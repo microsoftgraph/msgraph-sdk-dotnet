@@ -7,6 +7,7 @@ namespace Microsoft.Graph.Test.Requests.Generated
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Linq.Expressions;
     using System.Net.Http;
     using System.Threading.Tasks;
 
@@ -207,6 +208,31 @@ namespace Microsoft.Graph.Test.Requests.Generated
             Assert.AreEqual("$select", contactFoldersCollectionRequest.QueryOptions[0].Name, "Unexpected query option name.");
             Assert.AreEqual("value", contactFoldersCollectionRequest.QueryOptions[0].Value, "Unexpected query option value.");
         }
+
+        /// <summary>
+        /// Tests the Select() method with an expression on an entity collection request (calendarEvents).
+        /// </summary>
+        [TestMethod]
+        public void SelectExpression()
+        {
+            var expectedRequestUrl = $"{this.graphBaseUrl}/me/events";
+
+            IUserEventsCollectionRequest collectionRequest = this.graphServiceClient.Me.Events.Request().Select( s => new { NotBody=s.Body, NotSubject=s.Subject}) as UserEventsCollectionRequest;
+
+            Assert.IsNotNull(collectionRequest, "Unexpected request.");
+            Assert.AreEqual(new Uri(expectedRequestUrl), new Uri(collectionRequest.RequestUrl), "Unexpected request URL.");
+            Assert.AreEqual(1, collectionRequest.QueryOptions.Count, "Unexpected number of query options.");
+            Assert.AreEqual("$select", collectionRequest.QueryOptions[0].Name, "Unexpected query option name.");
+            Assert.AreEqual("Body,Subject", collectionRequest.QueryOptions[0].Value, "Unexpected query option values.");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void SelectExpressionNull()
+        {
+            IUserEventsCollectionRequest collectionRequest = this.graphServiceClient.Me.Events.Request().Select((Expression<Func<Microsoft.Graph.Event, object>>)null) as UserEventsCollectionRequest;
+        }
+
 
         /// <summary>
         /// Tests the Top() method on an entity collection request (contactFolders).

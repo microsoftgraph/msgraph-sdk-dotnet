@@ -9,6 +9,7 @@ namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq.Expressions;
     using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
@@ -59,6 +60,8 @@ namespace Microsoft.Graph
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
         IUserEventsCollectionRequest Select(string value);
+
+        IUserEventsCollectionRequest Select(Expression<Func<Microsoft.Graph.Event, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.
