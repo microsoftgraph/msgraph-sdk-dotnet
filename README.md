@@ -85,11 +85,9 @@ The following sample applications are also available:
 ## Documentation and resources
 
 * [Overview](docs/overview.md)
-* [Auth](docs/auth.md)
-* [Items](docs/items.md)
 * [Collections](docs/collections.md)
 * [Errors](docs/errors.md)
-* [OneDrive API](http://dev.onedrive.com)
+* [Microsoft Graph API](https://graph.microsoft.io)
 
 ## Issues
 
