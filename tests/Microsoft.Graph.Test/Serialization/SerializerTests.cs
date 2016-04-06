@@ -4,11 +4,15 @@
 
 namespace Microsoft.Graph.Test.Serialization
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Mocks;
+    using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
     using System.Text;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Mocks;
+
     [TestClass]
     public class SerializerTests
     {
@@ -139,6 +143,46 @@ namespace Microsoft.Graph.Test.Serialization
         }
 
         [TestMethod]
+        public void DeserializeEdmDateEnumerableValue()
+        {
+            var now = DateTimeOffset.UtcNow;
+            var tomorrow = now.AddDays(1);
+
+            var stringToDeserialize = string.Format("{{\"StartDate\":[\"{0}\",\"{1}\"]}}", now.ToString("yyyy-MM-dd"), tomorrow.ToString("yyyy-MM-dd"));
+
+            var deserializedObject = this.serializer.DeserializeObject<EdmDateEnumerableClass>(stringToDeserialize);
+
+            Assert.AreEqual(2, deserializedObject.StartDate.Count(), "Unexpected number of dates deserialized.");
+            Assert.IsTrue(deserializedObject.StartDate.Any(
+                 date =>
+                    date.Year == now.Year &&
+                    date.Month == now.Month &&
+                    date.Day == now.Day),
+                "Now date not found.");
+
+            Assert.IsTrue(deserializedObject.StartDate.Any(
+                date =>
+                    date.Year == tomorrow.Year &&
+                    date.Month == tomorrow.Month &&
+                    date.Day == tomorrow.Day),
+                "Tomorrow date not found.");
+        }
+
+        [TestMethod]
+        public void DeserializeEdmDateValue()
+        {
+            var now = DateTimeOffset.UtcNow;
+
+            var stringToDeserialize = string.Format("{{\"startDate\":\"{0}\"}}", now.ToString("yyyy-MM-dd"));
+
+            var recurrenceRange = this.serializer.DeserializeObject<RecurrenceRange>(stringToDeserialize);
+            
+            Assert.AreEqual(now.Year, recurrenceRange.StartDate.Year, "Unexpected startDate year deserialized.");
+            Assert.AreEqual(now.Month, recurrenceRange.StartDate.Month, "Unexpected startDate month deserialized.");
+            Assert.AreEqual(now.Day, recurrenceRange.StartDate.Day, "Unexpected startDate day deserialized.");
+        }
+
+        [TestMethod]
         public void DeserializeInterface()
         {
             var driveItemChildrenCollectionPage = new DriveItemChildrenCollectionPage
@@ -200,6 +244,41 @@ namespace Microsoft.Graph.Test.Serialization
             Assert.AreEqual(itemBody.Content, itemBody.Content, "Unexpected body content initialized.");
             Assert.AreEqual(BodyType.Text, itemBody.ContentType, "Unexpected content type initialized.");
             Assert.IsNull(itemBody.AdditionalData, "Additional data initialized.");
+        }
+
+        [TestMethod]
+        public void SerializeEdmDateEnumerableValue()
+        {
+            var now = DateTimeOffset.UtcNow;
+            var tomorrow = now.AddDays(1);
+
+            var expectedSerializedString = string.Format("{{\"StartDate\":[\"{0}\",\"{1}\"]}}", now.ToString("yyyy-MM-dd"), tomorrow.ToString("yyyy-MM-dd"));
+
+            var recurrence = new EdmDateEnumerableClass
+            {
+                StartDate = new List<EdmDate> { new EdmDate(now.Year, now.Month, now.Day), new EdmDate(tomorrow.Year, tomorrow.Month, tomorrow.Day) },
+            };
+
+            var serializedString = this.serializer.SerializeObject(recurrence);
+            
+            Assert.AreEqual(expectedSerializedString, serializedString, "Unexpected value serialized.");
+        }
+
+        [TestMethod]
+        public void SerializeEdmDateValue()
+        {
+            var now = DateTimeOffset.UtcNow;
+
+            var expectedSerializedString = string.Format("{{\"startDate\":\"{0}\"}}", now.ToString("yyyy-MM-dd"));
+
+            var recurrence = new RecurrenceRange
+            {
+                StartDate = new EdmDate(now.Year, now.Month, now.Day),
+            };
+
+            var serializedString = this.serializer.SerializeObject(recurrence);
+
+            Assert.AreEqual(expectedSerializedString, serializedString, "Unexpected value serialized.");
         }
     }
 }

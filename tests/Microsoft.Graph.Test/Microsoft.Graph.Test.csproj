@@ -71,6 +71,7 @@
     <Compile Include="Exceptions\ServiceExceptionTests.cs" />
     <Compile Include="Helpers\StringHelperTests.cs" />
     <Compile Include="Helpers\UrlHelperTests.cs" />
+    <Compile Include="Mocks\EdmDateEnumerableClass.cs" />
     <Compile Include="Mocks\ExceptionHttpMessageHandler.cs" />
     <Compile Include="Mocks\MockAuthenticationProvider.cs" />
     <Compile Include="Mocks\MockHttpProvider.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Requests\Generated\EntityCollectionRequestTests.cs" />
     <Compile Include="Requests\RequestTestBase.cs" />
     <Compile Include="Requests\Generated\ThumbnailRequestTests.cs" />
+    <Compile Include="Serialization\EdmDateConverterTests.cs" />
     <Compile Include="Serialization\SerializerTests.cs" />
   </ItemGroup>
   <ItemGroup>
