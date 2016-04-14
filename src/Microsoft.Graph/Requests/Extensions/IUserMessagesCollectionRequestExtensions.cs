@@ -4,17 +4,13 @@
 
 namespace Microsoft.Graph
 {
-    public partial class UserMessagesCollectionRequest
+    public partial interface IUserMessagesCollectionRequest
     {
         /// <summary>
         /// Adds the specified search value to the request.
         /// </summary>
         /// <param name="value">The search value.</param>
         /// <returns>The request object to send.</returns>
-        public IUserMessagesCollectionRequest Search(string value)
-        {
-            this.QueryOptions.Add(new QueryOption("$search", value));
-            return this;
-        }
+        IUserMessagesCollectionRequest Search(string value);
     }
 }
