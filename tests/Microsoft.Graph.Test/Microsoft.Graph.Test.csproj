@@ -81,6 +81,7 @@
     <Compile Include="Models\Generated\EntityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\Extensions\DriveItemRequestBuilderExtensionsTests.cs" />
+    <Compile Include="Requests\Extensions\UserMessagesCollectionExtensionTests.cs" />
     <Compile Include="Requests\Extensions\UserRequestBuilderExtensionsTests.cs" />
     <Compile Include="Requests\Extensions\DriveSpecialCollectionRequestBuilderExtensionsTests.cs" />
     <Compile Include="Requests\Extensions\MailFolderMessagesCollectionRequestBuilderExtensionsTests.cs" />
