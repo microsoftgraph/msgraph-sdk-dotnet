@@ -9,6 +9,8 @@ namespace Microsoft.Graph
 {
     using Newtonsoft.Json;
     
+    using Microsoft.Graph.Core;
+    
     /// <summary>
     /// The interface IDriveItemDeltaCollectionPage.
     /// </summary>

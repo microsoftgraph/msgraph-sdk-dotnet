@@ -10,8 +10,11 @@ namespace Microsoft.Graph.Test.Requests.Generated
     using System.Net.Http;
     using System.Threading.Tasks;
 
+    using Microsoft.Graph.Core;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
+
+    using Constants = Microsoft.Graph.Constants;
 
     [TestClass]
     public class ActionRequestTests : RequestTestBase

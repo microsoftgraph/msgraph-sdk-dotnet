@@ -6,7 +6,9 @@
 
 
 namespace Microsoft.Graph
-{   
+{
+    using Microsoft.Graph.Core;
+
     /// <summary>
     /// The type DriveRecentCollectionPage.
     /// </summary>

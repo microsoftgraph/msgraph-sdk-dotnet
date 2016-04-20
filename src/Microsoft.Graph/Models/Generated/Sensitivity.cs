@@ -8,6 +8,8 @@
 
 namespace Microsoft.Graph
 {
+    using Microsoft.Graph.Core;
+    
     using Newtonsoft.Json;
     
     /// <summary>

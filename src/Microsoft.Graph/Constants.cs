@@ -6,24 +6,6 @@ namespace Microsoft.Graph
 {
     public static class Constants
     {
-        public static class Headers
-        {
-            public const string Bearer = "Bearer";
-            
-            public const string SdkVersionHeaderName = "SdkVersion";
-
-            public const string FormUrlEncodedContentType = "application/x-www-form-urlencoded";
-
-            public const string SdkVersionHeaderValue = "graph-dotnet-{0}.{1}.{2}";
-
-            public const string ThrowSiteHeaderName = "X-ThrowSite";
-        }
-
-        public static class Serialization
-        {
-            public const string ODataType = "@odata.type";
-        }
-
         public static class Url
         {
             public const string AppRoot = "approot";

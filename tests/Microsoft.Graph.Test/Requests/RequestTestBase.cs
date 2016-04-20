@@ -8,9 +8,12 @@ namespace Microsoft.Graph.Test.Requests
     using System.Threading.Tasks;
 
     using Microsoft.Graph;
+    using Microsoft.Graph.Core;
+    using Microsoft.Graph.Core.Test.Mocks;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Mocks;
     using Moq;
+
+    using Constants = Microsoft.Graph.Constants;
 
     [TestClass]
     public class RequestTestBase

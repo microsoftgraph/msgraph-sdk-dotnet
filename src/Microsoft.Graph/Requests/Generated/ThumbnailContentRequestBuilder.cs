@@ -8,6 +8,8 @@
 namespace Microsoft.Graph
 {
     using System.Collections.Generic;
+    
+    using Microsoft.Graph.Core;
 
     /// <summary>
     /// The type ThumbnailContentRequestBuilder.

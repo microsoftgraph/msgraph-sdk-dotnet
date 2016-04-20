@@ -5,14 +5,16 @@
 namespace Microsoft.Graph.Test.Requests.Generated
 {
     using System;
-    using System.Collections.Generic;
     using System.IO;
     using System.Net.Http;
     using System.Threading.Tasks;
 
     using Microsoft.Graph;
+    using Microsoft.Graph.Core;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
+
+    using Constants = Microsoft.Graph.Constants;
 
     [TestClass]
     public class CollectionReferencesRequestTests : RequestTestBase
