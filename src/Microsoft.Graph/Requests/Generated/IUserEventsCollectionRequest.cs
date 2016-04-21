@@ -55,12 +55,24 @@ namespace Microsoft.Graph
         IUserEventsCollectionRequest Expand(string value);
 
         /// <summary>
+        /// Adds the specified expand value to the request.
+        /// </summary>
+        /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
+        /// <returns>The request object to send.</returns>
+        IUserEventsCollectionRequest Expand(Expression<Func<Microsoft.Graph.Event, object>> expandExpression);
+
+        /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
         IUserEventsCollectionRequest Select(string value);
 
+        /// <summary>
+        /// Adds the specified select value to the request.
+        /// </summary>
+        /// <param name="selectExpression">The expression from which to calculate the select value.</param>
+        /// <returns>The request object to send.</returns>
         IUserEventsCollectionRequest Select(Expression<Func<Microsoft.Graph.Event, object>> selectExpression);
 
         /// <summary>
