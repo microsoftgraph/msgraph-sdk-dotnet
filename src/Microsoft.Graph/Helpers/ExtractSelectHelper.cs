@@ -1,15 +1,16 @@
 // ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-using System;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
 
 namespace Microsoft.Graph
 {
+    using System;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using System.Reflection;
+    
     /// <summary>
-    /// Helper class to extract $select parameters from strongly-typed expressions.
+    /// Helper class to extract $select or $expand parameters from strongly-typed expressions.
     /// </summary>
     public static class ExpressionExtractHelper
     {
