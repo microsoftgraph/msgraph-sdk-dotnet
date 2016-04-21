@@ -193,6 +193,30 @@ namespace Microsoft.Graph.Test.Requests.Generated
         }
 
         /// <summary>
+        /// Tests the Expand() method with an expression on an entity collection request (calendarEvents).
+        /// </summary>
+        [TestMethod]
+        public void ExpandExpression()
+        {
+            var expectedRequestUrl = $"{this.graphBaseUrl}/me/events";
+
+            IUserEventsCollectionRequest collectionRequest = this.graphServiceClient.Me.Events.Request().Expand(s => new { s.Attachments, s.Instances }) as UserEventsCollectionRequest;
+
+            Assert.IsNotNull(collectionRequest, "Unexpected request.");
+            Assert.AreEqual(new Uri(expectedRequestUrl), new Uri(collectionRequest.RequestUrl), "Unexpected request URL.");
+            Assert.AreEqual(1, collectionRequest.QueryOptions.Count, "Unexpected number of query options.");
+            Assert.AreEqual("$expand", collectionRequest.QueryOptions[0].Name, "Unexpected query option name.");
+            Assert.AreEqual("Attachments,Instances", collectionRequest.QueryOptions[0].Value, "Unexpected query option values.");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ExpandExpressionNull()
+        {
+            IUserEventsCollectionRequest collectionRequest = this.graphServiceClient.Me.Events.Request().Expand((Expression<Func<Microsoft.Graph.Event, object>>)null) as UserEventsCollectionRequest;
+        }
+
+        /// <summary>
         /// Tests the Select() method on an entity collection request (contactFolders).
         /// </summary>
         [TestMethod]
@@ -217,7 +241,7 @@ namespace Microsoft.Graph.Test.Requests.Generated
         {
             var expectedRequestUrl = $"{this.graphBaseUrl}/me/events";
 
-            IUserEventsCollectionRequest collectionRequest = this.graphServiceClient.Me.Events.Request().Select( s => new { NotBody=s.Body, NotSubject=s.Subject}) as UserEventsCollectionRequest;
+            IUserEventsCollectionRequest collectionRequest = this.graphServiceClient.Me.Events.Request().Select( s => new { s.Body, s.Subject}) as UserEventsCollectionRequest;
 
             Assert.IsNotNull(collectionRequest, "Unexpected request.");
             Assert.AreEqual(new Uri(expectedRequestUrl), new Uri(collectionRequest.RequestUrl), "Unexpected request URL.");
@@ -232,7 +256,6 @@ namespace Microsoft.Graph.Test.Requests.Generated
         {
             IUserEventsCollectionRequest collectionRequest = this.graphServiceClient.Me.Events.Request().Select((Expression<Func<Microsoft.Graph.Event, object>>)null) as UserEventsCollectionRequest;
         }
-
 
         /// <summary>
         /// Tests the Top() method on an entity collection request (contactFolders).
