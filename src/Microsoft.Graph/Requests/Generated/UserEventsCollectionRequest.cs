@@ -126,8 +126,17 @@ namespace Microsoft.Graph
 
         public IUserEventsCollectionRequest Select(Expression<Func<Microsoft.Graph.Event, object>> selectExpression)
         {
-            string value = ExtractSelectHelper.ExtractMembers(selectExpression);
-            if (value != null)
+            if (selectExpression == null)
+            {
+                throw new ArgumentNullException(nameof(selectExpression));
+            }
+            string error;
+            string value = ExpressionExtractHelper.ExtractMembers(selectExpression, out error);
+            if (value == null)
+            {
+                throw new ArgumentException(error, nameof(selectExpression));
+            }
+            else
             {
                 this.QueryOptions.Add(new QueryOption("$select", value));
             }
