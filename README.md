@@ -80,7 +80,7 @@ var rootItem = await graphClient.Me.Drive.Root.Request().GetAsync();
 For a general overview of how the SDK is designed, see [overview](docs/overview.md).
 
 The following sample applications are also available:
-* [Microsoft Graph UWP Connect Library](https://github.com/ginach/Microsoft-Graph-UWP-Connect-Library) - Windows Universal app
+* [Microsoft Graph UWP Connect Library](https://github.com/OfficeDev/Microsoft-Graph-UWP-Connect-Library) - Windows Universal app
 
 ## Documentation and resources
 

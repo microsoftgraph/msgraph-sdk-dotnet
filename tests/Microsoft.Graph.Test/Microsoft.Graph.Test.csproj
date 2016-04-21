@@ -50,6 +50,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -72,6 +73,7 @@
     <Compile Include="Helpers\ExtractSelectHelperTest.cs" />
     <Compile Include="Helpers\StringHelperTests.cs" />
     <Compile Include="Helpers\UrlHelperTests.cs" />
+    <Compile Include="Mocks\DateTestClass.cs" />
     <Compile Include="Mocks\ExceptionHttpMessageHandler.cs" />
     <Compile Include="Mocks\MockAuthenticationProvider.cs" />
     <Compile Include="Mocks\MockHttpProvider.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Requests\Generated\EntityCollectionRequestTests.cs" />
     <Compile Include="Requests\RequestTestBase.cs" />
     <Compile Include="Requests\Generated\ThumbnailRequestTests.cs" />
+    <Compile Include="Serialization\DateConverterTests.cs" />
     <Compile Include="Serialization\SerializerTests.cs" />
   </ItemGroup>
   <ItemGroup>

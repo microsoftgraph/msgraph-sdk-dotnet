@@ -4,11 +4,16 @@
 
 namespace Microsoft.Graph.Test.Serialization
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Mocks;
+    using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
     using System.Text;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Mocks;
+    using Newtonsoft.Json;
+
     [TestClass]
     public class SerializerTests
     {
@@ -139,6 +144,46 @@ namespace Microsoft.Graph.Test.Serialization
         }
 
         [TestMethod]
+        public void DeserializeDateEnumerableValue()
+        {
+            var now = DateTimeOffset.UtcNow;
+            var tomorrow = now.AddDays(1);
+
+            var stringToDeserialize = string.Format("{{\"startDate\":[\"{0}\",\"{1}\"]}}", now.ToString("yyyy-MM-dd"), tomorrow.ToString("yyyy-MM-dd"));
+
+            var deserializedObject = this.serializer.DeserializeObject<DateTestClass>(stringToDeserialize);
+
+            Assert.AreEqual(2, deserializedObject.StartDate.Count(), "Unexpected number of dates deserialized.");
+            Assert.IsTrue(deserializedObject.StartDate.Any(
+                 date =>
+                    date.Year == now.Year &&
+                    date.Month == now.Month &&
+                    date.Day == now.Day),
+                "Now date not found.");
+
+            Assert.IsTrue(deserializedObject.StartDate.Any(
+                date =>
+                    date.Year == tomorrow.Year &&
+                    date.Month == tomorrow.Month &&
+                    date.Day == tomorrow.Day),
+                "Tomorrow date not found.");
+        }
+
+        [TestMethod]
+        public void DeserializeDateValue()
+        {
+            var now = DateTimeOffset.UtcNow;
+
+            var stringToDeserialize = string.Format("{{\"startDate\":\"{0}\"}}", now.ToString("yyyy-MM-dd"));
+
+            var recurrenceRange = this.serializer.DeserializeObject<RecurrenceRange>(stringToDeserialize);
+            
+            Assert.AreEqual(now.Year, recurrenceRange.StartDate.Year, "Unexpected startDate year deserialized.");
+            Assert.AreEqual(now.Month, recurrenceRange.StartDate.Month, "Unexpected startDate month deserialized.");
+            Assert.AreEqual(now.Day, recurrenceRange.StartDate.Day, "Unexpected startDate day deserialized.");
+        }
+
+        [TestMethod]
         public void DeserializeInterface()
         {
             var driveItemChildrenCollectionPage = new DriveItemChildrenCollectionPage
@@ -153,6 +198,26 @@ namespace Microsoft.Graph.Test.Serialization
             Assert.IsInstanceOfType(deserializedPage, typeof(DriveItemChildrenCollectionPage), "Unexpected object deserialized.");
             Assert.AreEqual(1, deserializedPage.Count, "Unexpected driveItems deserialized.");
             Assert.AreEqual("id", deserializedPage[0].Id, "Unexpected driveItem deserialized.");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ServiceException))]
+        public void DeserializeInvalidTypeForDateConverter()
+        {
+            var stringToDeserialize = "{\"invalidType\":1}";
+
+            try
+            {
+                var date = this.serializer.DeserializeObject<DateTestClass>(stringToDeserialize);
+            }
+            catch (ServiceException serviceException)
+            {
+                Assert.IsTrue(serviceException.IsMatch(GraphErrorCode.GeneralException.ToString()), "Unexpected error code thrown.");
+                Assert.AreEqual("Unable to deserialize the returned Date.", serviceException.Error.Message, "Unexpected error message thrown.");
+                Assert.IsInstanceOfType(serviceException.InnerException, typeof(JsonSerializationException), "Unexpected inner exception thrown.");
+
+                throw;
+            }
         }
 
         [TestMethod]
@@ -200,6 +265,77 @@ namespace Microsoft.Graph.Test.Serialization
             Assert.AreEqual(itemBody.Content, itemBody.Content, "Unexpected body content initialized.");
             Assert.AreEqual(BodyType.Text, itemBody.ContentType, "Unexpected content type initialized.");
             Assert.IsNull(itemBody.AdditionalData, "Additional data initialized.");
+        }
+
+        [TestMethod]
+        public void SerializeDateEnumerableValue()
+        {
+            var now = DateTimeOffset.UtcNow;
+            var tomorrow = now.AddDays(1);
+
+            var expectedSerializedString = string.Format("{{\"nullableDate\":null,\"startDate\":[\"{0}\",\"{1}\"]}}", now.ToString("yyyy-MM-dd"), tomorrow.ToString("yyyy-MM-dd"));
+
+            var recurrence = new DateTestClass
+            {
+                StartDate = new List<Date> { new Date(now.Year, now.Month, now.Day), new Date(tomorrow.Year, tomorrow.Month, tomorrow.Day) },
+            };
+
+            var serializedString = this.serializer.SerializeObject(recurrence);
+            
+            Assert.AreEqual(expectedSerializedString, serializedString, "Unexpected value serialized.");
+        }
+
+        [TestMethod]
+        public void SerializeDateNullValue()
+        {
+            var now = DateTimeOffset.UtcNow;
+
+            var expectedSerializedString = "{\"nullableDate\":null}";
+
+            var recurrence = new DateTestClass();
+
+            var serializedString = this.serializer.SerializeObject(recurrence);
+
+            Assert.AreEqual(expectedSerializedString, serializedString, "Unexpected value serialized.");
+        }
+
+        [TestMethod]
+        public void SerializeDateValue()
+        {
+            var now = DateTimeOffset.UtcNow;
+
+            var expectedSerializedString = string.Format("{{\"startDate\":\"{0}\"}}", now.ToString("yyyy-MM-dd"));
+
+            var recurrence = new RecurrenceRange
+            {
+                StartDate = new Date(now.Year, now.Month, now.Day),
+            };
+
+            var serializedString = this.serializer.SerializeObject(recurrence);
+
+            Assert.AreEqual(expectedSerializedString, serializedString, "Unexpected value serialized.");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ServiceException))]
+        public void SerializeInvalidTypeForDateConverter()
+        {
+            var dateToSerialize = new DateTestClass
+            {
+                InvalidType = 1,
+            };
+
+            try
+            {
+                var serializedString = this.serializer.SerializeObject(dateToSerialize);
+            }
+            catch (ServiceException serviceException)
+            {
+                Assert.IsTrue(serviceException.IsMatch(GraphErrorCode.GeneralException.ToString()), "Unexpected error code thrown.");
+                Assert.AreEqual("DateConverter can only serialize objects of type Date.", serviceException.Error.Message, "Unexpected error message thrown.");
+
+                throw;
+            }
         }
     }
 }

@@ -103,6 +103,7 @@ If you only want to retrieve certain properties of a resource you can select the
 ```csharp
 var user = await graphServiceClient
                      .Me
+					 .Request()
 					 .Select("id")
 					 .GetAsync();
 ```

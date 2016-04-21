@@ -50,6 +50,7 @@
     <Compile Include="Helpers\ExtractSelectHelper.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
+    <Compile Include="Models\Date.cs" />
     <Compile Include="Models\Generated\*.cs" />
     <Compile Include="Models\ReferenceRequestBody.cs" />
     <Compile Include="Models\CollectionPage.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Requests\Options\Option.cs" />
     <Compile Include="Requests\Options\HeaderOption.cs" />
     <Compile Include="Requests\Options\QueryOption.cs" />
+    <Compile Include="Serialization\DateConverter.cs" />
     <Compile Include="Serialization\EnumConverter.cs" />
     <Compile Include="Serialization\DerivedTypeConverter.cs" />
     <Compile Include="Serialization\ISerializer.cs" />
