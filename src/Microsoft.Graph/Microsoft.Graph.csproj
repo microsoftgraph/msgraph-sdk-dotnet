@@ -58,6 +58,8 @@
     <Compile Include="Requests\BaseRequest.cs" />
     <Compile Include="Requests\Extensions\DriveSpecialCollectionRequestBuilderExtensions.cs" />
     <Compile Include="Requests\Extensions\IDriveSpecialCollectionRequestBuilderExtensions.cs" />
+    <Compile Include="Requests\Extensions\IUserMessagesCollectionRequestExtensions.cs" />
+    <Compile Include="Requests\Extensions\UserMessagesCollectionRequestExtensions.cs" />
     <Compile Include="Requests\IBaseRequestBuilder.cs" />
     <Compile Include="Requests\BaseRequestBuilder.cs" />
     <Compile Include="Requests\Extensions\IUserMailFoldersCollectionRequestBuilderExtensions.cs" />
