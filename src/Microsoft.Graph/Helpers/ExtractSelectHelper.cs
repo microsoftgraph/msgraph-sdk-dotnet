@@ -1,7 +1,10 @@
+// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 
 namespace Microsoft.Graph
 {
@@ -25,14 +28,28 @@ namespace Microsoft.Graph
             }
 
             // Search s => s.Foo
-            MemberExpression memberExpression = expression.Body as MemberExpression;
+            var memberExpression = expression.Body as MemberExpression;
             if (memberExpression != null)
             {
-                return memberExpression.Member.Name;
+                return ProcessSimpleMemberExpression<T>(memberExpression, ref error);
             }
-            
-            // Search s => new { Foo = s.Foo, bar = s.Bar }
-            NewExpression newExpression  = expression.Body as NewExpression;
+
+            // Search s => s.BarFromBaseType 
+            // Property base type expressions introduce an intermediate conversion operator.
+            var convertExpression = expression.Body as UnaryExpression;
+            if (convertExpression?.NodeType == ExpressionType.Convert)
+            {
+                memberExpression = convertExpression.Operand as MemberExpression;
+                if (memberExpression != null)
+                {
+                    return ProcessSimpleMemberExpression<T>(memberExpression, ref error);
+                }
+            }
+
+            // Search s => new { [Foo = ]s.Foo, [bar = ]s.Bar }
+            // We'd prefer not to support the variant with named anonymous type members, but the expression trees don't differentiate, 
+            // between implicit and explicit naming, so there's no way to throw an error.
+            var newExpression = expression.Body as NewExpression;
             if (newExpression != null)
             {
                 if (newExpression.Arguments == null || newExpression.Arguments.Count == 0)
@@ -45,33 +62,32 @@ namespace Microsoft.Graph
                     var memberArgument = a as MemberExpression;
                     return memberArgument == null ||
                            !(memberArgument.Expression is ParameterExpression) ||
-                           memberArgument.Member.DeclaringType != typeof (T);
+                           !memberArgument.Member.DeclaringType.GetTypeInfo().IsAssignableFrom(typeof(T).GetTypeInfo());
                 }))
                 {
-                    error = $"Anonymous type in lambda expression may only be initialized with direct members of {nameof(T)}";
-                    return null;
-                }
-                if (newExpression.Arguments.Any(a =>
-                {
-                    var memberArgument = a as MemberExpression;
-                    return memberArgument == null ||
-                           !(memberArgument.Expression is ParameterExpression) ||
-                           memberArgument.Member.DeclaringType != typeof(T);
-                }))
-                {
-                    error = $"Anonymous type in lambda expression may only be initialized with direct members of {nameof(T)}";
+                    error = $"Anonymous type in lambda expression may only be initialized with direct members of type {typeof(T).Name}";
                     return null;
                 }
 
                 // Search only for direct members of the lambda's parameter
                 // Should already be validated above, but doesn't hurt to be sure.
                 var members = from m in newExpression.Arguments.OfType<MemberExpression>()
-                    where m.Expression is ParameterExpression && m.Member.DeclaringType == typeof (T)
+                    where m.Expression is ParameterExpression && m.Member.DeclaringType.GetTypeInfo().IsAssignableFrom(typeof(T).GetTypeInfo())
                     select m.Member.Name;
                 return string.Join(",", members);
             }
             error = "Unrecognized lambda expression.";
             return null;
+        }
+
+        private static string ProcessSimpleMemberExpression<T>(MemberExpression memberExpression, ref string error)
+        {
+            if (!memberExpression.Member.DeclaringType.GetTypeInfo().IsAssignableFrom(typeof (T).GetTypeInfo()))
+            {
+                error = $"Anonymous type in lambda expression may only be initialized with direct members of type {typeof (T).Name}";
+                return null;
+            }
+            return memberExpression.Member.Name;
         }
     }
 }
