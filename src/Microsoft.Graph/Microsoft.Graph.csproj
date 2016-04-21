@@ -47,6 +47,7 @@
     <Compile Include="Exceptions\Error.cs" />
     <Compile Include="Exceptions\ErrorResponse.cs" />
     <Compile Include="Exceptions\ServiceException.cs" />
+    <Compile Include="Helpers\ExtractSelectHelper.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="Models\Date.cs" />
