@@ -85,8 +85,8 @@ namespace Microsoft.Graph.Core.Test.Requests
 
             var expectedVersion = typeof(BaseRequest).GetTypeInfo().Assembly.GetName().Version;
             Assert.AreEqual(
-                string.Format(Constants.Headers.SdkVersionHeaderValueFormatString, "dotnet", expectedVersion.Major, expectedVersion.Minor, expectedVersion.Build),
-                httpRequestMessage.Headers.GetValues(Constants.Headers.SdkVersionHeaderName).First(), "Unexpected request stats header.");
+                string.Format(CoreConstants.Headers.SdkVersionHeaderValueFormatString, "dotnet", expectedVersion.Major, expectedVersion.Minor, expectedVersion.Build),
+                httpRequestMessage.Headers.GetValues(CoreConstants.Headers.SdkVersionHeaderName).First(), "Unexpected request stats header.");
         }
 
         [TestMethod]
@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Core.Test.Requests
 
             var expectedVersion = typeof(BaseRequest).GetTypeInfo().Assembly.GetName().Version;
             Assert.AreEqual(
-                string.Format(Constants.Headers.SdkVersionHeaderValueFormatString, "dotnet", expectedVersion.Major, expectedVersion.Minor, expectedVersion.Build),
-                httpRequestMessage.Headers.GetValues(Constants.Headers.SdkVersionHeaderName).First(), "Unexpected request stats header.");
+                string.Format(CoreConstants.Headers.SdkVersionHeaderValueFormatString, "dotnet", expectedVersion.Major, expectedVersion.Minor, expectedVersion.Build),
+                httpRequestMessage.Headers.GetValues(CoreConstants.Headers.SdkVersionHeaderName).First(), "Unexpected request stats header.");
         }
 
         [TestMethod]

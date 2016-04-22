@@ -261,7 +261,7 @@ namespace Microsoft.Graph.Core.Test.Requests
                 this.testHttpMessageHandler.AddResponseMapping(httpRequestMessage.RequestUri.ToString(), redirectResponseMessage);
                 this.testHttpMessageHandler.AddResponseMapping(redirectResponseMessage.Headers.Location.ToString(), tooManyRedirectsResponseMessage);
 
-                httpRequestMessage.Headers.Authorization = new AuthenticationHeaderValue(Constants.Headers.Bearer, "ticket");
+                httpRequestMessage.Headers.Authorization = new AuthenticationHeaderValue(CoreConstants.Headers.Bearer, "ticket");
 
                 try
                 {
@@ -369,7 +369,7 @@ namespace Microsoft.Graph.Core.Test.Requests
                 const string throwSite = "throw site";
 
                 httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
-                httpResponseMessage.Headers.Add(Constants.Headers.ThrowSiteHeaderName, throwSite);
+                httpResponseMessage.Headers.Add(CoreConstants.Headers.ThrowSiteHeaderName, throwSite);
                 httpResponseMessage.RequestMessage = httpRequestMessage;
 
                 this.testHttpMessageHandler.AddResponseMapping(httpRequestMessage.RequestUri.ToString(), httpResponseMessage);
@@ -410,7 +410,7 @@ namespace Microsoft.Graph.Core.Test.Requests
                 const string throwSiteHeaderValue = "throw site in header";
 
                 httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
-                httpResponseMessage.Headers.Add(Constants.Headers.ThrowSiteHeaderName, throwSiteHeaderValue);
+                httpResponseMessage.Headers.Add(CoreConstants.Headers.ThrowSiteHeaderName, throwSiteHeaderValue);
                 httpResponseMessage.RequestMessage = httpRequestMessage;
 
                 this.testHttpMessageHandler.AddResponseMapping(httpRequestMessage.RequestUri.ToString(), httpResponseMessage);

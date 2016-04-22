@@ -5,30 +5,23 @@
 namespace Microsoft.Graph.Core
 {
     using System;
+    using System.Collections.Concurrent;
     using System.Linq;
     using System.Reflection;
+
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
-    using System.Globalization;
-
+    
     /// <summary>
     /// Handles resolving interfaces to the correct derived class during serialization/deserialization.
     /// </summary>
     public class DerivedTypeConverter : JsonConverter
     {
-        private TextInfo textInfo;
-
-        internal static string assemblyName;
-
-        static DerivedTypeConverter()
-        {
-            assemblyName = typeof(DerivedTypeConverter).GetTypeInfo().Assembly.FullName;
-        }
+        private static readonly ConcurrentDictionary<string, Assembly> TypeMappingCache = new ConcurrentDictionary<string, Assembly>();
 
         public DerivedTypeConverter()
             : base()
         {
-            this.textInfo = CultureInfo.CurrentCulture.TextInfo;
         }
 
         public override bool CanConvert(Type objectType)
@@ -56,15 +49,40 @@ namespace Microsoft.Graph.Core
         {
             var jObject = JObject.Load(reader);
 
-            var type = jObject.GetValue(Constants.Serialization.ODataType);
+            var type = jObject.GetValue(CoreConstants.Serialization.ODataType);
 
-            var instance = this.Create(type == null ? objectType.AssemblyQualifiedName : type.ToString());
+            object instance = null;
 
-            // If @odata.type is set but we aren't able to create an instance of it type try using the method-provided
-            // object type instead. This means unknown types will be deserialized as a parent type.
-            if (instance == null && type != null)
+            if (type != null)
             {
-                instance = this.Create(objectType.AssemblyQualifiedName);
+                var typeString = type.ToString();
+                typeString = typeString.TrimStart('#');
+                typeString = StringHelper.ConvertTypeToTitleCase(typeString);
+
+                Assembly typeAssembly = null;
+                
+                if (!DerivedTypeConverter.TypeMappingCache.TryGetValue(typeString, out typeAssembly))
+                {
+                    typeAssembly = objectType.GetTypeInfo().Assembly;
+                }
+
+                instance = this.Create(typeString, typeAssembly);
+
+                // If @odata.type is set but we aren't able to create an instance of it use the method-provided
+                // object type instead. This means unknown types will be deserialized as a parent type.
+                if (instance == null)
+                {
+                    instance = this.Create(objectType.AssemblyQualifiedName, /* typeAssembly */ null);
+                }
+                else
+                {
+                    // Only cache the type to assembly mapping if the type creation succeeded using the assembly.
+                    DerivedTypeConverter.TypeMappingCache.TryAdd(typeString, typeAssembly);
+                }
+            }
+            else
+            {
+                instance = this.Create(objectType.AssemblyQualifiedName, /* typeAssembly */ null);
             }
 
             if (instance == null)
@@ -89,12 +107,18 @@ namespace Microsoft.Graph.Core
             throw new NotImplementedException();
         }
 
-        private object Create(string typeString)
+        private object Create(string typeString, Assembly typeAssembly)
         {
-            typeString = typeString.TrimStart('#');
-            typeString = StringHelper.ConvertTypeToTitleCase(typeString);
+            Type type = null;
 
-            var type = Type.GetType(typeString);
+            if (typeAssembly != null)
+            {
+                type = typeAssembly.GetType(typeString);
+            }
+            else
+            {
+                type = Type.GetType(typeString);
+            }
 
             if (type == null)
             {

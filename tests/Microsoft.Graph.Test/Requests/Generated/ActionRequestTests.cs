@@ -14,8 +14,6 @@ namespace Microsoft.Graph.Test.Requests.Generated
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
 
-    using Constants = Microsoft.Graph.Constants;
-
     [TestClass]
     public class ActionRequestTests : RequestTestBase
     {

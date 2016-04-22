@@ -272,7 +272,7 @@ namespace Microsoft.Graph.Core
             {
                 var assemblyVersion = this.GetType().GetTypeInfo().Assembly.GetName().Version;
                 this.sdkVersionHeaderValue = string.Format(
-                    Constants.Headers.SdkVersionHeaderValueFormatString,
+                    CoreConstants.Headers.SdkVersionHeaderValueFormatString,
                     this.SdkVersionHeaderPrefix,
                     assemblyVersion.Major,
                     assemblyVersion.Minor,
@@ -281,7 +281,7 @@ namespace Microsoft.Graph.Core
 
             // Append SDK version header for telemetry
             request.Headers.Add(
-                Constants.Headers.SdkVersionHeaderName,
+                CoreConstants.Headers.SdkVersionHeaderName,
                 this.sdkVersionHeaderValue);
         }
 

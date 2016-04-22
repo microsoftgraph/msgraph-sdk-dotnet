@@ -51,13 +51,12 @@ namespace Microsoft.Graph.Core.Test.Serialization
         [TestMethod]
         public void DeserializeDerivedType()
         {
-            var id = "userId";
+            var id = "id";
             var name = "name";
 
             var stringToDeserialize = string.Format(
-                "{{\"id\":\"{0}\", \"@odata.type\":\"#{1}\", \"name\":\"{2}\"}}",
+                "{{\"id\":\"{0}\", \"@odata.type\":\"#microsoft.graph.core.test.testModels.derivedTypeClass\", \"name\":\"{1}\"}}",
                 id,
-                typeof(DerivedTypeClass).AssemblyQualifiedName,
                 name);
 
             var derivedType = this.serializer.DeserializeObject<AbstractEntityType>(stringToDeserialize) as DerivedTypeClass;

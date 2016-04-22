@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Core.Test.Authentication
             var authenticationProvider = new DelegateAuthenticationProvider(
                 (requestMessage) =>
                 {
-                    requestMessage.Headers.Authorization = new AuthenticationHeaderValue(Constants.Headers.Bearer, authenticationToken);
+                    requestMessage.Headers.Authorization = new AuthenticationHeaderValue(CoreConstants.Headers.Bearer, authenticationToken);
                     return Task.FromResult(0);
                 });
 
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Core.Test.Authentication
             {
                 await authenticationProvider.AuthenticateRequestAsync(httpRequestMessage);
                 Assert.AreEqual(
-                    string.Format("{0} {1}", Constants.Headers.Bearer, authenticationToken),
+                    string.Format("{0} {1}", CoreConstants.Headers.Bearer, authenticationToken),
                     httpRequestMessage.Headers.Authorization.ToString(),
                     "Unexpected authorization header set.");
             }

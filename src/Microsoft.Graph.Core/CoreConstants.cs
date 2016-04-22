@@ -4,7 +4,7 @@
 
 namespace Microsoft.Graph.Core
 {
-    public static class Constants
+    public static class CoreConstants
     {
         public static class Headers
         {

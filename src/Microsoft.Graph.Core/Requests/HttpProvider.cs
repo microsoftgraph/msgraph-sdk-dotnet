@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Core
                     {
                         IEnumerable<string> throwsiteValues;
 
-                        if (response.Headers.TryGetValues(Constants.Headers.ThrowSiteHeaderName, out throwsiteValues))
+                        if (response.Headers.TryGetValues(CoreConstants.Headers.ThrowSiteHeaderName, out throwsiteValues))
                         {
                             error.ThrowSite = throwsiteValues.FirstOrDefault();
                         }

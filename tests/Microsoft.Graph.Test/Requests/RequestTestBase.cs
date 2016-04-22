@@ -13,8 +13,6 @@ namespace Microsoft.Graph.Test.Requests
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
 
-    using Constants = Microsoft.Graph.Constants;
-
     [TestClass]
     public class RequestTestBase
     {

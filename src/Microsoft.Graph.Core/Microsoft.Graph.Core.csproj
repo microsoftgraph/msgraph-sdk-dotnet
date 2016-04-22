@@ -39,12 +39,9 @@
     <AssemblyOriginatorKeyFile>..\..\build\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Authentication\DelegateAuthenticationProvider.cs" />
     <Compile Include="Authentication\IAuthenticationProvider.cs" />
-    <Compile Include="Constants.cs" />
+    <Compile Include="CoreConstants.cs" />
     <Compile Include="Exceptions\Error.cs" />
     <Compile Include="Exceptions\ErrorResponse.cs" />
     <Compile Include="Exceptions\ServiceException.cs" />
