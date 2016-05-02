@@ -67,6 +67,7 @@
     <Compile Include="Helpers\UrlHelperTests.cs" />
     <Compile Include="Requests\BaseRequestBuilderTests.cs" />
     <Compile Include="TestModels\AbstractEntityType.cs" />
+    <Compile Include="TestModels\CustomRequest.cs" />
     <Compile Include="TestModels\EnumType.cs" />
     <Compile Include="TestModels\ICollectionPageInstance.cs" />
     <Compile Include="TestModels\CollectionPageInstance.cs" />

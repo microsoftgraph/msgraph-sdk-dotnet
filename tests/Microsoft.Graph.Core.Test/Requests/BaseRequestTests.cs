@@ -110,6 +110,23 @@ namespace Microsoft.Graph.Core.Test.Requests
         }
 
         [TestMethod]
+        public void GetWebRequest_OverrideCustomTelemetryHeader()
+        {
+            var requestUrl = string.Concat(this.baseUrl, "/me/drive/items/id");
+
+            var baseRequest = new CustomRequest(requestUrl, this.baseClient);
+
+            var httpRequestMessage = baseRequest.GetHttpRequestMessage();
+
+            Assert.AreEqual(
+                CustomRequest.SdkHeaderValue,
+                httpRequestMessage.Headers.GetValues(CustomRequest.SdkHeaderName).First(), "Unexpected request stats header.");
+
+            Assert.IsFalse(
+                httpRequestMessage.Headers.Contains(CoreConstants.Headers.SdkVersionHeaderName), "Unexpected request stats header present.");
+        }
+
+        [TestMethod]
         public async Task SendAsync()
         {
             var requestUrl = string.Concat(this.baseUrl, "/me/drive/items/id");
