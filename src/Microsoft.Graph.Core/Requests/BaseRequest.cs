@@ -2,7 +2,7 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-namespace Microsoft.Graph.Core
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
@@ -20,7 +20,8 @@ namespace Microsoft.Graph.Core
     /// </summary>
     public class BaseRequest : IBaseRequest
     {
-        private readonly string sdkVersionHeaderValue;
+        protected string sdkVersionHeaderName;
+        protected string sdkVersionHeaderValue;
 
         /// <summary>
         /// Constructs a new <see cref="BaseRequest"/>.
@@ -39,6 +40,9 @@ namespace Microsoft.Graph.Core
             this.QueryOptions = new List<QueryOption>();
 
             this.RequestUrl = this.InitializeUrl(requestUrl);
+
+            this.sdkVersionHeaderName = CoreConstants.Headers.SdkVersionHeaderName;
+            this.SdkVersionHeaderPrefix = "graph";
 
             if (options != null)
             {
@@ -163,17 +167,6 @@ namespace Microsoft.Graph.Core
             CancellationToken cancellationToken,
             HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead)
         {
-            if (string.IsNullOrEmpty(this.sdkVersionHeaderValue))
-            {
-                var assemblyVersion = this.GetType().GetTypeInfo().Assembly.GetName().Version;
-                this.sdkVersionHeaderValue = string.Format(
-                    Constants.Headers.SdkVersionHeaderValueFormatString,
-                    this.SdkVersionHeaderPrefix,
-                    assemblyVersion.Major,
-                    assemblyVersion.Minor,
-                    assemblyVersion.Build);
-            }
-
             if (string.IsNullOrEmpty(this.RequestUrl))
             {
                 throw new ServiceException(
@@ -277,9 +270,20 @@ namespace Microsoft.Graph.Core
                 }
             }
 
+            if (string.IsNullOrEmpty(this.sdkVersionHeaderValue))
+            {
+                var assemblyVersion = this.GetType().GetTypeInfo().Assembly.GetName().Version;
+                this.sdkVersionHeaderValue = string.Format(
+                    CoreConstants.Headers.SdkVersionHeaderValueFormatString,
+                    this.SdkVersionHeaderPrefix,
+                    assemblyVersion.Major,
+                    assemblyVersion.Minor,
+                    assemblyVersion.Build);
+            }
+
             // Append SDK version header for telemetry
             request.Headers.Add(
-                Constants.Headers.SdkVersionHeaderName,
+                this.sdkVersionHeaderName,
                 this.sdkVersionHeaderValue);
         }
 
