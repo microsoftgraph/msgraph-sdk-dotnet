@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Core
             
             public const string SdkVersionHeaderName = "SdkVersion";
 
-            public const string SdkVersionHeaderValueFormatString = "{0}-{1}.{2}.{3}";
+            public const string SdkVersionHeaderValueFormatString = "{0}-dotnet-{1}.{2}.{3}";
 
             public const string FormUrlEncodedContentType = "application/x-www-form-urlencoded";
 

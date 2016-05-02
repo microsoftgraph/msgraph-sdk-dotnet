@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Core
             this.RequestUrl = this.InitializeUrl(requestUrl);
 
             this.sdkVersionHeaderName = CoreConstants.Headers.SdkVersionHeaderName;
-            this.SdkVersionHeaderPrefix = "dotnet";
+            this.SdkVersionHeaderPrefix = "graph";
 
             if (options != null)
             {
