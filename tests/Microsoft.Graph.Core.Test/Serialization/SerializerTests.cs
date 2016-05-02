@@ -9,8 +9,7 @@ namespace Microsoft.Graph.Core.Test.Serialization
     using System.IO;
     using System.Linq;
     using System.Text;
-
-    using Microsoft.Graph.Core;
+    
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using TestModels;
     using Newtonsoft.Json;

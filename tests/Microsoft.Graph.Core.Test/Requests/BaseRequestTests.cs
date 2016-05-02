@@ -12,8 +12,7 @@ namespace Microsoft.Graph.Core.Test.Requests
     using System.Reflection;
     using System.Threading;
     using System.Threading.Tasks;
-
-    using Microsoft.Graph.Core;
+    
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
     using TestModels;

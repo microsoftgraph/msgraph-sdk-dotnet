@@ -10,7 +10,6 @@ namespace Microsoft.Graph.Test.Requests.Generated
     using System.Threading.Tasks;
 
     using Microsoft.Graph;
-    using Microsoft.Graph.Core;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
 

@@ -10,8 +10,6 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.Text;
-    
-    using Microsoft.Graph.Core;
 
     /// <summary>
     /// The type MessageCreateForwardRequestBuilder.

@@ -7,8 +7,7 @@ namespace Microsoft.Graph.Core.Test.Authentication
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
-
-    using Microsoft.Graph.Core;
+    
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

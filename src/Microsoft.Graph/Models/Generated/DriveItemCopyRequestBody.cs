@@ -10,8 +10,6 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
-    
-    using Microsoft.Graph.Core;
 
     /// <summary>
     /// The type DriveItemCopyRequestBody.

@@ -14,8 +14,6 @@ namespace Microsoft.Graph
     using System.Threading;
     using System.Threading.Tasks;
     
-    using Microsoft.Graph.Core;
-    
     /// <summary>
     /// The interface IGroupRemoveFavoriteRequest.
     /// </summary>

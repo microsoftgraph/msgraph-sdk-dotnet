@@ -11,8 +11,6 @@ namespace Microsoft.Graph
     using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
-    
-    using Microsoft.Graph.Core;
 
     /// <summary>
     /// The type DirectoryObjectReferenceRequest.

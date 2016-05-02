@@ -8,8 +8,7 @@ namespace Microsoft.Graph
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;
-    
-    using Microsoft.Graph.Core;
+
     using Newtonsoft.Json;
 
     /// <summary>

@@ -5,12 +5,9 @@
 namespace Microsoft.Graph.Core.Test.Requests
 {
     using System.Net.Http;
-    using System.Threading.Tasks;
 
-    using Microsoft.Graph.Core;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Mocks;
-    using Moq;
 
     [TestClass]
     public class RequestTestBase

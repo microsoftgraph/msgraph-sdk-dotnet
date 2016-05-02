@@ -4,7 +4,6 @@
 
 namespace Microsoft.Graph.Core.Test.Helpers
 {
-    using Microsoft.Graph.Core;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

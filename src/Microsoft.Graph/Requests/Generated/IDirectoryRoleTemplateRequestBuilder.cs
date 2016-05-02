@@ -9,8 +9,6 @@ namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
-    
-    using Microsoft.Graph.Core;
 
     /// <summary>
     /// The interface IDirectoryRoleTemplateRequestBuilder.

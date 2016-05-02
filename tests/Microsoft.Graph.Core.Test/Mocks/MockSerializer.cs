@@ -4,7 +4,6 @@
 
 namespace Microsoft.Graph.Core.Test.Mocks
 {
-    using Microsoft.Graph.Core;
     using Moq;
 
     public class MockSerializer : Mock<ISerializer>
