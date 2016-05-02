@@ -20,6 +20,7 @@ namespace Microsoft.Graph.Core
     /// </summary>
     public class BaseRequest : IBaseRequest
     {
+        protected string sdkVersionHeaderName;
         protected string sdkVersionHeaderValue;
 
         /// <summary>
@@ -40,6 +41,7 @@ namespace Microsoft.Graph.Core
 
             this.RequestUrl = this.InitializeUrl(requestUrl);
 
+            this.sdkVersionHeaderName = CoreConstants.Headers.SdkVersionHeaderName;
             this.SdkVersionHeaderPrefix = "dotnet";
 
             if (options != null)
@@ -281,7 +283,7 @@ namespace Microsoft.Graph.Core
 
             // Append SDK version header for telemetry
             request.Headers.Add(
-                CoreConstants.Headers.SdkVersionHeaderName,
+                this.sdkVersionHeaderName,
                 this.sdkVersionHeaderValue);
         }
 
