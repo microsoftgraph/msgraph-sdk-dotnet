@@ -8,7 +8,7 @@
     <ProjectGuid>{9F04608C-D845-4445-83B1-E6D4EEE38CBC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Graph.Core</RootNamespace>
+    <RootNamespace>Microsoft.Graph</RootNamespace>
     <AssemblyName>Microsoft.Graph.Core</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
