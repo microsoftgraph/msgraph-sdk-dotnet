@@ -77,10 +77,10 @@ namespace Microsoft.Graph
                 {
                     instance = this.Create(objectType.AssemblyQualifiedName, /* typeAssembly */ null);
                 }
-                else
+
+                if (instance != null && instanceType == null)
                 {
-                    // Only cache the type mapping if we were able to successfully create the requested type.
-                    // Don't cache the parent type fall back.
+                    // Cache the type mapping resolution if we haven't pulled it from the cache already.
                     DerivedTypeConverter.TypeMappingCache.TryAdd(typeString, instance.GetType());
                 }
             }

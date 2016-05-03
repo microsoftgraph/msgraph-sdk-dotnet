@@ -341,6 +341,9 @@ namespace Microsoft.Graph.Core.Test.Serialization
         [TestMethod]
         public void VerifyTypeMappingCache()
         {
+            // Clear the cache so it won't have mappings from previous tests.
+            DerivedTypeConverter.TypeMappingCache.Clear();
+
             var id = "id";
             var derivedTypeClassTypeString = "microsoft.graph.core.test.testModels.derivedTypeClass";
             var dateTestClassTypeString = "microsoft.graph.core.test.testModels.dateTestClass";
@@ -371,11 +374,17 @@ namespace Microsoft.Graph.Core.Test.Serialization
             Assert.IsNotNull(upcastType, "Unexpected instance returned for up cast type.");
             Assert.IsNotNull(dateTestType, "Unexpected instance returned for date test type.");
 
-            Assert.AreEqual(2, DerivedTypeConverter.TypeMappingCache.Count, "Unexpected number of entries in type mapping cache.");
+            Assert.AreEqual(3, DerivedTypeConverter.TypeMappingCache.Count, "Unexpected number of entries in type mapping cache.");
 
             Assert.AreEqual(
                 typeof(DerivedTypeClass),
                 DerivedTypeConverter.TypeMappingCache[derivedTypeClassTypeString],
+                "Unexpected type cached for {0}",
+                derivedTypeClassTypeString);
+
+            Assert.AreEqual(
+                typeof(DerivedTypeClass),
+                DerivedTypeConverter.TypeMappingCache["unknown"],
                 "Unexpected type cached for {0}",
                 derivedTypeClassTypeString);
 
