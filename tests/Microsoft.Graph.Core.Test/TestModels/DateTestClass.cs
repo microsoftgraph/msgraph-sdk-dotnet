@@ -12,6 +12,7 @@ namespace Microsoft.Graph.Core.Test.TestModels
     /// <summary>
     /// Test class for testing serialization of Date.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter))]
     [DataContract]
     public class DateTestClass
     {

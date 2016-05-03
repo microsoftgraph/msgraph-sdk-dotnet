@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// </summary>
     public class DerivedTypeConverter : JsonConverter
     {
-        private static readonly ConcurrentDictionary<string, Assembly> TypeMappingCache = new ConcurrentDictionary<string, Assembly>();
+        internal static readonly ConcurrentDictionary<string, Type> TypeMappingCache = new ConcurrentDictionary<string, Type>(StringComparer.OrdinalIgnoreCase);
 
         public DerivedTypeConverter()
             : base()
@@ -59,14 +59,17 @@ namespace Microsoft.Graph
                 typeString = typeString.TrimStart('#');
                 typeString = StringHelper.ConvertTypeToTitleCase(typeString);
 
-                Assembly typeAssembly = null;
+                Type instanceType = null;
                 
-                if (!DerivedTypeConverter.TypeMappingCache.TryGetValue(typeString, out typeAssembly))
+                if (DerivedTypeConverter.TypeMappingCache.TryGetValue(typeString, out instanceType))
                 {
-                    typeAssembly = objectType.GetTypeInfo().Assembly;
+                    instance = this.Create(instanceType);
                 }
-
-                instance = this.Create(typeString, typeAssembly);
+                else
+                {
+                    var typeAssembly = objectType.GetTypeInfo().Assembly;
+                    instance = this.Create(typeString, typeAssembly);
+                }
 
                 // If @odata.type is set but we aren't able to create an instance of it use the method-provided
                 // object type instead. This means unknown types will be deserialized as a parent type.
@@ -76,8 +79,9 @@ namespace Microsoft.Graph
                 }
                 else
                 {
-                    // Only cache the type to assembly mapping if the type creation succeeded using the assembly.
-                    DerivedTypeConverter.TypeMappingCache.TryAdd(typeString, typeAssembly);
+                    // Only cache the type mapping if we were able to successfully create the requested type.
+                    // Don't cache the parent type fall back.
+                    DerivedTypeConverter.TypeMappingCache.TryAdd(typeString, instance.GetType());
                 }
             }
             else
@@ -120,6 +124,11 @@ namespace Microsoft.Graph
                 type = Type.GetType(typeString);
             }
 
+            return this.Create(type);
+        }
+
+        private object Create(Type type)
+        {
             if (type == null)
             {
                 return null;
@@ -144,7 +153,7 @@ namespace Microsoft.Graph
                     new Error
                     {
                         Code = "generalException",
-                        Message = string.Format("Unable to create an instance of type {0}.", typeString),
+                        Message = string.Format("Unable to create an instance of type {0}.", type.FullName),
                     },
                     exception);
             }

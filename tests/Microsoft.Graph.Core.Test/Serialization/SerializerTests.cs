@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Core.Test.Serialization
             {
                 Assert.IsTrue(exception.IsMatch("generalException"), "Unexpected error code thrown.");
                 Assert.AreEqual(
-                    string.Format("Unable to create an instance of type {0}.", typeof(AbstractClass).AssemblyQualifiedName),
+                    string.Format("Unable to create an instance of type {0}.", typeof(AbstractClass).FullName),
                     exception.Error.Message,
                     "Unexpected error message thrown.");
 
@@ -336,6 +336,54 @@ namespace Microsoft.Graph.Core.Test.Serialization
 
                 throw;
             }
+        }
+
+        [TestMethod]
+        public void VerifyTypeMappingCache()
+        {
+            var id = "id";
+            var derivedTypeClassTypeString = "microsoft.graph.core.test.testModels.derivedTypeClass";
+            var dateTestClassTypeString = "microsoft.graph.core.test.testModels.dateTestClass";
+
+            var deserializeExistingTypeString = string.Format(
+                "{{\"id\":\"{0}\", \"@odata.type\":\"#{1}\"}}",
+                id,
+                derivedTypeClassTypeString);
+
+            var derivedType = this.serializer.DeserializeObject<AbstractEntityType>(deserializeExistingTypeString) as DerivedTypeClass;
+            var derivedType2 = this.serializer.DeserializeObject<DerivedTypeClass>(deserializeExistingTypeString) as DerivedTypeClass;
+
+            var deserializeUnknownTypeString = string.Format(
+                "{{\"id\":\"{0}\", \"@odata.type\":\"#unknown\"}}",
+                id);
+
+            var upcastType = this.serializer.DeserializeObject<DerivedTypeClass>(deserializeUnknownTypeString) as DerivedTypeClass;
+
+            var dateTestTypeString = string.Format(
+                "{{\"@odata.type\":\"#{1}\"}}",
+                id,
+                dateTestClassTypeString);
+
+            var dateTestType = this.serializer.DeserializeObject<DateTestClass>(dateTestTypeString) as DateTestClass;
+
+            Assert.IsNotNull(derivedType, "Unexpected instance returned for derived type instance.");
+            Assert.IsNotNull(derivedType2, "Unexpected instance returned for derived type instance 2.");
+            Assert.IsNotNull(upcastType, "Unexpected instance returned for up cast type.");
+            Assert.IsNotNull(dateTestType, "Unexpected instance returned for date test type.");
+
+            Assert.AreEqual(2, DerivedTypeConverter.TypeMappingCache.Count, "Unexpected number of entries in type mapping cache.");
+
+            Assert.AreEqual(
+                typeof(DerivedTypeClass),
+                DerivedTypeConverter.TypeMappingCache[derivedTypeClassTypeString],
+                "Unexpected type cached for {0}",
+                derivedTypeClassTypeString);
+
+            Assert.AreEqual(
+                typeof(DateTestClass),
+                DerivedTypeConverter.TypeMappingCache[dateTestClassTypeString],
+                "Unexpected type cached for {0}",
+                dateTestClassTypeString);
         }
     }
 }
