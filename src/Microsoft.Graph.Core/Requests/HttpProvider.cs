@@ -104,8 +104,8 @@ namespace Microsoft.Graph
                     throw new ServiceException(
                         new Error
                         {
-                            Code = "notAllowed",
-                            Message = "Overall timeout cannot be set after the first request is sent."
+                            Code = ErrorConstants.Codes.NotAllowed,
+                            Message = ErrorConstants.Messages.OverallTimeoutCannotBeSet,
                         },
                         exception);
                 }
@@ -161,8 +161,8 @@ namespace Microsoft.Graph
                     throw new ServiceException(
                         new Error
                         {
-                            Code = "generalException",
-                            Message = "Location header not present in redirection response."
+                            Code = ErrorConstants.Codes.GeneralException,
+                            Message = ErrorConstants.Messages.LocationHeaderNotSetOnRedirect,
                         });
                 }
             }
@@ -178,14 +178,14 @@ namespace Microsoft.Graph
                     {
                         if (response != null && response.StatusCode == HttpStatusCode.NotFound)
                         {
-                            error = new Error { Code = "itemNotFound" };
+                            error = new Error { Code = ErrorConstants.Codes.ItemNotFound };
                         }
                         else
                         {
                             error = new Error
                             {
-                                Code = "generalException",
-                                Message = "Unexpected exception returned from the service."
+                                Code = ErrorConstants.Codes.GeneralException,
+                                Message = ErrorConstants.Messages.UnexpectedExceptionResponse,
                             };
                         }
                     }
@@ -240,8 +240,8 @@ namespace Microsoft.Graph
                         throw new ServiceException(
                             new Error
                             {
-                                Code = "tooManyRedirects",
-                                Message = string.Format("More than {0} redirects encountered while sending the request.", HttpProvider.maxRedirects)
+                                Code = ErrorConstants.Codes.TooManyRedirects,
+                                Message = string.Format(ErrorConstants.Messages.TooManyRedirectsFormatString, HttpProvider.maxRedirects)
                             });
                     }
 
@@ -266,8 +266,8 @@ namespace Microsoft.Graph
                 throw new ServiceException(
                         new Error
                         {
-                            Code = "timeout",
-                            Message = "The request timed out."
+                            Code = ErrorConstants.Codes.Timeout,
+                            Message = ErrorConstants.Messages.RequestTimedOut,
                         },
                         exception);
             }
@@ -276,8 +276,8 @@ namespace Microsoft.Graph
                 throw new ServiceException(
                         new Error
                         {
-                            Code = "generalException",
-                            Message = "An error occurred sending the request."
+                            Code = ErrorConstants.Codes.GeneralException,
+                            Message = ErrorConstants.Messages.UnexpectedExceptionOnSend,
                         },
                         exception);
             }

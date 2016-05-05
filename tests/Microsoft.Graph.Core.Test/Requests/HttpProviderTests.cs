@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Core.Test.Requests
             }
             catch (ServiceException serviceException)
             {
-                Assert.IsTrue(serviceException.IsMatch("notAllowed"), "Unexpected error code thrown.");
+                Assert.IsTrue(serviceException.IsMatch(ErrorConstants.Codes.NotAllowed), "Unexpected error code thrown.");
                 Assert.AreEqual(
-                    "Overall timeout cannot be set after the first request is sent.",
+                    ErrorConstants.Messages.OverallTimeoutCannotBeSet,
                     serviceException.Error.Message,
                     "Unexpected error message thrown.");
                 Assert.IsInstanceOfType(serviceException.InnerException, typeof(InvalidOperationException), "Unexpected inner exception thrown.");
@@ -140,9 +140,8 @@ namespace Microsoft.Graph.Core.Test.Requests
                 }
                 catch (ServiceException exception)
                 {
-                    Assert.IsNotNull(exception.Error, "No error body returned.");
-                    Assert.AreEqual("generalException", exception.Error.Code, "Incorrect error code returned.");
-                    Assert.AreEqual("An error occurred sending the request.", exception.Error.Message, "Unexpected error message.");
+                    Assert.IsTrue(exception.IsMatch(ErrorConstants.Codes.GeneralException), "Unexpected error code returned.");
+                    Assert.AreEqual(ErrorConstants.Messages.UnexpectedExceptionOnSend, exception.Error.Message, "Unexpected error message.");
                     Assert.AreEqual(clientException, exception.InnerException, "Inner exception not set.");
 
                     throw;
@@ -167,9 +166,8 @@ namespace Microsoft.Graph.Core.Test.Requests
                 }
                 catch (ServiceException exception)
                 {
-                    Assert.IsNotNull(exception.Error, "No error body returned.");
-                    Assert.AreEqual("timeout", exception.Error.Code, "Incorrect error code returned.");
-                    Assert.AreEqual("The request timed out.", exception.Error.Message, "Unexpected error message.");
+                    Assert.IsTrue(exception.IsMatch(ErrorConstants.Codes.Timeout), "Unexpected error code returned.");
+                    Assert.AreEqual(ErrorConstants.Messages.RequestTimedOut, exception.Error.Message, "Unexpected error message.");
                     Assert.AreEqual(clientException, exception.InnerException, "Inner exception not set.");
 
                     throw;
@@ -195,10 +193,9 @@ namespace Microsoft.Graph.Core.Test.Requests
                 }
                 catch (ServiceException exception)
                 {
-                    Assert.IsNotNull(exception.Error, "Error not set in exception.");
-                    Assert.AreEqual("generalException", exception.Error.Code, "Unexpected error code returned.");
+                    Assert.IsTrue(exception.IsMatch(ErrorConstants.Codes.GeneralException), "Unexpected error code returned.");
                     Assert.AreEqual(
-                        "Location header not present in redirection response.",
+                        ErrorConstants.Messages.LocationHeaderNotSetOnRedirect,
                         exception.Error.Message,
                         "Unexpected error message returned.");
 
@@ -272,10 +269,9 @@ namespace Microsoft.Graph.Core.Test.Requests
                 }
                 catch (ServiceException exception)
                 {
-                    Assert.IsNotNull(exception.Error, "Error not set in exception.");
-                    Assert.AreEqual("tooManyRedirects", exception.Error.Code, "Unexpected error code returned.");
+                    Assert.IsTrue(exception.IsMatch(ErrorConstants.Codes.TooManyRedirects), "Unexpected error code returned.");
                     Assert.AreEqual(
-                        "More than 5 redirects encountered while sending the request.",
+                        string.Format(ErrorConstants.Messages.TooManyRedirectsFormatString, "5"),
                         exception.Error.Message,
                         "Unexpected error message returned.");
 
@@ -308,8 +304,7 @@ namespace Microsoft.Graph.Core.Test.Requests
                 }
                 catch (ServiceException exception)
                 {
-                    Assert.IsNotNull(exception.Error, "No error body returned.");
-                    Assert.AreEqual("itemNotFound", exception.Error.Code, "Incorrect error code returned.");
+                    Assert.IsTrue(exception.IsMatch(ErrorConstants.Codes.ItemNotFound), "Unexpected error code returned.");
                     Assert.IsTrue(string.IsNullOrEmpty(exception.Error.Message), "Unexpected error message returned.");
 
                     throw;
@@ -330,13 +325,11 @@ namespace Microsoft.Graph.Core.Test.Requests
 
                 this.testHttpMessageHandler.AddResponseMapping(httpRequestMessage.RequestUri.ToString(), httpResponseMessage);
 
-                var notFoundErrorString = "itemNotFound";
-
                 var expectedError = new ErrorResponse
                 {
                     Error = new Error
                     {
-                        Code = notFoundErrorString,
+                        Code = ErrorConstants.Codes.ItemNotFound,
                         Message = "Error message"
                     }
                 };
@@ -349,9 +342,8 @@ namespace Microsoft.Graph.Core.Test.Requests
                 }
                 catch (ServiceException exception)
                 {
-                    Assert.IsNotNull(exception.Error, "No error body returned.");
-                    Assert.AreEqual(notFoundErrorString, exception.Error.Code, "Incorrect error code returned.");
-                    Assert.AreEqual("Error message", exception.Error.Message, "Unexpected error message.");
+                    Assert.AreEqual(expectedError.Error.Code, exception.Error.Code, "Unexpected error code returned.");
+                    Assert.AreEqual(expectedError.Error.Message, exception.Error.Message, "Unexpected error message.");
 
                     throw;
                 }

@@ -37,9 +37,9 @@ namespace Microsoft.Graph.Core.Test.Serialization
             }
             catch (ServiceException exception)
             {
-                Assert.IsTrue(exception.IsMatch("generalException"), "Unexpected error code thrown.");
+                Assert.IsTrue(exception.IsMatch(ErrorConstants.Codes.GeneralException), "Unexpected error code thrown.");
                 Assert.AreEqual(
-                    string.Format("Unable to create an instance of type {0}.", typeof(AbstractClass).FullName),
+                    string.Format(ErrorConstants.Messages.UnableToCreateInstanceOfTypeFormatString, typeof(AbstractClass).FullName),
                     exception.Error.Message,
                     "Unexpected error message thrown.");
 
@@ -133,9 +133,11 @@ namespace Microsoft.Graph.Core.Test.Serialization
             }
             catch (ServiceException exception)
             {
-                Assert.IsTrue(exception.IsMatch("generalException"), "Unexpected error code thrown.");
+                Assert.IsTrue(exception.IsMatch(ErrorConstants.Codes.GeneralException), "Unexpected error code thrown.");
                 Assert.AreEqual(
-                    string.Format("Unable to create an instance of type {0}.", typeof(NoDefaultConstructor).AssemblyQualifiedName),
+                    string.Format(
+                        ErrorConstants.Messages.UnableToCreateInstanceOfTypeFormatString,
+                        typeof(NoDefaultConstructor).AssemblyQualifiedName),
                     exception.Error.Message,
                     "Unexpected error message thrown.");
 
@@ -212,8 +214,8 @@ namespace Microsoft.Graph.Core.Test.Serialization
             }
             catch (ServiceException serviceException)
             {
-                Assert.IsTrue(serviceException.IsMatch("generalException"), "Unexpected error code thrown.");
-                Assert.AreEqual("Unable to deserialize the returned Date.", serviceException.Error.Message, "Unexpected error message thrown.");
+                Assert.IsTrue(serviceException.IsMatch(ErrorConstants.Codes.GeneralException), "Unexpected error code thrown.");
+                Assert.AreEqual(ErrorConstants.Messages.UnableToDeserializeDate, serviceException.Error.Message, "Unexpected error message thrown.");
                 Assert.IsInstanceOfType(serviceException.InnerException, typeof(JsonSerializationException), "Unexpected inner exception thrown.");
 
                 throw;
@@ -331,8 +333,11 @@ namespace Microsoft.Graph.Core.Test.Serialization
             }
             catch (ServiceException serviceException)
             {
-                Assert.IsTrue(serviceException.IsMatch("generalException"), "Unexpected error code thrown.");
-                Assert.AreEqual("DateConverter can only serialize objects of type Date.", serviceException.Error.Message, "Unexpected error message thrown.");
+                Assert.IsTrue(serviceException.IsMatch(ErrorConstants.Codes.GeneralException), "Unexpected error code thrown.");
+                Assert.AreEqual(
+                    ErrorConstants.Messages.InvalidTypeForDateConverter,
+                    serviceException.Error.Message,
+                    "Unexpected error message thrown.");
 
                 throw;
             }

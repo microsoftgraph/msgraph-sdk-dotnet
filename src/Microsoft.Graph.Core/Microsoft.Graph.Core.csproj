@@ -43,6 +43,7 @@
     <Compile Include="Authentication\IAuthenticationProvider.cs" />
     <Compile Include="CoreConstants.cs" />
     <Compile Include="Exceptions\Error.cs" />
+    <Compile Include="Exceptions\ErrorConstants.cs" />
     <Compile Include="Exceptions\ErrorResponse.cs" />
     <Compile Include="Exceptions\ServiceException.cs" />
     <Compile Include="Helpers\StringHelper.cs" />

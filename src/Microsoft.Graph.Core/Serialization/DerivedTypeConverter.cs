@@ -94,8 +94,10 @@ namespace Microsoft.Graph
                 throw new ServiceException(
                     new Error
                     {
-                        Code = "generalException",
-                        Message = string.Format("Unable to create an instance of type {0}.", objectType.AssemblyQualifiedName),
+                        Code = ErrorConstants.Codes.GeneralException,
+                        Message = string.Format(
+                            ErrorConstants.Messages.UnableToCreateInstanceOfTypeFormatString,
+                            objectType.AssemblyQualifiedName),
                     });
             }
 
@@ -152,8 +154,8 @@ namespace Microsoft.Graph
                 throw new ServiceException(
                     new Error
                     {
-                        Code = "generalException",
-                        Message = string.Format("Unable to create an instance of type {0}.", type.FullName),
+                        Code = ErrorConstants.Codes.GeneralException,
+                        Message = string.Format(ErrorConstants.Messages.UnableToCreateInstanceOfTypeFormatString, type.FullName),
                     },
                     exception);
             }

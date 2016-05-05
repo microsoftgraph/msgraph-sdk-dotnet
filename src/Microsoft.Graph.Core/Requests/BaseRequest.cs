@@ -172,8 +172,8 @@ namespace Microsoft.Graph
                 throw new ServiceException(
                     new Error
                     {
-                        Code = "invalidRequest",
-                        Message = "Request URL is required to send a request.",
+                        Code = ErrorConstants.Codes.InvalidRequest,
+                        Message = ErrorConstants.Messages.RequestUrlMissing,
                     });
             }
 
@@ -182,8 +182,8 @@ namespace Microsoft.Graph
                 throw new ServiceException(
                     new Error
                     {
-                        Code = "invalidRequest",
-                        Message = "Authentication provider is required before sending a request.",
+                        Code = ErrorConstants.Codes.InvalidRequest,
+                        Message = ErrorConstants.Messages.AuthenticationProviderMissing,
                     });
             }
 
@@ -309,8 +309,8 @@ namespace Microsoft.Graph
                 throw new ServiceException(
                     new Error
                     {
-                        Code = "invalidRequest",
-                        Message = "Base URL is not initialized for the request.",
+                        Code = ErrorConstants.Codes.InvalidRequest,
+                        Message = ErrorConstants.Messages.BaseUrlMissing,
                     });
             }
 

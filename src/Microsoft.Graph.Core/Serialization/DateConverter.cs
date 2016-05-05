@@ -33,8 +33,8 @@ namespace Microsoft.Graph
                 throw new ServiceException(
                     new Error
                     {
-                        Code = "generalException",
-                        Message = string.Format("Unable to deserialize the returned Date."),
+                        Code = ErrorConstants.Codes.GeneralException,
+                        Message = ErrorConstants.Messages.UnableToDeserializeDate,
                     },
                     serializationException);
             }
@@ -59,8 +59,8 @@ namespace Microsoft.Graph
                 throw new ServiceException(
                     new Error
                     {
-                        Code = "generalException",
-                        Message = string.Format("DateConverter can only serialize objects of type Date."),
+                        Code = ErrorConstants.Codes.GeneralException,
+                        Message = ErrorConstants.Messages.InvalidTypeForDateConverter,
                     });
             }
         }

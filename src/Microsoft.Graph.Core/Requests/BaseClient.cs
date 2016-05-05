@@ -47,8 +47,8 @@ namespace Microsoft.Graph
                     throw new ServiceException(
                         new Error
                         {
-                            Code = "invalidRequest",
-                            Message = "Base URL cannot be null or empty."
+                            Code = ErrorConstants.Codes.InvalidRequest,
+                            Message = ErrorConstants.Messages.BaseUrlMissing,
                         });
                 }
 

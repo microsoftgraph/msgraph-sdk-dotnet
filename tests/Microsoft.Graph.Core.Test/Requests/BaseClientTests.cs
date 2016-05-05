@@ -48,8 +48,8 @@ namespace Microsoft.Graph.Core.Test.Requests
             }
             catch (ServiceException exception)
             {
-                Assert.AreEqual("invalidRequest", exception.Error.Code, "Unexpected error code.");
-                Assert.AreEqual("Base URL cannot be null or empty.", exception.Error.Message, "Unexpected error message.");
+                Assert.AreEqual(ErrorConstants.Codes.InvalidRequest, exception.Error.Code, "Unexpected error code.");
+                Assert.AreEqual(ErrorConstants.Messages.BaseUrlMissing, exception.Error.Message, "Unexpected error message.");
                 throw;
             }
         }

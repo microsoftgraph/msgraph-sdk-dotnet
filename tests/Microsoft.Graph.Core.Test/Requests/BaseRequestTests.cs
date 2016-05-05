@@ -30,8 +30,8 @@ namespace Microsoft.Graph.Core.Test.Requests
             }
             catch (ServiceException exception)
             {
-                Assert.AreEqual("invalidRequest", exception.Error.Code, "Unexpected error code.");
-                Assert.AreEqual("Base URL is not initialized for the request.", exception.Error.Message, "Unexpected error message.");
+                Assert.AreEqual(ErrorConstants.Codes.InvalidRequest, exception.Error.Code, "Unexpected error code.");
+                Assert.AreEqual(ErrorConstants.Messages.BaseUrlMissing, exception.Error.Message, "Unexpected error message.");
                 throw;
             }
         }
@@ -177,8 +177,8 @@ namespace Microsoft.Graph.Core.Test.Requests
             }
             catch (ServiceException exception)
             {
-                Assert.AreEqual("invalidRequest", exception.Error.Code, "Unexpected error code.");
-                Assert.AreEqual("Authentication provider is required before sending a request.", exception.Error.Message, "Unexpected error message.");
+                Assert.AreEqual(ErrorConstants.Codes.InvalidRequest, exception.Error.Code, "Unexpected error code.");
+                Assert.AreEqual(ErrorConstants.Messages.AuthenticationProviderMissing, exception.Error.Message, "Unexpected error message.");
                 throw;
             }
         }
@@ -258,8 +258,8 @@ namespace Microsoft.Graph.Core.Test.Requests
             }
             catch (ServiceException exception)
             {
-                Assert.AreEqual("invalidRequest", exception.Error.Code, "Unexpected error code.");
-                Assert.AreEqual("Request URL is required to send a request.", exception.Error.Message, "Unexpected error message.");
+                Assert.AreEqual(ErrorConstants.Codes.InvalidRequest, exception.Error.Code, "Unexpected error code.");
+                Assert.AreEqual(ErrorConstants.Messages.RequestUrlMissing, exception.Error.Message, "Unexpected error message.");
                 throw;
             }
         }
