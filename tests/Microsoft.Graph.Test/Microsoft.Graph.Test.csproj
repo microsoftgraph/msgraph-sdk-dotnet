@@ -82,9 +82,8 @@
     <Compile Include="Requests\Generated\EntityRequestTests.cs" />
     <Compile Include="Requests\Generated\MediaEntityStreamRequestTests.cs" />
     <Compile Include="Requests\Generated\EntityCollectionRequestTests.cs" />
-    <Compile Include="Requests\Generated\ThumbnailRequestTests.cs" />
     <Compile Include="Requests\RequestTestBase.cs" />
-    <Compile Include="Models\ModelSerializationTests.cs" />
+    <Compile Include="Requests\Generated\ThumbnailRequestTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Microsoft.Graph.Core\Microsoft.Graph.Core.csproj">

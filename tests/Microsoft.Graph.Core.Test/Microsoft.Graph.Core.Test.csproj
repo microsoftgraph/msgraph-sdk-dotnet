@@ -63,6 +63,7 @@
     <Compile Include="Authentication\DelegateAuthenticationProviderTests.cs" />
     <Compile Include="Exceptions\ErrorTests.cs" />
     <Compile Include="Exceptions\ServiceExceptionTests.cs" />
+    <Compile Include="Helpers\ExtractSelectHelperTest.cs" />
     <Compile Include="Helpers\StringHelperTests.cs" />
     <Compile Include="Helpers\UrlHelperTests.cs" />
     <Compile Include="Requests\BaseRequestBuilderTests.cs" />

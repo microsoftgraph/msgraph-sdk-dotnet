@@ -15,7 +15,6 @@ namespace Microsoft.Graph
     using System.Threading;
     using System.Threading.Tasks;
     using System.Linq.Expressions;
-    using Microsoft.Graph.Core;
 
     /// <summary>
     /// The type UserEventsCollectionRequest.
