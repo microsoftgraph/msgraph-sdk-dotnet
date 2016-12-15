@@ -2,6 +2,9 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System.IO;
+using Microsoft.Graph.Serialization;
+
 namespace Microsoft.Graph
 {
     using System;
@@ -283,6 +286,29 @@ namespace Microsoft.Graph
             }
         }
 
+
+        ///// <summary>
+        ///// Converts the <see cref="HttpRequestException"/> into an <see cref="ErrorResponse"/> object;
+        ///// </summary>
+        ///// <param name="response">The <see cref="WebResponse"/> to convert.</param>
+        ///// <returns>The <see cref="ErrorResponse"/> object.</returns>
+        //private async Task<ErrorResponse> ConvertErrorResponseAsync(HttpResponseMessage response)
+        //{
+        //    try
+        //    {
+        //        using (var responseStream = await response.Content.ReadAsStreamAsync())
+        //        {
+        //            return this.Serializer.DeserializeObject<ErrorResponse>(responseStream);
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        // If there's an exception deserializing the error response return null and throw a generic
+        //        // ServiceException later.
+        //        return null;
+        //    }
+        //}
+
         /// <summary>
         /// Converts the <see cref="HttpRequestException"/> into an <see cref="ErrorResponse"/> object;
         /// </summary>
@@ -290,19 +316,50 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ErrorResponse"/> object.</returns>
         private async Task<ErrorResponse> ConvertErrorResponseAsync(HttpResponseMessage response)
         {
-            try
-            {
-                using (var responseStream = await response.Content.ReadAsStreamAsync())
+            using (var copyStream = new MemoryStream())
+            
+                try
                 {
-                    return this.Serializer.DeserializeObject<ErrorResponse>(responseStream);
+                    using (var responseStream = await response.Content.ReadAsStreamAsync())
+                    {
+                        await responseStream.CopyToAsync(copyStream);
+                        copyStream.Position = 0;
+                        return this.Serializer.DeserializeObject<ErrorResponse>(copyStream);
+                    }
                 }
-            }
             catch (Exception)
             {
-                // If there's an exception deserializing the error response return null and throw a generic
-                // ServiceException later.
-                return null;
+                // If deserialization error, check if the response is an OAUTH error instead, as per: https://tools.ietf.org/html/rfc6749#section-4.1.2.1
+                try
+                {
+                    copyStream.Position = 0;
+                    var oauthError = this.Serializer.DeserializeObject<OAuthError>(copyStream);
+
+                    return new ErrorResponse
+                    {
+                        Error = new Error
+                        {
+                            Code = ErrorConstants.Codes.AuthError,
+                            Message = ErrorConstants.Messages.AuthError,
+                            AdditionalData = new Dictionary<string, object>
+                            {
+                                { "error", oauthError.Error },
+                                { "error_description", oauthError.ErrorDescription }
+                            }
+                        }
+                    };
+
+                }
+                catch
+                {
+                    // No OAUTH error found
+
+                    // If there's an exception deserializing the error response return null and throw a generic
+                    // ServiceException later.
+                    return null;
+                }
             }
+            
         }
 
         private bool IsRedirect(HttpStatusCode statusCode)

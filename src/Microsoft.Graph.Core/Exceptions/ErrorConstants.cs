@@ -8,6 +8,8 @@ namespace Microsoft.Graph
     {
         internal static class Codes
         {
+            internal static string AuthError = "oauthError";
+
             internal static string GeneralException = "generalException";
 
             internal static string InvalidRequest = "invalidRequest";
@@ -46,6 +48,8 @@ namespace Microsoft.Graph
             internal static string UnexpectedExceptionOnSend = "An error occurred sending the request.";
 
             internal static string UnexpectedExceptionResponse = "Unexpected exception returned from the service.";
+
+            internal static string AuthError = "An OAUTH authentication error was returned from the service.";
         }
     }
 }

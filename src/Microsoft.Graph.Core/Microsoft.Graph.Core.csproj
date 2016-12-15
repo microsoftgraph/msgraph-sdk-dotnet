@@ -75,6 +75,7 @@
     <Compile Include="Serialization\EnumConverter.cs" />
     <Compile Include="Serialization\InterfaceConverter.cs" />
     <Compile Include="Serialization\ISerializer.cs" />
+    <Compile Include="Serialization\OAuthError.cs" />
     <Compile Include="Serialization\Serializer.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,11 +100,9 @@
     </ParameterGroup>
     <Task>
       <Reference Include="System" />
-     <Code Type="Fragment" Language="cs">
-        <![CDATA[
+      <Code Type="Fragment" Language="cs"><![CDATA[
           new System.Net.WebClient().DownloadFile(Url, FileName);
-        ]]>
-      </Code>
+        ]]></Code>
     </Task>
   </UsingTask>
   <Target Name="AfterBuild" Condition="'$(Configuration)' == 'Release'">
