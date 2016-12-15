@@ -2,6 +2,8 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.Serialization;
+
 namespace Microsoft.Graph.Core.Test.Requests
 {
     using System;
@@ -225,7 +227,7 @@ namespace Microsoft.Graph.Core.Test.Requests
                 var returnedResponseMessage = await this.httpProvider.SendAsync(httpRequestMessage);
 
                 Assert.AreEqual(3, finalResponseMessage.RequestMessage.Headers.Count(), "Unexpected number of headers on redirect request message.");
-                
+
                 foreach (var header in httpRequestMessage.Headers)
                 {
                     var actualValues = finalResponseMessage.RequestMessage.Headers.GetValues(header.Key);
@@ -344,6 +346,51 @@ namespace Microsoft.Graph.Core.Test.Requests
                 {
                     Assert.AreEqual(expectedError.Error.Code, exception.Error.Code, "Unexpected error code returned.");
                     Assert.AreEqual(expectedError.Error.Message, exception.Error.Message, "Unexpected error message.");
+
+                    throw;
+                }
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ServiceException))]
+        public async Task SendAsync_AuthInvalidGrant()
+        {
+            using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "https://localhost"))
+            using (var stringContent = new StringContent("{\"error\":\"invalid_grant\",\"error_description\":\"The user could not be authenticated or the grant is expired.The user must first sign in and if needed grant the client application access to the requested scope.\"}"))
+            using (var httpResponseMessage = new HttpResponseMessage())
+            {
+                httpResponseMessage.StatusCode = HttpStatusCode.BadRequest;
+                httpResponseMessage.RequestMessage = httpRequestMessage;
+                httpResponseMessage.Content = stringContent;
+
+                this.testHttpMessageHandler.AddResponseMapping(httpRequestMessage.RequestUri.ToString(), httpResponseMessage);
+
+                this.serializer.Setup(
+                    serializer => serializer.DeserializeObject<ErrorResponse>(
+                        It.IsAny<Stream>()))
+                        .Throws<Newtonsoft.Json.JsonReaderException>();
+
+                this.serializer.Setup(
+                    serializer => serializer.DeserializeObject<OAuthError>(
+                        It.IsAny<Stream>()))
+                        .Returns(new OAuthError
+                        {
+                            Error = "invalid_grant",
+                            ErrorDescription = "The user could not be authenticated or the grant is expired.The user must first sign in and if needed grant the client application access to the requested scope."
+                        });
+
+                try
+                {
+                    var returnedResponseMessage = await this.httpProvider.SendAsync(httpRequestMessage);
+                }
+                catch (ServiceException exception)
+                {
+                    Assert.IsTrue(exception.IsMatch(ErrorConstants.Codes.AuthError), "Unexpected error code returned.");
+                    Assert.AreEqual(
+                        ErrorConstants.Messages.AuthError,
+                        exception.Error.Message,
+                        "Unexpected error message returned.");
 
                     throw;
                 }
