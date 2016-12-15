@@ -286,29 +286,6 @@ namespace Microsoft.Graph
             }
         }
 
-
-        ///// <summary>
-        ///// Converts the <see cref="HttpRequestException"/> into an <see cref="ErrorResponse"/> object;
-        ///// </summary>
-        ///// <param name="response">The <see cref="WebResponse"/> to convert.</param>
-        ///// <returns>The <see cref="ErrorResponse"/> object.</returns>
-        //private async Task<ErrorResponse> ConvertErrorResponseAsync(HttpResponseMessage response)
-        //{
-        //    try
-        //    {
-        //        using (var responseStream = await response.Content.ReadAsStreamAsync())
-        //        {
-        //            return this.Serializer.DeserializeObject<ErrorResponse>(responseStream);
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        // If there's an exception deserializing the error response return null and throw a generic
-        //        // ServiceException later.
-        //        return null;
-        //    }
-        //}
-
         /// <summary>
         /// Converts the <see cref="HttpRequestException"/> into an <see cref="ErrorResponse"/> object;
         /// </summary>
