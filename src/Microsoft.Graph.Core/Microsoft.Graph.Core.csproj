@@ -1,115 +1,43 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9F04608C-D845-4445-83B1-E6D4EEE38CBC}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Graph</RootNamespace>
+    <Description>Microsoft Graph Core Client Library implements core functionality used by Microsoft Graph Client Libraries.</Description>
+    <Copyright>Copyright (c) Microsoft Corporation</Copyright>
+    <AssemblyTitle>Microsoft Graph Core Client Library</AssemblyTitle>
+    <VersionPrefix>1.4.0</VersionPrefix>
+    <Authors>Microsoft</Authors>
+    <TargetFrameworks>netstandard1.1;net45</TargetFrameworks>
     <AssemblyName>Microsoft.Graph.Core</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PackageId>Microsoft.Graph.Core</PackageId>
+    <PackageTags>Microsoft Office365;Graph;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;SDK</PackageTags>
+    <PackageReleaseNotes>May 2017 Release Summary (version 1.4.0)
+
+New features
+
+* Updated library to target .NETStandard 1.1</PackageReleaseNotes>
+    <PackageProjectUrl>https://graph.microsoft.io</PackageProjectUrl>
+    <PackageLicenseUrl>http://aka.ms/devservicesagreement</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.1' ">1.6.0</NetStandardImplicitPackageVersion>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-    <SignAssembly>true</SignAssembly>
-    <DelaySign>true</DelaySign>
-    <AssemblyOriginatorKeyFile>..\..\build\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="Authentication\DelegateAuthenticationProvider.cs" />
-    <Compile Include="Authentication\IAuthenticationProvider.cs" />
-    <Compile Include="CoreConstants.cs" />
-    <Compile Include="Exceptions\Error.cs" />
-    <Compile Include="Exceptions\ErrorConstants.cs" />
-    <Compile Include="Exceptions\ErrorResponse.cs" />
-    <Compile Include="Exceptions\ServiceException.cs" />
-    <Compile Include="Helpers\ExtractSelectHelper.cs" />
-    <Compile Include="Helpers\StringHelper.cs" />
-    <Compile Include="Helpers\UrlHelper.cs" />
-    <Compile Include="Models\AsyncOperationStatus.cs" />
-    <Compile Include="Models\CollectionPage.cs" />
-    <Compile Include="Models\Date.cs" />
-    <Compile Include="Models\ICollectionPage.cs" />
-    <Compile Include="Models\ReferenceRequestBody.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Requests\AsyncMonitor.cs" />
-    <Compile Include="Requests\BaseClient.cs" />
-    <Compile Include="Requests\BaseActionMethodRequestBuilder.cs" />
-    <Compile Include="Requests\BaseRequest.cs" />
-    <Compile Include="Requests\BaseFunctionMethodRequestBuilder.cs" />
-    <Compile Include="Requests\BaseRequestBuilder.cs" />
-    <Compile Include="Requests\HttpProvider.cs" />
-    <Compile Include="Requests\IAsyncMonitor.cs" />
-    <Compile Include="Requests\IBaseClient.cs" />
-    <Compile Include="Requests\IBaseRequest.cs" />
-    <Compile Include="Requests\IBaseRequestBuilder.cs" />
-    <Compile Include="Requests\IHttpProvider.cs" />
-    <Compile Include="Requests\Options\HeaderOption.cs" />
-    <Compile Include="Requests\Options\Option.cs" />
-    <Compile Include="Requests\Options\QueryOption.cs" />
-    <Compile Include="Serialization\DateConverter.cs" />
-    <Compile Include="Serialization\DerivedTypeConverter.cs" />
-    <Compile Include="Serialization\EnumConverter.cs" />
-    <Compile Include="Serialization\InterfaceConverter.cs" />
-    <Compile Include="Serialization\ISerializer.cs" />
-    <Compile Include="Serialization\Serializer.cs" />
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <PackageReference Include="Newtonsoft.Json" Version="[6.0.1,10)" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Microsoft.Graph.Core.nuspec" />
-    <None Include="packages.config" />
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.1' ">
+    <PackageReference Include="Newtonsoft.Json" Version="[9.0.1, 10)" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>-->
-  <UsingTask TaskName="DownloadFile" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
-    <ParameterGroup>
-      <Url ParameterType="System.String" Required="true" />
-      <FileName ParameterType="System.String" Required="true" />
-    </ParameterGroup>
-    <Task>
-      <Reference Include="System" />
-     <Code Type="Fragment" Language="cs">
-        <![CDATA[
-          new System.Net.WebClient().DownloadFile(Url, FileName);
-        ]]>
-      </Code>
-    </Task>
-  </UsingTask>
-  <Target Name="AfterBuild" Condition="'$(Configuration)' == 'Release'">
-    <!-- Download nuget.exe if we need it -->
-    <DownloadFile Condition="!Exists('$(OutputPath)\nuget.exe')" FileName="$(OutputPath)\nuget.exe" Url="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" />
-    <!-- Pack up a nuget package -->
-    <Exec Command="$(OutputPath)\nuget pack $(ProjectFileName) -Properties Configuration=Release -OutputDirectory $(OutputPath)" />
-  </Target>
+
 </Project>

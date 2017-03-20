@@ -1,19 +1,26 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5E0B65FC-67B7-41F8-87BF-96D6A342C438}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6496B661-8321-4D07-ACC2-B6602649293C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Graph", "src\Microsoft.Graph\Microsoft.Graph.csproj", "{660FA73B-987D-4085-A230-1B04F7EAEFBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph", "src\Microsoft.Graph\Microsoft.Graph.csproj", "{660FA73B-987D-4085-A230-1B04F7EAEFBC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Graph.Test", "tests\Microsoft.Graph.Test\Microsoft.Graph.Test.csproj", "{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{660FA73B-987D-4085-A230-1B04F7EAEFBC} = {660FA73B-987D-4085-A230-1B04F7EAEFBC}
+		{9F04608C-D845-4445-83B1-E6D4EEE38CBC} = {9F04608C-D845-4445-83B1-E6D4EEE38CBC}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Graph.Core", "src\Microsoft.Graph.Core\Microsoft.Graph.Core.csproj", "{9F04608C-D845-4445-83B1-E6D4EEE38CBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph.Core", "src\Microsoft.Graph.Core\Microsoft.Graph.Core.csproj", "{9F04608C-D845-4445-83B1-E6D4EEE38CBC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Graph.Core.Test", "tests\Microsoft.Graph.Core.Test\Microsoft.Graph.Core.Test.csproj", "{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph.DotnetCore.Core.Test", "tests\Microsoft.Graph.DotnetCore.Core.Test\Microsoft.Graph.DotnetCore.Core.Test.csproj", "{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph.DotnetCore.Test", "tests\Microsoft.Graph.DotnetCore.Test\Microsoft.Graph.DotnetCore.Test.csproj", "{A46FC884-EDDC-4617-9B52-37017A90241D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +90,38 @@ Global
 		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Release|ARM.ActiveCfg = Release|Any CPU
 		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Release|x64.ActiveCfg = Release|Any CPU
 		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Release|x86.ActiveCfg = Release|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Debug|ARM.Build.0 = Debug|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Debug|x64.Build.0 = Debug|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Debug|x86.Build.0 = Debug|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Release|ARM.ActiveCfg = Release|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Release|ARM.Build.0 = Release|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Release|x64.ActiveCfg = Release|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Release|x64.Build.0 = Release|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Release|x86.ActiveCfg = Release|Any CPU
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Release|x86.Build.0 = Release|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|ARM.Build.0 = Debug|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|x64.Build.0 = Debug|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|x86.Build.0 = Debug|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|ARM.ActiveCfg = Release|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|ARM.Build.0 = Release|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|x64.ActiveCfg = Release|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|x64.Build.0 = Release|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|x86.ActiveCfg = Release|Any CPU
+		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

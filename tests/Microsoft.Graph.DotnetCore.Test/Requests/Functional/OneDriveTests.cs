@@ -1,78 +1,81 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
+using Xunit;
 
-namespace Microsoft.Graph.Test.Requests.Functional
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
-    [Ignore]
-    [TestClass]
     public class OneDriveTests : GraphTestBase
     {
         // https://github.com/OneDrive/onedrive-sdk-csharp/blob/master/docs/chunked-uploads.md
         // https://dev.onedrive.com/items/upload_large_files.htm
-        [TestMethod]
-        public async Task OneDriveUploadLargeFile()
-        {
-            try
-            {
-                System.Drawing.ImageConverter converter = new System.Drawing.ImageConverter();
-                var buff = (byte[])converter.ConvertTo(Microsoft.Graph.Test.Properties.Resources.hamilton, typeof(byte[]));
-                using (System.IO.MemoryStream ms = new System.IO.MemoryStream(buff))
-                {
-                    // Describe the file to upload. Pass into CreateUploadSession, when the service works as expected.
-                    //var props = new DriveItemUploadableProperties();
-                    //props.Name = "_hamilton.png";
-                    //props.Description = "This is a pictureof Mr. Hamilton.";
-                    //props.FileSystemInfo = new FileSystemInfo();
-                    //props.FileSystemInfo.CreatedDateTime = System.DateTimeOffset.Now;
-                    //props.FileSystemInfo.LastModifiedDateTime = System.DateTimeOffset.Now;
+        //[Fact(Skip ="incomplete")]
+        //public async Task OneDriveUploadLargeFile()
+        //{
+        // try
+        // {
+        //    System.Drawing.ImageConverter converter = new System.Drawing.ImageConverter();
+        //    var buff = (byte[])converter.ConvertTo(Microsoft.Graph.DotnetCore.Test.Properties.Resources.hamilton, typeof(byte[]));
+        //    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(buff))
+        //    {
+        //        // Describe the file to upload. Pass into CreateUploadSession, when the service works as expected.
+        //        //var props = new DriveItemUploadableProperties();
+        //        //props.Name = "_hamilton.png";
+        //        //props.Description = "This is a pictureof Mr. Hamilton.";
+        //        //props.FileSystemInfo = new FileSystemInfo();
+        //        //props.FileSystemInfo.CreatedDateTime = System.DateTimeOffset.Now;
+        //        //props.FileSystemInfo.LastModifiedDateTime = System.DateTimeOffset.Now;
 
-                    // Get the provider. 
-                    // POST /v1.0/drive/items/01KGPRHTV6Y2GOVW7725BZO354PWSELRRZ:/_hamiltion.png:/microsoft.graph.createUploadSession
-                    // The CreateUploadSesssion action doesn't seem to support the options stated in the metadata.
-                    var uploadSession = await graphClient.Drive.Items["01KGPRHTV6Y2GOVW7725BZO354PWSELRRZ"].ItemWithPath("_hamilton.png").CreateUploadSession().Request().PostAsync();
+        //        // Get the provider. 
+        //        // POST /v1.0/drive/items/01KGPRHTV6Y2GOVW7725BZO354PWSELRRZ:/_hamiltion.png:/microsoft.graph.createUploadSession
+        //        // The CreateUploadSesssion action doesn't seem to support the options stated in the metadata.
+        //        var uploadSession = await graphClient.Drive.Items["01KGPRHTV6Y2GOVW7725BZO354PWSELRRZ"].ItemWithPath("_hamilton.png").CreateUploadSession().Request().PostAsync();
 
-                    var maxChunkSize = 320 * 1024; // 320 KB - Change this to your chunk size. 5MB is the default.
-                    var provider = new ChunkedUploadProvider(uploadSession, graphClient, ms, maxChunkSize);
+        //        var maxChunkSize = 320 * 1024; // 320 KB - Change this to your chunk size. 5MB is the default.
+        //        var provider = new ChunkedUploadProvider(uploadSession, graphClient, ms, maxChunkSize);
 
-                    // Setup the chunk request necessities
-                    var chunkRequests = provider.GetUploadChunkRequests();
-                    var readBuffer = new byte[maxChunkSize];
-                    var trackedExceptions = new List<Exception>();
-                    DriveItem itemResult = null;
+        //        // Setup the chunk request necessities
+        //        var chunkRequests = provider.GetUploadChunkRequests();
+        //        var readBuffer = new byte[maxChunkSize];
+        //        var trackedExceptions = new List<Exception>();
+        //        DriveItem itemResult = null;
 
-                    //upload the chunks
-                    foreach (var request in chunkRequests)
-                    {
-                        // Do your updates here: update progress bar, etc.
-                        // ...
-                        // Send chunk request
-                        var result = await provider.GetChunkRequestResponseAsync(request, readBuffer, trackedExceptions);
+        //        //upload the chunks
+        //        foreach (var request in chunkRequests)
+        //        {
+        //            // Do your updates here: update progress bar, etc.
+        //            // ...
+        //            // Send chunk request
+        //            var result = await provider.GetChunkRequestResponseAsync(request, readBuffer, trackedExceptions);
 
-                        if (result.UploadSucceeded)
-                        {
-                            itemResult = result.ItemResponse;
-                        }
-                    }
+        //            if (result.UploadSucceeded)
+        //            {
+        //                itemResult = result.ItemResponse;
+        //            }
+        //        }
 
-                    // Check that upload succeeded
-                    if (itemResult == null)
-                    {
-                        // Retry the upload
-                        // ...
-                    }
-                }
-            }
-            catch (Microsoft.Graph.ServiceException e)
-            {
-                Assert.Fail("Something happened, check out a trace. Error code: {0}", e.Error.Code);
-            }
-        }
+        //        // Check that upload succeeded
+        //        if (itemResult == null)
+        //        {
+        //            // Retry the upload
+        //            // ...
+        //        }
+        //    }
+        //}
+        //catch (Microsoft.Graph.ServiceException e)
+        //{
+        //    Assert.True(false, "Something happened, check out a trace. Error code: " + e.Error.Code);
+        //}
+        //}
 
 
-        [TestMethod]
+        [Fact(Skip = "No CI set up for functional tests")]
         public async Task OneDriveNextPageRequest()
         {
             try
@@ -81,7 +84,7 @@ namespace Microsoft.Graph.Test.Requests.Functional
 
                 var driveItemsPage = await graphClient.Me.Drive.Root.Children.Request().Top(4).GetAsync();
 
-                Assert.IsNotNull(driveItemsPage, "Expected that a page of OneDrive items is deserialized into an object.");
+                Assert.NotNull(driveItemsPage);
 
                 driveItems.AddRange(driveItemsPage.CurrentPage);
 
@@ -93,12 +96,12 @@ namespace Microsoft.Graph.Test.Requests.Functional
             }
             catch (Microsoft.Graph.ServiceException e)
             {
-                Assert.Fail("Something happened, check out a trace. Error code: {0}", e.Error.Code);
+                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Error.Code);
             }
         }
 
         // http://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/item_downloadcontent
-        [TestMethod]
+        [Fact(Skip = "No CI set up for functional tests")]
         public async Task OneDriveGetContent()
         {
             try
@@ -111,20 +114,20 @@ namespace Microsoft.Graph.Test.Requests.Functional
                     if (item.File != null)
                     {
                         var driveItemContent = await graphClient.Me.Drive.Items[item.Id].Content.Request().GetAsync();
-                        Assert.IsNotNull(driveItemContent, "Expected to find a file.");
-                        Assert.IsInstanceOfType(driveItemContent, typeof(Stream));
+                        Assert.NotNull(driveItemContent);
+                        Assert.IsType(typeof(Stream), driveItemContent);
                         return;
                     }
                 }
             }
             catch (Microsoft.Graph.ServiceException e)
             {
-                Assert.Fail("Something happened, check out a trace. Error code: {0}", e.Error.Code);
+                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Error.Code);
             }
         }
 
 
-        [TestMethod]
+        [Fact(Skip = "No CI set up for functional tests")]
         public async Task OneDriveGetSetPermissions()
         {
             try
@@ -146,11 +149,11 @@ namespace Microsoft.Graph.Test.Requests.Functional
                                                             .Request()
                                                             .Expand("permissions")
                                                             .GetAsync();
-                        Assert.IsNotNull(driveItem, "Expected to find a file.");
+                        Assert.NotNull(driveItem);
 
                         // Set permissions
                         var perm = new Permission();
-                        perm.Roles = new List<string>() { "write"};
+                        perm.Roles = new List<string>() { "write" };
                         if (driveItem.Permissions.Count > 0)
                         {
                             var headerOptions = new List<HeaderOption>()
@@ -170,11 +173,11 @@ namespace Microsoft.Graph.Test.Requests.Functional
             }
             catch (Microsoft.Graph.ServiceException e)
             {
-                Assert.Fail("Something happened, check out a trace. Error code: {0}", e.Error.Code);
+                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Error.Code);
             }
         }
 
-        [TestMethod]
+        [Fact(Skip = "No CI set up for functional tests")]
         public async Task OneDriveSearchFile()
         {
             // Note: can't upload an item and immediately search for it. Seems like search index doesn't get immediately updated.
@@ -185,17 +188,17 @@ namespace Microsoft.Graph.Test.Requests.Functional
                 var driveItems = await graphClient.Me.Drive.Search("employee services").Request().GetAsync();
 
                 // Expecting two results.
-                Assert.AreEqual(2, driveItems.Count, "Expected 2 search results.");
-                
+                Assert.Equal(2, driveItems.Count);
+
             }
             catch (Microsoft.Graph.ServiceException e)
             {
-                Assert.Fail("Something happened, check out a trace. Error code: {0}", e.Error.Code);
+                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Error.Code);
             }
         }
 
         // Assumption: test tenant has a file name that starts with 'Timesheet'.
-        [TestMethod]
+        [Fact(Skip = "No CI set up for functional tests")]
         public async Task OneDriveCreateSharingLink()
         {
             try
@@ -205,8 +208,7 @@ namespace Microsoft.Graph.Test.Requests.Functional
                                                             .Request()
                                                             .Filter("startswith(name,'Timesheet')")
                                                             .GetAsync();
-
-                StringAssert.StartsWith(itemToShare[0].Name, "Timesheet");
+                Assert.True(itemToShare[0].Name.StartsWith("Timesheet"));
 
                 var permission = await graphClient.Me.Drive.Root
                                                            .ItemWithPath(itemToShare[0].Name)
@@ -214,20 +216,20 @@ namespace Microsoft.Graph.Test.Requests.Functional
                                                            .Request()
                                                            .PostAsync();
 
-                Assert.AreEqual("organization", permission.Link.Scope, "Expected organization scope for sharing link");
-                Assert.AreEqual("edit", permission.Link.Type, "Expected edit type for sharing link");
-                Assert.IsNotNull(permission.Link.WebUrl, "Expected a sharing URL for the sharing link");
+                Assert.Equal("organization", permission.Link.Scope);
+                Assert.Equal("edit", permission.Link.Type);
+                Assert.NotNull(permission.Link.WebUrl);
 
             }
             catch (Microsoft.Graph.ServiceException e)
             {
-                Assert.Fail("Something happened, check out a trace. Error code: {0}", e.Error.Code);
+                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Error.Code);
             }
         }
 
         // Assumption: test tenant has a file name that starts with 'Timesheet'.
         // Assumption: there is a user with an email alias of alexd and a display name of Alex Darrow in the test tenant.
-        [TestMethod]
+        [Fact(Skip = "No CI set up for functional tests")]
         public async Task OneDriveInvite()
         {
             try
@@ -238,8 +240,7 @@ namespace Microsoft.Graph.Test.Requests.Functional
                                                             .Request()
                                                             .Filter("startswith(name,'Timesheet')")
                                                             .GetAsync();
-
-                StringAssert.StartsWith(itemToShare[0].Name, "Timesheet");
+                Assert.True(itemToShare[0].Name.StartsWith("Timesheet"));
 
                 var me = await graphClient.Me.Request().GetAsync();
                 var domain = me.Mail.Split('@')[1];
@@ -252,7 +253,7 @@ namespace Microsoft.Graph.Test.Requests.Functional
                     }
                 };
 
-                var roles = new List<string>() 
+                var roles = new List<string>()
                 {
                     "write"
                 };
@@ -264,11 +265,11 @@ namespace Microsoft.Graph.Test.Requests.Functional
                                                            .Request()
                                                            .PostAsync();
 
-                Assert.AreEqual("Alex Darrow", inviteCollection[0].GrantedTo.User.DisplayName);
+                Assert.Equal("Alex Darrow", inviteCollection[0].GrantedTo.User.DisplayName);
             }
             catch (Microsoft.Graph.ServiceException e)
             {
-                Assert.Fail("Something happened, check out a trace. Error code: {0}", e.Error.Code);
+                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Error.Code);
             }
         }
     }
