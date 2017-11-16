@@ -53,7 +53,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
-            this.Method = "POST";
+            this.Method = "PUT";
             var newEntity = await this.SendAsync<DriveItem>(driveItemToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
