@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Test.Requests.Functional
     /// https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/report
     /// Your test app registration will require the Reports.Read.All which requires admin consent.
     /// </summary>
-    //[Ignore]
+    [Ignore]
     [TestClass]
     public class ReportTests : GraphTestBase
     {
