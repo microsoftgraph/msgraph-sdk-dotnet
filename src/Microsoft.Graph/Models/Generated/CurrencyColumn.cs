@@ -24,6 +24,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets locale.
+        /// Specifies the locale from which to infer the currency symbol.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locale", Required = Newtonsoft.Json.Required.Default)]
         public string Locale { get; set; }

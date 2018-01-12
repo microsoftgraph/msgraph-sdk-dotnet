@@ -122,7 +122,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets specialFolder.
-        /// If the current item is also available as a special folder, this facet is returned. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "specialFolder", Required = Newtonsoft.Json.Required.Default)]
         public SpecialFolder SpecialFolder { get; set; }

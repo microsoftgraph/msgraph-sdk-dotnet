@@ -24,18 +24,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowTextEntry.
+        /// If true, allows custom values that aren't in the configured choices.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowTextEntry", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowTextEntry { get; set; }
     
         /// <summary>
         /// Gets or sets choices.
+        /// The list of values available for this column.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "choices", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Choices { get; set; }
     
         /// <summary>
         /// Gets or sets displayAs.
+        /// How the choices are to be presented in the UX. Must be one of checkBoxes, dropDownMenu, or radioButtons
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayAs", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayAs { get; set; }

@@ -30,40 +30,41 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets drive item.
-        /// A driveItem for the resource that was shared.  This is identical to the root property.
+        /// Used to access the underlying driveItem
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "driveItem", Required = Newtonsoft.Json.Required.Default)]
         public DriveItem DriveItem { get; set; }
     
         /// <summary>
         /// Gets or sets items.
-        /// A collection of shared driveItem resources. This collection cannot be enumerated, but items can be accessed by their unique ID.
+        /// All driveItems contained in the sharing root. This collection cannot be enumerated.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items", Required = Newtonsoft.Json.Required.Default)]
         public ISharedDriveItemItemsCollectionPage Items { get; set; }
     
         /// <summary>
         /// Gets or sets list.
+        /// Used to access the underlying list
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "list", Required = Newtonsoft.Json.Required.Default)]
         public List List { get; set; }
     
         /// <summary>
         /// Gets or sets list item.
+        /// Used to access the underlying listItem
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "listItem", Required = Newtonsoft.Json.Required.Default)]
         public ListItem ListItem { get; set; }
     
         /// <summary>
         /// Gets or sets root.
-        /// The top level shared driveItem. If a single file is shared, this item is the file. If a folder is shared, this item will be the folder. You can use the item's facets to determine which case applies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "root", Required = Newtonsoft.Json.Required.Default)]
         public DriveItem Root { get; set; }
     
         /// <summary>
         /// Gets or sets site.
-        /// A site resource that contains the item that was shared.
+        /// Used to access the underlying site
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "site", Required = Newtonsoft.Json.Required.Default)]
         public Site Site { get; set; }

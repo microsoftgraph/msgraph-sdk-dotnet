@@ -24,18 +24,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets contentTypesEnabled.
+        /// If true, indicates that content types are enabled for this list.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentTypesEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? ContentTypesEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets hidden.
+        /// If true, indicates that the list is not normally visible in the SharePoint user experience.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hidden", Required = Newtonsoft.Json.Required.Default)]
         public bool? Hidden { get; set; }
     
         /// <summary>
         /// Gets or sets template.
+        /// An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "template", Required = Newtonsoft.Json.Required.Default)]
         public string Template { get; set; }

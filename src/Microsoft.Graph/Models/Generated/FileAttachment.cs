@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content bytes.
-        /// The binary contents of the file.
+        /// The base64-encoded contents of the file.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentBytes", Required = Newtonsoft.Json.Required.Default)]
         public byte[] ContentBytes { get; set; }

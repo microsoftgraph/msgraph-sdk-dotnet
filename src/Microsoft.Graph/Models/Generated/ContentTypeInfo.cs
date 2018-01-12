@@ -24,6 +24,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets id.
+        /// The id of the content type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }

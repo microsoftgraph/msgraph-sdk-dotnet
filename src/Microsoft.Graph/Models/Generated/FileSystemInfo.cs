@@ -31,6 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets lastAccessedDateTime.
+        /// The UTC date and time the file was last accessed. Available for the recent file list only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastAccessedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastAccessedDateTime { get; set; }

@@ -24,12 +24,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets class.
+        /// The type of data source, such as Person.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "class", Required = Newtonsoft.Json.Required.Default)]
         public string Class { get; set; }
     
         /// <summary>
         /// Gets or sets subclass.
+        /// The secondary type of data source, such as OrganizationUser.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subclass", Required = Newtonsoft.Json.Required.Default)]
         public string Subclass { get; set; }

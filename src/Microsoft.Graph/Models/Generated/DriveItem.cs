@@ -182,7 +182,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets thumbnails.
-        /// Collection containing ThumbnailSet objects associated with the item. For more info, see getting thumbnails. Read-only. Nullable.
+        /// Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnails", Required = Newtonsoft.Json.Required.Default)]
         public IDriveItemThumbnailsCollectionPage Thumbnails { get; set; }

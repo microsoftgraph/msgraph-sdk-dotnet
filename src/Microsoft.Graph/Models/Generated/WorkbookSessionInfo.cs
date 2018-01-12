@@ -24,12 +24,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets id.
+        /// Id of the workbook session.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets persistChanges.
+        /// true for persistent session. false for non-persistent session (view mode)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "persistChanges", Required = Newtonsoft.Json.Required.Default)]
         public bool? PersistChanges { get; set; }

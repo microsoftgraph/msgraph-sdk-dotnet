@@ -24,30 +24,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowMultipleLines.
+        /// Whether to allow multiple lines of text.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowMultipleLines", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowMultipleLines { get; set; }
     
         /// <summary>
         /// Gets or sets appendChangesToExistingText.
+        /// Whether updates to this column should replace existing text, or append to it.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appendChangesToExistingText", Required = Newtonsoft.Json.Required.Default)]
         public bool? AppendChangesToExistingText { get; set; }
     
         /// <summary>
         /// Gets or sets linesForEditing.
+        /// The size of the text box.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linesForEditing", Required = Newtonsoft.Json.Required.Default)]
         public Int32? LinesForEditing { get; set; }
     
         /// <summary>
         /// Gets or sets maxLength.
+        /// The maximum number of characters for the value.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxLength", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MaxLength { get; set; }
     
         /// <summary>
         /// Gets or sets textType.
+        /// The type of text being stored. Must be one of plain or richText
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "textType", Required = Newtonsoft.Json.Required.Default)]
         public string TextType { get; set; }

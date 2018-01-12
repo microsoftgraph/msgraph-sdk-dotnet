@@ -24,24 +24,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets audioBitsPerSample.
+        /// Number of audio bits per sample.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioBitsPerSample", Required = Newtonsoft.Json.Required.Default)]
         public Int32? AudioBitsPerSample { get; set; }
     
         /// <summary>
         /// Gets or sets audioChannels.
+        /// Number of audio channels.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioChannels", Required = Newtonsoft.Json.Required.Default)]
         public Int32? AudioChannels { get; set; }
     
         /// <summary>
         /// Gets or sets audioFormat.
+        /// Name of the audio format (AAC, MP3, etc.).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioFormat", Required = Newtonsoft.Json.Required.Default)]
         public string AudioFormat { get; set; }
     
         /// <summary>
         /// Gets or sets audioSamplesPerSecond.
+        /// Number of audio samples per second.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioSamplesPerSecond", Required = Newtonsoft.Json.Required.Default)]
         public Int32? AudioSamplesPerSecond { get; set; }
@@ -62,6 +66,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fourCC.
+        /// "Four character code" name of the video format.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fourCC", Required = Newtonsoft.Json.Required.Default)]
         public string FourCC { get; set; }

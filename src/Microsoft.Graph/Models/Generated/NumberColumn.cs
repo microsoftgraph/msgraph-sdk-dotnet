@@ -24,24 +24,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets decimalPlaces.
+        /// How many decimal places to display. See below for information about the possible values.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decimalPlaces", Required = Newtonsoft.Json.Required.Default)]
         public string DecimalPlaces { get; set; }
     
         /// <summary>
         /// Gets or sets displayAs.
+        /// How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayAs", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayAs { get; set; }
     
         /// <summary>
         /// Gets or sets maximum.
+        /// The maximum permitted value.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximum", Required = Newtonsoft.Json.Required.Default)]
         public double? Maximum { get; set; }
     
         /// <summary>
         /// Gets or sets minimum.
+        /// The minimum permitted value.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimum", Required = Newtonsoft.Json.Required.Default)]
         public double? Minimum { get; set; }

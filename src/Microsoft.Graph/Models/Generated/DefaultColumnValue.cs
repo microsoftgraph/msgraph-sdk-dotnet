@@ -24,12 +24,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets formula.
+        /// The formula used to compute the default value for this column.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "formula", Required = Newtonsoft.Json.Required.Default)]
         public string Formula { get; set; }
     
         /// <summary>
         /// Gets or sets value.
+        /// The direct value to use as the default value for this column.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
         public string Value { get; set; }

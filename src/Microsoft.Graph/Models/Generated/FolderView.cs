@@ -24,6 +24,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sortBy.
+        /// The method by which the folder should be sorted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sortBy", Required = Newtonsoft.Json.Required.Default)]
         public string SortBy { get; set; }
@@ -36,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets viewType.
+        /// The type of view that should be used to represent the folder.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "viewType", Required = Newtonsoft.Json.Required.Default)]
         public string ViewType { get; set; }

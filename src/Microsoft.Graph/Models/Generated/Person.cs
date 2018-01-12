@@ -149,6 +149,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets im address.
+        /// The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imAddress", Required = Newtonsoft.Json.Required.Default)]
         public string ImAddress { get; set; }

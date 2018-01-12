@@ -50,6 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets system.
+        /// If present, indicates that this is a system-managed drive. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "system", Required = Newtonsoft.Json.Required.Default)]
         public SystemFacet System { get; set; }

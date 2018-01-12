@@ -28,6 +28,13 @@ namespace Microsoft.Graph
         public string Classification { get; set; }
     
         /// <summary>
+        /// Gets or sets created date time.
+        /// The date and time the group was created.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// An optional description for the group.
         /// </summary>
@@ -96,6 +103,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyAddresses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ProxyAddresses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets renewed date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renewedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? RenewedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets security enabled.

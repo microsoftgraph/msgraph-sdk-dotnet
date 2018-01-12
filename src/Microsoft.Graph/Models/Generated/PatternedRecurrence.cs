@@ -24,12 +24,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets pattern.
+        /// The frequency of an event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pattern", Required = Newtonsoft.Json.Required.Default)]
         public RecurrencePattern Pattern { get; set; }
     
         /// <summary>
         /// Gets or sets range.
+        /// The duration of an event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "range", Required = Newtonsoft.Json.Required.Default)]
         public RecurrenceRange Range { get; set; }

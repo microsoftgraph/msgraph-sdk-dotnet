@@ -31,6 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets view.
+        /// A collection of properties defining the recommended view for the folder.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "view", Required = Newtonsoft.Json.Required.Default)]
         public FolderView View { get; set; }

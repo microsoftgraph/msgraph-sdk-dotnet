@@ -233,7 +233,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets spouse name.
-        /// The name of the contact's spouse.
+        /// The name of the contact's spouse/partner.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "spouseName", Required = Newtonsoft.Json.Required.Default)]
         public string SpouseName { get; set; }

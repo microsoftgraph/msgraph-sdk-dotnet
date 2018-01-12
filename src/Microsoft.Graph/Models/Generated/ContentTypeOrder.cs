@@ -24,12 +24,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets default.
+        /// Whether this is the default Content Type
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "default", Required = Newtonsoft.Json.Required.Default)]
         public bool? Default { get; set; }
     
         /// <summary>
         /// Gets or sets position.
+        /// Specifies the position in which the Content Type appears in the selection UI.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "position", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Position { get; set; }

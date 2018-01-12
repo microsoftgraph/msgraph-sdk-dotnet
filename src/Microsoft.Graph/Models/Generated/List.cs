@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
+        /// The displayable title of the list.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets list.
+        /// Provides additional details about the list.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "list", Required = Newtonsoft.Json.Required.Default)]
         public ListInfo ListInfo { get; set; }
@@ -41,6 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets system.
+        /// If present, indicates that this is a system-managed list. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "system", Required = Newtonsoft.Json.Required.Default)]
         public SystemFacet System { get; set; }
@@ -59,12 +62,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets drive.
+        /// Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "drive", Required = Newtonsoft.Json.Required.Default)]
         public Drive Drive { get; set; }
     
         /// <summary>
         /// Gets or sets items.
+        /// All items contained in the list.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items", Required = Newtonsoft.Json.Required.Default)]
         public IListItemsCollectionPage Items { get; set; }

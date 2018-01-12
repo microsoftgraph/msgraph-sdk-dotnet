@@ -24,18 +24,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets format.
+        /// For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
         public string Format { get; set; }
     
         /// <summary>
         /// Gets or sets formula.
+        /// The formula used to compute the value for this column.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "formula", Required = Newtonsoft.Json.Required.Default)]
         public string Formula { get; set; }
     
         /// <summary>
         /// Gets or sets outputType.
+        /// The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outputType", Required = Newtonsoft.Json.Required.Default)]
         public string OutputType { get; set; }

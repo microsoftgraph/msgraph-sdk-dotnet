@@ -31,6 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets driveType.
+        /// Identifies the type of drive. See [drive][] resource for values.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "driveType", Required = Newtonsoft.Json.Required.Default)]
         public string DriveType { get; set; }
@@ -58,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets shareId.
-        /// A unique identifier for a shared resource that can be accessed via the Shares API.
+        /// A unique identifier for a shared resource that can be accessed via the [Shares][] API.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shareId", Required = Newtonsoft.Json.Required.Default)]
         public string ShareId { get; set; }

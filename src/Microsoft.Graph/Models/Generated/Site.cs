@@ -51,12 +51,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets columns.
+        /// The collection of column definitions reusable across lists under this site.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "columns", Required = Newtonsoft.Json.Required.Default)]
         public ISiteColumnsCollectionPage Columns { get; set; }
     
         /// <summary>
         /// Gets or sets content types.
+        /// The collection of content types defined for this site.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentTypes", Required = Newtonsoft.Json.Required.Default)]
         public ISiteContentTypesCollectionPage ContentTypes { get; set; }
@@ -84,6 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets lists.
+        /// The collection of lists under this site.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lists", Required = Newtonsoft.Json.Required.Default)]
         public ISiteListsCollectionPage Lists { get; set; }
