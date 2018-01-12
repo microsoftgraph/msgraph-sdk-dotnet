@@ -130,5 +130,10 @@ namespace Microsoft.Graph
         /// </summary>
         IPlannerRequestBuilder Planner { get; }
     
+        /// <summary>
+        /// Gets the GraphServiceReports request builder.
+        /// </summary>
+        IReportRootRequestBuilder Reports { get; }
+    
     }
 }

@@ -293,5 +293,16 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the GraphServiceReports request builder.
+        /// </summary>
+        public IReportRootRequestBuilder Reports
+        {
+            get
+            {
+                return new ReportRootRequestBuilder(this.BaseUrl + "/reports", this);
+            }
+        }
+    
     }
 }
