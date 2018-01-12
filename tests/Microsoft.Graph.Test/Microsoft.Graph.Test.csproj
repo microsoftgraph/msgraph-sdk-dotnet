@@ -98,6 +98,7 @@
     <Compile Include="Requests\Functional\SharePointTests.cs" />
     <Compile Include="Requests\Functional\OneNoteTests.cs" />
     <Compile Include="Requests\Functional\SchemaExtensionTests.cs" />
+    <Compile Include="Requests\Functional\ReportTests.cs" />
     <Compile Include="Requests\Functional\UsersTests.cs" />
     <Compile Include="Requests\Generated\EntityWithReferenceRequestTests.cs" />
     <Compile Include="Requests\Generated\EntityReferenceRequestTests.cs" />
