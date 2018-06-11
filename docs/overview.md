@@ -26,7 +26,7 @@ To begin making requests with the library, you will need to initialize a **Graph
 
 ## IAuthenticationProvider
 
-The authentication provider is responsible for authenticating requests before sending them to the service. The Microsoft Graph .NET Client Library doesn't implement any authentication by default. Instead, you will need to retrieve access tokens for the service via the authentication library of your choice or by coding against one of the authentication endpoints directly. Please [read here](https://graph.microsoft.io/en-us/docs/authorization/app_authorization) for more details about authenticating the Microsoft Graph service.
+The authentication provider is responsible for authenticating requests before sending them to the service. The Microsoft Graph .NET Client Library doesn't implement any authentication by default. Instead, you will need to retrieve access tokens for the service via the authentication library of your choice or by coding against one of the authentication endpoints directly. Please [read here](https://developer.microsoft.com/en-us/graph/docs/concepts/auth_overview) for more details about authenticating the Microsoft Graph service.
 
 ### DelegateAuthenticationProvider
 
@@ -76,21 +76,21 @@ After you build the request you call the `Request` method on the request builder
 
 For /me/calendar you call:
 
-```csharp
+``` csharp
 var calendarRequest = graphServiceClient
-                      .Me
-					  .Calendar
-					  .Request();
+    .Me
+    .Calendar
+    .Request();
 ```
 
 All request builders have a `Request` method that can generate a request object. Request objects may have different methods on them depending on the type of request. To get /me/calendar you call:
 
-```csharp
+``` csharp
 var calendar = await graphServiceClient
-                     .Me
-					 .Calendar
-					 .Request()
-					 .GetAsync();
+    .Me
+    .Calendar
+    .Request()
+    .GetAsync();
 ```
 
 Any errors while building or sending a request will bubble up as a `ServiceException`. See [errors](/docs/errors.md) for more information on errors.
@@ -99,12 +99,12 @@ Any errors while building or sending a request will bubble up as a `ServiceExcep
 
 If you only want to retrieve certain properties of a resource you can select them. Here's how to get only the ID of the me object:
 
-```csharp
+``` csharp
 var user = await graphServiceClient
-                     .Me
-					 .Request()
-					 .Select("id")
-					 .GetAsync();
+    .Me
+    .Request()
+    .Select("id")
+    .GetAsync();
 ```
 
 All properties other than `Id` will be null on the returned user object.
@@ -115,7 +115,7 @@ Expand, Skip, Top, OrderBy, and Filter are also supported via the client library
 
 If you need to include more specific behavior during a request that is not supported by the library, you can create a custom queryOptions List that you can add when calling ```Request```:
 
-```chsarp
+``` chsarp
 List<QueryOption> options = new List<QueryOption>
 {
      new QueryOption("$search", "lunch")
@@ -133,7 +133,7 @@ Please see [collections](/docs/collections.md) for details on collections and pa
 
 Sometimes, the functionality that you want to use isn't a part of the .NET client library. In this case, you can still use the client library to make your life easier. The client library can authenticate your requests and provide you the serializers. Here's an example of using the client library to create a OneNote page and deserialize the response object. 
 
-```csharp
+``` csharp
 
 public async Task OneNoteAddPageHtml()
 {
