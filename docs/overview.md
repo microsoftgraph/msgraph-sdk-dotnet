@@ -32,15 +32,14 @@ The authentication provider is responsible for authenticating requests before se
 
 The `DelegateAuthenticationProvider` is an implementation of `IAuthenticationProvider` that accepts a delegate to call during `AuthenticateRequestAsync`. This is the simplest way to append a retrieved access token to a request message:
 
-```csharp
-    var graphserviceClient = new GraphServiceClient(
-        new DelegateAuthenticationProvider(
-            (requestMessage) =>
-            {
-                requestMessage.Headers.Authorization = new AuthenticationHeaderValue("bearer", accessToken);
+``` csharp
+var graphServiceClient = new GraphServiceClient(new DelegateAuthenticationProvider((requestMessage) => {
+    requestMessage
+        .Headers
+        .Authorization = new AuthenticationHeaderValue("bearer", accessToken);
 
-                return Task.FromResult(0);
-            }));
+    return Task.FromResult(0);
+}));
 ```
 
 
