@@ -1,6 +1,5 @@
 ﻿namespace Microsoft.Graph.Test.Requests.Functional
 {
-    using Microsoft.Graph.Models.Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Linq;
