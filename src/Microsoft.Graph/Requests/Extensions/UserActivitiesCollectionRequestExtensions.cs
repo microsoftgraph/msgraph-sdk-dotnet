@@ -1,9 +1,13 @@
-﻿namespace Microsoft.Graph.Models.Extensions
+﻿// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
+namespace Microsoft.Graph
 {
     using System.Collections.Generic;
     using System.Threading;
 
-    public partial class UserActivitiesCollectionPutRequest : BaseRequest
+    public partial class UserActivitiesCollectionRequestExtensions : BaseRequest
     {
         /// <summary>
         /// Constructs a new UserActivitiesCollectionRequest.
@@ -11,7 +15,7 @@
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public UserActivitiesCollectionPutRequest(
+        public UserActivitiesCollectionRequestExtensions(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
