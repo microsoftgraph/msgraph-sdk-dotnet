@@ -9,6 +9,8 @@
     [TestClass]
     public class UserActivitiesTests : GraphTestBase
     {
+        Random r = new Random();
+
         public UserActivity CreateUserActivity(string appActivityId)
         {
             var activity = new UserActivity()
@@ -38,9 +40,9 @@
         {
             var history = new ActivityHistoryItem()
             {
-                StartedDateTime = DateTimeOffset.UtcNow.AddMinutes(-5),
-                LastActiveDateTime = DateTimeOffset.UtcNow,
-                Id = Guid.NewGuid().ToString(),
+                StartedDateTime = DateTimeOffset.Now.AddMinutes(-60),
+                LastActiveDateTime = DateTimeOffset.Now,
+                UserTimezone = "Test" + r.Next()
             };
             return history;
         }
@@ -53,8 +55,7 @@
                 var activity = CreateUserActivity("graphSdkTestCreateActivity");
 
                 // Create the user activity
-                var request = new UserActivitiesCollectionPutRequest(graphClient.Me.RequestUrl + "/activities", graphClient, null);
-                var createResponse = await request.AddUserActivityAsync(activity);
+                var createResponse = await graphClient.Me.Activities.Request().AddUserActivityAsync(activity);
 
                 Assert.IsNotNull(createResponse, "Unexpected results, the results contains a null collection.");
 
@@ -82,8 +83,7 @@
                 var activity = CreateUserActivity("graphSdkTestCreateHistory");
 
                 // Create the user activity
-                var request = new UserActivitiesCollectionPutRequest(graphClient.Me.RequestUrl + "/activities", graphClient, null);
-                var createActivityResponse = await request.AddUserActivityAsync(activity);
+                var createActivityResponse = await graphClient.Me.Activities.Request().AddUserActivityAsync(activity);
 
                 Assert.IsNotNull(createActivityResponse, "Unexpected results, the results contains a null collection.");
 
@@ -92,9 +92,7 @@
                 var history = CreateHistory();
 
                 // Create the history item on the created activity
-                var historyRequest = new UserActivityHistoryItemsCollectionPutRequest(graphClient.Me.Activities[activityId].RequestUrl + "/historyItems", 
-                    graphClient, null);
-                var createHistoryResponse = await historyRequest.AddActivityHistoryAsync(history);
+                var createHistoryResponse = await graphClient.Me.Activities[activityId].HistoryItems.Request().AddActivityHistoryAsync(history);
 
                 Assert.IsNotNull(createHistoryResponse, "Unexpected results, the results contains a null collection.");
 
@@ -129,8 +127,7 @@
                 var activity = CreateUserActivity("graphSdkTestGetRecent");
 
                 // Create the user activity
-                var request = new UserActivitiesCollectionPutRequest(graphClient.Me.RequestUrl + "/activities", graphClient, null);
-                var createActivityResponse = await request.AddUserActivityAsync(activity);
+                var createActivityResponse = await graphClient.Me.Activities.Request().AddUserActivityAsync(activity);
 
                 Assert.IsNotNull(createActivityResponse, "Unexpected results, the results contains a null collection.");
 
@@ -139,9 +136,7 @@
                 var history = CreateHistory();
 
                 // Create the history item on the user activity
-                var historyRequest = new UserActivityHistoryItemsCollectionPutRequest(graphClient.Me.Activities[activityId].RequestUrl + "/historyItems",
-                    graphClient, null);
-                var createHistoryResponse = await historyRequest.AddActivityHistoryAsync(history);
+                var createHistoryResponse = await graphClient.Me.Activities[activityId].HistoryItems.Request().AddActivityHistoryAsync(history);
 
                 Assert.IsNotNull(createHistoryResponse, "Unexpected results, the results contains a null collection.");
 
@@ -175,8 +170,7 @@
                 var activity = CreateUserActivity("graphSdkTestDeleteActivity");
 
                 // Create the user activity
-                var request = new UserActivitiesCollectionPutRequest(graphClient.Me.RequestUrl + "/activities", graphClient, null);
-                var createResponse = await request.AddUserActivityAsync(activity);
+                var createResponse = await graphClient.Me.Activities.Request().AddUserActivityAsync(activity);
 
                 Assert.IsNotNull(createResponse, "Unexpected results, the results contains a null collection.");
 
@@ -209,8 +203,7 @@
                 var activity = CreateUserActivity("graphSdkTestDeleteHistory");
 
                 // Create the user activity
-                var request = new UserActivitiesCollectionPutRequest(graphClient.Me.RequestUrl + "/activities", graphClient, null);
-                var createActivityResponse = await request.AddUserActivityAsync(activity);
+                var createActivityResponse = await graphClient.Me.Activities.Request().AddUserActivityAsync(activity);
 
                 Assert.IsNotNull(createActivityResponse, "Unexpected results, the results contains a null collection.");
 
@@ -219,9 +212,7 @@
                 var history = CreateHistory();
 
                 // Create the history item on the created activity
-                var historyRequest = new UserActivityHistoryItemsCollectionPutRequest(graphClient.Me.Activities[activityId].RequestUrl + "/historyItems",
-                    graphClient, null);
-                var createHistoryResponse = await historyRequest.AddActivityHistoryAsync(history);
+                var createHistoryResponse = await graphClient.Me.Activities[activityId].HistoryItems.Request().AddActivityHistoryAsync(history);
 
                 Assert.IsNotNull(createHistoryResponse, "Unexpected results, the results contains a null collection.");
 

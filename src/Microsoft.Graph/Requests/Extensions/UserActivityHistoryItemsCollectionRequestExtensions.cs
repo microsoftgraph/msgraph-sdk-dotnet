@@ -8,22 +8,8 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
     using System.Threading;
 
-    public partial class UserActivityHistoryItemsCollectionRequestExtensions : BaseRequest
+    public partial class UserActivityHistoryItemsCollectionRequest
     {
-        /// <summary>
-        /// Constructs a new UserActivitiesCollectionRequest.
-        /// </summary>
-        /// <param name="requestUrl">The URL for the built request.</param>
-        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="options">Query and header option name value pairs for the request.</param>
-        public UserActivityHistoryItemsCollectionRequestExtensions(
-            string requestUrl,
-            IBaseClient client,
-            IEnumerable<Option> options)
-            : base(requestUrl, client, options)
-        {
-        }
-
         /// <summary>
         /// Adds the specified ActivityHistoryItem to the collection via PUT.
         /// </summary>
