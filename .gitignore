@@ -3,7 +3,7 @@
 *.user
 *.userosscache
 *.sln.ide
-*.snk
+#*.snk
 TestResults/*
 .vs/*
 
