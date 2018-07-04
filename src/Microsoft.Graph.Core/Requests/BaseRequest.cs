@@ -303,6 +303,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets a URL that is the request builder's request URL with the segment appended.
+        /// </summary>
+        /// <param name="urlSegment">The segment to append to the request URL.</param>
+        /// <returns>A URL that is the request builder's request URL with the segment appended.</returns>
+        public void AppendSegmentToRequestUrl(string urlSegment)
+        {
+            this.RequestUrl = string.Format("{0}/{1}", this.RequestUrl, urlSegment);
+        }
+
+        /// <summary>
         /// Builds the query string for the request from the query option collection.
         /// </summary>
         /// <returns>The constructed query string.</returns>
