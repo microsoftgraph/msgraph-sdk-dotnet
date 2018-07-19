@@ -57,7 +57,7 @@ namespace Microsoft.Graph
         /// <param name="httpMessageHandler">An HTTP message handler to pass to the <see cref="HttpClient"/> for sending requests.</param>
         /// <param name="disposeHandler">Whether or not to dispose the client handler on Dispose().</param>
         /// <param name="serializer">A serializer for serializing and deserializing JSON objects.</param>
-        internal HttpProvider(HttpMessageHandler httpMessageHandler, bool disposeHandler, ISerializer serializer)
+        public HttpProvider(HttpMessageHandler httpMessageHandler, bool disposeHandler, ISerializer serializer)
         {
             this.disposeHandler = disposeHandler;
             this.httpMessageHandler = httpMessageHandler ?? new HttpClientHandler { AllowAutoRedirect = false };

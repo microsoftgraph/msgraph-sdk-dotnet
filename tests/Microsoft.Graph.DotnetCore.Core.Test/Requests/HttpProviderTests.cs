@@ -81,6 +81,18 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
         }
 
         [Fact]
+        public void HttpProvider_HttpMessageHandlerConstructor() {
+            using (var testhttpMessageHandler = new TestHttpMessageHandler())
+            using (var httpProvider = new HttpProvider(testhttpMessageHandler, false, null))
+            {
+                Assert.NotNull(httpProvider.httpMessageHandler);
+                Assert.Equal(httpProvider.httpMessageHandler, testhttpMessageHandler);
+                Assert.False(httpProvider.disposeHandler);
+                Assert.IsType(typeof(Serializer), httpProvider.Serializer);
+            }
+        }
+
+        [Fact]
         public async Task OverallTimeout_RequestAlreadySent()
         {
             using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "https://localhost"))
