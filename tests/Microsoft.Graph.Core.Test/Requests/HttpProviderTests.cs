@@ -85,11 +85,11 @@ namespace Microsoft.Graph.Core.Test.Requests
         [TestMethod]
         public void HttpProvider_HttpMessageHandlerConstructor()
         {
-            using (var testhttpMessageHandler = new TestHttpMessageHandler())
-            using (var httpProvider = new HttpProvider(testhttpMessageHandler, true, null))
+           
+            using (var httpProvider = new HttpProvider(this.testHttpMessageHandler, true, null))
             {
                 Assert.IsNotNull(httpProvider.httpMessageHandler, "HttpMessageHandler not initialized");
-                Assert.AreEqual(httpProvider.httpMessageHandler, testhttpMessageHandler, "Unexpected message handler set.");
+                Assert.AreEqual(httpProvider.httpMessageHandler, this.testHttpMessageHandler, "Unexpected message handler set.");
                 Assert.IsTrue(httpProvider.disposeHandler, "Dispose Handler set to false");
                 Assert.IsInstanceOfType(httpProvider.Serializer, typeof(Serializer), "Unexpected serializer initialized.");
             }
