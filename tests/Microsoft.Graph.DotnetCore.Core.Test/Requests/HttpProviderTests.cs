@@ -82,11 +82,11 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
 
         [Fact]
         public void HttpProvider_HttpMessageHandlerConstructor() {
-            using (var testhttpMessageHandler = new TestHttpMessageHandler())
-            using (var httpProvider = new HttpProvider(testhttpMessageHandler, false, null))
+           
+            using (var httpProvider = new HttpProvider(this.testHttpMessageHandler, false, null))
             {
                 Assert.NotNull(httpProvider.httpMessageHandler);
-                Assert.Equal(httpProvider.httpMessageHandler, testhttpMessageHandler);
+                Assert.Equal(httpProvider.httpMessageHandler, this.testHttpMessageHandler);
                 Assert.False(httpProvider.disposeHandler);
                 Assert.IsType(typeof(Serializer), httpProvider.Serializer);
             }
