@@ -32,6 +32,47 @@ namespace Microsoft.Graph
         /// <returns>The ManagedAppRegistration.</returns>
         System.Threading.Tasks.Task<ManagedAppRegistration> GetAsync(CancellationToken cancellationToken);
 
+		/// <summary>
+        /// Creates the specified ManagedAppRegistration using PUT.
+        /// </summary>
+        /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
+        /// <returns>The created ManagedAppRegistration.</returns>
+        System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate);        /// <summary>
+        /// Creates the specified ManagedAppRegistration using PUT.
+        /// </summary>
+        /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The created ManagedAppRegistration.</returns>
+        System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Updates the specified ManagedAppRegistration using PATCH.
+        /// </summary>
+        /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration to update.</param>
+        /// <returns>The updated ManagedAppRegistration.</returns>
+        System.Threading.Tasks.Task<ManagedAppRegistration> UpdateAsync(ManagedAppRegistration managedAppRegistrationToUpdate);
+
+        /// <summary>
+        /// Updates the specified ManagedAppRegistration using PATCH.
+        /// </summary>
+        /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The updated ManagedAppRegistration.</returns>
+        System.Threading.Tasks.Task<ManagedAppRegistration> UpdateAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified ManagedAppRegistration.
+        /// </summary>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task DeleteAsync();
+
+        /// <summary>
+        /// Deletes the specified ManagedAppRegistration.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>

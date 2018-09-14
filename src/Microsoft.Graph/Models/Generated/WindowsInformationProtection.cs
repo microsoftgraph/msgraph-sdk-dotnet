@@ -31,7 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enforcement level.
-        /// WIP enforcement level.See the Enum definition for supported values Possible values are: noProtection, encryptAndAuditOnly, encryptAuditAndPrompt, encryptAuditAndBlock.
+        /// WIP enforcement level.See the Enum definition for supported values. Possible values are: noProtection, encryptAndAuditOnly, encryptAuditAndPrompt, encryptAuditAndBlock.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforcementLevel", Required = Newtonsoft.Json.Required.Default)]
         public WindowsInformationProtectionEnforcementLevel? EnforcementLevel { get; set; }

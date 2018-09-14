@@ -24,14 +24,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets movieRating.
-        /// Movies rating selected for Germany Possible values are: allAllowed, allBlocked, general, agesAbove6, agesAbove12, agesAbove16, adults.
+        /// Movies rating selected for Germany. Possible values are: allAllowed, allBlocked, general, agesAbove6, agesAbove12, agesAbove16, adults.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "movieRating", Required = Newtonsoft.Json.Required.Default)]
         public RatingGermanyMoviesType? MovieRating { get; set; }
     
         /// <summary>
         /// Gets or sets tvRating.
-        /// TV rating selected for Germany Possible values are: allAllowed, allBlocked, general, agesAbove6, agesAbove12, agesAbove16, adults.
+        /// TV rating selected for Germany. Possible values are: allAllowed, allBlocked, general, agesAbove6, agesAbove12, agesAbove16, adults.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tvRating", Required = Newtonsoft.Json.Required.Default)]
         public RatingGermanyTelevisionType? TvRating { get; set; }

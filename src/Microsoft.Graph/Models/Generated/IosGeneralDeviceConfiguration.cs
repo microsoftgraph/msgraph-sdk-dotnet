@@ -554,6 +554,12 @@ namespace Microsoft.Graph
         public string KioskModeAppStoreUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode built in app id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeBuiltInAppId", Required = Newtonsoft.Json.Required.Default)]
+        public string KioskModeBuiltInAppId { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode require assistive touch.
         /// Indicates whether or not to require assistive touch while in kiosk mode.
         /// </summary>
@@ -695,7 +701,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets media content rating apps.
-        /// Media content rating settings for Apps Possible values are: allAllowed, allBlocked, agesAbove4, agesAbove9, agesAbove12, agesAbove17.
+        /// Media content rating settings for Apps. Possible values are: allAllowed, allBlocked, agesAbove4, agesAbove9, agesAbove12, agesAbove17.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaContentRatingApps", Required = Newtonsoft.Json.Required.Default)]
         public RatingAppsType? MediaContentRatingApps { get; set; }

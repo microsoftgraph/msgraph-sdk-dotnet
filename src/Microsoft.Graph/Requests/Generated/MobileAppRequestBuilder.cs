@@ -52,12 +52,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Categories.
         /// </summary>
-        /// <returns>The <see cref="IMobileAppCategoriesCollectionRequestBuilder"/>.</returns>
-        public IMobileAppCategoriesCollectionRequestBuilder Categories
+        /// <returns>The <see cref="IMobileAppCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IMobileAppCategoriesCollectionWithReferencesRequestBuilder Categories
         {
             get
             {
-                return new MobileAppCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
+                return new MobileAppCategoriesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
             }
         }
 

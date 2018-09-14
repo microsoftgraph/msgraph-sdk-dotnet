@@ -37,28 +37,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets pin uppercase characters usage.
-        /// Not yet documented Possible values are: allowed, required, disallowed.
+        /// Not yet documented. Possible values are: allowed, required, disallowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinUppercaseCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
         public WindowsHelloForBusinessPinUsage? PinUppercaseCharactersUsage { get; set; }
     
         /// <summary>
         /// Gets or sets pin lowercase characters usage.
-        /// Not yet documented Possible values are: allowed, required, disallowed.
+        /// Not yet documented. Possible values are: allowed, required, disallowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinLowercaseCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
         public WindowsHelloForBusinessPinUsage? PinLowercaseCharactersUsage { get; set; }
     
         /// <summary>
         /// Gets or sets pin special characters usage.
-        /// Not yet documented Possible values are: allowed, required, disallowed.
+        /// Not yet documented. Possible values are: allowed, required, disallowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinSpecialCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
         public WindowsHelloForBusinessPinUsage? PinSpecialCharactersUsage { get; set; }
     
         /// <summary>
         /// Gets or sets state.
-        /// Not yet documented Possible values are: notConfigured, enabled, disabled.
+        /// Not yet documented. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? State { get; set; }
@@ -100,7 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enhanced biometrics state.
-        /// Not yet documented Possible values are: notConfigured, enabled, disabled.
+        /// Not yet documented. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enhancedBiometricsState", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? EnhancedBiometricsState { get; set; }

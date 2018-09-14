@@ -55,6 +55,74 @@ namespace Microsoft.Graph
             return retrievedEntity;
         }
 
+		/// <summary>
+        /// Creates the specified SoftwareUpdateStatusSummary using POST.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
+        /// <returns>The created SoftwareUpdateStatusSummary.</returns>
+        public System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> CreateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate)
+        {
+            return this.CreateAsync(softwareUpdateStatusSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified SoftwareUpdateStatusSummary using POST.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The created SoftwareUpdateStatusSummary.</returns>
+        public async System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> CreateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            var newEntity = await this.SendAsync<SoftwareUpdateStatusSummary>(softwareUpdateStatusSummaryToCreate, cancellationToken).ConfigureAwait(false);
+            return newEntity;
+        }
+
+		/// <summary>
+        /// Updates the specified SoftwareUpdateStatusSummary using PATCH.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToUpdate">The SoftwareUpdateStatusSummary to update.</param>
+        /// <returns>The updated SoftwareUpdateStatusSummary.</returns>
+        public System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> UpdateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate)
+        {
+            return this.UpdateAsync(softwareUpdateStatusSummaryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified SoftwareUpdateStatusSummary using PATCH.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToUpdate">The SoftwareUpdateStatusSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The updated SoftwareUpdateStatusSummary.</returns>
+        public async System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> UpdateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            var updatedEntity = await this.SendAsync<SoftwareUpdateStatusSummary>(softwareUpdateStatusSummaryToUpdate, cancellationToken).ConfigureAwait(false);
+            return updatedEntity;
+        }
+
+		/// <summary>
+        /// Deletes the specified SoftwareUpdateStatusSummary.
+        /// </summary>
+        /// <returns>The task to await.</returns>
+        public System.Threading.Tasks.Task DeleteAsync()
+        {
+            return this.DeleteAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified SoftwareUpdateStatusSummary.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            await this.SendAsync<SoftwareUpdateStatusSummary>(null, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>

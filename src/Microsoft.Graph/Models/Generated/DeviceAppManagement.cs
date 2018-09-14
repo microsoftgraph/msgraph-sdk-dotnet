@@ -86,7 +86,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets ios managed app protections.
-        /// iOS managed app policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosManagedAppProtections", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceAppManagementIosManagedAppProtectionsCollectionPage IosManagedAppProtections { get; set; }

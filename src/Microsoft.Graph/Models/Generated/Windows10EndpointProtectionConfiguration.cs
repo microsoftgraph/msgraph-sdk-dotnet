@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets firewall pre shared key encoding method.
-        /// Select the preshared key encoding to be used Possible values are: deviceDefault, none, utF8.
+        /// Select the preshared key encoding to be used. Possible values are: deviceDefault, none, utF8.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallPreSharedKeyEncodingMethod", Required = Newtonsoft.Json.Required.Default)]
         public FirewallPreSharedKeyEncodingMethodType? FirewallPreSharedKeyEncodingMethod { get; set; }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets firewall certificate revocation list check method.
-        /// Specify how the certificate revocation list is to be enforced Possible values are: deviceDefault, none, attempt, require.
+        /// Specify how the certificate revocation list is to be enforced. Possible values are: deviceDefault, none, attempt, require.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallCertificateRevocationListCheckMethod", Required = Newtonsoft.Json.Required.Default)]
         public FirewallCertificateRevocationListCheckMethodType? FirewallCertificateRevocationListCheckMethod { get; set; }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets firewall packet queueing method.
-        /// Configures how packet queueing should be applied in the tunnel gateway scenario Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.
+        /// Configures how packet queueing should be applied in the tunnel gateway scenario. Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallPacketQueueingMethod", Required = Newtonsoft.Json.Required.Default)]
         public FirewallPacketQueueingMethodType? FirewallPacketQueueingMethod { get; set; }
@@ -184,7 +184,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets application guard block file transfer.
-        /// Block clipboard to transfer image file, text file or neither of them Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.
+        /// Block clipboard to transfer image file, text file or neither of them. Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockFileTransfer", Required = Newtonsoft.Json.Required.Default)]
         public ApplicationGuardBlockFileTransferType? ApplicationGuardBlockFileTransfer { get; set; }

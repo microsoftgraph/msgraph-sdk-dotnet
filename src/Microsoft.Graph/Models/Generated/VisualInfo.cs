@@ -31,7 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets backgroundColor.
-        /// Optional. Background color used to render the activity in the UI - brand color for the application source of the activity
+        /// Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "backgroundColor", Required = Newtonsoft.Json.Required.Default)]
         public string BackgroundColor { get; set; }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets displayText.
-        /// Rquired. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
+        /// Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayText", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayText { get; set; }

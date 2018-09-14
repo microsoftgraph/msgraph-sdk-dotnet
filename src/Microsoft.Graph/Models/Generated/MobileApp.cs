@@ -125,7 +125,7 @@ namespace Microsoft.Graph
         /// The list of categories for this app.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
-        public IMobileAppCategoriesCollectionPage Categories { get; set; }
+        public IMobileAppCategoriesCollectionWithReferencesPage Categories { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.

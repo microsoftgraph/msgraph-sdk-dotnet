@@ -24,14 +24,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets movieRating.
-        /// Movies rating selected for Australia Possible values are: allAllowed, allBlocked, general, parentalGuidance, mature, agesAbove15, agesAbove18.
+        /// Movies rating selected for Australia. Possible values are: allAllowed, allBlocked, general, parentalGuidance, mature, agesAbove15, agesAbove18.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "movieRating", Required = Newtonsoft.Json.Required.Default)]
         public RatingAustraliaMoviesType? MovieRating { get; set; }
     
         /// <summary>
         /// Gets or sets tvRating.
-        /// TV rating selected for Australia Possible values are: allAllowed, allBlocked, preschoolers, children, general, parentalGuidance, mature, agesAbove15, agesAbove15AdultViolence.
+        /// TV rating selected for Australia. Possible values are: allAllowed, allBlocked, preschoolers, children, general, parentalGuidance, mature, agesAbove15, agesAbove15AdultViolence.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tvRating", Required = Newtonsoft.Json.Required.Default)]
         public RatingAustraliaTelevisionType? TvRating { get; set; }

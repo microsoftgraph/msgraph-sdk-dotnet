@@ -32,6 +32,47 @@ namespace Microsoft.Graph
         /// <returns>The ManagedDeviceOverview.</returns>
         System.Threading.Tasks.Task<ManagedDeviceOverview> GetAsync(CancellationToken cancellationToken);
 
+		/// <summary>
+        /// Creates the specified ManagedDeviceOverview using PUT.
+        /// </summary>
+        /// <param name="managedDeviceOverviewToCreate">The ManagedDeviceOverview to create.</param>
+        /// <returns>The created ManagedDeviceOverview.</returns>
+        System.Threading.Tasks.Task<ManagedDeviceOverview> CreateAsync(ManagedDeviceOverview managedDeviceOverviewToCreate);        /// <summary>
+        /// Creates the specified ManagedDeviceOverview using PUT.
+        /// </summary>
+        /// <param name="managedDeviceOverviewToCreate">The ManagedDeviceOverview to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The created ManagedDeviceOverview.</returns>
+        System.Threading.Tasks.Task<ManagedDeviceOverview> CreateAsync(ManagedDeviceOverview managedDeviceOverviewToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Updates the specified ManagedDeviceOverview using PATCH.
+        /// </summary>
+        /// <param name="managedDeviceOverviewToUpdate">The ManagedDeviceOverview to update.</param>
+        /// <returns>The updated ManagedDeviceOverview.</returns>
+        System.Threading.Tasks.Task<ManagedDeviceOverview> UpdateAsync(ManagedDeviceOverview managedDeviceOverviewToUpdate);
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceOverview using PATCH.
+        /// </summary>
+        /// <param name="managedDeviceOverviewToUpdate">The ManagedDeviceOverview to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The updated ManagedDeviceOverview.</returns>
+        System.Threading.Tasks.Task<ManagedDeviceOverview> UpdateAsync(ManagedDeviceOverview managedDeviceOverviewToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified ManagedDeviceOverview.
+        /// </summary>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task DeleteAsync();
+
+        /// <summary>
+        /// Deletes the specified ManagedDeviceOverview.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>

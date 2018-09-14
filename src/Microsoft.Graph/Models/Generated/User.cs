@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public bool? AccountEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets age group.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ageGroup", Required = Newtonsoft.Json.Required.Default)]
+        public string AgeGroup { get; set; }
+    
+        /// <summary>
         /// Gets or sets assigned licenses.
         /// The licenses that are assigned to the user. Not nullable.
         /// </summary>
@@ -62,6 +68,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyName", Required = Newtonsoft.Json.Required.Default)]
         public string CompanyName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets consent provided for minor.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "consentProvidedForMinor", Required = Newtonsoft.Json.Required.Default)]
+        public string ConsentProvidedForMinor { get; set; }
     
         /// <summary>
         /// Gets or sets country.
@@ -105,6 +117,12 @@ namespace Microsoft.Graph
         public string JobTitle { get; set; }
     
         /// <summary>
+        /// Gets or sets legal age group classification.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "legalAgeGroupClassification", Required = Newtonsoft.Json.Required.Default)]
+        public string LegalAgeGroupClassification { get; set; }
+    
+        /// <summary>
         /// Gets or sets mail.
         /// The SMTP address for the user, for example, "jeff@contoso.onmicrosoft.com". Read-Only. Supports $filter.
         /// </summary>
@@ -126,6 +144,12 @@ namespace Microsoft.Graph
         public string MobilePhone { get; set; }
     
         /// <summary>
+        /// Gets or sets on premises extension attributes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesExtensionAttributes", Required = Newtonsoft.Json.Required.Default)]
+        public OnPremisesExtensionAttributes OnPremisesExtensionAttributes { get; set; }
+    
+        /// <summary>
         /// Gets or sets on premises immutable id.
         /// This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. Important: The $ and  characters cannot be used when specifying this property. Supports $filter.
         /// </summary>
@@ -140,6 +164,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets on premises provisioning errors.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesProvisioningErrors", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
+    
+        /// <summary>
         /// Gets or sets on premises security identifier.
         /// Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only.
         /// </summary>
@@ -152,6 +182,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSyncEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? OnPremisesSyncEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets on premises domain name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesDomainName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnPremisesDomainName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets on premises sam account name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSamAccountName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnPremisesSamAccountName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets on premises user principal name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnPremisesUserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets password policies.
@@ -323,7 +371,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device enrollment limit.
-        /// The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceEnrollmentLimit", Required = Newtonsoft.Json.Required.Default)]
         public Int32? DeviceEnrollmentLimit { get; set; }
@@ -538,6 +585,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
         public IUserActivitiesCollectionPage Activities { get; set; }
+    
+        /// <summary>
+        /// Gets or sets insights.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "insights", Required = Newtonsoft.Json.Required.Default)]
+        public OfficeGraphInsights Insights { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        public UserSettings Settings { get; set; }
     
     }
 }

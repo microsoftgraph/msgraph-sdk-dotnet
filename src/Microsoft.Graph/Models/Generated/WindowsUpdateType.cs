@@ -33,5 +33,20 @@ namespace Microsoft.Graph
         /// </summary>
         BusinessReadyOnly = 2,
 	
+        /// <summary>
+        /// windows Insider Build Fast
+        /// </summary>
+        WindowsInsiderBuildFast = 3,
+	
+        /// <summary>
+        /// windows Insider Build Slow
+        /// </summary>
+        WindowsInsiderBuildSlow = 4,
+	
+        /// <summary>
+        /// windows Insider Build Release
+        /// </summary>
+        WindowsInsiderBuildRelease = 5,
+	
     }
 }

@@ -97,16 +97,5 @@ namespace Microsoft.Graph
             }
         }
     
-        /// <summary>
-        /// Gets the request builder for EducationClassRenew.
-        /// </summary>
-        /// <returns>The <see cref="IEducationClassRenewRequestBuilder"/>.</returns>
-        public IEducationClassRenewRequestBuilder Renew()
-        {
-            return new EducationClassRenewRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.renew"),
-                this.Client);
-        }
-    
     }
 }

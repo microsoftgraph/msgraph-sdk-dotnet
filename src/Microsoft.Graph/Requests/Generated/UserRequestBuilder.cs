@@ -420,6 +420,30 @@ namespace Microsoft.Graph
                 return new UserActivitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("activities"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Insights.
+        /// </summary>
+        /// <returns>The <see cref="IOfficeGraphInsightsRequestBuilder"/>.</returns>
+        public IOfficeGraphInsightsRequestBuilder Insights
+        {
+            get
+            {
+                return new OfficeGraphInsightsRequestBuilder(this.AppendSegmentToRequestUrl("insights"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IUserSettingsRequestBuilder"/>.</returns>
+        public IUserSettingsRequestBuilder Settings
+        {
+            get
+            {
+                return new UserSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.
@@ -491,6 +515,21 @@ namespace Microsoft.Graph
                 IsOrganizerOptional,
                 ReturnSuggestionReasons,
                 MinimumAttendeePercentage);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserGetMailTips.
+        /// </summary>
+        /// <returns>The <see cref="IUserGetMailTipsRequestBuilder"/>.</returns>
+        public IUserGetMailTipsRequestBuilder GetMailTips(
+            IEnumerable<string> EmailAddresses,
+            MailTipsType? MailTipsOptions = null)
+        {
+            return new UserGetMailTipsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getMailTips"),
+                this.Client,
+                EmailAddresses,
+                MailTipsOptions);
         }
 
         /// <summary>

@@ -31,18 +31,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// Identity of the user which last modified the version. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// Date and time the version was last modified. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets publication.
+        /// Indicates the publication status of this particular version. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publication", Required = Newtonsoft.Json.Required.Default)]
         public PublicationFacet Publication { get; set; }

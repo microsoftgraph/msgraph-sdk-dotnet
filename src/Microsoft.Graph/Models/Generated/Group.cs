@@ -84,6 +84,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets on premises provisioning errors.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesProvisioningErrors", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
+    
+        /// <summary>
         /// Gets or sets on premises security identifier.
         /// Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Read-only.
         /// </summary>

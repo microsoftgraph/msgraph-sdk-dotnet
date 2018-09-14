@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
-        /// The compliance state of the setting Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict.
+        /// The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public ComplianceStatus? State { get; set; }

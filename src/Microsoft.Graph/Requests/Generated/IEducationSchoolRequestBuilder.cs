@@ -41,12 +41,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEducationSchoolUsersCollectionWithReferencesRequestBuilder"/>.</returns>
         IEducationSchoolUsersCollectionWithReferencesRequestBuilder Users { get; }
-
-        /// <summary>
-        /// Gets the request builder for AdministrativeUnit.
-        /// </summary>
-        /// <returns>The <see cref="IAdministrativeUnitWithReferenceRequestBuilder"/>.</returns>
-        IAdministrativeUnitWithReferenceRequestBuilder AdministrativeUnit { get; }
     
     }
 }

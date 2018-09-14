@@ -24,7 +24,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets firewallEnabled.
-        /// Turn on the firewall and advanced security enforcement Possible values are: notConfigured, blocked, allowed.
+        /// Turn on the firewall and advanced security enforcement. Possible values are: notConfigured, blocked, allowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallEnabled", Required = Newtonsoft.Json.Required.Default)]
         public StateManagementSetting? FirewallEnabled { get; set; }

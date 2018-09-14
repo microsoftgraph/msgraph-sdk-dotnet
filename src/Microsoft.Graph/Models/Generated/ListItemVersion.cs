@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fields.
+        /// A collection of the fields and values for this version of the list item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fields", Required = Newtonsoft.Json.Required.Default)]
         public FieldValueSet Fields { get; set; }

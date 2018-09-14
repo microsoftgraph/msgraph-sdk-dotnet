@@ -24,14 +24,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets movieRating.
-        /// Movies rating selected for New Zealand Possible values are: allAllowed, allBlocked, general, parentalGuidance, mature, agesAbove13, agesAbove15, agesAbove16, agesAbove18, restricted, agesAbove16Restricted.
+        /// Movies rating selected for New Zealand. Possible values are: allAllowed, allBlocked, general, parentalGuidance, mature, agesAbove13, agesAbove15, agesAbove16, agesAbove18, restricted, agesAbove16Restricted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "movieRating", Required = Newtonsoft.Json.Required.Default)]
         public RatingNewZealandMoviesType? MovieRating { get; set; }
     
         /// <summary>
         /// Gets or sets tvRating.
-        /// TV rating selected for New Zealand Possible values are: allAllowed, allBlocked, general, parentalGuidance, adults.
+        /// TV rating selected for New Zealand. Possible values are: allAllowed, allBlocked, general, parentalGuidance, adults.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tvRating", Required = Newtonsoft.Json.Required.Default)]
         public RatingNewZealandTelevisionType? TvRating { get; set; }

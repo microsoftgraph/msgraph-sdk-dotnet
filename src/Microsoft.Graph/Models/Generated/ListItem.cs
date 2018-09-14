@@ -49,6 +49,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets versions.
+        /// The list of previous versions of the list item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versions", Required = Newtonsoft.Json.Required.Default)]
         public IListItemVersionsCollectionPage Versions { get; set; }

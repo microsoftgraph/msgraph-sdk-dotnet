@@ -73,5 +73,10 @@ namespace Microsoft.Graph
         /// </summary>
         ClientDisconnected = 10,
 	
+        /// <summary>
+        /// user Abandonment
+        /// </summary>
+        UserAbandonment = 11,
+	
     }
 }

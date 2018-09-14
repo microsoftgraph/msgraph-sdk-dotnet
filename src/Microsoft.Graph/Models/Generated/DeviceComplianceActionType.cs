@@ -48,5 +48,10 @@ namespace Microsoft.Graph
         /// </summary>
         RemoveResourceAccessProfiles = 5,
 	
+        /// <summary>
+        /// push Notification
+        /// </summary>
+        PushNotification = 9,
+	
     }
 }

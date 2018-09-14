@@ -619,6 +619,35 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootDeviceConfigurationDeviceActivityRequestBuilder"/>.</returns>
         IReportRootDeviceConfigurationDeviceActivityRequestBuilder DeviceConfigurationDeviceActivity();
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder"/>.</returns>
+        IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails();
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder"/>.</returns>
+        IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails(
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null,
+            string skipToken = null);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentTopFailures.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder"/>.</returns>
+        IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder ManagedDeviceEnrollmentTopFailures();
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentTopFailures.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder"/>.</returns>
+        IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder ManagedDeviceEnrollmentTopFailures(
+            string period = null);
     
     }
 }

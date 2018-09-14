@@ -58,5 +58,15 @@ namespace Microsoft.Graph
         /// </summary>
         Unresponsive = 7,
 	
+        /// <summary>
+        /// compromised
+        /// </summary>
+        Compromised = 8,
+	
+        /// <summary>
+        /// misconfigured
+        /// </summary>
+        Misconfigured = 9,
+	
     }
 }

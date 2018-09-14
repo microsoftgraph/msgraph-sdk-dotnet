@@ -32,6 +32,47 @@ namespace Microsoft.Graph
         /// <returns>The ManagedDevice.</returns>
         System.Threading.Tasks.Task<ManagedDevice> GetAsync(CancellationToken cancellationToken);
 
+		/// <summary>
+        /// Creates the specified ManagedDevice using PUT.
+        /// </summary>
+        /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
+        /// <returns>The created ManagedDevice.</returns>
+        System.Threading.Tasks.Task<ManagedDevice> CreateAsync(ManagedDevice managedDeviceToCreate);        /// <summary>
+        /// Creates the specified ManagedDevice using PUT.
+        /// </summary>
+        /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The created ManagedDevice.</returns>
+        System.Threading.Tasks.Task<ManagedDevice> CreateAsync(ManagedDevice managedDeviceToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Updates the specified ManagedDevice using PATCH.
+        /// </summary>
+        /// <param name="managedDeviceToUpdate">The ManagedDevice to update.</param>
+        /// <returns>The updated ManagedDevice.</returns>
+        System.Threading.Tasks.Task<ManagedDevice> UpdateAsync(ManagedDevice managedDeviceToUpdate);
+
+        /// <summary>
+        /// Updates the specified ManagedDevice using PATCH.
+        /// </summary>
+        /// <param name="managedDeviceToUpdate">The ManagedDevice to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The updated ManagedDevice.</returns>
+        System.Threading.Tasks.Task<ManagedDevice> UpdateAsync(ManagedDevice managedDeviceToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified ManagedDevice.
+        /// </summary>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task DeleteAsync();
+
+        /// <summary>
+        /// Deletes the specified ManagedDevice.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>

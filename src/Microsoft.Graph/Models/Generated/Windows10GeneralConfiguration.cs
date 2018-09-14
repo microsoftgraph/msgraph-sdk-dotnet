@@ -184,21 +184,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets edge blocked.
-        /// Indicates whether or not to Block the user from using the Edge browser.
+        /// Indicates whether or not to Block the user from using the Microsoft Edge browser.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? EdgeBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets edge cookie policy.
-        /// Indicates which cookies to block in the Edge browser. Possible values are: userDefined, allow, blockThirdParty, blockAll.
+        /// Indicates which cookies to block in the Microsoft Edge browser. Possible values are: userDefined, allow, blockThirdParty, blockAll.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeCookiePolicy", Required = Newtonsoft.Json.Required.Default)]
         public EdgeCookiePolicy? EdgeCookiePolicy { get; set; }
     
         /// <summary>
         /// Gets or sets edge block developer tools.
-        /// Indicates whether or not to block developer tools in the Edge browser.
+        /// Indicates whether or not to block developer tools in the Microsoft Edge browser.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockDeveloperTools", Required = Newtonsoft.Json.Required.Default)]
         public bool? EdgeBlockDeveloperTools { get; set; }
@@ -212,14 +212,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets edge block extensions.
-        /// Indicates whether or not to block extensions in the Edge browser.
+        /// Indicates whether or not to block extensions in the Microsoft Edge browser.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockExtensions", Required = Newtonsoft.Json.Required.Default)]
         public bool? EdgeBlockExtensions { get; set; }
     
         /// <summary>
         /// Gets or sets edge block in private browsing.
-        /// Indicates whether or not to block InPrivate browsing on corporate networks, in the Edge browser.
+        /// Indicates whether or not to block InPrivate browsing on corporate networks, in the Microsoft Edge browser.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockInPrivateBrowsing", Required = Newtonsoft.Json.Required.Default)]
         public bool? EdgeBlockInPrivateBrowsing { get; set; }
@@ -261,7 +261,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets edge allow start pages modification.
-        /// Allow users to change Start pages on Edge. Use the EdgeHomepageUrls to specify the Start pages that the user would see by default when they open Edge.
+        /// Allow users to change Start pages on Microsoft Edge. Use the EdgeHomepageUrls to specify the Start pages that the user would see by default when they open Microsoft Edge.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeAllowStartPagesModification", Required = Newtonsoft.Json.Required.Default)]
         public bool? EdgeAllowStartPagesModification { get; set; }
@@ -723,7 +723,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets start menu layout edge assets xml.
-        /// This policy setting allows you to import Edge assets to be used with startMenuLayoutXml policy. Start layout can contain secondary tile from Edge app which looks for Edge local asset file. Edge local asset would not exist and cause Edge secondary tile to appear empty in this case. This policy only gets applied when startMenuLayoutXml policy is modified. The value should be a UTF-8 Base64 encoded byte array.
+        /// This policy setting allows you to import Microsoft Edge assets to be used with startMenuLayoutXml policy. Start layout can contain secondary tile from Microsoft Edge app which looks for Microsoft Edge local asset file. Microsoft Edge local asset would not exist and cause Microsoft Edge secondary tile to appear empty in this case. This policy only gets applied when startMenuLayoutXml policy is modified. The value should be a UTF-8 Base64 encoded byte array.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startMenuLayoutEdgeAssetsXml", Required = Newtonsoft.Json.Required.Default)]
         public byte[] StartMenuLayoutEdgeAssetsXml { get; set; }
@@ -947,7 +947,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets windows spotlight configure on lock screen.
-        /// Specifies the type of Spotlight Possible values are: notConfigured, disabled, enabled.
+        /// Specifies the type of Spotlight. Possible values are: notConfigured, disabled, enabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsSpotlightConfigureOnLockScreen", Required = Newtonsoft.Json.Required.Default)]
         public WindowsSpotlightEnablementSettings? WindowsSpotlightConfigureOnLockScreen { get; set; }
@@ -1073,7 +1073,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets edge block sending intranet traffic to internet explorer.
-        /// Indicates whether or not to Block the user from sending Intranet traffic to Internet Explorer from Edge.
+        /// Indicates whether or not to Block the user from sending Intranet traffic to Internet Explorer from Microsoft Edge.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSendingIntranetTrafficToInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
         public bool? EdgeBlockSendingIntranetTrafficToInternetExplorer { get; set; }
@@ -1094,7 +1094,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets edge first run url.
-        /// The first run URL for when Edge browser is opened for the first time.
+        /// The first run URL for when Microsoft Edge browser is opened for the first time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeFirstRunUrl", Required = Newtonsoft.Json.Required.Default)]
         public string EdgeFirstRunUrl { get; set; }
@@ -1108,14 +1108,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets edge homepage urls.
-        /// The list of URLs for homepages shodwn on MDM-enrolled devices on Edge browser.
+        /// The list of URLs for homepages shodwn on MDM-enrolled devices on Microsoft Edge browser.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeHomepageUrls", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> EdgeHomepageUrls { get; set; }
     
         /// <summary>
         /// Gets or sets edge block access to about flags.
-        /// Indicates whether or not to prevent access to about flags on Edge browser.
+        /// Indicates whether or not to prevent access to about flags on Microsoft Edge browser.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockAccessToAboutFlags", Required = Newtonsoft.Json.Required.Default)]
         public bool? EdgeBlockAccessToAboutFlags { get; set; }

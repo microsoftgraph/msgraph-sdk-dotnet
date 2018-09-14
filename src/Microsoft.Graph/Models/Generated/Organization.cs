@@ -96,6 +96,13 @@ namespace Microsoft.Graph
         public string PreferredLanguage { get; set; }
     
         /// <summary>
+        /// Gets or sets privacy profile.
+        /// The privacy profile of an organization.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyProfile", Required = Newtonsoft.Json.Required.Default)]
+        public PrivacyProfile PrivacyProfile { get; set; }
+    
+        /// <summary>
         /// Gets or sets provisioned plans.
         /// Not nullable.
         /// </summary>

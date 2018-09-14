@@ -24,14 +24,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets movieRating.
-        /// Movies rating selected for Ireland Possible values are: allAllowed, allBlocked, general, parentalGuidance, agesAbove12, agesAbove15, agesAbove16, adults.
+        /// Movies rating selected for Ireland. Possible values are: allAllowed, allBlocked, general, parentalGuidance, agesAbove12, agesAbove15, agesAbove16, adults.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "movieRating", Required = Newtonsoft.Json.Required.Default)]
         public RatingIrelandMoviesType? MovieRating { get; set; }
     
         /// <summary>
         /// Gets or sets tvRating.
-        /// TV rating selected for Ireland Possible values are: allAllowed, allBlocked, general, children, youngAdults, parentalSupervision, mature.
+        /// TV rating selected for Ireland. Possible values are: allAllowed, allBlocked, general, children, youngAdults, parentalSupervision, mature.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tvRating", Required = Newtonsoft.Json.Required.Default)]
         public RatingIrelandTelevisionType? TvRating { get; set; }

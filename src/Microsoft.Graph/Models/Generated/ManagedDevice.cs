@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets managed device owner type.
+        /// Ownership of the device. Can be 'company' or 'personal'. Possible values are: unknown, company, personal.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceOwnerType", Required = Newtonsoft.Json.Required.Default)]
         public ManagedDeviceOwnerType? ManagedDeviceOwnerType { get; set; }
@@ -344,7 +345,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device configuration states.
-        /// Device configuration states for this device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfigurationStates", Required = Newtonsoft.Json.Required.Default)]
         public IManagedDeviceDeviceConfigurationStatesCollectionPage DeviceConfigurationStates { get; set; }
@@ -358,7 +358,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device compliance policy states.
-        /// Device compliance policy states for this device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyStates", Required = Newtonsoft.Json.Required.Default)]
         public IManagedDeviceDeviceCompliancePolicyStatesCollectionPage DeviceCompliancePolicyStates { get; set; }

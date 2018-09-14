@@ -53,5 +53,10 @@ namespace Microsoft.Graph
         /// </summary>
         Conflict = 6,
 	
+        /// <summary>
+        /// not Assigned
+        /// </summary>
+        NotAssigned = 7,
+	
     }
 }

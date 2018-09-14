@@ -58,7 +58,7 @@ namespace Microsoft.Graph
                 throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
             }
 
-            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/education/teachers/{1}", this.Client.BaseUrl, educationUser.Id) };
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/education/users/{1}", this.Client.BaseUrl, educationUser.Id) };
             return this.SendAsync(requestBody, cancellationToken);
         }
 

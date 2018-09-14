@@ -23,21 +23,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource.
-        /// Specifies the resource that will be monitored for changes. Do not include the base URL ("https://graph.microsoft.com/v1.0/").
+        /// Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/{version}/).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
         public string Resource { get; set; }
     
         /// <summary>
         /// Gets or sets change type.
-        /// Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.
+        /// Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Drive root Item notifications require the use of updated only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeType", Required = Newtonsoft.Json.Required.Default)]
         public string ChangeType { get; set; }
     
         /// <summary>
         /// Gets or sets client state.
-        /// Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
+        /// Specifies the value of the clientState property sent by the service in each notification. The maximum length is 255 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientState", Required = Newtonsoft.Json.Required.Default)]
         public string ClientState { get; set; }
@@ -55,6 +55,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ExpirationDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application id.
+        /// Identifier of the application used to create the subscription.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationId", Required = Newtonsoft.Json.Required.Default)]
+        public string ApplicationId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets creator id.
+        /// Identifier of the user or service principal that created the subscription.If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of.If the app used application permissions, this field contains the id of the service principal corresponding to the app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creatorId", Required = Newtonsoft.Json.Required.Default)]
+        public string CreatorId { get; set; }
     
     }
 }

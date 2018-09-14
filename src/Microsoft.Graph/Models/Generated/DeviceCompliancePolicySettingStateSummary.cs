@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platform type.
-        /// Setting platform Possible values are: android, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, all.
+        /// Setting platform. Possible values are: android, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, all.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformType", Required = Newtonsoft.Json.Required.Default)]
         public PolicyPlatformType? PlatformType { get; set; }

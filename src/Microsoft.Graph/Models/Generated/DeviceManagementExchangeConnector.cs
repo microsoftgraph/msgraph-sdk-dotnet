@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Exchange Connector Status Possible values are: none, connectionPending, connected, disconnected.
+        /// Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementExchangeConnectorStatus? Status { get; set; }
@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serverName", Required = Newtonsoft.Json.Required.Default)]
         public string ServerName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets connector server name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorServerName", Required = Newtonsoft.Json.Required.Default)]
+        public string ConnectorServerName { get; set; }
     
         /// <summary>
         /// Gets or sets exchange connector type.

@@ -195,6 +195,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets versions.
+        /// The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versions", Required = Newtonsoft.Json.Required.Default)]
         public IDriveItemVersionsCollectionPage Versions { get; set; }

@@ -24,12 +24,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets level.
+        /// The state of publication for this document. Either published or checkout. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "level", Required = Newtonsoft.Json.Required.Default)]
         public string Level { get; set; }
     
         /// <summary>
         /// Gets or sets versionId.
+        /// The unique identifier for the version that is visible to the current caller. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionId", Required = Newtonsoft.Json.Required.Default)]
         public string VersionId { get; set; }

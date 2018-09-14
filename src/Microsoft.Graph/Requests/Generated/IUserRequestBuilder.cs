@@ -215,6 +215,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserActivitiesCollectionRequestBuilder"/>.</returns>
         IUserActivitiesCollectionRequestBuilder Activities { get; }
+
+        /// <summary>
+        /// Gets the request builder for Insights.
+        /// </summary>
+        /// <returns>The <see cref="IOfficeGraphInsightsRequestBuilder"/>.</returns>
+        IOfficeGraphInsightsRequestBuilder Insights { get; }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IUserSettingsRequestBuilder"/>.</returns>
+        IUserSettingsRequestBuilder Settings { get; }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.
@@ -253,6 +265,14 @@ namespace Microsoft.Graph
             bool? IsOrganizerOptional = null,
             bool? ReturnSuggestionReasons = null,
             double? MinimumAttendeePercentage = null);
+
+        /// <summary>
+        /// Gets the request builder for UserGetMailTips.
+        /// </summary>
+        /// <returns>The <see cref="IUserGetMailTipsRequestBuilder"/>.</returns>
+        IUserGetMailTipsRequestBuilder GetMailTips(
+            IEnumerable<string> EmailAddresses,
+            MailTipsType? MailTipsOptions = null);
 
         /// <summary>
         /// Gets the request builder for UserRemoveAllDevicesFromManagement.

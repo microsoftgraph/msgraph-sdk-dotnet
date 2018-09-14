@@ -33,8 +33,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Categories.
         /// </summary>
-        /// <returns>The <see cref="IMobileAppCategoriesCollectionRequestBuilder"/>.</returns>
-        IMobileAppCategoriesCollectionRequestBuilder Categories { get; }
+        /// <returns>The <see cref="IMobileAppCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IMobileAppCategoriesCollectionWithReferencesRequestBuilder Categories { get; }
 
         /// <summary>
         /// Gets the request builder for Assignments.

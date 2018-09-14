@@ -359,5 +359,16 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the GraphServiceSecurity request builder.
+        /// </summary>
+        public ISecurityRequestBuilder Security
+        {
+            get
+            {
+                return new SecurityRequestBuilder(this.BaseUrl + "/Security", this);
+            }
+        }
+    
     }
 }

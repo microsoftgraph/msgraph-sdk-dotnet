@@ -160,5 +160,10 @@ namespace Microsoft.Graph
         /// </summary>
         IDeviceManagementRequestBuilder DeviceManagement { get; }
     
+        /// <summary>
+        /// Gets the GraphServiceSecurity request builder.
+        /// </summary>
+        ISecurityRequestBuilder Security { get; }
+    
     }
 }

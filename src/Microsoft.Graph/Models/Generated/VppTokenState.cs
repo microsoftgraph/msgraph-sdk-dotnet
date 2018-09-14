@@ -38,5 +38,10 @@ namespace Microsoft.Graph
         /// </summary>
         Invalid = 3,
 	
+        /// <summary>
+        /// assigned To External MDM
+        /// </summary>
+        AssignedToExternalMDM = 4,
+	
     }
 }

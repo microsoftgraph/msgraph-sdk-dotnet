@@ -32,6 +32,47 @@ namespace Microsoft.Graph
         /// <returns>The SoftwareUpdateStatusSummary.</returns>
         System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> GetAsync(CancellationToken cancellationToken);
 
+		/// <summary>
+        /// Creates the specified SoftwareUpdateStatusSummary using PUT.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
+        /// <returns>The created SoftwareUpdateStatusSummary.</returns>
+        System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> CreateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate);        /// <summary>
+        /// Creates the specified SoftwareUpdateStatusSummary using PUT.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The created SoftwareUpdateStatusSummary.</returns>
+        System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> CreateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Updates the specified SoftwareUpdateStatusSummary using PATCH.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToUpdate">The SoftwareUpdateStatusSummary to update.</param>
+        /// <returns>The updated SoftwareUpdateStatusSummary.</returns>
+        System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> UpdateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate);
+
+        /// <summary>
+        /// Updates the specified SoftwareUpdateStatusSummary using PATCH.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToUpdate">The SoftwareUpdateStatusSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The updated SoftwareUpdateStatusSummary.</returns>
+        System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> UpdateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified SoftwareUpdateStatusSummary.
+        /// </summary>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task DeleteAsync();
+
+        /// <summary>
+        /// Deletes the specified SoftwareUpdateStatusSummary.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>

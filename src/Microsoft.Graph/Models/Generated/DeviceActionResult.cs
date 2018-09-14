@@ -31,7 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets actionState.
-        /// State of the action Possible values are: none, pending, canceled, active, done, failed, notSupported.
+        /// State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionState", Required = Newtonsoft.Json.Required.Default)]
         public ActionState? ActionState { get; set; }

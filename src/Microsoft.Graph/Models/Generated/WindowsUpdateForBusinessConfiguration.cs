@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets delivery optimization mode.
-        /// Delivery Optimization Mode Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.
+        /// Delivery Optimization Mode. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deliveryOptimizationMode", Required = Newtonsoft.Json.Required.Default)]
         public WindowsDeliveryOptimizationMode? DeliveryOptimizationMode { get; set; }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets business ready updates only.
-        /// Determines which branch devices will receive their updates from Possible values are: userDefined, all, businessReadyOnly.
+        /// Determines which branch devices will receive their updates from. Possible values are: userDefined, all, businessReadyOnly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessReadyUpdatesOnly", Required = Newtonsoft.Json.Required.Default)]
         public WindowsUpdateType? BusinessReadyUpdatesOnly { get; set; }

@@ -30,14 +30,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets partner state.
-        /// Partner state of this tenant Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+        /// Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerState", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementPartnerTenantState? PartnerState { get; set; }
     
         /// <summary>
         /// Gets or sets partner app type.
-        /// Partner App type Possible values are: unknown, singleTenantApp, multiTenantApp.
+        /// Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerAppType", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementPartnerAppType? PartnerAppType { get; set; }

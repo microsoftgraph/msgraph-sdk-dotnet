@@ -32,6 +32,47 @@ namespace Microsoft.Graph
         /// <returns>The RoleDefinition.</returns>
         System.Threading.Tasks.Task<RoleDefinition> GetAsync(CancellationToken cancellationToken);
 
+		/// <summary>
+        /// Creates the specified RoleDefinition using PUT.
+        /// </summary>
+        /// <param name="roleDefinitionToCreate">The RoleDefinition to create.</param>
+        /// <returns>The created RoleDefinition.</returns>
+        System.Threading.Tasks.Task<RoleDefinition> CreateAsync(RoleDefinition roleDefinitionToCreate);        /// <summary>
+        /// Creates the specified RoleDefinition using PUT.
+        /// </summary>
+        /// <param name="roleDefinitionToCreate">The RoleDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The created RoleDefinition.</returns>
+        System.Threading.Tasks.Task<RoleDefinition> CreateAsync(RoleDefinition roleDefinitionToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Updates the specified RoleDefinition using PATCH.
+        /// </summary>
+        /// <param name="roleDefinitionToUpdate">The RoleDefinition to update.</param>
+        /// <returns>The updated RoleDefinition.</returns>
+        System.Threading.Tasks.Task<RoleDefinition> UpdateAsync(RoleDefinition roleDefinitionToUpdate);
+
+        /// <summary>
+        /// Updates the specified RoleDefinition using PATCH.
+        /// </summary>
+        /// <param name="roleDefinitionToUpdate">The RoleDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The updated RoleDefinition.</returns>
+        System.Threading.Tasks.Task<RoleDefinition> UpdateAsync(RoleDefinition roleDefinitionToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified RoleDefinition.
+        /// </summary>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task DeleteAsync();
+
+        /// <summary>
+        /// Deletes the specified RoleDefinition.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>

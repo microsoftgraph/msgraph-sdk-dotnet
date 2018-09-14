@@ -177,7 +177,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets series master id.
-        /// The categories assigned to the item.
+        /// The ID for the recurring series master item, if this event is part of a recurring series.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "seriesMasterId", Required = Newtonsoft.Json.Required.Default)]
         public string SeriesMasterId { get; set; }

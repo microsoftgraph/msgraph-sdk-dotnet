@@ -112,12 +112,6 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "users", Required = Newtonsoft.Json.Required.Default)]
         public IEducationSchoolUsersCollectionWithReferencesPage Users { get; set; }
     
-        /// <summary>
-        /// Gets or sets administrative unit.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "administrativeUnit", Required = Newtonsoft.Json.Required.Default)]
-        public AdministrativeUnit AdministrativeUnit { get; set; }
-    
     }
 }
 

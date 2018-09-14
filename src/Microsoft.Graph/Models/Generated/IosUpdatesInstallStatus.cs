@@ -34,6 +34,11 @@ namespace Microsoft.Graph
         Idle = 2,
 	
         /// <summary>
+        /// unknown
+        /// </summary>
+        Unknown = 3,
+	
+        /// <summary>
         /// downloading
         /// </summary>
         Downloading = -2016330712,

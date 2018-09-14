@@ -32,6 +32,47 @@ namespace Microsoft.Graph
         /// <returns>The TermsAndConditions.</returns>
         System.Threading.Tasks.Task<TermsAndConditions> GetAsync(CancellationToken cancellationToken);
 
+		/// <summary>
+        /// Creates the specified TermsAndConditions using PUT.
+        /// </summary>
+        /// <param name="termsAndConditionsToCreate">The TermsAndConditions to create.</param>
+        /// <returns>The created TermsAndConditions.</returns>
+        System.Threading.Tasks.Task<TermsAndConditions> CreateAsync(TermsAndConditions termsAndConditionsToCreate);        /// <summary>
+        /// Creates the specified TermsAndConditions using PUT.
+        /// </summary>
+        /// <param name="termsAndConditionsToCreate">The TermsAndConditions to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The created TermsAndConditions.</returns>
+        System.Threading.Tasks.Task<TermsAndConditions> CreateAsync(TermsAndConditions termsAndConditionsToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Updates the specified TermsAndConditions using PATCH.
+        /// </summary>
+        /// <param name="termsAndConditionsToUpdate">The TermsAndConditions to update.</param>
+        /// <returns>The updated TermsAndConditions.</returns>
+        System.Threading.Tasks.Task<TermsAndConditions> UpdateAsync(TermsAndConditions termsAndConditionsToUpdate);
+
+        /// <summary>
+        /// Updates the specified TermsAndConditions using PATCH.
+        /// </summary>
+        /// <param name="termsAndConditionsToUpdate">The TermsAndConditions to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The updated TermsAndConditions.</returns>
+        System.Threading.Tasks.Task<TermsAndConditions> UpdateAsync(TermsAndConditions termsAndConditionsToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified TermsAndConditions.
+        /// </summary>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task DeleteAsync();
+
+        /// <summary>
+        /// Deletes the specified TermsAndConditions.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>

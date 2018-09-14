@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets license type.
-        /// The app license type Possible values are: offline, online.
+        /// The app license type. Possible values are: offline, online.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseType", Required = Newtonsoft.Json.Required.Default)]
         public MicrosoftStoreForBusinessLicenseType? LicenseType { get; set; }

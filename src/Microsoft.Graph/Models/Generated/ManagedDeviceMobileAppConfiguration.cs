@@ -80,6 +80,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device statuses.
+        /// List of ManagedDeviceMobileAppConfigurationDeviceStatus.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IManagedDeviceMobileAppConfigurationDeviceStatusesCollectionPage DeviceStatuses { get; set; }

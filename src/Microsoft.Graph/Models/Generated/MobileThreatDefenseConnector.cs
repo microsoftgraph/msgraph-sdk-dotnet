@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets partner state.
-        /// Data Sync Partner state for this account Possible values are: unavailable, available, enabled, unresponsive.
+        /// Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerState", Required = Newtonsoft.Json.Required.Default)]
         public MobileThreatPartnerTenantState? PartnerState { get; set; }

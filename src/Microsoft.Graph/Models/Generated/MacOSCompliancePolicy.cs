@@ -119,6 +119,24 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageRequireEncryption", Required = Newtonsoft.Json.Required.Default)]
         public bool? StorageRequireEncryption { get; set; }
     
+        /// <summary>
+        /// Gets or sets firewall enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall block all incoming.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallBlockAllIncoming", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallBlockAllIncoming { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall enable stealth mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallEnableStealthMode", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallEnableStealthMode { get; set; }
+    
     }
 }
 

@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets application type.
-        /// Application Type Possible values are: universal, desktop.
+        /// Application Type. Possible values are: universal, desktop.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationType", Required = Newtonsoft.Json.Required.Default)]
         public ApplicationType? ApplicationType { get; set; }

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets root.
+        /// If present, indicates that this is a root site collection in SharePoint. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "root", Required = Newtonsoft.Json.Required.Default)]
         public Root Root { get; set; }

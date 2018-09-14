@@ -115,7 +115,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets maximum pin retries.
-        /// Maximum number of incorrect pin retry attempts before the managed app is wiped.
+        /// Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumPinRetries", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MaximumPinRetries { get; set; }
