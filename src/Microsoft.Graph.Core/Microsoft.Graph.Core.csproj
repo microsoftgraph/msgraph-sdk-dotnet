@@ -3,9 +3,9 @@
     <Description>Microsoft Graph Core Client Library implements core functionality used by Microsoft Graph Client Libraries.</Description>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <AssemblyTitle>Microsoft Graph Core Client Library</AssemblyTitle>
-    <VersionPrefix>1.10.0</VersionPrefix>
-    <FileVersion>1.10.0</FileVersion>
-    <AssemblyVersion>1.10.0</AssemblyVersion>
+    <VersionPrefix>1.11.0</VersionPrefix>
+    <FileVersion>1.11.0</FileVersion>
+    <AssemblyVersion>1.11.0</AssemblyVersion>
     <Authors>Microsoft</Authors>
     <TargetFrameworks>netstandard1.1;net45</TargetFrameworks>
     <PreserveCompilationContext>false</PreserveCompilationContext>
@@ -13,11 +13,9 @@
     <PackageId>Microsoft.Graph.Core</PackageId>
     <PackageTags>Microsoft Office365;Graph;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK</PackageTags>
     <PackageReleaseNotes>
-July 2018 Release Summary (version 1.10.0)
+September 2018 Release Summary (version 1.11.0)
 
-New features
-- Added the ability to append an arbitrary URL segment to a request. This will support the creation of custom requests.
-- Set signing properties in .csproj to be 'false' by default.
+- exposed the HttpProvider constructor
     </PackageReleaseNotes>
     <PackageProjectUrl>https://developer.microsoft.com/graph</PackageProjectUrl>
     <PackageLicenseUrl>http://aka.ms/devservicesagreement</PackageLicenseUrl>
@@ -37,7 +35,7 @@ New features
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Version>1.10.0</Version>
+    <Version>1.11.0</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.1|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard1.1\Microsoft.Graph.Core.xml</DocumentationFile>

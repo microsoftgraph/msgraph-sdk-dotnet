@@ -3,9 +3,9 @@
     <Description>Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience.</Description>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <AssemblyTitle>Microsoft Graph Client Library</AssemblyTitle>
-    <VersionPrefix>1.10.0</VersionPrefix>
-    <FileVersion>1.10.0</FileVersion>
-    <AssemblyVersion>1.10.0</AssemblyVersion>
+    <VersionPrefix>1.11.0</VersionPrefix>
+    <FileVersion>1.11.0</FileVersion>
+    <AssemblyVersion>1.11.0</AssemblyVersion>
     <Authors>Microsoft</Authors>
     <TargetFrameworks>netstandard1.1;net45</TargetFrameworks>
     <PreserveCompilationContext>false</PreserveCompilationContext>
@@ -13,11 +13,14 @@
     <PackageId>Microsoft.Graph</PackageId>
     <PackageTags>Microsoft Office365;Graph;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK</PackageTags>
     <PackageReleaseNotes>
-July 2018 Release Summary (version 1.10.0)
+September 2018 Release Summary (version 1.11.0)
 
-- Updated reference to System.Net.Http to address a vulnerability and issue with .Net &gt;=4.7.2.
-- Set signing properties in .csproj to be 'false' by default.
-- Added custom request builders that help add user activity and history.
+- Support the new Security Alerts API
+- Updates to the Intune API
+- Insights functionality updated for the user entity
+- MailTips are now enabled
+- Update to the subscription entity and additional documentation comments propagated to the IntelliSense file.
+- EducationClass entities now support adding reference navigation to the teachers and members entity collections.
     </PackageReleaseNotes>
     <PackageProjectUrl>https://developer.microsoft.com/graph</PackageProjectUrl>
     <PackageLicenseUrl>http://aka.ms/devservicesagreement</PackageLicenseUrl>
@@ -37,7 +40,7 @@ July 2018 Release Summary (version 1.10.0)
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Version>1.10.0</Version>
+    <Version>1.11.0</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.1|AnyCPU'">
     <DocumentationFile>bin\Release\Microsoft.Graph.xml</DocumentationFile>
