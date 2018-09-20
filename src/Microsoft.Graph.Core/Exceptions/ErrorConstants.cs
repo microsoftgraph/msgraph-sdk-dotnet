@@ -19,6 +19,8 @@ namespace Microsoft.Graph
             internal static string Timeout = "timeout";
 
             internal static string TooManyRedirects = "tooManyRedirects";
+
+            internal static string TooManyRetries = "tooManyRetries";
         }
 
         internal static class Messages
@@ -38,6 +40,8 @@ namespace Microsoft.Graph
             internal static string RequestUrlMissing = "Request URL is required to send a request.";
 
             internal static string TooManyRedirectsFormatString = "More than {0} redirects encountered while sending the request.";
+
+            internal static string TooManyRetriesFormatString = "More than {0} retries encountered while sending the request.";
 
             internal static string UnableToCreateInstanceOfTypeFormatString = "Unable to create an instance of type {0}.";
 

@@ -87,6 +87,7 @@
     <Compile Include="Requests\AsyncMonitorTests.cs" />
     <Compile Include="Requests\BaseRequestBuilderTests.cs" />
     <Compile Include="Requests\RedirectHandlerTests.cs" />
+    <Compile Include="Requests\RetryHandlerTests.cs" />
     <Compile Include="Serialization\DurationConverterTests.cs" />
     <Compile Include="TestModels\AbstractEntityType.cs" />
     <Compile Include="TestModels\ClassWithJson.cs" />

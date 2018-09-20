@@ -5,7 +5,7 @@
 namespace Microsoft.Graph.Core.Test.Requests
 {
     using System;
-    using Microsoft.Graph.Core.Test.Mocks;
+    using Mocks;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Net;
     using System.Net.Http;
