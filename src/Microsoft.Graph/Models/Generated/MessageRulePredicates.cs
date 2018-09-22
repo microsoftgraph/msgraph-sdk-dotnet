@@ -21,7 +21,7 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MessageRulePredicates
     {
-    
+
         /// <summary>
         /// Gets or sets categories.
         /// Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
@@ -237,6 +237,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonExtensionData(ReadData = true)]
         public IDictionary<string, object> AdditionalData { get; set; }
+
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
     
     }
 }

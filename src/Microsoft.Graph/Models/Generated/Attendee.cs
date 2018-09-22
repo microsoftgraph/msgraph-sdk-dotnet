@@ -20,7 +20,7 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Attendee : AttendeeBase
     {
-    
+
         /// <summary>
         /// Gets or sets status.
         /// The attendee's response (none, accepted, declined, etc.) for the event and date-time that the response was sent.

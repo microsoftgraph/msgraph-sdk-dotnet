@@ -21,7 +21,7 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Phone
     {
-    
+
         /// <summary>
         /// Gets or sets type.
         /// The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
@@ -53,6 +53,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonExtensionData(ReadData = true)]
         public IDictionary<string, object> AdditionalData { get; set; }
+
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
     
     }
 }

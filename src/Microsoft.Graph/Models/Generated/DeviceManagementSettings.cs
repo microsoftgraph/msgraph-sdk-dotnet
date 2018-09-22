@@ -21,7 +21,7 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceManagementSettings
     {
-    
+
         /// <summary>
         /// Gets or sets deviceComplianceCheckinThresholdDays.
         /// The number of days a device is allowed to go without checking in to remain compliant. Valid values 0 to 120
@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonExtensionData(ReadData = true)]
         public IDictionary<string, object> AdditionalData { get; set; }
+
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
     
     }
 }

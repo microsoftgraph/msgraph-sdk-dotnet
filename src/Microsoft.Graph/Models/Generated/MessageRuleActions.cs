@@ -21,7 +21,7 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MessageRuleActions
     {
-    
+
         /// <summary>
         /// Gets or sets moveToFolder.
         /// The ID of the folder that a message will be moved to.
@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonExtensionData(ReadData = true)]
         public IDictionary<string, object> AdditionalData { get; set; }
+
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
     
     }
 }

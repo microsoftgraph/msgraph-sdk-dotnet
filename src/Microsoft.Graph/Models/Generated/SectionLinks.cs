@@ -21,7 +21,7 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SectionLinks
     {
-    
+
         /// <summary>
         /// Gets or sets oneNoteClientUrl.
         /// Opens the section in the OneNote native client if it's installed.
@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonExtensionData(ReadData = true)]
         public IDictionary<string, object> AdditionalData { get; set; }
+
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
     
     }
 }

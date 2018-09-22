@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OmaSettingBoolean : OmaSetting
     {
-    
+        public OmaSettingBoolean()
+        {
+            this.ODataType = "microsoft.graph.omaSettingBoolean";
+        }
         /// <summary>
         /// Gets or sets value.
         /// Value.

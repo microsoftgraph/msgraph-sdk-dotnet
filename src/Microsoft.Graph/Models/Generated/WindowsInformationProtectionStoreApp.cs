@@ -20,6 +20,9 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsInformationProtectionStoreApp : WindowsInformationProtectionApp
     {
-    
+        public WindowsInformationProtectionStoreApp()
+        {
+            this.ODataType = "microsoft.graph.windowsInformationProtectionStoreApp";
+        }
     }
 }

@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OmaSettingDateTime : OmaSetting
     {
-    
+        public OmaSettingDateTime()
+        {
+            this.ODataType = "microsoft.graph.omaSettingDateTime";
+        }
         /// <summary>
         /// Gets or sets value.
         /// Value.

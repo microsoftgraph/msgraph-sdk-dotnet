@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OmaSettingBase64 : OmaSetting
     {
-    
+        public OmaSettingBase64()
+        {
+            this.ODataType = "microsoft.graph.omaSettingBase64";
+        }
         /// <summary>
         /// Gets or sets fileName.
         /// File name associated with the Value property (.cer

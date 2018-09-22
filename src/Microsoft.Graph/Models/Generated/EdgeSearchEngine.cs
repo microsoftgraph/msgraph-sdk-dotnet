@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EdgeSearchEngine : EdgeSearchEngineBase
     {
-    
+        public EdgeSearchEngine()
+        {
+            this.ODataType = "microsoft.graph.edgeSearchEngine";
+        }
         /// <summary>
         /// Gets or sets edgeSearchEngineType.
         /// Allows IT admins to set a predefined default search engine for MDM-Controlled devices. Possible values are: default, bing.

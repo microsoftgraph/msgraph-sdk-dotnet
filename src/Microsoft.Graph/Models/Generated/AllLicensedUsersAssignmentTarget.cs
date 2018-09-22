@@ -20,6 +20,9 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AllLicensedUsersAssignmentTarget : DeviceAndAppManagementAssignmentTarget
     {
-    
+        public AllLicensedUsersAssignmentTarget()
+        {
+            this.ODataType = "microsoft.graph.allLicensedUsersAssignmentTarget";
+        }
     }
 }

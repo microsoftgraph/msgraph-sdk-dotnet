@@ -20,7 +20,7 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsDeviceAzureADAccount : WindowsDeviceAccount
     {
-    
+
         /// <summary>
         /// Gets or sets userPrincipalName.
         /// Not yet documented

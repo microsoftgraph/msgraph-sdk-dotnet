@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MicrosoftStoreForBusinessAppAssignmentSettings : MobileAppAssignmentSettings
     {
-    
+        public MicrosoftStoreForBusinessAppAssignmentSettings()
+        {
+            this.ODataType = "microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings";
+        }
         /// <summary>
         /// Gets or sets useDeviceContext.
         /// Whether or not to use device execution context for Microsoft Store for Business mobile app.

@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupAssignmentTarget : DeviceAndAppManagementAssignmentTarget
     {
-    
+        public GroupAssignmentTarget()
+        {
+            this.ODataType = "microsoft.graph.groupAssignmentTarget";
+        }
         /// <summary>
         /// Gets or sets groupId.
         /// The group Id that is the target of the assignment.

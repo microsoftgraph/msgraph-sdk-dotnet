@@ -20,7 +20,7 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsDeviceADAccount : WindowsDeviceAccount
     {
-    
+
         /// <summary>
         /// Gets or sets domainName.
         /// Not yet documented

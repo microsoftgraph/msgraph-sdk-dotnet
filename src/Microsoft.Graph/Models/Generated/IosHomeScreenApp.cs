@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosHomeScreenApp : IosHomeScreenItem
     {
-    
+        public IosHomeScreenApp()
+        {
+            this.ODataType = "microsoft.graph.iosHomeScreenApp";
+        }
         /// <summary>
         /// Gets or sets bundleID.
         /// BundleID of app

@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsUpdateScheduledInstall : WindowsUpdateInstallScheduleType
     {
-    
+        public WindowsUpdateScheduledInstall()
+        {
+            this.ODataType = "microsoft.graph.windowsUpdateScheduledInstall";
+        }
         /// <summary>
         /// Gets or sets scheduledInstallDay.
         /// Scheduled Install Day in week. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday.

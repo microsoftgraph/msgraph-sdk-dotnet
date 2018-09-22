@@ -20,7 +20,7 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DaylightTimeZoneOffset : StandardTimeZoneOffset
     {
-    
+
         /// <summary>
         /// Gets or sets daylightBias.
         /// The time offset from Coordinated Universal Time (UTC) for daylight saving time. This value is in minutes.

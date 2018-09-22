@@ -20,7 +20,7 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class LocateDeviceActionResult : DeviceActionResult
     {
-    
+
         /// <summary>
         /// Gets or sets deviceLocation.
         /// device location

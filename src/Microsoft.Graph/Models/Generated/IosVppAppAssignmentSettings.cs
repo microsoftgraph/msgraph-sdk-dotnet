@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosVppAppAssignmentSettings : MobileAppAssignmentSettings
     {
-    
+        public IosVppAppAssignmentSettings()
+        {
+            this.ODataType = "microsoft.graph.iosVppAppAssignmentSettings";
+        }
         /// <summary>
         /// Gets or sets useDeviceLicensing.
         /// Whether or not to use device licensing.

@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosHomeScreenFolder : IosHomeScreenItem
     {
-    
+        public IosHomeScreenFolder()
+        {
+            this.ODataType = "microsoft.graph.iosHomeScreenFolder";
+        }
         /// <summary>
         /// Gets or sets pages.
         /// Pages of Home Screen Layout Icons which must be Application Type. This collection can contain a maximum of 500 elements.

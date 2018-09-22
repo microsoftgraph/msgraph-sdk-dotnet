@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EdgeSearchEngineCustom : EdgeSearchEngineBase
     {
-    
+        public EdgeSearchEngineCustom()
+        {
+            this.ODataType = "microsoft.graph.edgeSearchEngineCustom";
+        }
         /// <summary>
         /// Gets or sets edgeSearchEngineOpenSearchXmlUrl.
         /// Points to a https link containing the OpenSearch xml file that contains, at minimum, the short name and the URL to the search Engine.

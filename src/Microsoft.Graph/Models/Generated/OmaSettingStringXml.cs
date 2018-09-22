@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OmaSettingStringXml : OmaSetting
     {
-    
+        public OmaSettingStringXml()
+        {
+            this.ODataType = "microsoft.graph.omaSettingStringXml";
+        }
         /// <summary>
         /// Gets or sets fileName.
         /// File name associated with the Value property (.xml).

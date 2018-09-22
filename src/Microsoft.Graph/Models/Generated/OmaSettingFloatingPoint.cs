@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OmaSettingFloatingPoint : OmaSetting
     {
-    
+        public OmaSettingFloatingPoint()
+        {
+            this.ODataType = "microsoft.graph.omaSettingFloatingPoint";
+        }
         /// <summary>
         /// Gets or sets value.
         /// Value.

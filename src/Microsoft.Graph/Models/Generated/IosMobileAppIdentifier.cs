@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosMobileAppIdentifier : MobileAppIdentifier
     {
-    
+        public IosMobileAppIdentifier()
+        {
+            this.ODataType = "microsoft.graph.iosMobileAppIdentifier";
+        }
         /// <summary>
         /// Gets or sets bundleId.
         /// The identifier for an app, as specified in the app store.

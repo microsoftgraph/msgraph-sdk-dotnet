@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsInformationProtectionDesktopApp : WindowsInformationProtectionApp
     {
-    
+        public WindowsInformationProtectionDesktopApp()
+        {
+            this.ODataType = "microsoft.graph.windowsInformationProtectionDesktopApp";
+        }
         /// <summary>
         /// Gets or sets binaryName.
         /// The binary name.

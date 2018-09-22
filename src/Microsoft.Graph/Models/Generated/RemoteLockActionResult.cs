@@ -20,7 +20,7 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class RemoteLockActionResult : DeviceActionResult
     {
-    
+
         /// <summary>
         /// Gets or sets unlockPin.
         /// Pin to unlock the client

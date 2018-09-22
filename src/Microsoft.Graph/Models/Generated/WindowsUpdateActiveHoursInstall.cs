@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsUpdateActiveHoursInstall : WindowsUpdateInstallScheduleType
     {
-    
+        public WindowsUpdateActiveHoursInstall()
+        {
+            this.ODataType = "microsoft.graph.windowsUpdateActiveHoursInstall";
+        }
         /// <summary>
         /// Gets or sets activeHoursStart.
         /// Active Hours Start

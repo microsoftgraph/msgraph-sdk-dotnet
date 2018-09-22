@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidMobileAppIdentifier : MobileAppIdentifier
     {
-    
+        public AndroidMobileAppIdentifier()
+        {
+            this.ODataType = "microsoft.graph.androidMobileAppIdentifier";
+        }
         /// <summary>
         /// Gets or sets packageId.
         /// The identifier for an app, as specified in the play store.

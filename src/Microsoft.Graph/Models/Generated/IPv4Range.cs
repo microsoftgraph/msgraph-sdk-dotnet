@@ -20,7 +20,7 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IPv4Range : IpRange
     {
-    
+
         /// <summary>
         /// Gets or sets lowerAddress.
         /// Lower IP Address

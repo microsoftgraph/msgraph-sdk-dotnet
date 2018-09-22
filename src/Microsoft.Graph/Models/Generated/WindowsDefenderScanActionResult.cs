@@ -20,7 +20,7 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsDefenderScanActionResult : DeviceActionResult
     {
-    
+
         /// <summary>
         /// Gets or sets scanType.
         /// Scan type either full scan or quick scan

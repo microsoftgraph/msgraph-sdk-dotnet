@@ -20,7 +20,7 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeleteUserFromSharedAppleDeviceActionResult : DeviceActionResult
     {
-    
+
         /// <summary>
         /// Gets or sets userPrincipalName.
         /// User principal name of the user to be deleted

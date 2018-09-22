@@ -20,7 +20,10 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosStoreAppAssignmentSettings : MobileAppAssignmentSettings
     {
-    
+        public IosStoreAppAssignmentSettings()
+        {
+            this.ODataType = "microsoft.graph.iosStoreAppAssignmentSettings";
+        }
         /// <summary>
         /// Gets or sets vpnConfigurationId.
         /// The VPN Configuration Id to apply for this app.

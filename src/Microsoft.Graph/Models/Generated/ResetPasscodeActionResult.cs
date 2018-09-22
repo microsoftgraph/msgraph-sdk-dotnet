@@ -20,7 +20,7 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ResetPasscodeActionResult : DeviceActionResult
     {
-    
+
         /// <summary>
         /// Gets or sets passcode.
         /// Newly generated passcode for the device
