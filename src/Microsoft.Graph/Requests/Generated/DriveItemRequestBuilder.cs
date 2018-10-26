@@ -198,6 +198,21 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DriveItemPreview.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemPreviewRequestBuilder"/>.</returns>
+        public IDriveItemPreviewRequestBuilder Preview(
+            string page = null,
+            double? zoom = null)
+        {
+            return new DriveItemPreviewRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.preview"),
+                this.Client,
+                page,
+                zoom);
+        }
+
+        /// <summary>
         /// Gets the request builder for DriveItemDelta.
         /// </summary>
         /// <returns>The <see cref="IDriveItemDeltaRequestBuilder"/>.</returns>

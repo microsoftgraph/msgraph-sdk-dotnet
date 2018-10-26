@@ -107,6 +107,14 @@ namespace Microsoft.Graph
             string message = null);
 
         /// <summary>
+        /// Gets the request builder for DriveItemPreview.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemPreviewRequestBuilder"/>.</returns>
+        IDriveItemPreviewRequestBuilder Preview(
+            string page = null,
+            double? zoom = null);
+
+        /// <summary>
         /// Gets the request builder for DriveItemDelta.
         /// </summary>
         /// <returns>The <see cref="IDriveItemDeltaRequestBuilder"/>.</returns>
