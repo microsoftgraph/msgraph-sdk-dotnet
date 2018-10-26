@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Test.Requests.Functional
         private readonly string tokenEndpoint = "https://login.microsoftonline.com/common/oauth2/token";
         private readonly string resourceId = "https%3A%2F%2Fgraph.microsoft.com%2F";
 
-        private static string accessToken = null;
+        private static string accessToken = string.Empty;
         private static string tokenForUser = null;
         private static System.DateTimeOffset expiration;
 
@@ -53,7 +53,11 @@ namespace Microsoft.Graph.Test.Requests.Functional
                         new DelegateAuthenticationProvider(
                             async (requestMessage) =>
                             {
-                                var token = await getAccessTokenUsingPasswordGrant();
+                                string token;
+                                if (accessToken == string.Empty)
+                                    token = await getAccessTokenUsingPasswordGrant();
+                                else
+                                    token = accessToken;
                                 requestMessage.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("bearer", token);
 
                             }));
