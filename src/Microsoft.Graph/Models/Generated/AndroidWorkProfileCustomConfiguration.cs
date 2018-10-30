@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets oma settings.
+        /// OMA settings. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "omaSettings", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<OmaSetting> OmaSettings { get; set; }

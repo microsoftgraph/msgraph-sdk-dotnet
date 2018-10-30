@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allow sample sharing.
-        /// Windows Defender AdvancedThreatProtection "Allow Sample Sharing" Rule
+        /// Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowSampleSharing", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowSampleSharing { get; set; }

@@ -80,7 +80,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user statuses.
-        /// Device configuration installation stauts by user.
+        /// Device configuration installation status by user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceConfigurationUserStatusesCollectionPage UserStatuses { get; set; }

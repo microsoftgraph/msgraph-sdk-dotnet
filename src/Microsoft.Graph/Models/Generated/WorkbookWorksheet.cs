@@ -23,48 +23,56 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets name.
+        /// The display name of the worksheet.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets position.
+        /// The zero-based position of the worksheet within the workbook.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "position", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Position { get; set; }
     
         /// <summary>
         /// Gets or sets visibility.
+        /// The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibility", Required = Newtonsoft.Json.Required.Default)]
         public string Visibility { get; set; }
     
         /// <summary>
         /// Gets or sets charts.
+        /// Returns collection of charts that are part of the worksheet. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "charts", Required = Newtonsoft.Json.Required.Default)]
         public IWorkbookWorksheetChartsCollectionPage Charts { get; set; }
     
         /// <summary>
         /// Gets or sets names.
+        /// Returns collection of names that are associated with the worksheet. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "names", Required = Newtonsoft.Json.Required.Default)]
         public IWorkbookWorksheetNamesCollectionPage Names { get; set; }
     
         /// <summary>
         /// Gets or sets pivot tables.
+        /// Collection of PivotTables that are part of the worksheet.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pivotTables", Required = Newtonsoft.Json.Required.Default)]
         public IWorkbookWorksheetPivotTablesCollectionPage PivotTables { get; set; }
     
         /// <summary>
         /// Gets or sets protection.
+        /// Returns sheet protection object for a worksheet. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "protection", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookWorksheetProtection Protection { get; set; }
     
         /// <summary>
         /// Gets or sets tables.
+        /// Collection of tables that are part of the worksheet. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tables", Required = Newtonsoft.Json.Required.Default)]
         public IWorkbookWorksheetTablesCollectionPage Tables { get; set; }

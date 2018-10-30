@@ -64,6 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets list.
+        /// For drives in SharePoint, the underlying document library list. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "list", Required = Newtonsoft.Json.Required.Default)]
         public List List { get; set; }

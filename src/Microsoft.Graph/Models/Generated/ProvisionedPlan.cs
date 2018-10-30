@@ -24,18 +24,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets capabilityStatus.
+        /// For example, 'Enabled'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "capabilityStatus", Required = Newtonsoft.Json.Required.Default)]
         public string CapabilityStatus { get; set; }
     
         /// <summary>
         /// Gets or sets provisioningStatus.
+        /// For example, 'Success'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningStatus", Required = Newtonsoft.Json.Required.Default)]
         public string ProvisioningStatus { get; set; }
     
         /// <summary>
         /// Gets or sets service.
+        /// The name of the service; for example, 'AccessControlS2S'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service", Required = Newtonsoft.Json.Required.Default)]
         public string Service { get; set; }

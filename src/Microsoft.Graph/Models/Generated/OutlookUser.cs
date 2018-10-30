@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets master categories.
+        /// A list of categories defined for the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "masterCategories", Required = Newtonsoft.Json.Required.Default)]
         public IOutlookUserMasterCategoriesCollectionPage MasterCategories { get; set; }

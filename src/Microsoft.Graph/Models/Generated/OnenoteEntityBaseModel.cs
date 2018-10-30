@@ -31,6 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets self.
+        /// The endpoint where you can get details about the page. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "self", Required = Newtonsoft.Json.Required.Default)]
         public string Self { get; set; }

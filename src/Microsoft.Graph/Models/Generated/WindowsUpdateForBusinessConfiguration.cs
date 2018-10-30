@@ -107,7 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets business ready updates only.
-        /// Determines which branch devices will receive their updates from. Possible values are: userDefined, all, businessReadyOnly.
+        /// Determines which branch devices will receive their updates from. Possible values are: userDefined, all, businessReadyOnly, windowsInsiderBuildFast, windowsInsiderBuildSlow, windowsInsiderBuildRelease.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessReadyUpdatesOnly", Required = Newtonsoft.Json.Required.Default)]
         public WindowsUpdateType? BusinessReadyUpdatesOnly { get; set; }

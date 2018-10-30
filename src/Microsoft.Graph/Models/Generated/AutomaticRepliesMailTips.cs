@@ -24,24 +24,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets message.
+        /// The automatic reply message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
         public string Message { get; set; }
     
         /// <summary>
         /// Gets or sets messageLanguage.
+        /// The language that the automatic reply message is in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageLanguage", Required = Newtonsoft.Json.Required.Default)]
         public LocaleInfo MessageLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets scheduledStartTime.
+        /// The date and time that automatic replies are set to begin.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledStartTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeTimeZone ScheduledStartTime { get; set; }
     
         /// <summary>
         /// Gets or sets scheduledEndTime.
+        /// The date and time that automatic replies are set to end.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledEndTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeTimeZone ScheduledEndTime { get; set; }

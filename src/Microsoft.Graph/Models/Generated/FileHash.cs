@@ -24,12 +24,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets hashType.
+        /// File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hashType", Required = Newtonsoft.Json.Required.Default)]
         public FileHashType? HashType { get; set; }
     
         /// <summary>
         /// Gets or sets hashValue.
+        /// Value of the file hash.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hashValue", Required = Newtonsoft.Json.Required.Default)]
         public string HashValue { get; set; }

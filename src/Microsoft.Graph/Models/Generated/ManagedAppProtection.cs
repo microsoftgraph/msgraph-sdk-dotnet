@@ -94,7 +94,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets save as blocked.
-        /// Indicates whether users may use the "Save As" menu item to save a copy of protected files.
+        /// Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "saveAsBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? SaveAsBlocked { get; set; }

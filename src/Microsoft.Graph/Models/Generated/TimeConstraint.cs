@@ -24,12 +24,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets activityDomain.
+        /// The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDomain", Required = Newtonsoft.Json.Required.Default)]
         public ActivityDomain? ActivityDomain { get; set; }
     
         /// <summary>
         /// Gets or sets timeslots.
+        /// An array of time periods.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeslots", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<TimeSlot> Timeslots { get; set; }

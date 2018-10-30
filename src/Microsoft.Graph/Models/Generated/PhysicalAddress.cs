@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets countryOrRegion.
-        /// The country or region. It's a free-format string value, for example, "United States".
+        /// The country or region. It's a free-format string value, for example, 'United States'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryOrRegion", Required = Newtonsoft.Json.Required.Default)]
         public string CountryOrRegion { get; set; }

@@ -24,30 +24,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets capabilities.
+        /// For example, 'Email', 'OfficeCommunicationsOnline'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "capabilities", Required = Newtonsoft.Json.Required.Default)]
         public string Capabilities { get; set; }
     
         /// <summary>
         /// Gets or sets isDefault.
+        /// true if this is the default domain associated with the tenant; otherwise, false.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDefault { get; set; }
     
         /// <summary>
         /// Gets or sets isInitial.
+        /// true if this is the initial domain associated with the tenant; otherwise, false
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInitial", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsInitial { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The domain name; for example, 'contoso.onmicrosoft.com'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// For example, 'Managed'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }

@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets line.
+        /// Represents chart line formatting. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "line", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartLineFormat Line { get; set; }

@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets formula hidden.
+        /// Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "formulaHidden", Required = Newtonsoft.Json.Required.Default)]
         public bool? FormulaHidden { get; set; }
     
         /// <summary>
         /// Gets or sets locked.
+        /// Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locked", Required = Newtonsoft.Json.Required.Default)]
         public bool? Locked { get; set; }

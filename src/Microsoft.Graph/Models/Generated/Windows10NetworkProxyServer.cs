@@ -24,7 +24,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets address.
-        /// Address to the proxy server. Specify an address in the format [":"]
+        /// Address to the proxy server. Specify an address in the format [':']
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
         public string Address { get; set; }

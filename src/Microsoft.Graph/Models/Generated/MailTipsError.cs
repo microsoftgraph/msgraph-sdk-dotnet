@@ -24,12 +24,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets message.
+        /// The error message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
         public string Message { get; set; }
     
         /// <summary>
         /// Gets or sets code.
+        /// The error code.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
         public string Code { get; set; }

@@ -73,7 +73,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets messageActionFlag.
-        /// Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. Possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
+        /// Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageActionFlag", Required = Newtonsoft.Json.Required.Default)]
         public MessageActionFlag? MessageActionFlag { get; set; }
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sensitivity.
-        /// Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. Possible values are: normal, personal, private, confidential.
+        /// Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivity", Required = Newtonsoft.Json.Required.Default)]
         public Sensitivity? Sensitivity { get; set; }

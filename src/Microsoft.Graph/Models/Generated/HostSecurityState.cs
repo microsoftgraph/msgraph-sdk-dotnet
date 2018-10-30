@@ -24,6 +24,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets fqdn.
+        /// Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fqdn", Required = Newtonsoft.Json.Required.Default)]
         public string Fqdn { get; set; }
@@ -42,36 +43,42 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets isHybridAzureDomainJoined.
+        /// True if the host is domain joined to an on-premises Active Directory domain.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isHybridAzureDomainJoined", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsHybridAzureDomainJoined { get; set; }
     
         /// <summary>
         /// Gets or sets netBiosName.
+        /// The local host name, without the DNS domain name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "netBiosName", Required = Newtonsoft.Json.Required.Default)]
         public string NetBiosName { get; set; }
     
         /// <summary>
         /// Gets or sets os.
+        /// Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "os", Required = Newtonsoft.Json.Required.Default)]
         public string Os { get; set; }
     
         /// <summary>
         /// Gets or sets privateIpAddress.
+        /// Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privateIpAddress", Required = Newtonsoft.Json.Required.Default)]
         public string PrivateIpAddress { get; set; }
     
         /// <summary>
         /// Gets or sets publicIpAddress.
+        /// Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publicIpAddress", Required = Newtonsoft.Json.Required.Default)]
         public string PublicIpAddress { get; set; }
     
         /// <summary>
         /// Gets or sets riskScore.
+        /// Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskScore", Required = Newtonsoft.Json.Required.Default)]
         public string RiskScore { get; set; }

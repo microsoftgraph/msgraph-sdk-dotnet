@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deleted items.
+        /// Recently deleted items. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedItems", Required = Newtonsoft.Json.Required.Default)]
         public IDirectoryDeletedItemsCollectionPage DeletedItems { get; set; }

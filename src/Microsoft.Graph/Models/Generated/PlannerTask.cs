@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets bucket id.
-        /// Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case sensitive. Format validation is done on the service.
+        /// Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bucketId", Required = Newtonsoft.Json.Required.Default)]
         public string BucketId { get; set; }
@@ -100,7 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preview type.
-        /// This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+        /// This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewType", Required = Newtonsoft.Json.Required.Default)]
         public PlannerPreviewType? PreviewType { get; set; }

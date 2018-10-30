@@ -45,6 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
+        /// Provides a user-visible description of the item. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
@@ -93,12 +94,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created by user.
+        /// Identity of the user who created the item. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdByUser", Required = Newtonsoft.Json.Required.Default)]
         public User CreatedByUser { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by user.
+        /// Identity of the user who last modified the item. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedByUser", Required = Newtonsoft.Json.Required.Default)]
         public User LastModifiedByUser { get; set; }

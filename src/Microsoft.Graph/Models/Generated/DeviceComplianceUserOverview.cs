@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets not applicable count.
-        /// Number of not applicable devices
+        /// Number of not applicable users
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notApplicableCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NotApplicableCount { get; set; }

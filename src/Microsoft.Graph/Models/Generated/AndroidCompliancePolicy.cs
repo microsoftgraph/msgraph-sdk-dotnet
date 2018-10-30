@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password expiration days.
-        /// Number of days before the password expires. Valid values 1 to 365
+        /// Number of days before the password expires. Valid values 1 to 65535
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordExpirationDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordExpirationDays { get; set; }

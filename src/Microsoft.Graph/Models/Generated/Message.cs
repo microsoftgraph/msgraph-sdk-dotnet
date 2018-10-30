@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets has attachments.
-        /// Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as &amp;lt;IMG src="cid:image001.jpg@01D26CD8.6C05F070"&amp;gt;.
+        /// Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as &amp;lt;IMG src='cid:image001.jpg@01D26CD8.6C05F070'&amp;gt;.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasAttachments", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasAttachments { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets internet message headers.
-        /// The collection of message headers, defined by RFC5322, that provide details of the network path taken by a message from the sender to the recipient. Read-only.
+        /// A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "internetMessageHeaders", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<InternetMessageHeader> InternetMessageHeaders { get; set; }
@@ -93,14 +93,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sender.
-        /// The account that is actually used to generate the message.
+        /// The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, or sending a message as a delegate. In any case, the value must correspond to the actual mailbox used.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sender", Required = Newtonsoft.Json.Required.Default)]
         public Recipient Sender { get; set; }
     
         /// <summary>
         /// Gets or sets from.
-        /// The mailbox owner and sender of the message.
+        /// The mailbox owner and sender of the message. The value must correspond to the actual mailbox used.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
         public Recipient From { get; set; }
@@ -184,7 +184,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets inference classification.
-        /// The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. Possible values are: focused or other.
+        /// The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. The possible values are: focused or other.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inferenceClassification", Required = Newtonsoft.Json.Required.Default)]
         public InferenceClassificationType? InferenceClassification { get; set; }

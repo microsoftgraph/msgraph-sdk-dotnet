@@ -23,54 +23,63 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets position.
+        /// DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "position", Required = Newtonsoft.Json.Required.Default)]
         public string Position { get; set; }
     
         /// <summary>
         /// Gets or sets separator.
+        /// String representing the separator used for the data labels on a chart.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "separator", Required = Newtonsoft.Json.Required.Default)]
         public string Separator { get; set; }
     
         /// <summary>
         /// Gets or sets show bubble size.
+        /// Boolean value representing if the data label bubble size is visible or not.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showBubbleSize", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowBubbleSize { get; set; }
     
         /// <summary>
         /// Gets or sets show category name.
+        /// Boolean value representing if the data label category name is visible or not.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showCategoryName", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowCategoryName { get; set; }
     
         /// <summary>
         /// Gets or sets show legend key.
+        /// Boolean value representing if the data label legend key is visible or not.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showLegendKey", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowLegendKey { get; set; }
     
         /// <summary>
         /// Gets or sets show percentage.
+        /// Boolean value representing if the data label percentage is visible or not.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showPercentage", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowPercentage { get; set; }
     
         /// <summary>
         /// Gets or sets show series name.
+        /// Boolean value representing if the data label series name is visible or not.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showSeriesName", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowSeriesName { get; set; }
     
         /// <summary>
         /// Gets or sets show value.
+        /// Boolean value representing if the data label value is visible or not.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showValue", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowValue { get; set; }
     
         /// <summary>
         /// Gets or sets format.
+        /// Represents the format of chart data labels, which includes fill and font formatting. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartDataLabelFormat Format { get; set; }

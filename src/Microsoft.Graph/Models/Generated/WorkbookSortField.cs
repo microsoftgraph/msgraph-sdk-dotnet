@@ -24,36 +24,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets ascending.
+        /// Represents whether the sorting is done in an ascending fashion.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ascending", Required = Newtonsoft.Json.Required.Default)]
         public bool? Ascending { get; set; }
     
         /// <summary>
         /// Gets or sets color.
+        /// Represents the color that is the target of the condition if the sorting is on font or cell color.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "color", Required = Newtonsoft.Json.Required.Default)]
         public string Color { get; set; }
     
         /// <summary>
         /// Gets or sets dataOption.
+        /// Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataOption", Required = Newtonsoft.Json.Required.Default)]
         public string DataOption { get; set; }
     
         /// <summary>
         /// Gets or sets icon.
+        /// Represents the icon that is the target of the condition if the sorting is on the cell's icon.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "icon", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookIcon Icon { get; set; }
     
         /// <summary>
         /// Gets or sets key.
+        /// Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "key", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Key { get; set; }
     
         /// <summary>
         /// Gets or sets sortOn.
+        /// Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sortOn", Required = Newtonsoft.Json.Required.Default)]
         public string SortOn { get; set; }

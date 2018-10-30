@@ -23,24 +23,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets overlay.
+        /// Boolean value for whether the chart legend should overlap with the main body of the chart.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overlay", Required = Newtonsoft.Json.Required.Default)]
         public bool? Overlay { get; set; }
     
         /// <summary>
         /// Gets or sets position.
+        /// Represents the position of the legend on the chart. The possible values are: Top, Bottom, Left, Right, Corner, Custom.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "position", Required = Newtonsoft.Json.Required.Default)]
         public string Position { get; set; }
     
         /// <summary>
         /// Gets or sets visible.
+        /// A boolean value the represents the visibility of a ChartLegend object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visible", Required = Newtonsoft.Json.Required.Default)]
         public bool? Visible { get; set; }
     
         /// <summary>
         /// Gets or sets format.
+        /// Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartLegendFormat Format { get; set; }

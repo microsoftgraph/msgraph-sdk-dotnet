@@ -24,24 +24,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets provider.
+        /// Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provider", Required = Newtonsoft.Json.Required.Default)]
         public string Provider { get; set; }
     
         /// <summary>
         /// Gets or sets providerVersion.
+        /// Version of the provider or subprovider, if it exists, that generated the alert.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerVersion", Required = Newtonsoft.Json.Required.Default)]
         public string ProviderVersion { get; set; }
     
         /// <summary>
         /// Gets or sets subProvider.
+        /// Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subProvider", Required = Newtonsoft.Json.Required.Default)]
         public string SubProvider { get; set; }
     
         /// <summary>
         /// Gets or sets vendor.
+        /// Name of the alert vendor (for example, Microsoft, Dell, FireEye).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendor", Required = Newtonsoft.Json.Required.Default)]
         public string Vendor { get; set; }

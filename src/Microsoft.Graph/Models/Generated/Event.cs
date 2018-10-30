@@ -93,14 +93,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets importance.
-        /// The importance of the event. Possible values are: low, normal, high.
+        /// The importance of the event. The possible values are: low, normal, high.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importance", Required = Newtonsoft.Json.Required.Default)]
         public Importance? Importance { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivity.
-        /// Possible values are: normal, personal, private, confidential.
+        /// The possible values are: normal, personal, private, confidential.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivity", Required = Newtonsoft.Json.Required.Default)]
         public Sensitivity? Sensitivity { get; set; }
@@ -184,14 +184,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets show as.
-        /// The status to show. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+        /// The status to show. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showAs", Required = Newtonsoft.Json.Required.Default)]
         public FreeBusyStatus? ShowAs { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// The event type. Possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only.
+        /// The event type. The possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public EventType? Type { get; set; }
@@ -219,7 +219,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets online meeting url.
-        /// A URL for an online meeting.
+        /// A URL for an online meeting. The property is set only when an organizer specifies an event as an online meeting such as a Skype meeting. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetingUrl", Required = Newtonsoft.Json.Required.Default)]
         public string OnlineMeetingUrl { get; set; }

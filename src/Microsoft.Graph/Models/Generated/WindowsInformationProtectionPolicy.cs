@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets pin special characters.
-        /// Integer value that configures the use of special characters in the Windows Hello for Business PIN. Valid special characters for Windows Hello for Business PIN gestures include: ! " # $ % &amp; ' ( )  + , - . / : ; &amp;lt; = &amp;gt; ? @ [ \ ] ^  ` {
+        /// Integer value that configures the use of special characters in the Windows Hello for Business PIN. Valid special characters for Windows Hello for Business PIN gestures include: ! ' # $ % &amp; ' ( )  + , - . / : ; &amp;lt; = &amp;gt; ? @ [ / ] ^  ` {
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinSpecialCharacters", Required = Newtonsoft.Json.Required.Default)]
         public WindowsInformationProtectionPinCharacterRequirements? PinSpecialCharacters { get; set; }

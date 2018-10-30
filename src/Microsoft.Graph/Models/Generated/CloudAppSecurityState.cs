@@ -24,18 +24,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets destinationServiceIp.
+        /// Destination IP Address of the connection to the cloud application/service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationServiceIp", Required = Newtonsoft.Json.Required.Default)]
         public string DestinationServiceIp { get; set; }
     
         /// <summary>
         /// Gets or sets destinationServiceName.
+        /// Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationServiceName", Required = Newtonsoft.Json.Required.Default)]
         public string DestinationServiceName { get; set; }
     
         /// <summary>
         /// Gets or sets riskScore.
+        /// Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskScore", Required = Newtonsoft.Json.Required.Default)]
         public string RiskScore { get; set; }

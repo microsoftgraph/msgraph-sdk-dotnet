@@ -59,21 +59,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets privacyUrl.
-        /// URL to the company/organization's privacy policy.
+        /// URL to the company/organization’s privacy policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyUrl", Required = Newtonsoft.Json.Required.Default)]
         public string PrivacyUrl { get; set; }
     
         /// <summary>
         /// Gets or sets onlineSupportSiteUrl.
-        /// URL to the company/organization's IT helpdesk site.
+        /// URL to the company/organization’s IT helpdesk site.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteUrl", Required = Newtonsoft.Json.Required.Default)]
         public string OnlineSupportSiteUrl { get; set; }
     
         /// <summary>
         /// Gets or sets onlineSupportSiteName.
-        /// Display name of the company/organization's IT helpdesk site.
+        /// Display name of the company/organization’s IT helpdesk site.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteName", Required = Newtonsoft.Json.Required.Default)]
         public string OnlineSupportSiteName { get; set; }

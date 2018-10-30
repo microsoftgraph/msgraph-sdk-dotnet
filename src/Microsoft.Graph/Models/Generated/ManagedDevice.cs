@@ -338,13 +338,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets partner reported threat state.
-        /// Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. Possible values are: unknown, activated, deactivated, secured, lowSeverity, mediumSeverity, highSeverity, unresponsive.
+        /// Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. Possible values are: unknown, activated, deactivated, secured, lowSeverity, mediumSeverity, highSeverity, unresponsive, compromised, misconfigured.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerReportedThreatState", Required = Newtonsoft.Json.Required.Default)]
         public ManagedDevicePartnerReportedHealthState? PartnerReportedThreatState { get; set; }
     
         /// <summary>
         /// Gets or sets device configuration states.
+        /// Device configuration states for this device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfigurationStates", Required = Newtonsoft.Json.Required.Default)]
         public IManagedDeviceDeviceConfigurationStatesCollectionPage DeviceConfigurationStates { get; set; }
@@ -358,6 +359,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device compliance policy states.
+        /// Device compliance policy states for this device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyStates", Required = Newtonsoft.Json.Required.Default)]
         public IManagedDeviceDeviceCompliancePolicyStatesCollectionPage DeviceCompliancePolicyStates { get; set; }

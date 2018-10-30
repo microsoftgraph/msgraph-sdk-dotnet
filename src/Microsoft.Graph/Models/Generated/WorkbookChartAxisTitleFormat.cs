@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets font.
+        /// Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "font", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartFont Font { get; set; }

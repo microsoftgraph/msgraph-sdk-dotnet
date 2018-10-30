@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content.
+        /// The content stream for this version of the item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
         public Stream Content { get; set; }
     
         /// <summary>
         /// Gets or sets size.
+        /// Indicates the size of the content stream for this version of the item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Size { get; set; }

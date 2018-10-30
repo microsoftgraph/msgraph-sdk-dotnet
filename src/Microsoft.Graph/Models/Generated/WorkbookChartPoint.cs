@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets value.
+        /// Returns the value of a chart point. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
         public Newtonsoft.Json.Linq.JToken Value { get; set; }
     
         /// <summary>
         /// Gets or sets format.
+        /// Encapsulates the format properties chart point. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartPointFormat Format { get; set; }

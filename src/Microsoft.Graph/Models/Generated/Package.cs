@@ -24,6 +24,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets type.
+        /// A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }

@@ -23,18 +23,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fields.
+        /// Represents the current conditions used to last sort the table. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fields", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<WorkbookSortField> Fields { get; set; }
     
         /// <summary>
         /// Gets or sets match case.
+        /// Represents whether the casing impacted the last sort of the table. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matchCase", Required = Newtonsoft.Json.Required.Default)]
         public bool? MatchCase { get; set; }
     
         /// <summary>
         /// Gets or sets method.
+        /// Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "method", Required = Newtonsoft.Json.Required.Default)]
         public string Method { get; set; }

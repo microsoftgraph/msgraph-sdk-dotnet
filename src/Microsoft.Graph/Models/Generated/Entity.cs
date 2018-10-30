@@ -32,6 +32,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets id.
+        /// Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }

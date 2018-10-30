@@ -24,7 +24,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets type.
-        /// The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+        /// The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public PhoneType? Type { get; set; }

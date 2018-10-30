@@ -143,7 +143,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enterprise internal proxy servers.
-        /// This is the comma-separated list of internal proxy servers. For example, "157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59". These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
+        /// This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseInternalProxyServers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<WindowsInformationProtectionResourceCollection> EnterpriseInternalProxyServers { get; set; }

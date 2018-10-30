@@ -24,18 +24,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
+        /// Provides a user-visible description of the item. Read-write. Only on OneDrive Personal
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets fileSystemInfo.
+        /// File system information on client. Read-write.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileSystemInfo", Required = Newtonsoft.Json.Required.Default)]
         public FileSystemInfo FileSystemInfo { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The name of the item (filename and extension). Read-write.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }

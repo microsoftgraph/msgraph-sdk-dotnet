@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sharepoint ids.
+        /// Returns identifiers useful for SharePoint REST compatibility. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharepointIds", Required = Newtonsoft.Json.Required.Default)]
         public SharepointIds SharepointIds { get; set; }
@@ -43,6 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fields.
+        /// The values of the columns set on this list item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fields", Required = Newtonsoft.Json.Required.Default)]
         public FieldValueSet Fields { get; set; }

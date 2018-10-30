@@ -29,18 +29,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets names.
+        /// Represents a collection of workbook scoped named items (named ranges and constants). Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "names", Required = Newtonsoft.Json.Required.Default)]
         public IWorkbookNamesCollectionPage Names { get; set; }
     
         /// <summary>
         /// Gets or sets tables.
+        /// Represents a collection of tables associated with the workbook. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tables", Required = Newtonsoft.Json.Required.Default)]
         public IWorkbookTablesCollectionPage Tables { get; set; }
     
         /// <summary>
         /// Gets or sets worksheets.
+        /// Represents a collection of worksheets associated with the workbook. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "worksheets", Required = Newtonsoft.Json.Required.Default)]
         public IWorkbookWorksheetsCollectionPage Worksheets { get; set; }

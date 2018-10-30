@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external source.
-        /// How this class was created. Possible values are: sis, manual, unknownFutureValue.
+        /// How this class was created. The possible values are: sis, manual, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSource", Required = Newtonsoft.Json.Required.Default)]
         public EducationExternalSource? ExternalSource { get; set; }
@@ -107,6 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets group.
+        /// The directory group corresponding to this class.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
         public Group Group { get; set; }

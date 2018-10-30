@@ -24,6 +24,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets content.
+        /// The content stream for the thumbnail.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
         public Stream Content { get; set; }

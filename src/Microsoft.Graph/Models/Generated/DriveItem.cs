@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content.
+        /// The content stream, if the item represents a file.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
         public Stream Content { get; set; }
@@ -99,6 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets publication.
+        /// Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publication", Required = Newtonsoft.Json.Required.Default)]
         public PublicationFacet Publication { get; set; }
@@ -175,6 +177,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets list item.
+        /// For drives in SharePoint, the associated document library list item. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "listItem", Required = Newtonsoft.Json.Required.Default)]
         public ListItem ListItem { get; set; }
@@ -202,6 +205,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets workbook.
+        /// For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workbook", Required = Newtonsoft.Json.Required.Default)]
         public Workbook Workbook { get; set; }

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sortOrder.
+        /// If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sortOrder", Required = Newtonsoft.Json.Required.Default)]
         public string SortOrder { get; set; }

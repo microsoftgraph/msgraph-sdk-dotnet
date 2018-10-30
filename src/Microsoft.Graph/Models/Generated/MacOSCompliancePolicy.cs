@@ -121,18 +121,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets firewall enabled.
+        /// Whether the firewall should be enabled or not.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? FirewallEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets firewall block all incoming.
+        /// Corresponds to the 'Block all incoming connections' option.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallBlockAllIncoming", Required = Newtonsoft.Json.Required.Default)]
         public bool? FirewallBlockAllIncoming { get; set; }
     
         /// <summary>
         /// Gets or sets firewall enable stealth mode.
+        /// Corresponds to 'Enable stealth mode.'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallEnableStealthMode", Required = Newtonsoft.Json.Required.Default)]
         public bool? FirewallEnableStealthMode { get; set; }

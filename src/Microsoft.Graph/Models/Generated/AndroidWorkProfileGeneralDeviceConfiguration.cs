@@ -23,204 +23,238 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password block fingerprint unlock.
+        /// Indicates whether or not to block fingerprint unlock.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordBlockFingerprintUnlock", Required = Newtonsoft.Json.Required.Default)]
         public bool? PasswordBlockFingerprintUnlock { get; set; }
     
         /// <summary>
         /// Gets or sets password block trust agents.
+        /// Indicates whether or not to block Smart Lock and other trust agents.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordBlockTrustAgents", Required = Newtonsoft.Json.Required.Default)]
         public bool? PasswordBlockTrustAgents { get; set; }
     
         /// <summary>
         /// Gets or sets password expiration days.
+        /// Number of days before the password expires. Valid values 1 to 365
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordExpirationDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordExpirationDays { get; set; }
     
         /// <summary>
         /// Gets or sets password minimum length.
+        /// Minimum length of passwords. Valid values 4 to 16
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumLength", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordMinimumLength { get; set; }
     
         /// <summary>
         /// Gets or sets password minutes of inactivity before screen timeout.
+        /// Minutes of inactivity before the screen times out.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinutesOfInactivityBeforeScreenTimeout", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordMinutesOfInactivityBeforeScreenTimeout { get; set; }
     
         /// <summary>
         /// Gets or sets password previous password block count.
+        /// Number of previous passwords to block. Valid values 0 to 24
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordPreviousPasswordBlockCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordPreviousPasswordBlockCount { get; set; }
     
         /// <summary>
         /// Gets or sets password sign in failure count before factory reset.
+        /// Number of sign in failures allowed before factory reset. Valid values 4 to 11
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordSignInFailureCountBeforeFactoryReset", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
     
         /// <summary>
         /// Gets or sets password required type.
+        /// Type of password that is required. Possible values are: deviceDefault, lowSecurityBiometric, required, atLeastNumeric, numericComplex, atLeastAlphabetic, atLeastAlphanumeric, alphanumericWithSymbols.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidWorkProfileRequiredPasswordType? PasswordRequiredType { get; set; }
     
         /// <summary>
         /// Gets or sets work profile data sharing type.
+        /// Type of data sharing that is allowed. Possible values are: deviceDefault, preventAny, allowPersonalToWork, noRestrictions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileDataSharingType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidWorkProfileCrossProfileDataSharingType? WorkProfileDataSharingType { get; set; }
     
         /// <summary>
         /// Gets or sets work profile block notifications while device locked.
+        /// Indicates whether or not to block notifications while device locked.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileBlockNotificationsWhileDeviceLocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? WorkProfileBlockNotificationsWhileDeviceLocked { get; set; }
     
         /// <summary>
         /// Gets or sets work profile block adding accounts.
+        /// Block users from adding/removing accounts in work profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileBlockAddingAccounts", Required = Newtonsoft.Json.Required.Default)]
         public bool? WorkProfileBlockAddingAccounts { get; set; }
     
         /// <summary>
         /// Gets or sets work profile bluetooth enable contact sharing.
+        /// Allow bluetooth devices to access enterprise contacts.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileBluetoothEnableContactSharing", Required = Newtonsoft.Json.Required.Default)]
         public bool? WorkProfileBluetoothEnableContactSharing { get; set; }
     
         /// <summary>
         /// Gets or sets work profile block screen capture.
+        /// Block screen capture in work profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileBlockScreenCapture", Required = Newtonsoft.Json.Required.Default)]
         public bool? WorkProfileBlockScreenCapture { get; set; }
     
         /// <summary>
         /// Gets or sets work profile block cross profile caller id.
+        /// Block display work profile caller ID in personal profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileBlockCrossProfileCallerId", Required = Newtonsoft.Json.Required.Default)]
         public bool? WorkProfileBlockCrossProfileCallerId { get; set; }
     
         /// <summary>
         /// Gets or sets work profile block camera.
+        /// Block work profile camera.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileBlockCamera", Required = Newtonsoft.Json.Required.Default)]
         public bool? WorkProfileBlockCamera { get; set; }
     
         /// <summary>
         /// Gets or sets work profile block cross profile contacts search.
+        /// Block work profile contacts availability in personal profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileBlockCrossProfileContactsSearch", Required = Newtonsoft.Json.Required.Default)]
         public bool? WorkProfileBlockCrossProfileContactsSearch { get; set; }
     
         /// <summary>
         /// Gets or sets work profile block cross profile copy paste.
+        /// Boolean that indicates if the setting disallow cross profile copy/paste is enabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileBlockCrossProfileCopyPaste", Required = Newtonsoft.Json.Required.Default)]
         public bool? WorkProfileBlockCrossProfileCopyPaste { get; set; }
     
         /// <summary>
         /// Gets or sets work profile default app permission policy.
+        /// Type of password that is required. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileDefaultAppPermissionPolicy", Required = Newtonsoft.Json.Required.Default)]
         public AndroidWorkProfileDefaultAppPermissionPolicyType? WorkProfileDefaultAppPermissionPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password block fingerprint unlock.
+        /// Indicates whether or not to block fingerprint unlock for work profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordBlockFingerprintUnlock", Required = Newtonsoft.Json.Required.Default)]
         public bool? WorkProfilePasswordBlockFingerprintUnlock { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password block trust agents.
+        /// Indicates whether or not to block Smart Lock and other trust agents for work profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordBlockTrustAgents", Required = Newtonsoft.Json.Required.Default)]
         public bool? WorkProfilePasswordBlockTrustAgents { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password expiration days.
+        /// Number of days before the work profile password expires. Valid values 1 to 365
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordExpirationDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WorkProfilePasswordExpirationDays { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password minimum length.
+        /// Minimum length of work profile password. Valid values 4 to 16
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordMinimumLength", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WorkProfilePasswordMinimumLength { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password min numeric characters.
+        /// Minimum # of numeric characters required in work profile password. Valid values 1 to 10
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordMinNumericCharacters", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WorkProfilePasswordMinNumericCharacters { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password min non letter characters.
+        /// Minimum # of non-letter characters required in work profile password. Valid values 1 to 10
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordMinNonLetterCharacters", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WorkProfilePasswordMinNonLetterCharacters { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password min letter characters.
+        /// Minimum # of letter characters required in work profile password. Valid values 1 to 10
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordMinLetterCharacters", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WorkProfilePasswordMinLetterCharacters { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password min lower case characters.
+        /// Minimum # of lower-case characters required in work profile password. Valid values 1 to 10
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordMinLowerCaseCharacters", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WorkProfilePasswordMinLowerCaseCharacters { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password min upper case characters.
+        /// Minimum # of upper-case characters required in work profile password. Valid values 1 to 10
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordMinUpperCaseCharacters", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WorkProfilePasswordMinUpperCaseCharacters { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password min symbol characters.
+        /// Minimum # of symbols required in work profile password. Valid values 1 to 10
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordMinSymbolCharacters", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WorkProfilePasswordMinSymbolCharacters { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password minutes of inactivity before screen timeout.
+        /// Minutes of inactivity before the screen times out.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordMinutesOfInactivityBeforeScreenTimeout", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password previous password block count.
+        /// Number of previous work profile passwords to block. Valid values 0 to 24
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordPreviousPasswordBlockCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WorkProfilePasswordPreviousPasswordBlockCount { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password sign in failure count before factory reset.
+        /// Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 4 to 11
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordSignInFailureCountBeforeFactoryReset", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WorkProfilePasswordSignInFailureCountBeforeFactoryReset { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password required type.
+        /// Type of work profile password that is required. Possible values are: deviceDefault, lowSecurityBiometric, required, atLeastNumeric, numericComplex, atLeastAlphabetic, atLeastAlphanumeric, alphanumericWithSymbols.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordRequiredType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidWorkProfileRequiredPasswordType? WorkProfilePasswordRequiredType { get; set; }
     
         /// <summary>
         /// Gets or sets work profile require password.
+        /// Password is required or not for work profile
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileRequirePassword", Required = Newtonsoft.Json.Required.Default)]
         public bool? WorkProfileRequirePassword { get; set; }
     
         /// <summary>
         /// Gets or sets security require verify apps.
+        /// Require the Android Verify apps feature is turned on.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityRequireVerifyApps", Required = Newtonsoft.Json.Required.Default)]
         public bool? SecurityRequireVerifyApps { get; set; }

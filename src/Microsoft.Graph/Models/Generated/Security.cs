@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alerts.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alerts", Required = Newtonsoft.Json.Required.Default)]
         public ISecurityAlertsCollectionPage Alerts { get; set; }

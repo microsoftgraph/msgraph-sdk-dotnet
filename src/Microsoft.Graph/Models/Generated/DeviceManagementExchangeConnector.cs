@@ -44,13 +44,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets server name.
-        /// The name of the server hosting the Exchange Connector.
+        /// The name of the Exchange server.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serverName", Required = Newtonsoft.Json.Required.Default)]
         public string ServerName { get; set; }
     
         /// <summary>
         /// Gets or sets connector server name.
+        /// The name of the server hosting the Exchange Connector.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorServerName", Required = Newtonsoft.Json.Required.Default)]
         public string ConnectorServerName { get; set; }

@@ -93,7 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets settings block my meetings and files.
-        /// Specifies whether to disable the "My meetings and files" feature in the Start menu, which shows the signed-in user's meetings and files from Office 365.
+        /// Specifies whether to disable the 'My meetings and files' feature in the Start menu, which shows the signed-in user's meetings and files from Office 365.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockMyMeetingsAndFiles", Required = Newtonsoft.Json.Required.Default)]
         public bool? SettingsBlockMyMeetingsAndFiles { get; set; }

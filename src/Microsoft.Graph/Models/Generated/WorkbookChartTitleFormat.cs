@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fill.
+        /// Represents the fill format of an object, which includes background formatting information. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fill", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartFill Fill { get; set; }
     
         /// <summary>
         /// Gets or sets font.
+        /// Represents the font attributes (font name, font size, color, etc.) for the current object. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "font", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartFont Font { get; set; }

@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets cell addresses.
+        /// Represents the cell addresses
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellAddresses", Required = Newtonsoft.Json.Required.Default)]
         public Newtonsoft.Json.Linq.JToken CellAddresses { get; set; }
@@ -43,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets formulas local.
-        /// Represents the formula in A1-style notation, in the user's language and number-formatting locale. For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.
+        /// Represents the formula in A1-style notation, in the user's language and number-formatting locale. For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "formulasLocal", Required = Newtonsoft.Json.Required.Default)]
         public Newtonsoft.Json.Linq.JToken FormulasLocal { get; set; }
@@ -85,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets value types.
-        /// Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
+        /// Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueTypes", Required = Newtonsoft.Json.Required.Default)]
         public Newtonsoft.Json.Linq.JToken ValueTypes { get; set; }

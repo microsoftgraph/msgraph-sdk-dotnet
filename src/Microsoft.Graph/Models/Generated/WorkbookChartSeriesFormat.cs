@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fill.
+        /// Represents the fill format of a chart series, which includes background formating information. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fill", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartFill Fill { get; set; }
     
         /// <summary>
         /// Gets or sets line.
+        /// Represents line formatting. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "line", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartLineFormat Line { get; set; }

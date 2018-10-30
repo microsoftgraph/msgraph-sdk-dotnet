@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets options.
+        /// Sheet protection options. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "options", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookWorksheetProtectionOptions Options { get; set; }
     
         /// <summary>
         /// Gets or sets protected.
+        /// Indicates if the worksheet is protected.  Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "protected", Required = Newtonsoft.Json.Required.Default)]
         public bool? Protected { get; set; }

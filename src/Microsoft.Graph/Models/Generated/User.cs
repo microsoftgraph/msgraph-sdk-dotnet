@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets age group.
+        /// Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ageGroup", Required = Newtonsoft.Json.Required.Default)]
         public string AgeGroup { get; set; }
@@ -71,13 +72,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets consent provided for minor.
+        /// Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "consentProvidedForMinor", Required = Newtonsoft.Json.Required.Default)]
         public string ConsentProvidedForMinor { get; set; }
     
         /// <summary>
         /// Gets or sets country.
-        /// The country/region in which the user is located; for example, "US" or "UK". Supports $filter.
+        /// The country/region in which the user is located; for example, 'US' or 'UK'. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "country", Required = Newtonsoft.Json.Required.Default)]
         public string Country { get; set; }
@@ -105,26 +107,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets im addresses.
+        /// The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imAddresses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ImAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets job title.
-        /// The user's job title. Supports $filter.
+        /// The user’s job title. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobTitle", Required = Newtonsoft.Json.Required.Default)]
         public string JobTitle { get; set; }
     
         /// <summary>
         /// Gets or sets legal age group classification.
+        /// Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information.)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "legalAgeGroupClassification", Required = Newtonsoft.Json.Required.Default)]
         public string LegalAgeGroupClassification { get; set; }
     
         /// <summary>
         /// Gets or sets mail.
-        /// The SMTP address for the user, for example, "jeff@contoso.onmicrosoft.com". Read-Only. Supports $filter.
+        /// The SMTP address for the user, for example, 'jeff@contoso.onmicrosoft.com'. Read-Only. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mail", Required = Newtonsoft.Json.Required.Default)]
         public string Mail { get; set; }
@@ -145,26 +149,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises extension attributes.
+        /// Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, this set of properties is mastered on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesExtensionAttributes", Required = Newtonsoft.Json.Required.Default)]
         public OnPremisesExtensionAttributes OnPremisesExtensionAttributes { get; set; }
     
         /// <summary>
         /// Gets or sets on premises immutable id.
-        /// This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. Important: The $ and  characters cannot be used when specifying this property. Supports $filter.
+        /// This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user’s userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesImmutableId", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesImmutableId { get; set; }
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// Indicates the last time at which the object was synced with the on-premises directory; for example: "2013-02-16T03:04:54Z". The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+        /// Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesLastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets on premises provisioning errors.
+        /// Errors when using Microsoft synchronization product during provisioning.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesProvisioningErrors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
@@ -185,32 +191,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises domain name.
+        /// Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesDomainName", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sam account name.
+        /// Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSamAccountName", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesSamAccountName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises user principal name.
+        /// Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesUserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets password policies.
-        /// Specifies password policies for the user. This value is an enumeration with one possible value being "DisableStrongPassword", which allows weaker passwords than the default policy to be specified. "DisablePasswordExpiration" can also be specified. The two may be specified together; for example: "DisablePasswordExpiration, DisableStrongPassword".
+        /// Specifies password policies for the user. This value is an enumeration with one possible value being 'DisableStrongPassword', which allows weaker passwords than the default policy to be specified. 'DisablePasswordExpiration' can also be specified. The two may be specified together; for example: 'DisablePasswordExpiration, DisableStrongPassword'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordPolicies", Required = Newtonsoft.Json.Required.Default)]
         public string PasswordPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets password profile.
-        /// Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
+        /// Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordProfile", Required = Newtonsoft.Json.Required.Default)]
         public PasswordProfile PasswordProfile { get; set; }
@@ -231,7 +240,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred language.
-        /// The preferred language for the user. Should follow ISO 639-1 Code; for example "en-US".
+        /// The preferred language for the user. Should follow ISO 639-1 Code; for example 'en-US'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredLanguage", Required = Newtonsoft.Json.Required.Default)]
         public string PreferredLanguage { get; set; }
@@ -245,7 +254,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets proxy addresses.
-        /// For example: ["SMTP: bob@contoso.com", "smtp: bob@sales.contoso.com"] The any operator is required for filter expressions on multi-valued properties. Read-only, Not nullable. Supports $filter.
+        /// For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'] The any operator is required for filter expressions on multi-valued properties. Read-only, Not nullable. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyAddresses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ProxyAddresses { get; set; }
@@ -273,21 +282,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets usage location.
-        /// A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: "US", "JP", and "GB". Not nullable. Supports $filter.
+        /// A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: 'US', 'JP', and 'GB'. Not nullable. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usageLocation", Required = Newtonsoft.Json.Required.Default)]
         public string UsageLocation { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Supports $filter and $orderby.
+        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Supports $filter and $orderby.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets user type.
-        /// A string value that can be used to classify user types in your directory, such as "Member" and "Guest". Supports $filter.
+        /// A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userType", Required = Newtonsoft.Json.Required.Default)]
         public string UserType { get; set; }
@@ -371,6 +380,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device enrollment limit.
+        /// The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceEnrollmentLimit", Required = Newtonsoft.Json.Required.Default)]
         public Int32? DeviceEnrollmentLimit { get; set; }
@@ -391,7 +401,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets manager.
-        /// The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)
+        /// The user or contact that is this user’s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
         public DirectoryObject Manager { get; set; }
@@ -426,6 +436,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets license details.
+        /// A collection of this user's license details. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseDetails", Required = Newtonsoft.Json.Required.Default)]
         public IUserLicenseDetailsCollectionPage LicenseDetails { get; set; }
@@ -439,6 +450,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets outlook.
+        /// Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlook", Required = Newtonsoft.Json.Required.Default)]
         public OutlookUser Outlook { get; set; }
@@ -494,6 +506,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets people.
+        /// People that are relevant to the user. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "people", Required = Newtonsoft.Json.Required.Default)]
         public IUserPeopleCollectionPage People { get; set; }
@@ -548,6 +561,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets planner.
+        /// Entry-point to the Planner resource that might exist for a user. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "planner", Required = Newtonsoft.Json.Required.Default)]
         public PlannerUser Planner { get; set; }
@@ -582,6 +596,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activities.
+        /// The user's activities across devices. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
         public IUserActivitiesCollectionPage Activities { get; set; }

@@ -555,6 +555,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk mode built in app id.
+        /// ID for built-in apps to use for kiosk mode. Used when KioskModeManagedAppId and KioskModeAppStoreUrl are not set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeBuiltInAppId", Required = Newtonsoft.Json.Required.Default)]
         public string KioskModeBuiltInAppId { get; set; }

@@ -23,36 +23,42 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets bold.
+        /// Represents the bold status of font.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bold", Required = Newtonsoft.Json.Required.Default)]
         public bool? Bold { get; set; }
     
         /// <summary>
         /// Gets or sets color.
+        /// HTML color code representation of the text color. E.g. #FF0000 represents Red.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "color", Required = Newtonsoft.Json.Required.Default)]
         public string Color { get; set; }
     
         /// <summary>
         /// Gets or sets italic.
+        /// Represents the italic status of the font.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "italic", Required = Newtonsoft.Json.Required.Default)]
         public bool? Italic { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// Font name (e.g. 'Calibri')
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets size.
+        /// Font size.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
         public double? Size { get; set; }
     
         /// <summary>
         /// Gets or sets underline.
+        /// Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "underline", Required = Newtonsoft.Json.Required.Default)]
         public string Underline { get; set; }

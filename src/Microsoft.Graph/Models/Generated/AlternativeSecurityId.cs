@@ -24,18 +24,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets type.
+        /// For internal use only
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Type { get; set; }
     
         /// <summary>
         /// Gets or sets identityProvider.
+        /// For internal use only
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityProvider", Required = Newtonsoft.Json.Required.Default)]
         public string IdentityProvider { get; set; }
     
         /// <summary>
         /// Gets or sets key.
+        /// For internal use only
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "key", Required = Newtonsoft.Json.Required.Default)]
         public byte[] Key { get; set; }

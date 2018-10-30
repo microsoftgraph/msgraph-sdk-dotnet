@@ -23,84 +23,98 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets visual elements.
+        /// Required. The object containing information to render the activity in the UX.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visualElements", Required = Newtonsoft.Json.Required.Default)]
         public VisualInfo VisualElements { get; set; }
     
         /// <summary>
         /// Gets or sets activity source host.
+        /// Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activitySourceHost", Required = Newtonsoft.Json.Required.Default)]
         public string ActivitySourceHost { get; set; }
     
         /// <summary>
         /// Gets or sets activation url.
+        /// Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activationUrl", Required = Newtonsoft.Json.Required.Default)]
         public string ActivationUrl { get; set; }
     
         /// <summary>
         /// Gets or sets app activity id.
+        /// Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActivityId", Required = Newtonsoft.Json.Required.Default)]
         public string AppActivityId { get; set; }
     
         /// <summary>
         /// Gets or sets app display name.
+        /// Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets content url.
+        /// Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentUrl", Required = Newtonsoft.Json.Required.Default)]
         public string ContentUrl { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// Set by the server. DateTime in UTC when the object was created on the server.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
+        /// Set by the server. DateTime in UTC when the object expired on the server.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets fallback url.
+        /// Optional. URL used to launch the activity in a web-based app, if available.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fallbackUrl", Required = Newtonsoft.Json.Required.Default)]
         public string FallbackUrl { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// Set by the server. DateTime in UTC when the object was modified on the server.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets user timezone.
+        /// Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userTimezone", Required = Newtonsoft.Json.Required.Default)]
         public string UserTimezone { get; set; }
     
         /// <summary>
         /// Gets or sets content info.
+        /// Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentInfo", Required = Newtonsoft.Json.Required.Default)]
         public Newtonsoft.Json.Linq.JToken ContentInfo { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public Status? Status { get; set; }
     
         /// <summary>
         /// Gets or sets history items.
+        /// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "historyItems", Required = Newtonsoft.Json.Required.Default)]
         public IUserActivityHistoryItemsCollectionPage HistoryItems { get; set; }

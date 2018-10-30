@@ -23,72 +23,84 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets height.
+        /// Represents the height, in points, of the chart object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "height", Required = Newtonsoft.Json.Required.Default)]
         public double? Height { get; set; }
     
         /// <summary>
         /// Gets or sets left.
+        /// The distance, in points, from the left side of the chart to the worksheet origin.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "left", Required = Newtonsoft.Json.Required.Default)]
         public double? Left { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// Represents the name of a chart object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets top.
+        /// Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "top", Required = Newtonsoft.Json.Required.Default)]
         public double? Top { get; set; }
     
         /// <summary>
         /// Gets or sets width.
+        /// Represents the width, in points, of the chart object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "width", Required = Newtonsoft.Json.Required.Default)]
         public double? Width { get; set; }
     
         /// <summary>
         /// Gets or sets axes.
+        /// Represents chart axes. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "axes", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartAxes Axes { get; set; }
     
         /// <summary>
         /// Gets or sets data labels.
+        /// Represents the datalabels on the chart. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataLabels", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartDataLabels DataLabels { get; set; }
     
         /// <summary>
         /// Gets or sets format.
+        /// Encapsulates the format properties for the chart area. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartAreaFormat Format { get; set; }
     
         /// <summary>
         /// Gets or sets legend.
+        /// Represents the legend for the chart. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "legend", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartLegend Legend { get; set; }
     
         /// <summary>
         /// Gets or sets series.
+        /// Represents either a single series or collection of series in the chart. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "series", Required = Newtonsoft.Json.Required.Default)]
         public IWorkbookChartSeriesCollectionPage Series { get; set; }
     
         /// <summary>
         /// Gets or sets title.
+        /// Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookChartTitle Title { get; set; }
     
         /// <summary>
         /// Gets or sets worksheet.
+        /// The worksheet containing the current chart. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "worksheet", Required = Newtonsoft.Json.Required.Default)]
         public WorkbookWorksheet Worksheet { get; set; }

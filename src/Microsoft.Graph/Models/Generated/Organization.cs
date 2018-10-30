@@ -90,7 +90,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred language.
-        /// The preferred language for the organization. Should follow ISO 639-1 Code; for example "en".
+        /// The preferred language for the organization. Should follow ISO 639-1 Code; for example 'en'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredLanguage", Required = Newtonsoft.Json.Required.Default)]
         public string PreferredLanguage { get; set; }

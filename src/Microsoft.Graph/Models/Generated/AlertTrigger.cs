@@ -24,18 +24,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets name.
+        /// Name of the property serving as a detection trigger.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// Type of the property in the key:value pair for interpretation. For example, String, Boolean, etc.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets value.
+        /// Value of the property serving as a detection trigger.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
         public string Value { get; set; }

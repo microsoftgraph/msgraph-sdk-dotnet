@@ -51,6 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets roles.
+        /// The type of permission, e.g. read. See below for the full list of roles. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roles", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Roles { get; set; }

@@ -24,84 +24,98 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets aadUserId.
+        /// AAD User object identifier (GUID) - represents the physical/multi-account user entity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aadUserId", Required = Newtonsoft.Json.Required.Default)]
         public string AadUserId { get; set; }
     
         /// <summary>
         /// Gets or sets accountName.
+        /// Account name of user account (without Active Directory domain or DNS domain) - (also called mailNickName).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountName", Required = Newtonsoft.Json.Required.Default)]
         public string AccountName { get; set; }
     
         /// <summary>
         /// Gets or sets domainName.
+        /// NetBIOS/Active Directory domain of user account (that is, domain/account format).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domainName", Required = Newtonsoft.Json.Required.Default)]
         public string DomainName { get; set; }
     
         /// <summary>
         /// Gets or sets emailRole.
+        /// For email-related alerts - user account's email 'role'. Possible values are: unknown, sender, recipient.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailRole", Required = Newtonsoft.Json.Required.Default)]
         public EmailRole? EmailRole { get; set; }
     
         /// <summary>
         /// Gets or sets isVpn.
+        /// Indicates whether the user logged on through a VPN.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isVpn", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsVpn { get; set; }
     
         /// <summary>
         /// Gets or sets logonDateTime.
+        /// Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LogonDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets logonId.
+        /// User sign-in ID.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonId", Required = Newtonsoft.Json.Required.Default)]
         public string LogonId { get; set; }
     
         /// <summary>
         /// Gets or sets logonIp.
+        /// IP Address the sign-in request originated from.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonIp", Required = Newtonsoft.Json.Required.Default)]
         public string LogonIp { get; set; }
     
         /// <summary>
         /// Gets or sets logonLocation.
+        /// Location (by IP address mapping) associated with a user sign-in event by this user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonLocation", Required = Newtonsoft.Json.Required.Default)]
         public string LogonLocation { get; set; }
     
         /// <summary>
         /// Gets or sets logonType.
+        /// Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonType", Required = Newtonsoft.Json.Required.Default)]
         public LogonType? LogonType { get; set; }
     
         /// <summary>
         /// Gets or sets onPremisesSecurityIdentifier.
+        /// Active Directory (on-premises) Security Identifier (SID) of the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSecurityIdentifier", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesSecurityIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets riskScore.
+        /// Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskScore", Required = Newtonsoft.Json.Required.Default)]
         public string RiskScore { get; set; }
     
         /// <summary>
         /// Gets or sets userAccountType.
+        /// User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userAccountType", Required = Newtonsoft.Json.Required.Default)]
         public UserAccountSecurityType? UserAccountType { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.
+        /// User sign-in name - internet format: (user account name)@(user account DNS domain name).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
