@@ -49,6 +49,13 @@ namespace Microsoft.Graph
         IDomainDomainNameReferencesCollectionWithReferencesRequestBuilder DomainNameReferences { get; }
     
         /// <summary>
+        /// Gets the request builder for DomainForceDelete.
+        /// </summary>
+        /// <returns>The <see cref="IDomainForceDeleteRequestBuilder"/>.</returns>
+        IDomainForceDeleteRequestBuilder ForceDelete(
+            bool? disableUserAccounts = null);
+
+        /// <summary>
         /// Gets the request builder for DomainVerify.
         /// </summary>
         /// <returns>The <see cref="IDomainVerifyRequestBuilder"/>.</returns>

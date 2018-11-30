@@ -227,6 +227,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserSettingsRequestBuilder"/>.</returns>
         IUserSettingsRequestBuilder Settings { get; }
+
+        /// <summary>
+        /// Gets the request builder for JoinedTeams.
+        /// </summary>
+        /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>
+        IUserJoinedTeamsCollectionRequestBuilder JoinedTeams { get; }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.

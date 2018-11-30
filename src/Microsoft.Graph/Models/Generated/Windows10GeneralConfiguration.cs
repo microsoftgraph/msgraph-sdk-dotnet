@@ -1414,6 +1414,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonBlockFastUserSwitching", Required = Newtonsoft.Json.Required.Default)]
         public bool? LogonBlockFastUserSwitching { get; set; }
     
+        /// <summary>
+        /// Gets or sets tenant lockdown require network during out of box experience.
+        /// Whether the device is required to connect to the network.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantLockdownRequireNetworkDuringOutOfBoxExperience", Required = Newtonsoft.Json.Required.Default)]
+        public bool? TenantLockdownRequireNetworkDuringOutOfBoxExperience { get; set; }
+    
     }
 }
 
