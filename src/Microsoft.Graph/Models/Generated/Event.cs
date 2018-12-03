@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets i cal uid.
-        /// A unique identifier that is shared by all instances of an event across different calendars.
+        /// A unique identifier that is shared by all instances of an event across different calendars. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iCalUId", Required = Newtonsoft.Json.Required.Default)]
         public string ICalUId { get; set; }

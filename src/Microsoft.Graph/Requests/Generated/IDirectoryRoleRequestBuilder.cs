@@ -36,5 +36,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDirectoryRoleMembersCollectionWithReferencesRequestBuilder"/>.</returns>
         IDirectoryRoleMembersCollectionWithReferencesRequestBuilder Members { get; }
     
+        
+    
     }
 }

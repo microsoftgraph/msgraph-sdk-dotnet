@@ -300,6 +300,18 @@ namespace Microsoft.Graph
                 return new GroupGroupLifecyclePoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupLifecyclePolicies"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Team.
+        /// </summary>
+        /// <returns>The <see cref="ITeamRequestBuilder"/>.</returns>
+        public ITeamRequestBuilder Team
+        {
+            get
+            {
+                return new TeamRequestBuilder(this.AppendSegmentToRequestUrl("team"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for GroupSubscribeByMail.
