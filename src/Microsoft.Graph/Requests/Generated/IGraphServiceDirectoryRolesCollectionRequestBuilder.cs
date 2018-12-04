@@ -35,6 +35,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDirectoryRoleRequestBuilder"/>.</returns>
         IDirectoryRoleRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for DirectoryRoleDelta.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryRoleDeltaRequestBuilder"/>.</returns>
+        IDirectoryRoleDeltaRequestBuilder Delta();
     }
 }
