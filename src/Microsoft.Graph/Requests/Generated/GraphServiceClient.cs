@@ -272,6 +272,28 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceTeams request builder.
+        /// </summary>
+        public IGraphServiceTeamsCollectionRequestBuilder Teams
+        {
+            get
+            {
+                return new GraphServiceTeamsCollectionRequestBuilder(this.BaseUrl + "/teams", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceDataPolicyOperations request builder.
+        /// </summary>
+        public IGraphServiceDataPolicyOperationsCollectionRequestBuilder DataPolicyOperations
+        {
+            get
+            {
+                return new GraphServiceDataPolicyOperationsCollectionRequestBuilder(this.BaseUrl + "/dataPolicyOperations", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceMe request builder.
         /// </summary>
         public IUserRequestBuilder Me
@@ -367,6 +389,17 @@ namespace Microsoft.Graph
             get
             {
                 return new SecurityRequestBuilder(this.BaseUrl + "/Security", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAppCatalogs request builder.
+        /// </summary>
+        public IAppCatalogsRequestBuilder AppCatalogs
+        {
+            get
+            {
+                return new AppCatalogsRequestBuilder(this.BaseUrl + "/appCatalogs", this);
             }
         }
     

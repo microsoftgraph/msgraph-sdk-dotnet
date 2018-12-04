@@ -109,5 +109,18 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceMobileAppConfigurationAssign.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceMobileAppConfigurationAssignRequestBuilder"/>.</returns>
+        public IManagedDeviceMobileAppConfigurationAssignRequestBuilder Assign(
+            IEnumerable<ManagedDeviceMobileAppConfigurationAssignment> assignments = null)
+        {
+            return new ManagedDeviceMobileAppConfigurationAssignRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.assign"),
+                this.Client,
+                assignments);
+        }
+    
     }
 }

@@ -121,6 +121,16 @@ namespace Microsoft.Graph
         IGraphServiceGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies { get; }
     
         /// <summary>
+        /// Gets the GraphServiceTeams request builder.
+        /// </summary>
+        IGraphServiceTeamsCollectionRequestBuilder Teams { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceDataPolicyOperations request builder.
+        /// </summary>
+        IGraphServiceDataPolicyOperationsCollectionRequestBuilder DataPolicyOperations { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceMe request builder.
         /// </summary>
         IUserRequestBuilder Me { get; }
@@ -164,6 +174,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceSecurity request builder.
         /// </summary>
         ISecurityRequestBuilder Security { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAppCatalogs request builder.
+        /// </summary>
+        IAppCatalogsRequestBuilder AppCatalogs { get; }
     
     }
 }
