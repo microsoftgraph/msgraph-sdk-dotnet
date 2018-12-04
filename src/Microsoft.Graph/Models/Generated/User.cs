@@ -613,6 +613,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
         public UserSettings Settings { get; set; }
     
+        /// <summary>
+        /// Gets or sets joined teams.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinedTeams", Required = Newtonsoft.Json.Required.Default)]
+        public IUserJoinedTeamsCollectionPage JoinedTeams { get; set; }
+    
     }
 }
 

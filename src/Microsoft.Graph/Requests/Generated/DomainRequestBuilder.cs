@@ -86,6 +86,19 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for DomainForceDelete.
+        /// </summary>
+        /// <returns>The <see cref="IDomainForceDeleteRequestBuilder"/>.</returns>
+        public IDomainForceDeleteRequestBuilder ForceDelete(
+            bool? disableUserAccounts = null)
+        {
+            return new DomainForceDeleteRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.forceDelete"),
+                this.Client,
+                disableUserAccounts);
+        }
+
+        /// <summary>
         /// Gets the request builder for DomainVerify.
         /// </summary>
         /// <returns>The <see cref="IDomainVerifyRequestBuilder"/>.</returns>

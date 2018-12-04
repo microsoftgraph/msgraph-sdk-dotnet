@@ -59,6 +59,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for DirectoryRoleDelta.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryRoleDeltaRequestBuilder"/>.</returns>
+        public IDirectoryRoleDeltaRequestBuilder Delta()
+        {
+            return new DirectoryRoleDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
     }
 }
