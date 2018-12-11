@@ -60,5 +60,12 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IManagedDeviceMobileAppConfigurationUserSummaryRequestBuilder"/>.</returns>
         IManagedDeviceMobileAppConfigurationUserSummaryRequestBuilder UserStatusSummary { get; }
     
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceMobileAppConfigurationAssign.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceMobileAppConfigurationAssignRequestBuilder"/>.</returns>
+        IManagedDeviceMobileAppConfigurationAssignRequestBuilder Assign(
+            IEnumerable<ManagedDeviceMobileAppConfigurationAssignment> assignments = null);
+    
     }
 }
