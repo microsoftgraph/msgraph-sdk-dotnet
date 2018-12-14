@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         new IDeviceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for MemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        IDeviceMemberOfCollectionWithReferencesRequestBuilder MemberOf { get; }
+
+        /// <summary>
         /// Gets the request builder for RegisteredOwners.
         /// </summary>
         /// <returns>The <see cref="IDeviceRegisteredOwnersCollectionWithReferencesRequestBuilder"/>.</returns>

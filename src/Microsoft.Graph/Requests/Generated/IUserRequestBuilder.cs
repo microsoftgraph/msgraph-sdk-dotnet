@@ -227,6 +227,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserSettingsRequestBuilder"/>.</returns>
         IUserSettingsRequestBuilder Settings { get; }
+
+        /// <summary>
+        /// Gets the request builder for JoinedTeams.
+        /// </summary>
+        /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>
+        IUserJoinedTeamsCollectionRequestBuilder JoinedTeams { get; }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.
@@ -286,6 +292,13 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IUserWipeManagedAppRegistrationsByDeviceTagRequestBuilder"/>.</returns>
         IUserWipeManagedAppRegistrationsByDeviceTagRequestBuilder WipeManagedAppRegistrationsByDeviceTag(
             string deviceTag = null);
+
+        /// <summary>
+        /// Gets the request builder for UserExportPersonalData.
+        /// </summary>
+        /// <returns>The <see cref="IUserExportPersonalDataRequestBuilder"/>.</returns>
+        IUserExportPersonalDataRequestBuilder ExportPersonalData(
+            string storageLocation = null);
 
         /// <summary>
         /// Gets the request builder for UserReminderView.
