@@ -155,6 +155,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IGroupGroupLifecyclePoliciesCollectionRequestBuilder"/>.</returns>
         IGroupGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for Team.
+        /// </summary>
+        /// <returns>The <see cref="ITeamRequestBuilder"/>.</returns>
+        ITeamRequestBuilder Team { get; }
     
         /// <summary>
         /// Gets the request builder for GroupSubscribeByMail.

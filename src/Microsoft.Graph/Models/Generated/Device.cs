@@ -127,6 +127,13 @@ namespace Microsoft.Graph
         public string TrustType { get; set; }
     
         /// <summary>
+        /// Gets or sets member of.
+        /// Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberOf", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceMemberOfCollectionWithReferencesPage MemberOf { get; set; }
+    
+        /// <summary>
         /// Gets or sets registered owners.
         /// The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.
         /// </summary>

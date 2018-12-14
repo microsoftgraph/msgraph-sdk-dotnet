@@ -444,6 +444,18 @@ namespace Microsoft.Graph
                 return new UserSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for JoinedTeams.
+        /// </summary>
+        /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>
+        public IUserJoinedTeamsCollectionRequestBuilder JoinedTeams
+        {
+            get
+            {
+                return new UserJoinedTeamsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.
@@ -554,6 +566,19 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.wipeManagedAppRegistrationsByDeviceTag"),
                 this.Client,
                 deviceTag);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExportPersonalData.
+        /// </summary>
+        /// <returns>The <see cref="IUserExportPersonalDataRequestBuilder"/>.</returns>
+        public IUserExportPersonalDataRequestBuilder ExportPersonalData(
+            string storageLocation = null)
+        {
+            return new UserExportPersonalDataRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.exportPersonalData"),
+                this.Client,
+                storageLocation);
         }
 
         /// <summary>

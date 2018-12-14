@@ -31,7 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets providerVersion.
-        /// Version of the provider or subprovider, if it exists, that generated the alert.
+        /// Version of the provider or subprovider, if it exists, that generated the alert. Required
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerVersion", Required = Newtonsoft.Json.Required.Default)]
         public string ProviderVersion { get; set; }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets vendor.
-        /// Name of the alert vendor (for example, Microsoft, Dell, FireEye).
+        /// Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendor", Required = Newtonsoft.Json.Required.Default)]
         public string Vendor { get; set; }
