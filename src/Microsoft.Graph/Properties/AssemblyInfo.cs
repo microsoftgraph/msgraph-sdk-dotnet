@@ -24,8 +24,8 @@ using System.Runtime.CompilerServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.12.0")]
-[assembly: AssemblyFileVersion("1.12.0.0")]
+[assembly: AssemblyVersion("1.13.0")]
+[assembly: AssemblyFileVersion("1.13.0.0")]
 
 #if DEBUG
 [assembly: InternalsVisibleTo("Microsoft.Graph.Test")]
