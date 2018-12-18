@@ -50,6 +50,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for MemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IDeviceMemberOfCollectionWithReferencesRequestBuilder MemberOf
+        {
+            get
+            {
+                return new DeviceMemberOfCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("memberOf"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RegisteredOwners.
         /// </summary>
         /// <returns>The <see cref="IDeviceRegisteredOwnersCollectionWithReferencesRequestBuilder"/>.</returns>

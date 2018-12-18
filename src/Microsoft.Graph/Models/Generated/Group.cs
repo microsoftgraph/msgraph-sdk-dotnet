@@ -156,10 +156,16 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets unseen count.
-        /// Count of posts that the current  user has not seen since his last visit.
+        /// Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unseenCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? UnseenCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is archived.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isArchived", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsArchived { get; set; }
     
         /// <summary>
         /// Gets or sets members.
@@ -307,6 +313,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupLifecyclePolicies", Required = Newtonsoft.Json.Required.Default)]
         public IGroupGroupLifecyclePoliciesCollectionPage GroupLifecyclePolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets team.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "team", Required = Newtonsoft.Json.Required.Default)]
+        public Team Team { get; set; }
     
     }
 }

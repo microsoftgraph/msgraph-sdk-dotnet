@@ -206,6 +206,22 @@ namespace Microsoft.Graph
             if (deviceToInitialize != null && deviceToInitialize.AdditionalData != null)
             {
 
+                if (deviceToInitialize.MemberOf != null && deviceToInitialize.MemberOf.CurrentPage != null)
+                {
+                    deviceToInitialize.MemberOf.AdditionalData = deviceToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceToInitialize.MemberOf.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceToInitialize.RegisteredOwners != null && deviceToInitialize.RegisteredOwners.CurrentPage != null)
                 {
                     deviceToInitialize.RegisteredOwners.AdditionalData = deviceToInitialize.AdditionalData;
