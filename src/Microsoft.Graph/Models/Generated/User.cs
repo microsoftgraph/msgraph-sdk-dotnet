@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -174,6 +174,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesProvisioningErrors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
+
+        /// <summary>
+        /// Gets or sets on premises distinguished name.
+        /// Contains the on-premises distinguished name for the user that was synchronized from on-premises to the cloud. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesDistinguishedName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnPremisesDistinguishedName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises security identifier.
