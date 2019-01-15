@@ -79,6 +79,12 @@ namespace Microsoft.Graph
         IUserLicenseDetailsCollectionRequestBuilder LicenseDetails { get; }
 
         /// <summary>
+        /// Gets the request builder for TransitiveMemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IUserTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUserTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
+
+        /// <summary>
         /// Gets the request builder for Extensions.
         /// </summary>
         /// <returns>The <see cref="IUserExtensionsCollectionRequestBuilder"/>.</returns>

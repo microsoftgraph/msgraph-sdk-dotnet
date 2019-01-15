@@ -182,6 +182,18 @@ namespace Microsoft.Graph
         public IGroupMemberOfCollectionWithReferencesPage MemberOf { get; set; }
     
         /// <summary>
+        /// Gets or sets transitive members.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMembers", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupTransitiveMembersCollectionWithReferencesPage TransitiveMembers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets transitive member of.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
+    
+        /// <summary>
         /// Gets or sets created on behalf of.
         /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
         /// </summary>
