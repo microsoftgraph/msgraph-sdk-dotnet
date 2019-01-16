@@ -43,6 +43,18 @@ namespace Microsoft.Graph
         IGroupMemberOfCollectionWithReferencesRequestBuilder MemberOf { get; }
 
         /// <summary>
+        /// Gets the request builder for TransitiveMembers.
+        /// </summary>
+        /// <returns>The <see cref="IGroupTransitiveMembersCollectionWithReferencesRequestBuilder"/>.</returns>
+        IGroupTransitiveMembersCollectionWithReferencesRequestBuilder TransitiveMembers { get; }
+
+        /// <summary>
+        /// Gets the request builder for TransitiveMemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IGroupTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        IGroupTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
+
+        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>

@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets employee id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeId", Required = Newtonsoft.Json.Required.Default)]
+        public string EmployeeId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets fax number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "faxNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string FaxNumber { get; set; }
+    
+        /// <summary>
         /// Gets or sets given name.
         /// The given name (first name) of the user. Supports $filter.
         /// </summary>
@@ -146,6 +158,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobilePhone", Required = Newtonsoft.Json.Required.Default)]
         public string MobilePhone { get; set; }
+    
+        /// <summary>
+        /// Gets or sets on premises distinguished name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesDistinguishedName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnPremisesDistinguishedName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises extension attributes.
@@ -211,6 +229,12 @@ namespace Microsoft.Graph
         public string OnPremisesUserPrincipalName { get; set; }
     
         /// <summary>
+        /// Gets or sets other mails.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "otherMails", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> OtherMails { get; set; }
+    
+        /// <summary>
         /// Gets or sets password policies.
         /// Specifies password policies for the user. This value is an enumeration with one possible value being 'DisableStrongPassword', which allows weaker passwords than the default policy to be specified. 'DisablePasswordExpiration' can also be specified. The two may be specified together; for example: 'DisablePasswordExpiration, DisableStrongPassword'.
         /// </summary>
@@ -258,6 +282,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyAddresses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ProxyAddresses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets show in address list.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showInAddressList", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ShowInAddressList { get; set; }
     
         /// <summary>
         /// Gets or sets state.
@@ -440,6 +470,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseDetails", Required = Newtonsoft.Json.Required.Default)]
         public IUserLicenseDetailsCollectionPage LicenseDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets transitive member of.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
+        public IUserTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.

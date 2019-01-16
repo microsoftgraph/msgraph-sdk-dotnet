@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         IDeviceRegisteredUsersCollectionWithReferencesRequestBuilder RegisteredUsers { get; }
 
         /// <summary>
+        /// Gets the request builder for TransitiveMemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        IDeviceTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
+
+        /// <summary>
         /// Gets the request builder for Extensions.
         /// </summary>
         /// <returns>The <see cref="IDeviceExtensionsCollectionRequestBuilder"/>.</returns>

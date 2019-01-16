@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets body.
-        /// The body of the message. It can be in HTML or text format.
+        /// The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "body", Required = Newtonsoft.Json.Required.Default)]
         public ItemBody Body { get; set; }
@@ -93,14 +93,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sender.
-        /// The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, or sending a message as a delegate. In any case, the value must correspond to the actual mailbox used.
+        /// The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, or sending a message as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sender", Required = Newtonsoft.Json.Required.Default)]
         public Recipient Sender { get; set; }
     
         /// <summary>
         /// Gets or sets from.
-        /// The mailbox owner and sender of the message. The value must correspond to the actual mailbox used.
+        /// The mailbox owner and sender of the message. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
         public Recipient From { get; set; }
@@ -205,21 +205,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets extensions.
-        /// The collection of open extensions defined for the message. Read-only. Nullable.
+        /// The collection of open extensions defined for the message. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
         public IMessageExtensionsCollectionPage Extensions { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
-        /// The collection of single-value extended properties defined for the message. Read-only. Nullable.
+        /// The collection of single-value extended properties defined for the message. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public IMessageSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
-        /// The collection of multi-value extended properties defined for the message. Read-only. Nullable.
+        /// The collection of multi-value extended properties defined for the message. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public IMessageMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }

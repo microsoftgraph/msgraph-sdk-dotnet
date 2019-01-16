@@ -74,6 +74,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TransitiveMembers.
+        /// </summary>
+        /// <returns>The <see cref="IGroupTransitiveMembersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IGroupTransitiveMembersCollectionWithReferencesRequestBuilder TransitiveMembers
+        {
+            get
+            {
+                return new GroupTransitiveMembersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("transitiveMembers"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TransitiveMemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IGroupTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IGroupTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf
+        {
+            get
+            {
+                return new GroupTransitiveMemberOfCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("transitiveMemberOf"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
