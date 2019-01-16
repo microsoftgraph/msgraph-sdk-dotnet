@@ -40,7 +40,7 @@ namespace Microsoft.Graph
         /// The licenses that are assigned to the user. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedLicenses", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AssignedLicense> AssignedLicenses { get; set; }
+        public IEnumerable<AssignedLicense> AssignedLicenses { get; }
     
         /// <summary>
         /// Gets or sets assigned plans.
