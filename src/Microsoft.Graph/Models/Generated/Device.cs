@@ -148,6 +148,12 @@ namespace Microsoft.Graph
         public IDeviceRegisteredUsersCollectionWithReferencesPage RegisteredUsers { get; set; }
     
         /// <summary>
+        /// Gets or sets transitive member of.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
+    
+        /// <summary>
         /// Gets or sets extensions.
         /// The collection of open extensions defined for the device. Read-only. Nullable.
         /// </summary>

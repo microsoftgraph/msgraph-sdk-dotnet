@@ -238,6 +238,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (groupToInitialize.TransitiveMembers != null && groupToInitialize.TransitiveMembers.CurrentPage != null)
+                {
+                    groupToInitialize.TransitiveMembers.AdditionalData = groupToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    groupToInitialize.AdditionalData.TryGetValue("transitiveMembers@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        groupToInitialize.TransitiveMembers.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (groupToInitialize.TransitiveMemberOf != null && groupToInitialize.TransitiveMemberOf.CurrentPage != null)
+                {
+                    groupToInitialize.TransitiveMemberOf.AdditionalData = groupToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    groupToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        groupToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (groupToInitialize.Owners != null && groupToInitialize.Owners.CurrentPage != null)
                 {
                     groupToInitialize.Owners.AdditionalData = groupToInitialize.AdditionalData;

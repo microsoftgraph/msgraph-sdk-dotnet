@@ -1079,6 +1079,13 @@ namespace Microsoft.Graph
         public bool? EdgeBlockSendingIntranetTrafficToInternetExplorer { get; set; }
     
         /// <summary>
+        /// Gets or sets edge send intranet traffic to internet explorer.
+        /// Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeSendIntranetTrafficToInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeSendIntranetTrafficToInternetExplorer { get; set; }
+    
+        /// <summary>
         /// Gets or sets edge require smart screen.
         /// Indicates whether or not to Require the user to use the smart screen filter.
         /// </summary>

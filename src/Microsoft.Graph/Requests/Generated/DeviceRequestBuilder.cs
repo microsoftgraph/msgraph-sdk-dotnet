@@ -86,6 +86,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TransitiveMemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IDeviceTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf
+        {
+            get
+            {
+                return new DeviceTransitiveMemberOfCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("transitiveMemberOf"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Extensions.
         /// </summary>
         /// <returns>The <see cref="IDeviceExtensionsCollectionRequestBuilder"/>.</returns>

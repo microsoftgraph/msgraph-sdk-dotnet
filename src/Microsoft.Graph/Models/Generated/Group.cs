@@ -23,140 +23,140 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets classification.
-        /// Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.
+        /// Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
         public string Classification { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+        /// Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// An optional description for the group.
+        /// An optional description for the group. Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the group. This property is required when a group is created and it cannot be cleared during updates. Supports $filter and $orderby.
+        /// The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter and $orderby.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets group types.
-        /// Specifies the type of group to create. Possible values are Unified to create an Office 365 group, or DynamicMembership for dynamic groups.  For all other group types, like security-enabled groups and email-enabled security groups, do not set this property. Supports $filter.
+        /// Specifies the type of group to create. Possible values are Unified to create an Office 365 group, or DynamicMembership for dynamic groups.  For all other group types, like security-enabled groups and email-enabled security groups, do not set this property. Returned by default. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> GroupTypes { get; set; }
     
         /// <summary>
         /// Gets or sets mail.
-        /// The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Read-only. Supports $filter.
+        /// The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mail", Required = Newtonsoft.Json.Required.Default)]
         public string Mail { get; set; }
     
         /// <summary>
         /// Gets or sets mail enabled.
-        /// Specifies whether the group is mail-enabled. If the securityEnabled property is also true, the group is a mail-enabled security group; otherwise, the group is a Microsoft Exchange distribution group.
+        /// Specifies whether the group is mail-enabled. If the securityEnabled property is also true, the group is a mail-enabled security group; otherwise, the group is a Microsoft Exchange distribution group. Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? MailEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets mail nickname.
-        /// The mail alias for the group, unique in the organization. This property must be specified when a group is created. Supports $filter.
+        /// The mail alias for the group, unique in the organization. This property must be specified when a group is created. Returned by default. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNickname", Required = Newtonsoft.Json.Required.Default)]
         public string MailNickname { get; set; }
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only. Supports $filter.
+        /// Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-only. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesLastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets on premises provisioning errors.
-        /// Errors when using Microsoft synchronization product during provisioning.
+        /// Errors when using Microsoft synchronization product during provisioning. Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesProvisioningErrors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
     
         /// <summary>
         /// Gets or sets on premises security identifier.
-        /// Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Read-only.
+        /// Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSecurityIdentifier", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesSecurityIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sync enabled.
-        /// true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter.
+        /// true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSyncEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? OnPremisesSyncEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets proxy addresses.
-        /// The any operator is required for filter expressions on multi-valued properties. Read-only. Not nullable. Supports $filter.
+        /// Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyAddresses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ProxyAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets renewed date time.
-        /// Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+        /// Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renewedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? RenewedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets security enabled.
-        /// Specifies whether the group is a security group. If the mailEnabled property is also true, the group is a mail-enabled security group; otherwise it is a security group. Must be false for Office 365 groups. Supports $filter.
+        /// Specifies whether the group is a security group. If the mailEnabled property is also true, the group is a mail-enabled security group; otherwise it is a security group. Must be false for Office 365 groups. Returned by default. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? SecurityEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets visibility.
-        /// Specifies the visibility of an Office 365 group. Possible values are: private, public, or hiddenmembership; blank values are treated as public.  See Group visibility options to learn more.Visibility can be set only when a group is created; it is not editable.Visibility is supported only for unified groups; it is not supported for security groups.
+        /// Specifies the visibility of an Office 365 group. Possible values are: private, public, or hiddenmembership; blank values are treated as public.  See group visibility options to learn more.Visibility can be set only when a group is created; it is not editable.Visibility is supported only for unified groups; it is not supported for security groups. Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibility", Required = Newtonsoft.Json.Required.Default)]
         public string Visibility { get; set; }
     
         /// <summary>
         /// Gets or sets allow external senders.
-        /// Default is false. Indicates if people external to the organization can send messages to the group.
+        /// Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowExternalSenders", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowExternalSenders { get; set; }
     
         /// <summary>
         /// Gets or sets auto subscribe new members.
-        /// Default is false. Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group.
+        /// Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoSubscribeNewMembers", Required = Newtonsoft.Json.Required.Default)]
         public bool? AutoSubscribeNewMembers { get; set; }
     
         /// <summary>
         /// Gets or sets is subscribed by mail.
-        /// Default value is true. Indicates whether the current user is subscribed to receive email conversations.
+        /// Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSubscribedByMail", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsSubscribedByMail { get; set; }
     
         /// <summary>
         /// Gets or sets unseen count.
-        /// Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group.
+        /// Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unseenCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? UnseenCount { get; set; }
@@ -180,6 +180,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberOf", Required = Newtonsoft.Json.Required.Default)]
         public IGroupMemberOfCollectionWithReferencesPage MemberOf { get; set; }
+    
+        /// <summary>
+        /// Gets or sets transitive members.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMembers", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupTransitiveMembersCollectionWithReferencesPage TransitiveMembers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets transitive member of.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
     
         /// <summary>
         /// Gets or sets created on behalf of.
