@@ -43,19 +43,20 @@ namespace Microsoft.Graph
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="baseRequest">The <see cref="BaseRequest"/> for the request.</param>
+        /// <param name="username">A username in a UPN format used to identify the right national cloud authentication provider for the user.</param>
         /// <returns></returns>
-        public static T WithPerRequestAuthProvider<T>(this T baseRequest) where T : IBaseRequest
+        public static T WithPerRequestAuthProvider<T>(this T baseRequest, string username = null) where T : IBaseRequest
         {
             if (baseRequest.Client.PerRequestAuthProvider != null)
             {
                 string authOptionKey = typeof(AuthOption).ToString();
                 if (baseRequest.MiddlewareOptions.ContainsKey(authOptionKey))
                 {
-                    (baseRequest.MiddlewareOptions[authOptionKey] as AuthOption).AuthenticationProvider = baseRequest.Client.PerRequestAuthProvider();
+                    (baseRequest.MiddlewareOptions[authOptionKey] as AuthOption).AuthenticationProvider = baseRequest.Client.PerRequestAuthProvider(username);
                 }
                 else
                 {
-                    baseRequest.MiddlewareOptions.Add(authOptionKey, new AuthOption { AuthenticationProvider = baseRequest.Client.PerRequestAuthProvider() });
+                    baseRequest.MiddlewareOptions.Add(authOptionKey, new AuthOption { AuthenticationProvider = baseRequest.Client.PerRequestAuthProvider(username) });
                 }
             }
             return baseRequest;

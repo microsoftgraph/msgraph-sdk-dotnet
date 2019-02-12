@@ -107,6 +107,7 @@
     <Compile Include="Requests\Functional\GraphTestBase.cs" />
     <Compile Include="Requests\Functional\GroupTests.cs" />
     <Compile Include="Requests\Functional\MailTests.cs" />
+    <Compile Include="Requests\Functional\NationalCloudTests.cs" />
     <Compile Include="Requests\Functional\OneDriveTests.cs" />
     <Compile Include="Requests\Functional\ErrorTests.cs" />
     <Compile Include="Requests\Functional\DeltaQueryTests.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="Requests\RequestTestBase.cs" />
     <Compile Include="Models\ModelSerializationTests.cs" />
     <Compile Include="Requests\Functional\ExcelTests.cs" />
+    <Compile Include="Requests\TestAuthProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Microsoft.Graph.Core\Microsoft.Graph.Core.csproj">

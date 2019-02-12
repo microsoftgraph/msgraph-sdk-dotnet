@@ -51,5 +51,13 @@ namespace Microsoft.Graph
             /// OData type
             public const string ODataType = "@odata.type";
         }
+
+        public static class NationalClouds
+        {
+            public const string China = "Mooncake";
+            public const string Germany = "BlackForest";
+            public const string USGov = "Fairfax";
+            public const string Global = "Global";
+        }
     }
 }

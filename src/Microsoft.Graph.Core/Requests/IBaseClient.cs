@@ -5,6 +5,7 @@
 namespace Microsoft.Graph
 {
     using System;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Interface for the base client.
@@ -29,6 +30,6 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or Sets the <see cref="IAuthenticationProvider"/> for authenticating a single HTTP requests. 
         /// </summary>
-        Func<IAuthenticationProvider> PerRequestAuthProvider { get; set; }
+        Func<string, IAuthenticationProvider> PerRequestAuthProvider { get; set; }
     }
 }
