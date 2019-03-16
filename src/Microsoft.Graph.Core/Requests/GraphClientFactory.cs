@@ -15,7 +15,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// GraphClientFactory class to create the HTTP client
     /// </summary>
-    internal static class GraphClientFactory
+    public static class GraphClientFactory
     {
 
 
@@ -40,7 +40,7 @@ namespace Microsoft.Graph
         private static readonly string _baseAddress = "https://graph.microsoft.com/";
 
         /// Microsoft Graph service nationa cloud endpoints
-        private static readonly Dictionary<string, string> cloudList = new Dictionary<string, string>
+        private static readonly Dictionary<string, string> cloudList = new Dictionary<string, string> (StringComparer.OrdinalIgnoreCase)
             {
                 { Global_Cloud, "https://graph.microsoft.com" },
                 { USGOV_Cloud, "https://graph.microsoft.com" },
