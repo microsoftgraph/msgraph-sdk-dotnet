@@ -69,7 +69,7 @@ namespace Microsoft.Graph
             };
 
             GraphClientFactory.DefaultHttpHandler = () => this.httpMessageHandler;
-            this.httpClient = GraphClientFactory.Create("v1.0", GraphClientFactory.Global_Cloud, handlers);
+            this.httpClient = GraphClientFactory.Create("v1.0", GraphCloud.Global, handlers);
             this.httpClient.SetFeatureFlags(FeatureFlag.RedirectHandler | FeatureFlag.RetryHandler | FeatureFlag.AuthHandler |
                 FeatureFlag.DefaultHttpProvider);
         }

@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Core.Test.Requests
         [TestMethod]
         public void CreateClient_SelectedCloudAndVersion()
         {
-            using (HttpClient httpClient = GraphClientFactory.Create(version: "beta", nationalCloud: GraphClientFactory.Germany_Cloud))
+            using (HttpClient httpClient = GraphClientFactory.Create(version: "beta", nationalCloud: GraphCloud.Germany))
             {
                 Assert.IsNotNull(httpClient, "Create Http client failed.");
                 Uri clouldEndpoint = new Uri("https://graph.microsoft.de/beta");
@@ -122,15 +122,14 @@ namespace Microsoft.Graph.Core.Test.Requests
         [TestMethod]
         public void CreateClient_SelectedCloudWithExceptions()
         {
-            string nation = "Canada";
             try
             {
-                HttpClient httpClient = GraphClientFactory.Create(nationalCloud: nation);
+                HttpClient httpClient = GraphClientFactory.Create(nationalCloud: (GraphCloud)7);
             }
             catch (ArgumentException exception)
             {
                 Assert.IsInstanceOfType(exception, typeof(ArgumentException), "Eeception is not the right type");
-                Assert.AreEqual(exception.Message, String.Format("{0} is an unexpected national cloud.", nation));
+                Assert.AreEqual(exception.Message, String.Format("{0} is an unexpected national cloud.", 7));
             }
         }
 

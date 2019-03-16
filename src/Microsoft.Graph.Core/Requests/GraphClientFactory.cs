@@ -11,14 +11,11 @@ namespace Microsoft.Graph
     using System.Reflection;
     using System.Net.Http.Headers;
 
-
     /// <summary>
     /// GraphClientFactory class to create the HTTP client
     /// </summary>
     public static class GraphClientFactory
     {
-
-
         /// The key for the SDK version header.
         private static readonly string SdkVersionHeaderName = CoreConstants.Headers.SdkVersionHeaderName;
 
@@ -40,24 +37,15 @@ namespace Microsoft.Graph
         private static readonly string _baseAddress = "https://graph.microsoft.com/";
 
         /// Microsoft Graph service nationa cloud endpoints
-        private static readonly Dictionary<string, string> cloudList = new Dictionary<string, string> (StringComparer.OrdinalIgnoreCase)
+        private static readonly Dictionary<GraphCloud, string> cloudList = new Dictionary<GraphCloud, string> 
             {
-                { Global_Cloud, "https://graph.microsoft.com" },
-                { USGOV_Cloud, "https://graph.microsoft.com" },
-                { China_Cloud, "https://microsoftgraph.chinacloudapi.cn" },
-                { Germany_Cloud, "https://graph.microsoft.de" }
+                { GraphCloud.Global, "https://graph.microsoft.com" },
+                { GraphCloud.USGovernment, "https://graph.microsoft.com" },
+                { GraphCloud.China, "https://microsoftgraph.chinacloudapi.cn" },
+                { GraphCloud.Germany, "https://graph.microsoft.de" }
             };
 
         private static FeatureFlag featureFlags;
-
-        /// Global endpoint
-        public const string Global_Cloud = "Global";
-        /// US_GOV endpoint
-        public const string USGOV_Cloud = "US_GOV";
-        /// China endpoint
-        public const string China_Cloud = "China";
-        /// Germany endpoint
-        public const string Germany_Cloud = "Germany";
 
         /// <summary>
         /// Proxy to be used with created clients
@@ -87,7 +75,7 @@ namespace Microsoft.Graph
         /// The handlers are invoked in a top-down fashion. That is, the first entry is invoked first for
         /// an outbound request message but last for an inbound response message.</param>
         /// <returns>An <see cref="HttpClient"/> instance with the configured handlers.</returns>
-        public static HttpClient Create(string version = "v1.0", string nationalCloud = Global_Cloud, IEnumerable<DelegatingHandler> handlers = null)
+        public static HttpClient Create(string version = "v1.0", GraphCloud nationalCloud = GraphCloud.Global, IEnumerable<DelegatingHandler> handlers = null)
         {
             HttpMessageHandler pipeline;
             if (handlers == null)
@@ -121,7 +109,7 @@ namespace Microsoft.Graph
             };
         }
 
-        private static Uri DetermineBaseAddress(string nationalCloud, string version)
+        private static Uri DetermineBaseAddress(GraphCloud nationalCloud, string version)
         {
             string cloud = "";
             if (!cloudList.TryGetValue(nationalCloud, out cloud))
@@ -130,7 +118,6 @@ namespace Microsoft.Graph
             }
             string cloudAddress = cloud + "/" + version;
             return new Uri(cloudAddress);
-
         }
 
         /// <summary>
