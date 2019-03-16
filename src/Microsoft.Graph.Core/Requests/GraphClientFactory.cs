@@ -163,38 +163,5 @@ namespace Microsoft.Graph
 
             return pipeline;
         }
-
-
-
-        ///// <summary>
-        ///// Configure an instance of an <see cref="HttpClient"/>
-        ///// </summary>
-        ///// <param name="client">The <see cref="HttpClient"/> client instance need to be configured.</param>
-        ///// <param name="timeout">A <see cref="TimeSpan"/> value for the HTTP client timeout property.</param>
-        ///// <param name="baseAddress">A <see cref="Uri"/> value to set the HTTP client BaseAddress property.</param>
-        ///// <param name="cacheControlHeaderValue">A <see cref="CacheControlHeaderValue"/> value to set HTTP client DefaultRequestHeaders property.</param>
-        ///// <returns></returns>
-        //public static HttpClient Configure(HttpClient client, TimeSpan timeout, Uri baseAddress, CacheControlHeaderValue cacheControlHeaderValue)
-        //{
-        //    try
-        //    {
-        //        client.Timeout = timeout;
-        //    }
-        //    catch (InvalidOperationException exception)
-        //    {
-        //        throw new ServiceException(
-        //            new Error
-        //            {
-        //                Code = ErrorConstants.Codes.NotAllowed,
-        //                Message = ErrorConstants.Messages.OverallTimeoutCannotBeSet,
-        //            },
-        //            exception);
-        //    }
-
-        //    client.BaseAddress = baseAddress == null ? new Uri(_baseAddress + Version) : baseAddress;
-        //    client.DefaultRequestHeaders.CacheControl = cacheControlHeaderValue ?? new CacheControlHeaderValue { NoCache = true, NoStore = true };
-        //    return client;
-        //}
-
     }
 }
