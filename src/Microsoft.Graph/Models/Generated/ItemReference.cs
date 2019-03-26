@@ -72,6 +72,12 @@ namespace Microsoft.Graph
         public SharepointIds SharepointIds { get; set; }
     
         /// <summary>
+        /// Gets or sets siteId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteId", Required = Newtonsoft.Json.Required.Default)]
+        public string SiteId { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

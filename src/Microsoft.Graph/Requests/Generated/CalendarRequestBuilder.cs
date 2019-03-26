@@ -97,5 +97,24 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for CalendarGetSchedule.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarGetScheduleRequestBuilder"/>.</returns>
+        public ICalendarGetScheduleRequestBuilder GetSchedule(
+            IEnumerable<string> Schedules = null,
+            DateTimeTimeZone EndTime = null,
+            DateTimeTimeZone StartTime = null,
+            Int32? AvailabilityViewInterval = null)
+        {
+            return new CalendarGetScheduleRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSchedule"),
+                this.Client,
+                Schedules,
+                EndTime,
+                StartTime,
+                AvailabilityViewInterval);
+        }
+    
     }
 }

@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         IDriveItemPermissionsCollectionRequestBuilder Permissions { get; }
 
         /// <summary>
+        /// Gets the request builder for Subscriptions.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemSubscriptionsCollectionRequestBuilder"/>.</returns>
+        IDriveItemSubscriptionsCollectionRequestBuilder Subscriptions { get; }
+
+        /// <summary>
         /// Gets the request builder for Thumbnails.
         /// </summary>
         /// <returns>The <see cref="IDriveItemThumbnailsCollectionRequestBuilder"/>.</returns>

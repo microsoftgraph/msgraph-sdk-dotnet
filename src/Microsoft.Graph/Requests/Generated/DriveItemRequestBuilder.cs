@@ -86,6 +86,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Subscriptions.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemSubscriptionsCollectionRequestBuilder"/>.</returns>
+        public IDriveItemSubscriptionsCollectionRequestBuilder Subscriptions
+        {
+            get
+            {
+                return new DriveItemSubscriptionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("subscriptions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Thumbnails.
         /// </summary>
         /// <returns>The <see cref="IDriveItemThumbnailsCollectionRequestBuilder"/>.</returns>

@@ -190,6 +190,13 @@ namespace Microsoft.Graph
         public IDriveItemPermissionsCollectionPage Permissions { get; set; }
     
         /// <summary>
+        /// Gets or sets subscriptions.
+        /// The set of subscriptions on the item. Only supported on the root of a drive.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptions", Required = Newtonsoft.Json.Required.Default)]
+        public IDriveItemSubscriptionsCollectionPage Subscriptions { get; set; }
+    
+        /// <summary>
         /// Gets or sets thumbnails.
         /// Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
         /// </summary>
