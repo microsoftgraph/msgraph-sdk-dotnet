@@ -24,7 +24,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
         private PageIterator<Event> pageIterator;
         private const string nextPageSubject = "";
         
-        [Fact (Skip = "No CI set up for functional tests")]
+        //[Fact (Skip = "No CI set up for functional tests")]
+        [Fact]
         public async Task PageIteratorDevTest()
         {
             // Get an initial page results to populate the iterator.
@@ -50,7 +51,14 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
         [Fact]
         public async Task Given_Concrete_CollectionPage_It_Throws_RuntimeBinderException()
         {
-            pageIterator = PageIterator<Event>.CreatePageIterator(new CollectionPage<Event>(), (e) => { return true; });
+            var page = new CollectionPage<Event>()
+            {
+                AdditionalData = new Dictionary<string, object>()
+            };
+
+            page.AdditionalData.Add("@odata.nextlink", "testnextlink");
+
+            pageIterator = PageIterator<Event>.CreatePageIterator(page, (e) => { return true; });
             await Assert.ThrowsAsync<RuntimeBinderException>(() => pageIterator.IterateAsync());
         }
 
@@ -184,6 +192,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
             {
                 nextPage.Add(new Event() { Subject = $"Subject for next page events: {i.ToString()}" });
             }
+            nextPage.AdditionalData = new Dictionary<string, object>();
 
             bool reachedNextPage = false;
 
@@ -191,18 +200,17 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
             // signal that we reached an event in the next page.
             Func<Event, bool> processEachEvent = (e) =>
             {
-                bool shouldContinue = true;
-
                 if (e.Subject.Contains("Subject for next page events"))
                 {
                     reachedNextPage = true;
+                    return false;
                 }
 
-                return shouldContinue;
+                return true;
             };
 
             Mocks.MockUserEventsCollectionRequest mockUserEventsCollectionRequest = new Mocks.MockUserEventsCollectionRequest(nextPage);
-            var mockUserEventsCollectionPage = new Mocks.MockUserEventsCollectionPage(originalCollectionPageEvents, mockUserEventsCollectionRequest) as IUserEventsCollectionPage;
+            var mockUserEventsCollectionPage = new Mocks.MockUserEventsCollectionPage(originalCollectionPageEvents, mockUserEventsCollectionRequest, "nextlink") as IUserEventsCollectionPage;
 
             pageIterator = PageIterator<Event>.CreatePageIterator(mockUserEventsCollectionPage, processEachEvent);
             await pageIterator.IterateAsync();
@@ -210,7 +218,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
             Assert.True(reachedNextPage, "The delegate page iterator did not reach the next page.");
         }
 
-        [Fact] 
+        [Fact]
         public async Task Given_CollectionPage_It_Handles_Empty_NextPage()
         {
             try
@@ -243,7 +251,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
                 Assert.True(false, "Unexpected exception occurred when next page contains no elements.");
             }
         }
+
+
         // Given_Delta_Query_CollectionPage_It_Returns_Deltalink
         // Given_DeltaLink_We_Can_Resume_PageItem_Iteration_And_Result_Paging
+        // Resume paging with fresh iterator.
     }
 }

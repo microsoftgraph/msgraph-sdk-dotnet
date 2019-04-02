@@ -22,6 +22,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Mocks
             return Task.FromResult<IUserEventsCollectionPage>(NextPage);
         }
 
+        public Task<IUserEventsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        {
+            return this.GetAsync();
+        }
+
         #region Not impl
 
         public string ContentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -66,10 +71,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Mocks
         }
 
 
-        public Task<IUserEventsCollectionPage> GetAsync(CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public IUserEventsCollectionRequest OrderBy(string value)
         {
