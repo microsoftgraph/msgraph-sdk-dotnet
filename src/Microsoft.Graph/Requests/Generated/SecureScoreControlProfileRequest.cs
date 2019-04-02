@@ -16,17 +16,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type SecurityRequest.
+    /// The type SecureScoreControlProfileRequest.
     /// </summary>
-    public partial class SecurityRequest : BaseRequest, ISecurityRequest
+    public partial class SecureScoreControlProfileRequest : BaseRequest, ISecureScoreControlProfileRequest
     {
         /// <summary>
-        /// Constructs a new SecurityRequest.
+        /// Constructs a new SecureScoreControlProfileRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public SecurityRequest(
+        public SecureScoreControlProfileRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -35,32 +35,32 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified Security using POST.
+        /// Creates the specified SecureScoreControlProfile using POST.
         /// </summary>
-        /// <param name="securityToCreate">The Security to create.</param>
-        /// <returns>The created Security.</returns>
-        public System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate)
+        /// <param name="secureScoreControlProfileToCreate">The SecureScoreControlProfile to create.</param>
+        /// <returns>The created SecureScoreControlProfile.</returns>
+        public System.Threading.Tasks.Task<SecureScoreControlProfile> CreateAsync(SecureScoreControlProfile secureScoreControlProfileToCreate)
         {
-            return this.CreateAsync(securityToCreate, CancellationToken.None);
+            return this.CreateAsync(secureScoreControlProfileToCreate, CancellationToken.None);
         }
 
         /// <summary>
-        /// Creates the specified Security using POST.
+        /// Creates the specified SecureScoreControlProfile using POST.
         /// </summary>
-        /// <param name="securityToCreate">The Security to create.</param>
+        /// <param name="secureScoreControlProfileToCreate">The SecureScoreControlProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Security.</returns>
-        public async System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate, CancellationToken cancellationToken)
+        /// <returns>The created SecureScoreControlProfile.</returns>
+        public async System.Threading.Tasks.Task<SecureScoreControlProfile> CreateAsync(SecureScoreControlProfile secureScoreControlProfileToCreate, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            var newEntity = await this.SendAsync<Security>(securityToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<SecureScoreControlProfile>(secureScoreControlProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Security.
+        /// Deletes the specified SecureScoreControlProfile.
         /// </summary>
         /// <returns>The task to await.</returns>
         public System.Threading.Tasks.Task DeleteAsync()
@@ -69,59 +69,59 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Deletes the specified Security.
+        /// Deletes the specified SecureScoreControlProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
         {
             this.Method = "DELETE";
-            await this.SendAsync<Security>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<SecureScoreControlProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Security.
+        /// Gets the specified SecureScoreControlProfile.
         /// </summary>
-        /// <returns>The Security.</returns>
-        public System.Threading.Tasks.Task<Security> GetAsync()
+        /// <returns>The SecureScoreControlProfile.</returns>
+        public System.Threading.Tasks.Task<SecureScoreControlProfile> GetAsync()
         {
             return this.GetAsync(CancellationToken.None);
         }
 
         /// <summary>
-        /// Gets the specified Security.
+        /// Gets the specified SecureScoreControlProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The Security.</returns>
-        public async System.Threading.Tasks.Task<Security> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The SecureScoreControlProfile.</returns>
+        public async System.Threading.Tasks.Task<SecureScoreControlProfile> GetAsync(CancellationToken cancellationToken)
         {
             this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<Security>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<SecureScoreControlProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Security using PATCH.
+        /// Updates the specified SecureScoreControlProfile using PATCH.
         /// </summary>
-        /// <param name="securityToUpdate">The Security to update.</param>
-        /// <returns>The updated Security.</returns>
-        public System.Threading.Tasks.Task<Security> UpdateAsync(Security securityToUpdate)
+        /// <param name="secureScoreControlProfileToUpdate">The SecureScoreControlProfile to update.</param>
+        /// <returns>The updated SecureScoreControlProfile.</returns>
+        public System.Threading.Tasks.Task<SecureScoreControlProfile> UpdateAsync(SecureScoreControlProfile secureScoreControlProfileToUpdate)
         {
-            return this.UpdateAsync(securityToUpdate, CancellationToken.None);
+            return this.UpdateAsync(secureScoreControlProfileToUpdate, CancellationToken.None);
         }
 
         /// <summary>
-        /// Updates the specified Security using PATCH.
+        /// Updates the specified SecureScoreControlProfile using PATCH.
         /// </summary>
-        /// <param name="securityToUpdate">The Security to update.</param>
+        /// <param name="secureScoreControlProfileToUpdate">The SecureScoreControlProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The updated Security.</returns>
-        public async System.Threading.Tasks.Task<Security> UpdateAsync(Security securityToUpdate, CancellationToken cancellationToken)
+        /// <returns>The updated SecureScoreControlProfile.</returns>
+        public async System.Threading.Tasks.Task<SecureScoreControlProfile> UpdateAsync(SecureScoreControlProfile secureScoreControlProfileToUpdate, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "PATCH";
-            var updatedEntity = await this.SendAsync<Security>(securityToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<SecureScoreControlProfile>(secureScoreControlProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
@@ -131,7 +131,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public ISecurityRequest Expand(string value)
+        public ISecureScoreControlProfileRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -142,7 +142,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public ISecurityRequest Expand(Expression<Func<Security, object>> expandExpression)
+        public ISecureScoreControlProfileRequest Expand(Expression<Func<SecureScoreControlProfile, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -166,7 +166,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public ISecurityRequest Select(string value)
+        public ISecureScoreControlProfileRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -177,7 +177,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public ISecurityRequest Select(Expression<Func<Security, object>> selectExpression)
+        public ISecureScoreControlProfileRequest Select(Expression<Func<SecureScoreControlProfile, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -199,63 +199,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="securityToInitialize">The <see cref="Security"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(Security securityToInitialize)
+        /// <param name="secureScoreControlProfileToInitialize">The <see cref="SecureScoreControlProfile"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(SecureScoreControlProfile secureScoreControlProfileToInitialize)
         {
-
-            if (securityToInitialize != null && securityToInitialize.AdditionalData != null)
-            {
-
-                if (securityToInitialize.Alerts != null && securityToInitialize.Alerts.CurrentPage != null)
-                {
-                    securityToInitialize.Alerts.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("alerts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.Alerts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (securityToInitialize.SecureScoreControlProfiles != null && securityToInitialize.SecureScoreControlProfiles.CurrentPage != null)
-                {
-                    securityToInitialize.SecureScoreControlProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("secureScoreControlProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.SecureScoreControlProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (securityToInitialize.SecureScores != null && securityToInitialize.SecureScores.CurrentPage != null)
-                {
-                    securityToInitialize.SecureScores.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("secureScores@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.SecureScores.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-            }
-
 
         }
     }

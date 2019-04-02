@@ -15,26 +15,36 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type TimeSlot.
+    /// The type ControlScore.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class TimeSlot
+    public partial class ControlScore
     {
 
         /// <summary>
-        /// Gets or sets start.
-        /// The date, time, and time zone that a period ends.
+        /// Gets or sets controlCategory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeTimeZone Start { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controlCategory", Required = Newtonsoft.Json.Required.Default)]
+        public string ControlCategory { get; set; }
     
         /// <summary>
-        /// Gets or sets end.
-        /// The date, time, and time zone that a period begins.
+        /// Gets or sets controlName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "end", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeTimeZone End { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controlName", Required = Newtonsoft.Json.Required.Default)]
+        public string ControlName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets score.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "score", Required = Newtonsoft.Json.Required.Default)]
+        public double? Score { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

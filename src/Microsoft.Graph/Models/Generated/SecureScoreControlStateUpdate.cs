@@ -15,26 +15,42 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type TimeSlot.
+    /// The type SecureScoreControlStateUpdate.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class TimeSlot
+    public partial class SecureScoreControlStateUpdate
     {
 
         /// <summary>
-        /// Gets or sets start.
-        /// The date, time, and time zone that a period ends.
+        /// Gets or sets assignedTo.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeTimeZone Start { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedTo", Required = Newtonsoft.Json.Required.Default)]
+        public string AssignedTo { get; set; }
     
         /// <summary>
-        /// Gets or sets end.
-        /// The date, time, and time zone that a period begins.
+        /// Gets or sets comment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "end", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeTimeZone End { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comment", Required = Newtonsoft.Json.Required.Default)]
+        public string Comment { get; set; }
+    
+        /// <summary>
+        /// Gets or sets state.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public string State { get; set; }
+    
+        /// <summary>
+        /// Gets or sets updatedBy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updatedBy", Required = Newtonsoft.Json.Required.Default)]
+        public string UpdatedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets updatedDateTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? UpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

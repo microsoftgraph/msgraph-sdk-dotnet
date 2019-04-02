@@ -28,6 +28,18 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alerts", Required = Newtonsoft.Json.Required.Default)]
         public ISecurityAlertsCollectionPage Alerts { get; set; }
     
+        /// <summary>
+        /// Gets or sets secure score control profiles.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secureScoreControlProfiles", Required = Newtonsoft.Json.Required.Default)]
+        public ISecuritySecureScoreControlProfilesCollectionPage SecureScoreControlProfiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets secure scores.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secureScores", Required = Newtonsoft.Json.Required.Default)]
+        public ISecuritySecureScoresCollectionPage SecureScores { get; set; }
+    
     }
 }
 

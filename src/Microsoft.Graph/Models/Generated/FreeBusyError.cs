@@ -15,26 +15,26 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type TimeSlot.
+    /// The type FreeBusyError.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class TimeSlot
+    public partial class FreeBusyError
     {
 
         /// <summary>
-        /// Gets or sets start.
-        /// The date, time, and time zone that a period ends.
+        /// Gets or sets message.
+        /// Describes the error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeTimeZone Start { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
+        public string Message { get; set; }
     
         /// <summary>
-        /// Gets or sets end.
-        /// The date, time, and time zone that a period begins.
+        /// Gets or sets responseCode.
+        /// The response code from querying for the availability of the user, distribution list, or resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "end", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeTimeZone End { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responseCode", Required = Newtonsoft.Json.Required.Default)]
+        public string ResponseCode { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

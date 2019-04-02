@@ -60,6 +60,30 @@ namespace Microsoft.Graph
                 return new SecurityAlertsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("alerts"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for SecureScoreControlProfiles.
+        /// </summary>
+        /// <returns>The <see cref="ISecuritySecureScoreControlProfilesCollectionRequestBuilder"/>.</returns>
+        public ISecuritySecureScoreControlProfilesCollectionRequestBuilder SecureScoreControlProfiles
+        {
+            get
+            {
+                return new SecuritySecureScoreControlProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("secureScoreControlProfiles"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SecureScores.
+        /// </summary>
+        /// <returns>The <see cref="ISecuritySecureScoresCollectionRequestBuilder"/>.</returns>
+        public ISecuritySecureScoresCollectionRequestBuilder SecureScores
+        {
+            get
+            {
+                return new SecuritySecureScoresCollectionRequestBuilder(this.AppendSegmentToRequestUrl("secureScores"), this.Client);
+            }
+        }
     
     }
 }

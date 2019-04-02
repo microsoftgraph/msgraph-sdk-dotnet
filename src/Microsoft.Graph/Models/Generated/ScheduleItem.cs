@@ -15,26 +15,54 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type TimeSlot.
+    /// The type ScheduleItem.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class TimeSlot
+    public partial class ScheduleItem
     {
 
         /// <summary>
         /// Gets or sets start.
-        /// The date, time, and time zone that a period ends.
+        /// The date, time, and time zone that the corresponding event starts.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeTimeZone Start { get; set; }
     
         /// <summary>
         /// Gets or sets end.
-        /// The date, time, and time zone that a period begins.
+        /// The date, time, and time zone that the corresponding event ends.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "end", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeTimeZone End { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isPrivate.
+        /// The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPrivate", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsPrivate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public FreeBusyStatus? Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subject.
+        /// The corresponding event's subject line. Optional.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        public string Subject { get; set; }
+    
+        /// <summary>
+        /// Gets or sets location.
+        /// The location where the corresponding event is held or attended from. Optional.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
+        public string Location { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

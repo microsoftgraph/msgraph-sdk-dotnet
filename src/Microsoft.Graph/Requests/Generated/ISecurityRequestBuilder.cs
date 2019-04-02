@@ -35,6 +35,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISecurityAlertsCollectionRequestBuilder"/>.</returns>
         ISecurityAlertsCollectionRequestBuilder Alerts { get; }
+
+        /// <summary>
+        /// Gets the request builder for SecureScoreControlProfiles.
+        /// </summary>
+        /// <returns>The <see cref="ISecuritySecureScoreControlProfilesCollectionRequestBuilder"/>.</returns>
+        ISecuritySecureScoreControlProfilesCollectionRequestBuilder SecureScoreControlProfiles { get; }
+
+        /// <summary>
+        /// Gets the request builder for SecureScores.
+        /// </summary>
+        /// <returns>The <see cref="ISecuritySecureScoresCollectionRequestBuilder"/>.</returns>
+        ISecuritySecureScoresCollectionRequestBuilder SecureScores { get; }
     
     }
 }

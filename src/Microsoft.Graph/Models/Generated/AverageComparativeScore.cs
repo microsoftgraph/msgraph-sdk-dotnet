@@ -15,26 +15,24 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type TimeSlot.
+    /// The type AverageComparativeScore.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class TimeSlot
+    public partial class AverageComparativeScore
     {
 
         /// <summary>
-        /// Gets or sets start.
-        /// The date, time, and time zone that a period ends.
+        /// Gets or sets averageScore.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeTimeZone Start { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageScore", Required = Newtonsoft.Json.Required.Default)]
+        public double? AverageScore { get; set; }
     
         /// <summary>
-        /// Gets or sets end.
-        /// The date, time, and time zone that a period begins.
+        /// Gets or sets basis.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "end", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeTimeZone End { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "basis", Required = Newtonsoft.Json.Required.Default)]
+        public string Basis { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
