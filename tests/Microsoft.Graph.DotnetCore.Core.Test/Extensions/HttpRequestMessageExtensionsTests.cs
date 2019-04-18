@@ -6,6 +6,8 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Extensions
 {
     using Microsoft.Graph.DotnetCore.Core.Test.Requests;
     using System.Net.Http;
+    using System.Text;
+    using System.Threading.Tasks;
     using Xunit;
     public class HttpRequestMessageExtensionsTests: BaseRequestTests
     {
@@ -84,6 +86,34 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Extensions
             HttpRequestMessage httpRequestMessage = baseRequest.GetHttpRequestMessage();
 
             Assert.NotNull(httpRequestMessage.GetMiddlewareOption<AuthenticationHandlerOption>());
+        }
+
+        [Fact]
+        public async Task CloneAsync_WithEmptyHttpContent()
+        {
+            HttpRequestMessage originalRequest = new HttpRequestMessage(HttpMethod.Post, "http://example.com");
+
+            HttpRequestMessage clonedRequest = await originalRequest.CloneAsync();
+
+            Assert.NotNull(clonedRequest);
+            Assert.Equal(originalRequest.Method, clonedRequest.Method);
+            Assert.Equal(originalRequest.RequestUri, clonedRequest.RequestUri);
+            Assert.Null(clonedRequest.Content);
+        }
+
+        [Fact]
+        public async Task CloneAsync_WithHttpContent()
+        {
+            HttpRequestMessage originalRequest = new HttpRequestMessage(HttpMethod.Post, "http://example.com");
+            originalRequest.Content = new StringContent("Sample Content", Encoding.UTF8, "application/json");
+
+            HttpRequestMessage clonedRequest = await originalRequest.CloneAsync();
+
+            Assert.NotNull(clonedRequest);
+            Assert.Equal(originalRequest.Method, clonedRequest.Method);
+            Assert.Equal(originalRequest.RequestUri, clonedRequest.RequestUri);
+            Assert.Equal(await originalRequest.Content.ReadAsStringAsync(), await clonedRequest.Content.ReadAsStringAsync());
+            Assert.Equal(originalRequest.Content.Headers.ContentType, clonedRequest.Content.Headers.ContentType);
         }
     }
 }

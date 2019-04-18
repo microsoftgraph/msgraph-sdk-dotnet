@@ -113,9 +113,10 @@ namespace Microsoft.Graph
         /// <returns></returns>
         public static IEnumerable<DelegatingHandler> CreateDefaultHandlers()
         {
-            featureFlags = FeatureFlag.RetryHandler | FeatureFlag.RedirectHandler;
+            featureFlags = FeatureFlag.CompressionHandler | FeatureFlag.RetryHandler | FeatureFlag.RedirectHandler;
 
             return new List<DelegatingHandler> {
+                new CompressionHandler(),
                 new RetryHandler(),
                 new RedirectHandler()
             };

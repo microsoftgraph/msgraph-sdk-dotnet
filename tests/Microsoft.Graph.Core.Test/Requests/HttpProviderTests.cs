@@ -251,7 +251,7 @@ namespace Microsoft.Graph.Core.Test.Requests
 
                 var returnedResponseMessage = await this.httpProvider.SendAsync(httpRequestMessage);
 
-                Assert.AreEqual(5, finalResponseMessage.RequestMessage.Headers.Count(), "Unexpected number of headers on redirect request message.");
+                Assert.AreEqual(6, finalResponseMessage.RequestMessage.Headers.Count(), "Unexpected number of headers on redirect request message.");
                 
                 foreach (var header in httpRequestMessage.Headers)
                 {

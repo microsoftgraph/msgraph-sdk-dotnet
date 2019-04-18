@@ -61,20 +61,23 @@ namespace Microsoft.Graph
         {
             var newRequest = new HttpRequestMessage(originalRequest.Method, originalRequest.RequestUri);
 
+            // Copy request headers.
             foreach (var header in originalRequest.Headers)
-            {
                 newRequest.Headers.TryAddWithoutValidation(header.Key, header.Value);
-            }
 
+            // Copy request properties.
             foreach (var property in originalRequest.Properties)
-            {
                 newRequest.Properties.Add(property);
-            }
 
-            // Set Content if previous request contains
-            if (originalRequest.Content != null && originalRequest.Content.Headers.ContentLength != 0)
+            // Set Content if previous request had one.
+            if (originalRequest.Content != null)
             {
                 newRequest.Content = new StreamContent(await originalRequest.Content.ReadAsStreamAsync());
+
+                // Copy content headers.
+                if (originalRequest.Content.Headers != null)
+                    foreach (var contentHeader in originalRequest.Content.Headers)
+                        newRequest.Content.Headers.TryAddWithoutValidation(contentHeader.Key, contentHeader.Value);
             }
 
             return newRequest;

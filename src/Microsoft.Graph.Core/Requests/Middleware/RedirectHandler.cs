@@ -82,10 +82,10 @@ namespace Microsoft.Graph
 
                     // Set newRequestUri from response
                     newRequest.RequestUri = response.Headers.Location;
-                    
+
                     // Remove Auth if http request's scheme or host changes
-                    if (String.Compare(newRequest.RequestUri.Host, request.RequestUri.Host, StringComparison.OrdinalIgnoreCase) != 0 || 
-                        !newRequest.RequestUri.Scheme.Equals(request.RequestUri.Scheme))
+                    if (String.CompareOrdinal(newRequest.RequestUri.Host, request.RequestUri.Host) != 0 ||
+                        String.CompareOrdinal(newRequest.RequestUri.Scheme, request.RequestUri.Scheme) != 0)
                     {
                         newRequest.Headers.Authorization = null;
                     }

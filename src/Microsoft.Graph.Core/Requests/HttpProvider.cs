@@ -61,17 +61,19 @@ namespace Microsoft.Graph
             this.httpMessageHandler = httpMessageHandler ?? new HttpClientHandler { AllowAutoRedirect = false };
             this.Serializer = serializer ?? new Serializer();
 
+            // Always ensure RedirectHandler is the last handler in your pipeline.
+            // The recommended DelegatingHandler order is : 1. AuthenticationHandler, 2. RetryHandler, 3.RedirectHandler.
             DelegatingHandler[] handlers = new DelegatingHandler[]
             {
-                new RedirectHandler(),
+                new AuthenticationHandler(null),
+                new CompressionHandler(),
                 new RetryHandler(),
-                new AuthenticationHandler(null)
+                new RedirectHandler()
             };
 
             GraphClientFactory.DefaultHttpHandler = () => this.httpMessageHandler;
             this.httpClient = GraphClientFactory.Create("v1.0", GraphClientFactory.Global_Cloud, handlers);
-            this.httpClient.SetFeatureFlags(FeatureFlag.RedirectHandler | FeatureFlag.RetryHandler | FeatureFlag.AuthHandler |
-                FeatureFlag.DefaultHttpProvider);
+            this.httpClient.SetFeatureFlags(FeatureFlag.AuthHandler | FeatureFlag.CompressionHandler | FeatureFlag.RetryHandler | FeatureFlag.RedirectHandler | FeatureFlag.DefaultHttpProvider);
         }
 
         /// <summary>

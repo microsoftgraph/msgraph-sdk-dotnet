@@ -53,7 +53,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                         new DelegateAuthenticationProvider(
                             async (requestMessage) =>
                             {
-                                var token = await getAccessTokenUsingPasswordGrant();
+                                var token = await GetAccessTokenUsingPasswordGrant();
                                 requestMessage.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("bearer", token);
 
                             }));
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
         }
 
-        private async Task<string> getAccessTokenUsingPasswordGrant()
+        public async Task<string> GetAccessTokenUsingPasswordGrant()
         {
             JObject jResult = null;
             String urlParameters = String.Format(
@@ -88,8 +88,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 responseTask.Wait();
                 string responseContent = responseTask.Result;
                 jResult = JObject.Parse(responseContent);
+                accessToken = (string)jResult["access_token"];
             }
-            accessToken = (string)jResult["access_token"];
 
             if (!String.IsNullOrEmpty(accessToken))
             {

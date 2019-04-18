@@ -59,6 +59,7 @@
     <Compile Include="Helpers\ExtractSelectHelperTest.cs" />
     <Compile Include="Helpers\StringHelperTests.cs" />
     <Compile Include="Helpers\UrlHelperTests.cs" />
+    <Compile Include="Mocks\MockCustomHttpProvider.cs" />
     <Compile Include="Mocks\MockProgress.cs" />
     <Compile Include="Mocks\MockRedirectHandler.cs" />
     <Compile Include="Requests\AsyncMonitorTests.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Requests\Middleware\Options\RetrytHandlerOptionTests.cs" />
     <Compile Include="Requests\Middleware\RedirectHandlerTests.cs" />
     <Compile Include="Requests\Middleware\RetryHandlerTests.cs" />
+    <Compile Include="Requests\ResponseHandlerTests.cs" />
     <Compile Include="Serialization\DurationConverterTests.cs" />
     <Compile Include="TestModels\AbstractEntityType.cs" />
     <Compile Include="TestModels\ClassWithJson.cs" />

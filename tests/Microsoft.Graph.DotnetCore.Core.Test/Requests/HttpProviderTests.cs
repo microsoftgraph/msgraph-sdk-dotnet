@@ -236,7 +236,7 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
 
                 var returnedResponseMessage = await this.httpProvider.SendAsync(httpRequestMessage);
 
-                Assert.Equal(5, finalResponseMessage.RequestMessage.Headers.Count());
+                Assert.Equal(6, finalResponseMessage.RequestMessage.Headers.Count());
 
                 foreach (var header in httpRequestMessage.Headers)
                 {

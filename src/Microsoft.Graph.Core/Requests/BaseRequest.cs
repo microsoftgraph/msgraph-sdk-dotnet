@@ -20,6 +20,8 @@ namespace Microsoft.Graph
     /// </summary>
     public class BaseRequest : IBaseRequest
     {
+        private ResponseHandler responseHandler;
+
         /// <summary>
         /// Constructs a new <see cref="BaseRequest"/>.
         /// </summary>
@@ -33,6 +35,7 @@ namespace Microsoft.Graph
         {
             this.Method = "GET";
             this.Client = client;
+            this.responseHandler = new ResponseHandler(client.HttpProvider.Serializer);
             this.Headers = new List<HeaderOption>();
             this.QueryOptions = new List<QueryOption>();
             this.MiddlewareOptions = new Dictionary<string, IMiddlewareOption>();
@@ -125,16 +128,10 @@ namespace Microsoft.Graph
         {
             using (var response = await this.SendRequestAsync(serializableObject, cancellationToken, completionOption).ConfigureAwait(false))
             {
-                if (response.Content != null)
-                {
-                    var responseString = await GetResponseString(response);
-                    return this.Client.HttpProvider.Serializer.DeserializeObject<T>(responseString);
-                }
-
-                return default(T);
+                return await this.responseHandler.HandleResponse<T>(response);
             }
         }
-
+        
         /// <summary>
         /// Sends the multipart request.
         /// </summary>
@@ -150,13 +147,7 @@ namespace Microsoft.Graph
         {
             using (var response = await this.SendMultiPartRequestAsync(multipartContent, cancellationToken, completionOption).ConfigureAwait(false))
             {
-                if (response.Content != null)
-                {
-                    var responseString = await GetResponseString(response);
-                    return this.Client.HttpProvider.Serializer.DeserializeObject<T>(responseString);
-                }
-
-                return default(T);
+                return await this.responseHandler.HandleResponse<T>(response);
             }
         }
 
@@ -202,6 +193,10 @@ namespace Microsoft.Graph
             {
                 using (var request = this.GetHttpRequestMessage(cancellationToken))
                 {
+                    // Only call `AuthenticateRequestAsync` when a custom IHttpProvider is used.
+                    if (this.Client.HttpProvider.GetType() != typeof(HttpProvider))
+                        await this.AuthenticateRequestAsync(request);
+
                     request.Content = multipartContent;
 
                     return await this.Client.HttpProvider.SendAsync(request, completionOption, cancellationToken).ConfigureAwait(false);
@@ -237,6 +232,10 @@ namespace Microsoft.Graph
 
             using (var request = this.GetHttpRequestMessage(cancellationToken))
             {
+                // Only call `AuthenticateRequestAsync` when a custom IHttpProvider is used.
+                if (this.Client.HttpProvider.GetType() != typeof(HttpProvider))
+                    await this.AuthenticateRequestAsync(request);
+
                 if (serializableObject != null)
                 {
                     var inputStream = serializableObject as Stream;
@@ -356,6 +355,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Adds the authentication header to the request. This is a patch to support request authentication for custom HttpProviders.
+        /// </summary>
+        /// <param name="request">The <see cref="HttpRequestMessage"/> representation of the request.</param>
+        /// <returns>The task to await.</returns>
+        private async Task AuthenticateRequestAsync(HttpRequestMessage request)
+        {
+            if (this.Client.AuthenticationProvider == null)
+            {
+                throw new ServiceException(
+                    new Error
+                    {
+                        Code = ErrorConstants.Codes.InvalidRequest,
+                        Message = ErrorConstants.Messages.AuthenticationProviderMissing,
+                    });
+            }
+
+            await Client.AuthenticationProvider.AuthenticateRequestAsync(request);
+        }
+
+        /// <summary>
         /// Initializes the request URL for the request, breaking it into query options and base URL.
         /// </summary>
         /// <param name="requestUrl">The request URL.</param>
@@ -409,33 +428,6 @@ namespace Microsoft.Graph
             return new UriBuilder(uri) { Query = string.Empty }.ToString();
         }
 
-        /// <summary>
-        /// Get the response content string
-        /// </summary>
-        /// <param name="hrm">The response object</param>
-        /// <returns>The full response string to return</returns>
-        private async Task<string> GetResponseString(HttpResponseMessage hrm)
-        {
-            var responseContent = "";
-
-            var content = await hrm.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-            //Only add headers if we are going to return a response body
-            if (content.Length > 0)
-            {
-                var responseHeaders = hrm.Headers;
-                var statusCode = hrm.StatusCode;
-
-                Dictionary<string, string[]> headerDictionary = responseHeaders.ToDictionary(x => x.Key, x => x.Value.ToArray());
-                var responseHeaderString = this.Client.HttpProvider.Serializer.SerializeObject(headerDictionary);
-
-                responseContent = content.Substring(0, content.Length - 1) + ", ";
-                responseContent += "\"responseHeaders\": " + responseHeaderString + ", ";
-                responseContent += "\"statusCode\": \"" + statusCode + "\"}";
-            }
-
-            return responseContent;
-        }
 
         /// <summary>
         /// Gets a specified header value from <see cref="HttpRequestMessage"/>

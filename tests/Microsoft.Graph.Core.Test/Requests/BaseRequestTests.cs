@@ -373,6 +373,27 @@ namespace Microsoft.Graph.Core.Test.Requests
         }
 
         [TestMethod]
+        public async Task SendAsync_WithCustomHttpProvider()
+        {
+            using (var httpResponseMessage = new HttpResponseMessage())
+            using (TestHttpMessageHandler testHttpMessageHandler = new TestHttpMessageHandler())
+            {
+                string requestUrl = "https://localhost/";
+                testHttpMessageHandler.AddResponseMapping(requestUrl, httpResponseMessage);
+                MockCustomHttpProvider customHttpProvider = new MockCustomHttpProvider(testHttpMessageHandler);
+
+                BaseClient client = new BaseClient(requestUrl, authenticationProvider.Object, customHttpProvider);
+                BaseRequest baseRequest = new BaseRequest(requestUrl, client);
+
+                HttpResponseMessage returnedResponse = await baseRequest.SendRequestAsync("string", CancellationToken.None);
+
+                Assert.AreEqual(httpResponseMessage, returnedResponse, "Unexpected response message returned.");
+                Assert.IsNotNull(returnedResponse.RequestMessage.Headers, "Headers cannot be null.");
+                Assert.AreEqual(returnedResponse.RequestMessage.Headers.Authorization.Parameter, "Default-Token", "Unexpected authorization header set.");
+            }
+        }
+
+        [TestMethod]
         public void BuildQueryString_NullQueryOptions()
         {
             var baseRequest = new BaseRequest("https://localhost", this.baseClient);

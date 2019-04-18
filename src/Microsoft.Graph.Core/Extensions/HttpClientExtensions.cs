@@ -4,13 +4,14 @@
 
 namespace Microsoft.Graph
 {
+    using System;
     using System.Net.Http;
 
     internal static class HttpClientExtensions
     {
         internal static void SetFeatureFlags(this HttpClient httpClient, FeatureFlag featureFlag)
         {
-            httpClient.DefaultRequestHeaders.Add(CoreConstants.Headers.FeatureFlag, featureFlag.ToString());
+            httpClient.DefaultRequestHeaders.Add(CoreConstants.Headers.FeatureFlag, Enum.Format(typeof(FeatureFlag), featureFlag, "x"));
         }
     }
 }

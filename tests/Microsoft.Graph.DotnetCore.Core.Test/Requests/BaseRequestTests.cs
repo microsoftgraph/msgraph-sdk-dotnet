@@ -2,6 +2,7 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.DotnetCore.Core.Test.Mocks;
 using Microsoft.Graph.DotnetCore.Core.Test.TestModels;
 using Moq;
 using System;
@@ -313,6 +314,27 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
                 {
                     Assert.Equal(await httpResponseMessage.Content.ReadAsStreamAsync(), returnedResponseStream);
                 }
+            }
+        }
+
+        [Fact]
+        public async Task SendAsync_WithCustomHttpProvider()
+        {
+            using (var httpResponseMessage = new HttpResponseMessage())
+            using (TestHttpMessageHandler testHttpMessageHandler = new TestHttpMessageHandler())
+            {
+                string requestUrl = "https://localhost/";
+                testHttpMessageHandler.AddResponseMapping(requestUrl, httpResponseMessage);
+                MockCustomHttpProvider customHttpProvider = new MockCustomHttpProvider(testHttpMessageHandler);
+
+                BaseClient client = new BaseClient(requestUrl, authenticationProvider.Object, customHttpProvider);
+                BaseRequest baseRequest = new BaseRequest(requestUrl, client);
+
+                HttpResponseMessage returnedResponse = await baseRequest.SendRequestAsync("string", CancellationToken.None);
+
+                Assert.Equal(httpResponseMessage, returnedResponse);
+                Assert.NotNull(returnedResponse.RequestMessage.Headers);
+                Assert.Equal(returnedResponse.RequestMessage.Headers.Authorization.Parameter, "Default-Token");
             }
         }
 

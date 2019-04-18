@@ -3,9 +3,10 @@
     <Description>Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience.</Description>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <AssemblyTitle>Microsoft Graph Client Library</AssemblyTitle>
-    <VersionPrefix>1.14.0</VersionPrefix>
-    <FileVersion>1.14.0</FileVersion>
-    <AssemblyVersion>1.14.0</AssemblyVersion>
+    <Version>1.15.0</Version>
+    <VersionPrefix>1.15.0</VersionPrefix>
+    <FileVersion>1.15.0</FileVersion>
+    <AssemblyVersion>1.15.0</AssemblyVersion>
     <Authors>Microsoft</Authors>
     <TargetFrameworks>netstandard1.1;net45</TargetFrameworks>
     <PreserveCompilationContext>false</PreserveCompilationContext>
@@ -13,23 +14,6 @@
     <PackageId>Microsoft.Graph</PackageId>
     <PackageTags>Microsoft Office365;Graph;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK</PackageTags>
     <PackageReleaseNotes>
-February 2019 Release Summary (version 1.14.0-preview)
-
-New functionality
-- Added new Teams API functionality.
-- Added new Intune API functionality.
-- Added new license API functionality.
-
-Updated functionality
-
-- Updated IntelliSense with new content.
-- Device is updated with the MemberOf relationship.
-- Group is updated with the isArchived property and Team relationship.
-- User is updated with the JoinedTeams relationship, EmployeeId, OtherMail.
-- Removed Newtonsoft.Json package reference upper bound limitation.
-- Support for transitive members.
-- Support for SharePoint root site access.
-- Added CopyNotebook support.
     </PackageReleaseNotes>
     <PackageProjectUrl>https://developer.microsoft.com/graph</PackageProjectUrl>
     <PackageLicenseUrl>http://aka.ms/devservicesagreement</PackageLicenseUrl>
@@ -49,7 +33,6 @@ Updated functionality
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Version>1.14.0-preview</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.1|AnyCPU'">
     <DocumentationFile>bin\Release\Microsoft.Graph.xml</DocumentationFile>

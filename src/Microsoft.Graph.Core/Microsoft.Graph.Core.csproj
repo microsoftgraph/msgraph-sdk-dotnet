@@ -3,9 +3,9 @@
     <Description>Microsoft Graph Core Client Library implements core functionality used by Microsoft Graph Client Libraries.</Description>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <AssemblyTitle>Microsoft Graph Core Client Library</AssemblyTitle>
-    <VersionPrefix>1.14.0</VersionPrefix>
-    <FileVersion>1.14.0</FileVersion>
-    <AssemblyVersion>1.14.0</AssemblyVersion>
+    <VersionPrefix>1.14.1</VersionPrefix>
+    <FileVersion>1.14.1</FileVersion>
+    <AssemblyVersion>1.14.1</AssemblyVersion>
     <Authors>Microsoft</Authors>
     <TargetFrameworks>netstandard1.1;net45</TargetFrameworks>
     <PreserveCompilationContext>false</PreserveCompilationContext>
@@ -13,12 +13,10 @@
     <PackageId>Microsoft.Graph.Core</PackageId>
     <PackageTags>Microsoft Office365;Graph;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK</PackageTags>
     <PackageReleaseNotes>
-February 2019 Release Summary (version 1.14.0-preview)
+March 2019 Release Summary (version 1.14.1)
 
-- Authentication handler added.
-- Removed Newtonsoft.Json package reference upper bound limitation.
-- Makes GraphClientFactory internal.
-- HttpProvider uses GraphClientFactory.
+- Fixes #413 - Slow middleware handler requests.
+- Fixes #417 - Custom IHttpProvider uses IAuthenticationProvider set in the GraphServiceClient constructor.
     </PackageReleaseNotes>
     <PackageProjectUrl>https://developer.microsoft.com/graph</PackageProjectUrl>
     <PackageLicenseUrl>http://aka.ms/devservicesagreement</PackageLicenseUrl>
@@ -38,7 +36,7 @@ February 2019 Release Summary (version 1.14.0-preview)
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Version>1.14.0-preview</Version>
+    <Version>1.14.1</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.1|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard1.1\Microsoft.Graph.Core.xml</DocumentationFile>
