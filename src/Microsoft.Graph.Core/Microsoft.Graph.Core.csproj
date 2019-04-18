@@ -3,40 +3,40 @@
     <Description>Microsoft Graph Core Client Library implements core functionality used by Microsoft Graph Client Libraries.</Description>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <AssemblyTitle>Microsoft Graph Core Client Library</AssemblyTitle>
-    <VersionPrefix>1.14.1</VersionPrefix>
-    <FileVersion>1.14.1</FileVersion>
-    <AssemblyVersion>1.14.1</AssemblyVersion>
     <Authors>Microsoft</Authors>
     <TargetFrameworks>netstandard1.1;net45</TargetFrameworks>
     <PreserveCompilationContext>false</PreserveCompilationContext>
     <AssemblyName>Microsoft.Graph.Core</AssemblyName>
     <PackageId>Microsoft.Graph.Core</PackageId>
     <PackageTags>Microsoft Office365;Graph;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK</PackageTags>
-    <PackageReleaseNotes>
-March 2019 Release Summary (version 1.14.1)
-
-- Fixes #413 - Slow middleware handler requests.
-- Fixes #417 - Custom IHttpProvider uses IAuthenticationProvider set in the GraphServiceClient constructor.
-    </PackageReleaseNotes>
     <PackageProjectUrl>https://developer.microsoft.com/graph</PackageProjectUrl>
-    <PackageLicenseUrl>http://aka.ms/devservicesagreement</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/microsoftgraph/msgraph-sdk-dotnet</RepositoryUrl>
     <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.1' ">1.6.0</NetStandardImplicitPackageVersion>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <SignAssembly>false</SignAssembly>
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Version>1.14.1</Version>
+    <VersionPrefix>1.15.0</VersionPrefix>
+    <VersionSuffix>preview.1</VersionSuffix>
+    <PackageReleaseNotes>April 2019 Release Summary (version 1.15.0 preview.1)
+
+New Features:
+Added Graph client factory to create HTTP clients that are pre-configured to make requests to Graph APIs.
+Added batch request content that make is easy to create payloads for a Graph batch request.
+Added batch response content to process batch responses from Graph.
+Added compression middleware handler to request, detect and decompress response bodies from Graph service.
+Added response handler to process native HTTP response messages to strongly typed Graph objects.
+
+Fixes:
+Fixed issue #136.
+Fixed issue #205.
+Fixed issue #401.
+Fixed issue #431.
+Fixed issue #435.
+</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.1|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard1.1\Microsoft.Graph.Core.xml</DocumentationFile>
@@ -60,5 +60,11 @@ March 2019 Release Summary (version 1.14.1)
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.1' ">
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
     <PackageReference Include="System.Net.Http" Version="4.3.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\msgraph-sdk-dotnet-auth\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>
