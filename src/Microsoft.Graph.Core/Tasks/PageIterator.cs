@@ -12,16 +12,16 @@ Spec
 namespace Microsoft.Graph
 {
     /// <summary>
-    /// Use PageIterator&lt;T&gt; to automatically page through result sets across multiple calls 
+    /// Use PageIterator&lt;TEntity&gt; to automatically page through result sets across multiple calls 
     /// and process each item in the result set.
     /// </summary>
-    /// <typeparam name="T">The common entity type returned in the result set.</typeparam>
-    public class PageIterator<T> where T : Entity
+    /// <typeparam name="TEntity">The Microsoft Graph entity type returned in the result set.</typeparam>
+    public class PageIterator<TEntity>
     {
-        private GraphServiceClient client;
-        private ICollectionPage<T> currentPage;
-        private Queue<T> pageItemQueue;
-        private Func<T, bool> processPageItemCallback;
+        private IBaseClient client;
+        private ICollectionPage<TEntity> currentPage;
+        private Queue<TEntity> pageItemQueue;
+        private Func<TEntity, bool> processPageItemCallback;
         
         /// <summary>
         /// The @odata.deltaLink returned from a delta query.
@@ -41,9 +41,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="client">The GraphServiceClient object used to create the NextPageRequest for a delta query.</param>
         /// <param name="page">A generated implementation of ICollectionPage.</param>
-        /// <param name="callback">A Func delegate that processes type T in the result set and should return false if the iterator should cancel processing.</param>
-        /// <returns>A PageIterator&lt;T&gt; that will process additional result pages based on the rules specified in Func&lt;T,bool&gt; processPageItems</returns>
-        public static PageIterator<T> CreatePageIterator(GraphServiceClient client, ICollectionPage<T> page, Func<T,bool> callback)
+        /// <param name="callback">A Func delegate that processes type TEntity in the result set and should return false if the iterator should cancel processing.</param>
+        /// <returns>A PageIterator&lt;TEntity&gt; that will process additional result pages based on the rules specified in Func&lt;TEntity,bool&gt; processPageItems</returns>
+        public static PageIterator<TEntity> CreatePageIterator(IBaseClient client, ICollectionPage<TEntity> page, Func<TEntity,bool> callback)
         {
             if (page == null)
                 throw new ArgumentNullException("page");
@@ -51,11 +51,11 @@ namespace Microsoft.Graph
             if (callback == null)
                 throw new ArgumentNullException("processPageItems");
 
-            return new PageIterator<T>()
+            return new PageIterator<TEntity>()
             {
                 client = client,
                 currentPage = page,
-                pageItemQueue = new Queue<T>(page),
+                pageItemQueue = new Queue<TEntity>(page),
                 processPageItemCallback = callback,
                 State = PagingState.NotStarted
             };
@@ -98,7 +98,7 @@ namespace Microsoft.Graph
         {
             State = PagingState.InterpageIteration;
 
-            // We need access to the NextPageRequest to call and get the next page. ICollectionPage<T> doesn't define NextPageRequest.
+            // We need access to the NextPageRequest to call and get the next page. ICollectionPage<TEntity> doesn't define NextPageRequest.
             // We are making this dynamic so we can access NextPageRequest.
             dynamic page = this.currentPage;
 
@@ -109,13 +109,13 @@ namespace Microsoft.Graph
 
             if (this.currentPage.Count > 0)
             {
-                this.pageItemQueue = new Queue<T>(this.currentPage);
+                this.pageItemQueue = new Queue<TEntity>(this.currentPage);
                 await IterateAsync(token);
             }
         }
 
         /// <summary>
-        /// Fetches page collections and iterates through each page of items and processes it according to the Func&lt;T, bool&gt; set in <see cref="CreatePageIterator"/>. 
+        /// Fetches page collections and iterates through each page of items and processes it according to the Func&lt;TEntity, bool&gt; set in <see cref="CreatePageIterator"/>. 
         /// </summary>
         /// <returns>The task object that represents the results of this asynchronous operation.</returns>
         /// <exception cref="Microsoft.CSharp.RuntimeBinder.RuntimeBinderException">Thrown when a base CollectionPage that does not implement NextPageRequest
@@ -128,7 +128,7 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Fetches page collections and iterates through each page of items and processes it according to the Func&lt;T, bool&gt; set in <see cref="CreatePageIterator"/>. 
+        /// Fetches page collections and iterates through each page of items and processes it according to the Func&lt;TEntity, bool&gt; set in <see cref="CreatePageIterator"/>. 
         /// </summary>
         /// <param name="token">The CancellationToken used to stop iterating calls for more pages.</param>
         /// <returns>The task object that represents the results of this asynchronous operation.</returns>
@@ -180,7 +180,7 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Resumes iterating through each page of items and processes it according to the Func&lt;T, bool&gt; set in <see cref="CreatePageIterator"/>. 
+        /// Resumes iterating through each page of items and processes it according to the Func&lt;TEntity, bool&gt; set in <see cref="CreatePageIterator"/>. 
         /// </summary>
         /// <returns>The task object that represents the results of this asynchronous operation.</returns>
         /// <exception cref="Microsoft.CSharp.RuntimeBinder.RuntimeBinderException">Thrown when a base CollectionPage that does not implement NextPageRequest
@@ -191,7 +191,7 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Resumes iterating through each page of items and processes it according to the Func&lt;T, bool&gt; set in <see cref="CreatePageIterator"/>. 
+        /// Resumes iterating through each page of items and processes it according to the Func&lt;TEntity, bool&gt; set in <see cref="CreatePageIterator"/>. 
         /// </summary>
         /// <param name="token">The CancellationToken used to stop iterating calls for more pages.</param>
         /// <returns>The task object that represents the results of this asynchronous operation.</returns>
