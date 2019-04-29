@@ -20,7 +20,7 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <VersionPrefix>1.15.0</VersionPrefix>
-    <VersionSuffix>preview.2</VersionSuffix>
+    <VersionSuffix></VersionSuffix>
     <PackageReleaseNotes>April 2019 Release Summary (version 1.15.0 preview.2)
 
 Fixes:
@@ -28,7 +28,7 @@ Fixed issue #413.
 Fixed issue #435.
 Fixed issue #447.
 Fixed issue #449.
-</PackageReleaseNotes>
+    </PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.1|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard1.1\Microsoft.Graph.Core.xml</DocumentationFile>
