@@ -25,6 +25,7 @@
 
 New functionality
 - AlertHistoryState
+- Audit logs
 - AverageComparativeScore
 - CalendarGetScheduleRequestBody
 - CertificationControl

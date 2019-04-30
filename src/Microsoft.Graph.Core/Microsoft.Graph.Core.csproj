@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Description>Microsoft Graph Core Client Library implements core functionality used by Microsoft Graph Client Libraries.</Description>
+    <Description>Microsoft Graph Core Client Library implements core functionality used by Microsoft Graph client libraries.</Description>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <AssemblyTitle>Microsoft Graph Core Client Library</AssemblyTitle>
     <Authors>Microsoft</Authors>
@@ -21,10 +21,22 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <VersionPrefix>1.15.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
-    <PackageReleaseNotes>April 2019 Release Summary (version 1.15.0 preview.2)
+    <PackageReleaseNotes>April 2019 Release Summary (version 1.15.0)
+
+New Features:
+Added Graph client factory to create HTTP clients that are pre-configured to make requests to Graph APIs.
+Added batch request content that make is easy to create payloads for a Graph batch request.
+Added batch response content to process batch responses from Graph.
+Added compression middleware handler to request, detect and decompress response bodies from Graph service.
+Added response handler to process native HTTP response messages to strongly typed Graph objects.
+Added page iterator to process items in a response page and provide control for iterating across response pages.
 
 Fixes:
+Fixed issue #136.
+Fixed issue #205.
+Fixed issue #401.
 Fixed issue #413.
+Fixed issue #431.
 Fixed issue #435.
 Fixed issue #447.
 Fixed issue #449.
