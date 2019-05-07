@@ -25,12 +25,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets name.
+        /// Certification control name
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets url.
+        /// URL for the Microsoft Service Trust Portal
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
         public string Url { get; set; }

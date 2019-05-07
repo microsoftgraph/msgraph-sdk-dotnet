@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public SharepointIds SharepointIds { get; set; }
     
         /// <summary>
+        /// Gets or sets analytics.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "analytics", Required = Newtonsoft.Json.Required.Default)]
+        public ItemAnalytics Analytics { get; set; }
+    
+        /// <summary>
         /// Gets or sets drive item.
         /// For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
         /// </summary>

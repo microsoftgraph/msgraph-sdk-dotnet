@@ -51,6 +51,12 @@ namespace Microsoft.Graph
         public SiteCollection SiteCollection { get; set; }
     
         /// <summary>
+        /// Gets or sets analytics.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "analytics", Required = Newtonsoft.Json.Required.Default)]
+        public ItemAnalytics Analytics { get; set; }
+    
+        /// <summary>
         /// Gets or sets columns.
         /// The collection of column definitions reusable across lists under this site.
         /// </summary>

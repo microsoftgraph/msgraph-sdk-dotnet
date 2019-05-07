@@ -170,6 +170,12 @@ namespace Microsoft.Graph
         public string WebDavUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets analytics.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "analytics", Required = Newtonsoft.Json.Required.Default)]
+        public ItemAnalytics Analytics { get; set; }
+    
+        /// <summary>
         /// Gets or sets children.
         /// Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
         /// </summary>

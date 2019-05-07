@@ -25,24 +25,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appId.
+        /// Refers to the Unique GUID representing Application Id in the Azure Active Directory.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// Refers to the Application Name displayed in the Azure Portal.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets servicePrincipalId.
+        /// Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalId", Required = Newtonsoft.Json.Required.Default)]
         public string ServicePrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets servicePrincipalName.
+        /// Refers to the Service Principal Name is the Application name in the tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string ServicePrincipalName { get; set; }

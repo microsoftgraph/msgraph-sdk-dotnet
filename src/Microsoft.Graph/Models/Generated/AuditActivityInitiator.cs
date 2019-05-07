@@ -25,12 +25,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets user.
+        /// If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "user", Required = Newtonsoft.Json.Required.Default)]
         public UserIdentity User { get; set; }
     
         /// <summary>
         /// Gets or sets app.
+        /// If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "app", Required = Newtonsoft.Json.Required.Default)]
         public AppIdentity App { get; set; }

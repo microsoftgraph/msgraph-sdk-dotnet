@@ -24,42 +24,49 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets category.
+        /// Indicates which resource category that's targeted by the activity. (For example: User Management, Group Management etc..)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
         public string Category { get; set; }
     
         /// <summary>
         /// Gets or sets correlation id.
+        /// Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "correlationId", Required = Newtonsoft.Json.Required.Default)]
         public string CorrelationId { get; set; }
     
         /// <summary>
         /// Gets or sets result.
+        /// Indicates the result of the activity.Possible values are: success, failure, timeout, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "result", Required = Newtonsoft.Json.Required.Default)]
         public OperationResult? Result { get; set; }
     
         /// <summary>
         /// Gets or sets result reason.
+        /// Describes cause of 'failure' or 'timeout' results.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultReason", Required = Newtonsoft.Json.Required.Default)]
         public string ResultReason { get; set; }
     
         /// <summary>
         /// Gets or sets activity display name.
+        /// Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string ActivityDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets activity date time.
+        /// Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets logged by service.
+        /// Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loggedByService", Required = Newtonsoft.Json.Required.Default)]
         public string LoggedByService { get; set; }
@@ -72,18 +79,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets initiated by.
+        /// Indicates information about the user or app initiated the activity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiatedBy", Required = Newtonsoft.Json.Required.Default)]
         public AuditActivityInitiator InitiatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets target resources.
+        /// Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetResources", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<TargetResource> TargetResources { get; set; }
     
         /// <summary>
         /// Gets or sets additional details.
+        /// Indicates additional details on the activity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalDetails", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyValue> AdditionalDetails { get; set; }

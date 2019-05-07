@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IDriveItemRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Analytics.
+        /// </summary>
+        /// <returns>The <see cref="IItemAnalyticsWithReferenceRequestBuilder"/>.</returns>
+        IItemAnalyticsWithReferenceRequestBuilder Analytics { get; }
+
+        /// <summary>
         /// Gets the request builder for Children.
         /// </summary>
         /// <returns>The <see cref="IDriveItemChildrenCollectionRequestBuilder"/>.</returns>
@@ -133,6 +139,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDriveItemDeltaRequestBuilder"/>.</returns>
         IDriveItemDeltaRequestBuilder Delta();
+
+        /// <summary>
+        /// Gets the request builder for DriveItemGetActivitiesByInterval.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemGetActivitiesByIntervalRequestBuilder"/>.</returns>
+        IDriveItemGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval();
 
         /// <summary>
         /// Gets the request builder for DriveItemSearch.

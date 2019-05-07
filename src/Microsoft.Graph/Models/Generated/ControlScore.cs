@@ -25,24 +25,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets controlCategory.
+        /// Control action category (Identity, Data, Device, Apps, Infrastructure).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controlCategory", Required = Newtonsoft.Json.Required.Default)]
         public string ControlCategory { get; set; }
     
         /// <summary>
         /// Gets or sets controlName.
+        /// Control unique name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controlName", Required = Newtonsoft.Json.Required.Default)]
         public string ControlName { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// Description of the control.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets score.
+        /// Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "score", Required = Newtonsoft.Json.Required.Default)]
         public double? Score { get; set; }

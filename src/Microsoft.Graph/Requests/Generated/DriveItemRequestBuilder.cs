@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Analytics.
+        /// </summary>
+        /// <returns>The <see cref="IItemAnalyticsWithReferenceRequestBuilder"/>.</returns>
+        public IItemAnalyticsWithReferenceRequestBuilder Analytics
+        {
+            get
+            {
+                return new ItemAnalyticsWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("analytics"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Children.
         /// </summary>
         /// <returns>The <see cref="IDriveItemChildrenCollectionRequestBuilder"/>.</returns>
@@ -246,6 +258,17 @@ namespace Microsoft.Graph
         {
             return new DriveItemDeltaRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DriveItemGetActivitiesByInterval.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemGetActivitiesByIntervalRequestBuilder"/>.</returns>
+        public IDriveItemGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval()
+        {
+            return new DriveItemGetActivitiesByIntervalRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getActivitiesByInterval"),
                 this.Client);
         }
 

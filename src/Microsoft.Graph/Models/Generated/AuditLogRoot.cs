@@ -24,12 +24,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sign ins.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signIns", Required = Newtonsoft.Json.Required.Default)]
         public IAuditLogRootSignInsCollectionPage SignIns { get; set; }
     
         /// <summary>
         /// Gets or sets directory audits.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directoryAudits", Required = Newtonsoft.Json.Required.Default)]
         public IAuditLogRootDirectoryAuditsCollectionPage DirectoryAudits { get; set; }

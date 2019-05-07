@@ -25,24 +25,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets id.
+        /// Unique identifier for the identity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The identity's display name. Note that this may not always be available or up-to-date.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets ipAddress.
+        /// Indicates the client IP address used by user performing the activity (audit log only).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddress", Required = Newtonsoft.Json.Required.Default)]
         public string IpAddress { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.
+        /// The userPrincipalName attribute of the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }

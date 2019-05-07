@@ -25,12 +25,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets averageScore.
+        /// Average score within specified basis.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageScore", Required = Newtonsoft.Json.Required.Default)]
         public double? AverageScore { get; set; }
     
         /// <summary>
         /// Gets or sets basis.
+        /// Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "basis", Required = Newtonsoft.Json.Required.Default)]
         public string Basis { get; set; }

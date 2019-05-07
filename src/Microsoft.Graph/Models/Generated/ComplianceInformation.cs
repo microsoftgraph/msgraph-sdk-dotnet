@@ -25,12 +25,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets certificationControls.
+        /// Collection of the certification controls associated with certification
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificationControls", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<CertificationControl> CertificationControls { get; set; }
     
         /// <summary>
         /// Gets or sets certificationName.
+        /// Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificationName", Required = Newtonsoft.Json.Required.Default)]
         public string CertificationName { get; set; }

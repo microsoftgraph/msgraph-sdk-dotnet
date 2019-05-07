@@ -25,18 +25,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets errorCode.
+        /// Provides the 5-6digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets failureReason.
+        /// Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureReason", Required = Newtonsoft.Json.Required.Default)]
         public string FailureReason { get; set; }
     
         /// <summary>
         /// Gets or sets additionalDetails.
+        /// Provides additional details on the sign-in activity
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalDetails", Required = Newtonsoft.Json.Required.Default)]
         public string AdditionalDetails { get; set; }
