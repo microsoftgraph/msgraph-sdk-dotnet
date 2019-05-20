@@ -20,32 +20,10 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <VersionPrefix>1.15.0</VersionPrefix>
-    <VersionSuffix></VersionSuffix>
-    <PackageReleaseNotes>April 2019 Release Summary (version 1.15.0)
-
-New functionality
-- AlertHistoryState
-- Audit logs
-- AverageComparativeScore
-- CalendarGetScheduleRequestBody
-- CertificationControl
-- ComplianceInformation
-- ControlScore
-- FreeBusyError
-- ScheduleInformation
-- ScheduleItem
-- SecureScore
-- SecureScoreControlProfile
-- SecureScoreControlStateUpdate
-
-Updated functionality
-
-- Alert
-- Channel
-- DriveItem
-- Security
-- ItemReference
-    </PackageReleaseNotes>
+    <!-- VersionPrefix minor version is not required to be manually set. It will be updated automatically. Major and patch versions must be automatically set. -->
+    <VersionSuffix>
+    </VersionSuffix>
+    <PackageReleaseNotes></PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.1|AnyCPU'">
     <DocumentationFile>bin\Release\Microsoft.Graph.xml</DocumentationFile>
@@ -67,7 +45,8 @@ Updated functionality
   <ItemGroup>
     <None Include="..\..\LICENSE.txt">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>
+      </PackagePath>
     </None>
   </ItemGroup>
 </Project>
