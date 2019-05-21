@@ -120,6 +120,9 @@ namespace Microsoft.Graph
         /// <returns>The updated Contact.</returns>
         public async System.Threading.Tasks.Task<Contact> UpdateAsync(Contact contactToUpdate, CancellationToken cancellationToken)
         {
+            contactToUpdate.AdditionalData.Remove(Constants.HttpPropertyNames.ResponseHeaders);
+            contactToUpdate.AdditionalData.Remove(Constants.HttpPropertyNames.StatusCode);
+
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Contact>(contactToUpdate, cancellationToken).ConfigureAwait(false);
