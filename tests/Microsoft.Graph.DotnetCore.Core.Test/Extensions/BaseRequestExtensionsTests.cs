@@ -1,12 +1,8 @@
 ﻿namespace Microsoft.Graph.DotnetCore.Core.Test.Extensions
 {
     using Microsoft.Graph.DotnetCore.Core.Test.Mocks;
-    using Microsoft.Graph.DotnetCore.Core.Test.Requests;
-    using Moq;
     using System;
-    using System.IO;
     using System.Net.Http;
-    using System.Threading;
     using System.Threading.Tasks;
     using Xunit;
     public class BaseRequestExtensionsTests: IDisposable

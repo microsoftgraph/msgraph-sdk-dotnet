@@ -21,45 +21,24 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests.Middleware.Options
         [Fact]
         public void RetrytHandlerOption_ShouldThrowMaximumValueExceededExceptionForDelayAndMaxRetry()
         {
-            try
-            {
-                Assert.Throws<ServiceException>(() => new RetryHandlerOption() { Delay = 181, MaxRetry = 11 });
-            }
-            catch (ServiceException exception)
-            {
-                Assert.Equal(exception.Error.Code, ErrorConstants.Codes.MaximumValueExceeded);
-                throw;
-            }
+            ServiceException exception = Assert.Throws<ServiceException>(() => new RetryHandlerOption() { Delay = 181, MaxRetry = 11 });
+            Assert.Equal(exception.Error.Code, ErrorConstants.Codes.MaximumValueExceeded);
         }
 
         [Fact]
         public void RetrytHandlerOption_ShouldThrowMaximumValueExceededExceptionForDelay()
         {
-            try
-            {
-                Assert.Throws<ServiceException>(() => new RetryHandlerOption() { Delay = 200 });
-            }
-            catch (ServiceException exception)
-            {
-                Assert.Equal(exception.Error.Code, ErrorConstants.Codes.MaximumValueExceeded);
-                Assert.Equal(exception.Error.Message, string.Format(ErrorConstants.Messages.MaximumValueExceeded, "Delay", RetryHandlerOption.MAX_DELAY));
-                throw;
-            }
+            ServiceException exception = Assert.Throws<ServiceException>(() => new RetryHandlerOption() { Delay = 200 });
+            Assert.Equal(exception.Error.Code, ErrorConstants.Codes.MaximumValueExceeded);
+            Assert.Equal(exception.Error.Message, string.Format(ErrorConstants.Messages.MaximumValueExceeded, "Delay", RetryHandlerOption.MAX_DELAY));
         }
 
         [Fact]
         public void RetrytHandlerOption_ShouldThrowMaximumValueExceededExceptionForMaxRetry()
         {
-            try
-            {
-                Assert.Throws<ServiceException>(() => new RetryHandlerOption() { Delay = 180, MaxRetry = 15 });
-            }
-            catch (ServiceException exception)
-            {
-                Assert.Equal(exception.Error.Code, ErrorConstants.Codes.MaximumValueExceeded);
-                Assert.Equal(exception.Error.Message, string.Format(ErrorConstants.Messages.MaximumValueExceeded, "MaxRetry", RetryHandlerOption.MAX_MAX_RETRY));
-                throw;
-            }
+            ServiceException exception = Assert.Throws<ServiceException>(() => new RetryHandlerOption() { Delay = 180, MaxRetry = 15 });
+            Assert.Equal(exception.Error.Code, ErrorConstants.Codes.MaximumValueExceeded);
+            Assert.Equal(exception.Error.Message, string.Format(ErrorConstants.Messages.MaximumValueExceeded, "MaxRetry", RetryHandlerOption.MAX_MAX_RETRY));
         }
 
         [Fact]

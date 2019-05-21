@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
+﻿// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
 
 namespace Microsoft.Graph.DotnetCore.Test.Mocks
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq.Expressions;
+    using System.Net.Http;
+    using System.Threading;
+    using System.Threading.Tasks;
     public class MockUserEventsCollectionRequest : IUserEventsCollectionRequest
     {
         IUserEventsCollectionPage NextPage { get; }
@@ -27,7 +30,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Mocks
             return this.GetAsync();
         }
 
-        #region Not impl
+        #region Not implemented
 
         public string ContentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
@@ -42,8 +45,6 @@ namespace Microsoft.Graph.DotnetCore.Test.Mocks
         public IList<QueryOption> QueryOptions => throw new NotImplementedException();
 
         public IDictionary<string, IMiddlewareOption> MiddlewareOptions => throw new NotImplementedException();
-
-
 
         public Task<Event> AddAsync(Event eventsEvent)
         {
@@ -69,9 +70,6 @@ namespace Microsoft.Graph.DotnetCore.Test.Mocks
         {
             throw new NotImplementedException();
         }
-
-
-
 
         public IUserEventsCollectionRequest OrderBy(string value)
         {

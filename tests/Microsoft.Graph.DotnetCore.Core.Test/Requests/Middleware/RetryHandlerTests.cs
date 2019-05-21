@@ -2,19 +2,17 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph.DotnetCore.Core.Test.Mocks;
-using System;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading;
-using System.Threading.Tasks;
-using Xunit;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
 {
+    using Microsoft.Graph.DotnetCore.Core.Test.Mocks;
+    using System;
+    using System.Net;
+    using System.Net.Http;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Xunit;
+    using System.Collections.Generic;
+    using System.Linq;
     public class RetryHandlerTests : IDisposable
     {
         private MockRedirectHandler testHttpMessageHandler;

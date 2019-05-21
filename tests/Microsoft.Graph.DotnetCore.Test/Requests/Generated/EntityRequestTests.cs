@@ -19,7 +19,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
     public class EntityRequestTests : RequestTestBase
     {
         [Fact]
-        public async System.Threading.Tasks.Task GetAsync_InitializeCollectionProperties()
+        public async Task GetAsync_InitializeCollectionProperties()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         }
 
         [Fact]
-        public async System.Threading.Tasks.Task DeleteAsync()
+        public async Task DeleteAsync()
         {
             using (var httpResponseMessage = new HttpResponseMessage(HttpStatusCode.NoContent))
             {
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         }
 
         [Fact]
-        public async System.Threading.Tasks.Task UpdateAsync_EntityWithNoCollecitonProperties()
+        public async Task UpdateAsync_EntityWithNoCollecitonProperties()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())
@@ -146,12 +146,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         }
 
         [Fact]
-        public async System.Threading.Tasks.Task UpdateAsync()
+        public async Task UpdateAsync()
         {
             await this.RequestWithItemInBody(true);
         }
 
-        private async System.Threading.Tasks.Task RequestWithItemInBody(bool isUpdate)
+        private async Task RequestWithItemInBody(bool isUpdate)
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())

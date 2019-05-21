@@ -20,16 +20,9 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests.Middleware.Options
         [Fact]
         public void RedirectHandlerOption_RetrytHandlerOption_ShouldThrowMaximumValueExceededExceptionForMaxRedirect()
         {
-            try
-            {
-                Assert.Throws<ServiceException>(() => new RedirectHandlerOption() { MaxRedirect = 21 });
-            }
-            catch (ServiceException exception)
-            {
-                Assert.Equal(exception.Error.Code, ErrorConstants.Codes.MaximumValueExceeded);
-                Assert.Equal(exception.Error.Message, string.Format(ErrorConstants.Messages.MaximumValueExceeded, "MaxRedirect", RedirectHandlerOption.MAX_MAX_REDIRECT));
-                throw;
-            }
+            ServiceException exception = Assert.Throws<ServiceException>(() => new RedirectHandlerOption() { MaxRedirect = 21 });
+            Assert.Equal(exception.Error.Code, ErrorConstants.Codes.MaximumValueExceeded);
+            Assert.Equal(exception.Error.Message, string.Format(ErrorConstants.Messages.MaximumValueExceeded, "MaxRedirect", RedirectHandlerOption.MAX_MAX_REDIRECT));
         }
 
         [Fact]

@@ -2,11 +2,10 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph.DotnetCore.Core.Test.Mocks;
-using Xunit;
-
 namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
 {
+    using Microsoft.Graph.DotnetCore.Core.Test.Mocks;
+    using Xunit;
     public class BaseClientTests
     {
         private MockAuthenticationProvider authenticationProvider;
@@ -39,16 +38,9 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
         [Fact]
         public void BaseClient_InitializeEmptyBaseUrl()
         {
-            try
-            {
-                Assert.Throws<ServiceException>(() => new BaseClient(null, this.authenticationProvider.Object));
-            }
-            catch (ServiceException exception)
-            {
-                Assert.Equal(ErrorConstants.Codes.InvalidRequest, exception.Error.Code);
-                Assert.Equal(ErrorConstants.Messages.BaseUrlMissing, exception.Error.Message);
-                throw;
-            }
+            ServiceException exception = Assert.Throws<ServiceException>(() => new BaseClient(null, this.authenticationProvider.Object));
+            Assert.Equal(ErrorConstants.Codes.InvalidRequest, exception.Error.Code);
+            Assert.Equal(ErrorConstants.Messages.BaseUrlMissing, exception.Error.Message);
         }
     }
 }

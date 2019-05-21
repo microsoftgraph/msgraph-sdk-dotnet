@@ -38,7 +38,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         /// Tests the DeleteAsync() method on an entity's $ref navigation.
         /// </summary>
         [Fact]
-        public async System.Threading.Tasks.Task DeleteAsync()
+        public async Task DeleteAsync()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())

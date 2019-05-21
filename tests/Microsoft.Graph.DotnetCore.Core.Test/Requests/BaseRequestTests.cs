@@ -2,37 +2,29 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph.DotnetCore.Core.Test.Mocks;
-using Microsoft.Graph.DotnetCore.Core.Test.TestModels;
-using Moq;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Reflection;
-using System.Threading;
-using System.Threading.Tasks;
-using Xunit;
-
 namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
 {
+    using Microsoft.Graph.DotnetCore.Core.Test.Mocks;
+    using Microsoft.Graph.DotnetCore.Core.Test.TestModels;
+    using Moq;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Net.Http;
+    using System.Net.Http.Headers;
+    using System.Text;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Xunit;
     public class BaseRequestTests : RequestTestBase
     {
         [Fact]
         public void BaseRequest_InitializeWithEmptyBaseUrl()
         {
-            try
-            {
-                Assert.Throws<ServiceException>(() => new BaseRequest(null, this.baseClient));
-            }
-            catch (ServiceException exception)
-            {
-                Assert.Equal(ErrorConstants.Codes.InvalidRequest, exception.Error.Code);
-                Assert.Equal(ErrorConstants.Messages.BaseUrlMissing, exception.Error.Message);
-                throw;
-            }
+            ServiceException exception =Assert.Throws<ServiceException>(() => new BaseRequest(null, this.baseClient));
+            Assert.Equal(ErrorConstants.Codes.InvalidRequest, exception.Error.Code);
+            Assert.Equal(ErrorConstants.Messages.BaseUrlMissing, exception.Error.Message);
         }
 
         [Fact]
@@ -190,22 +182,57 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
         }
 
         [Fact]
-        public async Task SendAsync_AuthenticationProviderNotSet()
+        public async Task SendAsync_ResponseHeaders()
         {
-            var client = new BaseClient("https://localhost", null);
+            var requestUrl = string.Concat(this.baseUrl, "/me/drive/items/id");
+            var baseRequest = new BaseRequest(requestUrl, this.baseClient) { ContentType = "application/json" };
+            var data = "{\"data\"}";
 
+            using (var httpResponseMessage = new HttpResponseMessage())
+            using (var responseStream = new MemoryStream(Encoding.ASCII.GetBytes(data)))
+            using (var streamContent = new StreamContent(responseStream))
+            {
+                httpResponseMessage.Content = streamContent;
+                httpResponseMessage.StatusCode = System.Net.HttpStatusCode.OK;
+
+                this.httpProvider.Setup(
+                    provider => provider.SendAsync(
+                        It.Is<HttpRequestMessage>(
+                            request =>
+                                string.Equals(request.Content.Headers.ContentType.ToString(), "application/json")
+                               && request.RequestUri.ToString().Equals(requestUrl)),
+                        HttpCompletionOption.ResponseContentRead,
+                        CancellationToken.None))
+                        .Returns(Task.FromResult(httpResponseMessage));
+
+                Dictionary<string, object> additionalData = new Dictionary<string, object>();
+                additionalData["responseHeaders"] = new Dictionary<string, List<string>>() { { "key", new List<string>() { "value" } } };
+
+                var expectedResponseItem = new DerivedTypeClass { Id = "id", AdditionalData = additionalData };
+
+                this.serializer.Setup(
+                    serializer => serializer.DeserializeObject<DerivedTypeClass>(It.IsAny<string>()))
+                    .Returns(expectedResponseItem);
+                this.serializer.Setup(
+                    serializer => serializer.DeserializeObject<DerivedTypeClass>(It.IsAny<string>()))
+                    .Returns(expectedResponseItem);
+
+                var responseItem = await baseRequest.SendAsync<DerivedTypeClass>("string", CancellationToken.None);
+                Assert.NotNull(responseItem.AdditionalData["responseHeaders"]);
+                Assert.NotNull(baseRequest.Client.AuthenticationProvider);
+                Assert.NotNull(baseRequest.GetHttpRequestMessage().GetRequestContext().ClientRequestId);
+                Assert.Equal(expectedResponseItem.AdditionalData["responseHeaders"], responseItem.AdditionalData["responseHeaders"]);
+            }
+        }
+
+        [Fact]
+        public async Task SendAsync_AuthenticationProviderNotSetWithCustomIHttpProvider()
+        {
+            var client = new BaseClient("https://localhost", null, this.httpProvider.Object);
             var baseRequest = new BaseRequest("https://localhost", client);
-
-            try
-            {
-                await Assert.ThrowsAsync<ServiceException>(async () => await baseRequest.SendAsync<DerivedTypeClass>("string", CancellationToken.None));
-            }
-            catch (ServiceException exception)
-            {
-                Assert.Equal(ErrorConstants.Codes.InvalidRequest, exception.Error.Code);
-                Assert.Equal(ErrorConstants.Messages.AuthenticationProviderMissing, exception.Error.Message);
-                throw;
-            }
+            ServiceException exception = await Assert.ThrowsAsync<ServiceException>(async () => await baseRequest.SendAsync<DerivedTypeClass>("string", CancellationToken.None));
+            Assert.Equal(ErrorConstants.Codes.InvalidRequest, exception.Error.Code);
+            Assert.Equal(ErrorConstants.Messages.AuthenticationProviderMissing, exception.Error.Message);
         }
 
         [Fact]
@@ -274,19 +301,11 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
         public async Task SendAsync_RequestUrlNotSet()
         {
             var baseRequest = new BaseRequest("https://localhost", this.baseClient);
-
             baseRequest.RequestUrl = null;
 
-            try
-            {
-                await Assert.ThrowsAsync<ServiceException>(async () => await baseRequest.SendAsync<DerivedTypeClass>("string", CancellationToken.None));
-            }
-            catch (ServiceException exception)
-            {
-                Assert.Equal(ErrorConstants.Codes.InvalidRequest, exception.Error.Code);
-                Assert.Equal(ErrorConstants.Messages.RequestUrlMissing, exception.Error.Message);
-                throw;
-            }
+            ServiceException exception = await Assert.ThrowsAsync<ServiceException>(async () => await baseRequest.SendAsync<DerivedTypeClass>("string", CancellationToken.None));
+            Assert.Equal(ErrorConstants.Codes.InvalidRequest, exception.Error.Code);
+            Assert.Equal(ErrorConstants.Messages.RequestUrlMissing, exception.Error.Message);
         }
 
         [Fact]

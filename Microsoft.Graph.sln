@@ -1,25 +1,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5E0B65FC-67B7-41F8-87BF-96D6A342C438}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6496B661-8321-4D07-ACC2-B6602649293C}"
-	ProjectSection(SolutionItems) = preProject
-		src\Microsoft.Graph\Constants.cs = src\Microsoft.Graph\Constants.cs
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph", "src\Microsoft.Graph\Microsoft.Graph.csproj", "{660FA73B-987D-4085-A230-1B04F7EAEFBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Graph.Test", "tests\Microsoft.Graph.Test\Microsoft.Graph.Test.csproj", "{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}"
-	ProjectSection(ProjectDependencies) = postProject
-		{660FA73B-987D-4085-A230-1B04F7EAEFBC} = {660FA73B-987D-4085-A230-1B04F7EAEFBC}
-		{9F04608C-D845-4445-83B1-E6D4EEE38CBC} = {9F04608C-D845-4445-83B1-E6D4EEE38CBC}
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph.Core", "src\Microsoft.Graph.Core\Microsoft.Graph.Core.csproj", "{9F04608C-D845-4445-83B1-E6D4EEE38CBC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Graph.Core.Test", "tests\Microsoft.Graph.Core.Test\Microsoft.Graph.Core.Test.csproj", "{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph.DotnetCore.Core.Test", "tests\Microsoft.Graph.DotnetCore.Core.Test\Microsoft.Graph.DotnetCore.Core.Test.csproj", "{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}"
 EndProject
@@ -53,18 +42,6 @@ Global
 		{660FA73B-987D-4085-A230-1B04F7EAEFBC}.Release|x64.Build.0 = Release|Any CPU
 		{660FA73B-987D-4085-A230-1B04F7EAEFBC}.Release|x86.ActiveCfg = Release|Any CPU
 		{660FA73B-987D-4085-A230-1B04F7EAEFBC}.Release|x86.Build.0 = Release|Any CPU
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}.Debug|ARM.Build.0 = Debug|Any CPU
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}.Debug|x64.Build.0 = Debug|Any CPU
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}.Debug|x86.Build.0 = Debug|Any CPU
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}.Release|ARM.ActiveCfg = Release|Any CPU
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}.Release|x64.ActiveCfg = Release|Any CPU
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE}.Release|x86.ActiveCfg = Release|Any CPU
 		{9F04608C-D845-4445-83B1-E6D4EEE38CBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9F04608C-D845-4445-83B1-E6D4EEE38CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F04608C-D845-4445-83B1-E6D4EEE38CBC}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -81,18 +58,6 @@ Global
 		{9F04608C-D845-4445-83B1-E6D4EEE38CBC}.Release|x64.Build.0 = Release|Any CPU
 		{9F04608C-D845-4445-83B1-E6D4EEE38CBC}.Release|x86.ActiveCfg = Release|Any CPU
 		{9F04608C-D845-4445-83B1-E6D4EEE38CBC}.Release|x86.Build.0 = Release|Any CPU
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Debug|ARM.Build.0 = Debug|Any CPU
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Debug|x64.Build.0 = Debug|Any CPU
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Debug|x86.Build.0 = Debug|Any CPU
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Release|ARM.ActiveCfg = Release|Any CPU
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Release|x64.ActiveCfg = Release|Any CPU
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C}.Release|x86.ActiveCfg = Release|Any CPU
 		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -131,9 +96,9 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{660FA73B-987D-4085-A230-1B04F7EAEFBC} = {5E0B65FC-67B7-41F8-87BF-96D6A342C438}
-		{025D498D-0FF5-4BE2-89ED-3D90D407DFFE} = {6496B661-8321-4D07-ACC2-B6602649293C}
 		{9F04608C-D845-4445-83B1-E6D4EEE38CBC} = {5E0B65FC-67B7-41F8-87BF-96D6A342C438}
-		{5169EDAD-1E05-42A5-A241-D6FA78A02C5C} = {6496B661-8321-4D07-ACC2-B6602649293C}
+		{A337BD4B-5C76-4BC5-8EC2-2EE7B834D030} = {6496B661-8321-4D07-ACC2-B6602649293C}
+		{A46FC884-EDDC-4617-9B52-37017A90241D} = {6496B661-8321-4D07-ACC2-B6602649293C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DB06E6E-58F0-497F-9ECC-00DD03BA9357}

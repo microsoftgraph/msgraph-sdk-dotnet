@@ -2,23 +2,20 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Net.Http;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-
-using Microsoft.Graph;
-using Microsoft.Graph.DotnetCore.Core.Test.Mocks;
-using Moq;
-using Microsoft.Graph.DotnetCore.Core.Test.TestModels;
-using Xunit;
-
 namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net;
+    using System.Net.Http;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.Graph;
+    using Microsoft.Graph.DotnetCore.Core.Test.Mocks;
+    using Moq;
+    using Microsoft.Graph.DotnetCore.Core.Test.TestModels;
+    using Xunit;
     public class AsyncMonitorTests : IDisposable
     {
         private const string itemUrl = "https://localhost/item";
@@ -126,15 +123,8 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
                 this.httpResponseMessage.Content = stringContent;
                 this.httpResponseMessage.StatusCode = HttpStatusCode.Accepted;
 
-                try
-                {
-                    await Assert.ThrowsAsync<ServiceException>(async () => await this.asyncMonitor.PollForOperationCompletionAsync(this.progress.Object, CancellationToken.None));
-                }
-                catch (ServiceException exception)
-                {
-                    Assert.Equal(ErrorConstants.Codes.GeneralException, exception.Error.Code);
-                    throw;
-                }
+                ServiceException exception = await Assert.ThrowsAsync<ServiceException>(() => this.asyncMonitor.PollForOperationCompletionAsync(this.progress.Object, CancellationToken.None));
+                Assert.Equal(ErrorConstants.Codes.GeneralException, exception.Error.Code);
             }
         }
 
@@ -155,16 +145,9 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
                 this.httpResponseMessage.Content = stringContent;
                 this.httpResponseMessage.StatusCode = HttpStatusCode.Accepted;
 
-                try
-                {
-                    await Assert.ThrowsAsync<ServiceException>(async () => await this.asyncMonitor.PollForOperationCompletionAsync(this.progress.Object, CancellationToken.None));
-                }
-                catch (ServiceException exception)
-                {
-                    Assert.Equal(ErrorConstants.Codes.GeneralException, exception.Error.Code);
-                    Assert.Equal("message", exception.Error.Message);
-                    throw;
-                }
+                ServiceException exception = await Assert.ThrowsAsync<ServiceException>(() => this.asyncMonitor.PollForOperationCompletionAsync(this.progress.Object, CancellationToken.None));
+                Assert.Equal(ErrorConstants.Codes.GeneralException, exception.Error.Code);
+                Assert.Equal("message", exception.Error.Message);
             }
         }
 
@@ -181,15 +164,8 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
                 this.httpResponseMessage.Content = stringContent;
                 this.httpResponseMessage.StatusCode = HttpStatusCode.Accepted;
 
-                try
-                {
-                    await Assert.ThrowsAsync<ServiceException>(async () => await this.asyncMonitor.PollForOperationCompletionAsync(this.progress.Object, CancellationToken.None));
-                }
-                catch (ServiceException exception)
-                {
-                    Assert.Equal(ErrorConstants.Codes.GeneralException, exception.Error.Code);
-                    throw;
-                }
+                ServiceException exception = await Assert.ThrowsAsync<ServiceException>(() => this.asyncMonitor.PollForOperationCompletionAsync(this.progress.Object, CancellationToken.None));
+                Assert.Equal(ErrorConstants.Codes.GeneralException, exception.Error.Code);
             }
         }
 

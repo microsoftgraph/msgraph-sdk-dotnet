@@ -219,6 +219,7 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests
                 Assert.True(response.RequestMessage.Headers.TryGetValues("Retry-Attempt", out values), "Don't set Retry-Attemp Header");
                 Assert.Equal(values.Count(), 1);
                 Assert.Equal(values.First(), 1.ToString());
+                Assert.NotSame(response.RequestMessage, httpRequestMessage);
             }
 
         }

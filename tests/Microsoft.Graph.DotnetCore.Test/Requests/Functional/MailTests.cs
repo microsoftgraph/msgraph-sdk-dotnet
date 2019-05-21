@@ -2,20 +2,18 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
+    using Microsoft.Graph;
+    using Microsoft.Graph.DotnetCore.Test.Requests.Functional.Resources;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Threading.Tasks;
+    using Xunit;
     public class MailTests : GraphTestBase
     {
-
-        public async System.Threading.Tasks.Task<Message> createEmail(string emailBody)
+        public async Task<Message> createEmail(string emailBody)
         {
             // Get the test user.
             var me = await graphClient.Me.Request().GetAsync();
@@ -43,7 +41,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
         // Tests the SendMail action.
         [Fact(Skip = "No CI set up for functional tests")]
-        public async System.Threading.Tasks.Task MailSendMail()
+        public async Task MailSendMail()
         {
             try
             {
@@ -69,31 +67,35 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         }
 
         //// Test that we can set an attachment on a mail, send it, and then retrieve it.
-        //[Fact]
-        //public async System.Threading.Tasks.Task MailSendMailWithFileAttachment()
-        //{
-        //    try
-        //    {
-        //        var message = await createEmail("Sent from the MailSendMailWithAttachment test.");
+        [Fact(Skip = "No CI set up for functional tests")]
+        public async Task MailSendMailWithFileAttachment()
+        {
+            try
+            {
+                var message = await createEmail("Sent from the MailSendMailWithAttachment test.");
 
-        //        var attachment = new FileAttachment();
-        //        attachment.ODataType = "#microsoft.graph.fileAttachment";
-        //        attachment.Name = "MyFileAttachment.txt";
-        //        attachment.ContentBytes = Microsoft.Graph.DotnetCore.Test.Properties.Resources.textfile;
+                var attachment = new FileAttachment();
+                attachment.ODataType = "#microsoft.graph.fileAttachment";
+                attachment.Name = "MyFileAttachment.txt";
+                using (Stream ms = ResourceHelper.GetResourceAsStream(ResourceHelper.TextFile))
+                using (BinaryReader reader = new BinaryReader(ms))
+                {
+                    attachment.ContentBytes = reader.ReadBytes((int)ms.Length);
+                }
 
-        //        message.Attachments = new MessageAttachmentsCollectionPage();
-        //        message.Attachments.Add(attachment);
+                message.Attachments = new MessageAttachmentsCollectionPage();
+                message.Attachments.Add(attachment);
 
-        //        await graphClient.Me.SendMail(message, true).Request().PostAsync();
-        //    }
-        //    catch (Microsoft.Graph.ServiceException e)
-        //    {
-        //        Assert.True(false, "Something happened, check out a trace. Error code: " + e.Error.Code);
-        //    }
-        //}
+                await graphClient.Me.SendMail(message, true).Request().PostAsync();
+            }
+            catch (Microsoft.Graph.ServiceException e)
+            {
+                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Error.Code);
+            }
+        }
 
         [Fact(Skip = "No CI set up for functional tests")]
-        public async System.Threading.Tasks.Task MailGetMailWithFileAttachment()
+        public async Task MailGetMailWithFileAttachment()
         {
             try
             {
@@ -126,9 +128,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
         }
 
-
         [Fact(Skip = "No CI set up for functional tests")]
-        public async System.Threading.Tasks.Task MailNextPageRequest()
+        public async Task MailNextPageRequest()
         {
             try
             {

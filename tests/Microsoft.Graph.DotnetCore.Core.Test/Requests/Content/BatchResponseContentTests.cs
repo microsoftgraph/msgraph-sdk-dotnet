@@ -9,7 +9,6 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Requests.Content
     using System.Net.Http;
     using Xunit;
     using System.Threading.Tasks;
-    using System;
 
     public class BatchResponseContentTests
     {
