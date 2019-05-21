@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -56,8 +56,8 @@ namespace Microsoft.Graph
                 var responseHeaderString = serializer.SerializeObject(headerDictionary);
 
                 responseContent = content.Substring(0, content.Length - 1) + ", ";
-                responseContent += "\"responseHeaders\": " + responseHeaderString + ", ";
-                responseContent += "\"statusCode\": \"" + statusCode + "\"}";
+                responseContent += $"\"{CoreConstants.HttpPropertyNames.ResponseHeaders}\": " + responseHeaderString + ", ";
+                responseContent += $"\"{CoreConstants.HttpPropertyNames.StatusCode}\": \"" + statusCode + "\"}";
             }
 
             return responseContent;
