@@ -185,12 +185,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 }
                 catch (ClientException exception)
                 {
-                    string expectedCode = "notAllowed";
-                    string expectedMessage = "Do not use objects returned in a response for updating an object in Microsoft Graph. " +
-                                  $"Create a new {contactToUpdate.GetType().Name} object and only set the updated properties on it.";
-
-                    Assert.Equal(expectedCode, exception.Error.Code);
-                    Assert.Equal(expectedMessage, exception.Error.Message);
+                    Assert.Equal(ErrorConstants.Codes.NotAllowed, exception.Error.Code);
+                    Assert.Equal(String.Format(ErrorConstants.Messages.ResponseObjectUsedForUpdate, contactToUpdate.GetType().Name), 
+                                exception.Error.Message);
                 }                       
             }
         }

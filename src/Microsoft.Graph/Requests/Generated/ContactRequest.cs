@@ -128,9 +128,8 @@ namespace Microsoft.Graph
                     throw new ClientException(
                         new Error
                         {
-                            Code = "notAllowed",
-                            Message = "Do not use objects returned in a response for updating an object in Microsoft Graph. " +
-                                      $"Create a new {contactToUpdate.GetType().Name} object and only set the updated properties on it."
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, contactToUpdate.GetType().Name)
                         });
                 }
             }            
