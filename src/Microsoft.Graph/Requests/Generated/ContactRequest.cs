@@ -120,8 +120,20 @@ namespace Microsoft.Graph
         /// <returns>The updated Contact.</returns>
         public async System.Threading.Tasks.Task<Contact> UpdateAsync(Contact contactToUpdate, CancellationToken cancellationToken)
         {
-            contactToUpdate.AdditionalData.Remove(Constants.HttpPropertyNames.ResponseHeaders);
-            contactToUpdate.AdditionalData.Remove(Constants.HttpPropertyNames.StatusCode);
+            if(contactToUpdate.AdditionalData != null)
+            {
+                if (contactToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                contactToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = "notAllowed",
+                            Message = "Do not use objects returned in a response for updating an object in Microsoft Graph. " +
+                                      $"Create a new {contactToUpdate.GetType().Name} object and only set the updated properties on it."
+                        });
+                }
+            }            
 
             this.ContentType = "application/json";
             this.Method = "PATCH";
