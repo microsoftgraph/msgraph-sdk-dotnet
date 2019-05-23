@@ -28,7 +28,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         }
 
         [Fact]
-        public async System.Threading.Tasks.Task ThumbnailContentStreamRequest_GetAsync()
+        public async Task ThumbnailContentStreamRequest_GetAsync()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var stringContent = new StringContent("body"))
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         }
 
         [Fact]
-        public async System.Threading.Tasks.Task ThumbnailContentStreamRequest_PutAsync()
+        public async Task ThumbnailContentStreamRequest_PutAsync()
         {
             using (var requestStream = new MemoryStream())
             using (var httpResponseMessage = new HttpResponseMessage())
