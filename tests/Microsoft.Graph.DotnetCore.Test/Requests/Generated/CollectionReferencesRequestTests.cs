@@ -38,7 +38,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         /// Tests the AddAsync() method on the $ref navigation of an entity collection.
         /// </summary>
         [Fact]
-        public async System.Threading.Tasks.Task AddAsync()
+        public async Task AddAsync()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         /// Tests the AddAsync() method on the $ref navigation of an entity collection errors if ID isn't set on the supplied directoryObject.
         /// </summary>
         [Fact]
-        public async System.Threading.Tasks.Task AddAsync_IdRequired()
+        public async Task AddAsync_IdRequired()
         {
             var userToCreate = new User();
 

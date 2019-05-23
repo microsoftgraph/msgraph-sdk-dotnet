@@ -28,7 +28,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         }
 
         [Fact]
-        public async System.Threading.Tasks.Task GetAsync()
+        public async Task GetAsync()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         }
 
         [Fact]
-        public async System.Threading.Tasks.Task PutAsync()
+        public async Task PutAsync()
         {
             using (var requestStream = new MemoryStream())
             using (var httpResponseMessage = new HttpResponseMessage())

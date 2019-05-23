@@ -149,7 +149,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         /// The action is also inherited from the base class.
         /// </summary>
         [Fact]
-        public async System.Threading.Tasks.Task PostAsync_CollectionOfPrimitivesReturnType()
+        public async Task PostAsync_CollectionOfPrimitivesReturnType()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         /// Tests the PostAsync() method for an action that returns a single entity (createLink).
         /// </summary>
         [Fact]
-        public async System.Threading.Tasks.Task PostAsync_NonCollectionReturnType()
+        public async Task PostAsync_NonCollectionReturnType()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())
@@ -253,7 +253,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         /// Tests the PostAsync() method for an action that returns nothing (send).
         /// </summary>
         [Fact]
-        public async System.Threading.Tasks.Task PostAsync_NoReturnValue()
+        public async Task PostAsync_NoReturnValue()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())

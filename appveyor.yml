@@ -14,15 +14,10 @@ build:
 test:
   assemblies:
     only:
-    - tests/Microsoft.Graph.Core.Test/bin/Debug/Microsoft.Graph.Core.dll
     - tests/Microsoft.Graph.Test/bin/Debug/Microsoft.Graph.Test.dll
 after_test:
 - cmd: >-
     cd tests/Microsoft.Graph.DotnetCore.Test
-
-    dotnet test
-
-    cd ../Microsoft.Graph.DotnetCore.Core.Test
 
     dotnet test
 
