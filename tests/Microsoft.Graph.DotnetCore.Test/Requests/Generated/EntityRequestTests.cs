@@ -144,54 +144,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 Assert.Equal(contactToUpdate, contactResponse);
             }
         }
-
-        [Fact]
-        public async System.Threading.Tasks.Task UpdateAsync_EntityWithResponseHeadersAndStatusCode()
-        {
-            using (var httpResponseMessage = new HttpResponseMessage())
-            using (var responseStream = new MemoryStream())
-            using (var streamContent = new StreamContent(responseStream))
-            {
-                httpResponseMessage.Content = streamContent;
-
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/contacts/id";
-                this.httpProvider.Setup(
-                        provider => provider.SendAsync(
-                            It.Is<HttpRequestMessage>(
-                                request =>
-                                    string.Equals(request.Method.ToString().ToUpperInvariant(), "PATCH")
-                                    && string.Equals(request.Content.Headers.ContentType.ToString(), "application/json")
-                                    && request.RequestUri.ToString().Equals(requestUrl)),
-                            HttpCompletionOption.ResponseContentRead,
-                            CancellationToken.None))
-                        .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
-
-                var contactToUpdate = new Contact
-                {
-                    Id = "id",
-                    AdditionalData = new Dictionary<string, object>
-                    {
-                        { Constants.HttpPropertyNames.ResponseHeaders, new { Value = "Response headers test value" } },
-                        { Constants.HttpPropertyNames.StatusCode, new { Value = "Status code test value" }}
-                    }
-                };
-
-                this.serializer.Setup(serializer => serializer.SerializeObject(contactToUpdate)).Returns("body");
-                this.serializer.Setup(serializer => serializer.DeserializeObject<Contact>(It.IsAny<string>())).Returns(contactToUpdate);
-
-                try
-                {
-                    await Assert.ThrowsAsync<ClientException>(async() => await this.graphServiceClient.Me.Contacts["id"].Request().UpdateAsync(contactToUpdate));
-                }
-                catch (ClientException exception)
-                {
-                    Assert.Equal(ErrorConstants.Codes.NotAllowed, exception.Error.Code);
-                    Assert.Equal(String.Format(ErrorConstants.Messages.ResponseObjectUsedForUpdate, contactToUpdate.GetType().Name), 
-                                exception.Error.Message);
-                }                       
-            }
-        }
-
+                
         [Fact]
         public async System.Threading.Tasks.Task UpdateAsync()
         {
