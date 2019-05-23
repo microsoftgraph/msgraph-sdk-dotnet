@@ -44,5 +44,21 @@ namespace Microsoft.Graph
             /// </summary>
             public const string SentItems = "SentItems";
         }
+
+        /// <summary>
+        /// Constants used for HTTP property names
+        /// </summary>
+        public static class HttpPropertyNames
+        {
+            /// <summary>
+            /// The Response Headers string
+            /// </summary>
+            public const string ResponseHeaders = "responseHeaders";
+
+            /// <summary>
+            /// The Status Code string
+            /// </summary>
+            public const string StatusCode = "statusCode";
+        }
     }
 }
