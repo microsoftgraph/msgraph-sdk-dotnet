@@ -52,6 +52,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets analytics.
+        /// Analytics about the view activities that took place in this site.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "analytics", Required = Newtonsoft.Json.Required.Default)]
         public ItemAnalytics Analytics { get; set; }

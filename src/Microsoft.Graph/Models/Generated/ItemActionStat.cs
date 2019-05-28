@@ -25,12 +25,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets actionCount.
+        /// The number of times the action took place. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ActionCount { get; set; }
     
         /// <summary>
         /// Gets or sets actorCount.
+        /// The number of distinct actors that performed the action. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actorCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ActorCount { get; set; }
