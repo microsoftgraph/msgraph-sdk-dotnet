@@ -32,5 +32,31 @@ namespace Microsoft.Graph.Extensions
             DateTime dateTime = DateTimeOffset.Parse(dateTimeTimeZone.DateTime).UtcDateTime;
             return dateTime;
         }
+
+        /// <summary>
+        /// Converts a Datetime parameter to its equivalent DateTimeTimeZone Complex Type
+        /// </summary>
+        /// <param name="dateTimeTimeZone"></param>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTimeTimeZone FromDateTime(this DateTimeTimeZone dateTimeTimeZone, DateTime dateTime)
+        {
+            dateTimeTimeZone.DateTime = dateTime.ToUniversalTime().ToString();
+            dateTimeTimeZone.TimeZone = "UTC";
+            return dateTimeTimeZone;
+        }
+
+        /// <summary>\\
+        /// Converts a DatetimeOffset parameter to its equivalent DateTimeTimeZone Complex Type
+        /// </summary>
+        /// <param name="dateTimeTimeZone"></param>
+        /// <param name="dateTimeOffset"></param>
+        /// <returns></returns>
+        public static DateTimeTimeZone FromDateTimeOffset(this DateTimeTimeZone dateTimeTimeZone, DateTimeOffset dateTimeOffset)
+        {
+            dateTimeTimeZone.DateTime = dateTimeOffset.ToUniversalTime().ToString();
+            dateTimeTimeZone.TimeZone = "UTC";
+            return dateTimeTimeZone;
+        }
     }
 }
