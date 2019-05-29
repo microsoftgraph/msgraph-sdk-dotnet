@@ -25,12 +25,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets missingDataBeforeDateTime.
+        /// The service does not have source data before the specified time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "missingDataBeforeDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? MissingDataBeforeDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets wasThrottled.
+        /// Some data was not recorded due to excessive activity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wasThrottled", Required = Newtonsoft.Json.Required.Default)]
         public bool? WasThrottled { get; set; }

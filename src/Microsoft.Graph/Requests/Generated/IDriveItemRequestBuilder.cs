@@ -86,6 +86,20 @@ namespace Microsoft.Graph
         IDriveItemContentRequestBuilder Content { get; }
     
         /// <summary>
+        /// Gets the request builder for DriveItemCheckin.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemCheckinRequestBuilder"/>.</returns>
+        IDriveItemCheckinRequestBuilder Checkin(
+            string checkInAs = null,
+            string comment = null);
+
+        /// <summary>
+        /// Gets the request builder for DriveItemCheckout.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemCheckoutRequestBuilder"/>.</returns>
+        IDriveItemCheckoutRequestBuilder Checkout();
+
+        /// <summary>
         /// Gets the request builder for DriveItemCopy.
         /// </summary>
         /// <returns>The <see cref="IDriveItemCopyRequestBuilder"/>.</returns>
