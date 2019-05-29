@@ -66,7 +66,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets group types.
-        /// Specifies the type of group to create. Possible values are Unified to create an Office 365 group, or DynamicMembership for dynamic groups.  For all other group types, like security-enabled groups and email-enabled security groups, do not set this property. Returned by default. Supports $filter.
+        /// Specifies the group type and its membership.  If the collection contains Unified then the group is an Office 365 group; otherwise it's a security group.  If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static.  Returned by default. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> GroupTypes { get; set; }
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mail enabled.
-        /// Specifies whether the group is mail-enabled. If the securityEnabled property is also true, the group is a mail-enabled security group; otherwise, the group is a Microsoft Exchange distribution group. Returned by default.
+        /// Specifies whether the group is mail-enabled. Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? MailEnabled { get; set; }
@@ -143,7 +143,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets security enabled.
-        /// Specifies whether the group is a security group. If the mailEnabled property is also true, the group is a mail-enabled security group; otherwise it is a security group. Must be false for Office 365 groups. Returned by default. Supports $filter.
+        /// Specifies whether the group is a security group. Returned by default. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? SecurityEnabled { get; set; }

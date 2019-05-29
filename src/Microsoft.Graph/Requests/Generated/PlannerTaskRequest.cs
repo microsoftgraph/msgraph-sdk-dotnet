@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="plannerTaskToUpdate">The PlannerTask to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PlannerTask.</returns>
         public async System.Threading.Tasks.Task<PlannerTask> UpdateAsync(PlannerTask plannerTaskToUpdate, CancellationToken cancellationToken)
         {
+			if (plannerTaskToUpdate.AdditionalData != null)
+			{
+				if (plannerTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					plannerTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerTaskToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PlannerTask>(plannerTaskToUpdate, cancellationToken).ConfigureAwait(false);

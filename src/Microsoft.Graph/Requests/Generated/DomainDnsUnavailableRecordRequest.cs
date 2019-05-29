@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="domainDnsUnavailableRecordToUpdate">The DomainDnsUnavailableRecord to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DomainDnsUnavailableRecord.</returns>
         public async System.Threading.Tasks.Task<DomainDnsUnavailableRecord> UpdateAsync(DomainDnsUnavailableRecord domainDnsUnavailableRecordToUpdate, CancellationToken cancellationToken)
         {
+			if (domainDnsUnavailableRecordToUpdate.AdditionalData != null)
+			{
+				if (domainDnsUnavailableRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					domainDnsUnavailableRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainDnsUnavailableRecordToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DomainDnsUnavailableRecord>(domainDnsUnavailableRecordToUpdate, cancellationToken).ConfigureAwait(false);

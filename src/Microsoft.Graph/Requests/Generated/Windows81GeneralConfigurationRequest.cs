@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows81GeneralConfigurationToUpdate">The Windows81GeneralConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows81GeneralConfiguration.</returns>
         public async System.Threading.Tasks.Task<Windows81GeneralConfiguration> UpdateAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windows81GeneralConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windows81GeneralConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows81GeneralConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows81GeneralConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Windows81GeneralConfiguration>(windows81GeneralConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsDefenderAdvancedThreatProtectionConfigurationToUpdate">The WindowsDefenderAdvancedThreatProtectionConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsDefenderAdvancedThreatProtectionConfiguration.</returns>
         public async System.Threading.Tasks.Task<WindowsDefenderAdvancedThreatProtectionConfiguration> UpdateAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsDefenderAdvancedThreatProtectionConfiguration>(windowsDefenderAdvancedThreatProtectionConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mailFolderToUpdate">The MailFolder to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MailFolder.</returns>
         public async System.Threading.Tasks.Task<MailFolder> UpdateAsync(MailFolder mailFolderToUpdate, CancellationToken cancellationToken)
         {
+			if (mailFolderToUpdate.AdditionalData != null)
+			{
+				if (mailFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mailFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailFolderToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MailFolder>(mailFolderToUpdate, cancellationToken).ConfigureAwait(false);

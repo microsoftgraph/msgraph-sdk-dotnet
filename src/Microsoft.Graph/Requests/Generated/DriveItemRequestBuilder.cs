@@ -159,6 +159,32 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for DriveItemCheckin.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemCheckinRequestBuilder"/>.</returns>
+        public IDriveItemCheckinRequestBuilder Checkin(
+            string checkInAs = null,
+            string comment = null)
+        {
+            return new DriveItemCheckinRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.checkin"),
+                this.Client,
+                checkInAs,
+                comment);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DriveItemCheckout.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemCheckoutRequestBuilder"/>.</returns>
+        public IDriveItemCheckoutRequestBuilder Checkout()
+        {
+            return new DriveItemCheckoutRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.checkout"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DriveItemCopy.
         /// </summary>
         /// <returns>The <see cref="IDriveItemCopyRequestBuilder"/>.</returns>

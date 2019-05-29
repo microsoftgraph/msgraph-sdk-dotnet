@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceAndAppManagementRoleAssignmentToUpdate">The DeviceAndAppManagementRoleAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceAndAppManagementRoleAssignment.</returns>
         public async System.Threading.Tasks.Task<DeviceAndAppManagementRoleAssignment> UpdateAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData != null)
+			{
+				if (deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAndAppManagementRoleAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceAndAppManagementRoleAssignment>(deviceAndAppManagementRoleAssignmentToUpdate, cancellationToken).ConfigureAwait(false);

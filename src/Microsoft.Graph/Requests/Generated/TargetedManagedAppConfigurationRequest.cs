@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="targetedManagedAppConfigurationToUpdate">The TargetedManagedAppConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TargetedManagedAppConfiguration.</returns>
         public async System.Threading.Tasks.Task<TargetedManagedAppConfiguration> UpdateAsync(TargetedManagedAppConfiguration targetedManagedAppConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (targetedManagedAppConfigurationToUpdate.AdditionalData != null)
+			{
+				if (targetedManagedAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					targetedManagedAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, targetedManagedAppConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TargetedManagedAppConfiguration>(targetedManagedAppConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

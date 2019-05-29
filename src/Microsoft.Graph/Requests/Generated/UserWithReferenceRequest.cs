@@ -95,9 +95,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userToUpdate">The User to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated User.</returns>
         public async System.Threading.Tasks.Task<User> UpdateAsync(User userToUpdate, CancellationToken cancellationToken)
         {
+			if (userToUpdate.AdditionalData != null)
+			{
+				if (userToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					userToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<User>(userToUpdate, cancellationToken).ConfigureAwait(false);

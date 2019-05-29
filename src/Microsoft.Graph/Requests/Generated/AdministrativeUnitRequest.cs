@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="administrativeUnitToUpdate">The AdministrativeUnit to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AdministrativeUnit.</returns>
         public async System.Threading.Tasks.Task<AdministrativeUnit> UpdateAsync(AdministrativeUnit administrativeUnitToUpdate, CancellationToken cancellationToken)
         {
+			if (administrativeUnitToUpdate.AdditionalData != null)
+			{
+				if (administrativeUnitToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					administrativeUnitToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, administrativeUnitToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AdministrativeUnit>(administrativeUnitToUpdate, cancellationToken).ConfigureAwait(false);

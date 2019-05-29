@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartTitleFormatToUpdate">The WorkbookChartTitleFormat to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartTitleFormat.</returns>
         public async System.Threading.Tasks.Task<WorkbookChartTitleFormat> UpdateAsync(WorkbookChartTitleFormat workbookChartTitleFormatToUpdate, CancellationToken cancellationToken)
         {
+			if (workbookChartTitleFormatToUpdate.AdditionalData != null)
+			{
+				if (workbookChartTitleFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookChartTitleFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartTitleFormatToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookChartTitleFormat>(workbookChartTitleFormatToUpdate, cancellationToken).ConfigureAwait(false);

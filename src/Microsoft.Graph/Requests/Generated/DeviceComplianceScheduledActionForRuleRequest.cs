@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceComplianceScheduledActionForRuleToUpdate">The DeviceComplianceScheduledActionForRule to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceComplianceScheduledActionForRule.</returns>
         public async System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> UpdateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceComplianceScheduledActionForRuleToUpdate.AdditionalData != null)
+			{
+				if (deviceComplianceScheduledActionForRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceComplianceScheduledActionForRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceScheduledActionForRuleToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceComplianceScheduledActionForRule>(deviceComplianceScheduledActionForRuleToUpdate, cancellationToken).ConfigureAwait(false);

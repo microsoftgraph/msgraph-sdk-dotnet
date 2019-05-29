@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartGridlinesToUpdate">The WorkbookChartGridlines to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartGridlines.</returns>
         public async System.Threading.Tasks.Task<WorkbookChartGridlines> UpdateAsync(WorkbookChartGridlines workbookChartGridlinesToUpdate, CancellationToken cancellationToken)
         {
+			if (workbookChartGridlinesToUpdate.AdditionalData != null)
+			{
+				if (workbookChartGridlinesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookChartGridlinesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartGridlinesToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookChartGridlines>(workbookChartGridlinesToUpdate, cancellationToken).ConfigureAwait(false);

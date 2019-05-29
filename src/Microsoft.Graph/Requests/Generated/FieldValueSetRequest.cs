@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="fieldValueSetToUpdate">The FieldValueSet to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FieldValueSet.</returns>
         public async System.Threading.Tasks.Task<FieldValueSet> UpdateAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken)
         {
+			if (fieldValueSetToUpdate.AdditionalData != null)
+			{
+				if (fieldValueSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					fieldValueSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fieldValueSetToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<FieldValueSet>(fieldValueSetToUpdate, cancellationToken).ConfigureAwait(false);

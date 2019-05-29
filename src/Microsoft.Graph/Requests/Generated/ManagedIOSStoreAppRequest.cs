@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedIOSStoreAppToUpdate">The ManagedIOSStoreApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedIOSStoreApp.</returns>
         public async System.Threading.Tasks.Task<ManagedIOSStoreApp> UpdateAsync(ManagedIOSStoreApp managedIOSStoreAppToUpdate, CancellationToken cancellationToken)
         {
+			if (managedIOSStoreAppToUpdate.AdditionalData != null)
+			{
+				if (managedIOSStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedIOSStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedIOSStoreAppToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedIOSStoreApp>(managedIOSStoreAppToUpdate, cancellationToken).ConfigureAwait(false);

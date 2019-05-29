@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="directoryAuditToUpdate">The DirectoryAudit to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DirectoryAudit.</returns>
         public async System.Threading.Tasks.Task<DirectoryAudit> UpdateAsync(DirectoryAudit directoryAuditToUpdate, CancellationToken cancellationToken)
         {
+			if (directoryAuditToUpdate.AdditionalData != null)
+			{
+				if (directoryAuditToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					directoryAuditToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryAuditToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DirectoryAudit>(directoryAuditToUpdate, cancellationToken).ConfigureAwait(false);

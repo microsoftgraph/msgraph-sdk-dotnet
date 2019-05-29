@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onenoteOperationToUpdate">The OnenoteOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnenoteOperation.</returns>
         public async System.Threading.Tasks.Task<OnenoteOperation> UpdateAsync(OnenoteOperation onenoteOperationToUpdate, CancellationToken cancellationToken)
         {
+			if (onenoteOperationToUpdate.AdditionalData != null)
+			{
+				if (onenoteOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					onenoteOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteOperationToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OnenoteOperation>(onenoteOperationToUpdate, cancellationToken).ConfigureAwait(false);

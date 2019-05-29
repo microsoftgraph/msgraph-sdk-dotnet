@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="sharedPCConfigurationToUpdate">The SharedPCConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharedPCConfiguration.</returns>
         public async System.Threading.Tasks.Task<SharedPCConfiguration> UpdateAsync(SharedPCConfiguration sharedPCConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (sharedPCConfigurationToUpdate.AdditionalData != null)
+			{
+				if (sharedPCConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					sharedPCConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharedPCConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SharedPCConfiguration>(sharedPCConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

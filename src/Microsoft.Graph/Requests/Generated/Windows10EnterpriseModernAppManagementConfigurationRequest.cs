@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10EnterpriseModernAppManagementConfigurationToUpdate">The Windows10EnterpriseModernAppManagementConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10EnterpriseModernAppManagementConfiguration.</returns>
         public async System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> UpdateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windows10EnterpriseModernAppManagementConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windows10EnterpriseModernAppManagementConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows10EnterpriseModernAppManagementConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10EnterpriseModernAppManagementConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Windows10EnterpriseModernAppManagementConfiguration>(windows10EnterpriseModernAppManagementConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

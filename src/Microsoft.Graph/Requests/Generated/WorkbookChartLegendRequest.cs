@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartLegendToUpdate">The WorkbookChartLegend to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartLegend.</returns>
         public async System.Threading.Tasks.Task<WorkbookChartLegend> UpdateAsync(WorkbookChartLegend workbookChartLegendToUpdate, CancellationToken cancellationToken)
         {
+			if (workbookChartLegendToUpdate.AdditionalData != null)
+			{
+				if (workbookChartLegendToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookChartLegendToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartLegendToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookChartLegend>(workbookChartLegendToUpdate, cancellationToken).ConfigureAwait(false);

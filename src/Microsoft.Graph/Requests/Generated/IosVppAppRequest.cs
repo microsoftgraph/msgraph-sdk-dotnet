@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosVppAppToUpdate">The IosVppApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosVppApp.</returns>
         public async System.Threading.Tasks.Task<IosVppApp> UpdateAsync(IosVppApp iosVppAppToUpdate, CancellationToken cancellationToken)
         {
+			if (iosVppAppToUpdate.AdditionalData != null)
+			{
+				if (iosVppAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosVppAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosVppAppToUpdate.GetType().Name)
+						});
+				}
+			}
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosVppApp>(iosVppAppToUpdate, cancellationToken).ConfigureAwait(false);
