@@ -117,23 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidWorkProfileCompliancePolicyToUpdate">The AndroidWorkProfileCompliancePolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWorkProfileCompliancePolicy.</returns>
         public async System.Threading.Tasks.Task<AndroidWorkProfileCompliancePolicy> UpdateAsync(AndroidWorkProfileCompliancePolicy androidWorkProfileCompliancePolicyToUpdate, CancellationToken cancellationToken)
         {
-			if (androidWorkProfileCompliancePolicyToUpdate.AdditionalData != null)
-			{
-				if (androidWorkProfileCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidWorkProfileCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileCompliancePolicyToUpdate.GetType().Name)
-						});
-				}
-			}
+            if (androidWorkProfileCompliancePolicyToUpdate.AdditionalData != null)
+            {
+                if (androidWorkProfileCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidWorkProfileCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileCompliancePolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidWorkProfileCompliancePolicy>(androidWorkProfileCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);

@@ -117,23 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToUpdate">The DeviceEnrollmentPlatformRestrictionsConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
         public async System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> UpdateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, CancellationToken cancellationToken)
         {
-			if (deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.AdditionalData != null)
-			{
-				if (deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
+            if (deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.AdditionalData != null)
+            {
+                if (deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceEnrollmentPlatformRestrictionsConfiguration>(deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

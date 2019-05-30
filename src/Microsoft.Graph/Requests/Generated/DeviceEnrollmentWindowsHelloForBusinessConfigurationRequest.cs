@@ -117,23 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate">The DeviceEnrollmentWindowsHelloForBusinessConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceEnrollmentWindowsHelloForBusinessConfiguration.</returns>
         public async System.Threading.Tasks.Task<DeviceEnrollmentWindowsHelloForBusinessConfiguration> UpdateAsync(DeviceEnrollmentWindowsHelloForBusinessConfiguration deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate, CancellationToken cancellationToken)
         {
-			if (deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.AdditionalData != null)
-			{
-				if (deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
+            if (deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.AdditionalData != null)
+            {
+                if (deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceEnrollmentWindowsHelloForBusinessConfiguration>(deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

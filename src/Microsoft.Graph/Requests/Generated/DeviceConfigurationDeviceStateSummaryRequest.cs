@@ -117,23 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceConfigurationDeviceStateSummaryToUpdate">The DeviceConfigurationDeviceStateSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceConfigurationDeviceStateSummary.</returns>
         public async System.Threading.Tasks.Task<DeviceConfigurationDeviceStateSummary> UpdateAsync(DeviceConfigurationDeviceStateSummary deviceConfigurationDeviceStateSummaryToUpdate, CancellationToken cancellationToken)
         {
-			if (deviceConfigurationDeviceStateSummaryToUpdate.AdditionalData != null)
-			{
-				if (deviceConfigurationDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceConfigurationDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceConfigurationDeviceStateSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
+            if (deviceConfigurationDeviceStateSummaryToUpdate.AdditionalData != null)
+            {
+                if (deviceConfigurationDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceConfigurationDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceConfigurationDeviceStateSummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceConfigurationDeviceStateSummary>(deviceConfigurationDeviceStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);

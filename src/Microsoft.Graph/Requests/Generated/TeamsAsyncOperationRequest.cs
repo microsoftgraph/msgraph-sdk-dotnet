@@ -117,23 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="teamsAsyncOperationToUpdate">The TeamsAsyncOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsAsyncOperation.</returns>
         public async System.Threading.Tasks.Task<TeamsAsyncOperation> UpdateAsync(TeamsAsyncOperation teamsAsyncOperationToUpdate, CancellationToken cancellationToken)
         {
-			if (teamsAsyncOperationToUpdate.AdditionalData != null)
-			{
-				if (teamsAsyncOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					teamsAsyncOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAsyncOperationToUpdate.GetType().Name)
-						});
-				}
-			}
+            if (teamsAsyncOperationToUpdate.AdditionalData != null)
+            {
+                if (teamsAsyncOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    teamsAsyncOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAsyncOperationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TeamsAsyncOperation>(teamsAsyncOperationToUpdate, cancellationToken).ConfigureAwait(false);

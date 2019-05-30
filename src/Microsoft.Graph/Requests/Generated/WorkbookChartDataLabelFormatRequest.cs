@@ -117,23 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartDataLabelFormatToUpdate">The WorkbookChartDataLabelFormat to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartDataLabelFormat.</returns>
         public async System.Threading.Tasks.Task<WorkbookChartDataLabelFormat> UpdateAsync(WorkbookChartDataLabelFormat workbookChartDataLabelFormatToUpdate, CancellationToken cancellationToken)
         {
-			if (workbookChartDataLabelFormatToUpdate.AdditionalData != null)
-			{
-				if (workbookChartDataLabelFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookChartDataLabelFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartDataLabelFormatToUpdate.GetType().Name)
-						});
-				}
-			}
+            if (workbookChartDataLabelFormatToUpdate.AdditionalData != null)
+            {
+                if (workbookChartDataLabelFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    workbookChartDataLabelFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartDataLabelFormatToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookChartDataLabelFormat>(workbookChartDataLabelFormatToUpdate, cancellationToken).ConfigureAwait(false);

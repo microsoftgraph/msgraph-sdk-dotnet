@@ -117,23 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="dataPolicyOperationToUpdate">The DataPolicyOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DataPolicyOperation.</returns>
         public async System.Threading.Tasks.Task<DataPolicyOperation> UpdateAsync(DataPolicyOperation dataPolicyOperationToUpdate, CancellationToken cancellationToken)
         {
-			if (dataPolicyOperationToUpdate.AdditionalData != null)
-			{
-				if (dataPolicyOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					dataPolicyOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataPolicyOperationToUpdate.GetType().Name)
-						});
-				}
-			}
+            if (dataPolicyOperationToUpdate.AdditionalData != null)
+            {
+                if (dataPolicyOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    dataPolicyOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataPolicyOperationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DataPolicyOperation>(dataPolicyOperationToUpdate, cancellationToken).ConfigureAwait(false);

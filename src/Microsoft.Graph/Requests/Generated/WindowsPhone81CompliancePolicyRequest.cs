@@ -117,23 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsPhone81CompliancePolicyToUpdate">The WindowsPhone81CompliancePolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhone81CompliancePolicy.</returns>
         public async System.Threading.Tasks.Task<WindowsPhone81CompliancePolicy> UpdateAsync(WindowsPhone81CompliancePolicy windowsPhone81CompliancePolicyToUpdate, CancellationToken cancellationToken)
         {
-			if (windowsPhone81CompliancePolicyToUpdate.AdditionalData != null)
-			{
-				if (windowsPhone81CompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsPhone81CompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81CompliancePolicyToUpdate.GetType().Name)
-						});
-				}
-			}
+            if (windowsPhone81CompliancePolicyToUpdate.AdditionalData != null)
+            {
+                if (windowsPhone81CompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsPhone81CompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81CompliancePolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsPhone81CompliancePolicy>(windowsPhone81CompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);

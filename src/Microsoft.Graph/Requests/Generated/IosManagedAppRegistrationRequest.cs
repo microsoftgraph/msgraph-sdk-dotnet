@@ -117,23 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosManagedAppRegistrationToUpdate">The IosManagedAppRegistration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-		/// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosManagedAppRegistration.</returns>
         public async System.Threading.Tasks.Task<IosManagedAppRegistration> UpdateAsync(IosManagedAppRegistration iosManagedAppRegistrationToUpdate, CancellationToken cancellationToken)
         {
-			if (iosManagedAppRegistrationToUpdate.AdditionalData != null)
-			{
-				if (iosManagedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosManagedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosManagedAppRegistrationToUpdate.GetType().Name)
-						});
-				}
-			}
+            if (iosManagedAppRegistrationToUpdate.AdditionalData != null)
+            {
+                if (iosManagedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosManagedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosManagedAppRegistrationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosManagedAppRegistration>(iosManagedAppRegistrationToUpdate, cancellationToken).ConfigureAwait(false);
