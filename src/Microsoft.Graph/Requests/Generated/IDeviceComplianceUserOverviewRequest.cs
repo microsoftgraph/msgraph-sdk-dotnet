@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceComplianceUserOverviewToUpdate">The DeviceComplianceUserOverview to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceComplianceUserOverview.</returns>
         System.Threading.Tasks.Task<DeviceComplianceUserOverview> UpdateAsync(DeviceComplianceUserOverview deviceComplianceUserOverviewToUpdate, CancellationToken cancellationToken);
 

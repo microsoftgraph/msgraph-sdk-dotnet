@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookFormatProtectionToUpdate">The WorkbookFormatProtection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookFormatProtection.</returns>
         public async System.Threading.Tasks.Task<WorkbookFormatProtection> UpdateAsync(WorkbookFormatProtection workbookFormatProtectionToUpdate, CancellationToken cancellationToken)
         {
+            if (workbookFormatProtectionToUpdate.AdditionalData != null)
+            {
+                if (workbookFormatProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    workbookFormatProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookFormatProtectionToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookFormatProtection>(workbookFormatProtectionToUpdate, cancellationToken).ConfigureAwait(false);

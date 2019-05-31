@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosCompliancePolicyToUpdate">The IosCompliancePolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosCompliancePolicy.</returns>
         public async System.Threading.Tasks.Task<IosCompliancePolicy> UpdateAsync(IosCompliancePolicy iosCompliancePolicyToUpdate, CancellationToken cancellationToken)
         {
+            if (iosCompliancePolicyToUpdate.AdditionalData != null)
+            {
+                if (iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCompliancePolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosCompliancePolicy>(iosCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);

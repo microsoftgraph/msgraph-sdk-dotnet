@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10EnterpriseModernAppManagementConfigurationToUpdate">The Windows10EnterpriseModernAppManagementConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10EnterpriseModernAppManagementConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> UpdateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToUpdate, CancellationToken cancellationToken);
 

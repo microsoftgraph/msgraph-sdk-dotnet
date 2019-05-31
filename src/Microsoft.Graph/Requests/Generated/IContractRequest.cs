@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="contractToUpdate">The Contract to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Contract.</returns>
         System.Threading.Tasks.Task<Contract> UpdateAsync(Contract contractToUpdate, CancellationToken cancellationToken);
 

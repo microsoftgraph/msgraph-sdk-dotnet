@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceComplianceSettingStateToUpdate">The DeviceComplianceSettingState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceComplianceSettingState.</returns>
         System.Threading.Tasks.Task<DeviceComplianceSettingState> UpdateAsync(DeviceComplianceSettingState deviceComplianceSettingStateToUpdate, CancellationToken cancellationToken);
 

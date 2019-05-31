@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookTableSortToUpdate">The WorkbookTableSort to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookTableSort.</returns>
         public async System.Threading.Tasks.Task<WorkbookTableSort> UpdateAsync(WorkbookTableSort workbookTableSortToUpdate, CancellationToken cancellationToken)
         {
+            if (workbookTableSortToUpdate.AdditionalData != null)
+            {
+                if (workbookTableSortToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    workbookTableSortToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookTableSortToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookTableSort>(workbookTableSortToUpdate, cancellationToken).ConfigureAwait(false);

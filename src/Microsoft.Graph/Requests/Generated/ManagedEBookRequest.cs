@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedEBookToUpdate">The ManagedEBook to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedEBook.</returns>
         public async System.Threading.Tasks.Task<ManagedEBook> UpdateAsync(ManagedEBook managedEBookToUpdate, CancellationToken cancellationToken)
         {
+            if (managedEBookToUpdate.AdditionalData != null)
+            {
+                if (managedEBookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    managedEBookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedEBookToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedEBook>(managedEBookToUpdate, cancellationToken).ConfigureAwait(false);

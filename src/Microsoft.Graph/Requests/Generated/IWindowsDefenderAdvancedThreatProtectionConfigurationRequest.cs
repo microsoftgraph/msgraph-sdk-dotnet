@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsDefenderAdvancedThreatProtectionConfigurationToUpdate">The WindowsDefenderAdvancedThreatProtectionConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsDefenderAdvancedThreatProtectionConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsDefenderAdvancedThreatProtectionConfiguration> UpdateAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToUpdate, CancellationToken cancellationToken);
 

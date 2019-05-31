@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationAssignmentToUpdate">The ManagedDeviceMobileAppConfigurationAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedDeviceMobileAppConfigurationAssignment.</returns>
         public async System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationAssignment> UpdateAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignmentToUpdate, CancellationToken cancellationToken)
         {
+            if (managedDeviceMobileAppConfigurationAssignmentToUpdate.AdditionalData != null)
+            {
+                if (managedDeviceMobileAppConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    managedDeviceMobileAppConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceMobileAppConfigurationAssignmentToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedDeviceMobileAppConfigurationAssignment>(managedDeviceMobileAppConfigurationAssignmentToUpdate, cancellationToken).ConfigureAwait(false);

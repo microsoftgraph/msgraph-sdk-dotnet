@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="educationSchoolToUpdate">The EducationSchool to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationSchool.</returns>
         System.Threading.Tasks.Task<EducationSchool> UpdateAsync(EducationSchool educationSchoolToUpdate, CancellationToken cancellationToken);
 

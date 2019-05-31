@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="resourceOperationToUpdate">The ResourceOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ResourceOperation.</returns>
         public async System.Threading.Tasks.Task<ResourceOperation> UpdateAsync(ResourceOperation resourceOperationToUpdate, CancellationToken cancellationToken)
         {
+            if (resourceOperationToUpdate.AdditionalData != null)
+            {
+                if (resourceOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    resourceOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, resourceOperationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ResourceOperation>(resourceOperationToUpdate, cancellationToken).ConfigureAwait(false);

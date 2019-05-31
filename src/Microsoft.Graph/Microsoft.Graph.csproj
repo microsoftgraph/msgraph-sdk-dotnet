@@ -21,10 +21,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <VersionPrefix>1.16.0</VersionPrefix>
     <!-- VersionPrefix minor version is not required to be manually set. It will be updated automatically. Major and patch versions must be automatically set. -->
-    <VersionSuffix>
-    </VersionSuffix>
-    <PackageReleaseNotes>
-    </PackageReleaseNotes>
+    <VersionSuffix></VersionSuffix>
+    <PackageReleaseNotes></PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.3|AnyCPU'">
     <DocumentationFile>bin\Release\Microsoft.Graph.xml</DocumentationFile>

@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10GeneralConfigurationToUpdate">The Windows10GeneralConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10GeneralConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10GeneralConfiguration> UpdateAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToUpdate, CancellationToken cancellationToken);
 

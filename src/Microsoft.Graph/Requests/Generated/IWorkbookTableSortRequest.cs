@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookTableSortToUpdate">The WorkbookTableSort to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookTableSort.</returns>
         System.Threading.Tasks.Task<WorkbookTableSort> UpdateAsync(WorkbookTableSort workbookTableSortToUpdate, CancellationToken cancellationToken);
 

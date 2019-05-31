@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookNamedItemToUpdate">The WorkbookNamedItem to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookNamedItem.</returns>
         public async System.Threading.Tasks.Task<WorkbookNamedItem> UpdateAsync(WorkbookNamedItem workbookNamedItemToUpdate, CancellationToken cancellationToken)
         {
+            if (workbookNamedItemToUpdate.AdditionalData != null)
+            {
+                if (workbookNamedItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    workbookNamedItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookNamedItemToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookNamedItem>(workbookNamedItemToUpdate, cancellationToken).ConfigureAwait(false);

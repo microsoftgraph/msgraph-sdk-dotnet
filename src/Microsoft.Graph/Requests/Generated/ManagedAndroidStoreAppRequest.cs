@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAndroidStoreAppToUpdate">The ManagedAndroidStoreApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedAndroidStoreApp.</returns>
         public async System.Threading.Tasks.Task<ManagedAndroidStoreApp> UpdateAsync(ManagedAndroidStoreApp managedAndroidStoreAppToUpdate, CancellationToken cancellationToken)
         {
+            if (managedAndroidStoreAppToUpdate.AdditionalData != null)
+            {
+                if (managedAndroidStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    managedAndroidStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAndroidStoreAppToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedAndroidStoreApp>(managedAndroidStoreAppToUpdate, cancellationToken).ConfigureAwait(false);

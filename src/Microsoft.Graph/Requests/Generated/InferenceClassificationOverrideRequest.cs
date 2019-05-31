@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="inferenceClassificationOverrideToUpdate">The InferenceClassificationOverride to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated InferenceClassificationOverride.</returns>
         public async System.Threading.Tasks.Task<InferenceClassificationOverride> UpdateAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken)
         {
+            if (inferenceClassificationOverrideToUpdate.AdditionalData != null)
+            {
+                if (inferenceClassificationOverrideToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    inferenceClassificationOverrideToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, inferenceClassificationOverrideToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<InferenceClassificationOverride>(inferenceClassificationOverrideToUpdate, cancellationToken).ConfigureAwait(false);

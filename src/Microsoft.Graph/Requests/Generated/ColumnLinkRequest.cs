@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="columnLinkToUpdate">The ColumnLink to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ColumnLink.</returns>
         public async System.Threading.Tasks.Task<ColumnLink> UpdateAsync(ColumnLink columnLinkToUpdate, CancellationToken cancellationToken)
         {
+            if (columnLinkToUpdate.AdditionalData != null)
+            {
+                if (columnLinkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    columnLinkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, columnLinkToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ColumnLink>(columnLinkToUpdate, cancellationToken).ConfigureAwait(false);

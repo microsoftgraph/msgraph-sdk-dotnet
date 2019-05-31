@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows81GeneralConfigurationToUpdate">The Windows81GeneralConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows81GeneralConfiguration.</returns>
         System.Threading.Tasks.Task<Windows81GeneralConfiguration> UpdateAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate, CancellationToken cancellationToken);
 

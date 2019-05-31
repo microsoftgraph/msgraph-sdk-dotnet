@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosVppEBookToUpdate">The IosVppEBook to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosVppEBook.</returns>
         public async System.Threading.Tasks.Task<IosVppEBook> UpdateAsync(IosVppEBook iosVppEBookToUpdate, CancellationToken cancellationToken)
         {
+            if (iosVppEBookToUpdate.AdditionalData != null)
+            {
+                if (iosVppEBookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosVppEBookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosVppEBookToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosVppEBook>(iosVppEBookToUpdate, cancellationToken).ConfigureAwait(false);

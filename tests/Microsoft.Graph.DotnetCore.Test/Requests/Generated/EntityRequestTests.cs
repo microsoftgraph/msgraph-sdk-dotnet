@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 Assert.Equal(contactToUpdate, contactResponse);
             }
         }
-
+                
         [Fact]
         public async Task UpdateAsync()
         {
@@ -179,6 +179,56 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                     : await this.graphServiceClient.Me.Drive.Items["id"].Request().CreateAsync(new DriveItem());
 
                 Assert.Equal("id", itemResponse.Id);
+            }
+        }
+
+        [Fact]
+        public async System.Threading.Tasks.Task UpdateAsync_EntityWithResponseHeadersAndStatusCode()
+        {
+            using (var httpResponseMessage = new HttpResponseMessage())
+            using (var responseStream = new MemoryStream())
+            using (var streamContent = new StreamContent(responseStream))
+            {
+                httpResponseMessage.Content = streamContent;
+
+                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/contacts/id";
+                this.httpProvider.Setup(
+                        provider => provider.SendAsync(
+                            It.Is<HttpRequestMessage>(
+                                request =>
+                                    string.Equals(request.Method.ToString().ToUpperInvariant(), "PATCH")
+                                    && string.Equals(request.Content.Headers.ContentType.ToString(), "application/json")
+                                    && request.RequestUri.ToString().Equals(requestUrl)),
+                            HttpCompletionOption.ResponseContentRead,
+                            CancellationToken.None))
+                        .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
+
+                var contactToUpdate = new Contact
+                {
+                    Id = "id",
+                    AdditionalData = new Dictionary<string, object>
+                    {
+                        { Constants.HttpPropertyNames.ResponseHeaders, new { Value = "Response headers test value" } },
+                        { Constants.HttpPropertyNames.StatusCode, new { Value = "Status code test value" }}
+                    }
+                };
+
+                this.serializer.Setup(serializer => serializer.SerializeObject(contactToUpdate)).Returns("body");
+                this.serializer.Setup(serializer => serializer.DeserializeObject<Contact>(It.IsAny<string>())).Returns(contactToUpdate);
+
+                try
+                {
+                   await Assert.ThrowsAsync<ClientException>(async () => await this.graphServiceClient.Me.Contacts["id"].Request().UpdateAsync(contactToUpdate));
+                }
+                catch (ClientException exception)
+                {
+                    string expectedCode = "notAllowed";
+                    string expectedMessage = "Do not use objects returned in a response for updating an object in Microsoft Graph. " +
+                                  $"Create a new {contactToUpdate.GetType().Name} object and only set the updated properties on it.";
+
+                    Assert.Equal(expectedCode, exception.Error.Code);
+                    Assert.Equal(expectedMessage, exception.Error.Message);
+                }
             }
         }
     }

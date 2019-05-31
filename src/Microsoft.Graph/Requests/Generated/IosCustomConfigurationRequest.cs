@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosCustomConfigurationToUpdate">The IosCustomConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosCustomConfiguration.</returns>
         public async System.Threading.Tasks.Task<IosCustomConfiguration> UpdateAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken)
         {
+            if (iosCustomConfigurationToUpdate.AdditionalData != null)
+            {
+                if (iosCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCustomConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosCustomConfiguration>(iosCustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupSettingToUpdate">The GroupSetting to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupSetting.</returns>
         System.Threading.Tasks.Task<GroupSetting> UpdateAsync(GroupSetting groupSettingToUpdate, CancellationToken cancellationToken);
 

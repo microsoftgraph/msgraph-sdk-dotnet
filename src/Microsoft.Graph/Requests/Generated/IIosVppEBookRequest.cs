@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosVppEBookToUpdate">The IosVppEBook to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosVppEBook.</returns>
         System.Threading.Tasks.Task<IosVppEBook> UpdateAsync(IosVppEBook iosVppEBookToUpdate, CancellationToken cancellationToken);
 

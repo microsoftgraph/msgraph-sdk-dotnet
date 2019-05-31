@@ -58,6 +58,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="entityToUpdate">The Entity to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Entity.</returns>
         System.Threading.Tasks.Task<Entity> UpdateAsync(Entity entityToUpdate, CancellationToken cancellationToken);
 

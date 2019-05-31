@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppContentFileToUpdate">The MobileAppContentFile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppContentFile.</returns>
         public async System.Threading.Tasks.Task<MobileAppContentFile> UpdateAsync(MobileAppContentFile mobileAppContentFileToUpdate, CancellationToken cancellationToken)
         {
+            if (mobileAppContentFileToUpdate.AdditionalData != null)
+            {
+                if (mobileAppContentFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    mobileAppContentFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppContentFileToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MobileAppContentFile>(mobileAppContentFileToUpdate, cancellationToken).ConfigureAwait(false);

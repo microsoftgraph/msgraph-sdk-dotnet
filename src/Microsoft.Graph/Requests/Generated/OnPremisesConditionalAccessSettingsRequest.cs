@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onPremisesConditionalAccessSettingsToUpdate">The OnPremisesConditionalAccessSettings to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnPremisesConditionalAccessSettings.</returns>
         public async System.Threading.Tasks.Task<OnPremisesConditionalAccessSettings> UpdateAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToUpdate, CancellationToken cancellationToken)
         {
+            if (onPremisesConditionalAccessSettingsToUpdate.AdditionalData != null)
+            {
+                if (onPremisesConditionalAccessSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    onPremisesConditionalAccessSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onPremisesConditionalAccessSettingsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OnPremisesConditionalAccessSettings>(onPremisesConditionalAccessSettingsToUpdate, cancellationToken).ConfigureAwait(false);

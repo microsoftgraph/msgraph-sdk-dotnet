@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10SecureAssessmentConfigurationToUpdate">The Windows10SecureAssessmentConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10SecureAssessmentConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10SecureAssessmentConfiguration> UpdateAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToUpdate, CancellationToken cancellationToken);
 

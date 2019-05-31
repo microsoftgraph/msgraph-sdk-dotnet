@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="outlookUserToUpdate">The OutlookUser to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OutlookUser.</returns>
         public async System.Threading.Tasks.Task<OutlookUser> UpdateAsync(OutlookUser outlookUserToUpdate, CancellationToken cancellationToken)
         {
+            if (outlookUserToUpdate.AdditionalData != null)
+            {
+                if (outlookUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    outlookUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, outlookUserToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OutlookUser>(outlookUserToUpdate, cancellationToken).ConfigureAwait(false);

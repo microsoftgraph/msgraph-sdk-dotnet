@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOSCompliancePolicyToUpdate">The MacOSCompliancePolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSCompliancePolicy.</returns>
         public async System.Threading.Tasks.Task<MacOSCompliancePolicy> UpdateAsync(MacOSCompliancePolicy macOSCompliancePolicyToUpdate, CancellationToken cancellationToken)
         {
+            if (macOSCompliancePolicyToUpdate.AdditionalData != null)
+            {
+                if (macOSCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    macOSCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSCompliancePolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MacOSCompliancePolicy>(macOSCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);

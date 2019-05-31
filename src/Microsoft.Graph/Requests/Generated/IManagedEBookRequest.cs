@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedEBookToUpdate">The ManagedEBook to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedEBook.</returns>
         System.Threading.Tasks.Task<ManagedEBook> UpdateAsync(ManagedEBook managedEBookToUpdate, CancellationToken cancellationToken);
 

@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10CompliancePolicyToUpdate">The Windows10CompliancePolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10CompliancePolicy.</returns>
         System.Threading.Tasks.Task<Windows10CompliancePolicy> UpdateAsync(Windows10CompliancePolicy windows10CompliancePolicyToUpdate, CancellationToken cancellationToken);
 

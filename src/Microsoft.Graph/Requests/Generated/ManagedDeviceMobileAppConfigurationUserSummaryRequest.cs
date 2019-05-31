@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationUserSummaryToUpdate">The ManagedDeviceMobileAppConfigurationUserSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedDeviceMobileAppConfigurationUserSummary.</returns>
         public async System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserSummary> UpdateAsync(ManagedDeviceMobileAppConfigurationUserSummary managedDeviceMobileAppConfigurationUserSummaryToUpdate, CancellationToken cancellationToken)
         {
+            if (managedDeviceMobileAppConfigurationUserSummaryToUpdate.AdditionalData != null)
+            {
+                if (managedDeviceMobileAppConfigurationUserSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    managedDeviceMobileAppConfigurationUserSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceMobileAppConfigurationUserSummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedDeviceMobileAppConfigurationUserSummary>(managedDeviceMobileAppConfigurationUserSummaryToUpdate, cancellationToken).ConfigureAwait(false);

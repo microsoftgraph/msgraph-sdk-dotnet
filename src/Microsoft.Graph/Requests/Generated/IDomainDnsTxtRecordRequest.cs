@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="domainDnsTxtRecordToUpdate">The DomainDnsTxtRecord to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DomainDnsTxtRecord.</returns>
         System.Threading.Tasks.Task<DomainDnsTxtRecord> UpdateAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken);
 

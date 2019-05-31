@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartLineFormatToUpdate">The WorkbookChartLineFormat to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartLineFormat.</returns>
         System.Threading.Tasks.Task<WorkbookChartLineFormat> UpdateAsync(WorkbookChartLineFormat workbookChartLineFormatToUpdate, CancellationToken cancellationToken);
 

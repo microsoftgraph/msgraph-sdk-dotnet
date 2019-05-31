@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsUniversalAppXToUpdate">The WindowsUniversalAppX to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsUniversalAppX.</returns>
         public async System.Threading.Tasks.Task<WindowsUniversalAppX> UpdateAsync(WindowsUniversalAppX windowsUniversalAppXToUpdate, CancellationToken cancellationToken)
         {
+            if (windowsUniversalAppXToUpdate.AdditionalData != null)
+            {
+                if (windowsUniversalAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsUniversalAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsUniversalAppXToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsUniversalAppX>(windowsUniversalAppXToUpdate, cancellationToken).ConfigureAwait(false);

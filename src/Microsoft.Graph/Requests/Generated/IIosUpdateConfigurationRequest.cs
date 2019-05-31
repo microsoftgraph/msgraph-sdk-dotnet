@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosUpdateConfigurationToUpdate">The IosUpdateConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosUpdateConfiguration.</returns>
         System.Threading.Tasks.Task<IosUpdateConfiguration> UpdateAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate, CancellationToken cancellationToken);
 

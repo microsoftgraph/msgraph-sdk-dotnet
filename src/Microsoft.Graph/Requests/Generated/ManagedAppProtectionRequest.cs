@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAppProtectionToUpdate">The ManagedAppProtection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedAppProtection.</returns>
         public async System.Threading.Tasks.Task<ManagedAppProtection> UpdateAsync(ManagedAppProtection managedAppProtectionToUpdate, CancellationToken cancellationToken)
         {
+            if (managedAppProtectionToUpdate.AdditionalData != null)
+            {
+                if (managedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    managedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppProtectionToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedAppProtection>(managedAppProtectionToUpdate, cancellationToken).ConfigureAwait(false);

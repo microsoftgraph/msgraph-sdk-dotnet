@@ -117,9 +117,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceConfigurationUserOverviewToUpdate">The DeviceConfigurationUserOverview to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceConfigurationUserOverview.</returns>
         public async System.Threading.Tasks.Task<DeviceConfigurationUserOverview> UpdateAsync(DeviceConfigurationUserOverview deviceConfigurationUserOverviewToUpdate, CancellationToken cancellationToken)
         {
+            if (deviceConfigurationUserOverviewToUpdate.AdditionalData != null)
+            {
+                if (deviceConfigurationUserOverviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceConfigurationUserOverviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceConfigurationUserOverviewToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceConfigurationUserOverview>(deviceConfigurationUserOverviewToUpdate, cancellationToken).ConfigureAwait(false);
