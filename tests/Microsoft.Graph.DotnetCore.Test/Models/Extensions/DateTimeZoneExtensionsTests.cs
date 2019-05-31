@@ -7,6 +7,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
 {
     public class DateTimeZoneExtensionsTests
     {
+        internal const string DateTimeFormat = "yyyy-MM-ddTHH:mm:ss.fffffffK";
+
         [Fact]
         public void ToDateTime_Should_Convert_DateTimeTimeZone_To_DateTime()
         {
@@ -16,8 +18,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
                 DateTime = "2019-01-25T06:37:39.8058788Z"
             };
 
-            var expectedDateTime = DateTime.ParseExact(dateTimeTimeZone.DateTime, @"yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture);
-            Assert.Equal(expectedDateTime, dateTimeTimeZone.ToDateTime(@"yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+            var actualDateTime = dateTimeTimeZone.ToDateTime();
+            var expectedDateTime = DateTime.ParseExact(dateTimeTimeZone.DateTime, DateTimeFormat, CultureInfo.InvariantCulture);
+
+            Assert.Equal(expectedDateTime, actualDateTime);
         }
 
         [Fact]
@@ -29,23 +33,33 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
                 DateTime = "2019-01-25T06:37:39.8058788Z"
             };
 
-            var expectedDateTimeOffset = DateTimeOffset.ParseExact(dateTimeTimeZone.DateTime, "yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture).UtcDateTime;
-            Assert.Equal(expectedDateTimeOffset, dateTimeTimeZone.ToDateTimeOffset("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+            DateTime dateTime = DateTime.ParseExact(dateTimeTimeZone.DateTime, DateTimeFormat, CultureInfo.InvariantCulture);
+            TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(dateTimeTimeZone.TimeZone);          
+            TimeSpan offset = timeZoneInfo.GetUtcOffset(dateTime);
+            dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
+
+            var expectedDateTimeOffset = new DateTimeOffset(dateTime, offset);
+            var actualDateTimeOffset = dateTimeTimeZone.ToDateTimeOffset();
+
+            Assert.True(expectedDateTimeOffset.Equals(actualDateTimeOffset));
         }
 
         [Fact]
         public void FromDateTime_Should_Convert_DateTime_To_DateTimeTimeZone()
         {
-            DateTimeTimeZone dateTimeTimeZone = new DateTimeTimeZone
+            var dateTime = DateTime.ParseExact("2019-01-25T06:37:39.8058788Z", DateTimeFormat, CultureInfo.InvariantCulture).ToUniversalTime();
+            var expectedDateTime = dateTime.ToString(DateTimeFormat, CultureInfo.InvariantCulture);
+
+            DateTimeTimeZone expectedDateTimeTimeZone = new DateTimeTimeZone
             {
-                TimeZone = "",
-                DateTime = ""
+                TimeZone = "UTC",
+                DateTime = expectedDateTime
             };
 
-            var expectedDateTime = DateTime.ParseExact("2019-01-25T06:37:39.8058788Z", "yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture).ToUniversalTime();
-            var actualDateTime = dateTimeTimeZone.FromDateTime(expectedDateTime, "yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture);
+            var actualDateTimeTimeZone = DateTimeTimeZone.FromDateTime(dateTime, "UTC");
 
-            Assert.Equal(expectedDateTime.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture), actualDateTime.DateTime);
+            Assert.Equal(expectedDateTimeTimeZone.DateTime, actualDateTimeTimeZone.DateTime);
+            Assert.Equal(expectedDateTimeTimeZone.TimeZone, actualDateTimeTimeZone.TimeZone);
         }
 
         [Fact]
@@ -53,14 +67,21 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
         {
             DateTimeTimeZone dateTimeTimeZone = new DateTimeTimeZone
             {
-                TimeZone = "",
-                DateTime = ""
+                TimeZone = "UTC",
+                DateTime = "2019-01-25T06:37:39.8058788Z"
             };
 
-            var expectedDateTimeOffset = DateTimeOffset.ParseExact("2019-01-25T06:37:39.8058788Z", "yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture).ToUniversalTime();
-            var actualDateTimeOffset = dateTimeTimeZone.FromDateTimeOffset(expectedDateTimeOffset, "yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture);
+            DateTime dateTime = DateTime.ParseExact(dateTimeTimeZone.DateTime, DateTimeFormat, CultureInfo.InvariantCulture);
 
-            Assert.Equal(expectedDateTimeOffset.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture), actualDateTimeOffset.DateTime);
+            TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(dateTimeTimeZone.TimeZone);
+            TimeSpan offset = timeZoneInfo.GetUtcOffset(dateTime);
+            dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
+
+            var expectedDateTimeOffset = new DateTimeOffset(dateTime, offset);
+            expectedDateTimeOffset = TimeZoneInfo.ConvertTime(expectedDateTimeOffset, timeZoneInfo);
+            var actualDateTimeTimeZone = DateTimeTimeZone.FromDateTimeOffset(expectedDateTimeOffset, dateTimeTimeZone.TimeZone);
+
+            Assert.Equal(expectedDateTimeOffset.ToString(DateTimeFormat, CultureInfo.InvariantCulture), actualDateTimeTimeZone.DateTime);
         }
     }
 }
