@@ -4,6 +4,7 @@
 
 using System;
 using System.Globalization;
+using TimeZoneConverter;
 
 namespace Microsoft.Graph.Extensions
 {
@@ -105,6 +106,7 @@ namespace Microsoft.Graph
     public partial class DateTimeTimeZone
     {      
         internal const string DateTimeFormat = "yyyy-MM-ddTHH:mm:ss.fffffffK";
+        internal const string DateTimeFormatNonUTC = "yyyy-MM-dd HH:mm:ss tt";
 
         /// <summary>
         /// Converts a Datetime parameter to its equivalent DateTimeTimeZone Complex Type given its TimeZone
@@ -160,8 +162,7 @@ namespace Microsoft.Graph
         {
             // The following is built-in, but is platform dependent.
             // It will use Windows time zones on Windows, and IANA time zones on other platforms.
-
-            return TimeZoneInfo.FindSystemTimeZoneById(timeZone);
+            // return TimeZoneInfo.FindSystemTimeZoneById(timeZone);
 
 
             // The following is platform independent, working with either Windows or IANA time zones on any platform.
@@ -169,7 +170,7 @@ namespace Microsoft.Graph
             // See also https://github.com/dotnet/corefx/issues/11897
             //      and https://github.com/dotnet/corefx/issues/2538
             //
-            // return TimeZoneConverter.TZConvert.GetTimeZoneInfo(timeZone);
+             return TZConvert.GetTimeZoneInfo(timeZone);
 
 
             // Note that *neither* of the above options map neatly to the list of time zones given in
