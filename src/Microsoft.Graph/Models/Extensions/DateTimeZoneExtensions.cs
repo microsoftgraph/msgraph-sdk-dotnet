@@ -4,7 +4,6 @@
 
 using System;
 using System.Globalization;
-using TimeZoneConverter;
 
 namespace Microsoft.Graph.Extensions
 {
@@ -24,8 +23,7 @@ namespace Microsoft.Graph.Extensions
             DateTime dateTime = DateTime.ParseExact(dateTimeTimeZone.DateTime, DateTimeTimeZone.DateTimeFormat, CultureInfo.InvariantCulture);
 
             // Now we need to determine which DateTimeKind to set based on the time zone specified in the input object.
-
-            TimeZoneInfo timeZoneInfo = DateTimeTimeZone.GetTimeZoneInfo(dateTimeTimeZone.TimeZone);
+            TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(dateTimeTimeZone.TimeZone);
 
             DateTimeKind kind;
             if (timeZoneInfo.Id == TimeZoneInfo.Utc.Id)
@@ -54,10 +52,10 @@ namespace Microsoft.Graph.Extensions
             // The resulting DateTimeOffset will have the correct offset for the time zone specified in the input object.
 
             DateTime dateTime = DateTime.ParseExact(dateTimeTimeZone.DateTime, DateTimeTimeZone.DateTimeFormat, CultureInfo.InvariantCulture);
-            TimeZoneInfo timeZoneInfo = DateTimeTimeZone.GetTimeZoneInfo(dateTimeTimeZone.TimeZone);
+            TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(dateTimeTimeZone.TimeZone);
             return dateTime.ToDateTimeOffset(timeZoneInfo);
         }
-        
+
         internal static DateTimeOffset ToDateTimeOffset(this DateTime dateTime, TimeZoneInfo timeZoneInfo)
         {
             TimeSpan offset;
@@ -104,28 +102,33 @@ namespace Microsoft.Graph.Extensions
 namespace Microsoft.Graph
 {
     public partial class DateTimeTimeZone
-    {      
+    {
         internal const string DateTimeFormat = "yyyy-MM-ddTHH:mm:ss.fffffffK";
-        internal const string DateTimeFormatNonUTC = "yyyy-MM-dd HH:mm:ss tt";
 
         /// <summary>
         /// Converts a Datetime parameter to its equivalent DateTimeTimeZone Complex Type given its TimeZone
         /// </summary>
-        /// <param name="dateTime"></param>
-        /// <param name="timeZone"></param>
+        /// <param name="dateTime">A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).</param>
+        /// <returns></returns>
+        public static DateTimeTimeZone FromDateTime(DateTime dateTime)
+        {
+            DateTimeTimeZone dateTimeTimeZone = new DateTimeTimeZone
+            {
+                DateTime = dateTime.ToString(DateTimeFormat, CultureInfo.InvariantCulture),
+                TimeZone = ""
+            };
+
+            return dateTimeTimeZone;
+        }
+
+        /// <summary>
+        /// Converts a Datetime parameter to its equivalent DateTimeTimeZone Complex Type given its TimeZone
+        /// </summary>
+        /// <param name="dateTime">A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).</param>
+        /// <param name="timeZone">The expected values for timeZone are specified here: https://docs.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-1.0 </param>
         /// <returns></returns>
         public static DateTimeTimeZone FromDateTime(DateTime dateTime, string timeZone)
         {
-            TimeZoneInfo timeZoneInfo = GetTimeZoneInfo(timeZone);
-
-            // When in Local or Utc kind, we can convert to the time zone specified
-            // Which may be a no-op if the value is already in the specified time zone
-            // We don't do this for Unspecified kind, as that would infer converting *from* the local time zone
-            if (dateTime.Kind != DateTimeKind.Unspecified)
-            {
-                dateTime = TimeZoneInfo.ConvertTime(dateTime, timeZoneInfo);
-            }
-
             DateTimeTimeZone dateTimeTimeZone = new DateTimeTimeZone
             {
                 DateTime = dateTime.ToString(DateTimeFormat, CultureInfo.InvariantCulture),
@@ -138,17 +141,11 @@ namespace Microsoft.Graph
         /// <summary>
         /// Converts a DatetimeOffset parameter to its equivalent DateTimeTimeZone Complex Type given its TimeZone
         /// </summary>
-        /// <param name="dateTimeOffset"></param>
-        /// <param name="timeZone"></param>
+        /// <param name="dateTimeOffset">Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC).</param>
+        /// <param name="timeZone">The expected values for timeZone are specified here: https://docs.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-1.0 </param>
         /// <returns></returns>
         public static DateTimeTimeZone FromDateTimeOffset(DateTimeOffset dateTimeOffset, string timeZone)
         {
-            TimeZoneInfo timeZoneInfo = GetTimeZoneInfo(timeZone);
-
-            // Convert the input value to the time zone specified.
-            // If it's already in an offset valid for that time zone, this will be a no-op.
-            dateTimeOffset = TimeZoneInfo.ConvertTime(dateTimeOffset, timeZoneInfo);
-
             DateTimeTimeZone dateTimeTimeZone = new DateTimeTimeZone
             {
                 DateTime = dateTimeOffset.ToString(DateTimeFormat, CultureInfo.InvariantCulture),
@@ -156,27 +153,6 @@ namespace Microsoft.Graph
             };
 
             return dateTimeTimeZone;
-        }
-
-        internal static TimeZoneInfo GetTimeZoneInfo(string timeZone)
-        {
-            // The following is built-in, but is platform dependent.
-            // It will use Windows time zones on Windows, and IANA time zones on other platforms.
-            // return TimeZoneInfo.FindSystemTimeZoneById(timeZone);
-
-
-            // The following is platform independent, working with either Windows or IANA time zones on any platform.
-            // However, it requires a dependency on https://github.com/mj1856/TimeZoneConverter
-            // See also https://github.com/dotnet/corefx/issues/11897
-            //      and https://github.com/dotnet/corefx/issues/2538
-            //
-             return TZConvert.GetTimeZoneInfo(timeZone);
-
-
-            // Note that *neither* of the above options map neatly to the list of time zones given in
-            // https://docs.microsoft.com/graph/api/resources/datetimetimezone
-            // That list seems to include many omissions and some additions and customizations.
-            // Those would also need to be handled here, probably by manually mapping the differences to valid IANA time zones.
         }
     }
 }

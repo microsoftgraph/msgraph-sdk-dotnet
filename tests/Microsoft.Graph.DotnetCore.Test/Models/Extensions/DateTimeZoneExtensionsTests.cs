@@ -2,7 +2,6 @@
 using System;
 using Xunit;
 using System.Globalization;
-using TimeZoneConverter;
 using System.Collections.Generic;
 
 namespace Microsoft.Graph.DotnetCore.Test.Extensions
@@ -10,7 +9,6 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
     public class DateTimeZoneExtensionsTests
     {
         internal const string DateTimeFormat = "yyyy-MM-ddTHH:mm:ss.fffffffK";
-        internal const string DateTimeFormatNonUTC = "yyyy-MM-dd HH:mm:ss tt";
 
         [Fact]
         public void ToDateTime_Should_Convert_DateTimeTimeZone_To_DateTime()
@@ -94,11 +92,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
             foreach (var dateTimeTimeZone in dateTimeTimeZoneList)
             {
                 DateTime dateTime = GetDateTimeFromDateTimeTimeZone(dateTimeTimeZone);
+                TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(dateTimeTimeZone.TimeZone);
 
-                // TimeZoneInfo.FindSystemTimeZoneById(dateTimeTimeZone.TimeZone)
-                // The above is also an option but is platform dependent
-                TimeZoneInfo timeZoneInfo = TZConvert.GetTimeZoneInfo(dateTimeTimeZone.TimeZone);
-          
                 TimeSpan offset = timeZoneInfo.GetUtcOffset(dateTime);
                 dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Unspecified);
 
