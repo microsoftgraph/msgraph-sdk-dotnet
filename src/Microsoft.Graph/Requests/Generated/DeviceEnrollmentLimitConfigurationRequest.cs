@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceEnrollmentLimitConfiguration.</returns>
         public async System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> UpdateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceEnrollmentLimitConfigurationToUpdate.AdditionalData != null)
+			{
+				if (deviceEnrollmentLimitConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceEnrollmentLimitConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceEnrollmentLimitConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (deviceEnrollmentLimitConfigurationToUpdate.AdditionalData != null)
             {
                 if (deviceEnrollmentLimitConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

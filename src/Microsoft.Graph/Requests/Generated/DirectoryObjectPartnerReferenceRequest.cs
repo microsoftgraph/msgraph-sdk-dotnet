@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DirectoryObjectPartnerReference.</returns>
         public async System.Threading.Tasks.Task<DirectoryObjectPartnerReference> UpdateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate, CancellationToken cancellationToken)
         {
+			if (directoryObjectPartnerReferenceToUpdate.AdditionalData != null)
+			{
+				if (directoryObjectPartnerReferenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					directoryObjectPartnerReferenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryObjectPartnerReferenceToUpdate.GetType().Name)
+						});
+				}
+			}
             if (directoryObjectPartnerReferenceToUpdate.AdditionalData != null)
             {
                 if (directoryObjectPartnerReferenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

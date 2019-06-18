@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated EBookInstallSummary.</returns>
         public async System.Threading.Tasks.Task<EBookInstallSummary> UpdateAsync(EBookInstallSummary eBookInstallSummaryToUpdate, CancellationToken cancellationToken)
         {
+			if (eBookInstallSummaryToUpdate.AdditionalData != null)
+			{
+				if (eBookInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					eBookInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eBookInstallSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
             if (eBookInstallSummaryToUpdate.AdditionalData != null)
             {
                 if (eBookInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

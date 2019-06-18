@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated OnPremisesConditionalAccessSettings.</returns>
         public async System.Threading.Tasks.Task<OnPremisesConditionalAccessSettings> UpdateAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToUpdate, CancellationToken cancellationToken)
         {
+			if (onPremisesConditionalAccessSettingsToUpdate.AdditionalData != null)
+			{
+				if (onPremisesConditionalAccessSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					onPremisesConditionalAccessSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onPremisesConditionalAccessSettingsToUpdate.GetType().Name)
+						});
+				}
+			}
             if (onPremisesConditionalAccessSettingsToUpdate.AdditionalData != null)
             {
                 if (onPremisesConditionalAccessSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

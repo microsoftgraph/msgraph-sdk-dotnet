@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated SharedDriveItem.</returns>
         public async System.Threading.Tasks.Task<SharedDriveItem> UpdateAsync(SharedDriveItem sharedDriveItemToUpdate, CancellationToken cancellationToken)
         {
+			if (sharedDriveItemToUpdate.AdditionalData != null)
+			{
+				if (sharedDriveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					sharedDriveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharedDriveItemToUpdate.GetType().Name)
+						});
+				}
+			}
             if (sharedDriveItemToUpdate.AdditionalData != null)
             {
                 if (sharedDriveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated AppCatalogs.</returns>
         public async System.Threading.Tasks.Task<AppCatalogs> UpdateAsync(AppCatalogs appCatalogsToUpdate, CancellationToken cancellationToken)
         {
+			if (appCatalogsToUpdate.AdditionalData != null)
+			{
+				if (appCatalogsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					appCatalogsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appCatalogsToUpdate.GetType().Name)
+						});
+				}
+			}
             if (appCatalogsToUpdate.AdditionalData != null)
             {
                 if (appCatalogsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

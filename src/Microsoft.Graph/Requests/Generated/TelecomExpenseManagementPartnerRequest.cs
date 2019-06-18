@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated TelecomExpenseManagementPartner.</returns>
         public async System.Threading.Tasks.Task<TelecomExpenseManagementPartner> UpdateAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToUpdate, CancellationToken cancellationToken)
         {
+			if (telecomExpenseManagementPartnerToUpdate.AdditionalData != null)
+			{
+				if (telecomExpenseManagementPartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					telecomExpenseManagementPartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, telecomExpenseManagementPartnerToUpdate.GetType().Name)
+						});
+				}
+			}
             if (telecomExpenseManagementPartnerToUpdate.AdditionalData != null)
             {
                 if (telecomExpenseManagementPartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

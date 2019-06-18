@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WorkbookChartLegend.</returns>
         public async System.Threading.Tasks.Task<WorkbookChartLegend> UpdateAsync(WorkbookChartLegend workbookChartLegendToUpdate, CancellationToken cancellationToken)
         {
+			if (workbookChartLegendToUpdate.AdditionalData != null)
+			{
+				if (workbookChartLegendToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookChartLegendToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartLegendToUpdate.GetType().Name)
+						});
+				}
+			}
             if (workbookChartLegendToUpdate.AdditionalData != null)
             {
                 if (workbookChartLegendToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

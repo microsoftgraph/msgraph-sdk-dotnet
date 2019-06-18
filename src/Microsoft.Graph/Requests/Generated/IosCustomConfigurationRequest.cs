@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated IosCustomConfiguration.</returns>
         public async System.Threading.Tasks.Task<IosCustomConfiguration> UpdateAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (iosCustomConfigurationToUpdate.AdditionalData != null)
+			{
+				if (iosCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCustomConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (iosCustomConfigurationToUpdate.AdditionalData != null)
             {
                 if (iosCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

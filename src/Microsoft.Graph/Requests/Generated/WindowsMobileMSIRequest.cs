@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WindowsMobileMSI.</returns>
         public async System.Threading.Tasks.Task<WindowsMobileMSI> UpdateAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsMobileMSIToUpdate.AdditionalData != null)
+			{
+				if (windowsMobileMSIToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsMobileMSIToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsMobileMSIToUpdate.GetType().Name)
+						});
+				}
+			}
             if (windowsMobileMSIToUpdate.AdditionalData != null)
             {
                 if (windowsMobileMSIToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceAppManagement.</returns>
         public async System.Threading.Tasks.Task<DeviceAppManagement> UpdateAsync(DeviceAppManagement deviceAppManagementToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceAppManagementToUpdate.AdditionalData != null)
+			{
+				if (deviceAppManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceAppManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAppManagementToUpdate.GetType().Name)
+						});
+				}
+			}
             if (deviceAppManagementToUpdate.AdditionalData != null)
             {
                 if (deviceAppManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

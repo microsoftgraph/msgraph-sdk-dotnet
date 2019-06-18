@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated UserInstallStateSummary.</returns>
         public async System.Threading.Tasks.Task<UserInstallStateSummary> UpdateAsync(UserInstallStateSummary userInstallStateSummaryToUpdate, CancellationToken cancellationToken)
         {
+			if (userInstallStateSummaryToUpdate.AdditionalData != null)
+			{
+				if (userInstallStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					userInstallStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userInstallStateSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
             if (userInstallStateSummaryToUpdate.AdditionalData != null)
             {
                 if (userInstallStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

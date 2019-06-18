@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ItemAttachment.</returns>
         public async System.Threading.Tasks.Task<ItemAttachment> UpdateAsync(ItemAttachment itemAttachmentToUpdate, CancellationToken cancellationToken)
         {
+			if (itemAttachmentToUpdate.AdditionalData != null)
+			{
+				if (itemAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					itemAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemAttachmentToUpdate.GetType().Name)
+						});
+				}
+			}
             if (itemAttachmentToUpdate.AdditionalData != null)
             {
                 if (itemAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

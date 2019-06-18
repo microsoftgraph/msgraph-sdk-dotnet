@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedEBook.</returns>
         public async System.Threading.Tasks.Task<ManagedEBook> UpdateAsync(ManagedEBook managedEBookToUpdate, CancellationToken cancellationToken)
         {
+			if (managedEBookToUpdate.AdditionalData != null)
+			{
+				if (managedEBookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedEBookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedEBookToUpdate.GetType().Name)
+						});
+				}
+			}
             if (managedEBookToUpdate.AdditionalData != null)
             {
                 if (managedEBookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

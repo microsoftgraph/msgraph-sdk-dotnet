@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceConfigurationAssignment.</returns>
         public async System.Threading.Tasks.Task<DeviceConfigurationAssignment> UpdateAsync(DeviceConfigurationAssignment deviceConfigurationAssignmentToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceConfigurationAssignmentToUpdate.AdditionalData != null)
+			{
+				if (deviceConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceConfigurationAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
             if (deviceConfigurationAssignmentToUpdate.AdditionalData != null)
             {
                 if (deviceConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

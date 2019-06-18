@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WindowsInformationProtection.</returns>
         public async System.Threading.Tasks.Task<WindowsInformationProtection> UpdateAsync(WindowsInformationProtection windowsInformationProtectionToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsInformationProtectionToUpdate.AdditionalData != null)
+			{
+				if (windowsInformationProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsInformationProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionToUpdate.GetType().Name)
+						});
+				}
+			}
             if (windowsInformationProtectionToUpdate.AdditionalData != null)
             {
                 if (windowsInformationProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated AndroidManagedAppRegistration.</returns>
         public async System.Threading.Tasks.Task<AndroidManagedAppRegistration> UpdateAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToUpdate, CancellationToken cancellationToken)
         {
+			if (androidManagedAppRegistrationToUpdate.AdditionalData != null)
+			{
+				if (androidManagedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidManagedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidManagedAppRegistrationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (androidManagedAppRegistrationToUpdate.AdditionalData != null)
             {
                 if (androidManagedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated AuditLogRoot.</returns>
         public async System.Threading.Tasks.Task<AuditLogRoot> UpdateAsync(AuditLogRoot auditLogRootToUpdate, CancellationToken cancellationToken)
         {
+			if (auditLogRootToUpdate.AdditionalData != null)
+			{
+				if (auditLogRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					auditLogRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, auditLogRootToUpdate.GetType().Name)
+						});
+				}
+			}
             if (auditLogRootToUpdate.AdditionalData != null)
             {
                 if (auditLogRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

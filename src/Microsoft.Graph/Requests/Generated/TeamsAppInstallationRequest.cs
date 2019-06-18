@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated TeamsAppInstallation.</returns>
         public async System.Threading.Tasks.Task<TeamsAppInstallation> UpdateAsync(TeamsAppInstallation teamsAppInstallationToUpdate, CancellationToken cancellationToken)
         {
+			if (teamsAppInstallationToUpdate.AdditionalData != null)
+			{
+				if (teamsAppInstallationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					teamsAppInstallationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAppInstallationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (teamsAppInstallationToUpdate.AdditionalData != null)
             {
                 if (teamsAppInstallationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

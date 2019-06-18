@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WorkbookTableColumn.</returns>
         public async System.Threading.Tasks.Task<WorkbookTableColumn> UpdateAsync(WorkbookTableColumn workbookTableColumnToUpdate, CancellationToken cancellationToken)
         {
+			if (workbookTableColumnToUpdate.AdditionalData != null)
+			{
+				if (workbookTableColumnToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookTableColumnToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookTableColumnToUpdate.GetType().Name)
+						});
+				}
+			}
             if (workbookTableColumnToUpdate.AdditionalData != null)
             {
                 if (workbookTableColumnToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

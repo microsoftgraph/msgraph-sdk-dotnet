@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Windows10GeneralConfiguration.</returns>
         public async System.Threading.Tasks.Task<Windows10GeneralConfiguration> UpdateAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windows10GeneralConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windows10GeneralConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows10GeneralConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10GeneralConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (windows10GeneralConfigurationToUpdate.AdditionalData != null)
             {
                 if (windows10GeneralConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

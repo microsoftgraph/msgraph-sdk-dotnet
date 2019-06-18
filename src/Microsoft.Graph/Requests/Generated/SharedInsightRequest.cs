@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated SharedInsight.</returns>
         public async System.Threading.Tasks.Task<SharedInsight> UpdateAsync(SharedInsight sharedInsightToUpdate, CancellationToken cancellationToken)
         {
+			if (sharedInsightToUpdate.AdditionalData != null)
+			{
+				if (sharedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					sharedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharedInsightToUpdate.GetType().Name)
+						});
+				}
+			}
             if (sharedInsightToUpdate.AdditionalData != null)
             {
                 if (sharedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

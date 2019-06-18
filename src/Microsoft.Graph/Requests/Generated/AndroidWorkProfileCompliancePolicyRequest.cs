@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated AndroidWorkProfileCompliancePolicy.</returns>
         public async System.Threading.Tasks.Task<AndroidWorkProfileCompliancePolicy> UpdateAsync(AndroidWorkProfileCompliancePolicy androidWorkProfileCompliancePolicyToUpdate, CancellationToken cancellationToken)
         {
+			if (androidWorkProfileCompliancePolicyToUpdate.AdditionalData != null)
+			{
+				if (androidWorkProfileCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidWorkProfileCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileCompliancePolicyToUpdate.GetType().Name)
+						});
+				}
+			}
             if (androidWorkProfileCompliancePolicyToUpdate.AdditionalData != null)
             {
                 if (androidWorkProfileCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

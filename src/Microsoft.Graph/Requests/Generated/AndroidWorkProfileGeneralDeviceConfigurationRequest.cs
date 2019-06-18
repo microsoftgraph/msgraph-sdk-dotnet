@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated AndroidWorkProfileGeneralDeviceConfiguration.</returns>
         public async System.Threading.Tasks.Task<AndroidWorkProfileGeneralDeviceConfiguration> UpdateAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (androidWorkProfileGeneralDeviceConfigurationToUpdate.AdditionalData != null)
+			{
+				if (androidWorkProfileGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidWorkProfileGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileGeneralDeviceConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (androidWorkProfileGeneralDeviceConfigurationToUpdate.AdditionalData != null)
             {
                 if (androidWorkProfileGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

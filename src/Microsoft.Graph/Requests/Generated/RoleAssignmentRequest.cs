@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated RoleAssignment.</returns>
         public async System.Threading.Tasks.Task<RoleAssignment> UpdateAsync(RoleAssignment roleAssignmentToUpdate, CancellationToken cancellationToken)
         {
+			if (roleAssignmentToUpdate.AdditionalData != null)
+			{
+				if (roleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					roleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, roleAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
             if (roleAssignmentToUpdate.AdditionalData != null)
             {
                 if (roleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

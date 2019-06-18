@@ -99,6 +99,19 @@ namespace Microsoft.Graph
         /// <returns>The updated RoleDefinition.</returns>
         public async System.Threading.Tasks.Task<RoleDefinition> UpdateAsync(RoleDefinition roleDefinitionToUpdate, CancellationToken cancellationToken)
         {
+			if (roleDefinitionToUpdate.AdditionalData != null)
+			{
+				if (roleDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					roleDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, roleDefinitionToUpdate.GetType().Name)
+						});
+				}
+			}
             if (roleDefinitionToUpdate.AdditionalData != null)
             {
                 if (roleDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Permission.</returns>
         public async System.Threading.Tasks.Task<Permission> UpdateAsync(Permission permissionToUpdate, CancellationToken cancellationToken)
         {
+			if (permissionToUpdate.AdditionalData != null)
+			{
+				if (permissionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					permissionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, permissionToUpdate.GetType().Name)
+						});
+				}
+			}
             if (permissionToUpdate.AdditionalData != null)
             {
                 if (permissionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

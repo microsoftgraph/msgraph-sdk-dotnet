@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ActivityHistoryItem.</returns>
         public async System.Threading.Tasks.Task<ActivityHistoryItem> UpdateAsync(ActivityHistoryItem activityHistoryItemToUpdate, CancellationToken cancellationToken)
         {
+			if (activityHistoryItemToUpdate.AdditionalData != null)
+			{
+				if (activityHistoryItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					activityHistoryItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, activityHistoryItemToUpdate.GetType().Name)
+						});
+				}
+			}
             if (activityHistoryItemToUpdate.AdditionalData != null)
             {
                 if (activityHistoryItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

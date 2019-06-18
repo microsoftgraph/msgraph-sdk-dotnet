@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ProfilePhoto.</returns>
         public async System.Threading.Tasks.Task<ProfilePhoto> UpdateAsync(ProfilePhoto profilePhotoToUpdate, CancellationToken cancellationToken)
         {
+			if (profilePhotoToUpdate.AdditionalData != null)
+			{
+				if (profilePhotoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					profilePhotoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, profilePhotoToUpdate.GetType().Name)
+						});
+				}
+			}
             if (profilePhotoToUpdate.AdditionalData != null)
             {
                 if (profilePhotoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

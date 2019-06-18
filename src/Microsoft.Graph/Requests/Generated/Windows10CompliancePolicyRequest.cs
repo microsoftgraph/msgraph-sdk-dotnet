@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Windows10CompliancePolicy.</returns>
         public async System.Threading.Tasks.Task<Windows10CompliancePolicy> UpdateAsync(Windows10CompliancePolicy windows10CompliancePolicyToUpdate, CancellationToken cancellationToken)
         {
+			if (windows10CompliancePolicyToUpdate.AdditionalData != null)
+			{
+				if (windows10CompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows10CompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10CompliancePolicyToUpdate.GetType().Name)
+						});
+				}
+			}
             if (windows10CompliancePolicyToUpdate.AdditionalData != null)
             {
                 if (windows10CompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

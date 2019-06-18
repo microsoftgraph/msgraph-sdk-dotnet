@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated SectionGroup.</returns>
         public async System.Threading.Tasks.Task<SectionGroup> UpdateAsync(SectionGroup sectionGroupToUpdate, CancellationToken cancellationToken)
         {
+			if (sectionGroupToUpdate.AdditionalData != null)
+			{
+				if (sectionGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					sectionGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sectionGroupToUpdate.GetType().Name)
+						});
+				}
+			}
             if (sectionGroupToUpdate.AdditionalData != null)
             {
                 if (sectionGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

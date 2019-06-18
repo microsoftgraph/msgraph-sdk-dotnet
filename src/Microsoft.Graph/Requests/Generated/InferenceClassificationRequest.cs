@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated InferenceClassification.</returns>
         public async System.Threading.Tasks.Task<InferenceClassification> UpdateAsync(InferenceClassification inferenceClassificationToUpdate, CancellationToken cancellationToken)
         {
+			if (inferenceClassificationToUpdate.AdditionalData != null)
+			{
+				if (inferenceClassificationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					inferenceClassificationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, inferenceClassificationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (inferenceClassificationToUpdate.AdditionalData != null)
             {
                 if (inferenceClassificationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

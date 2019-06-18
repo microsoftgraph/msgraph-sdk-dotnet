@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated EducationRoot.</returns>
         public async System.Threading.Tasks.Task<EducationRoot> UpdateAsync(EducationRoot educationRootToUpdate, CancellationToken cancellationToken)
         {
+			if (educationRootToUpdate.AdditionalData != null)
+			{
+				if (educationRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					educationRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationRootToUpdate.GetType().Name)
+						});
+				}
+			}
             if (educationRootToUpdate.AdditionalData != null)
             {
                 if (educationRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

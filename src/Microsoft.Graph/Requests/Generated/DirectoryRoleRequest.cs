@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DirectoryRole.</returns>
         public async System.Threading.Tasks.Task<DirectoryRole> UpdateAsync(DirectoryRole directoryRoleToUpdate, CancellationToken cancellationToken)
         {
+			if (directoryRoleToUpdate.AdditionalData != null)
+			{
+				if (directoryRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					directoryRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryRoleToUpdate.GetType().Name)
+						});
+				}
+			}
             if (directoryRoleToUpdate.AdditionalData != null)
             {
                 if (directoryRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

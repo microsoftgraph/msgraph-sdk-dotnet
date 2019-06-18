@@ -99,6 +99,19 @@ namespace Microsoft.Graph
         /// <returns>The updated EducationClass.</returns>
         public async System.Threading.Tasks.Task<EducationClass> UpdateAsync(EducationClass educationClassToUpdate, CancellationToken cancellationToken)
         {
+			if (educationClassToUpdate.AdditionalData != null)
+			{
+				if (educationClassToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					educationClassToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationClassToUpdate.GetType().Name)
+						});
+				}
+			}
             if (educationClassToUpdate.AdditionalData != null)
             {
                 if (educationClassToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

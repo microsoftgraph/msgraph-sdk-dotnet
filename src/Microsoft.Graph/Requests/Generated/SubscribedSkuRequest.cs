@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated SubscribedSku.</returns>
         public async System.Threading.Tasks.Task<SubscribedSku> UpdateAsync(SubscribedSku subscribedSkuToUpdate, CancellationToken cancellationToken)
         {
+			if (subscribedSkuToUpdate.AdditionalData != null)
+			{
+				if (subscribedSkuToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					subscribedSkuToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, subscribedSkuToUpdate.GetType().Name)
+						});
+				}
+			}
             if (subscribedSkuToUpdate.AdditionalData != null)
             {
                 if (subscribedSkuToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

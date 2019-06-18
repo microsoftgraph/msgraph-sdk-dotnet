@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Contract.</returns>
         public async System.Threading.Tasks.Task<Contract> UpdateAsync(Contract contractToUpdate, CancellationToken cancellationToken)
         {
+			if (contractToUpdate.AdditionalData != null)
+			{
+				if (contractToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					contractToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, contractToUpdate.GetType().Name)
+						});
+				}
+			}
             if (contractToUpdate.AdditionalData != null)
             {
                 if (contractToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

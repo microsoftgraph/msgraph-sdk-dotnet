@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated OnenoteOperation.</returns>
         public async System.Threading.Tasks.Task<OnenoteOperation> UpdateAsync(OnenoteOperation onenoteOperationToUpdate, CancellationToken cancellationToken)
         {
+			if (onenoteOperationToUpdate.AdditionalData != null)
+			{
+				if (onenoteOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					onenoteOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteOperationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (onenoteOperationToUpdate.AdditionalData != null)
             {
                 if (onenoteOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

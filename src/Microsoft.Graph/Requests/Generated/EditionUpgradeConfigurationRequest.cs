@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated EditionUpgradeConfiguration.</returns>
         public async System.Threading.Tasks.Task<EditionUpgradeConfiguration> UpdateAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (editionUpgradeConfigurationToUpdate.AdditionalData != null)
+			{
+				if (editionUpgradeConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					editionUpgradeConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, editionUpgradeConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (editionUpgradeConfigurationToUpdate.AdditionalData != null)
             {
                 if (editionUpgradeConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

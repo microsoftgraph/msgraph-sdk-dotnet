@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated MacOSCustomConfiguration.</returns>
         public async System.Threading.Tasks.Task<MacOSCustomConfiguration> UpdateAsync(MacOSCustomConfiguration macOSCustomConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (macOSCustomConfigurationToUpdate.AdditionalData != null)
+			{
+				if (macOSCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSCustomConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (macOSCustomConfigurationToUpdate.AdditionalData != null)
             {
                 if (macOSCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

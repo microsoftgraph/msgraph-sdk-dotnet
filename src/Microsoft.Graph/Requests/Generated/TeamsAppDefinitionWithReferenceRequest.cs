@@ -99,6 +99,19 @@ namespace Microsoft.Graph
         /// <returns>The updated TeamsAppDefinition.</returns>
         public async System.Threading.Tasks.Task<TeamsAppDefinition> UpdateAsync(TeamsAppDefinition teamsAppDefinitionToUpdate, CancellationToken cancellationToken)
         {
+			if (teamsAppDefinitionToUpdate.AdditionalData != null)
+			{
+				if (teamsAppDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					teamsAppDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAppDefinitionToUpdate.GetType().Name)
+						});
+				}
+			}
             if (teamsAppDefinitionToUpdate.AdditionalData != null)
             {
                 if (teamsAppDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

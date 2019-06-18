@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WindowsPhone81GeneralConfiguration.</returns>
         public async System.Threading.Tasks.Task<WindowsPhone81GeneralConfiguration> UpdateAsync(WindowsPhone81GeneralConfiguration windowsPhone81GeneralConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsPhone81GeneralConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windowsPhone81GeneralConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsPhone81GeneralConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81GeneralConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (windowsPhone81GeneralConfigurationToUpdate.AdditionalData != null)
             {
                 if (windowsPhone81GeneralConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

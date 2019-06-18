@@ -99,6 +99,19 @@ namespace Microsoft.Graph
         /// <returns>The updated User.</returns>
         public async System.Threading.Tasks.Task<User> UpdateAsync(User userToUpdate, CancellationToken cancellationToken)
         {
+			if (userToUpdate.AdditionalData != null)
+			{
+				if (userToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					userToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userToUpdate.GetType().Name)
+						});
+				}
+			}
             if (userToUpdate.AdditionalData != null)
             {
                 if (userToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

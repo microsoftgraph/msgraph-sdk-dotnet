@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated OutlookCategory.</returns>
         public async System.Threading.Tasks.Task<OutlookCategory> UpdateAsync(OutlookCategory outlookCategoryToUpdate, CancellationToken cancellationToken)
         {
+			if (outlookCategoryToUpdate.AdditionalData != null)
+			{
+				if (outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, outlookCategoryToUpdate.GetType().Name)
+						});
+				}
+			}
             if (outlookCategoryToUpdate.AdditionalData != null)
             {
                 if (outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated MobileAppContentFile.</returns>
         public async System.Threading.Tasks.Task<MobileAppContentFile> UpdateAsync(MobileAppContentFile mobileAppContentFileToUpdate, CancellationToken cancellationToken)
         {
+			if (mobileAppContentFileToUpdate.AdditionalData != null)
+			{
+				if (mobileAppContentFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mobileAppContentFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppContentFileToUpdate.GetType().Name)
+						});
+				}
+			}
             if (mobileAppContentFileToUpdate.AdditionalData != null)
             {
                 if (mobileAppContentFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

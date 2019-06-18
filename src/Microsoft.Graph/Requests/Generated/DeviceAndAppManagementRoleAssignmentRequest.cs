@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceAndAppManagementRoleAssignment.</returns>
         public async System.Threading.Tasks.Task<DeviceAndAppManagementRoleAssignment> UpdateAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData != null)
+			{
+				if (deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAndAppManagementRoleAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
             if (deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData != null)
             {
                 if (deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

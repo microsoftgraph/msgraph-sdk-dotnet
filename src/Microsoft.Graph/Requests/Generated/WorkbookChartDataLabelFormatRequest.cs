@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WorkbookChartDataLabelFormat.</returns>
         public async System.Threading.Tasks.Task<WorkbookChartDataLabelFormat> UpdateAsync(WorkbookChartDataLabelFormat workbookChartDataLabelFormatToUpdate, CancellationToken cancellationToken)
         {
+			if (workbookChartDataLabelFormatToUpdate.AdditionalData != null)
+			{
+				if (workbookChartDataLabelFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookChartDataLabelFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartDataLabelFormatToUpdate.GetType().Name)
+						});
+				}
+			}
             if (workbookChartDataLabelFormatToUpdate.AdditionalData != null)
             {
                 if (workbookChartDataLabelFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceEnrollmentWindowsHelloForBusinessConfiguration.</returns>
         public async System.Threading.Tasks.Task<DeviceEnrollmentWindowsHelloForBusinessConfiguration> UpdateAsync(DeviceEnrollmentWindowsHelloForBusinessConfiguration deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.AdditionalData != null)
+			{
+				if (deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.AdditionalData != null)
             {
                 if (deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedAppProtection.</returns>
         public async System.Threading.Tasks.Task<ManagedAppProtection> UpdateAsync(ManagedAppProtection managedAppProtectionToUpdate, CancellationToken cancellationToken)
         {
+			if (managedAppProtectionToUpdate.AdditionalData != null)
+			{
+				if (managedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppProtectionToUpdate.GetType().Name)
+						});
+				}
+			}
             if (managedAppProtectionToUpdate.AdditionalData != null)
             {
                 if (managedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

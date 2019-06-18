@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated RemoteAssistancePartner.</returns>
         public async System.Threading.Tasks.Task<RemoteAssistancePartner> UpdateAsync(RemoteAssistancePartner remoteAssistancePartnerToUpdate, CancellationToken cancellationToken)
         {
+			if (remoteAssistancePartnerToUpdate.AdditionalData != null)
+			{
+				if (remoteAssistancePartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					remoteAssistancePartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, remoteAssistancePartnerToUpdate.GetType().Name)
+						});
+				}
+			}
             if (remoteAssistancePartnerToUpdate.AdditionalData != null)
             {
                 if (remoteAssistancePartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

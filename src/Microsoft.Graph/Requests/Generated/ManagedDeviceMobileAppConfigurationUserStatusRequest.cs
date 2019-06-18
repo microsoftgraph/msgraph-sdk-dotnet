@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedDeviceMobileAppConfigurationUserStatus.</returns>
         public async System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> UpdateAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToUpdate, CancellationToken cancellationToken)
         {
+			if (managedDeviceMobileAppConfigurationUserStatusToUpdate.AdditionalData != null)
+			{
+				if (managedDeviceMobileAppConfigurationUserStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedDeviceMobileAppConfigurationUserStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceMobileAppConfigurationUserStatusToUpdate.GetType().Name)
+						});
+				}
+			}
             if (managedDeviceMobileAppConfigurationUserStatusToUpdate.AdditionalData != null)
             {
                 if (managedDeviceMobileAppConfigurationUserStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

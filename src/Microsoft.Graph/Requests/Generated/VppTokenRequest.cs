@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated VppToken.</returns>
         public async System.Threading.Tasks.Task<VppToken> UpdateAsync(VppToken vppTokenToUpdate, CancellationToken cancellationToken)
         {
+			if (vppTokenToUpdate.AdditionalData != null)
+			{
+				if (vppTokenToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					vppTokenToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, vppTokenToUpdate.GetType().Name)
+						});
+				}
+			}
             if (vppTokenToUpdate.AdditionalData != null)
             {
                 if (vppTokenToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

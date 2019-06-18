@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated TermsAndConditionsAssignment.</returns>
         public async System.Threading.Tasks.Task<TermsAndConditionsAssignment> UpdateAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToUpdate, CancellationToken cancellationToken)
         {
+			if (termsAndConditionsAssignmentToUpdate.AdditionalData != null)
+			{
+				if (termsAndConditionsAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					termsAndConditionsAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsAndConditionsAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
             if (termsAndConditionsAssignmentToUpdate.AdditionalData != null)
             {
                 if (termsAndConditionsAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

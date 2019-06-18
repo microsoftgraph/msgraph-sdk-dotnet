@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated TeamsAsyncOperation.</returns>
         public async System.Threading.Tasks.Task<TeamsAsyncOperation> UpdateAsync(TeamsAsyncOperation teamsAsyncOperationToUpdate, CancellationToken cancellationToken)
         {
+			if (teamsAsyncOperationToUpdate.AdditionalData != null)
+			{
+				if (teamsAsyncOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					teamsAsyncOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAsyncOperationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (teamsAsyncOperationToUpdate.AdditionalData != null)
             {
                 if (teamsAsyncOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

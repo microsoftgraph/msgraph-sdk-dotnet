@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated LocalizedNotificationMessage.</returns>
         public async System.Threading.Tasks.Task<LocalizedNotificationMessage> UpdateAsync(LocalizedNotificationMessage localizedNotificationMessageToUpdate, CancellationToken cancellationToken)
         {
+			if (localizedNotificationMessageToUpdate.AdditionalData != null)
+			{
+				if (localizedNotificationMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					localizedNotificationMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, localizedNotificationMessageToUpdate.GetType().Name)
+						});
+				}
+			}
             if (localizedNotificationMessageToUpdate.AdditionalData != null)
             {
                 if (localizedNotificationMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

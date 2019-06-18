@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WindowsInformationProtectionAppLockerFile.</returns>
         public async System.Threading.Tasks.Task<WindowsInformationProtectionAppLockerFile> UpdateAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsInformationProtectionAppLockerFileToUpdate.AdditionalData != null)
+			{
+				if (windowsInformationProtectionAppLockerFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsInformationProtectionAppLockerFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionAppLockerFileToUpdate.GetType().Name)
+						});
+				}
+			}
             if (windowsInformationProtectionAppLockerFileToUpdate.AdditionalData != null)
             {
                 if (windowsInformationProtectionAppLockerFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

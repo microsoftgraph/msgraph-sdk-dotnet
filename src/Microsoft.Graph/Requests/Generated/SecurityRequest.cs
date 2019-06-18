@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Security.</returns>
         public async System.Threading.Tasks.Task<Security> UpdateAsync(Security securityToUpdate, CancellationToken cancellationToken)
         {
+			if (securityToUpdate.AdditionalData != null)
+			{
+				if (securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityToUpdate.GetType().Name)
+						});
+				}
+			}
             if (securityToUpdate.AdditionalData != null)
             {
                 if (securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated MacOSCompliancePolicy.</returns>
         public async System.Threading.Tasks.Task<MacOSCompliancePolicy> UpdateAsync(MacOSCompliancePolicy macOSCompliancePolicyToUpdate, CancellationToken cancellationToken)
         {
+			if (macOSCompliancePolicyToUpdate.AdditionalData != null)
+			{
+				if (macOSCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSCompliancePolicyToUpdate.GetType().Name)
+						});
+				}
+			}
             if (macOSCompliancePolicyToUpdate.AdditionalData != null)
             {
                 if (macOSCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

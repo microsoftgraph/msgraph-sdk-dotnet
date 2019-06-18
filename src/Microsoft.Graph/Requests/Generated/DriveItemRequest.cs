@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DriveItem.</returns>
         public async System.Threading.Tasks.Task<DriveItem> UpdateAsync(DriveItem driveItemToUpdate, CancellationToken cancellationToken)
         {
+			if (driveItemToUpdate.AdditionalData != null)
+			{
+				if (driveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					driveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, driveItemToUpdate.GetType().Name)
+						});
+				}
+			}
             if (driveItemToUpdate.AdditionalData != null)
             {
                 if (driveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

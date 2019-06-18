@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated MacOSOfficeSuiteApp.</returns>
         public async System.Threading.Tasks.Task<MacOSOfficeSuiteApp> UpdateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate, CancellationToken cancellationToken)
         {
+			if (macOSOfficeSuiteAppToUpdate.AdditionalData != null)
+			{
+				if (macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSOfficeSuiteAppToUpdate.GetType().Name)
+						});
+				}
+			}
             if (macOSOfficeSuiteAppToUpdate.AdditionalData != null)
             {
                 if (macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

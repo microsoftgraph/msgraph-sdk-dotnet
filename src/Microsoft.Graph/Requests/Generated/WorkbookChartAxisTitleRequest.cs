@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WorkbookChartAxisTitle.</returns>
         public async System.Threading.Tasks.Task<WorkbookChartAxisTitle> UpdateAsync(WorkbookChartAxisTitle workbookChartAxisTitleToUpdate, CancellationToken cancellationToken)
         {
+			if (workbookChartAxisTitleToUpdate.AdditionalData != null)
+			{
+				if (workbookChartAxisTitleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookChartAxisTitleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartAxisTitleToUpdate.GetType().Name)
+						});
+				}
+			}
             if (workbookChartAxisTitleToUpdate.AdditionalData != null)
             {
                 if (workbookChartAxisTitleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

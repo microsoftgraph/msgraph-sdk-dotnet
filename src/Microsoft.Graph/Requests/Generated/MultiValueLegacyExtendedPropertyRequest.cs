@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated MultiValueLegacyExtendedProperty.</returns>
         public async System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> UpdateAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToUpdate, CancellationToken cancellationToken)
         {
+			if (multiValueLegacyExtendedPropertyToUpdate.AdditionalData != null)
+			{
+				if (multiValueLegacyExtendedPropertyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					multiValueLegacyExtendedPropertyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, multiValueLegacyExtendedPropertyToUpdate.GetType().Name)
+						});
+				}
+			}
             if (multiValueLegacyExtendedPropertyToUpdate.AdditionalData != null)
             {
                 if (multiValueLegacyExtendedPropertyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

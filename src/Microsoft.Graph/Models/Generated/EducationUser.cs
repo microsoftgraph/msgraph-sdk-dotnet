@@ -24,7 +24,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets primary role.
-        /// Default role for a user. The user's role might be different in an individual class. The possible values are: student, teacher, unknownFutureValue. Supports $filter.
+        /// Default role for a user. The user's role might be different in an individual class. The possible values are: student, teacher. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryRole", Required = Newtonsoft.Json.Required.Default)]
         public EducationUserRole? PrimaryRole { get; set; }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external source.
-        /// Where this user was created from. The possible values are: sis, manual, unkownFutureValue.
+        /// Where this user was created from. The possible values are: sis, manual.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSource", Required = Newtonsoft.Json.Required.Default)]
         public EducationExternalSource? ExternalSource { get; set; }

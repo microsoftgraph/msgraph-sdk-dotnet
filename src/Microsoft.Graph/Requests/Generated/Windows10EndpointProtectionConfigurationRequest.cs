@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Windows10EndpointProtectionConfiguration.</returns>
         public async System.Threading.Tasks.Task<Windows10EndpointProtectionConfiguration> UpdateAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windows10EndpointProtectionConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windows10EndpointProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows10EndpointProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10EndpointProtectionConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (windows10EndpointProtectionConfigurationToUpdate.AdditionalData != null)
             {
                 if (windows10EndpointProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

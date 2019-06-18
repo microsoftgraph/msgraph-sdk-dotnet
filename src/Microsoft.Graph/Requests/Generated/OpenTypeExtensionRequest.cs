@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated OpenTypeExtension.</returns>
         public async System.Threading.Tasks.Task<OpenTypeExtension> UpdateAsync(OpenTypeExtension openTypeExtensionToUpdate, CancellationToken cancellationToken)
         {
+			if (openTypeExtensionToUpdate.AdditionalData != null)
+			{
+				if (openTypeExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					openTypeExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, openTypeExtensionToUpdate.GetType().Name)
+						});
+				}
+			}
             if (openTypeExtensionToUpdate.AdditionalData != null)
             {
                 if (openTypeExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

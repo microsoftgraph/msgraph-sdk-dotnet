@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated AndroidWorkProfileCustomConfiguration.</returns>
         public async System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> UpdateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (androidWorkProfileCustomConfigurationToUpdate.AdditionalData != null)
+			{
+				if (androidWorkProfileCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidWorkProfileCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileCustomConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (androidWorkProfileCustomConfigurationToUpdate.AdditionalData != null)
             {
                 if (androidWorkProfileCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

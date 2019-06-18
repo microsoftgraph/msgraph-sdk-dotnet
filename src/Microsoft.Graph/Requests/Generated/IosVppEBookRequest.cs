@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated IosVppEBook.</returns>
         public async System.Threading.Tasks.Task<IosVppEBook> UpdateAsync(IosVppEBook iosVppEBookToUpdate, CancellationToken cancellationToken)
         {
+			if (iosVppEBookToUpdate.AdditionalData != null)
+			{
+				if (iosVppEBookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosVppEBookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosVppEBookToUpdate.GetType().Name)
+						});
+				}
+			}
             if (iosVppEBookToUpdate.AdditionalData != null)
             {
                 if (iosVppEBookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

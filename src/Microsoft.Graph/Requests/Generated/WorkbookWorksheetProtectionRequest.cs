@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WorkbookWorksheetProtection.</returns>
         public async System.Threading.Tasks.Task<WorkbookWorksheetProtection> UpdateAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToUpdate, CancellationToken cancellationToken)
         {
+			if (workbookWorksheetProtectionToUpdate.AdditionalData != null)
+			{
+				if (workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookWorksheetProtectionToUpdate.GetType().Name)
+						});
+				}
+			}
             if (workbookWorksheetProtectionToUpdate.AdditionalData != null)
             {
                 if (workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

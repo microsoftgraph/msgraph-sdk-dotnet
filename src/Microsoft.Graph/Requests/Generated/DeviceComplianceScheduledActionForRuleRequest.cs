@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceComplianceScheduledActionForRule.</returns>
         public async System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> UpdateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceComplianceScheduledActionForRuleToUpdate.AdditionalData != null)
+			{
+				if (deviceComplianceScheduledActionForRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceComplianceScheduledActionForRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceScheduledActionForRuleToUpdate.GetType().Name)
+						});
+				}
+			}
             if (deviceComplianceScheduledActionForRuleToUpdate.AdditionalData != null)
             {
                 if (deviceComplianceScheduledActionForRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

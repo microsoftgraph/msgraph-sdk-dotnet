@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceManagementExchangeConnector.</returns>
         public async System.Threading.Tasks.Task<DeviceManagementExchangeConnector> UpdateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceManagementExchangeConnectorToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementExchangeConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementExchangeConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementExchangeConnectorToUpdate.GetType().Name)
+						});
+				}
+			}
             if (deviceManagementExchangeConnectorToUpdate.AdditionalData != null)
             {
                 if (deviceManagementExchangeConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

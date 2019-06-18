@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedAndroidLobApp.</returns>
         public async System.Threading.Tasks.Task<ManagedAndroidLobApp> UpdateAsync(ManagedAndroidLobApp managedAndroidLobAppToUpdate, CancellationToken cancellationToken)
         {
+			if (managedAndroidLobAppToUpdate.AdditionalData != null)
+			{
+				if (managedAndroidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedAndroidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAndroidLobAppToUpdate.GetType().Name)
+						});
+				}
+			}
             if (managedAndroidLobAppToUpdate.AdditionalData != null)
             {
                 if (managedAndroidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

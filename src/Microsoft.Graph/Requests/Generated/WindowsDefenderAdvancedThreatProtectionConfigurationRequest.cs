@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WindowsDefenderAdvancedThreatProtectionConfiguration.</returns>
         public async System.Threading.Tasks.Task<WindowsDefenderAdvancedThreatProtectionConfiguration> UpdateAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData != null)
             {
                 if (windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

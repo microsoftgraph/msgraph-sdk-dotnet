@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated MacOSGeneralDeviceConfiguration.</returns>
         public async System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> UpdateAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (macOSGeneralDeviceConfigurationToUpdate.AdditionalData != null)
+			{
+				if (macOSGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSGeneralDeviceConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (macOSGeneralDeviceConfigurationToUpdate.AdditionalData != null)
             {
                 if (macOSGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

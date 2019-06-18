@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated SoftwareUpdateStatusSummary.</returns>
         public async System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> UpdateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate, CancellationToken cancellationToken)
         {
+			if (softwareUpdateStatusSummaryToUpdate.AdditionalData != null)
+			{
+				if (softwareUpdateStatusSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					softwareUpdateStatusSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, softwareUpdateStatusSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
             if (softwareUpdateStatusSummaryToUpdate.AdditionalData != null)
             {
                 if (softwareUpdateStatusSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

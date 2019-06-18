@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated IosManagedAppRegistration.</returns>
         public async System.Threading.Tasks.Task<IosManagedAppRegistration> UpdateAsync(IosManagedAppRegistration iosManagedAppRegistrationToUpdate, CancellationToken cancellationToken)
         {
+			if (iosManagedAppRegistrationToUpdate.AdditionalData != null)
+			{
+				if (iosManagedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosManagedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosManagedAppRegistrationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (iosManagedAppRegistrationToUpdate.AdditionalData != null)
             {
                 if (iosManagedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

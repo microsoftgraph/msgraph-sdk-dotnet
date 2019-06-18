@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DomainDnsTxtRecord.</returns>
         public async System.Threading.Tasks.Task<DomainDnsTxtRecord> UpdateAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken)
         {
+			if (domainDnsTxtRecordToUpdate.AdditionalData != null)
+			{
+				if (domainDnsTxtRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					domainDnsTxtRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainDnsTxtRecordToUpdate.GetType().Name)
+						});
+				}
+			}
             if (domainDnsTxtRecordToUpdate.AdditionalData != null)
             {
                 if (domainDnsTxtRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

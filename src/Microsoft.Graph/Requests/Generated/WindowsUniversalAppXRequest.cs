@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WindowsUniversalAppX.</returns>
         public async System.Threading.Tasks.Task<WindowsUniversalAppX> UpdateAsync(WindowsUniversalAppX windowsUniversalAppXToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsUniversalAppXToUpdate.AdditionalData != null)
+			{
+				if (windowsUniversalAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsUniversalAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsUniversalAppXToUpdate.GetType().Name)
+						});
+				}
+			}
             if (windowsUniversalAppXToUpdate.AdditionalData != null)
             {
                 if (windowsUniversalAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

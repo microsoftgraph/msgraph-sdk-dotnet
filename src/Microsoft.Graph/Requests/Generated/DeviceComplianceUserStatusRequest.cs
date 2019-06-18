@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceComplianceUserStatus.</returns>
         public async System.Threading.Tasks.Task<DeviceComplianceUserStatus> UpdateAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceComplianceUserStatusToUpdate.AdditionalData != null)
+			{
+				if (deviceComplianceUserStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceComplianceUserStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceUserStatusToUpdate.GetType().Name)
+						});
+				}
+			}
             if (deviceComplianceUserStatusToUpdate.AdditionalData != null)
             {
                 if (deviceComplianceUserStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

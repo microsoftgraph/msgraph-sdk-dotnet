@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Extension.</returns>
         public async System.Threading.Tasks.Task<Extension> UpdateAsync(Extension extensionToUpdate, CancellationToken cancellationToken)
         {
+			if (extensionToUpdate.AdditionalData != null)
+			{
+				if (extensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					extensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, extensionToUpdate.GetType().Name)
+						});
+				}
+			}
             if (extensionToUpdate.AdditionalData != null)
             {
                 if (extensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

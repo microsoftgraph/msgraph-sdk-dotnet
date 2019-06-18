@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedAppPolicy.</returns>
         public async System.Threading.Tasks.Task<ManagedAppPolicy> UpdateAsync(ManagedAppPolicy managedAppPolicyToUpdate, CancellationToken cancellationToken)
         {
+			if (managedAppPolicyToUpdate.AdditionalData != null)
+			{
+				if (managedAppPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedAppPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppPolicyToUpdate.GetType().Name)
+						});
+				}
+			}
             if (managedAppPolicyToUpdate.AdditionalData != null)
             {
                 if (managedAppPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

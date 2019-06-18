@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated IdentityProvider.</returns>
         public async System.Threading.Tasks.Task<IdentityProvider> UpdateAsync(IdentityProvider identityProviderToUpdate, CancellationToken cancellationToken)
         {
+			if (identityProviderToUpdate.AdditionalData != null)
+			{
+				if (identityProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					identityProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, identityProviderToUpdate.GetType().Name)
+						});
+				}
+			}
             if (identityProviderToUpdate.AdditionalData != null)
             {
                 if (identityProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

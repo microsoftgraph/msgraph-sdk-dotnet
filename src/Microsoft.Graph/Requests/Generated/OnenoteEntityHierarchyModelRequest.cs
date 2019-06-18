@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated OnenoteEntityHierarchyModel.</returns>
         public async System.Threading.Tasks.Task<OnenoteEntityHierarchyModel> UpdateAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToUpdate, CancellationToken cancellationToken)
         {
+			if (onenoteEntityHierarchyModelToUpdate.AdditionalData != null)
+			{
+				if (onenoteEntityHierarchyModelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					onenoteEntityHierarchyModelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteEntityHierarchyModelToUpdate.GetType().Name)
+						});
+				}
+			}
             if (onenoteEntityHierarchyModelToUpdate.AdditionalData != null)
             {
                 if (onenoteEntityHierarchyModelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

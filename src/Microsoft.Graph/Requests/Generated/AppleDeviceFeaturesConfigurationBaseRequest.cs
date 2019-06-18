@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated AppleDeviceFeaturesConfigurationBase.</returns>
         public async System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> UpdateAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToUpdate, CancellationToken cancellationToken)
         {
+			if (appleDeviceFeaturesConfigurationBaseToUpdate.AdditionalData != null)
+			{
+				if (appleDeviceFeaturesConfigurationBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					appleDeviceFeaturesConfigurationBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appleDeviceFeaturesConfigurationBaseToUpdate.GetType().Name)
+						});
+				}
+			}
             if (appleDeviceFeaturesConfigurationBaseToUpdate.AdditionalData != null)
             {
                 if (appleDeviceFeaturesConfigurationBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

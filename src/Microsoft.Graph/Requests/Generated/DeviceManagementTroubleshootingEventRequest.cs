@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceManagementTroubleshootingEvent.</returns>
         public async System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> UpdateAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceManagementTroubleshootingEventToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementTroubleshootingEventToUpdate.GetType().Name)
+						});
+				}
+			}
             if (deviceManagementTroubleshootingEventToUpdate.AdditionalData != null)
             {
                 if (deviceManagementTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

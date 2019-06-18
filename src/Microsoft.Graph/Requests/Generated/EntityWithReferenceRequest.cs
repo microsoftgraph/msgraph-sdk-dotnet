@@ -99,6 +99,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Entity.</returns>
         public async System.Threading.Tasks.Task<Entity> UpdateAsync(Entity entityToUpdate, CancellationToken cancellationToken)
         {
+			if (entityToUpdate.AdditionalData != null)
+			{
+				if (entityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					entityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, entityToUpdate.GetType().Name)
+						});
+				}
+			}
             if (entityToUpdate.AdditionalData != null)
             {
                 if (entityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated MdmWindowsInformationProtectionPolicy.</returns>
         public async System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> UpdateAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToUpdate, CancellationToken cancellationToken)
         {
+			if (mdmWindowsInformationProtectionPolicyToUpdate.AdditionalData != null)
+			{
+				if (mdmWindowsInformationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mdmWindowsInformationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mdmWindowsInformationProtectionPolicyToUpdate.GetType().Name)
+						});
+				}
+			}
             if (mdmWindowsInformationProtectionPolicyToUpdate.AdditionalData != null)
             {
                 if (mdmWindowsInformationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

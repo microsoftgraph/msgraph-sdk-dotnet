@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated SharedPCConfiguration.</returns>
         public async System.Threading.Tasks.Task<SharedPCConfiguration> UpdateAsync(SharedPCConfiguration sharedPCConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (sharedPCConfigurationToUpdate.AdditionalData != null)
+			{
+				if (sharedPCConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					sharedPCConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharedPCConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (sharedPCConfigurationToUpdate.AdditionalData != null)
             {
                 if (sharedPCConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

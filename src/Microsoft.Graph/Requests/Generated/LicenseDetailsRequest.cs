@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated LicenseDetails.</returns>
         public async System.Threading.Tasks.Task<LicenseDetails> UpdateAsync(LicenseDetails licenseDetailsToUpdate, CancellationToken cancellationToken)
         {
+			if (licenseDetailsToUpdate.AdditionalData != null)
+			{
+				if (licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, licenseDetailsToUpdate.GetType().Name)
+						});
+				}
+			}
             if (licenseDetailsToUpdate.AdditionalData != null)
             {
                 if (licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

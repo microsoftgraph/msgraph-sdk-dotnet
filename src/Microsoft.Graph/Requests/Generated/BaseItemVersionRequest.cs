@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated BaseItemVersion.</returns>
         public async System.Threading.Tasks.Task<BaseItemVersion> UpdateAsync(BaseItemVersion baseItemVersionToUpdate, CancellationToken cancellationToken)
         {
+			if (baseItemVersionToUpdate.AdditionalData != null)
+			{
+				if (baseItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					baseItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, baseItemVersionToUpdate.GetType().Name)
+						});
+				}
+			}
             if (baseItemVersionToUpdate.AdditionalData != null)
             {
                 if (baseItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

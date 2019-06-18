@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated AndroidStoreApp.</returns>
         public async System.Threading.Tasks.Task<AndroidStoreApp> UpdateAsync(AndroidStoreApp androidStoreAppToUpdate, CancellationToken cancellationToken)
         {
+			if (androidStoreAppToUpdate.AdditionalData != null)
+			{
+				if (androidStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidStoreAppToUpdate.GetType().Name)
+						});
+				}
+			}
             if (androidStoreAppToUpdate.AdditionalData != null)
             {
                 if (androidStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

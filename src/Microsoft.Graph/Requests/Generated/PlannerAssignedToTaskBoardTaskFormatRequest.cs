@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated PlannerAssignedToTaskBoardTaskFormat.</returns>
         public async System.Threading.Tasks.Task<PlannerAssignedToTaskBoardTaskFormat> UpdateAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken)
         {
+			if (plannerAssignedToTaskBoardTaskFormatToUpdate.AdditionalData != null)
+			{
+				if (plannerAssignedToTaskBoardTaskFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					plannerAssignedToTaskBoardTaskFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerAssignedToTaskBoardTaskFormatToUpdate.GetType().Name)
+						});
+				}
+			}
             if (plannerAssignedToTaskBoardTaskFormatToUpdate.AdditionalData != null)
             {
                 if (plannerAssignedToTaskBoardTaskFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

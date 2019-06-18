@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated IosMobileAppConfiguration.</returns>
         public async System.Threading.Tasks.Task<IosMobileAppConfiguration> UpdateAsync(IosMobileAppConfiguration iosMobileAppConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (iosMobileAppConfigurationToUpdate.AdditionalData != null)
+			{
+				if (iosMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosMobileAppConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (iosMobileAppConfigurationToUpdate.AdditionalData != null)
             {
                 if (iosMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

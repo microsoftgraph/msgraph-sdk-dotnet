@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ReportRoot.</returns>
         public async System.Threading.Tasks.Task<ReportRoot> UpdateAsync(ReportRoot reportRootToUpdate, CancellationToken cancellationToken)
         {
+			if (reportRootToUpdate.AdditionalData != null)
+			{
+				if (reportRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					reportRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, reportRootToUpdate.GetType().Name)
+						});
+				}
+			}
             if (reportRootToUpdate.AdditionalData != null)
             {
                 if (reportRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

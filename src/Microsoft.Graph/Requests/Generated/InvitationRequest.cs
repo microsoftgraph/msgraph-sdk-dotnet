@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Invitation.</returns>
         public async System.Threading.Tasks.Task<Invitation> UpdateAsync(Invitation invitationToUpdate, CancellationToken cancellationToken)
         {
+			if (invitationToUpdate.AdditionalData != null)
+			{
+				if (invitationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					invitationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, invitationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (invitationToUpdate.AdditionalData != null)
             {
                 if (invitationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

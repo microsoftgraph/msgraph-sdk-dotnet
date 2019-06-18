@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedIOSStoreApp.</returns>
         public async System.Threading.Tasks.Task<ManagedIOSStoreApp> UpdateAsync(ManagedIOSStoreApp managedIOSStoreAppToUpdate, CancellationToken cancellationToken)
         {
+			if (managedIOSStoreAppToUpdate.AdditionalData != null)
+			{
+				if (managedIOSStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedIOSStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedIOSStoreAppToUpdate.GetType().Name)
+						});
+				}
+			}
             if (managedIOSStoreAppToUpdate.AdditionalData != null)
             {
                 if (managedIOSStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

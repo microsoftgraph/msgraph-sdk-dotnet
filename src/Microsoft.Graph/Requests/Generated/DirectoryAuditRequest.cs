@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DirectoryAudit.</returns>
         public async System.Threading.Tasks.Task<DirectoryAudit> UpdateAsync(DirectoryAudit directoryAuditToUpdate, CancellationToken cancellationToken)
         {
+			if (directoryAuditToUpdate.AdditionalData != null)
+			{
+				if (directoryAuditToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					directoryAuditToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryAuditToUpdate.GetType().Name)
+						});
+				}
+			}
             if (directoryAuditToUpdate.AdditionalData != null)
             {
                 if (directoryAuditToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

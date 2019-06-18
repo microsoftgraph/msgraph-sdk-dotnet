@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WorkbookChartGridlinesFormat.</returns>
         public async System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> UpdateAsync(WorkbookChartGridlinesFormat workbookChartGridlinesFormatToUpdate, CancellationToken cancellationToken)
         {
+			if (workbookChartGridlinesFormatToUpdate.AdditionalData != null)
+			{
+				if (workbookChartGridlinesFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookChartGridlinesFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartGridlinesFormatToUpdate.GetType().Name)
+						});
+				}
+			}
             if (workbookChartGridlinesFormatToUpdate.AdditionalData != null)
             {
                 if (workbookChartGridlinesFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

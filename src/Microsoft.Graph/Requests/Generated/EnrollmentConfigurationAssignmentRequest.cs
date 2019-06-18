@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated EnrollmentConfigurationAssignment.</returns>
         public async System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> UpdateAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate, CancellationToken cancellationToken)
         {
+			if (enrollmentConfigurationAssignmentToUpdate.AdditionalData != null)
+			{
+				if (enrollmentConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					enrollmentConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, enrollmentConfigurationAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
             if (enrollmentConfigurationAssignmentToUpdate.AdditionalData != null)
             {
                 if (enrollmentConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

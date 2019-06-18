@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Domain.</returns>
         public async System.Threading.Tasks.Task<Domain> UpdateAsync(Domain domainToUpdate, CancellationToken cancellationToken)
         {
+			if (domainToUpdate.AdditionalData != null)
+			{
+				if (domainToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					domainToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainToUpdate.GetType().Name)
+						});
+				}
+			}
             if (domainToUpdate.AdditionalData != null)
             {
                 if (domainToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

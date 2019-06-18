@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ApplePushNotificationCertificate.</returns>
         public async System.Threading.Tasks.Task<ApplePushNotificationCertificate> UpdateAsync(ApplePushNotificationCertificate applePushNotificationCertificateToUpdate, CancellationToken cancellationToken)
         {
+			if (applePushNotificationCertificateToUpdate.AdditionalData != null)
+			{
+				if (applePushNotificationCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					applePushNotificationCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, applePushNotificationCertificateToUpdate.GetType().Name)
+						});
+				}
+			}
             if (applePushNotificationCertificateToUpdate.AdditionalData != null)
             {
                 if (applePushNotificationCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

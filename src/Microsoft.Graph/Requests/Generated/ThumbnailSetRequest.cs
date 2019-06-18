@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ThumbnailSet.</returns>
         public async System.Threading.Tasks.Task<ThumbnailSet> UpdateAsync(ThumbnailSet thumbnailSetToUpdate, CancellationToken cancellationToken)
         {
+			if (thumbnailSetToUpdate.AdditionalData != null)
+			{
+				if (thumbnailSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					thumbnailSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, thumbnailSetToUpdate.GetType().Name)
+						});
+				}
+			}
             if (thumbnailSetToUpdate.AdditionalData != null)
             {
                 if (thumbnailSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

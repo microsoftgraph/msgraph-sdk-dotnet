@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ContactFolder.</returns>
         public async System.Threading.Tasks.Task<ContactFolder> UpdateAsync(ContactFolder contactFolderToUpdate, CancellationToken cancellationToken)
         {
+			if (contactFolderToUpdate.AdditionalData != null)
+			{
+				if (contactFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					contactFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, contactFolderToUpdate.GetType().Name)
+						});
+				}
+			}
             if (contactFolderToUpdate.AdditionalData != null)
             {
                 if (contactFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

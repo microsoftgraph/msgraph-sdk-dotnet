@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Message.</returns>
         public async System.Threading.Tasks.Task<Message> UpdateAsync(Message messageToUpdate, CancellationToken cancellationToken)
         {
+			if (messageToUpdate.AdditionalData != null)
+			{
+				if (messageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					messageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, messageToUpdate.GetType().Name)
+						});
+				}
+			}
             if (messageToUpdate.AdditionalData != null)
             {
                 if (messageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

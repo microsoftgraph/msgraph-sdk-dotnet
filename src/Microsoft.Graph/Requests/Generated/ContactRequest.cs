@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Contact.</returns>
         public async System.Threading.Tasks.Task<Contact> UpdateAsync(Contact contactToUpdate, CancellationToken cancellationToken)
         {
+			if (contactToUpdate.AdditionalData != null)
+			{
+				if (contactToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					contactToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, contactToUpdate.GetType().Name)
+						});
+				}
+			}
             if (contactToUpdate.AdditionalData != null)
             {
                 if (contactToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

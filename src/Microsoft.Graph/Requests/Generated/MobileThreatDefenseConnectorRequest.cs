@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated MobileThreatDefenseConnector.</returns>
         public async System.Threading.Tasks.Task<MobileThreatDefenseConnector> UpdateAsync(MobileThreatDefenseConnector mobileThreatDefenseConnectorToUpdate, CancellationToken cancellationToken)
         {
+			if (mobileThreatDefenseConnectorToUpdate.AdditionalData != null)
+			{
+				if (mobileThreatDefenseConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mobileThreatDefenseConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileThreatDefenseConnectorToUpdate.GetType().Name)
+						});
+				}
+			}
             if (mobileThreatDefenseConnectorToUpdate.AdditionalData != null)
             {
                 if (mobileThreatDefenseConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

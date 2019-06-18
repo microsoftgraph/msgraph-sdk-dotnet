@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated IosCompliancePolicy.</returns>
         public async System.Threading.Tasks.Task<IosCompliancePolicy> UpdateAsync(IosCompliancePolicy iosCompliancePolicyToUpdate, CancellationToken cancellationToken)
         {
+			if (iosCompliancePolicyToUpdate.AdditionalData != null)
+			{
+				if (iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCompliancePolicyToUpdate.GetType().Name)
+						});
+				}
+			}
             if (iosCompliancePolicyToUpdate.AdditionalData != null)
             {
                 if (iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

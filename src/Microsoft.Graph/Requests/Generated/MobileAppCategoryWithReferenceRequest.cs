@@ -99,6 +99,19 @@ namespace Microsoft.Graph
         /// <returns>The updated MobileAppCategory.</returns>
         public async System.Threading.Tasks.Task<MobileAppCategory> UpdateAsync(MobileAppCategory mobileAppCategoryToUpdate, CancellationToken cancellationToken)
         {
+			if (mobileAppCategoryToUpdate.AdditionalData != null)
+			{
+				if (mobileAppCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mobileAppCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppCategoryToUpdate.GetType().Name)
+						});
+				}
+			}
             if (mobileAppCategoryToUpdate.AdditionalData != null)
             {
                 if (mobileAppCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

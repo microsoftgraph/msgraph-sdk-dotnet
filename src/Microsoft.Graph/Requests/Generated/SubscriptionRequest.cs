@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Subscription.</returns>
         public async System.Threading.Tasks.Task<Subscription> UpdateAsync(Subscription subscriptionToUpdate, CancellationToken cancellationToken)
         {
+			if (subscriptionToUpdate.AdditionalData != null)
+			{
+				if (subscriptionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					subscriptionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, subscriptionToUpdate.GetType().Name)
+						});
+				}
+			}
             if (subscriptionToUpdate.AdditionalData != null)
             {
                 if (subscriptionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

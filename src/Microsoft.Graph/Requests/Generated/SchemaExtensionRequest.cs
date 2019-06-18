@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated SchemaExtension.</returns>
         public async System.Threading.Tasks.Task<SchemaExtension> UpdateAsync(SchemaExtension schemaExtensionToUpdate, CancellationToken cancellationToken)
         {
+			if (schemaExtensionToUpdate.AdditionalData != null)
+			{
+				if (schemaExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					schemaExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, schemaExtensionToUpdate.GetType().Name)
+						});
+				}
+			}
             if (schemaExtensionToUpdate.AdditionalData != null)
             {
                 if (schemaExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

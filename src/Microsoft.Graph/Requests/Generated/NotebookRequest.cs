@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Notebook.</returns>
         public async System.Threading.Tasks.Task<Notebook> UpdateAsync(Notebook notebookToUpdate, CancellationToken cancellationToken)
         {
+			if (notebookToUpdate.AdditionalData != null)
+			{
+				if (notebookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					notebookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, notebookToUpdate.GetType().Name)
+						});
+				}
+			}
             if (notebookToUpdate.AdditionalData != null)
             {
                 if (notebookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

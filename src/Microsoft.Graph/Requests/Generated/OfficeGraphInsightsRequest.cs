@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated OfficeGraphInsights.</returns>
         public async System.Threading.Tasks.Task<OfficeGraphInsights> UpdateAsync(OfficeGraphInsights officeGraphInsightsToUpdate, CancellationToken cancellationToken)
         {
+			if (officeGraphInsightsToUpdate.AdditionalData != null)
+			{
+				if (officeGraphInsightsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					officeGraphInsightsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, officeGraphInsightsToUpdate.GetType().Name)
+						});
+				}
+			}
             if (officeGraphInsightsToUpdate.AdditionalData != null)
             {
                 if (officeGraphInsightsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

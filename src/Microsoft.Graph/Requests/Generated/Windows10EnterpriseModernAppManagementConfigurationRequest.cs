@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Windows10EnterpriseModernAppManagementConfiguration.</returns>
         public async System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> UpdateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windows10EnterpriseModernAppManagementConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windows10EnterpriseModernAppManagementConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows10EnterpriseModernAppManagementConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10EnterpriseModernAppManagementConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (windows10EnterpriseModernAppManagementConfigurationToUpdate.AdditionalData != null)
             {
                 if (windows10EnterpriseModernAppManagementConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

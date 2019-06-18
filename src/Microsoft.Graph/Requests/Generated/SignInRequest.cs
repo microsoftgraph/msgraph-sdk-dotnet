@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated SignIn.</returns>
         public async System.Threading.Tasks.Task<SignIn> UpdateAsync(SignIn signInToUpdate, CancellationToken cancellationToken)
         {
+			if (signInToUpdate.AdditionalData != null)
+			{
+				if (signInToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					signInToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, signInToUpdate.GetType().Name)
+						});
+				}
+			}
             if (signInToUpdate.AdditionalData != null)
             {
                 if (signInToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

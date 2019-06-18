@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated DomainDnsUnavailableRecord.</returns>
         public async System.Threading.Tasks.Task<DomainDnsUnavailableRecord> UpdateAsync(DomainDnsUnavailableRecord domainDnsUnavailableRecordToUpdate, CancellationToken cancellationToken)
         {
+			if (domainDnsUnavailableRecordToUpdate.AdditionalData != null)
+			{
+				if (domainDnsUnavailableRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					domainDnsUnavailableRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainDnsUnavailableRecordToUpdate.GetType().Name)
+						});
+				}
+			}
             if (domainDnsUnavailableRecordToUpdate.AdditionalData != null)
             {
                 if (domainDnsUnavailableRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

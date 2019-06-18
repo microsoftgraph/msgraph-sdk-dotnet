@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated GroupSettingTemplate.</returns>
         public async System.Threading.Tasks.Task<GroupSettingTemplate> UpdateAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken)
         {
+			if (groupSettingTemplateToUpdate.AdditionalData != null)
+			{
+				if (groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupSettingTemplateToUpdate.GetType().Name)
+						});
+				}
+			}
             if (groupSettingTemplateToUpdate.AdditionalData != null)
             {
                 if (groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

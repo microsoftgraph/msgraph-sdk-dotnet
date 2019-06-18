@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated MobileApp.</returns>
         public async System.Threading.Tasks.Task<MobileApp> UpdateAsync(MobileApp mobileAppToUpdate, CancellationToken cancellationToken)
         {
+			if (mobileAppToUpdate.AdditionalData != null)
+			{
+				if (mobileAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mobileAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppToUpdate.GetType().Name)
+						});
+				}
+			}
             if (mobileAppToUpdate.AdditionalData != null)
             {
                 if (mobileAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

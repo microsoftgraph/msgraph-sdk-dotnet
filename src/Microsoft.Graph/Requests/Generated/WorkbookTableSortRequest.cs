@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WorkbookTableSort.</returns>
         public async System.Threading.Tasks.Task<WorkbookTableSort> UpdateAsync(WorkbookTableSort workbookTableSortToUpdate, CancellationToken cancellationToken)
         {
+			if (workbookTableSortToUpdate.AdditionalData != null)
+			{
+				if (workbookTableSortToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookTableSortToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookTableSortToUpdate.GetType().Name)
+						});
+				}
+			}
             if (workbookTableSortToUpdate.AdditionalData != null)
             {
                 if (workbookTableSortToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated OutlookUser.</returns>
         public async System.Threading.Tasks.Task<OutlookUser> UpdateAsync(OutlookUser outlookUserToUpdate, CancellationToken cancellationToken)
         {
+			if (outlookUserToUpdate.AdditionalData != null)
+			{
+				if (outlookUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					outlookUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, outlookUserToUpdate.GetType().Name)
+						});
+				}
+			}
             if (outlookUserToUpdate.AdditionalData != null)
             {
                 if (outlookUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

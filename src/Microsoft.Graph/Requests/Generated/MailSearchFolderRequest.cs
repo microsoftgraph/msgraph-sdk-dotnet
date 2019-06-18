@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated MailSearchFolder.</returns>
         public async System.Threading.Tasks.Task<MailSearchFolder> UpdateAsync(MailSearchFolder mailSearchFolderToUpdate, CancellationToken cancellationToken)
         {
+			if (mailSearchFolderToUpdate.AdditionalData != null)
+			{
+				if (mailSearchFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mailSearchFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailSearchFolderToUpdate.GetType().Name)
+						});
+				}
+			}
             if (mailSearchFolderToUpdate.AdditionalData != null)
             {
                 if (mailSearchFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

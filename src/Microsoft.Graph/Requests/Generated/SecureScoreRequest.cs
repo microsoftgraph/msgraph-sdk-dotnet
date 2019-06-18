@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated SecureScore.</returns>
         public async System.Threading.Tasks.Task<SecureScore> UpdateAsync(SecureScore secureScoreToUpdate, CancellationToken cancellationToken)
         {
+			if (secureScoreToUpdate.AdditionalData != null)
+			{
+				if (secureScoreToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					secureScoreToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, secureScoreToUpdate.GetType().Name)
+						});
+				}
+			}
             if (secureScoreToUpdate.AdditionalData != null)
             {
                 if (secureScoreToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

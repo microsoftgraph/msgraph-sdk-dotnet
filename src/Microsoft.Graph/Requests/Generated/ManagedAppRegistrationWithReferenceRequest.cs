@@ -99,6 +99,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedAppRegistration.</returns>
         public async System.Threading.Tasks.Task<ManagedAppRegistration> UpdateAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken)
         {
+			if (managedAppRegistrationToUpdate.AdditionalData != null)
+			{
+				if (managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppRegistrationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (managedAppRegistrationToUpdate.AdditionalData != null)
             {
                 if (managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

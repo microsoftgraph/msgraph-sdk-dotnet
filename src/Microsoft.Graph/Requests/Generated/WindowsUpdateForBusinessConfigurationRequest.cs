@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated WindowsUpdateForBusinessConfiguration.</returns>
         public async System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> UpdateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsUpdateForBusinessConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windowsUpdateForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsUpdateForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsUpdateForBusinessConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (windowsUpdateForBusinessConfigurationToUpdate.AdditionalData != null)
             {
                 if (windowsUpdateForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated UserSettings.</returns>
         public async System.Threading.Tasks.Task<UserSettings> UpdateAsync(UserSettings userSettingsToUpdate, CancellationToken cancellationToken)
         {
+			if (userSettingsToUpdate.AdditionalData != null)
+			{
+				if (userSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					userSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userSettingsToUpdate.GetType().Name)
+						});
+				}
+			}
             if (userSettingsToUpdate.AdditionalData != null)
             {
                 if (userSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

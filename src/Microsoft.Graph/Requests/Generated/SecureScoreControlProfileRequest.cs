@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated SecureScoreControlProfile.</returns>
         public async System.Threading.Tasks.Task<SecureScoreControlProfile> UpdateAsync(SecureScoreControlProfile secureScoreControlProfileToUpdate, CancellationToken cancellationToken)
         {
+			if (secureScoreControlProfileToUpdate.AdditionalData != null)
+			{
+				if (secureScoreControlProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					secureScoreControlProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, secureScoreControlProfileToUpdate.GetType().Name)
+						});
+				}
+			}
             if (secureScoreControlProfileToUpdate.AdditionalData != null)
             {
                 if (secureScoreControlProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

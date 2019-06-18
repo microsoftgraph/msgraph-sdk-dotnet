@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated Calendar.</returns>
         public async System.Threading.Tasks.Task<Calendar> UpdateAsync(Calendar calendarToUpdate, CancellationToken cancellationToken)
         {
+			if (calendarToUpdate.AdditionalData != null)
+			{
+				if (calendarToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					calendarToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, calendarToUpdate.GetType().Name)
+						});
+				}
+			}
             if (calendarToUpdate.AdditionalData != null)
             {
                 if (calendarToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

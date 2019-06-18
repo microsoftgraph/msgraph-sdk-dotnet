@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedAppConfiguration.</returns>
         public async System.Threading.Tasks.Task<ManagedAppConfiguration> UpdateAsync(ManagedAppConfiguration managedAppConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (managedAppConfigurationToUpdate.AdditionalData != null)
+			{
+				if (managedAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
             if (managedAppConfigurationToUpdate.AdditionalData != null)
             {
                 if (managedAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

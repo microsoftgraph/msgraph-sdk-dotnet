@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated IosVppApp.</returns>
         public async System.Threading.Tasks.Task<IosVppApp> UpdateAsync(IosVppApp iosVppAppToUpdate, CancellationToken cancellationToken)
         {
+			if (iosVppAppToUpdate.AdditionalData != null)
+			{
+				if (iosVppAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosVppAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosVppAppToUpdate.GetType().Name)
+						});
+				}
+			}
             if (iosVppAppToUpdate.AdditionalData != null)
             {
                 if (iosVppAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

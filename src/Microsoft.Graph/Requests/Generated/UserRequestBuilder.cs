@@ -501,6 +501,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserRevokeSignInSessions.
+        /// </summary>
+        /// <returns>The <see cref="IUserRevokeSignInSessionsRequestBuilder"/>.</returns>
+        public IUserRevokeSignInSessionsRequestBuilder RevokeSignInSessions()
+        {
+            return new UserRevokeSignInSessionsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.revokeSignInSessions"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for UserSendMail.
         /// </summary>
         /// <returns>The <see cref="IUserSendMailRequestBuilder"/>.</returns>

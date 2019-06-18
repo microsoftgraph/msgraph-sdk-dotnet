@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated IosCertificateProfile.</returns>
         public async System.Threading.Tasks.Task<IosCertificateProfile> UpdateAsync(IosCertificateProfile iosCertificateProfileToUpdate, CancellationToken cancellationToken)
         {
+			if (iosCertificateProfileToUpdate.AdditionalData != null)
+			{
+				if (iosCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCertificateProfileToUpdate.GetType().Name)
+						});
+				}
+			}
             if (iosCertificateProfileToUpdate.AdditionalData != null)
             {
                 if (iosCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

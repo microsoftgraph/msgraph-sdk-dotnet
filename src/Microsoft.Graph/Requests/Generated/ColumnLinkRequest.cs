@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated ColumnLink.</returns>
         public async System.Threading.Tasks.Task<ColumnLink> UpdateAsync(ColumnLink columnLinkToUpdate, CancellationToken cancellationToken)
         {
+			if (columnLinkToUpdate.AdditionalData != null)
+			{
+				if (columnLinkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					columnLinkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, columnLinkToUpdate.GetType().Name)
+						});
+				}
+			}
             if (columnLinkToUpdate.AdditionalData != null)
             {
                 if (columnLinkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||

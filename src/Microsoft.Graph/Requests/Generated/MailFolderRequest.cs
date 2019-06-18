@@ -121,6 +121,19 @@ namespace Microsoft.Graph
         /// <returns>The updated MailFolder.</returns>
         public async System.Threading.Tasks.Task<MailFolder> UpdateAsync(MailFolder mailFolderToUpdate, CancellationToken cancellationToken)
         {
+			if (mailFolderToUpdate.AdditionalData != null)
+			{
+				if (mailFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mailFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailFolderToUpdate.GetType().Name)
+						});
+				}
+			}
             if (mailFolderToUpdate.AdditionalData != null)
             {
                 if (mailFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
