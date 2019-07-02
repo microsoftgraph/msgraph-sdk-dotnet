@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IContentTypeRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ContentType using PUT.
+        /// Creates the specified ContentType using POST.
         /// </summary>
         /// <param name="contentTypeToCreate">The ContentType to create.</param>
         /// <returns>The created ContentType.</returns>
         System.Threading.Tasks.Task<ContentType> CreateAsync(ContentType contentTypeToCreate);        /// <summary>
-        /// Creates the specified ContentType using PUT.
+        /// Creates the specified ContentType using POST.
         /// </summary>
         /// <param name="contentTypeToCreate">The ContentType to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

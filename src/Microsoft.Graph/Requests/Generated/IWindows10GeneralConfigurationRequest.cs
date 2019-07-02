@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows10GeneralConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows10GeneralConfiguration using PUT.
+        /// Creates the specified Windows10GeneralConfiguration using POST.
         /// </summary>
         /// <param name="windows10GeneralConfigurationToCreate">The Windows10GeneralConfiguration to create.</param>
         /// <returns>The created Windows10GeneralConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10GeneralConfiguration> CreateAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToCreate);        /// <summary>
-        /// Creates the specified Windows10GeneralConfiguration using PUT.
+        /// Creates the specified Windows10GeneralConfiguration using POST.
         /// </summary>
         /// <param name="windows10GeneralConfigurationToCreate">The Windows10GeneralConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<TeamsApp> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified TeamsApp using PUT.
+        /// Creates the specified TeamsApp using POST.
         /// </summary>
         /// <param name="teamsAppToCreate">The TeamsApp to create.</param>
         /// <returns>The created TeamsApp.</returns>
         System.Threading.Tasks.Task<TeamsApp> CreateAsync(TeamsApp teamsAppToCreate);        /// <summary>
-        /// Creates the specified TeamsApp using PUT.
+        /// Creates the specified TeamsApp using POST.
         /// </summary>
         /// <param name="teamsAppToCreate">The TeamsApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

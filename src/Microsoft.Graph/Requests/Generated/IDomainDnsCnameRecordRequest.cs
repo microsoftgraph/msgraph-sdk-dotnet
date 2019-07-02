@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDomainDnsCnameRecordRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DomainDnsCnameRecord using PUT.
+        /// Creates the specified DomainDnsCnameRecord using POST.
         /// </summary>
         /// <param name="domainDnsCnameRecordToCreate">The DomainDnsCnameRecord to create.</param>
         /// <returns>The created DomainDnsCnameRecord.</returns>
         System.Threading.Tasks.Task<DomainDnsCnameRecord> CreateAsync(DomainDnsCnameRecord domainDnsCnameRecordToCreate);        /// <summary>
-        /// Creates the specified DomainDnsCnameRecord using PUT.
+        /// Creates the specified DomainDnsCnameRecord using POST.
         /// </summary>
         /// <param name="domainDnsCnameRecordToCreate">The DomainDnsCnameRecord to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

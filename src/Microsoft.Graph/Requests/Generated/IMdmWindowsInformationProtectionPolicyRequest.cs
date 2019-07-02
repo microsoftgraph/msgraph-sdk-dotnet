@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMdmWindowsInformationProtectionPolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MdmWindowsInformationProtectionPolicy using PUT.
+        /// Creates the specified MdmWindowsInformationProtectionPolicy using POST.
         /// </summary>
         /// <param name="mdmWindowsInformationProtectionPolicyToCreate">The MdmWindowsInformationProtectionPolicy to create.</param>
         /// <returns>The created MdmWindowsInformationProtectionPolicy.</returns>
         System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> CreateAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToCreate);        /// <summary>
-        /// Creates the specified MdmWindowsInformationProtectionPolicy using PUT.
+        /// Creates the specified MdmWindowsInformationProtectionPolicy using POST.
         /// </summary>
         /// <param name="mdmWindowsInformationProtectionPolicyToCreate">The MdmWindowsInformationProtectionPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

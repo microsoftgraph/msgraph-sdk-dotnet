@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookChartFontRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookChartFont using PUT.
+        /// Creates the specified WorkbookChartFont using POST.
         /// </summary>
         /// <param name="workbookChartFontToCreate">The WorkbookChartFont to create.</param>
         /// <returns>The created WorkbookChartFont.</returns>
         System.Threading.Tasks.Task<WorkbookChartFont> CreateAsync(WorkbookChartFont workbookChartFontToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartFont using PUT.
+        /// Creates the specified WorkbookChartFont using POST.
         /// </summary>
         /// <param name="workbookChartFontToCreate">The WorkbookChartFont to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

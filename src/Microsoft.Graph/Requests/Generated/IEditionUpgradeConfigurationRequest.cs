@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEditionUpgradeConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EditionUpgradeConfiguration using PUT.
+        /// Creates the specified EditionUpgradeConfiguration using POST.
         /// </summary>
         /// <param name="editionUpgradeConfigurationToCreate">The EditionUpgradeConfiguration to create.</param>
         /// <returns>The created EditionUpgradeConfiguration.</returns>
         System.Threading.Tasks.Task<EditionUpgradeConfiguration> CreateAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToCreate);        /// <summary>
-        /// Creates the specified EditionUpgradeConfiguration using PUT.
+        /// Creates the specified EditionUpgradeConfiguration using POST.
         /// </summary>
         /// <param name="editionUpgradeConfigurationToCreate">The EditionUpgradeConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

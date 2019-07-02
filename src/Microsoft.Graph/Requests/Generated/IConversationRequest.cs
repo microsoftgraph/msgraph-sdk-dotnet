@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IConversationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Conversation using PUT.
+        /// Creates the specified Conversation using POST.
         /// </summary>
         /// <param name="conversationToCreate">The Conversation to create.</param>
         /// <returns>The created Conversation.</returns>
         System.Threading.Tasks.Task<Conversation> CreateAsync(Conversation conversationToCreate);        /// <summary>
-        /// Creates the specified Conversation using PUT.
+        /// Creates the specified Conversation using POST.
         /// </summary>
         /// <param name="conversationToCreate">The Conversation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

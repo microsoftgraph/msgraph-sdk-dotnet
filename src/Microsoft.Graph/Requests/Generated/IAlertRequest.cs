@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAlertRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Alert using PUT.
+        /// Creates the specified Alert using POST.
         /// </summary>
         /// <param name="alertToCreate">The Alert to create.</param>
         /// <returns>The created Alert.</returns>
         System.Threading.Tasks.Task<Alert> CreateAsync(Alert alertToCreate);        /// <summary>
-        /// Creates the specified Alert using PUT.
+        /// Creates the specified Alert using POST.
         /// </summary>
         /// <param name="alertToCreate">The Alert to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

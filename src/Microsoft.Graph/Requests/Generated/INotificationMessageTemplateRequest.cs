@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface INotificationMessageTemplateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified NotificationMessageTemplate using PUT.
+        /// Creates the specified NotificationMessageTemplate using POST.
         /// </summary>
         /// <param name="notificationMessageTemplateToCreate">The NotificationMessageTemplate to create.</param>
         /// <returns>The created NotificationMessageTemplate.</returns>
         System.Threading.Tasks.Task<NotificationMessageTemplate> CreateAsync(NotificationMessageTemplate notificationMessageTemplateToCreate);        /// <summary>
-        /// Creates the specified NotificationMessageTemplate using PUT.
+        /// Creates the specified NotificationMessageTemplate using POST.
         /// </summary>
         /// <param name="notificationMessageTemplateToCreate">The NotificationMessageTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

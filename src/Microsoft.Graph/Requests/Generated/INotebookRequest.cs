@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface INotebookRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Notebook using PUT.
+        /// Creates the specified Notebook using POST.
         /// </summary>
         /// <param name="notebookToCreate">The Notebook to create.</param>
         /// <returns>The created Notebook.</returns>
         System.Threading.Tasks.Task<Notebook> CreateAsync(Notebook notebookToCreate);        /// <summary>
-        /// Creates the specified Notebook using PUT.
+        /// Creates the specified Notebook using POST.
         /// </summary>
         /// <param name="notebookToCreate">The Notebook to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

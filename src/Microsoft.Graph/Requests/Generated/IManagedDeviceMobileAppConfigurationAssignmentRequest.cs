@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedDeviceMobileAppConfigurationAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedDeviceMobileAppConfigurationAssignment using PUT.
+        /// Creates the specified ManagedDeviceMobileAppConfigurationAssignment using POST.
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationAssignmentToCreate">The ManagedDeviceMobileAppConfigurationAssignment to create.</param>
         /// <returns>The created ManagedDeviceMobileAppConfigurationAssignment.</returns>
         System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationAssignment> CreateAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignmentToCreate);        /// <summary>
-        /// Creates the specified ManagedDeviceMobileAppConfigurationAssignment using PUT.
+        /// Creates the specified ManagedDeviceMobileAppConfigurationAssignment using POST.
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationAssignmentToCreate">The ManagedDeviceMobileAppConfigurationAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

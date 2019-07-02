@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOutlookItemRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OutlookItem using PUT.
+        /// Creates the specified OutlookItem using POST.
         /// </summary>
         /// <param name="outlookItemToCreate">The OutlookItem to create.</param>
         /// <returns>The created OutlookItem.</returns>
         System.Threading.Tasks.Task<OutlookItem> CreateAsync(OutlookItem outlookItemToCreate);        /// <summary>
-        /// Creates the specified OutlookItem using PUT.
+        /// Creates the specified OutlookItem using POST.
         /// </summary>
         /// <param name="outlookItemToCreate">The OutlookItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

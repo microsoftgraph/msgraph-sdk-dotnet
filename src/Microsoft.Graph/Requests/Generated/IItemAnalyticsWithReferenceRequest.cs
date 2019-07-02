@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ItemAnalytics> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified ItemAnalytics using PUT.
+        /// Creates the specified ItemAnalytics using POST.
         /// </summary>
         /// <param name="itemAnalyticsToCreate">The ItemAnalytics to create.</param>
         /// <returns>The created ItemAnalytics.</returns>
         System.Threading.Tasks.Task<ItemAnalytics> CreateAsync(ItemAnalytics itemAnalyticsToCreate);        /// <summary>
-        /// Creates the specified ItemAnalytics using PUT.
+        /// Creates the specified ItemAnalytics using POST.
         /// </summary>
         /// <param name="itemAnalyticsToCreate">The ItemAnalytics to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

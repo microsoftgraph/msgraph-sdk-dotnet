@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISharedPCConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SharedPCConfiguration using PUT.
+        /// Creates the specified SharedPCConfiguration using POST.
         /// </summary>
         /// <param name="sharedPCConfigurationToCreate">The SharedPCConfiguration to create.</param>
         /// <returns>The created SharedPCConfiguration.</returns>
         System.Threading.Tasks.Task<SharedPCConfiguration> CreateAsync(SharedPCConfiguration sharedPCConfigurationToCreate);        /// <summary>
-        /// Creates the specified SharedPCConfiguration using PUT.
+        /// Creates the specified SharedPCConfiguration using POST.
         /// </summary>
         /// <param name="sharedPCConfigurationToCreate">The SharedPCConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

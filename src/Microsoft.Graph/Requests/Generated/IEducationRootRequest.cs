@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEducationRootRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EducationRoot using PUT.
+        /// Creates the specified EducationRoot using POST.
         /// </summary>
         /// <param name="educationRootToCreate">The EducationRoot to create.</param>
         /// <returns>The created EducationRoot.</returns>
         System.Threading.Tasks.Task<EducationRoot> CreateAsync(EducationRoot educationRootToCreate);        /// <summary>
-        /// Creates the specified EducationRoot using PUT.
+        /// Creates the specified EducationRoot using POST.
         /// </summary>
         /// <param name="educationRootToCreate">The EducationRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMicrosoftStoreForBusinessAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MicrosoftStoreForBusinessApp using PUT.
+        /// Creates the specified MicrosoftStoreForBusinessApp using POST.
         /// </summary>
         /// <param name="microsoftStoreForBusinessAppToCreate">The MicrosoftStoreForBusinessApp to create.</param>
         /// <returns>The created MicrosoftStoreForBusinessApp.</returns>
         System.Threading.Tasks.Task<MicrosoftStoreForBusinessApp> CreateAsync(MicrosoftStoreForBusinessApp microsoftStoreForBusinessAppToCreate);        /// <summary>
-        /// Creates the specified MicrosoftStoreForBusinessApp using PUT.
+        /// Creates the specified MicrosoftStoreForBusinessApp using POST.
         /// </summary>
         /// <param name="microsoftStoreForBusinessAppToCreate">The MicrosoftStoreForBusinessApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

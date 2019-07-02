@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosManagedAppRegistrationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosManagedAppRegistration using PUT.
+        /// Creates the specified IosManagedAppRegistration using POST.
         /// </summary>
         /// <param name="iosManagedAppRegistrationToCreate">The IosManagedAppRegistration to create.</param>
         /// <returns>The created IosManagedAppRegistration.</returns>
         System.Threading.Tasks.Task<IosManagedAppRegistration> CreateAsync(IosManagedAppRegistration iosManagedAppRegistrationToCreate);        /// <summary>
-        /// Creates the specified IosManagedAppRegistration using PUT.
+        /// Creates the specified IosManagedAppRegistration using POST.
         /// </summary>
         /// <param name="iosManagedAppRegistrationToCreate">The IosManagedAppRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

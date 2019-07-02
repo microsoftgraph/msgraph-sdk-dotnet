@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IInvitationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Invitation using PUT.
+        /// Creates the specified Invitation using POST.
         /// </summary>
         /// <param name="invitationToCreate">The Invitation to create.</param>
         /// <returns>The created Invitation.</returns>
         System.Threading.Tasks.Task<Invitation> CreateAsync(Invitation invitationToCreate);        /// <summary>
-        /// Creates the specified Invitation using PUT.
+        /// Creates the specified Invitation using POST.
         /// </summary>
         /// <param name="invitationToCreate">The Invitation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

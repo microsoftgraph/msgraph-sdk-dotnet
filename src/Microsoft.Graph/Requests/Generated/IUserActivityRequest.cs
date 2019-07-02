@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUserActivityRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UserActivity using PUT.
+        /// Creates the specified UserActivity using POST.
         /// </summary>
         /// <param name="userActivityToCreate">The UserActivity to create.</param>
         /// <returns>The created UserActivity.</returns>
         System.Threading.Tasks.Task<UserActivity> CreateAsync(UserActivity userActivityToCreate);        /// <summary>
-        /// Creates the specified UserActivity using PUT.
+        /// Creates the specified UserActivity using POST.
         /// </summary>
         /// <param name="userActivityToCreate">The UserActivity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IVppTokenRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified VppToken using PUT.
+        /// Creates the specified VppToken using POST.
         /// </summary>
         /// <param name="vppTokenToCreate">The VppToken to create.</param>
         /// <returns>The created VppToken.</returns>
         System.Threading.Tasks.Task<VppToken> CreateAsync(VppToken vppTokenToCreate);        /// <summary>
-        /// Creates the specified VppToken using PUT.
+        /// Creates the specified VppToken using POST.
         /// </summary>
         /// <param name="vppTokenToCreate">The VppToken to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

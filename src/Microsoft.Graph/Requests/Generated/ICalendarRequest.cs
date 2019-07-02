@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICalendarRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Calendar using PUT.
+        /// Creates the specified Calendar using POST.
         /// </summary>
         /// <param name="calendarToCreate">The Calendar to create.</param>
         /// <returns>The created Calendar.</returns>
         System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate);        /// <summary>
-        /// Creates the specified Calendar using PUT.
+        /// Creates the specified Calendar using POST.
         /// </summary>
         /// <param name="calendarToCreate">The Calendar to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

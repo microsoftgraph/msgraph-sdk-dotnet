@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsInformationProtectionPolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsInformationProtectionPolicy using PUT.
+        /// Creates the specified WindowsInformationProtectionPolicy using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionPolicyToCreate">The WindowsInformationProtectionPolicy to create.</param>
         /// <returns>The created WindowsInformationProtectionPolicy.</returns>
         System.Threading.Tasks.Task<WindowsInformationProtectionPolicy> CreateAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicyToCreate);        /// <summary>
-        /// Creates the specified WindowsInformationProtectionPolicy using PUT.
+        /// Creates the specified WindowsInformationProtectionPolicy using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionPolicyToCreate">The WindowsInformationProtectionPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

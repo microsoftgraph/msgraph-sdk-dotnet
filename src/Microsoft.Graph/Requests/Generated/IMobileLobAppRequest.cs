@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMobileLobAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MobileLobApp using PUT.
+        /// Creates the specified MobileLobApp using POST.
         /// </summary>
         /// <param name="mobileLobAppToCreate">The MobileLobApp to create.</param>
         /// <returns>The created MobileLobApp.</returns>
         System.Threading.Tasks.Task<MobileLobApp> CreateAsync(MobileLobApp mobileLobAppToCreate);        /// <summary>
-        /// Creates the specified MobileLobApp using PUT.
+        /// Creates the specified MobileLobApp using POST.
         /// </summary>
         /// <param name="mobileLobAppToCreate">The MobileLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

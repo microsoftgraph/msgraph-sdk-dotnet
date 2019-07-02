@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedMobileLobAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedMobileLobApp using PUT.
+        /// Creates the specified ManagedMobileLobApp using POST.
         /// </summary>
         /// <param name="managedMobileLobAppToCreate">The ManagedMobileLobApp to create.</param>
         /// <returns>The created ManagedMobileLobApp.</returns>
         System.Threading.Tasks.Task<ManagedMobileLobApp> CreateAsync(ManagedMobileLobApp managedMobileLobAppToCreate);        /// <summary>
-        /// Creates the specified ManagedMobileLobApp using PUT.
+        /// Creates the specified ManagedMobileLobApp using POST.
         /// </summary>
         /// <param name="managedMobileLobAppToCreate">The ManagedMobileLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

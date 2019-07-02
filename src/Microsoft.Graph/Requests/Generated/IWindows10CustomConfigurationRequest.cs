@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows10CustomConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows10CustomConfiguration using PUT.
+        /// Creates the specified Windows10CustomConfiguration using POST.
         /// </summary>
         /// <param name="windows10CustomConfigurationToCreate">The Windows10CustomConfiguration to create.</param>
         /// <returns>The created Windows10CustomConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10CustomConfiguration> CreateAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate);        /// <summary>
-        /// Creates the specified Windows10CustomConfiguration using PUT.
+        /// Creates the specified Windows10CustomConfiguration using POST.
         /// </summary>
         /// <param name="windows10CustomConfigurationToCreate">The Windows10CustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IRoleAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified RoleAssignment using PUT.
+        /// Creates the specified RoleAssignment using POST.
         /// </summary>
         /// <param name="roleAssignmentToCreate">The RoleAssignment to create.</param>
         /// <returns>The created RoleAssignment.</returns>
         System.Threading.Tasks.Task<RoleAssignment> CreateAsync(RoleAssignment roleAssignmentToCreate);        /// <summary>
-        /// Creates the specified RoleAssignment using PUT.
+        /// Creates the specified RoleAssignment using POST.
         /// </summary>
         /// <param name="roleAssignmentToCreate">The RoleAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

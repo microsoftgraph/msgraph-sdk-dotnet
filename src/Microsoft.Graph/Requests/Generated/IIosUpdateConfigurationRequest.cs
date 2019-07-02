@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosUpdateConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosUpdateConfiguration using PUT.
+        /// Creates the specified IosUpdateConfiguration using POST.
         /// </summary>
         /// <param name="iosUpdateConfigurationToCreate">The IosUpdateConfiguration to create.</param>
         /// <returns>The created IosUpdateConfiguration.</returns>
         System.Threading.Tasks.Task<IosUpdateConfiguration> CreateAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate);        /// <summary>
-        /// Creates the specified IosUpdateConfiguration using PUT.
+        /// Creates the specified IosUpdateConfiguration using POST.
         /// </summary>
         /// <param name="iosUpdateConfigurationToCreate">The IosUpdateConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPlannerAssignedToTaskBoardTaskFormatRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PlannerAssignedToTaskBoardTaskFormat using PUT.
+        /// Creates the specified PlannerAssignedToTaskBoardTaskFormat using POST.
         /// </summary>
         /// <param name="plannerAssignedToTaskBoardTaskFormatToCreate">The PlannerAssignedToTaskBoardTaskFormat to create.</param>
         /// <returns>The created PlannerAssignedToTaskBoardTaskFormat.</returns>
         System.Threading.Tasks.Task<PlannerAssignedToTaskBoardTaskFormat> CreateAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToCreate);        /// <summary>
-        /// Creates the specified PlannerAssignedToTaskBoardTaskFormat using PUT.
+        /// Creates the specified PlannerAssignedToTaskBoardTaskFormat using POST.
         /// </summary>
         /// <param name="plannerAssignedToTaskBoardTaskFormatToCreate">The PlannerAssignedToTaskBoardTaskFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

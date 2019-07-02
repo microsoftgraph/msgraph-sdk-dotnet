@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceManagementPartnerRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceManagementPartner using PUT.
+        /// Creates the specified DeviceManagementPartner using POST.
         /// </summary>
         /// <param name="deviceManagementPartnerToCreate">The DeviceManagementPartner to create.</param>
         /// <returns>The created DeviceManagementPartner.</returns>
         System.Threading.Tasks.Task<DeviceManagementPartner> CreateAsync(DeviceManagementPartner deviceManagementPartnerToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementPartner using PUT.
+        /// Creates the specified DeviceManagementPartner using POST.
         /// </summary>
         /// <param name="deviceManagementPartnerToCreate">The DeviceManagementPartner to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

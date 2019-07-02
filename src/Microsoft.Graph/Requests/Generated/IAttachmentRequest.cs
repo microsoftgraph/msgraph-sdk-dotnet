@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAttachmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Attachment using PUT.
+        /// Creates the specified Attachment using POST.
         /// </summary>
         /// <param name="attachmentToCreate">The Attachment to create.</param>
         /// <returns>The created Attachment.</returns>
         System.Threading.Tasks.Task<Attachment> CreateAsync(Attachment attachmentToCreate);        /// <summary>
-        /// Creates the specified Attachment using PUT.
+        /// Creates the specified Attachment using POST.
         /// </summary>
         /// <param name="attachmentToCreate">The Attachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

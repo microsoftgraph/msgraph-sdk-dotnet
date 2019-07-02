@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceInstallStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceInstallState using PUT.
+        /// Creates the specified DeviceInstallState using POST.
         /// </summary>
         /// <param name="deviceInstallStateToCreate">The DeviceInstallState to create.</param>
         /// <returns>The created DeviceInstallState.</returns>
         System.Threading.Tasks.Task<DeviceInstallState> CreateAsync(DeviceInstallState deviceInstallStateToCreate);        /// <summary>
-        /// Creates the specified DeviceInstallState using PUT.
+        /// Creates the specified DeviceInstallState using POST.
         /// </summary>
         /// <param name="deviceInstallStateToCreate">The DeviceInstallState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

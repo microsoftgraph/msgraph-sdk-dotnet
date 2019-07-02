@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOrganizationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Organization using PUT.
+        /// Creates the specified Organization using POST.
         /// </summary>
         /// <param name="organizationToCreate">The Organization to create.</param>
         /// <returns>The created Organization.</returns>
         System.Threading.Tasks.Task<Organization> CreateAsync(Organization organizationToCreate);        /// <summary>
-        /// Creates the specified Organization using PUT.
+        /// Creates the specified Organization using POST.
         /// </summary>
         /// <param name="organizationToCreate">The Organization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

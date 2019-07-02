@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookFunctionResultRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookFunctionResult using PUT.
+        /// Creates the specified WorkbookFunctionResult using POST.
         /// </summary>
         /// <param name="workbookFunctionResultToCreate">The WorkbookFunctionResult to create.</param>
         /// <returns>The created WorkbookFunctionResult.</returns>
         System.Threading.Tasks.Task<WorkbookFunctionResult> CreateAsync(WorkbookFunctionResult workbookFunctionResultToCreate);        /// <summary>
-        /// Creates the specified WorkbookFunctionResult using PUT.
+        /// Creates the specified WorkbookFunctionResult using POST.
         /// </summary>
         /// <param name="workbookFunctionResultToCreate">The WorkbookFunctionResult to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

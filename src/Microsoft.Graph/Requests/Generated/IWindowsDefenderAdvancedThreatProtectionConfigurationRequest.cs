@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsDefenderAdvancedThreatProtectionConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsDefenderAdvancedThreatProtectionConfiguration using PUT.
+        /// Creates the specified WindowsDefenderAdvancedThreatProtectionConfiguration using POST.
         /// </summary>
         /// <param name="windowsDefenderAdvancedThreatProtectionConfigurationToCreate">The WindowsDefenderAdvancedThreatProtectionConfiguration to create.</param>
         /// <returns>The created WindowsDefenderAdvancedThreatProtectionConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsDefenderAdvancedThreatProtectionConfiguration> CreateAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsDefenderAdvancedThreatProtectionConfiguration using PUT.
+        /// Creates the specified WindowsDefenderAdvancedThreatProtectionConfiguration using POST.
         /// </summary>
         /// <param name="windowsDefenderAdvancedThreatProtectionConfigurationToCreate">The WindowsDefenderAdvancedThreatProtectionConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

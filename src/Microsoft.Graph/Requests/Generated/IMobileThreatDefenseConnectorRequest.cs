@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMobileThreatDefenseConnectorRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MobileThreatDefenseConnector using PUT.
+        /// Creates the specified MobileThreatDefenseConnector using POST.
         /// </summary>
         /// <param name="mobileThreatDefenseConnectorToCreate">The MobileThreatDefenseConnector to create.</param>
         /// <returns>The created MobileThreatDefenseConnector.</returns>
         System.Threading.Tasks.Task<MobileThreatDefenseConnector> CreateAsync(MobileThreatDefenseConnector mobileThreatDefenseConnectorToCreate);        /// <summary>
-        /// Creates the specified MobileThreatDefenseConnector using PUT.
+        /// Creates the specified MobileThreatDefenseConnector using POST.
         /// </summary>
         /// <param name="mobileThreatDefenseConnectorToCreate">The MobileThreatDefenseConnector to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

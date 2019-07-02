@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IRoleDefinitionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified RoleDefinition using PUT.
+        /// Creates the specified RoleDefinition using POST.
         /// </summary>
         /// <param name="roleDefinitionToCreate">The RoleDefinition to create.</param>
         /// <returns>The created RoleDefinition.</returns>
         System.Threading.Tasks.Task<RoleDefinition> CreateAsync(RoleDefinition roleDefinitionToCreate);        /// <summary>
-        /// Creates the specified RoleDefinition using PUT.
+        /// Creates the specified RoleDefinition using POST.
         /// </summary>
         /// <param name="roleDefinitionToCreate">The RoleDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

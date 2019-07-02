@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDriveItemVersionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DriveItemVersion using PUT.
+        /// Creates the specified DriveItemVersion using POST.
         /// </summary>
         /// <param name="driveItemVersionToCreate">The DriveItemVersion to create.</param>
         /// <returns>The created DriveItemVersion.</returns>
         System.Threading.Tasks.Task<DriveItemVersion> CreateAsync(DriveItemVersion driveItemVersionToCreate);        /// <summary>
-        /// Creates the specified DriveItemVersion using PUT.
+        /// Creates the specified DriveItemVersion using POST.
         /// </summary>
         /// <param name="driveItemVersionToCreate">The DriveItemVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

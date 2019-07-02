@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IBaseItemVersionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified BaseItemVersion using PUT.
+        /// Creates the specified BaseItemVersion using POST.
         /// </summary>
         /// <param name="baseItemVersionToCreate">The BaseItemVersion to create.</param>
         /// <returns>The created BaseItemVersion.</returns>
         System.Threading.Tasks.Task<BaseItemVersion> CreateAsync(BaseItemVersion baseItemVersionToCreate);        /// <summary>
-        /// Creates the specified BaseItemVersion using PUT.
+        /// Creates the specified BaseItemVersion using POST.
         /// </summary>
         /// <param name="baseItemVersionToCreate">The BaseItemVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

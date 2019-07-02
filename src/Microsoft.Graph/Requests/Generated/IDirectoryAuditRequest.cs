@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDirectoryAuditRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DirectoryAudit using PUT.
+        /// Creates the specified DirectoryAudit using POST.
         /// </summary>
         /// <param name="directoryAuditToCreate">The DirectoryAudit to create.</param>
         /// <returns>The created DirectoryAudit.</returns>
         System.Threading.Tasks.Task<DirectoryAudit> CreateAsync(DirectoryAudit directoryAuditToCreate);        /// <summary>
-        /// Creates the specified DirectoryAudit using PUT.
+        /// Creates the specified DirectoryAudit using POST.
         /// </summary>
         /// <param name="directoryAuditToCreate">The DirectoryAudit to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDirectoryObjectPartnerReferenceRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DirectoryObjectPartnerReference using PUT.
+        /// Creates the specified DirectoryObjectPartnerReference using POST.
         /// </summary>
         /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
         /// <returns>The created DirectoryObjectPartnerReference.</returns>
         System.Threading.Tasks.Task<DirectoryObjectPartnerReference> CreateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate);        /// <summary>
-        /// Creates the specified DirectoryObjectPartnerReference using PUT.
+        /// Creates the specified DirectoryObjectPartnerReference using POST.
         /// </summary>
         /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

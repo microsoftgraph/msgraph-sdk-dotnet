@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ILocalizedNotificationMessageRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified LocalizedNotificationMessage using PUT.
+        /// Creates the specified LocalizedNotificationMessage using POST.
         /// </summary>
         /// <param name="localizedNotificationMessageToCreate">The LocalizedNotificationMessage to create.</param>
         /// <returns>The created LocalizedNotificationMessage.</returns>
         System.Threading.Tasks.Task<LocalizedNotificationMessage> CreateAsync(LocalizedNotificationMessage localizedNotificationMessageToCreate);        /// <summary>
-        /// Creates the specified LocalizedNotificationMessage using PUT.
+        /// Creates the specified LocalizedNotificationMessage using POST.
         /// </summary>
         /// <param name="localizedNotificationMessageToCreate">The LocalizedNotificationMessage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

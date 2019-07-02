@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IConversationThreadRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ConversationThread using PUT.
+        /// Creates the specified ConversationThread using POST.
         /// </summary>
         /// <param name="conversationThreadToCreate">The ConversationThread to create.</param>
         /// <returns>The created ConversationThread.</returns>
         System.Threading.Tasks.Task<ConversationThread> CreateAsync(ConversationThread conversationThreadToCreate);        /// <summary>
-        /// Creates the specified ConversationThread using PUT.
+        /// Creates the specified ConversationThread using POST.
         /// </summary>
         /// <param name="conversationThreadToCreate">The ConversationThread to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

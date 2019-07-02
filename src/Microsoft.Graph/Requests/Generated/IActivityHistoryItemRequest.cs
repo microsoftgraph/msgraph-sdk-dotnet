@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IActivityHistoryItemRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ActivityHistoryItem using PUT.
+        /// Creates the specified ActivityHistoryItem using POST.
         /// </summary>
         /// <param name="activityHistoryItemToCreate">The ActivityHistoryItem to create.</param>
         /// <returns>The created ActivityHistoryItem.</returns>
         System.Threading.Tasks.Task<ActivityHistoryItem> CreateAsync(ActivityHistoryItem activityHistoryItemToCreate);        /// <summary>
-        /// Creates the specified ActivityHistoryItem using PUT.
+        /// Creates the specified ActivityHistoryItem using POST.
         /// </summary>
         /// <param name="activityHistoryItemToCreate">The ActivityHistoryItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

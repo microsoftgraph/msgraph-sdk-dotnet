@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISiteRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Site using PUT.
+        /// Creates the specified Site using POST.
         /// </summary>
         /// <param name="siteToCreate">The Site to create.</param>
         /// <returns>The created Site.</returns>
         System.Threading.Tasks.Task<Site> CreateAsync(Site siteToCreate);        /// <summary>
-        /// Creates the specified Site using PUT.
+        /// Creates the specified Site using POST.
         /// </summary>
         /// <param name="siteToCreate">The Site to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

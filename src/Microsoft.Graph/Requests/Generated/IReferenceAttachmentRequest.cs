@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IReferenceAttachmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ReferenceAttachment using PUT.
+        /// Creates the specified ReferenceAttachment using POST.
         /// </summary>
         /// <param name="referenceAttachmentToCreate">The ReferenceAttachment to create.</param>
         /// <returns>The created ReferenceAttachment.</returns>
         System.Threading.Tasks.Task<ReferenceAttachment> CreateAsync(ReferenceAttachment referenceAttachmentToCreate);        /// <summary>
-        /// Creates the specified ReferenceAttachment using PUT.
+        /// Creates the specified ReferenceAttachment using POST.
         /// </summary>
         /// <param name="referenceAttachmentToCreate">The ReferenceAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

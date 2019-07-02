@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IColumnDefinitionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ColumnDefinition using PUT.
+        /// Creates the specified ColumnDefinition using POST.
         /// </summary>
         /// <param name="columnDefinitionToCreate">The ColumnDefinition to create.</param>
         /// <returns>The created ColumnDefinition.</returns>
         System.Threading.Tasks.Task<ColumnDefinition> CreateAsync(ColumnDefinition columnDefinitionToCreate);        /// <summary>
-        /// Creates the specified ColumnDefinition using PUT.
+        /// Creates the specified ColumnDefinition using POST.
         /// </summary>
         /// <param name="columnDefinitionToCreate">The ColumnDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

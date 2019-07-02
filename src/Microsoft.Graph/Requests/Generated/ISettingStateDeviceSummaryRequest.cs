@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISettingStateDeviceSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SettingStateDeviceSummary using PUT.
+        /// Creates the specified SettingStateDeviceSummary using POST.
         /// </summary>
         /// <param name="settingStateDeviceSummaryToCreate">The SettingStateDeviceSummary to create.</param>
         /// <returns>The created SettingStateDeviceSummary.</returns>
         System.Threading.Tasks.Task<SettingStateDeviceSummary> CreateAsync(SettingStateDeviceSummary settingStateDeviceSummaryToCreate);        /// <summary>
-        /// Creates the specified SettingStateDeviceSummary using PUT.
+        /// Creates the specified SettingStateDeviceSummary using POST.
         /// </summary>
         /// <param name="settingStateDeviceSummaryToCreate">The SettingStateDeviceSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

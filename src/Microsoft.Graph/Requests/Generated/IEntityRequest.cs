@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEntityRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Entity using PUT.
+        /// Creates the specified Entity using POST.
         /// </summary>
         /// <param name="entityToCreate">The Entity to create.</param>
         /// <returns>The created Entity.</returns>
         System.Threading.Tasks.Task<Entity> CreateAsync(Entity entityToCreate);        /// <summary>
-        /// Creates the specified Entity using PUT.
+        /// Creates the specified Entity using POST.
         /// </summary>
         /// <param name="entityToCreate">The Entity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

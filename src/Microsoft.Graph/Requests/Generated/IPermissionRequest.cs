@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPermissionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Permission using PUT.
+        /// Creates the specified Permission using POST.
         /// </summary>
         /// <param name="permissionToCreate">The Permission to create.</param>
         /// <returns>The created Permission.</returns>
         System.Threading.Tasks.Task<Permission> CreateAsync(Permission permissionToCreate);        /// <summary>
-        /// Creates the specified Permission using PUT.
+        /// Creates the specified Permission using POST.
         /// </summary>
         /// <param name="permissionToCreate">The Permission to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

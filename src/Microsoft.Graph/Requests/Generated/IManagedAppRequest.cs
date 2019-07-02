@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedApp using PUT.
+        /// Creates the specified ManagedApp using POST.
         /// </summary>
         /// <param name="managedAppToCreate">The ManagedApp to create.</param>
         /// <returns>The created ManagedApp.</returns>
         System.Threading.Tasks.Task<ManagedApp> CreateAsync(ManagedApp managedAppToCreate);        /// <summary>
-        /// Creates the specified ManagedApp using PUT.
+        /// Creates the specified ManagedApp using POST.
         /// </summary>
         /// <param name="managedAppToCreate">The ManagedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

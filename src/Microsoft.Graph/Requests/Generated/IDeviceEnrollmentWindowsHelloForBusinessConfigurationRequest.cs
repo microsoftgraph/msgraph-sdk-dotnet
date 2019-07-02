@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceEnrollmentWindowsHelloForBusinessConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceEnrollmentWindowsHelloForBusinessConfiguration using PUT.
+        /// Creates the specified DeviceEnrollmentWindowsHelloForBusinessConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentWindowsHelloForBusinessConfigurationToCreate">The DeviceEnrollmentWindowsHelloForBusinessConfiguration to create.</param>
         /// <returns>The created DeviceEnrollmentWindowsHelloForBusinessConfiguration.</returns>
         System.Threading.Tasks.Task<DeviceEnrollmentWindowsHelloForBusinessConfiguration> CreateAsync(DeviceEnrollmentWindowsHelloForBusinessConfiguration deviceEnrollmentWindowsHelloForBusinessConfigurationToCreate);        /// <summary>
-        /// Creates the specified DeviceEnrollmentWindowsHelloForBusinessConfiguration using PUT.
+        /// Creates the specified DeviceEnrollmentWindowsHelloForBusinessConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentWindowsHelloForBusinessConfigurationToCreate">The DeviceEnrollmentWindowsHelloForBusinessConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

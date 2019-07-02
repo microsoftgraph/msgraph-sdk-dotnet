@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IContactFolderRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ContactFolder using PUT.
+        /// Creates the specified ContactFolder using POST.
         /// </summary>
         /// <param name="contactFolderToCreate">The ContactFolder to create.</param>
         /// <returns>The created ContactFolder.</returns>
         System.Threading.Tasks.Task<ContactFolder> CreateAsync(ContactFolder contactFolderToCreate);        /// <summary>
-        /// Creates the specified ContactFolder using PUT.
+        /// Creates the specified ContactFolder using POST.
         /// </summary>
         /// <param name="contactFolderToCreate">The ContactFolder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

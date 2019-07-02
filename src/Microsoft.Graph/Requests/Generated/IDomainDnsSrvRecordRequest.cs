@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDomainDnsSrvRecordRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DomainDnsSrvRecord using PUT.
+        /// Creates the specified DomainDnsSrvRecord using POST.
         /// </summary>
         /// <param name="domainDnsSrvRecordToCreate">The DomainDnsSrvRecord to create.</param>
         /// <returns>The created DomainDnsSrvRecord.</returns>
         System.Threading.Tasks.Task<DomainDnsSrvRecord> CreateAsync(DomainDnsSrvRecord domainDnsSrvRecordToCreate);        /// <summary>
-        /// Creates the specified DomainDnsSrvRecord using PUT.
+        /// Creates the specified DomainDnsSrvRecord using POST.
         /// </summary>
         /// <param name="domainDnsSrvRecordToCreate">The DomainDnsSrvRecord to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

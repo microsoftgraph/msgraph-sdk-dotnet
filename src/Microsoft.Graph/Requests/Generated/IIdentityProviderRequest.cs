@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIdentityProviderRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IdentityProvider using PUT.
+        /// Creates the specified IdentityProvider using POST.
         /// </summary>
         /// <param name="identityProviderToCreate">The IdentityProvider to create.</param>
         /// <returns>The created IdentityProvider.</returns>
         System.Threading.Tasks.Task<IdentityProvider> CreateAsync(IdentityProvider identityProviderToCreate);        /// <summary>
-        /// Creates the specified IdentityProvider using PUT.
+        /// Creates the specified IdentityProvider using POST.
         /// </summary>
         /// <param name="identityProviderToCreate">The IdentityProvider to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISharedDriveItemRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SharedDriveItem using PUT.
+        /// Creates the specified SharedDriveItem using POST.
         /// </summary>
         /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
         /// <returns>The created SharedDriveItem.</returns>
         System.Threading.Tasks.Task<SharedDriveItem> CreateAsync(SharedDriveItem sharedDriveItemToCreate);        /// <summary>
-        /// Creates the specified SharedDriveItem using PUT.
+        /// Creates the specified SharedDriveItem using POST.
         /// </summary>
         /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

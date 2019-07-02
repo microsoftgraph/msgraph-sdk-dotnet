@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceEnrollmentPlatformRestrictionsConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using PUT.
+        /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToCreate">The DeviceEnrollmentPlatformRestrictionsConfiguration to create.</param>
         /// <returns>The created DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
         System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> CreateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate);        /// <summary>
-        /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using PUT.
+        /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToCreate">The DeviceEnrollmentPlatformRestrictionsConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

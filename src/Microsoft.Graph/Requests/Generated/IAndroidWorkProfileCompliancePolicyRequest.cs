@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidWorkProfileCompliancePolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidWorkProfileCompliancePolicy using PUT.
+        /// Creates the specified AndroidWorkProfileCompliancePolicy using POST.
         /// </summary>
         /// <param name="androidWorkProfileCompliancePolicyToCreate">The AndroidWorkProfileCompliancePolicy to create.</param>
         /// <returns>The created AndroidWorkProfileCompliancePolicy.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileCompliancePolicy> CreateAsync(AndroidWorkProfileCompliancePolicy androidWorkProfileCompliancePolicyToCreate);        /// <summary>
-        /// Creates the specified AndroidWorkProfileCompliancePolicy using PUT.
+        /// Creates the specified AndroidWorkProfileCompliancePolicy using POST.
         /// </summary>
         /// <param name="androidWorkProfileCompliancePolicyToCreate">The AndroidWorkProfileCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

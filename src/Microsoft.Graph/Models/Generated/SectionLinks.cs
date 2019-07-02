@@ -32,7 +32,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets oneNoteWebUrl.
-        /// Opens the section in OneNote Online.
+        /// Opens the section in OneNote on the web.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneNoteWebUrl", Required = Newtonsoft.Json.Required.Default)]
         public ExternalLink OneNoteWebUrl { get; set; }

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceComplianceActionItemRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceComplianceActionItem using PUT.
+        /// Creates the specified DeviceComplianceActionItem using POST.
         /// </summary>
         /// <param name="deviceComplianceActionItemToCreate">The DeviceComplianceActionItem to create.</param>
         /// <returns>The created DeviceComplianceActionItem.</returns>
         System.Threading.Tasks.Task<DeviceComplianceActionItem> CreateAsync(DeviceComplianceActionItem deviceComplianceActionItemToCreate);        /// <summary>
-        /// Creates the specified DeviceComplianceActionItem using PUT.
+        /// Creates the specified DeviceComplianceActionItem using POST.
         /// </summary>
         /// <param name="deviceComplianceActionItemToCreate">The DeviceComplianceActionItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

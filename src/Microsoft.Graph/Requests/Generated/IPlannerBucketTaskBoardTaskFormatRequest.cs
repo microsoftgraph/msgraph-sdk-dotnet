@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPlannerBucketTaskBoardTaskFormatRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PlannerBucketTaskBoardTaskFormat using PUT.
+        /// Creates the specified PlannerBucketTaskBoardTaskFormat using POST.
         /// </summary>
         /// <param name="plannerBucketTaskBoardTaskFormatToCreate">The PlannerBucketTaskBoardTaskFormat to create.</param>
         /// <returns>The created PlannerBucketTaskBoardTaskFormat.</returns>
         System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> CreateAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToCreate);        /// <summary>
-        /// Creates the specified PlannerBucketTaskBoardTaskFormat using PUT.
+        /// Creates the specified PlannerBucketTaskBoardTaskFormat using POST.
         /// </summary>
         /// <param name="plannerBucketTaskBoardTaskFormatToCreate">The PlannerBucketTaskBoardTaskFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

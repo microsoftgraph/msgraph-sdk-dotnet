@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOnenoteEntitySchemaObjectModelRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OnenoteEntitySchemaObjectModel using PUT.
+        /// Creates the specified OnenoteEntitySchemaObjectModel using POST.
         /// </summary>
         /// <param name="onenoteEntitySchemaObjectModelToCreate">The OnenoteEntitySchemaObjectModel to create.</param>
         /// <returns>The created OnenoteEntitySchemaObjectModel.</returns>
         System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> CreateAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToCreate);        /// <summary>
-        /// Creates the specified OnenoteEntitySchemaObjectModel using PUT.
+        /// Creates the specified OnenoteEntitySchemaObjectModel using POST.
         /// </summary>
         /// <param name="onenoteEntitySchemaObjectModelToCreate">The OnenoteEntitySchemaObjectModel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

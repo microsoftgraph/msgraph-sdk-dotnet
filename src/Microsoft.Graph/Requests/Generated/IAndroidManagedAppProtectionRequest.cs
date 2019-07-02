@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidManagedAppProtectionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidManagedAppProtection using PUT.
+        /// Creates the specified AndroidManagedAppProtection using POST.
         /// </summary>
         /// <param name="androidManagedAppProtectionToCreate">The AndroidManagedAppProtection to create.</param>
         /// <returns>The created AndroidManagedAppProtection.</returns>
         System.Threading.Tasks.Task<AndroidManagedAppProtection> CreateAsync(AndroidManagedAppProtection androidManagedAppProtectionToCreate);        /// <summary>
-        /// Creates the specified AndroidManagedAppProtection using PUT.
+        /// Creates the specified AndroidManagedAppProtection using POST.
         /// </summary>
         /// <param name="androidManagedAppProtectionToCreate">The AndroidManagedAppProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

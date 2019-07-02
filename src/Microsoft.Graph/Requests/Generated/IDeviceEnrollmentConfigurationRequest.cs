@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceEnrollmentConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceEnrollmentConfiguration using PUT.
+        /// Creates the specified DeviceEnrollmentConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentConfigurationToCreate">The DeviceEnrollmentConfiguration to create.</param>
         /// <returns>The created DeviceEnrollmentConfiguration.</returns>
         System.Threading.Tasks.Task<DeviceEnrollmentConfiguration> CreateAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfigurationToCreate);        /// <summary>
-        /// Creates the specified DeviceEnrollmentConfiguration using PUT.
+        /// Creates the specified DeviceEnrollmentConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentConfigurationToCreate">The DeviceEnrollmentConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

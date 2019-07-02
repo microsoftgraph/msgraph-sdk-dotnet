@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IInferenceClassificationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified InferenceClassification using PUT.
+        /// Creates the specified InferenceClassification using POST.
         /// </summary>
         /// <param name="inferenceClassificationToCreate">The InferenceClassification to create.</param>
         /// <returns>The created InferenceClassification.</returns>
         System.Threading.Tasks.Task<InferenceClassification> CreateAsync(InferenceClassification inferenceClassificationToCreate);        /// <summary>
-        /// Creates the specified InferenceClassification using PUT.
+        /// Creates the specified InferenceClassification using POST.
         /// </summary>
         /// <param name="inferenceClassificationToCreate">The InferenceClassification to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

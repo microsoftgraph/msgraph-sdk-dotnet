@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows81GeneralConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows81GeneralConfiguration using PUT.
+        /// Creates the specified Windows81GeneralConfiguration using POST.
         /// </summary>
         /// <param name="windows81GeneralConfigurationToCreate">The Windows81GeneralConfiguration to create.</param>
         /// <returns>The created Windows81GeneralConfiguration.</returns>
         System.Threading.Tasks.Task<Windows81GeneralConfiguration> CreateAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToCreate);        /// <summary>
-        /// Creates the specified Windows81GeneralConfiguration using PUT.
+        /// Creates the specified Windows81GeneralConfiguration using POST.
         /// </summary>
         /// <param name="windows81GeneralConfigurationToCreate">The Windows81GeneralConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

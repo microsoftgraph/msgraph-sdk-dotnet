@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IReportRootRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ReportRoot using PUT.
+        /// Creates the specified ReportRoot using POST.
         /// </summary>
         /// <param name="reportRootToCreate">The ReportRoot to create.</param>
         /// <returns>The created ReportRoot.</returns>
         System.Threading.Tasks.Task<ReportRoot> CreateAsync(ReportRoot reportRootToCreate);        /// <summary>
-        /// Creates the specified ReportRoot using PUT.
+        /// Creates the specified ReportRoot using POST.
         /// </summary>
         /// <param name="reportRootToCreate">The ReportRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

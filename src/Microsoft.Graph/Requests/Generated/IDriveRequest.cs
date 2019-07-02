@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDriveRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Drive using PUT.
+        /// Creates the specified Drive using POST.
         /// </summary>
         /// <param name="driveToCreate">The Drive to create.</param>
         /// <returns>The created Drive.</returns>
         System.Threading.Tasks.Task<Drive> CreateAsync(Drive driveToCreate);        /// <summary>
-        /// Creates the specified Drive using PUT.
+        /// Creates the specified Drive using POST.
         /// </summary>
         /// <param name="driveToCreate">The Drive to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

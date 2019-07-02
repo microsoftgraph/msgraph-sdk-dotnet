@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISubscribedSkuRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SubscribedSku using PUT.
+        /// Creates the specified SubscribedSku using POST.
         /// </summary>
         /// <param name="subscribedSkuToCreate">The SubscribedSku to create.</param>
         /// <returns>The created SubscribedSku.</returns>
         System.Threading.Tasks.Task<SubscribedSku> CreateAsync(SubscribedSku subscribedSkuToCreate);        /// <summary>
-        /// Creates the specified SubscribedSku using PUT.
+        /// Creates the specified SubscribedSku using POST.
         /// </summary>
         /// <param name="subscribedSkuToCreate">The SubscribedSku to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

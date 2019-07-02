@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookChartFillRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookChartFill using PUT.
+        /// Creates the specified WorkbookChartFill using POST.
         /// </summary>
         /// <param name="workbookChartFillToCreate">The WorkbookChartFill to create.</param>
         /// <returns>The created WorkbookChartFill.</returns>
         System.Threading.Tasks.Task<WorkbookChartFill> CreateAsync(WorkbookChartFill workbookChartFillToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartFill using PUT.
+        /// Creates the specified WorkbookChartFill using POST.
         /// </summary>
         /// <param name="workbookChartFillToCreate">The WorkbookChartFill to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

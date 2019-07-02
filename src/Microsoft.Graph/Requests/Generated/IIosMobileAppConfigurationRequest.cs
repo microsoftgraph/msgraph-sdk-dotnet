@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosMobileAppConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosMobileAppConfiguration using PUT.
+        /// Creates the specified IosMobileAppConfiguration using POST.
         /// </summary>
         /// <param name="iosMobileAppConfigurationToCreate">The IosMobileAppConfiguration to create.</param>
         /// <returns>The created IosMobileAppConfiguration.</returns>
         System.Threading.Tasks.Task<IosMobileAppConfiguration> CreateAsync(IosMobileAppConfiguration iosMobileAppConfigurationToCreate);        /// <summary>
-        /// Creates the specified IosMobileAppConfiguration using PUT.
+        /// Creates the specified IosMobileAppConfiguration using POST.
         /// </summary>
         /// <param name="iosMobileAppConfigurationToCreate">The IosMobileAppConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

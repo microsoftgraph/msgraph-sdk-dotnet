@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookChartAxesRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookChartAxes using PUT.
+        /// Creates the specified WorkbookChartAxes using POST.
         /// </summary>
         /// <param name="workbookChartAxesToCreate">The WorkbookChartAxes to create.</param>
         /// <returns>The created WorkbookChartAxes.</returns>
         System.Threading.Tasks.Task<WorkbookChartAxes> CreateAsync(WorkbookChartAxes workbookChartAxesToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartAxes using PUT.
+        /// Creates the specified WorkbookChartAxes using POST.
         /// </summary>
         /// <param name="workbookChartAxesToCreate">The WorkbookChartAxes to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

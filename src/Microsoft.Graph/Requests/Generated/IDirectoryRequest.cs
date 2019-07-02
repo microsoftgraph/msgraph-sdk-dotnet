@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDirectoryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Directory using PUT.
+        /// Creates the specified Directory using POST.
         /// </summary>
         /// <param name="directoryToCreate">The Directory to create.</param>
         /// <returns>The created Directory.</returns>
         System.Threading.Tasks.Task<Directory> CreateAsync(Directory directoryToCreate);        /// <summary>
-        /// Creates the specified Directory using PUT.
+        /// Creates the specified Directory using POST.
         /// </summary>
         /// <param name="directoryToCreate">The Directory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

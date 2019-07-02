@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceComplianceScheduledActionForRuleRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceComplianceScheduledActionForRule using PUT.
+        /// Creates the specified DeviceComplianceScheduledActionForRule using POST.
         /// </summary>
         /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
         /// <returns>The created DeviceComplianceScheduledActionForRule.</returns>
         System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> CreateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate);        /// <summary>
-        /// Creates the specified DeviceComplianceScheduledActionForRule using PUT.
+        /// Creates the specified DeviceComplianceScheduledActionForRule using POST.
         /// </summary>
         /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

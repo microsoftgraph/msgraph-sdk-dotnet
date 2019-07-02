@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceManagementExchangeConnectorRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceManagementExchangeConnector using PUT.
+        /// Creates the specified DeviceManagementExchangeConnector using POST.
         /// </summary>
         /// <param name="deviceManagementExchangeConnectorToCreate">The DeviceManagementExchangeConnector to create.</param>
         /// <returns>The created DeviceManagementExchangeConnector.</returns>
         System.Threading.Tasks.Task<DeviceManagementExchangeConnector> CreateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementExchangeConnector using PUT.
+        /// Creates the specified DeviceManagementExchangeConnector using POST.
         /// </summary>
         /// <param name="deviceManagementExchangeConnectorToCreate">The DeviceManagementExchangeConnector to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

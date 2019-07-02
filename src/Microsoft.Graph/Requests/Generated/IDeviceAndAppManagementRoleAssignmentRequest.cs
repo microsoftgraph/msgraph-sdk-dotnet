@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceAndAppManagementRoleAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceAndAppManagementRoleAssignment using PUT.
+        /// Creates the specified DeviceAndAppManagementRoleAssignment using POST.
         /// </summary>
         /// <param name="deviceAndAppManagementRoleAssignmentToCreate">The DeviceAndAppManagementRoleAssignment to create.</param>
         /// <returns>The created DeviceAndAppManagementRoleAssignment.</returns>
         System.Threading.Tasks.Task<DeviceAndAppManagementRoleAssignment> CreateAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToCreate);        /// <summary>
-        /// Creates the specified DeviceAndAppManagementRoleAssignment using PUT.
+        /// Creates the specified DeviceAndAppManagementRoleAssignment using POST.
         /// </summary>
         /// <param name="deviceAndAppManagementRoleAssignmentToCreate">The DeviceAndAppManagementRoleAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

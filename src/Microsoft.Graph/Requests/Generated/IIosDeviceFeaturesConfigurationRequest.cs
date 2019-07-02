@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosDeviceFeaturesConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosDeviceFeaturesConfiguration using PUT.
+        /// Creates the specified IosDeviceFeaturesConfiguration using POST.
         /// </summary>
         /// <param name="iosDeviceFeaturesConfigurationToCreate">The IosDeviceFeaturesConfiguration to create.</param>
         /// <returns>The created IosDeviceFeaturesConfiguration.</returns>
         System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> CreateAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToCreate);        /// <summary>
-        /// Creates the specified IosDeviceFeaturesConfiguration using PUT.
+        /// Creates the specified IosDeviceFeaturesConfiguration using POST.
         /// </summary>
         /// <param name="iosDeviceFeaturesConfigurationToCreate">The IosDeviceFeaturesConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

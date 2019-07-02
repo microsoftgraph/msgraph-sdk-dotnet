@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAuditLogRootRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AuditLogRoot using PUT.
+        /// Creates the specified AuditLogRoot using POST.
         /// </summary>
         /// <param name="auditLogRootToCreate">The AuditLogRoot to create.</param>
         /// <returns>The created AuditLogRoot.</returns>
         System.Threading.Tasks.Task<AuditLogRoot> CreateAsync(AuditLogRoot auditLogRootToCreate);        /// <summary>
-        /// Creates the specified AuditLogRoot using PUT.
+        /// Creates the specified AuditLogRoot using POST.
         /// </summary>
         /// <param name="auditLogRootToCreate">The AuditLogRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

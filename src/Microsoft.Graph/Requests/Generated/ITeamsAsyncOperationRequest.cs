@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITeamsAsyncOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TeamsAsyncOperation using PUT.
+        /// Creates the specified TeamsAsyncOperation using POST.
         /// </summary>
         /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
         /// <returns>The created TeamsAsyncOperation.</returns>
         System.Threading.Tasks.Task<TeamsAsyncOperation> CreateAsync(TeamsAsyncOperation teamsAsyncOperationToCreate);        /// <summary>
-        /// Creates the specified TeamsAsyncOperation using PUT.
+        /// Creates the specified TeamsAsyncOperation using POST.
         /// </summary>
         /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows10SecureAssessmentConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows10SecureAssessmentConfiguration using PUT.
+        /// Creates the specified Windows10SecureAssessmentConfiguration using POST.
         /// </summary>
         /// <param name="windows10SecureAssessmentConfigurationToCreate">The Windows10SecureAssessmentConfiguration to create.</param>
         /// <returns>The created Windows10SecureAssessmentConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10SecureAssessmentConfiguration> CreateAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate);        /// <summary>
-        /// Creates the specified Windows10SecureAssessmentConfiguration using PUT.
+        /// Creates the specified Windows10SecureAssessmentConfiguration using POST.
         /// </summary>
         /// <param name="windows10SecureAssessmentConfigurationToCreate">The Windows10SecureAssessmentConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

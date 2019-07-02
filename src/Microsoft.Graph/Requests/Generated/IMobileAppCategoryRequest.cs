@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMobileAppCategoryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MobileAppCategory using PUT.
+        /// Creates the specified MobileAppCategory using POST.
         /// </summary>
         /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
         /// <returns>The created MobileAppCategory.</returns>
         System.Threading.Tasks.Task<MobileAppCategory> CreateAsync(MobileAppCategory mobileAppCategoryToCreate);        /// <summary>
-        /// Creates the specified MobileAppCategory using PUT.
+        /// Creates the specified MobileAppCategory using POST.
         /// </summary>
         /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

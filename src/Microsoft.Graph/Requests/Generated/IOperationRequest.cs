@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Operation using PUT.
+        /// Creates the specified Operation using POST.
         /// </summary>
         /// <param name="operationToCreate">The Operation to create.</param>
         /// <returns>The created Operation.</returns>
         System.Threading.Tasks.Task<Operation> CreateAsync(Operation operationToCreate);        /// <summary>
-        /// Creates the specified Operation using PUT.
+        /// Creates the specified Operation using POST.
         /// </summary>
         /// <param name="operationToCreate">The Operation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

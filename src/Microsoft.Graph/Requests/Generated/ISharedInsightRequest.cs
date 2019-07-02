@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISharedInsightRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SharedInsight using PUT.
+        /// Creates the specified SharedInsight using POST.
         /// </summary>
         /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
         /// <returns>The created SharedInsight.</returns>
         System.Threading.Tasks.Task<SharedInsight> CreateAsync(SharedInsight sharedInsightToCreate);        /// <summary>
-        /// Creates the specified SharedInsight using PUT.
+        /// Creates the specified SharedInsight using POST.
         /// </summary>
         /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

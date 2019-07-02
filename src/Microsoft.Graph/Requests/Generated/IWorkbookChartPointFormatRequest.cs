@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookChartPointFormatRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookChartPointFormat using PUT.
+        /// Creates the specified WorkbookChartPointFormat using POST.
         /// </summary>
         /// <param name="workbookChartPointFormatToCreate">The WorkbookChartPointFormat to create.</param>
         /// <returns>The created WorkbookChartPointFormat.</returns>
         System.Threading.Tasks.Task<WorkbookChartPointFormat> CreateAsync(WorkbookChartPointFormat workbookChartPointFormatToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartPointFormat using PUT.
+        /// Creates the specified WorkbookChartPointFormat using POST.
         /// </summary>
         /// <param name="workbookChartPointFormatToCreate">The WorkbookChartPointFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IFileAttachmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified FileAttachment using PUT.
+        /// Creates the specified FileAttachment using POST.
         /// </summary>
         /// <param name="fileAttachmentToCreate">The FileAttachment to create.</param>
         /// <returns>The created FileAttachment.</returns>
         System.Threading.Tasks.Task<FileAttachment> CreateAsync(FileAttachment fileAttachmentToCreate);        /// <summary>
-        /// Creates the specified FileAttachment using PUT.
+        /// Creates the specified FileAttachment using POST.
         /// </summary>
         /// <param name="fileAttachmentToCreate">The FileAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

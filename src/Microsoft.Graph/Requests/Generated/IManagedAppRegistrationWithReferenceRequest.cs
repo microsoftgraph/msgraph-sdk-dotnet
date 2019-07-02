@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ManagedAppRegistration> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified ManagedAppRegistration using PUT.
+        /// Creates the specified ManagedAppRegistration using POST.
         /// </summary>
         /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
         /// <returns>The created ManagedAppRegistration.</returns>
         System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate);        /// <summary>
-        /// Creates the specified ManagedAppRegistration using PUT.
+        /// Creates the specified ManagedAppRegistration using POST.
         /// </summary>
         /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

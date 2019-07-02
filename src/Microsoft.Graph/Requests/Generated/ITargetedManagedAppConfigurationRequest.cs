@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITargetedManagedAppConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TargetedManagedAppConfiguration using PUT.
+        /// Creates the specified TargetedManagedAppConfiguration using POST.
         /// </summary>
         /// <param name="targetedManagedAppConfigurationToCreate">The TargetedManagedAppConfiguration to create.</param>
         /// <returns>The created TargetedManagedAppConfiguration.</returns>
         System.Threading.Tasks.Task<TargetedManagedAppConfiguration> CreateAsync(TargetedManagedAppConfiguration targetedManagedAppConfigurationToCreate);        /// <summary>
-        /// Creates the specified TargetedManagedAppConfiguration using PUT.
+        /// Creates the specified TargetedManagedAppConfiguration using POST.
         /// </summary>
         /// <param name="targetedManagedAppConfigurationToCreate">The TargetedManagedAppConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

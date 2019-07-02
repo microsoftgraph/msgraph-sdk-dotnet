@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEBookInstallSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EBookInstallSummary using PUT.
+        /// Creates the specified EBookInstallSummary using POST.
         /// </summary>
         /// <param name="eBookInstallSummaryToCreate">The EBookInstallSummary to create.</param>
         /// <returns>The created EBookInstallSummary.</returns>
         System.Threading.Tasks.Task<EBookInstallSummary> CreateAsync(EBookInstallSummary eBookInstallSummaryToCreate);        /// <summary>
-        /// Creates the specified EBookInstallSummary using PUT.
+        /// Creates the specified EBookInstallSummary using POST.
         /// </summary>
         /// <param name="eBookInstallSummaryToCreate">The EBookInstallSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

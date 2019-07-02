@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGroupRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Group using PUT.
+        /// Creates the specified Group using POST.
         /// </summary>
         /// <param name="groupToCreate">The Group to create.</param>
         /// <returns>The created Group.</returns>
         System.Threading.Tasks.Task<Group> CreateAsync(Group groupToCreate);        /// <summary>
-        /// Creates the specified Group using PUT.
+        /// Creates the specified Group using POST.
         /// </summary>
         /// <param name="groupToCreate">The Group to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

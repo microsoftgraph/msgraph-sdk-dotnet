@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISignInRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SignIn using PUT.
+        /// Creates the specified SignIn using POST.
         /// </summary>
         /// <param name="signInToCreate">The SignIn to create.</param>
         /// <returns>The created SignIn.</returns>
         System.Threading.Tasks.Task<SignIn> CreateAsync(SignIn signInToCreate);        /// <summary>
-        /// Creates the specified SignIn using PUT.
+        /// Creates the specified SignIn using POST.
         /// </summary>
         /// <param name="signInToCreate">The SignIn to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

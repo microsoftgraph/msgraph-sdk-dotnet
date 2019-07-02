@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUserInstallStateSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UserInstallStateSummary using PUT.
+        /// Creates the specified UserInstallStateSummary using POST.
         /// </summary>
         /// <param name="userInstallStateSummaryToCreate">The UserInstallStateSummary to create.</param>
         /// <returns>The created UserInstallStateSummary.</returns>
         System.Threading.Tasks.Task<UserInstallStateSummary> CreateAsync(UserInstallStateSummary userInstallStateSummaryToCreate);        /// <summary>
-        /// Creates the specified UserInstallStateSummary using PUT.
+        /// Creates the specified UserInstallStateSummary using POST.
         /// </summary>
         /// <param name="userInstallStateSummaryToCreate">The UserInstallStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

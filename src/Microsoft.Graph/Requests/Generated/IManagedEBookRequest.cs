@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedEBookRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedEBook using PUT.
+        /// Creates the specified ManagedEBook using POST.
         /// </summary>
         /// <param name="managedEBookToCreate">The ManagedEBook to create.</param>
         /// <returns>The created ManagedEBook.</returns>
         System.Threading.Tasks.Task<ManagedEBook> CreateAsync(ManagedEBook managedEBookToCreate);        /// <summary>
-        /// Creates the specified ManagedEBook using PUT.
+        /// Creates the specified ManagedEBook using POST.
         /// </summary>
         /// <param name="managedEBookToCreate">The ManagedEBook to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

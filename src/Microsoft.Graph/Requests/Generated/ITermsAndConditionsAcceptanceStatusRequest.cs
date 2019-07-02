@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITermsAndConditionsAcceptanceStatusRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TermsAndConditionsAcceptanceStatus using PUT.
+        /// Creates the specified TermsAndConditionsAcceptanceStatus using POST.
         /// </summary>
         /// <param name="termsAndConditionsAcceptanceStatusToCreate">The TermsAndConditionsAcceptanceStatus to create.</param>
         /// <returns>The created TermsAndConditionsAcceptanceStatus.</returns>
         System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> CreateAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate);        /// <summary>
-        /// Creates the specified TermsAndConditionsAcceptanceStatus using PUT.
+        /// Creates the specified TermsAndConditionsAcceptanceStatus using POST.
         /// </summary>
         /// <param name="termsAndConditionsAcceptanceStatusToCreate">The TermsAndConditionsAcceptanceStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

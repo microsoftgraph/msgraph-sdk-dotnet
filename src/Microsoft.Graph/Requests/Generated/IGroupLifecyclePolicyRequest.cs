@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGroupLifecyclePolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified GroupLifecyclePolicy using PUT.
+        /// Creates the specified GroupLifecyclePolicy using POST.
         /// </summary>
         /// <param name="groupLifecyclePolicyToCreate">The GroupLifecyclePolicy to create.</param>
         /// <returns>The created GroupLifecyclePolicy.</returns>
         System.Threading.Tasks.Task<GroupLifecyclePolicy> CreateAsync(GroupLifecyclePolicy groupLifecyclePolicyToCreate);        /// <summary>
-        /// Creates the specified GroupLifecyclePolicy using PUT.
+        /// Creates the specified GroupLifecyclePolicy using POST.
         /// </summary>
         /// <param name="groupLifecyclePolicyToCreate">The GroupLifecyclePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

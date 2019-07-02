@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITeamsTabRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TeamsTab using PUT.
+        /// Creates the specified TeamsTab using POST.
         /// </summary>
         /// <param name="teamsTabToCreate">The TeamsTab to create.</param>
         /// <returns>The created TeamsTab.</returns>
         System.Threading.Tasks.Task<TeamsTab> CreateAsync(TeamsTab teamsTabToCreate);        /// <summary>
-        /// Creates the specified TeamsTab using PUT.
+        /// Creates the specified TeamsTab using POST.
         /// </summary>
         /// <param name="teamsTabToCreate">The TeamsTab to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IFieldValueSetRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified FieldValueSet using PUT.
+        /// Creates the specified FieldValueSet using POST.
         /// </summary>
         /// <param name="fieldValueSetToCreate">The FieldValueSet to create.</param>
         /// <returns>The created FieldValueSet.</returns>
         System.Threading.Tasks.Task<FieldValueSet> CreateAsync(FieldValueSet fieldValueSetToCreate);        /// <summary>
-        /// Creates the specified FieldValueSet using PUT.
+        /// Creates the specified FieldValueSet using POST.
         /// </summary>
         /// <param name="fieldValueSetToCreate">The FieldValueSet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

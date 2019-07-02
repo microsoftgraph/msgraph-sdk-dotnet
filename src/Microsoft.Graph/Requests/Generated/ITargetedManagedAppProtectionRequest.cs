@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITargetedManagedAppProtectionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TargetedManagedAppProtection using PUT.
+        /// Creates the specified TargetedManagedAppProtection using POST.
         /// </summary>
         /// <param name="targetedManagedAppProtectionToCreate">The TargetedManagedAppProtection to create.</param>
         /// <returns>The created TargetedManagedAppProtection.</returns>
         System.Threading.Tasks.Task<TargetedManagedAppProtection> CreateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate);        /// <summary>
-        /// Creates the specified TargetedManagedAppProtection using PUT.
+        /// Creates the specified TargetedManagedAppProtection using POST.
         /// </summary>
         /// <param name="targetedManagedAppProtectionToCreate">The TargetedManagedAppProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

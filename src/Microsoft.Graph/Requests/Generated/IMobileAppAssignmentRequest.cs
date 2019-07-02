@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMobileAppAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MobileAppAssignment using PUT.
+        /// Creates the specified MobileAppAssignment using POST.
         /// </summary>
         /// <param name="mobileAppAssignmentToCreate">The MobileAppAssignment to create.</param>
         /// <returns>The created MobileAppAssignment.</returns>
         System.Threading.Tasks.Task<MobileAppAssignment> CreateAsync(MobileAppAssignment mobileAppAssignmentToCreate);        /// <summary>
-        /// Creates the specified MobileAppAssignment using PUT.
+        /// Creates the specified MobileAppAssignment using POST.
         /// </summary>
         /// <param name="mobileAppAssignmentToCreate">The MobileAppAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookChartSeriesFormatRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookChartSeriesFormat using PUT.
+        /// Creates the specified WorkbookChartSeriesFormat using POST.
         /// </summary>
         /// <param name="workbookChartSeriesFormatToCreate">The WorkbookChartSeriesFormat to create.</param>
         /// <returns>The created WorkbookChartSeriesFormat.</returns>
         System.Threading.Tasks.Task<WorkbookChartSeriesFormat> CreateAsync(WorkbookChartSeriesFormat workbookChartSeriesFormatToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartSeriesFormat using PUT.
+        /// Creates the specified WorkbookChartSeriesFormat using POST.
         /// </summary>
         /// <param name="workbookChartSeriesFormatToCreate">The WorkbookChartSeriesFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

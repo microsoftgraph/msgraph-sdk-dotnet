@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Event using PUT.
+        /// Creates the specified Event using POST.
         /// </summary>
         /// <param name="eventToCreate">The Event to create.</param>
         /// <returns>The created Event.</returns>
         System.Threading.Tasks.Task<Event> CreateAsync(Event eventToCreate);        /// <summary>
-        /// Creates the specified Event using PUT.
+        /// Creates the specified Event using POST.
         /// </summary>
         /// <param name="eventToCreate">The Event to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedDeviceOverviewRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedDeviceOverview using PUT.
+        /// Creates the specified ManagedDeviceOverview using POST.
         /// </summary>
         /// <param name="managedDeviceOverviewToCreate">The ManagedDeviceOverview to create.</param>
         /// <returns>The created ManagedDeviceOverview.</returns>
         System.Threading.Tasks.Task<ManagedDeviceOverview> CreateAsync(ManagedDeviceOverview managedDeviceOverviewToCreate);        /// <summary>
-        /// Creates the specified ManagedDeviceOverview using PUT.
+        /// Creates the specified ManagedDeviceOverview using POST.
         /// </summary>
         /// <param name="managedDeviceOverviewToCreate">The ManagedDeviceOverview to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

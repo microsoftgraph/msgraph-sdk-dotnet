@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceConfigurationAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceConfigurationAssignment using PUT.
+        /// Creates the specified DeviceConfigurationAssignment using POST.
         /// </summary>
         /// <param name="deviceConfigurationAssignmentToCreate">The DeviceConfigurationAssignment to create.</param>
         /// <returns>The created DeviceConfigurationAssignment.</returns>
         System.Threading.Tasks.Task<DeviceConfigurationAssignment> CreateAsync(DeviceConfigurationAssignment deviceConfigurationAssignmentToCreate);        /// <summary>
-        /// Creates the specified DeviceConfigurationAssignment using PUT.
+        /// Creates the specified DeviceConfigurationAssignment using POST.
         /// </summary>
         /// <param name="deviceConfigurationAssignmentToCreate">The DeviceConfigurationAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

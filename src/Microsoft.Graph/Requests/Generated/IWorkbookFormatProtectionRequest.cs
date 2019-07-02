@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookFormatProtectionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookFormatProtection using PUT.
+        /// Creates the specified WorkbookFormatProtection using POST.
         /// </summary>
         /// <param name="workbookFormatProtectionToCreate">The WorkbookFormatProtection to create.</param>
         /// <returns>The created WorkbookFormatProtection.</returns>
         System.Threading.Tasks.Task<WorkbookFormatProtection> CreateAsync(WorkbookFormatProtection workbookFormatProtectionToCreate);        /// <summary>
-        /// Creates the specified WorkbookFormatProtection using PUT.
+        /// Creates the specified WorkbookFormatProtection using POST.
         /// </summary>
         /// <param name="workbookFormatProtectionToCreate">The WorkbookFormatProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IContractRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Contract using PUT.
+        /// Creates the specified Contract using POST.
         /// </summary>
         /// <param name="contractToCreate">The Contract to create.</param>
         /// <returns>The created Contract.</returns>
         System.Threading.Tasks.Task<Contract> CreateAsync(Contract contractToCreate);        /// <summary>
-        /// Creates the specified Contract using PUT.
+        /// Creates the specified Contract using POST.
         /// </summary>
         /// <param name="contractToCreate">The Contract to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

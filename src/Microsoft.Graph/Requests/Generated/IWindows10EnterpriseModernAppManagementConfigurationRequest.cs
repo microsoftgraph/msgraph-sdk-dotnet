@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows10EnterpriseModernAppManagementConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows10EnterpriseModernAppManagementConfiguration using PUT.
+        /// Creates the specified Windows10EnterpriseModernAppManagementConfiguration using POST.
         /// </summary>
         /// <param name="windows10EnterpriseModernAppManagementConfigurationToCreate">The Windows10EnterpriseModernAppManagementConfiguration to create.</param>
         /// <returns>The created Windows10EnterpriseModernAppManagementConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> CreateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate);        /// <summary>
-        /// Creates the specified Windows10EnterpriseModernAppManagementConfiguration using PUT.
+        /// Creates the specified Windows10EnterpriseModernAppManagementConfiguration using POST.
         /// </summary>
         /// <param name="windows10EnterpriseModernAppManagementConfigurationToCreate">The Windows10EnterpriseModernAppManagementConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

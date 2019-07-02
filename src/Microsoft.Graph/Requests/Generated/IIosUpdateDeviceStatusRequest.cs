@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosUpdateDeviceStatusRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosUpdateDeviceStatus using PUT.
+        /// Creates the specified IosUpdateDeviceStatus using POST.
         /// </summary>
         /// <param name="iosUpdateDeviceStatusToCreate">The IosUpdateDeviceStatus to create.</param>
         /// <returns>The created IosUpdateDeviceStatus.</returns>
         System.Threading.Tasks.Task<IosUpdateDeviceStatus> CreateAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToCreate);        /// <summary>
-        /// Creates the specified IosUpdateDeviceStatus using PUT.
+        /// Creates the specified IosUpdateDeviceStatus using POST.
         /// </summary>
         /// <param name="iosUpdateDeviceStatusToCreate">The IosUpdateDeviceStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

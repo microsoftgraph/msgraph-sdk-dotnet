@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidManagedAppRegistrationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidManagedAppRegistration using PUT.
+        /// Creates the specified AndroidManagedAppRegistration using POST.
         /// </summary>
         /// <param name="androidManagedAppRegistrationToCreate">The AndroidManagedAppRegistration to create.</param>
         /// <returns>The created AndroidManagedAppRegistration.</returns>
         System.Threading.Tasks.Task<AndroidManagedAppRegistration> CreateAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToCreate);        /// <summary>
-        /// Creates the specified AndroidManagedAppRegistration using PUT.
+        /// Creates the specified AndroidManagedAppRegistration using POST.
         /// </summary>
         /// <param name="androidManagedAppRegistrationToCreate">The AndroidManagedAppRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

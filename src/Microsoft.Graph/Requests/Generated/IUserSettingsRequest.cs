@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUserSettingsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UserSettings using PUT.
+        /// Creates the specified UserSettings using POST.
         /// </summary>
         /// <param name="userSettingsToCreate">The UserSettings to create.</param>
         /// <returns>The created UserSettings.</returns>
         System.Threading.Tasks.Task<UserSettings> CreateAsync(UserSettings userSettingsToCreate);        /// <summary>
-        /// Creates the specified UserSettings using PUT.
+        /// Creates the specified UserSettings using POST.
         /// </summary>
         /// <param name="userSettingsToCreate">The UserSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

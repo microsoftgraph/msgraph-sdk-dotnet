@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISingleValueLegacyExtendedPropertyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SingleValueLegacyExtendedProperty using PUT.
+        /// Creates the specified SingleValueLegacyExtendedProperty using POST.
         /// </summary>
         /// <param name="singleValueLegacyExtendedPropertyToCreate">The SingleValueLegacyExtendedProperty to create.</param>
         /// <returns>The created SingleValueLegacyExtendedProperty.</returns>
         System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> CreateAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToCreate);        /// <summary>
-        /// Creates the specified SingleValueLegacyExtendedProperty using PUT.
+        /// Creates the specified SingleValueLegacyExtendedProperty using POST.
         /// </summary>
         /// <param name="singleValueLegacyExtendedPropertyToCreate">The SingleValueLegacyExtendedProperty to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

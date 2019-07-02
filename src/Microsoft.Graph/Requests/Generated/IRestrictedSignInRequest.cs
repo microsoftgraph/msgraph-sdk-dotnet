@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IRestrictedSignInRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified RestrictedSignIn using PUT.
+        /// Creates the specified RestrictedSignIn using POST.
         /// </summary>
         /// <param name="restrictedSignInToCreate">The RestrictedSignIn to create.</param>
         /// <returns>The created RestrictedSignIn.</returns>
         System.Threading.Tasks.Task<RestrictedSignIn> CreateAsync(RestrictedSignIn restrictedSignInToCreate);        /// <summary>
-        /// Creates the specified RestrictedSignIn using PUT.
+        /// Creates the specified RestrictedSignIn using POST.
         /// </summary>
         /// <param name="restrictedSignInToCreate">The RestrictedSignIn to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

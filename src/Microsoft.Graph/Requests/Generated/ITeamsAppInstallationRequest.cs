@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITeamsAppInstallationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TeamsAppInstallation using PUT.
+        /// Creates the specified TeamsAppInstallation using POST.
         /// </summary>
         /// <param name="teamsAppInstallationToCreate">The TeamsAppInstallation to create.</param>
         /// <returns>The created TeamsAppInstallation.</returns>
         System.Threading.Tasks.Task<TeamsAppInstallation> CreateAsync(TeamsAppInstallation teamsAppInstallationToCreate);        /// <summary>
-        /// Creates the specified TeamsAppInstallation using PUT.
+        /// Creates the specified TeamsAppInstallation using POST.
         /// </summary>
         /// <param name="teamsAppInstallationToCreate">The TeamsAppInstallation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

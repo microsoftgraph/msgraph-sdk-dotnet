@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDataPolicyOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DataPolicyOperation using PUT.
+        /// Creates the specified DataPolicyOperation using POST.
         /// </summary>
         /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
         /// <returns>The created DataPolicyOperation.</returns>
         System.Threading.Tasks.Task<DataPolicyOperation> CreateAsync(DataPolicyOperation dataPolicyOperationToCreate);        /// <summary>
-        /// Creates the specified DataPolicyOperation using PUT.
+        /// Creates the specified DataPolicyOperation using POST.
         /// </summary>
         /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

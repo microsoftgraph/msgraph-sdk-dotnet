@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedAppPolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedAppPolicy using PUT.
+        /// Creates the specified ManagedAppPolicy using POST.
         /// </summary>
         /// <param name="managedAppPolicyToCreate">The ManagedAppPolicy to create.</param>
         /// <returns>The created ManagedAppPolicy.</returns>
         System.Threading.Tasks.Task<ManagedAppPolicy> CreateAsync(ManagedAppPolicy managedAppPolicyToCreate);        /// <summary>
-        /// Creates the specified ManagedAppPolicy using PUT.
+        /// Creates the specified ManagedAppPolicy using POST.
         /// </summary>
         /// <param name="managedAppPolicyToCreate">The ManagedAppPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsInformationProtectionNetworkLearningSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsInformationProtectionNetworkLearningSummary using PUT.
+        /// Creates the specified WindowsInformationProtectionNetworkLearningSummary using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionNetworkLearningSummaryToCreate">The WindowsInformationProtectionNetworkLearningSummary to create.</param>
         /// <returns>The created WindowsInformationProtectionNetworkLearningSummary.</returns>
         System.Threading.Tasks.Task<WindowsInformationProtectionNetworkLearningSummary> CreateAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToCreate);        /// <summary>
-        /// Creates the specified WindowsInformationProtectionNetworkLearningSummary using PUT.
+        /// Creates the specified WindowsInformationProtectionNetworkLearningSummary using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionNetworkLearningSummaryToCreate">The WindowsInformationProtectionNetworkLearningSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

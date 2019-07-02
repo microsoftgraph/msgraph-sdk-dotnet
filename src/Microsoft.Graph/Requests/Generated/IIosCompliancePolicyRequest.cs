@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosCompliancePolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosCompliancePolicy using PUT.
+        /// Creates the specified IosCompliancePolicy using POST.
         /// </summary>
         /// <param name="iosCompliancePolicyToCreate">The IosCompliancePolicy to create.</param>
         /// <returns>The created IosCompliancePolicy.</returns>
         System.Threading.Tasks.Task<IosCompliancePolicy> CreateAsync(IosCompliancePolicy iosCompliancePolicyToCreate);        /// <summary>
-        /// Creates the specified IosCompliancePolicy using PUT.
+        /// Creates the specified IosCompliancePolicy using POST.
         /// </summary>
         /// <param name="iosCompliancePolicyToCreate">The IosCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

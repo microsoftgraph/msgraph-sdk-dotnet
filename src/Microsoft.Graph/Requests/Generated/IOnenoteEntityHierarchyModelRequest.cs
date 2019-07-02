@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOnenoteEntityHierarchyModelRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OnenoteEntityHierarchyModel using PUT.
+        /// Creates the specified OnenoteEntityHierarchyModel using POST.
         /// </summary>
         /// <param name="onenoteEntityHierarchyModelToCreate">The OnenoteEntityHierarchyModel to create.</param>
         /// <returns>The created OnenoteEntityHierarchyModel.</returns>
         System.Threading.Tasks.Task<OnenoteEntityHierarchyModel> CreateAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToCreate);        /// <summary>
-        /// Creates the specified OnenoteEntityHierarchyModel using PUT.
+        /// Creates the specified OnenoteEntityHierarchyModel using POST.
         /// </summary>
         /// <param name="onenoteEntityHierarchyModelToCreate">The OnenoteEntityHierarchyModel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

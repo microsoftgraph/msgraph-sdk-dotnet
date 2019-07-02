@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMacOSCustomConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MacOSCustomConfiguration using PUT.
+        /// Creates the specified MacOSCustomConfiguration using POST.
         /// </summary>
         /// <param name="macOSCustomConfigurationToCreate">The MacOSCustomConfiguration to create.</param>
         /// <returns>The created MacOSCustomConfiguration.</returns>
         System.Threading.Tasks.Task<MacOSCustomConfiguration> CreateAsync(MacOSCustomConfiguration macOSCustomConfigurationToCreate);        /// <summary>
-        /// Creates the specified MacOSCustomConfiguration using PUT.
+        /// Creates the specified MacOSCustomConfiguration using POST.
         /// </summary>
         /// <param name="macOSCustomConfigurationToCreate">The MacOSCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

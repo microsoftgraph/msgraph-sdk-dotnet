@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IListRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified List using PUT.
+        /// Creates the specified List using POST.
         /// </summary>
         /// <param name="listToCreate">The List to create.</param>
         /// <returns>The created List.</returns>
         System.Threading.Tasks.Task<List> CreateAsync(List listToCreate);        /// <summary>
-        /// Creates the specified List using PUT.
+        /// Creates the specified List using POST.
         /// </summary>
         /// <param name="listToCreate">The List to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

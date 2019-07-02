@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOnenotePageRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OnenotePage using PUT.
+        /// Creates the specified OnenotePage using POST.
         /// </summary>
         /// <param name="onenotePageToCreate">The OnenotePage to create.</param>
         /// <returns>The created OnenotePage.</returns>
         System.Threading.Tasks.Task<OnenotePage> CreateAsync(OnenotePage onenotePageToCreate);        /// <summary>
-        /// Creates the specified OnenotePage using PUT.
+        /// Creates the specified OnenotePage using POST.
         /// </summary>
         /// <param name="onenotePageToCreate">The OnenotePage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

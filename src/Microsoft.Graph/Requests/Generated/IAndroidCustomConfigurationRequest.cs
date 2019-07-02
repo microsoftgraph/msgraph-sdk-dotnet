@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidCustomConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidCustomConfiguration using PUT.
+        /// Creates the specified AndroidCustomConfiguration using POST.
         /// </summary>
         /// <param name="androidCustomConfigurationToCreate">The AndroidCustomConfiguration to create.</param>
         /// <returns>The created AndroidCustomConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidCustomConfiguration> CreateAsync(AndroidCustomConfiguration androidCustomConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidCustomConfiguration using PUT.
+        /// Creates the specified AndroidCustomConfiguration using POST.
         /// </summary>
         /// <param name="androidCustomConfigurationToCreate">The AndroidCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITelecomExpenseManagementPartnerRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TelecomExpenseManagementPartner using PUT.
+        /// Creates the specified TelecomExpenseManagementPartner using POST.
         /// </summary>
         /// <param name="telecomExpenseManagementPartnerToCreate">The TelecomExpenseManagementPartner to create.</param>
         /// <returns>The created TelecomExpenseManagementPartner.</returns>
         System.Threading.Tasks.Task<TelecomExpenseManagementPartner> CreateAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToCreate);        /// <summary>
-        /// Creates the specified TelecomExpenseManagementPartner using PUT.
+        /// Creates the specified TelecomExpenseManagementPartner using POST.
         /// </summary>
         /// <param name="telecomExpenseManagementPartnerToCreate">The TelecomExpenseManagementPartner to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

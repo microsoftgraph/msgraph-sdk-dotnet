@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookChartAreaFormatRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookChartAreaFormat using PUT.
+        /// Creates the specified WorkbookChartAreaFormat using POST.
         /// </summary>
         /// <param name="workbookChartAreaFormatToCreate">The WorkbookChartAreaFormat to create.</param>
         /// <returns>The created WorkbookChartAreaFormat.</returns>
         System.Threading.Tasks.Task<WorkbookChartAreaFormat> CreateAsync(WorkbookChartAreaFormat workbookChartAreaFormatToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartAreaFormat using PUT.
+        /// Creates the specified WorkbookChartAreaFormat using POST.
         /// </summary>
         /// <param name="workbookChartAreaFormatToCreate">The WorkbookChartAreaFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

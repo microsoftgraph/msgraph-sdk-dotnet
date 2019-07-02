@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows10CompliancePolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows10CompliancePolicy using PUT.
+        /// Creates the specified Windows10CompliancePolicy using POST.
         /// </summary>
         /// <param name="windows10CompliancePolicyToCreate">The Windows10CompliancePolicy to create.</param>
         /// <returns>The created Windows10CompliancePolicy.</returns>
         System.Threading.Tasks.Task<Windows10CompliancePolicy> CreateAsync(Windows10CompliancePolicy windows10CompliancePolicyToCreate);        /// <summary>
-        /// Creates the specified Windows10CompliancePolicy using PUT.
+        /// Creates the specified Windows10CompliancePolicy using POST.
         /// </summary>
         /// <param name="windows10CompliancePolicyToCreate">The Windows10CompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

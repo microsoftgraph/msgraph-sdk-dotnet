@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosStoreAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosStoreApp using PUT.
+        /// Creates the specified IosStoreApp using POST.
         /// </summary>
         /// <param name="iosStoreAppToCreate">The IosStoreApp to create.</param>
         /// <returns>The created IosStoreApp.</returns>
         System.Threading.Tasks.Task<IosStoreApp> CreateAsync(IosStoreApp iosStoreAppToCreate);        /// <summary>
-        /// Creates the specified IosStoreApp using PUT.
+        /// Creates the specified IosStoreApp using POST.
         /// </summary>
         /// <param name="iosStoreAppToCreate">The IosStoreApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

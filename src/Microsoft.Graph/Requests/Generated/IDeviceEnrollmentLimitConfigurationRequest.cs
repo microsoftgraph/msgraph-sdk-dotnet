@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceEnrollmentLimitConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceEnrollmentLimitConfiguration using PUT.
+        /// Creates the specified DeviceEnrollmentLimitConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentLimitConfigurationToCreate">The DeviceEnrollmentLimitConfiguration to create.</param>
         /// <returns>The created DeviceEnrollmentLimitConfiguration.</returns>
         System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> CreateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate);        /// <summary>
-        /// Creates the specified DeviceEnrollmentLimitConfiguration using PUT.
+        /// Creates the specified DeviceEnrollmentLimitConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentLimitConfigurationToCreate">The DeviceEnrollmentLimitConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookChartTitleFormatRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookChartTitleFormat using PUT.
+        /// Creates the specified WorkbookChartTitleFormat using POST.
         /// </summary>
         /// <param name="workbookChartTitleFormatToCreate">The WorkbookChartTitleFormat to create.</param>
         /// <returns>The created WorkbookChartTitleFormat.</returns>
         System.Threading.Tasks.Task<WorkbookChartTitleFormat> CreateAsync(WorkbookChartTitleFormat workbookChartTitleFormatToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartTitleFormat using PUT.
+        /// Creates the specified WorkbookChartTitleFormat using POST.
         /// </summary>
         /// <param name="workbookChartTitleFormatToCreate">The WorkbookChartTitleFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

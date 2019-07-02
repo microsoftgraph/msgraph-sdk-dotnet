@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosVppEBookAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosVppEBookAssignment using PUT.
+        /// Creates the specified IosVppEBookAssignment using POST.
         /// </summary>
         /// <param name="iosVppEBookAssignmentToCreate">The IosVppEBookAssignment to create.</param>
         /// <returns>The created IosVppEBookAssignment.</returns>
         System.Threading.Tasks.Task<IosVppEBookAssignment> CreateAsync(IosVppEBookAssignment iosVppEBookAssignmentToCreate);        /// <summary>
-        /// Creates the specified IosVppEBookAssignment using PUT.
+        /// Creates the specified IosVppEBookAssignment using POST.
         /// </summary>
         /// <param name="iosVppEBookAssignmentToCreate">The IosVppEBookAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

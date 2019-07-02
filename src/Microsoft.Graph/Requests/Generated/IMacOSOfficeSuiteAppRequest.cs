@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMacOSOfficeSuiteAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MacOSOfficeSuiteApp using PUT.
+        /// Creates the specified MacOSOfficeSuiteApp using POST.
         /// </summary>
         /// <param name="macOSOfficeSuiteAppToCreate">The MacOSOfficeSuiteApp to create.</param>
         /// <returns>The created MacOSOfficeSuiteApp.</returns>
         System.Threading.Tasks.Task<MacOSOfficeSuiteApp> CreateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate);        /// <summary>
-        /// Creates the specified MacOSOfficeSuiteApp using PUT.
+        /// Creates the specified MacOSOfficeSuiteApp using POST.
         /// </summary>
         /// <param name="macOSOfficeSuiteAppToCreate">The MacOSOfficeSuiteApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookPivotTableRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookPivotTable using PUT.
+        /// Creates the specified WorkbookPivotTable using POST.
         /// </summary>
         /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
         /// <returns>The created WorkbookPivotTable.</returns>
         System.Threading.Tasks.Task<WorkbookPivotTable> CreateAsync(WorkbookPivotTable workbookPivotTableToCreate);        /// <summary>
-        /// Creates the specified WorkbookPivotTable using PUT.
+        /// Creates the specified WorkbookPivotTable using POST.
         /// </summary>
         /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

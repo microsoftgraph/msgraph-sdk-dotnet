@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsMobileMSIRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsMobileMSI using PUT.
+        /// Creates the specified WindowsMobileMSI using POST.
         /// </summary>
         /// <param name="windowsMobileMSIToCreate">The WindowsMobileMSI to create.</param>
         /// <returns>The created WindowsMobileMSI.</returns>
         System.Threading.Tasks.Task<WindowsMobileMSI> CreateAsync(WindowsMobileMSI windowsMobileMSIToCreate);        /// <summary>
-        /// Creates the specified WindowsMobileMSI using PUT.
+        /// Creates the specified WindowsMobileMSI using POST.
         /// </summary>
         /// <param name="windowsMobileMSIToCreate">The WindowsMobileMSI to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

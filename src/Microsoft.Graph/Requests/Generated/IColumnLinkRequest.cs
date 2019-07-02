@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IColumnLinkRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ColumnLink using PUT.
+        /// Creates the specified ColumnLink using POST.
         /// </summary>
         /// <param name="columnLinkToCreate">The ColumnLink to create.</param>
         /// <returns>The created ColumnLink.</returns>
         System.Threading.Tasks.Task<ColumnLink> CreateAsync(ColumnLink columnLinkToCreate);        /// <summary>
-        /// Creates the specified ColumnLink using PUT.
+        /// Creates the specified ColumnLink using POST.
         /// </summary>
         /// <param name="columnLinkToCreate">The ColumnLink to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

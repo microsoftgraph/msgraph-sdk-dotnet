@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedAppPolicyDeploymentSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedAppPolicyDeploymentSummary using PUT.
+        /// Creates the specified ManagedAppPolicyDeploymentSummary using POST.
         /// </summary>
         /// <param name="managedAppPolicyDeploymentSummaryToCreate">The ManagedAppPolicyDeploymentSummary to create.</param>
         /// <returns>The created ManagedAppPolicyDeploymentSummary.</returns>
         System.Threading.Tasks.Task<ManagedAppPolicyDeploymentSummary> CreateAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate);        /// <summary>
-        /// Creates the specified ManagedAppPolicyDeploymentSummary using PUT.
+        /// Creates the specified ManagedAppPolicyDeploymentSummary using POST.
         /// </summary>
         /// <param name="managedAppPolicyDeploymentSummaryToCreate">The ManagedAppPolicyDeploymentSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

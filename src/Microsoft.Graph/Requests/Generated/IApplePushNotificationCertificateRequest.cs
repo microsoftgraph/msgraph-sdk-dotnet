@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IApplePushNotificationCertificateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ApplePushNotificationCertificate using PUT.
+        /// Creates the specified ApplePushNotificationCertificate using POST.
         /// </summary>
         /// <param name="applePushNotificationCertificateToCreate">The ApplePushNotificationCertificate to create.</param>
         /// <returns>The created ApplePushNotificationCertificate.</returns>
         System.Threading.Tasks.Task<ApplePushNotificationCertificate> CreateAsync(ApplePushNotificationCertificate applePushNotificationCertificateToCreate);        /// <summary>
-        /// Creates the specified ApplePushNotificationCertificate using PUT.
+        /// Creates the specified ApplePushNotificationCertificate using POST.
         /// </summary>
         /// <param name="applePushNotificationCertificateToCreate">The ApplePushNotificationCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

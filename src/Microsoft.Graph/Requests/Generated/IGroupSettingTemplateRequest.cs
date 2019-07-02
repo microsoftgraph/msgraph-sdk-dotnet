@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGroupSettingTemplateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified GroupSettingTemplate using PUT.
+        /// Creates the specified GroupSettingTemplate using POST.
         /// </summary>
         /// <param name="groupSettingTemplateToCreate">The GroupSettingTemplate to create.</param>
         /// <returns>The created GroupSettingTemplate.</returns>
         System.Threading.Tasks.Task<GroupSettingTemplate> CreateAsync(GroupSettingTemplate groupSettingTemplateToCreate);        /// <summary>
-        /// Creates the specified GroupSettingTemplate using PUT.
+        /// Creates the specified GroupSettingTemplate using POST.
         /// </summary>
         /// <param name="groupSettingTemplateToCreate">The GroupSettingTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IContactRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Contact using PUT.
+        /// Creates the specified Contact using POST.
         /// </summary>
         /// <param name="contactToCreate">The Contact to create.</param>
         /// <returns>The created Contact.</returns>
         System.Threading.Tasks.Task<Contact> CreateAsync(Contact contactToCreate);        /// <summary>
-        /// Creates the specified Contact using PUT.
+        /// Creates the specified Contact using POST.
         /// </summary>
         /// <param name="contactToCreate">The Contact to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

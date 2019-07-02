@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMobileAppContentFileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MobileAppContentFile using PUT.
+        /// Creates the specified MobileAppContentFile using POST.
         /// </summary>
         /// <param name="mobileAppContentFileToCreate">The MobileAppContentFile to create.</param>
         /// <returns>The created MobileAppContentFile.</returns>
         System.Threading.Tasks.Task<MobileAppContentFile> CreateAsync(MobileAppContentFile mobileAppContentFileToCreate);        /// <summary>
-        /// Creates the specified MobileAppContentFile using PUT.
+        /// Creates the specified MobileAppContentFile using POST.
         /// </summary>
         /// <param name="mobileAppContentFileToCreate">The MobileAppContentFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

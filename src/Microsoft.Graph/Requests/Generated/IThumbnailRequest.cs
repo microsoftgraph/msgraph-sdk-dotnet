@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IThumbnailRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Thumbnail using PUT.
+        /// Creates the specified Thumbnail using POST.
         /// </summary>
         /// <param name="thumbnailToCreate">The Thumbnail to create.</param>
         /// <returns>The created Thumbnail.</returns>
         System.Threading.Tasks.Task<Thumbnail> CreateAsync(Thumbnail thumbnailToCreate);        /// <summary>
-        /// Creates the specified Thumbnail using PUT.
+        /// Creates the specified Thumbnail using POST.
         /// </summary>
         /// <param name="thumbnailToCreate">The Thumbnail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

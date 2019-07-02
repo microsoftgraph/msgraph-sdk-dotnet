@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IResourceOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ResourceOperation using PUT.
+        /// Creates the specified ResourceOperation using POST.
         /// </summary>
         /// <param name="resourceOperationToCreate">The ResourceOperation to create.</param>
         /// <returns>The created ResourceOperation.</returns>
         System.Threading.Tasks.Task<ResourceOperation> CreateAsync(ResourceOperation resourceOperationToCreate);        /// <summary>
-        /// Creates the specified ResourceOperation using PUT.
+        /// Creates the specified ResourceOperation using POST.
         /// </summary>
         /// <param name="resourceOperationToCreate">The ResourceOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

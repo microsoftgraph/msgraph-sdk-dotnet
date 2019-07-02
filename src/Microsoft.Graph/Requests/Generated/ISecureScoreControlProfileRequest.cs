@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISecureScoreControlProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SecureScoreControlProfile using PUT.
+        /// Creates the specified SecureScoreControlProfile using POST.
         /// </summary>
         /// <param name="secureScoreControlProfileToCreate">The SecureScoreControlProfile to create.</param>
         /// <returns>The created SecureScoreControlProfile.</returns>
         System.Threading.Tasks.Task<SecureScoreControlProfile> CreateAsync(SecureScoreControlProfile secureScoreControlProfileToCreate);        /// <summary>
-        /// Creates the specified SecureScoreControlProfile using PUT.
+        /// Creates the specified SecureScoreControlProfile using POST.
         /// </summary>
         /// <param name="secureScoreControlProfileToCreate">The SecureScoreControlProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

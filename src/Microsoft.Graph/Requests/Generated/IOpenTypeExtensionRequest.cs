@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOpenTypeExtensionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OpenTypeExtension using PUT.
+        /// Creates the specified OpenTypeExtension using POST.
         /// </summary>
         /// <param name="openTypeExtensionToCreate">The OpenTypeExtension to create.</param>
         /// <returns>The created OpenTypeExtension.</returns>
         System.Threading.Tasks.Task<OpenTypeExtension> CreateAsync(OpenTypeExtension openTypeExtensionToCreate);        /// <summary>
-        /// Creates the specified OpenTypeExtension using PUT.
+        /// Creates the specified OpenTypeExtension using POST.
         /// </summary>
         /// <param name="openTypeExtensionToCreate">The OpenTypeExtension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

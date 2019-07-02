@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDomainDnsUnavailableRecordRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DomainDnsUnavailableRecord using PUT.
+        /// Creates the specified DomainDnsUnavailableRecord using POST.
         /// </summary>
         /// <param name="domainDnsUnavailableRecordToCreate">The DomainDnsUnavailableRecord to create.</param>
         /// <returns>The created DomainDnsUnavailableRecord.</returns>
         System.Threading.Tasks.Task<DomainDnsUnavailableRecord> CreateAsync(DomainDnsUnavailableRecord domainDnsUnavailableRecordToCreate);        /// <summary>
-        /// Creates the specified DomainDnsUnavailableRecord using PUT.
+        /// Creates the specified DomainDnsUnavailableRecord using POST.
         /// </summary>
         /// <param name="domainDnsUnavailableRecordToCreate">The DomainDnsUnavailableRecord to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

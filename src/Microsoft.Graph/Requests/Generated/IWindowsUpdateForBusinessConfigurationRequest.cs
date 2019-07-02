@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsUpdateForBusinessConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsUpdateForBusinessConfiguration using PUT.
+        /// Creates the specified WindowsUpdateForBusinessConfiguration using POST.
         /// </summary>
         /// <param name="windowsUpdateForBusinessConfigurationToCreate">The WindowsUpdateForBusinessConfiguration to create.</param>
         /// <returns>The created WindowsUpdateForBusinessConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> CreateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsUpdateForBusinessConfiguration using PUT.
+        /// Creates the specified WindowsUpdateForBusinessConfiguration using POST.
         /// </summary>
         /// <param name="windowsUpdateForBusinessConfigurationToCreate">The WindowsUpdateForBusinessConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

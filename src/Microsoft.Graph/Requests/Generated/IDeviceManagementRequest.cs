@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceManagementRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceManagement using PUT.
+        /// Creates the specified DeviceManagement using POST.
         /// </summary>
         /// <param name="deviceManagementToCreate">The DeviceManagement to create.</param>
         /// <returns>The created DeviceManagement.</returns>
         System.Threading.Tasks.Task<DeviceManagement> CreateAsync(DeviceManagement deviceManagementToCreate);        /// <summary>
-        /// Creates the specified DeviceManagement using PUT.
+        /// Creates the specified DeviceManagement using POST.
         /// </summary>
         /// <param name="deviceManagementToCreate">The DeviceManagement to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceCategoryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceCategory using PUT.
+        /// Creates the specified DeviceCategory using POST.
         /// </summary>
         /// <param name="deviceCategoryToCreate">The DeviceCategory to create.</param>
         /// <returns>The created DeviceCategory.</returns>
         System.Threading.Tasks.Task<DeviceCategory> CreateAsync(DeviceCategory deviceCategoryToCreate);        /// <summary>
-        /// Creates the specified DeviceCategory using PUT.
+        /// Creates the specified DeviceCategory using POST.
         /// </summary>
         /// <param name="deviceCategoryToCreate">The DeviceCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosCertificateProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosCertificateProfile using PUT.
+        /// Creates the specified IosCertificateProfile using POST.
         /// </summary>
         /// <param name="iosCertificateProfileToCreate">The IosCertificateProfile to create.</param>
         /// <returns>The created IosCertificateProfile.</returns>
         System.Threading.Tasks.Task<IosCertificateProfile> CreateAsync(IosCertificateProfile iosCertificateProfileToCreate);        /// <summary>
-        /// Creates the specified IosCertificateProfile using PUT.
+        /// Creates the specified IosCertificateProfile using POST.
         /// </summary>
         /// <param name="iosCertificateProfileToCreate">The IosCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

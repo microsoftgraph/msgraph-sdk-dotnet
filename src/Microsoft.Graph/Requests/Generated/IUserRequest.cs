@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUserRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified User using PUT.
+        /// Creates the specified User using POST.
         /// </summary>
         /// <param name="userToCreate">The User to create.</param>
         /// <returns>The created User.</returns>
         System.Threading.Tasks.Task<User> CreateAsync(User userToCreate);        /// <summary>
-        /// Creates the specified User using PUT.
+        /// Creates the specified User using POST.
         /// </summary>
         /// <param name="userToCreate">The User to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

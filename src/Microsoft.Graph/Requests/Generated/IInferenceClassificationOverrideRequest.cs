@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IInferenceClassificationOverrideRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified InferenceClassificationOverride using PUT.
+        /// Creates the specified InferenceClassificationOverride using POST.
         /// </summary>
         /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
         /// <returns>The created InferenceClassificationOverride.</returns>
         System.Threading.Tasks.Task<InferenceClassificationOverride> CreateAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate);        /// <summary>
-        /// Creates the specified InferenceClassificationOverride using PUT.
+        /// Creates the specified InferenceClassificationOverride using POST.
         /// </summary>
         /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

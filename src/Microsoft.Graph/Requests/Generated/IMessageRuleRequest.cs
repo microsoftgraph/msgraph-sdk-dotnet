@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMessageRuleRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MessageRule using PUT.
+        /// Creates the specified MessageRule using POST.
         /// </summary>
         /// <param name="messageRuleToCreate">The MessageRule to create.</param>
         /// <returns>The created MessageRule.</returns>
         System.Threading.Tasks.Task<MessageRule> CreateAsync(MessageRule messageRuleToCreate);        /// <summary>
-        /// Creates the specified MessageRule using PUT.
+        /// Creates the specified MessageRule using POST.
         /// </summary>
         /// <param name="messageRuleToCreate">The MessageRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

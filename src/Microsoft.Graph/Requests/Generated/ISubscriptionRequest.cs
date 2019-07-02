@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISubscriptionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Subscription using PUT.
+        /// Creates the specified Subscription using POST.
         /// </summary>
         /// <param name="subscriptionToCreate">The Subscription to create.</param>
         /// <returns>The created Subscription.</returns>
         System.Threading.Tasks.Task<Subscription> CreateAsync(Subscription subscriptionToCreate);        /// <summary>
-        /// Creates the specified Subscription using PUT.
+        /// Creates the specified Subscription using POST.
         /// </summary>
         /// <param name="subscriptionToCreate">The Subscription to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

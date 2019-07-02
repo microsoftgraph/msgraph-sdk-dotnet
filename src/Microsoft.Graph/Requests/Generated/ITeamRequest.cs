@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITeamRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Team using PUT.
+        /// Creates the specified Team using POST.
         /// </summary>
         /// <param name="teamToCreate">The Team to create.</param>
         /// <returns>The created Team.</returns>
         System.Threading.Tasks.Task<Team> CreateAsync(Team teamToCreate);        /// <summary>
-        /// Creates the specified Team using PUT.
+        /// Creates the specified Team using POST.
         /// </summary>
         /// <param name="teamToCreate">The Team to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

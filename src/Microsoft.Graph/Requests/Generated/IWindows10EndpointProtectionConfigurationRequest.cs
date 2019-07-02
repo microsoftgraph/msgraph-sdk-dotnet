@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows10EndpointProtectionConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows10EndpointProtectionConfiguration using PUT.
+        /// Creates the specified Windows10EndpointProtectionConfiguration using POST.
         /// </summary>
         /// <param name="windows10EndpointProtectionConfigurationToCreate">The Windows10EndpointProtectionConfiguration to create.</param>
         /// <returns>The created Windows10EndpointProtectionConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10EndpointProtectionConfiguration> CreateAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate);        /// <summary>
-        /// Creates the specified Windows10EndpointProtectionConfiguration using PUT.
+        /// Creates the specified Windows10EndpointProtectionConfiguration using POST.
         /// </summary>
         /// <param name="windows10EndpointProtectionConfigurationToCreate">The Windows10EndpointProtectionConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

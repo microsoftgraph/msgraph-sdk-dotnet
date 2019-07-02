@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ItemActivityStat> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified ItemActivityStat using PUT.
+        /// Creates the specified ItemActivityStat using POST.
         /// </summary>
         /// <param name="itemActivityStatToCreate">The ItemActivityStat to create.</param>
         /// <returns>The created ItemActivityStat.</returns>
         System.Threading.Tasks.Task<ItemActivityStat> CreateAsync(ItemActivityStat itemActivityStatToCreate);        /// <summary>
-        /// Creates the specified ItemActivityStat using PUT.
+        /// Creates the specified ItemActivityStat using POST.
         /// </summary>
         /// <param name="itemActivityStatToCreate">The ItemActivityStat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

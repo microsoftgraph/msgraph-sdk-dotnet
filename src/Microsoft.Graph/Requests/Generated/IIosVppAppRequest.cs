@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosVppAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosVppApp using PUT.
+        /// Creates the specified IosVppApp using POST.
         /// </summary>
         /// <param name="iosVppAppToCreate">The IosVppApp to create.</param>
         /// <returns>The created IosVppApp.</returns>
         System.Threading.Tasks.Task<IosVppApp> CreateAsync(IosVppApp iosVppAppToCreate);        /// <summary>
-        /// Creates the specified IosVppApp using PUT.
+        /// Creates the specified IosVppApp using POST.
         /// </summary>
         /// <param name="iosVppAppToCreate">The IosVppApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

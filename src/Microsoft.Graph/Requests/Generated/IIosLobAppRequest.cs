@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosLobAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosLobApp using PUT.
+        /// Creates the specified IosLobApp using POST.
         /// </summary>
         /// <param name="iosLobAppToCreate">The IosLobApp to create.</param>
         /// <returns>The created IosLobApp.</returns>
         System.Threading.Tasks.Task<IosLobApp> CreateAsync(IosLobApp iosLobAppToCreate);        /// <summary>
-        /// Creates the specified IosLobApp using PUT.
+        /// Creates the specified IosLobApp using POST.
         /// </summary>
         /// <param name="iosLobAppToCreate">The IosLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

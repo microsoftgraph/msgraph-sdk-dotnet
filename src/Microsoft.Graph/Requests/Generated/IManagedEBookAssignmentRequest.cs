@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedEBookAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedEBookAssignment using PUT.
+        /// Creates the specified ManagedEBookAssignment using POST.
         /// </summary>
         /// <param name="managedEBookAssignmentToCreate">The ManagedEBookAssignment to create.</param>
         /// <returns>The created ManagedEBookAssignment.</returns>
         System.Threading.Tasks.Task<ManagedEBookAssignment> CreateAsync(ManagedEBookAssignment managedEBookAssignmentToCreate);        /// <summary>
-        /// Creates the specified ManagedEBookAssignment using PUT.
+        /// Creates the specified ManagedEBookAssignment using POST.
         /// </summary>
         /// <param name="managedEBookAssignmentToCreate">The ManagedEBookAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

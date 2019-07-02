@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ILicenseDetailsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified LicenseDetails using PUT.
+        /// Creates the specified LicenseDetails using POST.
         /// </summary>
         /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
         /// <returns>The created LicenseDetails.</returns>
         System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate);        /// <summary>
-        /// Creates the specified LicenseDetails using PUT.
+        /// Creates the specified LicenseDetails using POST.
         /// </summary>
         /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookChartGridlinesRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookChartGridlines using PUT.
+        /// Creates the specified WorkbookChartGridlines using POST.
         /// </summary>
         /// <param name="workbookChartGridlinesToCreate">The WorkbookChartGridlines to create.</param>
         /// <returns>The created WorkbookChartGridlines.</returns>
         System.Threading.Tasks.Task<WorkbookChartGridlines> CreateAsync(WorkbookChartGridlines workbookChartGridlinesToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartGridlines using PUT.
+        /// Creates the specified WorkbookChartGridlines using POST.
         /// </summary>
         /// <param name="workbookChartGridlinesToCreate">The WorkbookChartGridlines to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

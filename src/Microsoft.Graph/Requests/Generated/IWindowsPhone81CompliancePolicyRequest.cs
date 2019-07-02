@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsPhone81CompliancePolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsPhone81CompliancePolicy using PUT.
+        /// Creates the specified WindowsPhone81CompliancePolicy using POST.
         /// </summary>
         /// <param name="windowsPhone81CompliancePolicyToCreate">The WindowsPhone81CompliancePolicy to create.</param>
         /// <returns>The created WindowsPhone81CompliancePolicy.</returns>
         System.Threading.Tasks.Task<WindowsPhone81CompliancePolicy> CreateAsync(WindowsPhone81CompliancePolicy windowsPhone81CompliancePolicyToCreate);        /// <summary>
-        /// Creates the specified WindowsPhone81CompliancePolicy using PUT.
+        /// Creates the specified WindowsPhone81CompliancePolicy using POST.
         /// </summary>
         /// <param name="windowsPhone81CompliancePolicyToCreate">The WindowsPhone81CompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

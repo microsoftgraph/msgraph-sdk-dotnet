@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMultiValueLegacyExtendedPropertyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MultiValueLegacyExtendedProperty using PUT.
+        /// Creates the specified MultiValueLegacyExtendedProperty using POST.
         /// </summary>
         /// <param name="multiValueLegacyExtendedPropertyToCreate">The MultiValueLegacyExtendedProperty to create.</param>
         /// <returns>The created MultiValueLegacyExtendedProperty.</returns>
         System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> CreateAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToCreate);        /// <summary>
-        /// Creates the specified MultiValueLegacyExtendedProperty using PUT.
+        /// Creates the specified MultiValueLegacyExtendedProperty using POST.
         /// </summary>
         /// <param name="multiValueLegacyExtendedPropertyToCreate">The MultiValueLegacyExtendedProperty to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

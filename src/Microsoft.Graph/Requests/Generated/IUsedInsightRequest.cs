@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUsedInsightRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UsedInsight using PUT.
+        /// Creates the specified UsedInsight using POST.
         /// </summary>
         /// <param name="usedInsightToCreate">The UsedInsight to create.</param>
         /// <returns>The created UsedInsight.</returns>
         System.Threading.Tasks.Task<UsedInsight> CreateAsync(UsedInsight usedInsightToCreate);        /// <summary>
-        /// Creates the specified UsedInsight using PUT.
+        /// Creates the specified UsedInsight using POST.
         /// </summary>
         /// <param name="usedInsightToCreate">The UsedInsight to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMailSearchFolderRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MailSearchFolder using PUT.
+        /// Creates the specified MailSearchFolder using POST.
         /// </summary>
         /// <param name="mailSearchFolderToCreate">The MailSearchFolder to create.</param>
         /// <returns>The created MailSearchFolder.</returns>
         System.Threading.Tasks.Task<MailSearchFolder> CreateAsync(MailSearchFolder mailSearchFolderToCreate);        /// <summary>
-        /// Creates the specified MailSearchFolder using PUT.
+        /// Creates the specified MailSearchFolder using POST.
         /// </summary>
         /// <param name="mailSearchFolderToCreate">The MailSearchFolder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

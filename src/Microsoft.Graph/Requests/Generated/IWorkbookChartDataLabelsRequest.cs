@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookChartDataLabelsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookChartDataLabels using PUT.
+        /// Creates the specified WorkbookChartDataLabels using POST.
         /// </summary>
         /// <param name="workbookChartDataLabelsToCreate">The WorkbookChartDataLabels to create.</param>
         /// <returns>The created WorkbookChartDataLabels.</returns>
         System.Threading.Tasks.Task<WorkbookChartDataLabels> CreateAsync(WorkbookChartDataLabels workbookChartDataLabelsToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartDataLabels using PUT.
+        /// Creates the specified WorkbookChartDataLabels using POST.
         /// </summary>
         /// <param name="workbookChartDataLabelsToCreate">The WorkbookChartDataLabels to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

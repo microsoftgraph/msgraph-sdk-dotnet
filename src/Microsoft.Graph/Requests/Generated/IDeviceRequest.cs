@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Device using PUT.
+        /// Creates the specified Device using POST.
         /// </summary>
         /// <param name="deviceToCreate">The Device to create.</param>
         /// <returns>The created Device.</returns>
         System.Threading.Tasks.Task<Device> CreateAsync(Device deviceToCreate);        /// <summary>
-        /// Creates the specified Device using PUT.
+        /// Creates the specified Device using POST.
         /// </summary>
         /// <param name="deviceToCreate">The Device to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

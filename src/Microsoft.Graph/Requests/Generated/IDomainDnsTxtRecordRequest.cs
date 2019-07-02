@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDomainDnsTxtRecordRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DomainDnsTxtRecord using PUT.
+        /// Creates the specified DomainDnsTxtRecord using POST.
         /// </summary>
         /// <param name="domainDnsTxtRecordToCreate">The DomainDnsTxtRecord to create.</param>
         /// <returns>The created DomainDnsTxtRecord.</returns>
         System.Threading.Tasks.Task<DomainDnsTxtRecord> CreateAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate);        /// <summary>
-        /// Creates the specified DomainDnsTxtRecord using PUT.
+        /// Creates the specified DomainDnsTxtRecord using POST.
         /// </summary>
         /// <param name="domainDnsTxtRecordToCreate">The DomainDnsTxtRecord to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

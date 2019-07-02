@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEnrollmentConfigurationAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EnrollmentConfigurationAssignment using PUT.
+        /// Creates the specified EnrollmentConfigurationAssignment using POST.
         /// </summary>
         /// <param name="enrollmentConfigurationAssignmentToCreate">The EnrollmentConfigurationAssignment to create.</param>
         /// <returns>The created EnrollmentConfigurationAssignment.</returns>
         System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> CreateAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToCreate);        /// <summary>
-        /// Creates the specified EnrollmentConfigurationAssignment using PUT.
+        /// Creates the specified EnrollmentConfigurationAssignment using POST.
         /// </summary>
         /// <param name="enrollmentConfigurationAssignmentToCreate">The EnrollmentConfigurationAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

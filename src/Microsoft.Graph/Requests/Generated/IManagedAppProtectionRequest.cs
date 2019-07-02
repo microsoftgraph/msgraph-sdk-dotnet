@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedAppProtectionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedAppProtection using PUT.
+        /// Creates the specified ManagedAppProtection using POST.
         /// </summary>
         /// <param name="managedAppProtectionToCreate">The ManagedAppProtection to create.</param>
         /// <returns>The created ManagedAppProtection.</returns>
         System.Threading.Tasks.Task<ManagedAppProtection> CreateAsync(ManagedAppProtection managedAppProtectionToCreate);        /// <summary>
-        /// Creates the specified ManagedAppProtection using PUT.
+        /// Creates the specified ManagedAppProtection using POST.
         /// </summary>
         /// <param name="managedAppProtectionToCreate">The ManagedAppProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

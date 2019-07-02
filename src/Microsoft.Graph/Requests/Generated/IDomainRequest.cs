@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDomainRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Domain using PUT.
+        /// Creates the specified Domain using POST.
         /// </summary>
         /// <param name="domainToCreate">The Domain to create.</param>
         /// <returns>The created Domain.</returns>
         System.Threading.Tasks.Task<Domain> CreateAsync(Domain domainToCreate);        /// <summary>
-        /// Creates the specified Domain using PUT.
+        /// Creates the specified Domain using POST.
         /// </summary>
         /// <param name="domainToCreate">The Domain to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

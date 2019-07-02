@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISecurityRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Security using PUT.
+        /// Creates the specified Security using POST.
         /// </summary>
         /// <param name="securityToCreate">The Security to create.</param>
         /// <returns>The created Security.</returns>
         System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate);        /// <summary>
-        /// Creates the specified Security using PUT.
+        /// Creates the specified Security using POST.
         /// </summary>
         /// <param name="securityToCreate">The Security to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DirectoryObject> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified DirectoryObject using PUT.
+        /// Creates the specified DirectoryObject using POST.
         /// </summary>
         /// <param name="directoryObjectToCreate">The DirectoryObject to create.</param>
         /// <returns>The created DirectoryObject.</returns>
         System.Threading.Tasks.Task<DirectoryObject> CreateAsync(DirectoryObject directoryObjectToCreate);        /// <summary>
-        /// Creates the specified DirectoryObject using PUT.
+        /// Creates the specified DirectoryObject using POST.
         /// </summary>
         /// <param name="directoryObjectToCreate">The DirectoryObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

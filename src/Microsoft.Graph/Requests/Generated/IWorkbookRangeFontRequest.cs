@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookRangeFontRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookRangeFont using PUT.
+        /// Creates the specified WorkbookRangeFont using POST.
         /// </summary>
         /// <param name="workbookRangeFontToCreate">The WorkbookRangeFont to create.</param>
         /// <returns>The created WorkbookRangeFont.</returns>
         System.Threading.Tasks.Task<WorkbookRangeFont> CreateAsync(WorkbookRangeFont workbookRangeFontToCreate);        /// <summary>
-        /// Creates the specified WorkbookRangeFont using PUT.
+        /// Creates the specified WorkbookRangeFont using POST.
         /// </summary>
         /// <param name="workbookRangeFontToCreate">The WorkbookRangeFont to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

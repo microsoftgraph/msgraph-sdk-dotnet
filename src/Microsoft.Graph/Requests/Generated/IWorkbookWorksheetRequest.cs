@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookWorksheetRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookWorksheet using PUT.
+        /// Creates the specified WorkbookWorksheet using POST.
         /// </summary>
         /// <param name="workbookWorksheetToCreate">The WorkbookWorksheet to create.</param>
         /// <returns>The created WorkbookWorksheet.</returns>
         System.Threading.Tasks.Task<WorkbookWorksheet> CreateAsync(WorkbookWorksheet workbookWorksheetToCreate);        /// <summary>
-        /// Creates the specified WorkbookWorksheet using PUT.
+        /// Creates the specified WorkbookWorksheet using POST.
         /// </summary>
         /// <param name="workbookWorksheetToCreate">The WorkbookWorksheet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

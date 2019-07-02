@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookRangeSortRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookRangeSort using PUT.
+        /// Creates the specified WorkbookRangeSort using POST.
         /// </summary>
         /// <param name="workbookRangeSortToCreate">The WorkbookRangeSort to create.</param>
         /// <returns>The created WorkbookRangeSort.</returns>
         System.Threading.Tasks.Task<WorkbookRangeSort> CreateAsync(WorkbookRangeSort workbookRangeSortToCreate);        /// <summary>
-        /// Creates the specified WorkbookRangeSort using PUT.
+        /// Creates the specified WorkbookRangeSort using POST.
         /// </summary>
         /// <param name="workbookRangeSortToCreate">The WorkbookRangeSort to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

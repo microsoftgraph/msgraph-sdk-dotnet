@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITrendingRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Trending using PUT.
+        /// Creates the specified Trending using POST.
         /// </summary>
         /// <param name="trendingToCreate">The Trending to create.</param>
         /// <returns>The created Trending.</returns>
         System.Threading.Tasks.Task<Trending> CreateAsync(Trending trendingToCreate);        /// <summary>
-        /// Creates the specified Trending using PUT.
+        /// Creates the specified Trending using POST.
         /// </summary>
         /// <param name="trendingToCreate">The Trending to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidWorkProfileCustomConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidWorkProfileCustomConfiguration using PUT.
+        /// Creates the specified AndroidWorkProfileCustomConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileCustomConfigurationToCreate">The AndroidWorkProfileCustomConfiguration to create.</param>
         /// <returns>The created AndroidWorkProfileCustomConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> CreateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidWorkProfileCustomConfiguration using PUT.
+        /// Creates the specified AndroidWorkProfileCustomConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileCustomConfigurationToCreate">The AndroidWorkProfileCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

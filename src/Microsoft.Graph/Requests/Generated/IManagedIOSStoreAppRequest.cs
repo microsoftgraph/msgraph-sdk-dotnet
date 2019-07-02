@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedIOSStoreAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedIOSStoreApp using PUT.
+        /// Creates the specified ManagedIOSStoreApp using POST.
         /// </summary>
         /// <param name="managedIOSStoreAppToCreate">The ManagedIOSStoreApp to create.</param>
         /// <returns>The created ManagedIOSStoreApp.</returns>
         System.Threading.Tasks.Task<ManagedIOSStoreApp> CreateAsync(ManagedIOSStoreApp managedIOSStoreAppToCreate);        /// <summary>
-        /// Creates the specified ManagedIOSStoreApp using PUT.
+        /// Creates the specified ManagedIOSStoreApp using POST.
         /// </summary>
         /// <param name="managedIOSStoreAppToCreate">The ManagedIOSStoreApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

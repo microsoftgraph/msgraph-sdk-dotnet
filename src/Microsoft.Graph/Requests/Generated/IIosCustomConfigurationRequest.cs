@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosCustomConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosCustomConfiguration using PUT.
+        /// Creates the specified IosCustomConfiguration using POST.
         /// </summary>
         /// <param name="iosCustomConfigurationToCreate">The IosCustomConfiguration to create.</param>
         /// <returns>The created IosCustomConfiguration.</returns>
         System.Threading.Tasks.Task<IosCustomConfiguration> CreateAsync(IosCustomConfiguration iosCustomConfigurationToCreate);        /// <summary>
-        /// Creates the specified IosCustomConfiguration using PUT.
+        /// Creates the specified IosCustomConfiguration using POST.
         /// </summary>
         /// <param name="iosCustomConfigurationToCreate">The IosCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

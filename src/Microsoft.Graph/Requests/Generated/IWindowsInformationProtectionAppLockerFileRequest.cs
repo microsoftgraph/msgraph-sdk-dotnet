@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsInformationProtectionAppLockerFileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsInformationProtectionAppLockerFile using PUT.
+        /// Creates the specified WindowsInformationProtectionAppLockerFile using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionAppLockerFileToCreate">The WindowsInformationProtectionAppLockerFile to create.</param>
         /// <returns>The created WindowsInformationProtectionAppLockerFile.</returns>
         System.Threading.Tasks.Task<WindowsInformationProtectionAppLockerFile> CreateAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToCreate);        /// <summary>
-        /// Creates the specified WindowsInformationProtectionAppLockerFile using PUT.
+        /// Creates the specified WindowsInformationProtectionAppLockerFile using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionAppLockerFileToCreate">The WindowsInformationProtectionAppLockerFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

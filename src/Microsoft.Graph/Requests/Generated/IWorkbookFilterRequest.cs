@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookFilterRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookFilter using PUT.
+        /// Creates the specified WorkbookFilter using POST.
         /// </summary>
         /// <param name="workbookFilterToCreate">The WorkbookFilter to create.</param>
         /// <returns>The created WorkbookFilter.</returns>
         System.Threading.Tasks.Task<WorkbookFilter> CreateAsync(WorkbookFilter workbookFilterToCreate);        /// <summary>
-        /// Creates the specified WorkbookFilter using PUT.
+        /// Creates the specified WorkbookFilter using POST.
         /// </summary>
         /// <param name="workbookFilterToCreate">The WorkbookFilter to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

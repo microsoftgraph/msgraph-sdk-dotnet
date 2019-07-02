@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEducationUserRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EducationUser using PUT.
+        /// Creates the specified EducationUser using POST.
         /// </summary>
         /// <param name="educationUserToCreate">The EducationUser to create.</param>
         /// <returns>The created EducationUser.</returns>
         System.Threading.Tasks.Task<EducationUser> CreateAsync(EducationUser educationUserToCreate);        /// <summary>
-        /// Creates the specified EducationUser using PUT.
+        /// Creates the specified EducationUser using POST.
         /// </summary>
         /// <param name="educationUserToCreate">The EducationUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEnrollmentTroubleshootingEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EnrollmentTroubleshootingEvent using PUT.
+        /// Creates the specified EnrollmentTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="enrollmentTroubleshootingEventToCreate">The EnrollmentTroubleshootingEvent to create.</param>
         /// <returns>The created EnrollmentTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> CreateAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToCreate);        /// <summary>
-        /// Creates the specified EnrollmentTroubleshootingEvent using PUT.
+        /// Creates the specified EnrollmentTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="enrollmentTroubleshootingEventToCreate">The EnrollmentTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

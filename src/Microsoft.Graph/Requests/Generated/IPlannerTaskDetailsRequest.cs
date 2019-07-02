@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPlannerTaskDetailsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PlannerTaskDetails using PUT.
+        /// Creates the specified PlannerTaskDetails using POST.
         /// </summary>
         /// <param name="plannerTaskDetailsToCreate">The PlannerTaskDetails to create.</param>
         /// <returns>The created PlannerTaskDetails.</returns>
         System.Threading.Tasks.Task<PlannerTaskDetails> CreateAsync(PlannerTaskDetails plannerTaskDetailsToCreate);        /// <summary>
-        /// Creates the specified PlannerTaskDetails using PUT.
+        /// Creates the specified PlannerTaskDetails using POST.
         /// </summary>
         /// <param name="plannerTaskDetailsToCreate">The PlannerTaskDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

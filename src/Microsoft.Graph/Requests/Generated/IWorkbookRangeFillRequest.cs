@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookRangeFillRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookRangeFill using PUT.
+        /// Creates the specified WorkbookRangeFill using POST.
         /// </summary>
         /// <param name="workbookRangeFillToCreate">The WorkbookRangeFill to create.</param>
         /// <returns>The created WorkbookRangeFill.</returns>
         System.Threading.Tasks.Task<WorkbookRangeFill> CreateAsync(WorkbookRangeFill workbookRangeFillToCreate);        /// <summary>
-        /// Creates the specified WorkbookRangeFill using PUT.
+        /// Creates the specified WorkbookRangeFill using POST.
         /// </summary>
         /// <param name="workbookRangeFillToCreate">The WorkbookRangeFill to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

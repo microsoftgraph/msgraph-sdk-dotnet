@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidLobAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidLobApp using PUT.
+        /// Creates the specified AndroidLobApp using POST.
         /// </summary>
         /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
         /// <returns>The created AndroidLobApp.</returns>
         System.Threading.Tasks.Task<AndroidLobApp> CreateAsync(AndroidLobApp androidLobAppToCreate);        /// <summary>
-        /// Creates the specified AndroidLobApp using PUT.
+        /// Creates the specified AndroidLobApp using POST.
         /// </summary>
         /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

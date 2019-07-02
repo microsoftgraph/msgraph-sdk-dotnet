@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOfficeGraphInsightsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OfficeGraphInsights using PUT.
+        /// Creates the specified OfficeGraphInsights using POST.
         /// </summary>
         /// <param name="officeGraphInsightsToCreate">The OfficeGraphInsights to create.</param>
         /// <returns>The created OfficeGraphInsights.</returns>
         System.Threading.Tasks.Task<OfficeGraphInsights> CreateAsync(OfficeGraphInsights officeGraphInsightsToCreate);        /// <summary>
-        /// Creates the specified OfficeGraphInsights using PUT.
+        /// Creates the specified OfficeGraphInsights using POST.
         /// </summary>
         /// <param name="officeGraphInsightsToCreate">The OfficeGraphInsights to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

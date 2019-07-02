@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookWorksheetProtectionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookWorksheetProtection using PUT.
+        /// Creates the specified WorkbookWorksheetProtection using POST.
         /// </summary>
         /// <param name="workbookWorksheetProtectionToCreate">The WorkbookWorksheetProtection to create.</param>
         /// <returns>The created WorkbookWorksheetProtection.</returns>
         System.Threading.Tasks.Task<WorkbookWorksheetProtection> CreateAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate);        /// <summary>
-        /// Creates the specified WorkbookWorksheetProtection using PUT.
+        /// Creates the specified WorkbookWorksheetProtection using POST.
         /// </summary>
         /// <param name="workbookWorksheetProtectionToCreate">The WorkbookWorksheetProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

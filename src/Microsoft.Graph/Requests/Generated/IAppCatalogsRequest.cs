@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAppCatalogsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AppCatalogs using PUT.
+        /// Creates the specified AppCatalogs using POST.
         /// </summary>
         /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
         /// <returns>The created AppCatalogs.</returns>
         System.Threading.Tasks.Task<AppCatalogs> CreateAsync(AppCatalogs appCatalogsToCreate);        /// <summary>
-        /// Creates the specified AppCatalogs using PUT.
+        /// Creates the specified AppCatalogs using POST.
         /// </summary>
         /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

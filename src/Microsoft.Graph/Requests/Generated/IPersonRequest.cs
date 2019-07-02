@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPersonRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Person using PUT.
+        /// Creates the specified Person using POST.
         /// </summary>
         /// <param name="personToCreate">The Person to create.</param>
         /// <returns>The created Person.</returns>
         System.Threading.Tasks.Task<Person> CreateAsync(Person personToCreate);        /// <summary>
-        /// Creates the specified Person using PUT.
+        /// Creates the specified Person using POST.
         /// </summary>
         /// <param name="personToCreate">The Person to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

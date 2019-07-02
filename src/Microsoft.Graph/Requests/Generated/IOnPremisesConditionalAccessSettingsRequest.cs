@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOnPremisesConditionalAccessSettingsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OnPremisesConditionalAccessSettings using PUT.
+        /// Creates the specified OnPremisesConditionalAccessSettings using POST.
         /// </summary>
         /// <param name="onPremisesConditionalAccessSettingsToCreate">The OnPremisesConditionalAccessSettings to create.</param>
         /// <returns>The created OnPremisesConditionalAccessSettings.</returns>
         System.Threading.Tasks.Task<OnPremisesConditionalAccessSettings> CreateAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToCreate);        /// <summary>
-        /// Creates the specified OnPremisesConditionalAccessSettings using PUT.
+        /// Creates the specified OnPremisesConditionalAccessSettings using POST.
         /// </summary>
         /// <param name="onPremisesConditionalAccessSettingsToCreate">The OnPremisesConditionalAccessSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

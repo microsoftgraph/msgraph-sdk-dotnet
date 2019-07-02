@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedDeviceRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedDevice using PUT.
+        /// Creates the specified ManagedDevice using POST.
         /// </summary>
         /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
         /// <returns>The created ManagedDevice.</returns>
         System.Threading.Tasks.Task<ManagedDevice> CreateAsync(ManagedDevice managedDeviceToCreate);        /// <summary>
-        /// Creates the specified ManagedDevice using PUT.
+        /// Creates the specified ManagedDevice using POST.
         /// </summary>
         /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

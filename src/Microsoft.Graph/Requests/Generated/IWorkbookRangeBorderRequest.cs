@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookRangeBorderRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookRangeBorder using PUT.
+        /// Creates the specified WorkbookRangeBorder using POST.
         /// </summary>
         /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
         /// <returns>The created WorkbookRangeBorder.</returns>
         System.Threading.Tasks.Task<WorkbookRangeBorder> CreateAsync(WorkbookRangeBorder workbookRangeBorderToCreate);        /// <summary>
-        /// Creates the specified WorkbookRangeBorder using PUT.
+        /// Creates the specified WorkbookRangeBorder using POST.
         /// </summary>
         /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IChannelRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Channel using PUT.
+        /// Creates the specified Channel using POST.
         /// </summary>
         /// <param name="channelToCreate">The Channel to create.</param>
         /// <returns>The created Channel.</returns>
         System.Threading.Tasks.Task<Channel> CreateAsync(Channel channelToCreate);        /// <summary>
-        /// Creates the specified Channel using PUT.
+        /// Creates the specified Channel using POST.
         /// </summary>
         /// <param name="channelToCreate">The Channel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

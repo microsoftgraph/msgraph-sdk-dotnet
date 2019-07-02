@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceManagementTroubleshootingEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceManagementTroubleshootingEvent using PUT.
+        /// Creates the specified DeviceManagementTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="deviceManagementTroubleshootingEventToCreate">The DeviceManagementTroubleshootingEvent to create.</param>
         /// <returns>The created DeviceManagementTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> CreateAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementTroubleshootingEvent using PUT.
+        /// Creates the specified DeviceManagementTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="deviceManagementTroubleshootingEventToCreate">The DeviceManagementTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

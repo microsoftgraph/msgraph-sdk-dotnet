@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookChartLegendFormatRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookChartLegendFormat using PUT.
+        /// Creates the specified WorkbookChartLegendFormat using POST.
         /// </summary>
         /// <param name="workbookChartLegendFormatToCreate">The WorkbookChartLegendFormat to create.</param>
         /// <returns>The created WorkbookChartLegendFormat.</returns>
         System.Threading.Tasks.Task<WorkbookChartLegendFormat> CreateAsync(WorkbookChartLegendFormat workbookChartLegendFormatToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartLegendFormat using PUT.
+        /// Creates the specified WorkbookChartLegendFormat using POST.
         /// </summary>
         /// <param name="workbookChartLegendFormatToCreate">The WorkbookChartLegendFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

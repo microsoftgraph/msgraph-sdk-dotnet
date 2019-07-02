@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<EducationClass> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified EducationClass using PUT.
+        /// Creates the specified EducationClass using POST.
         /// </summary>
         /// <param name="educationClassToCreate">The EducationClass to create.</param>
         /// <returns>The created EducationClass.</returns>
         System.Threading.Tasks.Task<EducationClass> CreateAsync(EducationClass educationClassToCreate);        /// <summary>
-        /// Creates the specified EducationClass using PUT.
+        /// Creates the specified EducationClass using POST.
         /// </summary>
         /// <param name="educationClassToCreate">The EducationClass to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

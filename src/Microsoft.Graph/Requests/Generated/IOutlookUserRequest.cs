@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOutlookUserRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OutlookUser using PUT.
+        /// Creates the specified OutlookUser using POST.
         /// </summary>
         /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
         /// <returns>The created OutlookUser.</returns>
         System.Threading.Tasks.Task<OutlookUser> CreateAsync(OutlookUser outlookUserToCreate);        /// <summary>
-        /// Creates the specified OutlookUser using PUT.
+        /// Creates the specified OutlookUser using POST.
         /// </summary>
         /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

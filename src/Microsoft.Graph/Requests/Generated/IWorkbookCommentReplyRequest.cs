@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWorkbookCommentReplyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WorkbookCommentReply using PUT.
+        /// Creates the specified WorkbookCommentReply using POST.
         /// </summary>
         /// <param name="workbookCommentReplyToCreate">The WorkbookCommentReply to create.</param>
         /// <returns>The created WorkbookCommentReply.</returns>
         System.Threading.Tasks.Task<WorkbookCommentReply> CreateAsync(WorkbookCommentReply workbookCommentReplyToCreate);        /// <summary>
-        /// Creates the specified WorkbookCommentReply using PUT.
+        /// Creates the specified WorkbookCommentReply using POST.
         /// </summary>
         /// <param name="workbookCommentReplyToCreate">The WorkbookCommentReply to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISecureScoreRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SecureScore using PUT.
+        /// Creates the specified SecureScore using POST.
         /// </summary>
         /// <param name="secureScoreToCreate">The SecureScore to create.</param>
         /// <returns>The created SecureScore.</returns>
         System.Threading.Tasks.Task<SecureScore> CreateAsync(SecureScore secureScoreToCreate);        /// <summary>
-        /// Creates the specified SecureScore using PUT.
+        /// Creates the specified SecureScore using POST.
         /// </summary>
         /// <param name="secureScoreToCreate">The SecureScore to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

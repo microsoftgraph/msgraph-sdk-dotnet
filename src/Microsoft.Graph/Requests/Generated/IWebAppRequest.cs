@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWebAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WebApp using PUT.
+        /// Creates the specified WebApp using POST.
         /// </summary>
         /// <param name="webAppToCreate">The WebApp to create.</param>
         /// <returns>The created WebApp.</returns>
         System.Threading.Tasks.Task<WebApp> CreateAsync(WebApp webAppToCreate);        /// <summary>
-        /// Creates the specified WebApp using PUT.
+        /// Creates the specified WebApp using POST.
         /// </summary>
         /// <param name="webAppToCreate">The WebApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

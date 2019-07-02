@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOutlookCategoryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OutlookCategory using PUT.
+        /// Creates the specified OutlookCategory using POST.
         /// </summary>
         /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
         /// <returns>The created OutlookCategory.</returns>
         System.Threading.Tasks.Task<OutlookCategory> CreateAsync(OutlookCategory outlookCategoryToCreate);        /// <summary>
-        /// Creates the specified OutlookCategory using PUT.
+        /// Creates the specified OutlookCategory using POST.
         /// </summary>
         /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

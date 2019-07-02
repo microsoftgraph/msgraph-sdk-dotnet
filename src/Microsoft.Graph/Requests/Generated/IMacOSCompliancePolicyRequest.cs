@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMacOSCompliancePolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MacOSCompliancePolicy using PUT.
+        /// Creates the specified MacOSCompliancePolicy using POST.
         /// </summary>
         /// <param name="macOSCompliancePolicyToCreate">The MacOSCompliancePolicy to create.</param>
         /// <returns>The created MacOSCompliancePolicy.</returns>
         System.Threading.Tasks.Task<MacOSCompliancePolicy> CreateAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate);        /// <summary>
-        /// Creates the specified MacOSCompliancePolicy using PUT.
+        /// Creates the specified MacOSCompliancePolicy using POST.
         /// </summary>
         /// <param name="macOSCompliancePolicyToCreate">The MacOSCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

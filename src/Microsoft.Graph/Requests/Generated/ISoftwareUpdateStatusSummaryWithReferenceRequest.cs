@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified SoftwareUpdateStatusSummary using PUT.
+        /// Creates the specified SoftwareUpdateStatusSummary using POST.
         /// </summary>
         /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
         /// <returns>The created SoftwareUpdateStatusSummary.</returns>
         System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> CreateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate);        /// <summary>
-        /// Creates the specified SoftwareUpdateStatusSummary using PUT.
+        /// Creates the specified SoftwareUpdateStatusSummary using POST.
         /// </summary>
         /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

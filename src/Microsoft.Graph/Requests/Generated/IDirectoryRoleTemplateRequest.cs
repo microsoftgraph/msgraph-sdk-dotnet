@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDirectoryRoleTemplateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DirectoryRoleTemplate using PUT.
+        /// Creates the specified DirectoryRoleTemplate using POST.
         /// </summary>
         /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
         /// <returns>The created DirectoryRoleTemplate.</returns>
         System.Threading.Tasks.Task<DirectoryRoleTemplate> CreateAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate);        /// <summary>
-        /// Creates the specified DirectoryRoleTemplate using PUT.
+        /// Creates the specified DirectoryRoleTemplate using POST.
         /// </summary>
         /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

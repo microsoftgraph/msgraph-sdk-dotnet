@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceConfigurationStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceConfigurationState using PUT.
+        /// Creates the specified DeviceConfigurationState using POST.
         /// </summary>
         /// <param name="deviceConfigurationStateToCreate">The DeviceConfigurationState to create.</param>
         /// <returns>The created DeviceConfigurationState.</returns>
         System.Threading.Tasks.Task<DeviceConfigurationState> CreateAsync(DeviceConfigurationState deviceConfigurationStateToCreate);        /// <summary>
-        /// Creates the specified DeviceConfigurationState using PUT.
+        /// Creates the specified DeviceConfigurationState using POST.
         /// </summary>
         /// <param name="deviceConfigurationStateToCreate">The DeviceConfigurationState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

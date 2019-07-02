@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsPhone81GeneralConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsPhone81GeneralConfiguration using PUT.
+        /// Creates the specified WindowsPhone81GeneralConfiguration using POST.
         /// </summary>
         /// <param name="windowsPhone81GeneralConfigurationToCreate">The WindowsPhone81GeneralConfiguration to create.</param>
         /// <returns>The created WindowsPhone81GeneralConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsPhone81GeneralConfiguration> CreateAsync(WindowsPhone81GeneralConfiguration windowsPhone81GeneralConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsPhone81GeneralConfiguration using PUT.
+        /// Creates the specified WindowsPhone81GeneralConfiguration using POST.
         /// </summary>
         /// <param name="windowsPhone81GeneralConfigurationToCreate">The WindowsPhone81GeneralConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

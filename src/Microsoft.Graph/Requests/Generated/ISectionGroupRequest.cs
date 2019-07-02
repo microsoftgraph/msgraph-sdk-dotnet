@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISectionGroupRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SectionGroup using PUT.
+        /// Creates the specified SectionGroup using POST.
         /// </summary>
         /// <param name="sectionGroupToCreate">The SectionGroup to create.</param>
         /// <returns>The created SectionGroup.</returns>
         System.Threading.Tasks.Task<SectionGroup> CreateAsync(SectionGroup sectionGroupToCreate);        /// <summary>
-        /// Creates the specified SectionGroup using PUT.
+        /// Creates the specified SectionGroup using POST.
         /// </summary>
         /// <param name="sectionGroupToCreate">The SectionGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAppleDeviceFeaturesConfigurationBaseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AppleDeviceFeaturesConfigurationBase using PUT.
+        /// Creates the specified AppleDeviceFeaturesConfigurationBase using POST.
         /// </summary>
         /// <param name="appleDeviceFeaturesConfigurationBaseToCreate">The AppleDeviceFeaturesConfigurationBase to create.</param>
         /// <returns>The created AppleDeviceFeaturesConfigurationBase.</returns>
         System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> CreateAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate);        /// <summary>
-        /// Creates the specified AppleDeviceFeaturesConfigurationBase using PUT.
+        /// Creates the specified AppleDeviceFeaturesConfigurationBase using POST.
         /// </summary>
         /// <param name="appleDeviceFeaturesConfigurationBaseToCreate">The AppleDeviceFeaturesConfigurationBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

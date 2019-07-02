@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITargetedManagedAppPolicyAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TargetedManagedAppPolicyAssignment using PUT.
+        /// Creates the specified TargetedManagedAppPolicyAssignment using POST.
         /// </summary>
         /// <param name="targetedManagedAppPolicyAssignmentToCreate">The TargetedManagedAppPolicyAssignment to create.</param>
         /// <returns>The created TargetedManagedAppPolicyAssignment.</returns>
         System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> CreateAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignmentToCreate);        /// <summary>
-        /// Creates the specified TargetedManagedAppPolicyAssignment using PUT.
+        /// Creates the specified TargetedManagedAppPolicyAssignment using POST.
         /// </summary>
         /// <param name="targetedManagedAppPolicyAssignmentToCreate">The TargetedManagedAppPolicyAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
