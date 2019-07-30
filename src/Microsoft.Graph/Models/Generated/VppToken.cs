@@ -52,7 +52,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last sync date time.
-        /// The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
+        /// The last time when an application sync was done with the Apple volume purchase program service using the Apple Volume Purchase Program Token.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastSyncDateTime { get; set; }

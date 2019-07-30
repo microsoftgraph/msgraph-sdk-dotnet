@@ -32,7 +32,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets timeZone.
-        /// One of the following time zone names.
+        /// Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeZone", Required = Newtonsoft.Json.Required.Default)]
         public string TimeZone { get; set; }

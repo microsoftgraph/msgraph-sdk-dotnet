@@ -43,5 +43,15 @@ namespace Microsoft.Graph
         IDirectoryObjectGetByIdsRequestBuilder GetByIds(
             IEnumerable<string> ids,
             IEnumerable<string> types = null);
+
+        /// <summary>
+        /// Gets the request builder for DirectoryObjectValidateProperties.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectValidatePropertiesRequestBuilder"/>.</returns>
+        IDirectoryObjectValidatePropertiesRequestBuilder ValidateProperties(
+            string entityType = null,
+            string displayName = null,
+            string mailNickname = null,
+            Guid? onBehalfOfUserId = null);
     }
 }

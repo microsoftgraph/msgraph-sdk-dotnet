@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets profileIdentifier.
-        /// The the profile identifier.
+        /// The profile identifier.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileIdentifier", Required = Newtonsoft.Json.Required.Default)]
         public string ProfileIdentifier { get; set; }

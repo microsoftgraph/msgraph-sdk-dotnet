@@ -66,7 +66,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets teacher.
-        /// If the primary role is teacher, this block will conatin teacher specific data.
+        /// If the primary role is teacher, this block will contain teacher specific data.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teacher", Required = Newtonsoft.Json.Required.Default)]
         public EducationTeacher Teacher { get; set; }

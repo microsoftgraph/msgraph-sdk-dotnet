@@ -182,6 +182,15 @@ namespace Microsoft.Graph
         ITeamRequestBuilder Team { get; }
     
         /// <summary>
+        /// Gets the request builder for GroupValidateProperties.
+        /// </summary>
+        /// <returns>The <see cref="IGroupValidatePropertiesRequestBuilder"/>.</returns>
+        IGroupValidatePropertiesRequestBuilder ValidateProperties(
+            string displayName = null,
+            string mailNickname = null,
+            Guid? onBehalfOfUserId = null);
+
+        /// <summary>
         /// Gets the request builder for GroupSubscribeByMail.
         /// </summary>
         /// <returns>The <see cref="IGroupSubscribeByMailRequestBuilder"/>.</returns>

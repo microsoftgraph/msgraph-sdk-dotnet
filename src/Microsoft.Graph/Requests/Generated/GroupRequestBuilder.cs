@@ -351,6 +351,23 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for GroupValidateProperties.
+        /// </summary>
+        /// <returns>The <see cref="IGroupValidatePropertiesRequestBuilder"/>.</returns>
+        public IGroupValidatePropertiesRequestBuilder ValidateProperties(
+            string displayName = null,
+            string mailNickname = null,
+            Guid? onBehalfOfUserId = null)
+        {
+            return new GroupValidatePropertiesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.validateProperties"),
+                this.Client,
+                displayName,
+                mailNickname,
+                onBehalfOfUserId);
+        }
+
+        /// <summary>
         /// Gets the request builder for GroupSubscribeByMail.
         /// </summary>
         /// <returns>The <see cref="IGroupSubscribeByMailRequestBuilder"/>.</returns>

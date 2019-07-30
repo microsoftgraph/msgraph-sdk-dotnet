@@ -360,7 +360,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets i cloud block activity continuation.
-        /// Indicates whether or not to block  the the user from continuing work they started on iOS device to another iOS or macOS device.
+        /// Indicates whether or not to block the user from continuing work they started on iOS device to another iOS or macOS device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iCloudBlockActivityContinuation", Required = Newtonsoft.Json.Required.Default)]
         public bool? ICloudBlockActivityContinuation { get; set; }
