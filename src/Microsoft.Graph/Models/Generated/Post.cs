@@ -79,25 +79,11 @@ namespace Microsoft.Graph
         public string ConversationId { get; set; }
     
         /// <summary>
-        /// Gets or sets extensions.
-        /// The collection of open extensions defined for the post. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
-        public IPostExtensionsCollectionPage Extensions { get; set; }
-    
-        /// <summary>
         /// Gets or sets in reply to.
         /// Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inReplyTo", Required = Newtonsoft.Json.Required.Default)]
         public Post InReplyTo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets attachments.
-        /// Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
-        public IPostAttachmentsCollectionPage Attachments { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
@@ -112,6 +98,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public IPostMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extensions.
+        /// The collection of open extensions defined for the post. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        public IPostExtensionsCollectionPage Extensions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets attachments.
+        /// Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
+        public IPostAttachmentsCollectionPage Attachments { get; set; }
     
     }
 }

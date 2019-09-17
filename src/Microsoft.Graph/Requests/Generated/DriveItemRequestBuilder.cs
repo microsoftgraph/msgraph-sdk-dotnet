@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Workbook.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRequestBuilder"/>.</returns>
+        public IWorkbookRequestBuilder Workbook
+        {
+            get
+            {
+                return new WorkbookRequestBuilder(this.AppendSegmentToRequestUrl("workbook"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Analytics.
         /// </summary>
         /// <returns>The <see cref="IItemAnalyticsWithReferenceRequestBuilder"/>.</returns>
@@ -131,18 +143,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DriveItemVersionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("versions"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Workbook.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookRequestBuilder"/>.</returns>
-        public IWorkbookRequestBuilder Workbook
-        {
-            get
-            {
-                return new WorkbookRequestBuilder(this.AppendSegmentToRequestUrl("workbook"), this.Client);
             }
         }
     

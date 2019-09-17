@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IDriveItemRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Workbook.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRequestBuilder"/>.</returns>
+        IWorkbookRequestBuilder Workbook { get; }
+
+        /// <summary>
         /// Gets the request builder for Analytics.
         /// </summary>
         /// <returns>The <see cref="IItemAnalyticsWithReferenceRequestBuilder"/>.</returns>
@@ -72,12 +78,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDriveItemVersionsCollectionRequestBuilder"/>.</returns>
         IDriveItemVersionsCollectionRequestBuilder Versions { get; }
-
-        /// <summary>
-        /// Gets the request builder for Workbook.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookRequestBuilder"/>.</returns>
-        IWorkbookRequestBuilder Workbook { get; }
     
         /// <summary>
         /// Gets the request builder for Content.

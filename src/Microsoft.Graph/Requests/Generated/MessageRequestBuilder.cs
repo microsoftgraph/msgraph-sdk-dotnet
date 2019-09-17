@@ -51,30 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Attachments.
-        /// </summary>
-        /// <returns>The <see cref="IMessageAttachmentsCollectionRequestBuilder"/>.</returns>
-        public IMessageAttachmentsCollectionRequestBuilder Attachments
-        {
-            get
-            {
-                return new MessageAttachmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attachments"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IMessageExtensionsCollectionRequestBuilder"/>.</returns>
-        public IMessageExtensionsCollectionRequestBuilder Extensions
-        {
-            get
-            {
-                return new MessageExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for SingleValueExtendedProperties.
         /// </summary>
         /// <returns>The <see cref="IMessageSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
@@ -97,33 +73,31 @@ namespace Microsoft.Graph
                 return new MessageMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Attachments.
+        /// </summary>
+        /// <returns>The <see cref="IMessageAttachmentsCollectionRequestBuilder"/>.</returns>
+        public IMessageAttachmentsCollectionRequestBuilder Attachments
+        {
+            get
+            {
+                return new MessageAttachmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attachments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IMessageExtensionsCollectionRequestBuilder"/>.</returns>
+        public IMessageExtensionsCollectionRequestBuilder Extensions
+        {
+            get
+            {
+                return new MessageExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
+            }
+        }
     
-        /// <summary>
-        /// Gets the request builder for MessageCopy.
-        /// </summary>
-        /// <returns>The <see cref="IMessageCopyRequestBuilder"/>.</returns>
-        public IMessageCopyRequestBuilder Copy(
-            string DestinationId = null)
-        {
-            return new MessageCopyRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.copy"),
-                this.Client,
-                DestinationId);
-        }
-
-        /// <summary>
-        /// Gets the request builder for MessageMove.
-        /// </summary>
-        /// <returns>The <see cref="IMessageMoveRequestBuilder"/>.</returns>
-        public IMessageMoveRequestBuilder Move(
-            string DestinationId = null)
-        {
-            return new MessageMoveRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.move"),
-                this.Client,
-                DestinationId);
-        }
-
         /// <summary>
         /// Gets the request builder for MessageCreateReply.
         /// </summary>
@@ -158,6 +132,43 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for MessageSend.
+        /// </summary>
+        /// <returns>The <see cref="IMessageSendRequestBuilder"/>.</returns>
+        public IMessageSendRequestBuilder Send()
+        {
+            return new MessageSendRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.send"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for MessageCopy.
+        /// </summary>
+        /// <returns>The <see cref="IMessageCopyRequestBuilder"/>.</returns>
+        public IMessageCopyRequestBuilder Copy(
+            string DestinationId)
+        {
+            return new MessageCopyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.copy"),
+                this.Client,
+                DestinationId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for MessageMove.
+        /// </summary>
+        /// <returns>The <see cref="IMessageMoveRequestBuilder"/>.</returns>
+        public IMessageMoveRequestBuilder Move(
+            string DestinationId)
+        {
+            return new MessageMoveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.move"),
+                this.Client,
+                DestinationId);
+        }
+
+        /// <summary>
         /// Gets the request builder for MessageReply.
         /// </summary>
         /// <returns>The <see cref="IMessageReplyRequestBuilder"/>.</returns>
@@ -188,25 +199,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMessageForwardRequestBuilder"/>.</returns>
         public IMessageForwardRequestBuilder Forward(
-            string Comment = null,
-            IEnumerable<Recipient> ToRecipients = null)
+            IEnumerable<Recipient> ToRecipients = null,
+            string Comment = null)
         {
             return new MessageForwardRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.forward"),
                 this.Client,
-                Comment,
-                ToRecipients);
-        }
-
-        /// <summary>
-        /// Gets the request builder for MessageSend.
-        /// </summary>
-        /// <returns>The <see cref="IMessageSendRequestBuilder"/>.</returns>
-        public IMessageSendRequestBuilder Send()
-        {
-            return new MessageSendRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.send"),
-                this.Client);
+                ToRecipients,
+                Comment);
         }
     
     }

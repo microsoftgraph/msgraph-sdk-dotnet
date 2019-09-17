@@ -51,42 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Calendar.
-        /// </summary>
-        /// <returns>The <see cref="ICalendarRequestBuilder"/>.</returns>
-        public ICalendarRequestBuilder Calendar
-        {
-            get
-            {
-                return new CalendarRequestBuilder(this.AppendSegmentToRequestUrl("calendar"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Instances.
-        /// </summary>
-        /// <returns>The <see cref="IEventInstancesCollectionRequestBuilder"/>.</returns>
-        public IEventInstancesCollectionRequestBuilder Instances
-        {
-            get
-            {
-                return new EventInstancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("instances"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IEventExtensionsCollectionRequestBuilder"/>.</returns>
-        public IEventExtensionsCollectionRequestBuilder Extensions
-        {
-            get
-            {
-                return new EventExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Attachments.
         /// </summary>
         /// <returns>The <see cref="IEventAttachmentsCollectionRequestBuilder"/>.</returns>
@@ -121,50 +85,52 @@ namespace Microsoft.Graph
                 return new EventMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Calendar.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarRequestBuilder"/>.</returns>
+        public ICalendarRequestBuilder Calendar
+        {
+            get
+            {
+                return new CalendarRequestBuilder(this.AppendSegmentToRequestUrl("calendar"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Instances.
+        /// </summary>
+        /// <returns>The <see cref="IEventInstancesCollectionRequestBuilder"/>.</returns>
+        public IEventInstancesCollectionRequestBuilder Instances
+        {
+            get
+            {
+                return new EventInstancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("instances"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IEventExtensionsCollectionRequestBuilder"/>.</returns>
+        public IEventExtensionsCollectionRequestBuilder Extensions
+        {
+            get
+            {
+                return new EventExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
+            }
+        }
     
         /// <summary>
-        /// Gets the request builder for EventAccept.
+        /// Gets the request builder for EventDismissReminder.
         /// </summary>
-        /// <returns>The <see cref="IEventAcceptRequestBuilder"/>.</returns>
-        public IEventAcceptRequestBuilder Accept(
-            string Comment = null,
-            bool? SendResponse = null)
+        /// <returns>The <see cref="IEventDismissReminderRequestBuilder"/>.</returns>
+        public IEventDismissReminderRequestBuilder DismissReminder()
         {
-            return new EventAcceptRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.accept"),
-                this.Client,
-                Comment,
-                SendResponse);
-        }
-
-        /// <summary>
-        /// Gets the request builder for EventDecline.
-        /// </summary>
-        /// <returns>The <see cref="IEventDeclineRequestBuilder"/>.</returns>
-        public IEventDeclineRequestBuilder Decline(
-            string Comment = null,
-            bool? SendResponse = null)
-        {
-            return new EventDeclineRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.decline"),
-                this.Client,
-                Comment,
-                SendResponse);
-        }
-
-        /// <summary>
-        /// Gets the request builder for EventTentativelyAccept.
-        /// </summary>
-        /// <returns>The <see cref="IEventTentativelyAcceptRequestBuilder"/>.</returns>
-        public IEventTentativelyAcceptRequestBuilder TentativelyAccept(
-            string Comment = null,
-            bool? SendResponse = null)
-        {
-            return new EventTentativelyAcceptRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.tentativelyAccept"),
-                this.Client,
-                Comment,
-                SendResponse);
+            return new EventDismissReminderRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dismissReminder"),
+                this.Client);
         }
 
         /// <summary>
@@ -181,14 +147,48 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for EventDismissReminder.
+        /// Gets the request builder for EventAccept.
         /// </summary>
-        /// <returns>The <see cref="IEventDismissReminderRequestBuilder"/>.</returns>
-        public IEventDismissReminderRequestBuilder DismissReminder()
+        /// <returns>The <see cref="IEventAcceptRequestBuilder"/>.</returns>
+        public IEventAcceptRequestBuilder Accept(
+            bool? SendResponse = null,
+            string Comment = null)
         {
-            return new EventDismissReminderRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dismissReminder"),
-                this.Client);
+            return new EventAcceptRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.accept"),
+                this.Client,
+                SendResponse,
+                Comment);
+        }
+
+        /// <summary>
+        /// Gets the request builder for EventDecline.
+        /// </summary>
+        /// <returns>The <see cref="IEventDeclineRequestBuilder"/>.</returns>
+        public IEventDeclineRequestBuilder Decline(
+            bool? SendResponse = null,
+            string Comment = null)
+        {
+            return new EventDeclineRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.decline"),
+                this.Client,
+                SendResponse,
+                Comment);
+        }
+
+        /// <summary>
+        /// Gets the request builder for EventTentativelyAccept.
+        /// </summary>
+        /// <returns>The <see cref="IEventTentativelyAcceptRequestBuilder"/>.</returns>
+        public IEventTentativelyAcceptRequestBuilder TentativelyAccept(
+            bool? SendResponse = null,
+            string Comment = null)
+        {
+            return new EventTentativelyAcceptRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.tentativelyAccept"),
+                this.Client,
+                SendResponse,
+                Comment);
         }
     
     }

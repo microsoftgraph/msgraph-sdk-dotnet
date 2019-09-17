@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ManagedEBooks.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementManagedEBooksCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementManagedEBooksCollectionRequestBuilder ManagedEBooks
+        {
+            get
+            {
+                return new DeviceAppManagementManagedEBooksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedEBooks"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for MobileApps.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementMobileAppsCollectionRequestBuilder"/>.</returns>
@@ -203,18 +215,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceAppManagementManagedAppStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedAppStatuses"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedEBooks.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedEBooksCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementManagedEBooksCollectionRequestBuilder ManagedEBooks
-        {
-            get
-            {
-                return new DeviceAppManagementManagedEBooksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedEBooks"), this.Client);
             }
         }
     

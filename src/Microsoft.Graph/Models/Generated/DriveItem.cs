@@ -170,6 +170,13 @@ namespace Microsoft.Graph
         public string WebDavUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets workbook.
+        /// For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workbook", Required = Newtonsoft.Json.Required.Default)]
+        public Workbook Workbook { get; set; }
+    
+        /// <summary>
         /// Gets or sets analytics.
         /// Analytics about the view activities that took place on this item.
         /// </summary>
@@ -217,13 +224,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versions", Required = Newtonsoft.Json.Required.Default)]
         public IDriveItemVersionsCollectionPage Versions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets workbook.
-        /// For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workbook", Required = Newtonsoft.Json.Required.Default)]
-        public Workbook Workbook { get; set; }
     
     }
 }

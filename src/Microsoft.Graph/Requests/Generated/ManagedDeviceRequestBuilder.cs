@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceCategory.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceCategoryRequestBuilder"/>.</returns>
-        public IDeviceCategoryRequestBuilder DeviceCategory
-        {
-            get
-            {
-                return new DeviceCategoryRequestBuilder(this.AppendSegmentToRequestUrl("deviceCategory"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyStates.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceCompliancePolicyStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceCategory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCategoryRequestBuilder"/>.</returns>
+        public IDeviceCategoryRequestBuilder DeviceCategory
+        {
+            get
+            {
+                return new DeviceCategoryRequestBuilder(this.AppendSegmentToRequestUrl("deviceCategory"), this.Client);
             }
         }
     
