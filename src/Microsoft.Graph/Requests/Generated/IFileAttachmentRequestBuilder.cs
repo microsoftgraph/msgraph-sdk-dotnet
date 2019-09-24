@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IFileAttachmentRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Content.
+        /// </summary>
+        /// <returns>The <see cref="IFileAttachmentContentRequestBuilder"/>.</returns>
+        IFileAttachmentContentRequestBuilder Content { get; }
+    
     }
 }

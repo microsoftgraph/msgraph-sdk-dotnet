@@ -38,16 +38,16 @@ namespace Microsoft.Graph
         IManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder DeviceConfigurationStates { get; }
 
         /// <summary>
-        /// Gets the request builder for DeviceCategory.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceCategoryRequestBuilder"/>.</returns>
-        IDeviceCategoryRequestBuilder DeviceCategory { get; }
-
-        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyStates.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
         IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder DeviceCompliancePolicyStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceCategory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCategoryRequestBuilder"/>.</returns>
+        IDeviceCategoryRequestBuilder DeviceCategory { get; }
     
         /// <summary>
         /// Gets the request builder for ManagedDeviceRetire.

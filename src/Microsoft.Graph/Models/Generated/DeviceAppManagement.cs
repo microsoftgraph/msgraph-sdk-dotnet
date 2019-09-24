@@ -51,6 +51,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? MicrosoftStoreForBusinessLastCompletedApplicationSyncTime { get; set; }
     
         /// <summary>
+        /// Gets or sets managed ebooks.
+        /// The Managed eBook.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBooks", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementManagedEBooksCollectionPage ManagedEBooks { get; set; }
+    
+        /// <summary>
         /// Gets or sets mobile apps.
         /// The mobile apps.
         /// </summary>
@@ -140,13 +147,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedAppStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceAppManagementManagedAppStatusesCollectionPage ManagedAppStatuses { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed ebooks.
-        /// The Managed eBook.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBooks", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceAppManagementManagedEBooksCollectionPage ManagedEBooks { get; set; }
     
     }
 }

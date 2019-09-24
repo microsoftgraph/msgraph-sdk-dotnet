@@ -366,6 +366,13 @@ namespace Microsoft.Graph
         public MailboxSettings MailboxSettings { get; set; }
     
         /// <summary>
+        /// Gets or sets device enrollment limit.
+        /// The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceEnrollmentLimit", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DeviceEnrollmentLimit { get; set; }
+    
+        /// <summary>
         /// Gets or sets about me.
         /// A freeform text entry field for the user to describe themselves.
         /// </summary>
@@ -436,13 +443,6 @@ namespace Microsoft.Graph
         public IEnumerable<string> Skills { get; set; }
     
         /// <summary>
-        /// Gets or sets device enrollment limit.
-        /// The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceEnrollmentLimit", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DeviceEnrollmentLimit { get; set; }
-    
-        /// <summary>
         /// Gets or sets owned devices.
         /// Devices that are owned by the user. Read-only. Nullable.
         /// </summary>
@@ -503,13 +503,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
         public IUserTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
-    
-        /// <summary>
-        /// Gets or sets extensions.
-        /// The collection of open extensions defined for the user. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
-        public IUserExtensionsCollectionPage Extensions { get; set; }
     
         /// <summary>
         /// Gets or sets outlook.
@@ -623,18 +616,11 @@ namespace Microsoft.Graph
         public IUserDrivesCollectionPage Drives { get; set; }
     
         /// <summary>
-        /// Gets or sets planner.
-        /// Entry-point to the Planner resource that might exist for a user. Read-only.
+        /// Gets or sets extensions.
+        /// The collection of open extensions defined for the user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "planner", Required = Newtonsoft.Json.Required.Default)]
-        public PlannerUser Planner { get; set; }
-    
-        /// <summary>
-        /// Gets or sets onenote.
-        /// Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onenote", Required = Newtonsoft.Json.Required.Default)]
-        public Onenote Onenote { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        public IUserExtensionsCollectionPage Extensions { get; set; }
     
         /// <summary>
         /// Gets or sets managed devices.
@@ -658,11 +644,11 @@ namespace Microsoft.Graph
         public IUserDeviceManagementTroubleshootingEventsCollectionPage DeviceManagementTroubleshootingEvents { get; set; }
     
         /// <summary>
-        /// Gets or sets activities.
-        /// The user's activities across devices. Read-only. Nullable.
+        /// Gets or sets planner.
+        /// Entry-point to the Planner resource that might exist for a user. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
-        public IUserActivitiesCollectionPage Activities { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "planner", Required = Newtonsoft.Json.Required.Default)]
+        public PlannerUser Planner { get; set; }
     
         /// <summary>
         /// Gets or sets insights.
@@ -675,6 +661,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
         public UserSettings Settings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets onenote.
+        /// Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onenote", Required = Newtonsoft.Json.Required.Default)]
+        public Onenote Onenote { get; set; }
+    
+        /// <summary>
+        /// Gets or sets activities.
+        /// The user's activities across devices. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
+        public IUserActivitiesCollectionPage Activities { get; set; }
     
         /// <summary>
         /// Gets or sets joined teams.

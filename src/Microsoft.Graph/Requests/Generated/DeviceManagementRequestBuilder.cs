@@ -63,54 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ApplePushNotificationCertificate.
-        /// </summary>
-        /// <returns>The <see cref="IApplePushNotificationCertificateRequestBuilder"/>.</returns>
-        public IApplePushNotificationCertificateRequestBuilder ApplePushNotificationCertificate
-        {
-            get
-            {
-                return new ApplePushNotificationCertificateRequestBuilder(this.AppendSegmentToRequestUrl("applePushNotificationCertificate"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceOverview.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceOverviewWithReferenceRequestBuilder"/>.</returns>
-        public IManagedDeviceOverviewWithReferenceRequestBuilder ManagedDeviceOverview
-        {
-            get
-            {
-                return new ManagedDeviceOverviewWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("managedDeviceOverview"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for DetectedApps.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDetectedAppsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementDetectedAppsCollectionRequestBuilder DetectedApps
-        {
-            get
-            {
-                return new DeviceManagementDetectedAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("detectedApps"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDevices.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementManagedDevicesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementManagedDevicesCollectionRequestBuilder ManagedDevices
-        {
-            get
-            {
-                return new DeviceManagementManagedDevicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedDevices"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceConfigurations.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementDeviceConfigurationsCollectionRequestBuilder"/>.</returns>
@@ -267,6 +219,54 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ApplePushNotificationCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IApplePushNotificationCertificateRequestBuilder"/>.</returns>
+        public IApplePushNotificationCertificateRequestBuilder ApplePushNotificationCertificate
+        {
+            get
+            {
+                return new ApplePushNotificationCertificateRequestBuilder(this.AppendSegmentToRequestUrl("applePushNotificationCertificate"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceOverview.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceOverviewWithReferenceRequestBuilder"/>.</returns>
+        public IManagedDeviceOverviewWithReferenceRequestBuilder ManagedDeviceOverview
+        {
+            get
+            {
+                return new ManagedDeviceOverviewWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("managedDeviceOverview"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DetectedApps.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDetectedAppsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDetectedAppsCollectionRequestBuilder DetectedApps
+        {
+            get
+            {
+                return new DeviceManagementDetectedAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("detectedApps"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDevices.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementManagedDevicesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementManagedDevicesCollectionRequestBuilder ManagedDevices
+        {
+            get
+            {
+                return new DeviceManagementManagedDevicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedDevices"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for NotificationMessageTemplates.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementNotificationMessageTemplatesCollectionRequestBuilder"/>.</returns>
@@ -315,6 +315,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for RemoteAssistancePartners.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementRemoteAssistancePartnersCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementRemoteAssistancePartnersCollectionRequestBuilder RemoteAssistancePartners
+        {
+            get
+            {
+                return new DeviceManagementRemoteAssistancePartnersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("remoteAssistancePartners"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TelecomExpenseManagementPartners.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder"/>.</returns>
@@ -327,14 +339,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for RemoteAssistancePartners.
+        /// Gets the request builder for TroubleshootingEvents.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementRemoteAssistancePartnersCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementRemoteAssistancePartnersCollectionRequestBuilder RemoteAssistancePartners
+        /// <returns>The <see cref="IDeviceManagementTroubleshootingEventsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementTroubleshootingEventsCollectionRequestBuilder TroubleshootingEvents
         {
             get
             {
-                return new DeviceManagementRemoteAssistancePartnersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("remoteAssistancePartners"), this.Client);
+                return new DeviceManagementTroubleshootingEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("troubleshootingEvents"), this.Client);
             }
         }
 
@@ -359,18 +371,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsInformationProtectionNetworkLearningSummaries"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for TroubleshootingEvents.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementTroubleshootingEventsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementTroubleshootingEventsCollectionRequestBuilder TroubleshootingEvents
-        {
-            get
-            {
-                return new DeviceManagementTroubleshootingEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("troubleshootingEvents"), this.Client);
             }
         }
     

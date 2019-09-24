@@ -14,15 +14,15 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The interface IWorkbookProcessQueryRequestBuilder.
+    /// The interface IUserTranslateExchangeIdsRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookProcessQueryRequestBuilder
+    public partial interface IUserTranslateExchangeIdsRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        IWorkbookProcessQueryRequest Request(IEnumerable<Option> options = null);
+        IUserTranslateExchangeIdsRequest Request(IEnumerable<Option> options = null);
     }
 }

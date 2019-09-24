@@ -159,18 +159,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IUserExtensionsCollectionRequestBuilder"/>.</returns>
-        public IUserExtensionsCollectionRequestBuilder Extensions
-        {
-            get
-            {
-                return new UserExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Outlook.
         /// </summary>
         /// <returns>The <see cref="IOutlookUserRequestBuilder"/>.</returns>
@@ -363,26 +351,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Planner.
+        /// Gets the request builder for Extensions.
         /// </summary>
-        /// <returns>The <see cref="IPlannerUserRequestBuilder"/>.</returns>
-        public IPlannerUserRequestBuilder Planner
+        /// <returns>The <see cref="IUserExtensionsCollectionRequestBuilder"/>.</returns>
+        public IUserExtensionsCollectionRequestBuilder Extensions
         {
             get
             {
-                return new PlannerUserRequestBuilder(this.AppendSegmentToRequestUrl("planner"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Onenote.
-        /// </summary>
-        /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>
-        public IOnenoteRequestBuilder Onenote
-        {
-            get
-            {
-                return new OnenoteRequestBuilder(this.AppendSegmentToRequestUrl("onenote"), this.Client);
+                return new UserExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
             }
         }
 
@@ -423,14 +399,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Activities.
+        /// Gets the request builder for Planner.
         /// </summary>
-        /// <returns>The <see cref="IUserActivitiesCollectionRequestBuilder"/>.</returns>
-        public IUserActivitiesCollectionRequestBuilder Activities
+        /// <returns>The <see cref="IPlannerUserRequestBuilder"/>.</returns>
+        public IPlannerUserRequestBuilder Planner
         {
             get
             {
-                return new UserActivitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("activities"), this.Client);
+                return new PlannerUserRequestBuilder(this.AppendSegmentToRequestUrl("planner"), this.Client);
             }
         }
 
@@ -455,6 +431,30 @@ namespace Microsoft.Graph
             get
             {
                 return new UserSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Onenote.
+        /// </summary>
+        /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>
+        public IOnenoteRequestBuilder Onenote
+        {
+            get
+            {
+                return new OnenoteRequestBuilder(this.AppendSegmentToRequestUrl("onenote"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Activities.
+        /// </summary>
+        /// <returns>The <see cref="IUserActivitiesCollectionRequestBuilder"/>.</returns>
+        public IUserActivitiesCollectionRequestBuilder Activities
+        {
+            get
+            {
+                return new UserActivitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("activities"), this.Client);
             }
         }
 
@@ -512,6 +512,33 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserFindMeetingTimes.
+        /// </summary>
+        /// <returns>The <see cref="IUserFindMeetingTimesRequestBuilder"/>.</returns>
+        public IUserFindMeetingTimesRequestBuilder FindMeetingTimes(
+            IEnumerable<AttendeeBase> attendees = null,
+            LocationConstraint locationConstraint = null,
+            TimeConstraint timeConstraint = null,
+            Duration meetingDuration = null,
+            Int32? maxCandidates = null,
+            bool? isOrganizerOptional = null,
+            bool? returnSuggestionReasons = null,
+            double? minimumAttendeePercentage = null)
+        {
+            return new UserFindMeetingTimesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.findMeetingTimes"),
+                this.Client,
+                attendees,
+                locationConstraint,
+                timeConstraint,
+                meetingDuration,
+                maxCandidates,
+                isOrganizerOptional,
+                returnSuggestionReasons,
+                minimumAttendeePercentage);
+        }
+
+        /// <summary>
         /// Gets the request builder for UserSendMail.
         /// </summary>
         /// <returns>The <see cref="IUserSendMailRequestBuilder"/>.</returns>
@@ -542,30 +569,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserFindMeetingTimes.
+        /// Gets the request builder for UserTranslateExchangeIds.
         /// </summary>
-        /// <returns>The <see cref="IUserFindMeetingTimesRequestBuilder"/>.</returns>
-        public IUserFindMeetingTimesRequestBuilder FindMeetingTimes(
-            IEnumerable<AttendeeBase> attendees = null,
-            LocationConstraint locationConstraint = null,
-            TimeConstraint timeConstraint = null,
-            Duration meetingDuration = null,
-            Int32? maxCandidates = null,
-            bool? isOrganizerOptional = null,
-            bool? returnSuggestionReasons = null,
-            double? minimumAttendeePercentage = null)
+        /// <returns>The <see cref="IUserTranslateExchangeIdsRequestBuilder"/>.</returns>
+        public IUserTranslateExchangeIdsRequestBuilder TranslateExchangeIds(
+            IEnumerable<string> InputIds,
+            ExchangeIdFormat TargetIdType,
+            ExchangeIdFormat SourceIdType)
         {
-            return new UserFindMeetingTimesRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.findMeetingTimes"),
+            return new UserTranslateExchangeIdsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.translateExchangeIds"),
                 this.Client,
-                attendees,
-                locationConstraint,
-                timeConstraint,
-                meetingDuration,
-                maxCandidates,
-                isOrganizerOptional,
-                returnSuggestionReasons,
-                minimumAttendeePercentage);
+                InputIds,
+                TargetIdType,
+                SourceIdType);
         }
 
         /// <summary>

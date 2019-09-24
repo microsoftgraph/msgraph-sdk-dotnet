@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (deviceAppManagementToInitialize != null && deviceAppManagementToInitialize.AdditionalData != null)
             {
 
+                if (deviceAppManagementToInitialize.ManagedEBooks != null && deviceAppManagementToInitialize.ManagedEBooks.CurrentPage != null)
+                {
+                    deviceAppManagementToInitialize.ManagedEBooks.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedEBooks@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceAppManagementToInitialize.ManagedEBooks.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceAppManagementToInitialize.MobileApps != null && deviceAppManagementToInitialize.MobileApps.CurrentPage != null)
                 {
                     deviceAppManagementToInitialize.MobileApps.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
@@ -437,22 +453,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceAppManagementToInitialize.ManagedAppStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceAppManagementToInitialize.ManagedEBooks != null && deviceAppManagementToInitialize.ManagedEBooks.CurrentPage != null)
-                {
-                    deviceAppManagementToInitialize.ManagedEBooks.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedEBooks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.ManagedEBooks.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

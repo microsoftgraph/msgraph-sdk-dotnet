@@ -32,18 +32,6 @@ namespace Microsoft.Graph
         new IContactFolderRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Contacts.
-        /// </summary>
-        /// <returns>The <see cref="IContactFolderContactsCollectionRequestBuilder"/>.</returns>
-        IContactFolderContactsCollectionRequestBuilder Contacts { get; }
-
-        /// <summary>
-        /// Gets the request builder for ChildFolders.
-        /// </summary>
-        /// <returns>The <see cref="IContactFolderChildFoldersCollectionRequestBuilder"/>.</returns>
-        IContactFolderChildFoldersCollectionRequestBuilder ChildFolders { get; }
-
-        /// <summary>
         /// Gets the request builder for SingleValueExtendedProperties.
         /// </summary>
         /// <returns>The <see cref="IContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
@@ -54,6 +42,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
         IContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
+
+        /// <summary>
+        /// Gets the request builder for Contacts.
+        /// </summary>
+        /// <returns>The <see cref="IContactFolderContactsCollectionRequestBuilder"/>.</returns>
+        IContactFolderContactsCollectionRequestBuilder Contacts { get; }
+
+        /// <summary>
+        /// Gets the request builder for ChildFolders.
+        /// </summary>
+        /// <returns>The <see cref="IContactFolderChildFoldersCollectionRequestBuilder"/>.</returns>
+        IContactFolderChildFoldersCollectionRequestBuilder ChildFolders { get; }
     
         
     

@@ -250,38 +250,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.DetectedApps != null && deviceManagementToInitialize.DetectedApps.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.DetectedApps.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("detectedApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DetectedApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.ManagedDevices != null && deviceManagementToInitialize.ManagedDevices.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.ManagedDevices.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("managedDevices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ManagedDevices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceManagementToInitialize.DeviceConfigurations != null && deviceManagementToInitialize.DeviceConfigurations.CurrentPage != null)
                 {
                     deviceManagementToInitialize.DeviceConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -426,6 +394,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.DetectedApps != null && deviceManagementToInitialize.DetectedApps.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.DetectedApps.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("detectedApps@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.DetectedApps.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.ManagedDevices != null && deviceManagementToInitialize.ManagedDevices.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ManagedDevices.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("managedDevices@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.ManagedDevices.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.NotificationMessageTemplates != null && deviceManagementToInitialize.NotificationMessageTemplates.CurrentPage != null)
                 {
                     deviceManagementToInitialize.NotificationMessageTemplates.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -490,6 +490,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.RemoteAssistancePartners != null && deviceManagementToInitialize.RemoteAssistancePartners.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.RemoteAssistancePartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("remoteAssistancePartners@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.RemoteAssistancePartners.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.TelecomExpenseManagementPartners != null && deviceManagementToInitialize.TelecomExpenseManagementPartners.CurrentPage != null)
                 {
                     deviceManagementToInitialize.TelecomExpenseManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -506,17 +522,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.RemoteAssistancePartners != null && deviceManagementToInitialize.RemoteAssistancePartners.CurrentPage != null)
+                if (deviceManagementToInitialize.TroubleshootingEvents != null && deviceManagementToInitialize.TroubleshootingEvents.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.RemoteAssistancePartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.TroubleshootingEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("remoteAssistancePartners@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("troubleshootingEvents@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.RemoteAssistancePartners.InitializeNextPageRequest(
+                        deviceManagementToInitialize.TroubleshootingEvents.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -549,22 +565,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.WindowsInformationProtectionNetworkLearningSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.TroubleshootingEvents != null && deviceManagementToInitialize.TroubleshootingEvents.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.TroubleshootingEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("troubleshootingEvents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.TroubleshootingEvents.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

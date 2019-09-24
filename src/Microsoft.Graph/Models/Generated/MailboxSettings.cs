@@ -59,6 +59,18 @@ namespace Microsoft.Graph
         public WorkingHours WorkingHours { get; set; }
     
         /// <summary>
+        /// Gets or sets dateFormat.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dateFormat", Required = Newtonsoft.Json.Required.Default)]
+        public string DateFormat { get; set; }
+    
+        /// <summary>
+        /// Gets or sets timeFormat.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeFormat", Required = Newtonsoft.Json.Required.Default)]
+        public string TimeFormat { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

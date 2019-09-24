@@ -44,9 +44,9 @@ namespace Microsoft.Graph
         public SelectionLikelihoodInfo? SelectionLikelihood { get; set; }
     
         /// <summary>
-        /// Gets or sets ItemId.
+        /// Gets or sets itemId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ItemId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemId", Required = Newtonsoft.Json.Required.Default)]
         public string ItemId { get; set; }
     
         /// <summary>
