@@ -51,6 +51,30 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for SingleValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public IMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
+        {
+            get
+            {
+                return new MailFolderSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MultiValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public IMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties
+        {
+            get
+            {
+                return new MailFolderMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Messages.
         /// </summary>
         /// <returns>The <see cref="IMailFolderMessagesCollectionRequestBuilder"/>.</returns>
@@ -85,37 +109,13 @@ namespace Microsoft.Graph
                 return new MailFolderChildFoldersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("childFolders"), this.Client);
             }
         }
-
-        /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="IMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        public IMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
-        {
-            get
-            {
-                return new MailFolderSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for MultiValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="IMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        public IMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties
-        {
-            get
-            {
-                return new MailFolderMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
-            }
-        }
     
         /// <summary>
         /// Gets the request builder for MailFolderCopy.
         /// </summary>
         /// <returns>The <see cref="IMailFolderCopyRequestBuilder"/>.</returns>
         public IMailFolderCopyRequestBuilder Copy(
-            string DestinationId = null)
+            string DestinationId)
         {
             return new MailFolderCopyRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.copy"),
@@ -128,7 +128,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMailFolderMoveRequestBuilder"/>.</returns>
         public IMailFolderMoveRequestBuilder Move(
-            string DestinationId = null)
+            string DestinationId)
         {
             return new MailFolderMoveRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.move"),

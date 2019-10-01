@@ -16,17 +16,23 @@ namespace Microsoft.Graph
     using System.Runtime.Serialization;
 
     /// <summary>
-    /// The type WorkbookProcessQueryRequestBody.
+    /// The type MessageCreateReplyAllRequestBody.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class WorkbookProcessQueryRequestBody
+    public partial class MessageCreateReplyAllRequestBody
     {
     
         /// <summary>
-        /// Gets or sets Input.
+        /// Gets or sets Message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "input", Required = Newtonsoft.Json.Required.Default)]
-        public Stream Input { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Message", Required = Newtonsoft.Json.Required.Default)]
+        public Message Message { get; set; }
+    
+        /// <summary>
+        /// Gets or sets Comment.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Comment", Required = Newtonsoft.Json.Required.Default)]
+        public string Comment { get; set; }
     
     }
 }

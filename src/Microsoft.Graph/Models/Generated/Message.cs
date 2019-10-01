@@ -198,20 +198,6 @@ namespace Microsoft.Graph
         public FollowupFlag Flag { get; set; }
     
         /// <summary>
-        /// Gets or sets attachments.
-        /// The fileAttachment and itemAttachment attachments for the message.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
-        public IMessageAttachmentsCollectionPage Attachments { get; set; }
-    
-        /// <summary>
-        /// Gets or sets extensions.
-        /// The collection of open extensions defined for the message. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
-        public IMessageExtensionsCollectionPage Extensions { get; set; }
-    
-        /// <summary>
         /// Gets or sets single value extended properties.
         /// The collection of single-value extended properties defined for the message. Nullable.
         /// </summary>
@@ -224,6 +210,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public IMessageMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets attachments.
+        /// The fileAttachment and itemAttachment attachments for the message.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
+        public IMessageAttachmentsCollectionPage Attachments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extensions.
+        /// The collection of open extensions defined for the message. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        public IMessageExtensionsCollectionPage Extensions { get; set; }
     
     }
 }

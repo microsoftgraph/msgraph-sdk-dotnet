@@ -156,19 +156,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.refreshSession"),
                 this.Client);
         }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookProcessQuery.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookProcessQueryRequestBuilder"/>.</returns>
-        public IWorkbookProcessQueryRequestBuilder ProcessQuery(
-            Stream input = null)
-        {
-            return new WorkbookProcessQueryRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.processQuery"),
-                this.Client,
-                input);
-        }
     
     }
 }

@@ -29,7 +29,14 @@ namespace Microsoft.Graph
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
+            this.ContentType = "application/json";
+            this.RequestBody = new MessageCreateForwardRequestBody();
         }
+
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        public MessageCreateForwardRequestBody RequestBody { get; private set; }
 
         /// <summary>
         /// Issues the POST request.
@@ -48,7 +55,7 @@ namespace Microsoft.Graph
             CancellationToken cancellationToken)
         {
             this.Method = "POST";
-            return this.SendAsync<Message>(null, cancellationToken);
+            return this.SendAsync<Message>(this.RequestBody, cancellationToken);
         }
 
 

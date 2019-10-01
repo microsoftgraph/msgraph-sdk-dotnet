@@ -346,70 +346,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (groupToInitialize.Extensions != null && groupToInitialize.Extensions.CurrentPage != null)
-                {
-                    groupToInitialize.Extensions.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (groupToInitialize.Threads != null && groupToInitialize.Threads.CurrentPage != null)
-                {
-                    groupToInitialize.Threads.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("threads@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Threads.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (groupToInitialize.CalendarView != null && groupToInitialize.CalendarView.CurrentPage != null)
-                {
-                    groupToInitialize.CalendarView.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.CalendarView.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (groupToInitialize.Events != null && groupToInitialize.Events.CurrentPage != null)
-                {
-                    groupToInitialize.Events.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("events@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Events.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (groupToInitialize.Conversations != null && groupToInitialize.Conversations.CurrentPage != null)
                 {
                     groupToInitialize.Conversations.AdditionalData = groupToInitialize.AdditionalData;
@@ -474,6 +410,54 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (groupToInitialize.Threads != null && groupToInitialize.Threads.CurrentPage != null)
+                {
+                    groupToInitialize.Threads.AdditionalData = groupToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    groupToInitialize.AdditionalData.TryGetValue("threads@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        groupToInitialize.Threads.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (groupToInitialize.CalendarView != null && groupToInitialize.CalendarView.CurrentPage != null)
+                {
+                    groupToInitialize.CalendarView.AdditionalData = groupToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    groupToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        groupToInitialize.CalendarView.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (groupToInitialize.Events != null && groupToInitialize.Events.CurrentPage != null)
+                {
+                    groupToInitialize.Events.AdditionalData = groupToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    groupToInitialize.AdditionalData.TryGetValue("events@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        groupToInitialize.Events.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (groupToInitialize.Drives != null && groupToInitialize.Drives.CurrentPage != null)
                 {
                     groupToInitialize.Drives.AdditionalData = groupToInitialize.AdditionalData;
@@ -501,6 +485,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         groupToInitialize.Sites.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (groupToInitialize.Extensions != null && groupToInitialize.Extensions.CurrentPage != null)
+                {
+                    groupToInitialize.Extensions.AdditionalData = groupToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    groupToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        groupToInitialize.Extensions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

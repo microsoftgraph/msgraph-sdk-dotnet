@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IDeviceAppManagementRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for ManagedEBooks.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementManagedEBooksCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementManagedEBooksCollectionRequestBuilder ManagedEBooks { get; }
+
+        /// <summary>
         /// Gets the request builder for MobileApps.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementMobileAppsCollectionRequestBuilder"/>.</returns>
@@ -108,12 +114,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementManagedAppStatusesCollectionRequestBuilder"/>.</returns>
         IDeviceAppManagementManagedAppStatusesCollectionRequestBuilder ManagedAppStatuses { get; }
-
-        /// <summary>
-        /// Gets the request builder for ManagedEBooks.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedEBooksCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementManagedEBooksCollectionRequestBuilder ManagedEBooks { get; }
     
         /// <summary>
         /// Gets the request builder for DeviceAppManagementSyncMicrosoftStoreForBusinessApps.

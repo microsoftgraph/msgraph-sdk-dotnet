@@ -85,13 +85,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookRefreshSessionRequestBuilder"/>.</returns>
         IWorkbookRefreshSessionRequestBuilder RefreshSession();
-
-        /// <summary>
-        /// Gets the request builder for WorkbookProcessQuery.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookProcessQueryRequestBuilder"/>.</returns>
-        IWorkbookProcessQueryRequestBuilder ProcessQuery(
-            Stream input = null);
     
     }
 }

@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (contactToInitialize != null && contactToInitialize.AdditionalData != null)
             {
 
-                if (contactToInitialize.Extensions != null && contactToInitialize.Extensions.CurrentPage != null)
-                {
-                    contactToInitialize.Extensions.AdditionalData = contactToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (contactToInitialize.SingleValueExtendedProperties != null && contactToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
                     contactToInitialize.SingleValueExtendedProperties.AdditionalData = contactToInitialize.AdditionalData;
@@ -277,6 +261,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         contactToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (contactToInitialize.Extensions != null && contactToInitialize.Extensions.CurrentPage != null)
+                {
+                    contactToInitialize.Extensions.AdditionalData = contactToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    contactToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        contactToInitialize.Extensions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

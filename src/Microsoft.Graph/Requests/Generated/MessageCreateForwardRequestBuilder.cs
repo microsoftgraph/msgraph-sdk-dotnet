@@ -23,11 +23,20 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        /// <param name="ToRecipients">A ToRecipients parameter for the OData method call.</param>
+        /// <param name="Message">A Message parameter for the OData method call.</param>
+        /// <param name="Comment">A Comment parameter for the OData method call.</param>
         public MessageCreateForwardRequestBuilder(
             string requestUrl,
-            IBaseClient client)
+            IBaseClient client,
+            IEnumerable<Recipient> ToRecipients,
+            Message Message,
+            string Comment)
             : base(requestUrl, client)
         {
+            this.SetParameter("toRecipients", ToRecipients, true);
+            this.SetParameter("message", Message, true);
+            this.SetParameter("comment", Comment, true);
         }
 
         /// <summary>
@@ -39,6 +48,21 @@ namespace Microsoft.Graph
         protected override IMessageCreateForwardRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
             var request = new MessageCreateForwardRequest(functionUrl, this.Client, options);
+
+            if (this.HasParameter("toRecipients"))
+            {
+                request.RequestBody.ToRecipients = this.GetParameter<IEnumerable<Recipient>>("toRecipients");
+            }
+
+            if (this.HasParameter("message"))
+            {
+                request.RequestBody.Message = this.GetParameter<Message>("message");
+            }
+
+            if (this.HasParameter("comment"))
+            {
+                request.RequestBody.Comment = this.GetParameter<string>("comment");
+            }
 
             return request;
         }

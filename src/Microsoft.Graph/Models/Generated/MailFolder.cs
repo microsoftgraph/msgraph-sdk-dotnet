@@ -58,6 +58,20 @@ namespace Microsoft.Graph
         public Int32? TotalItemCount { get; set; }
     
         /// <summary>
+        /// Gets or sets single value extended properties.
+        /// The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IMailFolderSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets multi value extended properties.
+        /// The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IMailFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+    
+        /// <summary>
         /// Gets or sets messages.
         /// The collection of messages in the mailFolder.
         /// </summary>
@@ -77,20 +91,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "childFolders", Required = Newtonsoft.Json.Required.Default)]
         public IMailFolderChildFoldersCollectionPage ChildFolders { get; set; }
-    
-        /// <summary>
-        /// Gets or sets single value extended properties.
-        /// The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IMailFolderSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
-    
-        /// <summary>
-        /// Gets or sets multi value extended properties.
-        /// The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IMailFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
     
     }
 }

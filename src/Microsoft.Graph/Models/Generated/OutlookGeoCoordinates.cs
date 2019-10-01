@@ -24,13 +24,6 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
-        /// Gets or sets altitude.
-        /// The altitude of the location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitude", Required = Newtonsoft.Json.Required.Default)]
-        public double? Altitude { get; set; }
-    
-        /// <summary>
         /// Gets or sets latitude.
         /// The latitude of the location.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accuracy", Required = Newtonsoft.Json.Required.Default)]
         public double? Accuracy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets altitude.
+        /// The altitude of the location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitude", Required = Newtonsoft.Json.Required.Default)]
+        public double? Altitude { get; set; }
     
         /// <summary>
         /// Gets or sets altitudeAccuracy.
