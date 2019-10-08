@@ -234,38 +234,6 @@ namespace Microsoft.Graph
             if (postToInitialize != null && postToInitialize.AdditionalData != null)
             {
 
-                if (postToInitialize.Extensions != null && postToInitialize.Extensions.CurrentPage != null)
-                {
-                    postToInitialize.Extensions.AdditionalData = postToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    postToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        postToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (postToInitialize.Attachments != null && postToInitialize.Attachments.CurrentPage != null)
-                {
-                    postToInitialize.Attachments.AdditionalData = postToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    postToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        postToInitialize.Attachments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (postToInitialize.SingleValueExtendedProperties != null && postToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
                     postToInitialize.SingleValueExtendedProperties.AdditionalData = postToInitialize.AdditionalData;
@@ -293,6 +261,38 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         postToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (postToInitialize.Extensions != null && postToInitialize.Extensions.CurrentPage != null)
+                {
+                    postToInitialize.Extensions.AdditionalData = postToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    postToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        postToInitialize.Extensions.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (postToInitialize.Attachments != null && postToInitialize.Attachments.CurrentPage != null)
+                {
+                    postToInitialize.Attachments.AdditionalData = postToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    postToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        postToInitialize.Attachments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -17,6 +17,21 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets the GraphServiceInvitations request builder.
+        /// </summary>
+        IGraphServiceInvitationsCollectionRequestBuilder Invitations { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceUsers request builder.
+        /// </summary>
+        IGraphServiceUsersCollectionRequestBuilder Users { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceIdentityProviders request builder.
+        /// </summary>
+        IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.
         /// </summary>
         IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects { get; }
@@ -72,19 +87,14 @@ namespace Microsoft.Graph
         IGraphServiceSubscribedSkusCollectionRequestBuilder SubscribedSkus { get; }
     
         /// <summary>
-        /// Gets the GraphServiceUsers request builder.
-        /// </summary>
-        IGraphServiceUsersCollectionRequestBuilder Users { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceContracts request builder.
         /// </summary>
         IGraphServiceContractsCollectionRequestBuilder Contracts { get; }
     
         /// <summary>
-        /// Gets the GraphServiceSchemaExtensions request builder.
+        /// Gets the GraphServiceWorkbooks request builder.
         /// </summary>
-        IGraphServiceSchemaExtensionsCollectionRequestBuilder SchemaExtensions { get; }
+        IGraphServiceWorkbooksCollectionRequestBuilder Workbooks { get; }
     
         /// <summary>
         /// Gets the GraphServiceDrives request builder.
@@ -102,19 +112,9 @@ namespace Microsoft.Graph
         IGraphServiceSitesCollectionRequestBuilder Sites { get; }
     
         /// <summary>
-        /// Gets the GraphServiceWorkbooks request builder.
+        /// Gets the GraphServiceSchemaExtensions request builder.
         /// </summary>
-        IGraphServiceWorkbooksCollectionRequestBuilder Workbooks { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceSubscriptions request builder.
-        /// </summary>
-        IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceInvitations request builder.
-        /// </summary>
-        IGraphServiceInvitationsCollectionRequestBuilder Invitations { get; }
+        IGraphServiceSchemaExtensionsCollectionRequestBuilder SchemaExtensions { get; }
     
         /// <summary>
         /// Gets the GraphServiceGroupLifecyclePolicies request builder.
@@ -122,19 +122,24 @@ namespace Microsoft.Graph
         IGraphServiceGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies { get; }
     
         /// <summary>
-        /// Gets the GraphServiceTeams request builder.
-        /// </summary>
-        IGraphServiceTeamsCollectionRequestBuilder Teams { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceDataPolicyOperations request builder.
         /// </summary>
         IGraphServiceDataPolicyOperationsCollectionRequestBuilder DataPolicyOperations { get; }
     
         /// <summary>
-        /// Gets the GraphServiceIdentityProviders request builder.
+        /// Gets the GraphServiceSubscriptions request builder.
         /// </summary>
-        IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders { get; }
+        IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceTeams request builder.
+        /// </summary>
+        IGraphServiceTeamsCollectionRequestBuilder Teams { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAuditLogs request builder.
+        /// </summary>
+        IAuditLogRootRequestBuilder AuditLogs { get; }
     
         /// <summary>
         /// Gets the GraphServiceMe request builder.
@@ -147,24 +152,14 @@ namespace Microsoft.Graph
         IDirectoryRequestBuilder Directory { get; }
     
         /// <summary>
-        /// Gets the GraphServiceDrive request builder.
-        /// </summary>
-        IDriveRequestBuilder Drive { get; }
-    
-        /// <summary>
-        /// Gets the GraphServicePlanner request builder.
-        /// </summary>
-        IPlannerRequestBuilder Planner { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceReports request builder.
-        /// </summary>
-        IReportRootRequestBuilder Reports { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceEducation request builder.
         /// </summary>
         IEducationRootRequestBuilder Education { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceDrive request builder.
+        /// </summary>
+        IDriveRequestBuilder Drive { get; }
     
         /// <summary>
         /// Gets the GraphServiceDeviceAppManagement request builder.
@@ -177,19 +172,29 @@ namespace Microsoft.Graph
         IDeviceManagementRequestBuilder DeviceManagement { get; }
     
         /// <summary>
+        /// Gets the GraphServiceReports request builder.
+        /// </summary>
+        IReportRootRequestBuilder Reports { get; }
+    
+        /// <summary>
+        /// Gets the GraphServicePlanner request builder.
+        /// </summary>
+        IPlannerRequestBuilder Planner { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceSecurity request builder.
         /// </summary>
         ISecurityRequestBuilder Security { get; }
     
         /// <summary>
+        /// Gets the GraphServiceCommunications request builder.
+        /// </summary>
+        ICloudCommunicationsRequestBuilder Communications { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceAppCatalogs request builder.
         /// </summary>
         IAppCatalogsRequestBuilder AppCatalogs { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAuditLogs request builder.
-        /// </summary>
-        IAuditLogRootRequestBuilder AuditLogs { get; }
     
     }
 }

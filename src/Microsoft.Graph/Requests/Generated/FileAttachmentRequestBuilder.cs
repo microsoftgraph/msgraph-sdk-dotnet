@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new FileAttachmentRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Content.
+        /// </summary>
+        /// <returns>The <see cref="IFileAttachmentContentRequestBuilder"/>.</returns>
+        public IFileAttachmentContentRequestBuilder Content
+        {
+            get
+            {
+                return new FileAttachmentContentRequestBuilder(this.AppendSegmentToRequestUrl("$value"), this.Client);
+            }
+        }
+    
     }
 }

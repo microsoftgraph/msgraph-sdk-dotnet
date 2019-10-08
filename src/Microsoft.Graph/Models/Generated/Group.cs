@@ -157,7 +157,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets visibility.
-        /// Specifies the visibility of an Office 365 group. Possible values are: private, public, or hiddenmembership; blank values are treated as public.  See group visibility options to learn more.Visibility can be set only when a group is created; it is not editable.Visibility is supported only for unified groups; it is not supported for security groups. Returned by default.
+        /// Specifies the visibility of an Office 365 group. Possible values are: Private, Public, or Hiddenmembership; blank values are treated as public.  See group visibility options to learn more.Visibility can be set only when a group is created; it is not editable.Visibility is supported only for unified groups; it is not supported for security groups. Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibility", Required = Newtonsoft.Json.Required.Default)]
         public string Visibility { get; set; }
@@ -251,11 +251,32 @@ namespace Microsoft.Graph
         public IGroupSettingsCollectionPage Settings { get; set; }
     
         /// <summary>
-        /// Gets or sets extensions.
-        /// The collection of open extensions defined for the group. Read-only. Nullable.
+        /// Gets or sets conversations.
+        /// The group's conversations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupExtensionsCollectionPage Extensions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversations", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupConversationsCollectionPage Conversations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets photos.
+        /// The profile photos owned by the group. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photos", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupPhotosCollectionPage Photos { get; set; }
+    
+        /// <summary>
+        /// Gets or sets accepted senders.
+        /// The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptedSenders", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupAcceptedSendersCollectionPage AcceptedSenders { get; set; }
+    
+        /// <summary>
+        /// Gets or sets rejected senders.
+        /// The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rejectedSenders", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupRejectedSendersCollectionPage RejectedSenders { get; set; }
     
         /// <summary>
         /// Gets or sets threads.
@@ -286,39 +307,11 @@ namespace Microsoft.Graph
         public IGroupEventsCollectionPage Events { get; set; }
     
         /// <summary>
-        /// Gets or sets conversations.
-        /// The group's conversations.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversations", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupConversationsCollectionPage Conversations { get; set; }
-    
-        /// <summary>
         /// Gets or sets photo.
         /// The group's profile photo
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photo", Required = Newtonsoft.Json.Required.Default)]
         public ProfilePhoto Photo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets photos.
-        /// The profile photos owned by the group. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photos", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupPhotosCollectionPage Photos { get; set; }
-    
-        /// <summary>
-        /// Gets or sets accepted senders.
-        /// The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptedSenders", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupAcceptedSendersCollectionPage AcceptedSenders { get; set; }
-    
-        /// <summary>
-        /// Gets or sets rejected senders.
-        /// The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rejectedSenders", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupRejectedSendersCollectionPage RejectedSenders { get; set; }
     
         /// <summary>
         /// Gets or sets drive.
@@ -342,6 +335,20 @@ namespace Microsoft.Graph
         public IGroupSitesCollectionPage Sites { get; set; }
     
         /// <summary>
+        /// Gets or sets extensions.
+        /// The collection of open extensions defined for the group. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupExtensionsCollectionPage Extensions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group lifecycle policies.
+        /// The collection of lifecycle policies for this group. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupLifecyclePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupGroupLifecyclePoliciesCollectionPage GroupLifecyclePolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets planner.
         /// Entry-point to Planner resource that might exist for a Unified Group.
         /// </summary>
@@ -354,13 +361,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onenote", Required = Newtonsoft.Json.Required.Default)]
         public Onenote Onenote { get; set; }
-    
-        /// <summary>
-        /// Gets or sets group lifecycle policies.
-        /// The collection of lifecycle policies for this group. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupLifecyclePolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupGroupLifecyclePoliciesCollectionPage GroupLifecyclePolicies { get; set; }
     
         /// <summary>
         /// Gets or sets team.

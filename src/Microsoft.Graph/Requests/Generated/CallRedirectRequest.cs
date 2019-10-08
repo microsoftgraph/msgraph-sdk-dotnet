@@ -16,32 +16,32 @@ namespace Microsoft.Graph
     using System.Threading;
 
     /// <summary>
-    /// The type WorkbookProcessQueryRequest.
+    /// The type CallRedirectRequest.
     /// </summary>
-    public partial class WorkbookProcessQueryRequest : BaseRequest, IWorkbookProcessQueryRequest
+    public partial class CallRedirectRequest : BaseRequest, ICallRedirectRequest
     {
         /// <summary>
-        /// Constructs a new WorkbookProcessQueryRequest.
+        /// Constructs a new CallRedirectRequest.
         /// </summary>
-        public WorkbookProcessQueryRequest(
+        public CallRedirectRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
             this.ContentType = "application/json";
-            this.RequestBody = new WorkbookProcessQueryRequestBody();
+            this.RequestBody = new CallRedirectRequestBody();
         }
 
         /// <summary>
         /// Gets the request body.
         /// </summary>
-        public WorkbookProcessQueryRequestBody RequestBody { get; private set; }
+        public CallRedirectRequestBody RequestBody { get; private set; }
 
         /// <summary>
         /// Issues the POST request.
         /// </summary>
-        public System.Threading.Tasks.Task<Stream> PostAsync()
+        public System.Threading.Tasks.Task PostAsync()
         {
             return this.PostAsync(CancellationToken.None);
         }
@@ -50,17 +50,37 @@ namespace Microsoft.Graph
         /// Issues the POST request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="httpCompletionOption">The <see cref="HttpCompletionOption"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<Stream> PostAsync(
-            CancellationToken cancellationToken,
-            HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead)
+        public System.Threading.Tasks.Task PostAsync(
+            CancellationToken cancellationToken)
         {
             this.Method = "POST";
-            return this.SendStreamRequestAsync(null, cancellationToken, httpCompletionOption);
+            return this.SendAsync(this.RequestBody, cancellationToken);
         }
 
 
 
+
+        /// <summary>
+        /// Adds the specified expand value to the request.
+        /// </summary>
+        /// <param name="value">The expand value.</param>
+        /// <returns>The request object to send.</returns>
+        public ICallRedirectRequest Expand(string value)
+        {
+            this.QueryOptions.Add(new QueryOption("$expand", value));
+            return this;
+        }
+
+        /// <summary>
+        /// Adds the specified select value to the request.
+        /// </summary>
+        /// <param name="value">The select value.</param>
+        /// <returns>The request object to send.</returns>
+        public ICallRedirectRequest Select(string value)
+        {
+            this.QueryOptions.Add(new QueryOption("$select", value));
+            return this;
+        }
     }
 }

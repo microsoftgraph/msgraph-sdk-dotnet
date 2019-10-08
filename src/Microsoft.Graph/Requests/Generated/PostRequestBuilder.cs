@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IPostExtensionsCollectionRequestBuilder"/>.</returns>
-        public IPostExtensionsCollectionRequestBuilder Extensions
-        {
-            get
-            {
-                return new PostExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for InReplyTo.
         /// </summary>
         /// <returns>The <see cref="IPostRequestBuilder"/>.</returns>
@@ -71,18 +59,6 @@ namespace Microsoft.Graph
             get
             {
                 return new PostRequestBuilder(this.AppendSegmentToRequestUrl("inReplyTo"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Attachments.
-        /// </summary>
-        /// <returns>The <see cref="IPostAttachmentsCollectionRequestBuilder"/>.</returns>
-        public IPostAttachmentsCollectionRequestBuilder Attachments
-        {
-            get
-            {
-                return new PostAttachmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attachments"), this.Client);
             }
         }
 
@@ -109,7 +85,44 @@ namespace Microsoft.Graph
                 return new PostMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IPostExtensionsCollectionRequestBuilder"/>.</returns>
+        public IPostExtensionsCollectionRequestBuilder Extensions
+        {
+            get
+            {
+                return new PostExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Attachments.
+        /// </summary>
+        /// <returns>The <see cref="IPostAttachmentsCollectionRequestBuilder"/>.</returns>
+        public IPostAttachmentsCollectionRequestBuilder Attachments
+        {
+            get
+            {
+                return new PostAttachmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attachments"), this.Client);
+            }
+        }
     
+        /// <summary>
+        /// Gets the request builder for PostReply.
+        /// </summary>
+        /// <returns>The <see cref="IPostReplyRequestBuilder"/>.</returns>
+        public IPostReplyRequestBuilder Reply(
+            Post Post)
+        {
+            return new PostReplyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reply"),
+                this.Client,
+                Post);
+        }
+
         /// <summary>
         /// Gets the request builder for PostForward.
         /// </summary>
@@ -123,19 +136,6 @@ namespace Microsoft.Graph
                 this.Client,
                 ToRecipients,
                 Comment);
-        }
-
-        /// <summary>
-        /// Gets the request builder for PostReply.
-        /// </summary>
-        /// <returns>The <see cref="IPostReplyRequestBuilder"/>.</returns>
-        public IPostReplyRequestBuilder Reply(
-            Post Post)
-        {
-            return new PostReplyRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.reply"),
-                this.Client,
-                Post);
         }
     
     }

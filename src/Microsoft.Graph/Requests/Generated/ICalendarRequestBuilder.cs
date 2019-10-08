@@ -32,18 +32,6 @@ namespace Microsoft.Graph
         new ICalendarRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Events.
-        /// </summary>
-        /// <returns>The <see cref="ICalendarEventsCollectionRequestBuilder"/>.</returns>
-        ICalendarEventsCollectionRequestBuilder Events { get; }
-
-        /// <summary>
-        /// Gets the request builder for CalendarView.
-        /// </summary>
-        /// <returns>The <see cref="ICalendarCalendarViewCollectionRequestBuilder"/>.</returns>
-        ICalendarCalendarViewCollectionRequestBuilder CalendarView { get; }
-
-        /// <summary>
         /// Gets the request builder for SingleValueExtendedProperties.
         /// </summary>
         /// <returns>The <see cref="ICalendarSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
@@ -54,6 +42,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICalendarMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
         ICalendarMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
+
+        /// <summary>
+        /// Gets the request builder for Events.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarEventsCollectionRequestBuilder"/>.</returns>
+        ICalendarEventsCollectionRequestBuilder Events { get; }
+
+        /// <summary>
+        /// Gets the request builder for CalendarView.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarCalendarViewCollectionRequestBuilder"/>.</returns>
+        ICalendarCalendarViewCollectionRequestBuilder CalendarView { get; }
     
         /// <summary>
         /// Gets the request builder for CalendarGetSchedule.

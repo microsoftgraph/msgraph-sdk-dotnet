@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public PhysicalAddress Address { get; set; }
     
         /// <summary>
-        /// Gets or sets coordinates.
-        /// The geographic coordinates and elevation of the location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coordinates", Required = Newtonsoft.Json.Required.Default)]
-        public OutlookGeoCoordinates Coordinates { get; set; }
-    
-        /// <summary>
         /// Gets or sets locationUri.
         /// Optional URI representing the location.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationUri", Required = Newtonsoft.Json.Required.Default)]
         public string LocationUri { get; set; }
+    
+        /// <summary>
+        /// Gets or sets coordinates.
+        /// The geographic coordinates and elevation of the location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coordinates", Required = Newtonsoft.Json.Required.Default)]
+        public OutlookGeoCoordinates Coordinates { get; set; }
     
         /// <summary>
         /// Gets or sets locationType.

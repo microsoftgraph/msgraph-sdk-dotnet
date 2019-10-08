@@ -16,35 +16,47 @@ namespace Microsoft.Graph
     using System.Threading;
 
     /// <summary>
-    /// The interface IWorkbookProcessQueryRequest.
+    /// The interface ICallTransferRequest.
     /// </summary>
-    public partial interface IWorkbookProcessQueryRequest : IBaseRequest
+    public partial interface ICallTransferRequest : IBaseRequest
     {
 
         /// <summary>
         /// Gets the request body.
         /// </summary>
-        WorkbookProcessQueryRequestBody RequestBody { get; }
+        CallTransferRequestBody RequestBody { get; }
 
 
         /// <summary>
         /// Issues the POST request.
         /// </summary>
-        System.Threading.Tasks.Task<Stream> PostAsync();
+        System.Threading.Tasks.Task PostAsync();
 
         /// <summary>
         /// Issues the POST request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="httpCompletionOption">The <see cref="HttpCompletionOption"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<Stream> PostAsync(
-            CancellationToken cancellationToken,
-            HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead);
+        System.Threading.Tasks.Task PostAsync(
+            CancellationToken cancellationToken);
         
 
 
 
 
+
+        /// <summary>
+        /// Adds the specified expand value to the request.
+        /// </summary>
+        /// <param name="value">The expand value.</param>
+        /// <returns>The request object to send.</returns>
+        ICallTransferRequest Expand(string value);
+
+        /// <summary>
+        /// Adds the specified select value to the request.
+        /// </summary>
+        /// <param name="value">The select value.</param>
+        /// <returns>The request object to send.</returns>
+        ICallTransferRequest Select(string value);
     }
 }

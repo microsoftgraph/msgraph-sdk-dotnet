@@ -59,6 +59,13 @@ namespace Microsoft.Graph
         public bool? V12_0 { get; set; }
     
         /// <summary>
+        /// Gets or sets v13_0.
+        /// Version 13.0 or later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v13_0", Required = Newtonsoft.Json.Required.Default)]
+        public bool? V13_0 { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]
