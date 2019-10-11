@@ -21,7 +21,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
 
             var actualDateTime = dateTimeTimeZone.ToDateTime();
             var expectedDateTime = DateTime.ParseExact(dateTimeTimeZone.DateTime, DateTimeFormat, CultureInfo.InvariantCulture);
-                                 
+
             Assert.Equal(expectedDateTime, actualDateTime);
         }
 
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
                 DateTime = "2019-06-03T22:00:00.0000000"
             };
             dateTimeTimeZoneList.Add(dateTimeTimeZoneTestThree);
-            
+
             foreach (var dateTimeTimeZone in dateTimeTimeZoneList)
             {
                 DateTime dateTime = GetDateTimeFromDateTimeTimeZone(dateTimeTimeZone);
@@ -103,6 +103,48 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
 
                 Assert.Equal(expectedDateTimeOffset.ToString(DateTimeFormat, CultureInfo.InvariantCulture), actualDateTimeTimeZone.DateTime);
                 Assert.Equal(timeZoneInfo.Id, actualDateTimeTimeZone.TimeZone);
+            }
+        }
+
+        [Fact]
+        public void FromDateTimeOffset_Should_Convert_DateTimeOffset_To_DateTimeTimeZone_DefaultParameter()
+        {
+            List<DateTimeTimeZone> dateTimeTimeZoneList = new List<DateTimeTimeZone>();
+            DateTimeTimeZone dateTimeTimeZoneTestOne = new DateTimeTimeZone
+            {
+                TimeZone = "Eastern Standard Time",
+                DateTime = "2019-06-03T14:00:00.0000000"
+            };
+            dateTimeTimeZoneList.Add(dateTimeTimeZoneTestOne);
+
+            DateTimeTimeZone dateTimeTimeZoneTestTwo = new DateTimeTimeZone
+            {
+                TimeZone = "UTC",
+                DateTime = "2019-01-25T06:37:39.8058788Z"
+            };
+            dateTimeTimeZoneList.Add(dateTimeTimeZoneTestTwo);
+
+            DateTimeTimeZone dateTimeTimeZoneTestThree = new DateTimeTimeZone
+            {
+                TimeZone = "Mauritius Standard Time",
+                DateTime = "2019-06-03T22:00:00.0000000"
+            };
+            dateTimeTimeZoneList.Add(dateTimeTimeZoneTestThree);
+
+            foreach (var dateTimeTimeZone in dateTimeTimeZoneList)
+            {
+                DateTime dateTime = GetDateTimeFromDateTimeTimeZone(dateTimeTimeZone);
+                TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(dateTimeTimeZone.TimeZone);
+
+                TimeSpan offset = timeZoneInfo.GetUtcOffset(dateTime);
+                dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Unspecified);
+
+                var expectedDateTimeOffset = new DateTimeOffset(dateTime, offset);
+                expectedDateTimeOffset = TimeZoneInfo.ConvertTime(expectedDateTimeOffset, timeZoneInfo);
+                var actualDateTimeTimeZone = DateTimeTimeZone.FromDateTimeOffset(expectedDateTimeOffset);
+
+                Assert.Equal(expectedDateTimeOffset.ToString(DateTimeFormat, CultureInfo.InvariantCulture), actualDateTimeTimeZone.DateTime);
+                Assert.Empty(actualDateTimeTimeZone.TimeZone);
             }
         }
 

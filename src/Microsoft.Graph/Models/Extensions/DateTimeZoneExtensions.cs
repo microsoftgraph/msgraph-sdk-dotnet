@@ -96,6 +96,56 @@ namespace Microsoft.Graph.Extensions
 
             return new DateTimeOffset(dateTime, offset);
         }
+        /// <summary>
+        /// Converts the dateTime to a DateTimeTimeZone object
+        /// <para>This method assumes the value is expressed on the same timezone as the target mailbox and the local machine</para>
+        /// </summary>
+        /// <param name="dateTime">>A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).</param>
+        /// <returns></returns>
+        public static DateTimeTimeZone ToDateTimeTimeZone(this DateTime dateTime)
+        {
+            return DateTimeTimeZone.FromDateTime(dateTime);
+        }
+        /// <summary>
+        /// Converts the dateTime to a DateTimeTimeZone object
+        /// </summary>
+        /// <param name="dateTime">>A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).</param>
+        /// <param name="timeZoneInfo">The expected values for timeZone are specified here: https://docs.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-1.0 </param>
+        /// <returns></returns>
+        public static DateTimeTimeZone ToDateTimeTimeZone(this DateTime dateTime, TimeZoneInfo timeZoneInfo)
+        {
+            return DateTimeTimeZone.FromDateTime(dateTime, timeZoneInfo);
+        }
+        /// <summary>
+        /// Converts the dateTimeOffset to a DateTimeTimeZone object
+        /// <para>This method assumes the value is expressed on the same timezone as the target mailbox and the local machine</para>
+        /// </summary>
+        /// <param name="dateTimeOffset">>A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).</param>
+        /// <returns></returns>
+        public static DateTimeTimeZone ToDateTimeTimeZone(this DateTimeOffset dateTimeOffset)
+        {
+            return DateTimeTimeZone.FromDateTimeOffset(dateTimeOffset);
+        }
+        /// <summary>
+        /// Converts the dateTimeOffset to a DateTimeTimeZone object
+        /// </summary>
+        /// <param name="dateTimeOffset">>A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).</param>
+        /// <param name="timeZone">The expected values for timeZone are specified here: https://docs.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-1.0 </param>
+        /// <returns></returns>
+        public static DateTimeTimeZone ToDateTimeTimeZone(this DateTimeOffset dateTimeOffset, string timeZone)
+        {
+            return DateTimeTimeZone.FromDateTimeOffset(dateTimeOffset, timeZone);
+        }
+        /// <summary>
+        /// Converts the dateTimeOffset to a DateTimeTimeZone object
+        /// </summary>
+        /// <param name="dateTimeOffset">>A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).</param>
+        /// <param name="timeZoneInfo">The expected values for timeZone are specified here: https://docs.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-1.0 </param>
+        /// <returns></returns>
+        public static DateTimeTimeZone ToDateTimeTimeZone(this DateTimeOffset dateTimeOffset, TimeZoneInfo timeZoneInfo)
+        {
+            return DateTimeTimeZone.FromDateTimeOffset(dateTimeOffset, timeZoneInfo);
+        }
     }
 }
 
@@ -107,6 +157,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Converts a Datetime parameter to its equivalent DateTimeTimeZone Complex Type given its TimeZone
+        /// <para>This method assumes the value is expressed on the same timezone as the target mailbox and the local machine</para>
         /// </summary>
         /// <param name="dateTime">A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).</param>
         /// <returns></returns>
@@ -115,7 +166,7 @@ namespace Microsoft.Graph
             DateTimeTimeZone dateTimeTimeZone = new DateTimeTimeZone
             {
                 DateTime = dateTime.ToString(DateTimeFormat, CultureInfo.InvariantCulture),
-                TimeZone = ""
+                TimeZone = string.Empty
             };
 
             return dateTimeTimeZone;
@@ -139,6 +190,39 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Converts a Datetime parameter to its equivalent DateTimeTimeZone Complex Type given its TimeZone
+        /// </summary>
+        /// <param name="dateTime">A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).</param>
+        /// <param name="timeZoneInfo">The expected values for timeZone are specified here: https://docs.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-1.0 </param>
+        /// <returns></returns>
+        public static DateTimeTimeZone FromDateTime(DateTime dateTime, TimeZoneInfo timeZoneInfo)
+        {
+            DateTimeTimeZone dateTimeTimeZone = new DateTimeTimeZone
+            {
+                DateTime = dateTime.ToString(DateTimeFormat, CultureInfo.InvariantCulture),
+                TimeZone = timeZoneInfo.Id
+            };
+            return dateTimeTimeZone;
+        }
+
+        /// <summary>
+        /// Converts a DatetimeOffset parameter to its equivalent DateTimeTimeZone Complex Type given its TimeZone
+        /// <para>This method assumes the value is expressed on the same timezone as the target mailbox and the local machine</para>
+        /// </summary>
+        /// <param name="dateTimeOffset">Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC).</param>
+        /// <returns></returns>
+        public static DateTimeTimeZone FromDateTimeOffset(DateTimeOffset dateTimeOffset)
+        {
+            DateTimeTimeZone dateTimeTimeZone = new DateTimeTimeZone
+            {
+                DateTime = dateTimeOffset.ToString(DateTimeFormat, CultureInfo.InvariantCulture),
+                TimeZone = string.Empty
+            };
+
+            return dateTimeTimeZone;
+        }
+
+        /// <summary>
         /// Converts a DatetimeOffset parameter to its equivalent DateTimeTimeZone Complex Type given its TimeZone
         /// </summary>
         /// <param name="dateTimeOffset">Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC).</param>
@@ -150,6 +234,23 @@ namespace Microsoft.Graph
             {
                 DateTime = dateTimeOffset.ToString(DateTimeFormat, CultureInfo.InvariantCulture),
                 TimeZone = timeZone
+            };
+
+            return dateTimeTimeZone;
+        }
+
+        /// <summary>
+        /// Converts a DatetimeOffset parameter to its equivalent DateTimeTimeZone Complex Type given its TimeZone
+        /// </summary>
+        /// <param name="dateTimeOffset">Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC).</param>
+        /// <param name="timeZoneInfo">The expected values for timeZone are specified here: https://docs.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-1.0 </param>
+        /// <returns></returns>
+        public static DateTimeTimeZone FromDateTimeOffset(DateTimeOffset dateTimeOffset, TimeZoneInfo timeZoneInfo)
+        {
+            DateTimeTimeZone dateTimeTimeZone = new DateTimeTimeZone
+            {
+                DateTime = dateTimeOffset.ToString(DateTimeFormat, CultureInfo.InvariantCulture),
+                TimeZone = timeZoneInfo.Id
             };
 
             return dateTimeTimeZone;
