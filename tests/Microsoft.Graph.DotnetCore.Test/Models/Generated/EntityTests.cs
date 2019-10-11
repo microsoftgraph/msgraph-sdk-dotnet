@@ -16,7 +16,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models.Generated
             var constructors = entityType.GetConstructors(
                 BindingFlags.Public | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Instance);
 
-            Assert.Equal(1, constructors.Count());
+            Assert.Single(constructors);
 
             var defaultConstructor = constructors.First();
             Assert.False(defaultConstructor.IsPrivate);
