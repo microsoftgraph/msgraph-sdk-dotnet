@@ -16,17 +16,19 @@ namespace Microsoft.Graph
     public partial class PlannerAssignments : IEnumerable<KeyValuePair<string, PlannerAssignment>>
     {
         /// <summary>
-        /// Creates a new instance of PlannerAssignments.
-        /// </summary>
-        public PlannerAssignments()
-        {
-            this.AdditionalData = new Dictionary<string, object>();
-        }
-
-        /// <summary>
         /// Gets the ids of the users assigned to the task. 
         /// </summary>
-        public IEnumerable<string> Assignees => this.AdditionalData.Where(kvp => kvp.Value is PlannerAssignment).Select(kvp => kvp.Key);
+        public IEnumerable<string> Assignees
+        {
+            get
+            {
+                if (this.AdditionalData is null)
+                {
+                    this.AdditionalData = new Dictionary<string, object>();
+                }
+                return this.AdditionalData.Where(kvp => kvp.Value is PlannerAssignment).Select(kvp => kvp.Key);
+            }
+        }
 
         /// <summary>
         /// Gets the number of assignees on the task.
@@ -47,6 +49,11 @@ namespace Microsoft.Graph
                     throw new ArgumentNullException(nameof(userId));
                 }
 
+                if (this.AdditionalData is null)
+                {
+                    this.AdditionalData = new Dictionary<string, object>();
+                }
+
                 if (!this.AdditionalData.TryGetValue(userId, out object assignmentObject))
                 {
                     return null;
@@ -60,6 +67,11 @@ namespace Microsoft.Graph
                 if (string.IsNullOrWhiteSpace(userId))
                 {
                     throw new ArgumentNullException(nameof(userId));
+                }
+
+                if (this.AdditionalData is null)
+                {
+                    this.AdditionalData = new Dictionary<string, object>();
                 }
 
                 this.AdditionalData[userId] = value;
@@ -82,6 +94,11 @@ namespace Microsoft.Graph
             // Use default sorting.
             plannerAssignment.OrderHint = " !";
 
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
+            }
+
             this.AdditionalData.Add(userId, plannerAssignment);
         }
 
@@ -91,6 +108,11 @@ namespace Microsoft.Graph
         /// <returns>Enumeration of user id, assignment information pairs.</returns>
         public IEnumerator<KeyValuePair<string, PlannerAssignment>> GetEnumerator()
         {
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
+            }
+
             return this.AdditionalData
                 .Where(kvp => kvp.Value is PlannerAssignment)
                 .Select(kvp => new KeyValuePair<string, PlannerAssignment>(kvp.Key, (PlannerAssignment)kvp.Value))
@@ -109,6 +131,11 @@ namespace Microsoft.Graph
         [OnDeserialized]
         internal void DeserializeAssignments(StreamingContext context)
         {
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
+            }
+
             this.AdditionalData.ConvertComplexTypeProperties<PlannerAssignment>(PlannerAssignment.ODataTypeName);
         }
     }

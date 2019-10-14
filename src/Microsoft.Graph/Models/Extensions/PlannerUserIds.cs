@@ -15,14 +15,6 @@ namespace Microsoft.Graph
     public partial class PlannerUserIds : IEnumerable<string>
     {
         /// <summary>
-        /// Creates a new instance of PlannerUserIds.
-        /// </summary>
-        public PlannerUserIds()
-        {
-            this.AdditionalData = new Dictionary<string, object>();
-        }
-
-        /// <summary>
         /// Number of user ids in the collection.
         /// </summary>
         public int Count => this.UserIds.Count();
@@ -36,6 +28,11 @@ namespace Microsoft.Graph
             if (string.IsNullOrEmpty(userId))
             {
                 throw new ArgumentNullException(nameof(userId));
+            }
+
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
             }
 
             this.AdditionalData[userId] = true;
@@ -52,6 +49,11 @@ namespace Microsoft.Graph
                 throw new ArgumentNullException(nameof(userId));
             }
 
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
+            }
+
             this.AdditionalData[userId] = false;
         }
 
@@ -65,6 +67,11 @@ namespace Microsoft.Graph
             if (string.IsNullOrEmpty(userId))
             {
                 throw new ArgumentNullException(nameof(userId));
+            }
+
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
             }
 
             return this.AdditionalData.TryGetValue(userId, out object value) && value is bool boolValue && boolValue;
@@ -84,6 +91,17 @@ namespace Microsoft.Graph
             return this.GetEnumerator();
         }
 
-        private IEnumerable<string> UserIds => this.AdditionalData.Where(kvp => kvp.Value is bool).Select(kvp => kvp.Key);
+        private IEnumerable<string> UserIds
+        {
+            get
+            {
+                if (this.AdditionalData is null)
+                {
+                    this.AdditionalData = new Dictionary<string, object>();
+                }
+
+                return this.AdditionalData.Where(kvp => kvp.Value is bool).Select(kvp => kvp.Key);
+            }
+        }
     }
 }

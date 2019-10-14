@@ -15,14 +15,6 @@ namespace Microsoft.Graph
     public partial class PlannerOrderHintsByAssignee : IEnumerable<KeyValuePair<string, string>>
     {
         /// <summary>
-        /// Creates a new instance of PlannerOrderHintsByAssignee.
-        /// </summary>
-        public PlannerOrderHintsByAssignee()
-        {
-            this.AdditionalData = new Dictionary<string, object>();
-        }
-
-        /// <summary>
         /// Gets or sets the order hint of an assignee.
         /// </summary>
         /// <param name="userId">User id of the assignee.</param>
@@ -31,11 +23,21 @@ namespace Microsoft.Graph
         {
             get
             {
+                if (this.AdditionalData is null)
+                {
+                    this.AdditionalData = new Dictionary<string, object>();
+                }
+
                 return this.AdditionalData.TryGetValue(userId, out object orderHint) ? orderHint as string : null;
             }
 
             set
             {
+                if (this.AdditionalData is null)
+                {
+                    this.AdditionalData = new Dictionary<string, object>();
+                }
+
                 this.AdditionalData[userId] = value;
             }
         }
@@ -46,6 +48,11 @@ namespace Microsoft.Graph
         /// <returns>Enumeration of user id, order hint pairs.</returns>
         public IEnumerator<KeyValuePair<string, string>> GetEnumerator()
         {
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
+            }
+
             return this.AdditionalData
                 .Where(kvp => kvp.Value is string && kvp.Key != CoreConstants.Serialization.ODataType)
                 .Select(kvp => new KeyValuePair<string, string>(kvp.Key, (string)kvp.Value))
