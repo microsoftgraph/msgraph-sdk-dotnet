@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfileGeneralDeviceConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The AndroidWorkProfileGeneralDeviceConfiguration constructor
+		///</summary>
+        public AndroidWorkProfileGeneralDeviceConfiguration()
+        {
+            this.ODataType = "microsoft.graph.androidWorkProfileGeneralDeviceConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets password block fingerprint unlock.
         /// Indicates whether or not to block fingerprint unlock.

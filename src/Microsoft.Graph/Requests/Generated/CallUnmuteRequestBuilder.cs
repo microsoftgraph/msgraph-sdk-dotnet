@@ -14,23 +14,23 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type WorkbookProcessQueryRequestBuilder.
+    /// The type CallUnmuteRequestBuilder.
     /// </summary>
-    public partial class WorkbookProcessQueryRequestBuilder : BaseActionMethodRequestBuilder<IWorkbookProcessQueryRequest>, IWorkbookProcessQueryRequestBuilder
+    public partial class CallUnmuteRequestBuilder : BaseActionMethodRequestBuilder<ICallUnmuteRequest>, ICallUnmuteRequestBuilder
     {
         /// <summary>
-        /// Constructs a new <see cref="WorkbookProcessQueryRequestBuilder"/>.
+        /// Constructs a new <see cref="CallUnmuteRequestBuilder"/>.
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="input">A input parameter for the OData method call.</param>
-        public WorkbookProcessQueryRequestBuilder(
+        /// <param name="clientContext">A clientContext parameter for the OData method call.</param>
+        public CallUnmuteRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Stream input)
+            string clientContext)
             : base(requestUrl, client)
         {
-            this.SetParameter("input", input, true);
+            this.SetParameter("clientContext", clientContext, true);
         }
 
         /// <summary>
@@ -39,13 +39,13 @@ namespace Microsoft.Graph
         /// <param name="functionUrl">The request URL to </param>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>An instance of a specific request class.</returns>
-        protected override IWorkbookProcessQueryRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
+        protected override ICallUnmuteRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
-            var request = new WorkbookProcessQueryRequest(functionUrl, this.Client, options);
+            var request = new CallUnmuteRequest(functionUrl, this.Client, options);
 
-            if (this.HasParameter("input"))
+            if (this.HasParameter("clientContext"))
             {
-                request.RequestBody.Input = this.GetParameter<Stream>("input");
+                request.RequestBody.ClientContext = this.GetParameter<string>("clientContext");
             }
 
             return request;

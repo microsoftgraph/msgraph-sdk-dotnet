@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class RestrictedSignIn : SignIn
     {
     
+		///<summary>
+		/// The RestrictedSignIn constructor
+		///</summary>
+        public RestrictedSignIn()
+        {
+            this.ODataType = "microsoft.graph.restrictedSignIn";
+        }
+	
         /// <summary>
         /// Gets or sets target tenant id.
         /// </summary>

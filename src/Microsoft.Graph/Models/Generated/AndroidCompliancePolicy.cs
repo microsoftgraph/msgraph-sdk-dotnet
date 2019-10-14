@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidCompliancePolicy : DeviceCompliancePolicy
     {
     
+		///<summary>
+		/// The AndroidCompliancePolicy constructor
+		///</summary>
+        public AndroidCompliancePolicy()
+        {
+            this.ODataType = "microsoft.graph.androidCompliancePolicy";
+        }
+	
         /// <summary>
         /// Gets or sets password required.
         /// Require a password to unlock device.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOSCompliancePolicy : DeviceCompliancePolicy
     {
     
+		///<summary>
+		/// The MacOSCompliancePolicy constructor
+		///</summary>
+        public MacOSCompliancePolicy()
+        {
+            this.ODataType = "microsoft.graph.macOSCompliancePolicy";
+        }
+	
         /// <summary>
         /// Gets or sets password required.
         /// Whether or not to require a password.

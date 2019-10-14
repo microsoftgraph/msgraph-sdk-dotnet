@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AppliedConditionalAccessPolicy
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppliedConditionalAccessPolicy"/> class.
+        /// </summary>
+        public AppliedConditionalAccessPolicy()
+        {
+            this.ODataType = "microsoft.graph.appliedConditionalAccessPolicy";
+        }
 
         /// <summary>
         /// Gets or sets id.

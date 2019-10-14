@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class UserInstallStateSummary : Entity
     {
     
+		///<summary>
+		/// The UserInstallStateSummary constructor
+		///</summary>
+        public UserInstallStateSummary()
+        {
+            this.ODataType = "microsoft.graph.userInstallStateSummary";
+        }
+	
         /// <summary>
         /// Gets or sets user name.
         /// User name.

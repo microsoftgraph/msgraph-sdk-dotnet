@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Device : DirectoryObject
     {
     
+		///<summary>
+		/// The Device constructor
+		///</summary>
+        public Device()
+        {
+            this.ODataType = "microsoft.graph.device";
+        }
+	
         /// <summary>
         /// Gets or sets account enabled.
         /// true if the account is enabled; otherwise, false. Required.

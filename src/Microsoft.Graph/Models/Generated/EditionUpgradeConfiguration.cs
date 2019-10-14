@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EditionUpgradeConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The EditionUpgradeConfiguration constructor
+		///</summary>
+        public EditionUpgradeConfiguration()
+        {
+            this.ODataType = "microsoft.graph.editionUpgradeConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets license type.
         /// Edition Upgrade License Type. Possible values are: productKey, licenseFile.

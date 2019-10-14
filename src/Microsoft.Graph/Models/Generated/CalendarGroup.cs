@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class CalendarGroup : Entity
     {
     
+		///<summary>
+		/// The CalendarGroup constructor
+		///</summary>
+        public CalendarGroup()
+        {
+            this.ODataType = "microsoft.graph.calendarGroup";
+        }
+	
         /// <summary>
         /// Gets or sets name.
         /// The group name.

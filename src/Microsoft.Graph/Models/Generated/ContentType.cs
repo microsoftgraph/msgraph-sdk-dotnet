@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ContentType : Entity
     {
     
+		///<summary>
+		/// The ContentType constructor
+		///</summary>
+        public ContentType()
+        {
+            this.ODataType = "microsoft.graph.contentType";
+        }
+	
         /// <summary>
         /// Gets or sets description.
         /// The descriptive text for the item.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10SecureAssessmentConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The Windows10SecureAssessmentConfiguration constructor
+		///</summary>
+        public Windows10SecureAssessmentConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windows10SecureAssessmentConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets launch uri.
         /// Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).

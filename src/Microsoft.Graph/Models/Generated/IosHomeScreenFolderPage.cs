@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class IosHomeScreenFolderPage
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IosHomeScreenFolderPage"/> class.
+        /// </summary>
+        public IosHomeScreenFolderPage()
+        {
+            this.ODataType = "microsoft.graph.iosHomeScreenFolderPage";
+        }
 
         /// <summary>
         /// Gets or sets displayName.

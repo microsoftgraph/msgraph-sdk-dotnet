@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DirectoryRoleTemplate : DirectoryObject
     {
     
+		///<summary>
+		/// The DirectoryRoleTemplate constructor
+		///</summary>
+        public DirectoryRoleTemplate()
+        {
+            this.ODataType = "microsoft.graph.directoryRoleTemplate";
+        }
+	
         /// <summary>
         /// Gets or sets description.
         /// The description to set for the directory role. Read-only.

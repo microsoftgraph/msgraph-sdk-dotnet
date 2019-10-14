@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ManagedDeviceMobileAppConfigurationDeviceSummary : Entity
     {
     
+		///<summary>
+		/// The ManagedDeviceMobileAppConfigurationDeviceSummary constructor
+		///</summary>
+        public ManagedDeviceMobileAppConfigurationDeviceSummary()
+        {
+            this.ODataType = "microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary";
+        }
+	
         /// <summary>
         /// Gets or sets pending count.
         /// Number of pending devices

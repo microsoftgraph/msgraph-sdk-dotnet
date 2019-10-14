@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ScheduleInformation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScheduleInformation"/> class.
+        /// </summary>
+        public ScheduleInformation()
+        {
+            this.ODataType = "microsoft.graph.scheduleInformation";
+        }
 
         /// <summary>
         /// Gets or sets scheduleId.

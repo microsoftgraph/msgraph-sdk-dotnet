@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SiteCollection
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SiteCollection"/> class.
+        /// </summary>
+        public SiteCollection()
+        {
+            this.ODataType = "microsoft.graph.siteCollection";
+        }
 
         /// <summary>
         /// Gets or sets hostname.

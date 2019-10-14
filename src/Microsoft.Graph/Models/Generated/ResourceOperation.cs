@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ResourceOperation : Entity
     {
     
+		///<summary>
+		/// The ResourceOperation constructor
+		///</summary>
+        public ResourceOperation()
+        {
+            this.ODataType = "microsoft.graph.resourceOperation";
+        }
+	
         /// <summary>
         /// Gets or sets resource name.
         /// Name of the Resource this operation is performed on.

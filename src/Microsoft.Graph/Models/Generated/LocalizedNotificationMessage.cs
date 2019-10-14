@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class LocalizedNotificationMessage : Entity
     {
     
+		///<summary>
+		/// The LocalizedNotificationMessage constructor
+		///</summary>
+        public LocalizedNotificationMessage()
+        {
+            this.ODataType = "microsoft.graph.localizedNotificationMessage";
+        }
+	
         /// <summary>
         /// Gets or sets last modified date time.
         /// DateTime the object was last modified.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ManagedAppDiagnosticStatus
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManagedAppDiagnosticStatus"/> class.
+        /// </summary>
+        public ManagedAppDiagnosticStatus()
+        {
+            this.ODataType = "microsoft.graph.managedAppDiagnosticStatus";
+        }
 
         /// <summary>
         /// Gets or sets validationName.

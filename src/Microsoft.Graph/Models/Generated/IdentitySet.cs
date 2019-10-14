@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class IdentitySet
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IdentitySet"/> class.
+        /// </summary>
+        public IdentitySet()
+        {
+            this.ODataType = "microsoft.graph.identitySet";
+        }
 
         /// <summary>
         /// Gets or sets application.

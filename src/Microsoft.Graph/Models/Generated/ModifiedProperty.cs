@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ModifiedProperty
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModifiedProperty"/> class.
+        /// </summary>
+        public ModifiedProperty()
+        {
+            this.ODataType = "microsoft.graph.modifiedProperty";
+        }
 
         /// <summary>
         /// Gets or sets displayName.

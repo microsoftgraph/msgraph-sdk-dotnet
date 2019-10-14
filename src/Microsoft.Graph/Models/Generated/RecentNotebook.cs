@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class RecentNotebook
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecentNotebook"/> class.
+        /// </summary>
+        public RecentNotebook()
+        {
+            this.ODataType = "microsoft.graph.recentNotebook";
+        }
 
         /// <summary>
         /// Gets or sets displayName.

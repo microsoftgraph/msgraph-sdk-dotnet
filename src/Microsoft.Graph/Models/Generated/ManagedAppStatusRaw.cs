@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ManagedAppStatusRaw : ManagedAppStatus
     {
     
+		///<summary>
+		/// The ManagedAppStatusRaw constructor
+		///</summary>
+        public ManagedAppStatusRaw()
+        {
+            this.ODataType = "microsoft.graph.managedAppStatusRaw";
+        }
+	
         /// <summary>
         /// Gets or sets content.
         /// Status report content.

@@ -22,20 +22,31 @@ namespace Microsoft.Graph
     public partial class WorkbookComment : Entity
     {
     
+		///<summary>
+		/// The WorkbookComment constructor
+		///</summary>
+        public WorkbookComment()
+        {
+            this.ODataType = "microsoft.graph.workbookComment";
+        }
+	
         /// <summary>
         /// Gets or sets content.
+        /// The content of comment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
         public string Content { get; set; }
     
         /// <summary>
         /// Gets or sets content type.
+        /// Indicates the type for the comment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
         public string ContentType { get; set; }
     
         /// <summary>
         /// Gets or sets replies.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replies", Required = Newtonsoft.Json.Required.Default)]
         public IWorkbookCommentRepliesCollectionPage Replies { get; set; }

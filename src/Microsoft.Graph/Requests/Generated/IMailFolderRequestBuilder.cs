@@ -32,6 +32,18 @@ namespace Microsoft.Graph
         new IMailFolderRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for SingleValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        IMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
+
+        /// <summary>
+        /// Gets the request builder for MultiValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        IMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
+
+        /// <summary>
         /// Gets the request builder for Messages.
         /// </summary>
         /// <returns>The <see cref="IMailFolderMessagesCollectionRequestBuilder"/>.</returns>
@@ -48,32 +60,20 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMailFolderChildFoldersCollectionRequestBuilder"/>.</returns>
         IMailFolderChildFoldersCollectionRequestBuilder ChildFolders { get; }
-
-        /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="IMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        IMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
-
-        /// <summary>
-        /// Gets the request builder for MultiValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="IMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        IMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
     
         /// <summary>
         /// Gets the request builder for MailFolderCopy.
         /// </summary>
         /// <returns>The <see cref="IMailFolderCopyRequestBuilder"/>.</returns>
         IMailFolderCopyRequestBuilder Copy(
-            string DestinationId = null);
+            string DestinationId);
 
         /// <summary>
         /// Gets the request builder for MailFolderMove.
         /// </summary>
         /// <returns>The <see cref="IMailFolderMoveRequestBuilder"/>.</returns>
         IMailFolderMoveRequestBuilder Move(
-            string DestinationId = null);
+            string DestinationId);
     
     }
 }

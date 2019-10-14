@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DomainDnsUnavailableRecord : DomainDnsRecord
     {
     
+		///<summary>
+		/// The DomainDnsUnavailableRecord constructor
+		///</summary>
+        public DomainDnsUnavailableRecord()
+        {
+            this.ODataType = "microsoft.graph.domainDnsUnavailableRecord";
+        }
+	
         /// <summary>
         /// Gets or sets description.
         /// Provides the reason why the DomainDnsUnavailableRecord entity is returned.

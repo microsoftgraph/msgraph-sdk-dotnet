@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PlannerChecklistItem
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlannerChecklistItem"/> class.
+        /// </summary>
+        public PlannerChecklistItem()
+        {
+            this.ODataType = "microsoft.graph.plannerChecklistItem";
+        }
 
         /// <summary>
         /// Gets or sets isChecked.

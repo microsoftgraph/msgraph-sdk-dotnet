@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81CustomConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The WindowsPhone81CustomConfiguration constructor
+		///</summary>
+        public WindowsPhone81CustomConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windowsPhone81CustomConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets oma settings.
         /// OMA settings. This collection can contain a maximum of 1000 elements.

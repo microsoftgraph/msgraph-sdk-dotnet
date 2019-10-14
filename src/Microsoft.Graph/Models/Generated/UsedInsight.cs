@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class UsedInsight : Entity
     {
     
+		///<summary>
+		/// The UsedInsight constructor
+		///</summary>
+        public UsedInsight()
+        {
+            this.ODataType = "microsoft.graph.usedInsight";
+        }
+	
         /// <summary>
         /// Gets or sets last used.
         /// </summary>

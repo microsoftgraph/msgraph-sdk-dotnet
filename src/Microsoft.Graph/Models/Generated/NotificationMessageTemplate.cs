@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class NotificationMessageTemplate : Entity
     {
     
+		///<summary>
+		/// The NotificationMessageTemplate constructor
+		///</summary>
+        public NotificationMessageTemplate()
+        {
+            this.ODataType = "microsoft.graph.notificationMessageTemplate";
+        }
+	
         /// <summary>
         /// Gets or sets last modified date time.
         /// DateTime the object was last modified.

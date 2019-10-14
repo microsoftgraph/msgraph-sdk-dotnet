@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsUpdateForBusinessConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The WindowsUpdateForBusinessConfiguration constructor
+		///</summary>
+        public WindowsUpdateForBusinessConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windowsUpdateForBusinessConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets delivery optimization mode.
         /// Delivery Optimization Mode. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.

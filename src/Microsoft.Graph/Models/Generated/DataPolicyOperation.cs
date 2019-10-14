@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DataPolicyOperation : Entity
     {
     
+		///<summary>
+		/// The DataPolicyOperation constructor
+		///</summary>
+        public DataPolicyOperation()
+        {
+            this.ODataType = "microsoft.graph.dataPolicyOperation";
+        }
+	
         /// <summary>
         /// Gets or sets completed date time.
         /// Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Null until the operation completes.

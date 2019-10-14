@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class FreeBusyError
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FreeBusyError"/> class.
+        /// </summary>
+        public FreeBusyError()
+        {
+            this.ODataType = "microsoft.graph.freeBusyError";
+        }
 
         /// <summary>
         /// Gets or sets message.

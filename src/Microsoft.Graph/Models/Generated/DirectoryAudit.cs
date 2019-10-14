@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DirectoryAudit : Entity
     {
     
+		///<summary>
+		/// The DirectoryAudit constructor
+		///</summary>
+        public DirectoryAudit()
+        {
+            this.ODataType = "microsoft.graph.directoryAudit";
+        }
+	
         /// <summary>
         /// Gets or sets category.
         /// Indicates which resource category that's targeted by the activity. (For example: User Management, Group Management etc..)

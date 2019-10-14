@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class UserIdentity
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserIdentity"/> class.
+        /// </summary>
+        public UserIdentity()
+        {
+            this.ODataType = "microsoft.graph.userIdentity";
+        }
 
         /// <summary>
         /// Gets or sets id.

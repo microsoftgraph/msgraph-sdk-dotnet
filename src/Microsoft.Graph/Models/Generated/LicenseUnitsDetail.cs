@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class LicenseUnitsDetail
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LicenseUnitsDetail"/> class.
+        /// </summary>
+        public LicenseUnitsDetail()
+        {
+            this.ODataType = "microsoft.graph.licenseUnitsDetail";
+        }
 
         /// <summary>
         /// Gets or sets enabled.

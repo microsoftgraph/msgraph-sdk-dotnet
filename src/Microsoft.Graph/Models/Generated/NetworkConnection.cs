@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class NetworkConnection
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NetworkConnection"/> class.
+        /// </summary>
+        public NetworkConnection()
+        {
+            this.ODataType = "microsoft.graph.networkConnection";
+        }
 
         /// <summary>
         /// Gets or sets applicationName.

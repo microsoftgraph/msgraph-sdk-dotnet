@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceEnrollmentWindowsHelloForBusinessConfiguration : DeviceEnrollmentConfiguration
     {
     
+		///<summary>
+		/// The DeviceEnrollmentWindowsHelloForBusinessConfiguration constructor
+		///</summary>
+        public DeviceEnrollmentWindowsHelloForBusinessConfiguration()
+        {
+            this.ODataType = "microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets pin minimum length.
         /// Not yet documented

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Notebook : OnenoteEntityHierarchyModel
     {
     
+		///<summary>
+		/// The Notebook constructor
+		///</summary>
+        public Notebook()
+        {
+            this.ODataType = "microsoft.graph.notebook";
+        }
+	
         /// <summary>
         /// Gets or sets is default.
         /// Indicates whether this is the user's default notebook. Read-only.

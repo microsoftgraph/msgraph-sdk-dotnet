@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Quota
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Quota"/> class.
+        /// </summary>
+        public Quota()
+        {
+            this.ODataType = "microsoft.graph.quota";
+        }
 
         /// <summary>
         /// Gets or sets deleted.

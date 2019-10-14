@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class PlannerTaskDetails : Entity
     {
     
+		///<summary>
+		/// The PlannerTaskDetails constructor
+		///</summary>
+        public PlannerTaskDetails()
+        {
+            this.ODataType = "microsoft.graph.plannerTaskDetails";
+        }
+	
         /// <summary>
         /// Gets or sets description.
         /// Description of the task

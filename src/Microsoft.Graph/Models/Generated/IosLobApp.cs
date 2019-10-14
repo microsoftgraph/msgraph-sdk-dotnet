@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosLobApp : MobileLobApp
     {
     
+		///<summary>
+		/// The IosLobApp constructor
+		///</summary>
+        public IosLobApp()
+        {
+            this.ODataType = "microsoft.graph.iosLobApp";
+        }
+	
         /// <summary>
         /// Gets or sets bundle id.
         /// The Identity Name.

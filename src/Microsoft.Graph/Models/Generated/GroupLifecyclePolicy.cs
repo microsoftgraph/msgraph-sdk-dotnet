@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GroupLifecyclePolicy : Entity
     {
     
+		///<summary>
+		/// The GroupLifecyclePolicy constructor
+		///</summary>
+        public GroupLifecyclePolicy()
+        {
+            this.ODataType = "microsoft.graph.groupLifecyclePolicy";
+        }
+	
         /// <summary>
         /// Gets or sets group lifetime in days.
         /// Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.

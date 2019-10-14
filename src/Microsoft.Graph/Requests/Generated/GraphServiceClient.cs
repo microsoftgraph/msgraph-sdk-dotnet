@@ -9,6 +9,7 @@
 
 namespace Microsoft.Graph
 {
+    using System.Net.Http;
 
     /// <summary>
     /// The type GraphServiceClient.
@@ -39,6 +40,50 @@ namespace Microsoft.Graph
             IHttpProvider httpProvider = null)
             : base(baseUrl, authenticationProvider, httpProvider)
         {
+        }
+
+        /// <summary>
+        /// Instantiates a new GraphServiceClient.
+        /// </summary>
+        /// <param name="httpClient">The <see cref="HttpClient"/> to use for making requests to Microsoft Graph. Use the <see cref="GraphClientFactory"/>
+        /// to get a pre-configured HttpClient that is optimized for use with the Microsoft Graph service API. </param>
+        public GraphServiceClient(
+            HttpClient httpClient)
+            : base("https://graph.microsoft.com/v1.0", httpClient)
+        {
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceInvitations request builder.
+        /// </summary>
+        public IGraphServiceInvitationsCollectionRequestBuilder Invitations
+        {
+            get
+            {
+                return new GraphServiceInvitationsCollectionRequestBuilder(this.BaseUrl + "/invitations", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceUsers request builder.
+        /// </summary>
+        public IGraphServiceUsersCollectionRequestBuilder Users
+        {
+            get
+            {
+                return new GraphServiceUsersCollectionRequestBuilder(this.BaseUrl + "/users", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceIdentityProviders request builder.
+        /// </summary>
+        public IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders
+        {
+            get
+            {
+                return new GraphServiceIdentityProvidersCollectionRequestBuilder(this.BaseUrl + "/identityProviders", this);
+            }
         }
     
         /// <summary>
@@ -163,17 +208,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceUsers request builder.
-        /// </summary>
-        public IGraphServiceUsersCollectionRequestBuilder Users
-        {
-            get
-            {
-                return new GraphServiceUsersCollectionRequestBuilder(this.BaseUrl + "/users", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceContracts request builder.
         /// </summary>
         public IGraphServiceContractsCollectionRequestBuilder Contracts
@@ -185,13 +219,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceSchemaExtensions request builder.
+        /// Gets the GraphServiceWorkbooks request builder.
         /// </summary>
-        public IGraphServiceSchemaExtensionsCollectionRequestBuilder SchemaExtensions
+        public IGraphServiceWorkbooksCollectionRequestBuilder Workbooks
         {
             get
             {
-                return new GraphServiceSchemaExtensionsCollectionRequestBuilder(this.BaseUrl + "/schemaExtensions", this);
+                return new GraphServiceWorkbooksCollectionRequestBuilder(this.BaseUrl + "/workbooks", this);
             }
         }
     
@@ -229,35 +263,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceWorkbooks request builder.
+        /// Gets the GraphServiceSchemaExtensions request builder.
         /// </summary>
-        public IGraphServiceWorkbooksCollectionRequestBuilder Workbooks
+        public IGraphServiceSchemaExtensionsCollectionRequestBuilder SchemaExtensions
         {
             get
             {
-                return new GraphServiceWorkbooksCollectionRequestBuilder(this.BaseUrl + "/workbooks", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceSubscriptions request builder.
-        /// </summary>
-        public IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions
-        {
-            get
-            {
-                return new GraphServiceSubscriptionsCollectionRequestBuilder(this.BaseUrl + "/subscriptions", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceInvitations request builder.
-        /// </summary>
-        public IGraphServiceInvitationsCollectionRequestBuilder Invitations
-        {
-            get
-            {
-                return new GraphServiceInvitationsCollectionRequestBuilder(this.BaseUrl + "/invitations", this);
+                return new GraphServiceSchemaExtensionsCollectionRequestBuilder(this.BaseUrl + "/schemaExtensions", this);
             }
         }
     
@@ -273,17 +285,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceTeams request builder.
-        /// </summary>
-        public IGraphServiceTeamsCollectionRequestBuilder Teams
-        {
-            get
-            {
-                return new GraphServiceTeamsCollectionRequestBuilder(this.BaseUrl + "/teams", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceDataPolicyOperations request builder.
         /// </summary>
         public IGraphServiceDataPolicyOperationsCollectionRequestBuilder DataPolicyOperations
@@ -295,13 +296,35 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceIdentityProviders request builder.
+        /// Gets the GraphServiceSubscriptions request builder.
         /// </summary>
-        public IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders
+        public IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions
         {
             get
             {
-                return new GraphServiceIdentityProvidersCollectionRequestBuilder(this.BaseUrl + "/identityProviders", this);
+                return new GraphServiceSubscriptionsCollectionRequestBuilder(this.BaseUrl + "/subscriptions", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceTeams request builder.
+        /// </summary>
+        public IGraphServiceTeamsCollectionRequestBuilder Teams
+        {
+            get
+            {
+                return new GraphServiceTeamsCollectionRequestBuilder(this.BaseUrl + "/teams", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAuditLogs request builder.
+        /// </summary>
+        public IAuditLogRootRequestBuilder AuditLogs
+        {
+            get
+            {
+                return new AuditLogRootRequestBuilder(this.BaseUrl + "/auditLogs", this);
             }
         }
     
@@ -328,39 +351,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceDrive request builder.
-        /// </summary>
-        public IDriveRequestBuilder Drive
-        {
-            get
-            {
-                return new DriveRequestBuilder(this.BaseUrl + "/drive", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServicePlanner request builder.
-        /// </summary>
-        public IPlannerRequestBuilder Planner
-        {
-            get
-            {
-                return new PlannerRequestBuilder(this.BaseUrl + "/planner", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceReports request builder.
-        /// </summary>
-        public IReportRootRequestBuilder Reports
-        {
-            get
-            {
-                return new ReportRootRequestBuilder(this.BaseUrl + "/reports", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceEducation request builder.
         /// </summary>
         public IEducationRootRequestBuilder Education
@@ -368,6 +358,17 @@ namespace Microsoft.Graph
             get
             {
                 return new EducationRootRequestBuilder(this.BaseUrl + "/education", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceDrive request builder.
+        /// </summary>
+        public IDriveRequestBuilder Drive
+        {
+            get
+            {
+                return new DriveRequestBuilder(this.BaseUrl + "/drive", this);
             }
         }
     
@@ -394,6 +395,28 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceReports request builder.
+        /// </summary>
+        public IReportRootRequestBuilder Reports
+        {
+            get
+            {
+                return new ReportRootRequestBuilder(this.BaseUrl + "/reports", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServicePlanner request builder.
+        /// </summary>
+        public IPlannerRequestBuilder Planner
+        {
+            get
+            {
+                return new PlannerRequestBuilder(this.BaseUrl + "/planner", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceSecurity request builder.
         /// </summary>
         public ISecurityRequestBuilder Security
@@ -405,6 +428,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceCommunications request builder.
+        /// </summary>
+        public ICloudCommunicationsRequestBuilder Communications
+        {
+            get
+            {
+                return new CloudCommunicationsRequestBuilder(this.BaseUrl + "/communications", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceAppCatalogs request builder.
         /// </summary>
         public IAppCatalogsRequestBuilder AppCatalogs
@@ -412,17 +446,6 @@ namespace Microsoft.Graph
             get
             {
                 return new AppCatalogsRequestBuilder(this.BaseUrl + "/appCatalogs", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceAuditLogs request builder.
-        /// </summary>
-        public IAuditLogRootRequestBuilder AuditLogs
-        {
-            get
-            {
-                return new AuditLogRootRequestBuilder(this.BaseUrl + "/auditLogs", this);
             }
         }
     

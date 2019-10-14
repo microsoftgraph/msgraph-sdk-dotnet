@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class UserActivity : Entity
     {
     
+		///<summary>
+		/// The UserActivity constructor
+		///</summary>
+        public UserActivity()
+        {
+            this.ODataType = "microsoft.graph.userActivity";
+        }
+	
         /// <summary>
         /// Gets or sets visual elements.
         /// Required. The object containing information to render the activity in the UX.

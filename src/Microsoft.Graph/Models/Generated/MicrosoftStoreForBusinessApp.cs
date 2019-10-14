@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MicrosoftStoreForBusinessApp : MobileApp
     {
     
+		///<summary>
+		/// The MicrosoftStoreForBusinessApp constructor
+		///</summary>
+        public MicrosoftStoreForBusinessApp()
+        {
+            this.ODataType = "microsoft.graph.microsoftStoreForBusinessApp";
+        }
+	
         /// <summary>
         /// Gets or sets used license count.
         /// The number of Microsoft Store for Business licenses in use.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ItemBody
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ItemBody"/> class.
+        /// </summary>
+        public ItemBody()
+        {
+            this.ODataType = "microsoft.graph.itemBody";
+        }
 
         /// <summary>
         /// Gets or sets contentType.

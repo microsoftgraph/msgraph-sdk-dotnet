@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Subscription : Entity
     {
     
+		///<summary>
+		/// The Subscription constructor
+		///</summary>
+        public Subscription()
+        {
+            this.ODataType = "microsoft.graph.subscription";
+        }
+	
         /// <summary>
         /// Gets or sets resource.
         /// Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/).

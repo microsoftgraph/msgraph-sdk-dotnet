@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Drive : BaseItem
     {
     
+		///<summary>
+		/// The Drive constructor
+		///</summary>
+        public Drive()
+        {
+            this.ODataType = "microsoft.graph.drive";
+        }
+	
         /// <summary>
         /// Gets or sets drive type.
         /// Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.

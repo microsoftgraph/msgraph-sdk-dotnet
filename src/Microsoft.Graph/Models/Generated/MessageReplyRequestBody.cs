@@ -23,6 +23,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets Message.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Message", Required = Newtonsoft.Json.Required.Default)]
+        public Message Message { get; set; }
+    
+        /// <summary>
         /// Gets or sets Comment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Comment", Required = Newtonsoft.Json.Required.Default)]

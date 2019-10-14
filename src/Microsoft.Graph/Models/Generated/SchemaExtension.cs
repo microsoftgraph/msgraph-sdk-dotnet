@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SchemaExtension : Entity
     {
     
+		///<summary>
+		/// The SchemaExtension constructor
+		///</summary>
+        public SchemaExtension()
+        {
+            this.ODataType = "microsoft.graph.schemaExtension";
+        }
+	
         /// <summary>
         /// Gets or sets description.
         /// Description for the schema extension.

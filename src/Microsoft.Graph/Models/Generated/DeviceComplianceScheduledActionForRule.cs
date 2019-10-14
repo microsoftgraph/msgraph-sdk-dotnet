@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceComplianceScheduledActionForRule : Entity
     {
     
+		///<summary>
+		/// The DeviceComplianceScheduledActionForRule constructor
+		///</summary>
+        public DeviceComplianceScheduledActionForRule()
+        {
+            this.ODataType = "microsoft.graph.deviceComplianceScheduledActionForRule";
+        }
+	
         /// <summary>
         /// Gets or sets rule name.
         /// Name of the rule which this scheduled action applies to.

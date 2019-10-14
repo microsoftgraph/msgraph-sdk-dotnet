@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SharedPCConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The SharedPCConfiguration constructor
+		///</summary>
+        public SharedPCConfiguration()
+        {
+            this.ODataType = "microsoft.graph.sharedPCConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets account manager policy.
         /// Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.

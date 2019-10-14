@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ExternalLink
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExternalLink"/> class.
+        /// </summary>
+        public ExternalLink()
+        {
+            this.ODataType = "microsoft.graph.externalLink";
+        }
 
         /// <summary>
         /// Gets or sets href.

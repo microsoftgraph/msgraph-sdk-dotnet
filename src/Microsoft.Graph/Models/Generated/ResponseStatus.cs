@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ResponseStatus
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResponseStatus"/> class.
+        /// </summary>
+        public ResponseStatus()
+        {
+            this.ODataType = "microsoft.graph.responseStatus";
+        }
 
         /// <summary>
         /// Gets or sets response.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Alert : Entity
     {
     
+		///<summary>
+		/// The Alert constructor
+		///</summary>
+        public Alert()
+        {
+            this.ODataType = "microsoft.graph.alert";
+        }
+	
         /// <summary>
         /// Gets or sets activity group name.
         /// Name or alias of the activity group (attacker) this alert is attributed to.

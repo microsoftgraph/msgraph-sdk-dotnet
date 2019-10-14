@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class WindowsInformationProtectionResourceCollection
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsInformationProtectionResourceCollection"/> class.
+        /// </summary>
+        public WindowsInformationProtectionResourceCollection()
+        {
+            this.ODataType = "microsoft.graph.windowsInformationProtectionResourceCollection";
+        }
 
         /// <summary>
         /// Gets or sets displayName.

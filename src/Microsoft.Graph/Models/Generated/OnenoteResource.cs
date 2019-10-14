@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OnenoteResource : OnenoteEntityBaseModel
     {
     
+		///<summary>
+		/// The OnenoteResource constructor
+		///</summary>
+        public OnenoteResource()
+        {
+            this.ODataType = "microsoft.graph.onenoteResource";
+        }
+	
         /// <summary>
         /// Gets or sets content.
         /// The content stream

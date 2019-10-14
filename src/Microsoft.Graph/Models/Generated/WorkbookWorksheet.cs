@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookWorksheet : Entity
     {
     
+		///<summary>
+		/// The WorkbookWorksheet constructor
+		///</summary>
+        public WorkbookWorksheet()
+        {
+            this.ODataType = "microsoft.graph.workbookWorksheet";
+        }
+	
         /// <summary>
         /// Gets or sets name.
         /// The display name of the worksheet.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class InferenceClassificationOverride : Entity
     {
     
+		///<summary>
+		/// The InferenceClassificationOverride constructor
+		///</summary>
+        public InferenceClassificationOverride()
+        {
+            this.ODataType = "microsoft.graph.inferenceClassificationOverride";
+        }
+	
         /// <summary>
         /// Gets or sets classify as.
         /// Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.

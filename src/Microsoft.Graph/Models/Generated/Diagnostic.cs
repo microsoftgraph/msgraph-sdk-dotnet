@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Diagnostic
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Diagnostic"/> class.
+        /// </summary>
+        public Diagnostic()
+        {
+            this.ODataType = "microsoft.graph.diagnostic";
+        }
 
         /// <summary>
         /// Gets or sets message.

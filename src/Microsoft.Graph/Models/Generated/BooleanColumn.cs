@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class BooleanColumn
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BooleanColumn"/> class.
+        /// </summary>
+        public BooleanColumn()
+        {
+            this.ODataType = "microsoft.graph.booleanColumn";
+        }
 
         /// <summary>
         /// Gets or sets additional data.

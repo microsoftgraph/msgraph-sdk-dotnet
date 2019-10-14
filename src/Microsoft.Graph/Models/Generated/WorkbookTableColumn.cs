@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookTableColumn : Entity
     {
     
+		///<summary>
+		/// The WorkbookTableColumn constructor
+		///</summary>
+        public WorkbookTableColumn()
+        {
+            this.ODataType = "microsoft.graph.workbookTableColumn";
+        }
+	
         /// <summary>
         /// Gets or sets index.
         /// Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.
@@ -31,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets name.
-        /// Returns the name of the table column. Read-only.
+        /// Returns the name of the table column.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }

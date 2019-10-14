@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IdentityProvider : Entity
     {
     
+		///<summary>
+		/// The IdentityProvider constructor
+		///</summary>
+        public IdentityProvider()
+        {
+            this.ODataType = "microsoft.graph.identityProvider";
+        }
+	
         /// <summary>
         /// Gets or sets type.
         /// </summary>

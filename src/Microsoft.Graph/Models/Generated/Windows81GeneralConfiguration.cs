@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows81GeneralConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The Windows81GeneralConfiguration constructor
+		///</summary>
+        public Windows81GeneralConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windows81GeneralConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets accounts block adding non microsoft account email.
         /// Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.

@@ -234,38 +234,6 @@ namespace Microsoft.Graph
             if (contactFolderToInitialize != null && contactFolderToInitialize.AdditionalData != null)
             {
 
-                if (contactFolderToInitialize.Contacts != null && contactFolderToInitialize.Contacts.CurrentPage != null)
-                {
-                    contactFolderToInitialize.Contacts.AdditionalData = contactFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("contacts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactFolderToInitialize.Contacts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (contactFolderToInitialize.ChildFolders != null && contactFolderToInitialize.ChildFolders.CurrentPage != null)
-                {
-                    contactFolderToInitialize.ChildFolders.AdditionalData = contactFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("childFolders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactFolderToInitialize.ChildFolders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (contactFolderToInitialize.SingleValueExtendedProperties != null && contactFolderToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
                     contactFolderToInitialize.SingleValueExtendedProperties.AdditionalData = contactFolderToInitialize.AdditionalData;
@@ -293,6 +261,38 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         contactFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (contactFolderToInitialize.Contacts != null && contactFolderToInitialize.Contacts.CurrentPage != null)
+                {
+                    contactFolderToInitialize.Contacts.AdditionalData = contactFolderToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    contactFolderToInitialize.AdditionalData.TryGetValue("contacts@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        contactFolderToInitialize.Contacts.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (contactFolderToInitialize.ChildFolders != null && contactFolderToInitialize.ChildFolders.CurrentPage != null)
+                {
+                    contactFolderToInitialize.ChildFolders.AdditionalData = contactFolderToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    contactFolderToInitialize.AdditionalData.TryGetValue("childFolders@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        contactFolderToInitialize.ChildFolders.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

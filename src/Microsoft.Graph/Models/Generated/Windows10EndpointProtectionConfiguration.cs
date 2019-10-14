@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10EndpointProtectionConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The Windows10EndpointProtectionConfiguration constructor
+		///</summary>
+        public Windows10EndpointProtectionConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windows10EndpointProtectionConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets firewall block stateful ftp.
         /// Blocks stateful FTP connections to the device

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10GeneralConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The Windows10GeneralConfiguration constructor
+		///</summary>
+        public Windows10GeneralConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windows10GeneralConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets enterprise cloud print discovery end point.
         /// Endpoint for discovering cloud printers.

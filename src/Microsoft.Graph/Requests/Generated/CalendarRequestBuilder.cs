@@ -51,30 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Events.
-        /// </summary>
-        /// <returns>The <see cref="ICalendarEventsCollectionRequestBuilder"/>.</returns>
-        public ICalendarEventsCollectionRequestBuilder Events
-        {
-            get
-            {
-                return new CalendarEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("events"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for CalendarView.
-        /// </summary>
-        /// <returns>The <see cref="ICalendarCalendarViewCollectionRequestBuilder"/>.</returns>
-        public ICalendarCalendarViewCollectionRequestBuilder CalendarView
-        {
-            get
-            {
-                return new CalendarCalendarViewCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calendarView"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for SingleValueExtendedProperties.
         /// </summary>
         /// <returns>The <see cref="ICalendarSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
@@ -95,6 +71,30 @@ namespace Microsoft.Graph
             get
             {
                 return new CalendarMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Events.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarEventsCollectionRequestBuilder"/>.</returns>
+        public ICalendarEventsCollectionRequestBuilder Events
+        {
+            get
+            {
+                return new CalendarEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("events"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for CalendarView.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarCalendarViewCollectionRequestBuilder"/>.</returns>
+        public ICalendarCalendarViewCollectionRequestBuilder CalendarView
+        {
+            get
+            {
+                return new CalendarCalendarViewCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calendarView"), this.Client);
             }
         }
     

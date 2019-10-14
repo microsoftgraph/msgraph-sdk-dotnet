@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class LocateDeviceActionResult : DeviceActionResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LocateDeviceActionResult"/> class.
+        /// </summary>
+        public LocateDeviceActionResult()
+        {
+            this.ODataType = "microsoft.graph.locateDeviceActionResult";
+        }
 
         /// <summary>
         /// Gets or sets deviceLocation.

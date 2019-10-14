@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DirectoryObjectPartnerReference : DirectoryObject
     {
     
+		///<summary>
+		/// The DirectoryObjectPartnerReference constructor
+		///</summary>
+        public DirectoryObjectPartnerReference()
+        {
+            this.ODataType = "microsoft.graph.directoryObjectPartnerReference";
+        }
+	
         /// <summary>
         /// Gets or sets description.
         /// Description of the object returned. Read-only.

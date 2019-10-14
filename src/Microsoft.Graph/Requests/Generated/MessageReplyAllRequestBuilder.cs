@@ -23,13 +23,16 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        /// <param name="Message">A Message parameter for the OData method call.</param>
         /// <param name="Comment">A Comment parameter for the OData method call.</param>
         public MessageReplyAllRequestBuilder(
             string requestUrl,
             IBaseClient client,
+            Message Message,
             string Comment)
             : base(requestUrl, client)
         {
+            this.SetParameter("message", Message, true);
             this.SetParameter("comment", Comment, true);
         }
 
@@ -42,6 +45,11 @@ namespace Microsoft.Graph
         protected override IMessageReplyAllRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
             var request = new MessageReplyAllRequest(functionUrl, this.Client, options);
+
+            if (this.HasParameter("message"))
+            {
+                request.RequestBody.Message = this.GetParameter<Message>("message");
+            }
 
             if (this.HasParameter("comment"))
             {

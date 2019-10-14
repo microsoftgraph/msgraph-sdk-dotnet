@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class IntuneBrand
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IntuneBrand"/> class.
+        /// </summary>
+        public IntuneBrand()
+        {
+            this.ODataType = "microsoft.graph.intuneBrand";
+        }
 
         /// <summary>
         /// Gets or sets displayName.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PublicationFacet
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicationFacet"/> class.
+        /// </summary>
+        public PublicationFacet()
+        {
+            this.ODataType = "microsoft.graph.publicationFacet";
+        }
 
         /// <summary>
         /// Gets or sets level.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Process
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Process"/> class.
+        /// </summary>
+        public Process()
+        {
+            this.ODataType = "microsoft.graph.process";
+        }
 
         /// <summary>
         /// Gets or sets accountName.

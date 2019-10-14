@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOSGeneralDeviceConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The MacOSGeneralDeviceConfiguration constructor
+		///</summary>
+        public MacOSGeneralDeviceConfiguration()
+        {
+            this.ODataType = "microsoft.graph.macOSGeneralDeviceConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets compliant apps list.
         /// List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.

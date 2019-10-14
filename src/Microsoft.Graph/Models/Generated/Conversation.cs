@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Conversation : Entity
     {
     
+		///<summary>
+		/// The Conversation constructor
+		///</summary>
+        public Conversation()
+        {
+            this.ODataType = "microsoft.graph.conversation";
+        }
+	
         /// <summary>
         /// Gets or sets topic.
         /// The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.

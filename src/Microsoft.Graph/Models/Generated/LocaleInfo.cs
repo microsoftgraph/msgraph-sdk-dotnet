@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class LocaleInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LocaleInfo"/> class.
+        /// </summary>
+        public LocaleInfo()
+        {
+            this.ODataType = "microsoft.graph.localeInfo";
+        }
 
         /// <summary>
         /// Gets or sets locale.

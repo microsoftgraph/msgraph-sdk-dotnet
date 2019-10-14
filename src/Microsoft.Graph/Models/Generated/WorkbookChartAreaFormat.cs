@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartAreaFormat : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartAreaFormat constructor
+		///</summary>
+        public WorkbookChartAreaFormat()
+        {
+            this.ODataType = "microsoft.graph.workbookChartAreaFormat";
+        }
+	
         /// <summary>
         /// Gets or sets fill.
         /// Represents the fill format of an object, which includes background formatting information. Read-only.

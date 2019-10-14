@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class InsightIdentity
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InsightIdentity"/> class.
+        /// </summary>
+        public InsightIdentity()
+        {
+            this.ODataType = "microsoft.graph.insightIdentity";
+        }
 
         /// <summary>
         /// Gets or sets displayName.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SignIn : Entity
     {
     
+		///<summary>
+		/// The SignIn constructor
+		///</summary>
+        public SignIn()
+        {
+            this.ODataType = "microsoft.graph.signIn";
+        }
+	
         /// <summary>
         /// Gets or sets created date time.
         /// Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as '2014-01-01T00:00:00Z'.

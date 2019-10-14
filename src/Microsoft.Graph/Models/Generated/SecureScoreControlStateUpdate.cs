@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SecureScoreControlStateUpdate
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecureScoreControlStateUpdate"/> class.
+        /// </summary>
+        public SecureScoreControlStateUpdate()
+        {
+            this.ODataType = "microsoft.graph.secureScoreControlStateUpdate";
+        }
 
         /// <summary>
         /// Gets or sets assignedTo.

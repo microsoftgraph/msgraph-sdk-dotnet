@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartAxisTitle : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartAxisTitle constructor
+		///</summary>
+        public WorkbookChartAxisTitle()
+        {
+            this.ODataType = "microsoft.graph.workbookChartAxisTitle";
+        }
+	
         /// <summary>
         /// Gets or sets text.
         /// Represents the axis title.

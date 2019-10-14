@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartAxisFormat : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartAxisFormat constructor
+		///</summary>
+        public WorkbookChartAxisFormat()
+        {
+            this.ODataType = "microsoft.graph.workbookChartAxisFormat";
+        }
+	
         /// <summary>
         /// Gets or sets font.
         /// Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.

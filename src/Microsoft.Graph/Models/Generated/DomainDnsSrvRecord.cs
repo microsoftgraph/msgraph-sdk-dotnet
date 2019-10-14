@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DomainDnsSrvRecord : DomainDnsRecord
     {
     
+		///<summary>
+		/// The DomainDnsSrvRecord constructor
+		///</summary>
+        public DomainDnsSrvRecord()
+        {
+            this.ODataType = "microsoft.graph.domainDnsSrvRecord";
+        }
+	
         /// <summary>
         /// Gets or sets name target.
         /// Value to use when configuring the Target property of the SRV record at the DNS host.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosUpdateDeviceStatus : Entity
     {
     
+		///<summary>
+		/// The IosUpdateDeviceStatus constructor
+		///</summary>
+        public IosUpdateDeviceStatus()
+        {
+            this.ODataType = "microsoft.graph.iosUpdateDeviceStatus";
+        }
+	
         /// <summary>
         /// Gets or sets install status.
         /// The installation status of the policy report. Possible values are: success, available, idle, unknown, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError.

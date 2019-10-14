@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class StandardTimeZoneOffset
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StandardTimeZoneOffset"/> class.
+        /// </summary>
+        public StandardTimeZoneOffset()
+        {
+            this.ODataType = "microsoft.graph.standardTimeZoneOffset";
+        }
 
         /// <summary>
         /// Gets or sets time.

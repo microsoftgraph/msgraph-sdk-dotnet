@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceComplianceActionItem : Entity
     {
     
+		///<summary>
+		/// The DeviceComplianceActionItem constructor
+		///</summary>
+        public DeviceComplianceActionItem()
+        {
+            this.ODataType = "microsoft.graph.deviceComplianceActionItem";
+        }
+	
         /// <summary>
         /// Gets or sets grace period hours.
         /// Number of hours to wait till the action will be enforced. Valid values 0 to 8760

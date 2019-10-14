@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ManagedIOSStoreApp : ManagedApp
     {
     
+		///<summary>
+		/// The ManagedIOSStoreApp constructor
+		///</summary>
+        public ManagedIOSStoreApp()
+        {
+            this.ODataType = "microsoft.graph.managedIOSStoreApp";
+        }
+	
         /// <summary>
         /// Gets or sets bundle id.
         /// The app's Bundle ID.

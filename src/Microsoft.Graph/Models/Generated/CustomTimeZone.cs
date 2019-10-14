@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CustomTimeZone : TimeZoneBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomTimeZone"/> class.
+        /// </summary>
+        public CustomTimeZone()
+        {
+            this.ODataType = "microsoft.graph.customTimeZone";
+        }
 
         /// <summary>
         /// Gets or sets bias.

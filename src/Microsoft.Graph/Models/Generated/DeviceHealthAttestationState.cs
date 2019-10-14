@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceHealthAttestationState
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceHealthAttestationState"/> class.
+        /// </summary>
+        public DeviceHealthAttestationState()
+        {
+            this.ODataType = "microsoft.graph.deviceHealthAttestationState";
+        }
 
         /// <summary>
         /// Gets or sets lastUpdateDateTime.

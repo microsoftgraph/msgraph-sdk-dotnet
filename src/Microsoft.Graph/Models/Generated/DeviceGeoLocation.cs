@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceGeoLocation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceGeoLocation"/> class.
+        /// </summary>
+        public DeviceGeoLocation()
+        {
+            this.ODataType = "microsoft.graph.deviceGeoLocation";
+        }
 
         /// <summary>
         /// Gets or sets lastCollectedDateTime.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TermsAndConditions : Entity
     {
     
+		///<summary>
+		/// The TermsAndConditions constructor
+		///</summary>
+        public TermsAndConditions()
+        {
+            this.ODataType = "microsoft.graph.termsAndConditions";
+        }
+	
         /// <summary>
         /// Gets or sets created date time.
         /// DateTime the object was created.

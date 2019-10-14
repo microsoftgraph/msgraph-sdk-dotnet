@@ -51,42 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Calendar.
-        /// </summary>
-        /// <returns>The <see cref="ICalendarRequestBuilder"/>.</returns>
-        public ICalendarRequestBuilder Calendar
-        {
-            get
-            {
-                return new CalendarRequestBuilder(this.AppendSegmentToRequestUrl("calendar"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Instances.
-        /// </summary>
-        /// <returns>The <see cref="IEventInstancesCollectionRequestBuilder"/>.</returns>
-        public IEventInstancesCollectionRequestBuilder Instances
-        {
-            get
-            {
-                return new EventInstancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("instances"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IEventExtensionsCollectionRequestBuilder"/>.</returns>
-        public IEventExtensionsCollectionRequestBuilder Extensions
-        {
-            get
-            {
-                return new EventExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Attachments.
         /// </summary>
         /// <returns>The <see cref="IEventAttachmentsCollectionRequestBuilder"/>.</returns>
@@ -121,7 +85,67 @@ namespace Microsoft.Graph
                 return new EventMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Calendar.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarRequestBuilder"/>.</returns>
+        public ICalendarRequestBuilder Calendar
+        {
+            get
+            {
+                return new CalendarRequestBuilder(this.AppendSegmentToRequestUrl("calendar"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Instances.
+        /// </summary>
+        /// <returns>The <see cref="IEventInstancesCollectionRequestBuilder"/>.</returns>
+        public IEventInstancesCollectionRequestBuilder Instances
+        {
+            get
+            {
+                return new EventInstancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("instances"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IEventExtensionsCollectionRequestBuilder"/>.</returns>
+        public IEventExtensionsCollectionRequestBuilder Extensions
+        {
+            get
+            {
+                return new EventExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
+            }
+        }
     
+        /// <summary>
+        /// Gets the request builder for EventDismissReminder.
+        /// </summary>
+        /// <returns>The <see cref="IEventDismissReminderRequestBuilder"/>.</returns>
+        public IEventDismissReminderRequestBuilder DismissReminder()
+        {
+            return new EventDismissReminderRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dismissReminder"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for EventSnoozeReminder.
+        /// </summary>
+        /// <returns>The <see cref="IEventSnoozeReminderRequestBuilder"/>.</returns>
+        public IEventSnoozeReminderRequestBuilder SnoozeReminder(
+            DateTimeTimeZone NewReminderTime)
+        {
+            return new EventSnoozeReminderRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.snoozeReminder"),
+                this.Client,
+                NewReminderTime);
+        }
+
         /// <summary>
         /// Gets the request builder for EventAccept.
         /// </summary>
@@ -165,30 +189,6 @@ namespace Microsoft.Graph
                 this.Client,
                 Comment,
                 SendResponse);
-        }
-
-        /// <summary>
-        /// Gets the request builder for EventSnoozeReminder.
-        /// </summary>
-        /// <returns>The <see cref="IEventSnoozeReminderRequestBuilder"/>.</returns>
-        public IEventSnoozeReminderRequestBuilder SnoozeReminder(
-            DateTimeTimeZone NewReminderTime)
-        {
-            return new EventSnoozeReminderRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.snoozeReminder"),
-                this.Client,
-                NewReminderTime);
-        }
-
-        /// <summary>
-        /// Gets the request builder for EventDismissReminder.
-        /// </summary>
-        /// <returns>The <see cref="IEventDismissReminderRequestBuilder"/>.</returns>
-        public IEventDismissReminderRequestBuilder DismissReminder()
-        {
-            return new EventDismissReminderRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dismissReminder"),
-                this.Client);
         }
     
     }

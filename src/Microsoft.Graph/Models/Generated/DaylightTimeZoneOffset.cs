@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DaylightTimeZoneOffset : StandardTimeZoneOffset
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DaylightTimeZoneOffset"/> class.
+        /// </summary>
+        public DaylightTimeZoneOffset()
+        {
+            this.ODataType = "microsoft.graph.daylightTimeZoneOffset";
+        }
 
         /// <summary>
         /// Gets or sets daylightBias.

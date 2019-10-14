@@ -21,6 +21,11 @@ namespace Microsoft.Graph
     public partial interface IMessageCreateReplyRequest : IBaseRequest
     {
 
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        MessageCreateReplyRequestBody RequestBody { get; }
+
 
         /// <summary>
         /// Issues the POST request.

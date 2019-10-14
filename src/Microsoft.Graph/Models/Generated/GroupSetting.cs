@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GroupSetting : Entity
     {
     
+		///<summary>
+		/// The GroupSetting constructor
+		///</summary>
+        public GroupSetting()
+        {
+            this.ODataType = "microsoft.graph.groupSetting";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// Display name of this group of settings, which comes from the associated template.

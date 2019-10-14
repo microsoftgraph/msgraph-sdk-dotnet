@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidManagedAppRegistration : ManagedAppRegistration
     {
     
+		///<summary>
+		/// The AndroidManagedAppRegistration constructor
+		///</summary>
+        public AndroidManagedAppRegistration()
+        {
+            this.ODataType = "microsoft.graph.androidManagedAppRegistration";
+        }
+	
     }
 }
 

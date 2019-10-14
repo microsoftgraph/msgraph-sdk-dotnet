@@ -30,7 +30,7 @@ namespace Microsoft.Graph
             string DestinationId)
             : base(requestUrl, client)
         {
-            this.SetParameter("destinationId", DestinationId, true);
+            this.SetParameter("destinationId", DestinationId, false);
         }
 
         /// <summary>

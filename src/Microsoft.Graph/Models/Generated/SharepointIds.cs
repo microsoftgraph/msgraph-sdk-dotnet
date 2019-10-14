@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SharepointIds
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharepointIds"/> class.
+        /// </summary>
+        public SharepointIds()
+        {
+            this.ODataType = "microsoft.graph.sharepointIds";
+        }
 
         /// <summary>
         /// Gets or sets listId.

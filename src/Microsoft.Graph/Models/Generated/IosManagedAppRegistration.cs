@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosManagedAppRegistration : ManagedAppRegistration
     {
     
+		///<summary>
+		/// The IosManagedAppRegistration constructor
+		///</summary>
+        public IosManagedAppRegistration()
+        {
+            this.ODataType = "microsoft.graph.iosManagedAppRegistration";
+        }
+	
     }
 }
 

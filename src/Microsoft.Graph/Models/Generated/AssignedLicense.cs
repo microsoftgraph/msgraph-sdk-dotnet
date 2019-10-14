@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AssignedLicense
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssignedLicense"/> class.
+        /// </summary>
+        public AssignedLicense()
+        {
+            this.ODataType = "microsoft.graph.assignedLicense";
+        }
 
         /// <summary>
         /// Gets or sets disabledPlans.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class WindowsMinimumOperatingSystem
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsMinimumOperatingSystem"/> class.
+        /// </summary>
+        public WindowsMinimumOperatingSystem()
+        {
+            this.ODataType = "microsoft.graph.windowsMinimumOperatingSystem";
+        }
 
         /// <summary>
         /// Gets or sets v8_0.

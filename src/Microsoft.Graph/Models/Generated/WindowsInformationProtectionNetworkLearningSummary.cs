@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsInformationProtectionNetworkLearningSummary : Entity
     {
     
+		///<summary>
+		/// The WindowsInformationProtectionNetworkLearningSummary constructor
+		///</summary>
+        public WindowsInformationProtectionNetworkLearningSummary()
+        {
+            this.ODataType = "microsoft.graph.windowsInformationProtectionNetworkLearningSummary";
+        }
+	
         /// <summary>
         /// Gets or sets url.
         /// Website url

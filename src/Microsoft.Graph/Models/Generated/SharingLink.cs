@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SharingLink
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharingLink"/> class.
+        /// </summary>
+        public SharingLink()
+        {
+            this.ODataType = "microsoft.graph.sharingLink";
+        }
 
         /// <summary>
         /// Gets or sets application.

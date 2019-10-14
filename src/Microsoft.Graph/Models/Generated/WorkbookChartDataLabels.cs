@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartDataLabels : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartDataLabels constructor
+		///</summary>
+        public WorkbookChartDataLabels()
+        {
+            this.ODataType = "microsoft.graph.workbookChartDataLabels";
+        }
+	
         /// <summary>
         /// Gets or sets position.
         /// DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.

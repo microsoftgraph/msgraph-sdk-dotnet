@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ManagedAndroidStoreApp : ManagedApp
     {
     
+		///<summary>
+		/// The ManagedAndroidStoreApp constructor
+		///</summary>
+        public ManagedAndroidStoreApp()
+        {
+            this.ODataType = "microsoft.graph.managedAndroidStoreApp";
+        }
+	
         /// <summary>
         /// Gets or sets package id.
         /// The app's package ID.

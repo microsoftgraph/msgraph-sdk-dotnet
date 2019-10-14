@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceConfigurationUserStatus : Entity
     {
     
+		///<summary>
+		/// The DeviceConfigurationUserStatus constructor
+		///</summary>
+        public DeviceConfigurationUserStatus()
+        {
+            this.ODataType = "microsoft.graph.deviceConfigurationUserStatus";
+        }
+	
         /// <summary>
         /// Gets or sets user display name.
         /// User name of the DevicePolicyStatus.

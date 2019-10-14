@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Video
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Video"/> class.
+        /// </summary>
+        public Video()
+        {
+            this.ODataType = "microsoft.graph.video";
+        }
 
         /// <summary>
         /// Gets or sets audioBitsPerSample.

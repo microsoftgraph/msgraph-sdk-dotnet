@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOSOfficeSuiteApp : MobileApp
     {
     
+		///<summary>
+		/// The MacOSOfficeSuiteApp constructor
+		///</summary>
+        public MacOSOfficeSuiteApp()
+        {
+            this.ODataType = "microsoft.graph.macOSOfficeSuiteApp";
+        }
+	
     }
 }
 

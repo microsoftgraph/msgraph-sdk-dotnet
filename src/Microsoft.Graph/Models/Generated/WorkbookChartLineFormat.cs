@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartLineFormat : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartLineFormat constructor
+		///</summary>
+        public WorkbookChartLineFormat()
+        {
+            this.ODataType = "microsoft.graph.workbookChartLineFormat";
+        }
+	
         /// <summary>
         /// Gets or sets color.
         /// HTML color code representing the color of lines in the chart.

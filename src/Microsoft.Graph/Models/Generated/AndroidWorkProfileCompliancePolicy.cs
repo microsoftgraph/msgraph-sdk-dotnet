@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfileCompliancePolicy : DeviceCompliancePolicy
     {
     
+		///<summary>
+		/// The AndroidWorkProfileCompliancePolicy constructor
+		///</summary>
+        public AndroidWorkProfileCompliancePolicy()
+        {
+            this.ODataType = "microsoft.graph.androidWorkProfileCompliancePolicy";
+        }
+	
         /// <summary>
         /// Gets or sets password required.
         /// Require a password to unlock device.

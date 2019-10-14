@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ManagedDevice : Entity
     {
     
+		///<summary>
+		/// The ManagedDevice constructor
+		///</summary>
+        public ManagedDevice()
+        {
+            this.ODataType = "microsoft.graph.managedDevice";
+        }
+	
         /// <summary>
         /// Gets or sets user id.
         /// Unique Identifier for the user associated with the device
@@ -352,18 +360,18 @@ namespace Microsoft.Graph
         public IManagedDeviceDeviceConfigurationStatesCollectionPage DeviceConfigurationStates { get; set; }
     
         /// <summary>
-        /// Gets or sets device category.
-        /// Device category
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCategory", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceCategory DeviceCategory { get; set; }
-    
-        /// <summary>
         /// Gets or sets device compliance policy states.
         /// Device compliance policy states for this device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyStates", Required = Newtonsoft.Json.Required.Default)]
         public IManagedDeviceDeviceCompliancePolicyStatesCollectionPage DeviceCompliancePolicyStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device category.
+        /// Device category
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCategory", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceCategory DeviceCategory { get; set; }
     
     }
 }

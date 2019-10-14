@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceConfigurationDeviceStateSummary : Entity
     {
     
+		///<summary>
+		/// The DeviceConfigurationDeviceStateSummary constructor
+		///</summary>
+        public DeviceConfigurationDeviceStateSummary()
+        {
+            this.ODataType = "microsoft.graph.deviceConfigurationDeviceStateSummary";
+        }
+	
         /// <summary>
         /// Gets or sets unknown device count.
         /// Number of unknown devices

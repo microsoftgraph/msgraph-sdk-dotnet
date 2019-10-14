@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Permission : Entity
     {
     
+		///<summary>
+		/// The Permission constructor
+		///</summary>
+        public Permission()
+        {
+            this.ODataType = "microsoft.graph.permission";
+        }
+	
         /// <summary>
         /// Gets or sets granted to.
         /// For user type permissions, the details of the users &amp; applications for this permission. Read-only.

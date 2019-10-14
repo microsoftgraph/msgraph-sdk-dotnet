@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10CompliancePolicy : DeviceCompliancePolicy
     {
     
+		///<summary>
+		/// The Windows10CompliancePolicy constructor
+		///</summary>
+        public Windows10CompliancePolicy()
+        {
+            this.ODataType = "microsoft.graph.windows10CompliancePolicy";
+        }
+	
         /// <summary>
         /// Gets or sets password required.
         /// Require a password to unlock Windows device.

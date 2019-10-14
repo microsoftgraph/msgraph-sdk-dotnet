@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Directory : Entity
     {
     
+		///<summary>
+		/// The Directory constructor
+		///</summary>
+        public Directory()
+        {
+            this.ODataType = "microsoft.graph.directory";
+        }
+	
         /// <summary>
         /// Gets or sets deleted items.
         /// Recently deleted items. Read-only. Nullable.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class IosMinimumOperatingSystem
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IosMinimumOperatingSystem"/> class.
+        /// </summary>
+        public IosMinimumOperatingSystem()
+        {
+            this.ODataType = "microsoft.graph.iosMinimumOperatingSystem";
+        }
 
         /// <summary>
         /// Gets or sets v8_0.
@@ -57,6 +64,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v12_0", Required = Newtonsoft.Json.Required.Default)]
         public bool? V12_0 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets v13_0.
+        /// Version 13.0 or later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v13_0", Required = Newtonsoft.Json.Required.Default)]
+        public bool? V13_0 { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

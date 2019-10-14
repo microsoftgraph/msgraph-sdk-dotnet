@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class WorkbookIcon
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkbookIcon"/> class.
+        /// </summary>
+        public WorkbookIcon()
+        {
+            this.ODataType = "microsoft.graph.workbookIcon";
+        }
 
         /// <summary>
         /// Gets or sets index.

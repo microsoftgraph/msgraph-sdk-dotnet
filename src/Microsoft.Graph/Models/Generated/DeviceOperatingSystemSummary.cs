@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceOperatingSystemSummary
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceOperatingSystemSummary"/> class.
+        /// </summary>
+        public DeviceOperatingSystemSummary()
+        {
+            this.ODataType = "microsoft.graph.deviceOperatingSystemSummary";
+        }
 
         /// <summary>
         /// Gets or sets androidCount.

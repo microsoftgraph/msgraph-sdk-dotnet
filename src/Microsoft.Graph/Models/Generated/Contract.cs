@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Contract : DirectoryObject
     {
     
+		///<summary>
+		/// The Contract constructor
+		///</summary>
+        public Contract()
+        {
+            this.ODataType = "microsoft.graph.contract";
+        }
+	
         /// <summary>
         /// Gets or sets contract type.
         /// Type of contract.Possible values are: SyndicationPartner - Partner that exclusively resells and manages O365 and Intune for this customer. They resell and support their customers. BreadthPartner - Partner has the ability to provide administrative support for this customer. However, the partner is not allowed to resell to the customer.ResellerPartner - Partner that is similar to a syndication partner, except that the partner doesn’t have exclusive access to a tenant. In the syndication case, the customer cannot buy additional direct subscriptions from Microsoft or from other partners.

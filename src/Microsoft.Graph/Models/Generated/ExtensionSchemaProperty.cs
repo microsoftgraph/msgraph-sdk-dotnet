@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ExtensionSchemaProperty
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionSchemaProperty"/> class.
+        /// </summary>
+        public ExtensionSchemaProperty()
+        {
+            this.ODataType = "microsoft.graph.extensionSchemaProperty";
+        }
 
         /// <summary>
         /// Gets or sets name.

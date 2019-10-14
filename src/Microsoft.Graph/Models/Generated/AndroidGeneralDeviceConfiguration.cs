@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidGeneralDeviceConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The AndroidGeneralDeviceConfiguration constructor
+		///</summary>
+        public AndroidGeneralDeviceConfiguration()
+        {
+            this.ODataType = "microsoft.graph.androidGeneralDeviceConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets apps block clipboard sharing.
         /// Indicates whether or not to block clipboard sharing to copy and paste between applications.

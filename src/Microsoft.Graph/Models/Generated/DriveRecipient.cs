@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DriveRecipient
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DriveRecipient"/> class.
+        /// </summary>
+        public DriveRecipient()
+        {
+            this.ODataType = "microsoft.graph.driveRecipient";
+        }
 
         /// <summary>
         /// Gets or sets alias.

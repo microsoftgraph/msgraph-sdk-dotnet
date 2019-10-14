@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ProfilePhoto : Entity
     {
     
+		///<summary>
+		/// The ProfilePhoto constructor
+		///</summary>
+        public ProfilePhoto()
+        {
+            this.ODataType = "microsoft.graph.profilePhoto";
+        }
+	
         /// <summary>
         /// Gets or sets height.
         /// The height of the photo. Read-only.

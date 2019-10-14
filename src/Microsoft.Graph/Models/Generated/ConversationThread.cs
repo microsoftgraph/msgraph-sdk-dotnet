@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ConversationThread : Entity
     {
     
+		///<summary>
+		/// The ConversationThread constructor
+		///</summary>
+        public ConversationThread()
+        {
+            this.ODataType = "microsoft.graph.conversationThread";
+        }
+	
         /// <summary>
         /// Gets or sets to recipients.
         /// The To: recipients for the thread.

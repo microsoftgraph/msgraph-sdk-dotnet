@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ListItem : BaseItem
     {
     
+		///<summary>
+		/// The ListItem constructor
+		///</summary>
+        public ListItem()
+        {
+            this.ODataType = "microsoft.graph.listItem";
+        }
+	
         /// <summary>
         /// Gets or sets content type.
         /// The content type of this list item

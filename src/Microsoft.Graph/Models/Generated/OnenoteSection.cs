@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OnenoteSection : OnenoteEntityHierarchyModel
     {
     
+		///<summary>
+		/// The OnenoteSection constructor
+		///</summary>
+        public OnenoteSection()
+        {
+            this.ODataType = "microsoft.graph.onenoteSection";
+        }
+	
         /// <summary>
         /// Gets or sets is default.
         /// Indicates whether this is the user's default section. Read-only.

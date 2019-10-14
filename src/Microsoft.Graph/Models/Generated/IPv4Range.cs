@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IPv4Range : IpRange
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IPv4Range"/> class.
+        /// </summary>
+        public IPv4Range()
+        {
+            this.ODataType = "microsoft.graph.iPv4Range";
+        }
 
         /// <summary>
         /// Gets or sets lowerAddress.

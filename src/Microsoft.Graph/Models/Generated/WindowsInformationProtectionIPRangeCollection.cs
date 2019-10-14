@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class WindowsInformationProtectionIPRangeCollection
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsInformationProtectionIPRangeCollection"/> class.
+        /// </summary>
+        public WindowsInformationProtectionIPRangeCollection()
+        {
+            this.ODataType = "microsoft.graph.windowsInformationProtectionIPRangeCollection";
+        }
 
         /// <summary>
         /// Gets or sets displayName.

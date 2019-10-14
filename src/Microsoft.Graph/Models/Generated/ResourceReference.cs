@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ResourceReference
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResourceReference"/> class.
+        /// </summary>
+        public ResourceReference()
+        {
+            this.ODataType = "microsoft.graph.resourceReference";
+        }
 
         /// <summary>
         /// Gets or sets webUrl.

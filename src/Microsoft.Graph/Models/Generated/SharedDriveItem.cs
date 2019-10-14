@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SharedDriveItem : BaseItem
     {
     
+		///<summary>
+		/// The SharedDriveItem constructor
+		///</summary>
+        public SharedDriveItem()
+        {
+            this.ODataType = "microsoft.graph.sharedDriveItem";
+        }
+	
         /// <summary>
         /// Gets or sets owner.
         /// Information about the owner of the shared item being referenced.

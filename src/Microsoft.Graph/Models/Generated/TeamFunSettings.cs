@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class TeamFunSettings
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamFunSettings"/> class.
+        /// </summary>
+        public TeamFunSettings()
+        {
+            this.ODataType = "microsoft.graph.teamFunSettings";
+        }
 
         /// <summary>
         /// Gets or sets allowGiphy.

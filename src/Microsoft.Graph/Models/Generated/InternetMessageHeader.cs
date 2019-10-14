@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class InternetMessageHeader
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InternetMessageHeader"/> class.
+        /// </summary>
+        public InternetMessageHeader()
+        {
+            this.ODataType = "microsoft.graph.internetMessageHeader";
+        }
 
         /// <summary>
         /// Gets or sets name.

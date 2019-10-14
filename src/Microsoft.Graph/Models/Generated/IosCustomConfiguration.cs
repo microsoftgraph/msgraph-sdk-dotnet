@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosCustomConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The IosCustomConfiguration constructor
+		///</summary>
+        public IosCustomConfiguration()
+        {
+            this.ODataType = "microsoft.graph.iosCustomConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets payload name.
         /// Name that is displayed to the user.

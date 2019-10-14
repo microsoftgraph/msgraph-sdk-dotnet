@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ConfigurationManagerClientEnabledFeatures
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConfigurationManagerClientEnabledFeatures"/> class.
+        /// </summary>
+        public ConfigurationManagerClientEnabledFeatures()
+        {
+            this.ODataType = "microsoft.graph.configurationManagerClientEnabledFeatures";
+        }
 
         /// <summary>
         /// Gets or sets inventory.

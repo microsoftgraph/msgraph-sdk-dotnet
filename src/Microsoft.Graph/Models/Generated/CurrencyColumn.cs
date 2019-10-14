@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class CurrencyColumn
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CurrencyColumn"/> class.
+        /// </summary>
+        public CurrencyColumn()
+        {
+            this.ODataType = "microsoft.graph.currencyColumn";
+        }
 
         /// <summary>
         /// Gets or sets locale.

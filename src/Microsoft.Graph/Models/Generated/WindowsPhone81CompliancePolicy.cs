@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81CompliancePolicy : DeviceCompliancePolicy
     {
     
+		///<summary>
+		/// The WindowsPhone81CompliancePolicy constructor
+		///</summary>
+        public WindowsPhone81CompliancePolicy()
+        {
+            this.ODataType = "microsoft.graph.windowsPhone81CompliancePolicy";
+        }
+	
         /// <summary>
         /// Gets or sets password block simple.
         /// Whether or not to block syncing the calendar.
