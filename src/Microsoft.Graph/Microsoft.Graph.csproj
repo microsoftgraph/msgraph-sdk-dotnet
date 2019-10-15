@@ -26,8 +26,13 @@
     <VersionSuffix>
     </VersionSuffix>
     <PackageReleaseNotes>
-- New generated requests and models.
-- Add PageIterator from Microsoft.Graph.Core library.
+- Support for setting a custom HttpClient on GraphServiceClient.
+- New requests and models.
+- Generated from cleaned and documented v1.0 metadata from commit 7ad5793 in microsoftgraph/msgraph-metadata.xml.
+- Odata.Type is set in the constructor at generation time complex types
+- ConvertId support added for Exchange based identifiers.
+- Fix reordered parameters.
+- Many non-functional changes based on metadata reordering.
     </PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.3|AnyCPU'">

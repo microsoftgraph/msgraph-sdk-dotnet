@@ -21,14 +21,6 @@ namespace Microsoft.Graph
         private static readonly string[,] Conversions = new string[,] { { "%", "%25" }, { "@", "%40" }, { ".", "%2E" }, { ":", "%3A" } };
 
         /// <summary>
-        /// Creates a new instance of PlannerExternalReferences.
-        /// </summary>
-        public PlannerExternalReferences()
-        {
-            this.AdditionalData = new Dictionary<string, object>();
-        }
-
-        /// <summary>
         /// Gets or sets external reference data for a given reference url.
         /// </summary>
         /// <param name="url">The url of the reference.</param>
@@ -40,6 +32,11 @@ namespace Microsoft.Graph
                 if (string.IsNullOrWhiteSpace(url))
                 {
                     throw new ArgumentNullException(nameof(url));
+                }
+
+                if (this.AdditionalData is null)
+                {
+                    this.AdditionalData = new Dictionary<string, object>();
                 }
 
                 if (!this.AdditionalData.TryGetValue(Encode(url), out object referenceObject))
@@ -55,6 +52,11 @@ namespace Microsoft.Graph
                 if (string.IsNullOrWhiteSpace(url))
                 {
                     throw new ArgumentNullException(nameof(url));
+                }
+
+                if (this.AdditionalData is null)
+                {
+                    this.AdditionalData = new Dictionary<string, object>();
                 }
 
                 this.AdditionalData[Encode(url)] = value;
@@ -83,6 +85,11 @@ namespace Microsoft.Graph
 
             plannerExternalReference.Alias = alias;
 
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
+            }
+
             this.AdditionalData.Add(Encode(url), plannerExternalReference);
 
             return plannerExternalReference;
@@ -94,6 +101,11 @@ namespace Microsoft.Graph
         /// <returns>Enumeration of external reference ulr, external reference data pairs.</returns>
         public IEnumerator<KeyValuePair<string, PlannerExternalReference>> GetEnumerator()
         {
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
+            }
+
             return this.AdditionalData
                .Where(kvp => kvp.Value is PlannerExternalReference)
                .Select(kvp => new KeyValuePair<string, PlannerExternalReference>(Decode(kvp.Key), (PlannerExternalReference)kvp.Value))
@@ -112,6 +124,11 @@ namespace Microsoft.Graph
         [OnDeserialized]
         internal void DeserializeReferences(StreamingContext context)
         {
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
+            }
+
             this.AdditionalData.ConvertComplexTypeProperties<PlannerExternalReference>(PlannerExternalReference.ODataTypeName);
         }
 

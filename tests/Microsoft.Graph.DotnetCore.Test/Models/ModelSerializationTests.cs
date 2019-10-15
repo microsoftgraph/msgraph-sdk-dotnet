@@ -134,7 +134,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             };
 
             var expectedSerializedStream = string.Format(
-                "{{\"contentType\":\"{1}\",\"content\":\"{0}\"}}",
+                "{{\"contentType\":\"{1}\",\"content\":\"{0}\",\"@odata.type\":\"microsoft.graph.itemBody\"}}",
                 itemBody.Content,
                 "text");
 
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
         {
             var now = DateTimeOffset.UtcNow;
 
-            var expectedSerializedString = string.Format("{{\"startDate\":\"{0}\"}}", now.ToString("yyyy-MM-dd"));
+            var expectedSerializedString = string.Format("{{\"startDate\":\"{0}\",\"@odata.type\":\"microsoft.graph.recurrenceRange\"}}", now.ToString("yyyy-MM-dd"));
 
             var recurrence = new RecurrenceRange
             {

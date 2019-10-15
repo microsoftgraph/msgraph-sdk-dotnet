@@ -16,14 +16,6 @@ namespace Microsoft.Graph
     public partial class PlannerChecklistItems : IEnumerable<KeyValuePair<string, PlannerChecklistItem>>
     {
         /// <summary>
-        /// Creates a new instance of PlannerChecklistItems.
-        /// </summary>
-        public PlannerChecklistItems()
-        {
-            this.AdditionalData = new Dictionary<string, object>();
-        }
-
-        /// <summary>
         /// Gets or sets checklist item data for a given checklist item id.
         /// </summary>
         /// <param name="checklistItemId">The id of the checklit item.</param>
@@ -35,6 +27,11 @@ namespace Microsoft.Graph
                 if (string.IsNullOrWhiteSpace(checklistItemId))
                 {
                     throw new ArgumentNullException(nameof(checklistItemId));
+                }
+
+                if (this.AdditionalData is null)
+                {
+                    this.AdditionalData = new Dictionary<string, object>();
                 }
 
                 if (!this.AdditionalData.TryGetValue(checklistItemId, out object checklistItemObject))
@@ -50,6 +47,11 @@ namespace Microsoft.Graph
                 if (string.IsNullOrWhiteSpace(checklistItemId))
                 {
                     throw new ArgumentNullException(nameof(checklistItemId));
+                }
+
+                if (this.AdditionalData is null)
+                {
+                    this.AdditionalData = new Dictionary<string, object>();
                 }
 
                 this.AdditionalData[checklistItemId] = value;
@@ -73,6 +75,11 @@ namespace Microsoft.Graph
             plannerChecklistItem.Title = title;
             var newChecklistItemId = Guid.NewGuid().ToString();
 
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
+            }
+
             this.AdditionalData.Add(newChecklistItemId, plannerChecklistItem);
 
             return newChecklistItemId;
@@ -84,6 +91,11 @@ namespace Microsoft.Graph
         /// <returns>Enumeration of checklist item id, checklist item pairs.</returns>
         public IEnumerator<KeyValuePair<string, PlannerChecklistItem>> GetEnumerator()
         {
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
+            }
+
             return this.AdditionalData
                 .Where(kvp => kvp.Value is PlannerChecklistItem)
                 .Select(kvp => new KeyValuePair<string, PlannerChecklistItem>(kvp.Key, (PlannerChecklistItem)kvp.Value))
@@ -102,6 +114,11 @@ namespace Microsoft.Graph
         [OnDeserialized]
         internal void DeserializeChecklist(StreamingContext context)
         {
+            if (this.AdditionalData is null)
+            {
+                this.AdditionalData = new Dictionary<string, object>();
+            }
+
             this.AdditionalData.ConvertComplexTypeProperties<PlannerChecklistItem>(PlannerChecklistItem.ODataTypeName);
         }
     }
