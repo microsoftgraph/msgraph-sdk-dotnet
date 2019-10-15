@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class RemoteLockActionResult : DeviceActionResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemoteLockActionResult"/> class.
+        /// </summary>
+        public RemoteLockActionResult()
+        {
+            this.ODataType = "microsoft.graph.remoteLockActionResult";
+        }
 
         /// <summary>
         /// Gets or sets unlockPin.

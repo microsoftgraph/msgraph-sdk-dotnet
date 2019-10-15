@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookRangeFill : Entity
     {
     
+		///<summary>
+		/// The WorkbookRangeFill constructor
+		///</summary>
+        public WorkbookRangeFill()
+        {
+            this.ODataType = "microsoft.graph.workbookRangeFill";
+        }
+	
         /// <summary>
         /// Gets or sets color.
         /// HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange')

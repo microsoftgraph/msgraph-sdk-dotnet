@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceActionResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceActionResult"/> class.
+        /// </summary>
+        public DeviceActionResult()
+        {
+            this.ODataType = "microsoft.graph.deviceActionResult";
+        }
 
         /// <summary>
         /// Gets or sets actionName.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TeamsAppInstallation : Entity
     {
     
+		///<summary>
+		/// The TeamsAppInstallation constructor
+		///</summary>
+        public TeamsAppInstallation()
+        {
+            this.ODataType = "microsoft.graph.teamsAppInstallation";
+        }
+	
         /// <summary>
         /// Gets or sets teams app.
         /// The app that is installed.

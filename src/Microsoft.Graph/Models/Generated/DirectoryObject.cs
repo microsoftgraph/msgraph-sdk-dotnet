@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DirectoryObject : Entity
     {
     
+		///<summary>
+		/// The DirectoryObject constructor
+		///</summary>
+        public DirectoryObject()
+        {
+            this.ODataType = "microsoft.graph.directoryObject";
+        }
+	
         /// <summary>
         /// Gets or sets deleted date time.
         /// </summary>

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class TeamMemberSettings
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamMemberSettings"/> class.
+        /// </summary>
+        public TeamMemberSettings()
+        {
+            this.ODataType = "microsoft.graph.teamMemberSettings";
+        }
 
         /// <summary>
         /// Gets or sets allowCreateUpdateChannels.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class TimeZoneInformation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimeZoneInformation"/> class.
+        /// </summary>
+        public TimeZoneInformation()
+        {
+            this.ODataType = "microsoft.graph.timeZoneInformation";
+        }
 
         /// <summary>
         /// Gets or sets alias.

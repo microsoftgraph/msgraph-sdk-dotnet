@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceAndAppManagementRoleAssignment : RoleAssignment
     {
     
+		///<summary>
+		/// The DeviceAndAppManagementRoleAssignment constructor
+		///</summary>
+        public DeviceAndAppManagementRoleAssignment()
+        {
+            this.ODataType = "microsoft.graph.deviceAndAppManagementRoleAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets members.
         /// The list of ids of role member security groups. These are IDs from Azure Active Directory.

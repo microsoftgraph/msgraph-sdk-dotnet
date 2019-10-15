@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class WindowsFirewallNetworkProfile
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsFirewallNetworkProfile"/> class.
+        /// </summary>
+        public WindowsFirewallNetworkProfile()
+        {
+            this.ODataType = "microsoft.graph.windowsFirewallNetworkProfile";
+        }
 
         /// <summary>
         /// Gets or sets firewallEnabled.

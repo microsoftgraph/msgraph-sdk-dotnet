@@ -64,6 +64,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DirectoryObjectCheckMemberObjects.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectCheckMemberObjectsRequestBuilder"/>.</returns>
+        public IDirectoryObjectCheckMemberObjectsRequestBuilder CheckMemberObjects(
+            IEnumerable<string> ids)
+        {
+            return new DirectoryObjectCheckMemberObjectsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.checkMemberObjects"),
+                this.Client,
+                ids);
+        }
+
+        /// <summary>
         /// Gets the request builder for DirectoryObjectGetMemberGroups.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectGetMemberGroupsRequestBuilder"/>.</returns>

@@ -51,30 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Contacts.
-        /// </summary>
-        /// <returns>The <see cref="IContactFolderContactsCollectionRequestBuilder"/>.</returns>
-        public IContactFolderContactsCollectionRequestBuilder Contacts
-        {
-            get
-            {
-                return new ContactFolderContactsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("contacts"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ChildFolders.
-        /// </summary>
-        /// <returns>The <see cref="IContactFolderChildFoldersCollectionRequestBuilder"/>.</returns>
-        public IContactFolderChildFoldersCollectionRequestBuilder ChildFolders
-        {
-            get
-            {
-                return new ContactFolderChildFoldersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("childFolders"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for SingleValueExtendedProperties.
         /// </summary>
         /// <returns>The <see cref="IContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
@@ -95,6 +71,30 @@ namespace Microsoft.Graph
             get
             {
                 return new ContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Contacts.
+        /// </summary>
+        /// <returns>The <see cref="IContactFolderContactsCollectionRequestBuilder"/>.</returns>
+        public IContactFolderContactsCollectionRequestBuilder Contacts
+        {
+            get
+            {
+                return new ContactFolderContactsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("contacts"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ChildFolders.
+        /// </summary>
+        /// <returns>The <see cref="IContactFolderChildFoldersCollectionRequestBuilder"/>.</returns>
+        public IContactFolderChildFoldersCollectionRequestBuilder ChildFolders
+        {
+            get
+            {
+                return new ContactFolderChildFoldersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("childFolders"), this.Client);
             }
         }
     

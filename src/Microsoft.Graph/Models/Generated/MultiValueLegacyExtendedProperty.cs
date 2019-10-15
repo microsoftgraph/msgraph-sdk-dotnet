@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MultiValueLegacyExtendedProperty : Entity
     {
     
+		///<summary>
+		/// The MultiValueLegacyExtendedProperty constructor
+		///</summary>
+        public MultiValueLegacyExtendedProperty()
+        {
+            this.ODataType = "microsoft.graph.multiValueLegacyExtendedProperty";
+        }
+	
         /// <summary>
         /// Gets or sets value.
         /// A collection of property values.

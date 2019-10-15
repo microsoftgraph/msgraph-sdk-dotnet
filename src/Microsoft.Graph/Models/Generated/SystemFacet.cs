@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SystemFacet
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SystemFacet"/> class.
+        /// </summary>
+        public SystemFacet()
+        {
+            this.ODataType = "microsoft.graph.systemFacet";
+        }
 
         /// <summary>
         /// Gets or sets additional data.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class WindowsInformationProtectionDataRecoveryCertificate
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsInformationProtectionDataRecoveryCertificate"/> class.
+        /// </summary>
+        public WindowsInformationProtectionDataRecoveryCertificate()
+        {
+            this.ODataType = "microsoft.graph.windowsInformationProtectionDataRecoveryCertificate";
+        }
 
         /// <summary>
         /// Gets or sets subjectName.

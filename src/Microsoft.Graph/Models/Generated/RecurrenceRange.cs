@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class RecurrenceRange
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurrenceRange"/> class.
+        /// </summary>
+        public RecurrenceRange()
+        {
+            this.ODataType = "microsoft.graph.recurrenceRange";
+        }
 
         /// <summary>
         /// Gets or sets type.

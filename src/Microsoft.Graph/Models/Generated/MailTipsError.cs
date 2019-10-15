@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MailTipsError
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MailTipsError"/> class.
+        /// </summary>
+        public MailTipsError()
+        {
+            this.ODataType = "microsoft.graph.mailTipsError";
+        }
 
         /// <summary>
         /// Gets or sets message.

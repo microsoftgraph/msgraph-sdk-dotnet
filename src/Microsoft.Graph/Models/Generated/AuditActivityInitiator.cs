@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AuditActivityInitiator
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditActivityInitiator"/> class.
+        /// </summary>
+        public AuditActivityInitiator()
+        {
+            this.ODataType = "microsoft.graph.auditActivityInitiator";
+        }
 
         /// <summary>
         /// Gets or sets user.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class HostSecurityState
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HostSecurityState"/> class.
+        /// </summary>
+        public HostSecurityState()
+        {
+            this.ODataType = "microsoft.graph.hostSecurityState";
+        }
 
         /// <summary>
         /// Gets or sets fqdn.

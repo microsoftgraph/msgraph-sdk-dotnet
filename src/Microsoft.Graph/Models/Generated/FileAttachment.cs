@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class FileAttachment : Attachment
     {
     
+		///<summary>
+		/// The FileAttachment constructor
+		///</summary>
+        public FileAttachment()
+        {
+            this.ODataType = "microsoft.graph.fileAttachment";
+        }
+	
         /// <summary>
         /// Gets or sets content id.
         /// The ID of the attachment in the Exchange store.

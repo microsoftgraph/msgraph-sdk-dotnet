@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ItemPreviewInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ItemPreviewInfo"/> class.
+        /// </summary>
+        public ItemPreviewInfo()
+        {
+            this.ODataType = "microsoft.graph.itemPreviewInfo";
+        }
 
         /// <summary>
         /// Gets or sets getUrl.

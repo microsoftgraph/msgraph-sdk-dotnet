@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class OnPremisesExtensionAttributes
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OnPremisesExtensionAttributes"/> class.
+        /// </summary>
+        public OnPremisesExtensionAttributes()
+        {
+            this.ODataType = "microsoft.graph.onPremisesExtensionAttributes";
+        }
 
         /// <summary>
         /// Gets or sets extensionAttribute1.

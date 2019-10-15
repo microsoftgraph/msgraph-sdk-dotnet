@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceEnrollmentPlatformRestriction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceEnrollmentPlatformRestriction"/> class.
+        /// </summary>
+        public DeviceEnrollmentPlatformRestriction()
+        {
+            this.ODataType = "microsoft.graph.deviceEnrollmentPlatformRestriction";
+        }
 
         /// <summary>
         /// Gets or sets platformBlocked.

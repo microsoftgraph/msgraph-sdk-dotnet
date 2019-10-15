@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ActivityHistoryItem : Entity
     {
     
+		///<summary>
+		/// The ActivityHistoryItem constructor
+		///</summary>
+        public ActivityHistoryItem()
+        {
+            this.ODataType = "microsoft.graph.activityHistoryItem";
+        }
+	
         /// <summary>
         /// Gets or sets status.
         /// Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.

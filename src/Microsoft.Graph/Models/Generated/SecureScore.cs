@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SecureScore : Entity
     {
     
+		///<summary>
+		/// The SecureScore constructor
+		///</summary>
+        public SecureScore()
+        {
+            this.ODataType = "microsoft.graph.secureScore";
+        }
+	
         /// <summary>
         /// Gets or sets active user count.
         /// Active user count of the given tenant.

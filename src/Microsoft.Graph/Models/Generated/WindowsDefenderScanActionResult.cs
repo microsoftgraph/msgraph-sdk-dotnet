@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsDefenderScanActionResult : DeviceActionResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsDefenderScanActionResult"/> class.
+        /// </summary>
+        public WindowsDefenderScanActionResult()
+        {
+            this.ODataType = "microsoft.graph.windowsDefenderScanActionResult";
+        }
 
         /// <summary>
         /// Gets or sets scanType.

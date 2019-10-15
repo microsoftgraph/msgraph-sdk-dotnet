@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class PlannerPlanDetails : Entity
     {
     
+		///<summary>
+		/// The PlannerPlanDetails constructor
+		///</summary>
+        public PlannerPlanDetails()
+        {
+            this.ODataType = "microsoft.graph.plannerPlanDetails";
+        }
+	
         /// <summary>
         /// Gets or sets shared with.
         /// Set of user ids that this plan is shared with. If you are leveraging Office 365 Groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group.

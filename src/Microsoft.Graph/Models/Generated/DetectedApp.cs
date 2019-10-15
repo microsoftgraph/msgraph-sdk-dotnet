@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DetectedApp : Entity
     {
     
+		///<summary>
+		/// The DetectedApp constructor
+		///</summary>
+        public DetectedApp()
+        {
+            this.ODataType = "microsoft.graph.detectedApp";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// Name of the discovered application. Read-only

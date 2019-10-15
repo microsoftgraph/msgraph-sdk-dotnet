@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartGridlinesFormat : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartGridlinesFormat constructor
+		///</summary>
+        public WorkbookChartGridlinesFormat()
+        {
+            this.ODataType = "microsoft.graph.workbookChartGridlinesFormat";
+        }
+	
         /// <summary>
         /// Gets or sets line.
         /// Represents chart line formatting. Read-only.

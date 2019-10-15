@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceEnrollmentPlatformRestrictionsConfiguration : DeviceEnrollmentConfiguration
     {
     
+		///<summary>
+		/// The DeviceEnrollmentPlatformRestrictionsConfiguration constructor
+		///</summary>
+        public DeviceEnrollmentPlatformRestrictionsConfiguration()
+        {
+            this.ODataType = "microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets ios restriction.
         /// Not yet documented

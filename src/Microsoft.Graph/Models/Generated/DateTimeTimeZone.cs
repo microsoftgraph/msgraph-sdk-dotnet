@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DateTimeTimeZone
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DateTimeTimeZone"/> class.
+        /// </summary>
+        public DateTimeTimeZone()
+        {
+            this.ODataType = "microsoft.graph.dateTimeTimeZone";
+        }
 
         /// <summary>
         /// Gets or sets dateTime.

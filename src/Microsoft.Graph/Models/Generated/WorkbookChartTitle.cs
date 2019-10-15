@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartTitle : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartTitle constructor
+		///</summary>
+        public WorkbookChartTitle()
+        {
+            this.ODataType = "microsoft.graph.workbookChartTitle";
+        }
+	
         /// <summary>
         /// Gets or sets overlay.
         /// Boolean value representing if the chart title will overlay the chart or not.

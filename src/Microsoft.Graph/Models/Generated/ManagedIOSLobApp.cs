@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ManagedIOSLobApp : ManagedMobileLobApp
     {
     
+		///<summary>
+		/// The ManagedIOSLobApp constructor
+		///</summary>
+        public ManagedIOSLobApp()
+        {
+            this.ODataType = "microsoft.graph.managedIOSLobApp";
+        }
+	
         /// <summary>
         /// Gets or sets bundle id.
         /// The Identity Name.

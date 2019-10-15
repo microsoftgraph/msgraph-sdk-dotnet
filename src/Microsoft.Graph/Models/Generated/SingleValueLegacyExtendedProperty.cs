@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SingleValueLegacyExtendedProperty : Entity
     {
     
+		///<summary>
+		/// The SingleValueLegacyExtendedProperty constructor
+		///</summary>
+        public SingleValueLegacyExtendedProperty()
+        {
+            this.ODataType = "microsoft.graph.singleValueLegacyExtendedProperty";
+        }
+	
         /// <summary>
         /// Gets or sets value.
         /// A property value.

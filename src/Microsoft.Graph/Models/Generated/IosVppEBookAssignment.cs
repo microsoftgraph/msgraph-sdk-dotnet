@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosVppEBookAssignment : ManagedEBookAssignment
     {
     
+		///<summary>
+		/// The IosVppEBookAssignment constructor
+		///</summary>
+        public IosVppEBookAssignment()
+        {
+            this.ODataType = "microsoft.graph.iosVppEBookAssignment";
+        }
+	
     }
 }
 

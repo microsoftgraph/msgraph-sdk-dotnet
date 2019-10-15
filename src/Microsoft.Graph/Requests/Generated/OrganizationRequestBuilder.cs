@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for CertificateBasedAuthConfiguration.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder CertificateBasedAuthConfiguration
+        {
+            get
+            {
+                return new OrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("certificateBasedAuthConfiguration"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Extensions.
         /// </summary>
         /// <returns>The <see cref="IOrganizationExtensionsCollectionRequestBuilder"/>.</returns>

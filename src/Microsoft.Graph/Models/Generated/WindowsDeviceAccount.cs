@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class WindowsDeviceAccount
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsDeviceAccount"/> class.
+        /// </summary>
+        public WindowsDeviceAccount()
+        {
+            this.ODataType = "microsoft.graph.windowsDeviceAccount";
+        }
 
         /// <summary>
         /// Gets or sets password.

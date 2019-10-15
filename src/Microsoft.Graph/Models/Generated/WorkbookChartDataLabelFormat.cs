@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartDataLabelFormat : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartDataLabelFormat constructor
+		///</summary>
+        public WorkbookChartDataLabelFormat()
+        {
+            this.ODataType = "microsoft.graph.workbookChartDataLabelFormat";
+        }
+	
         /// <summary>
         /// Gets or sets fill.
         /// Represents the fill format of the current chart data label. Read-only.

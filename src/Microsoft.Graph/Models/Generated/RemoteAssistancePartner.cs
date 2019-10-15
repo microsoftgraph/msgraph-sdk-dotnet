@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class RemoteAssistancePartner : Entity
     {
     
+		///<summary>
+		/// The RemoteAssistancePartner constructor
+		///</summary>
+        public RemoteAssistancePartner()
+        {
+            this.ODataType = "microsoft.graph.remoteAssistancePartner";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// Display name of the partner.

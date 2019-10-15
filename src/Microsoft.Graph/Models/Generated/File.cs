@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class File
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="File"/> class.
+        /// </summary>
+        public File()
+        {
+            this.ODataType = "microsoft.graph.file";
+        }
 
         /// <summary>
         /// Gets or sets hashes.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ManagedDeviceOverview : Entity
     {
     
+		///<summary>
+		/// The ManagedDeviceOverview constructor
+		///</summary>
+        public ManagedDeviceOverview()
+        {
+            this.ODataType = "microsoft.graph.managedDeviceOverview";
+        }
+	
         /// <summary>
         /// Gets or sets enrolled device count.
         /// Total enrolled device count. Does not include PC devices managed via Intune PC Agent

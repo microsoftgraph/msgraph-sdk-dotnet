@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class WorkbookFilterDatetime
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkbookFilterDatetime"/> class.
+        /// </summary>
+        public WorkbookFilterDatetime()
+        {
+            this.ODataType = "microsoft.graph.workbookFilterDatetime";
+        }
 
         /// <summary>
         /// Gets or sets date.

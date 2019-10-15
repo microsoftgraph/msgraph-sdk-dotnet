@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TermsAndConditionsAcceptanceStatus : Entity
     {
     
+		///<summary>
+		/// The TermsAndConditionsAcceptanceStatus constructor
+		///</summary>
+        public TermsAndConditionsAcceptanceStatus()
+        {
+            this.ODataType = "microsoft.graph.termsAndConditionsAcceptanceStatus";
+        }
+	
         /// <summary>
         /// Gets or sets user display name.
         /// Display name of the user whose acceptance the entity represents.

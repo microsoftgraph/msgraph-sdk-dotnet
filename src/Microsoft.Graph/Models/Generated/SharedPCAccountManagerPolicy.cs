@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SharedPCAccountManagerPolicy
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharedPCAccountManagerPolicy"/> class.
+        /// </summary>
+        public SharedPCAccountManagerPolicy()
+        {
+            this.ODataType = "microsoft.graph.sharedPCAccountManagerPolicy";
+        }
 
         /// <summary>
         /// Gets or sets accountDeletionPolicy.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PersonType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonType"/> class.
+        /// </summary>
+        public PersonType()
+        {
+            this.ODataType = "microsoft.graph.personType";
+        }
 
         /// <summary>
         /// Gets or sets class.

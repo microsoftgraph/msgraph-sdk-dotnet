@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class PlannerBucketTaskBoardTaskFormat : Entity
     {
     
+		///<summary>
+		/// The PlannerBucketTaskBoardTaskFormat constructor
+		///</summary>
+        public PlannerBucketTaskBoardTaskFormat()
+        {
+            this.ODataType = "microsoft.graph.plannerBucketTaskBoardTaskFormat";
+        }
+	
         /// <summary>
         /// Gets or sets order hint.
         /// Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class TimeConstraint
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimeConstraint"/> class.
+        /// </summary>
+        public TimeConstraint()
+        {
+            this.ODataType = "microsoft.graph.timeConstraint";
+        }
 
         /// <summary>
         /// Gets or sets activityDomain.

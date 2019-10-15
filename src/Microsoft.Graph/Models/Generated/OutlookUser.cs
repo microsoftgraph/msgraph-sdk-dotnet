@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OutlookUser : Entity
     {
     
+		///<summary>
+		/// The OutlookUser constructor
+		///</summary>
+        public OutlookUser()
+        {
+            this.ODataType = "microsoft.graph.outlookUser";
+        }
+	
         /// <summary>
         /// Gets or sets master categories.
         /// A list of categories defined for the user.

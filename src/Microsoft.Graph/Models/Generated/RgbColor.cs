@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class RgbColor
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RgbColor"/> class.
+        /// </summary>
+        public RgbColor()
+        {
+            this.ODataType = "microsoft.graph.rgbColor";
+        }
 
         /// <summary>
         /// Gets or sets r.

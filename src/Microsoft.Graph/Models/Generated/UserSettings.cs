@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class UserSettings : Entity
     {
     
+		///<summary>
+		/// The UserSettings constructor
+		///</summary>
+        public UserSettings()
+        {
+            this.ODataType = "microsoft.graph.userSettings";
+        }
+	
         /// <summary>
         /// Gets or sets contribution to content discovery disabled.
         /// </summary>

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookRangeFont : Entity
     {
     
+		///<summary>
+		/// The WorkbookRangeFont constructor
+		///</summary>
+        public WorkbookRangeFont()
+        {
+            this.ODataType = "microsoft.graph.workbookRangeFont";
+        }
+	
         /// <summary>
         /// Gets or sets bold.
         /// Represents the bold status of font.

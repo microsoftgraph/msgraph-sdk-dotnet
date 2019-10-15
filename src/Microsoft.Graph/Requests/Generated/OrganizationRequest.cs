@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (organizationToInitialize != null && organizationToInitialize.AdditionalData != null)
             {
 
+                if (organizationToInitialize.CertificateBasedAuthConfiguration != null && organizationToInitialize.CertificateBasedAuthConfiguration.CurrentPage != null)
+                {
+                    organizationToInitialize.CertificateBasedAuthConfiguration.AdditionalData = organizationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    organizationToInitialize.AdditionalData.TryGetValue("certificateBasedAuthConfiguration@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        organizationToInitialize.CertificateBasedAuthConfiguration.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (organizationToInitialize.Extensions != null && organizationToInitialize.Extensions.CurrentPage != null)
                 {
                     organizationToInitialize.Extensions.AdditionalData = organizationToInitialize.AdditionalData;

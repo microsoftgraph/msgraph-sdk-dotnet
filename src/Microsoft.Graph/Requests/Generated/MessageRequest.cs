@@ -234,38 +234,6 @@ namespace Microsoft.Graph
             if (messageToInitialize != null && messageToInitialize.AdditionalData != null)
             {
 
-                if (messageToInitialize.Attachments != null && messageToInitialize.Attachments.CurrentPage != null)
-                {
-                    messageToInitialize.Attachments.AdditionalData = messageToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    messageToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        messageToInitialize.Attachments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (messageToInitialize.Extensions != null && messageToInitialize.Extensions.CurrentPage != null)
-                {
-                    messageToInitialize.Extensions.AdditionalData = messageToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    messageToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        messageToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (messageToInitialize.SingleValueExtendedProperties != null && messageToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
                     messageToInitialize.SingleValueExtendedProperties.AdditionalData = messageToInitialize.AdditionalData;
@@ -293,6 +261,38 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         messageToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (messageToInitialize.Attachments != null && messageToInitialize.Attachments.CurrentPage != null)
+                {
+                    messageToInitialize.Attachments.AdditionalData = messageToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    messageToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        messageToInitialize.Attachments.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (messageToInitialize.Extensions != null && messageToInitialize.Extensions.CurrentPage != null)
+                {
+                    messageToInitialize.Extensions.AdditionalData = messageToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    messageToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        messageToInitialize.Extensions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

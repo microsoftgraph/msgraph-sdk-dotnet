@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OutlookCategory : Entity
     {
     
+		///<summary>
+		/// The OutlookCategory constructor
+		///</summary>
+        public OutlookCategory()
+        {
+            this.ODataType = "microsoft.graph.outlookCategory";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.

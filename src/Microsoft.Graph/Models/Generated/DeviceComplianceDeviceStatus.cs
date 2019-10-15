@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceComplianceDeviceStatus : Entity
     {
     
+		///<summary>
+		/// The DeviceComplianceDeviceStatus constructor
+		///</summary>
+        public DeviceComplianceDeviceStatus()
+        {
+            this.ODataType = "microsoft.graph.deviceComplianceDeviceStatus";
+        }
+	
         /// <summary>
         /// Gets or sets device display name.
         /// Device name of the DevicePolicyStatus.

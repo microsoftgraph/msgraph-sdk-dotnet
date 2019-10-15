@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SignInStatus
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SignInStatus"/> class.
+        /// </summary>
+        public SignInStatus()
+        {
+            this.ODataType = "microsoft.graph.signInStatus";
+        }
 
         /// <summary>
         /// Gets or sets errorCode.

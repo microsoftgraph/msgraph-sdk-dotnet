@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class TimeSlot
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimeSlot"/> class.
+        /// </summary>
+        public TimeSlot()
+        {
+            this.ODataType = "microsoft.graph.timeSlot";
+        }
 
         /// <summary>
         /// Gets or sets start.

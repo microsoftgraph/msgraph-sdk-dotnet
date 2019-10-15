@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ItemActivityStat : Entity
     {
     
+		///<summary>
+		/// The ItemActivityStat constructor
+		///</summary>
+        public ItemActivityStat()
+        {
+            this.ODataType = "microsoft.graph.itemActivityStat";
+        }
+	
         /// <summary>
         /// Gets or sets start date time.
         /// When the interval starts. Read-only.

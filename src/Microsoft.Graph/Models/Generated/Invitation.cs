@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Invitation : Entity
     {
     
+		///<summary>
+		/// The Invitation constructor
+		///</summary>
+        public Invitation()
+        {
+            this.ODataType = "microsoft.graph.invitation";
+        }
+	
         /// <summary>
         /// Gets or sets invited user display name.
         /// The display name of the user being invited.

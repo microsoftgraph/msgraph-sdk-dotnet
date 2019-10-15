@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ExclusionGroupAssignmentTarget : GroupAssignmentTarget
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExclusionGroupAssignmentTarget"/> class.
+        /// </summary>
+        public ExclusionGroupAssignmentTarget()
+        {
+            this.ODataType = "microsoft.graph.exclusionGroupAssignmentTarget";
+        }
 
     }
 }

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceConfigurationSettingState
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceConfigurationSettingState"/> class.
+        /// </summary>
+        public DeviceConfigurationSettingState()
+        {
+            this.ODataType = "microsoft.graph.deviceConfigurationSettingState";
+        }
 
         /// <summary>
         /// Gets or sets setting.

@@ -22,13 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagement : Entity
     {
     
-        /// <summary>
-        /// Gets or sets subscription state.
-        /// Tenant mobile device management subscription state. The possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionState", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementSubscriptionState? SubscriptionState { get; set; }
-    
+		///<summary>
+		/// The DeviceManagement constructor
+		///</summary>
+        public DeviceManagement()
+        {
+            this.ODataType = "microsoft.graph.deviceManagement";
+        }
+	
         /// <summary>
         /// Gets or sets settings.
         /// Account level settings.
@@ -44,39 +45,18 @@ namespace Microsoft.Graph
         public IntuneBrand IntuneBrand { get; set; }
     
         /// <summary>
+        /// Gets or sets subscription state.
+        /// Tenant mobile device management subscription state. The possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionState", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementSubscriptionState? SubscriptionState { get; set; }
+    
+        /// <summary>
         /// Gets or sets terms and conditions.
         /// The terms and conditions associated with device management of the company.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsAndConditions", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementTermsAndConditionsCollectionPage TermsAndConditions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets apple push notification certificate.
-        /// Apple push notification certificate.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applePushNotificationCertificate", Required = Newtonsoft.Json.Required.Default)]
-        public ApplePushNotificationCertificate ApplePushNotificationCertificate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed device overview.
-        /// Device overview
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceOverview", Required = Newtonsoft.Json.Required.Default)]
-        public ManagedDeviceOverview ManagedDeviceOverview { get; set; }
-    
-        /// <summary>
-        /// Gets or sets detected apps.
-        /// The list of detected apps associated with a device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectedApps", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementDetectedAppsCollectionPage DetectedApps { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed devices.
-        /// The list of managed devices.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDevices", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementManagedDevicesCollectionPage ManagedDevices { get; set; }
     
         /// <summary>
         /// Gets or sets device configurations.
@@ -170,6 +150,34 @@ namespace Microsoft.Graph
         public IDeviceManagementDeviceManagementPartnersCollectionPage DeviceManagementPartners { get; set; }
     
         /// <summary>
+        /// Gets or sets apple push notification certificate.
+        /// Apple push notification certificate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applePushNotificationCertificate", Required = Newtonsoft.Json.Required.Default)]
+        public ApplePushNotificationCertificate ApplePushNotificationCertificate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed device overview.
+        /// Device overview
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceOverview", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedDeviceOverview ManagedDeviceOverview { get; set; }
+    
+        /// <summary>
+        /// Gets or sets detected apps.
+        /// The list of detected apps associated with a device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectedApps", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDetectedAppsCollectionPage DetectedApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed devices.
+        /// The list of managed devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDevices", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementManagedDevicesCollectionPage ManagedDevices { get; set; }
+    
+        /// <summary>
         /// Gets or sets notification message templates.
         /// The Notification Message Templates.
         /// </summary>
@@ -198,6 +206,13 @@ namespace Microsoft.Graph
         public IDeviceManagementResourceOperationsCollectionPage ResourceOperations { get; set; }
     
         /// <summary>
+        /// Gets or sets remote assistance partners.
+        /// The remote assist partners.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remoteAssistancePartners", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementRemoteAssistancePartnersCollectionPage RemoteAssistancePartners { get; set; }
+    
+        /// <summary>
         /// Gets or sets telecom expense management partners.
         /// The telecom expense management partners.
         /// </summary>
@@ -205,11 +220,11 @@ namespace Microsoft.Graph
         public IDeviceManagementTelecomExpenseManagementPartnersCollectionPage TelecomExpenseManagementPartners { get; set; }
     
         /// <summary>
-        /// Gets or sets remote assistance partners.
-        /// The remote assist partners.
+        /// Gets or sets troubleshooting events.
+        /// The list of troubleshooting events for the tenant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remoteAssistancePartners", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementRemoteAssistancePartnersCollectionPage RemoteAssistancePartners { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "troubleshootingEvents", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementTroubleshootingEventsCollectionPage TroubleshootingEvents { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection app learning summaries.
@@ -224,13 +239,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsInformationProtectionNetworkLearningSummaries", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionPage WindowsInformationProtectionNetworkLearningSummaries { get; set; }
-    
-        /// <summary>
-        /// Gets or sets troubleshooting events.
-        /// The list of troubleshooting events for the tenant.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "troubleshootingEvents", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementTroubleshootingEventsCollectionPage TroubleshootingEvents { get; set; }
     
     }
 }

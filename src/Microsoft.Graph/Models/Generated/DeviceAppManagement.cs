@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceAppManagement : Entity
     {
     
+		///<summary>
+		/// The DeviceAppManagement constructor
+		///</summary>
+        public DeviceAppManagement()
+        {
+            this.ODataType = "microsoft.graph.deviceAppManagement";
+        }
+	
         /// <summary>
         /// Gets or sets microsoft store for business last successful sync date time.
         /// The last time the apps from the Microsoft Store for Business were synced successfully for the account.
@@ -49,6 +57,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftStoreForBusinessLastCompletedApplicationSyncTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? MicrosoftStoreForBusinessLastCompletedApplicationSyncTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed ebooks.
+        /// The Managed eBook.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBooks", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementManagedEBooksCollectionPage ManagedEBooks { get; set; }
     
         /// <summary>
         /// Gets or sets mobile apps.
@@ -140,13 +155,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedAppStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceAppManagementManagedAppStatusesCollectionPage ManagedAppStatuses { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed ebooks.
-        /// The Managed eBook.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBooks", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceAppManagementManagedEBooksCollectionPage ManagedEBooks { get; set; }
     
     }
 }

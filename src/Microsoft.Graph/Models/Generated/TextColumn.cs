@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class TextColumn
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextColumn"/> class.
+        /// </summary>
+        public TextColumn()
+        {
+            this.ODataType = "microsoft.graph.textColumn";
+        }
 
         /// <summary>
         /// Gets or sets allowMultipleLines.

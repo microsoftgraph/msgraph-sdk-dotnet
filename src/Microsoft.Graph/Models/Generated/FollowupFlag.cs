@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class FollowupFlag
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FollowupFlag"/> class.
+        /// </summary>
+        public FollowupFlag()
+        {
+            this.ODataType = "microsoft.graph.followupFlag";
+        }
 
         /// <summary>
         /// Gets or sets completedDateTime.

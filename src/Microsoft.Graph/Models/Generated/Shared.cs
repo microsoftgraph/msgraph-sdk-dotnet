@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Shared
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Shared"/> class.
+        /// </summary>
+        public Shared()
+        {
+            this.ODataType = "microsoft.graph.shared";
+        }
 
         /// <summary>
         /// Gets or sets owner.

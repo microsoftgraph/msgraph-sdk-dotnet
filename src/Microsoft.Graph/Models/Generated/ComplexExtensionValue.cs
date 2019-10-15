@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ComplexExtensionValue
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ComplexExtensionValue"/> class.
+        /// </summary>
+        public ComplexExtensionValue()
+        {
+            this.ODataType = "microsoft.graph.ComplexExtensionValue";
+        }
 
         /// <summary>
         /// Gets or sets additional data.

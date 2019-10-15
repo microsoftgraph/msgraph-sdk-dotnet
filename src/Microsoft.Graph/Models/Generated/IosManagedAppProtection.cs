@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosManagedAppProtection : TargetedManagedAppProtection
     {
     
+		///<summary>
+		/// The IosManagedAppProtection constructor
+		///</summary>
+        public IosManagedAppProtection()
+        {
+            this.ODataType = "microsoft.graph.iosManagedAppProtection";
+        }
+	
         /// <summary>
         /// Gets or sets app data encryption type.
         /// Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SettingStateDeviceSummary : Entity
     {
     
+		///<summary>
+		/// The SettingStateDeviceSummary constructor
+		///</summary>
+        public SettingStateDeviceSummary()
+        {
+            this.ODataType = "microsoft.graph.settingStateDeviceSummary";
+        }
+	
         /// <summary>
         /// Gets or sets setting name.
         /// Name of the setting

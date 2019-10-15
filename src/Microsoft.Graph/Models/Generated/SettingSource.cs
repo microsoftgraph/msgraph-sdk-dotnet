@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SettingSource
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SettingSource"/> class.
+        /// </summary>
+        public SettingSource()
+        {
+            this.ODataType = "microsoft.graph.settingSource";
+        }
 
         /// <summary>
         /// Gets or sets id.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Channel : Entity
     {
     
+		///<summary>
+		/// The Channel constructor
+		///</summary>
+        public Channel()
+        {
+            this.ODataType = "microsoft.graph.channel";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// Channel name as it will appear to the user in Microsoft Teams.

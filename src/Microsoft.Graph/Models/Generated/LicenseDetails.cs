@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class LicenseDetails : Entity
     {
     
+		///<summary>
+		/// The LicenseDetails constructor
+		///</summary>
+        public LicenseDetails()
+        {
+            this.ODataType = "microsoft.graph.licenseDetails";
+        }
+	
         /// <summary>
         /// Gets or sets service plans.
         /// Information about the service plans assigned with the license. Read-only, Not nullable

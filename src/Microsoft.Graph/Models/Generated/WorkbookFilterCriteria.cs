@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class WorkbookFilterCriteria
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkbookFilterCriteria"/> class.
+        /// </summary>
+        public WorkbookFilterCriteria()
+        {
+            this.ODataType = "microsoft.graph.workbookFilterCriteria";
+        }
 
         /// <summary>
         /// Gets or sets color.

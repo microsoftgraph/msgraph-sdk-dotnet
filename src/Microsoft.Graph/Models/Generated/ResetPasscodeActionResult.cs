@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ResetPasscodeActionResult : DeviceActionResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResetPasscodeActionResult"/> class.
+        /// </summary>
+        public ResetPasscodeActionResult()
+        {
+            this.ODataType = "microsoft.graph.resetPasscodeActionResult";
+        }
 
         /// <summary>
         /// Gets or sets passcode.

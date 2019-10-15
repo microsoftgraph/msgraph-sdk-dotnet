@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceConfigurationUserOverview : Entity
     {
     
+		///<summary>
+		/// The DeviceConfigurationUserOverview constructor
+		///</summary>
+        public DeviceConfigurationUserOverview()
+        {
+            this.ODataType = "microsoft.graph.deviceConfigurationUserOverview";
+        }
+	
         /// <summary>
         /// Gets or sets pending count.
         /// Number of pending Users

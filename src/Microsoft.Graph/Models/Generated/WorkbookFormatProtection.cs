@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookFormatProtection : Entity
     {
     
+		///<summary>
+		/// The WorkbookFormatProtection constructor
+		///</summary>
+        public WorkbookFormatProtection()
+        {
+            this.ODataType = "microsoft.graph.workbookFormatProtection";
+        }
+	
         /// <summary>
         /// Gets or sets formula hidden.
         /// Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.

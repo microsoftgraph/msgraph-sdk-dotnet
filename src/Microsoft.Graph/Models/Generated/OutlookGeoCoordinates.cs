@@ -22,14 +22,14 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class OutlookGeoCoordinates
     {
-
         /// <summary>
-        /// Gets or sets altitude.
-        /// The altitude of the location.
+        /// Initializes a new instance of the <see cref="OutlookGeoCoordinates"/> class.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitude", Required = Newtonsoft.Json.Required.Default)]
-        public double? Altitude { get; set; }
-    
+        public OutlookGeoCoordinates()
+        {
+            this.ODataType = "microsoft.graph.outlookGeoCoordinates";
+        }
+
         /// <summary>
         /// Gets or sets latitude.
         /// The latitude of the location.
@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accuracy", Required = Newtonsoft.Json.Required.Default)]
         public double? Accuracy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets altitude.
+        /// The altitude of the location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitude", Required = Newtonsoft.Json.Required.Default)]
+        public double? Altitude { get; set; }
     
         /// <summary>
         /// Gets or sets altitudeAccuracy.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosCompliancePolicy : DeviceCompliancePolicy
     {
     
+		///<summary>
+		/// The IosCompliancePolicy constructor
+		///</summary>
+        public IosCompliancePolicy()
+        {
+            this.ODataType = "microsoft.graph.iosCompliancePolicy";
+        }
+	
         /// <summary>
         /// Gets or sets passcode block simple.
         /// Indicates whether or not to block simple passcodes.

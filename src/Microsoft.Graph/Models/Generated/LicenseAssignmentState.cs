@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class LicenseAssignmentState
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LicenseAssignmentState"/> class.
+        /// </summary>
+        public LicenseAssignmentState()
+        {
+            this.ODataType = "microsoft.graph.licenseAssignmentState";
+        }
 
         /// <summary>
         /// Gets or sets skuId.

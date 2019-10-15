@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartTitleFormat : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartTitleFormat constructor
+		///</summary>
+        public WorkbookChartTitleFormat()
+        {
+            this.ODataType = "microsoft.graph.workbookChartTitleFormat";
+        }
+	
         /// <summary>
         /// Gets or sets fill.
         /// Represents the fill format of an object, which includes background formatting information. Read-only.

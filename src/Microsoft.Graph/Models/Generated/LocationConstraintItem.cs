@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class LocationConstraintItem : Location
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LocationConstraintItem"/> class.
+        /// </summary>
+        public LocationConstraintItem()
+        {
+            this.ODataType = "microsoft.graph.locationConstraintItem";
+        }
 
         /// <summary>
         /// Gets or sets resolveAvailability.

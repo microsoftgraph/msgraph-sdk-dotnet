@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookRangeBorder : Entity
     {
     
+		///<summary>
+		/// The WorkbookRangeBorder constructor
+		///</summary>
+        public WorkbookRangeBorder()
+        {
+            this.ODataType = "microsoft.graph.workbookRangeBorder";
+        }
+	
         /// <summary>
         /// Gets or sets color.
         /// HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange').

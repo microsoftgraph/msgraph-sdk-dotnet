@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Calendar : Entity
     {
     
+		///<summary>
+		/// The Calendar constructor
+		///</summary>
+        public Calendar()
+        {
+            this.ODataType = "microsoft.graph.calendar";
+        }
+	
         /// <summary>
         /// Gets or sets name.
         /// The calendar name.
@@ -72,20 +80,6 @@ namespace Microsoft.Graph
         public EmailAddress Owner { get; set; }
     
         /// <summary>
-        /// Gets or sets events.
-        /// The events in the calendar. Navigation property. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "events", Required = Newtonsoft.Json.Required.Default)]
-        public ICalendarEventsCollectionPage Events { get; set; }
-    
-        /// <summary>
-        /// Gets or sets calendar view.
-        /// The calendar view for the calendar. Navigation property. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarView", Required = Newtonsoft.Json.Required.Default)]
-        public ICalendarCalendarViewCollectionPage CalendarView { get; set; }
-    
-        /// <summary>
         /// Gets or sets single value extended properties.
         /// The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
         /// </summary>
@@ -98,6 +92,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public ICalendarMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets events.
+        /// The events in the calendar. Navigation property. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "events", Required = Newtonsoft.Json.Required.Default)]
+        public ICalendarEventsCollectionPage Events { get; set; }
+    
+        /// <summary>
+        /// Gets or sets calendar view.
+        /// The calendar view for the calendar. Navigation property. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarView", Required = Newtonsoft.Json.Required.Default)]
+        public ICalendarCalendarViewCollectionPage CalendarView { get; set; }
     
     }
 }

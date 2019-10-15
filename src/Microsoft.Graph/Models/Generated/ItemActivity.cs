@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ItemActivity : Entity
     {
     
+		///<summary>
+		/// The ItemActivity constructor
+		///</summary>
+        public ItemActivity()
+        {
+            this.ODataType = "microsoft.graph.itemActivity";
+        }
+	
         /// <summary>
         /// Gets or sets access.
         /// An item was accessed.

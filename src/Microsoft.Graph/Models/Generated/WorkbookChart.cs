@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChart : Entity
     {
     
+		///<summary>
+		/// The WorkbookChart constructor
+		///</summary>
+        public WorkbookChart()
+        {
+            this.ODataType = "microsoft.graph.workbookChart";
+        }
+	
         /// <summary>
         /// Gets or sets height.
         /// Represents the height, in points, of the chart object.

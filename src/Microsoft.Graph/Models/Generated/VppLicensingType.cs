@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class VppLicensingType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VppLicensingType"/> class.
+        /// </summary>
+        public VppLicensingType()
+        {
+            this.ODataType = "microsoft.graph.vppLicensingType";
+        }
 
         /// <summary>
         /// Gets or sets supportsUserLicensing.

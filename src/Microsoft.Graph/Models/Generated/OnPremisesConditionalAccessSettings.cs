@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OnPremisesConditionalAccessSettings : Entity
     {
     
+		///<summary>
+		/// The OnPremisesConditionalAccessSettings constructor
+		///</summary>
+        public OnPremisesConditionalAccessSettings()
+        {
+            this.ODataType = "microsoft.graph.onPremisesConditionalAccessSettings";
+        }
+	
         /// <summary>
         /// Gets or sets enabled.
         /// Indicates if on premises conditional access is enabled for this organization

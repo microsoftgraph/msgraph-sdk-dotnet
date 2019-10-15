@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class PlannerTask : Entity
     {
     
+		///<summary>
+		/// The PlannerTask constructor
+		///</summary>
+        public PlannerTask()
+        {
+            this.ODataType = "microsoft.graph.plannerTask";
+        }
+	
         /// <summary>
         /// Gets or sets created by.
         /// Identity of the user that created the task.

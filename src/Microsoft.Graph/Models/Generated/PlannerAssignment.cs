@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PlannerAssignment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlannerAssignment"/> class.
+        /// </summary>
+        public PlannerAssignment()
+        {
+            this.ODataType = "microsoft.graph.plannerAssignment";
+        }
 
         /// <summary>
         /// Gets or sets assignedBy.

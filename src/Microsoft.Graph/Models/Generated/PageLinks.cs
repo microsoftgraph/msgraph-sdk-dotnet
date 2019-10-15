@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PageLinks
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PageLinks"/> class.
+        /// </summary>
+        public PageLinks()
+        {
+            this.ODataType = "microsoft.graph.pageLinks";
+        }
 
         /// <summary>
         /// Gets or sets oneNoteClientUrl.

@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsDeviceAzureADAccount : WindowsDeviceAccount
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsDeviceAzureADAccount"/> class.
+        /// </summary>
+        public WindowsDeviceAzureADAccount()
+        {
+            this.ODataType = "microsoft.graph.windowsDeviceAzureADAccount";
+        }
 
         /// <summary>
         /// Gets or sets userPrincipalName.

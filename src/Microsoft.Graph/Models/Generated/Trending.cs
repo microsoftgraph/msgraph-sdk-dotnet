@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Trending : Entity
     {
     
+		///<summary>
+		/// The Trending constructor
+		///</summary>
+        public Trending()
+        {
+            this.ODataType = "microsoft.graph.trending";
+        }
+	
         /// <summary>
         /// Gets or sets weight.
         /// </summary>

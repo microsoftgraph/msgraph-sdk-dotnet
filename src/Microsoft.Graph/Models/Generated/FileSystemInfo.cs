@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class FileSystemInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileSystemInfo"/> class.
+        /// </summary>
+        public FileSystemInfo()
+        {
+            this.ODataType = "microsoft.graph.fileSystemInfo";
+        }
 
         /// <summary>
         /// Gets or sets createdDateTime.

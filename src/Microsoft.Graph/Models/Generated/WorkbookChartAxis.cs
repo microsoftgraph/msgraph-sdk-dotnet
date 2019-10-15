@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartAxis : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartAxis constructor
+		///</summary>
+        public WorkbookChartAxis()
+        {
+            this.ODataType = "microsoft.graph.workbookChartAxis";
+        }
+	
         /// <summary>
         /// Gets or sets major unit.
         /// Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookPivotTable : Entity
     {
     
+		///<summary>
+		/// The WorkbookPivotTable constructor
+		///</summary>
+        public WorkbookPivotTable()
+        {
+            this.ODataType = "microsoft.graph.workbookPivotTable";
+        }
+	
         /// <summary>
         /// Gets or sets name.
         /// Name of the PivotTable.

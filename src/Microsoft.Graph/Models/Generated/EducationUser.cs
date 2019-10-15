@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EducationUser : Entity
     {
     
+		///<summary>
+		/// The EducationUser constructor
+		///</summary>
+        public EducationUser()
+        {
+            this.ODataType = "microsoft.graph.educationUser";
+        }
+	
         /// <summary>
         /// Gets or sets primary role.
         /// Default role for a user. The user's role might be different in an individual class. The possible values are: student, teacher. Supports $filter.

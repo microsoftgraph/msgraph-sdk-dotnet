@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DomainDnsRecord : Entity
     {
     
+		///<summary>
+		/// The DomainDnsRecord constructor
+		///</summary>
+        public DomainDnsRecord()
+        {
+            this.ODataType = "microsoft.graph.domainDnsRecord";
+        }
+	
         /// <summary>
         /// Gets or sets is optional.
         /// If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.

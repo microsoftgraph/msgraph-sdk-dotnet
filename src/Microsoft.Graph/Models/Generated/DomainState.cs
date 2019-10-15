@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DomainState
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DomainState"/> class.
+        /// </summary>
+        public DomainState()
+        {
+            this.ODataType = "microsoft.graph.domainState";
+        }
 
         /// <summary>
         /// Gets or sets status.

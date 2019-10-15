@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartPoint : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartPoint constructor
+		///</summary>
+        public WorkbookChartPoint()
+        {
+            this.ODataType = "microsoft.graph.workbookChartPoint";
+        }
+	
         /// <summary>
         /// Gets or sets value.
         /// Returns the value of a chart point. Read-only.

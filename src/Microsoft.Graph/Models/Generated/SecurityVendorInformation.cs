@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SecurityVendorInformation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecurityVendorInformation"/> class.
+        /// </summary>
+        public SecurityVendorInformation()
+        {
+            this.ODataType = "microsoft.graph.securityVendorInformation";
+        }
 
         /// <summary>
         /// Gets or sets provider.

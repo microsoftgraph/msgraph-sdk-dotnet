@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ContentTypeOrder
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentTypeOrder"/> class.
+        /// </summary>
+        public ContentTypeOrder()
+        {
+            this.ODataType = "microsoft.graph.contentTypeOrder";
+        }
 
         /// <summary>
         /// Gets or sets default.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceDetail
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceDetail"/> class.
+        /// </summary>
+        public DeviceDetail()
+        {
+            this.ODataType = "microsoft.graph.deviceDetail";
+        }
 
         /// <summary>
         /// Gets or sets deviceId.

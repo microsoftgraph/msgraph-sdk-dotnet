@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DomainDnsTxtRecord : DomainDnsRecord
     {
     
+		///<summary>
+		/// The DomainDnsTxtRecord constructor
+		///</summary>
+        public DomainDnsTxtRecord()
+        {
+            this.ODataType = "microsoft.graph.domainDnsTxtRecord";
+        }
+	
         /// <summary>
         /// Gets or sets text.
         /// Value used when configuring the text property at the DNS host.

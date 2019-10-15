@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosStoreApp : MobileApp
     {
     
+		///<summary>
+		/// The IosStoreApp constructor
+		///</summary>
+        public IosStoreApp()
+        {
+            this.ODataType = "microsoft.graph.iosStoreApp";
+        }
+	
         /// <summary>
         /// Gets or sets bundle id.
         /// The Identity Name.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class EducationStudent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EducationStudent"/> class.
+        /// </summary>
+        public EducationStudent()
+        {
+            this.ODataType = "microsoft.graph.educationStudent";
+        }
 
         /// <summary>
         /// Gets or sets graduationYear.

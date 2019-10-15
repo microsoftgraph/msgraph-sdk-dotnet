@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SignInLocation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SignInLocation"/> class.
+        /// </summary>
+        public SignInLocation()
+        {
+            this.ODataType = "microsoft.graph.signInLocation";
+        }
 
         /// <summary>
         /// Gets or sets city.

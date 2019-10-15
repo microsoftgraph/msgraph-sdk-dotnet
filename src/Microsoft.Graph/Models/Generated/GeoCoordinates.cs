@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class GeoCoordinates
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GeoCoordinates"/> class.
+        /// </summary>
+        public GeoCoordinates()
+        {
+            this.ODataType = "microsoft.graph.geoCoordinates";
+        }
 
         /// <summary>
         /// Gets or sets altitude.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceCompliancePolicyDeviceStateSummary : Entity
     {
     
+		///<summary>
+		/// The DeviceCompliancePolicyDeviceStateSummary constructor
+		///</summary>
+        public DeviceCompliancePolicyDeviceStateSummary()
+        {
+            this.ODataType = "microsoft.graph.deviceCompliancePolicyDeviceStateSummary";
+        }
+	
         /// <summary>
         /// Gets or sets in grace period count.
         /// Number of devices that are in grace period

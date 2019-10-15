@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SharingInvitation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharingInvitation"/> class.
+        /// </summary>
+        public SharingInvitation()
+        {
+            this.ODataType = "microsoft.graph.sharingInvitation";
+        }
 
         /// <summary>
         /// Gets or sets email.

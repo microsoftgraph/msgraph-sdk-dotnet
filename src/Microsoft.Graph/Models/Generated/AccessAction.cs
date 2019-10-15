@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AccessAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccessAction"/> class.
+        /// </summary>
+        public AccessAction()
+        {
+            this.ODataType = "microsoft.graph.accessAction";
+        }
 
         /// <summary>
         /// Gets or sets additional data.

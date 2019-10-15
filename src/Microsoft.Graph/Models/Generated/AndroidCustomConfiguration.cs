@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidCustomConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The AndroidCustomConfiguration constructor
+		///</summary>
+        public AndroidCustomConfiguration()
+        {
+            this.ODataType = "microsoft.graph.androidCustomConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets oma settings.
         /// OMA settings. This collection can contain a maximum of 1000 elements.

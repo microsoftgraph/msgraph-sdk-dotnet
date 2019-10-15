@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceEnrollmentLimitConfiguration : DeviceEnrollmentConfiguration
     {
     
+		///<summary>
+		/// The DeviceEnrollmentLimitConfiguration constructor
+		///</summary>
+        public DeviceEnrollmentLimitConfiguration()
+        {
+            this.ODataType = "microsoft.graph.deviceEnrollmentLimitConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets limit.
         /// Not yet documented

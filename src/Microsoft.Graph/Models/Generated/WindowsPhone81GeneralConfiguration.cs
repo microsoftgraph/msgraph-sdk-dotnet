@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81GeneralConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The WindowsPhone81GeneralConfiguration constructor
+		///</summary>
+        public WindowsPhone81GeneralConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windowsPhone81GeneralConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets apply only to windows phone81.
         /// Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.

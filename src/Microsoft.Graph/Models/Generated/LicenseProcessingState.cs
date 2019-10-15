@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class LicenseProcessingState
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LicenseProcessingState"/> class.
+        /// </summary>
+        public LicenseProcessingState()
+        {
+            this.ODataType = "microsoft.graph.licenseProcessingState";
+        }
 
         /// <summary>
         /// Gets or sets state.

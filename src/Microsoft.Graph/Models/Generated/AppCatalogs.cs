@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AppCatalogs : Entity
     {
     
+		///<summary>
+		/// The AppCatalogs constructor
+		///</summary>
+        public AppCatalogs()
+        {
+            this.ODataType = "microsoft.graph.appCatalogs";
+        }
+	
         /// <summary>
         /// Gets or sets teams apps.
         /// </summary>

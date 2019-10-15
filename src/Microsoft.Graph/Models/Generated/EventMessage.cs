@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EventMessage : Message
     {
     
+		///<summary>
+		/// The EventMessage constructor
+		///</summary>
+        public EventMessage()
+        {
+            this.ODataType = "microsoft.graph.eventMessage";
+        }
+	
         /// <summary>
         /// Gets or sets meeting message type.
         /// The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTenativelyAccepted, meetingDeclined.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class CopyNotebookModel
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopyNotebookModel"/> class.
+        /// </summary>
+        public CopyNotebookModel()
+        {
+            this.ODataType = "microsoft.graph.CopyNotebookModel";
+        }
 
         /// <summary>
         /// Gets or sets isDefault.

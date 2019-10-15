@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookRange : Entity
     {
     
+		///<summary>
+		/// The WorkbookRange constructor
+		///</summary>
+        public WorkbookRange()
+        {
+            this.ODataType = "microsoft.graph.workbookRange";
+        }
+	
         /// <summary>
         /// Gets or sets address.
         /// Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.

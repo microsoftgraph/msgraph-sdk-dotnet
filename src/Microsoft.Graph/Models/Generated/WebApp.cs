@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WebApp : MobileApp
     {
     
+		///<summary>
+		/// The WebApp constructor
+		///</summary>
+        public WebApp()
+        {
+            this.ODataType = "microsoft.graph.webApp";
+        }
+	
         /// <summary>
         /// Gets or sets app url.
         /// The web app URL.

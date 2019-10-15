@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Planner : Entity
     {
     
+		///<summary>
+		/// The Planner constructor
+		///</summary>
+        public Planner()
+        {
+            this.ODataType = "microsoft.graph.planner";
+        }
+	
         /// <summary>
         /// Gets or sets tasks.
         /// Read-only. Nullable. Returns a collection of the specified tasks

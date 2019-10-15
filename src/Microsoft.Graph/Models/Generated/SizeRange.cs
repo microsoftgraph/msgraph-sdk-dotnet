@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SizeRange
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SizeRange"/> class.
+        /// </summary>
+        public SizeRange()
+        {
+            this.ODataType = "microsoft.graph.sizeRange";
+        }
 
         /// <summary>
         /// Gets or sets minimumSize.

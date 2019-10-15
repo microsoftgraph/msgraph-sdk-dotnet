@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookTableRow : Entity
     {
     
+		///<summary>
+		/// The WorkbookTableRow constructor
+		///</summary>
+        public WorkbookTableRow()
+        {
+            this.ODataType = "microsoft.graph.workbookTableRow";
+        }
+	
         /// <summary>
         /// Gets or sets index.
         /// Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.

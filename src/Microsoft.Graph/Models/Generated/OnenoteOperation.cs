@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OnenoteOperation : Operation
     {
     
+		///<summary>
+		/// The OnenoteOperation constructor
+		///</summary>
+        public OnenoteOperation()
+        {
+            this.ODataType = "microsoft.graph.onenoteOperation";
+        }
+	
         /// <summary>
         /// Gets or sets resource location.
         /// The resource URI for the object. For example, the resource URI for a copied page or section.

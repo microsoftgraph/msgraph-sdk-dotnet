@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class TargetResource
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TargetResource"/> class.
+        /// </summary>
+        public TargetResource()
+        {
+            this.ODataType = "microsoft.graph.targetResource";
+        }
 
         /// <summary>
         /// Gets or sets id.

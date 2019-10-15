@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementPartner : Entity
     {
     
+		///<summary>
+		/// The DeviceManagementPartner constructor
+		///</summary>
+        public DeviceManagementPartner()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementPartner";
+        }
+	
         /// <summary>
         /// Gets or sets last heartbeat date time.
         /// Timestamp of last heartbeat after admin enabled option Connect to Device management Partner

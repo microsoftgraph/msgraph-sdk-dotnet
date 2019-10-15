@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class KeyValue
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="KeyValue"/> class.
+        /// </summary>
+        public KeyValue()
+        {
+            this.ODataType = "microsoft.graph.keyValue";
+        }
 
         /// <summary>
         /// Gets or sets key.

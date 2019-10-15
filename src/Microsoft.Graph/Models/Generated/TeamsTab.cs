@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TeamsTab : Entity
     {
     
+		///<summary>
+		/// The TeamsTab constructor
+		///</summary>
+        public TeamsTab()
+        {
+            this.ODataType = "microsoft.graph.teamsTab";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// Name of the tab.

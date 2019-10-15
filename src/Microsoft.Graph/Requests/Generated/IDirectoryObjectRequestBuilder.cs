@@ -39,6 +39,13 @@ namespace Microsoft.Graph
             IEnumerable<string> groupIds);
 
         /// <summary>
+        /// Gets the request builder for DirectoryObjectCheckMemberObjects.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectCheckMemberObjectsRequestBuilder"/>.</returns>
+        IDirectoryObjectCheckMemberObjectsRequestBuilder CheckMemberObjects(
+            IEnumerable<string> ids);
+
+        /// <summary>
         /// Gets the request builder for DirectoryObjectGetMemberGroups.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectGetMemberGroupsRequestBuilder"/>.</returns>

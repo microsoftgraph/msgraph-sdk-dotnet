@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookTable : Entity
     {
     
+		///<summary>
+		/// The WorkbookTable constructor
+		///</summary>
+        public WorkbookTable()
+        {
+            this.ODataType = "microsoft.graph.workbookTable";
+        }
+	
         /// <summary>
         /// Gets or sets highlight first column.
         /// Indicates whether the first column contains special formatting.

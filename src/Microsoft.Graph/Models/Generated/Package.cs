@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Package
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Package"/> class.
+        /// </summary>
+        public Package()
+        {
+            this.ODataType = "microsoft.graph.package";
+        }
 
         /// <summary>
         /// Gets or sets type.

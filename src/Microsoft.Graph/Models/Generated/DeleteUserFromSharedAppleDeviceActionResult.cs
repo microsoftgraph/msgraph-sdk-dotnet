@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeleteUserFromSharedAppleDeviceActionResult : DeviceActionResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteUserFromSharedAppleDeviceActionResult"/> class.
+        /// </summary>
+        public DeleteUserFromSharedAppleDeviceActionResult()
+        {
+            this.ODataType = "microsoft.graph.deleteUserFromSharedAppleDeviceActionResult";
+        }
 
         /// <summary>
         /// Gets or sets userPrincipalName.

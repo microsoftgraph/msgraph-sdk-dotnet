@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ReferenceAttachment : Attachment
     {
     
+		///<summary>
+		/// The ReferenceAttachment constructor
+		///</summary>
+        public ReferenceAttachment()
+        {
+            this.ODataType = "microsoft.graph.referenceAttachment";
+        }
+	
     }
 }
 

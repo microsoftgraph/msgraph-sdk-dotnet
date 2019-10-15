@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MessageRulePredicates
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageRulePredicates"/> class.
+        /// </summary>
+        public MessageRulePredicates()
+        {
+            this.ODataType = "microsoft.graph.messageRulePredicates";
+        }
 
         /// <summary>
         /// Gets or sets categories.

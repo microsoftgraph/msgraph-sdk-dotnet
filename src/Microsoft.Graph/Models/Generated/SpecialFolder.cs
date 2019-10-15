@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SpecialFolder
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SpecialFolder"/> class.
+        /// </summary>
+        public SpecialFolder()
+        {
+            this.ODataType = "microsoft.graph.specialFolder";
+        }
 
         /// <summary>
         /// Gets or sets name.

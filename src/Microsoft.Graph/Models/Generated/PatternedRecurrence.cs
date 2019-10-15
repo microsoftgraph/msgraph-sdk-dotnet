@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PatternedRecurrence
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PatternedRecurrence"/> class.
+        /// </summary>
+        public PatternedRecurrence()
+        {
+            this.ODataType = "microsoft.graph.patternedRecurrence";
+        }
 
         /// <summary>
         /// Gets or sets pattern.

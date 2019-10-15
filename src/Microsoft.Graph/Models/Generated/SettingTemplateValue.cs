@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SettingTemplateValue
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SettingTemplateValue"/> class.
+        /// </summary>
+        public SettingTemplateValue()
+        {
+            this.ODataType = "microsoft.graph.settingTemplateValue";
+        }
 
         /// <summary>
         /// Gets or sets name.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MobileThreatDefenseConnector : Entity
     {
     
+		///<summary>
+		/// The MobileThreatDefenseConnector constructor
+		///</summary>
+        public MobileThreatDefenseConnector()
+        {
+            this.ODataType = "microsoft.graph.mobileThreatDefenseConnector";
+        }
+	
         /// <summary>
         /// Gets or sets last heartbeat date time.
         /// DateTime of last Heartbeat recieved from the Data Sync Partner

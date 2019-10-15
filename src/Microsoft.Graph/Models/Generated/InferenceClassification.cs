@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class InferenceClassification : Entity
     {
     
+		///<summary>
+		/// The InferenceClassification constructor
+		///</summary>
+        public InferenceClassification()
+        {
+            this.ODataType = "microsoft.graph.inferenceClassification";
+        }
+	
         /// <summary>
         /// Gets or sets overrides.
         /// A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.

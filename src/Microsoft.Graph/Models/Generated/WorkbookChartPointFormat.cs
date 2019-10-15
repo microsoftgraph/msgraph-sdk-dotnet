@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartPointFormat : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartPointFormat constructor
+		///</summary>
+        public WorkbookChartPointFormat()
+        {
+            this.ODataType = "microsoft.graph.workbookChartPointFormat";
+        }
+	
         /// <summary>
         /// Gets or sets fill.
         /// Represents the fill format of a chart, which includes background formating information. Read-only.

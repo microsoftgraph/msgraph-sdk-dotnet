@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Hashes
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Hashes"/> class.
+        /// </summary>
+        public Hashes()
+        {
+            this.ODataType = "microsoft.graph.hashes";
+        }
 
         /// <summary>
         /// Gets or sets crc32Hash.

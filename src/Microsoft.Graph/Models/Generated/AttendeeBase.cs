@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AttendeeBase : Recipient
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AttendeeBase"/> class.
+        /// </summary>
+        public AttendeeBase()
+        {
+            this.ODataType = "microsoft.graph.attendeeBase";
+        }
 
         /// <summary>
         /// Gets or sets type.

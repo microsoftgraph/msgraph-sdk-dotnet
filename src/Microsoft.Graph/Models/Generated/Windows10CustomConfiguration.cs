@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10CustomConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The Windows10CustomConfiguration constructor
+		///</summary>
+        public Windows10CustomConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windows10CustomConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets oma settings.
         /// OMA settings. This collection can contain a maximum of 1000 elements.

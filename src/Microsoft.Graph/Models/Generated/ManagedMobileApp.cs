@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ManagedMobileApp : Entity
     {
     
+		///<summary>
+		/// The ManagedMobileApp constructor
+		///</summary>
+        public ManagedMobileApp()
+        {
+            this.ODataType = "microsoft.graph.managedMobileApp";
+        }
+	
         /// <summary>
         /// Gets or sets mobile app identifier.
         /// The identifier for an app with it's operating system type.

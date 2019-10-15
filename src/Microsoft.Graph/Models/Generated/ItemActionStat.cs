@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ItemActionStat
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ItemActionStat"/> class.
+        /// </summary>
+        public ItemActionStat()
+        {
+            this.ODataType = "microsoft.graph.itemActionStat";
+        }
 
         /// <summary>
         /// Gets or sets actionCount.

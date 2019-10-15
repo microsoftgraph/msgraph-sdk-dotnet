@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class IosDeviceType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IosDeviceType"/> class.
+        /// </summary>
+        public IosDeviceType()
+        {
+            this.ODataType = "microsoft.graph.iosDeviceType";
+        }
 
         /// <summary>
         /// Gets or sets iPad.

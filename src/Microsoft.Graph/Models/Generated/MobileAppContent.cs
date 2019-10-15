@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MobileAppContent : Entity
     {
     
+		///<summary>
+		/// The MobileAppContent constructor
+		///</summary>
+        public MobileAppContent()
+        {
+            this.ODataType = "microsoft.graph.mobileAppContent";
+        }
+	
         /// <summary>
         /// Gets or sets files.
         /// The list of files for this app content version.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartAxes : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartAxes constructor
+		///</summary>
+        public WorkbookChartAxes()
+        {
+            this.ODataType = "microsoft.graph.workbookChartAxes";
+        }
+	
         /// <summary>
         /// Gets or sets category axis.
         /// Represents the category axis in a chart. Read-only.

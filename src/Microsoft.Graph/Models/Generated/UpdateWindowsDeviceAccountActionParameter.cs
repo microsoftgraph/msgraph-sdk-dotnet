@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class UpdateWindowsDeviceAccountActionParameter
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateWindowsDeviceAccountActionParameter"/> class.
+        /// </summary>
+        public UpdateWindowsDeviceAccountActionParameter()
+        {
+            this.ODataType = "microsoft.graph.updateWindowsDeviceAccountActionParameter";
+        }
 
         /// <summary>
         /// Gets or sets deviceAccount.

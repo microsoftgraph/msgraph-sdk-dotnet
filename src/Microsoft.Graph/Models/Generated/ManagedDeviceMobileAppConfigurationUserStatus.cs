@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ManagedDeviceMobileAppConfigurationUserStatus : Entity
     {
     
+		///<summary>
+		/// The ManagedDeviceMobileAppConfigurationUserStatus constructor
+		///</summary>
+        public ManagedDeviceMobileAppConfigurationUserStatus()
+        {
+            this.ODataType = "microsoft.graph.managedDeviceMobileAppConfigurationUserStatus";
+        }
+	
         /// <summary>
         /// Gets or sets user display name.
         /// User name of the DevicePolicyStatus.

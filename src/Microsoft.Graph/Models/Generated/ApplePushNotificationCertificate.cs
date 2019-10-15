@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ApplePushNotificationCertificate : Entity
     {
     
+		///<summary>
+		/// The ApplePushNotificationCertificate constructor
+		///</summary>
+        public ApplePushNotificationCertificate()
+        {
+            this.ODataType = "microsoft.graph.applePushNotificationCertificate";
+        }
+	
         /// <summary>
         /// Gets or sets apple identifier.
         /// Apple Id of the account used to create the MDM push certificate.

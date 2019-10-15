@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IOrganizationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for CertificateBasedAuthConfiguration.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder"/>.</returns>
+        IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder CertificateBasedAuthConfiguration { get; }
+
+        /// <summary>
         /// Gets the request builder for Extensions.
         /// </summary>
         /// <returns>The <see cref="IOrganizationExtensionsCollectionRequestBuilder"/>.</returns>

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookChartFill : Entity
     {
     
+		///<summary>
+		/// The WorkbookChartFill constructor
+		///</summary>
+        public WorkbookChartFill()
+        {
+            this.ODataType = "microsoft.graph.workbookChartFill";
+        }
+	
     }
 }
 
