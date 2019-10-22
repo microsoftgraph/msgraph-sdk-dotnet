@@ -88,7 +88,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fax.
-        /// Fax number of school.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fax", Required = Newtonsoft.Json.Required.Default)]
         public string Fax { get; set; }

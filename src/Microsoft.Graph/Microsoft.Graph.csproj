@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience.</Description>
-    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+    <Copyright>Â© Microsoft Corporation. All rights reserved.</Copyright>
     <AssemblyTitle>Microsoft Graph V1.0 Service Client Library</AssemblyTitle>
     <Authors>Microsoft</Authors>
     <TargetFrameworks>netstandard1.3;net45</TargetFrameworks>
@@ -19,7 +19,7 @@
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <VersionPrefix>1.18.0</VersionPrefix>
+    <VersionPrefix>1.19.0</VersionPrefix>
     <!-- VersionPrefix minor version should not be set when the change comes from the generator. It will be updated automatically. -->
     <!-- VersionPrefix minor version must be manually set when making manual changes to code. -->
     <!-- VersionPrefix major and patch versions must be manually set. -->

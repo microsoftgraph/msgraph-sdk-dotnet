@@ -109,6 +109,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceContacts request builder.
+        /// </summary>
+        public IGraphServiceContactsCollectionRequestBuilder Contacts
+        {
+            get
+            {
+                return new GraphServiceContactsCollectionRequestBuilder(this.BaseUrl + "/contacts", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDevices request builder.
         /// </summary>
         public IGraphServiceDevicesCollectionRequestBuilder Devices

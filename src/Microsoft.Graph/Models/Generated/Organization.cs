@@ -177,6 +177,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificate based auth configuration.
+        /// Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateBasedAuthConfiguration", Required = Newtonsoft.Json.Required.Default)]
         public IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage CertificateBasedAuthConfiguration { get; set; }

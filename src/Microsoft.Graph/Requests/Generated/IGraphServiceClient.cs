@@ -42,6 +42,11 @@ namespace Microsoft.Graph
         IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects { get; }
     
         /// <summary>
+        /// Gets the GraphServiceContacts request builder.
+        /// </summary>
+        IGraphServiceContactsCollectionRequestBuilder Contacts { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDevices request builder.
         /// </summary>
         IGraphServiceDevicesCollectionRequestBuilder Devices { get; }
