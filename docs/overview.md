@@ -36,7 +36,7 @@ The `DelegateAuthenticationProvider` is an implementation of `IAuthenticationPro
 var graphServiceClient = new GraphServiceClient(new DelegateAuthenticationProvider((requestMessage) => {
     requestMessage
         .Headers
-        .Authorization = new AuthenticationHeaderValue("bearer", accessToken);
+        .Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
     return Task.FromResult(0);
 }));
