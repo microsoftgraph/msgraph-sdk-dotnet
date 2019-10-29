@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         /// </summary>
         public DriveItemUploadableProperties()
         {
-            
+            this.ODataType = "microsoft.graph.driveItemUploadableProperties";
         }
 
         /// <summary>

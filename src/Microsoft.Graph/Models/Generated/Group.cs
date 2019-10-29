@@ -164,6 +164,13 @@ namespace Microsoft.Graph
         public bool? SecurityEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets security identifier.
+        /// Security identifier of the group, used in Windows scenarios. Returned by default.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string SecurityIdentifier { get; set; }
+    
+        /// <summary>
         /// Gets or sets visibility.
         /// Specifies the visibility of an Office 365 group. Possible values are: Private, Public, or Hiddenmembership; blank values are treated as public.  See group visibility options to learn more.Visibility can be set only when a group is created; it is not editable.Visibility is supported only for unified groups; it is not supported for security groups. Returned by default.
         /// </summary>
