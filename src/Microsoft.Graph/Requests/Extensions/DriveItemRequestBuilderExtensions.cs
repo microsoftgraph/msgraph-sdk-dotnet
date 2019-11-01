@@ -4,6 +4,8 @@
 
 namespace Microsoft.Graph
 {
+    using System;
+
     /// <summary>
     /// The type  DriveItemRequestBuilder.
     /// </summary>
@@ -23,8 +25,13 @@ namespace Microsoft.Graph
                 }
             }
 
+            // Encode the path in accordance with the one drive spec 
+            // https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/addressing-driveitems
+            UriBuilder builder = new UriBuilder(this.RequestUrl);
+            builder.Path += string.Format(":{0}:", path);
+
             return new DriveItemRequestBuilder(
-                string.Format("{0}:{1}:", this.RequestUrl, path),
+                builder.Uri.OriginalString,
                 this.Client);
         }
     }
