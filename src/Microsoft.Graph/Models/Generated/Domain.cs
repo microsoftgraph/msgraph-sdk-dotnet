@@ -80,6 +80,18 @@ namespace Microsoft.Graph
         public bool? IsVerified { get; set; }
     
         /// <summary>
+        /// Gets or sets manufacturer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        public string Manufacturer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets model.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
+        public string Model { get; set; }
+    
+        /// <summary>
         /// Gets or sets password notification window in days.
         /// Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
         /// </summary>

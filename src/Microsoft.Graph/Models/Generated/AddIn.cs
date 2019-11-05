@@ -16,40 +16,37 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type DriveItemUploadableProperties.
+    /// The type AddIn.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class DriveItemUploadableProperties
+    public partial class AddIn
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DriveItemUploadableProperties"/> class.
+        /// Initializes a new instance of the <see cref="AddIn"/> class.
         /// </summary>
-        public DriveItemUploadableProperties()
+        public AddIn()
         {
-            this.ODataType = "microsoft.graph.driveItemUploadableProperties";
+            this.ODataType = "microsoft.graph.addIn";
         }
 
         /// <summary>
-        /// Gets or sets description.
-        /// Provides a user-visible description of the item. Read-write. Only on OneDrive Personal
+        /// Gets or sets id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? Id { get; set; }
     
         /// <summary>
-        /// Gets or sets fileSystemInfo.
-        /// File system information on client. Read-write.
+        /// Gets or sets type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileSystemInfo", Required = Newtonsoft.Json.Required.Default)]
-        public FileSystemInfo FileSystemInfo { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public string Type { get; set; }
     
         /// <summary>
-        /// Gets or sets name.
-        /// The name of the item (filename and extension). Read-write.
+        /// Gets or sets properties.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "properties", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyValue> Properties { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -16,40 +16,40 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type DriveItemUploadableProperties.
+    /// The type OptionalClaims.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class DriveItemUploadableProperties
+    public partial class OptionalClaims
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DriveItemUploadableProperties"/> class.
+        /// Initializes a new instance of the <see cref="OptionalClaims"/> class.
         /// </summary>
-        public DriveItemUploadableProperties()
+        public OptionalClaims()
         {
-            this.ODataType = "microsoft.graph.driveItemUploadableProperties";
+            this.ODataType = "microsoft.graph.optionalClaims";
         }
 
         /// <summary>
-        /// Gets or sets description.
-        /// Provides a user-visible description of the item. Read-write. Only on OneDrive Personal
+        /// Gets or sets idToken.
+        /// The optional claims returned in the JWT ID token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "idToken", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<OptionalClaim> IdToken { get; set; }
     
         /// <summary>
-        /// Gets or sets fileSystemInfo.
-        /// File system information on client. Read-write.
+        /// Gets or sets accessToken.
+        /// The optional claims returned in the JWT access token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileSystemInfo", Required = Newtonsoft.Json.Required.Default)]
-        public FileSystemInfo FileSystemInfo { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessToken", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<OptionalClaim> AccessToken { get; set; }
     
         /// <summary>
-        /// Gets or sets name.
-        /// The name of the item (filename and extension). Read-write.
+        /// Gets or sets saml2Token.
+        /// The optional claims returned in the SAML token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "saml2Token", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<OptionalClaim> Saml2Token { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
