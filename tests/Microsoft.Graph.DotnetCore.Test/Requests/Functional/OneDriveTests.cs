@@ -222,7 +222,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     {
                         var driveItemContent = await graphClient.Me.Drive.Items[item.Id].Content.Request().GetAsync();
                         Assert.NotNull(driveItemContent);
-                        Assert.IsType(typeof(MemoryStream), driveItemContent);
+                        Assert.IsType<MemoryStream>(driveItemContent);
                         return;
                     }
                 }
@@ -314,7 +314,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                                                             .Request()
                                                             .Filter("startswith(name,'Timesheet')")
                                                             .GetAsync();
-                Assert.True(itemToShare[0].Name.StartsWith("Timesheet"));
+                Assert.StartsWith("Timesheet", itemToShare[0].Name);
 
                 var permission = await graphClient.Me.Drive.Root
                                                            .ItemWithPath(itemToShare[0].Name)
@@ -346,7 +346,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                                                             .Request()
                                                             .Filter("startswith(name,'Timesheet')")
                                                             .GetAsync();
-                Assert.True(itemToShare[0].Name.StartsWith("Timesheet"));
+                Assert.StartsWith("Timesheet", itemToShare[0].Name);
 
                 var me = await graphClient.Me.Request().GetAsync();
                 var domain = me.Mail.Split('@')[1];

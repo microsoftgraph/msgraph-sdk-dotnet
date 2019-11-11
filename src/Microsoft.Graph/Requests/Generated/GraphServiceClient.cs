@@ -87,6 +87,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceApplications request builder.
+        /// </summary>
+        public IGraphServiceApplicationsCollectionRequestBuilder Applications
+        {
+            get
+            {
+                return new GraphServiceApplicationsCollectionRequestBuilder(this.BaseUrl + "/applications", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceCertificateBasedAuthConfiguration request builder.
         /// </summary>
         public IGraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder CertificateBasedAuthConfiguration

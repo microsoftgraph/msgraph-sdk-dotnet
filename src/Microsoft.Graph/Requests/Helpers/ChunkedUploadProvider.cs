@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -121,8 +121,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="maxTries">Number of times to retry entire session before giving up.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
+        /// <param name="progressCallback"><see cref="IProgressCallback"/> object to monitor the progress of the upload.</param>
         /// <returns>Item information returned by server.</returns>
-        public async Task<DriveItem> UploadAsync(int maxTries = 3, IEnumerable<Option> options = null)
+        public async Task<DriveItem> UploadAsync(int maxTries = 3, IEnumerable<Option> options = null , IProgressCallback progressCallback = null)
         {
             var uploadTries = 0;
             var trackedExceptions = new List<Exception>();
@@ -134,9 +135,11 @@ namespace Microsoft.Graph
                 foreach (var request in chunkRequests)
                 {
                     var result = await this.GetChunkRequestResponseAsync(request, trackedExceptions).ConfigureAwait(false);
+                    progressCallback?.UpdateProgress(request.RangeBegin, uploadStream.Length);// update the caller with  some progress
 
                     if (result.UploadSucceeded)
                     {
+                        progressCallback?.OnSuccess(result.ItemResponse);// update the caller with sucess
                         return result.ItemResponse;
                     }
                 }
@@ -146,11 +149,37 @@ namespace Microsoft.Graph
                 if (uploadTries < maxTries)
                 {
                     // Exponential backoff in case of failures.
-                    await System.Threading.Tasks.Task.Delay(2000 * uploadTries * uploadTries).ConfigureAwait(false);
+                    await Task.Delay(2000 * uploadTries * uploadTries).ConfigureAwait(false);
                 }
             }
 
+            if (progressCallback != null)
+            {
+                progressCallback.OnFailure(new ClientException(
+                    new Error
+                    {
+                        Code = GeneratedErrorConstants.Codes.NotAllowed,
+                        Message = "Upload failed too many times. See InnerException for list of exceptions that occured."
+                    }, new AggregateException(trackedExceptions.ToArray())));
+                
+                return null;
+            }
+
             throw new TaskCanceledException("Upload failed too many times. See InnerException for list of exceptions that occured.", new AggregateException(trackedExceptions.ToArray()));
+        }
+
+        /// <summary>
+        /// Write a chunk of data using the UploadChunkRequest.
+        /// This overload is obsolete and is kept for backward compatibility
+        /// </summary>
+        /// <param name="request">The UploadChunkRequest to make the request with.</param>
+        /// <param name="readBuffer">The byte[] content to read from.</param>
+        /// <param name="exceptionTrackingList">A list of exceptions to use to track progress. ChunkedUpload may retry.</param>
+        /// <returns></returns>
+        [Obsolete("This overload is obsolete. Please use the overload that does not use the unnecessary a readBuffer parameter")]
+        public virtual async Task<UploadChunkResult> GetChunkRequestResponseAsync(UploadChunkRequest request, byte[] readBuffer, ICollection<Exception> exceptionTrackingList)
+        {
+            return await this.GetChunkRequestResponseAsync(request, exceptionTrackingList);
         }
 
         /// <summary>
