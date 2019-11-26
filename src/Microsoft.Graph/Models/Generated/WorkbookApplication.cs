@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets calculation mode.
+        /// Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calculationMode", Required = Newtonsoft.Json.Required.Default)]
         public string CalculationMode { get; set; }
