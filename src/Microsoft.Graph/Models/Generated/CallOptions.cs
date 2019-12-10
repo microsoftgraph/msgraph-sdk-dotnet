@@ -16,32 +16,13 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type InvitationParticipantInfo.
+    /// The type CallOptions.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class InvitationParticipantInfo
+    public abstract partial class CallOptions
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InvitationParticipantInfo"/> class.
-        /// </summary>
-        public InvitationParticipantInfo()
-        {
-            this.ODataType = "microsoft.graph.invitationParticipantInfo";
-        }
 
-        /// <summary>
-        /// Gets or sets identity.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet Identity { get; set; }
-    
-        /// <summary>
-        /// Gets or sets replacesCallId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replacesCallId", Required = Newtonsoft.Json.Required.Default)]
-        public string ReplacesCallId { get; set; }
-    
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>

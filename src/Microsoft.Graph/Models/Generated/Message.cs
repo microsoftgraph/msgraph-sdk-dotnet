@@ -150,6 +150,13 @@ namespace Microsoft.Graph
         public string ConversationId { get; set; }
     
         /// <summary>
+        /// Gets or sets conversation index.
+        /// Indicates the position of the message within the conversation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversationIndex", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] ConversationIndex { get; set; }
+    
+        /// <summary>
         /// Gets or sets unique body.
         /// The part of the body of the message that is unique to the current message. uniqueBody is not returned by default but can be retrieved for a given message by use of the ?$select=uniqueBody query. It can be in HTML or text format.
         /// </summary>

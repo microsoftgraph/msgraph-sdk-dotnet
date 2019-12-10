@@ -76,7 +76,7 @@ namespace Microsoft.Graph
         /// Gets or sets targets.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targets", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ParticipantInfo> Targets { get; set; }
+        public IEnumerable<InvitationParticipantInfo> Targets { get; set; }
     
         /// <summary>
         /// Gets or sets requested modalities.
@@ -95,6 +95,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatInfo", Required = Newtonsoft.Json.Required.Default)]
         public ChatInfo ChatInfo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets call options.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callOptions", Required = Newtonsoft.Json.Required.Default)]
+        public CallOptions CallOptions { get; set; }
     
         /// <summary>
         /// Gets or sets meeting info.

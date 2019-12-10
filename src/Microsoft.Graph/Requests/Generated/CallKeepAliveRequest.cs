@@ -16,32 +16,25 @@ namespace Microsoft.Graph
     using System.Threading;
 
     /// <summary>
-    /// The type CallRecordRequest.
+    /// The type CallKeepAliveRequest.
     /// </summary>
-    public partial class CallRecordRequest : BaseRequest, ICallRecordRequest
+    public partial class CallKeepAliveRequest : BaseRequest, ICallKeepAliveRequest
     {
         /// <summary>
-        /// Constructs a new CallRecordRequest.
+        /// Constructs a new CallKeepAliveRequest.
         /// </summary>
-        public CallRecordRequest(
+        public CallKeepAliveRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
-            this.ContentType = "application/json";
-            this.RequestBody = new CallRecordRequestBody();
         }
-
-        /// <summary>
-        /// Gets the request body.
-        /// </summary>
-        public CallRecordRequestBody RequestBody { get; private set; }
 
         /// <summary>
         /// Issues the POST request.
         /// </summary>
-        public System.Threading.Tasks.Task<RecordOperation> PostAsync()
+        public System.Threading.Tasks.Task PostAsync()
         {
             return this.PostAsync(CancellationToken.None);
         }
@@ -51,11 +44,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<RecordOperation> PostAsync(
+        public System.Threading.Tasks.Task PostAsync(
             CancellationToken cancellationToken)
         {
             this.Method = "POST";
-            return this.SendAsync<RecordOperation>(this.RequestBody, cancellationToken);
+            return this.SendAsync(null, cancellationToken);
         }
 
 
@@ -66,7 +59,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public ICallRecordRequest Expand(string value)
+        public ICallKeepAliveRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -77,7 +70,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public ICallRecordRequest Select(string value)
+        public ICallKeepAliveRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;

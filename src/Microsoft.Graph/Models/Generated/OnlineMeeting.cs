@@ -49,10 +49,10 @@ namespace Microsoft.Graph
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets join url.
+        /// Gets or sets join web url.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string JoinUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinWebUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string JoinWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets subject.

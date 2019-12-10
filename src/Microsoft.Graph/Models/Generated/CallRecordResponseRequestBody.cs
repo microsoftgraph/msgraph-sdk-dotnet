@@ -16,10 +16,10 @@ namespace Microsoft.Graph
     using System.Runtime.Serialization;
 
     /// <summary>
-    /// The type CallRecordRequestBody.
+    /// The type CallRecordResponseRequestBody.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class CallRecordRequestBody
+    public partial class CallRecordResponseRequestBody
     {
     
         /// <summary>

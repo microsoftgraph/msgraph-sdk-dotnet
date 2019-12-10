@@ -94,6 +94,12 @@ namespace Microsoft.Graph
         public string Country { get; set; }
     
         /// <summary>
+        /// Gets or sets creation type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationType", Required = Newtonsoft.Json.Required.Default)]
+        public string CreationType { get; set; }
+    
+        /// <summary>
         /// Gets or sets department.
         /// The name for the department in which the user works. Supports $filter.
         /// </summary>
@@ -667,6 +673,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets insights.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "insights", Required = Newtonsoft.Json.Required.Default)]
         public OfficeGraphInsights Insights { get; set; }

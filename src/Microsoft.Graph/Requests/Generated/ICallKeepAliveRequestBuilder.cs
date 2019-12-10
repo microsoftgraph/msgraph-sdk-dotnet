@@ -14,15 +14,15 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The interface ICallRecordRequestBuilder.
+    /// The interface ICallKeepAliveRequestBuilder.
     /// </summary>
-    public partial interface ICallRecordRequestBuilder
+    public partial interface ICallKeepAliveRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        ICallRecordRequest Request(IEnumerable<Option> options = null);
+        ICallKeepAliveRequest Request(IEnumerable<Option> options = null);
     }
 }

@@ -109,7 +109,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises domain name.
-        /// Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesDomainName", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesDomainName { get; set; }
@@ -123,7 +122,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises net bios name.
-        /// Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesNetBiosName", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesNetBiosName { get; set; }
@@ -137,7 +135,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises sam account name.
-        /// Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSamAccountName", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesSamAccountName { get; set; }
