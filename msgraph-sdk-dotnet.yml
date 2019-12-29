@@ -1,0 +1,36 @@
+page_type: sample
+products:
+  - office-excel
+  - office-365
+  - office-outlook
+  - office-onedrive
+  - office-onenote
+  - office-planner
+  - office-sp
+  - ms-graph
+languages:
+  - csharp
+extensions:
+  contentType: sdks
+  technologies:
+    - Microsoft Graph
+    - Microsoft identity platform
+  services:
+    - Education
+    - Excel
+    - Groups
+    - Insights
+    - Intune
+    - Microsoft identity platform
+    - Office 365
+    - Outlook
+    - OneDrive
+    - OneNote
+    - Planner
+    - Reports
+    - Security
+    - SharePoint
+    - Users
+  createdDate: '3/2/2016 10:39:37 PM'
+title: Microsoft Graph .NET Client Library
+description: Microsoft Graph Client Library for .NET
