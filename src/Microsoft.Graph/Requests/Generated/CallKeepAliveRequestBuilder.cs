@@ -14,23 +14,20 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type TeamArchiveRequestBuilder.
+    /// The type CallKeepAliveRequestBuilder.
     /// </summary>
-    public partial class TeamArchiveRequestBuilder : BaseActionMethodRequestBuilder<ITeamArchiveRequest>, ITeamArchiveRequestBuilder
+    public partial class CallKeepAliveRequestBuilder : BaseActionMethodRequestBuilder<ICallKeepAliveRequest>, ICallKeepAliveRequestBuilder
     {
         /// <summary>
-        /// Constructs a new <see cref="TeamArchiveRequestBuilder"/>.
+        /// Constructs a new <see cref="CallKeepAliveRequestBuilder"/>.
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="shouldSetSpoSiteReadOnlyForMembers">A shouldSetSpoSiteReadOnlyForMembers parameter for the OData method call.</param>
-        public TeamArchiveRequestBuilder(
+        public CallKeepAliveRequestBuilder(
             string requestUrl,
-            IBaseClient client,
-            bool shouldSetSpoSiteReadOnlyForMembers)
+            IBaseClient client)
             : base(requestUrl, client)
         {
-            this.SetParameter("shouldSetSpoSiteReadOnlyForMembers", shouldSetSpoSiteReadOnlyForMembers, false);
         }
 
         /// <summary>
@@ -39,14 +36,9 @@ namespace Microsoft.Graph
         /// <param name="functionUrl">The request URL to </param>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>An instance of a specific request class.</returns>
-        protected override ITeamArchiveRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
+        protected override ICallKeepAliveRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
-            var request = new TeamArchiveRequest(functionUrl, this.Client, options);
-
-            if (this.HasParameter("shouldSetSpoSiteReadOnlyForMembers"))
-            {
-                request.RequestBody.ShouldSetSpoSiteReadOnlyForMembers = this.GetParameter<bool>("shouldSetSpoSiteReadOnlyForMembers");
-            }
+            var request = new CallKeepAliveRequest(functionUrl, this.Client, options);
 
             return request;
         }

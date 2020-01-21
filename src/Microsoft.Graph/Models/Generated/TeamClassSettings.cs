@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets notifyGuardiansAboutAssignments.
+        /// If set to true, enables sending of weekly assignments digest emails to parents/guardians, provided the tenant admin has enabled the setting globally.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifyGuardiansAboutAssignments", Required = Newtonsoft.Json.Required.Default)]
         public bool? NotifyGuardiansAboutAssignments { get; set; }

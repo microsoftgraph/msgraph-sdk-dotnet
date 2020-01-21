@@ -16,34 +16,13 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type CommsNotification.
+    /// The type CallOptions.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class CommsNotification
+    public abstract partial class CallOptions
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CommsNotification"/> class.
-        /// </summary>
-        public CommsNotification()
-        {
-            this.ODataType = "microsoft.graph.commsNotification";
-        }
 
-        /// <summary>
-        /// Gets or sets changeType.
-        /// Possible values are: created, updated, deleted.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeType", Required = Newtonsoft.Json.Required.Default)]
-        public ChangeType? ChangeType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resourceUrl.
-        /// URI of the resource that was changed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceUrl { get; set; }
-    
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>

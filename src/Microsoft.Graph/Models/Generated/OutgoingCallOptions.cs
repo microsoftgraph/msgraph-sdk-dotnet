@@ -16,25 +16,18 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type TokenMeetingInfo.
+    /// The type OutgoingCallOptions.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class TokenMeetingInfo : MeetingInfo
+    public partial class OutgoingCallOptions : CallOptions
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TokenMeetingInfo"/> class.
+        /// Initializes a new instance of the <see cref="OutgoingCallOptions"/> class.
         /// </summary>
-        public TokenMeetingInfo()
+        public OutgoingCallOptions()
         {
-            this.ODataType = "microsoft.graph.tokenMeetingInfo";
+            this.ODataType = "microsoft.graph.outgoingCallOptions";
         }
 
-        /// <summary>
-        /// Gets or sets token.
-        /// The token used to join the call.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "token", Required = Newtonsoft.Json.Required.Default)]
-        public string Token { get; set; }
-    
     }
 }

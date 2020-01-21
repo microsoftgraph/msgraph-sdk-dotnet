@@ -73,12 +73,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets creation type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationType", Required = Newtonsoft.Json.Required.Default)]
-        public string CreationType { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// The display name for the tenant.
         /// </summary>

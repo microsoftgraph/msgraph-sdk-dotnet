@@ -114,7 +114,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamArchiveRequestBuilder"/>.</returns>
         public ITeamArchiveRequestBuilder Archive(
-            bool? shouldSetSpoSiteReadOnlyForMembers = null)
+            bool shouldSetSpoSiteReadOnlyForMembers)
         {
             return new TeamArchiveRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.archive"),

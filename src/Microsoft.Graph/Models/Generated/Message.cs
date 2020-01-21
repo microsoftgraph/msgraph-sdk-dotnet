@@ -151,6 +151,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets conversation index.
+        /// Indicates the position of the message within the conversation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversationIndex", Required = Newtonsoft.Json.Required.Default)]
         public byte[] ConversationIndex { get; set; }

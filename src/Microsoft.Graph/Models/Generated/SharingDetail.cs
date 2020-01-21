@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets sharedBy.
+        /// The user who shared the document.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedBy", Required = Newtonsoft.Json.Required.Default)]
         public InsightIdentity SharedBy { get; set; }
     
         /// <summary>
         /// Gets or sets sharedDateTime.
+        /// The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? SharedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets sharingSubject.
+        /// The subject with which the document was shared.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingSubject", Required = Newtonsoft.Json.Required.Default)]
         public string SharingSubject { get; set; }
     
         /// <summary>
         /// Gets or sets sharingType.
+        /// Determines the way the document was shared, can be by a 'Link', 'Attachment', 'Group', 'Site'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingType", Required = Newtonsoft.Json.Required.Default)]
         public string SharingType { get; set; }
