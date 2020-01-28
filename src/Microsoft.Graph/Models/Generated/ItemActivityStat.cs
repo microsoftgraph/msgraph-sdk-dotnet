@@ -98,7 +98,7 @@ namespace Microsoft.Graph
         /// Exposes the itemActivities represented in this itemActivityStat resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
-        public IItemActivityStatActivitiesCollectionPage Activities { get; set; }
+        public IItemActivityStatActivitiesCollectionWithReferencesPage Activities { get; set; }
     
     }
 }

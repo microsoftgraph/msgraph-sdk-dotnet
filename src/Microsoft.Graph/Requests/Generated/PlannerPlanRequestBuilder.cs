@@ -53,24 +53,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Tasks.
         /// </summary>
-        /// <returns>The <see cref="IPlannerPlanTasksCollectionRequestBuilder"/>.</returns>
-        public IPlannerPlanTasksCollectionRequestBuilder Tasks
+        /// <returns>The <see cref="IPlannerPlanTasksCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IPlannerPlanTasksCollectionWithReferencesRequestBuilder Tasks
         {
             get
             {
-                return new PlannerPlanTasksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
+                return new PlannerPlanTasksCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
             }
         }
 
         /// <summary>
         /// Gets the request builder for Buckets.
         /// </summary>
-        /// <returns>The <see cref="IPlannerPlanBucketsCollectionRequestBuilder"/>.</returns>
-        public IPlannerPlanBucketsCollectionRequestBuilder Buckets
+        /// <returns>The <see cref="IPlannerPlanBucketsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IPlannerPlanBucketsCollectionWithReferencesRequestBuilder Buckets
         {
             get
             {
-                return new PlannerPlanBucketsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("buckets"), this.Client);
+                return new PlannerPlanBucketsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("buckets"), this.Client);
             }
         }
 

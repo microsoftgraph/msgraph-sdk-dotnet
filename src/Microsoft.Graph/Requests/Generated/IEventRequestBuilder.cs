@@ -85,24 +85,24 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventAcceptRequestBuilder"/>.</returns>
         IEventAcceptRequestBuilder Accept(
-            string Comment = null,
-            bool? SendResponse = null);
+            bool? SendResponse = null,
+            string Comment = null);
 
         /// <summary>
         /// Gets the request builder for EventDecline.
         /// </summary>
         /// <returns>The <see cref="IEventDeclineRequestBuilder"/>.</returns>
         IEventDeclineRequestBuilder Decline(
-            string Comment = null,
-            bool? SendResponse = null);
+            bool? SendResponse = null,
+            string Comment = null);
 
         /// <summary>
         /// Gets the request builder for EventTentativelyAccept.
         /// </summary>
         /// <returns>The <see cref="IEventTentativelyAcceptRequestBuilder"/>.</returns>
         IEventTentativelyAcceptRequestBuilder TentativelyAccept(
-            string Comment = null,
-            bool? SendResponse = null);
+            bool? SendResponse = null,
+            string Comment = null);
     
     }
 }

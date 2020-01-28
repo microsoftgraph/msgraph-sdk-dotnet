@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets preFetchMedia.
+        /// The list of media to pre-fetch.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preFetchMedia", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<MediaInfo> PreFetchMedia { get; set; }

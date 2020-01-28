@@ -270,6 +270,12 @@ namespace Microsoft.Graph
         IUserRevokeSignInSessionsRequestBuilder RevokeSignInSessions();
 
         /// <summary>
+        /// Gets the request builder for UserReprocessLicenseAssignment.
+        /// </summary>
+        /// <returns>The <see cref="IUserReprocessLicenseAssignmentRequestBuilder"/>.</returns>
+        IUserReprocessLicenseAssignmentRequestBuilder ReprocessLicenseAssignment();
+
+        /// <summary>
         /// Gets the request builder for UserFindMeetingTimes.
         /// </summary>
         /// <returns>The <see cref="IUserFindMeetingTimesRequestBuilder"/>.</returns>

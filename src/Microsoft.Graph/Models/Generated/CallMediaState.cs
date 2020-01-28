@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets audio.
+        /// The audio media state. Possible values are: active, inactive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audio", Required = Newtonsoft.Json.Required.Default)]
         public MediaState? Audio { get; set; }

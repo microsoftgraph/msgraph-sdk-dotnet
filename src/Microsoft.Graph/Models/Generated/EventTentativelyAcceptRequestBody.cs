@@ -23,16 +23,16 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets Comment.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Comment", Required = Newtonsoft.Json.Required.Default)]
-        public string Comment { get; set; }
-    
-        /// <summary>
         /// Gets or sets SendResponse.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "SendResponse", Required = Newtonsoft.Json.Required.Default)]
         public bool? SendResponse { get; set; }
+    
+        /// <summary>
+        /// Gets or sets Comment.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Comment", Required = Newtonsoft.Json.Required.Default)]
+        public string Comment { get; set; }
     
     }
 }

@@ -30,16 +30,12 @@ namespace Microsoft.Graph
         IUserJoinedTeamsCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IGroupRequestBuilder"/> for the specified Group.
+        /// Gets an <see cref="ITeamRequestBuilder"/> for the specified Team.
         /// </summary>
-        /// <param name="id">The ID for the Group.</param>
-        /// <returns>The <see cref="IGroupRequestBuilder"/>.</returns>
-        IGroupRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the Team.</param>
+        /// <returns>The <see cref="ITeamRequestBuilder"/>.</returns>
+        ITeamRequestBuilder this[string id] { get; }
 
-        /// <summary>
-        /// Gets the request builder for GroupDelta.
-        /// </summary>
-        /// <returns>The <see cref="IGroupDeltaRequestBuilder"/>.</returns>
-        IGroupDeltaRequestBuilder Delta();
+        
     }
 }
