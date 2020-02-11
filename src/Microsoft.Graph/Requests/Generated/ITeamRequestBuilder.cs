@@ -66,7 +66,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamArchiveRequestBuilder"/>.</returns>
         ITeamArchiveRequestBuilder Archive(
-            bool? shouldSetSpoSiteReadOnlyForMembers = null);
+            bool shouldSetSpoSiteReadOnlyForMembers);
 
         /// <summary>
         /// Gets the request builder for TeamUnarchive.

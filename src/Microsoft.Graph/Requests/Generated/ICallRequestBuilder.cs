@@ -60,6 +60,12 @@ namespace Microsoft.Graph
             ScreenSharingRole role);
 
         /// <summary>
+        /// Gets the request builder for CallKeepAlive.
+        /// </summary>
+        /// <returns>The <see cref="ICallKeepAliveRequestBuilder"/>.</returns>
+        ICallKeepAliveRequestBuilder KeepAlive();
+
+        /// <summary>
         /// Gets the request builder for CallMute.
         /// </summary>
         /// <returns>The <see cref="ICallMuteRequestBuilder"/>.</returns>
@@ -75,10 +81,10 @@ namespace Microsoft.Graph
             string clientContext = null);
 
         /// <summary>
-        /// Gets the request builder for CallRecord.
+        /// Gets the request builder for CallRecordResponse.
         /// </summary>
-        /// <returns>The <see cref="ICallRecordRequestBuilder"/>.</returns>
-        ICallRecordRequestBuilder Record(
+        /// <returns>The <see cref="ICallRecordResponseRequestBuilder"/>.</returns>
+        ICallRecordResponseRequestBuilder RecordResponse(
             IEnumerable<Prompt> prompts = null,
             bool? bargeInAllowed = null,
             Int32? initialSilenceTimeoutInSeconds = null,

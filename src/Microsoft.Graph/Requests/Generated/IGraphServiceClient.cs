@@ -211,5 +211,10 @@ namespace Microsoft.Graph
         /// </summary>
         IAppCatalogsRequestBuilder AppCatalogs { get; }
     
+        /// <summary>
+        /// Gets the GraphServiceInformationProtection request builder.
+        /// </summary>
+        IInformationProtectionRequestBuilder InformationProtection { get; }
+    
     }
 }

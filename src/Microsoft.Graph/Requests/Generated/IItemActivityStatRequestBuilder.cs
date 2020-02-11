@@ -34,8 +34,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Activities.
         /// </summary>
-        /// <returns>The <see cref="IItemActivityStatActivitiesCollectionRequestBuilder"/>.</returns>
-        IItemActivityStatActivitiesCollectionRequestBuilder Activities { get; }
+        /// <returns>The <see cref="IItemActivityStatActivitiesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IItemActivityStatActivitiesCollectionWithReferencesRequestBuilder Activities { get; }
     
     }
 }

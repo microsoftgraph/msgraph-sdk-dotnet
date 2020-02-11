@@ -182,6 +182,14 @@ namespace Microsoft.Graph
         ITeamRequestBuilder Team { get; }
     
         /// <summary>
+        /// Gets the request builder for GroupAssignLicense.
+        /// </summary>
+        /// <returns>The <see cref="IGroupAssignLicenseRequestBuilder"/>.</returns>
+        IGroupAssignLicenseRequestBuilder AssignLicense(
+            IEnumerable<AssignedLicense> addLicenses,
+            IEnumerable<Guid> removeLicenses);
+
+        /// <summary>
         /// Gets the request builder for GroupValidateProperties.
         /// </summary>
         /// <returns>The <see cref="IGroupValidatePropertiesRequestBuilder"/>.</returns>

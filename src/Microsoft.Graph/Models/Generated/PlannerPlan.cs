@@ -63,14 +63,14 @@ namespace Microsoft.Graph
         /// Read-only. Nullable. Collection of tasks in the plan.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
-        public IPlannerPlanTasksCollectionPage Tasks { get; set; }
+        public IPlannerPlanTasksCollectionWithReferencesPage Tasks { get; set; }
     
         /// <summary>
         /// Gets or sets buckets.
         /// Read-only. Nullable. Collection of buckets in the plan.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "buckets", Required = Newtonsoft.Json.Required.Default)]
-        public IPlannerPlanBucketsCollectionPage Buckets { get; set; }
+        public IPlannerPlanBucketsCollectionWithReferencesPage Buckets { get; set; }
     
         /// <summary>
         /// Gets or sets details.

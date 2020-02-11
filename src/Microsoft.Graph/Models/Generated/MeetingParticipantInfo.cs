@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets identity.
+        /// Identity information of the participant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Identity { get; set; }
     
         /// <summary>
         /// Gets or sets upn.
+        /// User principal name of the participant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upn", Required = Newtonsoft.Json.Required.Default)]
         public string Upn { get; set; }

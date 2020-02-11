@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Plans.
         /// </summary>
-        /// <returns>The <see cref="IPlannerGroupPlansCollectionRequestBuilder"/>.</returns>
-        public IPlannerGroupPlansCollectionRequestBuilder Plans
+        /// <returns>The <see cref="IPlannerGroupPlansCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IPlannerGroupPlansCollectionWithReferencesRequestBuilder Plans
         {
             get
             {
-                return new PlannerGroupPlansCollectionRequestBuilder(this.AppendSegmentToRequestUrl("plans"), this.Client);
+                return new PlannerGroupPlansCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("plans"), this.Client);
             }
         }
     

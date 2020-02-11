@@ -34,8 +34,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Tasks.
         /// </summary>
-        /// <returns>The <see cref="IPlannerBucketTasksCollectionRequestBuilder"/>.</returns>
-        IPlannerBucketTasksCollectionRequestBuilder Tasks { get; }
+        /// <returns>The <see cref="IPlannerBucketTasksCollectionWithReferencesRequestBuilder"/>.</returns>
+        IPlannerBucketTasksCollectionWithReferencesRequestBuilder Tasks { get; }
     
     }
 }

@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Tasks.
         /// </summary>
-        /// <returns>The <see cref="IPlannerBucketTasksCollectionRequestBuilder"/>.</returns>
-        public IPlannerBucketTasksCollectionRequestBuilder Tasks
+        /// <returns>The <see cref="IPlannerBucketTasksCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IPlannerBucketTasksCollectionWithReferencesRequestBuilder Tasks
         {
             get
             {
-                return new PlannerBucketTasksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
+                return new PlannerBucketTasksCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
             }
         }
     
