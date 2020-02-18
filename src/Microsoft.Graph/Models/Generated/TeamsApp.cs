@@ -56,7 +56,7 @@ namespace Microsoft.Graph
         /// The details for each version of the app.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDefinitions", Required = Newtonsoft.Json.Required.Default)]
-        public ITeamsAppAppDefinitionsCollectionPage AppDefinitions { get; set; }
+        public ITeamsAppAppDefinitionsCollectionWithReferencesPage AppDefinitions { get; set; }
     
     }
 }

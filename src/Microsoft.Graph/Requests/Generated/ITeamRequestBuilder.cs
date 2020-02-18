@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         ITeamChannelsCollectionRequestBuilder Channels { get; }
 
         /// <summary>
+        /// Gets the request builder for PrimaryChannel.
+        /// </summary>
+        /// <returns>The <see cref="IChannelRequestBuilder"/>.</returns>
+        IChannelRequestBuilder PrimaryChannel { get; }
+
+        /// <summary>
         /// Gets the request builder for InstalledApps.
         /// </summary>
         /// <returns>The <see cref="ITeamInstalledAppsCollectionRequestBuilder"/>.</returns>
@@ -66,7 +72,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamArchiveRequestBuilder"/>.</returns>
         ITeamArchiveRequestBuilder Archive(
-            bool? shouldSetSpoSiteReadOnlyForMembers = null);
+            bool shouldSetSpoSiteReadOnlyForMembers);
 
         /// <summary>
         /// Gets the request builder for TeamUnarchive.

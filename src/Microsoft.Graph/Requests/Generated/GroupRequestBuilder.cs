@@ -351,6 +351,21 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for GroupAssignLicense.
+        /// </summary>
+        /// <returns>The <see cref="IGroupAssignLicenseRequestBuilder"/>.</returns>
+        public IGroupAssignLicenseRequestBuilder AssignLicense(
+            IEnumerable<AssignedLicense> addLicenses,
+            IEnumerable<Guid> removeLicenses)
+        {
+            return new GroupAssignLicenseRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.assignLicense"),
+                this.Client,
+                addLicenses,
+                removeLicenses);
+        }
+
+        /// <summary>
         /// Gets the request builder for GroupValidateProperties.
         /// </summary>
         /// <returns>The <see cref="IGroupValidatePropertiesRequestBuilder"/>.</returns>

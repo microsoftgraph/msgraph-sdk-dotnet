@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserJoinedTeamsCollectionPage.
     /// </summary>
-    public partial class UserJoinedTeamsCollectionPage : CollectionPage<Group>, IUserJoinedTeamsCollectionPage
+    public partial class UserJoinedTeamsCollectionPage : CollectionPage<Team>, IUserJoinedTeamsCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IUserJoinedTeamsCollectionRequest"/> instance.

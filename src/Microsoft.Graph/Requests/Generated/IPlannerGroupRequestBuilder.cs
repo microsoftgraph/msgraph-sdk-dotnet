@@ -34,8 +34,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Plans.
         /// </summary>
-        /// <returns>The <see cref="IPlannerGroupPlansCollectionRequestBuilder"/>.</returns>
-        IPlannerGroupPlansCollectionRequestBuilder Plans { get; }
+        /// <returns>The <see cref="IPlannerGroupPlansCollectionWithReferencesRequestBuilder"/>.</returns>
+        IPlannerGroupPlansCollectionWithReferencesRequestBuilder Plans { get; }
     
     }
 }

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// Gets or sets ShouldSetSpoSiteReadOnlyForMembers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shouldSetSpoSiteReadOnlyForMembers", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ShouldSetSpoSiteReadOnlyForMembers { get; set; }
+        public bool ShouldSetSpoSiteReadOnlyForMembers { get; set; }
     
     }
 }

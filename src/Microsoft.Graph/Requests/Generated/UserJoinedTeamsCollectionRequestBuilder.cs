@@ -48,27 +48,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IGroupRequestBuilder"/> for the specified UserGroup.
+        /// Gets an <see cref="ITeamRequestBuilder"/> for the specified UserTeam.
         /// </summary>
-        /// <param name="id">The ID for the UserGroup.</param>
-        /// <returns>The <see cref="IGroupRequestBuilder"/>.</returns>
-        public IGroupRequestBuilder this[string id]
+        /// <param name="id">The ID for the UserTeam.</param>
+        /// <returns>The <see cref="ITeamRequestBuilder"/>.</returns>
+        public ITeamRequestBuilder this[string id]
         {
             get
             {
-                return new GroupRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new TeamRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 
-        /// <summary>
-        /// Gets the request builder for GroupDelta.
-        /// </summary>
-        /// <returns>The <see cref="IGroupDeltaRequestBuilder"/>.</returns>
-        public IGroupDeltaRequestBuilder Delta()
-        {
-            return new GroupDeltaRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
-                this.Client);
-        }
+        
     }
 }

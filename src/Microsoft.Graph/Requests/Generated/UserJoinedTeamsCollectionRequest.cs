@@ -35,26 +35,26 @@ namespace Microsoft.Graph
         }
         
         /// <summary>
-        /// Adds the specified Group to the collection via POST.
+        /// Adds the specified Team to the collection via POST.
         /// </summary>
-        /// <param name="group">The Group to add.</param>
-        /// <returns>The created Group.</returns>
-        public System.Threading.Tasks.Task<Group> AddAsync(Group group)
+        /// <param name="team">The Team to add.</param>
+        /// <returns>The created Team.</returns>
+        public System.Threading.Tasks.Task<Team> AddAsync(Team team)
         {
-            return this.AddAsync(group, CancellationToken.None);
+            return this.AddAsync(team, CancellationToken.None);
         }
 
         /// <summary>
-        /// Adds the specified Group to the collection via POST.
+        /// Adds the specified Team to the collection via POST.
         /// </summary>
-        /// <param name="group">The Group to add.</param>
+        /// <param name="team">The Team to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Group.</returns>
-        public System.Threading.Tasks.Task<Group> AddAsync(Group group, CancellationToken cancellationToken)
+        /// <returns>The created Team.</returns>
+        public System.Threading.Tasks.Task<Team> AddAsync(Team team, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<Group>(group, cancellationToken);
+            return this.SendAsync<Team>(team, cancellationToken);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IUserJoinedTeamsCollectionRequest Expand(Expression<Func<Group, object>> expandExpression)
+        public IUserJoinedTeamsCollectionRequest Expand(Expression<Func<Team, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IUserJoinedTeamsCollectionRequest Select(Expression<Func<Group, object>> selectExpression)
+        public IUserJoinedTeamsCollectionRequest Select(Expression<Func<Team, object>> selectExpression)
         {
             if (selectExpression == null)
             {

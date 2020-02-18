@@ -34,8 +34,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for AppDefinitions.
         /// </summary>
-        /// <returns>The <see cref="ITeamsAppAppDefinitionsCollectionRequestBuilder"/>.</returns>
-        ITeamsAppAppDefinitionsCollectionRequestBuilder AppDefinitions { get; }
+        /// <returns>The <see cref="ITeamsAppAppDefinitionsCollectionWithReferencesRequestBuilder"/>.</returns>
+        ITeamsAppAppDefinitionsCollectionWithReferencesRequestBuilder AppDefinitions { get; }
     
     }
 }

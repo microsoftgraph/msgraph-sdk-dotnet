@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Activities.
         /// </summary>
-        /// <returns>The <see cref="IItemActivityStatActivitiesCollectionRequestBuilder"/>.</returns>
-        public IItemActivityStatActivitiesCollectionRequestBuilder Activities
+        /// <returns>The <see cref="IItemActivityStatActivitiesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IItemActivityStatActivitiesCollectionWithReferencesRequestBuilder Activities
         {
             get
             {
-                return new ItemActivityStatActivitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("activities"), this.Client);
+                return new ItemActivityStatActivitiesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("activities"), this.Client);
             }
         }
     

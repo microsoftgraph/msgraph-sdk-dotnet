@@ -27,10 +27,10 @@ namespace Microsoft.Graph
         public TeamArchiveRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            bool? shouldSetSpoSiteReadOnlyForMembers)
+            bool shouldSetSpoSiteReadOnlyForMembers)
             : base(requestUrl, client)
         {
-            this.SetParameter("shouldSetSpoSiteReadOnlyForMembers", shouldSetSpoSiteReadOnlyForMembers, true);
+            this.SetParameter("shouldSetSpoSiteReadOnlyForMembers", shouldSetSpoSiteReadOnlyForMembers, false);
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("shouldSetSpoSiteReadOnlyForMembers"))
             {
-                request.RequestBody.ShouldSetSpoSiteReadOnlyForMembers = this.GetParameter<bool?>("shouldSetSpoSiteReadOnlyForMembers");
+                request.RequestBody.ShouldSetSpoSiteReadOnlyForMembers = this.GetParameter<bool>("shouldSetSpoSiteReadOnlyForMembers");
             }
 
             return request;
