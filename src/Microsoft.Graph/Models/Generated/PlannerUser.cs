@@ -35,14 +35,14 @@ namespace Microsoft.Graph
         /// Read-only. Nullable. Returns the plannerPlans shared with the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
-        public IPlannerUserTasksCollectionPage Tasks { get; set; }
+        public IPlannerUserTasksCollectionWithReferencesPage Tasks { get; set; }
     
         /// <summary>
         /// Gets or sets plans.
         /// Read-only. Nullable. Returns the plannerTasks assigned to the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plans", Required = Newtonsoft.Json.Required.Default)]
-        public IPlannerUserPlansCollectionPage Plans { get; set; }
+        public IPlannerUserPlansCollectionWithReferencesPage Plans { get; set; }
     
     }
 }

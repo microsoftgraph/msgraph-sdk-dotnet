@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets recording location.
+        /// The location where the recording is located.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingLocation", Required = Newtonsoft.Json.Required.Default)]
         public string RecordingLocation { get; set; }
     
         /// <summary>
         /// Gets or sets recording access token.
+        /// The access token required to retrieve the recording.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingAccessToken", Required = Newtonsoft.Json.Required.Default)]
         public string RecordingAccessToken { get; set; }

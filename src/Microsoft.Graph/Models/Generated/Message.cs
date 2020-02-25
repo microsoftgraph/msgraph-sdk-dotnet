@@ -102,14 +102,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sender.
-        /// The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, or sending a message as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
+        /// The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sender", Required = Newtonsoft.Json.Required.Default)]
         public Recipient Sender { get; set; }
     
         /// <summary>
         /// Gets or sets from.
-        /// The mailbox owner and sender of the message. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
+        /// The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
         public Recipient From { get; set; }
@@ -151,6 +151,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets conversation index.
+        /// Indicates the position of the message within the conversation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversationIndex", Required = Newtonsoft.Json.Required.Default)]
         public byte[] ConversationIndex { get; set; }

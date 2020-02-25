@@ -105,6 +105,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CallKeepAlive.
+        /// </summary>
+        /// <returns>The <see cref="ICallKeepAliveRequestBuilder"/>.</returns>
+        public ICallKeepAliveRequestBuilder KeepAlive()
+        {
+            return new CallKeepAliveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.keepAlive"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for CallMute.
         /// </summary>
         /// <returns>The <see cref="ICallMuteRequestBuilder"/>.</returns>
@@ -133,10 +144,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for CallRecord.
+        /// Gets the request builder for CallRecordResponse.
         /// </summary>
-        /// <returns>The <see cref="ICallRecordRequestBuilder"/>.</returns>
-        public ICallRecordRequestBuilder Record(
+        /// <returns>The <see cref="ICallRecordResponseRequestBuilder"/>.</returns>
+        public ICallRecordResponseRequestBuilder RecordResponse(
             IEnumerable<Prompt> prompts = null,
             bool? bargeInAllowed = null,
             Int32? initialSilenceTimeoutInSeconds = null,
@@ -146,8 +157,8 @@ namespace Microsoft.Graph
             IEnumerable<string> stopTones = null,
             string clientContext = null)
         {
-            return new CallRecordRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.record"),
+            return new CallRecordResponseRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.recordResponse"),
                 this.Client,
                 prompts,
                 bargeInAllowed,
@@ -227,6 +238,21 @@ namespace Microsoft.Graph
             return new CallUnmuteRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.unmute"),
                 this.Client,
+                clientContext);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CallUpdateRecordingStatus.
+        /// </summary>
+        /// <returns>The <see cref="ICallUpdateRecordingStatusRequestBuilder"/>.</returns>
+        public ICallUpdateRecordingStatusRequestBuilder UpdateRecordingStatus(
+            RecordingStatus status,
+            string clientContext = null)
+        {
+            return new CallUpdateRecordingStatusRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updateRecordingStatus"),
+                this.Client,
+                status,
                 clientContext);
         }
     

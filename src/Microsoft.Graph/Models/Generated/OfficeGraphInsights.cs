@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets trending.
+        /// Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trending", Required = Newtonsoft.Json.Required.Default)]
         public IOfficeGraphInsightsTrendingCollectionPage Trending { get; set; }
     
         /// <summary>
         /// Gets or sets shared.
+        /// Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shared", Required = Newtonsoft.Json.Required.Default)]
         public IOfficeGraphInsightsSharedCollectionPage Shared { get; set; }
     
         /// <summary>
         /// Gets or sets used.
+        /// Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "used", Required = Newtonsoft.Json.Required.Default)]
         public IOfficeGraphInsightsUsedCollectionPage Used { get; set; }

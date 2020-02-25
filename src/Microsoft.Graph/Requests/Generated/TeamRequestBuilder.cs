@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PrimaryChannel.
+        /// </summary>
+        /// <returns>The <see cref="IChannelRequestBuilder"/>.</returns>
+        public IChannelRequestBuilder PrimaryChannel
+        {
+            get
+            {
+                return new ChannelRequestBuilder(this.AppendSegmentToRequestUrl("primaryChannel"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for InstalledApps.
         /// </summary>
         /// <returns>The <see cref="ITeamInstalledAppsCollectionRequestBuilder"/>.</returns>

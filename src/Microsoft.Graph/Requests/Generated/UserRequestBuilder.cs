@@ -524,6 +524,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserReprocessLicenseAssignment.
+        /// </summary>
+        /// <returns>The <see cref="IUserReprocessLicenseAssignmentRequestBuilder"/>.</returns>
+        public IUserReprocessLicenseAssignmentRequestBuilder ReprocessLicenseAssignment()
+        {
+            return new UserReprocessLicenseAssignmentRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reprocessLicenseAssignment"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for UserFindMeetingTimes.
         /// </summary>
         /// <returns>The <see cref="IUserFindMeetingTimesRequestBuilder"/>.</returns>

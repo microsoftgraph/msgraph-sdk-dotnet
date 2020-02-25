@@ -224,6 +224,18 @@ namespace Microsoft.Graph
         public Int32? UnseenCount { get; set; }
     
         /// <summary>
+        /// Gets or sets hide from outlook clients.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideFromOutlookClients", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HideFromOutlookClients { get; set; }
+    
+        /// <summary>
+        /// Gets or sets hide from address lists.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideFromAddressLists", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HideFromAddressLists { get; set; }
+    
+        /// <summary>
         /// Gets or sets is archived.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isArchived", Required = Newtonsoft.Json.Required.Default)]

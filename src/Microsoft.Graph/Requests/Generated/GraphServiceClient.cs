@@ -482,5 +482,16 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the GraphServiceInformationProtection request builder.
+        /// </summary>
+        public IInformationProtectionRequestBuilder InformationProtection
+        {
+            get
+            {
+                return new InformationProtectionRequestBuilder(this.BaseUrl + "/informationProtection", this);
+            }
+        }
+    
     }
 }

@@ -165,7 +165,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is organizer.
-        /// Set to true if the message sender is also the organizer.
+        /// Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOrganizer", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsOrganizer { get; set; }

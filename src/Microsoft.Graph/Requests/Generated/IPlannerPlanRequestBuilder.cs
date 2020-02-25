@@ -34,14 +34,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Tasks.
         /// </summary>
-        /// <returns>The <see cref="IPlannerPlanTasksCollectionRequestBuilder"/>.</returns>
-        IPlannerPlanTasksCollectionRequestBuilder Tasks { get; }
+        /// <returns>The <see cref="IPlannerPlanTasksCollectionWithReferencesRequestBuilder"/>.</returns>
+        IPlannerPlanTasksCollectionWithReferencesRequestBuilder Tasks { get; }
 
         /// <summary>
         /// Gets the request builder for Buckets.
         /// </summary>
-        /// <returns>The <see cref="IPlannerPlanBucketsCollectionRequestBuilder"/>.</returns>
-        IPlannerPlanBucketsCollectionRequestBuilder Buckets { get; }
+        /// <returns>The <see cref="IPlannerPlanBucketsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IPlannerPlanBucketsCollectionWithReferencesRequestBuilder Buckets { get; }
 
         /// <summary>
         /// Gets the request builder for Details.
