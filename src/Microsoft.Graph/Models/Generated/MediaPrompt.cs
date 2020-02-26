@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets mediaInfo.
+        /// The media information
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaInfo", Required = Newtonsoft.Json.Required.Default)]
         public MediaInfo MediaInfo { get; set; }

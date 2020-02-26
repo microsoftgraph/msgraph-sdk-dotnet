@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets status.
+        /// Possible values are: notStarted, running, completed, failed. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public OperationStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets client context.
+        /// Unique Client Context string. Max limit is 256 chars.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientContext", Required = Newtonsoft.Json.Required.Default)]
         public string ClientContext { get; set; }
     
         /// <summary>
         /// Gets or sets result info.
+        /// The result information. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultInfo", Required = Newtonsoft.Json.Required.Default)]
         public ResultInfo ResultInfo { get; set; }

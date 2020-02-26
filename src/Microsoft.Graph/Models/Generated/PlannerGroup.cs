@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Read-only. Nullable. Returns the plannerPlans owned by the group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plans", Required = Newtonsoft.Json.Required.Default)]
-        public IPlannerGroupPlansCollectionPage Plans { get; set; }
+        public IPlannerGroupPlansCollectionWithReferencesPage Plans { get; set; }
     
     }
 }

@@ -56,7 +56,7 @@ namespace Microsoft.Graph
         /// Read-only. Nullable. The collection of tasks in the bucket.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
-        public IPlannerBucketTasksCollectionPage Tasks { get; set; }
+        public IPlannerBucketTasksCollectionWithReferencesPage Tasks { get; set; }
     
     }
 }

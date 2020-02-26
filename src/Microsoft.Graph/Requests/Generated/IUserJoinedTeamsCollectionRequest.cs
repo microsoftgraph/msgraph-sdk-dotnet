@@ -22,19 +22,19 @@ namespace Microsoft.Graph
     {
         
         /// <summary>
-        /// Adds the specified Group to the collection via POST.
+        /// Adds the specified Team to the collection via POST.
         /// </summary>
-        /// <param name="group">The Group to add.</param>
-        /// <returns>The created Group.</returns>
-        System.Threading.Tasks.Task<Group> AddAsync(Group group);
+        /// <param name="team">The Team to add.</param>
+        /// <returns>The created Team.</returns>
+        System.Threading.Tasks.Task<Team> AddAsync(Team team);
 
         /// <summary>
-        /// Adds the specified Group to the collection via POST.
+        /// Adds the specified Team to the collection via POST.
         /// </summary>
-        /// <param name="group">The Group to add.</param>
+        /// <param name="team">The Team to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Group.</returns>
-        System.Threading.Tasks.Task<Group> AddAsync(Group group, CancellationToken cancellationToken);
+        /// <returns>The created Team.</returns>
+        System.Threading.Tasks.Task<Team> AddAsync(Team team, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IUserJoinedTeamsCollectionRequest Expand(Expression<Func<Group, object>> expandExpression);
+        IUserJoinedTeamsCollectionRequest Expand(Expression<Func<Team, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IUserJoinedTeamsCollectionRequest Select(Expression<Func<Group, object>> selectExpression);
+        IUserJoinedTeamsCollectionRequest Select(Expression<Func<Team, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

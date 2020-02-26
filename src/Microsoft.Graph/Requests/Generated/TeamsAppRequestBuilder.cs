@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for AppDefinitions.
         /// </summary>
-        /// <returns>The <see cref="ITeamsAppAppDefinitionsCollectionRequestBuilder"/>.</returns>
-        public ITeamsAppAppDefinitionsCollectionRequestBuilder AppDefinitions
+        /// <returns>The <see cref="ITeamsAppAppDefinitionsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public ITeamsAppAppDefinitionsCollectionWithReferencesRequestBuilder AppDefinitions
         {
             get
             {
-                return new TeamsAppAppDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appDefinitions"), this.Client);
+                return new TeamsAppAppDefinitionsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("appDefinitions"), this.Client);
             }
         }
     
