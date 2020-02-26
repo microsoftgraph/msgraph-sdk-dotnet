@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets token.
+        /// The token used to join the call.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "token", Required = Newtonsoft.Json.Required.Default)]
         public string Token { get; set; }

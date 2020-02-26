@@ -16,15 +16,15 @@ namespace Microsoft.Graph
     using System.Threading;
 
     /// <summary>
-    /// The interface ICallRecordRequest.
+    /// The interface ICallRecordResponseRequest.
     /// </summary>
-    public partial interface ICallRecordRequest : IBaseRequest
+    public partial interface ICallRecordResponseRequest : IBaseRequest
     {
 
         /// <summary>
         /// Gets the request body.
         /// </summary>
-        CallRecordRequestBody RequestBody { get; }
+        CallRecordResponseRequestBody RequestBody { get; }
 
 
         /// <summary>
@@ -50,13 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        ICallRecordRequest Expand(string value);
+        ICallRecordResponseRequest Expand(string value);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        ICallRecordRequest Select(string value);
+        ICallRecordResponseRequest Select(string value);
     }
 }

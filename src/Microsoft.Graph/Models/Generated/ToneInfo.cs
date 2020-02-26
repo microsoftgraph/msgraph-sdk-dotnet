@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets sequenceId.
+        /// An incremental identifier used for ordering DTMF events.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sequenceId", Required = Newtonsoft.Json.Required.Default)]
         public Int64? SequenceId { get; set; }
     
         /// <summary>
         /// Gets or sets tone.
+        /// Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tone", Required = Newtonsoft.Json.Required.Default)]
         public Tone? Tone { get; set; }

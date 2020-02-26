@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         ITeamChannelsCollectionRequestBuilder Channels { get; }
 
         /// <summary>
+        /// Gets the request builder for PrimaryChannel.
+        /// </summary>
+        /// <returns>The <see cref="IChannelRequestBuilder"/>.</returns>
+        IChannelRequestBuilder PrimaryChannel { get; }
+
+        /// <summary>
         /// Gets the request builder for InstalledApps.
         /// </summary>
         /// <returns>The <see cref="ITeamInstalledAppsCollectionRequestBuilder"/>.</returns>

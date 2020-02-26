@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Moderate
-        /// </summary>
-        Moderate = 0,
-	
-        /// <summary>
         /// Strict
         /// </summary>
-        Strict = 1,
+        Strict = 0,
+	
+        /// <summary>
+        /// Moderate
+        /// </summary>
+        Moderate = 1,
 	
         /// <summary>
         /// Unknown Future Value
