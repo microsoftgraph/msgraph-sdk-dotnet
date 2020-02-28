@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// The interface IUserJoinedTeamsCollectionPage.
     /// </summary>
     [JsonConverter(typeof(InterfaceConverter<UserJoinedTeamsCollectionPage>))]
-    public interface IUserJoinedTeamsCollectionPage : ICollectionPage<Group>
+    public interface IUserJoinedTeamsCollectionPage : ICollectionPage<Team>
     {
         /// <summary>
         /// Gets the next page <see cref="IUserJoinedTeamsCollectionRequest"/> instance.

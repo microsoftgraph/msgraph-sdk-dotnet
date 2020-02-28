@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets last used.
+        /// Information about when the item was last viewed and modified by the user. Read only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUsed", Required = Newtonsoft.Json.Required.Default)]
         public UsageDetails LastUsed { get; set; }
     
         /// <summary>
         /// Gets or sets resource visualization.
+        /// Properties that you can use to visualize the document in your experience. Read-only
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceVisualization", Required = Newtonsoft.Json.Required.Default)]
         public ResourceVisualization ResourceVisualization { get; set; }
     
         /// <summary>
         /// Gets or sets resource reference.
+        /// Reference properties of the used document, such as the url and type of the document. Read-only
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceReference", Required = Newtonsoft.Json.Required.Default)]
         public ResourceReference ResourceReference { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
+        /// Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
         public Entity Resource { get; set; }

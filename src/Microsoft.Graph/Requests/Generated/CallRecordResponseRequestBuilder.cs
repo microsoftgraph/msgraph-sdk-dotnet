@@ -14,12 +14,12 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type CallRecordRequestBuilder.
+    /// The type CallRecordResponseRequestBuilder.
     /// </summary>
-    public partial class CallRecordRequestBuilder : BaseActionMethodRequestBuilder<ICallRecordRequest>, ICallRecordRequestBuilder
+    public partial class CallRecordResponseRequestBuilder : BaseActionMethodRequestBuilder<ICallRecordResponseRequest>, ICallRecordResponseRequestBuilder
     {
         /// <summary>
-        /// Constructs a new <see cref="CallRecordRequestBuilder"/>.
+        /// Constructs a new <see cref="CallRecordResponseRequestBuilder"/>.
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph
         /// <param name="playBeep">A playBeep parameter for the OData method call.</param>
         /// <param name="stopTones">A stopTones parameter for the OData method call.</param>
         /// <param name="clientContext">A clientContext parameter for the OData method call.</param>
-        public CallRecordRequestBuilder(
+        public CallRecordResponseRequestBuilder(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Prompt> prompts,
@@ -60,9 +60,9 @@ namespace Microsoft.Graph
         /// <param name="functionUrl">The request URL to </param>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>An instance of a specific request class.</returns>
-        protected override ICallRecordRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
+        protected override ICallRecordResponseRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
-            var request = new CallRecordRequest(functionUrl, this.Client, options);
+            var request = new CallRecordResponseRequest(functionUrl, this.Client, options);
 
             if (this.HasParameter("prompts"))
             {
