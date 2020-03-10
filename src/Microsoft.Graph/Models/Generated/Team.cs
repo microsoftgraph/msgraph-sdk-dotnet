@@ -80,6 +80,13 @@ namespace Microsoft.Graph
         public ITeamChannelsCollectionPage Channels { get; set; }
     
         /// <summary>
+        /// Gets or sets primary channel.
+        /// The general channel for the team.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryChannel", Required = Newtonsoft.Json.Required.Default)]
+        public Channel PrimaryChannel { get; set; }
+    
+        /// <summary>
         /// Gets or sets installed apps.
         /// The apps installed in this team.
         /// </summary>

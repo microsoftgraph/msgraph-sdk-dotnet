@@ -94,6 +94,13 @@ namespace Microsoft.Graph
         public string Country { get; set; }
     
         /// <summary>
+        /// Gets or sets creation type.
+        /// Indicates whether the user account was created as a regular school or work account (null), an external account (Invitation), a local account for an Azure Active Directory B2C tenant (LocalAccount) or self-service sign-up using email verification (EmailVerified). Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationType", Required = Newtonsoft.Json.Required.Default)]
+        public string CreationType { get; set; }
+    
+        /// <summary>
         /// Gets or sets department.
         /// The name for the department in which the user works. Supports $filter.
         /// </summary>
@@ -127,6 +134,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "givenName", Required = Newtonsoft.Json.Required.Default)]
         public string GivenName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets identities.
+        /// Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identities", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ObjectIdentity> Identities { get; set; }
     
         /// <summary>
         /// Gets or sets im addresses.
@@ -458,6 +472,12 @@ namespace Microsoft.Graph
         public IEnumerable<string> Skills { get; set; }
     
         /// <summary>
+        /// Gets or sets app role assignments.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignments", Required = Newtonsoft.Json.Required.Default)]
+        public IUserAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
+    
+        /// <summary>
         /// Gets or sets owned devices.
         /// Devices that are owned by the user. Read-only. Nullable.
         /// </summary>
@@ -498,6 +518,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdObjects", Required = Newtonsoft.Json.Required.Default)]
         public IUserCreatedObjectsCollectionWithReferencesPage CreatedObjects { get; set; }
+    
+        /// <summary>
+        /// Gets or sets oauth2permission grants.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oauth2PermissionGrants", Required = Newtonsoft.Json.Required.Default)]
+        public IUserOauth2PermissionGrantsCollectionWithReferencesPage Oauth2PermissionGrants { get; set; }
     
         /// <summary>
         /// Gets or sets owned objects.
@@ -667,6 +693,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets insights.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "insights", Required = Newtonsoft.Json.Required.Default)]
         public OfficeGraphInsights Insights { get; set; }

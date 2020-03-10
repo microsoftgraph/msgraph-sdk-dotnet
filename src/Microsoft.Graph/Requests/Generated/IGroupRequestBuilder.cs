@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IGroupRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AppRoleAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IGroupAppRoleAssignmentsCollectionRequestBuilder"/>.</returns>
+        IGroupAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments { get; }
+
+        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IGroupMembersCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -181,6 +187,14 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ITeamRequestBuilder"/>.</returns>
         ITeamRequestBuilder Team { get; }
     
+        /// <summary>
+        /// Gets the request builder for GroupAssignLicense.
+        /// </summary>
+        /// <returns>The <see cref="IGroupAssignLicenseRequestBuilder"/>.</returns>
+        IGroupAssignLicenseRequestBuilder AssignLicense(
+            IEnumerable<AssignedLicense> addLicenses,
+            IEnumerable<Guid> removeLicenses);
+
         /// <summary>
         /// Gets the request builder for GroupValidateProperties.
         /// </summary>

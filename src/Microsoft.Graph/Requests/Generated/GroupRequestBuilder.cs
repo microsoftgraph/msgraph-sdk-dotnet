@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AppRoleAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IGroupAppRoleAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IGroupAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments
+        {
+            get
+            {
+                return new GroupAppRoleAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appRoleAssignments"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IGroupMembersCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -350,6 +362,21 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for GroupAssignLicense.
+        /// </summary>
+        /// <returns>The <see cref="IGroupAssignLicenseRequestBuilder"/>.</returns>
+        public IGroupAssignLicenseRequestBuilder AssignLicense(
+            IEnumerable<AssignedLicense> addLicenses,
+            IEnumerable<Guid> removeLicenses)
+        {
+            return new GroupAssignLicenseRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.assignLicense"),
+                this.Client,
+                addLicenses,
+                removeLicenses);
+        }
+
         /// <summary>
         /// Gets the request builder for GroupValidateProperties.
         /// </summary>

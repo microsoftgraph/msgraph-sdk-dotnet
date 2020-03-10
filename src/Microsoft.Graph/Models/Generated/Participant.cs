@@ -32,24 +32,34 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets info.
+        /// The participant of the participant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "info", Required = Newtonsoft.Json.Required.Default)]
         public ParticipantInfo Info { get; set; }
     
         /// <summary>
+        /// Gets or sets recording info.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingInfo", Required = Newtonsoft.Json.Required.Default)]
+        public RecordingInfo RecordingInfo { get; set; }
+    
+        /// <summary>
         /// Gets or sets media streams.
+        /// The list of media streams.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaStreams", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<MediaStream> MediaStreams { get; set; }
     
         /// <summary>
         /// Gets or sets is muted.
+        /// true if the participant is muted (client or server muted).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMuted", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsMuted { get; set; }
     
         /// <summary>
         /// Gets or sets is in lobby.
+        /// true if the participant is in lobby.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInLobby", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsInLobby { get; set; }
