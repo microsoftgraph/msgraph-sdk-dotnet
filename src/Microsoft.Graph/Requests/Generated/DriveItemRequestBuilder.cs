@@ -222,7 +222,7 @@ namespace Microsoft.Graph
             DriveItemUploadableProperties item = null)
         {
             return new DriveItemCreateUploadSessionRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.createUploadSession"),
+                this.AppendSegmentToRequestUrl("createUploadSession"),
                 this.Client,
                 item);
         }
