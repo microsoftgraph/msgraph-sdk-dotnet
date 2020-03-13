@@ -34,7 +34,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             await OneDriveDeleteTestFile(fileId, 5000);
         }
 
-        public async Task OneDriveSearchForTestFile(string fileName = "_excelTestResource.xlsx")
+        private async Task OneDriveSearchForTestFile(string fileName = "_excelTestResource.xlsx")
         {
             // Check that this item hasn't already been created. 
             // https://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/item_search
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             return excelWorkbookDriveItem.Id;
         }
 
-        public async Task OneDriveUploadTestFileContent(string fileId)
+        private async Task OneDriveUploadTestFileContent(string fileId)
         {
             DriveItem excelDriveItem;
             using (Stream ms = ResourceHelper.GetResourceAsStream(ResourceHelper.ExcelTestResource))
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             Assert.NotNull(excelDriveItem);
         }
 
-        public async Task OneDriveDeleteTestFile(string fileId, int delayInMilliseconds = 0)
+        internal async Task OneDriveDeleteTestFile(string fileId, int delayInMilliseconds = 0)
         {
             try
             {

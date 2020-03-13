@@ -314,7 +314,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                                                             .Request()
                                                             .Filter("startswith(name,'Timesheet')")
                                                             .GetAsync();
-                Assert.True(itemToShare[0].Name.StartsWith("Timesheet"));
+                
+                Assert.StartsWith("Timesheet", itemToShare[0].Name);
 
                 var permission = await graphClient.Me.Drive.Root
                                                            .ItemWithPath(itemToShare[0].Name)

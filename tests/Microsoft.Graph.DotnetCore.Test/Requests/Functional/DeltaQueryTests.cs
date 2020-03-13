@@ -32,7 +32,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 driveItemDeltaCollectionPage = await driveItemDeltaCollectionPage.NextPageRequest.GetAsync();
             }
             Assert.NotNull(deltaLink);
-            Assert.Equal(driveItemDeltaCollectionPage.Count, 0);
+            Assert.Equal(0, driveItemDeltaCollectionPage.Count);
 
             // Create file to change.
             var excelTest = new ExcelTests();
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
 
             // We expect two changes, one new item, and the root folder will have a change.
-            Assert.Equal(driveItemDeltaCollectionPage.Count, 2);
+            Assert.Equal(2, driveItemDeltaCollectionPage.Count);
 
 
             // Delete the file
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 messagesDeltaCollectionPage = await messagesDeltaCollectionPage.NextPageRequest.GetAsync();
             }
             Assert.NotNull(deltaLink);
-            Assert.Equal(messagesDeltaCollectionPage.Count, 0);
+            Assert.Equal(0, messagesDeltaCollectionPage.Count);
 
             // Create a new message.
             //CreateNewMessage();
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
 
             // We expect two changes, one new item, and the root folder will have a change.
-            Assert.Equal(messagesDeltaCollectionPage.Count, 2);
+            Assert.Equal(2, messagesDeltaCollectionPage.Count);
         }
 
         [Fact(Skip = "No CI set up for functional tests. Before enabling these tests, we need to cleanup our test data.")]
