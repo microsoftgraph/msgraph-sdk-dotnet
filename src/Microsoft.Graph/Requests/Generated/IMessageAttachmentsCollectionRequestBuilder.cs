@@ -36,11 +36,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IAttachmentRequestBuilder"/>.</returns>
         IAttachmentRequestBuilder this[string id] { get; }
 
-        /// <summary>
-        /// Gets the request builder for AttachmentCreateUploadSession.
-        /// </summary>
-        /// <returns>The <see cref="IAttachmentCreateUploadSessionRequestBuilder"/>.</returns>
-        IAttachmentCreateUploadSessionRequestBuilder CreateUploadSession(
-            AttachmentItem AttachmentItem);
+        
     }
 }

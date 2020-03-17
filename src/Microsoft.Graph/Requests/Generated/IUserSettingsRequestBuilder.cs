@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IUserSettingsRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for ShiftPreferences.
+        /// </summary>
+        /// <returns>The <see cref="IShiftPreferencesRequestBuilder"/>.</returns>
+        IShiftPreferencesRequestBuilder ShiftPreferences { get; }
+    
     }
 }

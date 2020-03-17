@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (userToInitialize != null && userToInitialize.AdditionalData != null)
             {
 
-                if (userToInitialize.AppRoleAssignments != null && userToInitialize.AppRoleAssignments.CurrentPage != null)
-                {
-                    userToInitialize.AppRoleAssignments.AdditionalData = userToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("appRoleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userToInitialize.AppRoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (userToInitialize.OwnedDevices != null && userToInitialize.OwnedDevices.CurrentPage != null)
                 {
                     userToInitialize.OwnedDevices.AdditionalData = userToInitialize.AdditionalData;
@@ -325,22 +309,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         userToInitialize.CreatedObjects.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (userToInitialize.Oauth2PermissionGrants != null && userToInitialize.Oauth2PermissionGrants.CurrentPage != null)
-                {
-                    userToInitialize.Oauth2PermissionGrants.AdditionalData = userToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("oauth2PermissionGrants@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userToInitialize.Oauth2PermissionGrants.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

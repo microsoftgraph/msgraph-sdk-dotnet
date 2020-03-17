@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (groupToInitialize != null && groupToInitialize.AdditionalData != null)
             {
 
-                if (groupToInitialize.AppRoleAssignments != null && groupToInitialize.AppRoleAssignments.CurrentPage != null)
-                {
-                    groupToInitialize.AppRoleAssignments.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("appRoleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.AppRoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (groupToInitialize.Members != null && groupToInitialize.Members.CurrentPage != null)
                 {
                     groupToInitialize.Members.AdditionalData = groupToInitialize.AdditionalData;

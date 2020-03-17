@@ -73,6 +73,12 @@ namespace Microsoft.Graph
         public bool? IsArchived { get; set; }
     
         /// <summary>
+        /// Gets or sets schedule.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
+        public Schedule Schedule { get; set; }
+    
+        /// <summary>
         /// Gets or sets channels.
         /// The collection of channels &amp; messages associated with the team.
         /// </summary>

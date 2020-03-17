@@ -244,12 +244,6 @@ namespace Microsoft.Graph
         public bool? IsArchived { get; set; }
     
         /// <summary>
-        /// Gets or sets app role assignments.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignments", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
-    
-        /// <summary>
         /// Gets or sets members.
         /// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups) Nullable.
         /// </summary>

@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contributionToContentDiscoveryAsOrganizationDisabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? ContributionToContentDiscoveryAsOrganizationDisabled { get; set; }
     
+        /// <summary>
+        /// Gets or sets shift preferences.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shiftPreferences", Required = Newtonsoft.Json.Required.Default)]
+        public ShiftPreferences ShiftPreferences { get; set; }
+    
     }
 }
 

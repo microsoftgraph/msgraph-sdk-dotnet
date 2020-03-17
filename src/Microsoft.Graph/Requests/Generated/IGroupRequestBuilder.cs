@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IGroupRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for AppRoleAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IGroupAppRoleAssignmentsCollectionRequestBuilder"/>.</returns>
-        IGroupAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments { get; }
-
-        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IGroupMembersCollectionWithReferencesRequestBuilder"/>.</returns>

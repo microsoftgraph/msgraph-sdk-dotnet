@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for AppRoleAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IUserAppRoleAssignmentsCollectionRequestBuilder"/>.</returns>
-        public IUserAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments
-        {
-            get
-            {
-                return new UserAppRoleAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appRoleAssignments"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for OwnedDevices.
         /// </summary>
         /// <returns>The <see cref="IUserOwnedDevicesCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -131,18 +119,6 @@ namespace Microsoft.Graph
             get
             {
                 return new UserCreatedObjectsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("createdObjects"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Oauth2PermissionGrants.
-        /// </summary>
-        /// <returns>The <see cref="IUserOauth2PermissionGrantsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IUserOauth2PermissionGrantsCollectionWithReferencesRequestBuilder Oauth2PermissionGrants
-        {
-            get
-            {
-                return new UserOauth2PermissionGrantsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("oauth2PermissionGrants"), this.Client);
             }
         }
 

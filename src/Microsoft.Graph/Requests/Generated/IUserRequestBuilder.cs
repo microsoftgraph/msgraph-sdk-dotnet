@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IUserRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for AppRoleAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IUserAppRoleAssignmentsCollectionRequestBuilder"/>.</returns>
-        IUserAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments { get; }
-
-        /// <summary>
         /// Gets the request builder for OwnedDevices.
         /// </summary>
         /// <returns>The <see cref="IUserOwnedDevicesCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -72,12 +66,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserCreatedObjectsCollectionWithReferencesRequestBuilder"/>.</returns>
         IUserCreatedObjectsCollectionWithReferencesRequestBuilder CreatedObjects { get; }
-
-        /// <summary>
-        /// Gets the request builder for Oauth2PermissionGrants.
-        /// </summary>
-        /// <returns>The <see cref="IUserOauth2PermissionGrantsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IUserOauth2PermissionGrantsCollectionWithReferencesRequestBuilder Oauth2PermissionGrants { get; }
 
         /// <summary>
         /// Gets the request builder for OwnedObjects.

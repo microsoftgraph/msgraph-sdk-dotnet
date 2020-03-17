@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new ITeamRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Schedule.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleRequestBuilder"/>.</returns>
+        IScheduleRequestBuilder Schedule { get; }
+
+        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>

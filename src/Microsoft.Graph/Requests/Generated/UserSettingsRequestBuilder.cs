@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new UserSettingsRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for ShiftPreferences.
+        /// </summary>
+        /// <returns>The <see cref="IShiftPreferencesRequestBuilder"/>.</returns>
+        public IShiftPreferencesRequestBuilder ShiftPreferences
+        {
+            get
+            {
+                return new ShiftPreferencesRequestBuilder(this.AppendSegmentToRequestUrl("shiftPreferences"), this.Client);
+            }
+        }
+    
     }
 }
