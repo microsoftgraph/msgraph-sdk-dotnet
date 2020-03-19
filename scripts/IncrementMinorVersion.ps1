@@ -46,8 +46,9 @@ if ($majorVersion -ne $publishedMajorVersion -or `
     Exit 0;
 }
 
-# Increment minor version.
+# Increment minor version and set patchVersion to zero.
 $minorVersion = ($currentProjectVersion.Minor + 1).ToString()
+$patchVersion = "0"
 
 $updatedVersionPrefixString = "{0}.{1}.{2}" -f $majorVersion, $minorVersion, $patchVersion
 $xmlDoc.Project.PropertyGroup[0].VersionPrefix = $updatedVersionPrefixString

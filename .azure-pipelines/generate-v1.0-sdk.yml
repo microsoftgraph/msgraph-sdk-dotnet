@@ -1,0 +1,187 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+
+trigger: none # disable triggers based on commits.
+pr: none # disable triggers based on pull requests.
+
+resources:
+  repositories:
+  - repository: msgraph-sdk-dotnet # The name used to reference this repository in the checkout step
+    type: github
+    endpoint: microsoftgraph
+    name: microsoftgraph/msgraph-sdk-dotnet
+    ref: dev # checkout the dev branch
+  - repository: msgraph-metadata
+    type: github
+    endpoint: microsoftgraph
+    name: microsoftgraph/msgraph-metadata
+    ref: master # 
+  pipelines:
+  - pipeline: publishMetadata # This pipeline produces an metadata artifact that we need to validate.
+    source: (v1.0 - 3) msgraph-publish-cleanmetadata
+    trigger: # TODO: validate that this pipeline triggers as expected.
+      branches:
+      - master
+
+pool:
+  vmImage: windows-latest # Info about this image: [0][1]
+
+variables:
+  - group: MicrosoftGraph # Variable group, where variables not set here come from. Set in Azure DevOps
+
+steps:
+- checkout: msgraph-sdk-dotnet
+  clean: true
+  fetchDepth: 1
+  persistCredentials: true
+- checkout: msgraph-metadata
+  clean: true
+  fetchDepth: 1
+
+- task: PowerShell@2 # Setup environment variables and make them available to all tasks. See [1] for more info.
+  displayName: 'Calculate and set pipeline variables for this job'
+  inputs:
+    targetType: inline
+    script: |
+      
+      $repoModelsDir = "$env:Build_SourcesDirectory\msgraph-sdk-dotnet\src\Microsoft.Graph\Models\Generated\"
+      $repoRequestDir = "$env:Build_SourcesDirectory\msgraph-sdk-dotnet\src\Microsoft.Graph\Requests\Generated\"
+      Write-Host "Path to repo model directory: $repoModelsDir"
+      Write-Host "Path to repo model directory: $repoRequestDir"
+      Write-Host "##vso[task.setvariable variable=repoModelsDir]$repoModelsDir"
+      Write-Host "##vso[task.setvariable variable=repoRequestDir]$repoRequestDir"
+
+      $outputPath = Join-Path $env:Build_SourcesDirectory "output"
+      Write-Host "Path to typewriter.exe output $outputPath"
+      Write-Host "##vso[task.setvariable variable=outputPath]$outputPath"
+
+      $cleanMetadata = "https://raw.githubusercontent.com/microsoftgraph/msgraph-metadata/master/clean_v10_metadata/cleanMetadataWithDescriptionsv1.0.xml"
+      Write-Host "Path to clean metadata $cleanMetadata"
+      Write-Host "##vso[task.setvariable variable=cleanMetadata]$cleanMetadata"
+
+      $branchName = "v1.0/pipelinebuild/$env:Build_BuildId" # Match the spec in the GH Action
+      Write-Host "Branch path spec for the pull request will be $branchName"
+      Write-Host "##vso[task.setvariable variable=branchName]$branchName"
+
+- task: PowerShell@2
+  displayName: 'Git: checkout dev'
+  inputs:
+    targetType: inline
+    workingDirectory: '$(Build.SourcesDirectory)/msgraph-sdk-dotnet'
+    script: |
+      git checkout dev | Write-Host
+
+- task: PowerShell@2
+  displayName: 'Git: branch from dev named with the build id: $(Build.BuildId)'
+  inputs:
+    targetType: inline
+    workingDirectory: '$(Build.SourcesDirectory)/msgraph-sdk-dotnet'
+    script: |
+      
+      Write-Host "The new branch name will be: $env:branchName"
+      git checkout -B $env:branchName | Write-Host
+
+- task: PowerShell@2
+  displayName: 'Git: set user config'
+  inputs:
+    targetType: inline
+    workingDirectory: '$(Build.SourcesDirectory)/msgraph-sdk-dotnet'
+    script: |
+      git config user.email "GraphTooling@service.microsoft.com"
+      git config user.name "Microsoft Graph DevX Tooling"
+
+- task: PowerShell@2
+  displayName: 'Remove generated files from the repo'
+  inputs:
+    targetType: inline
+    script: |
+      Remove-Item -Recurse $env:repoModelsDir | Write-Host
+      Remove-Item -Recurse $env:repoRequestDir | Write-Host
+      Write-Host "Removed the existing generated files in the repo." -ForegroundColor Green
+
+- task: PowerShell@2
+  displayName: 'Typewriter: generate v1.0 .NET files'
+  inputs:
+    targetType: filePath
+    filePath: '$(Build.SourcesDirectory)/msgraph-metadata/scripts/runTypewriter.ps1'
+    arguments: '-verbosity Info -metadata $(cleanMetadata) -output $(outputPath) -generationMode Files'
+    workingDirectory: '$(Build.SourcesDirectory)' # Set the root for a multi-repo pipeline. /s
+  enabled: true
+
+- task: PowerShell@2
+  displayName: 'Copy generated files into the repo'
+  inputs:
+    targetType: inline
+    script: |
+      $modelsDirectory = Join-Path $env:outputPath "\com\microsoft\graph\model\"
+      $requestsDirectory = Join-Path $env:outputPath "\com\microsoft\graph\requests\"
+      Move-Item $modelsDirectory $env:repoModelsDir
+      Write-Host "Moved the models from $modelsDirectory into the local repo." -ForegroundColor Green
+      Move-Item $requestsDirectory $env:repoRequestDir
+      Write-Host "Moved the requests from $requestsDirectory into the local repo." -ForegroundColor Green
+
+- task: PowerShell@2
+  displayName: 'Bump minor version'
+  inputs:
+    targetType: filePath
+    filePath: '$(Build.SourcesDirectory)/msgraph-sdk-dotnet/scripts/IncrementMinorVersion.ps1'
+    workingDirectory: '$(Build.SourcesDirectory)/msgraph-sdk-dotnet'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
+  inputs:
+    command: restore
+    projects: '**/*.csproj'
+
+- task: MSBuild@1
+  displayName: 'Build Microsoft.Graph'
+  inputs:
+    solution: '$(Build.SourcesDirectory)/msgraph-sdk-dotnet/Microsoft.Graph.sln'
+    configuration: release
+    clean: true
+
+- task: VSTest@2
+  displayName: 'Run Microsoft.Graph tests'
+  inputs:
+    diagnosticsEnabled: True
+
+- task: PowerShell@2
+  displayName: 'Git: stage and commit generated files'
+  inputs:
+    targetType: inline
+    workingDirectory: '$(Build.SourcesDirectory)/msgraph-sdk-dotnet'
+    script: |
+      Write-Host "About to add files....." -ForegroundColor Green
+
+      git add . | Write-Host
+      git commit -m "Update generated files with build $env:Build_BuildId" | Write-Host
+      Write-Host "Added and commited generated files." -ForegroundColor Green
+
+- task: PowerShell@2
+  displayName: 'Git: push updates'
+  inputs:
+    targetType: inline
+    workingDirectory: '$(Build.SourcesDirectory)/msgraph-sdk-dotnet'
+    script: |
+      git push --set-upstream origin $env:branchName | Write-Host
+      Write-Host "Pushed the results of the build to the $env:branchName branch." -ForegroundColor Green
+  enabled: false # TODO: set false to validate that everything else works.
+
+# Send a notification to our Graph Tooling channel to let us know that
+# that automated build failed. This won't notify on manual builds.
+
+- task: YodLabs.O365PostMessage.O365PostMessageBuild.O365PostMessageBuild@0
+  displayName: 'Graph Client Tooling pipeline fail notification'
+  inputs:
+    addressType: serviceEndpoint
+    serviceEndpointName: 'microsoftgraph pipeline status'
+    title: '$(Build.DefinitionName) failure notification'
+    text: 'This automated pipeline has failed. View the build details for further information. This is a blocking failure.'
+  condition: and(failed(), ne(variables['Build.Reason'], 'Manual')) # Only notify if the automated build failed.
+  enabled: true
+
+# References
+# [0] https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops#use-a-microsoft-hosted-agent
+# [1] https://github.com/actions/virtual-environments/blob/master/images/win/Windows2019-Readme.md
