@@ -167,7 +167,7 @@ steps:
     script: |
       git push --set-upstream origin $env:branchName | Write-Host
       Write-Host "Pushed the results of the build to the $env:branchName branch." -ForegroundColor Green
-  enabled: false # TODO: set false to validate that everything else works.
+  enabled: true
 
 # Send a notification to our Graph Tooling channel to let us know that
 # that automated build failed. This won't notify on manual builds.
