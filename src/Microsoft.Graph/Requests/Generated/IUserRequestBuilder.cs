@@ -182,6 +182,12 @@ namespace Microsoft.Graph
         IUserDrivesCollectionRequestBuilder Drives { get; }
 
         /// <summary>
+        /// Gets the request builder for FollowedSites.
+        /// </summary>
+        /// <returns>The <see cref="IUserFollowedSitesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUserFollowedSitesCollectionWithReferencesRequestBuilder FollowedSites { get; }
+
+        /// <summary>
         /// Gets the request builder for Extensions.
         /// </summary>
         /// <returns>The <see cref="IUserExtensionsCollectionRequestBuilder"/>.</returns>

@@ -483,6 +483,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceTeamwork request builder.
+        /// </summary>
+        public ITeamworkRequestBuilder Teamwork
+        {
+            get
+            {
+                return new TeamworkRequestBuilder(this.BaseUrl + "/teamwork", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceInformationProtection request builder.
         /// </summary>
         public IInformationProtectionRequestBuilder InformationProtection

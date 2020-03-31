@@ -60,6 +60,30 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for SiteAdd.
+        /// </summary>
+        /// <returns>The <see cref="ISiteAddRequestBuilder"/>.</returns>
+        public ISiteAddRequestBuilder Add(
+            IEnumerable<Site> value = null)
+        {
+            return new SiteAddRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.add"),
+                this.Client,
+                value);
+        }
+
+        /// <summary>
+        /// Gets the request builder for SiteRemove.
+        /// </summary>
+        /// <returns>The <see cref="ISiteRemoveRequestBuilder"/>.</returns>
+        public ISiteRemoveRequestBuilder Remove(
+            IEnumerable<Site> value = null)
+        {
+            return new SiteRemoveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.remove"),
+                this.Client,
+                value);
+        }
     }
 }

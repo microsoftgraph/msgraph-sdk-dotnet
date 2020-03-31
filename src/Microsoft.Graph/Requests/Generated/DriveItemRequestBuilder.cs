@@ -228,6 +228,28 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DriveItemFollow.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemFollowRequestBuilder"/>.</returns>
+        public IDriveItemFollowRequestBuilder Follow()
+        {
+            return new DriveItemFollowRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.follow"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DriveItemUnfollow.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemUnfollowRequestBuilder"/>.</returns>
+        public IDriveItemUnfollowRequestBuilder Unfollow()
+        {
+            return new DriveItemUnfollowRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unfollow"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DriveItemInvite.
         /// </summary>
         /// <returns>The <see cref="IDriveItemInviteRequestBuilder"/>.</returns>
@@ -296,6 +318,23 @@ namespace Microsoft.Graph
             return new DriveItemGetActivitiesByIntervalRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getActivitiesByInterval"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DriveItemGetActivitiesByInterval.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemGetActivitiesByIntervalRequestBuilder"/>.</returns>
+        public IDriveItemGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval(
+            string startDateTime = null,
+            string endDateTime = null,
+            string interval = null)
+        {
+            return new DriveItemGetActivitiesByIntervalRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getActivitiesByInterval"),
+                this.Client,
+                startDateTime,
+                endDateTime,
+                interval);
         }
 
         /// <summary>

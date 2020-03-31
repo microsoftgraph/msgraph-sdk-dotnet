@@ -170,6 +170,13 @@ namespace Microsoft.Graph
         public IEnumerable<RiskEventType> RiskEventTypes { get; set; }
     
         /// <summary>
+        /// Gets or sets risk event types_v2.
+        /// The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskEventTypes_v2", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RiskEventTypes_v2 { get; set; }
+    
+        /// <summary>
         /// Gets or sets resource display name.
         /// Name of the resource the user signed into.
         /// </summary>

@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Permission.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionRequestBuilder"/>.</returns>
+        public IPermissionRequestBuilder Permission
+        {
+            get
+            {
+                return new PermissionRequestBuilder(this.AppendSegmentToRequestUrl("permission"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Root.
         /// </summary>
         /// <returns>The <see cref="IDriveItemRequestBuilder"/>.</returns>

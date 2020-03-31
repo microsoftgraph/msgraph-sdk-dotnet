@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IListItemsCollectionRequestBuilder"/>.</returns>
         IListItemsCollectionRequestBuilder Items { get; }
+
+        /// <summary>
+        /// Gets the request builder for Subscriptions.
+        /// </summary>
+        /// <returns>The <see cref="IListSubscriptionsCollectionRequestBuilder"/>.</returns>
+        IListSubscriptionsCollectionRequestBuilder Subscriptions { get; }
     
     }
 }

@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (driveToInitialize != null && driveToInitialize.AdditionalData != null)
             {
 
+                if (driveToInitialize.Following != null && driveToInitialize.Following.CurrentPage != null)
+                {
+                    driveToInitialize.Following.AdditionalData = driveToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    driveToInitialize.AdditionalData.TryGetValue("following@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        driveToInitialize.Following.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (driveToInitialize.Items != null && driveToInitialize.Items.CurrentPage != null)
                 {
                     driveToInitialize.Items.AdditionalData = driveToInitialize.AdditionalData;

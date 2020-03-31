@@ -97,6 +97,18 @@ namespace Microsoft.Graph
                 return new ListItemsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("items"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Subscriptions.
+        /// </summary>
+        /// <returns>The <see cref="IListSubscriptionsCollectionRequestBuilder"/>.</returns>
+        public IListSubscriptionsCollectionRequestBuilder Subscriptions
+        {
+            get
+            {
+                return new ListSubscriptionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("subscriptions"), this.Client);
+            }
+        }
     
     }
 }

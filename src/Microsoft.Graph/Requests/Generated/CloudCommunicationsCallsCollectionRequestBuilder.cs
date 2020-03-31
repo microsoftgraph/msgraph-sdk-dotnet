@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for CallLogTeleconferenceDeviceQuality.
+        /// </summary>
+        /// <returns>The <see cref="ICallLogTeleconferenceDeviceQualityRequestBuilder"/>.</returns>
+        public ICallLogTeleconferenceDeviceQualityRequestBuilder LogTeleconferenceDeviceQuality(
+            TeleconferenceDeviceQuality quality)
+        {
+            return new CallLogTeleconferenceDeviceQualityRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.logTeleconferenceDeviceQuality"),
+                this.Client,
+                quality);
+        }
     }
 }

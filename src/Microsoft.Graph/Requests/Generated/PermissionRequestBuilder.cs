@@ -50,5 +50,20 @@ namespace Microsoft.Graph
             return new PermissionRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for PermissionGrant.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionGrantRequestBuilder"/>.</returns>
+        public IPermissionGrantRequestBuilder Grant(
+            IEnumerable<string> roles = null,
+            IEnumerable<DriveRecipient> recipients = null)
+        {
+            return new PermissionGrantRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.grant"),
+                this.Client,
+                roles,
+                recipients);
+        }
+    
     }
 }

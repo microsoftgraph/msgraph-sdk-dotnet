@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ICallRequestBuilder"/>.</returns>
         ICallRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for CallLogTeleconferenceDeviceQuality.
+        /// </summary>
+        /// <returns>The <see cref="ICallLogTeleconferenceDeviceQualityRequestBuilder"/>.</returns>
+        ICallLogTeleconferenceDeviceQualityRequestBuilder LogTeleconferenceDeviceQuality(
+            TeleconferenceDeviceQuality quality);
     }
 }

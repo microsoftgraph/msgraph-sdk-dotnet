@@ -38,55 +38,6 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets contactITName.
-        /// Name of the person/organization responsible for IT support.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITName", Required = Newtonsoft.Json.Required.Default)]
-        public string ContactITName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets contactITPhoneNumber.
-        /// Phone number of the person/organization responsible for IT support.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITPhoneNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string ContactITPhoneNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets contactITEmailAddress.
-        /// Email address of the person/organization responsible for IT support.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITEmailAddress", Required = Newtonsoft.Json.Required.Default)]
-        public string ContactITEmailAddress { get; set; }
-    
-        /// <summary>
-        /// Gets or sets contactITNotes.
-        /// Text comments regarding the person/organization responsible for IT support.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITNotes", Required = Newtonsoft.Json.Required.Default)]
-        public string ContactITNotes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets privacyUrl.
-        /// URL to the company/organization’s privacy policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string PrivacyUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets onlineSupportSiteUrl.
-        /// URL to the company/organization’s IT helpdesk site.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string OnlineSupportSiteUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets onlineSupportSiteName.
-        /// Display name of the company/organization’s IT helpdesk site.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteName", Required = Newtonsoft.Json.Required.Default)]
-        public string OnlineSupportSiteName { get; set; }
-    
-        /// <summary>
         /// Gets or sets themeColor.
         /// Primary theme color used in the Company Portal applications and web portal.
         /// </summary>
@@ -127,6 +78,55 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showDisplayNameNextToLogo", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowDisplayNameNextToLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets contactITName.
+        /// Name of the person/organization responsible for IT support.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITName", Required = Newtonsoft.Json.Required.Default)]
+        public string ContactITName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets contactITPhoneNumber.
+        /// Phone number of the person/organization responsible for IT support.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITPhoneNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string ContactITPhoneNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets contactITEmailAddress.
+        /// Email address of the person/organization responsible for IT support.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITEmailAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string ContactITEmailAddress { get; set; }
+    
+        /// <summary>
+        /// Gets or sets contactITNotes.
+        /// Text comments regarding the person/organization responsible for IT support.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITNotes", Required = Newtonsoft.Json.Required.Default)]
+        public string ContactITNotes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets onlineSupportSiteUrl.
+        /// URL to the company/organization’s IT helpdesk site.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string OnlineSupportSiteUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets onlineSupportSiteName.
+        /// Display name of the company/organization’s IT helpdesk site.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnlineSupportSiteName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets privacyUrl.
+        /// URL to the company/organization’s privacy policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string PrivacyUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

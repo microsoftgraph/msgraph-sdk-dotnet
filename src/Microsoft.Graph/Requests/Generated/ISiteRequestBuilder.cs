@@ -92,6 +92,15 @@ namespace Microsoft.Graph
         ISiteGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval();
 
         /// <summary>
+        /// Gets the request builder for SiteGetActivitiesByInterval.
+        /// </summary>
+        /// <returns>The <see cref="ISiteGetActivitiesByIntervalRequestBuilder"/>.</returns>
+        ISiteGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval(
+            string startDateTime = null,
+            string endDateTime = null,
+            string interval = null);
+
+        /// <summary>
         /// Gets the request builder for SiteGetByPath.
         /// </summary>
         /// <returns>The <see cref="ISiteGetByPathRequestBuilder"/>.</returns>

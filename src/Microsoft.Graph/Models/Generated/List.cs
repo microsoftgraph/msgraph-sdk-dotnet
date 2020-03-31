@@ -86,6 +86,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items", Required = Newtonsoft.Json.Required.Default)]
         public IListItemsCollectionPage Items { get; set; }
     
+        /// <summary>
+        /// Gets or sets subscriptions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptions", Required = Newtonsoft.Json.Required.Default)]
+        public IListSubscriptionsCollectionPage Subscriptions { get; set; }
+    
     }
 }
 

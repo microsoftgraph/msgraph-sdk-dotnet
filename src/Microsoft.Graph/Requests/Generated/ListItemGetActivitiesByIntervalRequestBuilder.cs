@@ -31,6 +31,27 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Constructs a new <see cref="ListItemGetActivitiesByIntervalRequestBuilder"/>.
+        /// </summary>
+        /// <param name="requestUrl">The URL for the request.</param>
+        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        /// <param name="startDateTime">A startDateTime parameter for the OData method call.</param>
+        /// <param name="endDateTime">A endDateTime parameter for the OData method call.</param>
+        /// <param name="interval">A interval parameter for the OData method call.</param>
+        public ListItemGetActivitiesByIntervalRequestBuilder(
+            string requestUrl,
+            IBaseClient client,
+            string startDateTime,
+            string endDateTime,
+            string interval)
+            : base(requestUrl, client)
+        {
+            this.SetParameter("startDateTime", startDateTime, true);
+            this.SetParameter("endDateTime", endDateTime, true);
+            this.SetParameter("interval", interval, true);
+        }
+
+        /// <summary>
         /// A method used by the base class to construct a request class instance.
         /// </summary>
         /// <param name="functionUrl">The request URL to </param>

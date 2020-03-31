@@ -212,6 +212,11 @@ namespace Microsoft.Graph
         IAppCatalogsRequestBuilder AppCatalogs { get; }
     
         /// <summary>
+        /// Gets the GraphServiceTeamwork request builder.
+        /// </summary>
+        ITeamworkRequestBuilder Teamwork { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceInformationProtection request builder.
         /// </summary>
         IInformationProtectionRequestBuilder InformationProtection { get; }

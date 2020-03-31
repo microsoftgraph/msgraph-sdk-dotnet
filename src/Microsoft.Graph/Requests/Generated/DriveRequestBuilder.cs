@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Following.
+        /// </summary>
+        /// <returns>The <see cref="IDriveFollowingCollectionRequestBuilder"/>.</returns>
+        public IDriveFollowingCollectionRequestBuilder Following
+        {
+            get
+            {
+                return new DriveFollowingCollectionRequestBuilder(this.AppendSegmentToRequestUrl("following"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Items.
         /// </summary>
         /// <returns>The <see cref="IDriveItemsCollectionRequestBuilder"/>.</returns>

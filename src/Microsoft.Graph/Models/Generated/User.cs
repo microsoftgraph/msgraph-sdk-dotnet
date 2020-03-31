@@ -645,6 +645,12 @@ namespace Microsoft.Graph
         public IUserDrivesCollectionPage Drives { get; set; }
     
         /// <summary>
+        /// Gets or sets followed sites.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "followedSites", Required = Newtonsoft.Json.Required.Default)]
+        public IUserFollowedSitesCollectionWithReferencesPage FollowedSites { get; set; }
+    
+        /// <summary>
         /// Gets or sets extensions.
         /// The collection of open extensions defined for the user. Read-only. Nullable.
         /// </summary>

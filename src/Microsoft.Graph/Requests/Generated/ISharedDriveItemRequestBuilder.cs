@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         IListItemRequestBuilder ListItem { get; }
 
         /// <summary>
+        /// Gets the request builder for Permission.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionRequestBuilder"/>.</returns>
+        IPermissionRequestBuilder Permission { get; }
+
+        /// <summary>
         /// Gets the request builder for Root.
         /// </summary>
         /// <returns>The <see cref="IDriveItemRequestBuilder"/>.</returns>

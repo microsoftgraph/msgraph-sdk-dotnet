@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public DeviceManagementSettings Settings { get; set; }
     
         /// <summary>
+        /// Gets or sets intune account id.
+        /// Intune Account Id for given tenant
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneAccountId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? IntuneAccountId { get; set; }
+    
+        /// <summary>
         /// Gets or sets intune brand.
         /// intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
         /// </summary>

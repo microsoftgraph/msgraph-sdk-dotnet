@@ -36,6 +36,18 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ISiteRequestBuilder"/>.</returns>
         ISiteRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for SiteAdd.
+        /// </summary>
+        /// <returns>The <see cref="ISiteAddRequestBuilder"/>.</returns>
+        ISiteAddRequestBuilder Add(
+            IEnumerable<Site> value = null);
+
+        /// <summary>
+        /// Gets the request builder for SiteRemove.
+        /// </summary>
+        /// <returns>The <see cref="ISiteRemoveRequestBuilder"/>.</returns>
+        ISiteRemoveRequestBuilder Remove(
+            IEnumerable<Site> value = null);
     }
 }

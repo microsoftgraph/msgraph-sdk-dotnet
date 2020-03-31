@@ -104,5 +104,10 @@ namespace Microsoft.Graph
         /// </summary>
         SharedDeviceUserLoggedInError = -2016330699,
 	
+        /// <summary>
+        /// Device Os Higher Than Desired Os Version
+        /// </summary>
+        DeviceOsHigherThanDesiredOsVersion = -2016330696,
+	
     }
 }

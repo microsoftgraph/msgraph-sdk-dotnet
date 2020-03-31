@@ -52,6 +52,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? AcceptedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets user principal name.
+        /// The userPrincipalName of the User that accepted the term.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
+    
+        /// <summary>
         /// Gets or sets terms and conditions.
         /// Navigation link to the terms and conditions that are assigned.
         /// </summary>

@@ -66,6 +66,12 @@ namespace Microsoft.Graph
         public ListItem ListItem { get; set; }
     
         /// <summary>
+        /// Gets or sets permission.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permission", Required = Newtonsoft.Json.Required.Default)]
+        public Permission Permission { get; set; }
+    
+        /// <summary>
         /// Gets or sets root.
         /// Used to access the underlying driveItem. Deprecated -- use driveItem instead.
         /// </summary>

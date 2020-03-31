@@ -31,5 +31,13 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IPermissionRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for PermissionGrant.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionGrantRequestBuilder"/>.</returns>
+        IPermissionGrantRequestBuilder Grant(
+            IEnumerable<string> roles = null,
+            IEnumerable<DriveRecipient> recipients = null);
+    
     }
 }

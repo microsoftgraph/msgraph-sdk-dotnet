@@ -123,6 +123,18 @@ namespace Microsoft.Graph
             DriveItemUploadableProperties item = null);
 
         /// <summary>
+        /// Gets the request builder for DriveItemFollow.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemFollowRequestBuilder"/>.</returns>
+        IDriveItemFollowRequestBuilder Follow();
+
+        /// <summary>
+        /// Gets the request builder for DriveItemUnfollow.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemUnfollowRequestBuilder"/>.</returns>
+        IDriveItemUnfollowRequestBuilder Unfollow();
+
+        /// <summary>
         /// Gets the request builder for DriveItemInvite.
         /// </summary>
         /// <returns>The <see cref="IDriveItemInviteRequestBuilder"/>.</returns>
@@ -159,6 +171,15 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDriveItemGetActivitiesByIntervalRequestBuilder"/>.</returns>
         IDriveItemGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval();
+
+        /// <summary>
+        /// Gets the request builder for DriveItemGetActivitiesByInterval.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemGetActivitiesByIntervalRequestBuilder"/>.</returns>
+        IDriveItemGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval(
+            string startDateTime = null,
+            string endDateTime = null,
+            string interval = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemSearch.

@@ -39,6 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recording info.
+        /// Information about whether the participant has recording capability.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingInfo", Required = Newtonsoft.Json.Required.Default)]
         public RecordingInfo RecordingInfo { get; set; }

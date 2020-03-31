@@ -351,6 +351,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for FollowedSites.
+        /// </summary>
+        /// <returns>The <see cref="IUserFollowedSitesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserFollowedSitesCollectionWithReferencesRequestBuilder FollowedSites
+        {
+            get
+            {
+                return new UserFollowedSitesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("followedSites"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Extensions.
         /// </summary>
         /// <returns>The <see cref="IUserExtensionsCollectionRequestBuilder"/>.</returns>
