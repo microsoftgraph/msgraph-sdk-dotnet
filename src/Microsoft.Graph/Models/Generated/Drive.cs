@@ -66,6 +66,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets following.
+        /// The list of items the user is following. Only in OneDrive for Business.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "following", Required = Newtonsoft.Json.Required.Default)]
         public IDriveFollowingCollectionPage Following { get; set; }

@@ -66,6 +66,13 @@ namespace Microsoft.Graph
         public Folder Folder { get; set; }
     
         /// <summary>
+        /// Gets or sets image.
+        /// Image metadata, if the item is an image. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "image", Required = Newtonsoft.Json.Required.Default)]
+        public Image Image { get; set; }
+    
+        /// <summary>
         /// Gets or sets id.
         /// Unique identifier for the remote item in its drive. Read-only.
         /// </summary>
@@ -134,6 +141,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "specialFolder", Required = Newtonsoft.Json.Required.Default)]
         public SpecialFolder SpecialFolder { get; set; }
+    
+        /// <summary>
+        /// Gets or sets video.
+        /// Video metadata, if the item is a video. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "video", Required = Newtonsoft.Json.Required.Default)]
+        public Video Video { get; set; }
     
         /// <summary>
         /// Gets or sets webDavUrl.
