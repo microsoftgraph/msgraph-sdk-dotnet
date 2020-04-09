@@ -6,7 +6,7 @@
 Integrate the [Microsoft Graph API](https://graph.microsoft.io) into your .NET
 project!
 
-The Microsoft Graph .NET Client Library targets .NetStandard 1.1 and .Net Framework 4.5.
+The Microsoft Graph .NET Client Library targets .NetStandard 2.0 and .Net Framework 4.6.1.
 
 ## Installation via NuGet
 
@@ -85,6 +85,7 @@ The following sample applications are also available:
 * [Headers](docs/headers.md)
 * [Microsoft Graph API](https://graph.microsoft.io)
 * [Release notes](https://github.com/microsoftgraph/msgraph-sdk-dotnet/releases)
+* [Blog - Microsoft Graph .NET SDK updates 3/16/20](https://developer.microsoft.com/en-us/graph/blogs/microsoft-graph-net-sdk-updates/)
 
 ## Notes
 
