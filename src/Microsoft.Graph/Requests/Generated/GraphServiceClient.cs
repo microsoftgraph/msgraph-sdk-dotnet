@@ -362,6 +362,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServicePolicies request builder.
+        /// </summary>
+        public IPolicyRootRequestBuilder Policies
+        {
+            get
+            {
+                return new PolicyRootRequestBuilder(this.BaseUrl + "/policies", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceMe request builder.
         /// </summary>
         public IUserRequestBuilder Me

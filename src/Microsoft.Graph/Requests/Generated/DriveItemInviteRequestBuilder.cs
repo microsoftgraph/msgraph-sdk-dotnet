@@ -28,6 +28,8 @@ namespace Microsoft.Graph
         /// <param name="roles">A roles parameter for the OData method call.</param>
         /// <param name="sendInvitation">A sendInvitation parameter for the OData method call.</param>
         /// <param name="message">A message parameter for the OData method call.</param>
+        /// <param name="expirationDateTime">A expirationDateTime parameter for the OData method call.</param>
+        /// <param name="password">A password parameter for the OData method call.</param>
         public DriveItemInviteRequestBuilder(
             string requestUrl,
             IBaseClient client,
@@ -35,7 +37,9 @@ namespace Microsoft.Graph
             bool? requireSignIn,
             IEnumerable<string> roles,
             bool? sendInvitation,
-            string message)
+            string message,
+            string expirationDateTime,
+            string password)
             : base(requestUrl, client)
         {
             this.SetParameter("recipients", recipients, false);
@@ -43,6 +47,8 @@ namespace Microsoft.Graph
             this.SetParameter("roles", roles, true);
             this.SetParameter("sendInvitation", sendInvitation, true);
             this.SetParameter("message", message, true);
+            this.SetParameter("expirationDateTime", expirationDateTime, true);
+            this.SetParameter("password", password, true);
         }
 
         /// <summary>
@@ -78,6 +84,16 @@ namespace Microsoft.Graph
             if (this.HasParameter("message"))
             {
                 request.RequestBody.Message = this.GetParameter<string>("message");
+            }
+
+            if (this.HasParameter("expirationDateTime"))
+            {
+                request.RequestBody.ExpirationDateTime = this.GetParameter<string>("expirationDateTime");
+            }
+
+            if (this.HasParameter("password"))
+            {
+                request.RequestBody.Password = this.GetParameter<string>("password");
             }
 
             return request;

@@ -31,11 +31,29 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets expiration date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets granted to.
         /// For user type permissions, the details of the users &amp; applications for this permission. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grantedTo", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet GrantedTo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets granted to identities.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grantedToIdentities", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<IdentitySet> GrantedToIdentities { get; set; }
+    
+        /// <summary>
+        /// Gets or sets has password.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasPassword", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HasPassword { get; set; }
     
         /// <summary>
         /// Gets or sets inherited from.

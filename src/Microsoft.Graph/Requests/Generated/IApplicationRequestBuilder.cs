@@ -48,6 +48,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IApplicationOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
         IApplicationOwnersCollectionWithReferencesRequestBuilder Owners { get; }
+
+        /// <summary>
+        /// Gets the request builder for TokenLifetimePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for TokenIssuancePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder TokenIssuancePolicies { get; }
     
         /// <summary>
         /// Gets the request builder for Logo.

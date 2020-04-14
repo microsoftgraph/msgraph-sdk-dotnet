@@ -85,6 +85,30 @@ namespace Microsoft.Graph
                 return new ApplicationOwnersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("owners"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for TokenLifetimePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies
+        {
+            get
+            {
+                return new ApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tokenLifetimePolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TokenIssuancePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder TokenIssuancePolicies
+        {
+            get
+            {
+                return new ApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tokenIssuancePolicies"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for Logo.

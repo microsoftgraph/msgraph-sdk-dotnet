@@ -59,6 +59,13 @@ namespace Microsoft.Graph
         public LocaleInfo Language { get; set; }
     
         /// <summary>
+        /// Gets or sets delegateMeetingMessageDeliveryOptions.
+        /// If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delegateMeetingMessageDeliveryOptions", Required = Newtonsoft.Json.Required.Default)]
+        public DelegateMeetingMessageDeliveryOptions? DelegateMeetingMessageDeliveryOptions { get; set; }
+    
+        /// <summary>
         /// Gets or sets workingHours.
         /// The days of the week and hours in a specific time zone that the user works.
         /// </summary>

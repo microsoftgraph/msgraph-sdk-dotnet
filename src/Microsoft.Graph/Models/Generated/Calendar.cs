@@ -80,6 +80,34 @@ namespace Microsoft.Graph
         public EmailAddress Owner { get; set; }
     
         /// <summary>
+        /// Gets or sets allowed online meeting providers.
+        /// Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedOnlineMeetingProviders", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<OnlineMeetingProviderType> AllowedOnlineMeetingProviders { get; set; }
+    
+        /// <summary>
+        /// Gets or sets default online meeting provider.
+        /// The default online meeting provider for meetings sent from this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultOnlineMeetingProvider", Required = Newtonsoft.Json.Required.Default)]
+        public OnlineMeetingProviderType? DefaultOnlineMeetingProvider { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is tallying responses.
+        /// Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isTallyingResponses", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsTallyingResponses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is removable.
+        /// Indicates whether this user calendar can be deleted from the user mailbox.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRemovable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsRemovable { get; set; }
+    
+        /// <summary>
         /// Gets or sets single value extended properties.
         /// The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
         /// </summary>
@@ -92,6 +120,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public ICalendarMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets calendar permissions.
+        /// The permissions of the users with whom the calendar is shared.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarPermissions", Required = Newtonsoft.Json.Required.Default)]
+        public ICalendarCalendarPermissionsCollectionPage CalendarPermissions { get; set; }
     
         /// <summary>
         /// Gets or sets events.

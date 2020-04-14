@@ -52,5 +52,17 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipients", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<DriveRecipient> Recipients { get; set; }
     
+        /// <summary>
+        /// Gets or sets ExpirationDateTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public string ExpirationDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets Password.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "password", Required = Newtonsoft.Json.Required.Default)]
+        public string Password { get; set; }
+    
     }
 }

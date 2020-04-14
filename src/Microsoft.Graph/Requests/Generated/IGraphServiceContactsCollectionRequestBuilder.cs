@@ -36,6 +36,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IOrgContactRequestBuilder"/>.</returns>
         IOrgContactRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for OrgContactDelta.
+        /// </summary>
+        /// <returns>The <see cref="IOrgContactDeltaRequestBuilder"/>.</returns>
+        IOrgContactDeltaRequestBuilder Delta();
     }
 }

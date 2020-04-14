@@ -60,6 +60,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for OrgContactDelta.
+        /// </summary>
+        /// <returns>The <see cref="IOrgContactDeltaRequestBuilder"/>.</returns>
+        public IOrgContactDeltaRequestBuilder Delta()
+        {
+            return new OrgContactDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
     }
 }

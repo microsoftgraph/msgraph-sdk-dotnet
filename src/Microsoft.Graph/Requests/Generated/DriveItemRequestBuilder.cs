@@ -205,13 +205,19 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDriveItemCreateLinkRequestBuilder"/>.</returns>
         public IDriveItemCreateLinkRequestBuilder CreateLink(
             string type,
-            string scope = null)
+            string scope = null,
+            DateTimeOffset? expirationDateTime = null,
+            string password = null,
+            string message = null)
         {
             return new DriveItemCreateLinkRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.createLink"),
                 this.Client,
                 type,
-                scope);
+                scope,
+                expirationDateTime,
+                password,
+                message);
         }
 
         /// <summary>
@@ -258,7 +264,9 @@ namespace Microsoft.Graph
             bool? requireSignIn = null,
             IEnumerable<string> roles = null,
             bool? sendInvitation = null,
-            string message = null)
+            string message = null,
+            string expirationDateTime = null,
+            string password = null)
         {
             return new DriveItemInviteRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.invite"),
@@ -267,7 +275,9 @@ namespace Microsoft.Graph
                 requireSignIn,
                 roles,
                 sendInvitation,
-                message);
+                message,
+                expirationDateTime,
+                password);
         }
 
         /// <summary>

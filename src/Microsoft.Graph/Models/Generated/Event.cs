@@ -234,6 +234,27 @@ namespace Microsoft.Graph
         public string OnlineMeetingUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets is online meeting.
+        /// True if this event has online meeting information, false otherwise. Default is false. Optional.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOnlineMeeting", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsOnlineMeeting { get; set; }
+    
+        /// <summary>
+        /// Gets or sets online meeting provider.
+        /// Represents the online meeting service provider. The possible values are teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetingProvider", Required = Newtonsoft.Json.Required.Default)]
+        public OnlineMeetingProviderType? OnlineMeetingProvider { get; set; }
+    
+        /// <summary>
+        /// Gets or sets online meeting.
+        /// Details for an attendee to join the meeting online. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeeting", Required = Newtonsoft.Json.Required.Default)]
+        public OnlineMeetingInfo OnlineMeeting { get; set; }
+    
+        /// <summary>
         /// Gets or sets attachments.
         /// The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
         /// </summary>

@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CalendarPermissions.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarCalendarPermissionsCollectionRequestBuilder"/>.</returns>
+        public ICalendarCalendarPermissionsCollectionRequestBuilder CalendarPermissions
+        {
+            get
+            {
+                return new CalendarCalendarPermissionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calendarPermissions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Events.
         /// </summary>
         /// <returns>The <see cref="ICalendarEventsCollectionRequestBuilder"/>.</returns>
@@ -115,6 +127,19 @@ namespace Microsoft.Graph
                 EndTime,
                 StartTime,
                 AvailabilityViewInterval);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CalendarAllowedCalendarSharingRoles.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarAllowedCalendarSharingRolesRequestBuilder"/>.</returns>
+        public ICalendarAllowedCalendarSharingRolesRequestBuilder AllowedCalendarSharingRoles(
+            string User)
+        {
+            return new CalendarAllowedCalendarSharingRolesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.allowedCalendarSharingRoles"),
+                this.Client,
+                User);
         }
     
     }

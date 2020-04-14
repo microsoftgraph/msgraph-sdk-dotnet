@@ -66,6 +66,12 @@ namespace Microsoft.Graph
         public string SiteUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets tenantId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        public string TenantId { get; set; }
+    
+        /// <summary>
         /// Gets or sets webId.
         /// The unique identifier (guid) for the item's site (SPWeb).
         /// </summary>

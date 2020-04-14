@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         ICalendarMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
 
         /// <summary>
+        /// Gets the request builder for CalendarPermissions.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarCalendarPermissionsCollectionRequestBuilder"/>.</returns>
+        ICalendarCalendarPermissionsCollectionRequestBuilder CalendarPermissions { get; }
+
+        /// <summary>
         /// Gets the request builder for Events.
         /// </summary>
         /// <returns>The <see cref="ICalendarEventsCollectionRequestBuilder"/>.</returns>
@@ -64,6 +70,13 @@ namespace Microsoft.Graph
             DateTimeTimeZone EndTime = null,
             DateTimeTimeZone StartTime = null,
             Int32? AvailabilityViewInterval = null);
+
+        /// <summary>
+        /// Gets the request builder for CalendarAllowedCalendarSharingRoles.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarAllowedCalendarSharingRolesRequestBuilder"/>.</returns>
+        ICalendarAllowedCalendarSharingRolesRequestBuilder AllowedCalendarSharingRoles(
+            string User);
     
     }
 }

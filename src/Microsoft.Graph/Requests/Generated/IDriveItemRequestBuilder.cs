@@ -113,7 +113,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDriveItemCreateLinkRequestBuilder"/>.</returns>
         IDriveItemCreateLinkRequestBuilder CreateLink(
             string type,
-            string scope = null);
+            string scope = null,
+            DateTimeOffset? expirationDateTime = null,
+            string password = null,
+            string message = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemCreateUploadSession.
@@ -143,7 +146,9 @@ namespace Microsoft.Graph
             bool? requireSignIn = null,
             IEnumerable<string> roles = null,
             bool? sendInvitation = null,
-            string message = null);
+            string message = null,
+            string expirationDateTime = null,
+            string password = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemPreview.
