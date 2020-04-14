@@ -38,7 +38,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MESSAGE_TITLE: Generated v1.0 models and request builders using Typewriter
-        MESSAGE_BODY: "This pull request was automatically created by the GitHub Action, **${{github.workflow}}**. \n\n The commit hash is _${{github.sha}}_. \n\n **Important** Check for unexpected deletions or changes in this PR. \n\n - [ ] Check that the changes match the changes in the captured in the latest commit for [v1.0_metadata.xml](https://github.com/microsoftgraph/msgraph-metadata/blob/master/v1.0_metadata.xml) \n\n cc: @darrelmiller"
+        MESSAGE_BODY: "This pull request was automatically created by the GitHub Action, **${{github.workflow}}**. \n\n The commit hash is _${{github.sha}}_. \n\n **Important** Check for unexpected deletions or changes in this PR. \n\n - [ ] Check that the changes match the changes in the captured commit for [v1.0_metadata.xml](https://github.com/microsoftgraph/msgraph-metadata/blob/master/v1.0_metadata.xml) \n\n cc: @darrelmiller"
         REVIEWERS: peombwa,ddyett,zengin
         ASSIGNEDTO: MIchaelMainer
         LABELS: generated
