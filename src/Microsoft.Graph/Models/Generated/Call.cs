@@ -95,7 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets requested modalities.
-        /// The list of requested modalities.
+        /// The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestedModalities", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Modality> RequestedModalities { get; set; }
