@@ -16,40 +16,49 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type UploadSession.
+    /// The type AttachmentItem.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class UploadSession
+    public partial class AttachmentItem
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UploadSession"/> class.
+        /// Initializes a new instance of the <see cref="AttachmentItem"/> class.
         /// </summary>
-        public UploadSession()
+        public AttachmentItem()
         {
-            this.ODataType = "microsoft.graph.uploadSession";
+            this.ODataType = "microsoft.graph.attachmentItem";
         }
 
         /// <summary>
-        /// Gets or sets uploadUrl.
-        /// The URL endpoint that accepts PUT requests for byte ranges of the file.
+        /// Gets or sets attachmentType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string UploadUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachmentType", Required = Newtonsoft.Json.Required.Default)]
+        public AttachmentType? AttachmentType { get; set; }
     
         /// <summary>
-        /// Gets or sets expirationDateTime.
-        /// The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+        /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
     
         /// <summary>
-        /// Gets or sets nextExpectedRanges.
-        /// A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (e.g. '0-26' to indicate the first 27 bytes of the file).
+        /// Gets or sets size.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nextExpectedRanges", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> NextExpectedRanges { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Size { get; set; }
+    
+        /// <summary>
+        /// Gets or sets contentType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
+        public string ContentType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isInline.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInline", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsInline { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

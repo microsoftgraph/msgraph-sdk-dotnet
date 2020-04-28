@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for AttachmentCreateUploadSession.
+        /// </summary>
+        /// <returns>The <see cref="IAttachmentCreateUploadSessionRequestBuilder"/>.</returns>
+        public IAttachmentCreateUploadSessionRequestBuilder CreateUploadSession(
+            AttachmentItem AttachmentItem)
+        {
+            return new AttachmentCreateUploadSessionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createUploadSession"),
+                this.Client,
+                AttachmentItem);
+        }
     }
 }

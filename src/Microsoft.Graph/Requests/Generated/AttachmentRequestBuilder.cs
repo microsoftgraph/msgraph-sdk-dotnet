@@ -50,5 +50,7 @@ namespace Microsoft.Graph
             return new AttachmentRequest(this.RequestUrl, this.Client, options);
         }
     
+        
+    
     }
 }
