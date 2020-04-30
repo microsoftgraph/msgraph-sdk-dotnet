@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets expiration date time.
+        /// A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ExpirationDateTime { get; set; }
@@ -45,12 +46,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets granted to identities.
+        /// For link type permissions, the details of the users to whom permission was granted. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grantedToIdentities", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<IdentitySet> GrantedToIdentities { get; set; }
     
         /// <summary>
         /// Gets or sets has password.
+        /// This indicates whether password is set for this permission, it's only showing in response. Optional and Read-only and for OneDrive Personal only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasPassword", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasPassword { get; set; }

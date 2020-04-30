@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets dataLocationCode.
+        /// The geographic region code for where this site collection resides. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataLocationCode", Required = Newtonsoft.Json.Required.Default)]
         public string DataLocationCode { get; set; }

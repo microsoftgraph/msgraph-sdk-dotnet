@@ -67,6 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tenantId.
+        /// The unique identifier (guid) for the tenancy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
         public string TenantId { get; set; }

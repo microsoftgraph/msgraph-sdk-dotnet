@@ -67,6 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets permission.
+        /// Used to access the permission representing the underlying sharing link
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permission", Required = Newtonsoft.Json.Required.Default)]
         public Permission Permission { get; set; }
