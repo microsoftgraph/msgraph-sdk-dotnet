@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PolicyBaseRequestBuilder.
     /// </summary>
-    public partial class PolicyBaseRequestBuilder : EntityRequestBuilder, IPolicyBaseRequestBuilder
+    public partial class PolicyBaseRequestBuilder : DirectoryObjectRequestBuilder, IPolicyBaseRequestBuilder
     {
 
         /// <summary>

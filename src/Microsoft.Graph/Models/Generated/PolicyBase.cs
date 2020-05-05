@@ -19,7 +19,7 @@ namespace Microsoft.Graph
     /// The type Policy Base.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class PolicyBase : Entity
+    public partial class PolicyBase : DirectoryObject
     {
     
 		///<summary>
