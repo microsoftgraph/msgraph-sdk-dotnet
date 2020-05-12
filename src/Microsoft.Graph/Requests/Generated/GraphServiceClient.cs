@@ -263,6 +263,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServicePlaces request builder.
+        /// </summary>
+        public IGraphServicePlacesCollectionRequestBuilder Places
+        {
+            get
+            {
+                return new GraphServicePlacesCollectionRequestBuilder(this.BaseUrl + "/places", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDrives request builder.
         /// </summary>
         public IGraphServiceDrivesCollectionRequestBuilder Drives

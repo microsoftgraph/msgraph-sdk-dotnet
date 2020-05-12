@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets recurrence.
+        /// Specifies the pattern for recurrence
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
         public PatternedRecurrence Recurrence { get; set; }
     
         /// <summary>
         /// Gets or sets timeZone.
+        /// Specifies the time zone for the indicated time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeZone", Required = Newtonsoft.Json.Required.Default)]
         public string TimeZone { get; set; }
     
         /// <summary>
         /// Gets or sets timeSlots.
+        /// The time slot(s) preferred by the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeSlots", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<TimeRange> TimeSlots { get; set; }

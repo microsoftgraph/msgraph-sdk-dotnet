@@ -112,6 +112,11 @@ namespace Microsoft.Graph
         IGraphServiceWorkbooksCollectionRequestBuilder Workbooks { get; }
     
         /// <summary>
+        /// Gets the GraphServicePlaces request builder.
+        /// </summary>
+        IGraphServicePlacesCollectionRequestBuilder Places { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDrives request builder.
         /// </summary>
         IGraphServiceDrivesCollectionRequestBuilder Drives { get; }

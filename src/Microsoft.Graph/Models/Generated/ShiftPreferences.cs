@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets availability.
+        /// Availability of the user to be scheduled for work and its recurrence pattern.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availability", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ShiftAvailability> Availability { get; set; }

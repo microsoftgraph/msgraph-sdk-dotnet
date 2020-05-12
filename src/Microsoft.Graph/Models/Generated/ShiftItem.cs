@@ -31,18 +31,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The shift label of the shiftItem.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets notes.
+        /// The shift notes for the shiftItem.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
         public string Notes { get; set; }
     
         /// <summary>
         /// Gets or sets activities.
+        /// An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ShiftActivity> Activities { get; set; }

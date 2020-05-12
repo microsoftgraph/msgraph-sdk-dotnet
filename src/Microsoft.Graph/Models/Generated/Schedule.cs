@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets enabled.
+        /// Indicates whether the schedule is enabled for the team. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? Enabled { get; set; }
     
         /// <summary>
         /// Gets or sets time zone.
+        /// Indicates the time zone of the schedule team using tz database format. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeZone", Required = Newtonsoft.Json.Required.Default)]
         public string TimeZone { get; set; }
     
         /// <summary>
         /// Gets or sets provision status.
+        /// The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisionStatus", Required = Newtonsoft.Json.Required.Default)]
         public OperationStatus? ProvisionStatus { get; set; }
     
         /// <summary>
         /// Gets or sets provision status code.
+        /// Additional information about why schedule provisioning failed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisionStatusCode", Required = Newtonsoft.Json.Required.Default)]
         public string ProvisionStatusCode { get; set; }
@@ -62,36 +66,42 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets time clock enabled.
+        /// Indicates whether time clock is enabled for the schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeClockEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? TimeClockEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets open shifts enabled.
+        /// Indicates whether open shifts are enabled for the schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "openShiftsEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? OpenShiftsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets swap shifts requests enabled.
+        /// Indicates whether swap shifts requests are enabled for the schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "swapShiftsRequestsEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? SwapShiftsRequestsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets offer shift requests enabled.
+        /// Indicates whether offer shift requests are enabled for the schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offerShiftRequestsEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? OfferShiftRequestsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets time off requests enabled.
+        /// Indicates whether time off requests are enabled for the schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeOffRequestsEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? TimeOffRequestsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets shifts.
+        /// The shifts in the schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shifts", Required = Newtonsoft.Json.Required.Default)]
         public IScheduleShiftsCollectionPage Shifts { get; set; }
@@ -104,18 +114,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets times off.
+        /// The instances of times off in the schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timesOff", Required = Newtonsoft.Json.Required.Default)]
         public IScheduleTimesOffCollectionPage TimesOff { get; set; }
     
         /// <summary>
         /// Gets or sets time off reasons.
+        /// The set of reasons for a time off in the schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeOffReasons", Required = Newtonsoft.Json.Required.Default)]
         public IScheduleTimeOffReasonsCollectionPage TimeOffReasons { get; set; }
     
         /// <summary>
         /// Gets or sets scheduling groups.
+        /// The logical grouping of users in the schedule (usually by role).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedulingGroups", Required = Newtonsoft.Json.Required.Default)]
         public IScheduleSchedulingGroupsCollectionPage SchedulingGroups { get; set; }

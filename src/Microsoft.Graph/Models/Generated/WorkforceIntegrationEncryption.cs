@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets protocol.
+        /// Possible values are: sharedSecret, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "protocol", Required = Newtonsoft.Json.Required.Default)]
         public WorkforceIntegrationEncryptionProtocol? Protocol { get; set; }
     
         /// <summary>
         /// Gets or sets secret.
+        /// Encryption shared secret.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secret", Required = Newtonsoft.Json.Required.Default)]
         public string Secret { get; set; }

@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets display name.
+        /// The name of the timeOffReason. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets icon type.
+        /// Supported icon types: none; car; calendar; running; plane; firstAid; doctor; notWorking; clock; juryDuty; globe; cup; phone; weather; umbrella; piggyBank; dog; cake; trafficCone; pin; sunny. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iconType", Required = Newtonsoft.Json.Required.Default)]
         public TimeOffReasonIconType? IconType { get; set; }
     
         /// <summary>
         /// Gets or sets is active.
+        /// Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isActive", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsActive { get; set; }

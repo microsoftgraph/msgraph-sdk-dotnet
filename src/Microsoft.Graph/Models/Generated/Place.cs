@@ -16,40 +16,43 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type Scheduling Group.
+    /// The type Place.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class SchedulingGroup : ChangeTrackedEntity
+    public partial class Place : Entity
     {
     
 		///<summary>
-		/// The SchedulingGroup constructor
+		/// The internal Place constructor
 		///</summary>
-        public SchedulingGroup()
+        protected internal Place()
         {
-            this.ODataType = "microsoft.graph.schedulingGroup";
+            // Don't allow initialization of abstract entity types
         }
-	
+    
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the schedulingGroup. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets is active.
-        /// Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
+        /// Gets or sets geo coordinates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isActive", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsActive { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "geoCoordinates", Required = Newtonsoft.Json.Required.Default)]
+        public OutlookGeoCoordinates GeoCoordinates { get; set; }
     
         /// <summary>
-        /// Gets or sets user ids.
-        /// The list of user IDs that are a member of the schedulingGroup. Required.
+        /// Gets or sets phone.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> UserIds { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phone", Required = Newtonsoft.Json.Required.Default)]
+        public string Phone { get; set; }
+    
+        /// <summary>
+        /// Gets or sets address.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        public PhysicalAddress Address { get; set; }
     
     }
 }

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets openSlotCount.
+        /// Count of the number of slots for the given open shift.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "openSlotCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? OpenSlotCount { get; set; }

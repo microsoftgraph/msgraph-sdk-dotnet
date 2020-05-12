@@ -16,26 +16,31 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type Swap Shifts Change Request.
+    /// The type Room List.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class SwapShiftsChangeRequestObject : OfferShiftRequestObject
+    public partial class RoomList : Place
     {
     
 		///<summary>
-		/// The SwapShiftsChangeRequest constructor
+		/// The RoomList constructor
 		///</summary>
-        public SwapShiftsChangeRequestObject()
+        public RoomList()
         {
-            this.ODataType = "microsoft.graph.swapShiftsChangeRequest";
+            this.ODataType = "microsoft.graph.roomList";
         }
 	
         /// <summary>
-        /// Gets or sets recipient shift id.
-        /// ShiftId for the recipient user with whom the request is to swap.
+        /// Gets or sets email address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipientShiftId", Required = Newtonsoft.Json.Required.Default)]
-        public string RecipientShiftId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string EmailAddress { get; set; }
+    
+        /// <summary>
+        /// Gets or sets rooms.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rooms", Required = Newtonsoft.Json.Required.Default)]
+        public IRoomListRoomsCollectionPage Rooms { get; set; }
     
     }
 }

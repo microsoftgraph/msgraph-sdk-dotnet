@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets recipient action message.
+        /// Custom message sent by recipient of the offer shift request.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipientActionMessage", Required = Newtonsoft.Json.Required.Default)]
         public string RecipientActionMessage { get; set; }
     
         /// <summary>
         /// Gets or sets recipient action date time.
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipientActionDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? RecipientActionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets sender shift id.
+        /// User ID of the sender of the offer shift request.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "senderShiftId", Required = Newtonsoft.Json.Required.Default)]
         public string SenderShiftId { get; set; }
     
         /// <summary>
         /// Gets or sets recipient user id.
+        /// User ID of the recipient of the offer shift request.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipientUserId", Required = Newtonsoft.Json.Required.Default)]
         public string RecipientUserId { get; set; }

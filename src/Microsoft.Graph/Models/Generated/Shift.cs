@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets shared shift.
+        /// The shared version of this shift that is viewable by both employees and managers. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedShift", Required = Newtonsoft.Json.Required.Default)]
         public ShiftItem SharedShift { get; set; }
     
         /// <summary>
         /// Gets or sets draft shift.
+        /// The draft version of this shift that is viewable by managers. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "draftShift", Required = Newtonsoft.Json.Required.Default)]
         public ShiftItem DraftShift { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
+        /// ID of the user assigned to the shift. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets scheduling group id.
+        /// ID of the scheduling group the shift is part of. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedulingGroupId", Required = Newtonsoft.Json.Required.Default)]
         public string SchedulingGroupId { get; set; }

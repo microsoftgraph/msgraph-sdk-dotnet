@@ -32,6 +32,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets open shift id.
+        /// ID for the open shift.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "openShiftId", Required = Newtonsoft.Json.Required.Default)]
         public string OpenShiftId { get; set; }

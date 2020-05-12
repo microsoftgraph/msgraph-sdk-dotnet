@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets startTime.
+        /// Start time for the time range.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
         public TimeOfDay StartTime { get; set; }
     
         /// <summary>
         /// Gets or sets endTime.
+        /// End time for the time range.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endTime", Required = Newtonsoft.Json.Required.Default)]
         public TimeOfDay EndTime { get; set; }
