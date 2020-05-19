@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience.</Description>
-    <Copyright>Â© Microsoft Corporation. All rights reserved.</Copyright>
+    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <AssemblyTitle>Microsoft Graph V1.0 Service Client Library</AssemblyTitle>
     <Authors>Microsoft</Authors>
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
