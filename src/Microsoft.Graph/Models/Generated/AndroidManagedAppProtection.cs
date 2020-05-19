@@ -73,6 +73,20 @@ namespace Microsoft.Graph
         public string MinimumWarningPatchVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets custom browser package id.
+        /// Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserPackageId", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomBrowserPackageId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom browser display name.
+        /// Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomBrowserDisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets apps.
         /// List of apps to which the policy is deployed.
         /// </summary>

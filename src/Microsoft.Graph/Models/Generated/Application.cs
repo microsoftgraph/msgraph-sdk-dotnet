@@ -59,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app roles.
-        /// The collection of application roles that an application may declare. These roles can be assigned to users, groups, or service principals. Not nullable.
+        /// The collection of roles the application declares. With app role assignments, these roles can be assigned to users, groups, or other applications' service principals. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoles", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AppRole> AppRoles { get; set; }

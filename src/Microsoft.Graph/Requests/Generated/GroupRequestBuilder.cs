@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AppRoleAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IGroupAppRoleAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IGroupAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments
+        {
+            get
+            {
+                return new GroupAppRoleAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appRoleAssignments"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IGroupMembersCollectionWithReferencesRequestBuilder"/>.</returns>

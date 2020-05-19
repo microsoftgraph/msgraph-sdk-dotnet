@@ -32,63 +32,62 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets adminConsentDescription.
-        /// Permission help text that appears in the admin consent and app assignment experiences.
+        /// A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adminConsentDescription", Required = Newtonsoft.Json.Required.Default)]
         public string AdminConsentDescription { get; set; }
     
         /// <summary>
         /// Gets or sets adminConsentDisplayName.
-        /// Display name for the permission that appears in the admin consent and app assignment experiences.
+        /// The permission's title, intended to be read by an administrator granting the permission on behalf of all users.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adminConsentDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string AdminConsentDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets id.
-        /// Unique scope permission identifier inside the oauth2Permissions collection.
+        /// Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public Guid? Id { get; set; }
     
         /// <summary>
         /// Gets or sets isEnabled.
-        /// When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false. At that point, in a subsequent call, the permission may be removed.
+        /// When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets origin.
-        /// For internal use.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "origin", Required = Newtonsoft.Json.Required.Default)]
         public string Origin { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// Specifies whether this scope permission can be consented to by an end user, or whether it is a tenant-wide permission that must be consented to by a company administrator. Possible values are User or Admin.
+        /// Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator should be required for consent to the permissions. This will be the default behavior, but each customer can choose to customize the behavior in their organization (by allowing, restricting or limiting user consent to this delegated permission.)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets userConsentDescription.
-        /// Permission help text that appears in the end-user consent experience.
+        /// A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userConsentDescription", Required = Newtonsoft.Json.Required.Default)]
         public string UserConsentDescription { get; set; }
     
         /// <summary>
         /// Gets or sets userConsentDisplayName.
-        /// Display name for the permission that appears in the end-user consent experience.
+        /// A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userConsentDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string UserConsentDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets value.
-        /// The value of the scope claim that the resource application should expect in the OAuth 2.0 access token.
+        /// Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % &amp; ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
         public string Value { get; set; }

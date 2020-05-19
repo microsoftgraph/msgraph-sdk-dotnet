@@ -38,6 +38,54 @@ namespace Microsoft.Graph
         public MeetingMessageType? MeetingMessageType { get; set; }
     
         /// <summary>
+        /// Gets or sets start date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeTimeZone StartDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets end date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeTimeZone EndDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
+        public Location Location { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public EventType? Type { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recurrence.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
+        public PatternedRecurrence Recurrence { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is out of date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOutOfDate", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsOutOfDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is all day.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAllDay", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsAllDay { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is delegated.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDelegated", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDelegated { get; set; }
+    
+        /// <summary>
         /// Gets or sets event.
         /// The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
         /// </summary>

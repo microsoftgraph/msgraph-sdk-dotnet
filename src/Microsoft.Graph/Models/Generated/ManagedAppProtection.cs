@@ -212,6 +212,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumWarningAppVersion", Required = Newtonsoft.Json.Required.Default)]
         public string MinimumWarningAppVersion { get; set; }
     
+        /// <summary>
+        /// Gets or sets managed browser.
+        /// Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedBrowser", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedBrowserType? ManagedBrowser { get; set; }
+    
     }
 }
 

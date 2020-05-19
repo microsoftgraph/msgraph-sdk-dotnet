@@ -32,21 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowedMemberTypes.
-        /// Specifies whether this app role definition can be assigned to users and groups by setting to 'User', or to other applications (that are accessing this application in daemon service scenarios) by setting to 'Application', or to both.
+        /// Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment of other applications' service principals are also known as application permissions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedMemberTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> AllowedMemberTypes { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// Permission help text that appears in the admin app assignment and consent experiences.
+        /// The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
-        /// Display name for the permission that appears in the admin consent and app assignment experiences.
+        /// Display name for the permission that appears in the app role assignment and consent experiences.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
@@ -67,14 +67,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets origin.
-        /// Read-only. Specifies if the app role is defined on the Application object . Must not be included in any POST or PATCH requests.
+        /// Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "origin", Required = Newtonsoft.Json.Required.Default)]
         public string Origin { get; set; }
     
         /// <summary>
         /// Gets or sets value.
-        /// Specifies the value which will be included in the roles claim in authentication and access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % &amp; ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.
+        /// Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % &amp; ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
         public string Value { get; set; }

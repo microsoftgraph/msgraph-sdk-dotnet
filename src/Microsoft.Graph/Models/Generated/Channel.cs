@@ -59,11 +59,25 @@ namespace Microsoft.Graph
         public string WebUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets messages.
+        /// A collection of all the messages in the channel. A navigation property. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
+        public IChannelMessagesCollectionPage Messages { get; set; }
+    
+        /// <summary>
         /// Gets or sets tabs.
         /// A collection of all the tabs in the channel. A navigation property.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tabs", Required = Newtonsoft.Json.Required.Default)]
         public IChannelTabsCollectionPage Tabs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets files folder.
+        /// Metadata for the location where the channel's files are stored.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filesFolder", Required = Newtonsoft.Json.Required.Default)]
+        public DriveItem FilesFolder { get; set; }
     
     }
 }

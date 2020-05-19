@@ -255,6 +255,12 @@ namespace Microsoft.Graph
         public OnlineMeetingInfo OnlineMeeting { get; set; }
     
         /// <summary>
+        /// Gets or sets allow new time proposals.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewTimeProposals", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowNewTimeProposals { get; set; }
+    
+        /// <summary>
         /// Gets or sets attachments.
         /// The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
         /// </summary>

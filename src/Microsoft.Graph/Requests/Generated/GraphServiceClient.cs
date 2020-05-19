@@ -252,6 +252,28 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceServicePrincipals request builder.
+        /// </summary>
+        public IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals
+        {
+            get
+            {
+                return new GraphServiceServicePrincipalsCollectionRequestBuilder(this.BaseUrl + "/servicePrincipals", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceOauth2PermissionGrants request builder.
+        /// </summary>
+        public IGraphServiceOauth2PermissionGrantsCollectionRequestBuilder Oauth2PermissionGrants
+        {
+            get
+            {
+                return new GraphServiceOauth2PermissionGrantsCollectionRequestBuilder(this.BaseUrl + "/oauth2PermissionGrants", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceWorkbooks request builder.
         /// </summary>
         public IGraphServiceWorkbooksCollectionRequestBuilder Workbooks

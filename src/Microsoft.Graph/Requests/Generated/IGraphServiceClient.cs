@@ -107,6 +107,16 @@ namespace Microsoft.Graph
         IGraphServiceContractsCollectionRequestBuilder Contracts { get; }
     
         /// <summary>
+        /// Gets the GraphServiceServicePrincipals request builder.
+        /// </summary>
+        IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceOauth2PermissionGrants request builder.
+        /// </summary>
+        IGraphServiceOauth2PermissionGrantsCollectionRequestBuilder Oauth2PermissionGrants { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceWorkbooks request builder.
         /// </summary>
         IGraphServiceWorkbooksCollectionRequestBuilder Workbooks { get; }

@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets email address.
+        /// The email address of the room list.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddress", Required = Newtonsoft.Json.Required.Default)]
         public string EmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets rooms.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rooms", Required = Newtonsoft.Json.Required.Default)]
         public IRoomListRoomsCollectionPage Rooms { get; set; }

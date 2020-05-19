@@ -472,6 +472,12 @@ namespace Microsoft.Graph
         public IEnumerable<string> Skills { get; set; }
     
         /// <summary>
+        /// Gets or sets app role assignments.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignments", Required = Newtonsoft.Json.Required.Default)]
+        public IUserAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
+    
+        /// <summary>
         /// Gets or sets owned devices.
         /// Devices that are owned by the user. Read-only. Nullable.
         /// </summary>
@@ -512,6 +518,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdObjects", Required = Newtonsoft.Json.Required.Default)]
         public IUserCreatedObjectsCollectionWithReferencesPage CreatedObjects { get; set; }
+    
+        /// <summary>
+        /// Gets or sets oauth2permission grants.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oauth2PermissionGrants", Required = Newtonsoft.Json.Required.Default)]
+        public IUserOauth2PermissionGrantsCollectionWithReferencesPage Oauth2PermissionGrants { get; set; }
     
         /// <summary>
         /// Gets or sets owned objects.

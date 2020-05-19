@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets last used.
-        /// Information about when the item was last viewed and modified by the user. Read only.
+        /// Information about when the item was last viewed or modified by the user. Read only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUsed", Required = Newtonsoft.Json.Required.Default)]
         public UsageDetails LastUsed { get; set; }

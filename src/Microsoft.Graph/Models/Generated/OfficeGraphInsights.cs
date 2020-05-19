@@ -32,21 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets trending.
-        /// Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
+        /// Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trending", Required = Newtonsoft.Json.Required.Default)]
         public IOfficeGraphInsightsTrendingCollectionPage Trending { get; set; }
     
         /// <summary>
         /// Gets or sets shared.
-        /// Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
+        /// Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shared", Required = Newtonsoft.Json.Required.Default)]
         public IOfficeGraphInsightsSharedCollectionPage Shared { get; set; }
     
         /// <summary>
         /// Gets or sets used.
-        /// Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.
+        /// Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "used", Required = Newtonsoft.Json.Required.Default)]
         public IOfficeGraphInsightsUsedCollectionPage Used { get; set; }
