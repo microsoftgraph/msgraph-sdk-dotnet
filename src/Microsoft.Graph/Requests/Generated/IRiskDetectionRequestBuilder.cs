@@ -14,24 +14,22 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The interface IOnlineMeetingRequestBuilder.
+    /// The interface IRiskDetectionRequestBuilder.
     /// </summary>
-    public partial interface IOnlineMeetingRequestBuilder : IEntityRequestBuilder
+    public partial interface IRiskDetectionRequestBuilder : IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IOnlineMeetingRequest Request();
+        new IRiskDetectionRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IOnlineMeetingRequest Request(IEnumerable<Option> options);
-    
-        
+        new IRiskDetectionRequest Request(IEnumerable<Option> options);
     
     }
 }

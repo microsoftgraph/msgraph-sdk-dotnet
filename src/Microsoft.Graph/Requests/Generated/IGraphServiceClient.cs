@@ -152,6 +152,16 @@ namespace Microsoft.Graph
         IGraphServiceGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies { get; }
     
         /// <summary>
+        /// Gets the GraphServiceRiskDetections request builder.
+        /// </summary>
+        IGraphServiceRiskDetectionsCollectionRequestBuilder RiskDetections { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceRiskyUsers request builder.
+        /// </summary>
+        IGraphServiceRiskyUsersCollectionRequestBuilder RiskyUsers { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDataPolicyOperations request builder.
         /// </summary>
         IGraphServiceDataPolicyOperationsCollectionRequestBuilder DataPolicyOperations { get; }
@@ -197,6 +207,11 @@ namespace Microsoft.Graph
         IDriveRequestBuilder Drive { get; }
     
         /// <summary>
+        /// Gets the GraphServiceCommunications request builder.
+        /// </summary>
+        ICloudCommunicationsRequestBuilder Communications { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDeviceAppManagement request builder.
         /// </summary>
         IDeviceAppManagementRequestBuilder DeviceAppManagement { get; }
@@ -220,11 +235,6 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceSecurity request builder.
         /// </summary>
         ISecurityRequestBuilder Security { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceCommunications request builder.
-        /// </summary>
-        ICloudCommunicationsRequestBuilder Communications { get; }
     
         /// <summary>
         /// Gets the GraphServiceAppCatalogs request builder.

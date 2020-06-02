@@ -60,6 +60,27 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for OnlineMeetingCreateOrGet.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingCreateOrGetRequestBuilder"/>.</returns>
+        public IOnlineMeetingCreateOrGetRequestBuilder CreateOrGet(
+            string externalId,
+            ChatInfo chatInfo = null,
+            DateTimeOffset? endDateTime = null,
+            MeetingParticipants participants = null,
+            DateTimeOffset? startDateTime = null,
+            string subject = null)
+        {
+            return new OnlineMeetingCreateOrGetRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createOrGet"),
+                this.Client,
+                externalId,
+                chatInfo,
+                endDateTime,
+                participants,
+                startDateTime,
+                subject);
+        }
     }
 }

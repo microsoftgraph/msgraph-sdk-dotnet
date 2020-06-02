@@ -351,6 +351,28 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceRiskDetections request builder.
+        /// </summary>
+        public IGraphServiceRiskDetectionsCollectionRequestBuilder RiskDetections
+        {
+            get
+            {
+                return new GraphServiceRiskDetectionsCollectionRequestBuilder(this.BaseUrl + "/riskDetections", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceRiskyUsers request builder.
+        /// </summary>
+        public IGraphServiceRiskyUsersCollectionRequestBuilder RiskyUsers
+        {
+            get
+            {
+                return new GraphServiceRiskyUsersCollectionRequestBuilder(this.BaseUrl + "/riskyUsers", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDataPolicyOperations request builder.
         /// </summary>
         public IGraphServiceDataPolicyOperationsCollectionRequestBuilder DataPolicyOperations
@@ -450,6 +472,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceCommunications request builder.
+        /// </summary>
+        public ICloudCommunicationsRequestBuilder Communications
+        {
+            get
+            {
+                return new CloudCommunicationsRequestBuilder(this.BaseUrl + "/communications", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDeviceAppManagement request builder.
         /// </summary>
         public IDeviceAppManagementRequestBuilder DeviceAppManagement
@@ -501,17 +534,6 @@ namespace Microsoft.Graph
             get
             {
                 return new SecurityRequestBuilder(this.BaseUrl + "/Security", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceCommunications request builder.
-        /// </summary>
-        public ICloudCommunicationsRequestBuilder Communications
-        {
-            get
-            {
-                return new CloudCommunicationsRequestBuilder(this.BaseUrl + "/communications", this);
             }
         }
     

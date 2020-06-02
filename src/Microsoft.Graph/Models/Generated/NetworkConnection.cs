@@ -52,6 +52,12 @@ namespace Microsoft.Graph
         public string DestinationDomain { get; set; }
     
         /// <summary>
+        /// Gets or sets destinationLocation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string DestinationLocation { get; set; }
+    
+        /// <summary>
         /// Gets or sets destinationPort.
         /// Destination port (of the network connection).
         /// </summary>
@@ -134,6 +140,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceAddress", Required = Newtonsoft.Json.Required.Default)]
         public string SourceAddress { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sourceLocation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string SourceLocation { get; set; }
     
         /// <summary>
         /// Gets or sets sourcePort.

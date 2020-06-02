@@ -149,6 +149,12 @@ namespace Microsoft.Graph
         public IEnumerable<HostSecurityState> HostStates { get; set; }
     
         /// <summary>
+        /// Gets or sets incident ids.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incidentIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> IncidentIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// Time at which the alert entity was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
@@ -189,6 +195,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registryKeyStates", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RegistryKeyState> RegistryKeyStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security resources.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityResources", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<SecurityResource> SecurityResources { get; set; }
     
         /// <summary>
         /// Gets or sets severity.

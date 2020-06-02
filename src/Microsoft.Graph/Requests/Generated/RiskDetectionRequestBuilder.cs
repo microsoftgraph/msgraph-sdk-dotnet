@@ -14,17 +14,17 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type OnlineMeetingRequestBuilder.
+    /// The type RiskDetectionRequestBuilder.
     /// </summary>
-    public partial class OnlineMeetingRequestBuilder : EntityRequestBuilder, IOnlineMeetingRequestBuilder
+    public partial class RiskDetectionRequestBuilder : EntityRequestBuilder, IRiskDetectionRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new OnlineMeetingRequestBuilder.
+        /// Constructs a new RiskDetectionRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public OnlineMeetingRequestBuilder(
+        public RiskDetectionRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IOnlineMeetingRequest Request()
+        public new IRiskDetectionRequest Request()
         {
             return this.Request(null);
         }
@@ -45,12 +45,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IOnlineMeetingRequest Request(IEnumerable<Option> options)
+        public new IRiskDetectionRequest Request(IEnumerable<Option> options)
         {
-            return new OnlineMeetingRequest(this.RequestUrl, this.Client, options);
+            return new RiskDetectionRequest(this.RequestUrl, this.Client, options);
         }
-    
-        
     
     }
 }

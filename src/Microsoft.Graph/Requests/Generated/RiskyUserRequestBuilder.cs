@@ -14,17 +14,17 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type OnlineMeetingRequestBuilder.
+    /// The type RiskyUserRequestBuilder.
     /// </summary>
-    public partial class OnlineMeetingRequestBuilder : EntityRequestBuilder, IOnlineMeetingRequestBuilder
+    public partial class RiskyUserRequestBuilder : EntityRequestBuilder, IRiskyUserRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new OnlineMeetingRequestBuilder.
+        /// Constructs a new RiskyUserRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public OnlineMeetingRequestBuilder(
+        public RiskyUserRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IOnlineMeetingRequest Request()
+        public new IRiskyUserRequest Request()
         {
             return this.Request(null);
         }
@@ -45,9 +45,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IOnlineMeetingRequest Request(IEnumerable<Option> options)
+        public new IRiskyUserRequest Request(IEnumerable<Option> options)
         {
-            return new OnlineMeetingRequest(this.RequestUrl, this.Client, options);
+            return new RiskyUserRequest(this.RequestUrl, this.Client, options);
+        }
+    
+        /// <summary>
+        /// Gets the request builder for History.
+        /// </summary>
+        /// <returns>The <see cref="IRiskyUserHistoryCollectionRequestBuilder"/>.</returns>
+        public IRiskyUserHistoryCollectionRequestBuilder History
+        {
+            get
+            {
+                return new RiskyUserHistoryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("history"), this.Client);
+            }
         }
     
         

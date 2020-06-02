@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets assigned labels.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedLabels", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AssignedLabel> AssignedLabels { get; set; }
+    
+        /// <summary>
         /// Gets or sets assigned licenses.
         /// The licenses that are assigned to the group. Returned only on $select. Read-only.
         /// </summary>
@@ -64,6 +70,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets expiration date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets has members with license errors.
@@ -106,6 +118,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNickname", Required = Newtonsoft.Json.Required.Default)]
         public string MailNickname { get; set; }
+    
+        /// <summary>
+        /// Gets or sets membership rule.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipRule", Required = Newtonsoft.Json.Required.Default)]
+        public string MembershipRule { get; set; }
+    
+        /// <summary>
+        /// Gets or sets membership rule processing state.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipRuleProcessingState", Required = Newtonsoft.Json.Required.Default)]
+        public string MembershipRuleProcessingState { get; set; }
     
         /// <summary>
         /// Gets or sets on premises domain name.
@@ -161,6 +185,12 @@ namespace Microsoft.Graph
         public string PreferredDataLocation { get; set; }
     
         /// <summary>
+        /// Gets or sets preferred language.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredLanguage", Required = Newtonsoft.Json.Required.Default)]
+        public string PreferredLanguage { get; set; }
+    
+        /// <summary>
         /// Gets or sets proxy addresses.
         /// Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter.
         /// </summary>
@@ -187,6 +217,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityIdentifier", Required = Newtonsoft.Json.Required.Default)]
         public string SecurityIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets theme.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "theme", Required = Newtonsoft.Json.Required.Default)]
+        public string Theme { get; set; }
     
         /// <summary>
         /// Gets or sets visibility.
