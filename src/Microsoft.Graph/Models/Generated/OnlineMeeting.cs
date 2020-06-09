@@ -93,6 +93,19 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "videoTeleconferenceId", Required = Newtonsoft.Json.Required.Default)]
         public string VideoTeleconferenceId { get; set; }
     
+        /// <summary>
+        /// Gets or sets external id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
+        public string ExternalId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets join information.
+        /// The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinInformation", Required = Newtonsoft.Json.Required.Default)]
+        public ItemBody JoinInformation { get; set; }
+    
     }
 }
 

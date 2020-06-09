@@ -16,33 +16,33 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type ResourceAccess.
+    /// The type SecurityResource.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class ResourceAccess
+    public partial class SecurityResource
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResourceAccess"/> class.
+        /// Initializes a new instance of the <see cref="SecurityResource"/> class.
         /// </summary>
-        public ResourceAccess()
+        public SecurityResource()
         {
-            this.ODataType = "microsoft.graph.resourceAccess";
+            this.ODataType = "microsoft.graph.securityResource";
         }
 
         /// <summary>
-        /// Gets or sets id.
-        /// The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
+        /// Gets or sets resource.
+        /// Name of the resource that is related to current alert. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? Id { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        public string Resource { get; set; }
     
         /// <summary>
-        /// Gets or sets type.
-        /// Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are Scope or Role.
+        /// Gets or sets resourceType.
+        /// Represents type of security resources related to an alert. Possible values are: attacked, related.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public string Type { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceType", Required = Newtonsoft.Json.Required.Default)]
+        public SecurityResourceType? ResourceType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

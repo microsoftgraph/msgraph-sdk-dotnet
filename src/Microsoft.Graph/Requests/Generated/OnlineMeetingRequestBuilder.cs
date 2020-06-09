@@ -50,5 +50,7 @@ namespace Microsoft.Graph
             return new OnlineMeetingRequest(this.RequestUrl, this.Client, options);
         }
     
+        
+    
     }
 }

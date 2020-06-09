@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets applicationName.
-        /// Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
+        /// Name of the application managing the network connection (for example, Facebook or SMTP).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationName", Required = Newtonsoft.Json.Required.Default)]
         public string ApplicationName { get; set; }
@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationDomain", Required = Newtonsoft.Json.Required.Default)]
         public string DestinationDomain { get; set; }
+    
+        /// <summary>
+        /// Gets or sets destinationLocation.
+        /// Location (by IP address mapping) associated with the destination of a network connection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string DestinationLocation { get; set; }
     
         /// <summary>
         /// Gets or sets destinationPort.
@@ -134,6 +141,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceAddress", Required = Newtonsoft.Json.Required.Default)]
         public string SourceAddress { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sourceLocation.
+        /// Location (by IP address mapping) associated with the source of a network connection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string SourceLocation { get; set; }
     
         /// <summary>
         /// Gets or sets sourcePort.

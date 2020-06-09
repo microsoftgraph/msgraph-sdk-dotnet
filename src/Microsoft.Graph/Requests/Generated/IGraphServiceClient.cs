@@ -197,6 +197,11 @@ namespace Microsoft.Graph
         IDriveRequestBuilder Drive { get; }
     
         /// <summary>
+        /// Gets the GraphServiceCommunications request builder.
+        /// </summary>
+        ICloudCommunicationsRequestBuilder Communications { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDeviceAppManagement request builder.
         /// </summary>
         IDeviceAppManagementRequestBuilder DeviceAppManagement { get; }
@@ -220,11 +225,6 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceSecurity request builder.
         /// </summary>
         ISecurityRequestBuilder Security { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceCommunications request builder.
-        /// </summary>
-        ICloudCommunicationsRequestBuilder Communications { get; }
     
         /// <summary>
         /// Gets the GraphServiceAppCatalogs request builder.

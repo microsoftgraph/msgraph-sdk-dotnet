@@ -36,6 +36,16 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IOnlineMeetingRequestBuilder"/>.</returns>
         IOnlineMeetingRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for OnlineMeetingCreateOrGet.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingCreateOrGetRequestBuilder"/>.</returns>
+        IOnlineMeetingCreateOrGetRequestBuilder CreateOrGet(
+            string externalId,
+            ChatInfo chatInfo = null,
+            DateTimeOffset? endDateTime = null,
+            MeetingParticipants participants = null,
+            DateTimeOffset? startDateTime = null,
+            string subject = null);
     }
 }

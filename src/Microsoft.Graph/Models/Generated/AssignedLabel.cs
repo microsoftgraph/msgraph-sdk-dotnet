@@ -16,33 +16,31 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type ResourceAccess.
+    /// The type AssignedLabel.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class ResourceAccess
+    public partial class AssignedLabel
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResourceAccess"/> class.
+        /// Initializes a new instance of the <see cref="AssignedLabel"/> class.
         /// </summary>
-        public ResourceAccess()
+        public AssignedLabel()
         {
-            this.ODataType = "microsoft.graph.resourceAccess";
+            this.ODataType = "microsoft.graph.assignedLabel";
         }
 
         /// <summary>
-        /// Gets or sets id.
-        /// The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
+        /// Gets or sets labelId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? Id { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labelId", Required = Newtonsoft.Json.Required.Default)]
+        public string LabelId { get; set; }
     
         /// <summary>
-        /// Gets or sets type.
-        /// Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are Scope or Role.
+        /// Gets or sets displayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public string Type { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

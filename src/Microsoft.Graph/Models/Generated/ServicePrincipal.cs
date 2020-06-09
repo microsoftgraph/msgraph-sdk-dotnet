@@ -66,6 +66,13 @@ namespace Microsoft.Graph
         public string AppId { get; set; }
     
         /// <summary>
+        /// Gets or sets application template id.
+        /// Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationTemplateId", Required = Newtonsoft.Json.Required.Default)]
+        public string ApplicationTemplateId { get; set; }
+    
+        /// <summary>
         /// Gets or sets app owner organization id.
         /// Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.
         /// </summary>
@@ -115,11 +122,25 @@ namespace Microsoft.Graph
         public IEnumerable<KeyCredential> KeyCredentials { get; set; }
     
         /// <summary>
+        /// Gets or sets login url.
+        /// Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Office 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Office 365, the Azure AD My Apps, or the Azure AD SSO URL.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loginUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string LoginUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets logout url.
         /// Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logoutUrl", Required = Newtonsoft.Json.Required.Default)]
         public string LogoutUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notification email addresses.
+        /// Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationEmailAddresses", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> NotificationEmailAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets oauth2permission scopes.
@@ -136,6 +157,13 @@ namespace Microsoft.Graph
         public IEnumerable<PasswordCredential> PasswordCredentials { get; set; }
     
         /// <summary>
+        /// Gets or sets preferred single sign on mode.
+        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Office 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredSingleSignOnMode", Required = Newtonsoft.Json.Required.Default)]
+        public string PreferredSingleSignOnMode { get; set; }
+    
+        /// <summary>
         /// Gets or sets reply urls.
         /// The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
         /// </summary>
@@ -148,6 +176,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalNames", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ServicePrincipalNames { get; set; }
+    
+        /// <summary>
+        /// Gets or sets saml single sign on settings.
+        /// The collection for settings related to saml single sign-on.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "samlSingleSignOnSettings", Required = Newtonsoft.Json.Required.Default)]
+        public SamlSingleSignOnSettings SamlSingleSignOnSettings { get; set; }
     
         /// <summary>
         /// Gets or sets service principal type.

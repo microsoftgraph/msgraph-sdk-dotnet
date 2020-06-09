@@ -16,33 +16,26 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type ResourceAccess.
+    /// The type SamlSingleSignOnSettings.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class ResourceAccess
+    public partial class SamlSingleSignOnSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResourceAccess"/> class.
+        /// Initializes a new instance of the <see cref="SamlSingleSignOnSettings"/> class.
         /// </summary>
-        public ResourceAccess()
+        public SamlSingleSignOnSettings()
         {
-            this.ODataType = "microsoft.graph.resourceAccess";
+            this.ODataType = "microsoft.graph.samlSingleSignOnSettings";
         }
 
         /// <summary>
-        /// Gets or sets id.
-        /// The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
+        /// Gets or sets relayState.
+        /// The relative URI the service provider would redirect to after completion of the single sign-on flow.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? Id { get; set; }
-    
-        /// <summary>
-        /// Gets or sets type.
-        /// Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are Scope or Role.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public string Type { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relayState", Required = Newtonsoft.Json.Required.Default)]
+        public string RelayState { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
