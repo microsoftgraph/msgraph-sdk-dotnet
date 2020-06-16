@@ -172,6 +172,11 @@ namespace Microsoft.Graph
         IAuditLogRootRequestBuilder AuditLogs { get; }
     
         /// <summary>
+        /// Gets the GraphServiceIdentity request builder.
+        /// </summary>
+        IIdentityContainerRequestBuilder Identity { get; }
+    
+        /// <summary>
         /// Gets the GraphServicePolicies request builder.
         /// </summary>
         IPolicyRootRequestBuilder Policies { get; }

@@ -395,6 +395,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceIdentity request builder.
+        /// </summary>
+        public IIdentityContainerRequestBuilder Identity
+        {
+            get
+            {
+                return new IdentityContainerRequestBuilder(this.BaseUrl + "/identity", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServicePolicies request builder.
         /// </summary>
         public IPolicyRootRequestBuilder Policies

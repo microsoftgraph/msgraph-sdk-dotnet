@@ -109,6 +109,30 @@ namespace Microsoft.Graph
                 return new PolicyRootTokenLifetimePoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tokenLifetimePolicies"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for IdentitySecurityDefaultsEnforcementPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder"/>.</returns>
+        public IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder IdentitySecurityDefaultsEnforcementPolicy
+        {
+            get
+            {
+                return new IdentitySecurityDefaultsEnforcementPolicyRequestBuilder(this.AppendSegmentToRequestUrl("identitySecurityDefaultsEnforcementPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ConditionalAccessPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootConditionalAccessPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootConditionalAccessPoliciesCollectionRequestBuilder ConditionalAccessPolicies
+        {
+            get
+            {
+                return new PolicyRootConditionalAccessPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("conditionalAccessPolicies"), this.Client);
+            }
+        }
     
     }
 }
