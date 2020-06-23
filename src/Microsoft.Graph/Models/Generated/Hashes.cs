@@ -52,6 +52,12 @@ namespace Microsoft.Graph
         public string Sha1Hash { get; set; }
     
         /// <summary>
+        /// Gets or sets sha256Hash.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sha256Hash", Required = Newtonsoft.Json.Required.Default)]
+        public string Sha256Hash { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

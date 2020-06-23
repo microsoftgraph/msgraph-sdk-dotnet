@@ -66,6 +66,12 @@ namespace Microsoft.Graph
         public Int64? Used { get; set; }
     
         /// <summary>
+        /// Gets or sets storagePlanInformation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storagePlanInformation", Required = Newtonsoft.Json.Required.Default)]
+        public StoragePlanInformation StoragePlanInformation { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

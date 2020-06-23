@@ -157,6 +157,13 @@ namespace Microsoft.Graph
         public IDeviceManagementDeviceManagementPartnersCollectionPage DeviceManagementPartners { get; set; }
     
         /// <summary>
+        /// Gets or sets compliance management partners.
+        /// The list of Compliance Management Partners configured by the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceManagementPartners", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementComplianceManagementPartnersCollectionPage ComplianceManagementPartners { get; set; }
+    
+        /// <summary>
         /// Gets or sets apple push notification certificate.
         /// Apple push notification certificate.
         /// </summary>

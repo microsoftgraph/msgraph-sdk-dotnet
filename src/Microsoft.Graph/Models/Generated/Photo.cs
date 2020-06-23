@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         public Int32? Iso { get; set; }
     
         /// <summary>
+        /// Gets or sets orientation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orientation", Required = Newtonsoft.Json.Required.Default)]
+        public Int16? Orientation { get; set; }
+    
+        /// <summary>
         /// Gets or sets takenDateTime.
         /// Represents the date and time the photo was taken. Read-only.
         /// </summary>

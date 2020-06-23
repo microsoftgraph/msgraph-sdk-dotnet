@@ -250,6 +250,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (applicationToInitialize.HomeRealmDiscoveryPolicies != null && applicationToInitialize.HomeRealmDiscoveryPolicies.CurrentPage != null)
+                {
+                    applicationToInitialize.HomeRealmDiscoveryPolicies.AdditionalData = applicationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    applicationToInitialize.AdditionalData.TryGetValue("homeRealmDiscoveryPolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        applicationToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (applicationToInitialize.Owners != null && applicationToInitialize.Owners.CurrentPage != null)
                 {
                     applicationToInitialize.Owners.AdditionalData = applicationToInitialize.AdditionalData;

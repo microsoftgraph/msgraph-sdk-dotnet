@@ -219,6 +219,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ComplianceManagementPartners.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder ComplianceManagementPartners
+        {
+            get
+            {
+                return new DeviceManagementComplianceManagementPartnersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("complianceManagementPartners"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ApplePushNotificationCertificate.
         /// </summary>
         /// <returns>The <see cref="IApplePushNotificationCertificateRequestBuilder"/>.</returns>

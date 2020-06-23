@@ -220,11 +220,23 @@ namespace Microsoft.Graph
         public IServicePrincipalAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
     
         /// <summary>
+        /// Gets or sets claims mapping policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimsMappingPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalClaimsMappingPoliciesCollectionWithReferencesPage ClaimsMappingPolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets endpoints.
         /// Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpoints", Required = Newtonsoft.Json.Required.Default)]
         public IServicePrincipalEndpointsCollectionPage Endpoints { get; set; }
+    
+        /// <summary>
+        /// Gets or sets home realm discovery policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeRealmDiscoveryPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesPage HomeRealmDiscoveryPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets oauth2permission grants.
@@ -266,6 +278,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownedObjects", Required = Newtonsoft.Json.Required.Default)]
         public IServicePrincipalOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token issuance policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuancePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalTokenIssuancePoliciesCollectionWithReferencesPage TokenIssuancePolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token lifetime policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenLifetimePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }
     
     }
 }

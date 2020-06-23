@@ -52,6 +52,12 @@ namespace Microsoft.Graph
         public string Name { get; set; }
     
         /// <summary>
+        /// Gets or sets fileSize.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileSize", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? FileSize { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

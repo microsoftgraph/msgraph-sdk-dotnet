@@ -101,6 +101,12 @@ namespace Microsoft.Graph
         public bool? EnforceUniqueValues { get; set; }
     
         /// <summary>
+        /// Gets or sets geolocation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "geolocation", Required = Newtonsoft.Json.Required.Default)]
+        public GeolocationColumn Geolocation { get; set; }
+    
+        /// <summary>
         /// Gets or sets hidden.
         /// Specifies whether the column is displayed in the user interface.
         /// </summary>

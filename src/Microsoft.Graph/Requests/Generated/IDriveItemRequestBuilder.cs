@@ -123,7 +123,8 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDriveItemCreateUploadSessionRequestBuilder"/>.</returns>
         IDriveItemCreateUploadSessionRequestBuilder CreateUploadSession(
-            DriveItemUploadableProperties item = null);
+            DriveItemUploadableProperties item = null,
+            bool? deferCommit = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemFollow.
@@ -157,6 +158,22 @@ namespace Microsoft.Graph
         IDriveItemPreviewRequestBuilder Preview(
             string page = null,
             double? zoom = null);
+
+        /// <summary>
+        /// Gets the request builder for DriveItemRestore.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemRestoreRequestBuilder"/>.</returns>
+        IDriveItemRestoreRequestBuilder Restore(
+            ItemReference parentReference = null,
+            string name = null);
+
+        /// <summary>
+        /// Gets the request builder for DriveItemValidatePermission.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemValidatePermissionRequestBuilder"/>.</returns>
+        IDriveItemValidatePermissionRequestBuilder ValidatePermission(
+            string password,
+            string challengeToken = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemDelta.

@@ -30,12 +30,6 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.identityContainer";
         }
 	
-        /// <summary>
-        /// Gets or sets conditional access.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccess", Required = Newtonsoft.Json.Required.Default)]
-        public ConditionalAccessRoot ConditionalAccess { get; set; }
-    
     }
 }
 

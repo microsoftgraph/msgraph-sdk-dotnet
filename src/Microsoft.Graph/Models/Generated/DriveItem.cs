@@ -101,6 +101,12 @@ namespace Microsoft.Graph
         public Package Package { get; set; }
     
         /// <summary>
+        /// Gets or sets pending operations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingOperations", Required = Newtonsoft.Json.Required.Default)]
+        public PendingOperations PendingOperations { get; set; }
+    
+        /// <summary>
         /// Gets or sets photo.
         /// Photo metadata, if the item is a photo. Read-only.
         /// </summary>

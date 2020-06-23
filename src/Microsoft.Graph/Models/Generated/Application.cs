@@ -217,6 +217,12 @@ namespace Microsoft.Graph
         public DirectoryObject CreatedOnBehalfOf { get; set; }
     
         /// <summary>
+        /// Gets or sets home realm discovery policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeRealmDiscoveryPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesPage HomeRealmDiscoveryPolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets owners.
         /// Directory objects that are owners of the application. The owners are a set of non-admin users who are allowed to modify this object. Requires version 2013-11-08 or newer. Read-only. Nullable.
         /// </summary>
