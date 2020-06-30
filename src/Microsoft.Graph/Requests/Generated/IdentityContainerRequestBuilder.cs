@@ -50,17 +50,5 @@ namespace Microsoft.Graph
             return new IdentityContainerRequest(this.RequestUrl, this.Client, options);
         }
     
-        /// <summary>
-        /// Gets the request builder for ConditionalAccess.
-        /// </summary>
-        /// <returns>The <see cref="IConditionalAccessRootRequestBuilder"/>.</returns>
-        public IConditionalAccessRootRequestBuilder ConditionalAccess
-        {
-            get
-            {
-                return new ConditionalAccessRootRequestBuilder(this.AppendSegmentToRequestUrl("conditionalAccess"), this.Client);
-            }
-        }
-    
     }
 }

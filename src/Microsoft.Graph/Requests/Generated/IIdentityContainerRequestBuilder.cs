@@ -31,11 +31,5 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IIdentityContainerRequest Request(IEnumerable<Option> options);
     
-        /// <summary>
-        /// Gets the request builder for ConditionalAccess.
-        /// </summary>
-        /// <returns>The <see cref="IConditionalAccessRootRequestBuilder"/>.</returns>
-        IConditionalAccessRootRequestBuilder ConditionalAccess { get; }
-    
     }
 }

@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preview.
-        /// A short summary from the body of the latest post in this converstaion.
+        /// A short summary from the body of the latest post in this conversation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preview", Required = Newtonsoft.Json.Required.Default)]
         public string Preview { get; set; }

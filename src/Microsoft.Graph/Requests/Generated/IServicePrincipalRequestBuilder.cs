@@ -44,10 +44,22 @@ namespace Microsoft.Graph
         IServicePrincipalAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments { get; }
 
         /// <summary>
+        /// Gets the request builder for ClaimsMappingPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalClaimsMappingPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalClaimsMappingPoliciesCollectionWithReferencesRequestBuilder ClaimsMappingPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for Endpoints.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalEndpointsCollectionRequestBuilder"/>.</returns>
         IServicePrincipalEndpointsCollectionRequestBuilder Endpoints { get; }
+
+        /// <summary>
+        /// Gets the request builder for HomeRealmDiscoveryPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder HomeRealmDiscoveryPolicies { get; }
 
         /// <summary>
         /// Gets the request builder for Oauth2PermissionGrants.
@@ -84,6 +96,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalOwnedObjectsCollectionWithReferencesRequestBuilder"/>.</returns>
         IServicePrincipalOwnedObjectsCollectionWithReferencesRequestBuilder OwnedObjects { get; }
+
+        /// <summary>
+        /// Gets the request builder for TokenIssuancePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalTokenIssuancePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalTokenIssuancePoliciesCollectionWithReferencesRequestBuilder TokenIssuancePolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for TokenLifetimePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies { get; }
     
         /// <summary>
         /// Gets the request builder for ServicePrincipalAddKey.
