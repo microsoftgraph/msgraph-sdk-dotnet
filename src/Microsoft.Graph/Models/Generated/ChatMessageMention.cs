@@ -19,7 +19,8 @@ namespace Microsoft.Graph
     /// The type ChatMessageMention.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class ChatMessageMention : Entity
+    [JsonConverter(typeof(DerivedTypeConverter))]
+    public partial class ChatMessageMention
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatMessageMention"/> class.
@@ -31,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets id.
+        /// Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding &amp;lt;at id='{index}'&amp;gt; tag in the message body.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Id { get; set; }
@@ -48,6 +50,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentioned", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Mentioned { get; set; }
+    
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData(ReadData = true)]
+        public IDictionary<string, object> AdditionalData { get; set; }
+
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
     
     }
 }

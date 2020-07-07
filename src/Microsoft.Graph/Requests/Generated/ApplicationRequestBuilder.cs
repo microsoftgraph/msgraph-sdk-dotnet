@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for HomeRealmDiscoveryPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder HomeRealmDiscoveryPolicies
+        {
+            get
+            {
+                return new ApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("homeRealmDiscoveryPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Owners.
         /// </summary>
         /// <returns>The <see cref="IApplicationOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
