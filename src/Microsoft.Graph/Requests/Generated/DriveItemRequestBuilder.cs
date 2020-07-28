@@ -225,12 +225,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDriveItemCreateUploadSessionRequestBuilder"/>.</returns>
         public IDriveItemCreateUploadSessionRequestBuilder CreateUploadSession(
-            DriveItemUploadableProperties item = null)
+            DriveItemUploadableProperties item = null,
+            bool? deferCommit = null)
         {
             return new DriveItemCreateUploadSessionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.createUploadSession"),
                 this.Client,
-                item);
+                item,
+                deferCommit);
         }
 
         /// <summary>
@@ -293,6 +295,36 @@ namespace Microsoft.Graph
                 this.Client,
                 page,
                 zoom);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DriveItemRestore.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemRestoreRequestBuilder"/>.</returns>
+        public IDriveItemRestoreRequestBuilder Restore(
+            ItemReference parentReference = null,
+            string name = null)
+        {
+            return new DriveItemRestoreRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.restore"),
+                this.Client,
+                parentReference,
+                name);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DriveItemValidatePermission.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemValidatePermissionRequestBuilder"/>.</returns>
+        public IDriveItemValidatePermissionRequestBuilder ValidatePermission(
+            string password,
+            string challengeToken = null)
+        {
+            return new DriveItemValidatePermissionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.validatePermission"),
+                this.Client,
+                password,
+                challengeToken);
         }
 
         /// <summary>

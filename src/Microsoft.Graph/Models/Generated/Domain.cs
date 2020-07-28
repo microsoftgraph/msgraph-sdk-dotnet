@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is admin managed.
-        /// The value of the property is false if the DNS record management of the domain has been delegated to Office 365. Otherwise, the value is true. Not nullable
+        /// The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAdminManaged", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsAdminManaged { get; set; }

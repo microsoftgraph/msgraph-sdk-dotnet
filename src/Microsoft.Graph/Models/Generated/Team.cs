@@ -31,6 +31,43 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets internal id.
+        /// A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "internalId", Required = Newtonsoft.Json.Required.Default)]
+        public string InternalId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets classification.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
+        public string Classification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets specialization.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "specialization", Required = Newtonsoft.Json.Required.Default)]
+        public TeamSpecialization? Specialization { get; set; }
+    
+        /// <summary>
+        /// Gets or sets visibility.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibility", Required = Newtonsoft.Json.Required.Default)]
+        public TeamVisibilityType? Visibility { get; set; }
+    
+        /// <summary>
         /// Gets or sets web url.
         /// A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
         /// </summary>
@@ -77,6 +114,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
         public Schedule Schedule { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
+        public Group Group { get; set; }
+    
+        /// <summary>
+        /// Gets or sets template.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "template", Required = Newtonsoft.Json.Required.Default)]
+        public TeamsTemplate Template { get; set; }
+    
+        /// <summary>
+        /// Gets or sets members.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        public ITeamMembersCollectionPage Members { get; set; }
     
         /// <summary>
         /// Gets or sets channels.

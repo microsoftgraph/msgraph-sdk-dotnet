@@ -36,6 +36,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IOAuth2PermissionGrantRequestBuilder"/>.</returns>
         IOAuth2PermissionGrantRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for OAuth2PermissionGrantDelta.
+        /// </summary>
+        /// <returns>The <see cref="IOAuth2PermissionGrantDeltaRequestBuilder"/>.</returns>
+        IOAuth2PermissionGrantDeltaRequestBuilder Delta();
     }
 }

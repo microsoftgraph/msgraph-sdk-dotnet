@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets ip ranges.
+        /// List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipRanges", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<IpRange> IpRanges { get; set; }
     
         /// <summary>
         /// Gets or sets is trusted.
+        /// True if this location is explicitly trusted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isTrusted", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsTrusted { get; set; }

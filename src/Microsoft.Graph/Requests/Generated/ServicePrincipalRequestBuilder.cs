@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ClaimsMappingPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalClaimsMappingPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IServicePrincipalClaimsMappingPoliciesCollectionWithReferencesRequestBuilder ClaimsMappingPolicies
+        {
+            get
+            {
+                return new ServicePrincipalClaimsMappingPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("claimsMappingPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Endpoints.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalEndpointsCollectionRequestBuilder"/>.</returns>
@@ -83,6 +95,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ServicePrincipalEndpointsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("endpoints"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for HomeRealmDiscoveryPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder HomeRealmDiscoveryPolicies
+        {
+            get
+            {
+                return new ServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("homeRealmDiscoveryPolicies"), this.Client);
             }
         }
 
@@ -155,6 +179,30 @@ namespace Microsoft.Graph
             get
             {
                 return new ServicePrincipalOwnedObjectsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("ownedObjects"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TokenIssuancePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalTokenIssuancePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IServicePrincipalTokenIssuancePoliciesCollectionWithReferencesRequestBuilder TokenIssuancePolicies
+        {
+            get
+            {
+                return new ServicePrincipalTokenIssuancePoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tokenIssuancePolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TokenLifetimePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies
+        {
+            get
+            {
+                return new ServicePrincipalTokenLifetimePoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tokenLifetimePolicies"), this.Client);
             }
         }
     

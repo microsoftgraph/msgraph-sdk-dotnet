@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (teamToInitialize != null && teamToInitialize.AdditionalData != null)
             {
 
+                if (teamToInitialize.Members != null && teamToInitialize.Members.CurrentPage != null)
+                {
+                    teamToInitialize.Members.AdditionalData = teamToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    teamToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        teamToInitialize.Members.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (teamToInitialize.Channels != null && teamToInitialize.Channels.CurrentPage != null)
                 {
                     teamToInitialize.Channels.AdditionalData = teamToInitialize.AdditionalData;

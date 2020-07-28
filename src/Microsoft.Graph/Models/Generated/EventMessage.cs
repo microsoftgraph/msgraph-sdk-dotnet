@@ -81,6 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is delegated.
+        /// True if this meeting request is accessible to a delegate, false otherwise. Default is false.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDelegated", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDelegated { get; set; }

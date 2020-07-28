@@ -121,6 +121,18 @@ namespace Microsoft.Graph
                 return new WorkbookFunctionsRequestBuilder(this.AppendSegmentToRequestUrl("functions"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Operations.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookOperationsCollectionRequestBuilder"/>.</returns>
+        public IWorkbookOperationsCollectionRequestBuilder Operations
+        {
+            get
+            {
+                return new WorkbookOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for WorkbookCreateSession.
@@ -155,6 +167,19 @@ namespace Microsoft.Graph
             return new WorkbookRefreshSessionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.refreshSession"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookSessionInfoResource.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookSessionInfoResourceRequestBuilder"/>.</returns>
+        public IWorkbookSessionInfoResourceRequestBuilder SessionInfoResource(
+            string key)
+        {
+            return new WorkbookSessionInfoResourceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sessionInfoResource"),
+                this.Client,
+                key);
         }
     
     }

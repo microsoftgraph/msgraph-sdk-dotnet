@@ -50,5 +50,7 @@ namespace Microsoft.Graph
             return new AdministrativeUnitRequest(this.RequestUrl, this.Client, options);
         }
     
+        
+    
     }
 }

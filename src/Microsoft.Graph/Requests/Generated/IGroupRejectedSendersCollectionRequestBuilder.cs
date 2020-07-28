@@ -45,6 +45,13 @@ namespace Microsoft.Graph
             IEnumerable<string> types = null);
 
         /// <summary>
+        /// Gets the request builder for DirectoryObjectGetAvailableExtensionProperties.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder"/>.</returns>
+        IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder GetAvailableExtensionProperties(
+            bool? isSyncedFromOnPremises = null);
+
+        /// <summary>
         /// Gets the request builder for DirectoryObjectValidateProperties.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectValidatePropertiesRequestBuilder"/>.</returns>

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets cloudAppSecurityType.
+        /// Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudAppSecurityType", Required = Newtonsoft.Json.Required.Default)]
         public CloudAppSecuritySessionControlType? CloudAppSecurityType { get; set; }

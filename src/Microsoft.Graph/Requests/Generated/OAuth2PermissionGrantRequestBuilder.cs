@@ -50,5 +50,7 @@ namespace Microsoft.Graph
             return new OAuth2PermissionGrantRequest(this.RequestUrl, this.Client, options);
         }
     
+        
+    
     }
 }

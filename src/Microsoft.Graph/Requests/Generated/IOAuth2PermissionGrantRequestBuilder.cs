@@ -31,5 +31,7 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IOAuth2PermissionGrantRequest Request(IEnumerable<Option> options);
     
+        
+    
     }
 }

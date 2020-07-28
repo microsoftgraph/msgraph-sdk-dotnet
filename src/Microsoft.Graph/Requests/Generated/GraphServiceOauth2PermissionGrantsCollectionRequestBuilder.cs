@@ -60,6 +60,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for OAuth2PermissionGrantDelta.
+        /// </summary>
+        /// <returns>The <see cref="IOAuth2PermissionGrantDeltaRequestBuilder"/>.</returns>
+        public IOAuth2PermissionGrantDeltaRequestBuilder Delta()
+        {
+            return new OAuth2PermissionGrantDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
     }
 }

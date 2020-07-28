@@ -116,6 +116,12 @@ namespace Microsoft.Graph
         IDeviceManagementDeviceManagementPartnersCollectionRequestBuilder DeviceManagementPartners { get; }
 
         /// <summary>
+        /// Gets the request builder for ComplianceManagementPartners.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder ComplianceManagementPartners { get; }
+
+        /// <summary>
         /// Gets the request builder for ApplePushNotificationCertificate.
         /// </summary>
         /// <returns>The <see cref="IApplePushNotificationCertificateRequestBuilder"/>.</returns>

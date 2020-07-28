@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets mode.
+        /// Possible values are: always, never.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mode", Required = Newtonsoft.Json.Required.Default)]
         public PersistentBrowserSessionMode? Mode { get; set; }

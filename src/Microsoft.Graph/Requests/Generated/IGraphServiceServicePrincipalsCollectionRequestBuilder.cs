@@ -36,6 +36,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IServicePrincipalRequestBuilder"/>.</returns>
         IServicePrincipalRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalDelta.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalDeltaRequestBuilder"/>.</returns>
+        IServicePrincipalDeltaRequestBuilder Delta();
     }
 }

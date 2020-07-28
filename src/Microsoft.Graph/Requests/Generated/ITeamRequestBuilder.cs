@@ -38,6 +38,24 @@ namespace Microsoft.Graph
         IScheduleRequestBuilder Schedule { get; }
 
         /// <summary>
+        /// Gets the request builder for Group.
+        /// </summary>
+        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
+        IGroupWithReferenceRequestBuilder Group { get; }
+
+        /// <summary>
+        /// Gets the request builder for Template.
+        /// </summary>
+        /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>
+        ITeamsTemplateWithReferenceRequestBuilder Template { get; }
+
+        /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="ITeamMembersCollectionRequestBuilder"/>.</returns>
+        ITeamMembersCollectionRequestBuilder Members { get; }
+
+        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>

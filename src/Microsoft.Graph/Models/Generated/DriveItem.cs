@@ -101,6 +101,13 @@ namespace Microsoft.Graph
         public Package Package { get; set; }
     
         /// <summary>
+        /// Gets or sets pending operations.
+        /// If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingOperations", Required = Newtonsoft.Json.Required.Default)]
+        public PendingOperations PendingOperations { get; set; }
+    
+        /// <summary>
         /// Gets or sets photo.
         /// Photo metadata, if the item is a photo. Read-only.
         /// </summary>

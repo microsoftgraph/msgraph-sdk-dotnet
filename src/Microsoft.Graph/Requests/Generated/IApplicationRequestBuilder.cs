@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IDirectoryObjectWithReferenceRequestBuilder CreatedOnBehalfOf { get; }
 
         /// <summary>
+        /// Gets the request builder for HomeRealmDiscoveryPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder HomeRealmDiscoveryPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for Owners.
         /// </summary>
         /// <returns>The <see cref="IApplicationOwnersCollectionWithReferencesRequestBuilder"/>.</returns>

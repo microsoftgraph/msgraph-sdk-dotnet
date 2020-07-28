@@ -25,6 +25,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isEnabled.
+        /// Specifies whether the session control is enabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnabled { get; set; }

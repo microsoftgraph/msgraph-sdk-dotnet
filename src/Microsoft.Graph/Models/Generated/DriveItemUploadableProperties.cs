@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
-        /// Provides a user-visible description of the item. Read-write. Only on OneDrive Personal
+        /// Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
+    
+        /// <summary>
+        /// Gets or sets fileSize.
+        /// Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileSize", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? FileSize { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

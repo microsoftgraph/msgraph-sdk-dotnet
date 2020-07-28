@@ -28,5 +28,11 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "item", Required = Newtonsoft.Json.Required.Default)]
         public DriveItemUploadableProperties Item { get; set; }
     
+        /// <summary>
+        /// Gets or sets DeferCommit.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deferCommit", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeferCommit { get; set; }
+    
     }
 }

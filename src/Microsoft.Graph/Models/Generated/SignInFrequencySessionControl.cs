@@ -31,12 +31,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets value.
+        /// The number of days or hours.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Value { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// Possible values are: days, hours.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public SigninFrequencyType? Type { get; set; }

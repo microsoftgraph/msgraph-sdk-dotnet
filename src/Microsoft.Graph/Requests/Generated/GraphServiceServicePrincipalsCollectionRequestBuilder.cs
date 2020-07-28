@@ -60,6 +60,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalDelta.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalDeltaRequestBuilder"/>.</returns>
+        public IServicePrincipalDeltaRequestBuilder Delta()
+        {
+            return new ServicePrincipalDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
     }
 }

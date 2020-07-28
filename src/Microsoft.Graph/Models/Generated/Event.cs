@@ -179,7 +179,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets response requested.
-        /// Set to true if the sender would like a response when the event is accepted or declined.
+        /// Default is true, which represents the organizer would like an invitee to send a response to the event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responseRequested", Required = Newtonsoft.Json.Required.Default)]
         public bool? ResponseRequested { get; set; }
@@ -256,6 +256,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allow new time proposals.
+        /// True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewTimeProposals", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowNewTimeProposals { get; set; }

@@ -76,6 +76,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DirectoryObjectGetAvailableExtensionProperties.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder"/>.</returns>
+        public IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder GetAvailableExtensionProperties(
+            bool? isSyncedFromOnPremises = null)
+        {
+            return new DirectoryObjectGetAvailableExtensionPropertiesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAvailableExtensionProperties"),
+                this.Client,
+                isSyncedFromOnPremises);
+        }
+
+        /// <summary>
         /// Gets the request builder for DirectoryObjectValidateProperties.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectValidatePropertiesRequestBuilder"/>.</returns>

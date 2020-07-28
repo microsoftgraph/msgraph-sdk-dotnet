@@ -16,31 +16,39 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type ConditionalAccessDevices.
+    /// The type WorkbookOperationError.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class ConditionalAccessDevices
+    public partial class WorkbookOperationError
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessDevices"/> class.
+        /// Initializes a new instance of the <see cref="WorkbookOperationError"/> class.
         /// </summary>
-        public ConditionalAccessDevices()
+        public WorkbookOperationError()
         {
-            this.ODataType = "microsoft.graph.conditionalAccessDevices";
+            this.ODataType = "microsoft.graph.workbookOperationError";
         }
 
         /// <summary>
-        /// Gets or sets includeDeviceStates.
+        /// Gets or sets code.
+        /// The error code.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeDeviceStates", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> IncludeDeviceStates { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
+        public string Code { get; set; }
     
         /// <summary>
-        /// Gets or sets excludeDeviceStates.
+        /// Gets or sets message.
+        /// The error message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeDeviceStates", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> ExcludeDeviceStates { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
+        public string Message { get; set; }
+    
+        /// <summary>
+        /// Gets or sets innerError.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "innerError", Required = Newtonsoft.Json.Required.Default)]
+        public WorkbookOperationError InnerError { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

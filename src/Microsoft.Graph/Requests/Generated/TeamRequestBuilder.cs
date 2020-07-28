@@ -63,6 +63,42 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Group.
+        /// </summary>
+        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
+        public IGroupWithReferenceRequestBuilder Group
+        {
+            get
+            {
+                return new GroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("group"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Template.
+        /// </summary>
+        /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>
+        public ITeamsTemplateWithReferenceRequestBuilder Template
+        {
+            get
+            {
+                return new TeamsTemplateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("template"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="ITeamMembersCollectionRequestBuilder"/>.</returns>
+        public ITeamMembersCollectionRequestBuilder Members
+        {
+            get
+            {
+                return new TeamMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>

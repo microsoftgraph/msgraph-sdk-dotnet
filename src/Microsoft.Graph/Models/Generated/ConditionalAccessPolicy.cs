@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets created date time.
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Readonly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets modified date time.
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Readonly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Specifies a display name for the conditionalAccessPolicy object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
@@ -56,24 +59,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
+        /// Specifies the state of the conditionalAccessPolicy object. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessPolicyState? State { get; set; }
     
         /// <summary>
         /// Gets or sets conditions.
+        /// Specifies the rules that must be met for the policy to apply. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditions", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessConditionSet Conditions { get; set; }
     
         /// <summary>
         /// Gets or sets grant controls.
+        /// Specifies the grant controls that must be fulfilled to pass the policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grantControls", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessGrantControls GrantControls { get; set; }
     
         /// <summary>
         /// Gets or sets session controls.
+        /// Specifies the session controls that are enforced after sign-in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sessionControls", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessSessionControls SessionControls { get; set; }
