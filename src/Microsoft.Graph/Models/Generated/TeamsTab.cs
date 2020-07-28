@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets web url.
-        /// Deep link url of the tab instance. Read only.
+        /// Deep link URL of the tab instance. Read only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }

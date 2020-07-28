@@ -167,6 +167,11 @@ namespace Microsoft.Graph
         IGraphServiceTeamsCollectionRequestBuilder Teams { get; }
     
         /// <summary>
+        /// Gets the GraphServiceTeamsTemplates request builder.
+        /// </summary>
+        IGraphServiceTeamsTemplatesCollectionRequestBuilder TeamsTemplates { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceAuditLogs request builder.
         /// </summary>
         IAuditLogRootRequestBuilder AuditLogs { get; }
@@ -232,14 +237,14 @@ namespace Microsoft.Graph
         ISecurityRequestBuilder Security { get; }
     
         /// <summary>
-        /// Gets the GraphServiceAppCatalogs request builder.
-        /// </summary>
-        IAppCatalogsRequestBuilder AppCatalogs { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceTeamwork request builder.
         /// </summary>
         ITeamworkRequestBuilder Teamwork { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAppCatalogs request builder.
+        /// </summary>
+        IAppCatalogsRequestBuilder AppCatalogs { get; }
     
         /// <summary>
         /// Gets the GraphServiceInformationProtection request builder.

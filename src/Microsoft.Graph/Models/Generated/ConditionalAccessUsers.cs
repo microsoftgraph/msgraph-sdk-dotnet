@@ -32,36 +32,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets includeUsers.
+        /// User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeUsers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> IncludeUsers { get; set; }
     
         /// <summary>
         /// Gets or sets excludeUsers.
+        /// User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeUsers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ExcludeUsers { get; set; }
     
         /// <summary>
         /// Gets or sets includeGroups.
+        /// Group IDs in scope of policy unless explicitly excluded, or All.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeGroups", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> IncludeGroups { get; set; }
     
         /// <summary>
         /// Gets or sets excludeGroups.
+        /// Group IDs excluded from scope of policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeGroups", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ExcludeGroups { get; set; }
     
         /// <summary>
         /// Gets or sets includeRoles.
+        /// Role IDs in scope of policy unless explicitly excluded, or All.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeRoles", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> IncludeRoles { get; set; }
     
         /// <summary>
         /// Gets or sets excludeRoles.
+        /// Role IDs excluded from scope of policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeRoles", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ExcludeRoles { get; set; }

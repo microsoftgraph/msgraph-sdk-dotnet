@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets cidrAddress.
+        /// IPv4 address in CIDR notation
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cidrAddress", Required = Newtonsoft.Json.Required.Default)]
         public string CidrAddress { get; set; }

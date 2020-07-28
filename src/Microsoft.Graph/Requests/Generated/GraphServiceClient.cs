@@ -384,6 +384,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceTeamsTemplates request builder.
+        /// </summary>
+        public IGraphServiceTeamsTemplatesCollectionRequestBuilder TeamsTemplates
+        {
+            get
+            {
+                return new GraphServiceTeamsTemplatesCollectionRequestBuilder(this.BaseUrl + "/teamsTemplates", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceAuditLogs request builder.
         /// </summary>
         public IAuditLogRootRequestBuilder AuditLogs
@@ -527,17 +538,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceAppCatalogs request builder.
-        /// </summary>
-        public IAppCatalogsRequestBuilder AppCatalogs
-        {
-            get
-            {
-                return new AppCatalogsRequestBuilder(this.BaseUrl + "/appCatalogs", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceTeamwork request builder.
         /// </summary>
         public ITeamworkRequestBuilder Teamwork
@@ -545,6 +545,17 @@ namespace Microsoft.Graph
             get
             {
                 return new TeamworkRequestBuilder(this.BaseUrl + "/teamwork", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAppCatalogs request builder.
+        /// </summary>
+        public IAppCatalogsRequestBuilder AppCatalogs
+        {
+            get
+            {
+                return new AppCatalogsRequestBuilder(this.BaseUrl + "/appCatalogs", this);
             }
         }
     

@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets add ins.
-        /// Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.
+        /// Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addIns", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AddIn> AddIns { get; set; }
@@ -123,7 +123,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets login url.
-        /// Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Office 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Office 365, the Azure AD My Apps, or the Azure AD SSO URL.
+        /// Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loginUrl", Required = Newtonsoft.Json.Required.Default)]
         public string LoginUrl { get; set; }
@@ -157,8 +157,14 @@ namespace Microsoft.Graph
         public IEnumerable<PasswordCredential> PasswordCredentials { get; set; }
     
         /// <summary>
+        /// Gets or sets preferred token signing key thumbprint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredTokenSigningKeyThumbprint", Required = Newtonsoft.Json.Required.Default)]
+        public string PreferredTokenSigningKeyThumbprint { get; set; }
+    
+        /// <summary>
         /// Gets or sets preferred single sign on mode.
-        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Office 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.
+        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredSingleSignOnMode", Required = Newtonsoft.Json.Required.Default)]
         public string PreferredSingleSignOnMode { get; set; }
@@ -220,11 +226,25 @@ namespace Microsoft.Graph
         public IServicePrincipalAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
     
         /// <summary>
+        /// Gets or sets claims mapping policies.
+        /// The claimsMappingPolicies assigned to this service principal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimsMappingPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalClaimsMappingPoliciesCollectionWithReferencesPage ClaimsMappingPolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets endpoints.
         /// Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpoints", Required = Newtonsoft.Json.Required.Default)]
         public IServicePrincipalEndpointsCollectionPage Endpoints { get; set; }
+    
+        /// <summary>
+        /// Gets or sets home realm discovery policies.
+        /// The homeRealmDiscoveryPolicies assigned to this service principal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeRealmDiscoveryPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesPage HomeRealmDiscoveryPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets oauth2permission grants.
@@ -266,6 +286,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownedObjects", Required = Newtonsoft.Json.Required.Default)]
         public IServicePrincipalOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token issuance policies.
+        /// The tokenIssuancePolicies assigned to this service principal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuancePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalTokenIssuancePoliciesCollectionWithReferencesPage TokenIssuancePolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token lifetime policies.
+        /// The tokenLifetimePolicies assigned to this service principal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenLifetimePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }
     
     }
 }

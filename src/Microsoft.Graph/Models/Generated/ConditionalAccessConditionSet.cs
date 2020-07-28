@@ -32,45 +32,45 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets applications.
+        /// Applications and user actions included in and excluded from the policy. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applications", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessApplications Applications { get; set; }
     
         /// <summary>
         /// Gets or sets users.
+        /// Users, groups, and roles included in and excluded from the policy. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "users", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessUsers Users { get; set; }
     
         /// <summary>
         /// Gets or sets signInRiskLevels.
+        /// Risk levels included in the policy. Possible values are: low, medium, high, none.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInRiskLevels", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RiskLevel> SignInRiskLevels { get; set; }
     
         /// <summary>
         /// Gets or sets platforms.
+        /// Platforms included in and excluded from the policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platforms", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessPlatforms Platforms { get; set; }
     
         /// <summary>
         /// Gets or sets locations.
+        /// Locations included in and excluded from the policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locations", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessLocations Locations { get; set; }
     
         /// <summary>
         /// Gets or sets clientAppTypes.
+        /// Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientAppTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ConditionalAccessClientApp> ClientAppTypes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets devices.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devices", Required = Newtonsoft.Json.Required.Default)]
-        public ConditionalAccessDevices Devices { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

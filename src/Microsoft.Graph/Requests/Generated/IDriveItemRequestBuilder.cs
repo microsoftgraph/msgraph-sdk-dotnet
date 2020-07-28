@@ -159,6 +159,22 @@ namespace Microsoft.Graph
             double? zoom = null);
 
         /// <summary>
+        /// Gets the request builder for DriveItemRestore.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemRestoreRequestBuilder"/>.</returns>
+        IDriveItemRestoreRequestBuilder Restore(
+            ItemReference parentReference = null,
+            string name = null);
+
+        /// <summary>
+        /// Gets the request builder for DriveItemValidatePermission.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemValidatePermissionRequestBuilder"/>.</returns>
+        IDriveItemValidatePermissionRequestBuilder ValidatePermission(
+            string password,
+            string challengeToken = null);
+
+        /// <summary>
         /// Gets the request builder for DriveItemDelta.
         /// </summary>
         /// <returns>The <see cref="IDriveItemDeltaRequestBuilder"/>.</returns>

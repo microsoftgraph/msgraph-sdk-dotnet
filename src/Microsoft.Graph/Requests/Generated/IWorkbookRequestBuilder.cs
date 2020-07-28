@@ -66,6 +66,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsRequestBuilder"/>.</returns>
         IWorkbookFunctionsRequestBuilder Functions { get; }
+
+        /// <summary>
+        /// Gets the request builder for Operations.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookOperationsCollectionRequestBuilder"/>.</returns>
+        IWorkbookOperationsCollectionRequestBuilder Operations { get; }
     
         /// <summary>
         /// Gets the request builder for WorkbookCreateSession.
@@ -85,6 +91,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookRefreshSessionRequestBuilder"/>.</returns>
         IWorkbookRefreshSessionRequestBuilder RefreshSession();
+
+        /// <summary>
+        /// Gets the request builder for WorkbookSessionInfoResource.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookSessionInfoResourceRequestBuilder"/>.</returns>
+        IWorkbookSessionInfoResourceRequestBuilder SessionInfoResource(
+            string key);
     
     }
 }

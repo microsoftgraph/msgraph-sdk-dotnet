@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public string Id { get; set; }
     
         /// <summary>
+        /// Gets or sets name.
+        /// The name of the content type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

@@ -296,6 +296,36 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DriveItemRestore.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemRestoreRequestBuilder"/>.</returns>
+        public IDriveItemRestoreRequestBuilder Restore(
+            ItemReference parentReference = null,
+            string name = null)
+        {
+            return new DriveItemRestoreRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.restore"),
+                this.Client,
+                parentReference,
+                name);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DriveItemValidatePermission.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemValidatePermissionRequestBuilder"/>.</returns>
+        public IDriveItemValidatePermissionRequestBuilder ValidatePermission(
+            string password,
+            string challengeToken = null)
+        {
+            return new DriveItemValidatePermissionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.validatePermission"),
+                this.Client,
+                password,
+                challengeToken);
+        }
+
+        /// <summary>
         /// Gets the request builder for DriveItemDelta.
         /// </summary>
         /// <returns>The <see cref="IDriveItemDeltaRequestBuilder"/>.</returns>
