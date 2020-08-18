@@ -86,6 +86,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
         /// Gets or sets public client.
         /// Specifies settings for installed clients such as desktop or mobile devices.
         /// </summary>
@@ -132,6 +138,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logo", Required = Newtonsoft.Json.Required.Default)]
         public Stream Logo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        public string Notes { get; set; }
     
         /// <summary>
         /// Gets or sets oauth2require post response.

@@ -59,6 +59,12 @@ namespace Microsoft.Graph
         public string AppDisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets app description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDescription", Required = Newtonsoft.Json.Required.Default)]
+        public string AppDescription { get; set; }
+    
+        /// <summary>
         /// Gets or sets app id.
         /// The unique identifier for the associated application (its appId property).
         /// </summary>
@@ -92,6 +98,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoles", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AppRole> AppRoles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
@@ -134,6 +146,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logoutUrl", Required = Newtonsoft.Json.Required.Default)]
         public string LogoutUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        public string Notes { get; set; }
     
         /// <summary>
         /// Gets or sets notification email addresses.

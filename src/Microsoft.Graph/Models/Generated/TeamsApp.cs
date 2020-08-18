@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets distribution method.
-        /// The method of distribution for the app.
+        /// The method of distribution for the app. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "distributionMethod", Required = Newtonsoft.Json.Required.Default)]
         public TeamsAppDistributionMethod? DistributionMethod { get; set; }
