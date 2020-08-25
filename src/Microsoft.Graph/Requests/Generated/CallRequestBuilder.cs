@@ -92,6 +92,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CallCancelMediaProcessing.
+        /// </summary>
+        /// <returns>The <see cref="ICallCancelMediaProcessingRequestBuilder"/>.</returns>
+        public ICallCancelMediaProcessingRequestBuilder CancelMediaProcessing(
+            string clientContext = null)
+        {
+            return new CallCancelMediaProcessingRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.cancelMediaProcessing"),
+                this.Client,
+                clientContext);
+        }
+
+        /// <summary>
         /// Gets the request builder for CallChangeScreenSharingRole.
         /// </summary>
         /// <returns>The <see cref="ICallChangeScreenSharingRoleRequestBuilder"/>.</returns>

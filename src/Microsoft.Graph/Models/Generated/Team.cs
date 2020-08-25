@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets display name.
+        /// The name of the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// An optional description for the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
@@ -51,18 +53,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets classification.
+        /// An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
         public string Classification { get; set; }
     
         /// <summary>
         /// Gets or sets specialization.
+        /// Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "specialization", Required = Newtonsoft.Json.Required.Default)]
         public TeamSpecialization? Specialization { get; set; }
     
         /// <summary>
         /// Gets or sets visibility.
+        /// The visibility of a the group and team. Defaults to Public.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibility", Required = Newtonsoft.Json.Required.Default)]
         public TeamVisibilityType? Visibility { get; set; }
@@ -111,6 +116,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets schedule.
+        /// The schedule of shifts for this team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
         public Schedule Schedule { get; set; }
@@ -123,12 +129,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets template.
+        /// The template this team was created from. See available templates.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "template", Required = Newtonsoft.Json.Required.Default)]
         public TeamsTemplate Template { get; set; }
     
         /// <summary>
         /// Gets or sets members.
+        /// Members and owners of the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
         public ITeamMembersCollectionPage Members { get; set; }
@@ -156,6 +164,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operations.
+        /// The async operations that ran or are running on this team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
         public ITeamOperationsCollectionPage Operations { get; set; }

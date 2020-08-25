@@ -128,6 +128,12 @@ namespace Microsoft.Graph
         public MeetingInfo MeetingInfo { get; set; }
     
         /// <summary>
+        /// Gets or sets transcription.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transcription", Required = Newtonsoft.Json.Required.Default)]
+        public CallTranscriptionInfo Transcription { get; set; }
+    
+        /// <summary>
         /// Gets or sets tenant id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]

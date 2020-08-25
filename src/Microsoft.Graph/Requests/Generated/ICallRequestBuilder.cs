@@ -53,6 +53,13 @@ namespace Microsoft.Graph
             IEnumerable<Modality> acceptedModalities = null);
 
         /// <summary>
+        /// Gets the request builder for CallCancelMediaProcessing.
+        /// </summary>
+        /// <returns>The <see cref="ICallCancelMediaProcessingRequestBuilder"/>.</returns>
+        ICallCancelMediaProcessingRequestBuilder CancelMediaProcessing(
+            string clientContext = null);
+
+        /// <summary>
         /// Gets the request builder for CallChangeScreenSharingRole.
         /// </summary>
         /// <returns>The <see cref="ICallChangeScreenSharingRoleRequestBuilder"/>.</returns>
