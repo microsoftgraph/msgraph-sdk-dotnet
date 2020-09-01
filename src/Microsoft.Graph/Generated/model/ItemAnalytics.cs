@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets item activity stats.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemActivityStats", Required = Newtonsoft.Json.Required.Default)]
-        public IItemAnalyticsItemActivityStatsCollectionPage ItemActivityStats { get; set; }
-    
-        /// <summary>
         /// Gets or sets all time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allTime", Required = Newtonsoft.Json.Required.Default)]
         public ItemActivityStat AllTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets item activity stats.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemActivityStats", Required = Newtonsoft.Json.Required.Default)]
+        public IItemAnalyticsItemActivityStatsCollectionPage ItemActivityStats { get; set; }
     
         /// <summary>
         /// Gets or sets last seven days.

@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets minimumSize.
-        /// The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSize", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MinimumSize { get; set; }
-    
-        /// <summary>
         /// Gets or sets maximumSize.
         /// The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumSize", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MaximumSize { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimumSize.
+        /// The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSize", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MinimumSize { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

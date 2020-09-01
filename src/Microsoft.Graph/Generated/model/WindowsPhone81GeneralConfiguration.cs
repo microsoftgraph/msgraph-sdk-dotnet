@@ -66,18 +66,18 @@ namespace Microsoft.Graph
         public bool? CellularBlockWifiTethering { get; set; }
     
         /// <summary>
-        /// Gets or sets compliant apps list.
-        /// List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantAppsList", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AppListItem> CompliantAppsList { get; set; }
-    
-        /// <summary>
         /// Gets or sets compliant app list type.
         /// List that is in the AppComplianceList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantAppListType", Required = Newtonsoft.Json.Required.Default)]
         public AppListType? CompliantAppListType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets compliant apps list.
+        /// List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantAppsList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> CompliantAppsList { get; set; }
     
         /// <summary>
         /// Gets or sets diagnostic data block submission.
@@ -129,6 +129,13 @@ namespace Microsoft.Graph
         public Int32? PasswordExpirationDays { get; set; }
     
         /// <summary>
+        /// Gets or sets password minimum character set count.
+        /// Number of character sets a password must contain.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumCharacterSetCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets password minimum length.
         /// Minimum length of passwords.
         /// </summary>
@@ -143,13 +150,6 @@ namespace Microsoft.Graph
         public Int32? PasswordMinutesOfInactivityBeforeScreenTimeout { get; set; }
     
         /// <summary>
-        /// Gets or sets password minimum character set count.
-        /// Number of character sets a password must contain.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasswordMinimumCharacterSetCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets password previous password block count.
         /// Number of previous passwords to block. Valid values 0 to 24
         /// </summary>
@@ -157,11 +157,11 @@ namespace Microsoft.Graph
         public Int32? PasswordPreviousPasswordBlockCount { get; set; }
     
         /// <summary>
-        /// Gets or sets password sign in failure count before factory reset.
-        /// Number of sign in failures allowed before factory reset.
+        /// Gets or sets password required.
+        /// Indicates whether or not to require a password.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordSignInFailureCountBeforeFactoryReset", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequired", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasswordRequired { get; set; }
     
         /// <summary>
         /// Gets or sets password required type.
@@ -171,11 +171,11 @@ namespace Microsoft.Graph
         public RequiredPasswordType? PasswordRequiredType { get; set; }
     
         /// <summary>
-        /// Gets or sets password required.
-        /// Indicates whether or not to require a password.
+        /// Gets or sets password sign in failure count before factory reset.
+        /// Number of sign in failures allowed before factory reset.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequired", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PasswordRequired { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordSignInFailureCountBeforeFactoryReset", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
     
         /// <summary>
         /// Gets or sets screen capture blocked.
@@ -206,18 +206,18 @@ namespace Microsoft.Graph
         public bool? WebBrowserBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets wifi blocked.
-        /// Indicates whether or not to block Wi-Fi.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WifiBlocked { get; set; }
-    
-        /// <summary>
         /// Gets or sets wifi block automatic connect hotspots.
         /// Indicates whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiBlockAutomaticConnectHotspots", Required = Newtonsoft.Json.Required.Default)]
         public bool? WifiBlockAutomaticConnectHotspots { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wifi blocked.
+        /// Indicates whether or not to block Wi-Fi.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WifiBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets wifi block hotspot reporting.

@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IPlannerPlanRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Tasks.
-        /// </summary>
-        /// <returns>The <see cref="IPlannerPlanTasksCollectionRequestBuilder"/>.</returns>
-        IPlannerPlanTasksCollectionRequestBuilder Tasks { get; }
-
-        /// <summary>
         /// Gets the request builder for Buckets.
         /// </summary>
         /// <returns>The <see cref="IPlannerPlanBucketsCollectionRequestBuilder"/>.</returns>
@@ -48,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPlannerPlanDetailsRequestBuilder"/>.</returns>
         IPlannerPlanDetailsRequestBuilder Details { get; }
+
+        /// <summary>
+        /// Gets the request builder for Tasks.
+        /// </summary>
+        /// <returns>The <see cref="IPlannerPlanTasksCollectionRequestBuilder"/>.</returns>
+        IPlannerPlanTasksCollectionRequestBuilder Tasks { get; }
     
     }
 }

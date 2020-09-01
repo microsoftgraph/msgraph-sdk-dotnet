@@ -75,18 +75,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder"/>.</returns>
-        public IManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder UserStatuses
-        {
-            get
-            {
-                return new ManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStatuses"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceStatusSummary.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceMobileAppConfigurationDeviceSummaryRequestBuilder"/>.</returns>
@@ -95,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ManagedDeviceMobileAppConfigurationDeviceSummaryRequestBuilder(this.AppendSegmentToRequestUrl("deviceStatusSummary"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder UserStatuses
+        {
+            get
+            {
+                return new ManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStatuses"), this.Client);
             }
         }
 

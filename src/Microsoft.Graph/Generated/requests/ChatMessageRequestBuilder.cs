@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Replies.
-        /// </summary>
-        /// <returns>The <see cref="IChatMessageRepliesCollectionRequestBuilder"/>.</returns>
-        public IChatMessageRepliesCollectionRequestBuilder Replies
-        {
-            get
-            {
-                return new ChatMessageRepliesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("replies"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for HostedContents.
         /// </summary>
         /// <returns>The <see cref="IChatMessageHostedContentsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ChatMessageHostedContentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("hostedContents"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Replies.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageRepliesCollectionRequestBuilder"/>.</returns>
+        public IChatMessageRepliesCollectionRequestBuilder Replies
+        {
+            get
+            {
+                return new ChatMessageRepliesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("replies"), this.Client);
             }
         }
     

@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Pages.
+        /// </summary>
+        /// <returns>The <see cref="IOnenoteSectionPagesCollectionRequestBuilder"/>.</returns>
+        public IOnenoteSectionPagesCollectionRequestBuilder Pages
+        {
+            get
+            {
+                return new OnenoteSectionPagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("pages"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ParentNotebook.
         /// </summary>
         /// <returns>The <see cref="INotebookRequestBuilder"/>.</returns>
@@ -71,18 +83,6 @@ namespace Microsoft.Graph
             get
             {
                 return new SectionGroupRequestBuilder(this.AppendSegmentToRequestUrl("parentSectionGroup"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Pages.
-        /// </summary>
-        /// <returns>The <see cref="IOnenoteSectionPagesCollectionRequestBuilder"/>.</returns>
-        public IOnenoteSectionPagesCollectionRequestBuilder Pages
-        {
-            get
-            {
-                return new OnenoteSectionPagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("pages"), this.Client);
             }
         }
     

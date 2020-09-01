@@ -44,16 +44,16 @@ namespace Microsoft.Graph
         IManagedDeviceMobileAppConfigurationDeviceStatusesCollectionRequestBuilder DeviceStatuses { get; }
 
         /// <summary>
-        /// Gets the request builder for UserStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder"/>.</returns>
-        IManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder UserStatuses { get; }
-
-        /// <summary>
         /// Gets the request builder for DeviceStatusSummary.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceMobileAppConfigurationDeviceSummaryRequestBuilder"/>.</returns>
         IManagedDeviceMobileAppConfigurationDeviceSummaryRequestBuilder DeviceStatusSummary { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder UserStatuses { get; }
 
         /// <summary>
         /// Gets the request builder for UserStatusSummary.

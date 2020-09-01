@@ -52,18 +52,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets hint.
+        /// Contains the first three characters of the password. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hint", Required = Newtonsoft.Json.Required.Default)]
+        public string Hint { get; set; }
+    
+        /// <summary>
         /// Gets or sets keyId.
         /// The unique identifier for the password.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyId", Required = Newtonsoft.Json.Required.Default)]
         public Guid? KeyId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets startDateTime.
-        /// The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Optional.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets secretText.
@@ -73,11 +73,11 @@ namespace Microsoft.Graph
         public string SecretText { get; set; }
     
         /// <summary>
-        /// Gets or sets hint.
-        /// Contains the first three characters of the password. Read-only.
+        /// Gets or sets startDateTime.
+        /// The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hint", Required = Newtonsoft.Json.Required.Default)]
-        public string Hint { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

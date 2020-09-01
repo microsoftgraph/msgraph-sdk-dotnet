@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets resource location.
-        /// The resource URI for the object. For example, the resource URI for a copied page or section.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceLocation", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceLocation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resource id.
-        /// The resource id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceId { get; set; }
-    
-        /// <summary>
         /// Gets or sets error.
         /// The error returned by the operation.
         /// </summary>
@@ -57,6 +43,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "percentComplete", Required = Newtonsoft.Json.Required.Default)]
         public string PercentComplete { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource id.
+        /// The resource id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource location.
+        /// The resource URI for the object. For example, the resource URI for a copied page or section.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceLocation { get; set; }
     
     }
 }

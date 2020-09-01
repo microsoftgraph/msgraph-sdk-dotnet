@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets teacherNumber.
-        /// Teacher number.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teacherNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string TeacherNumber { get; set; }
-    
-        /// <summary>
         /// Gets or sets externalId.
         /// ID of the teacher in the source system.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets teacherNumber.
+        /// Teacher number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teacherNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string TeacherNumber { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

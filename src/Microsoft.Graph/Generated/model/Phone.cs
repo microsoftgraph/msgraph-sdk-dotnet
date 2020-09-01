@@ -31,11 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets type.
-        /// The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+        /// Gets or sets language.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public PhoneType? Type { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "language", Required = Newtonsoft.Json.Required.Default)]
+        public string Language { get; set; }
     
         /// <summary>
         /// Gets or sets number.
@@ -51,10 +50,11 @@ namespace Microsoft.Graph
         public string Region { get; set; }
     
         /// <summary>
-        /// Gets or sets language.
+        /// Gets or sets type.
+        /// The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "language", Required = Newtonsoft.Json.Required.Default)]
-        public string Language { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public PhoneType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

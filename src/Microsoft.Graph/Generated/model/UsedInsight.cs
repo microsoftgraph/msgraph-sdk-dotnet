@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         public UsageDetails LastUsed { get; set; }
     
         /// <summary>
-        /// Gets or sets resource visualization.
-        /// Properties that you can use to visualize the document in your experience. Read-only
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceVisualization", Required = Newtonsoft.Json.Required.Default)]
-        public ResourceVisualization ResourceVisualization { get; set; }
-    
-        /// <summary>
         /// Gets or sets resource reference.
         /// Reference properties of the used document, such as the url and type of the document. Read-only
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceReference", Required = Newtonsoft.Json.Required.Default)]
         public ResourceReference ResourceReference { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource visualization.
+        /// Properties that you can use to visualize the document in your experience. Read-only
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceVisualization", Required = Newtonsoft.Json.Required.Default)]
+        public ResourceVisualization ResourceVisualization { get; set; }
     
         /// <summary>
         /// Gets or sets resource.

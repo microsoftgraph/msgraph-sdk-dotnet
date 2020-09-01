@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets onboarding url.
-        /// URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
+        /// Gets or sets last connection date time.
+        /// Timestamp of the last request sent to Intune by the TEM partner.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string OnboardingUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastConnectionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastConnectionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets onboarding status.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public RemoteAssistanceOnboardingStatus? OnboardingStatus { get; set; }
     
         /// <summary>
-        /// Gets or sets last connection date time.
-        /// Timestamp of the last request sent to Intune by the TEM partner.
+        /// Gets or sets onboarding url.
+        /// URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastConnectionDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastConnectionDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string OnboardingUrl { get; set; }
     
     }
 }

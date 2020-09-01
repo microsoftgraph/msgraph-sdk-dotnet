@@ -24,11 +24,11 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
-        /// Gets or sets displayName.
-        /// App display name.
+        /// Gets or sets denied.
+        /// If true, app is denied protection or exemption.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "denied", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Denied { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets publisherName.
-        /// The publisher name
+        /// Gets or sets displayName.
+        /// App display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisherName", Required = Newtonsoft.Json.Required.Default)]
-        public string PublisherName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets productName.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public string ProductName { get; set; }
     
         /// <summary>
-        /// Gets or sets denied.
-        /// If true, app is denied protection or exemption.
+        /// Gets or sets publisherName.
+        /// The publisher name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "denied", Required = Newtonsoft.Json.Required.Default)]
-        public bool? Denied { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisherName", Required = Newtonsoft.Json.Required.Default)]
+        public string PublisherName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

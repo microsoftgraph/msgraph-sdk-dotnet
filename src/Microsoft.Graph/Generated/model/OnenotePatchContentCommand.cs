@@ -38,13 +38,6 @@ namespace Microsoft.Graph
         public OnenotePatchActionType? Action { get; set; }
     
         /// <summary>
-        /// Gets or sets target.
-        /// The element to update. Must be the #&amp;lt;data-id&amp;gt; or the generated &amp;lt;id&amp;gt; of the element, or the body or title keyword.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
-        public string Target { get; set; }
-    
-        /// <summary>
         /// Gets or sets content.
         /// A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.
         /// </summary>
@@ -57,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "position", Required = Newtonsoft.Json.Required.Default)]
         public OnenotePatchInsertPosition? Position { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target.
+        /// The element to update. Must be the #&amp;lt;data-id&amp;gt; or the generated &amp;lt;id&amp;gt; of the element, or the body or title keyword.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        public string Target { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

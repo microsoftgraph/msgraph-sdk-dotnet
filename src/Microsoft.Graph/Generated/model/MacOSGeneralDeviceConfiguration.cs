@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets compliant apps list.
-        /// List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantAppsList", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AppListItem> CompliantAppsList { get; set; }
-    
-        /// <summary>
         /// Gets or sets compliant app list type.
         /// List that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantAppListType", Required = Newtonsoft.Json.Required.Default)]
         public AppListType? CompliantAppListType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets compliant apps list.
+        /// List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantAppsList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> CompliantAppsList { get; set; }
     
         /// <summary>
         /// Gets or sets email in domain suffixes.
@@ -101,18 +101,18 @@ namespace Microsoft.Graph
         public Int32? PasswordPreviousPasswordBlockCount { get; set; }
     
         /// <summary>
-        /// Gets or sets password required type.
-        /// Type of password that is required. Possible values are: deviceDefault, alphanumeric, numeric.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
-        public RequiredPasswordType? PasswordRequiredType { get; set; }
-    
-        /// <summary>
         /// Gets or sets password required.
         /// Whether or not to require a password.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? PasswordRequired { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password required type.
+        /// Type of password that is required. Possible values are: deviceDefault, alphanumeric, numeric.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
+        public RequiredPasswordType? PasswordRequiredType { get; set; }
     
     }
 }

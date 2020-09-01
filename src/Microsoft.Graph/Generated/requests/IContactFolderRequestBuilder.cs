@@ -32,16 +32,10 @@ namespace Microsoft.Graph
         new IContactFolderRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
+        /// Gets the request builder for ChildFolders.
         /// </summary>
-        /// <returns>The <see cref="IContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        IContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
-
-        /// <summary>
-        /// Gets the request builder for MultiValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="IContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        IContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
+        /// <returns>The <see cref="IContactFolderChildFoldersCollectionRequestBuilder"/>.</returns>
+        IContactFolderChildFoldersCollectionRequestBuilder ChildFolders { get; }
 
         /// <summary>
         /// Gets the request builder for Contacts.
@@ -50,10 +44,16 @@ namespace Microsoft.Graph
         IContactFolderContactsCollectionRequestBuilder Contacts { get; }
 
         /// <summary>
-        /// Gets the request builder for ChildFolders.
+        /// Gets the request builder for MultiValueExtendedProperties.
         /// </summary>
-        /// <returns>The <see cref="IContactFolderChildFoldersCollectionRequestBuilder"/>.</returns>
-        IContactFolderChildFoldersCollectionRequestBuilder ChildFolders { get; }
+        /// <returns>The <see cref="IContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        IContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
+
+        /// <summary>
+        /// Gets the request builder for SingleValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        IContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
     
         
     

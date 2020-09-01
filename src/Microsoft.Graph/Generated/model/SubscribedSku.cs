@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets applies to.
+        /// For example, 'User' or 'Company'.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliesTo", Required = Newtonsoft.Json.Required.Default)]
+        public string AppliesTo { get; set; }
+    
+        /// <summary>
         /// Gets or sets capability status.
         /// Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
         /// </summary>
@@ -71,13 +78,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skuPartNumber", Required = Newtonsoft.Json.Required.Default)]
         public string SkuPartNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets applies to.
-        /// For example, 'User' or 'Company'.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliesTo", Required = Newtonsoft.Json.Required.Default)]
-        public string AppliesTo { get; set; }
     
     }
 }

@@ -37,12 +37,6 @@ namespace Microsoft.Graph
         public bool? CanAccept { get; set; }
     
         /// <summary>
-        /// Gets or sets suggested calendar name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "suggestedCalendarName", Required = Newtonsoft.Json.Required.Default)]
-        public string SuggestedCalendarName { get; set; }
-    
-        /// <summary>
         /// Gets or sets sharing message action.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingMessageAction", Required = Newtonsoft.Json.Required.Default)]
@@ -53,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingMessageActions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<CalendarSharingMessageAction> SharingMessageActions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets suggested calendar name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "suggestedCalendarName", Required = Newtonsoft.Json.Required.Default)]
+        public string SuggestedCalendarName { get; set; }
     
     }
 }

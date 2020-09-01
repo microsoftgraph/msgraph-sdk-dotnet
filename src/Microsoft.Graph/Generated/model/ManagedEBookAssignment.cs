@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets target.
-        /// The assignment target for eBook.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
-    
-        /// <summary>
         /// Gets or sets install intent.
         /// The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installIntent", Required = Newtonsoft.Json.Required.Default)]
         public InstallIntent? InstallIntent { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target.
+        /// The assignment target for eBook.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }
 }

@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets targeted mobile apps.
-        /// the associated app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedMobileApps", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> TargetedMobileApps { get; set; }
-    
-        /// <summary>
         /// Gets or sets created date time.
         /// DateTime the object was created.
         /// </summary>
@@ -52,6 +45,13 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets display name.
+        /// Admin provided name of the device configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// DateTime the object was last modified.
         /// </summary>
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets display name.
-        /// Admin provided name of the device configuration.
+        /// Gets or sets targeted mobile apps.
+        /// the associated app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedMobileApps", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> TargetedMobileApps { get; set; }
     
         /// <summary>
         /// Gets or sets version.
@@ -87,18 +87,18 @@ namespace Microsoft.Graph
         public IManagedDeviceMobileAppConfigurationDeviceStatusesCollectionPage DeviceStatuses { get; set; }
     
         /// <summary>
-        /// Gets or sets user statuses.
-        /// List of ManagedDeviceMobileAppConfigurationUserStatus.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
-        public IManagedDeviceMobileAppConfigurationUserStatusesCollectionPage UserStatuses { get; set; }
-    
-        /// <summary>
         /// Gets or sets device status summary.
         /// App configuration device status summary.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatusSummary", Required = Newtonsoft.Json.Required.Default)]
         public ManagedDeviceMobileAppConfigurationDeviceSummary DeviceStatusSummary { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user statuses.
+        /// List of ManagedDeviceMobileAppConfigurationUserStatus.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedDeviceMobileAppConfigurationUserStatusesCollectionPage UserStatuses { get; set; }
     
         /// <summary>
         /// Gets or sets user status summary.

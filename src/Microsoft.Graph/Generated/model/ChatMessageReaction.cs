@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets reactionType.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reactionType", Required = Newtonsoft.Json.Required.Default)]
-        public string ReactionType { get; set; }
-    
-        /// <summary>
         /// Gets or sets createdDateTime.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reactionType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reactionType", Required = Newtonsoft.Json.Required.Default)]
+        public string ReactionType { get; set; }
     
         /// <summary>
         /// Gets or sets user.

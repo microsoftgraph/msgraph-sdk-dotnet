@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets event date time.
-        /// Time when the event occurred .
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? EventDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets correlation id.
         /// Id used for tracing the failure in the service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "correlationId", Required = Newtonsoft.Json.Required.Default)]
         public string CorrelationId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets event date time.
+        /// Time when the event occurred .
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EventDateTime { get; set; }
     
     }
 }

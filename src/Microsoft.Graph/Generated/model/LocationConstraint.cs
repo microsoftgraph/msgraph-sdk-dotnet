@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets locations.
-        /// Constraint information for one or more locations that the client requests for the meeting.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locations", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<LocationConstraintItem> Locations { get; set; }
-    
-        /// <summary>
         /// Gets or sets isRequired.
         /// The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsRequired { get; set; }
+    
+        /// <summary>
+        /// Gets or sets locations.
+        /// Constraint information for one or more locations that the client requests for the meeting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locations", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<LocationConstraintItem> Locations { get; set; }
     
         /// <summary>
         /// Gets or sets suggestLocation.

@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets installed device count.
-        /// Number of Devices that have successfully installed this book.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? InstalledDeviceCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets failed device count.
         /// Number of Devices that have failed to install this book.
         /// </summary>
@@ -45,11 +38,18 @@ namespace Microsoft.Graph
         public Int32? FailedDeviceCount { get; set; }
     
         /// <summary>
-        /// Gets or sets not installed device count.
-        /// Number of Devices that does not have this book installed.
+        /// Gets or sets failed user count.
+        /// Number of Users that have 1 or more device that failed to install this book.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notInstalledDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? NotInstalledDeviceCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedUserCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? FailedUserCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets installed device count.
+        /// Number of Devices that have successfully installed this book.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? InstalledDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets installed user count.
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public Int32? InstalledUserCount { get; set; }
     
         /// <summary>
-        /// Gets or sets failed user count.
-        /// Number of Users that have 1 or more device that failed to install this book.
+        /// Gets or sets not installed device count.
+        /// Number of Devices that does not have this book installed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedUserCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? FailedUserCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notInstalledDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? NotInstalledDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets not installed user count.

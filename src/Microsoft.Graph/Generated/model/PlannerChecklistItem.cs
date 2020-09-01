@@ -38,20 +38,6 @@ namespace Microsoft.Graph
         public bool? IsChecked { get; set; }
     
         /// <summary>
-        /// Gets or sets title.
-        /// Title of the checklist item
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
-        public string Title { get; set; }
-    
-        /// <summary>
-        /// Gets or sets orderHint.
-        /// Used to set the relative order of items in the checklist. The format is defined as outlined here.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderHint", Required = Newtonsoft.Json.Required.Default)]
-        public string OrderHint { get; set; }
-    
-        /// <summary>
         /// Gets or sets lastModifiedBy.
         /// Read-only. User ID by which this is last modified.
         /// </summary>
@@ -64,6 +50,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets orderHint.
+        /// Used to set the relative order of items in the checklist. The format is defined as outlined here.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderHint", Required = Newtonsoft.Json.Required.Default)]
+        public string OrderHint { get; set; }
+    
+        /// <summary>
+        /// Gets or sets title.
+        /// Title of the checklist item
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
+        public string Title { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

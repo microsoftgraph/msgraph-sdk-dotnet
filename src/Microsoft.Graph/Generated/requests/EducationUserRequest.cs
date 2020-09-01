@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (educationUserToInitialize != null && educationUserToInitialize.AdditionalData != null)
             {
 
-                if (educationUserToInitialize.Schools != null && educationUserToInitialize.Schools.CurrentPage != null)
-                {
-                    educationUserToInitialize.Schools.AdditionalData = educationUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("schools@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationUserToInitialize.Schools.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (educationUserToInitialize.Classes != null && educationUserToInitialize.Classes.CurrentPage != null)
                 {
                     educationUserToInitialize.Classes.AdditionalData = educationUserToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         educationUserToInitialize.Classes.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (educationUserToInitialize.Schools != null && educationUserToInitialize.Schools.CurrentPage != null)
+                {
+                    educationUserToInitialize.Schools.AdditionalData = educationUserToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    educationUserToInitialize.AdditionalData.TryGetValue("schools@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        educationUserToInitialize.Schools.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -31,25 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets graduationYear.
-        /// Year the student is graduating from the school.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "graduationYear", Required = Newtonsoft.Json.Required.Default)]
-        public string GraduationYear { get; set; }
-    
-        /// <summary>
-        /// Gets or sets grade.
-        /// Current grade level of the student.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grade", Required = Newtonsoft.Json.Required.Default)]
-        public string Grade { get; set; }
-    
-        /// <summary>
         /// Gets or sets birthDate.
         /// Birth date of the student.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "birthDate", Required = Newtonsoft.Json.Required.Default)]
         public Date BirthDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets externalId.
+        /// ID of the student in the source system.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
+        public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets gender.
@@ -59,18 +52,25 @@ namespace Microsoft.Graph
         public EducationGender? Gender { get; set; }
     
         /// <summary>
+        /// Gets or sets grade.
+        /// Current grade level of the student.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grade", Required = Newtonsoft.Json.Required.Default)]
+        public string Grade { get; set; }
+    
+        /// <summary>
+        /// Gets or sets graduationYear.
+        /// Year the student is graduating from the school.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "graduationYear", Required = Newtonsoft.Json.Required.Default)]
+        public string GraduationYear { get; set; }
+    
+        /// <summary>
         /// Gets or sets studentNumber.
         /// Student Number.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "studentNumber", Required = Newtonsoft.Json.Required.Default)]
         public string StudentNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets externalId.
-        /// ID of the student in the source system.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
-        public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

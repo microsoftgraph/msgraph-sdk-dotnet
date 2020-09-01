@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets alternate notification emails.
+        /// List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternateNotificationEmails", Required = Newtonsoft.Json.Required.Default)]
+        public string AlternateNotificationEmails { get; set; }
+    
+        /// <summary>
         /// Gets or sets group lifetime in days.
         /// Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
         /// </summary>
@@ -43,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedGroupTypes", Required = Newtonsoft.Json.Required.Default)]
         public string ManagedGroupTypes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets alternate notification emails.
-        /// List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternateNotificationEmails", Required = Newtonsoft.Json.Required.Default)]
-        public string AlternateNotificationEmails { get; set; }
     
     }
 }

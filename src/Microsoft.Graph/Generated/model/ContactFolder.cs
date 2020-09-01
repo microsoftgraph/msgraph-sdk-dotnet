@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets parent folder id.
-        /// The ID of the folder's parent folder.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentFolderId", Required = Newtonsoft.Json.Required.Default)]
-        public string ParentFolderId { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// The folder's display name.
         /// </summary>
@@ -45,18 +38,18 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets single value extended properties.
-        /// The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
+        /// Gets or sets parent folder id.
+        /// The ID of the folder's parent folder.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IContactFolderSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentFolderId", Required = Newtonsoft.Json.Required.Default)]
+        public string ParentFolderId { get; set; }
     
         /// <summary>
-        /// Gets or sets multi value extended properties.
-        /// The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
+        /// Gets or sets child folders.
+        /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IContactFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "childFolders", Required = Newtonsoft.Json.Required.Default)]
+        public IContactFolderChildFoldersCollectionPage ChildFolders { get; set; }
     
         /// <summary>
         /// Gets or sets contacts.
@@ -66,11 +59,18 @@ namespace Microsoft.Graph
         public IContactFolderContactsCollectionPage Contacts { get; set; }
     
         /// <summary>
-        /// Gets or sets child folders.
-        /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+        /// Gets or sets multi value extended properties.
+        /// The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "childFolders", Required = Newtonsoft.Json.Required.Default)]
-        public IContactFolderChildFoldersCollectionPage ChildFolders { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IContactFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single value extended properties.
+        /// The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IContactFolderSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
     
     }
 }

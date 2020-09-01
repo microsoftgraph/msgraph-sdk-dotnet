@@ -45,6 +45,13 @@ namespace Microsoft.Graph
         public string BackgroundColor { get; set; }
     
         /// <summary>
+        /// Gets or sets content.
+        /// Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        public Newtonsoft.Json.Linq.JToken Content { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
         /// </summary>
@@ -57,13 +64,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayText", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayText { get; set; }
-    
-        /// <summary>
-        /// Gets or sets content.
-        /// Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Content { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

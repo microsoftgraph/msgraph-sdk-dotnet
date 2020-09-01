@@ -31,25 +31,18 @@ namespace Microsoft.Graph.CallRecords
         }
 	
         /// <summary>
-        /// Gets or sets version.
-        /// Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
+        /// Gets or sets end date time.
+        /// UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Version { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets type.
-        /// Indicates the type of the call. Possible values are: unknown, groupCall, peerToPeer, unknownFutureValue.
+        /// Gets or sets join web url.
+        /// Meeting URL associated to the call. May not be available for a peerToPeer call record type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public CallType? Type { get; set; }
-    
-        /// <summary>
-        /// Gets or sets modalities.
-        /// List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modalities", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Modality> Modalities { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinWebUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string JoinWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
@@ -59,18 +52,11 @@ namespace Microsoft.Graph.CallRecords
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets start date time.
-        /// UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// Gets or sets modalities.
+        /// List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets end date time.
-        /// UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? EndDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modalities", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Modality> Modalities { get; set; }
     
         /// <summary>
         /// Gets or sets organizer.
@@ -87,11 +73,25 @@ namespace Microsoft.Graph.CallRecords
         public IEnumerable<Microsoft.Graph.IdentitySet> Participants { get; set; }
     
         /// <summary>
-        /// Gets or sets join web url.
-        /// Meeting URL associated to the call. May not be available for a peerToPeer call record type.
+        /// Gets or sets start date time.
+        /// UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinWebUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string JoinWebUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// Indicates the type of the call. Possible values are: unknown, groupCall, peerToPeer, unknownFutureValue.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public CallType? Type { get; set; }
+    
+        /// <summary>
+        /// Gets or sets version.
+        /// Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Version { get; set; }
     
         /// <summary>
         /// Gets or sets sessions.

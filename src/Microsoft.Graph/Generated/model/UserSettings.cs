@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets contribution to content discovery disabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contributionToContentDiscoveryDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ContributionToContentDiscoveryDisabled { get; set; }
-    
-        /// <summary>
         /// Gets or sets contribution to content discovery as organization disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contributionToContentDiscoveryAsOrganizationDisabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? ContributionToContentDiscoveryAsOrganizationDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets contribution to content discovery disabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contributionToContentDiscoveryDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ContributionToContentDiscoveryDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets shift preferences.

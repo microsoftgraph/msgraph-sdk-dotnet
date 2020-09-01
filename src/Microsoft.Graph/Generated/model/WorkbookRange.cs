@@ -136,18 +136,18 @@ namespace Microsoft.Graph
         public Newtonsoft.Json.Linq.JToken Text { get; set; }
     
         /// <summary>
-        /// Gets or sets value types.
-        /// Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueTypes", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken ValueTypes { get; set; }
-    
-        /// <summary>
         /// Gets or sets values.
         /// Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
         public Newtonsoft.Json.Linq.JToken Values { get; set; }
+    
+        /// <summary>
+        /// Gets or sets value types.
+        /// Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueTypes", Required = Newtonsoft.Json.Required.Default)]
+        public Newtonsoft.Json.Linq.JToken ValueTypes { get; set; }
     
         /// <summary>
         /// Gets or sets format.

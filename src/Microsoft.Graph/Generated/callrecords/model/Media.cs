@@ -31,18 +31,11 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
-        /// Gets or sets label.
-        /// How the media was identified during media negotiation stage.
+        /// Gets or sets calleeDevice.
+        /// Device information associated with the callee endpoint of this media.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "label", Required = Newtonsoft.Json.Required.Default)]
-        public string Label { get; set; }
-    
-        /// <summary>
-        /// Gets or sets callerNetwork.
-        /// Network information associated with the caller endpoint of this media.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callerNetwork", Required = Newtonsoft.Json.Required.Default)]
-        public NetworkInfo CallerNetwork { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calleeDevice", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceInfo CalleeDevice { get; set; }
     
         /// <summary>
         /// Gets or sets calleeNetwork.
@@ -59,11 +52,18 @@ namespace Microsoft.Graph.CallRecords
         public DeviceInfo CallerDevice { get; set; }
     
         /// <summary>
-        /// Gets or sets calleeDevice.
-        /// Device information associated with the callee endpoint of this media.
+        /// Gets or sets callerNetwork.
+        /// Network information associated with the caller endpoint of this media.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calleeDevice", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceInfo CalleeDevice { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callerNetwork", Required = Newtonsoft.Json.Required.Default)]
+        public NetworkInfo CallerNetwork { get; set; }
+    
+        /// <summary>
+        /// Gets or sets label.
+        /// How the media was identified during media negotiation stage.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "label", Required = Newtonsoft.Json.Required.Default)]
+        public string Label { get; set; }
     
         /// <summary>
         /// Gets or sets streams.

@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// DateTime the object was last modified.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// Admin provided name of the device configuration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// DateTime the object was last modified.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets version.
@@ -66,39 +66,11 @@ namespace Microsoft.Graph
         public Int32? Version { get; set; }
     
         /// <summary>
-        /// Gets or sets scheduled actions for rule.
-        /// The list of scheduled action for this rule
+        /// Gets or sets assignments.
+        /// The collection of assignments for this compliance policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledActionsForRule", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceCompliancePolicyScheduledActionsForRuleCollectionPage ScheduledActionsForRule { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device statuses.
-        /// List of DeviceComplianceDeviceStatus.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatuses", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceCompliancePolicyDeviceStatusesCollectionPage DeviceStatuses { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user statuses.
-        /// List of DeviceComplianceUserStatus.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceCompliancePolicyUserStatusesCollectionPage UserStatuses { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device status overview.
-        /// Device compliance devices status overview
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatusOverview", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceComplianceDeviceOverview DeviceStatusOverview { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user status overview.
-        /// Device compliance users status overview
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatusOverview", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceComplianceUserOverview UserStatusOverview { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceCompliancePolicyAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
         /// Gets or sets device setting state summaries.
@@ -108,11 +80,39 @@ namespace Microsoft.Graph
         public IDeviceCompliancePolicyDeviceSettingStateSummariesCollectionPage DeviceSettingStateSummaries { get; set; }
     
         /// <summary>
-        /// Gets or sets assignments.
-        /// The collection of assignments for this compliance policy.
+        /// Gets or sets device statuses.
+        /// List of DeviceComplianceDeviceStatus.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceCompliancePolicyAssignmentsCollectionPage Assignments { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatuses", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceCompliancePolicyDeviceStatusesCollectionPage DeviceStatuses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device status overview.
+        /// Device compliance devices status overview
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatusOverview", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceComplianceDeviceOverview DeviceStatusOverview { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scheduled actions for rule.
+        /// The list of scheduled action for this rule
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledActionsForRule", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceCompliancePolicyScheduledActionsForRuleCollectionPage ScheduledActionsForRule { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user statuses.
+        /// List of DeviceComplianceUserStatus.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceCompliancePolicyUserStatusesCollectionPage UserStatuses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user status overview.
+        /// Device compliance users status overview
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatusOverview", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceComplianceUserOverview UserStatusOverview { get; set; }
     
     }
 }

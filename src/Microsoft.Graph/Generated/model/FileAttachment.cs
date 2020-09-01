@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets content bytes.
+        /// The base64-encoded contents of the file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentBytes", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] ContentBytes { get; set; }
+    
+        /// <summary>
         /// Gets or sets content id.
         /// The ID of the attachment in the Exchange store.
         /// </summary>
@@ -43,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentLocation", Required = Newtonsoft.Json.Required.Default)]
         public string ContentLocation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets content bytes.
-        /// The base64-encoded contents of the file.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentBytes", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] ContentBytes { get; set; }
     
     }
 }

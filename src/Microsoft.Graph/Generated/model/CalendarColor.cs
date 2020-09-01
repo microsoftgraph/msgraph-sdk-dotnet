@@ -30,6 +30,11 @@ namespace Microsoft.Graph
         LightGreen = 1,
 	
         /// <summary>
+        /// Auto
+        /// </summary>
+        Auto = -1,
+	
+        /// <summary>
         /// Light Orange
         /// </summary>
         LightOrange = 2,
@@ -68,11 +73,6 @@ namespace Microsoft.Graph
         /// Max Color
         /// </summary>
         MaxColor = 9,
-	
-        /// <summary>
-        /// Auto
-        /// </summary>
-        Auto = -1,
 	
     }
 }

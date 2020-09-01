@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// The display name of the rule.
+        /// Gets or sets actions.
+        /// Actions to be taken on a message when the corresponding conditions are fulfilled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sequence.
-        /// Indicates the order in which the rule is executed, among other rules.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sequence", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Sequence { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actions", Required = Newtonsoft.Json.Required.Default)]
+        public MessageRuleActions Actions { get; set; }
     
         /// <summary>
         /// Gets or sets conditions.
@@ -52,11 +45,11 @@ namespace Microsoft.Graph
         public MessageRulePredicates Conditions { get; set; }
     
         /// <summary>
-        /// Gets or sets actions.
-        /// Actions to be taken on a message when the corresponding conditions are fulfilled.
+        /// Gets or sets display name.
+        /// The display name of the rule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actions", Required = Newtonsoft.Json.Required.Default)]
-        public MessageRuleActions Actions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets exceptions.
@@ -66,13 +59,6 @@ namespace Microsoft.Graph
         public MessageRulePredicates Exceptions { get; set; }
     
         /// <summary>
-        /// Gets or sets is enabled.
-        /// Indicates whether the rule is enabled to be applied to messages.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsEnabled { get; set; }
-    
-        /// <summary>
         /// Gets or sets has error.
         /// Indicates whether the rule is in an error condition. Read-only.
         /// </summary>
@@ -80,11 +66,25 @@ namespace Microsoft.Graph
         public bool? HasError { get; set; }
     
         /// <summary>
+        /// Gets or sets is enabled.
+        /// Indicates whether the rule is enabled to be applied to messages.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets is read only.
         /// Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isReadOnly", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsReadOnly { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sequence.
+        /// Indicates the order in which the rule is executed, among other rules.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sequence", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Sequence { get; set; }
     
     }
 }

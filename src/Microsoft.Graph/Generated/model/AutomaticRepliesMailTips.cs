@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public LocaleInfo MessageLanguage { get; set; }
     
         /// <summary>
-        /// Gets or sets scheduledStartTime.
-        /// The date and time that automatic replies are set to begin.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledStartTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeTimeZone ScheduledStartTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets scheduledEndTime.
         /// The date and time that automatic replies are set to end.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledEndTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeTimeZone ScheduledEndTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scheduledStartTime.
+        /// The date and time that automatic replies are set to begin.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledStartTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeTimeZone ScheduledStartTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

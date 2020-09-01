@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets configuration deployed user count.
         /// Not yet documented
         /// </summary>
@@ -45,18 +38,25 @@ namespace Microsoft.Graph
         public Int32? ConfigurationDeployedUserCount { get; set; }
     
         /// <summary>
-        /// Gets or sets last refresh time.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastRefreshTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets configuration deployment summary per app.
         /// Not yet documented
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationDeploymentSummaryPerApp", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ManagedAppPolicyDeploymentSummaryPerApp> ConfigurationDeploymentSummaryPerApp { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last refresh time.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastRefreshTime { get; set; }
     
         /// <summary>
         /// Gets or sets version.

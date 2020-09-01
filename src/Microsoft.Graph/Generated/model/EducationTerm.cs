@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets displayName.
+        /// Display name of the term.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets endDate.
+        /// End of the term.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date EndDate { get; set; }
+    
+        /// <summary>
         /// Gets or sets externalId.
         /// ID of term in the syncing system.
         /// </summary>
@@ -43,20 +57,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDate", Required = Newtonsoft.Json.Required.Default)]
         public Date StartDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets endDate.
-        /// End of the term.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date EndDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets displayName.
-        /// Display name of the term.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

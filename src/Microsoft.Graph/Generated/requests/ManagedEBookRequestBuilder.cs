@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for InstallSummary.
-        /// </summary>
-        /// <returns>The <see cref="IEBookInstallSummaryRequestBuilder"/>.</returns>
-        public IEBookInstallSummaryRequestBuilder InstallSummary
-        {
-            get
-            {
-                return new EBookInstallSummaryRequestBuilder(this.AppendSegmentToRequestUrl("installSummary"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceStates.
         /// </summary>
         /// <returns>The <see cref="IManagedEBookDeviceStatesCollectionRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ManagedEBookDeviceStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for InstallSummary.
+        /// </summary>
+        /// <returns>The <see cref="IEBookInstallSummaryRequestBuilder"/>.</returns>
+        public IEBookInstallSummaryRequestBuilder InstallSummary
+        {
+            get
+            {
+                return new EBookInstallSummaryRequestBuilder(this.AppendSegmentToRequestUrl("installSummary"), this.Client);
             }
         }
 

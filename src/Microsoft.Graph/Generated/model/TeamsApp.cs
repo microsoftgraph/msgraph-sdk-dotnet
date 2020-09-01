@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets external id.
-        /// The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
-        public string ExternalId { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "distributionMethod", Required = Newtonsoft.Json.Required.Default)]
         public TeamsAppDistributionMethod? DistributionMethod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets external id.
+        /// The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
+        public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets app definitions.

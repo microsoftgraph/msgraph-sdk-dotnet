@@ -38,17 +38,17 @@ namespace Microsoft.Graph
         public string Code { get; set; }
     
         /// <summary>
+        /// Gets or sets innerError.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "innerError", Required = Newtonsoft.Json.Required.Default)]
+        public WorkbookOperationError InnerError { get; set; }
+    
+        /// <summary>
         /// Gets or sets message.
         /// The error message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
         public string Message { get; set; }
-    
-        /// <summary>
-        /// Gets or sets innerError.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "innerError", Required = Newtonsoft.Json.Required.Default)]
-        public WorkbookOperationError InnerError { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

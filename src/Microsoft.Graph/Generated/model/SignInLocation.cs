@@ -38,13 +38,6 @@ namespace Microsoft.Graph
         public string City { get; set; }
     
         /// <summary>
-        /// Gets or sets state.
-        /// Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public string State { get; set; }
-    
-        /// <summary>
         /// Gets or sets countryOrRegion.
         /// Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
         /// </summary>
@@ -57,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "geoCoordinates", Required = Newtonsoft.Json.Required.Default)]
         public GeoCoordinates GeoCoordinates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets state.
+        /// Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public string State { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

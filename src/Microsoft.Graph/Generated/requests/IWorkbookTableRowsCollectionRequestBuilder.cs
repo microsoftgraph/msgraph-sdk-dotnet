@@ -45,16 +45,16 @@ namespace Microsoft.Graph
             Newtonsoft.Json.Linq.JToken values = null);
 
         /// <summary>
+        /// Gets the request builder for WorkbookTableRowCount.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableRowCountRequestBuilder"/>.</returns>
+        IWorkbookTableRowCountRequestBuilder Count();
+
+        /// <summary>
         /// Gets the request builder for WorkbookTableRowItemAt.
         /// </summary>
         /// <returns>The <see cref="IWorkbookTableRowItemAtRequestBuilder"/>.</returns>
         IWorkbookTableRowItemAtRequestBuilder ItemAt(
             Int32 index);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookTableRowCount.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookTableRowCountRequestBuilder"/>.</returns>
-        IWorkbookTableRowCountRequestBuilder Count();
     }
 }

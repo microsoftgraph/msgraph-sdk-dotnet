@@ -31,17 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets iconUrl.
-        /// Optional; URI that points to an icon which represents the application used to generate the activity
+        /// Gets or sets addImageQuery.
+        /// Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iconUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string IconUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets alternativeText.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternativeText", Required = Newtonsoft.Json.Required.Default)]
-        public string AlternativeText { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addImageQuery", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AddImageQuery { get; set; }
     
         /// <summary>
         /// Gets or sets alternateText.
@@ -51,11 +45,17 @@ namespace Microsoft.Graph
         public string AlternateText { get; set; }
     
         /// <summary>
-        /// Gets or sets addImageQuery.
-        /// Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
+        /// Gets or sets alternativeText.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addImageQuery", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AddImageQuery { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternativeText", Required = Newtonsoft.Json.Required.Default)]
+        public string AlternativeText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets iconUrl.
+        /// Optional; URI that points to an icon which represents the application used to generate the activity
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iconUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string IconUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

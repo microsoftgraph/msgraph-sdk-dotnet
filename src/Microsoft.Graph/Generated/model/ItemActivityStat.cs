@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets start date time.
-        /// When the interval starts. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets end date time.
-        /// When the interval ends. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? EndDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets access.
         /// Statistics about the access actions in this interval. Read-only.
         /// </summary>
@@ -73,11 +59,18 @@ namespace Microsoft.Graph
         public ItemActionStat Edit { get; set; }
     
         /// <summary>
-        /// Gets or sets move.
-        /// Statistics about the move actions in this interval. Read-only.
+        /// Gets or sets end date time.
+        /// When the interval ends. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "move", Required = Newtonsoft.Json.Required.Default)]
-        public ItemActionStat Move { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EndDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets incomplete data.
+        /// Indicates that the statistics in this interval are based on incomplete data. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incompleteData", Required = Newtonsoft.Json.Required.Default)]
+        public IncompleteData IncompleteData { get; set; }
     
         /// <summary>
         /// Gets or sets is trending.
@@ -87,11 +80,18 @@ namespace Microsoft.Graph
         public bool? IsTrending { get; set; }
     
         /// <summary>
-        /// Gets or sets incomplete data.
-        /// Indicates that the statistics in this interval are based on incomplete data. Read-only.
+        /// Gets or sets move.
+        /// Statistics about the move actions in this interval. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incompleteData", Required = Newtonsoft.Json.Required.Default)]
-        public IncompleteData IncompleteData { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "move", Required = Newtonsoft.Json.Required.Default)]
+        public ItemActionStat Move { get; set; }
+    
+        /// <summary>
+        /// Gets or sets start date time.
+        /// When the interval starts. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets activities.

@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets errorDetails.
+        /// An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDetails", Required = Newtonsoft.Json.Required.Default)]
+        public GenericError ErrorDetails { get; set; }
+    
+        /// <summary>
         /// Gets or sets sourceId.
         /// The identifier that was converted. This value is the original, un-converted identifier.
         /// </summary>
@@ -43,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetId", Required = Newtonsoft.Json.Required.Default)]
         public string TargetId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets errorDetails.
-        /// An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDetails", Required = Newtonsoft.Json.Required.Default)]
-        public GenericError ErrorDetails { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -66,6 +66,13 @@ namespace Microsoft.Graph
         public bool? AirPlayForcePairingPasswordForOutgoingRequests { get; set; }
     
         /// <summary>
+        /// Gets or sets apple news blocked.
+        /// Indicates whether or not to block the user from using News when the device is in supervised mode (iOS 9.0 and later).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleNewsBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AppleNewsBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets apple watch block pairing.
         /// Indicates whether or not to allow Apple Watch pairing when the device is in supervised mode (iOS 9.0 and later).
         /// </summary>
@@ -80,32 +87,11 @@ namespace Microsoft.Graph
         public bool? AppleWatchForceWristDetection { get; set; }
     
         /// <summary>
-        /// Gets or sets apple news blocked.
-        /// Indicates whether or not to block the user from using News when the device is in supervised mode (iOS 9.0 and later).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleNewsBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AppleNewsBlocked { get; set; }
-    
-        /// <summary>
         /// Gets or sets apps single app mode list.
         /// Gets or sets the list of iOS apps allowed to autonomously enter Single App Mode. Supervised only. iOS 7.0 and later. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsSingleAppModeList", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AppListItem> AppsSingleAppModeList { get; set; }
-    
-        /// <summary>
-        /// Gets or sets apps visibility list.
-        /// List of apps in the visibility list (either visible/launchable apps list or hidden/unlaunchable apps list, controlled by AppsVisibilityListType) (iOS 9.3 and later). This collection can contain a maximum of 10000 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsVisibilityList", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AppListItem> AppsVisibilityList { get; set; }
-    
-        /// <summary>
-        /// Gets or sets apps visibility list type.
-        /// Type of list that is in the AppsVisibilityList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsVisibilityListType", Required = Newtonsoft.Json.Required.Default)]
-        public AppListType? AppsVisibilityListType { get; set; }
     
         /// <summary>
         /// Gets or sets app store block automatic downloads.
@@ -141,6 +127,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appStoreRequirePassword", Required = Newtonsoft.Json.Required.Default)]
         public bool? AppStoreRequirePassword { get; set; }
+    
+        /// <summary>
+        /// Gets or sets apps visibility list.
+        /// List of apps in the visibility list (either visible/launchable apps list or hidden/unlaunchable apps list, controlled by AppsVisibilityListType) (iOS 9.3 and later). This collection can contain a maximum of 10000 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsVisibilityList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> AppsVisibilityList { get; set; }
+    
+        /// <summary>
+        /// Gets or sets apps visibility list type.
+        /// Type of list that is in the AppsVisibilityList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsVisibilityListType", Required = Newtonsoft.Json.Required.Default)]
+        public AppListType? AppsVisibilityListType { get; set; }
     
         /// <summary>
         /// Gets or sets bluetooth block modification.
@@ -213,18 +213,18 @@ namespace Microsoft.Graph
         public bool? ClassroomAppForceUnpromptedScreenObservation { get; set; }
     
         /// <summary>
-        /// Gets or sets compliant apps list.
-        /// List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantAppsList", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AppListItem> CompliantAppsList { get; set; }
-    
-        /// <summary>
         /// Gets or sets compliant app list type.
         /// List that is in the AppComplianceList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantAppListType", Required = Newtonsoft.Json.Required.Default)]
         public AppListType? CompliantAppListType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets compliant apps list.
+        /// List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantAppsList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> CompliantAppsList { get; set; }
     
         /// <summary>
         /// Gets or sets configuration profile block changes.
@@ -325,6 +325,13 @@ namespace Microsoft.Graph
         public bool? FindMyFriendsBlocked { get; set; }
     
         /// <summary>
+        /// Gets or sets game center blocked.
+        /// Indicates whether or not to block the user from using Game Center when the device is in supervised mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gameCenterBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? GameCenterBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets gaming block game center friends.
         /// Indicates whether or not to block the user from having friends in Game Center.
         /// </summary>
@@ -337,13 +344,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gamingBlockMultiplayer", Required = Newtonsoft.Json.Required.Default)]
         public bool? GamingBlockMultiplayer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets game center blocked.
-        /// Indicates whether or not to block the user from using Game Center when the device is in supervised mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gameCenterBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? GameCenterBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets host pairing blocked.
@@ -570,6 +570,13 @@ namespace Microsoft.Graph
         public string KioskModeBuiltInAppId { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode managed app id.
+        /// Managed app id of the app to use for kiosk mode. If KioskModeManagedAppId is specified then KioskModeAppStoreUrl will be ignored.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeManagedAppId", Required = Newtonsoft.Json.Required.Default)]
+        public string KioskModeManagedAppId { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode require assistive touch.
         /// Indicates whether or not to require assistive touch while in kiosk mode.
         /// </summary>
@@ -605,13 +612,6 @@ namespace Microsoft.Graph
         public bool? KioskModeRequireZoom { get; set; }
     
         /// <summary>
-        /// Gets or sets kiosk mode managed app id.
-        /// Managed app id of the app to use for kiosk mode. If KioskModeManagedAppId is specified then KioskModeAppStoreUrl will be ignored.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeManagedAppId", Required = Newtonsoft.Json.Required.Default)]
-        public string KioskModeManagedAppId { get; set; }
-    
-        /// <summary>
         /// Gets or sets lock screen block control center.
         /// Indicates whether or not to block the user from using control center on the lock screen.
         /// </summary>
@@ -638,6 +638,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lockScreenBlockTodayView", Required = Newtonsoft.Json.Required.Default)]
         public bool? LockScreenBlockTodayView { get; set; }
+    
+        /// <summary>
+        /// Gets or sets media content rating apps.
+        /// Media content rating settings for Apps. Possible values are: allAllowed, allBlocked, agesAbove4, agesAbove9, agesAbove12, agesAbove17.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaContentRatingApps", Required = Newtonsoft.Json.Required.Default)]
+        public RatingAppsType? MediaContentRatingApps { get; set; }
     
         /// <summary>
         /// Gets or sets media content rating australia.
@@ -703,25 +710,18 @@ namespace Microsoft.Graph
         public MediaContentRatingUnitedStates MediaContentRatingUnitedStates { get; set; }
     
         /// <summary>
-        /// Gets or sets network usage rules.
-        /// List of managed apps and the network rules that applies to them. This collection can contain a maximum of 1000 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkUsageRules", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<IosNetworkUsageRule> NetworkUsageRules { get; set; }
-    
-        /// <summary>
-        /// Gets or sets media content rating apps.
-        /// Media content rating settings for Apps. Possible values are: allAllowed, allBlocked, agesAbove4, agesAbove9, agesAbove12, agesAbove17.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaContentRatingApps", Required = Newtonsoft.Json.Required.Default)]
-        public RatingAppsType? MediaContentRatingApps { get; set; }
-    
-        /// <summary>
         /// Gets or sets messages blocked.
         /// Indicates whether or not to block the user from using the Messages app on the supervised device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messagesBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? MessagesBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets network usage rules.
+        /// List of managed apps and the network rules that applies to them. This collection can contain a maximum of 1000 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkUsageRules", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<IosNetworkUsageRule> NetworkUsageRules { get; set; }
     
         /// <summary>
         /// Gets or sets notifications block settings modification.
@@ -731,18 +731,18 @@ namespace Microsoft.Graph
         public bool? NotificationsBlockSettingsModification { get; set; }
     
         /// <summary>
-        /// Gets or sets passcode block fingerprint unlock.
-        /// Indicates whether or not to block fingerprint unlock.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeBlockFingerprintUnlock", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PasscodeBlockFingerprintUnlock { get; set; }
-    
-        /// <summary>
         /// Gets or sets passcode block fingerprint modification.
         /// Block modification of registered Touch ID fingerprints when in supervised mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeBlockFingerprintModification", Required = Newtonsoft.Json.Required.Default)]
         public bool? PasscodeBlockFingerprintModification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets passcode block fingerprint unlock.
+        /// Indicates whether or not to block fingerprint unlock.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeBlockFingerprintUnlock", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasscodeBlockFingerprintUnlock { get; set; }
     
         /// <summary>
         /// Gets or sets passcode block modification.
@@ -766,6 +766,13 @@ namespace Microsoft.Graph
         public Int32? PasscodeExpirationDays { get; set; }
     
         /// <summary>
+        /// Gets or sets passcode minimum character set count.
+        /// Number of character sets a passcode must contain. Valid values 0 to 4
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasscodeMinimumCharacterSetCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets passcode minimum length.
         /// Minimum length of passcode. Valid values 4 to 14
         /// </summary>
@@ -787,13 +794,6 @@ namespace Microsoft.Graph
         public Int32? PasscodeMinutesOfInactivityBeforeScreenTimeout { get; set; }
     
         /// <summary>
-        /// Gets or sets passcode minimum character set count.
-        /// Number of character sets a passcode must contain. Valid values 0 to 4
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasscodeMinimumCharacterSetCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets passcode previous passcode block count.
         /// Number of previous passcodes to block. Valid values 1 to 24
         /// </summary>
@@ -801,11 +801,11 @@ namespace Microsoft.Graph
         public Int32? PasscodePreviousPasscodeBlockCount { get; set; }
     
         /// <summary>
-        /// Gets or sets passcode sign in failure count before wipe.
-        /// Number of sign in failures allowed before wiping the device. Valid values 4 to 11
+        /// Gets or sets passcode required.
+        /// Indicates whether or not to require a passcode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeSignInFailureCountBeforeWipe", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasscodeSignInFailureCountBeforeWipe { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeRequired", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasscodeRequired { get; set; }
     
         /// <summary>
         /// Gets or sets passcode required type.
@@ -815,11 +815,11 @@ namespace Microsoft.Graph
         public RequiredPasswordType? PasscodeRequiredType { get; set; }
     
         /// <summary>
-        /// Gets or sets passcode required.
-        /// Indicates whether or not to require a passcode.
+        /// Gets or sets passcode sign in failure count before wipe.
+        /// Number of sign in failures allowed before wiping the device. Valid values 4 to 11
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeRequired", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PasscodeRequired { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeSignInFailureCountBeforeWipe", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasscodeSignInFailureCountBeforeWipe { get; set; }
     
         /// <summary>
         /// Gets or sets podcasts blocked.
@@ -836,6 +836,13 @@ namespace Microsoft.Graph
         public bool? SafariBlockAutofill { get; set; }
     
         /// <summary>
+        /// Gets or sets safari blocked.
+        /// Indicates whether or not to block the user from using Safari.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "safariBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SafariBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets safari block java script.
         /// Indicates whether or not to block JavaScript in Safari.
         /// </summary>
@@ -848,13 +855,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "safariBlockPopups", Required = Newtonsoft.Json.Required.Default)]
         public bool? SafariBlockPopups { get; set; }
-    
-        /// <summary>
-        /// Gets or sets safari blocked.
-        /// Indicates whether or not to block the user from using Safari.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "safariBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SafariBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets safari cookie settings.

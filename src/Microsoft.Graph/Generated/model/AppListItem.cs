@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets appId.
+        /// The application or bundle identifier of the application
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
+        public string AppId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets appStoreUrl.
+        /// The Store URL of the application
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appStoreUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string AppStoreUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets name.
         /// The application name
         /// </summary>
@@ -43,20 +57,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
         public string Publisher { get; set; }
-    
-        /// <summary>
-        /// Gets or sets appStoreUrl.
-        /// The Store URL of the application
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appStoreUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string AppStoreUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets appId.
-        /// The application or bundle identifier of the application
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
-        public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -52,18 +52,18 @@ namespace Microsoft.Graph
         public Int32? QuarantinedDeviceCount { get; set; }
     
         /// <summary>
-        /// Gets or sets unknownDeviceCount.
-        /// Total count of devices with Exchange Access State: Unknown.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UnknownDeviceCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets unavailableDeviceCount.
         /// Total count of devices for which no Exchange Access State could be found.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unavailableDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? UnavailableDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unknownDeviceCount.
+        /// Total count of devices with Exchange Access State: Unknown.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UnknownDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

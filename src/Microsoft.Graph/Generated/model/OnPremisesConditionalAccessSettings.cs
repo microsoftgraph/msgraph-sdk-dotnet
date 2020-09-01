@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         public bool? Enabled { get; set; }
     
         /// <summary>
-        /// Gets or sets included groups.
-        /// User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includedGroups", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Guid> IncludedGroups { get; set; }
-    
-        /// <summary>
         /// Gets or sets excluded groups.
         /// User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludedGroups", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Guid> ExcludedGroups { get; set; }
+    
+        /// <summary>
+        /// Gets or sets included groups.
+        /// User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includedGroups", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Guid> IncludedGroups { get; set; }
     
         /// <summary>
         /// Gets or sets override default rule.

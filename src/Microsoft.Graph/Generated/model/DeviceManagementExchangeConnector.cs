@@ -31,18 +31,39 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets connector server name.
+        /// The name of the server hosting the Exchange Connector.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorServerName", Required = Newtonsoft.Json.Required.Default)]
+        public string ConnectorServerName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets exchange alias.
+        /// An alias assigned to the Exchange server
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeAlias", Required = Newtonsoft.Json.Required.Default)]
+        public string ExchangeAlias { get; set; }
+    
+        /// <summary>
+        /// Gets or sets exchange connector type.
+        /// The type of Exchange Connector Configured. Possible values are: onPremises, hosted, serviceToService, dedicated.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeConnectorType", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementExchangeConnectorType? ExchangeConnectorType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets exchange organization.
+        /// Exchange Organization to the Exchange server
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeOrganization", Required = Newtonsoft.Json.Required.Default)]
+        public string ExchangeOrganization { get; set; }
+    
+        /// <summary>
         /// Gets or sets last sync date time.
         /// Last sync time for the Exchange Connector
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastSyncDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementExchangeConnectorStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets primary smtp address.
@@ -59,18 +80,11 @@ namespace Microsoft.Graph
         public string ServerName { get; set; }
     
         /// <summary>
-        /// Gets or sets connector server name.
-        /// The name of the server hosting the Exchange Connector.
+        /// Gets or sets status.
+        /// Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorServerName", Required = Newtonsoft.Json.Required.Default)]
-        public string ConnectorServerName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets exchange connector type.
-        /// The type of Exchange Connector Configured. Possible values are: onPremises, hosted, serviceToService, dedicated.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeConnectorType", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementExchangeConnectorType? ExchangeConnectorType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementExchangeConnectorStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets version.
@@ -78,20 +92,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public string Version { get; set; }
-    
-        /// <summary>
-        /// Gets or sets exchange alias.
-        /// An alias assigned to the Exchange server
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeAlias", Required = Newtonsoft.Json.Required.Default)]
-        public string ExchangeAlias { get; set; }
-    
-        /// <summary>
-        /// Gets or sets exchange organization.
-        /// Exchange Organization to the Exchange server
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeOrganization", Required = Newtonsoft.Json.Required.Default)]
-        public string ExchangeOrganization { get; set; }
     
     }
 }

@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// DateTime the object was last modified.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets created date time.
         /// DateTime the object was created.
         /// </summary>
@@ -59,6 +52,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets last modified date time.
+        /// DateTime the object was last modified.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets version.
         /// Version of the device configuration.
         /// </summary>
@@ -73,18 +73,18 @@ namespace Microsoft.Graph
         public IDeviceConfigurationAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
+        /// Gets or sets device setting state summaries.
+        /// Device Configuration Setting State Device Summary
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceSettingStateSummaries", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceConfigurationDeviceSettingStateSummariesCollectionPage DeviceSettingStateSummaries { get; set; }
+    
+        /// <summary>
         /// Gets or sets device statuses.
         /// Device configuration installation status by device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceConfigurationDeviceStatusesCollectionPage DeviceStatuses { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user statuses.
-        /// Device configuration installation status by user.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceConfigurationUserStatusesCollectionPage UserStatuses { get; set; }
     
         /// <summary>
         /// Gets or sets device status overview.
@@ -94,18 +94,18 @@ namespace Microsoft.Graph
         public DeviceConfigurationDeviceOverview DeviceStatusOverview { get; set; }
     
         /// <summary>
+        /// Gets or sets user statuses.
+        /// Device configuration installation status by user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceConfigurationUserStatusesCollectionPage UserStatuses { get; set; }
+    
+        /// <summary>
         /// Gets or sets user status overview.
         /// Device Configuration users status overview
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatusOverview", Required = Newtonsoft.Json.Required.Default)]
         public DeviceConfigurationUserOverview UserStatusOverview { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device setting state summaries.
-        /// Device Configuration Setting State Device Summary
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceSettingStateSummaries", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceConfigurationDeviceSettingStateSummariesCollectionPage DeviceSettingStateSummaries { get; set; }
     
     }
 }

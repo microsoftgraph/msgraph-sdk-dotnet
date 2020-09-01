@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets latitude.
-        /// The latitude of the location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latitude", Required = Newtonsoft.Json.Required.Default)]
-        public double? Latitude { get; set; }
-    
-        /// <summary>
-        /// Gets or sets longitude.
-        /// The longitude of the location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longitude", Required = Newtonsoft.Json.Required.Default)]
-        public double? Longitude { get; set; }
-    
-        /// <summary>
         /// Gets or sets accuracy.
         /// The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
         /// </summary>
@@ -64,6 +50,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitudeAccuracy", Required = Newtonsoft.Json.Required.Default)]
         public double? AltitudeAccuracy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets latitude.
+        /// The latitude of the location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latitude", Required = Newtonsoft.Json.Required.Default)]
+        public double? Latitude { get; set; }
+    
+        /// <summary>
+        /// Gets or sets longitude.
+        /// The longitude of the location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longitude", Required = Newtonsoft.Json.Required.Default)]
+        public double? Longitude { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

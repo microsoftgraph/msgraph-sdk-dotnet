@@ -31,60 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets reply to id.
-        /// Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
+        /// Gets or sets attachments.
+        /// Attached files. Attachments are currently read-only – sending attachments is not supported.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyToId", Required = Newtonsoft.Json.Required.Default)]
-        public string ReplyToId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets from.
-        /// Read only. Details of the sender of the chat message.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet From { get; set; }
-    
-        /// <summary>
-        /// Gets or sets etag.
-        /// Read-only. Version number of the chat message.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "etag", Required = Newtonsoft.Json.Required.Default)]
-        public string Etag { get; set; }
-    
-        /// <summary>
-        /// Gets or sets message type.
-        /// The type of chat message. The possible values are: message.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageType", Required = Newtonsoft.Json.Required.Default)]
-        public ChatMessageType? MessageType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created date time.
-        /// Read only. Timestamp of when the chat message was created.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it's a root chat message in a channel) or a reaction is added or removed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets deleted date time.
-        /// Read only. Timestamp at which the chat message was deleted, or null if not deleted.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? DeletedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subject.
-        /// The subject of the chat message, in plaintext.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
-        public string Subject { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ChatMessageAttachment> Attachments { get; set; }
     
         /// <summary>
         /// Gets or sets body.
@@ -94,18 +45,53 @@ namespace Microsoft.Graph
         public ItemBody Body { get; set; }
     
         /// <summary>
-        /// Gets or sets summary.
-        /// Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
+        /// Gets or sets created date time.
+        /// Read only. Timestamp of when the chat message was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summary", Required = Newtonsoft.Json.Required.Default)]
-        public string Summary { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets attachments.
-        /// Attached files. Attachments are currently read-only – sending attachments is not supported.
+        /// Gets or sets deleted date time.
+        /// Read only. Timestamp at which the chat message was deleted, or null if not deleted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ChatMessageAttachment> Attachments { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? DeletedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets etag.
+        /// Read-only. Version number of the chat message.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "etag", Required = Newtonsoft.Json.Required.Default)]
+        public string Etag { get; set; }
+    
+        /// <summary>
+        /// Gets or sets from.
+        /// Read only. Details of the sender of the chat message.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet From { get; set; }
+    
+        /// <summary>
+        /// Gets or sets importance.
+        /// The importance of the chat message. The possible values are: normal, high, urgent.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importance", Required = Newtonsoft.Json.Required.Default)]
+        public ChatMessageImportance? Importance { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it's a root chat message in a channel) or a reaction is added or removed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets locale.
+        /// Locale of the chat message set by the client.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locale", Required = Newtonsoft.Json.Required.Default)]
+        public string Locale { get; set; }
     
         /// <summary>
         /// Gets or sets mentions.
@@ -115,11 +101,11 @@ namespace Microsoft.Graph
         public IEnumerable<ChatMessageMention> Mentions { get; set; }
     
         /// <summary>
-        /// Gets or sets importance.
-        /// The importance of the chat message. The possible values are: normal, high, urgent.
+        /// Gets or sets message type.
+        /// The type of chat message. The possible values are: message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importance", Required = Newtonsoft.Json.Required.Default)]
-        public ChatMessageImportance? Importance { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageType", Required = Newtonsoft.Json.Required.Default)]
+        public ChatMessageType? MessageType { get; set; }
     
         /// <summary>
         /// Gets or sets policy violation.
@@ -134,11 +120,25 @@ namespace Microsoft.Graph
         public IEnumerable<ChatMessageReaction> Reactions { get; set; }
     
         /// <summary>
-        /// Gets or sets locale.
-        /// Locale of the chat message set by the client.
+        /// Gets or sets reply to id.
+        /// Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locale", Required = Newtonsoft.Json.Required.Default)]
-        public string Locale { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyToId", Required = Newtonsoft.Json.Required.Default)]
+        public string ReplyToId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subject.
+        /// The subject of the chat message, in plaintext.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        public string Subject { get; set; }
+    
+        /// <summary>
+        /// Gets or sets summary.
+        /// Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summary", Required = Newtonsoft.Json.Required.Default)]
+        public string Summary { get; set; }
     
         /// <summary>
         /// Gets or sets web url.
@@ -147,16 +147,16 @@ namespace Microsoft.Graph
         public string WebUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets replies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replies", Required = Newtonsoft.Json.Required.Default)]
-        public IChatMessageRepliesCollectionPage Replies { get; set; }
-    
-        /// <summary>
         /// Gets or sets hosted contents.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostedContents", Required = Newtonsoft.Json.Required.Default)]
         public IChatMessageHostedContentsCollectionPage HostedContents { get; set; }
+    
+        /// <summary>
+        /// Gets or sets replies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replies", Required = Newtonsoft.Json.Required.Default)]
+        public IChatMessageRepliesCollectionPage Replies { get; set; }
     
     }
 }

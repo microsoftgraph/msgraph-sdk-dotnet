@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Manager.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
-        public IDirectoryObjectWithReferenceRequestBuilder Manager
-        {
-            get
-            {
-                return new DirectoryObjectWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("manager"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DirectReports.
         /// </summary>
         /// <returns>The <see cref="IOrgContactDirectReportsCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new OrgContactDirectReportsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("directReports"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Manager.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
+        public IDirectoryObjectWithReferenceRequestBuilder Manager
+        {
+            get
+            {
+                return new DirectoryObjectWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("manager"), this.Client);
             }
         }
 

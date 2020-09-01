@@ -38,24 +38,6 @@ namespace Microsoft.Graph
         IWorkbookApplicationRequestBuilder Application { get; }
 
         /// <summary>
-        /// Gets the request builder for Names.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookNamesCollectionRequestBuilder"/>.</returns>
-        IWorkbookNamesCollectionRequestBuilder Names { get; }
-
-        /// <summary>
-        /// Gets the request builder for Tables.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookTablesCollectionRequestBuilder"/>.</returns>
-        IWorkbookTablesCollectionRequestBuilder Tables { get; }
-
-        /// <summary>
-        /// Gets the request builder for Worksheets.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookWorksheetsCollectionRequestBuilder"/>.</returns>
-        IWorkbookWorksheetsCollectionRequestBuilder Worksheets { get; }
-
-        /// <summary>
         /// Gets the request builder for Comments.
         /// </summary>
         /// <returns>The <see cref="IWorkbookCommentsCollectionRequestBuilder"/>.</returns>
@@ -68,23 +50,41 @@ namespace Microsoft.Graph
         IWorkbookFunctionsRequestBuilder Functions { get; }
 
         /// <summary>
+        /// Gets the request builder for Names.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookNamesCollectionRequestBuilder"/>.</returns>
+        IWorkbookNamesCollectionRequestBuilder Names { get; }
+
+        /// <summary>
         /// Gets the request builder for Operations.
         /// </summary>
         /// <returns>The <see cref="IWorkbookOperationsCollectionRequestBuilder"/>.</returns>
         IWorkbookOperationsCollectionRequestBuilder Operations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Tables.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTablesCollectionRequestBuilder"/>.</returns>
+        IWorkbookTablesCollectionRequestBuilder Tables { get; }
+
+        /// <summary>
+        /// Gets the request builder for Worksheets.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookWorksheetsCollectionRequestBuilder"/>.</returns>
+        IWorkbookWorksheetsCollectionRequestBuilder Worksheets { get; }
     
+        /// <summary>
+        /// Gets the request builder for WorkbookCloseSession.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookCloseSessionRequestBuilder"/>.</returns>
+        IWorkbookCloseSessionRequestBuilder CloseSession();
+
         /// <summary>
         /// Gets the request builder for WorkbookCreateSession.
         /// </summary>
         /// <returns>The <see cref="IWorkbookCreateSessionRequestBuilder"/>.</returns>
         IWorkbookCreateSessionRequestBuilder CreateSession(
             bool persistChanges);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookCloseSession.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookCloseSessionRequestBuilder"/>.</returns>
-        IWorkbookCloseSessionRequestBuilder CloseSession();
 
         /// <summary>
         /// Gets the request builder for WorkbookRefreshSession.

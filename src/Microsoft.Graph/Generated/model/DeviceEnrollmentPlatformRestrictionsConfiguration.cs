@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets android restriction.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceEnrollmentPlatformRestriction AndroidRestriction { get; set; }
+    
+        /// <summary>
         /// Gets or sets ios restriction.
         /// Not yet documented
         /// </summary>
@@ -38,11 +45,11 @@ namespace Microsoft.Graph
         public DeviceEnrollmentPlatformRestriction IosRestriction { get; set; }
     
         /// <summary>
-        /// Gets or sets windows restriction.
+        /// Gets or sets mac osrestriction.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsRestriction", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceEnrollmentPlatformRestriction WindowsRestriction { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceEnrollmentPlatformRestriction MacOSRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets windows mobile restriction.
@@ -52,18 +59,11 @@ namespace Microsoft.Graph
         public DeviceEnrollmentPlatformRestriction WindowsMobileRestriction { get; set; }
     
         /// <summary>
-        /// Gets or sets android restriction.
+        /// Gets or sets windows restriction.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidRestriction", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceEnrollmentPlatformRestriction AndroidRestriction { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mac osrestriction.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSRestriction", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceEnrollmentPlatformRestriction MacOSRestriction { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceEnrollmentPlatformRestriction WindowsRestriction { get; set; }
     
     }
 }

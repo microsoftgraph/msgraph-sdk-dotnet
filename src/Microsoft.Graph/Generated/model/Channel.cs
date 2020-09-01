@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// Channel name as it will appear to the user in Microsoft Teams.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets description.
         /// Optional textual description for the channel.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// Channel name as it will appear to the user in Microsoft Teams.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets email.
@@ -52,11 +52,30 @@ namespace Microsoft.Graph
         public string Email { get; set; }
     
         /// <summary>
+        /// Gets or sets membership type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipType", Required = Newtonsoft.Json.Required.Default)]
+        public ChannelMembershipType? MembershipType { get; set; }
+    
+        /// <summary>
         /// Gets or sets web url.
         /// A hyperlink that will navigate to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets files folder.
+        /// Metadata for the location where the channel's files are stored.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filesFolder", Required = Newtonsoft.Json.Required.Default)]
+        public DriveItem FilesFolder { get; set; }
+    
+        /// <summary>
+        /// Gets or sets members.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        public IChannelMembersCollectionPage Members { get; set; }
     
         /// <summary>
         /// Gets or sets messages.
@@ -71,13 +90,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tabs", Required = Newtonsoft.Json.Required.Default)]
         public IChannelTabsCollectionPage Tabs { get; set; }
-    
-        /// <summary>
-        /// Gets or sets files folder.
-        /// Metadata for the location where the channel's files are stored.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filesFolder", Required = Newtonsoft.Json.Required.Default)]
-        public DriveItem FilesFolder { get; set; }
     
     }
 }

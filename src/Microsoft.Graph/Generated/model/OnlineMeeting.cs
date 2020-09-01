@@ -31,48 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets creation date time.
-        /// The meeting creation time in UTC. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreationDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets start date time.
-        /// The meeting start time in UTC.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets end date time.
-        /// The meeting end time in UTC.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? EndDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets join web url.
-        /// The join URL of the online meeting. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinWebUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string JoinWebUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subject.
-        /// The subject of the online meeting.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
-        public string Subject { get; set; }
-    
-        /// <summary>
-        /// Gets or sets participants.
-        /// The participants associated with the online meeting.  This includes the organizer and the attendees.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participants", Required = Newtonsoft.Json.Required.Default)]
-        public MeetingParticipants Participants { get; set; }
-    
-        /// <summary>
         /// Gets or sets audio conferencing.
         /// The phone access (dial-in) information for an online meeting. Read-only.
         /// </summary>
@@ -87,11 +45,18 @@ namespace Microsoft.Graph
         public ChatInfo ChatInfo { get; set; }
     
         /// <summary>
-        /// Gets or sets video teleconference id.
-        /// The video teleconferencing ID. Read-only.
+        /// Gets or sets creation date time.
+        /// The meeting creation time in UTC. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "videoTeleconferenceId", Required = Newtonsoft.Json.Required.Default)]
-        public string VideoTeleconferenceId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreationDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets end date time.
+        /// The meeting end time in UTC.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
@@ -105,6 +70,41 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinInformation", Required = Newtonsoft.Json.Required.Default)]
         public ItemBody JoinInformation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets join web url.
+        /// The join URL of the online meeting. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinWebUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string JoinWebUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets participants.
+        /// The participants associated with the online meeting.  This includes the organizer and the attendees.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participants", Required = Newtonsoft.Json.Required.Default)]
+        public MeetingParticipants Participants { get; set; }
+    
+        /// <summary>
+        /// Gets or sets start date time.
+        /// The meeting start time in UTC.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subject.
+        /// The subject of the online meeting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        public string Subject { get; set; }
+    
+        /// <summary>
+        /// Gets or sets video teleconference id.
+        /// The video teleconferencing ID. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "videoTeleconferenceId", Required = Newtonsoft.Json.Required.Default)]
+        public string VideoTeleconferenceId { get; set; }
     
     }
 }

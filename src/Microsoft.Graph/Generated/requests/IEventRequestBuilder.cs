@@ -38,22 +38,16 @@ namespace Microsoft.Graph
         IEventAttachmentsCollectionRequestBuilder Attachments { get; }
 
         /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="IEventSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        IEventSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
-
-        /// <summary>
-        /// Gets the request builder for MultiValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="IEventMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        IEventMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
-
-        /// <summary>
         /// Gets the request builder for Calendar.
         /// </summary>
         /// <returns>The <see cref="ICalendarRequestBuilder"/>.</returns>
         ICalendarRequestBuilder Calendar { get; }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IEventExtensionsCollectionRequestBuilder"/>.</returns>
+        IEventExtensionsCollectionRequestBuilder Extensions { get; }
 
         /// <summary>
         /// Gets the request builder for Instances.
@@ -62,24 +56,17 @@ namespace Microsoft.Graph
         IEventInstancesCollectionRequestBuilder Instances { get; }
 
         /// <summary>
-        /// Gets the request builder for Extensions.
+        /// Gets the request builder for MultiValueExtendedProperties.
         /// </summary>
-        /// <returns>The <see cref="IEventExtensionsCollectionRequestBuilder"/>.</returns>
-        IEventExtensionsCollectionRequestBuilder Extensions { get; }
+        /// <returns>The <see cref="IEventMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        IEventMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
+
+        /// <summary>
+        /// Gets the request builder for SingleValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IEventSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        IEventSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
     
-        /// <summary>
-        /// Gets the request builder for EventDismissReminder.
-        /// </summary>
-        /// <returns>The <see cref="IEventDismissReminderRequestBuilder"/>.</returns>
-        IEventDismissReminderRequestBuilder DismissReminder();
-
-        /// <summary>
-        /// Gets the request builder for EventSnoozeReminder.
-        /// </summary>
-        /// <returns>The <see cref="IEventSnoozeReminderRequestBuilder"/>.</returns>
-        IEventSnoozeReminderRequestBuilder SnoozeReminder(
-            DateTimeTimeZone NewReminderTime);
-
         /// <summary>
         /// Gets the request builder for EventAccept.
         /// </summary>
@@ -95,6 +82,19 @@ namespace Microsoft.Graph
         IEventDeclineRequestBuilder Decline(
             string Comment = null,
             bool? SendResponse = null);
+
+        /// <summary>
+        /// Gets the request builder for EventDismissReminder.
+        /// </summary>
+        /// <returns>The <see cref="IEventDismissReminderRequestBuilder"/>.</returns>
+        IEventDismissReminderRequestBuilder DismissReminder();
+
+        /// <summary>
+        /// Gets the request builder for EventSnoozeReminder.
+        /// </summary>
+        /// <returns>The <see cref="IEventSnoozeReminderRequestBuilder"/>.</returns>
+        IEventSnoozeReminderRequestBuilder SnoozeReminder(
+            DateTimeTimeZone NewReminderTime);
 
         /// <summary>
         /// Gets the request builder for EventTentativelyAccept.

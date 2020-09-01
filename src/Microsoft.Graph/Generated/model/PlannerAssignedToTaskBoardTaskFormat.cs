@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets unassigned order hint.
-        /// Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unassignedOrderHint", Required = Newtonsoft.Json.Required.Default)]
-        public string UnassignedOrderHint { get; set; }
-    
-        /// <summary>
         /// Gets or sets order hints by assignee.
         /// Dictionary of hints used to order tasks on the AssignedTo view of the Task Board. The key of each entry is one of the users the task is assigned to and the value is the order hint. The format of each value is defined as outlined here.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderHintsByAssignee", Required = Newtonsoft.Json.Required.Default)]
         public PlannerOrderHintsByAssignee OrderHintsByAssignee { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unassigned order hint.
+        /// Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unassignedOrderHint", Required = Newtonsoft.Json.Required.Default)]
+        public string UnassignedOrderHint { get; set; }
     
     }
 }

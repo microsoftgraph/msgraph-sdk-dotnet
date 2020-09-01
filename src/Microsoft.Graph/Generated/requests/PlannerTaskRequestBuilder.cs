@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Details.
-        /// </summary>
-        /// <returns>The <see cref="IPlannerTaskDetailsRequestBuilder"/>.</returns>
-        public IPlannerTaskDetailsRequestBuilder Details
-        {
-            get
-            {
-                return new PlannerTaskDetailsRequestBuilder(this.AppendSegmentToRequestUrl("details"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for AssignedToTaskBoardFormat.
         /// </summary>
         /// <returns>The <see cref="IPlannerAssignedToTaskBoardTaskFormatRequestBuilder"/>.</returns>
@@ -75,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ProgressTaskBoardFormat.
-        /// </summary>
-        /// <returns>The <see cref="IPlannerProgressTaskBoardTaskFormatRequestBuilder"/>.</returns>
-        public IPlannerProgressTaskBoardTaskFormatRequestBuilder ProgressTaskBoardFormat
-        {
-            get
-            {
-                return new PlannerProgressTaskBoardTaskFormatRequestBuilder(this.AppendSegmentToRequestUrl("progressTaskBoardFormat"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for BucketTaskBoardFormat.
         /// </summary>
         /// <returns>The <see cref="IPlannerBucketTaskBoardTaskFormatRequestBuilder"/>.</returns>
@@ -95,6 +71,30 @@ namespace Microsoft.Graph
             get
             {
                 return new PlannerBucketTaskBoardTaskFormatRequestBuilder(this.AppendSegmentToRequestUrl("bucketTaskBoardFormat"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Details.
+        /// </summary>
+        /// <returns>The <see cref="IPlannerTaskDetailsRequestBuilder"/>.</returns>
+        public IPlannerTaskDetailsRequestBuilder Details
+        {
+            get
+            {
+                return new PlannerTaskDetailsRequestBuilder(this.AppendSegmentToRequestUrl("details"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ProgressTaskBoardFormat.
+        /// </summary>
+        /// <returns>The <see cref="IPlannerProgressTaskBoardTaskFormatRequestBuilder"/>.</returns>
+        public IPlannerProgressTaskBoardTaskFormatRequestBuilder ProgressTaskBoardFormat
+        {
+            get
+            {
+                return new PlannerProgressTaskBoardTaskFormatRequestBuilder(this.AppendSegmentToRequestUrl("progressTaskBoardFormat"), this.Client);
             }
         }
     

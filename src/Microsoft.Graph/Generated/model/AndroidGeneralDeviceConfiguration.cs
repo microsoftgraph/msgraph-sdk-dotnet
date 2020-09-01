@@ -52,6 +52,27 @@ namespace Microsoft.Graph
         public bool? AppsBlockYouTube { get; set; }
     
         /// <summary>
+        /// Gets or sets apps hide list.
+        /// List of apps to be hidden on the KNOX device. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsHideList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> AppsHideList { get; set; }
+    
+        /// <summary>
+        /// Gets or sets apps install allow list.
+        /// List of apps which can be installed on the KNOX device. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsInstallAllowList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> AppsInstallAllowList { get; set; }
+    
+        /// <summary>
+        /// Gets or sets apps launch block list.
+        /// List of apps which are blocked from being launched on the KNOX device. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsLaunchBlockList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> AppsLaunchBlockList { get; set; }
+    
+        /// <summary>
         /// Gets or sets bluetooth blocked.
         /// Indicates whether or not to block Bluetooth.
         /// </summary>
@@ -94,6 +115,13 @@ namespace Microsoft.Graph
         public bool? CellularBlockWiFiTethering { get; set; }
     
         /// <summary>
+        /// Gets or sets compliant app list type.
+        /// Type of list that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantAppListType", Required = Newtonsoft.Json.Required.Default)]
+        public AppListType? CompliantAppListType { get; set; }
+    
+        /// <summary>
         /// Gets or sets compliant apps list.
         /// List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
         /// </summary>
@@ -101,11 +129,11 @@ namespace Microsoft.Graph
         public IEnumerable<AppListItem> CompliantAppsList { get; set; }
     
         /// <summary>
-        /// Gets or sets compliant app list type.
-        /// Type of list that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+        /// Gets or sets device sharing allowed.
+        /// Indicates whether or not to allow device sharing mode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantAppListType", Required = Newtonsoft.Json.Required.Default)]
-        public AppListType? CompliantAppListType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceSharingAllowed", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceSharingAllowed { get; set; }
     
         /// <summary>
         /// Gets or sets diagnostic data block submission.
@@ -115,11 +143,11 @@ namespace Microsoft.Graph
         public bool? DiagnosticDataBlockSubmission { get; set; }
     
         /// <summary>
-        /// Gets or sets location services blocked.
-        /// Indicates whether or not to block location services.
+        /// Gets or sets factory reset blocked.
+        /// Indicates whether or not to block user performing a factory reset.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationServicesBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocationServicesBlocked { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "factoryResetBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FactoryResetBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets google account block auto sync.
@@ -136,6 +164,13 @@ namespace Microsoft.Graph
         public bool? GooglePlayStoreBlocked { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode apps.
+        /// A list of apps that will be allowed to run when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeApps", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> KioskModeApps { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode block sleep button.
         /// Indicates whether or not to block the screen sleep button while in Kiosk Mode.
         /// </summary>
@@ -150,11 +185,11 @@ namespace Microsoft.Graph
         public bool? KioskModeBlockVolumeButtons { get; set; }
     
         /// <summary>
-        /// Gets or sets kiosk mode apps.
-        /// A list of apps that will be allowed to run when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
+        /// Gets or sets location services blocked.
+        /// Indicates whether or not to block location services.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeApps", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AppListItem> KioskModeApps { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationServicesBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocationServicesBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets nfc blocked.
@@ -206,11 +241,11 @@ namespace Microsoft.Graph
         public Int32? PasswordPreviousPasswordBlockCount { get; set; }
     
         /// <summary>
-        /// Gets or sets password sign in failure count before factory reset.
-        /// Number of sign in failures allowed before factory reset. Valid values 1 to 16
+        /// Gets or sets password required.
+        /// Indicates whether or not to require a password.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordSignInFailureCountBeforeFactoryReset", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequired", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasswordRequired { get; set; }
     
         /// <summary>
         /// Gets or sets password required type.
@@ -220,11 +255,11 @@ namespace Microsoft.Graph
         public AndroidRequiredPasswordType? PasswordRequiredType { get; set; }
     
         /// <summary>
-        /// Gets or sets password required.
-        /// Indicates whether or not to require a password.
+        /// Gets or sets password sign in failure count before factory reset.
+        /// Number of sign in failures allowed before factory reset. Valid values 1 to 16
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequired", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PasswordRequired { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordSignInFailureCountBeforeFactoryReset", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
     
         /// <summary>
         /// Gets or sets power off blocked.
@@ -234,13 +269,6 @@ namespace Microsoft.Graph
         public bool? PowerOffBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets factory reset blocked.
-        /// Indicates whether or not to block user performing a factory reset.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "factoryResetBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FactoryResetBlocked { get; set; }
-    
-        /// <summary>
         /// Gets or sets screen capture blocked.
         /// Indicates whether or not to block screenshots.
         /// </summary>
@@ -248,11 +276,11 @@ namespace Microsoft.Graph
         public bool? ScreenCaptureBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets device sharing allowed.
-        /// Indicates whether or not to allow device sharing mode.
+        /// Gets or sets security require verify apps.
+        /// Require the Android Verify apps feature is turned on.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceSharingAllowed", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DeviceSharingAllowed { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityRequireVerifyApps", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SecurityRequireVerifyApps { get; set; }
     
         /// <summary>
         /// Gets or sets storage block google backup.
@@ -297,18 +325,18 @@ namespace Microsoft.Graph
         public bool? VoiceDialingBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets web browser block popups.
-        /// Indicates whether or not to block popups within the web browser.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webBrowserBlockPopups", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WebBrowserBlockPopups { get; set; }
-    
-        /// <summary>
         /// Gets or sets web browser block autofill.
         /// Indicates whether or not to block the web browser's auto fill feature.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webBrowserBlockAutofill", Required = Newtonsoft.Json.Required.Default)]
         public bool? WebBrowserBlockAutofill { get; set; }
+    
+        /// <summary>
+        /// Gets or sets web browser blocked.
+        /// Indicates whether or not to block the web browser.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webBrowserBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WebBrowserBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets web browser block java script.
@@ -318,11 +346,11 @@ namespace Microsoft.Graph
         public bool? WebBrowserBlockJavaScript { get; set; }
     
         /// <summary>
-        /// Gets or sets web browser blocked.
-        /// Indicates whether or not to block the web browser.
+        /// Gets or sets web browser block popups.
+        /// Indicates whether or not to block popups within the web browser.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webBrowserBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WebBrowserBlocked { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webBrowserBlockPopups", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WebBrowserBlockPopups { get; set; }
     
         /// <summary>
         /// Gets or sets web browser cookie settings.
@@ -337,34 +365,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? WiFiBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets apps install allow list.
-        /// List of apps which can be installed on the KNOX device. This collection can contain a maximum of 500 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsInstallAllowList", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AppListItem> AppsInstallAllowList { get; set; }
-    
-        /// <summary>
-        /// Gets or sets apps launch block list.
-        /// List of apps which are blocked from being launched on the KNOX device. This collection can contain a maximum of 500 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsLaunchBlockList", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AppListItem> AppsLaunchBlockList { get; set; }
-    
-        /// <summary>
-        /// Gets or sets apps hide list.
-        /// List of apps to be hidden on the KNOX device. This collection can contain a maximum of 500 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsHideList", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AppListItem> AppsHideList { get; set; }
-    
-        /// <summary>
-        /// Gets or sets security require verify apps.
-        /// Require the Android Verify apps feature is turned on.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityRequireVerifyApps", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SecurityRequireVerifyApps { get; set; }
     
     }
 }

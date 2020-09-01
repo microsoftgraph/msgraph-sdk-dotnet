@@ -234,33 +234,17 @@ namespace Microsoft.Graph
             if (contactFolderToInitialize != null && contactFolderToInitialize.AdditionalData != null)
             {
 
-                if (contactFolderToInitialize.SingleValueExtendedProperties != null && contactFolderToInitialize.SingleValueExtendedProperties.CurrentPage != null)
+                if (contactFolderToInitialize.ChildFolders != null && contactFolderToInitialize.ChildFolders.CurrentPage != null)
                 {
-                    contactFolderToInitialize.SingleValueExtendedProperties.AdditionalData = contactFolderToInitialize.AdditionalData;
+                    contactFolderToInitialize.ChildFolders.AdditionalData = contactFolderToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
+                    contactFolderToInitialize.AdditionalData.TryGetValue("childFolders@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        contactFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (contactFolderToInitialize.MultiValueExtendedProperties != null && contactFolderToInitialize.MultiValueExtendedProperties.CurrentPage != null)
-                {
-                    contactFolderToInitialize.MultiValueExtendedProperties.AdditionalData = contactFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                        contactFolderToInitialize.ChildFolders.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -282,17 +266,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (contactFolderToInitialize.ChildFolders != null && contactFolderToInitialize.ChildFolders.CurrentPage != null)
+                if (contactFolderToInitialize.MultiValueExtendedProperties != null && contactFolderToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
-                    contactFolderToInitialize.ChildFolders.AdditionalData = contactFolderToInitialize.AdditionalData;
+                    contactFolderToInitialize.MultiValueExtendedProperties.AdditionalData = contactFolderToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("childFolders@odata.nextLink", out nextPageLink);
+                    contactFolderToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        contactFolderToInitialize.ChildFolders.InitializeNextPageRequest(
+                        contactFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (contactFolderToInitialize.SingleValueExtendedProperties != null && contactFolderToInitialize.SingleValueExtendedProperties.CurrentPage != null)
+                {
+                    contactFolderToInitialize.SingleValueExtendedProperties.AdditionalData = contactFolderToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    contactFolderToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        contactFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

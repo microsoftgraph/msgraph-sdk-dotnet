@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets payload name.
-        /// Name that is displayed to the user.
+        /// Gets or sets payload.
+        /// Payload. (UTF8 encoded byte array)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadName", Required = Newtonsoft.Json.Required.Default)]
-        public string PayloadName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payload", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] Payload { get; set; }
     
         /// <summary>
         /// Gets or sets payload file name.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public string PayloadFileName { get; set; }
     
         /// <summary>
-        /// Gets or sets payload.
-        /// Payload. (UTF8 encoded byte array)
+        /// Gets or sets payload name.
+        /// Name that is displayed to the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payload", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] Payload { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadName", Required = Newtonsoft.Json.Required.Default)]
+        public string PayloadName { get; set; }
     
     }
 }

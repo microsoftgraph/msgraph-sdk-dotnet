@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets or sets address.
+        /// The street address of the place.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        public PhysicalAddress Address { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The name associated with the place.
         /// </summary>
@@ -50,13 +57,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phone", Required = Newtonsoft.Json.Required.Default)]
         public string Phone { get; set; }
-    
-        /// <summary>
-        /// Gets or sets address.
-        /// The street address of the place.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
-        public PhysicalAddress Address { get; set; }
     
     }
 }

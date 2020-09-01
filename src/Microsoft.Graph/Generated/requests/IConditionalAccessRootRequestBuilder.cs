@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IConditionalAccessRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Policies.
-        /// </summary>
-        /// <returns>The <see cref="IConditionalAccessRootPoliciesCollectionRequestBuilder"/>.</returns>
-        IConditionalAccessRootPoliciesCollectionRequestBuilder Policies { get; }
-
-        /// <summary>
         /// Gets the request builder for NamedLocations.
         /// </summary>
         /// <returns>The <see cref="IConditionalAccessRootNamedLocationsCollectionRequestBuilder"/>.</returns>
         IConditionalAccessRootNamedLocationsCollectionRequestBuilder NamedLocations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Policies.
+        /// </summary>
+        /// <returns>The <see cref="IConditionalAccessRootPoliciesCollectionRequestBuilder"/>.</returns>
+        IConditionalAccessRootPoliciesCollectionRequestBuilder Policies { get; }
     
     }
 }

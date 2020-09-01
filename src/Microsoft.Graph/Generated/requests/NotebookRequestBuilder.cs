@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Sections.
-        /// </summary>
-        /// <returns>The <see cref="INotebookSectionsCollectionRequestBuilder"/>.</returns>
-        public INotebookSectionsCollectionRequestBuilder Sections
-        {
-            get
-            {
-                return new NotebookSectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sections"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for SectionGroups.
         /// </summary>
         /// <returns>The <see cref="INotebookSectionGroupsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new NotebookSectionGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sectionGroups"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Sections.
+        /// </summary>
+        /// <returns>The <see cref="INotebookSectionsCollectionRequestBuilder"/>.</returns>
+        public INotebookSectionsCollectionRequestBuilder Sections
+        {
+            get
+            {
+                return new NotebookSectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sections"), this.Client);
             }
         }
     

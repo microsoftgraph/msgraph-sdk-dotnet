@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// DateTime the object was last modified.
+        /// Gets or sets branding options.
+        /// The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// Display name for the Notification Message Template.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "brandingOptions", Required = Newtonsoft.Json.Required.Default)]
+        public NotificationTemplateBrandingOptions? BrandingOptions { get; set; }
     
         /// <summary>
         /// Gets or sets default locale.
@@ -52,11 +45,18 @@ namespace Microsoft.Graph
         public string DefaultLocale { get; set; }
     
         /// <summary>
-        /// Gets or sets branding options.
-        /// The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
+        /// Gets or sets display name.
+        /// Display name for the Notification Message Template.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "brandingOptions", Required = Newtonsoft.Json.Required.Default)]
-        public NotificationTemplateBrandingOptions? BrandingOptions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// DateTime the object was last modified.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets localized notification messages.

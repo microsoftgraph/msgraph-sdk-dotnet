@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets configuration.
+        /// Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
+        public TeamsTabConfiguration Configuration { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// Name of the tab.
         /// </summary>
@@ -43,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets configuration.
-        /// Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
-        public TeamsTabConfiguration Configuration { get; set; }
     
         /// <summary>
         /// Gets or sets teams app.

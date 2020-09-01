@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets allowAddRemoveApps.
+        /// If set to true, members can add and remove apps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAddRemoveApps", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowAddRemoveApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allowCreatePrivateChannels.
+        /// If set to true, members can add and update private channels.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCreatePrivateChannels", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowCreatePrivateChannels { get; set; }
+    
+        /// <summary>
         /// Gets or sets allowCreateUpdateChannels.
         /// If set to true, members can add and update channels.
         /// </summary>
@@ -38,18 +52,11 @@ namespace Microsoft.Graph
         public bool? AllowCreateUpdateChannels { get; set; }
     
         /// <summary>
-        /// Gets or sets allowDeleteChannels.
-        /// If set to true, members can delete channels.
+        /// Gets or sets allowCreateUpdateRemoveConnectors.
+        /// If set to true, members can add, update, and remove connectors.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDeleteChannels", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowDeleteChannels { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowAddRemoveApps.
-        /// If set to true, members can add and remove apps.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAddRemoveApps", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowAddRemoveApps { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCreateUpdateRemoveConnectors", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowCreateUpdateRemoveConnectors { get; set; }
     
         /// <summary>
         /// Gets or sets allowCreateUpdateRemoveTabs.
@@ -59,11 +66,11 @@ namespace Microsoft.Graph
         public bool? AllowCreateUpdateRemoveTabs { get; set; }
     
         /// <summary>
-        /// Gets or sets allowCreateUpdateRemoveConnectors.
-        /// If set to true, members can add, update, and remove connectors.
+        /// Gets or sets allowDeleteChannels.
+        /// If set to true, members can delete channels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCreateUpdateRemoveConnectors", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowCreateUpdateRemoveConnectors { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDeleteChannels", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowDeleteChannels { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

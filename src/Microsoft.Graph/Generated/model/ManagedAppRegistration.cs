@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets created date time.
-        /// Date and time of creation
+        /// Gets or sets app identifier.
+        /// The app package Identifier
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last sync date time.
-        /// Date and time of last the app synced with management service.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastSyncDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public MobileAppIdentifier AppIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets application version.
@@ -50,6 +43,48 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationVersion", Required = Newtonsoft.Json.Required.Default)]
         public string ApplicationVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// Date and time of creation
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device name.
+        /// Host device name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device tag.
+        /// App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceTag", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceTag { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device type.
+        /// Host device type
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceType", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets flagged reasons.
+        /// Zero or more reasons an app registration is flagged. E.g. app running on rooted device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "flaggedReasons", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ManagedAppFlaggedReason> FlaggedReasons { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last sync date time.
+        /// Date and time of last the app synced with management service.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets management sdk version.
@@ -66,46 +101,11 @@ namespace Microsoft.Graph
         public string PlatformVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets device type.
-        /// Host device type
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceType", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device tag.
-        /// App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceTag", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceTag { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device name.
-        /// Host device name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets flagged reasons.
-        /// Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "flaggedReasons", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ManagedAppFlaggedReason> FlaggedReasons { get; set; }
-    
-        /// <summary>
         /// Gets or sets user id.
         /// The user Id to who this app registration belongs.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
         public string UserId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets app identifier.
-        /// The app package Identifier
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public MobileAppIdentifier AppIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets version.

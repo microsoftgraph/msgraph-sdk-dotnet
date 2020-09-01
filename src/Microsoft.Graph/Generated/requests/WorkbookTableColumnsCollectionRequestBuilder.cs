@@ -78,6 +78,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookTableColumnCount.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableColumnCountRequestBuilder"/>.</returns>
+        public IWorkbookTableColumnCountRequestBuilder Count()
+        {
+            return new WorkbookTableColumnCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookTableColumnItemAt.
         /// </summary>
         /// <returns>The <see cref="IWorkbookTableColumnItemAtRequestBuilder"/>.</returns>
@@ -88,17 +99,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
                 this.Client,
                 index);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookTableColumnCount.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookTableColumnCountRequestBuilder"/>.</returns>
-        public IWorkbookTableColumnCountRequestBuilder Count()
-        {
-            return new WorkbookTableColumnCountRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
-                this.Client);
         }
     }
 }

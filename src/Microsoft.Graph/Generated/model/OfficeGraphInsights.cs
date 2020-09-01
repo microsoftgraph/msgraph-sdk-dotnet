@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets trending.
-        /// Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trending", Required = Newtonsoft.Json.Required.Default)]
-        public IOfficeGraphInsightsTrendingCollectionPage Trending { get; set; }
-    
-        /// <summary>
         /// Gets or sets shared.
         /// Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shared", Required = Newtonsoft.Json.Required.Default)]
         public IOfficeGraphInsightsSharedCollectionPage Shared { get; set; }
+    
+        /// <summary>
+        /// Gets or sets trending.
+        /// Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trending", Required = Newtonsoft.Json.Required.Default)]
+        public IOfficeGraphInsightsTrendingCollectionPage Trending { get; set; }
     
         /// <summary>
         /// Gets or sets used.

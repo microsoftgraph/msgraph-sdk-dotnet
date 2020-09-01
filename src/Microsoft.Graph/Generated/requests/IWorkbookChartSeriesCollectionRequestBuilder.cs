@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         IWorkbookChartSeriesRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for WorkbookChartSeriesCount.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartSeriesCountRequestBuilder"/>.</returns>
+        IWorkbookChartSeriesCountRequestBuilder Count();
+
+        /// <summary>
         /// Gets the request builder for WorkbookChartSeriesItemAt.
         /// </summary>
         /// <returns>The <see cref="IWorkbookChartSeriesItemAtRequestBuilder"/>.</returns>
         IWorkbookChartSeriesItemAtRequestBuilder ItemAt(
             Int32 index);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookChartSeriesCount.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookChartSeriesCountRequestBuilder"/>.</returns>
-        IWorkbookChartSeriesCountRequestBuilder Count();
     }
 }

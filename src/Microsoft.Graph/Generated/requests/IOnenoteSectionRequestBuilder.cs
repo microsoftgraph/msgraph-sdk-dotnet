@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IOnenoteSectionRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Pages.
+        /// </summary>
+        /// <returns>The <see cref="IOnenoteSectionPagesCollectionRequestBuilder"/>.</returns>
+        IOnenoteSectionPagesCollectionRequestBuilder Pages { get; }
+
+        /// <summary>
         /// Gets the request builder for ParentNotebook.
         /// </summary>
         /// <returns>The <see cref="INotebookRequestBuilder"/>.</returns>
@@ -42,12 +48,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISectionGroupRequestBuilder"/>.</returns>
         ISectionGroupRequestBuilder ParentSectionGroup { get; }
-
-        /// <summary>
-        /// Gets the request builder for Pages.
-        /// </summary>
-        /// <returns>The <see cref="IOnenoteSectionPagesCollectionRequestBuilder"/>.</returns>
-        IOnenoteSectionPagesCollectionRequestBuilder Pages { get; }
     
         /// <summary>
         /// Gets the request builder for OnenoteSectionCopyToNotebook.

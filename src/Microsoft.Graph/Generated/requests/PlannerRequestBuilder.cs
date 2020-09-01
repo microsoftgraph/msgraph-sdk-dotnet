@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Tasks.
+        /// Gets the request builder for Buckets.
         /// </summary>
-        /// <returns>The <see cref="IPlannerTasksCollectionRequestBuilder"/>.</returns>
-        public IPlannerTasksCollectionRequestBuilder Tasks
+        /// <returns>The <see cref="IPlannerBucketsCollectionRequestBuilder"/>.</returns>
+        public IPlannerBucketsCollectionRequestBuilder Buckets
         {
             get
             {
-                return new PlannerTasksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
+                return new PlannerBucketsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("buckets"), this.Client);
             }
         }
 
@@ -75,14 +75,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Buckets.
+        /// Gets the request builder for Tasks.
         /// </summary>
-        /// <returns>The <see cref="IPlannerBucketsCollectionRequestBuilder"/>.</returns>
-        public IPlannerBucketsCollectionRequestBuilder Buckets
+        /// <returns>The <see cref="IPlannerTasksCollectionRequestBuilder"/>.</returns>
+        public IPlannerTasksCollectionRequestBuilder Tasks
         {
             get
             {
-                return new PlannerBucketsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("buckets"), this.Client);
+                return new PlannerTasksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
             }
         }
     

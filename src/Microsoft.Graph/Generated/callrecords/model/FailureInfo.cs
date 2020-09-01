@@ -31,18 +31,18 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
-        /// Gets or sets stage.
-        /// The stage when the failure occurred. Possible values are: unknown, callSetup, midcall, unknownFutureValue.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stage", Required = Newtonsoft.Json.Required.Default)]
-        public FailureStage? Stage { get; set; }
-    
-        /// <summary>
         /// Gets or sets reason.
         /// Classification of why a call or portion of a call failed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
         public string Reason { get; set; }
+    
+        /// <summary>
+        /// Gets or sets stage.
+        /// The stage when the failure occurred. Possible values are: unknown, callSetup, midcall, unknownFutureValue.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stage", Required = Newtonsoft.Json.Required.Default)]
+        public FailureStage? Stage { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets package id.
-        /// The app's package ID.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageId", Required = Newtonsoft.Json.Required.Default)]
-        public string PackageId { get; set; }
-    
-        /// <summary>
         /// Gets or sets app store url.
         /// The Android AppStoreUrl.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
         public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
+    
+        /// <summary>
+        /// Gets or sets package id.
+        /// The app's package ID.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageId", Required = Newtonsoft.Json.Required.Default)]
+        public string PackageId { get; set; }
     
     }
 }

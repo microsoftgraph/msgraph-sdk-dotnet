@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets file hash.
-        /// SHA256 hash of the file
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileHash", Required = Newtonsoft.Json.Required.Default)]
-        public string FileHash { get; set; }
-    
-        /// <summary>
         /// Gets or sets file.
         /// File as a byte array
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "file", Required = Newtonsoft.Json.Required.Default)]
         public byte[] File { get; set; }
+    
+        /// <summary>
+        /// Gets or sets file hash.
+        /// SHA256 hash of the file
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileHash", Required = Newtonsoft.Json.Required.Default)]
+        public string FileHash { get; set; }
     
         /// <summary>
         /// Gets or sets version.

@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets managedApps.
-        /// Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
+        /// Gets or sets cellularDataBlocked.
+        /// If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedApps", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AppListItem> ManagedApps { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellularDataBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CellularDataBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets cellularDataBlockWhenRoaming.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public bool? CellularDataBlockWhenRoaming { get; set; }
     
         /// <summary>
-        /// Gets or sets cellularDataBlocked.
-        /// If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
+        /// Gets or sets managedApps.
+        /// Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellularDataBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? CellularDataBlocked { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedApps", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> ManagedApps { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

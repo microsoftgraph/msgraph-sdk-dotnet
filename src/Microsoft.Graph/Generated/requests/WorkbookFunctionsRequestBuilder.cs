@@ -1288,210 +1288,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDaverage.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDaverageRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDaverageRequestBuilder Daverage(
-            Newtonsoft.Json.Linq.JToken database = null,
-            Newtonsoft.Json.Linq.JToken field = null,
-            Newtonsoft.Json.Linq.JToken criteria = null)
-        {
-            return new WorkbookFunctionsDaverageRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.daverage"),
-                this.Client,
-                database,
-                field,
-                criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDcount.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDcountRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDcountRequestBuilder Dcount(
-            Newtonsoft.Json.Linq.JToken database = null,
-            Newtonsoft.Json.Linq.JToken field = null,
-            Newtonsoft.Json.Linq.JToken criteria = null)
-        {
-            return new WorkbookFunctionsDcountRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dcount"),
-                this.Client,
-                database,
-                field,
-                criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDcountA.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDcountARequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDcountARequestBuilder DcountA(
-            Newtonsoft.Json.Linq.JToken database = null,
-            Newtonsoft.Json.Linq.JToken field = null,
-            Newtonsoft.Json.Linq.JToken criteria = null)
-        {
-            return new WorkbookFunctionsDcountARequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dcountA"),
-                this.Client,
-                database,
-                field,
-                criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDget.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDgetRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDgetRequestBuilder Dget(
-            Newtonsoft.Json.Linq.JToken database = null,
-            Newtonsoft.Json.Linq.JToken field = null,
-            Newtonsoft.Json.Linq.JToken criteria = null)
-        {
-            return new WorkbookFunctionsDgetRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dget"),
-                this.Client,
-                database,
-                field,
-                criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDmax.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDmaxRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDmaxRequestBuilder Dmax(
-            Newtonsoft.Json.Linq.JToken database = null,
-            Newtonsoft.Json.Linq.JToken field = null,
-            Newtonsoft.Json.Linq.JToken criteria = null)
-        {
-            return new WorkbookFunctionsDmaxRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dmax"),
-                this.Client,
-                database,
-                field,
-                criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDmin.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDminRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDminRequestBuilder Dmin(
-            Newtonsoft.Json.Linq.JToken database = null,
-            Newtonsoft.Json.Linq.JToken field = null,
-            Newtonsoft.Json.Linq.JToken criteria = null)
-        {
-            return new WorkbookFunctionsDminRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dmin"),
-                this.Client,
-                database,
-                field,
-                criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDproduct.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDproductRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDproductRequestBuilder Dproduct(
-            Newtonsoft.Json.Linq.JToken database = null,
-            Newtonsoft.Json.Linq.JToken field = null,
-            Newtonsoft.Json.Linq.JToken criteria = null)
-        {
-            return new WorkbookFunctionsDproductRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dproduct"),
-                this.Client,
-                database,
-                field,
-                criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDstDev.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDstDevRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDstDevRequestBuilder DstDev(
-            Newtonsoft.Json.Linq.JToken database = null,
-            Newtonsoft.Json.Linq.JToken field = null,
-            Newtonsoft.Json.Linq.JToken criteria = null)
-        {
-            return new WorkbookFunctionsDstDevRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dstDev"),
-                this.Client,
-                database,
-                field,
-                criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDstDevP.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDstDevPRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDstDevPRequestBuilder DstDevP(
-            Newtonsoft.Json.Linq.JToken database = null,
-            Newtonsoft.Json.Linq.JToken field = null,
-            Newtonsoft.Json.Linq.JToken criteria = null)
-        {
-            return new WorkbookFunctionsDstDevPRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dstDevP"),
-                this.Client,
-                database,
-                field,
-                criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDsum.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDsumRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDsumRequestBuilder Dsum(
-            Newtonsoft.Json.Linq.JToken database = null,
-            Newtonsoft.Json.Linq.JToken field = null,
-            Newtonsoft.Json.Linq.JToken criteria = null)
-        {
-            return new WorkbookFunctionsDsumRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dsum"),
-                this.Client,
-                database,
-                field,
-                criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDvar.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDvarRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDvarRequestBuilder Dvar(
-            Newtonsoft.Json.Linq.JToken database = null,
-            Newtonsoft.Json.Linq.JToken field = null,
-            Newtonsoft.Json.Linq.JToken criteria = null)
-        {
-            return new WorkbookFunctionsDvarRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dvar"),
-                this.Client,
-                database,
-                field,
-                criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDvarP.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDvarPRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDvarPRequestBuilder DvarP(
-            Newtonsoft.Json.Linq.JToken database = null,
-            Newtonsoft.Json.Linq.JToken field = null,
-            Newtonsoft.Json.Linq.JToken criteria = null)
-        {
-            return new WorkbookFunctionsDvarPRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dvarP"),
-                this.Client,
-                database,
-                field,
-                criteria);
-        }
-
-        /// <summary>
         /// Gets the request builder for WorkbookFunctionsDate.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsDateRequestBuilder"/>.</returns>
@@ -1519,6 +1315,23 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.datevalue"),
                 this.Client,
                 dateText);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDaverage.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDaverageRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDaverageRequestBuilder Daverage(
+            Newtonsoft.Json.Linq.JToken database = null,
+            Newtonsoft.Json.Linq.JToken field = null,
+            Newtonsoft.Json.Linq.JToken criteria = null)
+        {
+            return new WorkbookFunctionsDaverageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.daverage"),
+                this.Client,
+                database,
+                field,
+                criteria);
         }
 
         /// <summary>
@@ -1598,6 +1411,40 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.dbcs"),
                 this.Client,
                 text);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDcount.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDcountRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDcountRequestBuilder Dcount(
+            Newtonsoft.Json.Linq.JToken database = null,
+            Newtonsoft.Json.Linq.JToken field = null,
+            Newtonsoft.Json.Linq.JToken criteria = null)
+        {
+            return new WorkbookFunctionsDcountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dcount"),
+                this.Client,
+                database,
+                field,
+                criteria);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDcountA.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDcountARequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDcountARequestBuilder DcountA(
+            Newtonsoft.Json.Linq.JToken database = null,
+            Newtonsoft.Json.Linq.JToken field = null,
+            Newtonsoft.Json.Linq.JToken criteria = null)
+        {
+            return new WorkbookFunctionsDcountARequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dcountA"),
+                this.Client,
+                database,
+                field,
+                criteria);
         }
 
         /// <summary>
@@ -1723,6 +1570,23 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDget.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDgetRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDgetRequestBuilder Dget(
+            Newtonsoft.Json.Linq.JToken database = null,
+            Newtonsoft.Json.Linq.JToken field = null,
+            Newtonsoft.Json.Linq.JToken criteria = null)
+        {
+            return new WorkbookFunctionsDgetRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dget"),
+                this.Client,
+                database,
+                field,
+                criteria);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsDisc.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsDiscRequestBuilder"/>.</returns>
@@ -1741,6 +1605,40 @@ namespace Microsoft.Graph
                 pr,
                 redemption,
                 basis);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDmax.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDmaxRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDmaxRequestBuilder Dmax(
+            Newtonsoft.Json.Linq.JToken database = null,
+            Newtonsoft.Json.Linq.JToken field = null,
+            Newtonsoft.Json.Linq.JToken criteria = null)
+        {
+            return new WorkbookFunctionsDmaxRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dmax"),
+                this.Client,
+                database,
+                field,
+                criteria);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDmin.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDminRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDminRequestBuilder Dmin(
+            Newtonsoft.Json.Linq.JToken database = null,
+            Newtonsoft.Json.Linq.JToken field = null,
+            Newtonsoft.Json.Linq.JToken criteria = null)
+        {
+            return new WorkbookFunctionsDminRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dmin"),
+                this.Client,
+                database,
+                field,
+                criteria);
         }
 
         /// <summary>
@@ -1789,6 +1687,74 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDproduct.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDproductRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDproductRequestBuilder Dproduct(
+            Newtonsoft.Json.Linq.JToken database = null,
+            Newtonsoft.Json.Linq.JToken field = null,
+            Newtonsoft.Json.Linq.JToken criteria = null)
+        {
+            return new WorkbookFunctionsDproductRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dproduct"),
+                this.Client,
+                database,
+                field,
+                criteria);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDstDev.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDstDevRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDstDevRequestBuilder DstDev(
+            Newtonsoft.Json.Linq.JToken database = null,
+            Newtonsoft.Json.Linq.JToken field = null,
+            Newtonsoft.Json.Linq.JToken criteria = null)
+        {
+            return new WorkbookFunctionsDstDevRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dstDev"),
+                this.Client,
+                database,
+                field,
+                criteria);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDstDevP.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDstDevPRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDstDevPRequestBuilder DstDevP(
+            Newtonsoft.Json.Linq.JToken database = null,
+            Newtonsoft.Json.Linq.JToken field = null,
+            Newtonsoft.Json.Linq.JToken criteria = null)
+        {
+            return new WorkbookFunctionsDstDevPRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dstDevP"),
+                this.Client,
+                database,
+                field,
+                criteria);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDsum.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDsumRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDsumRequestBuilder Dsum(
+            Newtonsoft.Json.Linq.JToken database = null,
+            Newtonsoft.Json.Linq.JToken field = null,
+            Newtonsoft.Json.Linq.JToken criteria = null)
+        {
+            return new WorkbookFunctionsDsumRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dsum"),
+                this.Client,
+                database,
+                field,
+                criteria);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsDuration.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsDurationRequestBuilder"/>.</returns>
@@ -1809,6 +1775,40 @@ namespace Microsoft.Graph
                 yld,
                 frequency,
                 basis);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDvar.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDvarRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDvarRequestBuilder Dvar(
+            Newtonsoft.Json.Linq.JToken database = null,
+            Newtonsoft.Json.Linq.JToken field = null,
+            Newtonsoft.Json.Linq.JToken criteria = null)
+        {
+            return new WorkbookFunctionsDvarRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dvar"),
+                this.Client,
+                database,
+                field,
+                criteria);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDvarP.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDvarPRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDvarPRequestBuilder DvarP(
+            Newtonsoft.Json.Linq.JToken database = null,
+            Newtonsoft.Json.Linq.JToken field = null,
+            Newtonsoft.Json.Linq.JToken criteria = null)
+        {
+            return new WorkbookFunctionsDvarPRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dvarP"),
+                this.Client,
+                database,
+                field,
+                criteria);
         }
 
         /// <summary>
@@ -1887,6 +1887,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsErf_Precise.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsErf_PreciseRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsErf_PreciseRequestBuilder Erf_Precise(
+            Newtonsoft.Json.Linq.JToken X = null)
+        {
+            return new WorkbookFunctionsErf_PreciseRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.erf_Precise"),
+                this.Client,
+                X);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsErfC.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsErfCRequestBuilder"/>.</returns>
@@ -1908,19 +1921,6 @@ namespace Microsoft.Graph
         {
             return new WorkbookFunctionsErfC_PreciseRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.erfC_Precise"),
-                this.Client,
-                X);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsErf_Precise.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsErf_PreciseRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsErf_PreciseRequestBuilder Erf_Precise(
-            Newtonsoft.Json.Linq.JToken X = null)
-        {
-            return new WorkbookFunctionsErf_PreciseRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.erf_Precise"),
                 this.Client,
                 X);
         }
@@ -1994,21 +1994,6 @@ namespace Microsoft.Graph
                 x,
                 lambda,
                 cumulative);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsFvschedule.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsFvscheduleRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsFvscheduleRequestBuilder Fvschedule(
-            Newtonsoft.Json.Linq.JToken principal = null,
-            Newtonsoft.Json.Linq.JToken schedule = null)
-        {
-            return new WorkbookFunctionsFvscheduleRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.fvschedule"),
-                this.Client,
-                principal,
-                schedule);
         }
 
         /// <summary>
@@ -2249,6 +2234,21 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsFvschedule.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsFvscheduleRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsFvscheduleRequestBuilder Fvschedule(
+            Newtonsoft.Json.Linq.JToken principal = null,
+            Newtonsoft.Json.Linq.JToken schedule = null)
+        {
+            return new WorkbookFunctionsFvscheduleRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.fvschedule"),
+                this.Client,
+                principal,
+                schedule);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsGamma.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsGammaRequestBuilder"/>.</returns>
@@ -2257,32 +2257,6 @@ namespace Microsoft.Graph
         {
             return new WorkbookFunctionsGammaRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.gamma"),
-                this.Client,
-                x);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsGammaLn.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsGammaLnRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsGammaLnRequestBuilder GammaLn(
-            Newtonsoft.Json.Linq.JToken x = null)
-        {
-            return new WorkbookFunctionsGammaLnRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.gammaLn"),
-                this.Client,
-                x);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsGammaLn_Precise.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsGammaLn_PreciseRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsGammaLn_PreciseRequestBuilder GammaLn_Precise(
-            Newtonsoft.Json.Linq.JToken x = null)
-        {
-            return new WorkbookFunctionsGammaLn_PreciseRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.gammaLn_Precise"),
                 this.Client,
                 x);
         }
@@ -2324,6 +2298,32 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsGammaLn.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsGammaLnRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsGammaLnRequestBuilder GammaLn(
+            Newtonsoft.Json.Linq.JToken x = null)
+        {
+            return new WorkbookFunctionsGammaLnRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.gammaLn"),
+                this.Client,
+                x);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsGammaLn_Precise.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsGammaLn_PreciseRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsGammaLn_PreciseRequestBuilder GammaLn_Precise(
+            Newtonsoft.Json.Linq.JToken x = null)
+        {
+            return new WorkbookFunctionsGammaLn_PreciseRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.gammaLn_Precise"),
+                this.Client,
+                x);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsGauss.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsGaussRequestBuilder"/>.</returns>
@@ -2350,21 +2350,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsGeStep.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsGeStepRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsGeStepRequestBuilder GeStep(
-            Newtonsoft.Json.Linq.JToken number = null,
-            Newtonsoft.Json.Linq.JToken step = null)
-        {
-            return new WorkbookFunctionsGeStepRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.geStep"),
-                this.Client,
-                number,
-                step);
-        }
-
-        /// <summary>
         /// Gets the request builder for WorkbookFunctionsGeoMean.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsGeoMeanRequestBuilder"/>.</returns>
@@ -2378,22 +2363,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsHlookup.
+        /// Gets the request builder for WorkbookFunctionsGeStep.
         /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsHlookupRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsHlookupRequestBuilder Hlookup(
-            Newtonsoft.Json.Linq.JToken lookupValue = null,
-            Newtonsoft.Json.Linq.JToken tableArray = null,
-            Newtonsoft.Json.Linq.JToken rowIndexNum = null,
-            Newtonsoft.Json.Linq.JToken rangeLookup = null)
+        /// <returns>The <see cref="IWorkbookFunctionsGeStepRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsGeStepRequestBuilder GeStep(
+            Newtonsoft.Json.Linq.JToken number = null,
+            Newtonsoft.Json.Linq.JToken step = null)
         {
-            return new WorkbookFunctionsHlookupRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.hlookup"),
+            return new WorkbookFunctionsGeStepRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.geStep"),
                 this.Client,
-                lookupValue,
-                tableArray,
-                rowIndexNum,
-                rangeLookup);
+                number,
+                step);
         }
 
         /// <summary>
@@ -2453,6 +2434,25 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsHlookup.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsHlookupRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsHlookupRequestBuilder Hlookup(
+            Newtonsoft.Json.Linq.JToken lookupValue = null,
+            Newtonsoft.Json.Linq.JToken tableArray = null,
+            Newtonsoft.Json.Linq.JToken rowIndexNum = null,
+            Newtonsoft.Json.Linq.JToken rangeLookup = null)
+        {
+            return new WorkbookFunctionsHlookupRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hlookup"),
+                this.Client,
+                lookupValue,
+                tableArray,
+                rowIndexNum,
+                rangeLookup);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsHour.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsHourRequestBuilder"/>.</returns>
@@ -2463,6 +2463,21 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.hour"),
                 this.Client,
                 serialNumber);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsHyperlink.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsHyperlinkRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsHyperlinkRequestBuilder Hyperlink(
+            Newtonsoft.Json.Linq.JToken linkLocation = null,
+            Newtonsoft.Json.Linq.JToken friendlyName = null)
+        {
+            return new WorkbookFunctionsHyperlinkRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hyperlink"),
+                this.Client,
+                linkLocation,
+                friendlyName);
         }
 
         /// <summary>
@@ -2484,36 +2499,6 @@ namespace Microsoft.Graph
                 populationS,
                 numberPop,
                 cumulative);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsHyperlink.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsHyperlinkRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsHyperlinkRequestBuilder Hyperlink(
-            Newtonsoft.Json.Linq.JToken linkLocation = null,
-            Newtonsoft.Json.Linq.JToken friendlyName = null)
-        {
-            return new WorkbookFunctionsHyperlinkRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.hyperlink"),
-                this.Client,
-                linkLocation,
-                friendlyName);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsIso_Ceiling.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsIso_CeilingRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsIso_CeilingRequestBuilder Iso_Ceiling(
-            Newtonsoft.Json.Linq.JToken number = null,
-            Newtonsoft.Json.Linq.JToken significance = null)
-        {
-            return new WorkbookFunctionsIso_CeilingRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.iso_Ceiling"),
-                this.Client,
-                number,
-                significance);
         }
 
         /// <summary>
@@ -2542,6 +2527,19 @@ namespace Microsoft.Graph
         {
             return new WorkbookFunctionsImAbsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.imAbs"),
+                this.Client,
+                inumber);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsImaginary.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsImaginaryRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsImaginaryRequestBuilder Imaginary(
+            Newtonsoft.Json.Linq.JToken inumber = null)
+        {
+            return new WorkbookFunctionsImaginaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.imaginary"),
                 this.Client,
                 inumber);
         }
@@ -2852,19 +2850,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsImaginary.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsImaginaryRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsImaginaryRequestBuilder Imaginary(
-            Newtonsoft.Json.Linq.JToken inumber = null)
-        {
-            return new WorkbookFunctionsImaginaryRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.imaginary"),
-                this.Client,
-                inumber);
-        }
-
-        /// <summary>
         /// Gets the request builder for WorkbookFunctionsInt.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsIntRequestBuilder"/>.</returns>
@@ -3041,6 +3026,21 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsIso_Ceiling.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsIso_CeilingRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsIso_CeilingRequestBuilder Iso_Ceiling(
+            Newtonsoft.Json.Linq.JToken number = null,
+            Newtonsoft.Json.Linq.JToken significance = null)
+        {
+            return new WorkbookFunctionsIso_CeilingRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.iso_Ceiling"),
+                this.Client,
+                number,
+                significance);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsIsOdd.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsIsOddRequestBuilder"/>.</returns>
@@ -3051,19 +3051,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.isOdd"),
                 this.Client,
                 number);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsIsText.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsIsTextRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsIsTextRequestBuilder IsText(
-            Newtonsoft.Json.Linq.JToken value = null)
-        {
-            return new WorkbookFunctionsIsTextRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.isText"),
-                this.Client,
-                value);
         }
 
         /// <summary>
@@ -3107,6 +3094,19 @@ namespace Microsoft.Graph
         {
             return new WorkbookFunctionsIsrefRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.isref"),
+                this.Client,
+                value);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsIsText.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsIsTextRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsIsTextRequestBuilder IsText(
+            Newtonsoft.Json.Linq.JToken value = null)
+        {
+            return new WorkbookFunctionsIsTextRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.isText"),
                 this.Client,
                 value);
         }
@@ -3316,61 +3316,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsMduration.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsMdurationRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsMdurationRequestBuilder Mduration(
-            Newtonsoft.Json.Linq.JToken settlement = null,
-            Newtonsoft.Json.Linq.JToken maturity = null,
-            Newtonsoft.Json.Linq.JToken coupon = null,
-            Newtonsoft.Json.Linq.JToken yld = null,
-            Newtonsoft.Json.Linq.JToken frequency = null,
-            Newtonsoft.Json.Linq.JToken basis = null)
-        {
-            return new WorkbookFunctionsMdurationRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.mduration"),
-                this.Client,
-                settlement,
-                maturity,
-                coupon,
-                yld,
-                frequency,
-                basis);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsMirr.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsMirrRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsMirrRequestBuilder Mirr(
-            Newtonsoft.Json.Linq.JToken values = null,
-            Newtonsoft.Json.Linq.JToken financeRate = null,
-            Newtonsoft.Json.Linq.JToken reinvestRate = null)
-        {
-            return new WorkbookFunctionsMirrRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.mirr"),
-                this.Client,
-                values,
-                financeRate,
-                reinvestRate);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsMround.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsMroundRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsMroundRequestBuilder Mround(
-            Newtonsoft.Json.Linq.JToken number = null,
-            Newtonsoft.Json.Linq.JToken multiple = null)
-        {
-            return new WorkbookFunctionsMroundRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.mround"),
-                this.Client,
-                number,
-                multiple);
-        }
-
-        /// <summary>
         /// Gets the request builder for WorkbookFunctionsMatch.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsMatchRequestBuilder"/>.</returns>
@@ -3411,6 +3356,29 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.maxA"),
                 this.Client,
                 values);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsMduration.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsMdurationRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsMdurationRequestBuilder Mduration(
+            Newtonsoft.Json.Linq.JToken settlement = null,
+            Newtonsoft.Json.Linq.JToken maturity = null,
+            Newtonsoft.Json.Linq.JToken coupon = null,
+            Newtonsoft.Json.Linq.JToken yld = null,
+            Newtonsoft.Json.Linq.JToken frequency = null,
+            Newtonsoft.Json.Linq.JToken basis = null)
+        {
+            return new WorkbookFunctionsMdurationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.mduration"),
+                this.Client,
+                settlement,
+                maturity,
+                coupon,
+                yld,
+                frequency,
+                basis);
         }
 
         /// <summary>
@@ -3500,6 +3468,23 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsMirr.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsMirrRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsMirrRequestBuilder Mirr(
+            Newtonsoft.Json.Linq.JToken values = null,
+            Newtonsoft.Json.Linq.JToken financeRate = null,
+            Newtonsoft.Json.Linq.JToken reinvestRate = null)
+        {
+            return new WorkbookFunctionsMirrRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.mirr"),
+                this.Client,
+                values,
+                financeRate,
+                reinvestRate);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsMod.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsModRequestBuilder"/>.</returns>
@@ -3528,6 +3513,21 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsMround.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsMroundRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsMroundRequestBuilder Mround(
+            Newtonsoft.Json.Linq.JToken number = null,
+            Newtonsoft.Json.Linq.JToken multiple = null)
+        {
+            return new WorkbookFunctionsMroundRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.mround"),
+                this.Client,
+                number,
+                multiple);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsMultiNomial.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsMultiNomialRequestBuilder"/>.</returns>
@@ -3551,27 +3551,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.n"),
                 this.Client,
                 value);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsNper.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsNperRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsNperRequestBuilder Nper(
-            Newtonsoft.Json.Linq.JToken rate = null,
-            Newtonsoft.Json.Linq.JToken pmt = null,
-            Newtonsoft.Json.Linq.JToken pv = null,
-            Newtonsoft.Json.Linq.JToken fv = null,
-            Newtonsoft.Json.Linq.JToken type = null)
-        {
-            return new WorkbookFunctionsNperRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.nper"),
-                this.Client,
-                rate,
-                pmt,
-                pv,
-                fv,
-                type);
         }
 
         /// <summary>
@@ -3741,6 +3720,27 @@ namespace Microsoft.Graph
             return new WorkbookFunctionsNowRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.now"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsNper.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsNperRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsNperRequestBuilder Nper(
+            Newtonsoft.Json.Linq.JToken rate = null,
+            Newtonsoft.Json.Linq.JToken pmt = null,
+            Newtonsoft.Json.Linq.JToken pv = null,
+            Newtonsoft.Json.Linq.JToken fv = null,
+            Newtonsoft.Json.Linq.JToken type = null)
+        {
+            return new WorkbookFunctionsNperRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.nper"),
+                this.Client,
+                rate,
+                pmt,
+                pv,
+                fv,
+                type);
         }
 
         /// <summary>
@@ -3974,6 +3974,36 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsPercentile_Exc.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsPercentile_ExcRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsPercentile_ExcRequestBuilder Percentile_Exc(
+            Newtonsoft.Json.Linq.JToken array = null,
+            Newtonsoft.Json.Linq.JToken k = null)
+        {
+            return new WorkbookFunctionsPercentile_ExcRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.percentile_Exc"),
+                this.Client,
+                array,
+                k);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsPercentile_Inc.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsPercentile_IncRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsPercentile_IncRequestBuilder Percentile_Inc(
+            Newtonsoft.Json.Linq.JToken array = null,
+            Newtonsoft.Json.Linq.JToken k = null)
+        {
+            return new WorkbookFunctionsPercentile_IncRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.percentile_Inc"),
+                this.Client,
+                array,
+                k);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsPercentRank_Exc.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsPercentRank_ExcRequestBuilder"/>.</returns>
@@ -4005,36 +4035,6 @@ namespace Microsoft.Graph
                 array,
                 x,
                 significance);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsPercentile_Exc.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsPercentile_ExcRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsPercentile_ExcRequestBuilder Percentile_Exc(
-            Newtonsoft.Json.Linq.JToken array = null,
-            Newtonsoft.Json.Linq.JToken k = null)
-        {
-            return new WorkbookFunctionsPercentile_ExcRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.percentile_Exc"),
-                this.Client,
-                array,
-                k);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsPercentile_Inc.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsPercentile_IncRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsPercentile_IncRequestBuilder Percentile_Inc(
-            Newtonsoft.Json.Linq.JToken array = null,
-            Newtonsoft.Json.Linq.JToken k = null)
-        {
-            return new WorkbookFunctionsPercentile_IncRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.percentile_Inc"),
-                this.Client,
-                array,
-                k);
         }
 
         /// <summary>
@@ -4826,29 +4826,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsStDevA.
+        /// Gets the request builder for WorkbookFunctionsStandardize.
         /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsStDevARequestBuilder"/>.</returns>
-        public IWorkbookFunctionsStDevARequestBuilder StDevA(
-            Newtonsoft.Json.Linq.JToken values = null)
+        /// <returns>The <see cref="IWorkbookFunctionsStandardizeRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsStandardizeRequestBuilder Standardize(
+            Newtonsoft.Json.Linq.JToken x = null,
+            Newtonsoft.Json.Linq.JToken mean = null,
+            Newtonsoft.Json.Linq.JToken standardDev = null)
         {
-            return new WorkbookFunctionsStDevARequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.stDevA"),
+            return new WorkbookFunctionsStandardizeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.standardize"),
                 this.Client,
-                values);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsStDevPA.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsStDevPARequestBuilder"/>.</returns>
-        public IWorkbookFunctionsStDevPARequestBuilder StDevPA(
-            Newtonsoft.Json.Linq.JToken values = null)
-        {
-            return new WorkbookFunctionsStDevPARequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.stDevPA"),
-                this.Client,
-                values);
+                x,
+                mean,
+                standardDev);
         }
 
         /// <summary>
@@ -4878,20 +4869,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsStandardize.
+        /// Gets the request builder for WorkbookFunctionsStDevA.
         /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsStandardizeRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsStandardizeRequestBuilder Standardize(
-            Newtonsoft.Json.Linq.JToken x = null,
-            Newtonsoft.Json.Linq.JToken mean = null,
-            Newtonsoft.Json.Linq.JToken standardDev = null)
+        /// <returns>The <see cref="IWorkbookFunctionsStDevARequestBuilder"/>.</returns>
+        public IWorkbookFunctionsStDevARequestBuilder StDevA(
+            Newtonsoft.Json.Linq.JToken values = null)
         {
-            return new WorkbookFunctionsStandardizeRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.standardize"),
+            return new WorkbookFunctionsStDevARequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.stDevA"),
                 this.Client,
-                x,
-                mean,
-                standardDev);
+                values);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsStDevPA.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsStDevPARequestBuilder"/>.</returns>
+        public IWorkbookFunctionsStDevPARequestBuilder StDevPA(
+            Newtonsoft.Json.Linq.JToken values = null)
+        {
+            return new WorkbookFunctionsStDevPARequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.stDevPA"),
+                this.Client,
+                values);
         }
 
         /// <summary>
@@ -5019,57 +5019,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsTbillEq.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsTbillEqRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsTbillEqRequestBuilder TbillEq(
-            Newtonsoft.Json.Linq.JToken settlement = null,
-            Newtonsoft.Json.Linq.JToken maturity = null,
-            Newtonsoft.Json.Linq.JToken discount = null)
-        {
-            return new WorkbookFunctionsTbillEqRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.tbillEq"),
-                this.Client,
-                settlement,
-                maturity,
-                discount);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsTbillPrice.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsTbillPriceRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsTbillPriceRequestBuilder TbillPrice(
-            Newtonsoft.Json.Linq.JToken settlement = null,
-            Newtonsoft.Json.Linq.JToken maturity = null,
-            Newtonsoft.Json.Linq.JToken discount = null)
-        {
-            return new WorkbookFunctionsTbillPriceRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.tbillPrice"),
-                this.Client,
-                settlement,
-                maturity,
-                discount);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsTbillYield.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsTbillYieldRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsTbillYieldRequestBuilder TbillYield(
-            Newtonsoft.Json.Linq.JToken settlement = null,
-            Newtonsoft.Json.Linq.JToken maturity = null,
-            Newtonsoft.Json.Linq.JToken pr = null)
-        {
-            return new WorkbookFunctionsTbillYieldRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.tbillYield"),
-                this.Client,
-                settlement,
-                maturity,
-                pr);
-        }
-
-        /// <summary>
         /// Gets the request builder for WorkbookFunctionsT_Dist.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsT_DistRequestBuilder"/>.</returns>
@@ -5170,6 +5119,57 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.tanh"),
                 this.Client,
                 number);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsTbillEq.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsTbillEqRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsTbillEqRequestBuilder TbillEq(
+            Newtonsoft.Json.Linq.JToken settlement = null,
+            Newtonsoft.Json.Linq.JToken maturity = null,
+            Newtonsoft.Json.Linq.JToken discount = null)
+        {
+            return new WorkbookFunctionsTbillEqRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.tbillEq"),
+                this.Client,
+                settlement,
+                maturity,
+                discount);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsTbillPrice.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsTbillPriceRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsTbillPriceRequestBuilder TbillPrice(
+            Newtonsoft.Json.Linq.JToken settlement = null,
+            Newtonsoft.Json.Linq.JToken maturity = null,
+            Newtonsoft.Json.Linq.JToken discount = null)
+        {
+            return new WorkbookFunctionsTbillPriceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.tbillPrice"),
+                this.Client,
+                settlement,
+                maturity,
+                discount);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsTbillYield.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsTbillYieldRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsTbillYieldRequestBuilder TbillYield(
+            Newtonsoft.Json.Linq.JToken settlement = null,
+            Newtonsoft.Json.Linq.JToken maturity = null,
+            Newtonsoft.Json.Linq.JToken pr = null)
+        {
+            return new WorkbookFunctionsTbillYieldRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.tbillYield"),
+                this.Client,
+                settlement,
+                maturity,
+                pr);
         }
 
         /// <summary>
@@ -5296,21 +5296,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsUsdollar.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsUsdollarRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsUsdollarRequestBuilder Usdollar(
-            Newtonsoft.Json.Linq.JToken number = null,
-            Newtonsoft.Json.Linq.JToken decimals = null)
-        {
-            return new WorkbookFunctionsUsdollarRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.usdollar"),
-                this.Client,
-                number,
-                decimals);
-        }
-
-        /// <summary>
         /// Gets the request builder for WorkbookFunctionsUnichar.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsUnicharRequestBuilder"/>.</returns>
@@ -5350,22 +5335,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsVlookup.
+        /// Gets the request builder for WorkbookFunctionsUsdollar.
         /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsVlookupRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsVlookupRequestBuilder Vlookup(
-            Newtonsoft.Json.Linq.JToken lookupValue = null,
-            Newtonsoft.Json.Linq.JToken tableArray = null,
-            Newtonsoft.Json.Linq.JToken colIndexNum = null,
-            Newtonsoft.Json.Linq.JToken rangeLookup = null)
+        /// <returns>The <see cref="IWorkbookFunctionsUsdollarRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsUsdollarRequestBuilder Usdollar(
+            Newtonsoft.Json.Linq.JToken number = null,
+            Newtonsoft.Json.Linq.JToken decimals = null)
         {
-            return new WorkbookFunctionsVlookupRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.vlookup"),
+            return new WorkbookFunctionsUsdollarRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.usdollar"),
                 this.Client,
-                lookupValue,
-                tableArray,
-                colIndexNum,
-                rangeLookup);
+                number,
+                decimals);
         }
 
         /// <summary>
@@ -5379,32 +5360,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.value"),
                 this.Client,
                 text);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsVarA.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsVarARequestBuilder"/>.</returns>
-        public IWorkbookFunctionsVarARequestBuilder VarA(
-            Newtonsoft.Json.Linq.JToken values = null)
-        {
-            return new WorkbookFunctionsVarARequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.varA"),
-                this.Client,
-                values);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsVarPA.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsVarPARequestBuilder"/>.</returns>
-        public IWorkbookFunctionsVarPARequestBuilder VarPA(
-            Newtonsoft.Json.Linq.JToken values = null)
-        {
-            return new WorkbookFunctionsVarPARequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.varPA"),
-                this.Client,
-                values);
         }
 
         /// <summary>
@@ -5429,6 +5384,32 @@ namespace Microsoft.Graph
         {
             return new WorkbookFunctionsVar_SRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.var_S"),
+                this.Client,
+                values);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsVarA.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsVarARequestBuilder"/>.</returns>
+        public IWorkbookFunctionsVarARequestBuilder VarA(
+            Newtonsoft.Json.Linq.JToken values = null)
+        {
+            return new WorkbookFunctionsVarARequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.varA"),
+                this.Client,
+                values);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsVarPA.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsVarPARequestBuilder"/>.</returns>
+        public IWorkbookFunctionsVarPARequestBuilder VarPA(
+            Newtonsoft.Json.Linq.JToken values = null)
+        {
+            return new WorkbookFunctionsVarPARequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.varPA"),
                 this.Client,
                 values);
         }
@@ -5459,18 +5440,22 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsWeekNum.
+        /// Gets the request builder for WorkbookFunctionsVlookup.
         /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsWeekNumRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsWeekNumRequestBuilder WeekNum(
-            Newtonsoft.Json.Linq.JToken serialNumber = null,
-            Newtonsoft.Json.Linq.JToken returnType = null)
+        /// <returns>The <see cref="IWorkbookFunctionsVlookupRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsVlookupRequestBuilder Vlookup(
+            Newtonsoft.Json.Linq.JToken lookupValue = null,
+            Newtonsoft.Json.Linq.JToken tableArray = null,
+            Newtonsoft.Json.Linq.JToken colIndexNum = null,
+            Newtonsoft.Json.Linq.JToken rangeLookup = null)
         {
-            return new WorkbookFunctionsWeekNumRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.weekNum"),
+            return new WorkbookFunctionsVlookupRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.vlookup"),
                 this.Client,
-                serialNumber,
-                returnType);
+                lookupValue,
+                tableArray,
+                colIndexNum,
+                rangeLookup);
         }
 
         /// <summary>
@@ -5483,6 +5468,21 @@ namespace Microsoft.Graph
         {
             return new WorkbookFunctionsWeekdayRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.weekday"),
+                this.Client,
+                serialNumber,
+                returnType);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsWeekNum.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsWeekNumRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsWeekNumRequestBuilder WeekNum(
+            Newtonsoft.Json.Linq.JToken serialNumber = null,
+            Newtonsoft.Json.Linq.JToken returnType = null)
+        {
+            return new WorkbookFunctionsWeekNumRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.weekNum"),
                 this.Client,
                 serialNumber,
                 returnType);

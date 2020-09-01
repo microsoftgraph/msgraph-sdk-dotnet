@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         public IEnumerable<DayOfWeek> DaysOfWeek { get; set; }
     
         /// <summary>
-        /// Gets or sets startTime.
-        /// The time of the day that the user starts working.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay StartTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets endTime.
         /// The time of the day that the user stops working.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endTime", Required = Newtonsoft.Json.Required.Default)]
         public TimeOfDay EndTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets startTime.
+        /// The time of the day that the user starts working.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay StartTime { get; set; }
     
         /// <summary>
         /// Gets or sets timeZone.

@@ -30,6 +30,11 @@ namespace Microsoft.Graph
         Icmp = 1,
 	
         /// <summary>
+        /// Unknown
+        /// </summary>
+        Unknown = -1,
+	
+        /// <summary>
         /// Igmp
         /// </summary>
         Igmp = 2,
@@ -133,11 +138,6 @@ namespace Microsoft.Graph
         /// Unknown Future Value
         /// </summary>
         UnknownFutureValue = 32767,
-	
-        /// <summary>
-        /// Unknown
-        /// </summary>
-        Unknown = -1,
 	
     }
 }

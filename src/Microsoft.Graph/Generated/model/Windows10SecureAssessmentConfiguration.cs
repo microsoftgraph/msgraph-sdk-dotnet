@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets launch uri.
-        /// Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "launchUri", Required = Newtonsoft.Json.Required.Default)]
-        public string LaunchUri { get; set; }
-    
-        /// <summary>
-        /// Gets or sets configuration account.
-        /// The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationAccount", Required = Newtonsoft.Json.Required.Default)]
-        public string ConfigurationAccount { get; set; }
-    
-        /// <summary>
         /// Gets or sets allow printing.
         /// Indicates whether or not to allow the app from printing during the test.
         /// </summary>
@@ -64,6 +50,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowTextSuggestion", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowTextSuggestion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets configuration account.
+        /// The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationAccount", Required = Newtonsoft.Json.Required.Default)]
+        public string ConfigurationAccount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets launch uri.
+        /// Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "launchUri", Required = Newtonsoft.Json.Required.Default)]
+        public string LaunchUri { get; set; }
     
     }
 }

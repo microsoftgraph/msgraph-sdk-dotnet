@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets active hours start.
-        /// Active Hours Start (active hours mean the time window when updates install should not happen)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeHoursStart", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay ActiveHoursStart { get; set; }
-    
-        /// <summary>
         /// Gets or sets active hours end.
         /// Active Hours End (active hours mean the time window when updates install should not happen)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeHoursEnd", Required = Newtonsoft.Json.Required.Default)]
         public TimeOfDay ActiveHoursEnd { get; set; }
+    
+        /// <summary>
+        /// Gets or sets active hours start.
+        /// Active Hours Start (active hours mean the time window when updates install should not happen)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeHoursStart", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay ActiveHoursStart { get; set; }
     
         /// <summary>
         /// Gets or sets scheduled install days.

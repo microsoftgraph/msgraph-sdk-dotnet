@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets blockCrossOrganizationWriteAccess.
+        /// This policy setting determines whether BitLocker protection is required for removable data drives to be writable on a computer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockCrossOrganizationWriteAccess", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BlockCrossOrganizationWriteAccess { get; set; }
+    
+        /// <summary>
         /// Gets or sets encryptionMethod.
         /// Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
         /// </summary>
@@ -43,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireEncryptionForWriteAccess", Required = Newtonsoft.Json.Required.Default)]
         public bool? RequireEncryptionForWriteAccess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets blockCrossOrganizationWriteAccess.
-        /// This policy setting determines whether BitLocker protection is required for removable data drives to be writable on a computer.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockCrossOrganizationWriteAccess", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BlockCrossOrganizationWriteAccess { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

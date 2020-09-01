@@ -52,6 +52,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets key.
+        /// Value for the key credential. Should be a base 64 encoded value.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "key", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] Key { get; set; }
+    
+        /// <summary>
         /// Gets or sets keyId.
         /// The unique identifier (GUID) for the key.
         /// </summary>
@@ -78,13 +85,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usage", Required = Newtonsoft.Json.Required.Default)]
         public string Usage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets key.
-        /// Value for the key credential. Should be a base 64 encoded value.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "key", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] Key { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -63,26 +63,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Sections.
+        /// Gets the request builder for Operations.
         /// </summary>
-        /// <returns>The <see cref="IOnenoteSectionsCollectionRequestBuilder"/>.</returns>
-        public IOnenoteSectionsCollectionRequestBuilder Sections
+        /// <returns>The <see cref="IOnenoteOperationsCollectionRequestBuilder"/>.</returns>
+        public IOnenoteOperationsCollectionRequestBuilder Operations
         {
             get
             {
-                return new OnenoteSectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sections"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for SectionGroups.
-        /// </summary>
-        /// <returns>The <see cref="IOnenoteSectionGroupsCollectionRequestBuilder"/>.</returns>
-        public IOnenoteSectionGroupsCollectionRequestBuilder SectionGroups
-        {
-            get
-            {
-                return new OnenoteSectionGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sectionGroups"), this.Client);
+                return new OnenoteOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
             }
         }
 
@@ -111,14 +99,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Operations.
+        /// Gets the request builder for SectionGroups.
         /// </summary>
-        /// <returns>The <see cref="IOnenoteOperationsCollectionRequestBuilder"/>.</returns>
-        public IOnenoteOperationsCollectionRequestBuilder Operations
+        /// <returns>The <see cref="IOnenoteSectionGroupsCollectionRequestBuilder"/>.</returns>
+        public IOnenoteSectionGroupsCollectionRequestBuilder SectionGroups
         {
             get
             {
-                return new OnenoteOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
+                return new OnenoteSectionGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sectionGroups"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Sections.
+        /// </summary>
+        /// <returns>The <see cref="IOnenoteSectionsCollectionRequestBuilder"/>.</returns>
+        public IOnenoteSectionsCollectionRequestBuilder Sections
+        {
+            get
+            {
+                return new OnenoteSectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sections"), this.Client);
             }
         }
     

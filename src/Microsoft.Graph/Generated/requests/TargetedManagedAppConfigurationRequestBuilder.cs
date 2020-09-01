@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeploymentSummary.
-        /// </summary>
-        /// <returns>The <see cref="IManagedAppPolicyDeploymentSummaryRequestBuilder"/>.</returns>
-        public IManagedAppPolicyDeploymentSummaryRequestBuilder DeploymentSummary
-        {
-            get
-            {
-                return new ManagedAppPolicyDeploymentSummaryRequestBuilder(this.AppendSegmentToRequestUrl("deploymentSummary"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="ITargetedManagedAppConfigurationAssignmentsCollectionRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new TargetedManagedAppConfigurationAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeploymentSummary.
+        /// </summary>
+        /// <returns>The <see cref="IManagedAppPolicyDeploymentSummaryRequestBuilder"/>.</returns>
+        public IManagedAppPolicyDeploymentSummaryRequestBuilder DeploymentSummary
+        {
+            get
+            {
+                return new ManagedAppPolicyDeploymentSummaryRequestBuilder(this.AppendSegmentToRequestUrl("deploymentSummary"), this.Client);
             }
         }
     

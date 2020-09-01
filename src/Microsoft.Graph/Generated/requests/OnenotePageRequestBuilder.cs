@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ParentSection.
-        /// </summary>
-        /// <returns>The <see cref="IOnenoteSectionRequestBuilder"/>.</returns>
-        public IOnenoteSectionRequestBuilder ParentSection
-        {
-            get
-            {
-                return new OnenoteSectionRequestBuilder(this.AppendSegmentToRequestUrl("parentSection"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ParentNotebook.
         /// </summary>
         /// <returns>The <see cref="INotebookRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new NotebookRequestBuilder(this.AppendSegmentToRequestUrl("parentNotebook"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ParentSection.
+        /// </summary>
+        /// <returns>The <see cref="IOnenoteSectionRequestBuilder"/>.</returns>
+        public IOnenoteSectionRequestBuilder ParentSection
+        {
+            get
+            {
+                return new OnenoteSectionRequestBuilder(this.AppendSegmentToRequestUrl("parentSection"), this.Client);
             }
         }
     
@@ -86,19 +86,6 @@ namespace Microsoft.Graph
             }
         }
     
-        /// <summary>
-        /// Gets the request builder for OnenotePageOnenotePatchContent.
-        /// </summary>
-        /// <returns>The <see cref="IOnenotePageOnenotePatchContentRequestBuilder"/>.</returns>
-        public IOnenotePageOnenotePatchContentRequestBuilder OnenotePatchContent(
-            IEnumerable<OnenotePatchContentCommand> commands = null)
-        {
-            return new OnenotePageOnenotePatchContentRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.onenotePatchContent"),
-                this.Client,
-                commands);
-        }
-
         /// <summary>
         /// Gets the request builder for OnenotePageCopyToSection.
         /// </summary>
@@ -116,6 +103,19 @@ namespace Microsoft.Graph
                 groupId,
                 siteCollectionId,
                 siteId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for OnenotePageOnenotePatchContent.
+        /// </summary>
+        /// <returns>The <see cref="IOnenotePageOnenotePatchContentRequestBuilder"/>.</returns>
+        public IOnenotePageOnenotePatchContentRequestBuilder OnenotePatchContent(
+            IEnumerable<OnenotePatchContentCommand> commands = null)
+        {
+            return new OnenotePageOnenotePatchContentRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.onenotePatchContent"),
+                this.Client,
+                commands);
         }
 
         /// <summary>

@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets bundleID.
-        /// Bundle id of app to which to apply these notification settings.
+        /// Gets or sets alertType.
+        /// Indicates the type of alert for notifications for this app. Possible values are: deviceDefault, banner, modal, none.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleID", Required = Newtonsoft.Json.Required.Default)]
-        public string BundleID { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alertType", Required = Newtonsoft.Json.Required.Default)]
+        public IosNotificationAlertType? AlertType { get; set; }
     
         /// <summary>
         /// Gets or sets appName.
@@ -45,11 +45,18 @@ namespace Microsoft.Graph
         public string AppName { get; set; }
     
         /// <summary>
-        /// Gets or sets publisher.
-        /// Publisher to be associated with the bundleID.
+        /// Gets or sets badgesEnabled.
+        /// Indicates whether badges are allowed for this app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
-        public string Publisher { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "badgesEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BadgesEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bundleID.
+        /// Bundle id of app to which to apply these notification settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleID", Required = Newtonsoft.Json.Required.Default)]
+        public string BundleID { get; set; }
     
         /// <summary>
         /// Gets or sets enabled.
@@ -57,6 +64,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? Enabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets publisher.
+        /// Publisher to be associated with the bundleID.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
+        public string Publisher { get; set; }
     
         /// <summary>
         /// Gets or sets showInNotificationCenter.
@@ -71,20 +85,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showOnLockScreen", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowOnLockScreen { get; set; }
-    
-        /// <summary>
-        /// Gets or sets alertType.
-        /// Indicates the type of alert for notifications for this app. Possible values are: deviceDefault, banner, modal, none.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alertType", Required = Newtonsoft.Json.Required.Default)]
-        public IosNotificationAlertType? AlertType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets badgesEnabled.
-        /// Indicates whether badges are allowed for this app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "badgesEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BadgesEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets soundsEnabled.

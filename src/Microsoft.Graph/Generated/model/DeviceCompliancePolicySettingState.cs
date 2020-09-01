@@ -31,32 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets setting.
-        /// The setting that is being reported
+        /// Gets or sets currentValue.
+        /// Current value of setting on device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "setting", Required = Newtonsoft.Json.Required.Default)]
-        public string Setting { get; set; }
-    
-        /// <summary>
-        /// Gets or sets settingName.
-        /// Localized/user friendly setting name that is being reported
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
-        public string SettingName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets instanceDisplayName.
-        /// Name of setting instance that is being reported.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instanceDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string InstanceDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets state.
-        /// The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public ComplianceStatus? State { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentValue", Required = Newtonsoft.Json.Required.Default)]
+        public string CurrentValue { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.
@@ -73,6 +52,48 @@ namespace Microsoft.Graph
         public string ErrorDescription { get; set; }
     
         /// <summary>
+        /// Gets or sets instanceDisplayName.
+        /// Name of setting instance that is being reported.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instanceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string InstanceDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets setting.
+        /// The setting that is being reported
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "setting", Required = Newtonsoft.Json.Required.Default)]
+        public string Setting { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settingName.
+        /// Localized/user friendly setting name that is being reported
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sources.
+        /// Contributing policies
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sources", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<SettingSource> Sources { get; set; }
+    
+        /// <summary>
+        /// Gets or sets state.
+        /// The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public ComplianceStatus? State { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userEmail.
+        /// UserEmail
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userEmail", Required = Newtonsoft.Json.Required.Default)]
+        public string UserEmail { get; set; }
+    
+        /// <summary>
         /// Gets or sets userId.
         /// UserId
         /// </summary>
@@ -87,32 +108,11 @@ namespace Microsoft.Graph
         public string UserName { get; set; }
     
         /// <summary>
-        /// Gets or sets userEmail.
-        /// UserEmail
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userEmail", Required = Newtonsoft.Json.Required.Default)]
-        public string UserEmail { get; set; }
-    
-        /// <summary>
         /// Gets or sets userPrincipalName.
         /// UserPrincipalName.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sources.
-        /// Contributing policies
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sources", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<SettingSource> Sources { get; set; }
-    
-        /// <summary>
-        /// Gets or sets currentValue.
-        /// Current value of setting on device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentValue", Required = Newtonsoft.Json.Required.Default)]
-        public string CurrentValue { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

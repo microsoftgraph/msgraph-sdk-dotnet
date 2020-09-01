@@ -52,6 +52,13 @@ namespace Microsoft.Graph
         public string PagesUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets pages.
+        /// The collection of pages in the section.  Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pages", Required = Newtonsoft.Json.Required.Default)]
+        public IOnenoteSectionPagesCollectionPage Pages { get; set; }
+    
+        /// <summary>
         /// Gets or sets parent notebook.
         /// The notebook that contains the section.  Read-only.
         /// </summary>
@@ -64,13 +71,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentSectionGroup", Required = Newtonsoft.Json.Required.Default)]
         public SectionGroup ParentSectionGroup { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pages.
-        /// The collection of pages in the section.  Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pages", Required = Newtonsoft.Json.Required.Default)]
-        public IOnenoteSectionPagesCollectionPage Pages { get; set; }
     
     }
 }

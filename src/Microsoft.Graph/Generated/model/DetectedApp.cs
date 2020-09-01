@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets device count.
+        /// The number of devices that have installed this application
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DeviceCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// Name of the discovered application. Read-only
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets version.
-        /// Version of the discovered application. Read-only
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
-        public string Version { get; set; }
     
         /// <summary>
         /// Gets or sets size in byte.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public Int64? SizeInByte { get; set; }
     
         /// <summary>
-        /// Gets or sets device count.
-        /// The number of devices that have installed this application
+        /// Gets or sets version.
+        /// Version of the discovered application. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DeviceCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        public string Version { get; set; }
     
         /// <summary>
         /// Gets or sets managed devices.

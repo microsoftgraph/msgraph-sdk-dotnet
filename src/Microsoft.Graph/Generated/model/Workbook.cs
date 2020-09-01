@@ -37,11 +37,30 @@ namespace Microsoft.Graph
         public WorkbookApplication Application { get; set; }
     
         /// <summary>
+        /// Gets or sets comments.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comments", Required = Newtonsoft.Json.Required.Default)]
+        public IWorkbookCommentsCollectionPage Comments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets functions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "functions", Required = Newtonsoft.Json.Required.Default)]
+        public WorkbookFunctions Functions { get; set; }
+    
+        /// <summary>
         /// Gets or sets names.
         /// Represents a collection of workbook scoped named items (named ranges and constants). Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "names", Required = Newtonsoft.Json.Required.Default)]
         public IWorkbookNamesCollectionPage Names { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operations.
+        /// The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        public IWorkbookOperationsCollectionPage Operations { get; set; }
     
         /// <summary>
         /// Gets or sets tables.
@@ -56,25 +75,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "worksheets", Required = Newtonsoft.Json.Required.Default)]
         public IWorkbookWorksheetsCollectionPage Worksheets { get; set; }
-    
-        /// <summary>
-        /// Gets or sets comments.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comments", Required = Newtonsoft.Json.Required.Default)]
-        public IWorkbookCommentsCollectionPage Comments { get; set; }
-    
-        /// <summary>
-        /// Gets or sets functions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "functions", Required = Newtonsoft.Json.Required.Default)]
-        public WorkbookFunctions Functions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets operations.
-        /// The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
-        public IWorkbookOperationsCollectionPage Operations { get; set; }
     
     }
 }

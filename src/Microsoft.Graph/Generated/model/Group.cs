@@ -80,18 +80,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets has members with license errors.
-        /// Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasMembersWithLicenseErrors", Required = Newtonsoft.Json.Required.Default)]
-        public bool? HasMembersWithLicenseErrors { get; set; }
-    
-        /// <summary>
         /// Gets or sets group types.
         /// Specifies the group type and its membership.  If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static.  Returned by default. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> GroupTypes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets has members with license errors.
+        /// Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasMembersWithLicenseErrors", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HasMembersWithLicenseErrors { get; set; }
     
         /// <summary>
         /// Gets or sets license processing state.
@@ -255,6 +255,20 @@ namespace Microsoft.Graph
         public bool? AutoSubscribeNewMembers { get; set; }
     
         /// <summary>
+        /// Gets or sets hide from address lists.
+        /// True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideFromAddressLists", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HideFromAddressLists { get; set; }
+    
+        /// <summary>
+        /// Gets or sets hide from outlook clients.
+        /// True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideFromOutlookClients", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HideFromOutlookClients { get; set; }
+    
+        /// <summary>
         /// Gets or sets is subscribed by mail.
         /// Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select.
         /// </summary>
@@ -269,20 +283,6 @@ namespace Microsoft.Graph
         public Int32? UnseenCount { get; set; }
     
         /// <summary>
-        /// Gets or sets hide from outlook clients.
-        /// True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideFromOutlookClients", Required = Newtonsoft.Json.Required.Default)]
-        public bool? HideFromOutlookClients { get; set; }
-    
-        /// <summary>
-        /// Gets or sets hide from address lists.
-        /// True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideFromAddressLists", Required = Newtonsoft.Json.Required.Default)]
-        public bool? HideFromAddressLists { get; set; }
-    
-        /// <summary>
         /// Gets or sets is archived.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isArchived", Required = Newtonsoft.Json.Required.Default)]
@@ -295,11 +295,11 @@ namespace Microsoft.Graph
         public IGroupAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
     
         /// <summary>
-        /// Gets or sets members.
-        /// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups) Nullable.
+        /// Gets or sets created on behalf of.
+        /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupMembersCollectionWithReferencesPage Members { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdOnBehalfOf", Required = Newtonsoft.Json.Required.Default)]
+        public DirectoryObject CreatedOnBehalfOf { get; set; }
     
         /// <summary>
         /// Gets or sets member of.
@@ -309,30 +309,18 @@ namespace Microsoft.Graph
         public IGroupMemberOfCollectionWithReferencesPage MemberOf { get; set; }
     
         /// <summary>
+        /// Gets or sets members.
+        /// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups) Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupMembersCollectionWithReferencesPage Members { get; set; }
+    
+        /// <summary>
         /// Gets or sets members with license errors.
         /// A list of group members with license errors from this group-based license assignment. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membersWithLicenseErrors", Required = Newtonsoft.Json.Required.Default)]
         public IGroupMembersWithLicenseErrorsCollectionWithReferencesPage MembersWithLicenseErrors { get; set; }
-    
-        /// <summary>
-        /// Gets or sets transitive members.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMembers", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupTransitiveMembersCollectionWithReferencesPage TransitiveMembers { get; set; }
-    
-        /// <summary>
-        /// Gets or sets transitive member of.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created on behalf of.
-        /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdOnBehalfOf", Required = Newtonsoft.Json.Required.Default)]
-        public DirectoryObject CreatedOnBehalfOf { get; set; }
     
         /// <summary>
         /// Gets or sets owners.
@@ -349,18 +337,16 @@ namespace Microsoft.Graph
         public IGroupSettingsCollectionPage Settings { get; set; }
     
         /// <summary>
-        /// Gets or sets conversations.
-        /// The group's conversations.
+        /// Gets or sets transitive member of.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversations", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupConversationsCollectionPage Conversations { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
     
         /// <summary>
-        /// Gets or sets photos.
-        /// The profile photos owned by the group. Read-only. Nullable.
+        /// Gets or sets transitive members.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photos", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupPhotosCollectionPage Photos { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMembers", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupTransitiveMembersCollectionWithReferencesPage TransitiveMembers { get; set; }
     
         /// <summary>
         /// Gets or sets accepted senders.
@@ -368,20 +354,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptedSenders", Required = Newtonsoft.Json.Required.Default)]
         public IGroupAcceptedSendersCollectionPage AcceptedSenders { get; set; }
-    
-        /// <summary>
-        /// Gets or sets rejected senders.
-        /// The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rejectedSenders", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupRejectedSendersCollectionPage RejectedSenders { get; set; }
-    
-        /// <summary>
-        /// Gets or sets threads.
-        /// The group's conversation threads. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "threads", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupThreadsCollectionPage Threads { get; set; }
     
         /// <summary>
         /// Gets or sets calendar.
@@ -398,6 +370,13 @@ namespace Microsoft.Graph
         public IGroupCalendarViewCollectionPage CalendarView { get; set; }
     
         /// <summary>
+        /// Gets or sets conversations.
+        /// The group's conversations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversations", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupConversationsCollectionPage Conversations { get; set; }
+    
+        /// <summary>
         /// Gets or sets events.
         /// The group's calendar events.
         /// </summary>
@@ -410,6 +389,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photo", Required = Newtonsoft.Json.Required.Default)]
         public ProfilePhoto Photo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets photos.
+        /// The profile photos owned by the group. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photos", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupPhotosCollectionPage Photos { get; set; }
+    
+        /// <summary>
+        /// Gets or sets rejected senders.
+        /// The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rejectedSenders", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupRejectedSendersCollectionPage RejectedSenders { get; set; }
+    
+        /// <summary>
+        /// Gets or sets threads.
+        /// The group's conversation threads. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "threads", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupThreadsCollectionPage Threads { get; set; }
     
         /// <summary>
         /// Gets or sets drive.

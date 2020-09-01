@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets compliance grace period expiration date time.
+        /// The DateTime when device compliance grace period expires
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceGracePeriodExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ComplianceGracePeriodExpirationDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets device display name.
         /// Device name of the DevicePolicyStatus.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user name.
-        /// The User Name that is being reported
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserName { get; set; }
     
         /// <summary>
         /// Gets or sets device model.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public string DeviceModel { get; set; }
     
         /// <summary>
-        /// Gets or sets compliance grace period expiration date time.
-        /// The DateTime when device compliance grace period expires
+        /// Gets or sets last reported date time.
+        /// Last modified date time of the policy report.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceGracePeriodExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ComplianceGracePeriodExpirationDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastReportedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastReportedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
@@ -66,11 +66,11 @@ namespace Microsoft.Graph
         public ComplianceStatus? Status { get; set; }
     
         /// <summary>
-        /// Gets or sets last reported date time.
-        /// Last modified date time of the policy report.
+        /// Gets or sets user name.
+        /// The User Name that is being reported
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastReportedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastReportedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserName { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.

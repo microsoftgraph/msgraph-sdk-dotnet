@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets target types.
-        /// Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.
+        /// Gets or sets owner.
+        /// The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application's appId will be set as the owner. In either case, the signed-in user must be the owner of the application. Once set, this property is read-only and cannot be changed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetTypes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> TargetTypes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
+        public string Owner { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public string Status { get; set; }
     
         /// <summary>
-        /// Gets or sets owner.
-        /// The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application's appId will be set as the owner. In either case, the signed-in user must be the owner of the application. Once set, this property is read-only and cannot be changed.
+        /// Gets or sets target types.
+        /// Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
-        public string Owner { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> TargetTypes { get; set; }
     
     }
 }

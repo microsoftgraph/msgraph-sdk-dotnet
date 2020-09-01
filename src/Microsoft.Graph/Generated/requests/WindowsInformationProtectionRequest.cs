@@ -234,17 +234,17 @@ namespace Microsoft.Graph
             if (windowsInformationProtectionToInitialize != null && windowsInformationProtectionToInitialize.AdditionalData != null)
             {
 
-                if (windowsInformationProtectionToInitialize.ProtectedAppLockerFiles != null && windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.CurrentPage != null)
+                if (windowsInformationProtectionToInitialize.Assignments != null && windowsInformationProtectionToInitialize.Assignments.CurrentPage != null)
                 {
-                    windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.AdditionalData = windowsInformationProtectionToInitialize.AdditionalData;
+                    windowsInformationProtectionToInitialize.Assignments.AdditionalData = windowsInformationProtectionToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("protectedAppLockerFiles@odata.nextLink", out nextPageLink);
+                    windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.InitializeNextPageRequest(
+                        windowsInformationProtectionToInitialize.Assignments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -266,17 +266,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (windowsInformationProtectionToInitialize.Assignments != null && windowsInformationProtectionToInitialize.Assignments.CurrentPage != null)
+                if (windowsInformationProtectionToInitialize.ProtectedAppLockerFiles != null && windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.CurrentPage != null)
                 {
-                    windowsInformationProtectionToInitialize.Assignments.AdditionalData = windowsInformationProtectionToInitialize.AdditionalData;
+                    windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.AdditionalData = windowsInformationProtectionToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
+                    windowsInformationProtectionToInitialize.AdditionalData.TryGetValue("protectedAppLockerFiles@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        windowsInformationProtectionToInitialize.Assignments.InitializeNextPageRequest(
+                        windowsInformationProtectionToInitialize.ProtectedAppLockerFiles.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

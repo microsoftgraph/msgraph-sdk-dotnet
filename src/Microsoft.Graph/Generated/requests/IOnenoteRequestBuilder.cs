@@ -38,16 +38,10 @@ namespace Microsoft.Graph
         IOnenoteNotebooksCollectionRequestBuilder Notebooks { get; }
 
         /// <summary>
-        /// Gets the request builder for Sections.
+        /// Gets the request builder for Operations.
         /// </summary>
-        /// <returns>The <see cref="IOnenoteSectionsCollectionRequestBuilder"/>.</returns>
-        IOnenoteSectionsCollectionRequestBuilder Sections { get; }
-
-        /// <summary>
-        /// Gets the request builder for SectionGroups.
-        /// </summary>
-        /// <returns>The <see cref="IOnenoteSectionGroupsCollectionRequestBuilder"/>.</returns>
-        IOnenoteSectionGroupsCollectionRequestBuilder SectionGroups { get; }
+        /// <returns>The <see cref="IOnenoteOperationsCollectionRequestBuilder"/>.</returns>
+        IOnenoteOperationsCollectionRequestBuilder Operations { get; }
 
         /// <summary>
         /// Gets the request builder for Pages.
@@ -62,10 +56,16 @@ namespace Microsoft.Graph
         IOnenoteResourcesCollectionRequestBuilder Resources { get; }
 
         /// <summary>
-        /// Gets the request builder for Operations.
+        /// Gets the request builder for SectionGroups.
         /// </summary>
-        /// <returns>The <see cref="IOnenoteOperationsCollectionRequestBuilder"/>.</returns>
-        IOnenoteOperationsCollectionRequestBuilder Operations { get; }
+        /// <returns>The <see cref="IOnenoteSectionGroupsCollectionRequestBuilder"/>.</returns>
+        IOnenoteSectionGroupsCollectionRequestBuilder SectionGroups { get; }
+
+        /// <summary>
+        /// Gets the request builder for Sections.
+        /// </summary>
+        /// <returns>The <see cref="IOnenoteSectionsCollectionRequestBuilder"/>.</returns>
+        IOnenoteSectionsCollectionRequestBuilder Sections { get; }
     
     }
 }

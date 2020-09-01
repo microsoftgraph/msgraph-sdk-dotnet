@@ -31,6 +31,27 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets birthday.
+        /// The person's birthday.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "birthday", Required = Newtonsoft.Json.Required.Default)]
+        public string Birthday { get; set; }
+    
+        /// <summary>
+        /// Gets or sets company name.
+        /// The name of the person's company.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyName", Required = Newtonsoft.Json.Required.Default)]
+        public string CompanyName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets department.
+        /// The person's department.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "department", Required = Newtonsoft.Json.Required.Default)]
+        public string Department { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The person's display name.
         /// </summary>
@@ -45,25 +66,11 @@ namespace Microsoft.Graph
         public string GivenName { get; set; }
     
         /// <summary>
-        /// Gets or sets surname.
-        /// The person's surname.
+        /// Gets or sets im address.
+        /// The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "surname", Required = Newtonsoft.Json.Required.Default)]
-        public string Surname { get; set; }
-    
-        /// <summary>
-        /// Gets or sets birthday.
-        /// The person's birthday.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "birthday", Required = Newtonsoft.Json.Required.Default)]
-        public string Birthday { get; set; }
-    
-        /// <summary>
-        /// Gets or sets person notes.
-        /// Free-form notes that the user has taken about this person.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personNotes", Required = Newtonsoft.Json.Required.Default)]
-        public string PersonNotes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string ImAddress { get; set; }
     
         /// <summary>
         /// Gets or sets is favorite.
@@ -73,11 +80,32 @@ namespace Microsoft.Graph
         public bool? IsFavorite { get; set; }
     
         /// <summary>
-        /// Gets or sets scored email addresses.
-        /// The person's email addresses.
+        /// Gets or sets job title.
+        /// The person's job title.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scoredEmailAddresses", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ScoredEmailAddress> ScoredEmailAddresses { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobTitle", Required = Newtonsoft.Json.Required.Default)]
+        public string JobTitle { get; set; }
+    
+        /// <summary>
+        /// Gets or sets office location.
+        /// The location of the person's office.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string OfficeLocation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets person notes.
+        /// Free-form notes that the user has taken about this person.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personNotes", Required = Newtonsoft.Json.Required.Default)]
+        public string PersonNotes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets person type.
+        /// The type of person.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personType", Required = Newtonsoft.Json.Required.Default)]
+        public PersonType PersonType { get; set; }
     
         /// <summary>
         /// Gets or sets phones.
@@ -94,48 +122,6 @@ namespace Microsoft.Graph
         public IEnumerable<Location> PostalAddresses { get; set; }
     
         /// <summary>
-        /// Gets or sets websites.
-        /// The person's websites.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "websites", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Website> Websites { get; set; }
-    
-        /// <summary>
-        /// Gets or sets job title.
-        /// The person's job title.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobTitle", Required = Newtonsoft.Json.Required.Default)]
-        public string JobTitle { get; set; }
-    
-        /// <summary>
-        /// Gets or sets company name.
-        /// The name of the person's company.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyName", Required = Newtonsoft.Json.Required.Default)]
-        public string CompanyName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets yomi company.
-        /// The phonetic Japanese name of the person's company.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yomiCompany", Required = Newtonsoft.Json.Required.Default)]
-        public string YomiCompany { get; set; }
-    
-        /// <summary>
-        /// Gets or sets department.
-        /// The person's department.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "department", Required = Newtonsoft.Json.Required.Default)]
-        public string Department { get; set; }
-    
-        /// <summary>
-        /// Gets or sets office location.
-        /// The location of the person's office.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
-        public string OfficeLocation { get; set; }
-    
-        /// <summary>
         /// Gets or sets profession.
         /// The person's profession.
         /// </summary>
@@ -143,11 +129,18 @@ namespace Microsoft.Graph
         public string Profession { get; set; }
     
         /// <summary>
-        /// Gets or sets person type.
-        /// The type of person.
+        /// Gets or sets scored email addresses.
+        /// The person's email addresses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personType", Required = Newtonsoft.Json.Required.Default)]
-        public PersonType PersonType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scoredEmailAddresses", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ScoredEmailAddress> ScoredEmailAddresses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets surname.
+        /// The person's surname.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "surname", Required = Newtonsoft.Json.Required.Default)]
+        public string Surname { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
@@ -157,11 +150,18 @@ namespace Microsoft.Graph
         public string UserPrincipalName { get; set; }
     
         /// <summary>
-        /// Gets or sets im address.
-        /// The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
+        /// Gets or sets websites.
+        /// The person's websites.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imAddress", Required = Newtonsoft.Json.Required.Default)]
-        public string ImAddress { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "websites", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Website> Websites { get; set; }
+    
+        /// <summary>
+        /// Gets or sets yomi company.
+        /// The phonetic Japanese name of the person's company.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yomiCompany", Required = Newtonsoft.Json.Required.Default)]
+        public string YomiCompany { get; set; }
     
     }
 }

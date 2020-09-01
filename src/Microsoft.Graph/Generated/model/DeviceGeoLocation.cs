@@ -31,46 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets lastCollectedDateTime.
-        /// Time at which location was recorded, relative to UTC
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCollectedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastCollectedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets longitude.
-        /// Longitude coordinate of the device's location
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longitude", Required = Newtonsoft.Json.Required.Default)]
-        public double? Longitude { get; set; }
-    
-        /// <summary>
-        /// Gets or sets latitude.
-        /// Latitude coordinate of the device's location
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latitude", Required = Newtonsoft.Json.Required.Default)]
-        public double? Latitude { get; set; }
-    
-        /// <summary>
         /// Gets or sets altitude.
         /// Altitude, given in meters above sea level
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitude", Required = Newtonsoft.Json.Required.Default)]
         public double? Altitude { get; set; }
-    
-        /// <summary>
-        /// Gets or sets horizontalAccuracy.
-        /// Accuracy of longitude and latitude in meters
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "horizontalAccuracy", Required = Newtonsoft.Json.Required.Default)]
-        public double? HorizontalAccuracy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets verticalAccuracy.
-        /// Accuracy of altitude in meters
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "verticalAccuracy", Required = Newtonsoft.Json.Required.Default)]
-        public double? VerticalAccuracy { get; set; }
     
         /// <summary>
         /// Gets or sets heading.
@@ -80,11 +45,46 @@ namespace Microsoft.Graph
         public double? Heading { get; set; }
     
         /// <summary>
+        /// Gets or sets horizontalAccuracy.
+        /// Accuracy of longitude and latitude in meters
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "horizontalAccuracy", Required = Newtonsoft.Json.Required.Default)]
+        public double? HorizontalAccuracy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lastCollectedDateTime.
+        /// Time at which location was recorded, relative to UTC
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCollectedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastCollectedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets latitude.
+        /// Latitude coordinate of the device's location
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latitude", Required = Newtonsoft.Json.Required.Default)]
+        public double? Latitude { get; set; }
+    
+        /// <summary>
+        /// Gets or sets longitude.
+        /// Longitude coordinate of the device's location
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longitude", Required = Newtonsoft.Json.Required.Default)]
+        public double? Longitude { get; set; }
+    
+        /// <summary>
         /// Gets or sets speed.
         /// Speed the device is traveling in meters per second
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "speed", Required = Newtonsoft.Json.Required.Default)]
         public double? Speed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets verticalAccuracy.
+        /// Accuracy of altitude in meters
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "verticalAccuracy", Required = Newtonsoft.Json.Required.Default)]
+        public double? VerticalAccuracy { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

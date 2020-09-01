@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (notebookToInitialize != null && notebookToInitialize.AdditionalData != null)
             {
 
-                if (notebookToInitialize.Sections != null && notebookToInitialize.Sections.CurrentPage != null)
-                {
-                    notebookToInitialize.Sections.AdditionalData = notebookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    notebookToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        notebookToInitialize.Sections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (notebookToInitialize.SectionGroups != null && notebookToInitialize.SectionGroups.CurrentPage != null)
                 {
                     notebookToInitialize.SectionGroups.AdditionalData = notebookToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         notebookToInitialize.SectionGroups.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (notebookToInitialize.Sections != null && notebookToInitialize.Sections.CurrentPage != null)
+                {
+                    notebookToInitialize.Sections.AdditionalData = notebookToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    notebookToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        notebookToInitialize.Sections.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

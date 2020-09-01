@@ -38,32 +38,11 @@ namespace Microsoft.Graph
         public bool? IsDefault { get; set; }
     
         /// <summary>
-        /// Gets or sets user role.
-        /// Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRole", Required = Newtonsoft.Json.Required.Default)]
-        public OnenoteUserRole? UserRole { get; set; }
-    
-        /// <summary>
         /// Gets or sets is shared.
         /// Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isShared", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsShared { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sections url.
-        /// The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sectionsUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string SectionsUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets section groups url.
-        /// The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sectionGroupsUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string SectionGroupsUrl { get; set; }
     
         /// <summary>
         /// Gets or sets links.
@@ -73,11 +52,25 @@ namespace Microsoft.Graph
         public NotebookLinks Links { get; set; }
     
         /// <summary>
-        /// Gets or sets sections.
-        /// The sections in the notebook. Read-only. Nullable.
+        /// Gets or sets section groups url.
+        /// The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sections", Required = Newtonsoft.Json.Required.Default)]
-        public INotebookSectionsCollectionPage Sections { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sectionGroupsUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string SectionGroupsUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sections url.
+        /// The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sectionsUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string SectionsUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user role.
+        /// Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRole", Required = Newtonsoft.Json.Required.Default)]
+        public OnenoteUserRole? UserRole { get; set; }
     
         /// <summary>
         /// Gets or sets section groups.
@@ -85,6 +78,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sectionGroups", Required = Newtonsoft.Json.Required.Default)]
         public INotebookSectionGroupsCollectionPage SectionGroups { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sections.
+        /// The sections in the notebook. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sections", Required = Newtonsoft.Json.Required.Default)]
+        public INotebookSectionsCollectionPage Sections { get; set; }
     
     }
 }

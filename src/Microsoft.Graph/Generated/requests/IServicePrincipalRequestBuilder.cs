@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IServicePrincipalClaimsMappingPoliciesCollectionWithReferencesRequestBuilder ClaimsMappingPolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for CreatedObjects.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder CreatedObjects { get; }
+
+        /// <summary>
         /// Gets the request builder for Endpoints.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalEndpointsCollectionRequestBuilder"/>.</returns>
@@ -62,40 +68,28 @@ namespace Microsoft.Graph
         IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder HomeRealmDiscoveryPolicies { get; }
 
         /// <summary>
-        /// Gets the request builder for Oauth2PermissionGrants.
-        /// </summary>
-        /// <returns>The <see cref="IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder Oauth2PermissionGrants { get; }
-
-        /// <summary>
         /// Gets the request builder for MemberOf.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
         IServicePrincipalMemberOfCollectionWithReferencesRequestBuilder MemberOf { get; }
 
         /// <summary>
-        /// Gets the request builder for TransitiveMemberOf.
+        /// Gets the request builder for Oauth2PermissionGrants.
         /// </summary>
-        /// <returns>The <see cref="IServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
-        IServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
-
-        /// <summary>
-        /// Gets the request builder for CreatedObjects.
-        /// </summary>
-        /// <returns>The <see cref="IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder CreatedObjects { get; }
-
-        /// <summary>
-        /// Gets the request builder for Owners.
-        /// </summary>
-        /// <returns>The <see cref="IServicePrincipalOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
-        IServicePrincipalOwnersCollectionWithReferencesRequestBuilder Owners { get; }
+        /// <returns>The <see cref="IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder Oauth2PermissionGrants { get; }
 
         /// <summary>
         /// Gets the request builder for OwnedObjects.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalOwnedObjectsCollectionWithReferencesRequestBuilder"/>.</returns>
         IServicePrincipalOwnedObjectsCollectionWithReferencesRequestBuilder OwnedObjects { get; }
+
+        /// <summary>
+        /// Gets the request builder for Owners.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalOwnersCollectionWithReferencesRequestBuilder Owners { get; }
 
         /// <summary>
         /// Gets the request builder for TokenIssuancePolicies.
@@ -108,6 +102,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
         IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for TransitiveMemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
     
         /// <summary>
         /// Gets the request builder for ServicePrincipalAddKey.

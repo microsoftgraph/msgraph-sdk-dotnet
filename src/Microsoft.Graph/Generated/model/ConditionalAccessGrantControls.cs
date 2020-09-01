@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets operator.
-        /// Defines the relationship of the grant controls. Possible values: AND, OR.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
-        public string Operator { get; set; }
-    
-        /// <summary>
         /// Gets or sets builtInControls.
         /// List of values of built-in controls required by the policy. Possible values: Block, Mfa, CompliantDevice, DomainJoinedDevice, ApprovedApplication, CompliantApplication
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customAuthenticationFactors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> CustomAuthenticationFactors { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operator.
+        /// Defines the relationship of the grant controls. Possible values: AND, OR.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
+        public string Operator { get; set; }
     
         /// <summary>
         /// Gets or sets termsOfUse.

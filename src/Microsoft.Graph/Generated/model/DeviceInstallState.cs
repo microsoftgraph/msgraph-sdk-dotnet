@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets device name.
-        /// Device name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceName { get; set; }
-    
-        /// <summary>
         /// Gets or sets device id.
         /// Device Id.
         /// </summary>
@@ -45,18 +38,11 @@ namespace Microsoft.Graph
         public string DeviceId { get; set; }
     
         /// <summary>
-        /// Gets or sets last sync date time.
-        /// Last sync date and time.
+        /// Gets or sets device name.
+        /// Device name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastSyncDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets install state.
-        /// The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installState", Required = Newtonsoft.Json.Required.Default)]
-        public InstallState? InstallState { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets error code.
@@ -66,11 +52,18 @@ namespace Microsoft.Graph
         public string ErrorCode { get; set; }
     
         /// <summary>
-        /// Gets or sets os version.
-        /// OS Version.
+        /// Gets or sets install state.
+        /// The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installState", Required = Newtonsoft.Json.Required.Default)]
+        public InstallState? InstallState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last sync date time.
+        /// Last sync date and time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets os description.
@@ -78,6 +71,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osDescription", Required = Newtonsoft.Json.Required.Default)]
         public string OsDescription { get; set; }
+    
+        /// <summary>
+        /// Gets or sets os version.
+        /// OS Version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets user name.

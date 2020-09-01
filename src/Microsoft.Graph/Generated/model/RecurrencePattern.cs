@@ -31,27 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets type.
-        /// The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public RecurrencePatternType? Type { get; set; }
-    
-        /// <summary>
-        /// Gets or sets interval.
-        /// The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "interval", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Interval { get; set; }
-    
-        /// <summary>
-        /// Gets or sets month.
-        /// The month in which the event occurs.  This is a number from 1 to 12.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "month", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Month { get; set; }
-    
-        /// <summary>
         /// Gets or sets dayOfMonth.
         /// The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
         /// </summary>
@@ -78,6 +57,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "index", Required = Newtonsoft.Json.Required.Default)]
         public WeekIndex? Index { get; set; }
+    
+        /// <summary>
+        /// Gets or sets interval.
+        /// The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "interval", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Interval { get; set; }
+    
+        /// <summary>
+        /// Gets or sets month.
+        /// The month in which the event occurs.  This is a number from 1 to 12.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "month", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Month { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public RecurrencePatternType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

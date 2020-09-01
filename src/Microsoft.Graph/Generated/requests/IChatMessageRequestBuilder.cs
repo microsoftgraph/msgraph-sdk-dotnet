@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IChatMessageRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Replies.
-        /// </summary>
-        /// <returns>The <see cref="IChatMessageRepliesCollectionRequestBuilder"/>.</returns>
-        IChatMessageRepliesCollectionRequestBuilder Replies { get; }
-
-        /// <summary>
         /// Gets the request builder for HostedContents.
         /// </summary>
         /// <returns>The <see cref="IChatMessageHostedContentsCollectionRequestBuilder"/>.</returns>
         IChatMessageHostedContentsCollectionRequestBuilder HostedContents { get; }
+
+        /// <summary>
+        /// Gets the request builder for Replies.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageRepliesCollectionRequestBuilder"/>.</returns>
+        IChatMessageRepliesCollectionRequestBuilder Replies { get; }
     
     }
 }

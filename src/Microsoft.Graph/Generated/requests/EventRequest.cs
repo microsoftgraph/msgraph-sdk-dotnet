@@ -250,33 +250,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (eventToInitialize.SingleValueExtendedProperties != null && eventToInitialize.SingleValueExtendedProperties.CurrentPage != null)
+                if (eventToInitialize.Extensions != null && eventToInitialize.Extensions.CurrentPage != null)
                 {
-                    eventToInitialize.SingleValueExtendedProperties.AdditionalData = eventToInitialize.AdditionalData;
+                    eventToInitialize.Extensions.AdditionalData = eventToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
+                    eventToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        eventToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (eventToInitialize.MultiValueExtendedProperties != null && eventToInitialize.MultiValueExtendedProperties.CurrentPage != null)
-                {
-                    eventToInitialize.MultiValueExtendedProperties.AdditionalData = eventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        eventToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                        eventToInitialize.Extensions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -298,17 +282,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (eventToInitialize.Extensions != null && eventToInitialize.Extensions.CurrentPage != null)
+                if (eventToInitialize.MultiValueExtendedProperties != null && eventToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
-                    eventToInitialize.Extensions.AdditionalData = eventToInitialize.AdditionalData;
+                    eventToInitialize.MultiValueExtendedProperties.AdditionalData = eventToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
+                    eventToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        eventToInitialize.Extensions.InitializeNextPageRequest(
+                        eventToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (eventToInitialize.SingleValueExtendedProperties != null && eventToInitialize.SingleValueExtendedProperties.CurrentPage != null)
+                {
+                    eventToInitialize.SingleValueExtendedProperties.AdditionalData = eventToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    eventToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        eventToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

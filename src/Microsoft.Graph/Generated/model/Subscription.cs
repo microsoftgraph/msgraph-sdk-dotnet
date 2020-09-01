@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets resource.
-        /// Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+        /// Gets or sets application id.
+        /// Identifier of the application used to create the subscription. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
-        public string Resource { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationId", Required = Newtonsoft.Json.Required.Default)]
+        public string ApplicationId { get; set; }
     
         /// <summary>
         /// Gets or sets change type.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public string ClientState { get; set; }
     
         /// <summary>
-        /// Gets or sets notification url.
-        /// Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+        /// Gets or sets creator id.
+        /// Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string NotificationUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creatorId", Required = Newtonsoft.Json.Required.Default)]
+        public string CreatorId { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
@@ -66,25 +66,25 @@ namespace Microsoft.Graph
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets application id.
-        /// Identifier of the application used to create the subscription. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationId", Required = Newtonsoft.Json.Required.Default)]
-        public string ApplicationId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets creator id.
-        /// Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creatorId", Required = Newtonsoft.Json.Required.Default)]
-        public string CreatorId { get; set; }
-    
-        /// <summary>
         /// Gets or sets latest supported tls version.
         /// Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latestSupportedTlsVersion", Required = Newtonsoft.Json.Required.Default)]
         public string LatestSupportedTlsVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notification url.
+        /// Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string NotificationUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource.
+        /// Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        public string Resource { get; set; }
     
     }
 }

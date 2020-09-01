@@ -234,17 +234,17 @@ namespace Microsoft.Graph
             if (contactToInitialize != null && contactToInitialize.AdditionalData != null)
             {
 
-                if (contactToInitialize.SingleValueExtendedProperties != null && contactToInitialize.SingleValueExtendedProperties.CurrentPage != null)
+                if (contactToInitialize.Extensions != null && contactToInitialize.Extensions.CurrentPage != null)
                 {
-                    contactToInitialize.SingleValueExtendedProperties.AdditionalData = contactToInitialize.AdditionalData;
+                    contactToInitialize.Extensions.AdditionalData = contactToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    contactToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
+                    contactToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        contactToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
+                        contactToInitialize.Extensions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -266,17 +266,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (contactToInitialize.Extensions != null && contactToInitialize.Extensions.CurrentPage != null)
+                if (contactToInitialize.SingleValueExtendedProperties != null && contactToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
-                    contactToInitialize.Extensions.AdditionalData = contactToInitialize.AdditionalData;
+                    contactToInitialize.SingleValueExtendedProperties.AdditionalData = contactToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    contactToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
+                    contactToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        contactToInitialize.Extensions.InitializeNextPageRequest(
+                        contactToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -38,18 +38,11 @@ namespace Microsoft.Graph
         public ParticipantInfo Info { get; set; }
     
         /// <summary>
-        /// Gets or sets recording info.
-        /// Information about whether the participant has recording capability.
+        /// Gets or sets is in lobby.
+        /// true if the participant is in lobby.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingInfo", Required = Newtonsoft.Json.Required.Default)]
-        public RecordingInfo RecordingInfo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets media streams.
-        /// The list of media streams.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaStreams", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<MediaStream> MediaStreams { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInLobby", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsInLobby { get; set; }
     
         /// <summary>
         /// Gets or sets is muted.
@@ -59,11 +52,18 @@ namespace Microsoft.Graph
         public bool? IsMuted { get; set; }
     
         /// <summary>
-        /// Gets or sets is in lobby.
-        /// true if the participant is in lobby.
+        /// Gets or sets media streams.
+        /// The list of media streams.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInLobby", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsInLobby { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaStreams", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<MediaStream> MediaStreams { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recording info.
+        /// Information about whether the participant has recording capability.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingInfo", Required = Newtonsoft.Json.Required.Default)]
+        public RecordingInfo RecordingInfo { get; set; }
     
     }
 }

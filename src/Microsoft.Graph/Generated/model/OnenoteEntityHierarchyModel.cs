@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets display name.
-        /// The name of the notebook.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets created by.
         /// Identity of the user, device, and application which created the item. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet CreatedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// The name of the notebook.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.

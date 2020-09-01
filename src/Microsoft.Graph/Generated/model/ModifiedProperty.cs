@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets oldValue.
-        /// Indicates the previous value (before the update) for the property.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oldValue", Required = Newtonsoft.Json.Required.Default)]
-        public string OldValue { get; set; }
-    
-        /// <summary>
         /// Gets or sets newValue.
         /// Indicates the updated value for the propery.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "newValue", Required = Newtonsoft.Json.Required.Default)]
         public string NewValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets oldValue.
+        /// Indicates the previous value (before the update) for the property.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oldValue", Required = Newtonsoft.Json.Required.Default)]
+        public string OldValue { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

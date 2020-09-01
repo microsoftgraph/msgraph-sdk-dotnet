@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets includeApplications.
-        /// The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeApplications", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> IncludeApplications { get; set; }
-    
-        /// <summary>
         /// Gets or sets excludeApplications.
         /// The list of application IDs explicitly excluded from the policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeApplications", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ExcludeApplications { get; set; }
+    
+        /// <summary>
+        /// Gets or sets includeApplications.
+        /// The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeApplications", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> IncludeApplications { get; set; }
     
         /// <summary>
         /// Gets or sets includeUserActions.

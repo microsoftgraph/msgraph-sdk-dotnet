@@ -31,181 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets firewall block stateful ftp.
-        /// Blocks stateful FTP connections to the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallBlockStatefulFTP", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FirewallBlockStatefulFTP { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall idle timeout for security association in seconds.
-        /// Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIdleTimeoutForSecurityAssociationInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? FirewallIdleTimeoutForSecurityAssociationInSeconds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall pre shared key encoding method.
-        /// Select the preshared key encoding to be used. Possible values are: deviceDefault, none, utF8.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallPreSharedKeyEncodingMethod", Required = Newtonsoft.Json.Required.Default)]
-        public FirewallPreSharedKeyEncodingMethodType? FirewallPreSharedKeyEncodingMethod { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall ipsec exemptions allow neighbor discovery.
-        /// Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowNeighborDiscovery", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FirewallIPSecExemptionsAllowNeighborDiscovery { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall ipsec exemptions allow icmp.
-        /// Configures IPSec exemptions to allow ICMP
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowICMP", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FirewallIPSecExemptionsAllowICMP { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall ipsec exemptions allow router discovery.
-        /// Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowRouterDiscovery", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FirewallIPSecExemptionsAllowRouterDiscovery { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall ipsec exemptions allow dhcp.
-        /// Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowDHCP", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FirewallIPSecExemptionsAllowDHCP { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall certificate revocation list check method.
-        /// Specify how the certificate revocation list is to be enforced. Possible values are: deviceDefault, none, attempt, require.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallCertificateRevocationListCheckMethod", Required = Newtonsoft.Json.Required.Default)]
-        public FirewallCertificateRevocationListCheckMethodType? FirewallCertificateRevocationListCheckMethod { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall merge keying module settings.
-        /// If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallMergeKeyingModuleSettings", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FirewallMergeKeyingModuleSettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall packet queueing method.
-        /// Configures how packet queueing should be applied in the tunnel gateway scenario. Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallPacketQueueingMethod", Required = Newtonsoft.Json.Required.Default)]
-        public FirewallPacketQueueingMethodType? FirewallPacketQueueingMethod { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall profile domain.
-        /// Configures the firewall profile settings for domain networks
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallProfileDomain", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsFirewallNetworkProfile FirewallProfileDomain { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall profile public.
-        /// Configures the firewall profile settings for public networks
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallProfilePublic", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsFirewallNetworkProfile FirewallProfilePublic { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall profile private.
-        /// Configures the firewall profile settings for private networks
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallProfilePrivate", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsFirewallNetworkProfile FirewallProfilePrivate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender attack surface reduction excluded paths.
-        /// List of exe files and folders to be excluded from attack surface reduction rules
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAttackSurfaceReductionExcludedPaths", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefenderAttackSurfaceReductionExcludedPaths { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender guarded folders allowed app paths.
-        /// List of paths to exe that are allowed to access protected folders
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderGuardedFoldersAllowedAppPaths", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefenderGuardedFoldersAllowedAppPaths { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender additional guarded folders.
-        /// List of folder paths to be added to the list of protected folders
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAdditionalGuardedFolders", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefenderAdditionalGuardedFolders { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender exploit protection xml.
-        /// Xml content containing information regarding exploit protection details.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderExploitProtectionXml", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] DefenderExploitProtectionXml { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender exploit protection xml file name.
-        /// Name of the file from which DefenderExploitProtectionXml was obtained.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderExploitProtectionXmlFileName", Required = Newtonsoft.Json.Required.Default)]
-        public string DefenderExploitProtectionXmlFileName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center block exploit protection override.
-        /// Indicates whether or not to block user from overriding Exploit Protection settings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterBlockExploitProtectionOverride", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterBlockExploitProtectionOverride { get; set; }
-    
-        /// <summary>
-        /// Gets or sets app locker application control.
-        /// Enables the Admin to choose what types of app to allow on devices. Possible values are: notConfigured, enforceComponentsAndStoreApps, auditComponentsAndStoreApps, enforceComponentsStoreAppsAndSmartlocker, auditComponentsStoreAppsAndSmartlocker.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appLockerApplicationControl", Required = Newtonsoft.Json.Required.Default)]
-        public AppLockerApplicationControlType? AppLockerApplicationControl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets smart screen enable in shell.
-        /// Allows IT Admins to configure SmartScreen for Windows.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenEnableInShell", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SmartScreenEnableInShell { get; set; }
-    
-        /// <summary>
-        /// Gets or sets smart screen block override for files.
-        /// Allows IT Admins to control whether users can ignore SmartScreen warnings and run malicious files.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenBlockOverrideForFiles", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SmartScreenBlockOverrideForFiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard enabled.
-        /// Enable Windows Defender Application Guard
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard block file transfer.
-        /// Block clipboard to transfer image file, text file or neither of them. Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockFileTransfer", Required = Newtonsoft.Json.Required.Default)]
-        public ApplicationGuardBlockFileTransferType? ApplicationGuardBlockFileTransfer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard block non enterprise content.
-        /// Block enterprise sites to load non-enterprise content, such as third party plug-ins
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockNonEnterpriseContent", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardBlockNonEnterpriseContent { get; set; }
-    
-        /// <summary>
         /// Gets or sets application guard allow persistence.
         /// Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)
         /// </summary>
@@ -213,18 +38,18 @@ namespace Microsoft.Graph
         public bool? ApplicationGuardAllowPersistence { get; set; }
     
         /// <summary>
-        /// Gets or sets application guard force auditing.
-        /// Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
+        /// Gets or sets application guard allow print to local printers.
+        /// Allow printing to Local Printers from Container
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardForceAuditing", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardForceAuditing { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPrintToLocalPrinters", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardAllowPrintToLocalPrinters { get; set; }
     
         /// <summary>
-        /// Gets or sets application guard block clipboard sharing.
-        /// Block clipboard to share data from Host to Container, or from Container to Host, or both ways, or neither ways. Possible values are: notConfigured, blockBoth, blockHostToContainer, blockContainerToHost, blockNone.
+        /// Gets or sets application guard allow print to network printers.
+        /// Allow printing to Network Printers from Container
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockClipboardSharing", Required = Newtonsoft.Json.Required.Default)]
-        public ApplicationGuardBlockClipboardSharingType? ApplicationGuardBlockClipboardSharing { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPrintToNetworkPrinters", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardAllowPrintToNetworkPrinters { get; set; }
     
         /// <summary>
         /// Gets or sets application guard allow print to pdf.
@@ -241,18 +66,46 @@ namespace Microsoft.Graph
         public bool? ApplicationGuardAllowPrintToXPS { get; set; }
     
         /// <summary>
-        /// Gets or sets application guard allow print to local printers.
-        /// Allow printing to Local Printers from Container
+        /// Gets or sets application guard block clipboard sharing.
+        /// Block clipboard to share data from Host to Container, or from Container to Host, or both ways, or neither ways. Possible values are: notConfigured, blockBoth, blockHostToContainer, blockContainerToHost, blockNone.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPrintToLocalPrinters", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardAllowPrintToLocalPrinters { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockClipboardSharing", Required = Newtonsoft.Json.Required.Default)]
+        public ApplicationGuardBlockClipboardSharingType? ApplicationGuardBlockClipboardSharing { get; set; }
     
         /// <summary>
-        /// Gets or sets application guard allow print to network printers.
-        /// Allow printing to Network Printers from Container
+        /// Gets or sets application guard block file transfer.
+        /// Block clipboard to transfer image file, text file or neither of them. Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPrintToNetworkPrinters", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardAllowPrintToNetworkPrinters { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockFileTransfer", Required = Newtonsoft.Json.Required.Default)]
+        public ApplicationGuardBlockFileTransferType? ApplicationGuardBlockFileTransfer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard block non enterprise content.
+        /// Block enterprise sites to load non-enterprise content, such as third party plug-ins
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockNonEnterpriseContent", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardBlockNonEnterpriseContent { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard enabled.
+        /// Enable Windows Defender Application Guard
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard force auditing.
+        /// Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardForceAuditing", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardForceAuditing { get; set; }
+    
+        /// <summary>
+        /// Gets or sets app locker application control.
+        /// Enables the Admin to choose what types of app to allow on devices. Possible values are: notConfigured, enforceComponentsAndStoreApps, auditComponentsAndStoreApps, enforceComponentsStoreAppsAndSmartlocker, auditComponentsStoreAppsAndSmartlocker.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appLockerApplicationControl", Required = Newtonsoft.Json.Required.Default)]
+        public AppLockerApplicationControlType? AppLockerApplicationControl { get; set; }
     
         /// <summary>
         /// Gets or sets bit locker disable warning for other disk encryption.
@@ -281,6 +134,153 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerRemovableDrivePolicy", Required = Newtonsoft.Json.Required.Default)]
         public BitLockerRemovableDrivePolicy BitLockerRemovableDrivePolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender additional guarded folders.
+        /// List of folder paths to be added to the list of protected folders
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAdditionalGuardedFolders", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderAdditionalGuardedFolders { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender attack surface reduction excluded paths.
+        /// List of exe files and folders to be excluded from attack surface reduction rules
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAttackSurfaceReductionExcludedPaths", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderAttackSurfaceReductionExcludedPaths { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender exploit protection xml.
+        /// Xml content containing information regarding exploit protection details.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderExploitProtectionXml", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] DefenderExploitProtectionXml { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender exploit protection xml file name.
+        /// Name of the file from which DefenderExploitProtectionXml was obtained.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderExploitProtectionXmlFileName", Required = Newtonsoft.Json.Required.Default)]
+        public string DefenderExploitProtectionXmlFileName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender guarded folders allowed app paths.
+        /// List of paths to exe that are allowed to access protected folders
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderGuardedFoldersAllowedAppPaths", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderGuardedFoldersAllowedAppPaths { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center block exploit protection override.
+        /// Indicates whether or not to block user from overriding Exploit Protection settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterBlockExploitProtectionOverride", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterBlockExploitProtectionOverride { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall block stateful ftp.
+        /// Blocks stateful FTP connections to the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallBlockStatefulFTP", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallBlockStatefulFTP { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall certificate revocation list check method.
+        /// Specify how the certificate revocation list is to be enforced. Possible values are: deviceDefault, none, attempt, require.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallCertificateRevocationListCheckMethod", Required = Newtonsoft.Json.Required.Default)]
+        public FirewallCertificateRevocationListCheckMethodType? FirewallCertificateRevocationListCheckMethod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall idle timeout for security association in seconds.
+        /// Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIdleTimeoutForSecurityAssociationInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? FirewallIdleTimeoutForSecurityAssociationInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall ipsec exemptions allow dhcp.
+        /// Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowDHCP", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallIPSecExemptionsAllowDHCP { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall ipsec exemptions allow icmp.
+        /// Configures IPSec exemptions to allow ICMP
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowICMP", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallIPSecExemptionsAllowICMP { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall ipsec exemptions allow neighbor discovery.
+        /// Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowNeighborDiscovery", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallIPSecExemptionsAllowNeighborDiscovery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall ipsec exemptions allow router discovery.
+        /// Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowRouterDiscovery", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallIPSecExemptionsAllowRouterDiscovery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall merge keying module settings.
+        /// If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallMergeKeyingModuleSettings", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallMergeKeyingModuleSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall packet queueing method.
+        /// Configures how packet queueing should be applied in the tunnel gateway scenario. Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallPacketQueueingMethod", Required = Newtonsoft.Json.Required.Default)]
+        public FirewallPacketQueueingMethodType? FirewallPacketQueueingMethod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall pre shared key encoding method.
+        /// Select the preshared key encoding to be used. Possible values are: deviceDefault, none, utF8.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallPreSharedKeyEncodingMethod", Required = Newtonsoft.Json.Required.Default)]
+        public FirewallPreSharedKeyEncodingMethodType? FirewallPreSharedKeyEncodingMethod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall profile domain.
+        /// Configures the firewall profile settings for domain networks
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallProfileDomain", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsFirewallNetworkProfile FirewallProfileDomain { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall profile private.
+        /// Configures the firewall profile settings for private networks
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallProfilePrivate", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsFirewallNetworkProfile FirewallProfilePrivate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall profile public.
+        /// Configures the firewall profile settings for public networks
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallProfilePublic", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsFirewallNetworkProfile FirewallProfilePublic { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smart screen block override for files.
+        /// Allows IT Admins to control whether users can ignore SmartScreen warnings and run malicious files.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenBlockOverrideForFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SmartScreenBlockOverrideForFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smart screen enable in shell.
+        /// Allows IT Admins to configure SmartScreen for Windows.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenEnableInShell", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SmartScreenEnableInShell { get; set; }
     
     }
 }

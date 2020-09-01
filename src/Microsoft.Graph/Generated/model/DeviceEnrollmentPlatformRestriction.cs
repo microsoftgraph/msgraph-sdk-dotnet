@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets platformBlocked.
-        /// Block the platform from enrolling
+        /// Gets or sets osMaximumVersion.
+        /// Max OS version supported
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PlatformBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets personalDeviceEnrollmentBlocked.
-        /// Block personally owned devices from enrolling
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personalDeviceEnrollmentBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PersonalDeviceEnrollmentBlocked { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMaximumVersion { get; set; }
     
         /// <summary>
         /// Gets or sets osMinimumVersion.
@@ -52,11 +45,18 @@ namespace Microsoft.Graph
         public string OsMinimumVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets osMaximumVersion.
-        /// Max OS version supported
+        /// Gets or sets personalDeviceEnrollmentBlocked.
+        /// Block personally owned devices from enrolling
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsMaximumVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personalDeviceEnrollmentBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PersonalDeviceEnrollmentBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets platformBlocked.
+        /// Block the platform from enrolling
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PlatformBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets time.
-        /// Represents the time of day when the transition from daylight saving time to standard time occurs.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "time", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay Time { get; set; }
-    
-        /// <summary>
         /// Gets or sets dayOccurrence.
         /// Represents the nth occurrence of the day of week that the transition from daylight saving time to standard time occurs.
         /// </summary>
@@ -57,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "month", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Month { get; set; }
+    
+        /// <summary>
+        /// Gets or sets time.
+        /// Represents the time of day when the transition from daylight saving time to standard time occurs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "time", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay Time { get; set; }
     
         /// <summary>
         /// Gets or sets year.

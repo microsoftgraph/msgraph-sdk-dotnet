@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
+        /// Gets the request builder for Extensions.
         /// </summary>
-        /// <returns>The <see cref="IContactSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        public IContactSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
+        /// <returns>The <see cref="IContactExtensionsCollectionRequestBuilder"/>.</returns>
+        public IContactExtensionsCollectionRequestBuilder Extensions
         {
             get
             {
-                return new ContactSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
+                return new ContactExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
             }
         }
 
@@ -87,14 +87,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Extensions.
+        /// Gets the request builder for SingleValueExtendedProperties.
         /// </summary>
-        /// <returns>The <see cref="IContactExtensionsCollectionRequestBuilder"/>.</returns>
-        public IContactExtensionsCollectionRequestBuilder Extensions
+        /// <returns>The <see cref="IContactSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public IContactSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
         {
             get
             {
-                return new ContactExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
+                return new ContactSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
             }
         }
     

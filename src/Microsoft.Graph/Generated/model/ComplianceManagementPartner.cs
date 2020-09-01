@@ -31,32 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets last heartbeat date time.
-        /// Timestamp of last heartbeat after admin onboarded to the compliance management partner
+        /// Gets or sets android enrollment assignments.
+        /// User groups which enroll Android devices through partner.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastHeartbeatDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastHeartbeatDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets partner state.
-        /// Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerState", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementPartnerTenantState? PartnerState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// Partner display name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mac os onboarded.
-        /// Partner onboarded for Mac devices.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOsOnboarded", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MacOsOnboarded { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidEnrollmentAssignments", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ComplianceManagementPartnerAssignment> AndroidEnrollmentAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets android onboarded.
@@ -66,11 +45,32 @@ namespace Microsoft.Graph
         public bool? AndroidOnboarded { get; set; }
     
         /// <summary>
+        /// Gets or sets display name.
+        /// Partner display name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ios enrollment assignments.
+        /// User groups which enroll ios devices through partner.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosEnrollmentAssignments", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ComplianceManagementPartnerAssignment> IosEnrollmentAssignments { get; set; }
+    
+        /// <summary>
         /// Gets or sets ios onboarded.
         /// Partner onboarded for ios devices.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosOnboarded", Required = Newtonsoft.Json.Required.Default)]
         public bool? IosOnboarded { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last heartbeat date time.
+        /// Timestamp of last heartbeat after admin onboarded to the compliance management partner
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastHeartbeatDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastHeartbeatDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets mac os enrollment assignments.
@@ -80,18 +80,18 @@ namespace Microsoft.Graph
         public IEnumerable<ComplianceManagementPartnerAssignment> MacOsEnrollmentAssignments { get; set; }
     
         /// <summary>
-        /// Gets or sets android enrollment assignments.
-        /// User groups which enroll Android devices through partner.
+        /// Gets or sets mac os onboarded.
+        /// Partner onboarded for Mac devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidEnrollmentAssignments", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ComplianceManagementPartnerAssignment> AndroidEnrollmentAssignments { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOsOnboarded", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MacOsOnboarded { get; set; }
     
         /// <summary>
-        /// Gets or sets ios enrollment assignments.
-        /// User groups which enroll ios devices through partner.
+        /// Gets or sets partner state.
+        /// Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosEnrollmentAssignments", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ComplianceManagementPartnerAssignment> IosEnrollmentAssignments { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerState", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementPartnerTenantState? PartnerState { get; set; }
     
     }
 }

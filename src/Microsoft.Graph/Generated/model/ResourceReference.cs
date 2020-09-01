@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets webUrl.
-        /// A URL leading to the referenced item.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string WebUrl { get; set; }
-    
-        /// <summary>
         /// Gets or sets id.
         /// The item's unique identifier.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }
+    
+        /// <summary>
+        /// Gets or sets webUrl.
+        /// A URL leading to the referenced item.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string WebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

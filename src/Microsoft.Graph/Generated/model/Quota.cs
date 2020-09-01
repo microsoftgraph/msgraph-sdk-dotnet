@@ -52,6 +52,13 @@ namespace Microsoft.Graph
         public string State { get; set; }
     
         /// <summary>
+        /// Gets or sets storagePlanInformation.
+        /// Information about the drive's storage quota plans. Only in Personal OneDrive.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storagePlanInformation", Required = Newtonsoft.Json.Required.Default)]
+        public StoragePlanInformation StoragePlanInformation { get; set; }
+    
+        /// <summary>
         /// Gets or sets total.
         /// Total allowed storage space, in bytes. Read-only.
         /// </summary>
@@ -64,13 +71,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "used", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Used { get; set; }
-    
-        /// <summary>
-        /// Gets or sets storagePlanInformation.
-        /// Information about the drive's storage quota plans. Only in Personal OneDrive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storagePlanInformation", Required = Newtonsoft.Json.Required.Default)]
-        public StoragePlanInformation StoragePlanInformation { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

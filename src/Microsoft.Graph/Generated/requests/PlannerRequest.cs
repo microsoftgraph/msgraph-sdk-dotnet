@@ -234,17 +234,17 @@ namespace Microsoft.Graph
             if (plannerToInitialize != null && plannerToInitialize.AdditionalData != null)
             {
 
-                if (plannerToInitialize.Tasks != null && plannerToInitialize.Tasks.CurrentPage != null)
+                if (plannerToInitialize.Buckets != null && plannerToInitialize.Buckets.CurrentPage != null)
                 {
-                    plannerToInitialize.Tasks.AdditionalData = plannerToInitialize.AdditionalData;
+                    plannerToInitialize.Buckets.AdditionalData = plannerToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    plannerToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
+                    plannerToInitialize.AdditionalData.TryGetValue("buckets@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        plannerToInitialize.Tasks.InitializeNextPageRequest(
+                        plannerToInitialize.Buckets.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -266,17 +266,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (plannerToInitialize.Buckets != null && plannerToInitialize.Buckets.CurrentPage != null)
+                if (plannerToInitialize.Tasks != null && plannerToInitialize.Tasks.CurrentPage != null)
                 {
-                    plannerToInitialize.Buckets.AdditionalData = plannerToInitialize.AdditionalData;
+                    plannerToInitialize.Tasks.AdditionalData = plannerToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    plannerToInitialize.AdditionalData.TryGetValue("buckets@odata.nextLink", out nextPageLink);
+                    plannerToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        plannerToInitialize.Buckets.InitializeNextPageRequest(
+                        plannerToInitialize.Tasks.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

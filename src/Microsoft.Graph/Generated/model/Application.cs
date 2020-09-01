@@ -65,20 +65,6 @@ namespace Microsoft.Graph
         public IEnumerable<AppRole> AppRoles { get; set; }
     
         /// <summary>
-        /// Gets or sets is fallback public client.
-        /// Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app. There are certain scenarios where Azure AD cannot determine the client application type (e.g. ROPC flow where it is configured without specifying a redirect URI). In those cases Azure AD will interpret the application type based on the value of this property.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFallbackPublicClient", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsFallbackPublicClient { get; set; }
-    
-        /// <summary>
-        /// Gets or sets identifier uris.
-        /// The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifierUris", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> IdentifierUris { get; set; }
-    
-        /// <summary>
         /// Gets or sets created date time.
         /// The date and time the application was registered. Read-only.
         /// </summary>
@@ -90,13 +76,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets public client.
-        /// Specifies settings for installed clients such as desktop or mobile devices.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publicClient", Required = Newtonsoft.Json.Required.Default)]
-        public PublicClientApplication PublicClient { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
@@ -113,6 +92,13 @@ namespace Microsoft.Graph
         public string GroupMembershipClaims { get; set; }
     
         /// <summary>
+        /// Gets or sets identifier uris.
+        /// The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifierUris", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> IdentifierUris { get; set; }
+    
+        /// <summary>
         /// Gets or sets info.
         /// Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps.
         /// </summary>
@@ -124,6 +110,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeviceOnlyAuthSupported", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDeviceOnlyAuthSupported { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is fallback public client.
+        /// Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app. There are certain scenarios where Azure AD cannot determine the client application type (e.g. ROPC flow where it is configured without specifying a redirect URI). In those cases Azure AD will interpret the application type based on the value of this property.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFallbackPublicClient", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsFallbackPublicClient { get; set; }
     
         /// <summary>
         /// Gets or sets key credentials.
@@ -173,6 +166,13 @@ namespace Microsoft.Graph
         public IEnumerable<PasswordCredential> PasswordCredentials { get; set; }
     
         /// <summary>
+        /// Gets or sets public client.
+        /// Specifies settings for installed clients such as desktop or mobile devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publicClient", Required = Newtonsoft.Json.Required.Default)]
+        public PublicClientApplication PublicClient { get; set; }
+    
+        /// <summary>
         /// Gets or sets publisher domain.
         /// The verified publisher domain for the application. Read-only.
         /// </summary>
@@ -215,18 +215,18 @@ namespace Microsoft.Graph
         public WebApplication Web { get; set; }
     
         /// <summary>
-        /// Gets or sets extension properties.
-        /// Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IApplicationExtensionPropertiesCollectionPage ExtensionProperties { get; set; }
-    
-        /// <summary>
         /// Gets or sets created on behalf of.
         /// Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdOnBehalfOf", Required = Newtonsoft.Json.Required.Default)]
         public DirectoryObject CreatedOnBehalfOf { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extension properties.
+        /// Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IApplicationExtensionPropertiesCollectionPage ExtensionProperties { get; set; }
     
         /// <summary>
         /// Gets or sets home realm discovery policies.
@@ -242,16 +242,16 @@ namespace Microsoft.Graph
         public IApplicationOwnersCollectionWithReferencesPage Owners { get; set; }
     
         /// <summary>
-        /// Gets or sets token lifetime policies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenLifetimePolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IApplicationTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }
-    
-        /// <summary>
         /// Gets or sets token issuance policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuancePolicies", Required = Newtonsoft.Json.Required.Default)]
         public IApplicationTokenIssuancePoliciesCollectionWithReferencesPage TokenIssuancePolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token lifetime policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenLifetimePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IApplicationTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }
     
     }
 }

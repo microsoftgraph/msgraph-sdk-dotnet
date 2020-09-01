@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public CloudAppSecuritySessionControl CloudAppSecurity { get; set; }
     
         /// <summary>
-        /// Gets or sets signInFrequency.
-        /// Session control to enforce signin frequency.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInFrequency", Required = Newtonsoft.Json.Required.Default)]
-        public SignInFrequencySessionControl SignInFrequency { get; set; }
-    
-        /// <summary>
         /// Gets or sets persistentBrowser.
         /// Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "persistentBrowser", Required = Newtonsoft.Json.Required.Default)]
         public PersistentBrowserSessionControl PersistentBrowser { get; set; }
+    
+        /// <summary>
+        /// Gets or sets signInFrequency.
+        /// Session control to enforce signin frequency.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInFrequency", Required = Newtonsoft.Json.Required.Default)]
+        public SignInFrequencySessionControl SignInFrequency { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

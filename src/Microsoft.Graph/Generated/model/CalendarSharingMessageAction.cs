@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets importance.
+        /// Gets or sets action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importance", Required = Newtonsoft.Json.Required.Default)]
-        public CalendarSharingActionImportance? Importance { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
+        public CalendarSharingAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets actionType.
@@ -43,10 +43,10 @@ namespace Microsoft.Graph
         public CalendarSharingActionType? ActionType { get; set; }
     
         /// <summary>
-        /// Gets or sets action.
+        /// Gets or sets importance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
-        public CalendarSharingAction? Action { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importance", Required = Newtonsoft.Json.Required.Default)]
+        public CalendarSharingActionImportance? Importance { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

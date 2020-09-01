@@ -38,13 +38,6 @@ namespace Microsoft.Graph
         public string AssetTagTemplate { get; set; }
     
         /// <summary>
-        /// Gets or sets lock screen footnote.
-        /// A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lockScreenFootnote", Required = Newtonsoft.Json.Required.Default)]
-        public string LockScreenFootnote { get; set; }
-    
-        /// <summary>
         /// Gets or sets home screen dock icons.
         /// A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.
         /// </summary>
@@ -57,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeScreenPages", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<IosHomeScreenPage> HomeScreenPages { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lock screen footnote.
+        /// A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lockScreenFootnote", Required = Newtonsoft.Json.Required.Default)]
+        public string LockScreenFootnote { get; set; }
     
         /// <summary>
         /// Gets or sets notification settings.

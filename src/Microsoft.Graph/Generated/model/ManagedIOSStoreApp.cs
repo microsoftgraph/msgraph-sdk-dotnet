@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets bundle id.
-        /// The app's Bundle ID.
+        /// Gets or sets applicable device type.
+        /// The iOS architecture for which this app can run on.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
-        public string BundleId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicableDeviceType", Required = Newtonsoft.Json.Required.Default)]
+        public IosDeviceType ApplicableDeviceType { get; set; }
     
         /// <summary>
         /// Gets or sets app store url.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public string AppStoreUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets applicable device type.
-        /// The iOS architecture for which this app can run on.
+        /// Gets or sets bundle id.
+        /// The app's Bundle ID.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicableDeviceType", Required = Newtonsoft.Json.Required.Default)]
-        public IosDeviceType ApplicableDeviceType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
+        public string BundleId { get; set; }
     
         /// <summary>
         /// Gets or sets minimum supported operating system.

@@ -31,17 +31,17 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets error.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
-        public PublicError Error { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// The full title for the site. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets error.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        public PublicError Error { get; set; }
     
         /// <summary>
         /// Gets or sets root.

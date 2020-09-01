@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Schools.
-        /// </summary>
-        /// <returns>The <see cref="IEducationUserSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IEducationUserSchoolsCollectionWithReferencesRequestBuilder Schools
-        {
-            get
-            {
-                return new EducationUserSchoolsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("schools"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Classes.
         /// </summary>
         /// <returns>The <see cref="IEducationUserClassesCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new EducationUserClassesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("classes"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Schools.
+        /// </summary>
+        /// <returns>The <see cref="IEducationUserSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IEducationUserSchoolsCollectionWithReferencesRequestBuilder Schools
+        {
+            get
+            {
+                return new EducationUserSchoolsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("schools"), this.Client);
             }
         }
 

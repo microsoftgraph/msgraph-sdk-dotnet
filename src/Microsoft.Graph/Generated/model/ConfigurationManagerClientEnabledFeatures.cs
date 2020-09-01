@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets compliancePolicy.
+        /// Whether compliance policy is managed by Intune
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicy", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CompliancePolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceConfiguration.
+        /// Whether device configuration is managed by Intune
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceConfiguration { get; set; }
+    
+        /// <summary>
         /// Gets or sets inventory.
         /// Whether inventory is managed by Intune
         /// </summary>
@@ -50,20 +64,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceAccess", Required = Newtonsoft.Json.Required.Default)]
         public bool? ResourceAccess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets deviceConfiguration.
-        /// Whether device configuration is managed by Intune
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfiguration", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DeviceConfiguration { get; set; }
-    
-        /// <summary>
-        /// Gets or sets compliancePolicy.
-        /// Whether compliance policy is managed by Intune
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicy", Required = Newtonsoft.Json.Required.Default)]
-        public bool? CompliancePolicy { get; set; }
     
         /// <summary>
         /// Gets or sets windowsUpdateForBusiness.

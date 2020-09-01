@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets additionalProperties.
+        /// Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AdditionalProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets essential.
+        /// If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "essential", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Essential { get; set; }
+    
+        /// <summary>
         /// Gets or sets name.
         /// The name of the optional claim.
         /// </summary>
@@ -43,20 +57,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
         public string Source { get; set; }
-    
-        /// <summary>
-        /// Gets or sets essential.
-        /// If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "essential", Required = Newtonsoft.Json.Required.Default)]
-        public bool? Essential { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additionalProperties.
-        /// Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> AdditionalProperties { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

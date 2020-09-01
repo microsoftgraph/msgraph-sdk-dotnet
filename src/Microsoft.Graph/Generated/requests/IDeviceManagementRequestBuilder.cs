@@ -38,22 +38,10 @@ namespace Microsoft.Graph
         IDeviceManagementTermsAndConditionsCollectionRequestBuilder TermsAndConditions { get; }
 
         /// <summary>
-        /// Gets the request builder for DeviceConfigurations.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDeviceConfigurationsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementDeviceConfigurationsCollectionRequestBuilder DeviceConfigurations { get; }
-
-        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicies.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder"/>.</returns>
         IDeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder DeviceCompliancePolicies { get; }
-
-        /// <summary>
-        /// Gets the request builder for SoftwareUpdateStatusSummary.
-        /// </summary>
-        /// <returns>The <see cref="ISoftwareUpdateStatusSummaryWithReferenceRequestBuilder"/>.</returns>
-        ISoftwareUpdateStatusSummaryWithReferenceRequestBuilder SoftwareUpdateStatusSummary { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyDeviceStateSummary.
@@ -74,46 +62,22 @@ namespace Microsoft.Graph
         IDeviceConfigurationDeviceStateSummaryRequestBuilder DeviceConfigurationDeviceStateSummaries { get; }
 
         /// <summary>
+        /// Gets the request builder for DeviceConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceConfigurationsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementDeviceConfigurationsCollectionRequestBuilder DeviceConfigurations { get; }
+
+        /// <summary>
         /// Gets the request builder for IosUpdateStatuses.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIosUpdateStatusesCollectionRequestBuilder"/>.</returns>
         IDeviceManagementIosUpdateStatusesCollectionRequestBuilder IosUpdateStatuses { get; }
 
         /// <summary>
-        /// Gets the request builder for DeviceCategories.
+        /// Gets the request builder for SoftwareUpdateStatusSummary.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDeviceCategoriesCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementDeviceCategoriesCollectionRequestBuilder DeviceCategories { get; }
-
-        /// <summary>
-        /// Gets the request builder for ExchangeConnectors.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementExchangeConnectorsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementExchangeConnectorsCollectionRequestBuilder ExchangeConnectors { get; }
-
-        /// <summary>
-        /// Gets the request builder for DeviceEnrollmentConfigurations.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder DeviceEnrollmentConfigurations { get; }
-
-        /// <summary>
-        /// Gets the request builder for ConditionalAccessSettings.
-        /// </summary>
-        /// <returns>The <see cref="IOnPremisesConditionalAccessSettingsRequestBuilder"/>.</returns>
-        IOnPremisesConditionalAccessSettingsRequestBuilder ConditionalAccessSettings { get; }
-
-        /// <summary>
-        /// Gets the request builder for MobileThreatDefenseConnectors.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder MobileThreatDefenseConnectors { get; }
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementPartners.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDeviceManagementPartnersCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementDeviceManagementPartnersCollectionRequestBuilder DeviceManagementPartners { get; }
+        /// <returns>The <see cref="ISoftwareUpdateStatusSummaryWithReferenceRequestBuilder"/>.</returns>
+        ISoftwareUpdateStatusSummaryWithReferenceRequestBuilder SoftwareUpdateStatusSummary { get; }
 
         /// <summary>
         /// Gets the request builder for ComplianceManagementPartners.
@@ -122,22 +86,58 @@ namespace Microsoft.Graph
         IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder ComplianceManagementPartners { get; }
 
         /// <summary>
+        /// Gets the request builder for ConditionalAccessSettings.
+        /// </summary>
+        /// <returns>The <see cref="IOnPremisesConditionalAccessSettingsRequestBuilder"/>.</returns>
+        IOnPremisesConditionalAccessSettingsRequestBuilder ConditionalAccessSettings { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceCategories.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceCategoriesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementDeviceCategoriesCollectionRequestBuilder DeviceCategories { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceEnrollmentConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder DeviceEnrollmentConfigurations { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementPartners.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceManagementPartnersCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementDeviceManagementPartnersCollectionRequestBuilder DeviceManagementPartners { get; }
+
+        /// <summary>
+        /// Gets the request builder for ExchangeConnectors.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementExchangeConnectorsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementExchangeConnectorsCollectionRequestBuilder ExchangeConnectors { get; }
+
+        /// <summary>
+        /// Gets the request builder for MobileThreatDefenseConnectors.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder MobileThreatDefenseConnectors { get; }
+
+        /// <summary>
         /// Gets the request builder for ApplePushNotificationCertificate.
         /// </summary>
         /// <returns>The <see cref="IApplePushNotificationCertificateRequestBuilder"/>.</returns>
         IApplePushNotificationCertificateRequestBuilder ApplePushNotificationCertificate { get; }
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceOverview.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceOverviewWithReferenceRequestBuilder"/>.</returns>
-        IManagedDeviceOverviewWithReferenceRequestBuilder ManagedDeviceOverview { get; }
-
-        /// <summary>
         /// Gets the request builder for DetectedApps.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementDetectedAppsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementDetectedAppsCollectionRequestBuilder DetectedApps { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceOverview.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceOverviewWithReferenceRequestBuilder"/>.</returns>
+        IManagedDeviceOverviewWithReferenceRequestBuilder ManagedDeviceOverview { get; }
 
         /// <summary>
         /// Gets the request builder for ManagedDevices.
@@ -152,10 +152,10 @@ namespace Microsoft.Graph
         IDeviceManagementNotificationMessageTemplatesCollectionRequestBuilder NotificationMessageTemplates { get; }
 
         /// <summary>
-        /// Gets the request builder for RoleDefinitions.
+        /// Gets the request builder for ResourceOperations.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementRoleDefinitionsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementRoleDefinitionsCollectionRequestBuilder RoleDefinitions { get; }
+        /// <returns>The <see cref="IDeviceManagementResourceOperationsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementResourceOperationsCollectionRequestBuilder ResourceOperations { get; }
 
         /// <summary>
         /// Gets the request builder for RoleAssignments.
@@ -164,10 +164,10 @@ namespace Microsoft.Graph
         IDeviceManagementRoleAssignmentsCollectionRequestBuilder RoleAssignments { get; }
 
         /// <summary>
-        /// Gets the request builder for ResourceOperations.
+        /// Gets the request builder for RoleDefinitions.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementResourceOperationsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementResourceOperationsCollectionRequestBuilder ResourceOperations { get; }
+        /// <returns>The <see cref="IDeviceManagementRoleDefinitionsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementRoleDefinitionsCollectionRequestBuilder RoleDefinitions { get; }
 
         /// <summary>
         /// Gets the request builder for RemoteAssistancePartners.

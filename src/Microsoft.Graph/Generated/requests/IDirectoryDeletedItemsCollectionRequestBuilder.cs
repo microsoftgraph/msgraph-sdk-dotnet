@@ -37,19 +37,19 @@ namespace Microsoft.Graph
         IDirectoryObjectRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for DirectoryObjectGetAvailableExtensionProperties.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder"/>.</returns>
+        IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder GetAvailableExtensionProperties(
+            bool? isSyncedFromOnPremises = null);
+
+        /// <summary>
         /// Gets the request builder for DirectoryObjectGetByIds.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectGetByIdsRequestBuilder"/>.</returns>
         IDirectoryObjectGetByIdsRequestBuilder GetByIds(
             IEnumerable<string> ids,
             IEnumerable<string> types = null);
-
-        /// <summary>
-        /// Gets the request builder for DirectoryObjectGetAvailableExtensionProperties.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder"/>.</returns>
-        IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder GetAvailableExtensionProperties(
-            bool? isSyncedFromOnPremises = null);
 
         /// <summary>
         /// Gets the request builder for DirectoryObjectValidateProperties.

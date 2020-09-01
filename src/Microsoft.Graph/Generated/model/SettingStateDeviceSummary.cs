@@ -31,34 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets setting name.
-        /// Name of the setting
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
-        public string SettingName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets instance path.
-        /// Name of the InstancePath for the setting
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instancePath", Required = Newtonsoft.Json.Required.Default)]
-        public string InstancePath { get; set; }
-    
-        /// <summary>
-        /// Gets or sets unknown device count.
-        /// Device Unkown count for the setting
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UnknownDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets not applicable device count.
-        /// Device Not Applicable count for the setting
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notApplicableDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? NotApplicableDeviceCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets compliant device count.
         /// Device Compliant count for the setting
         /// </summary>
@@ -66,18 +38,11 @@ namespace Microsoft.Graph
         public Int32? CompliantDeviceCount { get; set; }
     
         /// <summary>
-        /// Gets or sets remediated device count.
-        /// Device Compliant count for the setting
+        /// Gets or sets conflict device count.
+        /// Device conflict error count for the setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediatedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? RemediatedDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets non compliant device count.
-        /// Device NonCompliant count for the setting
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nonCompliantDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? NonCompliantDeviceCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflictDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ConflictDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets error device count.
@@ -87,11 +52,46 @@ namespace Microsoft.Graph
         public Int32? ErrorDeviceCount { get; set; }
     
         /// <summary>
-        /// Gets or sets conflict device count.
-        /// Device conflict error count for the setting
+        /// Gets or sets instance path.
+        /// Name of the InstancePath for the setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflictDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ConflictDeviceCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instancePath", Required = Newtonsoft.Json.Required.Default)]
+        public string InstancePath { get; set; }
+    
+        /// <summary>
+        /// Gets or sets non compliant device count.
+        /// Device NonCompliant count for the setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nonCompliantDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? NonCompliantDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets not applicable device count.
+        /// Device Not Applicable count for the setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notApplicableDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? NotApplicableDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets remediated device count.
+        /// Device Compliant count for the setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediatedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? RemediatedDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets setting name.
+        /// Name of the setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unknown device count.
+        /// Device Unkown count for the setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UnknownDeviceCount { get; set; }
     
     }
 }

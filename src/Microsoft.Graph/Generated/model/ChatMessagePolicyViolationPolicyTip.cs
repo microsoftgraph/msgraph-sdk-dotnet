@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets generalText.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "generalText", Required = Newtonsoft.Json.Required.Default)]
-        public string GeneralText { get; set; }
-    
-        /// <summary>
         /// Gets or sets complianceUrl.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceUrl", Required = Newtonsoft.Json.Required.Default)]
         public string ComplianceUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets generalText.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "generalText", Required = Newtonsoft.Json.Required.Default)]
+        public string GeneralText { get; set; }
     
         /// <summary>
         /// Gets or sets matchedConditionDescriptions.

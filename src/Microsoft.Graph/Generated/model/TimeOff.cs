@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets shared time off.
-        /// The shared version of this timeOff that is viewable by both employees and managers. Required.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedTimeOff", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOffItem SharedTimeOff { get; set; }
-    
-        /// <summary>
         /// Gets or sets draft time off.
         /// The draft version of this timeOff that is viewable by managers. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "draftTimeOff", Required = Newtonsoft.Json.Required.Default)]
         public TimeOffItem DraftTimeOff { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shared time off.
+        /// The shared version of this timeOff that is viewable by both employees and managers. Required.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedTimeOff", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOffItem SharedTimeOff { get; set; }
     
         /// <summary>
         /// Gets or sets user id.

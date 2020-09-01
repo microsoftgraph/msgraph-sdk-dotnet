@@ -51,62 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ScheduledActionsForRule.
+        /// Gets the request builder for Assignments.
         /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder"/>.</returns>
-        public IDeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder ScheduledActionsForRule
+        /// <returns>The <see cref="IDeviceCompliancePolicyAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IDeviceCompliancePolicyAssignmentsCollectionRequestBuilder Assignments
         {
             get
             {
-                return new DeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder(this.AppendSegmentToRequestUrl("scheduledActionsForRule"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder"/>.</returns>
-        public IDeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder DeviceStatuses
-        {
-            get
-            {
-                return new DeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceStatuses"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for UserStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyUserStatusesCollectionRequestBuilder"/>.</returns>
-        public IDeviceCompliancePolicyUserStatusesCollectionRequestBuilder UserStatuses
-        {
-            get
-            {
-                return new DeviceCompliancePolicyUserStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStatuses"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceStatusOverview.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceComplianceDeviceOverviewRequestBuilder"/>.</returns>
-        public IDeviceComplianceDeviceOverviewRequestBuilder DeviceStatusOverview
-        {
-            get
-            {
-                return new DeviceComplianceDeviceOverviewRequestBuilder(this.AppendSegmentToRequestUrl("deviceStatusOverview"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for UserStatusOverview.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceComplianceUserOverviewRequestBuilder"/>.</returns>
-        public IDeviceComplianceUserOverviewRequestBuilder UserStatusOverview
-        {
-            get
-            {
-                return new DeviceComplianceUserOverviewRequestBuilder(this.AppendSegmentToRequestUrl("userStatusOverview"), this.Client);
+                return new DeviceCompliancePolicyAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
             }
         }
 
@@ -123,14 +75,62 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Assignments.
+        /// Gets the request builder for DeviceStatuses.
         /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyAssignmentsCollectionRequestBuilder"/>.</returns>
-        public IDeviceCompliancePolicyAssignmentsCollectionRequestBuilder Assignments
+        /// <returns>The <see cref="IDeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder"/>.</returns>
+        public IDeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder DeviceStatuses
         {
             get
             {
-                return new DeviceCompliancePolicyAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
+                return new DeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceStatuses"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceStatusOverview.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceComplianceDeviceOverviewRequestBuilder"/>.</returns>
+        public IDeviceComplianceDeviceOverviewRequestBuilder DeviceStatusOverview
+        {
+            get
+            {
+                return new DeviceComplianceDeviceOverviewRequestBuilder(this.AppendSegmentToRequestUrl("deviceStatusOverview"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ScheduledActionsForRule.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder"/>.</returns>
+        public IDeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder ScheduledActionsForRule
+        {
+            get
+            {
+                return new DeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder(this.AppendSegmentToRequestUrl("scheduledActionsForRule"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyUserStatusesCollectionRequestBuilder"/>.</returns>
+        public IDeviceCompliancePolicyUserStatusesCollectionRequestBuilder UserStatuses
+        {
+            get
+            {
+                return new DeviceCompliancePolicyUserStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStatuses"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserStatusOverview.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceComplianceUserOverviewRequestBuilder"/>.</returns>
+        public IDeviceComplianceUserOverviewRequestBuilder UserStatusOverview
+        {
+            get
+            {
+                return new DeviceComplianceUserOverviewRequestBuilder(this.AppendSegmentToRequestUrl("userStatusOverview"), this.Client);
             }
         }
     

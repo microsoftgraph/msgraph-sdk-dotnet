@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IDomainRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for DomainNameReferences.
+        /// </summary>
+        /// <returns>The <see cref="IDomainDomainNameReferencesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IDomainDomainNameReferencesCollectionWithReferencesRequestBuilder DomainNameReferences { get; }
+
+        /// <summary>
         /// Gets the request builder for ServiceConfigurationRecords.
         /// </summary>
         /// <returns>The <see cref="IDomainServiceConfigurationRecordsCollectionRequestBuilder"/>.</returns>
@@ -42,12 +48,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDomainVerificationDnsRecordsCollectionRequestBuilder"/>.</returns>
         IDomainVerificationDnsRecordsCollectionRequestBuilder VerificationDnsRecords { get; }
-
-        /// <summary>
-        /// Gets the request builder for DomainNameReferences.
-        /// </summary>
-        /// <returns>The <see cref="IDomainDomainNameReferencesCollectionWithReferencesRequestBuilder"/>.</returns>
-        IDomainDomainNameReferencesCollectionWithReferencesRequestBuilder DomainNameReferences { get; }
     
         /// <summary>
         /// Gets the request builder for DomainForceDelete.

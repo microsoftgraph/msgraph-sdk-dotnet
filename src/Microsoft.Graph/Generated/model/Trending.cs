@@ -31,18 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets weight.
-        /// Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
+        /// Gets or sets last modified date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "weight", Required = Newtonsoft.Json.Required.Default)]
-        public double? Weight { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resource visualization.
-        /// Properties that you can use to visualize the document in your experience.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceVisualization", Required = Newtonsoft.Json.Required.Default)]
-        public ResourceVisualization ResourceVisualization { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets resource reference.
@@ -52,10 +44,18 @@ namespace Microsoft.Graph
         public ResourceReference ResourceReference { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
+        /// Gets or sets resource visualization.
+        /// Properties that you can use to visualize the document in your experience.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceVisualization", Required = Newtonsoft.Json.Required.Default)]
+        public ResourceVisualization ResourceVisualization { get; set; }
+    
+        /// <summary>
+        /// Gets or sets weight.
+        /// Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "weight", Required = Newtonsoft.Json.Required.Default)]
+        public double? Weight { get; set; }
     
         /// <summary>
         /// Gets or sets resource.

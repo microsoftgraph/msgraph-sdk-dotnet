@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets used license count.
-        /// The number of VPP licenses in use.
+        /// Gets or sets applicable device type.
+        /// The applicable iOS Device Type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedLicenseCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UsedLicenseCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets total license count.
-        /// The total number of VPP licenses.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicenseCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? TotalLicenseCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets release date time.
-        /// The VPP application release date and time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releaseDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ReleaseDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicableDeviceType", Required = Newtonsoft.Json.Required.Default)]
+        public IosDeviceType ApplicableDeviceType { get; set; }
     
         /// <summary>
         /// Gets or sets app store url.
@@ -59,6 +45,13 @@ namespace Microsoft.Graph
         public string AppStoreUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets bundle id.
+        /// The Identity Name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
+        public string BundleId { get; set; }
+    
+        /// <summary>
         /// Gets or sets licensing type.
         /// The supported License Type.
         /// </summary>
@@ -66,18 +59,25 @@ namespace Microsoft.Graph
         public VppLicensingType LicensingType { get; set; }
     
         /// <summary>
-        /// Gets or sets applicable device type.
-        /// The applicable iOS Device Type.
+        /// Gets or sets release date time.
+        /// The VPP application release date and time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicableDeviceType", Required = Newtonsoft.Json.Required.Default)]
-        public IosDeviceType ApplicableDeviceType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releaseDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ReleaseDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets vpp token organization name.
-        /// The organization associated with the Apple Volume Purchase Program Token
+        /// Gets or sets total license count.
+        /// The total number of VPP licenses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppTokenOrganizationName", Required = Newtonsoft.Json.Required.Default)]
-        public string VppTokenOrganizationName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicenseCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? TotalLicenseCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets used license count.
+        /// The number of VPP licenses in use.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedLicenseCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UsedLicenseCount { get; set; }
     
         /// <summary>
         /// Gets or sets vpp token account type.
@@ -94,11 +94,11 @@ namespace Microsoft.Graph
         public string VppTokenAppleId { get; set; }
     
         /// <summary>
-        /// Gets or sets bundle id.
-        /// The Identity Name.
+        /// Gets or sets vpp token organization name.
+        /// The organization associated with the Apple Volume Purchase Program Token
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
-        public string BundleId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppTokenOrganizationName", Required = Newtonsoft.Json.Required.Default)]
+        public string VppTokenOrganizationName { get; set; }
     
     }
 }

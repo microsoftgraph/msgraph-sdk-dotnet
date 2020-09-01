@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public ManagedAppDataEncryptionType? AppDataEncryptionType { get; set; }
     
         /// <summary>
-        /// Gets or sets minimum required sdk version.
-        /// Versions less than the specified version will block the managed app from accessing company data.
+        /// Gets or sets custom browser protocol.
+        /// A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumRequiredSdkVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string MinimumRequiredSdkVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserProtocol", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomBrowserProtocol { get; set; }
     
         /// <summary>
         /// Gets or sets deployed app count.
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public bool? FaceIdBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets custom browser protocol.
-        /// A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+        /// Gets or sets minimum required sdk version.
+        /// Versions less than the specified version will block the managed app from accessing company data.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserProtocol", Required = Newtonsoft.Json.Required.Default)]
-        public string CustomBrowserProtocol { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumRequiredSdkVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string MinimumRequiredSdkVersion { get; set; }
     
         /// <summary>
         /// Gets or sets apps.

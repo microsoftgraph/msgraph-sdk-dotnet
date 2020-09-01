@@ -32,34 +32,10 @@ namespace Microsoft.Graph
         new IDeviceCompliancePolicyRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for ScheduledActionsForRule.
+        /// Gets the request builder for Assignments.
         /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder"/>.</returns>
-        IDeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder ScheduledActionsForRule { get; }
-
-        /// <summary>
-        /// Gets the request builder for DeviceStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder"/>.</returns>
-        IDeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder DeviceStatuses { get; }
-
-        /// <summary>
-        /// Gets the request builder for UserStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyUserStatusesCollectionRequestBuilder"/>.</returns>
-        IDeviceCompliancePolicyUserStatusesCollectionRequestBuilder UserStatuses { get; }
-
-        /// <summary>
-        /// Gets the request builder for DeviceStatusOverview.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceComplianceDeviceOverviewRequestBuilder"/>.</returns>
-        IDeviceComplianceDeviceOverviewRequestBuilder DeviceStatusOverview { get; }
-
-        /// <summary>
-        /// Gets the request builder for UserStatusOverview.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceComplianceUserOverviewRequestBuilder"/>.</returns>
-        IDeviceComplianceUserOverviewRequestBuilder UserStatusOverview { get; }
+        /// <returns>The <see cref="IDeviceCompliancePolicyAssignmentsCollectionRequestBuilder"/>.</returns>
+        IDeviceCompliancePolicyAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceSettingStateSummaries.
@@ -68,10 +44,34 @@ namespace Microsoft.Graph
         IDeviceCompliancePolicyDeviceSettingStateSummariesCollectionRequestBuilder DeviceSettingStateSummaries { get; }
 
         /// <summary>
-        /// Gets the request builder for Assignments.
+        /// Gets the request builder for DeviceStatuses.
         /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyAssignmentsCollectionRequestBuilder"/>.</returns>
-        IDeviceCompliancePolicyAssignmentsCollectionRequestBuilder Assignments { get; }
+        /// <returns>The <see cref="IDeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder"/>.</returns>
+        IDeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder DeviceStatuses { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceStatusOverview.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceComplianceDeviceOverviewRequestBuilder"/>.</returns>
+        IDeviceComplianceDeviceOverviewRequestBuilder DeviceStatusOverview { get; }
+
+        /// <summary>
+        /// Gets the request builder for ScheduledActionsForRule.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder"/>.</returns>
+        IDeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder ScheduledActionsForRule { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyUserStatusesCollectionRequestBuilder"/>.</returns>
+        IDeviceCompliancePolicyUserStatusesCollectionRequestBuilder UserStatuses { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserStatusOverview.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceComplianceUserOverviewRequestBuilder"/>.</returns>
+        IDeviceComplianceUserOverviewRequestBuilder UserStatusOverview { get; }
     
         /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyAssign.

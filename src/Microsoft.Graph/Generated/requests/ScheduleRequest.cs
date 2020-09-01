@@ -234,97 +234,17 @@ namespace Microsoft.Graph
             if (scheduleToInitialize != null && scheduleToInitialize.AdditionalData != null)
             {
 
-                if (scheduleToInitialize.Shifts != null && scheduleToInitialize.Shifts.CurrentPage != null)
+                if (scheduleToInitialize.OfferShiftRequests != null && scheduleToInitialize.OfferShiftRequests.CurrentPage != null)
                 {
-                    scheduleToInitialize.Shifts.AdditionalData = scheduleToInitialize.AdditionalData;
+                    scheduleToInitialize.OfferShiftRequests.AdditionalData = scheduleToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("shifts@odata.nextLink", out nextPageLink);
+                    scheduleToInitialize.AdditionalData.TryGetValue("offerShiftRequests@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        scheduleToInitialize.Shifts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (scheduleToInitialize.OpenShifts != null && scheduleToInitialize.OpenShifts.CurrentPage != null)
-                {
-                    scheduleToInitialize.OpenShifts.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("openShifts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.OpenShifts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (scheduleToInitialize.TimesOff != null && scheduleToInitialize.TimesOff.CurrentPage != null)
-                {
-                    scheduleToInitialize.TimesOff.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("timesOff@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.TimesOff.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (scheduleToInitialize.TimeOffReasons != null && scheduleToInitialize.TimeOffReasons.CurrentPage != null)
-                {
-                    scheduleToInitialize.TimeOffReasons.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("timeOffReasons@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.TimeOffReasons.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (scheduleToInitialize.SchedulingGroups != null && scheduleToInitialize.SchedulingGroups.CurrentPage != null)
-                {
-                    scheduleToInitialize.SchedulingGroups.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("schedulingGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.SchedulingGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (scheduleToInitialize.SwapShiftsChangeRequests != null && scheduleToInitialize.SwapShiftsChangeRequests.CurrentPage != null)
-                {
-                    scheduleToInitialize.SwapShiftsChangeRequests.AdditionalData = scheduleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("swapShiftsChangeRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        scheduleToInitialize.SwapShiftsChangeRequests.InitializeNextPageRequest(
+                        scheduleToInitialize.OfferShiftRequests.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -346,17 +266,81 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (scheduleToInitialize.OfferShiftRequests != null && scheduleToInitialize.OfferShiftRequests.CurrentPage != null)
+                if (scheduleToInitialize.OpenShifts != null && scheduleToInitialize.OpenShifts.CurrentPage != null)
                 {
-                    scheduleToInitialize.OfferShiftRequests.AdditionalData = scheduleToInitialize.AdditionalData;
+                    scheduleToInitialize.OpenShifts.AdditionalData = scheduleToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    scheduleToInitialize.AdditionalData.TryGetValue("offerShiftRequests@odata.nextLink", out nextPageLink);
+                    scheduleToInitialize.AdditionalData.TryGetValue("openShifts@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        scheduleToInitialize.OfferShiftRequests.InitializeNextPageRequest(
+                        scheduleToInitialize.OpenShifts.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (scheduleToInitialize.SchedulingGroups != null && scheduleToInitialize.SchedulingGroups.CurrentPage != null)
+                {
+                    scheduleToInitialize.SchedulingGroups.AdditionalData = scheduleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    scheduleToInitialize.AdditionalData.TryGetValue("schedulingGroups@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        scheduleToInitialize.SchedulingGroups.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (scheduleToInitialize.Shifts != null && scheduleToInitialize.Shifts.CurrentPage != null)
+                {
+                    scheduleToInitialize.Shifts.AdditionalData = scheduleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    scheduleToInitialize.AdditionalData.TryGetValue("shifts@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        scheduleToInitialize.Shifts.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (scheduleToInitialize.SwapShiftsChangeRequests != null && scheduleToInitialize.SwapShiftsChangeRequests.CurrentPage != null)
+                {
+                    scheduleToInitialize.SwapShiftsChangeRequests.AdditionalData = scheduleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    scheduleToInitialize.AdditionalData.TryGetValue("swapShiftsChangeRequests@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        scheduleToInitialize.SwapShiftsChangeRequests.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (scheduleToInitialize.TimeOffReasons != null && scheduleToInitialize.TimeOffReasons.CurrentPage != null)
+                {
+                    scheduleToInitialize.TimeOffReasons.AdditionalData = scheduleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    scheduleToInitialize.AdditionalData.TryGetValue("timeOffReasons@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        scheduleToInitialize.TimeOffReasons.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -373,6 +357,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         scheduleToInitialize.TimeOffRequests.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (scheduleToInitialize.TimesOff != null && scheduleToInitialize.TimesOff.CurrentPage != null)
+                {
+                    scheduleToInitialize.TimesOff.AdditionalData = scheduleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    scheduleToInitialize.AdditionalData.TryGetValue("timesOff@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        scheduleToInitialize.TimesOff.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

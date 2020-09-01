@@ -220,11 +220,25 @@ namespace Microsoft.Graph
         public string MobilePhone { get; set; }
     
         /// <summary>
+        /// Gets or sets office location.
+        /// The office location in the user's place of business.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string OfficeLocation { get; set; }
+    
+        /// <summary>
         /// Gets or sets on premises distinguished name.
         /// Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesDistinguishedName", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesDistinguishedName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets on premises domain name.
+        /// Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesDomainName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnPremisesDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises extension attributes.
@@ -255,6 +269,13 @@ namespace Microsoft.Graph
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
     
         /// <summary>
+        /// Gets or sets on premises sam account name.
+        /// Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSamAccountName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnPremisesSamAccountName { get; set; }
+    
+        /// <summary>
         /// Gets or sets on premises security identifier.
         /// Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only.
         /// </summary>
@@ -267,20 +288,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSyncEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? OnPremisesSyncEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets on premises domain name.
-        /// Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesDomainName", Required = Newtonsoft.Json.Required.Default)]
-        public string OnPremisesDomainName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets on premises sam account name.
-        /// Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSamAccountName", Required = Newtonsoft.Json.Required.Default)]
-        public string OnPremisesSamAccountName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises user principal name.
@@ -309,13 +316,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordProfile", Required = Newtonsoft.Json.Required.Default)]
         public PasswordProfile PasswordProfile { get; set; }
-    
-        /// <summary>
-        /// Gets or sets office location.
-        /// The office location in the user's place of business.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
-        public string OfficeLocation { get; set; }
     
         /// <summary>
         /// Gets or sets postal code.
@@ -492,25 +492,11 @@ namespace Microsoft.Graph
         public IUserAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
     
         /// <summary>
-        /// Gets or sets owned devices.
-        /// Devices that are owned by the user. Read-only. Nullable.
+        /// Gets or sets created objects.
+        /// Directory objects that were created by the user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownedDevices", Required = Newtonsoft.Json.Required.Default)]
-        public IUserOwnedDevicesCollectionWithReferencesPage OwnedDevices { get; set; }
-    
-        /// <summary>
-        /// Gets or sets registered devices.
-        /// Devices that are registered for the user. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registeredDevices", Required = Newtonsoft.Json.Required.Default)]
-        public IUserRegisteredDevicesCollectionWithReferencesPage RegisteredDevices { get; set; }
-    
-        /// <summary>
-        /// Gets or sets manager.
-        /// The user or contact that is this user’s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
-        public DirectoryObject Manager { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdObjects", Required = Newtonsoft.Json.Required.Default)]
+        public IUserCreatedObjectsCollectionWithReferencesPage CreatedObjects { get; set; }
     
         /// <summary>
         /// Gets or sets direct reports.
@@ -520,6 +506,20 @@ namespace Microsoft.Graph
         public IUserDirectReportsCollectionWithReferencesPage DirectReports { get; set; }
     
         /// <summary>
+        /// Gets or sets license details.
+        /// A collection of this user's license details. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseDetails", Required = Newtonsoft.Json.Required.Default)]
+        public IUserLicenseDetailsCollectionPage LicenseDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets manager.
+        /// The user or contact that is this user’s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
+        public DirectoryObject Manager { get; set; }
+    
+        /// <summary>
         /// Gets or sets member of.
         /// The groups and directory roles that the user is a member of. Read-only. Nullable.
         /// </summary>
@@ -527,17 +527,17 @@ namespace Microsoft.Graph
         public IUserMemberOfCollectionWithReferencesPage MemberOf { get; set; }
     
         /// <summary>
-        /// Gets or sets created objects.
-        /// Directory objects that were created by the user. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdObjects", Required = Newtonsoft.Json.Required.Default)]
-        public IUserCreatedObjectsCollectionWithReferencesPage CreatedObjects { get; set; }
-    
-        /// <summary>
         /// Gets or sets oauth2permission grants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oauth2PermissionGrants", Required = Newtonsoft.Json.Required.Default)]
         public IUserOauth2PermissionGrantsCollectionWithReferencesPage Oauth2PermissionGrants { get; set; }
+    
+        /// <summary>
+        /// Gets or sets owned devices.
+        /// Devices that are owned by the user. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownedDevices", Required = Newtonsoft.Json.Required.Default)]
+        public IUserOwnedDevicesCollectionWithReferencesPage OwnedDevices { get; set; }
     
         /// <summary>
         /// Gets or sets owned objects.
@@ -547,38 +547,17 @@ namespace Microsoft.Graph
         public IUserOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
     
         /// <summary>
-        /// Gets or sets license details.
-        /// A collection of this user's license details. Read-only.
+        /// Gets or sets registered devices.
+        /// Devices that are registered for the user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseDetails", Required = Newtonsoft.Json.Required.Default)]
-        public IUserLicenseDetailsCollectionPage LicenseDetails { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registeredDevices", Required = Newtonsoft.Json.Required.Default)]
+        public IUserRegisteredDevicesCollectionWithReferencesPage RegisteredDevices { get; set; }
     
         /// <summary>
         /// Gets or sets transitive member of.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
         public IUserTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
-    
-        /// <summary>
-        /// Gets or sets outlook.
-        /// Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlook", Required = Newtonsoft.Json.Required.Default)]
-        public OutlookUser Outlook { get; set; }
-    
-        /// <summary>
-        /// Gets or sets messages.
-        /// The messages in a mailbox or folder. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
-        public IUserMessagesCollectionPage Messages { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mail folders.
-        /// The user's mail folders. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailFolders", Required = Newtonsoft.Json.Required.Default)]
-        public IUserMailFoldersCollectionPage MailFolders { get; set; }
     
         /// <summary>
         /// Gets or sets calendar.
@@ -588,18 +567,18 @@ namespace Microsoft.Graph
         public Calendar Calendar { get; set; }
     
         /// <summary>
-        /// Gets or sets calendars.
-        /// The user's calendars. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendars", Required = Newtonsoft.Json.Required.Default)]
-        public IUserCalendarsCollectionPage Calendars { get; set; }
-    
-        /// <summary>
         /// Gets or sets calendar groups.
         /// The user's calendar groups. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarGroups", Required = Newtonsoft.Json.Required.Default)]
         public IUserCalendarGroupsCollectionPage CalendarGroups { get; set; }
+    
+        /// <summary>
+        /// Gets or sets calendars.
+        /// The user's calendars. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendars", Required = Newtonsoft.Json.Required.Default)]
+        public IUserCalendarsCollectionPage Calendars { get; set; }
     
         /// <summary>
         /// Gets or sets calendar view.
@@ -609,18 +588,11 @@ namespace Microsoft.Graph
         public IUserCalendarViewCollectionPage CalendarView { get; set; }
     
         /// <summary>
-        /// Gets or sets events.
-        /// The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
+        /// Gets or sets contact folders.
+        /// The user's contacts folders. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "events", Required = Newtonsoft.Json.Required.Default)]
-        public IUserEventsCollectionPage Events { get; set; }
-    
-        /// <summary>
-        /// Gets or sets people.
-        /// People that are relevant to the user. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "people", Required = Newtonsoft.Json.Required.Default)]
-        public IUserPeopleCollectionPage People { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactFolders", Required = Newtonsoft.Json.Required.Default)]
+        public IUserContactFoldersCollectionPage ContactFolders { get; set; }
     
         /// <summary>
         /// Gets or sets contacts.
@@ -630,11 +602,11 @@ namespace Microsoft.Graph
         public IUserContactsCollectionPage Contacts { get; set; }
     
         /// <summary>
-        /// Gets or sets contact folders.
-        /// The user's contacts folders. Read-only. Nullable.
+        /// Gets or sets events.
+        /// The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactFolders", Required = Newtonsoft.Json.Required.Default)]
-        public IUserContactFoldersCollectionPage ContactFolders { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "events", Required = Newtonsoft.Json.Required.Default)]
+        public IUserEventsCollectionPage Events { get; set; }
     
         /// <summary>
         /// Gets or sets inference classification.
@@ -642,6 +614,34 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inferenceClassification", Required = Newtonsoft.Json.Required.Default)]
         public InferenceClassification InferenceClassification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mail folders.
+        /// The user's mail folders. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailFolders", Required = Newtonsoft.Json.Required.Default)]
+        public IUserMailFoldersCollectionPage MailFolders { get; set; }
+    
+        /// <summary>
+        /// Gets or sets messages.
+        /// The messages in a mailbox or folder. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
+        public IUserMessagesCollectionPage Messages { get; set; }
+    
+        /// <summary>
+        /// Gets or sets outlook.
+        /// Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlook", Required = Newtonsoft.Json.Required.Default)]
+        public OutlookUser Outlook { get; set; }
+    
+        /// <summary>
+        /// Gets or sets people.
+        /// People that are relevant to the user. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "people", Required = Newtonsoft.Json.Required.Default)]
+        public IUserPeopleCollectionPage People { get; set; }
     
         /// <summary>
         /// Gets or sets photo.

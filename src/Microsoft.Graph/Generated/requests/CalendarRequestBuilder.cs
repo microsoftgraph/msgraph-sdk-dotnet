@@ -51,30 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="ICalendarSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        public ICalendarSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
-        {
-            get
-            {
-                return new CalendarSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for MultiValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="ICalendarMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        public ICalendarMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties
-        {
-            get
-            {
-                return new CalendarMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for CalendarPermissions.
         /// </summary>
         /// <returns>The <see cref="ICalendarCalendarPermissionsCollectionRequestBuilder"/>.</returns>
@@ -83,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new CalendarCalendarPermissionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calendarPermissions"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for CalendarView.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarCalendarViewCollectionRequestBuilder"/>.</returns>
+        public ICalendarCalendarViewCollectionRequestBuilder CalendarView
+        {
+            get
+            {
+                return new CalendarCalendarViewCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calendarView"), this.Client);
             }
         }
 
@@ -99,14 +87,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for CalendarView.
+        /// Gets the request builder for MultiValueExtendedProperties.
         /// </summary>
-        /// <returns>The <see cref="ICalendarCalendarViewCollectionRequestBuilder"/>.</returns>
-        public ICalendarCalendarViewCollectionRequestBuilder CalendarView
+        /// <returns>The <see cref="ICalendarMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public ICalendarMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties
         {
             get
             {
-                return new CalendarCalendarViewCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calendarView"), this.Client);
+                return new CalendarMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SingleValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public ICalendarSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
+        {
+            get
+            {
+                return new CalendarSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
             }
         }
     

@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         IGraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder CertificateBasedAuthConfiguration { get; }
     
         /// <summary>
-        /// Gets the GraphServiceDirectoryObjects request builder.
-        /// </summary>
-        IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceContacts request builder.
         /// </summary>
         IGraphServiceContactsCollectionRequestBuilder Contacts { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceContracts request builder.
+        /// </summary>
+        IGraphServiceContractsCollectionRequestBuilder Contracts { get; }
     
         /// <summary>
         /// Gets the GraphServiceDevices request builder.
@@ -57,19 +57,9 @@ namespace Microsoft.Graph
         IGraphServiceDevicesCollectionRequestBuilder Devices { get; }
     
         /// <summary>
-        /// Gets the GraphServiceDomains request builder.
+        /// Gets the GraphServiceDirectoryObjects request builder.
         /// </summary>
-        IGraphServiceDomainsCollectionRequestBuilder Domains { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceDomainDnsRecords request builder.
-        /// </summary>
-        IGraphServiceDomainDnsRecordsCollectionRequestBuilder DomainDnsRecords { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceGroups request builder.
-        /// </summary>
-        IGraphServiceGroupsCollectionRequestBuilder Groups { get; }
+        IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects { get; }
     
         /// <summary>
         /// Gets the GraphServiceDirectoryRoles request builder.
@@ -82,9 +72,19 @@ namespace Microsoft.Graph
         IGraphServiceDirectoryRoleTemplatesCollectionRequestBuilder DirectoryRoleTemplates { get; }
     
         /// <summary>
-        /// Gets the GraphServiceOrganization request builder.
+        /// Gets the GraphServiceDomainDnsRecords request builder.
         /// </summary>
-        IGraphServiceOrganizationCollectionRequestBuilder Organization { get; }
+        IGraphServiceDomainDnsRecordsCollectionRequestBuilder DomainDnsRecords { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceDomains request builder.
+        /// </summary>
+        IGraphServiceDomainsCollectionRequestBuilder Domains { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceGroups request builder.
+        /// </summary>
+        IGraphServiceGroupsCollectionRequestBuilder Groups { get; }
     
         /// <summary>
         /// Gets the GraphServiceGroupSettings request builder.
@@ -97,14 +97,14 @@ namespace Microsoft.Graph
         IGraphServiceGroupSettingTemplatesCollectionRequestBuilder GroupSettingTemplates { get; }
     
         /// <summary>
-        /// Gets the GraphServiceSubscribedSkus request builder.
+        /// Gets the GraphServiceOauth2PermissionGrants request builder.
         /// </summary>
-        IGraphServiceSubscribedSkusCollectionRequestBuilder SubscribedSkus { get; }
+        IGraphServiceOauth2PermissionGrantsCollectionRequestBuilder Oauth2PermissionGrants { get; }
     
         /// <summary>
-        /// Gets the GraphServiceContracts request builder.
+        /// Gets the GraphServiceOrganization request builder.
         /// </summary>
-        IGraphServiceContractsCollectionRequestBuilder Contracts { get; }
+        IGraphServiceOrganizationCollectionRequestBuilder Organization { get; }
     
         /// <summary>
         /// Gets the GraphServiceServicePrincipals request builder.
@@ -112,9 +112,9 @@ namespace Microsoft.Graph
         IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals { get; }
     
         /// <summary>
-        /// Gets the GraphServiceOauth2PermissionGrants request builder.
+        /// Gets the GraphServiceSubscribedSkus request builder.
         /// </summary>
-        IGraphServiceOauth2PermissionGrantsCollectionRequestBuilder Oauth2PermissionGrants { get; }
+        IGraphServiceSubscribedSkusCollectionRequestBuilder SubscribedSkus { get; }
     
         /// <summary>
         /// Gets the GraphServiceWorkbooks request builder.
@@ -182,9 +182,9 @@ namespace Microsoft.Graph
         IIdentityContainerRequestBuilder Identity { get; }
     
         /// <summary>
-        /// Gets the GraphServicePolicies request builder.
+        /// Gets the GraphServiceDirectory request builder.
         /// </summary>
-        IPolicyRootRequestBuilder Policies { get; }
+        IDirectoryRequestBuilder Directory { get; }
     
         /// <summary>
         /// Gets the GraphServiceMe request builder.
@@ -192,9 +192,9 @@ namespace Microsoft.Graph
         IUserRequestBuilder Me { get; }
     
         /// <summary>
-        /// Gets the GraphServiceDirectory request builder.
+        /// Gets the GraphServicePolicies request builder.
         /// </summary>
-        IDirectoryRequestBuilder Directory { get; }
+        IPolicyRootRequestBuilder Policies { get; }
     
         /// <summary>
         /// Gets the GraphServiceEducation request builder.
@@ -237,14 +237,14 @@ namespace Microsoft.Graph
         ISecurityRequestBuilder Security { get; }
     
         /// <summary>
-        /// Gets the GraphServiceTeamwork request builder.
-        /// </summary>
-        ITeamworkRequestBuilder Teamwork { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceAppCatalogs request builder.
         /// </summary>
         IAppCatalogsRequestBuilder AppCatalogs { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceTeamwork request builder.
+        /// </summary>
+        ITeamworkRequestBuilder Teamwork { get; }
     
         /// <summary>
         /// Gets the GraphServiceInformationProtection request builder.
