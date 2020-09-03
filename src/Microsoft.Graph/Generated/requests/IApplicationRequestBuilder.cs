@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IApplicationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for ExtensionProperties.
-        /// </summary>
-        /// <returns>The <see cref="IApplicationExtensionPropertiesCollectionRequestBuilder"/>.</returns>
-        IApplicationExtensionPropertiesCollectionRequestBuilder ExtensionProperties { get; }
-
-        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
         IDirectoryObjectWithReferenceRequestBuilder CreatedOnBehalfOf { get; }
+
+        /// <summary>
+        /// Gets the request builder for ExtensionProperties.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationExtensionPropertiesCollectionRequestBuilder"/>.</returns>
+        IApplicationExtensionPropertiesCollectionRequestBuilder ExtensionProperties { get; }
 
         /// <summary>
         /// Gets the request builder for HomeRealmDiscoveryPolicies.
@@ -56,16 +56,16 @@ namespace Microsoft.Graph
         IApplicationOwnersCollectionWithReferencesRequestBuilder Owners { get; }
 
         /// <summary>
-        /// Gets the request builder for TokenLifetimePolicies.
-        /// </summary>
-        /// <returns>The <see cref="IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
-        IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies { get; }
-
-        /// <summary>
         /// Gets the request builder for TokenIssuancePolicies.
         /// </summary>
         /// <returns>The <see cref="IApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
         IApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder TokenIssuancePolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for TokenLifetimePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies { get; }
     
         /// <summary>
         /// Gets the request builder for Logo.

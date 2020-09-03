@@ -31,6 +31,61 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets address.
+        /// Address of the school.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        public PhysicalAddress Address { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created by.
+        /// Entity who created the school.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet CreatedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets external id.
+        /// ID of school in syncing system.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
+        public string ExternalId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets external principal id.
+        /// ID of principal in syncing system.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalPrincipalId", Required = Newtonsoft.Json.Required.Default)]
+        public string ExternalPrincipalId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets fax.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fax", Required = Newtonsoft.Json.Required.Default)]
+        public string Fax { get; set; }
+    
+        /// <summary>
+        /// Gets or sets highest grade.
+        /// Highest grade taught.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "highestGrade", Required = Newtonsoft.Json.Required.Default)]
+        public string HighestGrade { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lowest grade.
+        /// Lowest grade taught.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lowestGrade", Required = Newtonsoft.Json.Required.Default)]
+        public string LowestGrade { get; set; }
+    
+        /// <summary>
+        /// Gets or sets phone.
+        /// Phone number of school.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phone", Required = Newtonsoft.Json.Required.Default)]
+        public string Phone { get; set; }
+    
+        /// <summary>
         /// Gets or sets principal email.
         /// Email address of the principal.
         /// </summary>
@@ -45,66 +100,11 @@ namespace Microsoft.Graph
         public string PrincipalName { get; set; }
     
         /// <summary>
-        /// Gets or sets external principal id.
-        /// ID of principal in syncing system.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalPrincipalId", Required = Newtonsoft.Json.Required.Default)]
-        public string ExternalPrincipalId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets lowest grade.
-        /// Lowest grade taught.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lowestGrade", Required = Newtonsoft.Json.Required.Default)]
-        public string LowestGrade { get; set; }
-    
-        /// <summary>
-        /// Gets or sets highest grade.
-        /// Highest grade taught.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "highestGrade", Required = Newtonsoft.Json.Required.Default)]
-        public string HighestGrade { get; set; }
-    
-        /// <summary>
         /// Gets or sets school number.
         /// School Number.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schoolNumber", Required = Newtonsoft.Json.Required.Default)]
         public string SchoolNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets external id.
-        /// ID of school in syncing system.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
-        public string ExternalId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets phone.
-        /// Phone number of school.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phone", Required = Newtonsoft.Json.Required.Default)]
-        public string Phone { get; set; }
-    
-        /// <summary>
-        /// Gets or sets fax.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fax", Required = Newtonsoft.Json.Required.Default)]
-        public string Fax { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created by.
-        /// Entity who created the school.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet CreatedBy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets address.
-        /// Address of the school.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
-        public PhysicalAddress Address { get; set; }
     
         /// <summary>
         /// Gets or sets classes.

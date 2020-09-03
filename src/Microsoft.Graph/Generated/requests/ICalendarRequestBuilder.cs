@@ -32,22 +32,16 @@ namespace Microsoft.Graph
         new ICalendarRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="ICalendarSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        ICalendarSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
-
-        /// <summary>
-        /// Gets the request builder for MultiValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="ICalendarMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        ICalendarMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
-
-        /// <summary>
         /// Gets the request builder for CalendarPermissions.
         /// </summary>
         /// <returns>The <see cref="ICalendarCalendarPermissionsCollectionRequestBuilder"/>.</returns>
         ICalendarCalendarPermissionsCollectionRequestBuilder CalendarPermissions { get; }
+
+        /// <summary>
+        /// Gets the request builder for CalendarView.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarCalendarViewCollectionRequestBuilder"/>.</returns>
+        ICalendarCalendarViewCollectionRequestBuilder CalendarView { get; }
 
         /// <summary>
         /// Gets the request builder for Events.
@@ -56,10 +50,16 @@ namespace Microsoft.Graph
         ICalendarEventsCollectionRequestBuilder Events { get; }
 
         /// <summary>
-        /// Gets the request builder for CalendarView.
+        /// Gets the request builder for MultiValueExtendedProperties.
         /// </summary>
-        /// <returns>The <see cref="ICalendarCalendarViewCollectionRequestBuilder"/>.</returns>
-        ICalendarCalendarViewCollectionRequestBuilder CalendarView { get; }
+        /// <returns>The <see cref="ICalendarMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        ICalendarMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
+
+        /// <summary>
+        /// Gets the request builder for SingleValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="ICalendarSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        ICalendarSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
     
         /// <summary>
         /// Gets the request builder for CalendarGetSchedule.

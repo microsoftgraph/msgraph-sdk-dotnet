@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets mobileAppIdentifier.
-        /// Deployment of an app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public MobileAppIdentifier MobileAppIdentifier { get; set; }
-    
-        /// <summary>
         /// Gets or sets configurationAppliedUserCount.
         /// Number of users the policy is applied.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationAppliedUserCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ConfigurationAppliedUserCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mobileAppIdentifier.
+        /// Deployment of an app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public MobileAppIdentifier MobileAppIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

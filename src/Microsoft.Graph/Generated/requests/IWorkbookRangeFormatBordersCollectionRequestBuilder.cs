@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         IWorkbookRangeBorderRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for WorkbookRangeBorderCount.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRangeBorderCountRequestBuilder"/>.</returns>
+        IWorkbookRangeBorderCountRequestBuilder Count();
+
+        /// <summary>
         /// Gets the request builder for WorkbookRangeBorderItemAt.
         /// </summary>
         /// <returns>The <see cref="IWorkbookRangeBorderItemAtRequestBuilder"/>.</returns>
         IWorkbookRangeBorderItemAtRequestBuilder ItemAt(
             Int32 index);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookRangeBorderCount.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookRangeBorderCountRequestBuilder"/>.</returns>
-        IWorkbookRangeBorderCountRequestBuilder Count();
     }
 }

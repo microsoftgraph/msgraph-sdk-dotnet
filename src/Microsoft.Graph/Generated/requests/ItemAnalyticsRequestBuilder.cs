@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ItemActivityStats.
-        /// </summary>
-        /// <returns>The <see cref="IItemAnalyticsItemActivityStatsCollectionRequestBuilder"/>.</returns>
-        public IItemAnalyticsItemActivityStatsCollectionRequestBuilder ItemActivityStats
-        {
-            get
-            {
-                return new ItemAnalyticsItemActivityStatsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("itemActivityStats"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for AllTime.
         /// </summary>
         /// <returns>The <see cref="IItemActivityStatWithReferenceRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ItemActivityStatWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("allTime"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ItemActivityStats.
+        /// </summary>
+        /// <returns>The <see cref="IItemAnalyticsItemActivityStatsCollectionRequestBuilder"/>.</returns>
+        public IItemAnalyticsItemActivityStatsCollectionRequestBuilder ItemActivityStats
+        {
+            get
+            {
+                return new ItemAnalyticsItemActivityStatsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("itemActivityStats"), this.Client);
             }
         }
 

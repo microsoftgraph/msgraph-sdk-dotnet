@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets title.
-        /// The title of the page.
+        /// Gets or sets content.
+        /// The page's HTML content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
-        public string Title { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created by app id.
-        /// The unique identifier of the application that created the page. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdByAppId", Required = Newtonsoft.Json.Required.Default)]
-        public string CreatedByAppId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets links.
-        /// Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it 's installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "links", Required = Newtonsoft.Json.Required.Default)]
-        public PageLinks Links { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        public Stream Content { get; set; }
     
         /// <summary>
         /// Gets or sets content url.
@@ -59,11 +45,11 @@ namespace Microsoft.Graph
         public string ContentUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets content.
-        /// The page's HTML content.
+        /// Gets or sets created by app id.
+        /// The unique identifier of the application that created the page. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
-        public Stream Content { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdByAppId", Required = Newtonsoft.Json.Required.Default)]
+        public string CreatedByAppId { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
@@ -80,11 +66,25 @@ namespace Microsoft.Graph
         public Int32? Level { get; set; }
     
         /// <summary>
+        /// Gets or sets links.
+        /// Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it 's installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "links", Required = Newtonsoft.Json.Required.Default)]
+        public PageLinks Links { get; set; }
+    
+        /// <summary>
         /// Gets or sets order.
         /// The order of the page within its parent section. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "order", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Order { get; set; }
+    
+        /// <summary>
+        /// Gets or sets title.
+        /// The title of the page.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
+        public string Title { get; set; }
     
         /// <summary>
         /// Gets or sets user tags.
@@ -93,18 +93,18 @@ namespace Microsoft.Graph
         public IEnumerable<string> UserTags { get; set; }
     
         /// <summary>
-        /// Gets or sets parent section.
-        /// The section that contains the page. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentSection", Required = Newtonsoft.Json.Required.Default)]
-        public OnenoteSection ParentSection { get; set; }
-    
-        /// <summary>
         /// Gets or sets parent notebook.
         /// The notebook that contains the page.  Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentNotebook", Required = Newtonsoft.Json.Required.Default)]
         public Notebook ParentNotebook { get; set; }
+    
+        /// <summary>
+        /// Gets or sets parent section.
+        /// The section that contains the page. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentSection", Required = Newtonsoft.Json.Required.Default)]
+        public OnenoteSection ParentSection { get; set; }
     
     }
 }

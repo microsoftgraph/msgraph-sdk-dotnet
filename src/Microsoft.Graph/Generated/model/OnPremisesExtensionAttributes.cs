@@ -38,6 +38,48 @@ namespace Microsoft.Graph
         public string ExtensionAttribute1 { get; set; }
     
         /// <summary>
+        /// Gets or sets extensionAttribute10.
+        /// Tenth customizable extension attribute.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute10", Required = Newtonsoft.Json.Required.Default)]
+        public string ExtensionAttribute10 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extensionAttribute11.
+        /// Eleventh customizable extension attribute.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute11", Required = Newtonsoft.Json.Required.Default)]
+        public string ExtensionAttribute11 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extensionAttribute12.
+        /// Twelfth customizable extension attribute.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute12", Required = Newtonsoft.Json.Required.Default)]
+        public string ExtensionAttribute12 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extensionAttribute13.
+        /// Thirteenth customizable extension attribute.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute13", Required = Newtonsoft.Json.Required.Default)]
+        public string ExtensionAttribute13 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extensionAttribute14.
+        /// Fourteenth customizable extension attribute.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute14", Required = Newtonsoft.Json.Required.Default)]
+        public string ExtensionAttribute14 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extensionAttribute15.
+        /// Fifteenth customizable extension attribute.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute15", Required = Newtonsoft.Json.Required.Default)]
+        public string ExtensionAttribute15 { get; set; }
+    
+        /// <summary>
         /// Gets or sets extensionAttribute2.
         /// Second customizable extension attribute.
         /// </summary>
@@ -92,48 +134,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute9", Required = Newtonsoft.Json.Required.Default)]
         public string ExtensionAttribute9 { get; set; }
-    
-        /// <summary>
-        /// Gets or sets extensionAttribute10.
-        /// Tenth customizable extension attribute.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute10", Required = Newtonsoft.Json.Required.Default)]
-        public string ExtensionAttribute10 { get; set; }
-    
-        /// <summary>
-        /// Gets or sets extensionAttribute11.
-        /// Eleventh customizable extension attribute.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute11", Required = Newtonsoft.Json.Required.Default)]
-        public string ExtensionAttribute11 { get; set; }
-    
-        /// <summary>
-        /// Gets or sets extensionAttribute12.
-        /// Twelfth customizable extension attribute.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute12", Required = Newtonsoft.Json.Required.Default)]
-        public string ExtensionAttribute12 { get; set; }
-    
-        /// <summary>
-        /// Gets or sets extensionAttribute13.
-        /// Thirteenth customizable extension attribute.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute13", Required = Newtonsoft.Json.Required.Default)]
-        public string ExtensionAttribute13 { get; set; }
-    
-        /// <summary>
-        /// Gets or sets extensionAttribute14.
-        /// Fourteenth customizable extension attribute.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute14", Required = Newtonsoft.Json.Required.Default)]
-        public string ExtensionAttribute14 { get; set; }
-    
-        /// <summary>
-        /// Gets or sets extensionAttribute15.
-        /// Fifteenth customizable extension attribute.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttribute15", Required = Newtonsoft.Json.Required.Default)]
-        public string ExtensionAttribute15 { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

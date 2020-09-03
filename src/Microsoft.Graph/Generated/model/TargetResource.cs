@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets displayName.
+        /// Indicates the visible name defined for the resource. Typically specified when the resource is created.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets groupType.
+        /// When type is set to Group, this indicates the group type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupType", Required = Newtonsoft.Json.Required.Default)]
+        public GroupType? GroupType { get; set; }
+    
+        /// <summary>
         /// Gets or sets id.
         /// Indicates the unique ID of the resource.
         /// </summary>
@@ -38,11 +52,11 @@ namespace Microsoft.Graph
         public string Id { get; set; }
     
         /// <summary>
-        /// Gets or sets displayName.
-        /// Indicates the visible name defined for the resource. Typically specified when the resource is created.
+        /// Gets or sets modifiedProperties.
+        /// Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ModifiedProperty> ModifiedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets type.
@@ -57,20 +71,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets groupType.
-        /// When type is set to Group, this indicates the group type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupType", Required = Newtonsoft.Json.Required.Default)]
-        public GroupType? GroupType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets modifiedProperties.
-        /// Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ModifiedProperty> ModifiedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

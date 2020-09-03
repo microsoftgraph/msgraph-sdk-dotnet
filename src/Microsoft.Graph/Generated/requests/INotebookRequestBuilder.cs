@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new INotebookRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Sections.
-        /// </summary>
-        /// <returns>The <see cref="INotebookSectionsCollectionRequestBuilder"/>.</returns>
-        INotebookSectionsCollectionRequestBuilder Sections { get; }
-
-        /// <summary>
         /// Gets the request builder for SectionGroups.
         /// </summary>
         /// <returns>The <see cref="INotebookSectionGroupsCollectionRequestBuilder"/>.</returns>
         INotebookSectionGroupsCollectionRequestBuilder SectionGroups { get; }
+
+        /// <summary>
+        /// Gets the request builder for Sections.
+        /// </summary>
+        /// <returns>The <see cref="INotebookSectionsCollectionRequestBuilder"/>.</returns>
+        INotebookSectionsCollectionRequestBuilder Sections { get; }
     
         /// <summary>
         /// Gets the request builder for NotebookCopyNotebook.

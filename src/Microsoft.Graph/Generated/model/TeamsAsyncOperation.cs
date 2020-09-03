@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets operation type.
-        /// Denotes which type of operation is being described.
+        /// Gets or sets attempts count.
+        /// Number of times the operation was attempted before being marked successful or failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operationType", Required = Newtonsoft.Json.Required.Default)]
-        public TeamsAsyncOperationType? OperationType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attemptsCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? AttemptsCount { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets status.
-        /// Operation status.
+        /// Gets or sets error.
+        /// Any error that causes the async operation to fail.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public TeamsAsyncOperationStatus? Status { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        public OperationError Error { get; set; }
     
         /// <summary>
         /// Gets or sets last action date time.
@@ -59,11 +59,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastActionDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets attempts count.
-        /// Number of times the operation was attempted before being marked successful or failed.
+        /// Gets or sets operation type.
+        /// Denotes which type of operation is being described.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attemptsCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? AttemptsCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operationType", Required = Newtonsoft.Json.Required.Default)]
+        public TeamsAsyncOperationType? OperationType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// Operation status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public TeamsAsyncOperationStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets target resource id.
@@ -78,13 +85,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetResourceLocation", Required = Newtonsoft.Json.Required.Default)]
         public string TargetResourceLocation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets error.
-        /// Any error that causes the async operation to fail.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
-        public OperationError Error { get; set; }
     
     }
 }

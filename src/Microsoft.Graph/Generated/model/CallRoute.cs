@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets routingType.
-        /// Possible values are: forwarded, lookup, selfFork.
+        /// Gets or sets final.
+        /// The identity that was resolved to in the call.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "routingType", Required = Newtonsoft.Json.Required.Default)]
-        public RoutingType? RoutingType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "final", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet Final { get; set; }
     
         /// <summary>
         /// Gets or sets original.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public IdentitySet Original { get; set; }
     
         /// <summary>
-        /// Gets or sets final.
-        /// The identity that was resolved to in the call.
+        /// Gets or sets routingType.
+        /// Possible values are: forwarded, lookup, selfFork.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "final", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet Final { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "routingType", Required = Newtonsoft.Json.Required.Default)]
+        public RoutingType? RoutingType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

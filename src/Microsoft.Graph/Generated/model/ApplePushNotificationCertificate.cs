@@ -38,18 +38,11 @@ namespace Microsoft.Graph
         public string AppleIdentifier { get; set; }
     
         /// <summary>
-        /// Gets or sets topic identifier.
-        /// Topic Id.
+        /// Gets or sets certificate.
+        /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topicIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string TopicIdentifier { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// Last modified date and time for Apple push notification certificate.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificate", Required = Newtonsoft.Json.Required.Default)]
+        public string Certificate { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
@@ -59,11 +52,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets certificate.
-        /// Not yet documented
+        /// Gets or sets last modified date time.
+        /// Last modified date and time for Apple push notification certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificate", Required = Newtonsoft.Json.Required.Default)]
-        public string Certificate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets topic identifier.
+        /// Topic Id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topicIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string TopicIdentifier { get; set; }
     
     }
 }

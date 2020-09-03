@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets visual elements.
-        /// Required. The object containing information to render the activity in the UX.
+        /// Gets or sets activation url.
+        /// Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visualElements", Required = Newtonsoft.Json.Required.Default)]
-        public VisualInfo VisualElements { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activationUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string ActivationUrl { get; set; }
     
         /// <summary>
         /// Gets or sets activity source host.
@@ -43,13 +43,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activitySourceHost", Required = Newtonsoft.Json.Required.Default)]
         public string ActivitySourceHost { get; set; }
-    
-        /// <summary>
-        /// Gets or sets activation url.
-        /// Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activationUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string ActivationUrl { get; set; }
     
         /// <summary>
         /// Gets or sets app activity id.
@@ -64,6 +57,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string AppDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content info.
+        /// Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentInfo", Required = Newtonsoft.Json.Required.Default)]
+        public Newtonsoft.Json.Linq.JToken ContentInfo { get; set; }
     
         /// <summary>
         /// Gets or sets content url.
@@ -101,6 +101,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets status.
+        /// Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public Status? Status { get; set; }
+    
+        /// <summary>
         /// Gets or sets user timezone.
         /// Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
         /// </summary>
@@ -108,18 +115,11 @@ namespace Microsoft.Graph
         public string UserTimezone { get; set; }
     
         /// <summary>
-        /// Gets or sets content info.
-        /// Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
+        /// Gets or sets visual elements.
+        /// Required. The object containing information to render the activity in the UX.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentInfo", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken ContentInfo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public Status? Status { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visualElements", Required = Newtonsoft.Json.Required.Default)]
+        public VisualInfo VisualElements { get; set; }
     
         /// <summary>
         /// Gets or sets history items.

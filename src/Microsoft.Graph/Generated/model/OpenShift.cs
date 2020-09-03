@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets shared open shift.
-        /// A published open shift.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedOpenShift", Required = Newtonsoft.Json.Required.Default)]
-        public OpenShiftItem SharedOpenShift { get; set; }
-    
-        /// <summary>
         /// Gets or sets draft open shift.
         /// An unpublished open shift.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedulingGroupId", Required = Newtonsoft.Json.Required.Default)]
         public string SchedulingGroupId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shared open shift.
+        /// A published open shift.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedOpenShift", Required = Newtonsoft.Json.Required.Default)]
+        public OpenShiftItem SharedOpenShift { get; set; }
     
     }
 }

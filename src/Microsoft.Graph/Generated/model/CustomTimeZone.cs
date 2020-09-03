@@ -37,18 +37,18 @@ namespace Microsoft.Graph
         public Int32? Bias { get; set; }
     
         /// <summary>
-        /// Gets or sets standardOffset.
-        /// Specifies when the time zone switches from daylight saving time to standard time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "standardOffset", Required = Newtonsoft.Json.Required.Default)]
-        public StandardTimeZoneOffset StandardOffset { get; set; }
-    
-        /// <summary>
         /// Gets or sets daylightOffset.
         /// Specifies when the time zone switches from standard time to daylight saving time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "daylightOffset", Required = Newtonsoft.Json.Required.Default)]
         public DaylightTimeZoneOffset DaylightOffset { get; set; }
+    
+        /// <summary>
+        /// Gets or sets standardOffset.
+        /// Specifies when the time zone switches from daylight saving time to standard time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "standardOffset", Required = Newtonsoft.Json.Required.Default)]
+        public StandardTimeZoneOffset StandardOffset { get; set; }
     
     }
 }

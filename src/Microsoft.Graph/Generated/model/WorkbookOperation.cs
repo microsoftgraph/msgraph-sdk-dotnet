@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets status.
-        /// The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
+        /// Gets or sets error.
+        /// The error returned by the operation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public WorkbookOperationStatus? Status { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        public WorkbookOperationError Error { get; set; }
     
         /// <summary>
         /// Gets or sets resource location.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public string ResourceLocation { get; set; }
     
         /// <summary>
-        /// Gets or sets error.
-        /// The error returned by the operation.
+        /// Gets or sets status.
+        /// The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
-        public WorkbookOperationError Error { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public WorkbookOperationStatus? Status { get; set; }
     
     }
 }

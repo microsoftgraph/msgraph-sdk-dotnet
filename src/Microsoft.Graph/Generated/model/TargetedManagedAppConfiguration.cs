@@ -52,18 +52,18 @@ namespace Microsoft.Graph
         public ITargetedManagedAppConfigurationAppsCollectionPage Apps { get; set; }
     
         /// <summary>
-        /// Gets or sets deployment summary.
-        /// Navigation property to deployment summary of the configuration.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentSummary", Required = Newtonsoft.Json.Required.Default)]
-        public ManagedAppPolicyDeploymentSummary DeploymentSummary { get; set; }
-    
-        /// <summary>
         /// Gets or sets assignments.
         /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
         public ITargetedManagedAppConfigurationAssignmentsCollectionPage Assignments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deployment summary.
+        /// Navigation property to deployment summary of the configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentSummary", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedAppPolicyDeploymentSummary DeploymentSummary { get; set; }
     
     }
 }

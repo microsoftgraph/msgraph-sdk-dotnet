@@ -63,6 +63,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Comments.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookCommentsCollectionRequestBuilder"/>.</returns>
+        public IWorkbookCommentsCollectionRequestBuilder Comments
+        {
+            get
+            {
+                return new WorkbookCommentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("comments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Functions.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsRequestBuilder Functions
+        {
+            get
+            {
+                return new WorkbookFunctionsRequestBuilder(this.AppendSegmentToRequestUrl("functions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Names.
         /// </summary>
         /// <returns>The <see cref="IWorkbookNamesCollectionRequestBuilder"/>.</returns>
@@ -71,6 +95,18 @@ namespace Microsoft.Graph
             get
             {
                 return new WorkbookNamesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("names"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Operations.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookOperationsCollectionRequestBuilder"/>.</returns>
+        public IWorkbookOperationsCollectionRequestBuilder Operations
+        {
+            get
+            {
+                return new WorkbookOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
             }
         }
 
@@ -97,43 +133,18 @@ namespace Microsoft.Graph
                 return new WorkbookWorksheetsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("worksheets"), this.Client);
             }
         }
-
-        /// <summary>
-        /// Gets the request builder for Comments.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookCommentsCollectionRequestBuilder"/>.</returns>
-        public IWorkbookCommentsCollectionRequestBuilder Comments
-        {
-            get
-            {
-                return new WorkbookCommentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("comments"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Functions.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsRequestBuilder Functions
-        {
-            get
-            {
-                return new WorkbookFunctionsRequestBuilder(this.AppendSegmentToRequestUrl("functions"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Operations.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookOperationsCollectionRequestBuilder"/>.</returns>
-        public IWorkbookOperationsCollectionRequestBuilder Operations
-        {
-            get
-            {
-                return new WorkbookOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
-            }
-        }
     
+        /// <summary>
+        /// Gets the request builder for WorkbookCloseSession.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookCloseSessionRequestBuilder"/>.</returns>
+        public IWorkbookCloseSessionRequestBuilder CloseSession()
+        {
+            return new WorkbookCloseSessionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.closeSession"),
+                this.Client);
+        }
+
         /// <summary>
         /// Gets the request builder for WorkbookCreateSession.
         /// </summary>
@@ -145,17 +156,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.createSession"),
                 this.Client,
                 persistChanges);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookCloseSession.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookCloseSessionRequestBuilder"/>.</returns>
-        public IWorkbookCloseSessionRequestBuilder CloseSession()
-        {
-            return new WorkbookCloseSessionRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.closeSession"),
-                this.Client);
         }
 
         /// <summary>

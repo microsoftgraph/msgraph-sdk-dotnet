@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public ActionState? ActionState { get; set; }
     
         /// <summary>
-        /// Gets or sets startDateTime.
-        /// Time the action was initiated
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets lastUpdatedDateTime.
         /// Time the action state was last updated
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets startDateTime.
+        /// Time the action was initiated
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

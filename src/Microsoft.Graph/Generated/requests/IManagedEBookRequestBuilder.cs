@@ -38,16 +38,16 @@ namespace Microsoft.Graph
         IManagedEBookAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
-        /// Gets the request builder for InstallSummary.
-        /// </summary>
-        /// <returns>The <see cref="IEBookInstallSummaryRequestBuilder"/>.</returns>
-        IEBookInstallSummaryRequestBuilder InstallSummary { get; }
-
-        /// <summary>
         /// Gets the request builder for DeviceStates.
         /// </summary>
         /// <returns>The <see cref="IManagedEBookDeviceStatesCollectionRequestBuilder"/>.</returns>
         IManagedEBookDeviceStatesCollectionRequestBuilder DeviceStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for InstallSummary.
+        /// </summary>
+        /// <returns>The <see cref="IEBookInstallSummaryRequestBuilder"/>.</returns>
+        IEBookInstallSummaryRequestBuilder InstallSummary { get; }
 
         /// <summary>
         /// Gets the request builder for UserStateSummary.

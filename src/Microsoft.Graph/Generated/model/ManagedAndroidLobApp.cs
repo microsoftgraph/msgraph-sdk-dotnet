@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets package id.
-        /// The package identifier.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageId", Required = Newtonsoft.Json.Required.Default)]
-        public string PackageId { get; set; }
-    
-        /// <summary>
         /// Gets or sets minimum supported operating system.
         /// The value for the minimum applicable operating system.
         /// </summary>
@@ -45,11 +38,11 @@ namespace Microsoft.Graph
         public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
     
         /// <summary>
-        /// Gets or sets version name.
-        /// The version name of managed Android Line of Business (LoB) app.
+        /// Gets or sets package id.
+        /// The package identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionName", Required = Newtonsoft.Json.Required.Default)]
-        public string VersionName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageId", Required = Newtonsoft.Json.Required.Default)]
+        public string PackageId { get; set; }
     
         /// <summary>
         /// Gets or sets version code.
@@ -57,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionCode", Required = Newtonsoft.Json.Required.Default)]
         public string VersionCode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets version name.
+        /// The version name of managed Android Line of Business (LoB) app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionName", Required = Newtonsoft.Json.Required.Default)]
+        public string VersionName { get; set; }
     
     }
 }

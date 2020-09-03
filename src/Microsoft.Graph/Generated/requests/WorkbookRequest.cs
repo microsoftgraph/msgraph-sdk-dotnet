@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (workbookToInitialize != null && workbookToInitialize.AdditionalData != null)
             {
 
+                if (workbookToInitialize.Comments != null && workbookToInitialize.Comments.CurrentPage != null)
+                {
+                    workbookToInitialize.Comments.AdditionalData = workbookToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    workbookToInitialize.AdditionalData.TryGetValue("comments@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        workbookToInitialize.Comments.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (workbookToInitialize.Names != null && workbookToInitialize.Names.CurrentPage != null)
                 {
                     workbookToInitialize.Names.AdditionalData = workbookToInitialize.AdditionalData;
@@ -245,6 +261,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         workbookToInitialize.Names.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (workbookToInitialize.Operations != null && workbookToInitialize.Operations.CurrentPage != null)
+                {
+                    workbookToInitialize.Operations.AdditionalData = workbookToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    workbookToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        workbookToInitialize.Operations.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -277,38 +309,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         workbookToInitialize.Worksheets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (workbookToInitialize.Comments != null && workbookToInitialize.Comments.CurrentPage != null)
-                {
-                    workbookToInitialize.Comments.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("comments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookToInitialize.Comments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (workbookToInitialize.Operations != null && workbookToInitialize.Operations.CurrentPage != null)
-                {
-                    workbookToInitialize.Operations.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookToInitialize.Operations.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -75,18 +75,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Sections.
-        /// </summary>
-        /// <returns>The <see cref="ISectionGroupSectionsCollectionRequestBuilder"/>.</returns>
-        public ISectionGroupSectionsCollectionRequestBuilder Sections
-        {
-            get
-            {
-                return new SectionGroupSectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sections"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for SectionGroups.
         /// </summary>
         /// <returns>The <see cref="ISectionGroupSectionGroupsCollectionRequestBuilder"/>.</returns>
@@ -95,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new SectionGroupSectionGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sectionGroups"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Sections.
+        /// </summary>
+        /// <returns>The <see cref="ISectionGroupSectionsCollectionRequestBuilder"/>.</returns>
+        public ISectionGroupSectionsCollectionRequestBuilder Sections
+        {
+            get
+            {
+                return new SectionGroupSectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sections"), this.Client);
             }
         }
     

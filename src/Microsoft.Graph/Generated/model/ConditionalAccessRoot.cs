@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets policies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policies", Required = Newtonsoft.Json.Required.Default)]
-        public IConditionalAccessRootPoliciesCollectionPage Policies { get; set; }
-    
-        /// <summary>
         /// Gets or sets named locations.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "namedLocations", Required = Newtonsoft.Json.Required.Default)]
         public IConditionalAccessRootNamedLocationsCollectionPage NamedLocations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policies", Required = Newtonsoft.Json.Required.Default)]
+        public IConditionalAccessRootPoliciesCollectionPage Policies { get; set; }
     
     }
 }

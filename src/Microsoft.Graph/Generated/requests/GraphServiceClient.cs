@@ -109,17 +109,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceDirectoryObjects request builder.
-        /// </summary>
-        public IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects
-        {
-            get
-            {
-                return new GraphServiceDirectoryObjectsCollectionRequestBuilder(this.BaseUrl + "/directoryObjects", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceContacts request builder.
         /// </summary>
         public IGraphServiceContactsCollectionRequestBuilder Contacts
@@ -127,6 +116,17 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceContactsCollectionRequestBuilder(this.BaseUrl + "/contacts", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceContracts request builder.
+        /// </summary>
+        public IGraphServiceContractsCollectionRequestBuilder Contracts
+        {
+            get
+            {
+                return new GraphServiceContractsCollectionRequestBuilder(this.BaseUrl + "/contracts", this);
             }
         }
     
@@ -142,35 +142,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceDomains request builder.
+        /// Gets the GraphServiceDirectoryObjects request builder.
         /// </summary>
-        public IGraphServiceDomainsCollectionRequestBuilder Domains
+        public IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects
         {
             get
             {
-                return new GraphServiceDomainsCollectionRequestBuilder(this.BaseUrl + "/domains", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceDomainDnsRecords request builder.
-        /// </summary>
-        public IGraphServiceDomainDnsRecordsCollectionRequestBuilder DomainDnsRecords
-        {
-            get
-            {
-                return new GraphServiceDomainDnsRecordsCollectionRequestBuilder(this.BaseUrl + "/domainDnsRecords", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceGroups request builder.
-        /// </summary>
-        public IGraphServiceGroupsCollectionRequestBuilder Groups
-        {
-            get
-            {
-                return new GraphServiceGroupsCollectionRequestBuilder(this.BaseUrl + "/groups", this);
+                return new GraphServiceDirectoryObjectsCollectionRequestBuilder(this.BaseUrl + "/directoryObjects", this);
             }
         }
     
@@ -197,13 +175,35 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceOrganization request builder.
+        /// Gets the GraphServiceDomainDnsRecords request builder.
         /// </summary>
-        public IGraphServiceOrganizationCollectionRequestBuilder Organization
+        public IGraphServiceDomainDnsRecordsCollectionRequestBuilder DomainDnsRecords
         {
             get
             {
-                return new GraphServiceOrganizationCollectionRequestBuilder(this.BaseUrl + "/organization", this);
+                return new GraphServiceDomainDnsRecordsCollectionRequestBuilder(this.BaseUrl + "/domainDnsRecords", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceDomains request builder.
+        /// </summary>
+        public IGraphServiceDomainsCollectionRequestBuilder Domains
+        {
+            get
+            {
+                return new GraphServiceDomainsCollectionRequestBuilder(this.BaseUrl + "/domains", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceGroups request builder.
+        /// </summary>
+        public IGraphServiceGroupsCollectionRequestBuilder Groups
+        {
+            get
+            {
+                return new GraphServiceGroupsCollectionRequestBuilder(this.BaseUrl + "/groups", this);
             }
         }
     
@@ -230,24 +230,24 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceSubscribedSkus request builder.
+        /// Gets the GraphServiceOauth2PermissionGrants request builder.
         /// </summary>
-        public IGraphServiceSubscribedSkusCollectionRequestBuilder SubscribedSkus
+        public IGraphServiceOauth2PermissionGrantsCollectionRequestBuilder Oauth2PermissionGrants
         {
             get
             {
-                return new GraphServiceSubscribedSkusCollectionRequestBuilder(this.BaseUrl + "/subscribedSkus", this);
+                return new GraphServiceOauth2PermissionGrantsCollectionRequestBuilder(this.BaseUrl + "/oauth2PermissionGrants", this);
             }
         }
     
         /// <summary>
-        /// Gets the GraphServiceContracts request builder.
+        /// Gets the GraphServiceOrganization request builder.
         /// </summary>
-        public IGraphServiceContractsCollectionRequestBuilder Contracts
+        public IGraphServiceOrganizationCollectionRequestBuilder Organization
         {
             get
             {
-                return new GraphServiceContractsCollectionRequestBuilder(this.BaseUrl + "/contracts", this);
+                return new GraphServiceOrganizationCollectionRequestBuilder(this.BaseUrl + "/organization", this);
             }
         }
     
@@ -263,13 +263,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceOauth2PermissionGrants request builder.
+        /// Gets the GraphServiceSubscribedSkus request builder.
         /// </summary>
-        public IGraphServiceOauth2PermissionGrantsCollectionRequestBuilder Oauth2PermissionGrants
+        public IGraphServiceSubscribedSkusCollectionRequestBuilder SubscribedSkus
         {
             get
             {
-                return new GraphServiceOauth2PermissionGrantsCollectionRequestBuilder(this.BaseUrl + "/oauth2PermissionGrants", this);
+                return new GraphServiceSubscribedSkusCollectionRequestBuilder(this.BaseUrl + "/subscribedSkus", this);
             }
         }
     
@@ -417,13 +417,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServicePolicies request builder.
+        /// Gets the GraphServiceDirectory request builder.
         /// </summary>
-        public IPolicyRootRequestBuilder Policies
+        public IDirectoryRequestBuilder Directory
         {
             get
             {
-                return new PolicyRootRequestBuilder(this.BaseUrl + "/policies", this);
+                return new DirectoryRequestBuilder(this.BaseUrl + "/directory", this);
             }
         }
     
@@ -439,13 +439,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceDirectory request builder.
+        /// Gets the GraphServicePolicies request builder.
         /// </summary>
-        public IDirectoryRequestBuilder Directory
+        public IPolicyRootRequestBuilder Policies
         {
             get
             {
-                return new DirectoryRequestBuilder(this.BaseUrl + "/directory", this);
+                return new PolicyRootRequestBuilder(this.BaseUrl + "/policies", this);
             }
         }
     
@@ -538,17 +538,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceTeamwork request builder.
-        /// </summary>
-        public ITeamworkRequestBuilder Teamwork
-        {
-            get
-            {
-                return new TeamworkRequestBuilder(this.BaseUrl + "/teamwork", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceAppCatalogs request builder.
         /// </summary>
         public IAppCatalogsRequestBuilder AppCatalogs
@@ -556,6 +545,17 @@ namespace Microsoft.Graph
             get
             {
                 return new AppCatalogsRequestBuilder(this.BaseUrl + "/appCatalogs", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceTeamwork request builder.
+        /// </summary>
+        public ITeamworkRequestBuilder Teamwork
+        {
+            get
+            {
+                return new TeamworkRequestBuilder(this.BaseUrl + "/teamwork", this);
             }
         }
     

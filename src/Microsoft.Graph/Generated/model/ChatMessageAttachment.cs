@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
-        /// Read-only. Unique id of the attachment.
+        /// Gets or sets content.
+        /// The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        public string Content { get; set; }
     
         /// <summary>
         /// Gets or sets contentType.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public string ContentUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets content.
-        /// The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
+        /// Gets or sets id.
+        /// Read-only. Unique id of the attachment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
-        public string Content { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets name.

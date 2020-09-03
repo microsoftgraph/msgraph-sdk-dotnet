@@ -63,14 +63,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Members.
+        /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
-        /// <returns>The <see cref="IGroupMembersCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IGroupMembersCollectionWithReferencesRequestBuilder Members
+        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
+        public IDirectoryObjectWithReferenceRequestBuilder CreatedOnBehalfOf
         {
             get
             {
-                return new GroupMembersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
+                return new DirectoryObjectWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("createdOnBehalfOf"), this.Client);
             }
         }
 
@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="IGroupMembersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IGroupMembersCollectionWithReferencesRequestBuilder Members
+        {
+            get
+            {
+                return new GroupMembersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for MembersWithLicenseErrors.
         /// </summary>
         /// <returns>The <see cref="IGroupMembersWithLicenseErrorsCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -95,42 +107,6 @@ namespace Microsoft.Graph
             get
             {
                 return new GroupMembersWithLicenseErrorsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("membersWithLicenseErrors"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for TransitiveMembers.
-        /// </summary>
-        /// <returns>The <see cref="IGroupTransitiveMembersCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IGroupTransitiveMembersCollectionWithReferencesRequestBuilder TransitiveMembers
-        {
-            get
-            {
-                return new GroupTransitiveMembersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("transitiveMembers"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for TransitiveMemberOf.
-        /// </summary>
-        /// <returns>The <see cref="IGroupTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IGroupTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf
-        {
-            get
-            {
-                return new GroupTransitiveMemberOfCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("transitiveMemberOf"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for CreatedOnBehalfOf.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
-        public IDirectoryObjectWithReferenceRequestBuilder CreatedOnBehalfOf
-        {
-            get
-            {
-                return new DirectoryObjectWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("createdOnBehalfOf"), this.Client);
             }
         }
 
@@ -159,26 +135,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Conversations.
+        /// Gets the request builder for TransitiveMemberOf.
         /// </summary>
-        /// <returns>The <see cref="IGroupConversationsCollectionRequestBuilder"/>.</returns>
-        public IGroupConversationsCollectionRequestBuilder Conversations
+        /// <returns>The <see cref="IGroupTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IGroupTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf
         {
             get
             {
-                return new GroupConversationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("conversations"), this.Client);
+                return new GroupTransitiveMemberOfCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("transitiveMemberOf"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for Photos.
+        /// Gets the request builder for TransitiveMembers.
         /// </summary>
-        /// <returns>The <see cref="IGroupPhotosCollectionRequestBuilder"/>.</returns>
-        public IGroupPhotosCollectionRequestBuilder Photos
+        /// <returns>The <see cref="IGroupTransitiveMembersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IGroupTransitiveMembersCollectionWithReferencesRequestBuilder TransitiveMembers
         {
             get
             {
-                return new GroupPhotosCollectionRequestBuilder(this.AppendSegmentToRequestUrl("photos"), this.Client);
+                return new GroupTransitiveMembersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("transitiveMembers"), this.Client);
             }
         }
 
@@ -191,30 +167,6 @@ namespace Microsoft.Graph
             get
             {
                 return new GroupAcceptedSendersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("acceptedSenders"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for RejectedSenders.
-        /// </summary>
-        /// <returns>The <see cref="IGroupRejectedSendersCollectionRequestBuilder"/>.</returns>
-        public IGroupRejectedSendersCollectionRequestBuilder RejectedSenders
-        {
-            get
-            {
-                return new GroupRejectedSendersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("rejectedSenders"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Threads.
-        /// </summary>
-        /// <returns>The <see cref="IGroupThreadsCollectionRequestBuilder"/>.</returns>
-        public IGroupThreadsCollectionRequestBuilder Threads
-        {
-            get
-            {
-                return new GroupThreadsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("threads"), this.Client);
             }
         }
 
@@ -243,6 +195,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Conversations.
+        /// </summary>
+        /// <returns>The <see cref="IGroupConversationsCollectionRequestBuilder"/>.</returns>
+        public IGroupConversationsCollectionRequestBuilder Conversations
+        {
+            get
+            {
+                return new GroupConversationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("conversations"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Events.
         /// </summary>
         /// <returns>The <see cref="IGroupEventsCollectionRequestBuilder"/>.</returns>
@@ -263,6 +227,42 @@ namespace Microsoft.Graph
             get
             {
                 return new ProfilePhotoRequestBuilder(this.AppendSegmentToRequestUrl("photo"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Photos.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPhotosCollectionRequestBuilder"/>.</returns>
+        public IGroupPhotosCollectionRequestBuilder Photos
+        {
+            get
+            {
+                return new GroupPhotosCollectionRequestBuilder(this.AppendSegmentToRequestUrl("photos"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RejectedSenders.
+        /// </summary>
+        /// <returns>The <see cref="IGroupRejectedSendersCollectionRequestBuilder"/>.</returns>
+        public IGroupRejectedSendersCollectionRequestBuilder RejectedSenders
+        {
+            get
+            {
+                return new GroupRejectedSendersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("rejectedSenders"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Threads.
+        /// </summary>
+        /// <returns>The <see cref="IGroupThreadsCollectionRequestBuilder"/>.</returns>
+        public IGroupThreadsCollectionRequestBuilder Threads
+        {
+            get
+            {
+                return new GroupThreadsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("threads"), this.Client);
             }
         }
 
@@ -395,28 +395,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for GroupSubscribeByMail.
-        /// </summary>
-        /// <returns>The <see cref="IGroupSubscribeByMailRequestBuilder"/>.</returns>
-        public IGroupSubscribeByMailRequestBuilder SubscribeByMail()
-        {
-            return new GroupSubscribeByMailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.subscribeByMail"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for GroupUnsubscribeByMail.
-        /// </summary>
-        /// <returns>The <see cref="IGroupUnsubscribeByMailRequestBuilder"/>.</returns>
-        public IGroupUnsubscribeByMailRequestBuilder UnsubscribeByMail()
-        {
-            return new GroupUnsubscribeByMailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.unsubscribeByMail"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for GroupAddFavorite.
         /// </summary>
         /// <returns>The <see cref="IGroupAddFavoriteRequestBuilder"/>.</returns>
@@ -446,6 +424,28 @@ namespace Microsoft.Graph
         {
             return new GroupResetUnseenCountRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.resetUnseenCount"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for GroupSubscribeByMail.
+        /// </summary>
+        /// <returns>The <see cref="IGroupSubscribeByMailRequestBuilder"/>.</returns>
+        public IGroupSubscribeByMailRequestBuilder SubscribeByMail()
+        {
+            return new GroupSubscribeByMailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.subscribeByMail"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for GroupUnsubscribeByMail.
+        /// </summary>
+        /// <returns>The <see cref="IGroupUnsubscribeByMailRequestBuilder"/>.</returns>
+        public IGroupUnsubscribeByMailRequestBuilder UnsubscribeByMail()
+        {
+            return new GroupUnsubscribeByMailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unsubscribeByMail"),
                 this.Client);
         }
 

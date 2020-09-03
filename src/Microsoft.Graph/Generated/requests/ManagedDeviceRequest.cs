@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (managedDeviceToInitialize != null && managedDeviceToInitialize.AdditionalData != null)
             {
 
-                if (managedDeviceToInitialize.DeviceConfigurationStates != null && managedDeviceToInitialize.DeviceConfigurationStates.CurrentPage != null)
-                {
-                    managedDeviceToInitialize.DeviceConfigurationStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceToInitialize.AdditionalData.TryGetValue("deviceConfigurationStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceToInitialize.DeviceConfigurationStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (managedDeviceToInitialize.DeviceCompliancePolicyStates != null && managedDeviceToInitialize.DeviceCompliancePolicyStates.CurrentPage != null)
                 {
                     managedDeviceToInitialize.DeviceCompliancePolicyStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         managedDeviceToInitialize.DeviceCompliancePolicyStates.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (managedDeviceToInitialize.DeviceConfigurationStates != null && managedDeviceToInitialize.DeviceConfigurationStates.CurrentPage != null)
+                {
+                    managedDeviceToInitialize.DeviceConfigurationStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedDeviceToInitialize.AdditionalData.TryGetValue("deviceConfigurationStates@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedDeviceToInitialize.DeviceConfigurationStates.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

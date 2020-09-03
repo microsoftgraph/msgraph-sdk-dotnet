@@ -30,14 +30,14 @@ namespace Microsoft.Graph
         Contributor = 1,
 	
         /// <summary>
-        /// Reader
-        /// </summary>
-        Reader = 2,
-	
-        /// <summary>
         /// None
         /// </summary>
         None = -1,
+	
+        /// <summary>
+        /// Reader
+        /// </summary>
+        Reader = 2,
 	
     }
 }

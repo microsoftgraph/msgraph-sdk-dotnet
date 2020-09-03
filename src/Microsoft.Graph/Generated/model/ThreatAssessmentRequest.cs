@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets created date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// Gets or sets category.
+        /// The threat category. Possible values are: spam, phishing, malware.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
+        public ThreatCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets content type.
@@ -45,25 +45,25 @@ namespace Microsoft.Graph
         public ThreatAssessmentContentType? ContentType { get; set; }
     
         /// <summary>
+        /// Gets or sets created by.
+        /// The threat assessment request creator.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet CreatedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets expected assessment.
         /// The expected assessment from submitter. Possible values are: block, unblock.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expectedAssessment", Required = Newtonsoft.Json.Required.Default)]
         public ThreatExpectedAssessment? ExpectedAssessment { get; set; }
-    
-        /// <summary>
-        /// Gets or sets category.
-        /// The threat category. Possible values are: spam, phishing, malware.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
-        public ThreatCategory? Category { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// The assessment process status. Possible values are: pending, completed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public ThreatAssessmentStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets request source.
@@ -73,11 +73,11 @@ namespace Microsoft.Graph
         public ThreatAssessmentRequestSource? RequestSource { get; set; }
     
         /// <summary>
-        /// Gets or sets created by.
-        /// The threat assessment request creator.
+        /// Gets or sets status.
+        /// The assessment process status. Possible values are: pending, completed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet CreatedBy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public ThreatAssessmentStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets results.

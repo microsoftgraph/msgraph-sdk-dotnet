@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (chatMessageToInitialize != null && chatMessageToInitialize.AdditionalData != null)
             {
 
-                if (chatMessageToInitialize.Replies != null && chatMessageToInitialize.Replies.CurrentPage != null)
-                {
-                    chatMessageToInitialize.Replies.AdditionalData = chatMessageToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    chatMessageToInitialize.AdditionalData.TryGetValue("replies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        chatMessageToInitialize.Replies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (chatMessageToInitialize.HostedContents != null && chatMessageToInitialize.HostedContents.CurrentPage != null)
                 {
                     chatMessageToInitialize.HostedContents.AdditionalData = chatMessageToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         chatMessageToInitialize.HostedContents.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (chatMessageToInitialize.Replies != null && chatMessageToInitialize.Replies.CurrentPage != null)
+                {
+                    chatMessageToInitialize.Replies.AdditionalData = chatMessageToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    chatMessageToInitialize.AdditionalData.TryGetValue("replies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        chatMessageToInitialize.Replies.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

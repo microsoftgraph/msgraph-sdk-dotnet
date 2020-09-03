@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets v10_0.
+        /// Windows version 10.0 or later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_0", Required = Newtonsoft.Json.Required.Default)]
+        public bool? V10_0 { get; set; }
+    
+        /// <summary>
         /// Gets or sets v8_0.
         /// Windows version 8.0 or later.
         /// </summary>
@@ -43,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v8_1", Required = Newtonsoft.Json.Required.Default)]
         public bool? V8_1 { get; set; }
-    
-        /// <summary>
-        /// Gets or sets v10_0.
-        /// Windows version 10.0 or later.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_0", Required = Newtonsoft.Json.Required.Default)]
-        public bool? V10_0 { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IItemAnalyticsRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for ItemActivityStats.
-        /// </summary>
-        /// <returns>The <see cref="IItemAnalyticsItemActivityStatsCollectionRequestBuilder"/>.</returns>
-        IItemAnalyticsItemActivityStatsCollectionRequestBuilder ItemActivityStats { get; }
-
-        /// <summary>
         /// Gets the request builder for AllTime.
         /// </summary>
         /// <returns>The <see cref="IItemActivityStatWithReferenceRequestBuilder"/>.</returns>
         IItemActivityStatWithReferenceRequestBuilder AllTime { get; }
+
+        /// <summary>
+        /// Gets the request builder for ItemActivityStats.
+        /// </summary>
+        /// <returns>The <see cref="IItemAnalyticsItemActivityStatsCollectionRequestBuilder"/>.</returns>
+        IItemAnalyticsItemActivityStatsCollectionRequestBuilder ItemActivityStats { get; }
 
         /// <summary>
         /// Gets the request builder for LastSevenDays.

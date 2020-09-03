@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Categories.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IMobileAppCategoriesCollectionWithReferencesRequestBuilder Categories
-        {
-            get
-            {
-                return new MobileAppCategoriesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IMobileAppAssignmentsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new MobileAppAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Categories.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IMobileAppCategoriesCollectionWithReferencesRequestBuilder Categories
+        {
+            get
+            {
+                return new MobileAppCategoriesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
             }
         }
     

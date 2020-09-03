@@ -47,6 +47,12 @@ namespace Microsoft.Graph
             Newtonsoft.Json.Linq.JToken sourceData = null);
 
         /// <summary>
+        /// Gets the request builder for WorkbookChartCount.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartCountRequestBuilder"/>.</returns>
+        IWorkbookChartCountRequestBuilder Count();
+
+        /// <summary>
         /// Gets the request builder for WorkbookChartItem.
         /// </summary>
         /// <returns>The <see cref="IWorkbookChartItemRequestBuilder"/>.</returns>
@@ -59,11 +65,5 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookChartItemAtRequestBuilder"/>.</returns>
         IWorkbookChartItemAtRequestBuilder ItemAt(
             Int32 index);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookChartCount.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookChartCountRequestBuilder"/>.</returns>
-        IWorkbookChartCountRequestBuilder Count();
     }
 }

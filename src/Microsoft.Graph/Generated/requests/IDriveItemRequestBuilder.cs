@@ -132,12 +132,6 @@ namespace Microsoft.Graph
         IDriveItemFollowRequestBuilder Follow();
 
         /// <summary>
-        /// Gets the request builder for DriveItemUnfollow.
-        /// </summary>
-        /// <returns>The <see cref="IDriveItemUnfollowRequestBuilder"/>.</returns>
-        IDriveItemUnfollowRequestBuilder Unfollow();
-
-        /// <summary>
         /// Gets the request builder for DriveItemInvite.
         /// </summary>
         /// <returns>The <see cref="IDriveItemInviteRequestBuilder"/>.</returns>
@@ -167,6 +161,12 @@ namespace Microsoft.Graph
             string name = null);
 
         /// <summary>
+        /// Gets the request builder for DriveItemUnfollow.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemUnfollowRequestBuilder"/>.</returns>
+        IDriveItemUnfollowRequestBuilder Unfollow();
+
+        /// <summary>
         /// Gets the request builder for DriveItemValidatePermission.
         /// </summary>
         /// <returns>The <see cref="IDriveItemValidatePermissionRequestBuilder"/>.</returns>
@@ -178,14 +178,14 @@ namespace Microsoft.Graph
         /// Gets the request builder for DriveItemDelta.
         /// </summary>
         /// <returns>The <see cref="IDriveItemDeltaRequestBuilder"/>.</returns>
-        IDriveItemDeltaRequestBuilder Delta(
-            string token = null);
+        IDriveItemDeltaRequestBuilder Delta();
 
         /// <summary>
         /// Gets the request builder for DriveItemDelta.
         /// </summary>
         /// <returns>The <see cref="IDriveItemDeltaRequestBuilder"/>.</returns>
-        IDriveItemDeltaRequestBuilder Delta();
+        IDriveItemDeltaRequestBuilder Delta(
+            string token = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemGetActivitiesByInterval.

@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets roles.
-        /// The roles for that user.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roles", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Roles { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// The display name of the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets roles.
+        /// The roles for that user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roles", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Roles { get; set; }
     
     }
 }

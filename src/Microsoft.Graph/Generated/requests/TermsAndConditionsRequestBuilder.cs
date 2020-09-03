@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Assignments.
-        /// </summary>
-        /// <returns>The <see cref="ITermsAndConditionsAssignmentsCollectionRequestBuilder"/>.</returns>
-        public ITermsAndConditionsAssignmentsCollectionRequestBuilder Assignments
-        {
-            get
-            {
-                return new TermsAndConditionsAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for AcceptanceStatuses.
         /// </summary>
         /// <returns>The <see cref="ITermsAndConditionsAcceptanceStatusesCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new TermsAndConditionsAcceptanceStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("acceptanceStatuses"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Assignments.
+        /// </summary>
+        /// <returns>The <see cref="ITermsAndConditionsAssignmentsCollectionRequestBuilder"/>.</returns>
+        public ITermsAndConditionsAssignmentsCollectionRequestBuilder Assignments
+        {
+            get
+            {
+                return new TermsAndConditionsAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
             }
         }
     

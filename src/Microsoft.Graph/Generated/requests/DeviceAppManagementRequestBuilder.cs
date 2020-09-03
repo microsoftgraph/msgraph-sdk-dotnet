@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for MobileApps.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementMobileAppsCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementMobileAppsCollectionRequestBuilder MobileApps
-        {
-            get
-            {
-                return new DeviceAppManagementMobileAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileApps"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for MobileAppCategories.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementMobileAppCategoriesCollectionRequestBuilder"/>.</returns>
@@ -99,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for MobileApps.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementMobileAppsCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementMobileAppsCollectionRequestBuilder MobileApps
+        {
+            get
+            {
+                return new DeviceAppManagementMobileAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileApps"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for VppTokens.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementVppTokensCollectionRequestBuilder"/>.</returns>
@@ -107,30 +107,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceAppManagementVppTokensCollectionRequestBuilder(this.AppendSegmentToRequestUrl("vppTokens"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedAppPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedAppPoliciesCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementManagedAppPoliciesCollectionRequestBuilder ManagedAppPolicies
-        {
-            get
-            {
-                return new DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedAppPolicies"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for IosManagedAppProtections.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder IosManagedAppProtections
-        {
-            get
-            {
-                return new DeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("iosManagedAppProtections"), this.Client);
             }
         }
 
@@ -159,38 +135,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for TargetedManagedAppConfigurations.
+        /// Gets the request builder for IosManagedAppProtections.
         /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder TargetedManagedAppConfigurations
+        /// <returns>The <see cref="IDeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder IosManagedAppProtections
         {
             get
             {
-                return new DeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("targetedManagedAppConfigurations"), this.Client);
+                return new DeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("iosManagedAppProtections"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for MdmWindowsInformationProtectionPolicies.
+        /// Gets the request builder for ManagedAppPolicies.
         /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder MdmWindowsInformationProtectionPolicies
+        /// <returns>The <see cref="IDeviceAppManagementManagedAppPoliciesCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementManagedAppPoliciesCollectionRequestBuilder ManagedAppPolicies
         {
             get
             {
-                return new DeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mdmWindowsInformationProtectionPolicies"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for WindowsInformationProtectionPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder WindowsInformationProtectionPolicies
-        {
-            get
-            {
-                return new DeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsInformationProtectionPolicies"), this.Client);
+                return new DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedAppPolicies"), this.Client);
             }
         }
 
@@ -215,6 +179,42 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceAppManagementManagedAppStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedAppStatuses"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MdmWindowsInformationProtectionPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder MdmWindowsInformationProtectionPolicies
+        {
+            get
+            {
+                return new DeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mdmWindowsInformationProtectionPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TargetedManagedAppConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder TargetedManagedAppConfigurations
+        {
+            get
+            {
+                return new DeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("targetedManagedAppConfigurations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsInformationProtectionPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder WindowsInformationProtectionPolicies
+        {
+            get
+            {
+                return new DeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsInformationProtectionPolicies"), this.Client);
             }
         }
     

@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets or sets content type.
+        /// The MIME type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
+        public string ContentType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is inline.
+        /// true if the attachment is an inline attachment; otherwise, false.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInline", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsInline { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
@@ -45,25 +59,11 @@ namespace Microsoft.Graph
         public string Name { get; set; }
     
         /// <summary>
-        /// Gets or sets content type.
-        /// The MIME type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
-        public string ContentType { get; set; }
-    
-        /// <summary>
         /// Gets or sets size.
         /// The length of the attachment in bytes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Size { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is inline.
-        /// true if the attachment is an inline attachment; otherwise, false.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInline", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsInline { get; set; }
     
     }
 }

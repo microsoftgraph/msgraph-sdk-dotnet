@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets allowCustomMemes.
+        /// If set to true, enables users to include custom memes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCustomMemes", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowCustomMemes { get; set; }
+    
+        /// <summary>
         /// Gets or sets allowGiphy.
         /// If set to true, enables Giphy use.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowGiphy", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowGiphy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets giphyContentRating.
-        /// Giphy content rating. Possible values are: moderate, strict.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "giphyContentRating", Required = Newtonsoft.Json.Required.Default)]
-        public GiphyRatingType? GiphyContentRating { get; set; }
     
         /// <summary>
         /// Gets or sets allowStickersAndMemes.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public bool? AllowStickersAndMemes { get; set; }
     
         /// <summary>
-        /// Gets or sets allowCustomMemes.
-        /// If set to true, enables users to include custom memes.
+        /// Gets or sets giphyContentRating.
+        /// Giphy content rating. Possible values are: moderate, strict.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCustomMemes", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowCustomMemes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "giphyContentRating", Required = Newtonsoft.Json.Required.Default)]
+        public GiphyRatingType? GiphyContentRating { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

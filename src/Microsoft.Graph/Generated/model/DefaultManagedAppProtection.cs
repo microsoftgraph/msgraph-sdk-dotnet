@@ -38,34 +38,6 @@ namespace Microsoft.Graph
         public ManagedAppDataEncryptionType? AppDataEncryptionType { get; set; }
     
         /// <summary>
-        /// Gets or sets screen capture blocked.
-        /// Indicates whether screen capture is blocked. (Android only)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenCaptureBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ScreenCaptureBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets encrypt app data.
-        /// Indicates whether managed-app data should be encrypted. (Android only)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptAppData", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EncryptAppData { get; set; }
-    
-        /// <summary>
-        /// Gets or sets disable app encryption if device encryption is enabled.
-        /// When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableAppEncryptionIfDeviceEncryptionIsEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DisableAppEncryptionIfDeviceEncryptionIsEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets minimum required sdk version.
-        /// Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumRequiredSdkVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string MinimumRequiredSdkVersion { get; set; }
-    
-        /// <summary>
         /// Gets or sets custom settings.
         /// A set of string key and string value pairs to be sent to the affected users, unalterned by this service
         /// </summary>
@@ -80,11 +52,39 @@ namespace Microsoft.Graph
         public Int32? DeployedAppCount { get; set; }
     
         /// <summary>
+        /// Gets or sets disable app encryption if device encryption is enabled.
+        /// When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableAppEncryptionIfDeviceEncryptionIsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DisableAppEncryptionIfDeviceEncryptionIsEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets encrypt app data.
+        /// Indicates whether managed-app data should be encrypted. (Android only)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptAppData", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EncryptAppData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets face id blocked.
+        /// Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "faceIdBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FaceIdBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets minimum required patch version.
         /// Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumRequiredPatchVersion", Required = Newtonsoft.Json.Required.Default)]
         public string MinimumRequiredPatchVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimum required sdk version.
+        /// Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumRequiredSdkVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string MinimumRequiredSdkVersion { get; set; }
     
         /// <summary>
         /// Gets or sets minimum warning patch version.
@@ -94,11 +94,11 @@ namespace Microsoft.Graph
         public string MinimumWarningPatchVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets face id blocked.
-        /// Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
+        /// Gets or sets screen capture blocked.
+        /// Indicates whether screen capture is blocked. (Android only)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "faceIdBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FaceIdBlocked { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenCaptureBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ScreenCaptureBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets apps.

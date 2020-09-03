@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets name.
-        /// Name of the setting.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
-    
-        /// <summary>
-        /// Gets or sets type.
-        /// Type of the setting.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public string Type { get; set; }
-    
-        /// <summary>
         /// Gets or sets defaultValue.
         /// Default value for the setting.
         /// </summary>
@@ -57,6 +43,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets name.
+        /// Name of the setting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// Type of the setting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

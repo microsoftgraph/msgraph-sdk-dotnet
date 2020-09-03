@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
-        /// Unique GUID of the conditional access policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
-    
-        /// <summary>
         /// Gets or sets displayName.
         /// Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
         /// </summary>
@@ -57,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforcedSessionControls", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> EnforcedSessionControls { get; set; }
+    
+        /// <summary>
+        /// Gets or sets id.
+        /// Unique GUID of the conditional access policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets result.

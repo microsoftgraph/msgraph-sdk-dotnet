@@ -45,16 +45,16 @@ namespace Microsoft.Graph
             string address = null);
 
         /// <summary>
+        /// Gets the request builder for WorkbookTableCount.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableCountRequestBuilder"/>.</returns>
+        IWorkbookTableCountRequestBuilder Count();
+
+        /// <summary>
         /// Gets the request builder for WorkbookTableItemAt.
         /// </summary>
         /// <returns>The <see cref="IWorkbookTableItemAtRequestBuilder"/>.</returns>
         IWorkbookTableItemAtRequestBuilder ItemAt(
             Int32 index);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookTableCount.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookTableCountRequestBuilder"/>.</returns>
-        IWorkbookTableCountRequestBuilder Count();
     }
 }

@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (officeGraphInsightsToInitialize != null && officeGraphInsightsToInitialize.AdditionalData != null)
             {
 
-                if (officeGraphInsightsToInitialize.Trending != null && officeGraphInsightsToInitialize.Trending.CurrentPage != null)
-                {
-                    officeGraphInsightsToInitialize.Trending.AdditionalData = officeGraphInsightsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    officeGraphInsightsToInitialize.AdditionalData.TryGetValue("trending@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        officeGraphInsightsToInitialize.Trending.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (officeGraphInsightsToInitialize.Shared != null && officeGraphInsightsToInitialize.Shared.CurrentPage != null)
                 {
                     officeGraphInsightsToInitialize.Shared.AdditionalData = officeGraphInsightsToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         officeGraphInsightsToInitialize.Shared.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (officeGraphInsightsToInitialize.Trending != null && officeGraphInsightsToInitialize.Trending.CurrentPage != null)
+                {
+                    officeGraphInsightsToInitialize.Trending.AdditionalData = officeGraphInsightsToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    officeGraphInsightsToInitialize.AdditionalData.TryGetValue("trending@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        officeGraphInsightsToInitialize.Trending.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

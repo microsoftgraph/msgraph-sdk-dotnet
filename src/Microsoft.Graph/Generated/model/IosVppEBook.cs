@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets vpp token id.
-        /// The Vpp token ID.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppTokenId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? VppTokenId { get; set; }
-    
-        /// <summary>
         /// Gets or sets apple id.
         /// The Apple ID associated with Vpp token.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleId", Required = Newtonsoft.Json.Required.Default)]
         public string AppleId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets vpp organization name.
-        /// The Vpp token's organization name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppOrganizationName", Required = Newtonsoft.Json.Required.Default)]
-        public string VppOrganizationName { get; set; }
     
         /// <summary>
         /// Gets or sets genres.
@@ -85,6 +71,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedLicenseCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? UsedLicenseCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets vpp organization name.
+        /// The Vpp token's organization name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppOrganizationName", Required = Newtonsoft.Json.Required.Default)]
+        public string VppOrganizationName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets vpp token id.
+        /// The Vpp token ID.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppTokenId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? VppTokenId { get; set; }
     
     }
 }

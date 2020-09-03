@@ -31,18 +31,18 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
-        /// Gets or sets text.
-        /// The feedback text provided by the user of this endpoint for the session.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
-        public string Text { get; set; }
-    
-        /// <summary>
         /// Gets or sets rating.
         /// The rating provided by the user of this endpoint about the quality of this Session. Possible values are: notRated, bad, poor, fair, good, excellent, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rating", Required = Newtonsoft.Json.Required.Default)]
         public UserFeedbackRating? Rating { get; set; }
+    
+        /// <summary>
+        /// Gets or sets text.
+        /// The feedback text provided by the user of this endpoint for the session.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        public string Text { get; set; }
     
         /// <summary>
         /// Gets or sets tokens.

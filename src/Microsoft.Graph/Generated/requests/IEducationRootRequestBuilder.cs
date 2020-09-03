@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IEducationRootClassesCollectionRequestBuilder Classes { get; }
 
         /// <summary>
+        /// Gets the request builder for Me.
+        /// </summary>
+        /// <returns>The <see cref="IEducationUserRequestBuilder"/>.</returns>
+        IEducationUserRequestBuilder Me { get; }
+
+        /// <summary>
         /// Gets the request builder for Schools.
         /// </summary>
         /// <returns>The <see cref="IEducationRootSchoolsCollectionRequestBuilder"/>.</returns>
@@ -48,12 +54,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEducationRootUsersCollectionRequestBuilder"/>.</returns>
         IEducationRootUsersCollectionRequestBuilder Users { get; }
-
-        /// <summary>
-        /// Gets the request builder for Me.
-        /// </summary>
-        /// <returns>The <see cref="IEducationUserRequestBuilder"/>.</returns>
-        IEducationUserRequestBuilder Me { get; }
     
     }
 }

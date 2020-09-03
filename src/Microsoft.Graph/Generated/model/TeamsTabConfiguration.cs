@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets entityId.
-        /// Identifier for the entity hosted by the tab provider.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entityId", Required = Newtonsoft.Json.Required.Default)]
-        public string EntityId { get; set; }
-    
-        /// <summary>
         /// Gets or sets contentUrl.
         /// Url used for rendering tab contents in Teams. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentUrl", Required = Newtonsoft.Json.Required.Default)]
         public string ContentUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets entityId.
+        /// Identifier for the entity hosted by the tab provider.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entityId", Required = Newtonsoft.Json.Required.Default)]
+        public string EntityId { get; set; }
     
         /// <summary>
         /// Gets or sets removeUrl.

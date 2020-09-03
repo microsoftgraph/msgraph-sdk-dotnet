@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public string AzureStorageUri { get; set; }
     
         /// <summary>
-        /// Gets or sets is committed.
-        /// A value indicating whether the file is committed.
+        /// Gets or sets azure storage uri expiration date time.
+        /// The time the Azure storage Uri expires.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCommitted", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsCommitted { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureStorageUriExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? AzureStorageUriExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -50,6 +50,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is committed.
+        /// A value indicating whether the file is committed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCommitted", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsCommitted { get; set; }
+    
+        /// <summary>
+        /// Gets or sets manifest.
+        /// The manifest information.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manifest", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] Manifest { get; set; }
     
         /// <summary>
         /// Gets or sets name.
@@ -71,20 +85,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sizeEncrypted", Required = Newtonsoft.Json.Required.Default)]
         public Int64? SizeEncrypted { get; set; }
-    
-        /// <summary>
-        /// Gets or sets azure storage uri expiration date time.
-        /// The time the Azure storage Uri expires.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureStorageUriExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? AzureStorageUriExpirationDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets manifest.
-        /// The manifest information.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manifest", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] Manifest { get; set; }
     
         /// <summary>
         /// Gets or sets upload state.

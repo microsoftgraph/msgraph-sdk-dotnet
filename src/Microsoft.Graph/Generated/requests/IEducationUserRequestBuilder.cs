@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IEducationUserRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Schools.
-        /// </summary>
-        /// <returns>The <see cref="IEducationUserSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IEducationUserSchoolsCollectionWithReferencesRequestBuilder Schools { get; }
-
-        /// <summary>
         /// Gets the request builder for Classes.
         /// </summary>
         /// <returns>The <see cref="IEducationUserClassesCollectionWithReferencesRequestBuilder"/>.</returns>
         IEducationUserClassesCollectionWithReferencesRequestBuilder Classes { get; }
+
+        /// <summary>
+        /// Gets the request builder for Schools.
+        /// </summary>
+        /// <returns>The <see cref="IEducationUserSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IEducationUserSchoolsCollectionWithReferencesRequestBuilder Schools { get; }
 
         /// <summary>
         /// Gets the request builder for User.

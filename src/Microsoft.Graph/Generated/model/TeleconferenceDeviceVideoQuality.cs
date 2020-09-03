@@ -30,20 +30,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets averageInboundFrameRate.
-        /// The average inbound stream video frame rate per second.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageInboundFrameRate", Required = Newtonsoft.Json.Required.Default)]
-        public double? AverageInboundFrameRate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets averageOutboundFrameRate.
-        /// The average outbound stream video frame rate per second.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageOutboundFrameRate", Required = Newtonsoft.Json.Required.Default)]
-        public double? AverageOutboundFrameRate { get; set; }
-    
-        /// <summary>
         /// Gets or sets averageInboundBitRate.
         /// The average inbound stream video bit rate per second.
         /// </summary>
@@ -51,11 +37,25 @@ namespace Microsoft.Graph
         public double? AverageInboundBitRate { get; set; }
     
         /// <summary>
+        /// Gets or sets averageInboundFrameRate.
+        /// The average inbound stream video frame rate per second.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageInboundFrameRate", Required = Newtonsoft.Json.Required.Default)]
+        public double? AverageInboundFrameRate { get; set; }
+    
+        /// <summary>
         /// Gets or sets averageOutboundBitRate.
         /// The average outbound stream video bit rate per second.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageOutboundBitRate", Required = Newtonsoft.Json.Required.Default)]
         public double? AverageOutboundBitRate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets averageOutboundFrameRate.
+        /// The average outbound stream video frame rate per second.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageOutboundFrameRate", Required = Newtonsoft.Json.Required.Default)]
+        public double? AverageOutboundFrameRate { get; set; }
     
     }
 }

@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Trending.
-        /// </summary>
-        /// <returns>The <see cref="IOfficeGraphInsightsTrendingCollectionRequestBuilder"/>.</returns>
-        public IOfficeGraphInsightsTrendingCollectionRequestBuilder Trending
-        {
-            get
-            {
-                return new OfficeGraphInsightsTrendingCollectionRequestBuilder(this.AppendSegmentToRequestUrl("trending"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Shared.
         /// </summary>
         /// <returns>The <see cref="IOfficeGraphInsightsSharedCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new OfficeGraphInsightsSharedCollectionRequestBuilder(this.AppendSegmentToRequestUrl("shared"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Trending.
+        /// </summary>
+        /// <returns>The <see cref="IOfficeGraphInsightsTrendingCollectionRequestBuilder"/>.</returns>
+        public IOfficeGraphInsightsTrendingCollectionRequestBuilder Trending
+        {
+            get
+            {
+                return new OfficeGraphInsightsTrendingCollectionRequestBuilder(this.AppendSegmentToRequestUrl("trending"), this.Client);
             }
         }
 

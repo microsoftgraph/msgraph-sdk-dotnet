@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IAuditLogRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for SignIns.
-        /// </summary>
-        /// <returns>The <see cref="IAuditLogRootSignInsCollectionRequestBuilder"/>.</returns>
-        IAuditLogRootSignInsCollectionRequestBuilder SignIns { get; }
-
-        /// <summary>
         /// Gets the request builder for DirectoryAudits.
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootDirectoryAuditsCollectionRequestBuilder"/>.</returns>
@@ -48,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootRestrictedSignInsCollectionRequestBuilder"/>.</returns>
         IAuditLogRootRestrictedSignInsCollectionRequestBuilder RestrictedSignIns { get; }
+
+        /// <summary>
+        /// Gets the request builder for SignIns.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootSignInsCollectionRequestBuilder"/>.</returns>
+        IAuditLogRootSignInsCollectionRequestBuilder SignIns { get; }
     
     }
 }

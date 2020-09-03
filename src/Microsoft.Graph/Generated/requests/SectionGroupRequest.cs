@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (sectionGroupToInitialize != null && sectionGroupToInitialize.AdditionalData != null)
             {
 
-                if (sectionGroupToInitialize.Sections != null && sectionGroupToInitialize.Sections.CurrentPage != null)
-                {
-                    sectionGroupToInitialize.Sections.AdditionalData = sectionGroupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    sectionGroupToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        sectionGroupToInitialize.Sections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (sectionGroupToInitialize.SectionGroups != null && sectionGroupToInitialize.SectionGroups.CurrentPage != null)
                 {
                     sectionGroupToInitialize.SectionGroups.AdditionalData = sectionGroupToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         sectionGroupToInitialize.SectionGroups.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (sectionGroupToInitialize.Sections != null && sectionGroupToInitialize.Sections.CurrentPage != null)
+                {
+                    sectionGroupToInitialize.Sections.AdditionalData = sectionGroupToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    sectionGroupToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        sectionGroupToInitialize.Sections.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

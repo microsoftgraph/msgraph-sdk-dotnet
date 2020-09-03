@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets r.
-        /// Red value
+        /// Gets or sets b.
+        /// Blue value
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "r", Required = Newtonsoft.Json.Required.Default)]
-        public Byte? R { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "b", Required = Newtonsoft.Json.Required.Default)]
+        public Byte? B { get; set; }
     
         /// <summary>
         /// Gets or sets g.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public Byte? G { get; set; }
     
         /// <summary>
-        /// Gets or sets b.
-        /// Blue value
+        /// Gets or sets r.
+        /// Red value
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "b", Required = Newtonsoft.Json.Required.Default)]
-        public Byte? B { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "r", Required = Newtonsoft.Json.Required.Default)]
+        public Byte? R { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

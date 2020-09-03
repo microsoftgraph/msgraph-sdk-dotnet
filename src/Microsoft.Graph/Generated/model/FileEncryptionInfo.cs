@@ -38,6 +38,20 @@ namespace Microsoft.Graph
         public byte[] EncryptionKey { get; set; }
     
         /// <summary>
+        /// Gets or sets fileDigest.
+        /// The file digest prior to encryption.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileDigest", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] FileDigest { get; set; }
+    
+        /// <summary>
+        /// Gets or sets fileDigestAlgorithm.
+        /// The file digest algorithm.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileDigestAlgorithm", Required = Newtonsoft.Json.Required.Default)]
+        public string FileDigestAlgorithm { get; set; }
+    
+        /// <summary>
         /// Gets or sets initializationVector.
         /// The initialization vector used for the encryption algorithm.
         /// </summary>
@@ -64,20 +78,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileIdentifier", Required = Newtonsoft.Json.Required.Default)]
         public string ProfileIdentifier { get; set; }
-    
-        /// <summary>
-        /// Gets or sets fileDigest.
-        /// The file digest prior to encryption.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileDigest", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] FileDigest { get; set; }
-    
-        /// <summary>
-        /// Gets or sets fileDigestAlgorithm.
-        /// The file digest algorithm.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileDigestAlgorithm", Required = Newtonsoft.Json.Required.Default)]
-        public string FileDigestAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

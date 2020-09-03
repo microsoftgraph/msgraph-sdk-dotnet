@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new IContactRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
+        /// Gets the request builder for Extensions.
         /// </summary>
-        /// <returns>The <see cref="IContactSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        IContactSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
+        /// <returns>The <see cref="IContactExtensionsCollectionRequestBuilder"/>.</returns>
+        IContactExtensionsCollectionRequestBuilder Extensions { get; }
 
         /// <summary>
         /// Gets the request builder for MultiValueExtendedProperties.
@@ -50,10 +50,10 @@ namespace Microsoft.Graph
         IProfilePhotoRequestBuilder Photo { get; }
 
         /// <summary>
-        /// Gets the request builder for Extensions.
+        /// Gets the request builder for SingleValueExtendedProperties.
         /// </summary>
-        /// <returns>The <see cref="IContactExtensionsCollectionRequestBuilder"/>.</returns>
-        IContactExtensionsCollectionRequestBuilder Extensions { get; }
+        /// <returns>The <see cref="IContactSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        IContactSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
     
         
     

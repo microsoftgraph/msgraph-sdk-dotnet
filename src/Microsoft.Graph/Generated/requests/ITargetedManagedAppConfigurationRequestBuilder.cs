@@ -38,16 +38,16 @@ namespace Microsoft.Graph
         ITargetedManagedAppConfigurationAppsCollectionRequestBuilder Apps { get; }
 
         /// <summary>
-        /// Gets the request builder for DeploymentSummary.
-        /// </summary>
-        /// <returns>The <see cref="IManagedAppPolicyDeploymentSummaryRequestBuilder"/>.</returns>
-        IManagedAppPolicyDeploymentSummaryRequestBuilder DeploymentSummary { get; }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="ITargetedManagedAppConfigurationAssignmentsCollectionRequestBuilder"/>.</returns>
         ITargetedManagedAppConfigurationAssignmentsCollectionRequestBuilder Assignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeploymentSummary.
+        /// </summary>
+        /// <returns>The <see cref="IManagedAppPolicyDeploymentSummaryRequestBuilder"/>.</returns>
+        IManagedAppPolicyDeploymentSummaryRequestBuilder DeploymentSummary { get; }
     
         /// <summary>
         /// Gets the request builder for TargetedManagedAppConfigurationAssign.

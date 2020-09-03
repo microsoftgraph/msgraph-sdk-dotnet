@@ -32,28 +32,28 @@ namespace Microsoft.Graph
         new IPlannerTaskRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Details.
-        /// </summary>
-        /// <returns>The <see cref="IPlannerTaskDetailsRequestBuilder"/>.</returns>
-        IPlannerTaskDetailsRequestBuilder Details { get; }
-
-        /// <summary>
         /// Gets the request builder for AssignedToTaskBoardFormat.
         /// </summary>
         /// <returns>The <see cref="IPlannerAssignedToTaskBoardTaskFormatRequestBuilder"/>.</returns>
         IPlannerAssignedToTaskBoardTaskFormatRequestBuilder AssignedToTaskBoardFormat { get; }
 
         /// <summary>
-        /// Gets the request builder for ProgressTaskBoardFormat.
-        /// </summary>
-        /// <returns>The <see cref="IPlannerProgressTaskBoardTaskFormatRequestBuilder"/>.</returns>
-        IPlannerProgressTaskBoardTaskFormatRequestBuilder ProgressTaskBoardFormat { get; }
-
-        /// <summary>
         /// Gets the request builder for BucketTaskBoardFormat.
         /// </summary>
         /// <returns>The <see cref="IPlannerBucketTaskBoardTaskFormatRequestBuilder"/>.</returns>
         IPlannerBucketTaskBoardTaskFormatRequestBuilder BucketTaskBoardFormat { get; }
+
+        /// <summary>
+        /// Gets the request builder for Details.
+        /// </summary>
+        /// <returns>The <see cref="IPlannerTaskDetailsRequestBuilder"/>.</returns>
+        IPlannerTaskDetailsRequestBuilder Details { get; }
+
+        /// <summary>
+        /// Gets the request builder for ProgressTaskBoardFormat.
+        /// </summary>
+        /// <returns>The <see cref="IPlannerProgressTaskBoardTaskFormatRequestBuilder"/>.</returns>
+        IPlannerProgressTaskBoardTaskFormatRequestBuilder ProgressTaskBoardFormat { get; }
     
     }
 }

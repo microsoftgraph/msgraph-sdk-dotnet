@@ -23,6 +23,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        public DriveItemDeltaRequestBuilder(
+            string requestUrl,
+            IBaseClient client)
+            : base(requestUrl, client)
+        {
+        }
+
+        /// <summary>
+        /// Constructs a new <see cref="DriveItemDeltaRequestBuilder"/>.
+        /// </summary>
+        /// <param name="requestUrl">The URL for the request.</param>
+        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="token">A token parameter for the OData method call.</param>
         public DriveItemDeltaRequestBuilder(
             string requestUrl,
@@ -31,18 +43,6 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("token", token, true);
-        }
-
-        /// <summary>
-        /// Constructs a new <see cref="DriveItemDeltaRequestBuilder"/>.
-        /// </summary>
-        /// <param name="requestUrl">The URL for the request.</param>
-        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public DriveItemDeltaRequestBuilder(
-            string requestUrl,
-            IBaseClient client)
-            : base(requestUrl, client)
-        {
         }
 
         /// <summary>

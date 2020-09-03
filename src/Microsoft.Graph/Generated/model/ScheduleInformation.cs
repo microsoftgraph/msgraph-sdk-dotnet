@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets scheduleId.
-        /// An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduleId", Required = Newtonsoft.Json.Required.Default)]
-        public string ScheduleId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets scheduleItems.
-        /// Contains the items that describe the availability of the user or resource.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduleItems", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ScheduleItem> ScheduleItems { get; set; }
-    
-        /// <summary>
         /// Gets or sets availabilityView.
         /// Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free, 1= tentative, 2= busy, 3= out of office, 4= working elsewhere.
         /// </summary>
@@ -57,6 +43,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
         public FreeBusyError Error { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scheduleId.
+        /// An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduleId", Required = Newtonsoft.Json.Required.Default)]
+        public string ScheduleId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scheduleItems.
+        /// Contains the items that describe the availability of the user or resource.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduleItems", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ScheduleItem> ScheduleItems { get; set; }
     
         /// <summary>
         /// Gets or sets workingHours.

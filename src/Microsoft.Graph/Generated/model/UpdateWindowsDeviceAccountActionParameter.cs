@@ -31,25 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets deviceAccount.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceAccount", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsDeviceAccount DeviceAccount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets passwordRotationEnabled.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRotationEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PasswordRotationEnabled { get; set; }
-    
-        /// <summary>
         /// Gets or sets calendarSyncEnabled.
         /// Not yet documented
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarSyncEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? CalendarSyncEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceAccount.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceAccount", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsDeviceAccount DeviceAccount { get; set; }
     
         /// <summary>
         /// Gets or sets deviceAccountEmail.
@@ -64,6 +57,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeServer", Required = Newtonsoft.Json.Required.Default)]
         public string ExchangeServer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets passwordRotationEnabled.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRotationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasswordRotationEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets sessionInitiationProtocalAddress.

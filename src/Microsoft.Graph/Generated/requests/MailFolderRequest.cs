@@ -234,49 +234,17 @@ namespace Microsoft.Graph
             if (mailFolderToInitialize != null && mailFolderToInitialize.AdditionalData != null)
             {
 
-                if (mailFolderToInitialize.SingleValueExtendedProperties != null && mailFolderToInitialize.SingleValueExtendedProperties.CurrentPage != null)
+                if (mailFolderToInitialize.ChildFolders != null && mailFolderToInitialize.ChildFolders.CurrentPage != null)
                 {
-                    mailFolderToInitialize.SingleValueExtendedProperties.AdditionalData = mailFolderToInitialize.AdditionalData;
+                    mailFolderToInitialize.ChildFolders.AdditionalData = mailFolderToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
+                    mailFolderToInitialize.AdditionalData.TryGetValue("childFolders@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        mailFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (mailFolderToInitialize.MultiValueExtendedProperties != null && mailFolderToInitialize.MultiValueExtendedProperties.CurrentPage != null)
-                {
-                    mailFolderToInitialize.MultiValueExtendedProperties.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (mailFolderToInitialize.Messages != null && mailFolderToInitialize.Messages.CurrentPage != null)
-                {
-                    mailFolderToInitialize.Messages.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("messages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.Messages.InitializeNextPageRequest(
+                        mailFolderToInitialize.ChildFolders.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -298,17 +266,49 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (mailFolderToInitialize.ChildFolders != null && mailFolderToInitialize.ChildFolders.CurrentPage != null)
+                if (mailFolderToInitialize.Messages != null && mailFolderToInitialize.Messages.CurrentPage != null)
                 {
-                    mailFolderToInitialize.ChildFolders.AdditionalData = mailFolderToInitialize.AdditionalData;
+                    mailFolderToInitialize.Messages.AdditionalData = mailFolderToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("childFolders@odata.nextLink", out nextPageLink);
+                    mailFolderToInitialize.AdditionalData.TryGetValue("messages@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        mailFolderToInitialize.ChildFolders.InitializeNextPageRequest(
+                        mailFolderToInitialize.Messages.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (mailFolderToInitialize.MultiValueExtendedProperties != null && mailFolderToInitialize.MultiValueExtendedProperties.CurrentPage != null)
+                {
+                    mailFolderToInitialize.MultiValueExtendedProperties.AdditionalData = mailFolderToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    mailFolderToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        mailFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (mailFolderToInitialize.SingleValueExtendedProperties != null && mailFolderToInitialize.SingleValueExtendedProperties.CurrentPage != null)
+                {
+                    mailFolderToInitialize.SingleValueExtendedProperties.AdditionalData = mailFolderToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    mailFolderToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        mailFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

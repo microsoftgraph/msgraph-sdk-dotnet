@@ -79,12 +79,6 @@ namespace Microsoft.Graph
         public string MailNickname { get; set; }
     
         /// <summary>
-        /// Gets or sets on premises sync enabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSyncEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? OnPremisesSyncEnabled { get; set; }
-    
-        /// <summary>
         /// Gets or sets on premises last sync date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesLastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
@@ -95,6 +89,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesProvisioningErrors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
+    
+        /// <summary>
+        /// Gets or sets on premises sync enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSyncEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? OnPremisesSyncEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets phones.
@@ -115,16 +115,16 @@ namespace Microsoft.Graph
         public string Surname { get; set; }
     
         /// <summary>
-        /// Gets or sets manager.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
-        public DirectoryObject Manager { get; set; }
-    
-        /// <summary>
         /// Gets or sets direct reports.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directReports", Required = Newtonsoft.Json.Required.Default)]
         public IOrgContactDirectReportsCollectionWithReferencesPage DirectReports { get; set; }
+    
+        /// <summary>
+        /// Gets or sets manager.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
+        public DirectoryObject Manager { get; set; }
     
         /// <summary>
         /// Gets or sets member of.

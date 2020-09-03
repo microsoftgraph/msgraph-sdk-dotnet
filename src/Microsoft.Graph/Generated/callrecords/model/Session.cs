@@ -31,6 +31,34 @@ namespace Microsoft.Graph.CallRecords
         }
 	
         /// <summary>
+        /// Gets or sets callee.
+        /// Endpoint that answered the session.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callee", Required = Newtonsoft.Json.Required.Default)]
+        public Endpoint Callee { get; set; }
+    
+        /// <summary>
+        /// Gets or sets caller.
+        /// Endpoint that initiated the session.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "caller", Required = Newtonsoft.Json.Required.Default)]
+        public Endpoint Caller { get; set; }
+    
+        /// <summary>
+        /// Gets or sets end date time.
+        /// UTC time when the last user left the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EndDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets failure info.
+        /// Failure information associated with the session if the session failed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureInfo", Required = Newtonsoft.Json.Required.Default)]
+        public FailureInfo FailureInfo { get; set; }
+    
+        /// <summary>
         /// Gets or sets modalities.
         /// List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
         /// </summary>
@@ -43,34 +71,6 @@ namespace Microsoft.Graph.CallRecords
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets end date time.
-        /// UTC time when the last user left the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? EndDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets caller.
-        /// Endpoint that initiated the session.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "caller", Required = Newtonsoft.Json.Required.Default)]
-        public Endpoint Caller { get; set; }
-    
-        /// <summary>
-        /// Gets or sets callee.
-        /// Endpoint that answered the session.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callee", Required = Newtonsoft.Json.Required.Default)]
-        public Endpoint Callee { get; set; }
-    
-        /// <summary>
-        /// Gets or sets failure info.
-        /// Failure information associated with the session if the session failed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureInfo", Required = Newtonsoft.Json.Required.Default)]
-        public FailureInfo FailureInfo { get; set; }
     
         /// <summary>
         /// Gets or sets segments.

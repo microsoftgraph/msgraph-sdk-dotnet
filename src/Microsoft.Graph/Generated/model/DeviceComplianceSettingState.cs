@@ -31,6 +31,34 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets compliance grace period expiration date time.
+        /// The DateTime when device compliance grace period expires
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceGracePeriodExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ComplianceGracePeriodExpirationDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device id.
+        /// The Device Id that is being reported
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device model.
+        /// The device model that is being reported
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceModel", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceModel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device name.
+        /// The Device Name that is being reported
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceName { get; set; }
+    
+        /// <summary>
         /// Gets or sets setting.
         /// The setting class name and property name.
         /// </summary>
@@ -45,25 +73,11 @@ namespace Microsoft.Graph
         public string SettingName { get; set; }
     
         /// <summary>
-        /// Gets or sets device id.
-        /// The Device Id that is being reported
+        /// Gets or sets state.
+        /// The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device name.
-        /// The Device Name that is being reported
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user id.
-        /// The user Id that is being reported
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public ComplianceStatus? State { get; set; }
     
         /// <summary>
         /// Gets or sets user email.
@@ -71,6 +85,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userEmail", Required = Newtonsoft.Json.Required.Default)]
         public string UserEmail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user id.
+        /// The user Id that is being reported
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets user name.
@@ -85,27 +106,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device model.
-        /// The device model that is being reported
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceModel", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceModel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets state.
-        /// The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public ComplianceStatus? State { get; set; }
-    
-        /// <summary>
-        /// Gets or sets compliance grace period expiration date time.
-        /// The DateTime when device compliance grace period expires
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceGracePeriodExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ComplianceGracePeriodExpirationDateTime { get; set; }
     
     }
 }

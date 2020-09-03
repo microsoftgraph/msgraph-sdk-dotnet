@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets microsoft store for business last successful sync date time.
-        /// The last time the apps from the Microsoft Store for Business were synced successfully for the account.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftStoreForBusinessLastSuccessfulSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? MicrosoftStoreForBusinessLastSuccessfulSyncDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets is enabled for microsoft store for business.
         /// Whether the account is enabled for syncing applications from the Microsoft Store for Business.
         /// </summary>
@@ -59,18 +52,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? MicrosoftStoreForBusinessLastCompletedApplicationSyncTime { get; set; }
     
         /// <summary>
+        /// Gets or sets microsoft store for business last successful sync date time.
+        /// The last time the apps from the Microsoft Store for Business were synced successfully for the account.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftStoreForBusinessLastSuccessfulSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? MicrosoftStoreForBusinessLastSuccessfulSyncDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets managed ebooks.
         /// The Managed eBook.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBooks", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceAppManagementManagedEBooksCollectionPage ManagedEBooks { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mobile apps.
-        /// The mobile apps.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileApps", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceAppManagementMobileAppsCollectionPage MobileApps { get; set; }
     
         /// <summary>
         /// Gets or sets mobile app categories.
@@ -87,25 +80,18 @@ namespace Microsoft.Graph
         public IDeviceAppManagementMobileAppConfigurationsCollectionPage MobileAppConfigurations { get; set; }
     
         /// <summary>
+        /// Gets or sets mobile apps.
+        /// The mobile apps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileApps", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementMobileAppsCollectionPage MobileApps { get; set; }
+    
+        /// <summary>
         /// Gets or sets vpp tokens.
         /// List of Vpp tokens for this organization.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppTokens", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceAppManagementVppTokensCollectionPage VppTokens { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed app policies.
-        /// Managed app policies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedAppPolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceAppManagementManagedAppPoliciesCollectionPage ManagedAppPolicies { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ios managed app protections.
-        /// iOS managed app policies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosManagedAppProtections", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceAppManagementIosManagedAppProtectionsCollectionPage IosManagedAppProtections { get; set; }
     
         /// <summary>
         /// Gets or sets android managed app protections.
@@ -122,25 +108,18 @@ namespace Microsoft.Graph
         public IDeviceAppManagementDefaultManagedAppProtectionsCollectionPage DefaultManagedAppProtections { get; set; }
     
         /// <summary>
-        /// Gets or sets targeted managed app configurations.
-        /// Targeted managed app configurations.
+        /// Gets or sets ios managed app protections.
+        /// iOS managed app policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedManagedAppConfigurations", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceAppManagementTargetedManagedAppConfigurationsCollectionPage TargetedManagedAppConfigurations { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosManagedAppProtections", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementIosManagedAppProtectionsCollectionPage IosManagedAppProtections { get; set; }
     
         /// <summary>
-        /// Gets or sets mdm windows information protection policies.
-        /// Windows information protection for apps running on devices which are MDM enrolled.
+        /// Gets or sets managed app policies.
+        /// Managed app policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmWindowsInformationProtectionPolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionPage MdmWindowsInformationProtectionPolicies { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows information protection policies.
-        /// Windows information protection for apps running on devices which are not MDM enrolled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsInformationProtectionPolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionPage WindowsInformationProtectionPolicies { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedAppPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementManagedAppPoliciesCollectionPage ManagedAppPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets managed app registrations.
@@ -155,6 +134,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedAppStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceAppManagementManagedAppStatusesCollectionPage ManagedAppStatuses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mdm windows information protection policies.
+        /// Windows information protection for apps running on devices which are MDM enrolled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmWindowsInformationProtectionPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionPage MdmWindowsInformationProtectionPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets targeted managed app configurations.
+        /// Targeted managed app configurations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedManagedAppConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementTargetedManagedAppConfigurationsCollectionPage TargetedManagedAppConfigurations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows information protection policies.
+        /// Windows information protection for apps running on devices which are not MDM enrolled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsInformationProtectionPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionPage WindowsInformationProtectionPolicies { get; set; }
     
     }
 }

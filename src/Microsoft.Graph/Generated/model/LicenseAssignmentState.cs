@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets skuId.
+        /// Gets or sets assignedByGroup.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skuId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? SkuId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedByGroup", Required = Newtonsoft.Json.Required.Default)]
+        public string AssignedByGroup { get; set; }
     
         /// <summary>
         /// Gets or sets disabledPlans.
@@ -43,22 +43,22 @@ namespace Microsoft.Graph
         public IEnumerable<Guid> DisabledPlans { get; set; }
     
         /// <summary>
-        /// Gets or sets assignedByGroup.
+        /// Gets or sets error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedByGroup", Required = Newtonsoft.Json.Required.Default)]
-        public string AssignedByGroup { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        public string Error { get; set; }
+    
+        /// <summary>
+        /// Gets or sets skuId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skuId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? SkuId { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public string State { get; set; }
-    
-        /// <summary>
-        /// Gets or sets error.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
-        public string Error { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

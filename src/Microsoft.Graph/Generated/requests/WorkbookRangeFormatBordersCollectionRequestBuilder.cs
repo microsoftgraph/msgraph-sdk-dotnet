@@ -61,6 +61,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookRangeBorderCount.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRangeBorderCountRequestBuilder"/>.</returns>
+        public IWorkbookRangeBorderCountRequestBuilder Count()
+        {
+            return new WorkbookRangeBorderCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookRangeBorderItemAt.
         /// </summary>
         /// <returns>The <see cref="IWorkbookRangeBorderItemAtRequestBuilder"/>.</returns>
@@ -71,17 +82,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
                 this.Client,
                 index);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookRangeBorderCount.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookRangeBorderCountRequestBuilder"/>.</returns>
-        public IWorkbookRangeBorderCountRequestBuilder Count()
-        {
-            return new WorkbookRangeBorderCountRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
-                this.Client);
         }
     }
 }

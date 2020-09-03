@@ -31,25 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets name.
-        /// The calendar name.
+        /// Gets or sets allowed online meeting providers.
+        /// Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedOnlineMeetingProviders", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<OnlineMeetingProviderType> AllowedOnlineMeetingProviders { get; set; }
     
         /// <summary>
-        /// Gets or sets color.
-        /// Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: LightBlue=0, LightGreen=1, LightOrange=2, LightGray=3, LightYellow=4, LightTeal=5, LightPink=6, LightBrown=7, LightRed=8, MaxColor=9, Auto=-1
+        /// Gets or sets can edit.
+        /// True if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "color", Required = Newtonsoft.Json.Required.Default)]
-        public CalendarColor? Color { get; set; }
-    
-        /// <summary>
-        /// Gets or sets change key.
-        /// Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeKey", Required = Newtonsoft.Json.Required.Default)]
-        public string ChangeKey { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "canEdit", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CanEdit { get; set; }
     
         /// <summary>
         /// Gets or sets can share.
@@ -66,25 +59,18 @@ namespace Microsoft.Graph
         public bool? CanViewPrivateItems { get; set; }
     
         /// <summary>
-        /// Gets or sets can edit.
-        /// True if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
+        /// Gets or sets change key.
+        /// Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "canEdit", Required = Newtonsoft.Json.Required.Default)]
-        public bool? CanEdit { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeKey", Required = Newtonsoft.Json.Required.Default)]
+        public string ChangeKey { get; set; }
     
         /// <summary>
-        /// Gets or sets owner.
-        /// If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.
+        /// Gets or sets color.
+        /// Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: LightBlue=0, LightGreen=1, LightOrange=2, LightGray=3, LightYellow=4, LightTeal=5, LightPink=6, LightBrown=7, LightRed=8, MaxColor=9, Auto=-1
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
-        public EmailAddress Owner { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowed online meeting providers.
-        /// Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedOnlineMeetingProviders", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<OnlineMeetingProviderType> AllowedOnlineMeetingProviders { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "color", Required = Newtonsoft.Json.Required.Default)]
+        public CalendarColor? Color { get; set; }
     
         /// <summary>
         /// Gets or sets default online meeting provider.
@@ -94,13 +80,6 @@ namespace Microsoft.Graph
         public OnlineMeetingProviderType? DefaultOnlineMeetingProvider { get; set; }
     
         /// <summary>
-        /// Gets or sets is tallying responses.
-        /// Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isTallyingResponses", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsTallyingResponses { get; set; }
-    
-        /// <summary>
         /// Gets or sets is removable.
         /// Indicates whether this user calendar can be deleted from the user mailbox.
         /// </summary>
@@ -108,18 +87,25 @@ namespace Microsoft.Graph
         public bool? IsRemovable { get; set; }
     
         /// <summary>
-        /// Gets or sets single value extended properties.
-        /// The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
+        /// Gets or sets is tallying responses.
+        /// Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
-        public ICalendarSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isTallyingResponses", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsTallyingResponses { get; set; }
     
         /// <summary>
-        /// Gets or sets multi value extended properties.
-        /// The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
+        /// Gets or sets name.
+        /// The calendar name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
-        public ICalendarMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
+    
+        /// <summary>
+        /// Gets or sets owner.
+        /// If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
+        public EmailAddress Owner { get; set; }
     
         /// <summary>
         /// Gets or sets calendar permissions.
@@ -129,6 +115,13 @@ namespace Microsoft.Graph
         public ICalendarCalendarPermissionsCollectionPage CalendarPermissions { get; set; }
     
         /// <summary>
+        /// Gets or sets calendar view.
+        /// The calendar view for the calendar. Navigation property. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarView", Required = Newtonsoft.Json.Required.Default)]
+        public ICalendarCalendarViewCollectionPage CalendarView { get; set; }
+    
+        /// <summary>
         /// Gets or sets events.
         /// The events in the calendar. Navigation property. Read-only.
         /// </summary>
@@ -136,11 +129,18 @@ namespace Microsoft.Graph
         public ICalendarEventsCollectionPage Events { get; set; }
     
         /// <summary>
-        /// Gets or sets calendar view.
-        /// The calendar view for the calendar. Navigation property. Read-only.
+        /// Gets or sets multi value extended properties.
+        /// The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarView", Required = Newtonsoft.Json.Required.Default)]
-        public ICalendarCalendarViewCollectionPage CalendarView { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        public ICalendarMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single value extended properties.
+        /// The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        public ICalendarSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
     
     }
 }

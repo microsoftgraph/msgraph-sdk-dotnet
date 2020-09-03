@@ -37,11 +37,11 @@ namespace Microsoft.Graph
         public string ConferenceId { get; set; }
     
         /// <summary>
-        /// Gets or sets tollNumber.
-        /// The toll number that connects to the Audio Conference Provider.
+        /// Gets or sets dialinUrl.
+        /// A URL to the externally-accessible web page that contains dial-in information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tollNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string TollNumber { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dialinUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string DialinUrl { get; set; }
     
         /// <summary>
         /// Gets or sets tollFreeNumber.
@@ -51,11 +51,11 @@ namespace Microsoft.Graph
         public string TollFreeNumber { get; set; }
     
         /// <summary>
-        /// Gets or sets dialinUrl.
-        /// A URL to the externally-accessible web page that contains dial-in information.
+        /// Gets or sets tollNumber.
+        /// The toll number that connects to the Audio Conference Provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dialinUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string DialinUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tollNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string TollNumber { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

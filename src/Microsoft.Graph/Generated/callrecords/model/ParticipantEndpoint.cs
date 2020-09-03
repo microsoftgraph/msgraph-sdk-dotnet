@@ -30,18 +30,18 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
-        /// Gets or sets identity.
-        /// Identity associated with the endpoint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
-        public Microsoft.Graph.IdentitySet Identity { get; set; }
-    
-        /// <summary>
         /// Gets or sets feedback.
         /// The feedback provided by the user of this endpoint about the quality of the session.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedback", Required = Newtonsoft.Json.Required.Default)]
         public UserFeedback Feedback { get; set; }
+    
+        /// <summary>
+        /// Gets or sets identity.
+        /// Identity associated with the endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
+        public Microsoft.Graph.IdentitySet Identity { get; set; }
     
     }
 }

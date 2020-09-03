@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Schools.
+        /// Gets the request builder for Group.
         /// </summary>
-        /// <returns>The <see cref="IEducationClassSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IEducationClassSchoolsCollectionWithReferencesRequestBuilder Schools
+        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
+        public IGroupWithReferenceRequestBuilder Group
         {
             get
             {
-                return new EducationClassSchoolsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("schools"), this.Client);
+                return new GroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("group"), this.Client);
             }
         }
 
@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Schools.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IEducationClassSchoolsCollectionWithReferencesRequestBuilder Schools
+        {
+            get
+            {
+                return new EducationClassSchoolsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("schools"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Teachers.
         /// </summary>
         /// <returns>The <see cref="IEducationClassTeachersCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -83,18 +95,6 @@ namespace Microsoft.Graph
             get
             {
                 return new EducationClassTeachersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("teachers"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Group.
-        /// </summary>
-        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
-        public IGroupWithReferenceRequestBuilder Group
-        {
-            get
-            {
-                return new GroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("group"), this.Client);
             }
         }
     

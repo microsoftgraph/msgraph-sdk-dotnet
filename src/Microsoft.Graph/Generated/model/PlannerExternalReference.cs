@@ -38,20 +38,6 @@ namespace Microsoft.Graph
         public string Alias { get; set; }
     
         /// <summary>
-        /// Gets or sets type.
-        /// Used to describe the type of the reference. Types include: PowerPoint, Word, Excel, Other.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public string Type { get; set; }
-    
-        /// <summary>
-        /// Gets or sets previewPriority.
-        /// Used to set the relative priority order in which the reference will be shown as a preview on the task.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewPriority", Required = Newtonsoft.Json.Required.Default)]
-        public string PreviewPriority { get; set; }
-    
-        /// <summary>
         /// Gets or sets lastModifiedBy.
         /// Read-only. User ID by which this is last modified.
         /// </summary>
@@ -64,6 +50,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets previewPriority.
+        /// Used to set the relative priority order in which the reference will be shown as a preview on the task.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewPriority", Required = Newtonsoft.Json.Required.Default)]
+        public string PreviewPriority { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// Used to describe the type of the reference. Types include: PowerPoint, Word, Excel, Other.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

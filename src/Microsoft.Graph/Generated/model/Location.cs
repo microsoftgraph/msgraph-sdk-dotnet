@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets address.
+        /// The street address of the location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        public PhysicalAddress Address { get; set; }
+    
+        /// <summary>
+        /// Gets or sets coordinates.
+        /// The geographic coordinates and elevation of the location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coordinates", Required = Newtonsoft.Json.Required.Default)]
+        public OutlookGeoCoordinates Coordinates { get; set; }
+    
+        /// <summary>
         /// Gets or sets displayName.
         /// The name associated with the location.
         /// </summary>
@@ -45,11 +59,11 @@ namespace Microsoft.Graph
         public string LocationEmailAddress { get; set; }
     
         /// <summary>
-        /// Gets or sets address.
-        /// The street address of the location.
+        /// Gets or sets locationType.
+        /// The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
-        public PhysicalAddress Address { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationType", Required = Newtonsoft.Json.Required.Default)]
+        public LocationType? LocationType { get; set; }
     
         /// <summary>
         /// Gets or sets locationUri.
@@ -57,20 +71,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationUri", Required = Newtonsoft.Json.Required.Default)]
         public string LocationUri { get; set; }
-    
-        /// <summary>
-        /// Gets or sets coordinates.
-        /// The geographic coordinates and elevation of the location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coordinates", Required = Newtonsoft.Json.Required.Default)]
-        public OutlookGeoCoordinates Coordinates { get; set; }
-    
-        /// <summary>
-        /// Gets or sets locationType.
-        /// The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationType", Required = Newtonsoft.Json.Required.Default)]
-        public LocationType? LocationType { get; set; }
     
         /// <summary>
         /// Gets or sets uniqueId.

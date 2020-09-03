@@ -162,6 +162,12 @@ namespace Microsoft.Graph
         public IEnumerable<string> TechnicalNotificationMails { get; set; }
     
         /// <summary>
+        /// Gets or sets tenant type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantType", Required = Newtonsoft.Json.Required.Default)]
+        public string TenantType { get; set; }
+    
+        /// <summary>
         /// Gets or sets verified domains.
         /// The collection of domains associated with this tenant. Not nullable.
         /// </summary>

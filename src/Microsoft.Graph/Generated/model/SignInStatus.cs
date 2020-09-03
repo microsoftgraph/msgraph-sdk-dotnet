@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets additionalDetails.
+        /// Provides additional details on the sign-in activity
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalDetails", Required = Newtonsoft.Json.Required.Default)]
+        public string AdditionalDetails { get; set; }
+    
+        /// <summary>
         /// Gets or sets errorCode.
         /// Provides the 5-6digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
         /// </summary>
@@ -43,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureReason", Required = Newtonsoft.Json.Required.Default)]
         public string FailureReason { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additionalDetails.
-        /// Provides additional details on the sign-in activity
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalDetails", Required = Newtonsoft.Json.Required.Default)]
-        public string AdditionalDetails { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

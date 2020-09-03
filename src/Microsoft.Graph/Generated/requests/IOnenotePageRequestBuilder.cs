@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IOnenotePageRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for ParentSection.
-        /// </summary>
-        /// <returns>The <see cref="IOnenoteSectionRequestBuilder"/>.</returns>
-        IOnenoteSectionRequestBuilder ParentSection { get; }
-
-        /// <summary>
         /// Gets the request builder for ParentNotebook.
         /// </summary>
         /// <returns>The <see cref="INotebookRequestBuilder"/>.</returns>
         INotebookRequestBuilder ParentNotebook { get; }
+
+        /// <summary>
+        /// Gets the request builder for ParentSection.
+        /// </summary>
+        /// <returns>The <see cref="IOnenoteSectionRequestBuilder"/>.</returns>
+        IOnenoteSectionRequestBuilder ParentSection { get; }
     
         /// <summary>
         /// Gets the request builder for Content.
@@ -49,13 +49,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IOnenotePageContentRequestBuilder"/>.</returns>
         IOnenotePageContentRequestBuilder Content { get; }
     
-        /// <summary>
-        /// Gets the request builder for OnenotePageOnenotePatchContent.
-        /// </summary>
-        /// <returns>The <see cref="IOnenotePageOnenotePatchContentRequestBuilder"/>.</returns>
-        IOnenotePageOnenotePatchContentRequestBuilder OnenotePatchContent(
-            IEnumerable<OnenotePatchContentCommand> commands = null);
-
         /// <summary>
         /// Gets the request builder for OnenotePageCopyToSection.
         /// </summary>
@@ -65,6 +58,13 @@ namespace Microsoft.Graph
             string groupId = null,
             string siteCollectionId = null,
             string siteId = null);
+
+        /// <summary>
+        /// Gets the request builder for OnenotePageOnenotePatchContent.
+        /// </summary>
+        /// <returns>The <see cref="IOnenotePageOnenotePatchContentRequestBuilder"/>.</returns>
+        IOnenotePageOnenotePatchContentRequestBuilder OnenotePatchContent(
+            IEnumerable<OnenotePatchContentCommand> commands = null);
 
         /// <summary>
         /// Gets the request builder for OnenotePagePreview.

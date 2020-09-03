@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (domainToInitialize != null && domainToInitialize.AdditionalData != null)
             {
 
+                if (domainToInitialize.DomainNameReferences != null && domainToInitialize.DomainNameReferences.CurrentPage != null)
+                {
+                    domainToInitialize.DomainNameReferences.AdditionalData = domainToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    domainToInitialize.AdditionalData.TryGetValue("domainNameReferences@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        domainToInitialize.DomainNameReferences.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (domainToInitialize.ServiceConfigurationRecords != null && domainToInitialize.ServiceConfigurationRecords.CurrentPage != null)
                 {
                     domainToInitialize.ServiceConfigurationRecords.AdditionalData = domainToInitialize.AdditionalData;
@@ -261,22 +277,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         domainToInitialize.VerificationDnsRecords.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (domainToInitialize.DomainNameReferences != null && domainToInitialize.DomainNameReferences.CurrentPage != null)
-                {
-                    domainToInitialize.DomainNameReferences.AdditionalData = domainToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    domainToInitialize.AdditionalData.TryGetValue("domainNameReferences@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        domainToInitialize.DomainNameReferences.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

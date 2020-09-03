@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets threadId.
-        /// The unique identifier for a thread in Microsoft Teams.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "threadId", Required = Newtonsoft.Json.Required.Default)]
-        public string ThreadId { get; set; }
-    
-        /// <summary>
         /// Gets or sets messageId.
         /// The unique identifier of a message in a Microsoft Teams channel.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyChainMessageId", Required = Newtonsoft.Json.Required.Default)]
         public string ReplyChainMessageId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets threadId.
+        /// The unique identifier for a thread in Microsoft Teams.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "threadId", Required = Newtonsoft.Json.Required.Default)]
+        public string ThreadId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

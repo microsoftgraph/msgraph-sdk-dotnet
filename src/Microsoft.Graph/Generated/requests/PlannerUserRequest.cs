@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (plannerUserToInitialize != null && plannerUserToInitialize.AdditionalData != null)
             {
 
-                if (plannerUserToInitialize.Tasks != null && plannerUserToInitialize.Tasks.CurrentPage != null)
-                {
-                    plannerUserToInitialize.Tasks.AdditionalData = plannerUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    plannerUserToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        plannerUserToInitialize.Tasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (plannerUserToInitialize.Plans != null && plannerUserToInitialize.Plans.CurrentPage != null)
                 {
                     plannerUserToInitialize.Plans.AdditionalData = plannerUserToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         plannerUserToInitialize.Plans.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (plannerUserToInitialize.Tasks != null && plannerUserToInitialize.Tasks.CurrentPage != null)
+                {
+                    plannerUserToInitialize.Tasks.AdditionalData = plannerUserToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    plannerUserToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        plannerUserToInitialize.Tasks.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

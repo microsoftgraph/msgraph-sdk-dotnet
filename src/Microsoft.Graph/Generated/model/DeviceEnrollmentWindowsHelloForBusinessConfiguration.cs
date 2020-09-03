@@ -31,74 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets pin minimum length.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinMinimumLength", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PinMinimumLength { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pin maximum length.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinMaximumLength", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PinMaximumLength { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pin uppercase characters usage.
-        /// Not yet documented. Possible values are: allowed, required, disallowed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinUppercaseCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsHelloForBusinessPinUsage? PinUppercaseCharactersUsage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pin lowercase characters usage.
-        /// Not yet documented. Possible values are: allowed, required, disallowed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinLowercaseCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsHelloForBusinessPinUsage? PinLowercaseCharactersUsage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pin special characters usage.
-        /// Not yet documented. Possible values are: allowed, required, disallowed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinSpecialCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsHelloForBusinessPinUsage? PinSpecialCharactersUsage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets state.
+        /// Gets or sets enhanced biometrics state.
         /// Not yet documented. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public Enablement? State { get; set; }
-    
-        /// <summary>
-        /// Gets or sets security device required.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityDeviceRequired", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SecurityDeviceRequired { get; set; }
-    
-        /// <summary>
-        /// Gets or sets unlock with biometrics enabled.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unlockWithBiometricsEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UnlockWithBiometricsEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets remote passport enabled.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remotePassportEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RemotePassportEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pin previous block count.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinPreviousBlockCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PinPreviousBlockCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enhancedBiometricsState", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? EnhancedBiometricsState { get; set; }
     
         /// <summary>
         /// Gets or sets pin expiration in days.
@@ -108,11 +45,74 @@ namespace Microsoft.Graph
         public Int32? PinExpirationInDays { get; set; }
     
         /// <summary>
-        /// Gets or sets enhanced biometrics state.
+        /// Gets or sets pin lowercase characters usage.
+        /// Not yet documented. Possible values are: allowed, required, disallowed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinLowercaseCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsHelloForBusinessPinUsage? PinLowercaseCharactersUsage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pin maximum length.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinMaximumLength", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PinMaximumLength { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pin minimum length.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinMinimumLength", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PinMinimumLength { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pin previous block count.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinPreviousBlockCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PinPreviousBlockCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pin special characters usage.
+        /// Not yet documented. Possible values are: allowed, required, disallowed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinSpecialCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsHelloForBusinessPinUsage? PinSpecialCharactersUsage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pin uppercase characters usage.
+        /// Not yet documented. Possible values are: allowed, required, disallowed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinUppercaseCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsHelloForBusinessPinUsage? PinUppercaseCharactersUsage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets remote passport enabled.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remotePassportEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RemotePassportEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security device required.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityDeviceRequired", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SecurityDeviceRequired { get; set; }
+    
+        /// <summary>
+        /// Gets or sets state.
         /// Not yet documented. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enhancedBiometricsState", Required = Newtonsoft.Json.Required.Default)]
-        public Enablement? EnhancedBiometricsState { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? State { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unlock with biometrics enabled.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unlockWithBiometricsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UnlockWithBiometricsEnabled { get; set; }
     
     }
 }

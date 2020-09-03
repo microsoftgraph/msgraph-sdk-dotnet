@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets to recipients.
-        /// The To: recipients for the thread.
+        /// Gets or sets cc recipients.
+        /// The Cc: recipients for the thread.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "toRecipients", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Recipient> ToRecipients { get; set; }
-    
-        /// <summary>
-        /// Gets or sets topic.
-        /// The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topic", Required = Newtonsoft.Json.Required.Default)]
-        public string Topic { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ccRecipients", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Recipient> CcRecipients { get; set; }
     
         /// <summary>
         /// Gets or sets has attachments.
@@ -52,25 +45,18 @@ namespace Microsoft.Graph
         public bool? HasAttachments { get; set; }
     
         /// <summary>
+        /// Gets or sets is locked.
+        /// Indicates if the thread is locked.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isLocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsLocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets last delivered date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastDeliveredDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastDeliveredDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets unique senders.
-        /// All the users that sent a message to this thread.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueSenders", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> UniqueSenders { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cc recipients.
-        /// The Cc: recipients for the thread.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ccRecipients", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Recipient> CcRecipients { get; set; }
     
         /// <summary>
         /// Gets or sets preview.
@@ -80,11 +66,25 @@ namespace Microsoft.Graph
         public string Preview { get; set; }
     
         /// <summary>
-        /// Gets or sets is locked.
-        /// Indicates if the thread is locked.
+        /// Gets or sets topic.
+        /// The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isLocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsLocked { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topic", Required = Newtonsoft.Json.Required.Default)]
+        public string Topic { get; set; }
+    
+        /// <summary>
+        /// Gets or sets to recipients.
+        /// The To: recipients for the thread.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "toRecipients", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Recipient> ToRecipients { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unique senders.
+        /// All the users that sent a message to this thread.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueSenders", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> UniqueSenders { get; set; }
     
         /// <summary>
         /// Gets or sets posts.

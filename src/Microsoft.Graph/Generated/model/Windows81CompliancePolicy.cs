@@ -31,11 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets password required.
-        /// Require a password to unlock Windows device.
+        /// Gets or sets os maximum version.
+        /// Maximum Windows 8.1 version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequired", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PasswordRequired { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMaximumVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets os minimum version.
+        /// Minimum Windows 8.1 version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMinimumVersion { get; set; }
     
         /// <summary>
         /// Gets or sets password block simple.
@@ -52,6 +59,13 @@ namespace Microsoft.Graph
         public Int32? PasswordExpirationDays { get; set; }
     
         /// <summary>
+        /// Gets or sets password minimum character set count.
+        /// The number of character sets required in the password.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumCharacterSetCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets password minimum length.
         /// The minimum password length.
         /// </summary>
@@ -66,20 +80,6 @@ namespace Microsoft.Graph
         public Int32? PasswordMinutesOfInactivityBeforeLock { get; set; }
     
         /// <summary>
-        /// Gets or sets password minimum character set count.
-        /// The number of character sets required in the password.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasswordMinimumCharacterSetCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets password required type.
-        /// The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
-        public RequiredPasswordType? PasswordRequiredType { get; set; }
-    
-        /// <summary>
         /// Gets or sets password previous password block count.
         /// The number of previous passwords to prevent re-use of. Valid values 0 to 24
         /// </summary>
@@ -87,18 +87,18 @@ namespace Microsoft.Graph
         public Int32? PasswordPreviousPasswordBlockCount { get; set; }
     
         /// <summary>
-        /// Gets or sets os minimum version.
-        /// Minimum Windows 8.1 version.
+        /// Gets or sets password required.
+        /// Require a password to unlock Windows device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsMinimumVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequired", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasswordRequired { get; set; }
     
         /// <summary>
-        /// Gets or sets os maximum version.
-        /// Maximum Windows 8.1 version.
+        /// Gets or sets password required type.
+        /// The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsMaximumVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
+        public RequiredPasswordType? PasswordRequiredType { get; set; }
     
         /// <summary>
         /// Gets or sets storage require encryption.

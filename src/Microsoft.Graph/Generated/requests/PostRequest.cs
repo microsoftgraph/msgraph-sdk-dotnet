@@ -234,33 +234,17 @@ namespace Microsoft.Graph
             if (postToInitialize != null && postToInitialize.AdditionalData != null)
             {
 
-                if (postToInitialize.SingleValueExtendedProperties != null && postToInitialize.SingleValueExtendedProperties.CurrentPage != null)
+                if (postToInitialize.Attachments != null && postToInitialize.Attachments.CurrentPage != null)
                 {
-                    postToInitialize.SingleValueExtendedProperties.AdditionalData = postToInitialize.AdditionalData;
+                    postToInitialize.Attachments.AdditionalData = postToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    postToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
+                    postToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        postToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (postToInitialize.MultiValueExtendedProperties != null && postToInitialize.MultiValueExtendedProperties.CurrentPage != null)
-                {
-                    postToInitialize.MultiValueExtendedProperties.AdditionalData = postToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    postToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        postToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                        postToInitialize.Attachments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -282,17 +266,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (postToInitialize.Attachments != null && postToInitialize.Attachments.CurrentPage != null)
+                if (postToInitialize.MultiValueExtendedProperties != null && postToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
-                    postToInitialize.Attachments.AdditionalData = postToInitialize.AdditionalData;
+                    postToInitialize.MultiValueExtendedProperties.AdditionalData = postToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    postToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out nextPageLink);
+                    postToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        postToInitialize.Attachments.InitializeNextPageRequest(
+                        postToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (postToInitialize.SingleValueExtendedProperties != null && postToInitialize.SingleValueExtendedProperties.CurrentPage != null)
+                {
+                    postToInitialize.SingleValueExtendedProperties.AdditionalData = postToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    postToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        postToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         IWorkbookChartPointRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for WorkbookChartPointCount.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartPointCountRequestBuilder"/>.</returns>
+        IWorkbookChartPointCountRequestBuilder Count();
+
+        /// <summary>
         /// Gets the request builder for WorkbookChartPointItemAt.
         /// </summary>
         /// <returns>The <see cref="IWorkbookChartPointItemAtRequestBuilder"/>.</returns>
         IWorkbookChartPointItemAtRequestBuilder ItemAt(
             Int32 index);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookChartPointCount.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookChartPointCountRequestBuilder"/>.</returns>
-        IWorkbookChartPointCountRequestBuilder Count();
     }
 }

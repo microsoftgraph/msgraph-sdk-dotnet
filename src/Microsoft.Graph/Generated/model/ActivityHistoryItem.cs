@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets status.
-        /// Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public Status? Status { get; set; }
-    
-        /// <summary>
         /// Gets or sets active duration seconds.
         /// Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets expiration date time.
+        /// Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last active date time.
@@ -66,18 +66,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets expiration date time.
-        /// Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets started date time.
         /// Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public Status? Status { get; set; }
     
         /// <summary>
         /// Gets or sets user timezone.

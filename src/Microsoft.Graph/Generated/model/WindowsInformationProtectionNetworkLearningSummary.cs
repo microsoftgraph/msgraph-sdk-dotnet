@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets url.
-        /// Website url
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
-        public string Url { get; set; }
-    
-        /// <summary>
         /// Gets or sets device count.
         /// Device Count
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? DeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets url.
+        /// Website url
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
+        public string Url { get; set; }
     
     }
 }

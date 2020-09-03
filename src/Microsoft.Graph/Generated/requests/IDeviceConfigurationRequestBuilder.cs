@@ -38,16 +38,16 @@ namespace Microsoft.Graph
         IDeviceConfigurationAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
+        /// Gets the request builder for DeviceSettingStateSummaries.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder"/>.</returns>
+        IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder DeviceSettingStateSummaries { get; }
+
+        /// <summary>
         /// Gets the request builder for DeviceStatuses.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationDeviceStatusesCollectionRequestBuilder"/>.</returns>
         IDeviceConfigurationDeviceStatusesCollectionRequestBuilder DeviceStatuses { get; }
-
-        /// <summary>
-        /// Gets the request builder for UserStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationUserStatusesCollectionRequestBuilder"/>.</returns>
-        IDeviceConfigurationUserStatusesCollectionRequestBuilder UserStatuses { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceStatusOverview.
@@ -56,16 +56,16 @@ namespace Microsoft.Graph
         IDeviceConfigurationDeviceOverviewRequestBuilder DeviceStatusOverview { get; }
 
         /// <summary>
+        /// Gets the request builder for UserStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationUserStatusesCollectionRequestBuilder"/>.</returns>
+        IDeviceConfigurationUserStatusesCollectionRequestBuilder UserStatuses { get; }
+
+        /// <summary>
         /// Gets the request builder for UserStatusOverview.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationUserOverviewRequestBuilder"/>.</returns>
         IDeviceConfigurationUserOverviewRequestBuilder UserStatusOverview { get; }
-
-        /// <summary>
-        /// Gets the request builder for DeviceSettingStateSummaries.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder"/>.</returns>
-        IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder DeviceSettingStateSummaries { get; }
     
         /// <summary>
         /// Gets the request builder for DeviceConfigurationAssign.

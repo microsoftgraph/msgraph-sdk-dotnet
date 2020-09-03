@@ -51,38 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
+        /// Gets the request builder for ChildFolders.
         /// </summary>
-        /// <returns>The <see cref="IMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        public IMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
+        /// <returns>The <see cref="IMailFolderChildFoldersCollectionRequestBuilder"/>.</returns>
+        public IMailFolderChildFoldersCollectionRequestBuilder ChildFolders
         {
             get
             {
-                return new MailFolderSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for MultiValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="IMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        public IMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties
-        {
-            get
-            {
-                return new MailFolderMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Messages.
-        /// </summary>
-        /// <returns>The <see cref="IMailFolderMessagesCollectionRequestBuilder"/>.</returns>
-        public IMailFolderMessagesCollectionRequestBuilder Messages
-        {
-            get
-            {
-                return new MailFolderMessagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("messages"), this.Client);
+                return new MailFolderChildFoldersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("childFolders"), this.Client);
             }
         }
 
@@ -99,14 +75,38 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ChildFolders.
+        /// Gets the request builder for Messages.
         /// </summary>
-        /// <returns>The <see cref="IMailFolderChildFoldersCollectionRequestBuilder"/>.</returns>
-        public IMailFolderChildFoldersCollectionRequestBuilder ChildFolders
+        /// <returns>The <see cref="IMailFolderMessagesCollectionRequestBuilder"/>.</returns>
+        public IMailFolderMessagesCollectionRequestBuilder Messages
         {
             get
             {
-                return new MailFolderChildFoldersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("childFolders"), this.Client);
+                return new MailFolderMessagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("messages"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MultiValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public IMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties
+        {
+            get
+            {
+                return new MailFolderMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SingleValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public IMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
+        {
+            get
+            {
+                return new MailFolderSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
             }
         }
     

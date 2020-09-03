@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets address.
+        /// The email address of the user who shared the item.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        public string Address { get; set; }
+    
+        /// <summary>
         /// Gets or sets displayName.
         /// The display name of the user who shared the item.
         /// </summary>
@@ -43,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }
-    
-        /// <summary>
-        /// Gets or sets address.
-        /// The email address of the user who shared the item.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
-        public string Address { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

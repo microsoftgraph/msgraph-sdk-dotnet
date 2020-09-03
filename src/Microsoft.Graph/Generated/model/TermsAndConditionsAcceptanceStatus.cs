@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets user display name.
-        /// Display name of the user whose acceptance the entity represents.
+        /// Gets or sets accepted date time.
+        /// DateTime when the terms were last accepted by the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserDisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? AcceptedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets accepted version.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public Int32? AcceptedVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets accepted date time.
-        /// DateTime when the terms were last accepted by the user.
+        /// Gets or sets user display name.
+        /// Display name of the user whose acceptance the entity represents.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? AcceptedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.

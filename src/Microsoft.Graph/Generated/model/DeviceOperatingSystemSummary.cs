@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public Int32? MacOSCount { get; set; }
     
         /// <summary>
-        /// Gets or sets windowsMobileCount.
-        /// Number of Windows mobile device count.
+        /// Gets or sets unknownCount.
+        /// Number of unknown device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsMobileCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? WindowsMobileCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UnknownCount { get; set; }
     
         /// <summary>
         /// Gets or sets windowsCount.
@@ -66,11 +66,11 @@ namespace Microsoft.Graph
         public Int32? WindowsCount { get; set; }
     
         /// <summary>
-        /// Gets or sets unknownCount.
-        /// Number of unknown device count.
+        /// Gets or sets windowsMobileCount.
+        /// Number of Windows mobile device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UnknownCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsMobileCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? WindowsMobileCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

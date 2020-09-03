@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets sign ins.
-        /// Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signIns", Required = Newtonsoft.Json.Required.Default)]
-        public IAuditLogRootSignInsCollectionPage SignIns { get; set; }
-    
-        /// <summary>
         /// Gets or sets directory audits.
         /// Read-only. Nullable.
         /// </summary>
@@ -49,6 +42,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictedSignIns", Required = Newtonsoft.Json.Required.Default)]
         public IAuditLogRootRestrictedSignInsCollectionPage RestrictedSignIns { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sign ins.
+        /// Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signIns", Required = Newtonsoft.Json.Required.Default)]
+        public IAuditLogRootSignInsCollectionPage SignIns { get; set; }
     
     }
 }

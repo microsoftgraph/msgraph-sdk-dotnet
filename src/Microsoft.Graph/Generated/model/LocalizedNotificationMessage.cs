@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets is default.
+        /// Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDefault { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// DateTime the object was last modified.
         /// </summary>
@@ -45,13 +52,6 @@ namespace Microsoft.Graph
         public string Locale { get; set; }
     
         /// <summary>
-        /// Gets or sets subject.
-        /// The Message Template Subject.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
-        public string Subject { get; set; }
-    
-        /// <summary>
         /// Gets or sets message template.
         /// The Message Template content.
         /// </summary>
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public string MessageTemplate { get; set; }
     
         /// <summary>
-        /// Gets or sets is default.
-        /// Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
+        /// Gets or sets subject.
+        /// The Message Template Subject.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsDefault { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        public string Subject { get; set; }
     
     }
 }

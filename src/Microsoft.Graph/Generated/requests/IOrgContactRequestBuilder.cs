@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IOrgContactRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Manager.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
-        IDirectoryObjectWithReferenceRequestBuilder Manager { get; }
-
-        /// <summary>
         /// Gets the request builder for DirectReports.
         /// </summary>
         /// <returns>The <see cref="IOrgContactDirectReportsCollectionWithReferencesRequestBuilder"/>.</returns>
         IOrgContactDirectReportsCollectionWithReferencesRequestBuilder DirectReports { get; }
+
+        /// <summary>
+        /// Gets the request builder for Manager.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
+        IDirectoryObjectWithReferenceRequestBuilder Manager { get; }
 
         /// <summary>
         /// Gets the request builder for MemberOf.

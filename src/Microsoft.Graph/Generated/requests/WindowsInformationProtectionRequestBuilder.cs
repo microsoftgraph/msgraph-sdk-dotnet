@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ProtectedAppLockerFiles.
+        /// Gets the request builder for Assignments.
         /// </summary>
-        /// <returns>The <see cref="IWindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder"/>.</returns>
-        public IWindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder ProtectedAppLockerFiles
+        /// <returns>The <see cref="IWindowsInformationProtectionAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IWindowsInformationProtectionAssignmentsCollectionRequestBuilder Assignments
         {
             get
             {
-                return new WindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("protectedAppLockerFiles"), this.Client);
+                return new WindowsInformationProtectionAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
             }
         }
 
@@ -75,14 +75,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Assignments.
+        /// Gets the request builder for ProtectedAppLockerFiles.
         /// </summary>
-        /// <returns>The <see cref="IWindowsInformationProtectionAssignmentsCollectionRequestBuilder"/>.</returns>
-        public IWindowsInformationProtectionAssignmentsCollectionRequestBuilder Assignments
+        /// <returns>The <see cref="IWindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder"/>.</returns>
+        public IWindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder ProtectedAppLockerFiles
         {
             get
             {
-                return new WindowsInformationProtectionAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
+                return new WindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("protectedAppLockerFiles"), this.Client);
             }
         }
     

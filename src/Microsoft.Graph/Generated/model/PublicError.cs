@@ -37,18 +37,6 @@ namespace Microsoft.Graph
         public string Code { get; set; }
     
         /// <summary>
-        /// Gets or sets message.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
-        public string Message { get; set; }
-    
-        /// <summary>
-        /// Gets or sets target.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
-        public string Target { get; set; }
-    
-        /// <summary>
         /// Gets or sets details.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
@@ -59,6 +47,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "innerError", Required = Newtonsoft.Json.Required.Default)]
         public PublicInnerError InnerError { get; set; }
+    
+        /// <summary>
+        /// Gets or sets message.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
+        public string Message { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        public string Target { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

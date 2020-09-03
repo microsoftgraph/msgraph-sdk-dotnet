@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
-        /// Unique ID for the notification. Optional.
+        /// Gets or sets changeType.
+        /// Indicates the type of change that will raise the change notification. The supported values are: created, updated, deleted. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subscriptionId.
-        /// The unique identifier of the subscription that generated the notification.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? SubscriptionId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subscriptionExpirationDateTime.
-        /// The expiration time for the subscription. Required.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? SubscriptionExpirationDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeType", Required = Newtonsoft.Json.Required.Default)]
+        public ChangeType? ChangeType { get; set; }
     
         /// <summary>
         /// Gets or sets clientState.
@@ -59,11 +45,11 @@ namespace Microsoft.Graph
         public string ClientState { get; set; }
     
         /// <summary>
-        /// Gets or sets changeType.
-        /// Indicates the type of change that will raise the change notification. The supported values are: created, updated, deleted. Required.
+        /// Gets or sets id.
+        /// Unique ID for the notification. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeType", Required = Newtonsoft.Json.Required.Default)]
-        public ChangeType? ChangeType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
@@ -73,18 +59,32 @@ namespace Microsoft.Graph
         public string Resource { get; set; }
     
         /// <summary>
-        /// Gets or sets tenantId.
-        /// The unique identifier of the tenant from which the change notification originated.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? TenantId { get; set; }
-    
-        /// <summary>
         /// Gets or sets resourceData.
         /// The content of this property depends on the type of resource being subscribed to. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceData", Required = Newtonsoft.Json.Required.Default)]
         public ResourceData ResourceData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subscriptionExpirationDateTime.
+        /// The expiration time for the subscription. Required.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? SubscriptionExpirationDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subscriptionId.
+        /// The unique identifier of the subscription that generated the notification.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? SubscriptionId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenantId.
+        /// The unique identifier of the tenant from which the change notification originated.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

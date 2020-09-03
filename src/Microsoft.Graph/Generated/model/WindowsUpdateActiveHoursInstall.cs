@@ -30,18 +30,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets activeHoursStart.
-        /// Active Hours Start
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeHoursStart", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay ActiveHoursStart { get; set; }
-    
-        /// <summary>
         /// Gets or sets activeHoursEnd.
         /// Active Hours End
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeHoursEnd", Required = Newtonsoft.Json.Required.Default)]
         public TimeOfDay ActiveHoursEnd { get; set; }
+    
+        /// <summary>
+        /// Gets or sets activeHoursStart.
+        /// Active Hours Start
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeHoursStart", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay ActiveHoursStart { get; set; }
     
     }
 }

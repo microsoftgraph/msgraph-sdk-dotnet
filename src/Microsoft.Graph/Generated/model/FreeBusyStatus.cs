@@ -30,6 +30,11 @@ namespace Microsoft.Graph
         Tentative = 1,
 	
         /// <summary>
+        /// Unknown
+        /// </summary>
+        Unknown = -1,
+	
+        /// <summary>
         /// Busy
         /// </summary>
         Busy = 2,
@@ -43,11 +48,6 @@ namespace Microsoft.Graph
         /// Working Elsewhere
         /// </summary>
         WorkingElsewhere = 4,
-	
-        /// <summary>
-        /// Unknown
-        /// </summary>
-        Unknown = -1,
 	
     }
 }

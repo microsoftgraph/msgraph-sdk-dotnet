@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets includePlatforms.
-        /// Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includePlatforms", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ConditionalAccessDevicePlatform> IncludePlatforms { get; set; }
-    
-        /// <summary>
         /// Gets or sets excludePlatforms.
         /// Possible values are: android, iOS, windows, windowsPhone, macOS, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludePlatforms", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ConditionalAccessDevicePlatform> ExcludePlatforms { get; set; }
+    
+        /// <summary>
+        /// Gets or sets includePlatforms.
+        /// Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includePlatforms", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ConditionalAccessDevicePlatform> IncludePlatforms { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

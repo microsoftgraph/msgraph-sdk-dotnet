@@ -32,40 +32,10 @@ namespace Microsoft.Graph
         new IScheduleRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Shifts.
+        /// Gets the request builder for OfferShiftRequests.
         /// </summary>
-        /// <returns>The <see cref="IScheduleShiftsCollectionRequestBuilder"/>.</returns>
-        IScheduleShiftsCollectionRequestBuilder Shifts { get; }
-
-        /// <summary>
-        /// Gets the request builder for OpenShifts.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleOpenShiftsCollectionRequestBuilder"/>.</returns>
-        IScheduleOpenShiftsCollectionRequestBuilder OpenShifts { get; }
-
-        /// <summary>
-        /// Gets the request builder for TimesOff.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleTimesOffCollectionRequestBuilder"/>.</returns>
-        IScheduleTimesOffCollectionRequestBuilder TimesOff { get; }
-
-        /// <summary>
-        /// Gets the request builder for TimeOffReasons.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleTimeOffReasonsCollectionRequestBuilder"/>.</returns>
-        IScheduleTimeOffReasonsCollectionRequestBuilder TimeOffReasons { get; }
-
-        /// <summary>
-        /// Gets the request builder for SchedulingGroups.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleSchedulingGroupsCollectionRequestBuilder"/>.</returns>
-        IScheduleSchedulingGroupsCollectionRequestBuilder SchedulingGroups { get; }
-
-        /// <summary>
-        /// Gets the request builder for SwapShiftsChangeRequests.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder"/>.</returns>
-        IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder SwapShiftsChangeRequests { get; }
+        /// <returns>The <see cref="IScheduleOfferShiftRequestsCollectionRequestBuilder"/>.</returns>
+        IScheduleOfferShiftRequestsCollectionRequestBuilder OfferShiftRequests { get; }
 
         /// <summary>
         /// Gets the request builder for OpenShiftChangeRequests.
@@ -74,16 +44,46 @@ namespace Microsoft.Graph
         IScheduleOpenShiftChangeRequestsCollectionRequestBuilder OpenShiftChangeRequests { get; }
 
         /// <summary>
-        /// Gets the request builder for OfferShiftRequests.
+        /// Gets the request builder for OpenShifts.
         /// </summary>
-        /// <returns>The <see cref="IScheduleOfferShiftRequestsCollectionRequestBuilder"/>.</returns>
-        IScheduleOfferShiftRequestsCollectionRequestBuilder OfferShiftRequests { get; }
+        /// <returns>The <see cref="IScheduleOpenShiftsCollectionRequestBuilder"/>.</returns>
+        IScheduleOpenShiftsCollectionRequestBuilder OpenShifts { get; }
+
+        /// <summary>
+        /// Gets the request builder for SchedulingGroups.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleSchedulingGroupsCollectionRequestBuilder"/>.</returns>
+        IScheduleSchedulingGroupsCollectionRequestBuilder SchedulingGroups { get; }
+
+        /// <summary>
+        /// Gets the request builder for Shifts.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleShiftsCollectionRequestBuilder"/>.</returns>
+        IScheduleShiftsCollectionRequestBuilder Shifts { get; }
+
+        /// <summary>
+        /// Gets the request builder for SwapShiftsChangeRequests.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder"/>.</returns>
+        IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder SwapShiftsChangeRequests { get; }
+
+        /// <summary>
+        /// Gets the request builder for TimeOffReasons.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleTimeOffReasonsCollectionRequestBuilder"/>.</returns>
+        IScheduleTimeOffReasonsCollectionRequestBuilder TimeOffReasons { get; }
 
         /// <summary>
         /// Gets the request builder for TimeOffRequests.
         /// </summary>
         /// <returns>The <see cref="IScheduleTimeOffRequestsCollectionRequestBuilder"/>.</returns>
         IScheduleTimeOffRequestsCollectionRequestBuilder TimeOffRequests { get; }
+
+        /// <summary>
+        /// Gets the request builder for TimesOff.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleTimesOffCollectionRequestBuilder"/>.</returns>
+        IScheduleTimesOffCollectionRequestBuilder TimesOff { get; }
     
         /// <summary>
         /// Gets the request builder for ScheduleShare.

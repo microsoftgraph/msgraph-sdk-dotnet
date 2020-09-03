@@ -52,18 +52,18 @@ namespace Microsoft.Graph
         public string ProviderName { get; set; }
     
         /// <summary>
-        /// Gets or sets uri.
-        /// URL of the published resource. Not nullable. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uri", Required = Newtonsoft.Json.Required.Default)]
-        public string Uri { get; set; }
-    
-        /// <summary>
         /// Gets or sets provider resource id.
         /// For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerResourceId", Required = Newtonsoft.Json.Required.Default)]
         public string ProviderResourceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets uri.
+        /// URL of the published resource. Not nullable. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uri", Required = Newtonsoft.Json.Required.Default)]
+        public string Uri { get; set; }
     
     }
 }

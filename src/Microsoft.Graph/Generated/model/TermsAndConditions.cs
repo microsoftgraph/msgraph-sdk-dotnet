@@ -31,39 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets created date time.
-        /// DateTime the object was created.
+        /// Gets or sets acceptance statement.
+        /// Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&amp;C policy. This is shown to the user on prompts to accept the T&amp;C policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// DateTime the object was last modified.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// Administrator-supplied name for the T&amp;C policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// Administrator-supplied description of the T&amp;C policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets title.
-        /// Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&amp;C policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
-        public string Title { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptanceStatement", Required = Newtonsoft.Json.Required.Default)]
+        public string AcceptanceStatement { get; set; }
     
         /// <summary>
         /// Gets or sets body text.
@@ -73,11 +45,39 @@ namespace Microsoft.Graph
         public string BodyText { get; set; }
     
         /// <summary>
-        /// Gets or sets acceptance statement.
-        /// Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&amp;C policy. This is shown to the user on prompts to accept the T&amp;C policy.
+        /// Gets or sets created date time.
+        /// DateTime the object was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptanceStatement", Required = Newtonsoft.Json.Required.Default)]
-        public string AcceptanceStatement { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// Administrator-supplied description of the T&amp;C policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// Administrator-supplied name for the T&amp;C policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// DateTime the object was last modified.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets title.
+        /// Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&amp;C policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
+        public string Title { get; set; }
     
         /// <summary>
         /// Gets or sets version.
@@ -87,18 +87,18 @@ namespace Microsoft.Graph
         public Int32? Version { get; set; }
     
         /// <summary>
-        /// Gets or sets assignments.
-        /// The list of assignments for this T&amp;C policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
-        public ITermsAndConditionsAssignmentsCollectionPage Assignments { get; set; }
-    
-        /// <summary>
         /// Gets or sets acceptance statuses.
         /// The list of acceptance statuses for this T&amp;C policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptanceStatuses", Required = Newtonsoft.Json.Required.Default)]
         public ITermsAndConditionsAcceptanceStatusesCollectionPage AcceptanceStatuses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignments.
+        /// The list of assignments for this T&amp;C policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        public ITermsAndConditionsAssignmentsCollectionPage Assignments { get; set; }
     
     }
 }

@@ -282,6 +282,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (servicePrincipalToInitialize.CreatedObjects != null && servicePrincipalToInitialize.CreatedObjects.CurrentPage != null)
+                {
+                    servicePrincipalToInitialize.CreatedObjects.AdditionalData = servicePrincipalToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    servicePrincipalToInitialize.AdditionalData.TryGetValue("createdObjects@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        servicePrincipalToInitialize.CreatedObjects.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (servicePrincipalToInitialize.Endpoints != null && servicePrincipalToInitialize.Endpoints.CurrentPage != null)
                 {
                     servicePrincipalToInitialize.Endpoints.AdditionalData = servicePrincipalToInitialize.AdditionalData;
@@ -314,22 +330,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (servicePrincipalToInitialize.Oauth2PermissionGrants != null && servicePrincipalToInitialize.Oauth2PermissionGrants.CurrentPage != null)
-                {
-                    servicePrincipalToInitialize.Oauth2PermissionGrants.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("oauth2PermissionGrants@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        servicePrincipalToInitialize.Oauth2PermissionGrants.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (servicePrincipalToInitialize.MemberOf != null && servicePrincipalToInitialize.MemberOf.CurrentPage != null)
                 {
                     servicePrincipalToInitialize.MemberOf.AdditionalData = servicePrincipalToInitialize.AdditionalData;
@@ -346,49 +346,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (servicePrincipalToInitialize.TransitiveMemberOf != null && servicePrincipalToInitialize.TransitiveMemberOf.CurrentPage != null)
+                if (servicePrincipalToInitialize.Oauth2PermissionGrants != null && servicePrincipalToInitialize.Oauth2PermissionGrants.CurrentPage != null)
                 {
-                    servicePrincipalToInitialize.TransitiveMemberOf.AdditionalData = servicePrincipalToInitialize.AdditionalData;
+                    servicePrincipalToInitialize.Oauth2PermissionGrants.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out nextPageLink);
+                    servicePrincipalToInitialize.AdditionalData.TryGetValue("oauth2PermissionGrants@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        servicePrincipalToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (servicePrincipalToInitialize.CreatedObjects != null && servicePrincipalToInitialize.CreatedObjects.CurrentPage != null)
-                {
-                    servicePrincipalToInitialize.CreatedObjects.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("createdObjects@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        servicePrincipalToInitialize.CreatedObjects.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (servicePrincipalToInitialize.Owners != null && servicePrincipalToInitialize.Owners.CurrentPage != null)
-                {
-                    servicePrincipalToInitialize.Owners.AdditionalData = servicePrincipalToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        servicePrincipalToInitialize.Owners.InitializeNextPageRequest(
+                        servicePrincipalToInitialize.Oauth2PermissionGrants.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -405,6 +373,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         servicePrincipalToInitialize.OwnedObjects.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (servicePrincipalToInitialize.Owners != null && servicePrincipalToInitialize.Owners.CurrentPage != null)
+                {
+                    servicePrincipalToInitialize.Owners.AdditionalData = servicePrincipalToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    servicePrincipalToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        servicePrincipalToInitialize.Owners.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -437,6 +421,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         servicePrincipalToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (servicePrincipalToInitialize.TransitiveMemberOf != null && servicePrincipalToInitialize.TransitiveMemberOf.CurrentPage != null)
+                {
+                    servicePrincipalToInitialize.TransitiveMemberOf.AdditionalData = servicePrincipalToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    servicePrincipalToInitialize.AdditionalData.TryGetValue("transitiveMemberOf@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        servicePrincipalToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

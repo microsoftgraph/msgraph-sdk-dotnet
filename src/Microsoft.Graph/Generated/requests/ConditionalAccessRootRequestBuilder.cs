@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Policies.
-        /// </summary>
-        /// <returns>The <see cref="IConditionalAccessRootPoliciesCollectionRequestBuilder"/>.</returns>
-        public IConditionalAccessRootPoliciesCollectionRequestBuilder Policies
-        {
-            get
-            {
-                return new ConditionalAccessRootPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("policies"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for NamedLocations.
         /// </summary>
         /// <returns>The <see cref="IConditionalAccessRootNamedLocationsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ConditionalAccessRootNamedLocationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("namedLocations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Policies.
+        /// </summary>
+        /// <returns>The <see cref="IConditionalAccessRootPoliciesCollectionRequestBuilder"/>.</returns>
+        public IConditionalAccessRootPoliciesCollectionRequestBuilder Policies
+        {
+            get
+            {
+                return new ConditionalAccessRootPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("policies"), this.Client);
             }
         }
     

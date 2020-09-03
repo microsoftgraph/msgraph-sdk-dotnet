@@ -106,6 +106,13 @@ namespace Microsoft.Graph
         public Int32? PasswordValidityPeriodInDays { get; set; }
     
         /// <summary>
+        /// Gets or sets state.
+        /// Status of asynchronous operations scheduled for the domain.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public DomainState State { get; set; }
+    
+        /// <summary>
         /// Gets or sets supported services.
         /// The capabilities assigned to the domain.Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, YammerNot nullable
         /// </summary>
@@ -113,11 +120,11 @@ namespace Microsoft.Graph
         public IEnumerable<string> SupportedServices { get; set; }
     
         /// <summary>
-        /// Gets or sets state.
-        /// Status of asynchronous operations scheduled for the domain.
+        /// Gets or sets domain name references.
+        /// Read-only, Nullable
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public DomainState State { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domainNameReferences", Required = Newtonsoft.Json.Required.Default)]
+        public IDomainDomainNameReferencesCollectionWithReferencesPage DomainNameReferences { get; set; }
     
         /// <summary>
         /// Gets or sets service configuration records.
@@ -132,13 +139,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "verificationDnsRecords", Required = Newtonsoft.Json.Required.Default)]
         public IDomainVerificationDnsRecordsCollectionPage VerificationDnsRecords { get; set; }
-    
-        /// <summary>
-        /// Gets or sets domain name references.
-        /// Read-only, Nullable
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domainNameReferences", Required = Newtonsoft.Json.Required.Default)]
-        public IDomainDomainNameReferencesCollectionWithReferencesPage DomainNameReferences { get; set; }
     
     }
 }

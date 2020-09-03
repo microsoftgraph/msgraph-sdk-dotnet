@@ -24,18 +24,18 @@ namespace Microsoft.Graph.CallRecords
     {
 
         /// <summary>
-        /// Gets or sets headerValue.
-        /// User-agent header value reported by this endpoint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "headerValue", Required = Newtonsoft.Json.Required.Default)]
-        public string HeaderValue { get; set; }
-    
-        /// <summary>
         /// Gets or sets applicationVersion.
         /// Identifies the version of application software used by this endpoint.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationVersion", Required = Newtonsoft.Json.Required.Default)]
         public string ApplicationVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets headerValue.
+        /// User-agent header value reported by this endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "headerValue", Required = Newtonsoft.Json.Required.Default)]
+        public string HeaderValue { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

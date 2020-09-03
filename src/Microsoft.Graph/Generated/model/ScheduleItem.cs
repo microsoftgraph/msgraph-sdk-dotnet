@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets start.
-        /// The date, time, and time zone that the corresponding event starts.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeTimeZone Start { get; set; }
-    
-        /// <summary>
         /// Gets or sets end.
         /// The date, time, and time zone that the corresponding event ends.
         /// </summary>
@@ -52,6 +45,20 @@ namespace Microsoft.Graph
         public bool? IsPrivate { get; set; }
     
         /// <summary>
+        /// Gets or sets location.
+        /// The location where the corresponding event is held or attended from. Optional.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
+        public string Location { get; set; }
+    
+        /// <summary>
+        /// Gets or sets start.
+        /// The date, time, and time zone that the corresponding event starts.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeTimeZone Start { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
         /// </summary>
@@ -64,13 +71,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
         public string Subject { get; set; }
-    
-        /// <summary>
-        /// Gets or sets location.
-        /// The location where the corresponding event is held or attended from. Optional.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
-        public string Location { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

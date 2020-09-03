@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new ICallRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Participants.
-        /// </summary>
-        /// <returns>The <see cref="ICallParticipantsCollectionRequestBuilder"/>.</returns>
-        ICallParticipantsCollectionRequestBuilder Participants { get; }
-
-        /// <summary>
         /// Gets the request builder for Operations.
         /// </summary>
         /// <returns>The <see cref="ICallOperationsCollectionRequestBuilder"/>.</returns>
         ICallOperationsCollectionRequestBuilder Operations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Participants.
+        /// </summary>
+        /// <returns>The <see cref="ICallParticipantsCollectionRequestBuilder"/>.</returns>
+        ICallParticipantsCollectionRequestBuilder Participants { get; }
     
         /// <summary>
         /// Gets the request builder for CallAnswer.

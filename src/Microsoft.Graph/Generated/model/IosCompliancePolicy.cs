@@ -31,6 +31,41 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets device threat protection enabled.
+        /// Require that devices have enabled device threat protection .
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceThreatProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceThreatProtectionEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device threat protection required security level.
+        /// Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceThreatProtectionRequiredSecurityLevel", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed email profile required.
+        /// Indicates whether or not to require a managed email profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEmailProfileRequired", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ManagedEmailProfileRequired { get; set; }
+    
+        /// <summary>
+        /// Gets or sets os maximum version.
+        /// Maximum IOS version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMaximumVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets os minimum version.
+        /// Minimum IOS version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMinimumVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets passcode block simple.
         /// Indicates whether or not to block simple passcodes.
         /// </summary>
@@ -43,6 +78,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeExpirationDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasscodeExpirationDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets passcode minimum character set count.
+        /// The number of character sets required in the password.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasscodeMinimumCharacterSetCount { get; set; }
     
         /// <summary>
         /// Gets or sets passcode minimum length.
@@ -66,11 +108,11 @@ namespace Microsoft.Graph
         public Int32? PasscodePreviousPasscodeBlockCount { get; set; }
     
         /// <summary>
-        /// Gets or sets passcode minimum character set count.
-        /// The number of character sets required in the password.
+        /// Gets or sets passcode required.
+        /// Indicates whether or not to require a passcode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasscodeMinimumCharacterSetCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeRequired", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasscodeRequired { get; set; }
     
         /// <summary>
         /// Gets or sets passcode required type.
@@ -80,53 +122,11 @@ namespace Microsoft.Graph
         public RequiredPasswordType? PasscodeRequiredType { get; set; }
     
         /// <summary>
-        /// Gets or sets passcode required.
-        /// Indicates whether or not to require a passcode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeRequired", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PasscodeRequired { get; set; }
-    
-        /// <summary>
-        /// Gets or sets os minimum version.
-        /// Minimum IOS version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsMinimumVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets os maximum version.
-        /// Maximum IOS version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsMaximumVersion { get; set; }
-    
-        /// <summary>
         /// Gets or sets security block jailbroken devices.
         /// Devices must not be jailbroken or rooted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityBlockJailbrokenDevices", Required = Newtonsoft.Json.Required.Default)]
         public bool? SecurityBlockJailbrokenDevices { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device threat protection enabled.
-        /// Require that devices have enabled device threat protection .
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceThreatProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DeviceThreatProtectionEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device threat protection required security level.
-        /// Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceThreatProtectionRequiredSecurityLevel", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed email profile required.
-        /// Indicates whether or not to require a managed email profile.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEmailProfileRequired", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ManagedEmailProfileRequired { get; set; }
     
     }
 }

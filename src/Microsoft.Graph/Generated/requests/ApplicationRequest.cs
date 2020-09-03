@@ -282,22 +282,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (applicationToInitialize.TokenLifetimePolicies != null && applicationToInitialize.TokenLifetimePolicies.CurrentPage != null)
-                {
-                    applicationToInitialize.TokenLifetimePolicies.AdditionalData = applicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    applicationToInitialize.AdditionalData.TryGetValue("tokenLifetimePolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        applicationToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (applicationToInitialize.TokenIssuancePolicies != null && applicationToInitialize.TokenIssuancePolicies.CurrentPage != null)
                 {
                     applicationToInitialize.TokenIssuancePolicies.AdditionalData = applicationToInitialize.AdditionalData;
@@ -309,6 +293,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         applicationToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (applicationToInitialize.TokenLifetimePolicies != null && applicationToInitialize.TokenLifetimePolicies.CurrentPage != null)
+                {
+                    applicationToInitialize.TokenLifetimePolicies.AdditionalData = applicationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    applicationToInitialize.AdditionalData.TryGetValue("tokenLifetimePolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        applicationToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

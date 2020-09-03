@@ -31,62 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets primary role.
-        /// Default role for a user. The user's role might be different in an individual class. The possible values are: student, teacher. Supports $filter.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryRole", Required = Newtonsoft.Json.Required.Default)]
-        public EducationUserRole? PrimaryRole { get; set; }
-    
-        /// <summary>
-        /// Gets or sets middle name.
-        /// The middle name of user.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "middleName", Required = Newtonsoft.Json.Required.Default)]
-        public string MiddleName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets external source.
-        /// Where this user was created from. The possible values are: sis, manual.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSource", Required = Newtonsoft.Json.Required.Default)]
-        public EducationExternalSource? ExternalSource { get; set; }
-    
-        /// <summary>
-        /// Gets or sets residence address.
-        /// Address where user lives.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "residenceAddress", Required = Newtonsoft.Json.Required.Default)]
-        public PhysicalAddress ResidenceAddress { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mailing address.
-        /// Mail address of user.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailingAddress", Required = Newtonsoft.Json.Required.Default)]
-        public PhysicalAddress MailingAddress { get; set; }
-    
-        /// <summary>
-        /// Gets or sets student.
-        /// If the primary role is student, this block will contain student specific data.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "student", Required = Newtonsoft.Json.Required.Default)]
-        public EducationStudent Student { get; set; }
-    
-        /// <summary>
-        /// Gets or sets teacher.
-        /// If the primary role is teacher, this block will contain teacher specific data.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teacher", Required = Newtonsoft.Json.Required.Default)]
-        public EducationTeacher Teacher { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created by.
-        /// Entity who created the user.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet CreatedBy { get; set; }
-    
-        /// <summary>
         /// Gets or sets account enabled.
         /// True if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.
         /// </summary>
@@ -115,6 +59,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> BusinessPhones { get; set; }
     
         /// <summary>
+        /// Gets or sets created by.
+        /// Entity who created the user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet CreatedBy { get; set; }
+    
+        /// <summary>
         /// Gets or sets department.
         /// The name for the department in which the user works. Supports $filter.
         /// </summary>
@@ -127,6 +78,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets external source.
+        /// Where this user was created from. The possible values are: sis, manual.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSource", Required = Newtonsoft.Json.Required.Default)]
+        public EducationExternalSource? ExternalSource { get; set; }
     
         /// <summary>
         /// Gets or sets given name.
@@ -143,6 +101,13 @@ namespace Microsoft.Graph
         public string Mail { get; set; }
     
         /// <summary>
+        /// Gets or sets mailing address.
+        /// Mail address of user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailingAddress", Required = Newtonsoft.Json.Required.Default)]
+        public PhysicalAddress MailingAddress { get; set; }
+    
+        /// <summary>
         /// Gets or sets mail nickname.
         /// The mail alias for the user. This property must be specified when a user is created. Supports $filter.
         /// </summary>
@@ -150,11 +115,24 @@ namespace Microsoft.Graph
         public string MailNickname { get; set; }
     
         /// <summary>
+        /// Gets or sets middle name.
+        /// The middle name of user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "middleName", Required = Newtonsoft.Json.Required.Default)]
+        public string MiddleName { get; set; }
+    
+        /// <summary>
         /// Gets or sets mobile phone.
         /// The primary cellular telephone number for the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobilePhone", Required = Newtonsoft.Json.Required.Default)]
         public string MobilePhone { get; set; }
+    
+        /// <summary>
+        /// Gets or sets office location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string OfficeLocation { get; set; }
     
         /// <summary>
         /// Gets or sets password policies.
@@ -171,17 +149,18 @@ namespace Microsoft.Graph
         public PasswordProfile PasswordProfile { get; set; }
     
         /// <summary>
-        /// Gets or sets office location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
-        public string OfficeLocation { get; set; }
-    
-        /// <summary>
         /// Gets or sets preferred language.
         /// The preferred language for the user. Should follow ISO 639-1 Code; for example, 'en-US'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredLanguage", Required = Newtonsoft.Json.Required.Default)]
         public string PreferredLanguage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets primary role.
+        /// Default role for a user. The user's role might be different in an individual class. The possible values are: student, teacher. Supports $filter.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryRole", Required = Newtonsoft.Json.Required.Default)]
+        public EducationUserRole? PrimaryRole { get; set; }
     
         /// <summary>
         /// Gets or sets provisioned plans.
@@ -197,10 +176,24 @@ namespace Microsoft.Graph
         public DateTimeOffset? RefreshTokensValidFromDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets residence address.
+        /// Address where user lives.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "residenceAddress", Required = Newtonsoft.Json.Required.Default)]
+        public PhysicalAddress ResidenceAddress { get; set; }
+    
+        /// <summary>
         /// Gets or sets show in address list.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showInAddressList", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowInAddressList { get; set; }
+    
+        /// <summary>
+        /// Gets or sets student.
+        /// If the primary role is student, this block will contain student specific data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "student", Required = Newtonsoft.Json.Required.Default)]
+        public EducationStudent Student { get; set; }
     
         /// <summary>
         /// Gets or sets surname.
@@ -208,6 +201,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "surname", Required = Newtonsoft.Json.Required.Default)]
         public string Surname { get; set; }
+    
+        /// <summary>
+        /// Gets or sets teacher.
+        /// If the primary role is teacher, this block will contain teacher specific data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teacher", Required = Newtonsoft.Json.Required.Default)]
+        public EducationTeacher Teacher { get; set; }
     
         /// <summary>
         /// Gets or sets usage location.
@@ -231,18 +231,18 @@ namespace Microsoft.Graph
         public string UserType { get; set; }
     
         /// <summary>
-        /// Gets or sets schools.
-        /// Schools to which the user belongs. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schools", Required = Newtonsoft.Json.Required.Default)]
-        public IEducationUserSchoolsCollectionWithReferencesPage Schools { get; set; }
-    
-        /// <summary>
         /// Gets or sets classes.
         /// Classes to which the user belongs. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classes", Required = Newtonsoft.Json.Required.Default)]
         public IEducationUserClassesCollectionWithReferencesPage Classes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets schools.
+        /// Schools to which the user belongs. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schools", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationUserSchoolsCollectionWithReferencesPage Schools { get; set; }
     
         /// <summary>
         /// Gets or sets user.

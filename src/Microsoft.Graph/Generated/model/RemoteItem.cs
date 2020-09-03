@@ -66,18 +66,18 @@ namespace Microsoft.Graph
         public Folder Folder { get; set; }
     
         /// <summary>
-        /// Gets or sets image.
-        /// Image metadata, if the item is an image. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "image", Required = Newtonsoft.Json.Required.Default)]
-        public Image Image { get; set; }
-    
-        /// <summary>
         /// Gets or sets id.
         /// Unique identifier for the remote item in its drive. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }
+    
+        /// <summary>
+        /// Gets or sets image.
+        /// Image metadata, if the item is an image. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "image", Required = Newtonsoft.Json.Required.Default)]
+        public Image Image { get; set; }
     
         /// <summary>
         /// Gets or sets lastModifiedBy.

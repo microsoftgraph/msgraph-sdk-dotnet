@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets sourceParticipantId.
-        /// The ID of the participant that triggered the incoming call. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceParticipantId", Required = Newtonsoft.Json.Required.Default)]
-        public string SourceParticipantId { get; set; }
-    
-        /// <summary>
         /// Gets or sets observedParticipantId.
         /// The ID of the participant that is under observation. Read-only.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onBehalfOf", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet OnBehalfOf { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sourceParticipantId.
+        /// The ID of the participant that triggered the incoming call. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceParticipantId", Required = Newtonsoft.Json.Required.Default)]
+        public string SourceParticipantId { get; set; }
     
         /// <summary>
         /// Gets or sets transferor.

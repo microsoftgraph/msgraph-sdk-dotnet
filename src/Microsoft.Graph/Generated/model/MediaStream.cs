@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets mediaType.
-        /// The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.
+        /// Gets or sets direction.
+        /// The direction. The possible values are inactive, sendOnly, receiveOnly, sendReceive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaType", Required = Newtonsoft.Json.Required.Default)]
-        public Modality? MediaType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "direction", Required = Newtonsoft.Json.Required.Default)]
+        public MediaDirection? Direction { get; set; }
     
         /// <summary>
         /// Gets or sets label.
@@ -45,18 +45,11 @@ namespace Microsoft.Graph
         public string Label { get; set; }
     
         /// <summary>
-        /// Gets or sets sourceId.
-        /// The source ID.
+        /// Gets or sets mediaType.
+        /// The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
-        public string SourceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets direction.
-        /// The direction. The possible values are inactive, sendOnly, receiveOnly, sendReceive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "direction", Required = Newtonsoft.Json.Required.Default)]
-        public MediaDirection? Direction { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaType", Required = Newtonsoft.Json.Required.Default)]
+        public Modality? MediaType { get; set; }
     
         /// <summary>
         /// Gets or sets serverMuted.
@@ -64,6 +57,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serverMuted", Required = Newtonsoft.Json.Required.Default)]
         public bool? ServerMuted { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sourceId.
+        /// The source ID.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
+        public string SourceId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

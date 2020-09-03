@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets previewText.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewText", Required = Newtonsoft.Json.Required.Default)]
-        public string PreviewText { get; set; }
-    
-        /// <summary>
         /// Gets or sets links.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "links", Required = Newtonsoft.Json.Required.Default)]
         public OnenotePagePreviewLinks Links { get; set; }
+    
+        /// <summary>
+        /// Gets or sets previewText.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewText", Required = Newtonsoft.Json.Required.Default)]
+        public string PreviewText { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

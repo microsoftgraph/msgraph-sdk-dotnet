@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets status.
-        /// The current status of the operation: notStarted, running, completed, failed
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public OperationStatus? Status { get; set; }
-    
-        /// <summary>
         /// Gets or sets created date time.
         /// The start time of the operation.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActionDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastActionDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// The current status of the operation: notStarted, running, completed, failed
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public OperationStatus? Status { get; set; }
     
     }
 }

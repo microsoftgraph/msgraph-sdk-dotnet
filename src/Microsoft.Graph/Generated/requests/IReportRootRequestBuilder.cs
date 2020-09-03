@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IReportRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for ReportRootDeviceConfigurationUserActivity.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootDeviceConfigurationUserActivityRequestBuilder"/>.</returns>
-        IReportRootDeviceConfigurationUserActivityRequestBuilder DeviceConfigurationUserActivity();
-
-        /// <summary>
         /// Gets the request builder for ReportRootDeviceConfigurationDeviceActivity.
         /// </summary>
         /// <returns>The <see cref="IReportRootDeviceConfigurationDeviceActivityRequestBuilder"/>.</returns>
         IReportRootDeviceConfigurationDeviceActivityRequestBuilder DeviceConfigurationDeviceActivity();
+
+        /// <summary>
+        /// Gets the request builder for ReportRootDeviceConfigurationUserActivity.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDeviceConfigurationUserActivityRequestBuilder"/>.</returns>
+        IReportRootDeviceConfigurationUserActivityRequestBuilder DeviceConfigurationUserActivity();
 
         /// <summary>
         /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureDetails.
@@ -73,108 +73,6 @@ namespace Microsoft.Graph
             string period = null);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ActivationsUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ActivationsUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetOffice365ActivationsUserDetailRequestBuilder GetOffice365ActivationsUserDetail();
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ActivationCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ActivationCountsRequestBuilder"/>.</returns>
-        IReportRootGetOffice365ActivationCountsRequestBuilder GetOffice365ActivationCounts();
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ActivationsUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ActivationsUserCountsRequestBuilder"/>.</returns>
-        IReportRootGetOffice365ActivationsUserCountsRequestBuilder GetOffice365ActivationsUserCounts();
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ActiveUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ActiveUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetOffice365ActiveUserDetailRequestBuilder GetOffice365ActiveUserDetail(
-            Date date);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ActiveUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ActiveUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetOffice365ActiveUserDetailRequestBuilder GetOffice365ActiveUserDetail(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ServicesUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ServicesUserCountsRequestBuilder"/>.</returns>
-        IReportRootGetOffice365ServicesUserCountsRequestBuilder GetOffice365ServicesUserCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ActiveUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ActiveUserCountsRequestBuilder"/>.</returns>
-        IReportRootGetOffice365ActiveUserCountsRequestBuilder GetOffice365ActiveUserCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365GroupsActivityDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityDetailRequestBuilder"/>.</returns>
-        IReportRootGetOffice365GroupsActivityDetailRequestBuilder GetOffice365GroupsActivityDetail(
-            Date date);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365GroupsActivityDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityDetailRequestBuilder"/>.</returns>
-        IReportRootGetOffice365GroupsActivityDetailRequestBuilder GetOffice365GroupsActivityDetail(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365GroupsActivityCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityCountsRequestBuilder"/>.</returns>
-        IReportRootGetOffice365GroupsActivityCountsRequestBuilder GetOffice365GroupsActivityCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365GroupsActivityGroupCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityGroupCountsRequestBuilder"/>.</returns>
-        IReportRootGetOffice365GroupsActivityGroupCountsRequestBuilder GetOffice365GroupsActivityGroupCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365GroupsActivityStorage.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityStorageRequestBuilder"/>.</returns>
-        IReportRootGetOffice365GroupsActivityStorageRequestBuilder GetOffice365GroupsActivityStorage(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365GroupsActivityFileCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityFileCountsRequestBuilder"/>.</returns>
-        IReportRootGetOffice365GroupsActivityFileCountsRequestBuilder GetOffice365GroupsActivityFileCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetEmailActivityUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetEmailActivityUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetEmailActivityUserDetailRequestBuilder GetEmailActivityUserDetail(
-            Date date);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetEmailActivityUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetEmailActivityUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetEmailActivityUserDetailRequestBuilder GetEmailActivityUserDetail(
-            string period);
-
-        /// <summary>
         /// Gets the request builder for ReportRootGetEmailActivityCounts.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetEmailActivityCountsRequestBuilder"/>.</returns>
@@ -189,17 +87,17 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetEmailAppUsageUserDetail.
+        /// Gets the request builder for ReportRootGetEmailActivityUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetEmailAppUsageUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetEmailAppUsageUserDetailRequestBuilder GetEmailAppUsageUserDetail(
+        /// <returns>The <see cref="IReportRootGetEmailActivityUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetEmailActivityUserDetailRequestBuilder GetEmailActivityUserDetail(
             Date date);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetEmailAppUsageUserDetail.
+        /// Gets the request builder for ReportRootGetEmailActivityUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetEmailAppUsageUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetEmailAppUsageUserDetailRequestBuilder GetEmailAppUsageUserDetail(
+        /// <returns>The <see cref="IReportRootGetEmailActivityUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetEmailActivityUserDetailRequestBuilder GetEmailActivityUserDetail(
             string period);
 
         /// <summary>
@@ -214,6 +112,20 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetEmailAppUsageUserCountsRequestBuilder"/>.</returns>
         IReportRootGetEmailAppUsageUserCountsRequestBuilder GetEmailAppUsageUserCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetEmailAppUsageUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetEmailAppUsageUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetEmailAppUsageUserDetailRequestBuilder GetEmailAppUsageUserDetail(
+            Date date);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetEmailAppUsageUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetEmailAppUsageUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetEmailAppUsageUserDetailRequestBuilder GetEmailAppUsageUserDetail(
             string period);
 
         /// <summary>
@@ -252,24 +164,91 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetOneDriveActivityUserDetail.
+        /// Gets the request builder for ReportRootGetOffice365ActivationCounts.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetOneDriveActivityUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetOneDriveActivityUserDetailRequestBuilder GetOneDriveActivityUserDetail(
-            Date date);
+        /// <returns>The <see cref="IReportRootGetOffice365ActivationCountsRequestBuilder"/>.</returns>
+        IReportRootGetOffice365ActivationCountsRequestBuilder GetOffice365ActivationCounts();
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetOneDriveActivityUserDetail.
+        /// Gets the request builder for ReportRootGetOffice365ActivationsUserCounts.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetOneDriveActivityUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetOneDriveActivityUserDetailRequestBuilder GetOneDriveActivityUserDetail(
+        /// <returns>The <see cref="IReportRootGetOffice365ActivationsUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetOffice365ActivationsUserCountsRequestBuilder GetOffice365ActivationsUserCounts();
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365ActivationsUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365ActivationsUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetOffice365ActivationsUserDetailRequestBuilder GetOffice365ActivationsUserDetail();
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365ActiveUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365ActiveUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetOffice365ActiveUserCountsRequestBuilder GetOffice365ActiveUserCounts(
             string period);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetOneDriveActivityUserCounts.
+        /// Gets the request builder for ReportRootGetOffice365ActiveUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetOneDriveActivityUserCountsRequestBuilder"/>.</returns>
-        IReportRootGetOneDriveActivityUserCountsRequestBuilder GetOneDriveActivityUserCounts(
+        /// <returns>The <see cref="IReportRootGetOffice365ActiveUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetOffice365ActiveUserDetailRequestBuilder GetOffice365ActiveUserDetail(
+            Date date);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365ActiveUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365ActiveUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetOffice365ActiveUserDetailRequestBuilder GetOffice365ActiveUserDetail(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365GroupsActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityCountsRequestBuilder"/>.</returns>
+        IReportRootGetOffice365GroupsActivityCountsRequestBuilder GetOffice365GroupsActivityCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365GroupsActivityDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityDetailRequestBuilder"/>.</returns>
+        IReportRootGetOffice365GroupsActivityDetailRequestBuilder GetOffice365GroupsActivityDetail(
+            Date date);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365GroupsActivityDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityDetailRequestBuilder"/>.</returns>
+        IReportRootGetOffice365GroupsActivityDetailRequestBuilder GetOffice365GroupsActivityDetail(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365GroupsActivityFileCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityFileCountsRequestBuilder"/>.</returns>
+        IReportRootGetOffice365GroupsActivityFileCountsRequestBuilder GetOffice365GroupsActivityFileCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365GroupsActivityGroupCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityGroupCountsRequestBuilder"/>.</returns>
+        IReportRootGetOffice365GroupsActivityGroupCountsRequestBuilder GetOffice365GroupsActivityGroupCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365GroupsActivityStorage.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityStorageRequestBuilder"/>.</returns>
+        IReportRootGetOffice365GroupsActivityStorageRequestBuilder GetOffice365GroupsActivityStorage(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365ServicesUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365ServicesUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetOffice365ServicesUserCountsRequestBuilder GetOffice365ServicesUserCounts(
             string period);
 
         /// <summary>
@@ -280,6 +259,34 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetOneDriveActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOneDriveActivityUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetOneDriveActivityUserCountsRequestBuilder GetOneDriveActivityUserCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOneDriveActivityUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOneDriveActivityUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetOneDriveActivityUserDetailRequestBuilder GetOneDriveActivityUserDetail(
+            Date date);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOneDriveActivityUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOneDriveActivityUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetOneDriveActivityUserDetailRequestBuilder GetOneDriveActivityUserDetail(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOneDriveUsageAccountCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOneDriveUsageAccountCountsRequestBuilder"/>.</returns>
+        IReportRootGetOneDriveUsageAccountCountsRequestBuilder GetOneDriveUsageAccountCounts(
+            string period);
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetOneDriveUsageAccountDetail.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetOneDriveUsageAccountDetailRequestBuilder"/>.</returns>
@@ -291,13 +298,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetOneDriveUsageAccountDetailRequestBuilder"/>.</returns>
         IReportRootGetOneDriveUsageAccountDetailRequestBuilder GetOneDriveUsageAccountDetail(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOneDriveUsageAccountCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOneDriveUsageAccountCountsRequestBuilder"/>.</returns>
-        IReportRootGetOneDriveUsageAccountCountsRequestBuilder GetOneDriveUsageAccountCounts(
             string period);
 
         /// <summary>
@@ -315,6 +315,27 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetSharePointActivityFileCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSharePointActivityFileCountsRequestBuilder"/>.</returns>
+        IReportRootGetSharePointActivityFileCountsRequestBuilder GetSharePointActivityFileCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSharePointActivityPages.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSharePointActivityPagesRequestBuilder"/>.</returns>
+        IReportRootGetSharePointActivityPagesRequestBuilder GetSharePointActivityPages(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSharePointActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSharePointActivityUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetSharePointActivityUserCountsRequestBuilder GetSharePointActivityUserCounts(
+            string period);
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetSharePointActivityUserDetail.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetSharePointActivityUserDetailRequestBuilder"/>.</returns>
@@ -326,27 +347,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetSharePointActivityUserDetailRequestBuilder"/>.</returns>
         IReportRootGetSharePointActivityUserDetailRequestBuilder GetSharePointActivityUserDetail(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSharePointActivityFileCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSharePointActivityFileCountsRequestBuilder"/>.</returns>
-        IReportRootGetSharePointActivityFileCountsRequestBuilder GetSharePointActivityFileCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSharePointActivityUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSharePointActivityUserCountsRequestBuilder"/>.</returns>
-        IReportRootGetSharePointActivityUserCountsRequestBuilder GetSharePointActivityUserCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSharePointActivityPages.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSharePointActivityPagesRequestBuilder"/>.</returns>
-        IReportRootGetSharePointActivityPagesRequestBuilder GetSharePointActivityPages(
             string period);
 
         /// <summary>
@@ -371,6 +371,13 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetSharePointSiteUsagePages.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSharePointSiteUsagePagesRequestBuilder"/>.</returns>
+        IReportRootGetSharePointSiteUsagePagesRequestBuilder GetSharePointSiteUsagePages(
+            string period);
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetSharePointSiteUsageSiteCounts.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetSharePointSiteUsageSiteCountsRequestBuilder"/>.</returns>
@@ -382,27 +389,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetSharePointSiteUsageStorageRequestBuilder"/>.</returns>
         IReportRootGetSharePointSiteUsageStorageRequestBuilder GetSharePointSiteUsageStorage(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSharePointSiteUsagePages.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSharePointSiteUsagePagesRequestBuilder"/>.</returns>
-        IReportRootGetSharePointSiteUsagePagesRequestBuilder GetSharePointSiteUsagePages(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessActivityUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder GetSkypeForBusinessActivityUserDetail(
-            Date date);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessActivityUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder GetSkypeForBusinessActivityUserDetail(
             string period);
 
         /// <summary>
@@ -420,80 +406,17 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessPeerToPeerActivityCounts.
+        /// Gets the request builder for ReportRootGetSkypeForBusinessActivityUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessPeerToPeerActivityCountsRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessPeerToPeerActivityCountsRequestBuilder GetSkypeForBusinessPeerToPeerActivityCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessPeerToPeerActivityUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder GetSkypeForBusinessPeerToPeerActivityUserCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCountsRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCountsRequestBuilder GetSkypeForBusinessPeerToPeerActivityMinuteCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessOrganizerActivityCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessOrganizerActivityCountsRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessOrganizerActivityCountsRequestBuilder GetSkypeForBusinessOrganizerActivityCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessOrganizerActivityUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessOrganizerActivityUserCountsRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessOrganizerActivityUserCountsRequestBuilder GetSkypeForBusinessOrganizerActivityUserCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessOrganizerActivityMinuteCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsRequestBuilder GetSkypeForBusinessOrganizerActivityMinuteCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessParticipantActivityCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessParticipantActivityCountsRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessParticipantActivityCountsRequestBuilder GetSkypeForBusinessParticipantActivityCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessParticipantActivityUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessParticipantActivityUserCountsRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessParticipantActivityUserCountsRequestBuilder GetSkypeForBusinessParticipantActivityUserCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessParticipantActivityMinuteCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessParticipantActivityMinuteCountsRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessParticipantActivityMinuteCountsRequestBuilder GetSkypeForBusinessParticipantActivityMinuteCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessDeviceUsageUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder GetSkypeForBusinessDeviceUsageUserDetail(
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder GetSkypeForBusinessActivityUserDetail(
             Date date);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessDeviceUsageUserDetail.
+        /// Gets the request builder for ReportRootGetSkypeForBusinessActivityUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder GetSkypeForBusinessDeviceUsageUserDetail(
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder GetSkypeForBusinessActivityUserDetail(
             string period);
 
         /// <summary>
@@ -511,17 +434,136 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetYammerActivityUserDetail.
+        /// Gets the request builder for ReportRootGetSkypeForBusinessDeviceUsageUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetYammerActivityUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetYammerActivityUserDetailRequestBuilder GetYammerActivityUserDetail(
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder GetSkypeForBusinessDeviceUsageUserDetail(
             Date date);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetYammerActivityUserDetail.
+        /// Gets the request builder for ReportRootGetSkypeForBusinessDeviceUsageUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetYammerActivityUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetYammerActivityUserDetailRequestBuilder GetYammerActivityUserDetail(
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder GetSkypeForBusinessDeviceUsageUserDetail(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessOrganizerActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessOrganizerActivityCountsRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessOrganizerActivityCountsRequestBuilder GetSkypeForBusinessOrganizerActivityCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessOrganizerActivityMinuteCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsRequestBuilder GetSkypeForBusinessOrganizerActivityMinuteCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessOrganizerActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessOrganizerActivityUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessOrganizerActivityUserCountsRequestBuilder GetSkypeForBusinessOrganizerActivityUserCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessParticipantActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessParticipantActivityCountsRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessParticipantActivityCountsRequestBuilder GetSkypeForBusinessParticipantActivityCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessParticipantActivityMinuteCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessParticipantActivityMinuteCountsRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessParticipantActivityMinuteCountsRequestBuilder GetSkypeForBusinessParticipantActivityMinuteCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessParticipantActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessParticipantActivityUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessParticipantActivityUserCountsRequestBuilder GetSkypeForBusinessParticipantActivityUserCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessPeerToPeerActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessPeerToPeerActivityCountsRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessPeerToPeerActivityCountsRequestBuilder GetSkypeForBusinessPeerToPeerActivityCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCountsRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCountsRequestBuilder GetSkypeForBusinessPeerToPeerActivityMinuteCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessPeerToPeerActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder GetSkypeForBusinessPeerToPeerActivityUserCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsDeviceUsageDistributionUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageDistributionUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetTeamsDeviceUsageDistributionUserCountsRequestBuilder GetTeamsDeviceUsageDistributionUserCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsDeviceUsageUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetTeamsDeviceUsageUserCountsRequestBuilder GetTeamsDeviceUsageUserCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsDeviceUsageUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder GetTeamsDeviceUsageUserDetail(
+            Date date);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsDeviceUsageUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder GetTeamsDeviceUsageUserDetail(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityCountsRequestBuilder"/>.</returns>
+        IReportRootGetTeamsUserActivityCountsRequestBuilder GetTeamsUserActivityCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetTeamsUserActivityUserCountsRequestBuilder GetTeamsUserActivityUserCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetTeamsUserActivityUserDetailRequestBuilder GetTeamsUserActivityUserDetail(
+            Date date);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetTeamsUserActivityUserDetailRequestBuilder GetTeamsUserActivityUserDetail(
             string period);
 
         /// <summary>
@@ -539,17 +581,17 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetYammerDeviceUsageUserDetail.
+        /// Gets the request builder for ReportRootGetYammerActivityUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetYammerDeviceUsageUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetYammerDeviceUsageUserDetailRequestBuilder GetYammerDeviceUsageUserDetail(
+        /// <returns>The <see cref="IReportRootGetYammerActivityUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetYammerActivityUserDetailRequestBuilder GetYammerActivityUserDetail(
             Date date);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetYammerDeviceUsageUserDetail.
+        /// Gets the request builder for ReportRootGetYammerActivityUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetYammerDeviceUsageUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetYammerDeviceUsageUserDetailRequestBuilder GetYammerDeviceUsageUserDetail(
+        /// <returns>The <see cref="IReportRootGetYammerActivityUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetYammerActivityUserDetailRequestBuilder GetYammerActivityUserDetail(
             string period);
 
         /// <summary>
@@ -564,6 +606,27 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetYammerDeviceUsageUserCountsRequestBuilder"/>.</returns>
         IReportRootGetYammerDeviceUsageUserCountsRequestBuilder GetYammerDeviceUsageUserCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetYammerDeviceUsageUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetYammerDeviceUsageUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetYammerDeviceUsageUserDetailRequestBuilder GetYammerDeviceUsageUserDetail(
+            Date date);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetYammerDeviceUsageUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetYammerDeviceUsageUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetYammerDeviceUsageUserDetailRequestBuilder GetYammerDeviceUsageUserDetail(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetYammerGroupsActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetYammerGroupsActivityCountsRequestBuilder"/>.</returns>
+        IReportRootGetYammerGroupsActivityCountsRequestBuilder GetYammerGroupsActivityCounts(
             string period);
 
         /// <summary>
@@ -585,69 +648,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetYammerGroupsActivityGroupCountsRequestBuilder"/>.</returns>
         IReportRootGetYammerGroupsActivityGroupCountsRequestBuilder GetYammerGroupsActivityGroupCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetYammerGroupsActivityCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetYammerGroupsActivityCountsRequestBuilder"/>.</returns>
-        IReportRootGetYammerGroupsActivityCountsRequestBuilder GetYammerGroupsActivityCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsUserActivityUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsUserActivityUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetTeamsUserActivityUserDetailRequestBuilder GetTeamsUserActivityUserDetail(
-            Date date);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsUserActivityUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsUserActivityUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetTeamsUserActivityUserDetailRequestBuilder GetTeamsUserActivityUserDetail(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsUserActivityCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsUserActivityCountsRequestBuilder"/>.</returns>
-        IReportRootGetTeamsUserActivityCountsRequestBuilder GetTeamsUserActivityCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsUserActivityUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsUserActivityUserCountsRequestBuilder"/>.</returns>
-        IReportRootGetTeamsUserActivityUserCountsRequestBuilder GetTeamsUserActivityUserCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsDeviceUsageUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder GetTeamsDeviceUsageUserDetail(
-            Date date);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsDeviceUsageUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder"/>.</returns>
-        IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder GetTeamsDeviceUsageUserDetail(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsDeviceUsageUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageUserCountsRequestBuilder"/>.</returns>
-        IReportRootGetTeamsDeviceUsageUserCountsRequestBuilder GetTeamsDeviceUsageUserCounts(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsDeviceUsageDistributionUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageDistributionUserCountsRequestBuilder"/>.</returns>
-        IReportRootGetTeamsDeviceUsageDistributionUserCountsRequestBuilder GetTeamsDeviceUsageDistributionUserCounts(
             string period);
     
     }

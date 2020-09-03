@@ -31,39 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets created by.
-        /// Identity of the user that created the task.
+        /// Gets or sets active checklist item count.
+        /// Number of checklist items with value set to false, representing incomplete items.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet CreatedBy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeChecklistItemCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ActiveChecklistItemCount { get; set; }
     
         /// <summary>
-        /// Gets or sets plan id.
-        /// Plan ID to which the task belongs.
+        /// Gets or sets applied categories.
+        /// The categories to which the task has been applied. See applied Categories for possible values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "planId", Required = Newtonsoft.Json.Required.Default)]
-        public string PlanId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bucket id.
-        /// Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bucketId", Required = Newtonsoft.Json.Required.Default)]
-        public string BucketId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets title.
-        /// Title of the task.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
-        public string Title { get; set; }
-    
-        /// <summary>
-        /// Gets or sets order hint.
-        /// Hint used to order items of this type in a list view. The format is defined as outlined here.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderHint", Required = Newtonsoft.Json.Required.Default)]
-        public string OrderHint { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedCategories", Required = Newtonsoft.Json.Required.Default)]
+        public PlannerAppliedCategories AppliedCategories { get; set; }
     
         /// <summary>
         /// Gets or sets assignee priority.
@@ -73,18 +52,53 @@ namespace Microsoft.Graph
         public string AssigneePriority { get; set; }
     
         /// <summary>
-        /// Gets or sets percent complete.
-        /// Percentage of task completion. When set to 100, the task is considered completed.
+        /// Gets or sets assignments.
+        /// The set of assignees the task is assigned to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "percentComplete", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PercentComplete { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        public PlannerAssignments Assignments { get; set; }
     
         /// <summary>
-        /// Gets or sets start date time.
-        /// Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// Gets or sets bucket id.
+        /// Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bucketId", Required = Newtonsoft.Json.Required.Default)]
+        public string BucketId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets checklist item count.
+        /// Number of checklist items that are present on the task.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checklistItemCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ChecklistItemCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets completed by.
+        /// Identity of the user that completed the task.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedBy", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet CompletedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets completed date time.
+        /// Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CompletedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets conversation thread id.
+        /// Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversationThreadId", Required = Newtonsoft.Json.Required.Default)]
+        public string ConversationThreadId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created by.
+        /// Identity of the user that created the task.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -108,25 +122,32 @@ namespace Microsoft.Graph
         public bool? HasDescription { get; set; }
     
         /// <summary>
+        /// Gets or sets order hint.
+        /// Hint used to order items of this type in a list view. The format is defined as outlined here.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderHint", Required = Newtonsoft.Json.Required.Default)]
+        public string OrderHint { get; set; }
+    
+        /// <summary>
+        /// Gets or sets percent complete.
+        /// Percentage of task completion. When set to 100, the task is considered completed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "percentComplete", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PercentComplete { get; set; }
+    
+        /// <summary>
+        /// Gets or sets plan id.
+        /// Plan ID to which the task belongs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "planId", Required = Newtonsoft.Json.Required.Default)]
+        public string PlanId { get; set; }
+    
+        /// <summary>
         /// Gets or sets preview type.
         /// This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewType", Required = Newtonsoft.Json.Required.Default)]
         public PlannerPreviewType? PreviewType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets completed date time.
-        /// Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CompletedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets completed by.
-        /// Identity of the user that completed the task.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedBy", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet CompletedBy { get; set; }
     
         /// <summary>
         /// Gets or sets reference count.
@@ -136,46 +157,18 @@ namespace Microsoft.Graph
         public Int32? ReferenceCount { get; set; }
     
         /// <summary>
-        /// Gets or sets checklist item count.
-        /// Number of checklist items that are present on the task.
+        /// Gets or sets start date time.
+        /// Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checklistItemCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ChecklistItemCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets active checklist item count.
-        /// Number of checklist items with value set to false, representing incomplete items.
+        /// Gets or sets title.
+        /// Title of the task.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeChecklistItemCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ActiveChecklistItemCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets applied categories.
-        /// The categories to which the task has been applied. See applied Categories for possible values.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedCategories", Required = Newtonsoft.Json.Required.Default)]
-        public PlannerAppliedCategories AppliedCategories { get; set; }
-    
-        /// <summary>
-        /// Gets or sets assignments.
-        /// The set of assignees the task is assigned to.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
-        public PlannerAssignments Assignments { get; set; }
-    
-        /// <summary>
-        /// Gets or sets conversation thread id.
-        /// Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversationThreadId", Required = Newtonsoft.Json.Required.Default)]
-        public string ConversationThreadId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets details.
-        /// Read-only. Nullable. Additional details about the task.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
-        public PlannerTaskDetails Details { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
+        public string Title { get; set; }
     
         /// <summary>
         /// Gets or sets assigned to task board format.
@@ -185,18 +178,25 @@ namespace Microsoft.Graph
         public PlannerAssignedToTaskBoardTaskFormat AssignedToTaskBoardFormat { get; set; }
     
         /// <summary>
-        /// Gets or sets progress task board format.
-        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "progressTaskBoardFormat", Required = Newtonsoft.Json.Required.Default)]
-        public PlannerProgressTaskBoardTaskFormat ProgressTaskBoardFormat { get; set; }
-    
-        /// <summary>
         /// Gets or sets bucket task board format.
         /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bucketTaskBoardFormat", Required = Newtonsoft.Json.Required.Default)]
         public PlannerBucketTaskBoardTaskFormat BucketTaskBoardFormat { get; set; }
+    
+        /// <summary>
+        /// Gets or sets details.
+        /// Read-only. Nullable. Additional details about the task.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
+        public PlannerTaskDetails Details { get; set; }
+    
+        /// <summary>
+        /// Gets or sets progress task board format.
+        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "progressTaskBoardFormat", Required = Newtonsoft.Json.Required.Default)]
+        public PlannerProgressTaskBoardTaskFormat ProgressTaskBoardFormat { get; set; }
     
     }
 }

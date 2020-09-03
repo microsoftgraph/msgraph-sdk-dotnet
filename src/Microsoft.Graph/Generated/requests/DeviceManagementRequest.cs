@@ -250,22 +250,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.DeviceConfigurations != null && deviceManagementToInitialize.DeviceConfigurations.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.DeviceConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceManagementToInitialize.DeviceCompliancePolicies != null && deviceManagementToInitialize.DeviceCompliancePolicies.CurrentPage != null)
                 {
                     deviceManagementToInitialize.DeviceCompliancePolicies.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -298,6 +282,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.DeviceConfigurations != null && deviceManagementToInitialize.DeviceConfigurations.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.DeviceConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceConfigurations@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.DeviceConfigurations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.IosUpdateStatuses != null && deviceManagementToInitialize.IosUpdateStatuses.CurrentPage != null)
                 {
                     deviceManagementToInitialize.IosUpdateStatuses.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -309,6 +309,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.IosUpdateStatuses.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.ComplianceManagementPartners != null && deviceManagementToInitialize.ComplianceManagementPartners.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ComplianceManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("complianceManagementPartners@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.ComplianceManagementPartners.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -330,22 +346,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.ExchangeConnectors != null && deviceManagementToInitialize.ExchangeConnectors.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.ExchangeConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("exchangeConnectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ExchangeConnectors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceManagementToInitialize.DeviceEnrollmentConfigurations != null && deviceManagementToInitialize.DeviceEnrollmentConfigurations.CurrentPage != null)
                 {
                     deviceManagementToInitialize.DeviceEnrollmentConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -357,22 +357,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.DeviceEnrollmentConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.MobileThreatDefenseConnectors != null && deviceManagementToInitialize.MobileThreatDefenseConnectors.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.MobileThreatDefenseConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("mobileThreatDefenseConnectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.MobileThreatDefenseConnectors.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -394,17 +378,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.ComplianceManagementPartners != null && deviceManagementToInitialize.ComplianceManagementPartners.CurrentPage != null)
+                if (deviceManagementToInitialize.ExchangeConnectors != null && deviceManagementToInitialize.ExchangeConnectors.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.ComplianceManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.ExchangeConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("complianceManagementPartners@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("exchangeConnectors@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.ComplianceManagementPartners.InitializeNextPageRequest(
+                        deviceManagementToInitialize.ExchangeConnectors.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.MobileThreatDefenseConnectors != null && deviceManagementToInitialize.MobileThreatDefenseConnectors.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.MobileThreatDefenseConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("mobileThreatDefenseConnectors@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.MobileThreatDefenseConnectors.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -458,17 +458,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.RoleDefinitions != null && deviceManagementToInitialize.RoleDefinitions.CurrentPage != null)
+                if (deviceManagementToInitialize.ResourceOperations != null && deviceManagementToInitialize.ResourceOperations.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.RoleDefinitions.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.ResourceOperations.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("resourceOperations@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.RoleDefinitions.InitializeNextPageRequest(
+                        deviceManagementToInitialize.ResourceOperations.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -490,17 +490,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.ResourceOperations != null && deviceManagementToInitialize.ResourceOperations.CurrentPage != null)
+                if (deviceManagementToInitialize.RoleDefinitions != null && deviceManagementToInitialize.RoleDefinitions.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.ResourceOperations.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.RoleDefinitions.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("resourceOperations@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.ResourceOperations.InitializeNextPageRequest(
+                        deviceManagementToInitialize.RoleDefinitions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IOfficeGraphInsightsRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Trending.
-        /// </summary>
-        /// <returns>The <see cref="IOfficeGraphInsightsTrendingCollectionRequestBuilder"/>.</returns>
-        IOfficeGraphInsightsTrendingCollectionRequestBuilder Trending { get; }
-
-        /// <summary>
         /// Gets the request builder for Shared.
         /// </summary>
         /// <returns>The <see cref="IOfficeGraphInsightsSharedCollectionRequestBuilder"/>.</returns>
         IOfficeGraphInsightsSharedCollectionRequestBuilder Shared { get; }
+
+        /// <summary>
+        /// Gets the request builder for Trending.
+        /// </summary>
+        /// <returns>The <see cref="IOfficeGraphInsightsTrendingCollectionRequestBuilder"/>.</returns>
+        IOfficeGraphInsightsTrendingCollectionRequestBuilder Trending { get; }
 
         /// <summary>
         /// Gets the request builder for Used.

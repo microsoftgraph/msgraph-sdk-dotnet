@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         IDeviceEnrollmentConfigurationAssignmentsCollectionRequestBuilder Assignments { get; }
     
         /// <summary>
-        /// Gets the request builder for DeviceEnrollmentConfigurationSetPriority.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceEnrollmentConfigurationSetPriorityRequestBuilder"/>.</returns>
-        IDeviceEnrollmentConfigurationSetPriorityRequestBuilder SetPriority(
-            Int32 priority);
-
-        /// <summary>
         /// Gets the request builder for DeviceEnrollmentConfigurationAssign.
         /// </summary>
         /// <returns>The <see cref="IDeviceEnrollmentConfigurationAssignRequestBuilder"/>.</returns>
         IDeviceEnrollmentConfigurationAssignRequestBuilder Assign(
             IEnumerable<EnrollmentConfigurationAssignment> enrollmentConfigurationAssignments = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceEnrollmentConfigurationSetPriority.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceEnrollmentConfigurationSetPriorityRequestBuilder"/>.</returns>
+        IDeviceEnrollmentConfigurationSetPriorityRequestBuilder SetPriority(
+            Int32 priority);
     
     }
 }

@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// Display Name of the Role definition.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets description.
         /// Description of the Role definition.
         /// </summary>
@@ -45,11 +38,11 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets role permissions.
-        /// List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
+        /// Gets or sets display name.
+        /// Display Name of the Role definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rolePermissions", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<RolePermission> RolePermissions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is built in.
@@ -57,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltIn", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsBuiltIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role permissions.
+        /// List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rolePermissions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<RolePermission> RolePermissions { get; set; }
     
         /// <summary>
         /// Gets or sets role assignments.

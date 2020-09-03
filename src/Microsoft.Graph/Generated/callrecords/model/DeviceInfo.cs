@@ -31,13 +31,6 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
-        /// Gets or sets captureDeviceName.
-        /// Name of the capture device used by the media endpoint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "captureDeviceName", Required = Newtonsoft.Json.Required.Default)]
-        public string CaptureDeviceName { get; set; }
-    
-        /// <summary>
         /// Gets or sets captureDeviceDriver.
         /// Name of the capture device driver used by the media endpoint.
         /// </summary>
@@ -45,67 +38,11 @@ namespace Microsoft.Graph.CallRecords
         public string CaptureDeviceDriver { get; set; }
     
         /// <summary>
-        /// Gets or sets renderDeviceName.
-        /// Name of the render device used by the media endpoint.
+        /// Gets or sets captureDeviceName.
+        /// Name of the capture device used by the media endpoint.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renderDeviceName", Required = Newtonsoft.Json.Required.Default)]
-        public string RenderDeviceName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets renderDeviceDriver.
-        /// Name of the render device driver used by the media endpoint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renderDeviceDriver", Required = Newtonsoft.Json.Required.Default)]
-        public string RenderDeviceDriver { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sentSignalLevel.
-        /// Average energy level of sent audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sentSignalLevel", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SentSignalLevel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets receivedSignalLevel.
-        /// Average energy level of received audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receivedSignalLevel", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ReceivedSignalLevel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sentNoiseLevel.
-        /// Average energy level of sent audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sentNoiseLevel", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SentNoiseLevel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets receivedNoiseLevel.
-        /// Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receivedNoiseLevel", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ReceivedNoiseLevel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets initialSignalLevelRootMeanSquare.
-        /// The root mean square (RMS) of the incoming signal of up to the first 30 seconds of the call.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initialSignalLevelRootMeanSquare", Required = Newtonsoft.Json.Required.Default)]
-        public Single? InitialSignalLevelRootMeanSquare { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cpuInsufficentEventRatio.
-        /// Fraction of the call that the media endpoint detected the CPU resources available were insufficient and caused poor quality of the audio sent and received.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cpuInsufficentEventRatio", Required = Newtonsoft.Json.Required.Default)]
-        public Single? CpuInsufficentEventRatio { get; set; }
-    
-        /// <summary>
-        /// Gets or sets renderNotFunctioningEventRatio.
-        /// Fraction of the call that the media endpoint detected the render device was not working properly.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renderNotFunctioningEventRatio", Required = Newtonsoft.Json.Required.Default)]
-        public Single? RenderNotFunctioningEventRatio { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "captureDeviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string CaptureDeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets captureNotFunctioningEventRatio.
@@ -115,25 +52,11 @@ namespace Microsoft.Graph.CallRecords
         public Single? CaptureNotFunctioningEventRatio { get; set; }
     
         /// <summary>
-        /// Gets or sets deviceGlitchEventRatio.
-        /// Fraction of the call that the media endpoint detected glitches or gaps in the audio played or captured that caused poor quality of the audio being sent or received.
+        /// Gets or sets cpuInsufficentEventRatio.
+        /// Fraction of the call that the media endpoint detected the CPU resources available were insufficient and caused poor quality of the audio sent and received.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGlitchEventRatio", Required = Newtonsoft.Json.Required.Default)]
-        public Single? DeviceGlitchEventRatio { get; set; }
-    
-        /// <summary>
-        /// Gets or sets lowSpeechToNoiseEventRatio.
-        /// Fraction of the call that the media endpoint detected low speech to noise level that caused poor quality of the audio being sent.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lowSpeechToNoiseEventRatio", Required = Newtonsoft.Json.Required.Default)]
-        public Single? LowSpeechToNoiseEventRatio { get; set; }
-    
-        /// <summary>
-        /// Gets or sets lowSpeechLevelEventRatio.
-        /// Fraction of the call that the media endpoint detected low speech level that caused poor quality of the audio being sent.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lowSpeechLevelEventRatio", Required = Newtonsoft.Json.Required.Default)]
-        public Single? LowSpeechLevelEventRatio { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cpuInsufficentEventRatio", Required = Newtonsoft.Json.Required.Default)]
+        public Single? CpuInsufficentEventRatio { get; set; }
     
         /// <summary>
         /// Gets or sets deviceClippingEventRatio.
@@ -143,6 +66,13 @@ namespace Microsoft.Graph.CallRecords
         public Single? DeviceClippingEventRatio { get; set; }
     
         /// <summary>
+        /// Gets or sets deviceGlitchEventRatio.
+        /// Fraction of the call that the media endpoint detected glitches or gaps in the audio played or captured that caused poor quality of the audio being sent or received.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGlitchEventRatio", Required = Newtonsoft.Json.Required.Default)]
+        public Single? DeviceGlitchEventRatio { get; set; }
+    
+        /// <summary>
         /// Gets or sets howlingEventCount.
         /// Number of times during the call that the media endpoint detected howling or screeching audio.
         /// </summary>
@@ -150,11 +80,60 @@ namespace Microsoft.Graph.CallRecords
         public Int32? HowlingEventCount { get; set; }
     
         /// <summary>
-        /// Gets or sets renderZeroVolumeEventRatio.
-        /// Fraction of the call that media endpoint detected device render volume is set to 0.
+        /// Gets or sets initialSignalLevelRootMeanSquare.
+        /// The root mean square (RMS) of the incoming signal of up to the first 30 seconds of the call.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renderZeroVolumeEventRatio", Required = Newtonsoft.Json.Required.Default)]
-        public Single? RenderZeroVolumeEventRatio { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initialSignalLevelRootMeanSquare", Required = Newtonsoft.Json.Required.Default)]
+        public Single? InitialSignalLevelRootMeanSquare { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lowSpeechLevelEventRatio.
+        /// Fraction of the call that the media endpoint detected low speech level that caused poor quality of the audio being sent.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lowSpeechLevelEventRatio", Required = Newtonsoft.Json.Required.Default)]
+        public Single? LowSpeechLevelEventRatio { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lowSpeechToNoiseEventRatio.
+        /// Fraction of the call that the media endpoint detected low speech to noise level that caused poor quality of the audio being sent.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lowSpeechToNoiseEventRatio", Required = Newtonsoft.Json.Required.Default)]
+        public Single? LowSpeechToNoiseEventRatio { get; set; }
+    
+        /// <summary>
+        /// Gets or sets micGlitchRate.
+        /// Glitches per 5 minute interval for the media endpoint's microphone.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "micGlitchRate", Required = Newtonsoft.Json.Required.Default)]
+        public Single? MicGlitchRate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets receivedNoiseLevel.
+        /// Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receivedNoiseLevel", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ReceivedNoiseLevel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets receivedSignalLevel.
+        /// Average energy level of received audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receivedSignalLevel", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ReceivedSignalLevel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets renderDeviceDriver.
+        /// Name of the render device driver used by the media endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renderDeviceDriver", Required = Newtonsoft.Json.Required.Default)]
+        public string RenderDeviceDriver { get; set; }
+    
+        /// <summary>
+        /// Gets or sets renderDeviceName.
+        /// Name of the render device used by the media endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renderDeviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string RenderDeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets renderMuteEventRatio.
@@ -164,11 +143,32 @@ namespace Microsoft.Graph.CallRecords
         public Single? RenderMuteEventRatio { get; set; }
     
         /// <summary>
-        /// Gets or sets micGlitchRate.
-        /// Glitches per 5 minute interval for the media endpoint's microphone.
+        /// Gets or sets renderNotFunctioningEventRatio.
+        /// Fraction of the call that the media endpoint detected the render device was not working properly.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "micGlitchRate", Required = Newtonsoft.Json.Required.Default)]
-        public Single? MicGlitchRate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renderNotFunctioningEventRatio", Required = Newtonsoft.Json.Required.Default)]
+        public Single? RenderNotFunctioningEventRatio { get; set; }
+    
+        /// <summary>
+        /// Gets or sets renderZeroVolumeEventRatio.
+        /// Fraction of the call that media endpoint detected device render volume is set to 0.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renderZeroVolumeEventRatio", Required = Newtonsoft.Json.Required.Default)]
+        public Single? RenderZeroVolumeEventRatio { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sentNoiseLevel.
+        /// Average energy level of sent audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sentNoiseLevel", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SentNoiseLevel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sentSignalLevel.
+        /// Average energy level of sent audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sentSignalLevel", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SentSignalLevel { get; set; }
     
         /// <summary>
         /// Gets or sets speakerGlitchRate.

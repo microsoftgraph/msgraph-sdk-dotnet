@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ExtensionProperties.
-        /// </summary>
-        /// <returns>The <see cref="IApplicationExtensionPropertiesCollectionRequestBuilder"/>.</returns>
-        public IApplicationExtensionPropertiesCollectionRequestBuilder ExtensionProperties
-        {
-            get
-            {
-                return new ApplicationExtensionPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensionProperties"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DirectoryObjectWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("createdOnBehalfOf"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ExtensionProperties.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationExtensionPropertiesCollectionRequestBuilder"/>.</returns>
+        public IApplicationExtensionPropertiesCollectionRequestBuilder ExtensionProperties
+        {
+            get
+            {
+                return new ApplicationExtensionPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensionProperties"), this.Client);
             }
         }
 
@@ -99,18 +99,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for TokenLifetimePolicies.
-        /// </summary>
-        /// <returns>The <see cref="IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies
-        {
-            get
-            {
-                return new ApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tokenLifetimePolicies"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for TokenIssuancePolicies.
         /// </summary>
         /// <returns>The <see cref="IApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -119,6 +107,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tokenIssuancePolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TokenLifetimePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies
+        {
+            get
+            {
+                return new ApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tokenLifetimePolicies"), this.Client);
             }
         }
     

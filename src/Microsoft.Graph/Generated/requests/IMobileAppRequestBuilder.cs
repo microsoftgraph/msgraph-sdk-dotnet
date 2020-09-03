@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IMobileAppRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Categories.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
-        IMobileAppCategoriesCollectionWithReferencesRequestBuilder Categories { get; }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IMobileAppAssignmentsCollectionRequestBuilder"/>.</returns>
         IMobileAppAssignmentsCollectionRequestBuilder Assignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for Categories.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IMobileAppCategoriesCollectionWithReferencesRequestBuilder Categories { get; }
     
         /// <summary>
         /// Gets the request builder for MobileAppAssign.

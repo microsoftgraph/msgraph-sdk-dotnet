@@ -63,42 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Group.
-        /// </summary>
-        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
-        public IGroupWithReferenceRequestBuilder Group
-        {
-            get
-            {
-                return new GroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("group"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Template.
-        /// </summary>
-        /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>
-        public ITeamsTemplateWithReferenceRequestBuilder Template
-        {
-            get
-            {
-                return new TeamsTemplateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("template"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Members.
-        /// </summary>
-        /// <returns>The <see cref="ITeamMembersCollectionRequestBuilder"/>.</returns>
-        public ITeamMembersCollectionRequestBuilder Members
-        {
-            get
-            {
-                return new TeamMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>
@@ -111,14 +75,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for PrimaryChannel.
+        /// Gets the request builder for Group.
         /// </summary>
-        /// <returns>The <see cref="IChannelRequestBuilder"/>.</returns>
-        public IChannelRequestBuilder PrimaryChannel
+        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
+        public IGroupWithReferenceRequestBuilder Group
         {
             get
             {
-                return new ChannelRequestBuilder(this.AppendSegmentToRequestUrl("primaryChannel"), this.Client);
+                return new GroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("group"), this.Client);
             }
         }
 
@@ -135,6 +99,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="ITeamMembersCollectionRequestBuilder"/>.</returns>
+        public ITeamMembersCollectionRequestBuilder Members
+        {
+            get
+            {
+                return new TeamMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Operations.
         /// </summary>
         /// <returns>The <see cref="ITeamOperationsCollectionRequestBuilder"/>.</returns>
@@ -145,7 +121,44 @@ namespace Microsoft.Graph
                 return new TeamOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for PrimaryChannel.
+        /// </summary>
+        /// <returns>The <see cref="IChannelRequestBuilder"/>.</returns>
+        public IChannelRequestBuilder PrimaryChannel
+        {
+            get
+            {
+                return new ChannelRequestBuilder(this.AppendSegmentToRequestUrl("primaryChannel"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Template.
+        /// </summary>
+        /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>
+        public ITeamsTemplateWithReferenceRequestBuilder Template
+        {
+            get
+            {
+                return new TeamsTemplateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("template"), this.Client);
+            }
+        }
     
+        /// <summary>
+        /// Gets the request builder for TeamArchive.
+        /// </summary>
+        /// <returns>The <see cref="ITeamArchiveRequestBuilder"/>.</returns>
+        public ITeamArchiveRequestBuilder Archive(
+            bool? shouldSetSpoSiteReadOnlyForMembers = null)
+        {
+            return new TeamArchiveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.archive"),
+                this.Client,
+                shouldSetSpoSiteReadOnlyForMembers);
+        }
+
         /// <summary>
         /// Gets the request builder for TeamClone.
         /// </summary>
@@ -167,19 +180,6 @@ namespace Microsoft.Graph
                 description,
                 mailNickname,
                 classification);
-        }
-
-        /// <summary>
-        /// Gets the request builder for TeamArchive.
-        /// </summary>
-        /// <returns>The <see cref="ITeamArchiveRequestBuilder"/>.</returns>
-        public ITeamArchiveRequestBuilder Archive(
-            bool? shouldSetSpoSiteReadOnlyForMembers = null)
-        {
-            return new TeamArchiveRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.archive"),
-                this.Client,
-                shouldSetSpoSiteReadOnlyForMembers);
         }
 
         /// <summary>

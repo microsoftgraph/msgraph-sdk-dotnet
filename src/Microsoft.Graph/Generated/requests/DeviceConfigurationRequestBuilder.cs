@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceSettingStateSummaries.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder"/>.</returns>
+        public IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder DeviceSettingStateSummaries
+        {
+            get
+            {
+                return new DeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceSettingStateSummaries"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceStatuses.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationDeviceStatusesCollectionRequestBuilder"/>.</returns>
@@ -71,18 +83,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceConfigurationDeviceStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceStatuses"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for UserStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationUserStatusesCollectionRequestBuilder"/>.</returns>
-        public IDeviceConfigurationUserStatusesCollectionRequestBuilder UserStatuses
-        {
-            get
-            {
-                return new DeviceConfigurationUserStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStatuses"), this.Client);
             }
         }
 
@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationUserStatusesCollectionRequestBuilder"/>.</returns>
+        public IDeviceConfigurationUserStatusesCollectionRequestBuilder UserStatuses
+        {
+            get
+            {
+                return new DeviceConfigurationUserStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStatuses"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserStatusOverview.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationUserOverviewRequestBuilder"/>.</returns>
@@ -107,18 +119,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceConfigurationUserOverviewRequestBuilder(this.AppendSegmentToRequestUrl("userStatusOverview"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceSettingStateSummaries.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder"/>.</returns>
-        public IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder DeviceSettingStateSummaries
-        {
-            get
-            {
-                return new DeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceSettingStateSummaries"), this.Client);
             }
         }
     

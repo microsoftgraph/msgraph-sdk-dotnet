@@ -31,53 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets firewallEnabled.
-        /// Configures the host device to allow or block the firewall and advanced security enforcement for the network profile. Possible values are: notConfigured, blocked, allowed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public StateManagementSetting? FirewallEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets stealthModeBlocked.
-        /// Prevent the server from operating in stealth mode. When StealthModeRequired and StealthModeBlocked are both true, StealthModeBlocked takes priority.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stealthModeBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? StealthModeBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets incomingTrafficBlocked.
-        /// Configures the firewall to block all incoming traffic regardless of other policy settings. When IncomingTrafficRequired and IncomingTrafficBlocked are both true, IncomingTrafficBlocked takes priority.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incomingTrafficBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IncomingTrafficBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets unicastResponsesToMulticastBroadcastsBlocked.
-        /// Configures the firewall to block unicast responses to multicast broadcast traffic. When UnicastResponsesToMulticastBroadcastsRequired and UnicastResponsesToMulticastBroadcastsBlocked are both true, UnicastResponsesToMulticastBroadcastsBlocked takes priority.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unicastResponsesToMulticastBroadcastsBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UnicastResponsesToMulticastBroadcastsBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets inboundNotificationsBlocked.
-        /// Prevents the firewall from displaying notifications when an application is blocked from listening on a port. When InboundNotificationsRequired and InboundNotificationsBlocked are both true, InboundNotificationsBlocked takes priority.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inboundNotificationsBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? InboundNotificationsBlocked { get; set; }
-    
-        /// <summary>
         /// Gets or sets authorizedApplicationRulesFromGroupPolicyMerged.
         /// Configures the firewall to merge authorized application rules from group policy with those from local store instead of ignoring the local store rules. When AuthorizedApplicationRulesFromGroupPolicyNotMerged and AuthorizedApplicationRulesFromGroupPolicyMerged are both true, AuthorizedApplicationRulesFromGroupPolicyMerged takes priority.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorizedApplicationRulesFromGroupPolicyMerged", Required = Newtonsoft.Json.Required.Default)]
         public bool? AuthorizedApplicationRulesFromGroupPolicyMerged { get; set; }
-    
-        /// <summary>
-        /// Gets or sets globalPortRulesFromGroupPolicyMerged.
-        /// Configures the firewall to merge global port rules from group policy with those from local store instead of ignoring the local store rules. When GlobalPortRulesFromGroupPolicyNotMerged and GlobalPortRulesFromGroupPolicyMerged are both true, GlobalPortRulesFromGroupPolicyMerged takes priority.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "globalPortRulesFromGroupPolicyMerged", Required = Newtonsoft.Json.Required.Default)]
-        public bool? GlobalPortRulesFromGroupPolicyMerged { get; set; }
     
         /// <summary>
         /// Gets or sets connectionSecurityRulesFromGroupPolicyMerged.
@@ -87,11 +45,18 @@ namespace Microsoft.Graph
         public bool? ConnectionSecurityRulesFromGroupPolicyMerged { get; set; }
     
         /// <summary>
-        /// Gets or sets outboundConnectionsBlocked.
-        /// Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.
+        /// Gets or sets firewallEnabled.
+        /// Configures the host device to allow or block the firewall and advanced security enforcement for the network profile. Possible values are: notConfigured, blocked, allowed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outboundConnectionsBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? OutboundConnectionsBlocked { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public StateManagementSetting? FirewallEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets globalPortRulesFromGroupPolicyMerged.
+        /// Configures the firewall to merge global port rules from group policy with those from local store instead of ignoring the local store rules. When GlobalPortRulesFromGroupPolicyNotMerged and GlobalPortRulesFromGroupPolicyMerged are both true, GlobalPortRulesFromGroupPolicyMerged takes priority.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "globalPortRulesFromGroupPolicyMerged", Required = Newtonsoft.Json.Required.Default)]
+        public bool? GlobalPortRulesFromGroupPolicyMerged { get; set; }
     
         /// <summary>
         /// Gets or sets inboundConnectionsBlocked.
@@ -101,11 +66,25 @@ namespace Microsoft.Graph
         public bool? InboundConnectionsBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets securedPacketExemptionAllowed.
-        /// Configures the firewall to allow the host computer to respond to unsolicited network traffic of that traffic is secured by IPSec even when stealthModeBlocked is set to true. When SecuredPacketExemptionBlocked and SecuredPacketExemptionAllowed are both true, SecuredPacketExemptionAllowed takes priority.
+        /// Gets or sets inboundNotificationsBlocked.
+        /// Prevents the firewall from displaying notifications when an application is blocked from listening on a port. When InboundNotificationsRequired and InboundNotificationsBlocked are both true, InboundNotificationsBlocked takes priority.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securedPacketExemptionAllowed", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SecuredPacketExemptionAllowed { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inboundNotificationsBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? InboundNotificationsBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets incomingTrafficBlocked.
+        /// Configures the firewall to block all incoming traffic regardless of other policy settings. When IncomingTrafficRequired and IncomingTrafficBlocked are both true, IncomingTrafficBlocked takes priority.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incomingTrafficBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IncomingTrafficBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets outboundConnectionsBlocked.
+        /// Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outboundConnectionsBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? OutboundConnectionsBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets policyRulesFromGroupPolicyMerged.
@@ -113,6 +92,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyRulesFromGroupPolicyMerged", Required = Newtonsoft.Json.Required.Default)]
         public bool? PolicyRulesFromGroupPolicyMerged { get; set; }
+    
+        /// <summary>
+        /// Gets or sets securedPacketExemptionAllowed.
+        /// Configures the firewall to allow the host computer to respond to unsolicited network traffic of that traffic is secured by IPSec even when stealthModeBlocked is set to true. When SecuredPacketExemptionBlocked and SecuredPacketExemptionAllowed are both true, SecuredPacketExemptionAllowed takes priority.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securedPacketExemptionAllowed", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SecuredPacketExemptionAllowed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets stealthModeBlocked.
+        /// Prevent the server from operating in stealth mode. When StealthModeRequired and StealthModeBlocked are both true, StealthModeBlocked takes priority.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stealthModeBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? StealthModeBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unicastResponsesToMulticastBroadcastsBlocked.
+        /// Configures the firewall to block unicast responses to multicast broadcast traffic. When UnicastResponsesToMulticastBroadcastsRequired and UnicastResponsesToMulticastBroadcastsBlocked are both true, UnicastResponsesToMulticastBroadcastsBlocked takes priority.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unicastResponsesToMulticastBroadcastsBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UnicastResponsesToMulticastBroadcastsBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

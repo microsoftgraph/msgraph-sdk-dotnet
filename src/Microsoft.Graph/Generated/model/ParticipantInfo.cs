@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets identity.
-        /// The identitySet associated with this participant. Read-only.
+        /// Gets or sets countryCode.
+        /// The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet Identity { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryCode", Required = Newtonsoft.Json.Required.Default)]
+        public string CountryCode { get; set; }
     
         /// <summary>
         /// Gets or sets endpointType.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public EndpointType? EndpointType { get; set; }
     
         /// <summary>
-        /// Gets or sets region.
-        /// The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
+        /// Gets or sets identity.
+        /// The identitySet associated with this participant. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "region", Required = Newtonsoft.Json.Required.Default)]
-        public string Region { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet Identity { get; set; }
     
         /// <summary>
         /// Gets or sets languageId.
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public string LanguageId { get; set; }
     
         /// <summary>
-        /// Gets or sets countryCode.
-        /// The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
+        /// Gets or sets region.
+        /// The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryCode", Required = Newtonsoft.Json.Required.Default)]
-        public string CountryCode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "region", Required = Newtonsoft.Json.Required.Default)]
+        public string Region { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

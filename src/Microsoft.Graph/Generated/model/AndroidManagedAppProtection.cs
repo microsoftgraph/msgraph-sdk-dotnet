@@ -31,11 +31,25 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets screen capture blocked.
-        /// Indicates whether a managed user can take screen captures of managed apps
+        /// Gets or sets custom browser display name.
+        /// Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenCaptureBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ScreenCaptureBlocked { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomBrowserDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom browser package id.
+        /// Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserPackageId", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomBrowserPackageId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deployed app count.
+        /// Count of apps to which the current policy is deployed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployedAppCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DeployedAppCount { get; set; }
     
         /// <summary>
         /// Gets or sets disable app encryption if device encryption is enabled.
@@ -52,13 +66,6 @@ namespace Microsoft.Graph
         public bool? EncryptAppData { get; set; }
     
         /// <summary>
-        /// Gets or sets deployed app count.
-        /// Count of apps to which the current policy is deployed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployedAppCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DeployedAppCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets minimum required patch version.
         /// Define the oldest required Android security patch level a user can have to gain secure access to the app.
         /// </summary>
@@ -73,18 +80,11 @@ namespace Microsoft.Graph
         public string MinimumWarningPatchVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets custom browser package id.
-        /// Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+        /// Gets or sets screen capture blocked.
+        /// Indicates whether a managed user can take screen captures of managed apps
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserPackageId", Required = Newtonsoft.Json.Required.Default)]
-        public string CustomBrowserPackageId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets custom browser display name.
-        /// Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string CustomBrowserDisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenCaptureBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ScreenCaptureBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets apps.

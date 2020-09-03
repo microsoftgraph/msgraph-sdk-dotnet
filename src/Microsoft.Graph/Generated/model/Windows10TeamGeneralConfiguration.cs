@@ -80,18 +80,18 @@ namespace Microsoft.Graph
         public TimeOfDay MaintenanceWindowStartTime { get; set; }
     
         /// <summary>
-        /// Gets or sets miracast channel.
-        /// The channel. Possible values are: userDefined, one, two, three, four, five, six, seven, eight, nine, ten, eleven, thirtySix, forty, fortyFour, fortyEight, oneHundredFortyNine, oneHundredFiftyThree, oneHundredFiftySeven, oneHundredSixtyOne, oneHundredSixtyFive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "miracastChannel", Required = Newtonsoft.Json.Required.Default)]
-        public MiracastChannel? MiracastChannel { get; set; }
-    
-        /// <summary>
         /// Gets or sets miracast blocked.
         /// Indicates whether or not to Block wireless projection.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "miracastBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? MiracastBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets miracast channel.
+        /// The channel. Possible values are: userDefined, one, two, three, four, five, six, seven, eight, nine, ten, eleven, thirtySix, forty, fortyFour, fortyEight, oneHundredFortyNine, oneHundredFiftyThree, oneHundredFiftySeven, oneHundredSixtyOne, oneHundredSixtyFive.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "miracastChannel", Required = Newtonsoft.Json.Required.Default)]
+        public MiracastChannel? MiracastChannel { get; set; }
     
         /// <summary>
         /// Gets or sets miracast require pin.
@@ -150,18 +150,18 @@ namespace Microsoft.Graph
         public Int32? SettingsSleepTimeoutInMinutes { get; set; }
     
         /// <summary>
-        /// Gets or sets welcome screen block automatic wake up.
-        /// Indicates whether or not to Block the welcome screen from waking up automatically when someone enters the room.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "welcomeScreenBlockAutomaticWakeUp", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WelcomeScreenBlockAutomaticWakeUp { get; set; }
-    
-        /// <summary>
         /// Gets or sets welcome screen background image url.
         /// The welcome screen background image URL. The URL must use the HTTPS protocol and return a PNG image.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "welcomeScreenBackgroundImageUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WelcomeScreenBackgroundImageUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets welcome screen block automatic wake up.
+        /// Indicates whether or not to Block the welcome screen from waking up automatically when someone enters the room.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "welcomeScreenBlockAutomaticWakeUp", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WelcomeScreenBlockAutomaticWakeUp { get; set; }
     
         /// <summary>
         /// Gets or sets welcome screen meeting information.

@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets os maximum version.
+        /// Maximum Windows Phone version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMaximumVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets os minimum version.
+        /// Minimum Windows Phone version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMinimumVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets password block simple.
         /// Whether or not to block syncing the calendar.
         /// </summary>
@@ -43,6 +57,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordExpirationDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordExpirationDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password minimum character set count.
+        /// The number of character sets required in the password.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumCharacterSetCount { get; set; }
     
         /// <summary>
         /// Gets or sets password minimum length.
@@ -59,20 +80,6 @@ namespace Microsoft.Graph
         public Int32? PasswordMinutesOfInactivityBeforeLock { get; set; }
     
         /// <summary>
-        /// Gets or sets password minimum character set count.
-        /// The number of character sets required in the password.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasswordMinimumCharacterSetCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets password required type.
-        /// The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
-        public RequiredPasswordType? PasswordRequiredType { get; set; }
-    
-        /// <summary>
         /// Gets or sets password previous password block count.
         /// Number of previous passwords to block. Valid values 0 to 24
         /// </summary>
@@ -87,18 +94,11 @@ namespace Microsoft.Graph
         public bool? PasswordRequired { get; set; }
     
         /// <summary>
-        /// Gets or sets os minimum version.
-        /// Minimum Windows Phone version.
+        /// Gets or sets password required type.
+        /// The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsMinimumVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets os maximum version.
-        /// Maximum Windows Phone version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsMaximumVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
+        public RequiredPasswordType? PasswordRequiredType { get; set; }
     
         /// <summary>
         /// Gets or sets storage require encryption.

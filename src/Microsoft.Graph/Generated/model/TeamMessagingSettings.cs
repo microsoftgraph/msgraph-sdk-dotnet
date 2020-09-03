@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets allowUserEditMessages.
-        /// If set to true, users can edit their messages.
+        /// Gets or sets allowChannelMentions.
+        /// If set to true, @channel mentions are allowed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowUserEditMessages", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowUserEditMessages { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowUserDeleteMessages.
-        /// If set to true, users can delete their messages.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowUserDeleteMessages", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowUserDeleteMessages { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowChannelMentions", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowChannelMentions { get; set; }
     
         /// <summary>
         /// Gets or sets allowOwnerDeleteMessages.
@@ -59,11 +52,18 @@ namespace Microsoft.Graph
         public bool? AllowTeamMentions { get; set; }
     
         /// <summary>
-        /// Gets or sets allowChannelMentions.
-        /// If set to true, @channel mentions are allowed.
+        /// Gets or sets allowUserDeleteMessages.
+        /// If set to true, users can delete their messages.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowChannelMentions", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowChannelMentions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowUserDeleteMessages", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowUserDeleteMessages { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allowUserEditMessages.
+        /// If set to true, users can edit their messages.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowUserEditMessages", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowUserEditMessages { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new IWindowsInformationProtectionRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for ProtectedAppLockerFiles.
+        /// Gets the request builder for Assignments.
         /// </summary>
-        /// <returns>The <see cref="IWindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder"/>.</returns>
-        IWindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder ProtectedAppLockerFiles { get; }
+        /// <returns>The <see cref="IWindowsInformationProtectionAssignmentsCollectionRequestBuilder"/>.</returns>
+        IWindowsInformationProtectionAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
         /// Gets the request builder for ExemptAppLockerFiles.
@@ -44,10 +44,10 @@ namespace Microsoft.Graph
         IWindowsInformationProtectionExemptAppLockerFilesCollectionRequestBuilder ExemptAppLockerFiles { get; }
 
         /// <summary>
-        /// Gets the request builder for Assignments.
+        /// Gets the request builder for ProtectedAppLockerFiles.
         /// </summary>
-        /// <returns>The <see cref="IWindowsInformationProtectionAssignmentsCollectionRequestBuilder"/>.</returns>
-        IWindowsInformationProtectionAssignmentsCollectionRequestBuilder Assignments { get; }
+        /// <returns>The <see cref="IWindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder"/>.</returns>
+        IWindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder ProtectedAppLockerFiles { get; }
     
         /// <summary>
         /// Gets the request builder for WindowsInformationProtectionAssign.

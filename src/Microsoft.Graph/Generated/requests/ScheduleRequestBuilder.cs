@@ -51,74 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Shifts.
+        /// Gets the request builder for OfferShiftRequests.
         /// </summary>
-        /// <returns>The <see cref="IScheduleShiftsCollectionRequestBuilder"/>.</returns>
-        public IScheduleShiftsCollectionRequestBuilder Shifts
+        /// <returns>The <see cref="IScheduleOfferShiftRequestsCollectionRequestBuilder"/>.</returns>
+        public IScheduleOfferShiftRequestsCollectionRequestBuilder OfferShiftRequests
         {
             get
             {
-                return new ScheduleShiftsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("shifts"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for OpenShifts.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleOpenShiftsCollectionRequestBuilder"/>.</returns>
-        public IScheduleOpenShiftsCollectionRequestBuilder OpenShifts
-        {
-            get
-            {
-                return new ScheduleOpenShiftsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("openShifts"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for TimesOff.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleTimesOffCollectionRequestBuilder"/>.</returns>
-        public IScheduleTimesOffCollectionRequestBuilder TimesOff
-        {
-            get
-            {
-                return new ScheduleTimesOffCollectionRequestBuilder(this.AppendSegmentToRequestUrl("timesOff"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for TimeOffReasons.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleTimeOffReasonsCollectionRequestBuilder"/>.</returns>
-        public IScheduleTimeOffReasonsCollectionRequestBuilder TimeOffReasons
-        {
-            get
-            {
-                return new ScheduleTimeOffReasonsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("timeOffReasons"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for SchedulingGroups.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleSchedulingGroupsCollectionRequestBuilder"/>.</returns>
-        public IScheduleSchedulingGroupsCollectionRequestBuilder SchedulingGroups
-        {
-            get
-            {
-                return new ScheduleSchedulingGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("schedulingGroups"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for SwapShiftsChangeRequests.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder"/>.</returns>
-        public IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder SwapShiftsChangeRequests
-        {
-            get
-            {
-                return new ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("swapShiftsChangeRequests"), this.Client);
+                return new ScheduleOfferShiftRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("offerShiftRequests"), this.Client);
             }
         }
 
@@ -135,14 +75,62 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for OfferShiftRequests.
+        /// Gets the request builder for OpenShifts.
         /// </summary>
-        /// <returns>The <see cref="IScheduleOfferShiftRequestsCollectionRequestBuilder"/>.</returns>
-        public IScheduleOfferShiftRequestsCollectionRequestBuilder OfferShiftRequests
+        /// <returns>The <see cref="IScheduleOpenShiftsCollectionRequestBuilder"/>.</returns>
+        public IScheduleOpenShiftsCollectionRequestBuilder OpenShifts
         {
             get
             {
-                return new ScheduleOfferShiftRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("offerShiftRequests"), this.Client);
+                return new ScheduleOpenShiftsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("openShifts"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SchedulingGroups.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleSchedulingGroupsCollectionRequestBuilder"/>.</returns>
+        public IScheduleSchedulingGroupsCollectionRequestBuilder SchedulingGroups
+        {
+            get
+            {
+                return new ScheduleSchedulingGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("schedulingGroups"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Shifts.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleShiftsCollectionRequestBuilder"/>.</returns>
+        public IScheduleShiftsCollectionRequestBuilder Shifts
+        {
+            get
+            {
+                return new ScheduleShiftsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("shifts"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SwapShiftsChangeRequests.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder"/>.</returns>
+        public IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder SwapShiftsChangeRequests
+        {
+            get
+            {
+                return new ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("swapShiftsChangeRequests"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TimeOffReasons.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleTimeOffReasonsCollectionRequestBuilder"/>.</returns>
+        public IScheduleTimeOffReasonsCollectionRequestBuilder TimeOffReasons
+        {
+            get
+            {
+                return new ScheduleTimeOffReasonsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("timeOffReasons"), this.Client);
             }
         }
 
@@ -155,6 +143,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ScheduleTimeOffRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("timeOffRequests"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TimesOff.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleTimesOffCollectionRequestBuilder"/>.</returns>
+        public IScheduleTimesOffCollectionRequestBuilder TimesOff
+        {
+            get
+            {
+                return new ScheduleTimesOffCollectionRequestBuilder(this.AppendSegmentToRequestUrl("timesOff"), this.Client);
             }
         }
     

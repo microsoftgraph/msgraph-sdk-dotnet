@@ -44,16 +44,16 @@ namespace Microsoft.Graph
         ISectionGroupRequestBuilder ParentSectionGroup { get; }
 
         /// <summary>
-        /// Gets the request builder for Sections.
-        /// </summary>
-        /// <returns>The <see cref="ISectionGroupSectionsCollectionRequestBuilder"/>.</returns>
-        ISectionGroupSectionsCollectionRequestBuilder Sections { get; }
-
-        /// <summary>
         /// Gets the request builder for SectionGroups.
         /// </summary>
         /// <returns>The <see cref="ISectionGroupSectionGroupsCollectionRequestBuilder"/>.</returns>
         ISectionGroupSectionGroupsCollectionRequestBuilder SectionGroups { get; }
+
+        /// <summary>
+        /// Gets the request builder for Sections.
+        /// </summary>
+        /// <returns>The <see cref="ISectionGroupSectionsCollectionRequestBuilder"/>.</returns>
+        ISectionGroupSectionsCollectionRequestBuilder Sections { get; }
     
     }
 }

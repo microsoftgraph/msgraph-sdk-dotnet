@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets value.
-        /// Value of the property causing the error.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
-        public string Value { get; set; }
-    
-        /// <summary>
         /// Gets or sets category.
         /// Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
         public string Category { get; set; }
+    
+        /// <summary>
+        /// Gets or sets occurredDateTime.
+        /// The date and time at which the error occurred.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "occurredDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? OccurredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets propertyCausingError.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public string PropertyCausingError { get; set; }
     
         /// <summary>
-        /// Gets or sets occurredDateTime.
-        /// The date and time at which the error occurred.
+        /// Gets or sets value.
+        /// Value of the property causing the error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "occurredDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? OccurredDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        public string Value { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

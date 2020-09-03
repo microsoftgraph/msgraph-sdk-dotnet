@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public DateTimeTimeZone DueDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets startDateTime.
-        /// The date and time that the follow-up is to begin.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeTimeZone StartDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets flagStatus.
         /// The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "flagStatus", Required = Newtonsoft.Json.Required.Default)]
         public FollowupFlagStatus? FlagStatus { get; set; }
+    
+        /// <summary>
+        /// Gets or sets startDateTime.
+        /// The date and time that the follow-up is to begin.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeTimeZone StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

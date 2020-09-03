@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets subjectName.
-        /// Data recovery Certificate subject name
+        /// Gets or sets certificate.
+        /// Data recovery Certificate
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectName", Required = Newtonsoft.Json.Required.Default)]
-        public string SubjectName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificate", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] Certificate { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets certificate.
-        /// Data recovery Certificate
+        /// Gets or sets subjectName.
+        /// Data recovery Certificate subject name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificate", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] Certificate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectName", Required = Newtonsoft.Json.Required.Default)]
+        public string SubjectName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets labelId.
-        /// The unique identifier of the label.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labelId", Required = Newtonsoft.Json.Required.Default)]
-        public string LabelId { get; set; }
-    
-        /// <summary>
         /// Gets or sets displayName.
         /// The display name of the label. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets labelId.
+        /// The unique identifier of the label.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labelId", Required = Newtonsoft.Json.Required.Default)]
+        public string LabelId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

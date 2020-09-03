@@ -31,34 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets managed device identifier.
-        /// Device identifier created or collected by Intune.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string ManagedDeviceIdentifier { get; set; }
-    
-        /// <summary>
-        /// Gets or sets operating system.
-        /// Operating System.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystem", Required = Newtonsoft.Json.Required.Default)]
-        public string OperatingSystem { get; set; }
-    
-        /// <summary>
-        /// Gets or sets os version.
-        /// OS Version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user id.
-        /// Identifier for the user that tried to enroll the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
-    
-        /// <summary>
         /// Gets or sets device id.
         /// Azure AD device identifier.
         /// </summary>
@@ -85,6 +57,34 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureReason", Required = Newtonsoft.Json.Required.Default)]
         public string FailureReason { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed device identifier.
+        /// Device identifier created or collected by Intune.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string ManagedDeviceIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operating system.
+        /// Operating System.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        public string OperatingSystem { get; set; }
+    
+        /// <summary>
+        /// Gets or sets os version.
+        /// OS Version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user id.
+        /// Identifier for the user that tried to enroll the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
     
     }
 }

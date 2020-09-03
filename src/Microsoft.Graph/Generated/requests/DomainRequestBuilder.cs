@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for DomainNameReferences.
+        /// </summary>
+        /// <returns>The <see cref="IDomainDomainNameReferencesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IDomainDomainNameReferencesCollectionWithReferencesRequestBuilder DomainNameReferences
+        {
+            get
+            {
+                return new DomainDomainNameReferencesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("domainNameReferences"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ServiceConfigurationRecords.
         /// </summary>
         /// <returns>The <see cref="IDomainServiceConfigurationRecordsCollectionRequestBuilder"/>.</returns>
@@ -71,18 +83,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DomainVerificationDnsRecordsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("verificationDnsRecords"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for DomainNameReferences.
-        /// </summary>
-        /// <returns>The <see cref="IDomainDomainNameReferencesCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IDomainDomainNameReferencesCollectionWithReferencesRequestBuilder DomainNameReferences
-        {
-            get
-            {
-                return new DomainDomainNameReferencesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("domainNameReferences"), this.Client);
             }
         }
     

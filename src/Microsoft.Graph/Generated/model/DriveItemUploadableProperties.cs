@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets fileSize.
+        /// Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileSize", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? FileSize { get; set; }
+    
+        /// <summary>
         /// Gets or sets fileSystemInfo.
         /// File system information on client. Read-write.
         /// </summary>
@@ -50,13 +57,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
-    
-        /// <summary>
-        /// Gets or sets fileSize.
-        /// Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileSize", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? FileSize { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

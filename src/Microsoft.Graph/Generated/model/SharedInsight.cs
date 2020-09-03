@@ -38,10 +38,11 @@ namespace Microsoft.Graph
         public SharingDetail LastShared { get; set; }
     
         /// <summary>
-        /// Gets or sets sharing history.
+        /// Gets or sets resource reference.
+        /// Reference properties of the shared document, such as the url and type of the document. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingHistory", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<SharingDetail> SharingHistory { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceReference", Required = Newtonsoft.Json.Required.Default)]
+        public ResourceReference ResourceReference { get; set; }
     
         /// <summary>
         /// Gets or sets resource visualization.
@@ -51,11 +52,10 @@ namespace Microsoft.Graph
         public ResourceVisualization ResourceVisualization { get; set; }
     
         /// <summary>
-        /// Gets or sets resource reference.
-        /// Reference properties of the shared document, such as the url and type of the document. Read-only
+        /// Gets or sets sharing history.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceReference", Required = Newtonsoft.Json.Required.Default)]
-        public ResourceReference ResourceReference { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingHistory", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<SharingDetail> SharingHistory { get; set; }
     
         /// <summary>
         /// Gets or sets last shared method.

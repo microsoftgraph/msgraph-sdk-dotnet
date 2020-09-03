@@ -61,6 +61,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DirectoryObjectGetAvailableExtensionProperties.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder"/>.</returns>
+        public IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder GetAvailableExtensionProperties(
+            bool? isSyncedFromOnPremises = null)
+        {
+            return new DirectoryObjectGetAvailableExtensionPropertiesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAvailableExtensionProperties"),
+                this.Client,
+                isSyncedFromOnPremises);
+        }
+
+        /// <summary>
         /// Gets the request builder for DirectoryObjectGetByIds.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectGetByIdsRequestBuilder"/>.</returns>
@@ -73,19 +86,6 @@ namespace Microsoft.Graph
                 this.Client,
                 ids,
                 types);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DirectoryObjectGetAvailableExtensionProperties.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder"/>.</returns>
-        public IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder GetAvailableExtensionProperties(
-            bool? isSyncedFromOnPremises = null)
-        {
-            return new DirectoryObjectGetAvailableExtensionPropertiesRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getAvailableExtensionProperties"),
-                this.Client,
-                isSyncedFromOnPremises);
         }
 
         /// <summary>

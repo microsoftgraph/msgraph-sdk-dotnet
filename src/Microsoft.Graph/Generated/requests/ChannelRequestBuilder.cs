@@ -51,6 +51,30 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for FilesFolder.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemRequestBuilder"/>.</returns>
+        public IDriveItemRequestBuilder FilesFolder
+        {
+            get
+            {
+                return new DriveItemRequestBuilder(this.AppendSegmentToRequestUrl("filesFolder"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="IChannelMembersCollectionRequestBuilder"/>.</returns>
+        public IChannelMembersCollectionRequestBuilder Members
+        {
+            get
+            {
+                return new ChannelMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Messages.
         /// </summary>
         /// <returns>The <see cref="IChannelMessagesCollectionRequestBuilder"/>.</returns>
@@ -71,18 +95,6 @@ namespace Microsoft.Graph
             get
             {
                 return new ChannelTabsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tabs"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for FilesFolder.
-        /// </summary>
-        /// <returns>The <see cref="IDriveItemRequestBuilder"/>.</returns>
-        public IDriveItemRequestBuilder FilesFolder
-        {
-            get
-            {
-                return new DriveItemRequestBuilder(this.AppendSegmentToRequestUrl("filesFolder"), this.Client);
             }
         }
     

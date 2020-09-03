@@ -66,6 +66,13 @@ namespace Microsoft.Graph
         public string IdentityResourceIdentifier { get; set; }
     
         /// <summary>
+        /// Gets or sets identity version.
+        /// The identity version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string IdentityVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets is bundle.
         /// Whether or not the app is a bundle.
         /// </summary>
@@ -78,13 +85,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
-    
-        /// <summary>
-        /// Gets or sets identity version.
-        /// The identity version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string IdentityVersion { get; set; }
     
     }
 }

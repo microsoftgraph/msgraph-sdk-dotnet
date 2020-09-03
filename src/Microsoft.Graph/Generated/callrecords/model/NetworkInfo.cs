@@ -31,25 +31,18 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
-        /// Gets or sets ipAddress.
-        /// IP address of the media endpoint.
+        /// Gets or sets bandwidthLowEventRatio.
+        /// Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddress", Required = Newtonsoft.Json.Required.Default)]
-        public string IpAddress { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bandwidthLowEventRatio", Required = Newtonsoft.Json.Required.Default)]
+        public Single? BandwidthLowEventRatio { get; set; }
     
         /// <summary>
-        /// Gets or sets subnet.
-        /// Subnet used for media stream by the media endpoint.
+        /// Gets or sets basicServiceSetIdentifier.
+        /// The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subnet", Required = Newtonsoft.Json.Required.Default)]
-        public string Subnet { get; set; }
-    
-        /// <summary>
-        /// Gets or sets linkSpeed.
-        /// Link speed in bits per second reported by the network adapter used by the media endpoint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linkSpeed", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? LinkSpeed { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "basicServiceSetIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string BasicServiceSetIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets connectionType.
@@ -59,11 +52,53 @@ namespace Microsoft.Graph.CallRecords
         public NetworkConnectionType? ConnectionType { get; set; }
     
         /// <summary>
+        /// Gets or sets delayEventRatio.
+        /// Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delayEventRatio", Required = Newtonsoft.Json.Required.Default)]
+        public Single? DelayEventRatio { get; set; }
+    
+        /// <summary>
+        /// Gets or sets dnsSuffix.
+        /// DNS suffix associated with the network adapter of the media endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSuffix", Required = Newtonsoft.Json.Required.Default)]
+        public string DnsSuffix { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ipAddress.
+        /// IP address of the media endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string IpAddress { get; set; }
+    
+        /// <summary>
+        /// Gets or sets linkSpeed.
+        /// Link speed in bits per second reported by the network adapter used by the media endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linkSpeed", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? LinkSpeed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets macAddress.
+        /// The media access control (MAC) address of the media endpoint's network device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string MacAddress { get; set; }
+    
+        /// <summary>
         /// Gets or sets port.
         /// Network port number used by media endpoint.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "port", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Port { get; set; }
+    
+        /// <summary>
+        /// Gets or sets receivedQualityEventRatio.
+        /// Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receivedQualityEventRatio", Required = Newtonsoft.Json.Required.Default)]
+        public Single? ReceivedQualityEventRatio { get; set; }
     
         /// <summary>
         /// Gets or sets reflexiveIPAddress.
@@ -87,11 +122,39 @@ namespace Microsoft.Graph.CallRecords
         public Int32? RelayPort { get; set; }
     
         /// <summary>
-        /// Gets or sets macAddress.
-        /// The media access control (MAC) address of the media endpoint's network device.
+        /// Gets or sets sentQualityEventRatio.
+        /// Fraction of the call that the media endpoint detected the network was causing poor quality of the audio sent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macAddress", Required = Newtonsoft.Json.Required.Default)]
-        public string MacAddress { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sentQualityEventRatio", Required = Newtonsoft.Json.Required.Default)]
+        public Single? SentQualityEventRatio { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subnet.
+        /// Subnet used for media stream by the media endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subnet", Required = Newtonsoft.Json.Required.Default)]
+        public string Subnet { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wifiBand.
+        /// WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiBand", Required = Newtonsoft.Json.Required.Default)]
+        public WifiBand? WifiBand { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wifiBatteryCharge.
+        /// Estimated remaining battery charge in percentage reported by the media endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiBatteryCharge", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? WifiBatteryCharge { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wifiChannel.
+        /// WiFi channel used by the media endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiChannel", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? WifiChannel { get; set; }
     
         /// <summary>
         /// Gets or sets wifiMicrosoftDriver.
@@ -108,41 +171,6 @@ namespace Microsoft.Graph.CallRecords
         public string WifiMicrosoftDriverVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets wifiVendorDriver.
-        /// Name of the WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiVendorDriver", Required = Newtonsoft.Json.Required.Default)]
-        public string WifiVendorDriver { get; set; }
-    
-        /// <summary>
-        /// Gets or sets wifiVendorDriverVersion.
-        /// Version of the WiFi driver used by the media endpoint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiVendorDriverVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string WifiVendorDriverVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets wifiChannel.
-        /// WiFi channel used by the media endpoint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiChannel", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? WifiChannel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets wifiBand.
-        /// WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiBand", Required = Newtonsoft.Json.Required.Default)]
-        public WifiBand? WifiBand { get; set; }
-    
-        /// <summary>
-        /// Gets or sets basicServiceSetIdentifier.
-        /// The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "basicServiceSetIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string BasicServiceSetIdentifier { get; set; }
-    
-        /// <summary>
         /// Gets or sets wifiRadioType.
         /// Type of WiFi radio used by the media endpoint. Possible values are: unknown, wifi80211a, wifi80211b, wifi80211g, wifi80211n, wifi80211ac, wifi80211ax, unknownFutureValue.
         /// </summary>
@@ -157,46 +185,18 @@ namespace Microsoft.Graph.CallRecords
         public Int32? WifiSignalStrength { get; set; }
     
         /// <summary>
-        /// Gets or sets wifiBatteryCharge.
-        /// Estimated remaining battery charge in percentage reported by the media endpoint.
+        /// Gets or sets wifiVendorDriver.
+        /// Name of the WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiBatteryCharge", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? WifiBatteryCharge { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiVendorDriver", Required = Newtonsoft.Json.Required.Default)]
+        public string WifiVendorDriver { get; set; }
     
         /// <summary>
-        /// Gets or sets dnsSuffix.
-        /// DNS suffix associated with the network adapter of the media endpoint.
+        /// Gets or sets wifiVendorDriverVersion.
+        /// Version of the WiFi driver used by the media endpoint.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSuffix", Required = Newtonsoft.Json.Required.Default)]
-        public string DnsSuffix { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sentQualityEventRatio.
-        /// Fraction of the call that the media endpoint detected the network was causing poor quality of the audio sent.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sentQualityEventRatio", Required = Newtonsoft.Json.Required.Default)]
-        public Single? SentQualityEventRatio { get; set; }
-    
-        /// <summary>
-        /// Gets or sets receivedQualityEventRatio.
-        /// Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receivedQualityEventRatio", Required = Newtonsoft.Json.Required.Default)]
-        public Single? ReceivedQualityEventRatio { get; set; }
-    
-        /// <summary>
-        /// Gets or sets delayEventRatio.
-        /// Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delayEventRatio", Required = Newtonsoft.Json.Required.Default)]
-        public Single? DelayEventRatio { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bandwidthLowEventRatio.
-        /// Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bandwidthLowEventRatio", Required = Newtonsoft.Json.Required.Default)]
-        public Single? BandwidthLowEventRatio { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiVendorDriverVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string WifiVendorDriverVersion { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

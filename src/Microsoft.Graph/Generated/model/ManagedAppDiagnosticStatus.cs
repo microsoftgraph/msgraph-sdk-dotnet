@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets validationName.
-        /// The validation friendly name
+        /// Gets or sets mitigationInstruction.
+        /// Instruction on how to mitigate a failed validation
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "validationName", Required = Newtonsoft.Json.Required.Default)]
-        public string ValidationName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mitigationInstruction", Required = Newtonsoft.Json.Required.Default)]
+        public string MitigationInstruction { get; set; }
     
         /// <summary>
         /// Gets or sets state.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public string State { get; set; }
     
         /// <summary>
-        /// Gets or sets mitigationInstruction.
-        /// Instruction on how to mitigate a failed validation
+        /// Gets or sets validationName.
+        /// The validation friendly name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mitigationInstruction", Required = Newtonsoft.Json.Required.Default)]
-        public string MitigationInstruction { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "validationName", Required = Newtonsoft.Json.Required.Default)]
+        public string ValidationName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

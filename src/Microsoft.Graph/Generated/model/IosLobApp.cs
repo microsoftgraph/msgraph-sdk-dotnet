@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets bundle id.
-        /// The Identity Name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
-        public string BundleId { get; set; }
-    
-        /// <summary>
         /// Gets or sets applicable device type.
         /// The iOS architecture for which this app can run on.
         /// </summary>
@@ -45,11 +38,18 @@ namespace Microsoft.Graph
         public IosDeviceType ApplicableDeviceType { get; set; }
     
         /// <summary>
-        /// Gets or sets minimum supported operating system.
-        /// The value for the minimum applicable operating system.
+        /// Gets or sets build number.
+        /// The build number of iOS Line of Business (LoB) app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
-        public IosMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "buildNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string BuildNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bundle id.
+        /// The Identity Name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
+        public string BundleId { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
@@ -59,18 +59,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets minimum supported operating system.
+        /// The value for the minimum applicable operating system.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        public IosMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
+    
+        /// <summary>
         /// Gets or sets version number.
         /// The version number of iOS Line of Business (LoB) app.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionNumber", Required = Newtonsoft.Json.Required.Default)]
         public string VersionNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets build number.
-        /// The build number of iOS Line of Business (LoB) app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "buildNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string BuildNumber { get; set; }
     
     }
 }

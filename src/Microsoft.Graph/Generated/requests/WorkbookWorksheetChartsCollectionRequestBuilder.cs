@@ -79,6 +79,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WorkbookChartCount.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartCountRequestBuilder"/>.</returns>
+        public IWorkbookChartCountRequestBuilder Count()
+        {
+            return new WorkbookChartCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookChartItem.
         /// </summary>
         /// <returns>The <see cref="IWorkbookChartItemRequestBuilder"/>.</returns>
@@ -102,17 +113,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
                 this.Client,
                 index);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookChartCount.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookChartCountRequestBuilder"/>.</returns>
-        public IWorkbookChartCountRequestBuilder Count()
-        {
-            return new WorkbookChartCountRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
-                this.Client);
         }
     }
 }

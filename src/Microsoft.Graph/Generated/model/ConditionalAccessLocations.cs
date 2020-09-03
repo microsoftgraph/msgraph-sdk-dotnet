@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets includeLocations.
-        /// Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeLocations", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> IncludeLocations { get; set; }
-    
-        /// <summary>
         /// Gets or sets excludeLocations.
         /// Location IDs excluded from scope of policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeLocations", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ExcludeLocations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets includeLocations.
+        /// Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeLocations", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> IncludeLocations { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

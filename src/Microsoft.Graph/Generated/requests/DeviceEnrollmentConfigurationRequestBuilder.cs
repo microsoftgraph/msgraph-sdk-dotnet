@@ -63,19 +63,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for DeviceEnrollmentConfigurationSetPriority.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceEnrollmentConfigurationSetPriorityRequestBuilder"/>.</returns>
-        public IDeviceEnrollmentConfigurationSetPriorityRequestBuilder SetPriority(
-            Int32 priority)
-        {
-            return new DeviceEnrollmentConfigurationSetPriorityRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.setPriority"),
-                this.Client,
-                priority);
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceEnrollmentConfigurationAssign.
         /// </summary>
         /// <returns>The <see cref="IDeviceEnrollmentConfigurationAssignRequestBuilder"/>.</returns>
@@ -86,6 +73,19 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.assign"),
                 this.Client,
                 enrollmentConfigurationAssignments);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceEnrollmentConfigurationSetPriority.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceEnrollmentConfigurationSetPriorityRequestBuilder"/>.</returns>
+        public IDeviceEnrollmentConfigurationSetPriorityRequestBuilder SetPriority(
+            Int32 priority)
+        {
+            return new DeviceEnrollmentConfigurationSetPriorityRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setPriority"),
+                this.Client,
+                priority);
         }
     
     }

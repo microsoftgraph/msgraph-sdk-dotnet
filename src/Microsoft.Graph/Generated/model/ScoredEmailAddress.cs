@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         public string Address { get; set; }
     
         /// <summary>
+        /// Gets or sets itemId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemId", Required = Newtonsoft.Json.Required.Default)]
+        public string ItemId { get; set; }
+    
+        /// <summary>
         /// Gets or sets relevanceScore.
         /// The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.
         /// </summary>
@@ -49,12 +55,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "selectionLikelihood", Required = Newtonsoft.Json.Required.Default)]
         public SelectionLikelihoodInfo? SelectionLikelihood { get; set; }
-    
-        /// <summary>
-        /// Gets or sets itemId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemId", Required = Newtonsoft.Json.Required.Default)]
-        public string ItemId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

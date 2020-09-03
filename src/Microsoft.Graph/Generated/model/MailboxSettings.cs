@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets automaticRepliesSetting.
-        /// Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "automaticRepliesSetting", Required = Newtonsoft.Json.Required.Default)]
-        public AutomaticRepliesSetting AutomaticRepliesSetting { get; set; }
-    
-        /// <summary>
         /// Gets or sets archiveFolder.
         /// Folder ID of an archive folder for the user.
         /// </summary>
@@ -45,32 +38,11 @@ namespace Microsoft.Graph
         public string ArchiveFolder { get; set; }
     
         /// <summary>
-        /// Gets or sets timeZone.
-        /// The default time zone for the user's mailbox.
+        /// Gets or sets automaticRepliesSetting.
+        /// Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeZone", Required = Newtonsoft.Json.Required.Default)]
-        public string TimeZone { get; set; }
-    
-        /// <summary>
-        /// Gets or sets language.
-        /// The locale information for the user, including the preferred language and country/region.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "language", Required = Newtonsoft.Json.Required.Default)]
-        public LocaleInfo Language { get; set; }
-    
-        /// <summary>
-        /// Gets or sets delegateMeetingMessageDeliveryOptions.
-        /// If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delegateMeetingMessageDeliveryOptions", Required = Newtonsoft.Json.Required.Default)]
-        public DelegateMeetingMessageDeliveryOptions? DelegateMeetingMessageDeliveryOptions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets workingHours.
-        /// The days of the week and hours in a specific time zone that the user works.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workingHours", Required = Newtonsoft.Json.Required.Default)]
-        public WorkingHours WorkingHours { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "automaticRepliesSetting", Required = Newtonsoft.Json.Required.Default)]
+        public AutomaticRepliesSetting AutomaticRepliesSetting { get; set; }
     
         /// <summary>
         /// Gets or sets dateFormat.
@@ -80,11 +52,39 @@ namespace Microsoft.Graph
         public string DateFormat { get; set; }
     
         /// <summary>
+        /// Gets or sets delegateMeetingMessageDeliveryOptions.
+        /// If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delegateMeetingMessageDeliveryOptions", Required = Newtonsoft.Json.Required.Default)]
+        public DelegateMeetingMessageDeliveryOptions? DelegateMeetingMessageDeliveryOptions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets language.
+        /// The locale information for the user, including the preferred language and country/region.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "language", Required = Newtonsoft.Json.Required.Default)]
+        public LocaleInfo Language { get; set; }
+    
+        /// <summary>
         /// Gets or sets timeFormat.
         /// The time format for the user's mailbox.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeFormat", Required = Newtonsoft.Json.Required.Default)]
         public string TimeFormat { get; set; }
+    
+        /// <summary>
+        /// Gets or sets timeZone.
+        /// The default time zone for the user's mailbox.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeZone", Required = Newtonsoft.Json.Required.Default)]
+        public string TimeZone { get; set; }
+    
+        /// <summary>
+        /// Gets or sets workingHours.
+        /// The days of the week and hours in a specific time zone that the user works.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workingHours", Required = Newtonsoft.Json.Required.Default)]
+        public WorkingHours WorkingHours { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

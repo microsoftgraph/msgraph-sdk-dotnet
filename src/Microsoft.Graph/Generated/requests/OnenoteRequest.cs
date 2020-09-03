@@ -250,33 +250,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (onenoteToInitialize.Sections != null && onenoteToInitialize.Sections.CurrentPage != null)
+                if (onenoteToInitialize.Operations != null && onenoteToInitialize.Operations.CurrentPage != null)
                 {
-                    onenoteToInitialize.Sections.AdditionalData = onenoteToInitialize.AdditionalData;
+                    onenoteToInitialize.Operations.AdditionalData = onenoteToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out nextPageLink);
+                    onenoteToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        onenoteToInitialize.Sections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (onenoteToInitialize.SectionGroups != null && onenoteToInitialize.SectionGroups.CurrentPage != null)
-                {
-                    onenoteToInitialize.SectionGroups.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("sectionGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.SectionGroups.InitializeNextPageRequest(
+                        onenoteToInitialize.Operations.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -314,17 +298,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (onenoteToInitialize.Operations != null && onenoteToInitialize.Operations.CurrentPage != null)
+                if (onenoteToInitialize.SectionGroups != null && onenoteToInitialize.SectionGroups.CurrentPage != null)
                 {
-                    onenoteToInitialize.Operations.AdditionalData = onenoteToInitialize.AdditionalData;
+                    onenoteToInitialize.SectionGroups.AdditionalData = onenoteToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
+                    onenoteToInitialize.AdditionalData.TryGetValue("sectionGroups@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        onenoteToInitialize.Operations.InitializeNextPageRequest(
+                        onenoteToInitialize.SectionGroups.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (onenoteToInitialize.Sections != null && onenoteToInitialize.Sections.CurrentPage != null)
+                {
+                    onenoteToInitialize.Sections.AdditionalData = onenoteToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    onenoteToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        onenoteToInitialize.Sections.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

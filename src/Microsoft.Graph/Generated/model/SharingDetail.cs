@@ -45,6 +45,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? SharedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets sharingReference.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingReference", Required = Newtonsoft.Json.Required.Default)]
+        public ResourceReference SharingReference { get; set; }
+    
+        /// <summary>
         /// Gets or sets sharingSubject.
         /// The subject with which the document was shared.
         /// </summary>
@@ -57,12 +63,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingType", Required = Newtonsoft.Json.Required.Default)]
         public string SharingType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sharingReference.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingReference", Required = Newtonsoft.Json.Required.Default)]
-        public ResourceReference SharingReference { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

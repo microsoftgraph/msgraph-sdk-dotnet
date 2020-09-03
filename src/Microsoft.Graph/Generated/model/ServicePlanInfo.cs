@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets appliesTo.
+        /// The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliesTo", Required = Newtonsoft.Json.Required.Default)]
+        public string AppliesTo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets provisioningStatus.
+        /// The provisioning status of the service plan. Possible values:'Success' - Service is fully provisioned.'Disabled' - Service has been disabled.'PendingInput' - Service is not yet provisioned; awaiting service confirmation.'PendingActivation' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)'PendingProvisioning' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningStatus", Required = Newtonsoft.Json.Required.Default)]
+        public string ProvisioningStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets servicePlanId.
         /// The unique identifier of the service plan.
         /// </summary>
@@ -43,20 +57,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePlanName", Required = Newtonsoft.Json.Required.Default)]
         public string ServicePlanName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets provisioningStatus.
-        /// The provisioning status of the service plan. Possible values:'Success' - Service is fully provisioned.'Disabled' - Service has been disabled.'PendingInput' - Service is not yet provisioned; awaiting service confirmation.'PendingActivation' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)'PendingProvisioning' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningStatus", Required = Newtonsoft.Json.Required.Default)]
-        public string ProvisioningStatus { get; set; }
-    
-        /// <summary>
-        /// Gets or sets appliesTo.
-        /// The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliesTo", Required = Newtonsoft.Json.Required.Default)]
-        public string AppliesTo { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

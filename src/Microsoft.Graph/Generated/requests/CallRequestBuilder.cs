@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Participants.
-        /// </summary>
-        /// <returns>The <see cref="ICallParticipantsCollectionRequestBuilder"/>.</returns>
-        public ICallParticipantsCollectionRequestBuilder Participants
-        {
-            get
-            {
-                return new CallParticipantsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("participants"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Operations.
         /// </summary>
         /// <returns>The <see cref="ICallOperationsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new CallOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Participants.
+        /// </summary>
+        /// <returns>The <see cref="ICallParticipantsCollectionRequestBuilder"/>.</returns>
+        public ICallParticipantsCollectionRequestBuilder Participants
+        {
+            get
+            {
+                return new CallParticipantsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("participants"), this.Client);
             }
         }
     

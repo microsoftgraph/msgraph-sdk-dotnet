@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public string HomePageUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets redirectUris.
-        /// Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
+        /// Gets or sets implicitGrantSettings.
+        /// Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "redirectUris", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> RedirectUris { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "implicitGrantSettings", Required = Newtonsoft.Json.Required.Default)]
+        public ImplicitGrantSettings ImplicitGrantSettings { get; set; }
     
         /// <summary>
         /// Gets or sets logoutUrl.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public string LogoutUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets implicitGrantSettings.
-        /// Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.
+        /// Gets or sets redirectUris.
+        /// Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "implicitGrantSettings", Required = Newtonsoft.Json.Required.Default)]
-        public ImplicitGrantSettings ImplicitGrantSettings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "redirectUris", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RedirectUris { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (termsAndConditionsToInitialize != null && termsAndConditionsToInitialize.AdditionalData != null)
             {
 
-                if (termsAndConditionsToInitialize.Assignments != null && termsAndConditionsToInitialize.Assignments.CurrentPage != null)
-                {
-                    termsAndConditionsToInitialize.Assignments.AdditionalData = termsAndConditionsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    termsAndConditionsToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        termsAndConditionsToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (termsAndConditionsToInitialize.AcceptanceStatuses != null && termsAndConditionsToInitialize.AcceptanceStatuses.CurrentPage != null)
                 {
                     termsAndConditionsToInitialize.AcceptanceStatuses.AdditionalData = termsAndConditionsToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         termsAndConditionsToInitialize.AcceptanceStatuses.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (termsAndConditionsToInitialize.Assignments != null && termsAndConditionsToInitialize.Assignments.CurrentPage != null)
+                {
+                    termsAndConditionsToInitialize.Assignments.AdditionalData = termsAndConditionsToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    termsAndConditionsToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        termsAndConditionsToInitialize.Assignments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

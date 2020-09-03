@@ -38,13 +38,6 @@ namespace Microsoft.Graph
         public string AppDisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets name.
-        /// Name of the extension property. Not nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
-    
-        /// <summary>
         /// Gets or sets data type.
         /// Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
         /// </summary>
@@ -57,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSyncedFromOnPremises", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsSyncedFromOnPremises { get; set; }
+    
+        /// <summary>
+        /// Gets or sets name.
+        /// Name of the extension property. Not nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets target objects.

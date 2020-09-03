@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets idToken.
-        /// The optional claims returned in the JWT ID token.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "idToken", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<OptionalClaim> IdToken { get; set; }
-    
-        /// <summary>
         /// Gets or sets accessToken.
         /// The optional claims returned in the JWT access token.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessToken", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<OptionalClaim> AccessToken { get; set; }
+    
+        /// <summary>
+        /// Gets or sets idToken.
+        /// The optional claims returned in the JWT ID token.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "idToken", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<OptionalClaim> IdToken { get; set; }
     
         /// <summary>
         /// Gets or sets saml2Token.

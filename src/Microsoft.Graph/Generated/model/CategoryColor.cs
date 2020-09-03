@@ -30,6 +30,11 @@ namespace Microsoft.Graph
         Preset1 = 1,
 	
         /// <summary>
+        /// None
+        /// </summary>
+        None = -1,
+	
+        /// <summary>
         /// Preset2
         /// </summary>
         Preset2 = 2,
@@ -143,11 +148,6 @@ namespace Microsoft.Graph
         /// Preset24
         /// </summary>
         Preset24 = 24,
-	
-        /// <summary>
-        /// None
-        /// </summary>
-        None = -1,
 	
     }
 }

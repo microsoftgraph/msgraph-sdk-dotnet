@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets moveToFolder.
-        /// The ID of the folder that a message will be moved to.
+        /// Gets or sets assignCategories.
+        /// A list of categories to be assigned to a message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "moveToFolder", Required = Newtonsoft.Json.Required.Default)]
-        public string MoveToFolder { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignCategories", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AssignCategories { get; set; }
     
         /// <summary>
         /// Gets or sets copyToFolder.
@@ -52,11 +52,18 @@ namespace Microsoft.Graph
         public bool? Delete { get; set; }
     
         /// <summary>
-        /// Gets or sets permanentDelete.
-        /// Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
+        /// Gets or sets forwardAsAttachmentTo.
+        /// The email addresses of the recipients to which a message should be forwarded as an attachment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permanentDelete", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PermanentDelete { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "forwardAsAttachmentTo", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Recipient> ForwardAsAttachmentTo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets forwardTo.
+        /// The email addresses of the recipients to which a message should be forwarded.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "forwardTo", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Recipient> ForwardTo { get; set; }
     
         /// <summary>
         /// Gets or sets markAsRead.
@@ -73,18 +80,18 @@ namespace Microsoft.Graph
         public Importance? MarkImportance { get; set; }
     
         /// <summary>
-        /// Gets or sets forwardTo.
-        /// The email addresses of the recipients to which a message should be forwarded.
+        /// Gets or sets moveToFolder.
+        /// The ID of the folder that a message will be moved to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "forwardTo", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Recipient> ForwardTo { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "moveToFolder", Required = Newtonsoft.Json.Required.Default)]
+        public string MoveToFolder { get; set; }
     
         /// <summary>
-        /// Gets or sets forwardAsAttachmentTo.
-        /// The email addresses of the recipients to which a message should be forwarded as an attachment.
+        /// Gets or sets permanentDelete.
+        /// Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "forwardAsAttachmentTo", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Recipient> ForwardAsAttachmentTo { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permanentDelete", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PermanentDelete { get; set; }
     
         /// <summary>
         /// Gets or sets redirectTo.
@@ -92,13 +99,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "redirectTo", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Recipient> RedirectTo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets assignCategories.
-        /// A list of categories to be assigned to a message.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignCategories", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> AssignCategories { get; set; }
     
         /// <summary>
         /// Gets or sets stopProcessingRules.

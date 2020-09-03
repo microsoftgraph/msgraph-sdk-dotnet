@@ -31,25 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// Display name of the TEM partner.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets url.
-        /// URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
-        public string Url { get; set; }
-    
-        /// <summary>
         /// Gets or sets app authorized.
         /// Whether the partner's AAD app has been authorized to access Intune.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appAuthorized", Required = Newtonsoft.Json.Required.Default)]
         public bool? AppAuthorized { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// Display name of the TEM partner.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets enabled.
@@ -64,6 +57,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastConnectionDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastConnectionDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets url.
+        /// URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
+        public string Url { get; set; }
     
     }
 }
