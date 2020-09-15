@@ -51,6 +51,21 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDelta.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDeltaRequestBuilder"/>.</returns>
+        public IWorkbookFunctionsDeltaRequestBuilder Delta(
+            Newtonsoft.Json.Linq.JToken number1 = null,
+            Newtonsoft.Json.Linq.JToken number2 = null)
+        {
+            return new WorkbookFunctionsDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client,
+                number1,
+                number2);
+        }
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsAbs.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsAbsRequestBuilder"/>.</returns>
@@ -1539,21 +1554,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.degrees"),
                 this.Client,
                 angle);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDelta.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDeltaRequestBuilder"/>.</returns>
-        public IWorkbookFunctionsDeltaRequestBuilder Delta(
-            Newtonsoft.Json.Linq.JToken number1 = null,
-            Newtonsoft.Json.Linq.JToken number2 = null)
-        {
-            return new WorkbookFunctionsDeltaRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
-                this.Client,
-                number1,
-                number2);
         }
 
         /// <summary>

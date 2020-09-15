@@ -50,6 +50,42 @@ namespace Microsoft.Graph
             return new AdministrativeUnitRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="IAdministrativeUnitMembersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IAdministrativeUnitMembersCollectionWithReferencesRequestBuilder Members
+        {
+            get
+            {
+                return new AdministrativeUnitMembersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ScopedRoleMembers.
+        /// </summary>
+        /// <returns>The <see cref="IAdministrativeUnitScopedRoleMembersCollectionRequestBuilder"/>.</returns>
+        public IAdministrativeUnitScopedRoleMembersCollectionRequestBuilder ScopedRoleMembers
+        {
+            get
+            {
+                return new AdministrativeUnitScopedRoleMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("scopedRoleMembers"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IAdministrativeUnitExtensionsCollectionRequestBuilder"/>.</returns>
+        public IAdministrativeUnitExtensionsCollectionRequestBuilder Extensions
+        {
+            get
+            {
+                return new AdministrativeUnitExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
+            }
+        }
+    
         
     
     }

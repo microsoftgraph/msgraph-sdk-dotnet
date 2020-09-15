@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PermissionGrantPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootPermissionGrantPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootPermissionGrantPoliciesCollectionRequestBuilder PermissionGrantPolicies
+        {
+            get
+            {
+                return new PolicyRootPermissionGrantPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("permissionGrantPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TokenIssuancePolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootTokenIssuancePoliciesCollectionRequestBuilder"/>.</returns>

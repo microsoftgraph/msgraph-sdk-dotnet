@@ -378,6 +378,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (userToInitialize.ScopedRoleMemberOf != null && userToInitialize.ScopedRoleMemberOf.CurrentPage != null)
+                {
+                    userToInitialize.ScopedRoleMemberOf.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("scopedRoleMemberOf@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.ScopedRoleMemberOf.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (userToInitialize.TransitiveMemberOf != null && userToInitialize.TransitiveMemberOf.CurrentPage != null)
                 {
                     userToInitialize.TransitiveMemberOf.AdditionalData = userToInitialize.AdditionalData;

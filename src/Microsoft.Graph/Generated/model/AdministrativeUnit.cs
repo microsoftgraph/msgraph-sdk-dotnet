@@ -30,6 +30,42 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.administrativeUnit";
         }
 	
+        /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets visibility.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibility", Required = Newtonsoft.Json.Required.Default)]
+        public string Visibility { get; set; }
+    
+        /// <summary>
+        /// Gets or sets members.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        public IAdministrativeUnitMembersCollectionWithReferencesPage Members { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scoped role members.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopedRoleMembers", Required = Newtonsoft.Json.Required.Default)]
+        public IAdministrativeUnitScopedRoleMembersCollectionPage ScopedRoleMembers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extensions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        public IAdministrativeUnitExtensionsCollectionPage Extensions { get; set; }
+    
     }
 }
 

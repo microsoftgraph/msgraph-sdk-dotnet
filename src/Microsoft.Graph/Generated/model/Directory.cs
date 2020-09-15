@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets administrative units.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "administrativeUnits", Required = Newtonsoft.Json.Required.Default)]
+        public IDirectoryAdministrativeUnitsCollectionPage AdministrativeUnits { get; set; }
+    
+        /// <summary>
         /// Gets or sets deleted items.
         /// Recently deleted items. Read-only. Nullable.
         /// </summary>

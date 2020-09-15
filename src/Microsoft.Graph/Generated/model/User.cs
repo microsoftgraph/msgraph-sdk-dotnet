@@ -561,6 +561,12 @@ namespace Microsoft.Graph
         public IUserRegisteredDevicesCollectionWithReferencesPage RegisteredDevices { get; set; }
     
         /// <summary>
+        /// Gets or sets scoped role member of.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopedRoleMemberOf", Required = Newtonsoft.Json.Required.Default)]
+        public IUserScopedRoleMemberOfCollectionPage ScopedRoleMemberOf { get; set; }
+    
+        /// <summary>
         /// Gets or sets transitive member of.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]

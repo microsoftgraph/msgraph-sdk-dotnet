@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IPolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder HomeRealmDiscoveryPolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for PermissionGrantPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootPermissionGrantPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootPermissionGrantPoliciesCollectionRequestBuilder PermissionGrantPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for TokenIssuancePolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootTokenIssuancePoliciesCollectionRequestBuilder"/>.</returns>

@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AdministrativeUnits.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryAdministrativeUnitsCollectionRequestBuilder"/>.</returns>
+        public IDirectoryAdministrativeUnitsCollectionRequestBuilder AdministrativeUnits
+        {
+            get
+            {
+                return new DirectoryAdministrativeUnitsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("administrativeUnits"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DeletedItems.
         /// </summary>
         /// <returns>The <see cref="IDirectoryDeletedItemsCollectionRequestBuilder"/>.</returns>

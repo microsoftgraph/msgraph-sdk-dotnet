@@ -32,17 +32,17 @@ namespace Microsoft.Graph
         new IScheduleChangeRequestRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for ScheduleChangeRequestApprove.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleChangeRequestApproveRequestBuilder"/>.</returns>
-        IScheduleChangeRequestApproveRequestBuilder Approve(
-            string message = null);
-
-        /// <summary>
         /// Gets the request builder for ScheduleChangeRequestDecline.
         /// </summary>
         /// <returns>The <see cref="IScheduleChangeRequestDeclineRequestBuilder"/>.</returns>
         IScheduleChangeRequestDeclineRequestBuilder Decline(
+            string message = null);
+
+        /// <summary>
+        /// Gets the request builder for ScheduleChangeRequestApprove.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleChangeRequestApproveRequestBuilder"/>.</returns>
+        IScheduleChangeRequestApproveRequestBuilder Approve(
             string message = null);
     
     }

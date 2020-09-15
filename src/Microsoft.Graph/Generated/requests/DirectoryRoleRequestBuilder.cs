@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new DirectoryRoleMembersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for ScopedMembers.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryRoleScopedMembersCollectionRequestBuilder"/>.</returns>
+        public IDirectoryRoleScopedMembersCollectionRequestBuilder ScopedMembers
+        {
+            get
+            {
+                return new DirectoryRoleScopedMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("scopedMembers"), this.Client);
+            }
+        }
     
         
     

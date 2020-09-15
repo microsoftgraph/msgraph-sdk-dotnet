@@ -252,6 +252,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceScopedRoleMemberships request builder.
+        /// </summary>
+        public IGraphServiceScopedRoleMembershipsCollectionRequestBuilder ScopedRoleMemberships
+        {
+            get
+            {
+                return new GraphServiceScopedRoleMembershipsCollectionRequestBuilder(this.BaseUrl + "/scopedRoleMemberships", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceServicePrincipals request builder.
         /// </summary>
         public IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals

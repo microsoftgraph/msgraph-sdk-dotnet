@@ -126,30 +126,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WorkbookWorksheetRange.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookWorksheetRangeRequestBuilder"/>.</returns>
-        public IWorkbookWorksheetRangeRequestBuilder Range()
-        {
-            return new WorkbookWorksheetRangeRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.range"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WorkbookWorksheetRange.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookWorksheetRangeRequestBuilder"/>.</returns>
-        public IWorkbookWorksheetRangeRequestBuilder Range(
-            string address = null)
-        {
-            return new WorkbookWorksheetRangeRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.range"),
-                this.Client,
-                address);
-        }
-
-        /// <summary>
         /// Gets the request builder for WorkbookWorksheetUsedRange.
         /// </summary>
         /// <returns>The <see cref="IWorkbookWorksheetUsedRangeRequestBuilder"/>.</returns>
@@ -171,6 +147,30 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.usedRange"),
                 this.Client,
                 valuesOnly);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookWorksheetRange.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookWorksheetRangeRequestBuilder"/>.</returns>
+        public IWorkbookWorksheetRangeRequestBuilder Range()
+        {
+            return new WorkbookWorksheetRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.range"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookWorksheetRange.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookWorksheetRangeRequestBuilder"/>.</returns>
+        public IWorkbookWorksheetRangeRequestBuilder Range(
+            string address = null)
+        {
+            return new WorkbookWorksheetRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.range"),
+                this.Client,
+                address);
         }
     
     }

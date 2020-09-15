@@ -61,6 +61,25 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DirectoryObjectValidateProperties.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectValidatePropertiesRequestBuilder"/>.</returns>
+        public IDirectoryObjectValidatePropertiesRequestBuilder ValidateProperties(
+            string entityType = null,
+            string displayName = null,
+            string mailNickname = null,
+            Guid? onBehalfOfUserId = null)
+        {
+            return new DirectoryObjectValidatePropertiesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.validateProperties"),
+                this.Client,
+                entityType,
+                displayName,
+                mailNickname,
+                onBehalfOfUserId);
+        }
+
+        /// <summary>
         /// Gets the request builder for DirectoryObjectGetAvailableExtensionProperties.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder"/>.</returns>
@@ -86,25 +105,6 @@ namespace Microsoft.Graph
                 this.Client,
                 ids,
                 types);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DirectoryObjectValidateProperties.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryObjectValidatePropertiesRequestBuilder"/>.</returns>
-        public IDirectoryObjectValidatePropertiesRequestBuilder ValidateProperties(
-            string entityType = null,
-            string displayName = null,
-            string mailNickname = null,
-            Guid? onBehalfOfUserId = null)
-        {
-            return new DirectoryObjectValidatePropertiesRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.validateProperties"),
-                this.Client,
-                entityType,
-                displayName,
-                mailNickname,
-                onBehalfOfUserId);
         }
     }
 }

@@ -92,6 +92,12 @@ namespace Microsoft.Graph
         IUserRegisteredDevicesCollectionWithReferencesRequestBuilder RegisteredDevices { get; }
 
         /// <summary>
+        /// Gets the request builder for ScopedRoleMemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IUserScopedRoleMemberOfCollectionRequestBuilder"/>.</returns>
+        IUserScopedRoleMemberOfCollectionRequestBuilder ScopedRoleMemberOf { get; }
+
+        /// <summary>
         /// Gets the request builder for TransitiveMemberOf.
         /// </summary>
         /// <returns>The <see cref="IUserTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>

@@ -70,19 +70,6 @@ namespace Microsoft.Graph
             Int32 column);
 
         /// <summary>
-        /// Gets the request builder for WorkbookWorksheetRange.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookWorksheetRangeRequestBuilder"/>.</returns>
-        IWorkbookWorksheetRangeRequestBuilder Range();
-
-        /// <summary>
-        /// Gets the request builder for WorkbookWorksheetRange.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookWorksheetRangeRequestBuilder"/>.</returns>
-        IWorkbookWorksheetRangeRequestBuilder Range(
-            string address = null);
-
-        /// <summary>
         /// Gets the request builder for WorkbookWorksheetUsedRange.
         /// </summary>
         /// <returns>The <see cref="IWorkbookWorksheetUsedRangeRequestBuilder"/>.</returns>
@@ -94,6 +81,19 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookWorksheetUsedRangeRequestBuilder"/>.</returns>
         IWorkbookWorksheetUsedRangeRequestBuilder UsedRange(
             bool valuesOnly);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookWorksheetRange.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookWorksheetRangeRequestBuilder"/>.</returns>
+        IWorkbookWorksheetRangeRequestBuilder Range();
+
+        /// <summary>
+        /// Gets the request builder for WorkbookWorksheetRange.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookWorksheetRangeRequestBuilder"/>.</returns>
+        IWorkbookWorksheetRangeRequestBuilder Range(
+            string address = null);
     
     }
 }

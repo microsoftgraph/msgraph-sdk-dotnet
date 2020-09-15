@@ -112,6 +112,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for MessageMove.
+        /// </summary>
+        /// <returns>The <see cref="IMessageMoveRequestBuilder"/>.</returns>
+        public IMessageMoveRequestBuilder Move(
+            string DestinationId)
+        {
+            return new MessageMoveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.move"),
+                this.Client,
+                DestinationId);
+        }
+
+        /// <summary>
         /// Gets the request builder for MessageCreateForward.
         /// </summary>
         /// <returns>The <see cref="IMessageCreateForwardRequestBuilder"/>.</returns>
@@ -173,19 +186,6 @@ namespace Microsoft.Graph
                 ToRecipients,
                 Message,
                 Comment);
-        }
-
-        /// <summary>
-        /// Gets the request builder for MessageMove.
-        /// </summary>
-        /// <returns>The <see cref="IMessageMoveRequestBuilder"/>.</returns>
-        public IMessageMoveRequestBuilder Move(
-            string DestinationId)
-        {
-            return new MessageMoveRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.move"),
-                this.Client,
-                DestinationId);
         }
 
         /// <summary>

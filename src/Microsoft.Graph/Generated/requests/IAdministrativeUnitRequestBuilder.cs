@@ -31,6 +31,24 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IAdministrativeUnitRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="IAdministrativeUnitMembersCollectionWithReferencesRequestBuilder"/>.</returns>
+        IAdministrativeUnitMembersCollectionWithReferencesRequestBuilder Members { get; }
+
+        /// <summary>
+        /// Gets the request builder for ScopedRoleMembers.
+        /// </summary>
+        /// <returns>The <see cref="IAdministrativeUnitScopedRoleMembersCollectionRequestBuilder"/>.</returns>
+        IAdministrativeUnitScopedRoleMembersCollectionRequestBuilder ScopedRoleMembers { get; }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IAdministrativeUnitExtensionsCollectionRequestBuilder"/>.</returns>
+        IAdministrativeUnitExtensionsCollectionRequestBuilder Extensions { get; }
+    
         
     
     }

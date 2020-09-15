@@ -107,6 +107,11 @@ namespace Microsoft.Graph
         IGraphServiceOrganizationCollectionRequestBuilder Organization { get; }
     
         /// <summary>
+        /// Gets the GraphServiceScopedRoleMemberships request builder.
+        /// </summary>
+        IGraphServiceScopedRoleMembershipsCollectionRequestBuilder ScopedRoleMemberships { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceServicePrincipals request builder.
         /// </summary>
         IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals { get; }

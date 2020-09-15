@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (directoryToInitialize != null && directoryToInitialize.AdditionalData != null)
             {
 
+                if (directoryToInitialize.AdministrativeUnits != null && directoryToInitialize.AdministrativeUnits.CurrentPage != null)
+                {
+                    directoryToInitialize.AdministrativeUnits.AdditionalData = directoryToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    directoryToInitialize.AdditionalData.TryGetValue("administrativeUnits@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        directoryToInitialize.AdministrativeUnits.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (directoryToInitialize.DeletedItems != null && directoryToInitialize.DeletedItems.CurrentPage != null)
                 {
                     directoryToInitialize.DeletedItems.AdditionalData = directoryToInitialize.AdditionalData;

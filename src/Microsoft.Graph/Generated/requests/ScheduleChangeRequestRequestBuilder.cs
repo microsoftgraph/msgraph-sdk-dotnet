@@ -51,19 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ScheduleChangeRequestApprove.
-        /// </summary>
-        /// <returns>The <see cref="IScheduleChangeRequestApproveRequestBuilder"/>.</returns>
-        public IScheduleChangeRequestApproveRequestBuilder Approve(
-            string message = null)
-        {
-            return new ScheduleChangeRequestApproveRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.approve"),
-                this.Client,
-                message);
-        }
-
-        /// <summary>
         /// Gets the request builder for ScheduleChangeRequestDecline.
         /// </summary>
         /// <returns>The <see cref="IScheduleChangeRequestDeclineRequestBuilder"/>.</returns>
@@ -72,6 +59,19 @@ namespace Microsoft.Graph
         {
             return new ScheduleChangeRequestDeclineRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.decline"),
+                this.Client,
+                message);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ScheduleChangeRequestApprove.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleChangeRequestApproveRequestBuilder"/>.</returns>
+        public IScheduleChangeRequestApproveRequestBuilder Approve(
+            string message = null)
+        {
+            return new ScheduleChangeRequestApproveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.approve"),
                 this.Client,
                 message);
         }

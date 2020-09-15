@@ -62,17 +62,17 @@ namespace Microsoft.Graph
         IDriveSpecialCollectionRequestBuilder Special { get; }
     
         /// <summary>
-        /// Gets the request builder for DriveRecent.
-        /// </summary>
-        /// <returns>The <see cref="IDriveRecentRequestBuilder"/>.</returns>
-        IDriveRecentRequestBuilder Recent();
-
-        /// <summary>
         /// Gets the request builder for DriveSearch.
         /// </summary>
         /// <returns>The <see cref="IDriveSearchRequestBuilder"/>.</returns>
         IDriveSearchRequestBuilder Search(
             string q = null);
+
+        /// <summary>
+        /// Gets the request builder for DriveRecent.
+        /// </summary>
+        /// <returns>The <see cref="IDriveRecentRequestBuilder"/>.</returns>
+        IDriveRecentRequestBuilder Recent();
 
         /// <summary>
         /// Gets the request builder for DriveSharedWithMe.

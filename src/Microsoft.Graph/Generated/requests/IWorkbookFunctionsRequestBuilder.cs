@@ -32,6 +32,14 @@ namespace Microsoft.Graph
         new IWorkbookFunctionsRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDelta.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDeltaRequestBuilder"/>.</returns>
+        IWorkbookFunctionsDeltaRequestBuilder Delta(
+            Newtonsoft.Json.Linq.JToken number1 = null,
+            Newtonsoft.Json.Linq.JToken number2 = null);
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsAbs.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsAbsRequestBuilder"/>.</returns>
@@ -823,14 +831,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookFunctionsDegreesRequestBuilder"/>.</returns>
         IWorkbookFunctionsDegreesRequestBuilder Degrees(
             Newtonsoft.Json.Linq.JToken angle = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDelta.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDeltaRequestBuilder"/>.</returns>
-        IWorkbookFunctionsDeltaRequestBuilder Delta(
-            Newtonsoft.Json.Linq.JToken number1 = null,
-            Newtonsoft.Json.Linq.JToken number2 = null);
 
         /// <summary>
         /// Gets the request builder for WorkbookFunctionsDevSq.

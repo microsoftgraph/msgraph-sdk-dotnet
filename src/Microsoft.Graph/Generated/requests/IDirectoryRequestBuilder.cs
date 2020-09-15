@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IDirectoryRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AdministrativeUnits.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryAdministrativeUnitsCollectionRequestBuilder"/>.</returns>
+        IDirectoryAdministrativeUnitsCollectionRequestBuilder AdministrativeUnits { get; }
+
+        /// <summary>
         /// Gets the request builder for DeletedItems.
         /// </summary>
         /// <returns>The <see cref="IDirectoryDeletedItemsCollectionRequestBuilder"/>.</returns>

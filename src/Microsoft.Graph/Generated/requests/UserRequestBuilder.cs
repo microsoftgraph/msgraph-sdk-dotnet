@@ -171,6 +171,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ScopedRoleMemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IUserScopedRoleMemberOfCollectionRequestBuilder"/>.</returns>
+        public IUserScopedRoleMemberOfCollectionRequestBuilder ScopedRoleMemberOf
+        {
+            get
+            {
+                return new UserScopedRoleMemberOfCollectionRequestBuilder(this.AppendSegmentToRequestUrl("scopedRoleMemberOf"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TransitiveMemberOf.
         /// </summary>
         /// <returns>The <see cref="IUserTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>

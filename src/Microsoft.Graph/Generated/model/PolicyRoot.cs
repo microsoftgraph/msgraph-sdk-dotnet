@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public IPolicyRootHomeRealmDiscoveryPoliciesCollectionPage HomeRealmDiscoveryPolicies { get; set; }
     
         /// <summary>
+        /// Gets or sets permission grant policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionGrantPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IPolicyRootPermissionGrantPoliciesCollectionPage PermissionGrantPolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets token issuance policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuancePolicies", Required = Newtonsoft.Json.Required.Default)]
