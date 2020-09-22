@@ -384,6 +384,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceChats request builder.
+        /// </summary>
+        public IGraphServiceChatsCollectionRequestBuilder Chats
+        {
+            get
+            {
+                return new GraphServiceChatsCollectionRequestBuilder(this.BaseUrl + "/chats", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceTeams request builder.
         /// </summary>
         public IGraphServiceTeamsCollectionRequestBuilder Teams

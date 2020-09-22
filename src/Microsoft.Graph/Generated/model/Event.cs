@@ -249,6 +249,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transaction id.
+        /// A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client's prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transactionId", Required = Newtonsoft.Json.Required.Default)]
         public string TransactionId { get; set; }

@@ -80,8 +80,15 @@ namespace Microsoft.Graph
         public ChatMessageImportance? Importance { get; set; }
     
         /// <summary>
+        /// Gets or sets last edited date time.
+        /// Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Microsoft Teams UI. If no edits are made the value is null.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastEditedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastEditedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
-        /// Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it's a root chat message in a channel) or a reaction is added or removed.
+        /// Read only. Timestamp when the chat message is created (initial setting) or edited, including when a reaction is added or removed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }

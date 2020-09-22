@@ -59,6 +59,20 @@ namespace Microsoft.Graph
         public string CreatorId { get; set; }
     
         /// <summary>
+        /// Gets or sets encryption certificate.
+        /// A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional. Required when includeResourceData is true.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionCertificate", Required = Newtonsoft.Json.Required.Default)]
+        public string EncryptionCertificate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets encryption certificate id.
+        /// A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionCertificateId", Required = Newtonsoft.Json.Required.Default)]
+        public string EncryptionCertificateId { get; set; }
+    
+        /// <summary>
         /// Gets or sets expiration date time.
         /// Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.
         /// </summary>
@@ -66,11 +80,23 @@ namespace Microsoft.Graph
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets include resource data.
+        /// When set to true, change notifications include resource data (such as content of a chat message). Optional.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeResourceData", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IncludeResourceData { get; set; }
+    
+        /// <summary>
         /// Gets or sets latest supported tls version.
-        /// Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latestSupportedTlsVersion", Required = Newtonsoft.Json.Required.Default)]
         public string LatestSupportedTlsVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lifecycle notification url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lifecycleNotificationUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string LifecycleNotificationUrl { get; set; }
     
         /// <summary>
         /// Gets or sets notification url.

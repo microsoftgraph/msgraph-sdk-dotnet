@@ -45,11 +45,24 @@ namespace Microsoft.Graph
         public string ClientState { get; set; }
     
         /// <summary>
+        /// Gets or sets encryptedContent.
+        /// (Preview) Encrypted content attached with the change notification. Only provided if encryptionCertificate and includeResourceData were defined during the subscription request and if the resource supports it. Optional.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptedContent", Required = Newtonsoft.Json.Required.Default)]
+        public ChangeNotificationEncryptedContent EncryptedContent { get; set; }
+    
+        /// <summary>
         /// Gets or sets id.
         /// Unique ID for the notification. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lifecycleEvent.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lifecycleEvent", Required = Newtonsoft.Json.Required.Default)]
+        public LifecycleEventType? LifecycleEvent { get; set; }
     
         /// <summary>
         /// Gets or sets resource.

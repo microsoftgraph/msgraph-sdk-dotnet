@@ -167,6 +167,11 @@ namespace Microsoft.Graph
         IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions { get; }
     
         /// <summary>
+        /// Gets the GraphServiceChats request builder.
+        /// </summary>
+        IGraphServiceChatsCollectionRequestBuilder Chats { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceTeams request builder.
         /// </summary>
         IGraphServiceTeamsCollectionRequestBuilder Teams { get; }
