@@ -22,9 +22,9 @@ namespace Microsoft.Graph
     public partial class ScopedRoleMembership : Entity
     {
     
-		    ///<summary>
-		    /// The ScopedRoleMembership constructor
-		    ///</summary>
+		///<summary>
+		/// The ScopedRoleMembership constructor
+		///</summary>
         public ScopedRoleMembership()
         {
             this.ODataType = "microsoft.graph.scopedRoleMembership";
@@ -50,6 +50,7 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleMemberInfo", Required = Newtonsoft.Json.Required.Default)]
         public Identity RoleMemberInfo { get; set; }
+    
     }
 }
 
