@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         IMessageSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
     
         /// <summary>
+        /// Gets the request builder for Content.
+        /// </summary>
+        /// <returns>The <see cref="IMessageContentRequestBuilder"/>.</returns>
+        IMessageContentRequestBuilder Content { get; }
+    
+        /// <summary>
         /// Gets the request builder for MessageCopy.
         /// </summary>
         /// <returns>The <see cref="IMessageCopyRequestBuilder"/>.</returns>

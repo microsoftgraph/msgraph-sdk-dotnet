@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IIdentityContainerRequestBuilder.
     /// </summary>
-    public partial interface IIdentityContainerRequestBuilder : IEntityRequestBuilder
+    public partial interface IIdentityContainerRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IIdentityContainerRequest Request();
+        IIdentityContainerRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IIdentityContainerRequest Request(IEnumerable<Option> options);
+        IIdentityContainerRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for ConditionalAccess.

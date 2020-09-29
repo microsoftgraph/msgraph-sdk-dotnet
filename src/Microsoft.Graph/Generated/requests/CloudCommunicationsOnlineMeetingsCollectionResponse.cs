@@ -16,6 +16,7 @@ namespace Microsoft.Graph
     /// The type CloudCommunicationsOnlineMeetingsCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter))]
     public class CloudCommunicationsOnlineMeetingsCollectionResponse
     {
         /// <summary>

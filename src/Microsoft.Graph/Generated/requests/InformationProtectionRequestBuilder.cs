@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type InformationProtectionRequestBuilder.
     /// </summary>
-    public partial class InformationProtectionRequestBuilder : EntityRequestBuilder, IInformationProtectionRequestBuilder
+    public partial class InformationProtectionRequestBuilder : BaseRequestBuilder, IInformationProtectionRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IInformationProtectionRequest Request()
+        public IInformationProtectionRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IInformationProtectionRequest Request(IEnumerable<Option> options)
+        public IInformationProtectionRequest Request(IEnumerable<Option> options)
         {
             return new InformationProtectionRequest(this.RequestUrl, this.Client, options);
         }

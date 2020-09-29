@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IdentityContainerRequestBuilder.
     /// </summary>
-    public partial class IdentityContainerRequestBuilder : EntityRequestBuilder, IIdentityContainerRequestBuilder
+    public partial class IdentityContainerRequestBuilder : BaseRequestBuilder, IIdentityContainerRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IIdentityContainerRequest Request()
+        public IIdentityContainerRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IIdentityContainerRequest Request(IEnumerable<Option> options)
+        public IIdentityContainerRequest Request(IEnumerable<Option> options)
         {
             return new IdentityContainerRequest(this.RequestUrl, this.Client, options);
         }

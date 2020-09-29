@@ -16,6 +16,7 @@ namespace Microsoft.Graph
     /// The type PolicyRootClaimsMappingPoliciesCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter))]
     public class PolicyRootClaimsMappingPoliciesCollectionResponse
     {
         /// <summary>

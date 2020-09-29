@@ -16,6 +16,7 @@ namespace Microsoft.Graph
     /// The type AppCatalogsTeamsAppsCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter))]
     public class AppCatalogsTeamsAppsCollectionResponse
     {
         /// <summary>

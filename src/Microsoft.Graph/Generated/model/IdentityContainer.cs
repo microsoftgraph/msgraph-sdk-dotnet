@@ -19,7 +19,8 @@ namespace Microsoft.Graph
     /// The type Identity Container.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class IdentityContainer : Entity
+    [JsonConverter(typeof(DerivedTypeConverter))]
+    public partial class IdentityContainer
     {
     
 		///<summary>
@@ -35,6 +36,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccess", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessRoot ConditionalAccess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData(ReadData = true, WriteData = true)]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

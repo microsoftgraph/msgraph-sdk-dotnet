@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IInformationProtectionRequestBuilder.
     /// </summary>
-    public partial interface IInformationProtectionRequestBuilder : IEntityRequestBuilder
+    public partial interface IInformationProtectionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IInformationProtectionRequest Request();
+        IInformationProtectionRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IInformationProtectionRequest Request(IEnumerable<Option> options);
+        IInformationProtectionRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for ThreatAssessmentRequests.

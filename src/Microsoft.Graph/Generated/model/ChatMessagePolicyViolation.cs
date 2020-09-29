@@ -32,30 +32,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets dlpAction.
+        /// The action taken by the DLP provider on the message with sensitive content. Supported values are: NoneNotifySender -- Inform the sender of the violation but allow readers to read the message.BlockAccess -- Block readers from reading the message.BlockAccessExternal -- Block users outside the organization from reading the message, while allowing users within the organization to read the message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dlpAction", Required = Newtonsoft.Json.Required.Default)]
         public ChatMessagePolicyViolationDlpActionTypes? DlpAction { get; set; }
     
         /// <summary>
         /// Gets or sets justificationText.
+        /// Justification text provided by the sender of the message when overriding a policy violation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justificationText", Required = Newtonsoft.Json.Required.Default)]
         public string JustificationText { get; set; }
     
         /// <summary>
         /// Gets or sets policyTip.
+        /// Information to display to the message sender about why the message was flagged as a violation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyTip", Required = Newtonsoft.Json.Required.Default)]
         public ChatMessagePolicyViolationPolicyTip PolicyTip { get; set; }
     
         /// <summary>
         /// Gets or sets userAction.
+        /// Indicates the action taken by the user on a message blocked by the DLP provider. Supported values are: NoneOverrideReportFalsePositiveWhen the DLP provider is updating the message for blocking sensitive content, userAction is not required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userAction", Required = Newtonsoft.Json.Required.Default)]
         public ChatMessagePolicyViolationUserActionTypes? UserAction { get; set; }
     
         /// <summary>
         /// Gets or sets verdictDetails.
+        /// Indicates what actions the sender may take in response to the policy violation. Supported values are: NoneAllowFalsePositiveOverride -- Allows the sender to declare the policyViolation to be an error in the DLP app and its rules, and allow readers to see the message again if the dlpAction had hidden it.AllowOverrideWithoutJustification -- Allows the sender to overriide the DLP violation and allow readers to see the message again if the dlpAction had hidden it, without needing to provide an explanation for doing so. AllowOverrideWithJustification -- Allows the sender to overriide the DLP violation and allow readers to see the message again if the dlpAction had hidden it, after providing an explanation for doing so.AllowOverrideWithoutJustification and AllowOverrideWithJustification are mutually exclusive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "verdictDetails", Required = Newtonsoft.Json.Required.Default)]
         public ChatMessagePolicyViolationVerdictDetailsTypes? VerdictDetails { get; set; }

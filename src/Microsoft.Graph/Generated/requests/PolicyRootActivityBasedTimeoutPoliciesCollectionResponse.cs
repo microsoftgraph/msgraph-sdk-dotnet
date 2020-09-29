@@ -16,6 +16,7 @@ namespace Microsoft.Graph
     /// The type PolicyRootActivityBasedTimeoutPoliciesCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter))]
     public class PolicyRootActivityBasedTimeoutPoliciesCollectionResponse
     {
         /// <summary>

@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAppCatalogsRequestBuilder.
     /// </summary>
-    public partial interface IAppCatalogsRequestBuilder : IEntityRequestBuilder
+    public partial interface IAppCatalogsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IAppCatalogsRequest Request();
+        IAppCatalogsRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IAppCatalogsRequest Request(IEnumerable<Option> options);
+        IAppCatalogsRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for TeamsApps.

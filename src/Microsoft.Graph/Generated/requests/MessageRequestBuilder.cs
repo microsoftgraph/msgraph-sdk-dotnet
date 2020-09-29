@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Content.
+        /// </summary>
+        /// <returns>The <see cref="IMessageContentRequestBuilder"/>.</returns>
+        public IMessageContentRequestBuilder Content
+        {
+            get
+            {
+                return new MessageContentRequestBuilder(this.AppendSegmentToRequestUrl("$value"), this.Client);
+            }
+        }
+    
+        /// <summary>
         /// Gets the request builder for MessageCopy.
         /// </summary>
         /// <returns>The <see cref="IMessageCopyRequestBuilder"/>.</returns>

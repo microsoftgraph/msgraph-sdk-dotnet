@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPolicyRootRequestBuilder.
     /// </summary>
-    public partial interface IPolicyRootRequestBuilder : IEntityRequestBuilder
+    public partial interface IPolicyRootRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IPolicyRootRequest Request();
+        IPolicyRootRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IPolicyRootRequest Request(IEnumerable<Option> options);
+        IPolicyRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for ActivityBasedTimeoutPolicies.

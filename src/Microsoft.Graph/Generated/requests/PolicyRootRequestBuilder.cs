@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PolicyRootRequestBuilder.
     /// </summary>
-    public partial class PolicyRootRequestBuilder : EntityRequestBuilder, IPolicyRootRequestBuilder
+    public partial class PolicyRootRequestBuilder : BaseRequestBuilder, IPolicyRootRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IPolicyRootRequest Request()
+        public IPolicyRootRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IPolicyRootRequest Request(IEnumerable<Option> options)
+        public IPolicyRootRequest Request(IEnumerable<Option> options)
         {
             return new PolicyRootRequest(this.RequestUrl, this.Client, options);
         }

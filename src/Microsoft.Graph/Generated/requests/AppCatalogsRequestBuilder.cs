@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AppCatalogsRequestBuilder.
     /// </summary>
-    public partial class AppCatalogsRequestBuilder : EntityRequestBuilder, IAppCatalogsRequestBuilder
+    public partial class AppCatalogsRequestBuilder : BaseRequestBuilder, IAppCatalogsRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IAppCatalogsRequest Request()
+        public IAppCatalogsRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IAppCatalogsRequest Request(IEnumerable<Option> options)
+        public IAppCatalogsRequest Request(IEnumerable<Option> options)
         {
             return new AppCatalogsRequest(this.RequestUrl, this.Client, options);
         }
