@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the GET request.
         /// </summary>
-        public System.Threading.Tasks.Task<bool> GetAsync()
+        public System.Threading.Tasks.Task<bool?> GetAsync()
         {
             return this.GetAsync(CancellationToken.None);
         }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<bool> GetAsync(
+        public async System.Threading.Tasks.Task<bool?> GetAsync(
             CancellationToken cancellationToken)
         {
             this.Method = "GET";
