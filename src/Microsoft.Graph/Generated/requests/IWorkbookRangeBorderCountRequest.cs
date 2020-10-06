@@ -25,14 +25,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the GET request.
         /// </summary>
-        System.Threading.Tasks.Task<Int32> GetAsync();
+        System.Threading.Tasks.Task<Int32?> GetAsync();
 
         /// <summary>
         /// Issues the GET request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<Int32> GetAsync(
+        System.Threading.Tasks.Task<Int32?> GetAsync(
             CancellationToken cancellationToken);
 
 

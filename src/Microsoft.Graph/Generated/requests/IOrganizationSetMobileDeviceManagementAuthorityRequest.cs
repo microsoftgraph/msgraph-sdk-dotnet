@@ -25,14 +25,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the POST request.
         /// </summary>
-        System.Threading.Tasks.Task<Int32> PostAsync();
+        System.Threading.Tasks.Task<Int32?> PostAsync();
 
         /// <summary>
         /// Issues the POST request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<Int32> PostAsync(
+        System.Threading.Tasks.Task<Int32?> PostAsync(
             CancellationToken cancellationToken);
 
 
