@@ -56,6 +56,21 @@ namespace Microsoft.Graph
         IMessageSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
     
         /// <summary>
+        /// Gets the request builder for Content.
+        /// </summary>
+        /// <returns>The <see cref="IMessageContentRequestBuilder"/>.</returns>
+        IMessageContentRequestBuilder Content { get; }
+    
+        /// <summary>
+        /// Gets the request builder for MessageForward.
+        /// </summary>
+        /// <returns>The <see cref="IMessageForwardRequestBuilder"/>.</returns>
+        IMessageForwardRequestBuilder Forward(
+            IEnumerable<Recipient> ToRecipients = null,
+            Message Message = null,
+            string Comment = null);
+
+        /// <summary>
         /// Gets the request builder for MessageCopy.
         /// </summary>
         /// <returns>The <see cref="IMessageCopyRequestBuilder"/>.</returns>
@@ -91,15 +106,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMessageCreateReplyAllRequestBuilder"/>.</returns>
         IMessageCreateReplyAllRequestBuilder CreateReplyAll(
-            Message Message = null,
-            string Comment = null);
-
-        /// <summary>
-        /// Gets the request builder for MessageForward.
-        /// </summary>
-        /// <returns>The <see cref="IMessageForwardRequestBuilder"/>.</returns>
-        IMessageForwardRequestBuilder Forward(
-            IEnumerable<Recipient> ToRecipients = null,
             Message Message = null,
             string Comment = null);
 

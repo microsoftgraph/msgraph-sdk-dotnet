@@ -99,6 +99,35 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Content.
+        /// </summary>
+        /// <returns>The <see cref="IMessageContentRequestBuilder"/>.</returns>
+        public IMessageContentRequestBuilder Content
+        {
+            get
+            {
+                return new MessageContentRequestBuilder(this.AppendSegmentToRequestUrl("$value"), this.Client);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the request builder for MessageForward.
+        /// </summary>
+        /// <returns>The <see cref="IMessageForwardRequestBuilder"/>.</returns>
+        public IMessageForwardRequestBuilder Forward(
+            IEnumerable<Recipient> ToRecipients = null,
+            Message Message = null,
+            string Comment = null)
+        {
+            return new MessageForwardRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.forward"),
+                this.Client,
+                ToRecipients,
+                Message,
+                Comment);
+        }
+
+        /// <summary>
         /// Gets the request builder for MessageCopy.
         /// </summary>
         /// <returns>The <see cref="IMessageCopyRequestBuilder"/>.</returns>
@@ -167,23 +196,6 @@ namespace Microsoft.Graph
             return new MessageCreateReplyAllRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.createReplyAll"),
                 this.Client,
-                Message,
-                Comment);
-        }
-
-        /// <summary>
-        /// Gets the request builder for MessageForward.
-        /// </summary>
-        /// <returns>The <see cref="IMessageForwardRequestBuilder"/>.</returns>
-        public IMessageForwardRequestBuilder Forward(
-            IEnumerable<Recipient> ToRecipients = null,
-            Message Message = null,
-            string Comment = null)
-        {
-            return new MessageForwardRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.forward"),
-                this.Client,
-                ToRecipients,
                 Message,
                 Comment);
         }

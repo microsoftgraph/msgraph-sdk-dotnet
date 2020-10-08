@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets complianceUrl.
+        /// The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn't say in chats)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceUrl", Required = Newtonsoft.Json.Required.Default)]
         public string ComplianceUrl { get; set; }
     
         /// <summary>
         /// Gets or sets generalText.
+        /// Explanatory text shown to the sender of the message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "generalText", Required = Newtonsoft.Json.Required.Default)]
         public string GeneralText { get; set; }
     
         /// <summary>
         /// Gets or sets matchedConditionDescriptions.
+        /// The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include 'Credit Card Number' and 'Social Security Number'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matchedConditionDescriptions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> MatchedConditionDescriptions { get; set; }

@@ -529,6 +529,18 @@ namespace Microsoft.Graph
                 return new UserJoinedTeamsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Teamwork.
+        /// </summary>
+        /// <returns>The <see cref="IUserTeamworkRequestBuilder"/>.</returns>
+        public IUserTeamworkRequestBuilder Teamwork
+        {
+            get
+            {
+                return new UserTeamworkRequestBuilder(this.AppendSegmentToRequestUrl("teamwork"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.

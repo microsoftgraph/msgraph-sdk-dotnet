@@ -116,7 +116,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mail nickname.
-        /// The mail alias for the group, unique in the organization. This property must be specified when a group is created. Returned by default. Supports $filter.
+        /// The mail alias for the group, unique in the organization. This property must be specified when a group is created. These characters cannot be used in the mailNickName: @()/[]';:.&amp;lt;&amp;gt;,SPACE. Returned by default. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNickname", Required = Newtonsoft.Json.Required.Default)]
         public string MailNickname { get; set; }

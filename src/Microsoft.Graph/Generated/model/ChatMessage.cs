@@ -116,6 +116,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets policy violation.
+        /// Defines the properties of a policy violation set by a data loss prevention (DLP) application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyViolation", Required = Newtonsoft.Json.Required.Default)]
         public ChatMessagePolicyViolation PolicyViolation { get; set; }

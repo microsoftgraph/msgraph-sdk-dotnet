@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         public OnlineMeetingProviderType? DefaultOnlineMeetingProvider { get; set; }
     
         /// <summary>
+        /// Gets or sets hex color.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hexColor", Required = Newtonsoft.Json.Required.Default)]
+        public string HexColor { get; set; }
+    
+        /// <summary>
         /// Gets or sets is removable.
         /// Indicates whether this user calendar can be deleted from the user mailbox.
         /// </summary>

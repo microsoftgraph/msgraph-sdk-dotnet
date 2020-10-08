@@ -763,6 +763,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinedTeams", Required = Newtonsoft.Json.Required.Default)]
         public IUserJoinedTeamsCollectionPage JoinedTeams { get; set; }
     
+        /// <summary>
+        /// Gets or sets teamwork.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamwork", Required = Newtonsoft.Json.Required.Default)]
+        public UserTeamwork Teamwork { get; set; }
+    
     }
 }
 

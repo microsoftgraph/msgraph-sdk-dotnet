@@ -270,6 +270,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>
         IUserJoinedTeamsCollectionRequestBuilder JoinedTeams { get; }
+
+        /// <summary>
+        /// Gets the request builder for Teamwork.
+        /// </summary>
+        /// <returns>The <see cref="IUserTeamworkRequestBuilder"/>.</returns>
+        IUserTeamworkRequestBuilder Teamwork { get; }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.

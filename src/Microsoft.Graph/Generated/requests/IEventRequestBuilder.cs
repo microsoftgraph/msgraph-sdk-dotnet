@@ -76,6 +76,13 @@ namespace Microsoft.Graph
             bool? SendResponse = null);
 
         /// <summary>
+        /// Gets the request builder for EventCancel.
+        /// </summary>
+        /// <returns>The <see cref="IEventCancelRequestBuilder"/>.</returns>
+        IEventCancelRequestBuilder Cancel(
+            string Comment = null);
+
+        /// <summary>
         /// Gets the request builder for EventDecline.
         /// </summary>
         /// <returns>The <see cref="IEventDeclineRequestBuilder"/>.</returns>
@@ -88,6 +95,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventDismissReminderRequestBuilder"/>.</returns>
         IEventDismissReminderRequestBuilder DismissReminder();
+
+        /// <summary>
+        /// Gets the request builder for EventForward.
+        /// </summary>
+        /// <returns>The <see cref="IEventForwardRequestBuilder"/>.</returns>
+        IEventForwardRequestBuilder Forward(
+            IEnumerable<Recipient> ToRecipients = null,
+            string Comment = null);
 
         /// <summary>
         /// Gets the request builder for EventSnoozeReminder.
