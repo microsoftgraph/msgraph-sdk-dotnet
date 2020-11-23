@@ -45,5 +45,162 @@ namespace Microsoft.Graph
 
             return request;
         }
+        /// <summary>
+        /// Gets the request builder for SiteAddRequestBuilder.
+        /// </summary>
+        /// <param name="value">A value parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteAddRequestBuilder"/>.</returns>
+        public ISiteAddRequestBuilder Add(
+            IEnumerable<Site> value)
+        {
+            return new SiteAddRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.add"),
+                this.Client,
+                value);
+        }
+        /// <summary>
+        /// Gets the request builder for SiteGetActivitiesByIntervalRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="ISiteGetActivitiesByIntervalRequestBuilder"/>.</returns>
+        public ISiteGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval()
+        {
+            return new SiteGetActivitiesByIntervalRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getActivitiesByInterval"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for SiteGetByPathRequestBuilder.
+        /// </summary>
+        /// <param name="path">A path parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteGetByPathRequestBuilder"/>.</returns>
+        public ISiteGetByPathRequestBuilder GetByPath(
+            string path)
+        {
+            return new SiteGetByPathRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getByPath"),
+                this.Client,
+                path);
+        }
+        /// <summary>
+        /// Gets the request builder for SiteRemoveRequestBuilder.
+        /// </summary>
+        /// <param name="value">A value parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteRemoveRequestBuilder"/>.</returns>
+        public ISiteRemoveRequestBuilder Remove(
+            IEnumerable<Site> value)
+        {
+            return new SiteRemoveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.remove"),
+                this.Client,
+                value);
+        }
+        /// <summary>
+        /// Gets the request builder for Analytics.
+        /// Analytics about the view activities that took place in this site.
+        /// </summary>
+        /// <returns>The <see cref="IItemAnalyticsRequestBuilder"/>.</returns>
+        public IItemAnalyticsRequestBuilder Analytics
+        {
+            get
+            {
+                return new ItemAnalyticsRequestBuilder(this.AppendSegmentToRequestUrl("analytics"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for Columns.
+        /// The collection of column definitions reusable across lists under this site.
+        /// </summary>
+        /// <returns>The <see cref="IColumnDefinitionRequestBuilder"/>.</returns>
+        public IColumnDefinitionRequestBuilder Columns
+        {
+            get
+            {
+                return new ColumnDefinitionRequestBuilder(this.AppendSegmentToRequestUrl("columns"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for ContentTypes.
+        /// The collection of content types defined for this site.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeRequestBuilder"/>.</returns>
+        public IContentTypeRequestBuilder ContentTypes
+        {
+            get
+            {
+                return new ContentTypeRequestBuilder(this.AppendSegmentToRequestUrl("contentTypes"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for Drive.
+        /// The default drive (document library) for this site.
+        /// </summary>
+        /// <returns>The <see cref="IDriveRequestBuilder"/>.</returns>
+        public IDriveRequestBuilder Drive
+        {
+            get
+            {
+                return new DriveRequestBuilder(this.AppendSegmentToRequestUrl("drive"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for Drives.
+        /// The collection of drives (document libraries) under this site.
+        /// </summary>
+        /// <returns>The <see cref="IDriveRequestBuilder"/>.</returns>
+        public IDriveRequestBuilder Drives
+        {
+            get
+            {
+                return new DriveRequestBuilder(this.AppendSegmentToRequestUrl("drives"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for Items.
+        /// Used to address any item contained in this site. This collection cannot be enumerated.
+        /// </summary>
+        /// <returns>The <see cref="IBaseItemRequestBuilder"/>.</returns>
+        public IBaseItemRequestBuilder Items
+        {
+            get
+            {
+                return new BaseItemRequestBuilder(this.AppendSegmentToRequestUrl("items"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for Lists.
+        /// The collection of lists under this site.
+        /// </summary>
+        /// <returns>The <see cref="IListRequestBuilder"/>.</returns>
+        public IListRequestBuilder Lists
+        {
+            get
+            {
+                return new ListRequestBuilder(this.AppendSegmentToRequestUrl("lists"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for Onenote.
+        /// Calls the OneNote service for notebook related operations.
+        /// </summary>
+        /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>
+        public IOnenoteRequestBuilder Onenote
+        {
+            get
+            {
+                return new OnenoteRequestBuilder(this.AppendSegmentToRequestUrl("onenote"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for Sites.
+        /// The collection of the sub-sites under this site.
+        /// </summary>
+        /// <returns>The <see cref="ISiteRequestBuilder"/>.</returns>
+        public ISiteRequestBuilder Sites
+        {
+            get
+            {
+                return new SiteRequestBuilder(this.AppendSegmentToRequestUrl("sites"), this.Client);
+            }
+        }
     }
 }

@@ -45,5 +45,99 @@ namespace Microsoft.Graph
 
             return request;
         }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableColumnAddRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <param name="values">A values parameter for the OData method call.</param>
+        /// <param name="name">A name parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookTableColumnAddRequestBuilder"/>.</returns>
+        public IWorkbookTableColumnAddRequestBuilder Add(
+            Int32? index,
+            Newtonsoft.Json.Linq.JToken values,
+            string name)
+        {
+            return new WorkbookTableColumnAddRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.add"),
+                this.Client,
+                index,
+                values,
+                name);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableColumnCountRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableColumnCountRequestBuilder"/>.</returns>
+        public IWorkbookTableColumnCountRequestBuilder Count()
+        {
+            return new WorkbookTableColumnCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableColumnDataBodyRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableColumnDataBodyRangeRequestBuilder"/>.</returns>
+        public IWorkbookTableColumnDataBodyRangeRequestBuilder DataBodyRange()
+        {
+            return new WorkbookTableColumnDataBodyRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dataBodyRange"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableColumnHeaderRowRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableColumnHeaderRowRangeRequestBuilder"/>.</returns>
+        public IWorkbookTableColumnHeaderRowRangeRequestBuilder HeaderRowRange()
+        {
+            return new WorkbookTableColumnHeaderRowRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.headerRowRange"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableColumnItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookTableColumnItemAtRequestBuilder"/>.</returns>
+        public IWorkbookTableColumnItemAtRequestBuilder ItemAt(
+            Int32 index)
+        {
+            return new WorkbookTableColumnItemAtRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
+                this.Client,
+                index);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableColumnRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableColumnRangeRequestBuilder"/>.</returns>
+        public IWorkbookTableColumnRangeRequestBuilder Range()
+        {
+            return new WorkbookTableColumnRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.range"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableColumnTotalRowRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableColumnTotalRowRangeRequestBuilder"/>.</returns>
+        public IWorkbookTableColumnTotalRowRangeRequestBuilder TotalRowRange()
+        {
+            return new WorkbookTableColumnTotalRowRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.totalRowRange"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for Filter.
+        /// Retrieve the filter applied to the column. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFilterRequestBuilder"/>.</returns>
+        public IWorkbookFilterRequestBuilder Filter
+        {
+            get
+            {
+                return new WorkbookFilterRequestBuilder(this.AppendSegmentToRequestUrl("filter"), this.Client);
+            }
+        }
     }
 }

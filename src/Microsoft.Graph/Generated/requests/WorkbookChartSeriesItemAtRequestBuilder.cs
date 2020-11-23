@@ -45,5 +45,52 @@ namespace Microsoft.Graph
 
             return request;
         }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartSeriesCountRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartSeriesCountRequestBuilder"/>.</returns>
+        public IWorkbookChartSeriesCountRequestBuilder Count()
+        {
+            return new WorkbookChartSeriesCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartSeriesItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartSeriesItemAtRequestBuilder"/>.</returns>
+        public IWorkbookChartSeriesItemAtRequestBuilder ItemAt(
+            Int32 index)
+        {
+            return new WorkbookChartSeriesItemAtRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
+                this.Client,
+                index);
+        }
+        /// <summary>
+        /// Gets the request builder for Format.
+        /// Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartSeriesFormatRequestBuilder"/>.</returns>
+        public IWorkbookChartSeriesFormatRequestBuilder Format
+        {
+            get
+            {
+                return new WorkbookChartSeriesFormatRequestBuilder(this.AppendSegmentToRequestUrl("format"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for Points.
+        /// Represents a collection of all points in the series. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartPointRequestBuilder"/>.</returns>
+        public IWorkbookChartPointRequestBuilder Points
+        {
+            get
+            {
+                return new WorkbookChartPointRequestBuilder(this.AppendSegmentToRequestUrl("points"), this.Client);
+            }
+        }
     }
 }

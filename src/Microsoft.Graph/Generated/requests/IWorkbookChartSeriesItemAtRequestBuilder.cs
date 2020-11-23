@@ -24,5 +24,29 @@ namespace Microsoft.Graph
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
         IWorkbookChartSeriesItemAtRequest Request(IEnumerable<Option> options = null);
+        /// <summary>
+        /// Gets the request builder for WorkbookChartSeriesCountRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartSeriesCountRequestBuilder"/>.</returns>
+        IWorkbookChartSeriesCountRequestBuilder Count();
+        /// <summary>
+        /// Gets the request builder for WorkbookChartSeriesItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartSeriesItemAtRequestBuilder"/>.</returns>
+        IWorkbookChartSeriesItemAtRequestBuilder ItemAt(
+            Int32 index);
+        /// <summary>
+        /// Gets the request builder for Format.
+        /// Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartSeriesFormatRequestBuilder"/>.</returns>
+        IWorkbookChartSeriesFormatRequestBuilder Format  { get; }
+        /// <summary>
+        /// Gets the request builder for Points.
+        /// Represents a collection of all points in the series. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartPointRequestBuilder"/>.</returns>
+        IWorkbookChartPointRequestBuilder Points  { get; }
     }
 }

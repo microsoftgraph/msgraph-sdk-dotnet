@@ -45,5 +45,54 @@ namespace Microsoft.Graph
 
             return request;
         }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableRowAddRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <param name="values">A values parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookTableRowAddRequestBuilder"/>.</returns>
+        public IWorkbookTableRowAddRequestBuilder Add(
+            Int32? index,
+            Newtonsoft.Json.Linq.JToken values)
+        {
+            return new WorkbookTableRowAddRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.add"),
+                this.Client,
+                index,
+                values);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableRowCountRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableRowCountRequestBuilder"/>.</returns>
+        public IWorkbookTableRowCountRequestBuilder Count()
+        {
+            return new WorkbookTableRowCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableRowItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookTableRowItemAtRequestBuilder"/>.</returns>
+        public IWorkbookTableRowItemAtRequestBuilder ItemAt(
+            Int32 index)
+        {
+            return new WorkbookTableRowItemAtRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
+                this.Client,
+                index);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableRowRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableRowRangeRequestBuilder"/>.</returns>
+        public IWorkbookTableRowRangeRequestBuilder Range()
+        {
+            return new WorkbookTableRowRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.range"),
+                this.Client);
+        }
     }
 }

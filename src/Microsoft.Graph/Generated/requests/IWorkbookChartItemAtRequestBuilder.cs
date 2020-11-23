@@ -24,5 +24,100 @@ namespace Microsoft.Graph
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
         IWorkbookChartItemAtRequest Request(IEnumerable<Option> options = null);
+        /// <summary>
+        /// Gets the request builder for WorkbookChartAddRequestBuilder.
+        /// </summary>
+        /// <param name="type">A type parameter for the OData method call.</param>
+        /// <param name="seriesBy">A seriesBy parameter for the OData method call.</param>
+        /// <param name="sourceData">A sourceData parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartAddRequestBuilder"/>.</returns>
+        IWorkbookChartAddRequestBuilder Add(
+            string type,
+            string seriesBy,
+            Newtonsoft.Json.Linq.JToken sourceData);
+        /// <summary>
+        /// Gets the request builder for WorkbookChartCountRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartCountRequestBuilder"/>.</returns>
+        IWorkbookChartCountRequestBuilder Count();
+        /// <summary>
+        /// Gets the request builder for WorkbookChartImageRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartImageRequestBuilder"/>.</returns>
+        IWorkbookChartImageRequestBuilder Image();
+        /// <summary>
+        /// Gets the request builder for WorkbookChartItemRequestBuilder.
+        /// </summary>
+        /// <param name="name">A name parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartItemRequestBuilder"/>.</returns>
+        IWorkbookChartItemRequestBuilder Item(
+            string name);
+        /// <summary>
+        /// Gets the request builder for WorkbookChartItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartItemAtRequestBuilder"/>.</returns>
+        IWorkbookChartItemAtRequestBuilder ItemAt(
+            Int32 index);
+        /// <summary>
+        /// Gets the request builder for WorkbookChartSetDataRequestBuilder.
+        /// </summary>
+        /// <param name="seriesBy">A seriesBy parameter for the OData method call.</param>
+        /// <param name="sourceData">A sourceData parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartSetDataRequestBuilder"/>.</returns>
+        IWorkbookChartSetDataRequestBuilder SetData(
+            string seriesBy,
+            Newtonsoft.Json.Linq.JToken sourceData);
+        /// <summary>
+        /// Gets the request builder for WorkbookChartSetPositionRequestBuilder.
+        /// </summary>
+        /// <param name="startCell">A startCell parameter for the OData method call.</param>
+        /// <param name="endCell">A endCell parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartSetPositionRequestBuilder"/>.</returns>
+        IWorkbookChartSetPositionRequestBuilder SetPosition(
+            Newtonsoft.Json.Linq.JToken startCell,
+            Newtonsoft.Json.Linq.JToken endCell);
+        /// <summary>
+        /// Gets the request builder for Axes.
+        /// Represents chart axes. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartAxesRequestBuilder"/>.</returns>
+        IWorkbookChartAxesRequestBuilder Axes  { get; }
+        /// <summary>
+        /// Gets the request builder for DataLabels.
+        /// Represents the datalabels on the chart. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartDataLabelsRequestBuilder"/>.</returns>
+        IWorkbookChartDataLabelsRequestBuilder DataLabels  { get; }
+        /// <summary>
+        /// Gets the request builder for Format.
+        /// Encapsulates the format properties for the chart area. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartAreaFormatRequestBuilder"/>.</returns>
+        IWorkbookChartAreaFormatRequestBuilder Format  { get; }
+        /// <summary>
+        /// Gets the request builder for Legend.
+        /// Represents the legend for the chart. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartLegendRequestBuilder"/>.</returns>
+        IWorkbookChartLegendRequestBuilder Legend  { get; }
+        /// <summary>
+        /// Gets the request builder for Series.
+        /// Represents either a single series or collection of series in the chart. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartSeriesRequestBuilder"/>.</returns>
+        IWorkbookChartSeriesRequestBuilder Series  { get; }
+        /// <summary>
+        /// Gets the request builder for Title.
+        /// Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartTitleRequestBuilder"/>.</returns>
+        IWorkbookChartTitleRequestBuilder Title  { get; }
+        /// <summary>
+        /// Gets the request builder for Worksheet.
+        /// The worksheet containing the current chart. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookWorksheetRequestBuilder"/>.</returns>
+        IWorkbookWorksheetRequestBuilder Worksheet  { get; }
     }
 }
