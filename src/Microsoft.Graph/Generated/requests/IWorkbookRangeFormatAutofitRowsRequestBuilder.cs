@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookRangeFormatAutofitRowsRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookRangeFormatAutofitRowsRequestBuilder
+    public partial interface IWorkbookRangeFormatAutofitRowsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

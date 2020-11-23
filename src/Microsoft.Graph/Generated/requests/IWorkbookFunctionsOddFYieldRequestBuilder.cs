@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsOddFYieldRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsOddFYieldRequestBuilder
+    public partial interface IWorkbookFunctionsOddFYieldRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

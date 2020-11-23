@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFilterClearRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFilterClearRequestBuilder
+    public partial interface IWorkbookFilterClearRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

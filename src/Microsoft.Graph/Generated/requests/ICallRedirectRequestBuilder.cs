@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICallRedirectRequestBuilder.
     /// </summary>
-    public partial interface ICallRedirectRequestBuilder
+    public partial interface ICallRedirectRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

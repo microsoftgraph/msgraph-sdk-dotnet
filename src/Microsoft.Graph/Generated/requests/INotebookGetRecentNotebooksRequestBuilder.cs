@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface INotebookGetRecentNotebooksRequestBuilder.
     /// </summary>
-    public partial interface INotebookGetRecentNotebooksRequestBuilder
+    public partial interface INotebookGetRecentNotebooksRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

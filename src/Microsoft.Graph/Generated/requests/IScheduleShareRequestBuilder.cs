@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IScheduleShareRequestBuilder.
     /// </summary>
-    public partial interface IScheduleShareRequestBuilder
+    public partial interface IScheduleShareRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

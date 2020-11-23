@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsMaxARequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsMaxARequestBuilder
+    public partial interface IWorkbookFunctionsMaxARequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

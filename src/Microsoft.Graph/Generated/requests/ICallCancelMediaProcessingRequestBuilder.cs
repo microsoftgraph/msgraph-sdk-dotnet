@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICallCancelMediaProcessingRequestBuilder.
     /// </summary>
-    public partial interface ICallCancelMediaProcessingRequestBuilder
+    public partial interface ICallCancelMediaProcessingRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

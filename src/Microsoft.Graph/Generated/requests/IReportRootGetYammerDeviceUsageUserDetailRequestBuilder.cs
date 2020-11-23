@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetYammerDeviceUsageUserDetailRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetYammerDeviceUsageUserDetailRequestBuilder
+    public partial interface IReportRootGetYammerDeviceUsageUserDetailRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

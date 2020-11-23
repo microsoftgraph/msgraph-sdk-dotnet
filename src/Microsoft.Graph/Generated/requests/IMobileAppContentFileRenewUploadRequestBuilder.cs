@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMobileAppContentFileRenewUploadRequestBuilder.
     /// </summary>
-    public partial interface IMobileAppContentFileRenewUploadRequestBuilder
+    public partial interface IMobileAppContentFileRenewUploadRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

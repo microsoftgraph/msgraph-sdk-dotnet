@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsArabicRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsArabicRequestBuilder
+    public partial interface IWorkbookFunctionsArabicRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

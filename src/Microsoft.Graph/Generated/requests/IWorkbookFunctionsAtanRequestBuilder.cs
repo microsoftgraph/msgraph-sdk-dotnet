@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsAtanRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsAtanRequestBuilder
+    public partial interface IWorkbookFunctionsAtanRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

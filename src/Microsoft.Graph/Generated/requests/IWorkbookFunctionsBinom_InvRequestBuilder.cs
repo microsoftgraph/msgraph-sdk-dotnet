@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsBinom_InvRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsBinom_InvRequestBuilder
+    public partial interface IWorkbookFunctionsBinom_InvRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

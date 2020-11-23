@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITeamsAppInstallationUpgradeRequestBuilder.
     /// </summary>
-    public partial interface ITeamsAppInstallationUpgradeRequestBuilder
+    public partial interface ITeamsAppInstallationUpgradeRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

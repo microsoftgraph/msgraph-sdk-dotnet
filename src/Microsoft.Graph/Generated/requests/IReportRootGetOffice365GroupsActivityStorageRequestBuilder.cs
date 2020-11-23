@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetOffice365GroupsActivityStorageRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetOffice365GroupsActivityStorageRequestBuilder
+    public partial interface IReportRootGetOffice365GroupsActivityStorageRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

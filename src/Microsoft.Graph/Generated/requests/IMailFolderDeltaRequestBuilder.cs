@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMailFolderDeltaRequestBuilder.
     /// </summary>
-    public partial interface IMailFolderDeltaRequestBuilder
+    public partial interface IMailFolderDeltaRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

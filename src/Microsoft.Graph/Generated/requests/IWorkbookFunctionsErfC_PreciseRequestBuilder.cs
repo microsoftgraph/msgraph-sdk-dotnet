@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsErfC_PreciseRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsErfC_PreciseRequestBuilder
+    public partial interface IWorkbookFunctionsErfC_PreciseRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

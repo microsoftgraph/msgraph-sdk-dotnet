@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookWorksheetUsedRangeRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookWorksheetUsedRangeRequestBuilder
+    public partial interface IWorkbookWorksheetUsedRangeRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

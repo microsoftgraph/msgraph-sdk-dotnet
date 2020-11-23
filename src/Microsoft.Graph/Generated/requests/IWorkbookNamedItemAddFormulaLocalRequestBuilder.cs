@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookNamedItemAddFormulaLocalRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookNamedItemAddFormulaLocalRequestBuilder
+    public partial interface IWorkbookNamedItemAddFormulaLocalRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

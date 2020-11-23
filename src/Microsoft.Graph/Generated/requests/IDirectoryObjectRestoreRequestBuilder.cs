@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDirectoryObjectRestoreRequestBuilder.
     /// </summary>
-    public partial interface IDirectoryObjectRestoreRequestBuilder
+    public partial interface IDirectoryObjectRestoreRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

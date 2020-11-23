@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceUpdateWindowsDeviceAccountRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceUpdateWindowsDeviceAccountRequestBuilder
+    public partial interface IManagedDeviceUpdateWindowsDeviceAccountRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsAverageRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsAverageRequestBuilder
+    public partial interface IWorkbookFunctionsAverageRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

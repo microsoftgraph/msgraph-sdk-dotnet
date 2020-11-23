@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsSecRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsSecRequestBuilder
+    public partial interface IWorkbookFunctionsSecRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

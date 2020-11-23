@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDriveRecentRequestBuilder.
     /// </summary>
-    public partial interface IDriveRecentRequestBuilder
+    public partial interface IDriveRecentRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

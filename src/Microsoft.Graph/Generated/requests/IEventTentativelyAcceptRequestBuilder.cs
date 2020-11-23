@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEventTentativelyAcceptRequestBuilder.
     /// </summary>
-    public partial interface IEventTentativelyAcceptRequestBuilder
+    public partial interface IEventTentativelyAcceptRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

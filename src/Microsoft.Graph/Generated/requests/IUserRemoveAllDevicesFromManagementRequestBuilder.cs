@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserRemoveAllDevicesFromManagementRequestBuilder.
     /// </summary>
-    public partial interface IUserRemoveAllDevicesFromManagementRequestBuilder
+    public partial interface IUserRemoveAllDevicesFromManagementRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

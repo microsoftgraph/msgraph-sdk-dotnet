@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IOAuth2PermissionGrantDeltaRequestBuilder.
     /// </summary>
-    public partial interface IOAuth2PermissionGrantDeltaRequestBuilder
+    public partial interface IOAuth2PermissionGrantDeltaRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

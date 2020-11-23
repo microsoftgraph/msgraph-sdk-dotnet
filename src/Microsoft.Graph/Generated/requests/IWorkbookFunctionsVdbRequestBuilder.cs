@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsVdbRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsVdbRequestBuilder
+    public partial interface IWorkbookFunctionsVdbRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

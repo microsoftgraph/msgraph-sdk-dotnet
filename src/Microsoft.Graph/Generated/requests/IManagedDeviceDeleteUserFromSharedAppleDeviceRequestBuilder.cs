@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder
+    public partial interface IManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserWipeManagedAppRegistrationsByDeviceTagRequestBuilder.
     /// </summary>
-    public partial interface IUserWipeManagedAppRegistrationsByDeviceTagRequestBuilder
+    public partial interface IUserWipeManagedAppRegistrationsByDeviceTagRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsTrimMeanRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsTrimMeanRequestBuilder
+    public partial interface IWorkbookFunctionsTrimMeanRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

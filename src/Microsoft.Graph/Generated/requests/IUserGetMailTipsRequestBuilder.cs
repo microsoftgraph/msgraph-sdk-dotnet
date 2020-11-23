@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserGetMailTipsRequestBuilder.
     /// </summary>
-    public partial interface IUserGetMailTipsRequestBuilder
+    public partial interface IUserGetMailTipsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

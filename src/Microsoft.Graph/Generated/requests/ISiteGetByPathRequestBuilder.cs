@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISiteGetByPathRequestBuilder.
     /// </summary>
-    public partial interface ISiteGetByPathRequestBuilder
+    public partial interface ISiteGetByPathRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceRecoverPasscodeRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceRecoverPasscodeRequestBuilder
+    public partial interface IManagedDeviceRecoverPasscodeRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

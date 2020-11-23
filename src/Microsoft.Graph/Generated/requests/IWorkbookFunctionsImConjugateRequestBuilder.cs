@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsImConjugateRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsImConjugateRequestBuilder
+    public partial interface IWorkbookFunctionsImConjugateRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMobileAppContentFileCommitRequestBuilder.
     /// </summary>
-    public partial interface IMobileAppContentFileCommitRequestBuilder
+    public partial interface IMobileAppContentFileCommitRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

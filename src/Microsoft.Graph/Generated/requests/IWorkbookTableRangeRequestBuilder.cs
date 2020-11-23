@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookTableRangeRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookTableRangeRequestBuilder
+    public partial interface IWorkbookTableRangeRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

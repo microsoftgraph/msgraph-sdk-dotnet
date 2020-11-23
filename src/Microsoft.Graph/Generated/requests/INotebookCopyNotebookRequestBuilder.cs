@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface INotebookCopyNotebookRequestBuilder.
     /// </summary>
-    public partial interface INotebookCopyNotebookRequestBuilder
+    public partial interface INotebookCopyNotebookRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

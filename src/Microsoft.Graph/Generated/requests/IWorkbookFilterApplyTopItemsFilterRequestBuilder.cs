@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFilterApplyTopItemsFilterRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFilterApplyTopItemsFilterRequestBuilder
+    public partial interface IWorkbookFilterApplyTopItemsFilterRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

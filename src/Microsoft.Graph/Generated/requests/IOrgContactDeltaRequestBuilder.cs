@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IOrgContactDeltaRequestBuilder.
     /// </summary>
-    public partial interface IOrgContactDeltaRequestBuilder
+    public partial interface IOrgContactDeltaRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

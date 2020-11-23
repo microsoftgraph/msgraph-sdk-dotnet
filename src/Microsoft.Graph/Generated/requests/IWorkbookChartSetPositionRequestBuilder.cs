@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookChartSetPositionRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookChartSetPositionRequestBuilder
+    public partial interface IWorkbookChartSetPositionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

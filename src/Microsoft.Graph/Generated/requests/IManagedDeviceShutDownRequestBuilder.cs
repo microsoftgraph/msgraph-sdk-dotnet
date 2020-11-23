@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceShutDownRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceShutDownRequestBuilder
+    public partial interface IManagedDeviceShutDownRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

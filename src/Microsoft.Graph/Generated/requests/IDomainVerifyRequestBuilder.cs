@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDomainVerifyRequestBuilder.
     /// </summary>
-    public partial interface IDomainVerifyRequestBuilder
+    public partial interface IDomainVerifyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

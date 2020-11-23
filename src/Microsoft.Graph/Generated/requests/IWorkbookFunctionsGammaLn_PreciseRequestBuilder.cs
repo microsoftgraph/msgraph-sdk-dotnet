@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsGammaLn_PreciseRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsGammaLn_PreciseRequestBuilder
+    public partial interface IWorkbookFunctionsGammaLn_PreciseRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

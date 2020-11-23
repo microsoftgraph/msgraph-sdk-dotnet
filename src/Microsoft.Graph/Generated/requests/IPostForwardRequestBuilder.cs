@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPostForwardRequestBuilder.
     /// </summary>
-    public partial interface IPostForwardRequestBuilder
+    public partial interface IPostForwardRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

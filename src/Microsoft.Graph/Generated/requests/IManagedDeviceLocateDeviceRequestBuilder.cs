@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceLocateDeviceRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceLocateDeviceRequestBuilder
+    public partial interface IManagedDeviceLocateDeviceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

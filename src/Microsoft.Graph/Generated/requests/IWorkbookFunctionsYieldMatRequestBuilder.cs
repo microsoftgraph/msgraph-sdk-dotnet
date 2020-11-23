@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsYieldMatRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsYieldMatRequestBuilder
+    public partial interface IWorkbookFunctionsYieldMatRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

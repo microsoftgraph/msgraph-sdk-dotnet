@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISiteRemoveRequestBuilder.
     /// </summary>
-    public partial interface ISiteRemoveRequestBuilder
+    public partial interface ISiteRemoveRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

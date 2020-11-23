@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookRefreshSessionRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookRefreshSessionRequestBuilder
+    public partial interface IWorkbookRefreshSessionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsFvscheduleRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsFvscheduleRequestBuilder
+    public partial interface IWorkbookFunctionsFvscheduleRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

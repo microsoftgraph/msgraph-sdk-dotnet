@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsEdateRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsEdateRequestBuilder
+    public partial interface IWorkbookFunctionsEdateRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

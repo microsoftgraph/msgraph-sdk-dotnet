@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookPivotTableRefreshRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookPivotTableRefreshRequestBuilder
+    public partial interface IWorkbookPivotTableRefreshRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

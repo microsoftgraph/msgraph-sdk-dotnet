@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetOneDriveActivityFileCountsRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetOneDriveActivityFileCountsRequestBuilder
+    public partial interface IReportRootGetOneDriveActivityFileCountsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

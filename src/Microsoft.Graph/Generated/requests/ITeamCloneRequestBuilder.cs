@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITeamCloneRequestBuilder.
     /// </summary>
-    public partial interface ITeamCloneRequestBuilder
+    public partial interface ITeamCloneRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

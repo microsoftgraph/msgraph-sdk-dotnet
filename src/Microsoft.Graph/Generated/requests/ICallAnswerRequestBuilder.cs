@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICallAnswerRequestBuilder.
     /// </summary>
-    public partial interface ICallAnswerRequestBuilder
+    public partial interface ICallAnswerRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

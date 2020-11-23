@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICallPlayPromptRequestBuilder.
     /// </summary>
-    public partial interface ICallPlayPromptRequestBuilder
+    public partial interface ICallPlayPromptRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

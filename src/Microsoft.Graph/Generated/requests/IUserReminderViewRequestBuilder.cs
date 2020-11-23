@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserReminderViewRequestBuilder.
     /// </summary>
-    public partial interface IUserReminderViewRequestBuilder
+    public partial interface IUserReminderViewRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

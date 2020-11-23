@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICallUnmuteRequestBuilder.
     /// </summary>
-    public partial interface ICallUnmuteRequestBuilder
+    public partial interface ICallUnmuteRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

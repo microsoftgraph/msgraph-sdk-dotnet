@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITodoTaskDeltaRequestBuilder.
     /// </summary>
-    public partial interface ITodoTaskDeltaRequestBuilder
+    public partial interface ITodoTaskDeltaRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

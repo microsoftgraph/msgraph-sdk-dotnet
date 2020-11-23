@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupCheckGrantedPermissionsForAppRequestBuilder.
     /// </summary>
-    public partial interface IGroupCheckGrantedPermissionsForAppRequestBuilder
+    public partial interface IGroupCheckGrantedPermissionsForAppRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

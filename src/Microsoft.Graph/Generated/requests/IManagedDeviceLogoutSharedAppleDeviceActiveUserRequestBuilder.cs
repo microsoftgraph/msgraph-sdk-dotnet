@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder
+    public partial interface IManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

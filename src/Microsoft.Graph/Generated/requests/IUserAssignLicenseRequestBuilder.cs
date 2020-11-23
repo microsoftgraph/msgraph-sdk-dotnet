@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserAssignLicenseRequestBuilder.
     /// </summary>
-    public partial interface IUserAssignLicenseRequestBuilder
+    public partial interface IUserAssignLicenseRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

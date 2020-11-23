@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsHypGeom_DistRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsHypGeom_DistRequestBuilder
+    public partial interface IWorkbookFunctionsHypGeom_DistRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

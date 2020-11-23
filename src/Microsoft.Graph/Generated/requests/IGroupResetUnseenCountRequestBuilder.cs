@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupResetUnseenCountRequestBuilder.
     /// </summary>
-    public partial interface IGroupResetUnseenCountRequestBuilder
+    public partial interface IGroupResetUnseenCountRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

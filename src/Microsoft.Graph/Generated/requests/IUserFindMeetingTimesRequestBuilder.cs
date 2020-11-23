@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserFindMeetingTimesRequestBuilder.
     /// </summary>
-    public partial interface IUserFindMeetingTimesRequestBuilder
+    public partial interface IUserFindMeetingTimesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

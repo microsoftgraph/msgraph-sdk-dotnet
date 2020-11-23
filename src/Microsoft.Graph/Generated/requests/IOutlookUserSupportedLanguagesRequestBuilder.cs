@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IOutlookUserSupportedLanguagesRequestBuilder.
     /// </summary>
-    public partial interface IOutlookUserSupportedLanguagesRequestBuilder
+    public partial interface IOutlookUserSupportedLanguagesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

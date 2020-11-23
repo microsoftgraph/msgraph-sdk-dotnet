@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookChartPointCountRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookChartPointCountRequestBuilder
+    public partial interface IWorkbookChartPointCountRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

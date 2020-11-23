@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementGetEffectivePermissionsRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementGetEffectivePermissionsRequestBuilder
+    public partial interface IDeviceManagementGetEffectivePermissionsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISiteGetActivitiesByIntervalRequestBuilder.
     /// </summary>
-    public partial interface ISiteGetActivitiesByIntervalRequestBuilder
+    public partial interface ISiteGetActivitiesByIntervalRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

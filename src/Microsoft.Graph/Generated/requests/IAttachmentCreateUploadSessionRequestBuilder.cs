@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAttachmentCreateUploadSessionRequestBuilder.
     /// </summary>
-    public partial interface IAttachmentCreateUploadSessionRequestBuilder
+    public partial interface IAttachmentCreateUploadSessionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

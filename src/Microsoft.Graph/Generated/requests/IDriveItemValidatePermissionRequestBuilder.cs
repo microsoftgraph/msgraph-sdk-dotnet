@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDriveItemValidatePermissionRequestBuilder.
     /// </summary>
-    public partial interface IDriveItemValidatePermissionRequestBuilder
+    public partial interface IDriveItemValidatePermissionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

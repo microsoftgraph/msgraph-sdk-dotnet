@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceSyncDeviceRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceSyncDeviceRequestBuilder
+    public partial interface IManagedDeviceSyncDeviceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

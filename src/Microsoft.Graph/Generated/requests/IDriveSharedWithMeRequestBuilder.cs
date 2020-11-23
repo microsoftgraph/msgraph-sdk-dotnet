@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDriveSharedWithMeRequestBuilder.
     /// </summary>
-    public partial interface IDriveSharedWithMeRequestBuilder
+    public partial interface IDriveSharedWithMeRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetOffice365GroupsActivityFileCountsRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetOffice365GroupsActivityFileCountsRequestBuilder
+    public partial interface IReportRootGetOffice365GroupsActivityFileCountsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

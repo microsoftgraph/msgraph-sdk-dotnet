@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IApplicationAddPasswordRequestBuilder.
     /// </summary>
-    public partial interface IApplicationAddPasswordRequestBuilder
+    public partial interface IApplicationAddPasswordRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

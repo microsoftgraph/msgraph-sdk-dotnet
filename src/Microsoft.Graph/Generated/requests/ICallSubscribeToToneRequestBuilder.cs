@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICallSubscribeToToneRequestBuilder.
     /// </summary>
-    public partial interface ICallSubscribeToToneRequestBuilder
+    public partial interface ICallSubscribeToToneRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

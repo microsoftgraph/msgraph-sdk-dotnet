@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IListItemVersionRestoreVersionRequestBuilder.
     /// </summary>
-    public partial interface IListItemVersionRestoreVersionRequestBuilder
+    public partial interface IListItemVersionRestoreVersionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

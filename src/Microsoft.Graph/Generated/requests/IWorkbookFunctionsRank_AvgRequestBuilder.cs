@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsRank_AvgRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsRank_AvgRequestBuilder
+    public partial interface IWorkbookFunctionsRank_AvgRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

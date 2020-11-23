@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IOnenoteSectionCopyToSectionGroupRequestBuilder.
     /// </summary>
-    public partial interface IOnenoteSectionCopyToSectionGroupRequestBuilder
+    public partial interface IOnenoteSectionCopyToSectionGroupRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

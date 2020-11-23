@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsRadiansRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsRadiansRequestBuilder
+    public partial interface IWorkbookFunctionsRadiansRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

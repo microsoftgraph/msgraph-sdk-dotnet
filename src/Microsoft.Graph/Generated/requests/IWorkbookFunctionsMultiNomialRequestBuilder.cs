@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsMultiNomialRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsMultiNomialRequestBuilder
+    public partial interface IWorkbookFunctionsMultiNomialRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

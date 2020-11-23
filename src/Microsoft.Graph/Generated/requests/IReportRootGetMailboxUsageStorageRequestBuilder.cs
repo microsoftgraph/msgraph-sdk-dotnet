@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetMailboxUsageStorageRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetMailboxUsageStorageRequestBuilder
+    public partial interface IReportRootGetMailboxUsageStorageRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

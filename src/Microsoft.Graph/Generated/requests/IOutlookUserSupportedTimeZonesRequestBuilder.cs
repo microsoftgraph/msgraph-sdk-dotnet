@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IOutlookUserSupportedTimeZonesRequestBuilder.
     /// </summary>
-    public partial interface IOutlookUserSupportedTimeZonesRequestBuilder
+    public partial interface IOutlookUserSupportedTimeZonesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

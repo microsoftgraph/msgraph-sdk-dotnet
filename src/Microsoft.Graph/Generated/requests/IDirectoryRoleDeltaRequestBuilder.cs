@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDirectoryRoleDeltaRequestBuilder.
     /// </summary>
-    public partial interface IDirectoryRoleDeltaRequestBuilder
+    public partial interface IDirectoryRoleDeltaRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

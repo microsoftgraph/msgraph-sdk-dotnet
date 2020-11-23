@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserRevokeSignInSessionsRequestBuilder.
     /// </summary>
-    public partial interface IUserRevokeSignInSessionsRequestBuilder
+    public partial interface IUserRevokeSignInSessionsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

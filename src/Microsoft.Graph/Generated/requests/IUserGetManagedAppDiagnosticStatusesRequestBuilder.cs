@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserGetManagedAppDiagnosticStatusesRequestBuilder.
     /// </summary>
-    public partial interface IUserGetManagedAppDiagnosticStatusesRequestBuilder
+    public partial interface IUserGetManagedAppDiagnosticStatusesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

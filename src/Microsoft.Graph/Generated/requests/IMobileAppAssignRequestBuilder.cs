@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMobileAppAssignRequestBuilder.
     /// </summary>
-    public partial interface IMobileAppAssignRequestBuilder
+    public partial interface IMobileAppAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

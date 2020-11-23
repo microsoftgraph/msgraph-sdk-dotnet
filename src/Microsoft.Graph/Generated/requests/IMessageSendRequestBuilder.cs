@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMessageSendRequestBuilder.
     /// </summary>
-    public partial interface IMessageSendRequestBuilder
+    public partial interface IMessageSendRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICalendarGetScheduleRequestBuilder.
     /// </summary>
-    public partial interface ICalendarGetScheduleRequestBuilder
+    public partial interface ICalendarGetScheduleRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

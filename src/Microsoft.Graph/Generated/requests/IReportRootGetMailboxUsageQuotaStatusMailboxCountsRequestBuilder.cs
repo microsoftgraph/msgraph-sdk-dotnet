@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetMailboxUsageQuotaStatusMailboxCountsRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetMailboxUsageQuotaStatusMailboxCountsRequestBuilder
+    public partial interface IReportRootGetMailboxUsageQuotaStatusMailboxCountsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

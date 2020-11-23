@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceAppManagementSyncMicrosoftStoreForBusinessAppsRequestBuilder.
     /// </summary>
-    public partial interface IDeviceAppManagementSyncMicrosoftStoreForBusinessAppsRequestBuilder
+    public partial interface IDeviceAppManagementSyncMicrosoftStoreForBusinessAppsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

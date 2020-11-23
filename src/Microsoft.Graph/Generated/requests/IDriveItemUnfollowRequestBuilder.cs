@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDriveItemUnfollowRequestBuilder.
     /// </summary>
-    public partial interface IDriveItemUnfollowRequestBuilder
+    public partial interface IDriveItemUnfollowRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

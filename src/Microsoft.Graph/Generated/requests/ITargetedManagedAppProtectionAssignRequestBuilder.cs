@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITargetedManagedAppProtectionAssignRequestBuilder.
     /// </summary>
-    public partial interface ITargetedManagedAppProtectionAssignRequestBuilder
+    public partial interface ITargetedManagedAppProtectionAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

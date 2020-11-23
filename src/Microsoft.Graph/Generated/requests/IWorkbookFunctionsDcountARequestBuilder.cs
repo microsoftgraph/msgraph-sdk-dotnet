@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsDcountARequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsDcountARequestBuilder
+    public partial interface IWorkbookFunctionsDcountARequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

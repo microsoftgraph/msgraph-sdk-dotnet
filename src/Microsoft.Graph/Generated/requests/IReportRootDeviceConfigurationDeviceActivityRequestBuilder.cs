@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootDeviceConfigurationDeviceActivityRequestBuilder.
     /// </summary>
-    public partial interface IReportRootDeviceConfigurationDeviceActivityRequestBuilder
+    public partial interface IReportRootDeviceConfigurationDeviceActivityRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

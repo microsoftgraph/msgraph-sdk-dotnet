@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFilterApplyIconFilterRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFilterApplyIconFilterRequestBuilder
+    public partial interface IWorkbookFilterApplyIconFilterRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

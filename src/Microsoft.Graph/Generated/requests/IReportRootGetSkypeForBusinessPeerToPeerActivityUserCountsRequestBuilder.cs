@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder
+    public partial interface IReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

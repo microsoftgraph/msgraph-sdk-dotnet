@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDirectoryObjectCheckMemberObjectsRequestBuilder.
     /// </summary>
-    public partial interface IDirectoryObjectCheckMemberObjectsRequestBuilder
+    public partial interface IDirectoryObjectCheckMemberObjectsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

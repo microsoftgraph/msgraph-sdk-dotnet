@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserGetManagedAppPoliciesRequestBuilder.
     /// </summary>
-    public partial interface IUserGetManagedAppPoliciesRequestBuilder
+    public partial interface IUserGetManagedAppPoliciesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsGeoMeanRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsGeoMeanRequestBuilder
+    public partial interface IWorkbookFunctionsGeoMeanRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

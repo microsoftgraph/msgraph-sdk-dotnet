@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDriveItemGetActivitiesByIntervalRequestBuilder.
     /// </summary>
-    public partial interface IDriveItemGetActivitiesByIntervalRequestBuilder
+    public partial interface IDriveItemGetActivitiesByIntervalRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookRangeVisibleViewRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookRangeVisibleViewRequestBuilder
+    public partial interface IWorkbookRangeVisibleViewRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

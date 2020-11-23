@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITeamUnarchiveRequestBuilder.
     /// </summary>
-    public partial interface ITeamUnarchiveRequestBuilder
+    public partial interface ITeamUnarchiveRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

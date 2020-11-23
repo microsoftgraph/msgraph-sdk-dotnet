@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISearchEntityQueryRequestBuilder.
     /// </summary>
-    public partial interface ISearchEntityQueryRequestBuilder
+    public partial interface ISearchEntityQueryRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

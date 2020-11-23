@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceWindowsDefenderUpdateSignaturesRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceWindowsDefenderUpdateSignaturesRequestBuilder
+    public partial interface IManagedDeviceWindowsDefenderUpdateSignaturesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

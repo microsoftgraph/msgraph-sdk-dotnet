@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEventForwardRequestBuilder.
     /// </summary>
-    public partial interface IEventForwardRequestBuilder
+    public partial interface IEventForwardRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

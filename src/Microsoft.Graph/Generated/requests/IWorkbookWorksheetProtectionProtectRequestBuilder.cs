@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookWorksheetProtectionProtectRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookWorksheetProtectionProtectRequestBuilder
+    public partial interface IWorkbookWorksheetProtectionProtectRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

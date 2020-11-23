@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetEmailAppUsageUserCountsRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetEmailAppUsageUserCountsRequestBuilder
+    public partial interface IReportRootGetEmailAppUsageUserCountsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

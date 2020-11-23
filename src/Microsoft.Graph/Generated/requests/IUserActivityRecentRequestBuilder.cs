@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserActivityRecentRequestBuilder.
     /// </summary>
-    public partial interface IUserActivityRecentRequestBuilder
+    public partial interface IUserActivityRecentRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

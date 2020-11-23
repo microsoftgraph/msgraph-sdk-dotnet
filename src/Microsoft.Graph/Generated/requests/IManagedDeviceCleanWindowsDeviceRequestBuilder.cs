@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceCleanWindowsDeviceRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceCleanWindowsDeviceRequestBuilder
+    public partial interface IManagedDeviceCleanWindowsDeviceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

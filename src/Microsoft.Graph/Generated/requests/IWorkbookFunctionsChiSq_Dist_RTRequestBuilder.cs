@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsChiSq_Dist_RTRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsChiSq_Dist_RTRequestBuilder
+    public partial interface IWorkbookFunctionsChiSq_Dist_RTRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

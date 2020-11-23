@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetSharePointSiteUsageSiteCountsRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetSharePointSiteUsageSiteCountsRequestBuilder
+    public partial interface IReportRootGetSharePointSiteUsageSiteCountsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

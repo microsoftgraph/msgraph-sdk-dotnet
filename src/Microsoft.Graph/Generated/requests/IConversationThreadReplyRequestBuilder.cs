@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IConversationThreadReplyRequestBuilder.
     /// </summary>
-    public partial interface IConversationThreadReplyRequestBuilder
+    public partial interface IConversationThreadReplyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

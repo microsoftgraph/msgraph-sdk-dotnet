@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDirectoryObjectGetMemberGroupsRequestBuilder.
     /// </summary>
-    public partial interface IDirectoryObjectGetMemberGroupsRequestBuilder
+    public partial interface IDirectoryObjectGetMemberGroupsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

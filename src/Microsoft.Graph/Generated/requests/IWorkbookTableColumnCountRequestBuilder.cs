@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookTableColumnCountRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookTableColumnCountRequestBuilder
+    public partial interface IWorkbookTableColumnCountRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

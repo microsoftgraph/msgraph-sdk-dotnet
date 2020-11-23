@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookRangeSortApplyRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookRangeSortApplyRequestBuilder
+    public partial interface IWorkbookRangeSortApplyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

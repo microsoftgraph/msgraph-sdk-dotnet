@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookTableSortClearRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookTableSortClearRequestBuilder
+    public partial interface IWorkbookTableSortClearRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMailFolderCopyRequestBuilder.
     /// </summary>
-    public partial interface IMailFolderCopyRequestBuilder
+    public partial interface IMailFolderCopyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

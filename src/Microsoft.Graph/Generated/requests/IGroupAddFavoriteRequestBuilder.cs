@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupAddFavoriteRequestBuilder.
     /// </summary>
-    public partial interface IGroupAddFavoriteRequestBuilder
+    public partial interface IGroupAddFavoriteRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

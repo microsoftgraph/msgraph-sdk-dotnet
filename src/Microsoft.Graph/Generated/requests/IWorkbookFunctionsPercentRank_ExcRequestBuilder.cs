@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsPercentRank_ExcRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsPercentRank_ExcRequestBuilder
+    public partial interface IWorkbookFunctionsPercentRank_ExcRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

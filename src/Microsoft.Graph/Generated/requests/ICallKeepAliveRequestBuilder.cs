@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICallKeepAliveRequestBuilder.
     /// </summary>
-    public partial interface ICallKeepAliveRequestBuilder
+    public partial interface ICallKeepAliveRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDriveItemVersionRestoreVersionRequestBuilder.
     /// </summary>
-    public partial interface IDriveItemVersionRestoreVersionRequestBuilder
+    public partial interface IDriveItemVersionRestoreVersionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

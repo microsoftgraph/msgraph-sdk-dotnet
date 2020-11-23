@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IApplicationAddKeyRequestBuilder.
     /// </summary>
-    public partial interface IApplicationAddKeyRequestBuilder
+    public partial interface IApplicationAddKeyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

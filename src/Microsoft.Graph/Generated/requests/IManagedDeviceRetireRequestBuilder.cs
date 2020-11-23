@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceRetireRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceRetireRequestBuilder
+    public partial interface IManagedDeviceRetireRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

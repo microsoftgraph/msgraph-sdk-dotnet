@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsPermutationaRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsPermutationaRequestBuilder
+    public partial interface IWorkbookFunctionsPermutationaRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

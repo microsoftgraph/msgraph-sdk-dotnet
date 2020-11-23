@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IApplicationDeltaRequestBuilder.
     /// </summary>
-    public partial interface IApplicationDeltaRequestBuilder
+    public partial interface IApplicationDeltaRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

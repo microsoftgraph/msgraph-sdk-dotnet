@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsYearFracRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsYearFracRequestBuilder
+    public partial interface IWorkbookFunctionsYearFracRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

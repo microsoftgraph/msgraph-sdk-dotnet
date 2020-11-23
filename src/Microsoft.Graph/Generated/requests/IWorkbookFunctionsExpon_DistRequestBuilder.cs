@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsExpon_DistRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsExpon_DistRequestBuilder
+    public partial interface IWorkbookFunctionsExpon_DistRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICallLogTeleconferenceDeviceQualityRequestBuilder.
     /// </summary>
-    public partial interface ICallLogTeleconferenceDeviceQualityRequestBuilder
+    public partial interface ICallLogTeleconferenceDeviceQualityRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

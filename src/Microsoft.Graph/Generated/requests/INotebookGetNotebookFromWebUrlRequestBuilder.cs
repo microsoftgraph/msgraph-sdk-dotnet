@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface INotebookGetNotebookFromWebUrlRequestBuilder.
     /// </summary>
-    public partial interface INotebookGetNotebookFromWebUrlRequestBuilder
+    public partial interface INotebookGetNotebookFromWebUrlRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

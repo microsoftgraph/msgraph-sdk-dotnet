@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDriveItemPreviewRequestBuilder.
     /// </summary>
-    public partial interface IDriveItemPreviewRequestBuilder
+    public partial interface IDriveItemPreviewRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

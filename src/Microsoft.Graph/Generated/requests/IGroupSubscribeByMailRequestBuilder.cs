@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupSubscribeByMailRequestBuilder.
     /// </summary>
-    public partial interface IGroupSubscribeByMailRequestBuilder
+    public partial interface IGroupSubscribeByMailRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

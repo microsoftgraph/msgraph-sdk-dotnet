@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceRequestRemoteAssistanceRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceRequestRemoteAssistanceRequestBuilder
+    public partial interface IManagedDeviceRequestRemoteAssistanceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

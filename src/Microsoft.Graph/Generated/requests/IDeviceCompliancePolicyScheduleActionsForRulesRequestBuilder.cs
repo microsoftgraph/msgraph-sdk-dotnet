@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceCompliancePolicyScheduleActionsForRulesRequestBuilder.
     /// </summary>
-    public partial interface IDeviceCompliancePolicyScheduleActionsForRulesRequestBuilder
+    public partial interface IDeviceCompliancePolicyScheduleActionsForRulesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

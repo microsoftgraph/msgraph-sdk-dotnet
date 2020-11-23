@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFilterApplyBottomPercentFilterRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFilterApplyBottomPercentFilterRequestBuilder
+    public partial interface IWorkbookFilterApplyBottomPercentFilterRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

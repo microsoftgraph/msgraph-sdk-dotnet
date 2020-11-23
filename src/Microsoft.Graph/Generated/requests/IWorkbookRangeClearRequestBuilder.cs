@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookRangeClearRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookRangeClearRequestBuilder
+    public partial interface IWorkbookRangeClearRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

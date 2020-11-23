@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IServicePrincipalRemovePasswordRequestBuilder.
     /// </summary>
-    public partial interface IServicePrincipalRemovePasswordRequestBuilder
+    public partial interface IServicePrincipalRemovePasswordRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

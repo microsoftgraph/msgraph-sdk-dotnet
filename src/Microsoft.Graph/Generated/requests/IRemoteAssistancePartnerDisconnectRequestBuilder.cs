@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IRemoteAssistancePartnerDisconnectRequestBuilder.
     /// </summary>
-    public partial interface IRemoteAssistancePartnerDisconnectRequestBuilder
+    public partial interface IRemoteAssistancePartnerDisconnectRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

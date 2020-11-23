@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserSendMailRequestBuilder.
     /// </summary>
-    public partial interface IUserSendMailRequestBuilder
+    public partial interface IUserSendMailRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

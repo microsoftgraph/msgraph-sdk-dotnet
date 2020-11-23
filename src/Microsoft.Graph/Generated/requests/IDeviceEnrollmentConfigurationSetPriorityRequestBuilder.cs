@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceEnrollmentConfigurationSetPriorityRequestBuilder.
     /// </summary>
-    public partial interface IDeviceEnrollmentConfigurationSetPriorityRequestBuilder
+    public partial interface IDeviceEnrollmentConfigurationSetPriorityRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

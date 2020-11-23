@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICallChangeScreenSharingRoleRequestBuilder.
     /// </summary>
-    public partial interface ICallChangeScreenSharingRoleRequestBuilder
+    public partial interface ICallChangeScreenSharingRoleRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

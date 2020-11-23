@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookCloseSessionRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookCloseSessionRequestBuilder
+    public partial interface IWorkbookCloseSessionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

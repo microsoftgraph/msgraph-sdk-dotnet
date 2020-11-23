@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEventSnoozeReminderRequestBuilder.
     /// </summary>
-    public partial interface IEventSnoozeReminderRequestBuilder
+    public partial interface IEventSnoozeReminderRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

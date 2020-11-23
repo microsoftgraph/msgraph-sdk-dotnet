@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedEBookAssignRequestBuilder.
     /// </summary>
-    public partial interface IManagedEBookAssignRequestBuilder
+    public partial interface IManagedEBookAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

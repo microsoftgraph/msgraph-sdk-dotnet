@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserTranslateExchangeIdsRequestBuilder.
     /// </summary>
-    public partial interface IUserTranslateExchangeIdsRequestBuilder
+    public partial interface IUserTranslateExchangeIdsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsBinom_Dist_RangeRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsBinom_Dist_RangeRequestBuilder
+    public partial interface IWorkbookFunctionsBinom_Dist_RangeRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

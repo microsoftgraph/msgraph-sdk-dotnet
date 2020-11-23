@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITeamGetAllMessagesRequestBuilder.
     /// </summary>
-    public partial interface ITeamGetAllMessagesRequestBuilder
+    public partial interface ITeamGetAllMessagesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsDecimalRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsDecimalRequestBuilder
+    public partial interface IWorkbookFunctionsDecimalRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

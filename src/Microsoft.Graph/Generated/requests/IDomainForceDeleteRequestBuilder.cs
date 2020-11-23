@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDomainForceDeleteRequestBuilder.
     /// </summary>
-    public partial interface IDomainForceDeleteRequestBuilder
+    public partial interface IDomainForceDeleteRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

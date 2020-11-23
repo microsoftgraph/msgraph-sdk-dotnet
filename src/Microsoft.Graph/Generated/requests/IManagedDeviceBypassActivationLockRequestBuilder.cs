@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceBypassActivationLockRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceBypassActivationLockRequestBuilder
+    public partial interface IManagedDeviceBypassActivationLockRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

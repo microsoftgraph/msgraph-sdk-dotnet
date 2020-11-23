@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDriveItemCreateUploadSessionRequestBuilder.
     /// </summary>
-    public partial interface IDriveItemCreateUploadSessionRequestBuilder
+    public partial interface IDriveItemCreateUploadSessionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

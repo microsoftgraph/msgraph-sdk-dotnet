@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookChartLineFormatClearRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookChartLineFormatClearRequestBuilder
+    public partial interface IWorkbookChartLineFormatClearRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

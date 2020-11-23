@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDirectoryObjectValidatePropertiesRequestBuilder.
     /// </summary>
-    public partial interface IDirectoryObjectValidatePropertiesRequestBuilder
+    public partial interface IDirectoryObjectValidatePropertiesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

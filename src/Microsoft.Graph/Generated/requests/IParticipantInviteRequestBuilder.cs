@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IParticipantInviteRequestBuilder.
     /// </summary>
-    public partial interface IParticipantInviteRequestBuilder
+    public partial interface IParticipantInviteRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

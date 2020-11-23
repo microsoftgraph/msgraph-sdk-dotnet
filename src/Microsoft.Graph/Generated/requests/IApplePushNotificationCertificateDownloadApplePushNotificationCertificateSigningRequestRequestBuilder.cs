@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilder.
     /// </summary>
-    public partial interface IApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilder
+    public partial interface IApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

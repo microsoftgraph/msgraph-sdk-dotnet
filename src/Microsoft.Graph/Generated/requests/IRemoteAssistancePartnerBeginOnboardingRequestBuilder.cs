@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IRemoteAssistancePartnerBeginOnboardingRequestBuilder.
     /// </summary>
-    public partial interface IRemoteAssistancePartnerBeginOnboardingRequestBuilder
+    public partial interface IRemoteAssistancePartnerBeginOnboardingRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

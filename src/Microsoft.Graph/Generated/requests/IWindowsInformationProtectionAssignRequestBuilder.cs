@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWindowsInformationProtectionAssignRequestBuilder.
     /// </summary>
-    public partial interface IWindowsInformationProtectionAssignRequestBuilder
+    public partial interface IWindowsInformationProtectionAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

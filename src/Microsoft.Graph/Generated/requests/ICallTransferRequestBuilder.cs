@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICallTransferRequestBuilder.
     /// </summary>
-    public partial interface ICallTransferRequestBuilder
+    public partial interface ICallTransferRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

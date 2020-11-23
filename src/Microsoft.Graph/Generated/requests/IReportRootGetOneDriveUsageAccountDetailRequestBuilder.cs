@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetOneDriveUsageAccountDetailRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetOneDriveUsageAccountDetailRequestBuilder
+    public partial interface IReportRootGetOneDriveUsageAccountDetailRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

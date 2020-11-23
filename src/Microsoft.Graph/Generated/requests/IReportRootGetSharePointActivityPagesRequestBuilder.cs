@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetSharePointActivityPagesRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetSharePointActivityPagesRequestBuilder
+    public partial interface IReportRootGetSharePointActivityPagesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

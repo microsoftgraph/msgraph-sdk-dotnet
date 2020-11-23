@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IScheduleChangeRequestDeclineRequestBuilder.
     /// </summary>
-    public partial interface IScheduleChangeRequestDeclineRequestBuilder
+    public partial interface IScheduleChangeRequestDeclineRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

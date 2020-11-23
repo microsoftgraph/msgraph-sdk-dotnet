@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupValidatePropertiesRequestBuilder.
     /// </summary>
-    public partial interface IGroupValidatePropertiesRequestBuilder
+    public partial interface IGroupValidatePropertiesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

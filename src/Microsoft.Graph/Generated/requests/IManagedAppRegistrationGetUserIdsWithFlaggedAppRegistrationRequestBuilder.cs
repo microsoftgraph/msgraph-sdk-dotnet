@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedAppRegistrationGetUserIdsWithFlaggedAppRegistrationRequestBuilder.
     /// </summary>
-    public partial interface IManagedAppRegistrationGetUserIdsWithFlaggedAppRegistrationRequestBuilder
+    public partial interface IManagedAppRegistrationGetUserIdsWithFlaggedAppRegistrationRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

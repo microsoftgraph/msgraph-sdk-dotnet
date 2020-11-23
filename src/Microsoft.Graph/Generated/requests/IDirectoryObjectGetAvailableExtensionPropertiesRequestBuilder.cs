@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder.
     /// </summary>
-    public partial interface IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder
+    public partial interface IDirectoryObjectGetAvailableExtensionPropertiesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

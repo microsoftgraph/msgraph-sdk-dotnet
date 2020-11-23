@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementVerifyWindowsEnrollmentAutoDiscoveryRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementVerifyWindowsEnrollmentAutoDiscoveryRequestBuilder
+    public partial interface IDeviceManagementVerifyWindowsEnrollmentAutoDiscoveryRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

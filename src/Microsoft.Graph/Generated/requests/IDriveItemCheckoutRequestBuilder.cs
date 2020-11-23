@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDriveItemCheckoutRequestBuilder.
     /// </summary>
-    public partial interface IDriveItemCheckoutRequestBuilder
+    public partial interface IDriveItemCheckoutRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

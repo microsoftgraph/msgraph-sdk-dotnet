@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IApplicationRemoveKeyRequestBuilder.
     /// </summary>
-    public partial interface IApplicationRemoveKeyRequestBuilder
+    public partial interface IApplicationRemoveKeyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

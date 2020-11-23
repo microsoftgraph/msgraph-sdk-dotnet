@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementExchangeConnectorSyncRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementExchangeConnectorSyncRequestBuilder
+    public partial interface IDeviceManagementExchangeConnectorSyncRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

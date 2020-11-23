@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMailFolderMoveRequestBuilder.
     /// </summary>
-    public partial interface IMailFolderMoveRequestBuilder
+    public partial interface IMailFolderMoveRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

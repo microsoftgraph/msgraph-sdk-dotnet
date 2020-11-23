@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetYammerActivityUserCountsRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetYammerActivityUserCountsRequestBuilder
+    public partial interface IReportRootGetYammerActivityUserCountsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

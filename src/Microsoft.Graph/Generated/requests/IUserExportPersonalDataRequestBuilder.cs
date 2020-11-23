@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserExportPersonalDataRequestBuilder.
     /// </summary>
-    public partial interface IUserExportPersonalDataRequestBuilder
+    public partial interface IUserExportPersonalDataRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

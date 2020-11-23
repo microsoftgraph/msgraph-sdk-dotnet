@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupRenewRequestBuilder.
     /// </summary>
-    public partial interface IGroupRenewRequestBuilder
+    public partial interface IGroupRenewRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICalendarAllowedCalendarSharingRolesRequestBuilder.
     /// </summary>
-    public partial interface ICalendarAllowedCalendarSharingRolesRequestBuilder
+    public partial interface ICalendarAllowedCalendarSharingRolesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

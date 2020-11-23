@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserChangePasswordRequestBuilder.
     /// </summary>
-    public partial interface IUserChangePasswordRequestBuilder
+    public partial interface IUserChangePasswordRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IOnlineMeetingCreateOrGetRequestBuilder.
     /// </summary>
-    public partial interface IOnlineMeetingCreateOrGetRequestBuilder
+    public partial interface IOnlineMeetingCreateOrGetRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

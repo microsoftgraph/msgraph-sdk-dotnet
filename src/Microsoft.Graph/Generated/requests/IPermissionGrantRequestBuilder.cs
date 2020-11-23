@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPermissionGrantRequestBuilder.
     /// </summary>
-    public partial interface IPermissionGrantRequestBuilder
+    public partial interface IPermissionGrantRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

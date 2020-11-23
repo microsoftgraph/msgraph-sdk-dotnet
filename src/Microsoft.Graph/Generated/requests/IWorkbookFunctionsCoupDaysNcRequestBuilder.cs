@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsCoupDaysNcRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsCoupDaysNcRequestBuilder
+    public partial interface IWorkbookFunctionsCoupDaysNcRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

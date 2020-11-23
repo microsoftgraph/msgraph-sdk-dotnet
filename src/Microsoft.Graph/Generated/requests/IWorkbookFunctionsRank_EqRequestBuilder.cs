@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsRank_EqRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsRank_EqRequestBuilder
+    public partial interface IWorkbookFunctionsRank_EqRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

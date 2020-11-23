@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceRemoteLockRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceRemoteLockRequestBuilder
+    public partial interface IManagedDeviceRemoteLockRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

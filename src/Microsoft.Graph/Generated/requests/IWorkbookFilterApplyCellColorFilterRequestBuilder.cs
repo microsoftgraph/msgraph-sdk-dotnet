@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFilterApplyCellColorFilterRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFilterApplyCellColorFilterRequestBuilder
+    public partial interface IWorkbookFilterApplyCellColorFilterRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

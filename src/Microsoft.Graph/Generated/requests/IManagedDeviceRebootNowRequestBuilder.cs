@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceRebootNowRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceRebootNowRequestBuilder
+    public partial interface IManagedDeviceRebootNowRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

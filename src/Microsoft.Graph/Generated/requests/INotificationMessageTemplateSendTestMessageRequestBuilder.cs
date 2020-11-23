@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface INotificationMessageTemplateSendTestMessageRequestBuilder.
     /// </summary>
-    public partial interface INotificationMessageTemplateSendTestMessageRequestBuilder
+    public partial interface INotificationMessageTemplateSendTestMessageRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookChartFillSetSolidColorRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookChartFillSetSolidColorRequestBuilder
+    public partial interface IWorkbookChartFillSetSolidColorRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

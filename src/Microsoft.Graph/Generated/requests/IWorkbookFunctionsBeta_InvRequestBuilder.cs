@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsBeta_InvRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsBeta_InvRequestBuilder
+    public partial interface IWorkbookFunctionsBeta_InvRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

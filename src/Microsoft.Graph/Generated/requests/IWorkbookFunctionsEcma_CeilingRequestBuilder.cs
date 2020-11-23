@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWorkbookFunctionsEcma_CeilingRequestBuilder.
     /// </summary>
-    public partial interface IWorkbookFunctionsEcma_CeilingRequestBuilder
+    public partial interface IWorkbookFunctionsEcma_CeilingRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

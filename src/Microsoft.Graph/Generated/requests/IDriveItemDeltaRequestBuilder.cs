@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDriveItemDeltaRequestBuilder.
     /// </summary>
-    public partial interface IDriveItemDeltaRequestBuilder
+    public partial interface IDriveItemDeltaRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

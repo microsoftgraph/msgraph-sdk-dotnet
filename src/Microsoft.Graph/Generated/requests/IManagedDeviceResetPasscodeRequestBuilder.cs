@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceResetPasscodeRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceResetPasscodeRequestBuilder
+    public partial interface IManagedDeviceResetPasscodeRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

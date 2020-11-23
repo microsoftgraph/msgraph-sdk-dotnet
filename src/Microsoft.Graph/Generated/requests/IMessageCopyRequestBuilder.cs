@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMessageCopyRequestBuilder.
     /// </summary>
-    public partial interface IMessageCopyRequestBuilder
+    public partial interface IMessageCopyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

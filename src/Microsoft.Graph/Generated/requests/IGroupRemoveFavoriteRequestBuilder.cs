@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupRemoveFavoriteRequestBuilder.
     /// </summary>
-    public partial interface IGroupRemoveFavoriteRequestBuilder
+    public partial interface IGroupRemoveFavoriteRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

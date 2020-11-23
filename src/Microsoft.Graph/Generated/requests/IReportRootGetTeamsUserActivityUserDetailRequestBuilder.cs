@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetTeamsUserActivityUserDetailRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetTeamsUserActivityUserDetailRequestBuilder
+    public partial interface IReportRootGetTeamsUserActivityUserDetailRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

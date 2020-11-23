@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IOrganizationSetMobileDeviceManagementAuthorityRequestBuilder.
     /// </summary>
-    public partial interface IOrganizationSetMobileDeviceManagementAuthorityRequestBuilder
+    public partial interface IOrganizationSetMobileDeviceManagementAuthorityRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
