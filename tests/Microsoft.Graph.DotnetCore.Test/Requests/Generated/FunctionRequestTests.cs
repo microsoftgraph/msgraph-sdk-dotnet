@@ -322,7 +322,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void ComposableFunctionWithComposedFunction()
         {
-            var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range/microsoft.graph.boundingRect(anotherRange='A1:B2')", this.graphBaseUrl);
+            var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range()/microsoft.graph.boundingRect(anotherRange='A1:B2')", this.graphBaseUrl);
             var boundRectRequest = this.graphServiceClient.Me.Drives[driveId].Items[fieldId].Workbook.Worksheets[sheetId].Range().BoundingRect(rangeAddress).Request() as WorkbookRangeBoundingRectRequest;
 
             Assert.NotNull(boundRectRequest);
@@ -336,7 +336,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void ComposableFunctionWithComposedNavigation()
         {
             // Actual: https://graph.microsoft.com/v1.0/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range/microsoft.graph.boundingRect/format
-            var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range/microsoft.graph.boundingRect(anotherRange='A1:B2')/format", this.graphBaseUrl);
+            var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range()/microsoft.graph.boundingRect(anotherRange='A1:B2')/format", this.graphBaseUrl);
             var formatRequest = this.graphServiceClient.Me.Drives[driveId].Items[fieldId].Workbook.Worksheets[sheetId].Range().BoundingRect(rangeAddress).Format.Request() as WorkbookRangeFormatRequest;
 
             Assert.NotNull(formatRequest);
@@ -350,7 +350,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void ComposableFunctionWithComposedAction()
         {
             // Actual: https://graph.microsoft.com/v1.0/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range/microsoft.graph.boundingRect/microsoft.graph.delete
-            var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range/microsoft.graph.boundingRect(anotherRange='A1:B2')/microsoft.graph.delete", this.graphBaseUrl);
+            var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range()/microsoft.graph.boundingRect(anotherRange='A1:B2')/microsoft.graph.delete", this.graphBaseUrl);
             var deleteRequest = this.graphServiceClient.Me.Drives[driveId].Items[fieldId].Workbook.Worksheets[sheetId].Range().BoundingRect(rangeAddress).Delete("Up").Request() as WorkbookRangeDeleteRequest;
 
             Assert.NotNull(deleteRequest);
@@ -366,7 +366,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void FunctionBoundToCollection()
         {
-            var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/charts/microsoft.graph.count", this.graphBaseUrl);
+            var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/charts/microsoft.graph.count()", this.graphBaseUrl);
             var chartCountRequest = this.graphServiceClient.Me.Drives[driveId].Items[fieldId].Workbook.Worksheets[sheetId].Charts.Count().Request() as WorkbookChartCountRequest;
 
             Assert.NotNull(chartCountRequest);
