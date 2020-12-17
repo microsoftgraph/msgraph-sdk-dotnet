@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Extensions
 
             DateTime dateTime = DateTime.ParseExact(dateTimeTimeZone.DateTime, DateTimeTimeZone.DateTimeFormat, CultureInfo.InvariantCulture);
             TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(dateTimeTimeZone.TimeZone);
-            return dateTime.ToDateTimeOffset(timeZoneInfo);
+            return TimeZoneInfo.ConvertTime(dateTime, timeZoneInfo);
         }
 
         internal static DateTimeOffset ToDateTimeOffset(this DateTime dateTime, TimeZoneInfo timeZoneInfo)
@@ -153,7 +153,7 @@ namespace Microsoft.Graph
 {
     public partial class DateTimeTimeZone
     {
-        internal const string DateTimeFormat = "yyyy-MM-ddTHH:mm:ss.fffffffK";
+        public const string DateTimeFormat = "yyyy-MM-ddTHH:mm:ss.fffffffK";
 
         /// <summary>
         /// Converts a Datetime parameter to its equivalent DateTimeTimeZone Complex Type given its TimeZone
