@@ -74,6 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hide attendees.
+        /// When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideAttendees", Required = Newtonsoft.Json.Required.Default)]
         public bool? HideAttendees { get; set; }
@@ -108,6 +109,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is draft.
+        /// Set to true if the user has updated the meeting in Outlook but has not sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDraft", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDraft { get; set; }
@@ -282,7 +284,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attachments.
-        /// The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
+        /// The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
         public IEventAttachmentsCollectionPage Attachments { get; set; }
@@ -296,14 +298,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets extensions.
-        /// The collection of open extensions defined for the event. Read-only. Nullable.
+        /// The collection of open extensions defined for the event. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
         public IEventExtensionsCollectionPage Extensions { get; set; }
     
         /// <summary>
         /// Gets or sets instances.
-        /// The instances of the event. Navigation property. Read-only. Nullable.
+        /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instances", Required = Newtonsoft.Json.Required.Default)]
         public IEventInstancesCollectionPage Instances { get; set; }

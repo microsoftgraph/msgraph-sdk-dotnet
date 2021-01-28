@@ -32,14 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets builtInControls.
-        /// List of values of built-in controls required by the policy. Possible values: Block, Mfa, CompliantDevice, DomainJoinedDevice, ApprovedApplication, CompliantApplication
+        /// List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "builtInControls", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ConditionalAccessGrantControl> BuiltInControls { get; set; }
     
         /// <summary>
         /// Gets or sets customAuthenticationFactors.
-        /// List of custom controls IDs required by the policy. For more information, see Custom controls.
+        /// List of custom controls IDs required by the policy. Learn more about custom controls here: https://docs.microsoft.com/azure/active-directory/conditional-access/controls#custom-controls-preview
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customAuthenticationFactors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> CustomAuthenticationFactors { get; set; }

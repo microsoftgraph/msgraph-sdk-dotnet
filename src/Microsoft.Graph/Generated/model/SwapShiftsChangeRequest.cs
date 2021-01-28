@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets recipient shift id.
-        /// ShiftId for the recipient user with whom the request is to swap.
+        /// Shift ID for the recipient user with whom the request is to swap.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipientShiftId", Required = Newtonsoft.Json.Required.Default)]
         public string RecipientShiftId { get; set; }

@@ -94,8 +94,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for AcceptedSenders.
         /// </summary>
-        /// <returns>The <see cref="IGroupAcceptedSendersCollectionRequestBuilder"/>.</returns>
-        IGroupAcceptedSendersCollectionRequestBuilder AcceptedSenders { get; }
+        /// <returns>The <see cref="IGroupAcceptedSendersCollectionWithReferencesRequestBuilder"/>.</returns>
+        IGroupAcceptedSendersCollectionWithReferencesRequestBuilder AcceptedSenders { get; }
 
         /// <summary>
         /// Gets the request builder for Calendar.
@@ -136,8 +136,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for RejectedSenders.
         /// </summary>
-        /// <returns>The <see cref="IGroupRejectedSendersCollectionRequestBuilder"/>.</returns>
-        IGroupRejectedSendersCollectionRequestBuilder RejectedSenders { get; }
+        /// <returns>The <see cref="IGroupRejectedSendersCollectionWithReferencesRequestBuilder"/>.</returns>
+        IGroupRejectedSendersCollectionWithReferencesRequestBuilder RejectedSenders { get; }
 
         /// <summary>
         /// Gets the request builder for Threads.

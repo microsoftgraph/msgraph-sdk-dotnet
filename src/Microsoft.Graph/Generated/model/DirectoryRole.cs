@@ -60,6 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scoped members.
+        /// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopedMembers", Required = Newtonsoft.Json.Required.Default)]
         public IDirectoryRoleScopedMembersCollectionPage ScopedMembers { get; set; }

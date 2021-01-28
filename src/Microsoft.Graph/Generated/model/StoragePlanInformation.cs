@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets upgradeAvailable.
-        /// Indicates whether there are higher storage quota plans available. Read-only.
+        /// Indicates if there are higher storage quota plans available. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeAvailable", Required = Newtonsoft.Json.Required.Default)]
         public bool? UpgradeAvailable { get; set; }

@@ -51,9 +51,14 @@ namespace Microsoft.Graph
         CompliantApplication = 5,
 	
         /// <summary>
+        /// Password Change
+        /// </summary>
+        PasswordChange = 6,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 6,
+        UnknownFutureValue = 7,
 	
     }
 }
