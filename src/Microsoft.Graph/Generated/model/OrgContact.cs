@@ -32,119 +32,102 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets addresses.
-        /// Postal addresses for this organizational contact. For now a contact can only have one physical address.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addresses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<PhysicalOfficeAddress> Addresses { get; set; }
     
         /// <summary>
         /// Gets or sets company name.
-        /// Name of the company that this organizational contact belong to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyName", Required = Newtonsoft.Json.Required.Default)]
         public string CompanyName { get; set; }
     
         /// <summary>
         /// Gets or sets department.
-        /// The name for the department in which the contact works.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "department", Required = Newtonsoft.Json.Required.Default)]
         public string Department { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Display name for this organizational contact.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets given name.
-        /// First name for this organizational contact.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "givenName", Required = Newtonsoft.Json.Required.Default)]
         public string GivenName { get; set; }
     
         /// <summary>
         /// Gets or sets job title.
-        /// Job title for this organizational contact.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobTitle", Required = Newtonsoft.Json.Required.Default)]
         public string JobTitle { get; set; }
     
         /// <summary>
         /// Gets or sets mail.
-        /// The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mail", Required = Newtonsoft.Json.Required.Default)]
         public string Mail { get; set; }
     
         /// <summary>
         /// Gets or sets mail nickname.
-        /// Email alias (portion of email address pre-pending the @ symbol) for this organizational contact.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNickname", Required = Newtonsoft.Json.Required.Default)]
         public string MailNickname { get; set; }
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesLastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets on premises provisioning errors.
-        /// List of any synchronization provisioning errors for this organizational contact.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesProvisioningErrors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sync enabled.
-        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSyncEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? OnPremisesSyncEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets phones.
-        /// List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phones", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Phone> Phones { get; set; }
     
         /// <summary>
         /// Gets or sets proxy addresses.
-        /// For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyAddresses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ProxyAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets surname.
-        /// Last name for this organizational contact.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "surname", Required = Newtonsoft.Json.Required.Default)]
         public string Surname { get; set; }
     
         /// <summary>
         /// Gets or sets direct reports.
-        /// The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directReports", Required = Newtonsoft.Json.Required.Default)]
         public IOrgContactDirectReportsCollectionWithReferencesPage DirectReports { get; set; }
     
         /// <summary>
         /// Gets or sets manager.
-        /// The user or contact that is this contact's manager. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
         public DirectoryObject Manager { get; set; }
     
         /// <summary>
         /// Gets or sets member of.
-        /// Groups that this contact is a member of. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberOf", Required = Newtonsoft.Json.Required.Default)]
         public IOrgContactMemberOfCollectionWithReferencesPage MemberOf { get; set; }

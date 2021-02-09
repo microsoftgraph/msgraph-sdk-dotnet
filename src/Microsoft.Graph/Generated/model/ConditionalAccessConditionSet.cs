@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets userRiskLevels.
-        /// User risk levels included in the policy. Possible values are: low, medium, high, none.
+        /// User risk levels included in the policy. Possible values are: low, medium, high.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRiskLevels", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RiskLevel> UserRiskLevels { get; set; }

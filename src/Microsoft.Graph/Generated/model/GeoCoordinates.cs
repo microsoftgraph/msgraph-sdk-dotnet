@@ -39,14 +39,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets latitude.
-        /// Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
+        /// Optional. The latitude, in decimal, for the item. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latitude", Required = Newtonsoft.Json.Required.Default)]
         public double? Latitude { get; set; }
     
         /// <summary>
         /// Gets or sets longitude.
-        /// Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
+        /// Optional. The longitude, in decimal, for the item. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longitude", Required = Newtonsoft.Json.Required.Default)]
         public double? Longitude { get; set; }

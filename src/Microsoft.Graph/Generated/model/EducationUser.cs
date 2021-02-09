@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets account enabled.
-        /// True if the account is enabled; otherwise, false. This property is required when a user is created. Supports /$filter.
+        /// True if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? AccountEnabled { get; set; }
@@ -67,49 +67,49 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets department.
-        /// The name for the department in which the user works. Supports /$filter.
+        /// The name for the department in which the user works. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "department", Required = Newtonsoft.Json.Required.Default)]
         public string Department { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name displayed in the address book for the user. Supports $filter and $orderby.
+        /// The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets external source.
-        /// The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
+        /// Where this user was created from. The possible values are: sis, manual.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSource", Required = Newtonsoft.Json.Required.Default)]
         public EducationExternalSource? ExternalSource { get; set; }
     
         /// <summary>
         /// Gets or sets given name.
-        /// The given name (first name) of the user. Supports /$filter.
+        /// The given name (first name) of the user. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "givenName", Required = Newtonsoft.Json.Required.Default)]
         public string GivenName { get; set; }
     
         /// <summary>
         /// Gets or sets mail.
-        /// The SMTP address for the user; for example, 'jeff@contoso.onmicrosoft.com'. Read-Only. Supports /$filter.
+        /// The SMTP address for the user; for example, 'jeff@contoso.onmicrosoft.com'. Read-Only. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mail", Required = Newtonsoft.Json.Required.Default)]
         public string Mail { get; set; }
     
         /// <summary>
         /// Gets or sets mailing address.
-        /// Mail address of user. Note: type and postOfficeBox are not supported for educationUser resources.
+        /// Mail address of user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailingAddress", Required = Newtonsoft.Json.Required.Default)]
         public PhysicalAddress MailingAddress { get; set; }
     
         /// <summary>
         /// Gets or sets mail nickname.
-        /// The mail alias for the user. This property must be specified when a user is created. Supports /$filter.
+        /// The mail alias for the user. This property must be specified when a user is created. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNickname", Required = Newtonsoft.Json.Required.Default)]
         public string MailNickname { get; set; }
@@ -136,14 +136,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password policies.
-        /// Specifies password policies for the user. See standard [user] resource for additional details.
+        /// Specifies password policies for the user. This value is an enumeration with one possible value being 'DisableStrongPassword', which allows weaker passwords than the default policy to be specified. 'DisablePasswordExpiration' can also be specified. The two can be specified together; for example: 'DisablePasswordExpiration, DisableStrongPassword'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordPolicies", Required = Newtonsoft.Json.Required.Default)]
         public string PasswordPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets password profile.
-        /// Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for additional details.
+        /// Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordProfile", Required = Newtonsoft.Json.Required.Default)]
         public PasswordProfile PasswordProfile { get; set; }
@@ -157,7 +157,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets primary role.
-        /// Default role for a user. The user's role might be different in an individual class. Possible values are: student, teacher, faculty. Supports /$filter.
+        /// Default role for a user. The user's role might be different in an individual class. The possible values are: student, teacher. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryRole", Required = Newtonsoft.Json.Required.Default)]
         public EducationUserRole? PrimaryRole { get; set; }
@@ -177,7 +177,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets residence address.
-        /// Address where user lives. Note: type and postOfficeBox are not supported for educationUser resources.
+        /// Address where user lives.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "residenceAddress", Required = Newtonsoft.Json.Required.Default)]
         public PhysicalAddress ResidenceAddress { get; set; }
@@ -197,7 +197,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets surname.
-        /// The user's surname (family name or last name). Supports /$filter.
+        /// The user's surname (family name or last name). Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "surname", Required = Newtonsoft.Json.Required.Default)]
         public string Surname { get; set; }
@@ -211,21 +211,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets usage location.
-        /// A two-letter country code ([ISO 3166 Alpha-2]). Required for users who will be assigned licenses. Not nullable. Supports /$filter.
+        /// A two-letter country code (ISO standard 3166). Required for users who will be assigned licenses due to a legal requirement to check for availability of services in countries or regions. Examples include: 'US', 'JP', and 'GB'. Not nullable. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usageLocation", Required = Newtonsoft.Json.Required.Default)]
         public string UsageLocation { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.
+        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Supports $filter and $orderby.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets user type.
-        /// A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Supports /$filter.
+        /// A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userType", Required = Newtonsoft.Json.Required.Default)]
         public string UserType { get; set; }

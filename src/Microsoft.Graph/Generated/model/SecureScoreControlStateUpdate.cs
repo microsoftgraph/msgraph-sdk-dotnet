@@ -32,35 +32,30 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets assignedTo.
-        /// Assigns the control to the user who will take the action.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedTo", Required = Newtonsoft.Json.Required.Default)]
         public string AssignedTo { get; set; }
     
         /// <summary>
         /// Gets or sets comment.
-        /// Provides optional comment about the control.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comment", Required = Newtonsoft.Json.Required.Default)]
         public string Comment { get; set; }
     
         /// <summary>
         /// Gets or sets state.
-        /// State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public string State { get; set; }
     
         /// <summary>
         /// Gets or sets updatedBy.
-        /// ID of the user who updated tenant state.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updatedBy", Required = Newtonsoft.Json.Required.Default)]
         public string UpdatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets updatedDateTime.
-        /// Time at which the control state was updated.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updatedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? UpdatedDateTime { get; set; }

@@ -88,6 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is wheel chair accessible.
+        /// Specifies whether the room is wheelchair accessible.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isWheelChairAccessible", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsWheelChairAccessible { get; set; }

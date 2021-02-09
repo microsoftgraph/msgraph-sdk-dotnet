@@ -32,21 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
-        /// Name of property that was modified.
+        /// Indicates the property name of the target attribute that was changed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets newValue.
-        /// New property value.
+        /// Indicates the updated value for the propery.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "newValue", Required = Newtonsoft.Json.Required.Default)]
         public string NewValue { get; set; }
     
         /// <summary>
         /// Gets or sets oldValue.
-        /// Old property value.
+        /// Indicates the previous value (before the update) for the property.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oldValue", Required = Newtonsoft.Json.Required.Default)]
         public string OldValue { get; set; }

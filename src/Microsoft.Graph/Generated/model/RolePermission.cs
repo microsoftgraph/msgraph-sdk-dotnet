@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets resourceActions.
-        /// Resource Actions each containing a set of allowed and not allowed permissions.
+        /// Actions
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceActions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ResourceAction> ResourceActions { get; set; }
