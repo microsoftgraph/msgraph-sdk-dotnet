@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets ranges.
-        /// Collection of Internet protocol address ranges
+        /// Collection of ip ranges
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ranges", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<IpRange> Ranges { get; set; }

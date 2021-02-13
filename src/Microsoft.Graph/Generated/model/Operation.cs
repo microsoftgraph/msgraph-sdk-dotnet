@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The current status of the operation: notStarted, running, completed, failed
+        /// Possible values are: notStarted, running, completed, failed. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public OperationStatus? Status { get; set; }

@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets method.
-        /// Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
+        /// Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "method", Required = Newtonsoft.Json.Required.Default)]
         public string Method { get; set; }

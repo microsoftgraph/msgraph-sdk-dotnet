@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets gender.
-        /// The possible values are: female, male, other, unknownFutureValue.
+        /// Possible values are: female, male, other.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gender", Required = Newtonsoft.Json.Required.Default)]
         public EducationGender? Gender { get; set; }

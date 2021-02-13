@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets forceChangePasswordNextSignIn.
-        /// true if the user must change her password on the next login; otherwise false.
+        /// If true, at next sign-in, the user must change their password. After a password change, this property will be automatically reset to false. If not set, default is false.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "forceChangePasswordNextSignIn", Required = Newtonsoft.Json.Required.Default)]
         public bool? ForceChangePasswordNextSignIn { get; set; }
