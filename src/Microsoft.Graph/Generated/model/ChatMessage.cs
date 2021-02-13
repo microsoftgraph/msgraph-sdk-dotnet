@@ -81,14 +81,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last edited date time.
-        /// Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Microsoft Teams UI. If no edits are made the value is null.
+        /// Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastEditedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastEditedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// Read only. Timestamp when the chat message is created (initial setting) or edited, including when a reaction is added or removed.
+        /// Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
@@ -123,13 +123,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reactions.
+        /// Reactions for this chat message (for example, Like).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reactions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ChatMessageReaction> Reactions { get; set; }
     
         /// <summary>
         /// Gets or sets reply to id.
-        /// Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
+        /// Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyToId", Required = Newtonsoft.Json.Required.Default)]
         public string ReplyToId { get; set; }

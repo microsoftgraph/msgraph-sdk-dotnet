@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notAllowedResourceActions.
-        /// Not Allowed Actions
+        /// Not Allowed Actions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notAllowedResourceActions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> NotAllowedResourceActions { get; set; }

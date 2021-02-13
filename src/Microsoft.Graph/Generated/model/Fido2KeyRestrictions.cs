@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets aaGuids.
+        /// A collection of Authenticator Attestation GUIDs. AADGUIDs define key types and manufacturers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aaGuids", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> AaGuids { get; set; }
     
         /// <summary>
         /// Gets or sets enforcementType.
+        /// Enforcement type. Possible values are: allow, block.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforcementType", Required = Newtonsoft.Json.Required.Default)]
         public Fido2RestrictionEnforcementType? EnforcementType { get; set; }
     
         /// <summary>
         /// Gets or sets isEnforced.
+        /// Determines if the configured key enforcement is enabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnforced", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnforced { get; set; }

@@ -176,13 +176,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred single sign on mode.
-        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.
+        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredSingleSignOnMode", Required = Newtonsoft.Json.Required.Default)]
         public string PreferredSingleSignOnMode { get; set; }
     
         /// <summary>
         /// Gets or sets preferred token signing key thumbprint.
+        /// Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredTokenSigningKeyThumbprint", Required = Newtonsoft.Json.Required.Default)]
         public string PreferredTokenSigningKeyThumbprint { get; set; }
@@ -217,6 +218,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sign in audience.
+        /// Specifies what Microsoft accounts are supported for the associated application. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInAudience", Required = Newtonsoft.Json.Required.Default)]
         public string SignInAudience { get; set; }
@@ -265,12 +267,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets delegated permission classifications.
+        /// The permission classifications for delegated permissions exposed by the app that this service principal represents.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delegatedPermissionClassifications", Required = Newtonsoft.Json.Required.Default)]
         public IServicePrincipalDelegatedPermissionClassificationsCollectionPage DelegatedPermissionClassifications { get; set; }
     
         /// <summary>
         /// Gets or sets endpoints.
+        /// Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpoints", Required = Newtonsoft.Json.Required.Default)]
         public IServicePrincipalEndpointsCollectionPage Endpoints { get; set; }

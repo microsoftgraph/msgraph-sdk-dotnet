@@ -88,7 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets share id.
-        /// A unique token that can be used to access this shared item via the **shares** API. Read-only.
+        /// A unique token that can be used to access this shared item via the [shares API][]. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shareId", Required = Newtonsoft.Json.Required.Default)]
         public string ShareId { get; set; }
