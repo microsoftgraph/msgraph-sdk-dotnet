@@ -143,6 +143,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets history states.
+        /// A collection of alertHistoryStates comprising an audit log of all updates made to an alert.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "historyStates", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AlertHistoryState> HistoryStates { get; set; }

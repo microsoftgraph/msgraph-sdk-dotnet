@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets classify as.
-        /// Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.
+        /// Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classifyAs", Required = Newtonsoft.Json.Required.Default)]
         public InferenceClassificationType? ClassifyAs { get; set; }

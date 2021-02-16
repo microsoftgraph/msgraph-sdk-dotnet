@@ -32,30 +32,35 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets device tag.
+        /// Tags containing app metadata.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceTag", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceTag { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The name of the device on which this app is registered.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets phone app version.
+        /// Numerical version of this instance of the Authenticator app.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneAppVersion", Required = Newtonsoft.Json.Required.Default)]
         public string PhoneAppVersion { get; set; }
     
         /// <summary>
         /// Gets or sets device.
+        /// The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "device", Required = Newtonsoft.Json.Required.Default)]
         public Device Device { get; set; }

@@ -32,6 +32,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
+        /// The state of the policy. Possible values are: enabled, disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public AuthenticationMethodState? State { get; set; }

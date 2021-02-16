@@ -102,7 +102,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets person type.
-        /// The type of person.
+        /// The type of person, for example distribution list.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personType", Required = Newtonsoft.Json.Required.Default)]
         public PersonType PersonType { get; set; }

@@ -59,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets chat info.
-        /// The chat information. Required information for joining a meeting.
+        /// The chat information. Required information for meeting scenarios.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatInfo", Required = Newtonsoft.Json.Required.Default)]
         public ChatInfo ChatInfo { get; set; }
@@ -73,13 +73,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets incoming context.
+        /// The context associated with an incoming call. Read-only. Server generated.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incomingContext", Required = Newtonsoft.Json.Required.Default)]
         public IncomingContext IncomingContext { get; set; }
     
         /// <summary>
         /// Gets or sets media config.
-        /// The media configuration. Required.
+        /// The media configuration. Required information for creating peer to peer calls or joining meetings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaConfig", Required = Newtonsoft.Json.Required.Default)]
         public MediaConfig MediaConfig { get; set; }
@@ -93,7 +94,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets meeting info.
-        /// The meeting information that's required for joining a meeting.
+        /// The meeting information. Required information for meeting scenarios.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingInfo", Required = Newtonsoft.Json.Required.Default)]
         public MeetingInfo MeetingInfo { get; set; }
@@ -154,6 +155,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transcription.
+        /// The transcription information for the call. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transcription", Required = Newtonsoft.Json.Required.Default)]
         public CallTranscriptionInfo Transcription { get; set; }
