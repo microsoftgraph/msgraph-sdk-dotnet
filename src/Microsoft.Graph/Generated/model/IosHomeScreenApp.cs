@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets bundleID.
-        /// BundleID of app
+        /// BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleID", Required = Newtonsoft.Json.Required.Default)]
         public string BundleID { get; set; }

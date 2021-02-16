@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets applicationName.
-        /// Name of the application managing the network connection (for example, Facebook or SMTP).
+        /// Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationName", Required = Newtonsoft.Json.Required.Default)]
         public string ApplicationName { get; set; }

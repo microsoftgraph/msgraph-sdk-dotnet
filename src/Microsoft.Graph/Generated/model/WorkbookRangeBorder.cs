@@ -39,21 +39,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets side index.
-        /// Constant value that indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
+        /// Constant value that indicates the specific side of the border. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sideIndex", Required = Newtonsoft.Json.Required.Default)]
         public string SideIndex { get; set; }
     
         /// <summary>
         /// Gets or sets style.
-        /// One of the constants of line style specifying the line style for the border. The possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
+        /// One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "style", Required = Newtonsoft.Json.Required.Default)]
         public string Style { get; set; }
     
         /// <summary>
         /// Gets or sets weight.
-        /// Specifies the weight of the border around a range. The possible values are: Hairline, Thin, Medium, Thick.
+        /// Specifies the weight of the border around a range. Possible values are: Hairline, Thin, Medium, Thick.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "weight", Required = Newtonsoft.Json.Required.Default)]
         public string Weight { get; set; }
