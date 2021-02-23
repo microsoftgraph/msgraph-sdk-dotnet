@@ -290,6 +290,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app role assignments.
+        /// Represents the app roles a group has been granted for an application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignments", Required = Newtonsoft.Json.Required.Default)]
         public IGroupAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
