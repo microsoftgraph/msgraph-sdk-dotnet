@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets observedParticipantId.
-        /// The id of the participant that is under observation. Read-only.
+        /// The ID of the participant that is under observation. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "observedParticipantId", Required = Newtonsoft.Json.Required.Default)]
         public string ObservedParticipantId { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sourceParticipantId.
-        /// The id of the participant that triggered the incoming call. Read-only.
+        /// The ID of the participant that triggered the incoming call. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceParticipantId", Required = Newtonsoft.Json.Required.Default)]
         public string SourceParticipantId { get; set; }

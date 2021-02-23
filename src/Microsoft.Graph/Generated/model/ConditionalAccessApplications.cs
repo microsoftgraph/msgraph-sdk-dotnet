@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets includeUserActions.
-        /// User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
+        /// User actions to include. For example, urn:user:registersecurityinfo
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeUserActions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> IncludeUserActions { get; set; }

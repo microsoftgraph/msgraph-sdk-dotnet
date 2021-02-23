@@ -176,7 +176,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred single sign on mode.
-        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
+        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredSingleSignOnMode", Required = Newtonsoft.Json.Required.Default)]
         public string PreferredSingleSignOnMode { get; set; }
@@ -239,14 +239,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app role assigned to.
-        /// Principals (users, groups, and service principals) that are assigned to this service principal. Read-only.
+        /// App role assignments for this app or service, granted to users, groups, and other service principals.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignedTo", Required = Newtonsoft.Json.Required.Default)]
         public IServicePrincipalAppRoleAssignedToCollectionPage AppRoleAssignedTo { get; set; }
     
         /// <summary>
         /// Gets or sets app role assignments.
-        /// Applications that this service principal is assigned to. Read-only. Nullable.
+        /// App role assignment for another app or service, granted to this service principal.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignments", Required = Newtonsoft.Json.Required.Default)]
         public IServicePrincipalAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }

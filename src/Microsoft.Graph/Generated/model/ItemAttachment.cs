@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets item.
-        /// The attached contact, message or event. Navigation property.
+        /// The attached message or event. Navigation property.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "item", Required = Newtonsoft.Json.Required.Default)]
         public OutlookItem Item { get; set; }
