@@ -19,7 +19,7 @@ namespace Microsoft.Graph
     /// The type Chat Message Hosted Content.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class ChatMessageHostedContent : Entity
+    public partial class ChatMessageHostedContent : TeamworkHostedContent
     {
     
 		///<summary>

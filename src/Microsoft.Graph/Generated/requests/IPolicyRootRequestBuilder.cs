@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         IPolicyRootTokenLifetimePoliciesCollectionRequestBuilder TokenLifetimePolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for FeatureRolloutPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootFeatureRolloutPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootFeatureRolloutPoliciesCollectionRequestBuilder FeatureRolloutPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for ConditionalAccessPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootConditionalAccessPoliciesCollectionRequestBuilder"/>.</returns>

@@ -12,15 +12,15 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
 
     /// <summary>
-    /// The interface IChatMessageHostedContentContentRequestBuilder.
+    /// The interface ITeamworkHostedContentContentRequestBuilder.
     /// </summary>
-    public partial interface IChatMessageHostedContentContentRequestBuilder
+    public partial interface ITeamworkHostedContentContentRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        IChatMessageHostedContentContentRequest Request(IEnumerable<Option> options = null);
+        ITeamworkHostedContentContentRequest Request(IEnumerable<Option> options = null);
     }
 }

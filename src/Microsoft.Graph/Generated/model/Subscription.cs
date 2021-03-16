@@ -101,6 +101,12 @@ namespace Microsoft.Graph
         public string LifecycleNotificationUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets notification query options.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationQueryOptions", Required = Newtonsoft.Json.Required.Default)]
+        public string NotificationQueryOptions { get; set; }
+    
+        /// <summary>
         /// Gets or sets notification url.
         /// The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Required.
         /// </summary>

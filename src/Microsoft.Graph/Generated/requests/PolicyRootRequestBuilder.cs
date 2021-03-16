@@ -147,6 +147,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for FeatureRolloutPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootFeatureRolloutPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootFeatureRolloutPoliciesCollectionRequestBuilder FeatureRolloutPolicies
+        {
+            get
+            {
+                return new PolicyRootFeatureRolloutPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("featureRolloutPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ConditionalAccessPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootConditionalAccessPoliciesCollectionRequestBuilder"/>.</returns>

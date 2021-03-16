@@ -46,14 +46,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets approximate last sign in date time.
-        /// The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+        /// The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approximateLastSignInDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ApproximateLastSignInDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets compliance expiration date time.
-        /// The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+        /// The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ComplianceExpirationDateTime { get; set; }
@@ -109,7 +109,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' Read-only.
+        /// The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesLastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }

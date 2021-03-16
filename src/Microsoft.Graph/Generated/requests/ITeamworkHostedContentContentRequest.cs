@@ -15,9 +15,9 @@ namespace Microsoft.Graph
     using System.Threading;
 
     /// <summary>
-    /// The interface IChatMessageHostedContentContentRequest.
+    /// The interface ITeamworkHostedContentContentRequest.
     /// </summary>
-    public partial interface IChatMessageHostedContentContentRequest : IBaseRequest
+    public partial interface ITeamworkHostedContentContentRequest : IBaseRequest
     {
         /// <summary>
         /// Gets the stream.

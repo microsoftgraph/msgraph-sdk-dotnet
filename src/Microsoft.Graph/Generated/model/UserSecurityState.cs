@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets logonDateTime.
-        /// Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LogonDateTime { get; set; }

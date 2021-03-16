@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets received date time.
-        /// Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receivedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ReceivedDateTime { get; set; }

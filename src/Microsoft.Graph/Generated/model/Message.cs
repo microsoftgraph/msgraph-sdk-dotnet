@@ -158,7 +158,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets received date time.
-        /// The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receivedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ReceivedDateTime { get; set; }
@@ -179,7 +179,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sent date time.
-        /// The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+        /// The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sentDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? SentDateTime { get; set; }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IChatMessageHostedContentRequestBuilder.
     /// </summary>
-    public partial interface IChatMessageHostedContentRequestBuilder : IEntityRequestBuilder
+    public partial interface IChatMessageHostedContentRequestBuilder : ITeamworkHostedContentRequestBuilder
     {
         /// <summary>
         /// Builds the request.
@@ -30,12 +30,6 @@ namespace Microsoft.Graph
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
         new IChatMessageHostedContentRequest Request(IEnumerable<Option> options);
-    
-        /// <summary>
-        /// Gets the request builder for Content.
-        /// </summary>
-        /// <returns>The <see cref="IChatMessageHostedContentContentRequestBuilder"/>.</returns>
-        IChatMessageHostedContentContentRequestBuilder Content { get; }
     
     }
 }

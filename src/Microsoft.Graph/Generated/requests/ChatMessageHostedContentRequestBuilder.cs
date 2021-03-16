@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ChatMessageHostedContentRequestBuilder.
     /// </summary>
-    public partial class ChatMessageHostedContentRequestBuilder : EntityRequestBuilder, IChatMessageHostedContentRequestBuilder
+    public partial class ChatMessageHostedContentRequestBuilder : TeamworkHostedContentRequestBuilder, IChatMessageHostedContentRequestBuilder
     {
 
         /// <summary>
@@ -48,18 +48,6 @@ namespace Microsoft.Graph
         public new IChatMessageHostedContentRequest Request(IEnumerable<Option> options)
         {
             return new ChatMessageHostedContentRequest(this.RequestUrl, this.Client, options);
-        }
-    
-        /// <summary>
-        /// Gets the request builder for Content.
-        /// </summary>
-        /// <returns>The <see cref="IChatMessageHostedContentContentRequestBuilder"/>.</returns>
-        public IChatMessageHostedContentContentRequestBuilder Content
-        {
-            get
-            {
-                return new ChatMessageHostedContentContentRequestBuilder(this.AppendSegmentToRequestUrl("$value"), this.Client);
-            }
         }
     
     }

@@ -12,16 +12,16 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
 
     /// <summary>
-    /// The type ChatMessageHostedContentContentRequestBuilder.
+    /// The type TeamworkHostedContentContentRequestBuilder.
     /// </summary>
-    public partial class ChatMessageHostedContentContentRequestBuilder : BaseRequestBuilder, IChatMessageHostedContentContentRequestBuilder
+    public partial class TeamworkHostedContentContentRequestBuilder : BaseRequestBuilder, ITeamworkHostedContentContentRequestBuilder
     {
         /// <summary>
-        /// Constructs a new ChatMessageHostedContentContentRequestBuilder.
+        /// Constructs a new TeamworkHostedContentContentRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public ChatMessageHostedContentContentRequestBuilder(
+        public TeamworkHostedContentContentRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -33,9 +33,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public IChatMessageHostedContentContentRequest Request(IEnumerable<Option> options = null)
+        public ITeamworkHostedContentContentRequest Request(IEnumerable<Option> options = null)
         {
-            return new ChatMessageHostedContentContentRequest(this.RequestUrl, this.Client, options);
+            return new TeamworkHostedContentContentRequest(this.RequestUrl, this.Client, options);
         }
     }
 }

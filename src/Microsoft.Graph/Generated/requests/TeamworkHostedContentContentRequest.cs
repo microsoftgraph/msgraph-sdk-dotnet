@@ -15,17 +15,17 @@ namespace Microsoft.Graph
     using System.Threading;
 
     /// <summary>
-    /// The type ChatMessageHostedContentContentRequest.
+    /// The type TeamworkHostedContentContentRequest.
     /// </summary>
-    public partial class ChatMessageHostedContentContentRequest : BaseRequest, IChatMessageHostedContentContentRequest
+    public partial class TeamworkHostedContentContentRequest : BaseRequest, ITeamworkHostedContentContentRequest
     {
         /// <summary>
-        /// Constructs a new ChatMessageHostedContentContentRequest.
+        /// Constructs a new TeamworkHostedContentContentRequest.
         /// <param name="requestUrl">The request URL.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query option name value pairs for the request.</param>
         /// </summary>
-        public ChatMessageHostedContentContentRequest(
+        public TeamworkHostedContentContentRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
