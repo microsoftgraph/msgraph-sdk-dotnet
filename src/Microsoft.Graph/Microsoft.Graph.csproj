@@ -26,7 +26,7 @@
     <VersionSuffix>
     </VersionSuffix>
     <PackageReleaseNotes>
-- Publish symbols.
+- Updates models and request builders.
     </PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
