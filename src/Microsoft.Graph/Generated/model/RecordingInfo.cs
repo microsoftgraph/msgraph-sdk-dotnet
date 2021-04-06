@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets initiator.
-        /// The identities of the recording initiator.
+        /// The identities of recording initiator.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Initiator { get; set; }

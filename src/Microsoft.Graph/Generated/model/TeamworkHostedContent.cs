@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content type.
-        /// Write only. Content type. sicj as image/png, image/jpg.
+        /// Write only. Content type, such as image/png, image/jpg.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
         public string ContentType { get; set; }

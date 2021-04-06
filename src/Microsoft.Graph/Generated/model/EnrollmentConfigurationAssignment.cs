@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets target.
-        /// Not yet documented
+        /// Represents an assignment to managed devices in the tenant
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

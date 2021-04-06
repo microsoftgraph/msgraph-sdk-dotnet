@@ -102,7 +102,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets value types.
-        /// Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
+        /// Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueTypes", Required = Newtonsoft.Json.Required.Default)]
         public Newtonsoft.Json.Linq.JToken ValueTypes { get; set; }

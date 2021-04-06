@@ -60,21 +60,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets buckets.
-        /// Read-only. Nullable. Collection of buckets in the plan.
+        /// Collection of buckets in the plan. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "buckets", Required = Newtonsoft.Json.Required.Default)]
         public IPlannerPlanBucketsCollectionPage Buckets { get; set; }
     
         /// <summary>
         /// Gets or sets details.
-        /// Read-only. Nullable. Additional details about the plan.
+        /// Additional details about the plan. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
         public PlannerPlanDetails Details { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
-        /// Read-only. Nullable. Collection of tasks in the plan.
+        /// Collection of tasks in the plan. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
         public IPlannerPlanTasksCollectionPage Tasks { get; set; }
