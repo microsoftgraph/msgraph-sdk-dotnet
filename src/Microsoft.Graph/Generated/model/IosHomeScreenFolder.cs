@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets pages.
-        /// Pages of Home Screen Layout Icons which must be Application Type. This collection can contain a maximum of 500 elements.
+        /// Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pages", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<IosHomeScreenFolderPage> Pages { get; set; }

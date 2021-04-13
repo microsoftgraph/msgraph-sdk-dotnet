@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets teams app.
-        /// The application that is linked to the tab. This cannot be changed after tab creation.
+        /// The application that is linked to the tab.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsApp", Required = Newtonsoft.Json.Required.Default)]
         public TeamsApp TeamsApp { get; set; }

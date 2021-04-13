@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets app url.
-        /// The web app URL.
+        /// The web app URL. This property cannot be PATCHed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appUrl", Required = Newtonsoft.Json.Required.Default)]
         public string AppUrl { get; set; }

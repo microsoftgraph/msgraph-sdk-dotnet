@@ -81,7 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external source.
-        /// How this class was created. The possible values are: sis, manual, unknownFutureValue.
+        /// The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSource", Required = Newtonsoft.Json.Required.Default)]
         public EducationExternalSource? ExternalSource { get; set; }
@@ -109,7 +109,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets term.
-        /// Term for this class.
+        /// Term for the class.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "term", Required = Newtonsoft.Json.Required.Default)]
         public EducationTerm Term { get; set; }

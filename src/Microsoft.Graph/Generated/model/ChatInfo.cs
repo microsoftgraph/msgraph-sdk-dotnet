@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets messageId.
-        /// The unique identifier of a message in a Microsoft Teams channel.
+        /// The unique identifier for a message in a Microsoft Teams channel.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageId", Required = Newtonsoft.Json.Required.Default)]
         public string MessageId { get; set; }
