@@ -88,7 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets takenDateTime.
-        /// The date and time the photo was taken in UTC time. Read-only.
+        /// Represents the date and time the photo was taken. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "takenDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? TakenDateTime { get; set; }

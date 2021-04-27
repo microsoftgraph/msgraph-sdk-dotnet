@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets attendees.
+        /// Information of the meeting attendees.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attendees", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<MeetingParticipantInfo> Attendees { get; set; }
     
         /// <summary>
         /// Gets or sets organizer.
+        /// Information of the meeting organizer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizer", Required = Newtonsoft.Json.Required.Default)]
         public MeetingParticipantInfo Organizer { get; set; }

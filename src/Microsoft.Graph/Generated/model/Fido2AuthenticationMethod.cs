@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attestation level.
-        /// The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
+        /// The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attestationLevel", Required = Newtonsoft.Json.Required.Default)]
         public AttestationLevel? AttestationLevel { get; set; }

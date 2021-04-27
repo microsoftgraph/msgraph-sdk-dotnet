@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets name.
-        /// The display name of the attachment. This does not need to be the actual file name.
+        /// The attachment's file name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }

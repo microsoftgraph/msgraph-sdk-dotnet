@@ -52,7 +52,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operationType.
-        /// The file system operation type. Possible values are: notConfigured, exists, modifiedDate, createdDate, version, sizeInMB, doesNotExist.
+        /// The file system operation type. Possible values are: notConfigured, exists, modifiedDate, createdDate, version, sizeInMB.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operationType", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppFileSystemOperationType? OperationType { get; set; }

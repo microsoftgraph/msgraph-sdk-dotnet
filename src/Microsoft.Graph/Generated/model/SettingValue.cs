@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets name.
-        /// Name of the setting (as defined by the directorySettingTemplate).
+        /// Name of the setting (as defined by the groupSettingTemplate).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }

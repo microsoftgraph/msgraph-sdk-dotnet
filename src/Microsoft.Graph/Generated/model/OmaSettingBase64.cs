@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets fileName.
-        /// File name associated with the Value property (.cer
+        /// File name associated with the Value property (.cer | .crt | .p7b | .bin).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
         public string FileName { get; set; }

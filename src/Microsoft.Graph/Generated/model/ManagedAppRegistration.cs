@@ -116,7 +116,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets applied policies.
-        /// Zero or more policys already applied on the registered app when it last synchronized with managment service.
+        /// Zero or more policys already applied on the registered app when it last synchronized with management service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedPolicies", Required = Newtonsoft.Json.Required.Default)]
         public IManagedAppRegistrationAppliedPoliciesCollectionPage AppliedPolicies { get; set; }

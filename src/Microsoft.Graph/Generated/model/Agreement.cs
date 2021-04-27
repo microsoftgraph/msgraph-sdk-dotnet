@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is per device acceptance required.
-        /// This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so.
+        /// Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPerDeviceAcceptanceRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsPerDeviceAcceptanceRequired { get; set; }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets files.
-        /// PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
+        /// PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "files", Required = Newtonsoft.Json.Required.Default)]
         public IAgreementFilesCollectionPage Files { get; set; }

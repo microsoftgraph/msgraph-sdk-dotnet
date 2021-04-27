@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets response.
-        /// The response type. Possible values are: None, Organizer, TentativelyAccepted, Accepted, Declined, NotResponded.
+        /// The response type. The possible values are: None, Organizer, TentativelyAccepted, Accepted, Declined, NotResponded.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "response", Required = Newtonsoft.Json.Required.Default)]
         public ResponseType? Response { get; set; }

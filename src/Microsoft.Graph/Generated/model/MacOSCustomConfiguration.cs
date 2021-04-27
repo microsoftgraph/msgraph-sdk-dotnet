@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets payload file name.
-        /// Payload file name (.mobileconfig
+        /// Payload file name (.mobileconfig | .xml).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadFileName", Required = Newtonsoft.Json.Required.Default)]
         public string PayloadFileName { get; set; }

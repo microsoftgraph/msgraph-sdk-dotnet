@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets key.
-        /// Value for the key credential. Should be a base 64 encoded value.
+        /// The certificate's raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "key", Required = Newtonsoft.Json.Required.Default)]
         public byte[] Key { get; set; }

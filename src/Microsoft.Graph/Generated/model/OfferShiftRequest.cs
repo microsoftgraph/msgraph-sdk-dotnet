@@ -46,14 +46,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recipient user id.
-        /// User id of the recipient of the offer shift request.
+        /// User ID of the recipient of the offer shift request.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipientUserId", Required = Newtonsoft.Json.Required.Default)]
         public string RecipientUserId { get; set; }
     
         /// <summary>
         /// Gets or sets sender shift id.
-        /// User id of the sender of the offer shift request.
+        /// User ID of the sender of the offer shift request.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "senderShiftId", Required = Newtonsoft.Json.Required.Default)]
         public string SenderShiftId { get; set; }

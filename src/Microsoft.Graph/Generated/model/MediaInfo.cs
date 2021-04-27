@@ -32,14 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets resourceId.
-        /// Optional, used to uniquely identity the resource. If passed the prompt uri will be cached against this resourceId as key.
+        /// Optional. Used to uniquely identity the resource. If passed in, the prompt uri will be cached against this resourceId as a key.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
         public string ResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets uri.
-        /// Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16KHz) sampling rate is only supported.
+        /// Path to the prompt that will be played. Currently supports only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16KHz) sampling rate.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uri", Required = Newtonsoft.Json.Required.Default)]
         public string Uri { get; set; }

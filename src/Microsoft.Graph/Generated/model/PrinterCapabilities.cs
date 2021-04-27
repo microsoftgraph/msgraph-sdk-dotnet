@@ -130,14 +130,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mediaSizes.
-        /// The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes, along with any custom sizes supported by the associated printer.
+        /// The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaSizes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> MediaSizes { get; set; }
     
         /// <summary>
         /// Gets or sets mediaTypes.
-        /// The media types supported by the printer. Valid values are described in the following table.
+        /// The media types supported by the printer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> MediaTypes { get; set; }

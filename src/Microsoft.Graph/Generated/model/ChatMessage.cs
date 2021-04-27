@@ -144,7 +144,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reply to id.
-        /// Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
+        /// Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyToId", Required = Newtonsoft.Json.Required.Default)]
         public string ReplyToId { get; set; }
