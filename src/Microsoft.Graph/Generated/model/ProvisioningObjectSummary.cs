@@ -81,12 +81,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets provisioning action.
+        /// Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningAction", Required = Newtonsoft.Json.Required.Default)]
         public ProvisioningAction? ProvisioningAction { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning status info.
+        /// Details of provisioning status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningStatusInfo", Required = Newtonsoft.Json.Required.Default)]
         public ProvisioningStatusInfo ProvisioningStatusInfo { get; set; }

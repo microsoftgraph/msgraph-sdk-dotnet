@@ -32,49 +32,49 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Not yet documented
+        /// Created date time in UTC of the device enrollment configuration
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// Not yet documented
+        /// The description of the device enrollment configuration
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Not yet documented
+        /// The display name of the device enrollment configuration
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// Not yet documented
+        /// Last modified date time in UTC of the device enrollment configuration
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
-        /// Not yet documented
+        /// Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets version.
-        /// Not yet documented
+        /// The version of the device enrollment configuration
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Version { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
-        /// The list of group assignments for the device configuration profile.
+        /// The list of group assignments for the device configuration profile
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceEnrollmentConfigurationAssignmentsCollectionPage Assignments { get; set; }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationRootRequestBuilder.
     /// </summary>
-    public partial class EducationRootRequestBuilder : EntityRequestBuilder, IEducationRootRequestBuilder
+    public partial class EducationRootRequestBuilder : BaseRequestBuilder, IEducationRootRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IEducationRootRequest Request()
+        public IEducationRootRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IEducationRootRequest Request(IEnumerable<Option> options)
+        public IEducationRootRequest Request(IEnumerable<Option> options)
         {
             return new EducationRootRequest(this.RequestUrl, this.Client, options);
         }

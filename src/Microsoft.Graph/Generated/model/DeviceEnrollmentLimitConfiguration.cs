@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets limit.
-        /// Not yet documented
+        /// The maximum number of devices that a user can enroll
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "limit", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Limit { get; set; }

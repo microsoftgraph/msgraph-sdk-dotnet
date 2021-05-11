@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets serverMuted.
-        /// If the media is muted by the server.
+        /// Indicates whether the media is muted by the server.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serverMuted", Required = Newtonsoft.Json.Required.Default)]
         public bool? ServerMuted { get; set; }

@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets allow external id to use email otp.
-        /// Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in March 2021.
+        /// Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowExternalIdToUseEmailOtp", Required = Newtonsoft.Json.Required.Default)]
         public ExternalEmailOtpState? AllowExternalIdToUseEmailOtp { get; set; }

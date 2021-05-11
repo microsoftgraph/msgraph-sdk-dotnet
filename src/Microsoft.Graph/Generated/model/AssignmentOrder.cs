@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets order.
-        /// A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
+        /// A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "order", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Order { get; set; }

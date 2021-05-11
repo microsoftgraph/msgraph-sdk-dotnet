@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed accounts.
-        /// Indicates which type of accounts are allowed to use on a shared PC. Possible values are: guest, domain.
+        /// Indicates which type of accounts are allowed to use on a shared PC. Possible values are: notConfigured, guest, domain.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedAccounts", Required = Newtonsoft.Json.Required.Default)]
         public SharedPCAllowedAccountType? AllowedAccounts { get; set; }

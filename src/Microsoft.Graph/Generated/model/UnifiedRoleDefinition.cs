@@ -39,14 +39,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.
+        /// The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is built in.
-        /// Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.
+        /// Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltIn", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsBuiltIn { get; set; }
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource scopes.
-        /// List of scopes permissions granted by the role definition apply to. Currently only '/' is supported. Read-only when isBuiltIn is true. DO NOT USE. This is going to be deprecated soon. Attach scope to role assignment
+        /// List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This is going to be deprecated soon. Attach scope to role assignment
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceScopes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ResourceScopes { get; set; }
@@ -88,6 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets inherits permissions from.
+        /// Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inheritsPermissionsFrom", Required = Newtonsoft.Json.Required.Default)]
         public IUnifiedRoleDefinitionInheritsPermissionsFromCollectionPage InheritsPermissionsFrom { get; set; }

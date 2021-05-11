@@ -46,13 +46,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external source.
-        /// Source where this organization was created from. The possible values are: sis, manual, unknownFutureValue.
+        /// Where this user was created from. Possible values are: sis, lms, or manual.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSource", Required = Newtonsoft.Json.Required.Default)]
         public EducationExternalSource? ExternalSource { get; set; }
     
         /// <summary>
         /// Gets or sets external source detail.
+        /// The name of the external source this resources was generated from.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSourceDetail", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalSourceDetail { get; set; }

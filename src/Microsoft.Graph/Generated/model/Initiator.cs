@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets initiatorType.
-        /// Type of initiator. Possible values are: user, app, system, unknownFutureValue.
+        /// Type of initiator. Possible values are: user, application, system, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiatorType", Required = Newtonsoft.Json.Required.Default)]
         public InitiatorType? InitiatorType { get; set; }

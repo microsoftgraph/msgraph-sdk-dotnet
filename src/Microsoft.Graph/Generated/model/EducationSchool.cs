@@ -108,6 +108,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets administrative unit.
+        /// The underlying administrativeUnit for this school.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "administrativeUnit", Required = Newtonsoft.Json.Required.Default)]
         public AdministrativeUnit AdministrativeUnit { get; set; }

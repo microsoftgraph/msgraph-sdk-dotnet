@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets stages.
-        /// A collection of stages in the approval decision.
+        /// Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stages", Required = Newtonsoft.Json.Required.Default)]
         public IApprovalStagesCollectionPage Stages { get; set; }
