@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public IIdentityContainerB2xUserFlowsCollectionPage B2xUserFlows { get; set; }
     
         /// <summary>
+        /// Gets or sets identity providers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityProviders", Required = Newtonsoft.Json.Required.Default)]
+        public IIdentityContainerIdentityProvidersCollectionPage IdentityProviders { get; set; }
+    
+        /// <summary>
         /// Gets or sets user flow attributes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userFlowAttributes", Required = Newtonsoft.Json.Required.Default)]

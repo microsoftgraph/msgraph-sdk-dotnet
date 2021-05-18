@@ -45,6 +45,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets is hidden.
+        /// Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isHidden", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsHidden { get; set; }
+    
+        /// <summary>
         /// Gets or sets parent folder id.
         /// The unique identifier for the mailFolder's parent mailFolder.
         /// </summary>

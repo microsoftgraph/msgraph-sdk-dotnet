@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for IdentityProviders.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerIdentityProvidersCollectionRequestBuilder"/>.</returns>
+        public IIdentityContainerIdentityProvidersCollectionRequestBuilder IdentityProviders
+        {
+            get
+            {
+                return new IdentityContainerIdentityProvidersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("identityProviders"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserFlowAttributes.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerUserFlowAttributesCollectionRequestBuilder"/>.</returns>
