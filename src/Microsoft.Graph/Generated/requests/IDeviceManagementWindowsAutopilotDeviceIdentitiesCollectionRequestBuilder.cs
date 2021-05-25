@@ -36,11 +36,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityRequestBuilder"/>.</returns>
         IWindowsAutopilotDeviceIdentityRequestBuilder this[string id] { get; }
 
-        /// <summary>
-        /// Gets the request builder for WindowsAutopilotDeviceIdentityDeleteDevices.
-        /// </summary>
-        /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityDeleteDevicesRequestBuilder"/>.</returns>
-        IWindowsAutopilotDeviceIdentityDeleteDevicesRequestBuilder DeleteDevices(
-            IEnumerable<string> serialNumbers = null);
+        
     }
 }

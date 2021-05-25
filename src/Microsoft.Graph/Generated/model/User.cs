@@ -228,7 +228,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mail.
-        /// The SMTP address for the user, for example, 'jeff@contoso.onmicrosoft.com'.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.
+        /// The SMTP address for the user, for example, 'jeff@contoso.onmicrosoft.com'. Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mail", Required = Newtonsoft.Json.Required.Default)]
         public string Mail { get; set; }
