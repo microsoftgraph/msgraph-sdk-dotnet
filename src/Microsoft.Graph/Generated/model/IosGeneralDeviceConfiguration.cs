@@ -942,7 +942,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets wi fi connect only to configured networks.
-        /// Indicates whether or not to force the device to use only Wi-Fi networks from configuration profiles when the device is in supervised mode.
+        /// Indicates whether or not to force the device to use only Wi-Fi networks from configuration profiles when the device is in supervised mode. Available for devices running iOS and iPadOS versions 14.4 and earlier. Devices running 14.5+ should use the setting, 'WiFiConnectToAllowedNetworksOnlyForced.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiConnectOnlyToConfiguredNetworks", Required = Newtonsoft.Json.Required.Default)]
         public bool? WiFiConnectOnlyToConfiguredNetworks { get; set; }

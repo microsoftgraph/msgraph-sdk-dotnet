@@ -60,17 +60,6 @@ namespace Microsoft.Graph
             }
         }
 
-        /// <summary>
-        /// Gets the request builder for WindowsAutopilotDeviceIdentityDeleteDevices.
-        /// </summary>
-        /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityDeleteDevicesRequestBuilder"/>.</returns>
-        public IWindowsAutopilotDeviceIdentityDeleteDevicesRequestBuilder DeleteDevices(
-            IEnumerable<string> serialNumbers = null)
-        {
-            return new WindowsAutopilotDeviceIdentityDeleteDevicesRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.deleteDevices"),
-                this.Client,
-                serialNumbers);
-        }
+        
     }
 }

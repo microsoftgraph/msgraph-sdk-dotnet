@@ -162,7 +162,8 @@ namespace Microsoft.Graph
         IManagedDeviceWipeRequestBuilder Wipe(
             bool? keepEnrollmentData = null,
             bool? keepUserData = null,
-            string macOsUnlockCode = null);
+            string macOsUnlockCode = null,
+            bool? persistEsimDataPlan = null);
     
     }
 }

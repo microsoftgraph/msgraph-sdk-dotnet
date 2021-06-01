@@ -157,6 +157,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? EnrolledDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets ethernet mac address.
+        /// Ethernet MAC. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ethernetMacAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string EthernetMacAddress { get; set; }
+    
+        /// <summary>
         /// Gets or sets exchange access state.
         /// The Access State of the device in Exchange. This property is read-only. Possible values are: none, unknown, allowed, blocked, quarantined.
         /// </summary>
@@ -183,6 +190,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "freeStorageSpaceInBytes", Required = Newtonsoft.Json.Required.Default)]
         public Int64? FreeStorageSpaceInBytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets iccid.
+        /// Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iccid", Required = Newtonsoft.Json.Required.Default)]
+        public string Iccid { get; set; }
     
         /// <summary>
         /// Gets or sets imei.
@@ -235,7 +249,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets management agent.
-        /// Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense.
+        /// Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementAgent", Required = Newtonsoft.Json.Required.Default)]
         public ManagementAgentType? ManagementAgent { get; set; }
@@ -260,6 +274,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
         public string Model { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notes.
+        /// Notes on the device created by IT Admin
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        public string Notes { get; set; }
     
         /// <summary>
         /// Gets or sets operating system.
@@ -288,6 +309,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneNumber", Required = Newtonsoft.Json.Required.Default)]
         public string PhoneNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets physical memory in bytes.
+        /// Total Memory in Bytes. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "physicalMemoryInBytes", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? PhysicalMemoryInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets remote assistance session error details.
@@ -323,6 +351,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalStorageSpaceInBytes", Required = Newtonsoft.Json.Required.Default)]
         public Int64? TotalStorageSpaceInBytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets udid.
+        /// Unique Device Identifier for iOS and macOS devices. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "udid", Required = Newtonsoft.Json.Required.Default)]
+        public string Udid { get; set; }
     
         /// <summary>
         /// Gets or sets user display name.

@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets query.
-        /// The query representing what will be reviewed in an access review. Examples of this include /groups/{id}/members?$filter=…
+        /// The query representing what will be reviewed in an access review.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "query", Required = Newtonsoft.Json.Required.Default)]
         public string Query { get; set; }
