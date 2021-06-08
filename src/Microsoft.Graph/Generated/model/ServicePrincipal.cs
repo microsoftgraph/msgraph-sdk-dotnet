@@ -108,6 +108,13 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets disabled by microsoft status.
+        /// Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disabledByMicrosoftStatus", Required = Newtonsoft.Json.Required.Default)]
+        public string DisabledByMicrosoftStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The display name for the service principal.
         /// </summary>
