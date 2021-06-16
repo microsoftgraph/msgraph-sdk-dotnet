@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public IGraphServiceSitesCollectionRequest Request(IEnumerable<Option> options)
+        public IGraphServiceSitesCollectionRequest Request(IEnumerable<Option> options=new Option[]{new QueryOption("search","*")})
         {
             return new GraphServiceSitesCollectionRequest(this.RequestUrl, this.Client, options);
         }
