@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// Read only. Details of the sender of the chat message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet From { get; set; }
+        public ChatMessageFromIdentitySet From { get; set; }
     
         /// <summary>
         /// Gets or sets importance.
@@ -144,7 +144,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reply to id.
-        /// Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
+        /// Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyToId", Required = Newtonsoft.Json.Required.Default)]
         public string ReplyToId { get; set; }

@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets activityDomain.
-        /// The nature of the activity, optional. Possible values are: work, personal, unrestricted, or unknown.
+        /// The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDomain", Required = Newtonsoft.Json.Required.Default)]
         public ActivityDomain? ActivityDomain { get; set; }

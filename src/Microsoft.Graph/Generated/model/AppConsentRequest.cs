@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets pending scopes.
-        /// A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
+        /// A list of pending scopes waiting for approval. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingScopes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AppConsentRequestScope> PendingScopes { get; set; }

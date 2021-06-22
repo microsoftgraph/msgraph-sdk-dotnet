@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets replacesCallId.
-        /// Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+        /// Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replacesCallId", Required = Newtonsoft.Json.Required.Default)]
         public string ReplacesCallId { get; set; }

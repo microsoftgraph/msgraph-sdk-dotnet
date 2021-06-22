@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets defaultDecision.
-        /// Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
+        /// Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDecision", Required = Newtonsoft.Json.Required.Default)]
         public string DefaultDecision { get; set; }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recommendationsEnabled.
-        /// Indicates whether decision recommendations are enabled/disabled.
+        /// Indicates whether decision recommendations are enabled or disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendationsEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? RecommendationsEnabled { get; set; }
