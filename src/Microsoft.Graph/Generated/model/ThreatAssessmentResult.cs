@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets result type.
-        /// The threat assessment result type. Possible values are: checkPolicy (only for mail assessment), rescan.
+        /// The threat assessment result type. Possible values are: checkPolicy, rescan.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultType", Required = Newtonsoft.Json.Required.Default)]
         public ThreatAssessmentResultType? ResultType { get; set; }

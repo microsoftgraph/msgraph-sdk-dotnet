@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         /// The entity (user, application, team, or channel) that was mentioned.  If it was a channel or team that was @mentioned, the identitySet contains a conversation property giving the ID of the team/channel, and a conversationIdentityType property that represents either the team or channel.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentioned", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet Mentioned { get; set; }
+        public ChatMessageMentionedIdentitySet Mentioned { get; set; }
     
         /// <summary>
         /// Gets or sets mentionText.

@@ -74,7 +74,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets start date time.
-        /// UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartDateTime { get; set; }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets version.
-        /// Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+        /// Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Version { get; set; }

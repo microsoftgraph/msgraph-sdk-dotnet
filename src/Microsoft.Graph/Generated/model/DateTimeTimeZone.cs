@@ -32,14 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets dateTime.
-        /// A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+        /// A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dateTime", Required = Newtonsoft.Json.Required.Default)]
         public string DateTime { get; set; }
     
         /// <summary>
         /// Gets or sets timeZone.
-        /// Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+        /// Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeZone", Required = Newtonsoft.Json.Required.Default)]
         public string TimeZone { get; set; }

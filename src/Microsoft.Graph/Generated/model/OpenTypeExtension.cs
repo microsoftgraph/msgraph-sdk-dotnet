@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets extension name.
-        /// A unique text identifier for an open type data extension. Required.
+        /// A unique text identifier for an open type open extension. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionName", Required = Newtonsoft.Json.Required.Default)]
         public string ExtensionName { get; set; }

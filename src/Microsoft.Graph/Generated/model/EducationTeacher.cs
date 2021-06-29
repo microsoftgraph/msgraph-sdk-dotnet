@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets externalId.
-        /// Id of the Teacher in external source system.
+        /// ID of the teacher in the source system.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalId { get; set; }

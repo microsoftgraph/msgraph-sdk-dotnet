@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets forceChangePasswordNextSignIn.
-        /// If true, at next sign-in, the user must change their password. After a password change, this property will be automatically reset to false. If not set, default is false.
+        /// true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "forceChangePasswordNextSignIn", Required = Newtonsoft.Json.Required.Default)]
         public bool? ForceChangePasswordNextSignIn { get; set; }
