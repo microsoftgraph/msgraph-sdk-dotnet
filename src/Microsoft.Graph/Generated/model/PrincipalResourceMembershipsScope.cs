@@ -31,14 +31,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets principalScopes.
-        /// Defines the scopes of the principals to be included in an access review.
+        /// Defines the scopes of the principals whose access to resources are reviewed in the access review.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalScopes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AccessReviewScope> PrincipalScopes { get; set; }
     
         /// <summary>
         /// Gets or sets resourceScopes.
-        /// Defines the scopes of the resources for which access will be reviewed.
+        /// Defines the scopes of the resources for which access is reviewed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceScopes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AccessReviewScope> ResourceScopes { get; set; }
