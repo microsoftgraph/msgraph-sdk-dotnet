@@ -451,6 +451,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceConnections request builder.
+        /// </summary>
+        public IGraphServiceConnectionsCollectionRequestBuilder Connections
+        {
+            get
+            {
+                return new GraphServiceConnectionsCollectionRequestBuilder(this.BaseUrl + "/connections", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceChats request builder.
         /// </summary>
         public IGraphServiceChatsCollectionRequestBuilder Chats
@@ -689,6 +700,17 @@ namespace Microsoft.Graph
             get
             {
                 return new SecurityRequestBuilder(this.BaseUrl + "/security", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceExternal request builder.
+        /// </summary>
+        public Microsoft.Graph.ExternalConnectors.IExternalRequestBuilder External
+        {
+            get
+            {
+                return new Microsoft.Graph.ExternalConnectors.ExternalRequestBuilder(this.BaseUrl + "/external", this);
             }
         }
     

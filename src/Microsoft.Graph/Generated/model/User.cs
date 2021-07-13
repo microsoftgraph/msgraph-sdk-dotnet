@@ -95,7 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, NOT , ge, le, and in operators) and $orderBy.
+        /// The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, NOT , ge, le, and in operators).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -291,7 +291,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises provisioning errors.
-        /// Errors when using Microsoft synchronization product during provisioning.
+        /// Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, NOT, ge, le).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesProvisioningErrors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
@@ -305,7 +305,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises security identifier.
-        /// Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq, ne, NOT, in).
+        /// Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSecurityIdentifier", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesSecurityIdentifier { get; set; }
@@ -333,14 +333,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password policies.
-        /// Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.Supports $filter (eq, ne, NOT).
+        /// Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.Supports $filter (ne, NOT).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordPolicies", Required = Newtonsoft.Json.Required.Default)]
         public string PasswordPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets password profile.
-        /// Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.
+        /// Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon. Supports $filter (eq, ne, NOT, in).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordProfile", Required = Newtonsoft.Json.Required.Default)]
         public PasswordProfile PasswordProfile { get; set; }
@@ -361,7 +361,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets provisioned plans.
-        /// The plans that are provisioned for the user. Read-only. Not nullable.
+        /// The plans that are provisioned for the user. Read-only. Not nullable. Supports $filter (eq, NOT, ge, le).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisionedPlans", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ProvisionedPlan> ProvisionedPlans { get; set; }
@@ -424,7 +424,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user type.
-        /// A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, NOT, in, startsWith, endsWith).
+        /// A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, NOT, in,).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userType", Required = Newtonsoft.Json.Required.Default)]
         public string UserType { get; set; }
@@ -515,7 +515,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app role assignments.
-        /// Represents the app roles a user has been granted for an application.
+        /// Represents the app roles a user has been granted for an application. Supports $expand.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignments", Required = Newtonsoft.Json.Required.Default)]
         public IUserAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
@@ -529,7 +529,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets direct reports.
-        /// The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable.
+        /// The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directReports", Required = Newtonsoft.Json.Required.Default)]
         public IUserDirectReportsCollectionWithReferencesPage DirectReports { get; set; }
@@ -543,14 +543,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets manager.
-        /// The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)
+        /// The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
         public DirectoryObject Manager { get; set; }
     
         /// <summary>
         /// Gets or sets member of.
-        /// The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable.
+        /// The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberOf", Required = Newtonsoft.Json.Required.Default)]
         public IUserMemberOfCollectionWithReferencesPage MemberOf { get; set; }
@@ -563,21 +563,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owned devices.
-        /// Devices that are owned by the user. Read-only. Nullable.
+        /// Devices that are owned by the user. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownedDevices", Required = Newtonsoft.Json.Required.Default)]
         public IUserOwnedDevicesCollectionWithReferencesPage OwnedDevices { get; set; }
     
         /// <summary>
         /// Gets or sets owned objects.
-        /// Directory objects that are owned by the user. Read-only. Nullable.
+        /// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownedObjects", Required = Newtonsoft.Json.Required.Default)]
         public IUserOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
     
         /// <summary>
         /// Gets or sets registered devices.
-        /// Devices that are registered for the user. Read-only. Nullable.
+        /// Devices that are registered for the user. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registeredDevices", Required = Newtonsoft.Json.Required.Default)]
         public IUserRegisteredDevicesCollectionWithReferencesPage RegisteredDevices { get; set; }

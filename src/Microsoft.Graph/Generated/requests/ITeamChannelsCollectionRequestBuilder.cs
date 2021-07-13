@@ -36,6 +36,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IChannelRequestBuilder"/>.</returns>
         IChannelRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for ChannelGetAllMessages.
+        /// </summary>
+        /// <returns>The <see cref="IChannelGetAllMessagesRequestBuilder"/>.</returns>
+        IChannelGetAllMessagesRequestBuilder GetAllMessages();
     }
 }

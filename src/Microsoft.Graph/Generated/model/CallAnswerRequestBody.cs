@@ -40,5 +40,11 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptedModalities", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Modality> AcceptedModalities { get; set; }
     
+        /// <summary>
+        /// Gets or sets ParticipantCapacity.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participantCapacity", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ParticipantCapacity { get; set; }
+    
     }
 }

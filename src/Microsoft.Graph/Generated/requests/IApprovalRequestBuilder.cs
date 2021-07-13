@@ -37,5 +37,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IApprovalStagesCollectionRequestBuilder"/>.</returns>
         IApprovalStagesCollectionRequestBuilder Stages { get; }
     
+        
+    
     }
 }

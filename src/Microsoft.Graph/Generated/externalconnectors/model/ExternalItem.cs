@@ -31,6 +31,12 @@ namespace Microsoft.Graph.ExternalConnectors
         }
 	
         /// <summary>
+        /// Gets or sets acl.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acl", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Acl> Acl { get; set; }
+    
+        /// <summary>
         /// Gets or sets content.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]

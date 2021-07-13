@@ -26,17 +26,20 @@ namespace Microsoft.Graph
         /// <param name="callbackUri">A callbackUri parameter for the OData method call.</param>
         /// <param name="mediaConfig">A mediaConfig parameter for the OData method call.</param>
         /// <param name="acceptedModalities">A acceptedModalities parameter for the OData method call.</param>
+        /// <param name="participantCapacity">A participantCapacity parameter for the OData method call.</param>
         public CallAnswerRequestBuilder(
             string requestUrl,
             IBaseClient client,
             string callbackUri,
             MediaConfig mediaConfig,
-            IEnumerable<Modality> acceptedModalities)
+            IEnumerable<Modality> acceptedModalities,
+            Int32? participantCapacity)
             : base(requestUrl, client)
         {
             this.SetParameter("callbackUri", callbackUri, false);
             this.SetParameter("mediaConfig", mediaConfig, false);
             this.SetParameter("acceptedModalities", acceptedModalities, true);
+            this.SetParameter("participantCapacity", participantCapacity, true);
         }
 
         /// <summary>
@@ -62,6 +65,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("acceptedModalities"))
             {
                 request.RequestBody.AcceptedModalities = this.GetParameter<IEnumerable<Modality>>("acceptedModalities");
+            }
+
+            if (this.HasParameter("participantCapacity"))
+            {
+                request.RequestBody.ParticipantCapacity = this.GetParameter<Int32?>("participantCapacity");
             }
 
             return request;

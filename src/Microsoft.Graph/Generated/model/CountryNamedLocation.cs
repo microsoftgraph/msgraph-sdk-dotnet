@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> CountriesAndRegions { get; set; }
     
         /// <summary>
+        /// Gets or sets country lookup method.
+        /// Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress and authenticatorAppGps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryLookupMethod", Required = Newtonsoft.Json.Required.Default)]
+        public CountryLookupMethodType? CountryLookupMethod { get; set; }
+    
+        /// <summary>
         /// Gets or sets include unknown countries and regions.
         /// True if IP addresses that don't map to a country or region should be included in the named location.
         /// </summary>

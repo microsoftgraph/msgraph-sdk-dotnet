@@ -31,11 +31,39 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets allow attendee to enable camera.
+        /// Indicates whether attendees can turn on their camera.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAttendeeToEnableCamera", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowAttendeeToEnableCamera { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow attendee to enable mic.
+        /// Indicates whether attendees can turn on their microphone.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAttendeeToEnableMic", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowAttendeeToEnableMic { get; set; }
+    
+        /// <summary>
         /// Gets or sets allowed presenters.
         /// Specifies who can be a presenter in a meeting. Possible values are everyone, organization, roleIsPresenter, organizer, and unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedPresenters", Required = Newtonsoft.Json.Required.Default)]
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow meeting chat.
+        /// Specifies the mode of meeting chat.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowMeetingChat", Required = Newtonsoft.Json.Required.Default)]
+        public MeetingChatMode? AllowMeetingChat { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow teamwork reactions.
+        /// Indicates if Teams reactions are enabled for the meeting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowTeamworkReactions", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowTeamworkReactions { get; set; }
     
         /// <summary>
         /// Gets or sets audio conferencing.

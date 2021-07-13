@@ -49,7 +49,7 @@ namespace Microsoft.Graph
         /// The user who reacted to the message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "user", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet User { get; set; }
+        public ChatMessageReactionIdentitySet User { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

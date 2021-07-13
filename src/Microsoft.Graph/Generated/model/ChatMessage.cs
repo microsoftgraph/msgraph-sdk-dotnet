@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// Read only. Details of the sender of the chat message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet From { get; set; }
+        public ChatMessageFromIdentitySet From { get; set; }
     
         /// <summary>
         /// Gets or sets importance.

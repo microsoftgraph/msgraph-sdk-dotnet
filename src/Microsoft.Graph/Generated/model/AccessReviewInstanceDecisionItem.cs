@@ -32,89 +32,91 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets access review id.
-        /// The identifier of the accessReviewInstance parent.
+        /// The identifier of the accessReviewInstance parent. Supports $select. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessReviewId", Required = Newtonsoft.Json.Required.Default)]
         public string AccessReviewId { get; set; }
     
         /// <summary>
         /// Gets or sets applied by.
-        /// The identifier of the user who applied the decision.
+        /// The identifier of the user who applied the decision. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedBy", Required = Newtonsoft.Json.Required.Default)]
         public UserIdentity AppliedBy { get; set; }
     
         /// <summary>
         /// Gets or sets applied date time.
-        /// The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        /// The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? AppliedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets apply result.
-        /// The result of applying the decision. Possible values: NotApplied, Success, Failed, NotFound, or NotSupported.
+        /// The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyResult", Required = Newtonsoft.Json.Required.Default)]
         public string ApplyResult { get; set; }
     
         /// <summary>
         /// Gets or sets decision.
-        /// Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow.
+        /// Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow. Supports $select, $orderby, and $filter (eq only).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decision", Required = Newtonsoft.Json.Required.Default)]
         public string Decision { get; set; }
     
         /// <summary>
         /// Gets or sets justification.
-        /// The review decision justification.
+        /// Justification left by the reviewer when they made the decision.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
         public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets principal.
-        /// Every decision item in an access review represents a principal's access to a resource. This property represents details of the principal. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is 'Bob' and the resource is 'Sales'. Principals can be of two types - userIdentity and servicePrincipalIdentity.
+        /// Every decision item in an access review represents a principal's access to a resource. This property represents details of the principal. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is 'Bob' and the resource is 'Sales'. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principal", Required = Newtonsoft.Json.Required.Default)]
         public Identity Principal { get; set; }
     
         /// <summary>
         /// Gets or sets principal link.
+        /// Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalLink", Required = Newtonsoft.Json.Required.Default)]
         public string PrincipalLink { get; set; }
     
         /// <summary>
         /// Gets or sets recommendation.
-        /// A system-generated recommendation for the approval decision. Possible values: Approve, Deny, or NotAvailable.
+        /// A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendation", Required = Newtonsoft.Json.Required.Default)]
         public string Recommendation { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
-        /// Every decision item in an access review represents a principal's access to a resource. This property represents details of the resource. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is Bob and the resource is 'Sales'. Resources can be of multiple types. See accessReviewInstanceDecisionItemResource
+        /// Every decision item in an access review represents a principal's access to a resource. This property represents details of the resource. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is Bob and the resource is 'Sales'. Resources can be of multiple types. See accessReviewInstanceDecisionItemResource. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
         public AccessReviewInstanceDecisionItemResource Resource { get; set; }
     
         /// <summary>
         /// Gets or sets resource link.
+        /// A link to the resource. For example, https://graph.microsoft.com/v1.0/servicePrincipals/c86300f3-8695-4320-9f6e-32a2555f5ff8. Supports $select. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceLink", Required = Newtonsoft.Json.Required.Default)]
         public string ResourceLink { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed by.
-        /// The identifier of the reviewer.
+        /// The identifier of the reviewer. Supports $select. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedBy", Required = Newtonsoft.Json.Required.Default)]
         public UserIdentity ReviewedBy { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed date time.
-        /// The timestamp when the review occurred.
+        /// The timestamp when the review decision occurred. Supports $select. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ReviewedDateTime { get; set; }
