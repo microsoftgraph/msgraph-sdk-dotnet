@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DirectoryRoleTemplate using POST.
         /// </summary>
         /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
-        /// <returns>The created DirectoryRoleTemplate.</returns>
-        public System.Threading.Tasks.Task<DirectoryRoleTemplate> CreateAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate)
-        {
-            return this.CreateAsync(directoryRoleTemplateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DirectoryRoleTemplate using POST.
-        /// </summary>
-        /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryRoleTemplate.</returns>
-        public async System.Threading.Tasks.Task<DirectoryRoleTemplate> CreateAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DirectoryRoleTemplate> CreateAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DirectoryRoleTemplate>(directoryRoleTemplateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DirectoryRoleTemplate.
+        /// Creates the specified DirectoryRoleTemplate using POST and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> CreateResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DirectoryRoleTemplate>(directoryRoleTemplateToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DirectoryRoleTemplate>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DirectoryRoleTemplate.
+        /// Deletes the specified DirectoryRoleTemplate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DirectoryRoleTemplate.</returns>
-        public System.Threading.Tasks.Task<DirectoryRoleTemplate> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DirectoryRoleTemplate.</returns>
-        public async System.Threading.Tasks.Task<DirectoryRoleTemplate> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DirectoryRoleTemplate> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DirectoryRoleTemplate>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DirectoryRoleTemplate using PATCH.
+        /// Gets the specified DirectoryRoleTemplate and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
         /// </summary>
-        /// <param name="directoryRoleTemplateToUpdate">The DirectoryRoleTemplate to update.</param>
-        /// <returns>The updated DirectoryRoleTemplate.</returns>
-        public System.Threading.Tasks.Task<DirectoryRoleTemplate> UpdateAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(directoryRoleTemplateToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DirectoryRoleTemplate>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DirectoryRoleTemplate.</returns>
-        public async System.Threading.Tasks.Task<DirectoryRoleTemplate> UpdateAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DirectoryRoleTemplate> UpdateAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate, CancellationToken cancellationToken = default)
         {
-			if (directoryRoleTemplateToUpdate.AdditionalData != null)
-			{
-				if (directoryRoleTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					directoryRoleTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryRoleTemplateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (directoryRoleTemplateToUpdate.AdditionalData != null)
-            {
-                if (directoryRoleTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    directoryRoleTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryRoleTemplateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DirectoryRoleTemplate>(directoryRoleTemplateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DirectoryRoleTemplate using PATCH and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToUpdate">The DirectoryRoleTemplate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> UpdateResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DirectoryRoleTemplate>(directoryRoleTemplateToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DirectoryRoleTemplate using PUT.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToUpdate">The DirectoryRoleTemplate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DirectoryRoleTemplate> PutAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DirectoryRoleTemplate>(directoryRoleTemplateToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DirectoryRoleTemplate using PUT and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToUpdate">The DirectoryRoleTemplate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DirectoryRoleTemplate}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> PutResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DirectoryRoleTemplate>(directoryRoleTemplateToUpdate, cancellationToken);
         }
 
         /// <summary>

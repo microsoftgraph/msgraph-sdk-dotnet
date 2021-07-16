@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IosDeviceFeaturesConfiguration using POST.
         /// </summary>
         /// <param name="iosDeviceFeaturesConfigurationToCreate">The IosDeviceFeaturesConfiguration to create.</param>
-        /// <returns>The created IosDeviceFeaturesConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> CreateAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToCreate)
-        {
-            return this.CreateAsync(iosDeviceFeaturesConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosDeviceFeaturesConfiguration using POST.
-        /// </summary>
-        /// <param name="iosDeviceFeaturesConfigurationToCreate">The IosDeviceFeaturesConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosDeviceFeaturesConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> CreateAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> CreateAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IosDeviceFeaturesConfiguration>(iosDeviceFeaturesConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IosDeviceFeaturesConfiguration.
+        /// Creates the specified IosDeviceFeaturesConfiguration using POST and returns a <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="iosDeviceFeaturesConfigurationToCreate">The IosDeviceFeaturesConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosDeviceFeaturesConfiguration>> CreateResponseAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IosDeviceFeaturesConfiguration>(iosDeviceFeaturesConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IosDeviceFeaturesConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IosDeviceFeaturesConfiguration.
+        /// Deletes the specified IosDeviceFeaturesConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IosDeviceFeaturesConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosDeviceFeaturesConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IosDeviceFeaturesConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IosDeviceFeaturesConfiguration using PATCH.
+        /// Gets the specified IosDeviceFeaturesConfiguration and returns a <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object.
         /// </summary>
-        /// <param name="iosDeviceFeaturesConfigurationToUpdate">The IosDeviceFeaturesConfiguration to update.</param>
-        /// <returns>The updated IosDeviceFeaturesConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> UpdateAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosDeviceFeaturesConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(iosDeviceFeaturesConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IosDeviceFeaturesConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosDeviceFeaturesConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> UpdateAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> UpdateAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (iosDeviceFeaturesConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosDeviceFeaturesConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosDeviceFeaturesConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosDeviceFeaturesConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosDeviceFeaturesConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosDeviceFeaturesConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosDeviceFeaturesConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosDeviceFeaturesConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IosDeviceFeaturesConfiguration>(iosDeviceFeaturesConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosDeviceFeaturesConfiguration using PATCH and returns a <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosDeviceFeaturesConfigurationToUpdate">The IosDeviceFeaturesConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosDeviceFeaturesConfiguration>> UpdateResponseAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IosDeviceFeaturesConfiguration>(iosDeviceFeaturesConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified IosDeviceFeaturesConfiguration using PUT.
+        /// </summary>
+        /// <param name="iosDeviceFeaturesConfigurationToUpdate">The IosDeviceFeaturesConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> PutAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IosDeviceFeaturesConfiguration>(iosDeviceFeaturesConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosDeviceFeaturesConfiguration using PUT and returns a <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosDeviceFeaturesConfigurationToUpdate">The IosDeviceFeaturesConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosDeviceFeaturesConfiguration>> PutResponseAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IosDeviceFeaturesConfiguration>(iosDeviceFeaturesConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

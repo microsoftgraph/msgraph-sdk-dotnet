@@ -9,66 +9,64 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsAccrIntRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsAccrIntRequestBody
     {
     
         /// <summary>
         /// Gets or sets Issue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issue", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Issue { get; set; }
+        [JsonPropertyName("issue")]
+        public System.Text.Json.JsonDocument Issue { get; set; }
     
         /// <summary>
         /// Gets or sets FirstInterest.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firstInterest", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken FirstInterest { get; set; }
+        [JsonPropertyName("firstInterest")]
+        public System.Text.Json.JsonDocument FirstInterest { get; set; }
     
         /// <summary>
         /// Gets or sets Settlement.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settlement", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Settlement { get; set; }
+        [JsonPropertyName("settlement")]
+        public System.Text.Json.JsonDocument Settlement { get; set; }
     
         /// <summary>
         /// Gets or sets Rate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rate", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Rate { get; set; }
+        [JsonPropertyName("rate")]
+        public System.Text.Json.JsonDocument Rate { get; set; }
     
         /// <summary>
         /// Gets or sets Par.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "par", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Par { get; set; }
+        [JsonPropertyName("par")]
+        public System.Text.Json.JsonDocument Par { get; set; }
     
         /// <summary>
         /// Gets or sets Frequency.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "frequency", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Frequency { get; set; }
+        [JsonPropertyName("frequency")]
+        public System.Text.Json.JsonDocument Frequency { get; set; }
     
         /// <summary>
         /// Gets or sets Basis.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "basis", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Basis { get; set; }
+        [JsonPropertyName("basis")]
+        public System.Text.Json.JsonDocument Basis { get; set; }
     
         /// <summary>
         /// Gets or sets CalcMethod.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calcMethod", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken CalcMethod { get; set; }
+        [JsonPropertyName("calcMethod")]
+        public System.Text.Json.JsonDocument CalcMethod { get; set; }
     
     }
 }

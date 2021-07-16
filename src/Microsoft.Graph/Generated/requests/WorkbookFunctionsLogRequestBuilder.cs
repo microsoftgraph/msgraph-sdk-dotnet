@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsLogRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken @base)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument @base)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("base"))
             {
-                request.RequestBody.Base = this.GetParameter<Newtonsoft.Json.Linq.JToken>("base");
+                request.RequestBody.Base = this.GetParameter<System.Text.Json.JsonDocument>("base");
             }
 
             return request;

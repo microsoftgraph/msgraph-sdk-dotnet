@@ -12,43 +12,33 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Identity Api Connector.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IdentityApiConnector : Entity
     {
     
-		///<summary>
-		/// The IdentityApiConnector constructor
-		///</summary>
-        public IdentityApiConnector()
-        {
-            this.ODataType = "microsoft.graph.identityApiConnector";
-        }
-	
         /// <summary>
         /// Gets or sets authentication configuration.
         /// The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationConfiguration")]
         public ApiAuthenticationConfigurationBase AuthenticationConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The name of the API connector.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets target url.
         /// The URL of the API endpoint to call.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetUrl")]
         public string TargetUrl { get; set; }
     
     }

@@ -9,35 +9,33 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CallAnswerRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CallAnswerRequestBody
     {
     
         /// <summary>
         /// Gets or sets CallbackUri.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callbackUri", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callbackUri")]
         public string CallbackUri { get; set; }
     
         /// <summary>
         /// Gets or sets MediaConfig.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaConfig", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mediaConfig")]
         public MediaConfig MediaConfig { get; set; }
     
         /// <summary>
         /// Gets or sets AcceptedModalities.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptedModalities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("acceptedModalities")]
         public IEnumerable<Modality> AcceptedModalities { get; set; }
     
     }

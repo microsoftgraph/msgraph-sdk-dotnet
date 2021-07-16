@@ -10,13 +10,12 @@
 
 namespace Microsoft.Graph
 {
-    using System;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum Win32LobAppRuleType.
     /// </summary>
-    [JsonConverter(typeof(EnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum Win32LobAppRuleType
     {
     

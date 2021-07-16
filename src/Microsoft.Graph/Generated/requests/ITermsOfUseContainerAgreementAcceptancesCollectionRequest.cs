@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ITermsOfUseContainerAgreementAcceptancesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AgreementAcceptance to the collection via POST.
-        /// </summary>
-        /// <param name="agreementAcceptance">The AgreementAcceptance to add.</param>
-        /// <returns>The created AgreementAcceptance.</returns>
-        System.Threading.Tasks.Task<AgreementAcceptance> AddAsync(AgreementAcceptance agreementAcceptance);
-
         /// <summary>
         /// Adds the specified AgreementAcceptance to the collection via POST.
         /// </summary>
         /// <param name="agreementAcceptance">The AgreementAcceptance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgreementAcceptance.</returns>
-        System.Threading.Tasks.Task<AgreementAcceptance> AddAsync(AgreementAcceptance agreementAcceptance, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AgreementAcceptance> AddAsync(AgreementAcceptance agreementAcceptance, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AgreementAcceptance to the collection via POST and returns a <see cref="GraphResponse{AgreementAcceptance}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITermsOfUseContainerAgreementAcceptancesCollectionPage> GetAsync();
+        /// <param name="agreementAcceptance">The AgreementAcceptance to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementAcceptance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementAcceptance>> AddResponseAsync(AgreementAcceptance agreementAcceptance, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITermsOfUseContainerAgreementAcceptancesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ITermsOfUseContainerAgreementAcceptancesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TermsOfUseContainerAgreementAcceptancesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsOfUseContainerAgreementAcceptancesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainerAgreementAcceptancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

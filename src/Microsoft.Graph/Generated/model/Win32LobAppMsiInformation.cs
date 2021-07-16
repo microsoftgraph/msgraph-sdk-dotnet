@@ -12,83 +12,74 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Win32LobAppMsiInformation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppMsiInformation>))]
     public partial class Win32LobAppMsiInformation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Win32LobAppMsiInformation"/> class.
-        /// </summary>
-        public Win32LobAppMsiInformation()
-        {
-            this.ODataType = "microsoft.graph.win32LobAppMsiInformation";
-        }
 
         /// <summary>
         /// Gets or sets packageType.
         /// The MSI package type. Possible values are: perMachine, perUser, dualPurpose.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("packageType")]
         public Win32LobAppMsiPackageType? PackageType { get; set; }
     
         /// <summary>
         /// Gets or sets productCode.
         /// The MSI product code.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productCode")]
         public string ProductCode { get; set; }
     
         /// <summary>
         /// Gets or sets productName.
         /// The MSI product name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productName")]
         public string ProductName { get; set; }
     
         /// <summary>
         /// Gets or sets productVersion.
         /// The MSI product version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productVersion")]
         public string ProductVersion { get; set; }
     
         /// <summary>
         /// Gets or sets publisher.
         /// The MSI publisher.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publisher")]
         public string Publisher { get; set; }
     
         /// <summary>
         /// Gets or sets requiresReboot.
         /// Whether the MSI app requires the machine to reboot to complete installation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiresReboot", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requiresReboot")]
         public bool? RequiresReboot { get; set; }
     
         /// <summary>
         /// Gets or sets upgradeCode.
         /// The MSI upgrade code.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("upgradeCode")]
         public string UpgradeCode { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,118 +12,109 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceConfigurationSettingState.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceConfigurationSettingState>))]
     public partial class DeviceConfigurationSettingState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceConfigurationSettingState"/> class.
-        /// </summary>
-        public DeviceConfigurationSettingState()
-        {
-            this.ODataType = "microsoft.graph.deviceConfigurationSettingState";
-        }
 
         /// <summary>
         /// Gets or sets currentValue.
         /// Current value of setting on device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("currentValue")]
         public string CurrentValue { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.
         /// Error code for the setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCode")]
         public Int64? ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets errorDescription.
         /// Error description
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDescription", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorDescription")]
         public string ErrorDescription { get; set; }
     
         /// <summary>
         /// Gets or sets instanceDisplayName.
         /// Name of setting instance that is being reported.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instanceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("instanceDisplayName")]
         public string InstanceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets setting.
         /// The setting that is being reported
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "setting", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("setting")]
         public string Setting { get; set; }
     
         /// <summary>
         /// Gets or sets settingName.
         /// Localized/user friendly setting name that is being reported
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingName")]
         public string SettingName { get; set; }
     
         /// <summary>
         /// Gets or sets sources.
         /// Contributing policies
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sources")]
         public IEnumerable<SettingSource> Sources { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public ComplianceStatus? State { get; set; }
     
         /// <summary>
         /// Gets or sets userEmail.
         /// UserEmail
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userEmail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userEmail")]
         public string UserEmail { get; set; }
     
         /// <summary>
         /// Gets or sets userId.
         /// UserId
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets userName.
         /// UserName
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userName")]
         public string UserName { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.
         /// UserPrincipalName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Base Item Version.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<BaseItemVersion>))]
     public partial class BaseItemVersion : Entity
     {
     
-		///<summary>
-		/// The internal BaseItemVersion constructor
-		///</summary>
+        ///<summary>
+        /// The internal BaseItemVersion constructor
+        ///</summary>
         protected internal BaseItemVersion()
         {
             // Don't allow initialization of abstract entity types
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets last modified by.
         /// Identity of the user which last modified the version. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedBy")]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// Date and time the version was last modified. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets publication.
         /// Indicates the publication status of this particular version. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publication", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publication")]
         public PublicationFacet Publication { get; set; }
     
     }

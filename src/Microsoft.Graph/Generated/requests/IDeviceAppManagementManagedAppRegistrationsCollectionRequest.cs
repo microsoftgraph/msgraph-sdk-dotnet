@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceAppManagementManagedAppRegistrationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ManagedAppRegistration to the collection via POST.
-        /// </summary>
-        /// <param name="managedAppRegistration">The ManagedAppRegistration to add.</param>
-        /// <returns>The created ManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<ManagedAppRegistration> AddAsync(ManagedAppRegistration managedAppRegistration);
-
         /// <summary>
         /// Adds the specified ManagedAppRegistration to the collection via POST.
         /// </summary>
         /// <param name="managedAppRegistration">The ManagedAppRegistration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<ManagedAppRegistration> AddAsync(ManagedAppRegistration managedAppRegistration, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagedAppRegistration> AddAsync(ManagedAppRegistration managedAppRegistration, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ManagedAppRegistration to the collection via POST and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementManagedAppRegistrationsCollectionPage> GetAsync();
+        /// <param name="managedAppRegistration">The ManagedAppRegistration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> AddResponseAsync(ManagedAppRegistration managedAppRegistration, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementManagedAppRegistrationsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceAppManagementManagedAppRegistrationsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementManagedAppRegistrationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementManagedAppRegistrationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementManagedAppRegistrationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

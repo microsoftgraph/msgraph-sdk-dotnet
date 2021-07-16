@@ -12,71 +12,61 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Approval Stage.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ApprovalStage : Entity
     {
     
-		///<summary>
-		/// The ApprovalStage constructor
-		///</summary>
-        public ApprovalStage()
-        {
-            this.ODataType = "microsoft.graph.approvalStage";
-        }
-	
         /// <summary>
         /// Gets or sets assigned to me.
         /// Indicates whether the stage is assigned to the calling user to review. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedToMe", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedToMe")]
         public bool? AssignedToMe { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The label provided by the policy creator to identify an approval stage. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets justification.
         /// The justification associated with the approval stage decision.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("justification")]
         public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed by.
         /// The identifier of the reviewer. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewedBy")]
         public Identity ReviewedBy { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed date time.
         /// The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewedDateTime")]
         public DateTimeOffset? ReviewedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets review result.
         /// The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewResult", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewResult")]
         public string ReviewResult { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public string Status { get; set; }
     
     }

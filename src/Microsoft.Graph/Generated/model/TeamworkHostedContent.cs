@@ -12,36 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Teamwork Hosted Content.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<TeamworkHostedContent>))]
     public partial class TeamworkHostedContent : Entity
     {
     
-		///<summary>
-		/// The TeamworkHostedContent constructor
-		///</summary>
-        public TeamworkHostedContent()
-        {
-            this.ODataType = "microsoft.graph.teamworkHostedContent";
-        }
-	
         /// <summary>
         /// Gets or sets content bytes.
         /// Write only. Bytes for the hosted content (such as images).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentBytes")]
         public byte[] ContentBytes { get; set; }
     
         /// <summary>
         /// Gets or sets content type.
         /// Write only. Content type, such as image/png, image/jpg.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentType")]
         public string ContentType { get; set; }
     
     }

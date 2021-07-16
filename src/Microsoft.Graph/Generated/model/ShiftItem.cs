@@ -12,42 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ShiftItem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ShiftItem>))]
     public partial class ShiftItem : ScheduleEntity
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ShiftItem"/> class.
-        /// </summary>
-        public ShiftItem()
-        {
-            this.ODataType = "microsoft.graph.shiftItem";
-        }
 
         /// <summary>
         /// Gets or sets activities.
         /// An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activities")]
         public IEnumerable<ShiftActivity> Activities { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// The shift label of the shiftItem.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets notes.
         /// The shift notes for the shiftItem.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notes")]
         public string Notes { get; set; }
     
     }

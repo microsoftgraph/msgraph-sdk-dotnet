@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsRank_EqRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsRank_EqRequestBody
     {
     
         /// <summary>
         /// Gets or sets Number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Number { get; set; }
+        [JsonPropertyName("number")]
+        public System.Text.Json.JsonDocument Number { get; set; }
     
         /// <summary>
         /// Gets or sets Ref.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ref", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Ref { get; set; }
+        [JsonPropertyName("ref")]
+        public System.Text.Json.JsonDocument Ref { get; set; }
     
         /// <summary>
         /// Gets or sets Order.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "order", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Order { get; set; }
+        [JsonPropertyName("order")]
+        public System.Text.Json.JsonDocument Order { get; set; }
     
     }
 }

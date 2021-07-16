@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified RemoteAssistancePartner using POST.
         /// </summary>
         /// <param name="remoteAssistancePartnerToCreate">The RemoteAssistancePartner to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RemoteAssistancePartner.</returns>
-        System.Threading.Tasks.Task<RemoteAssistancePartner> CreateAsync(RemoteAssistancePartner remoteAssistancePartnerToCreate);        /// <summary>
-        /// Creates the specified RemoteAssistancePartner using POST.
+        System.Threading.Tasks.Task<RemoteAssistancePartner> CreateAsync(RemoteAssistancePartner remoteAssistancePartnerToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified RemoteAssistancePartner using POST and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object.
         /// </summary>
         /// <param name="remoteAssistancePartnerToCreate">The RemoteAssistancePartner to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created RemoteAssistancePartner.</returns>
-        System.Threading.Tasks.Task<RemoteAssistancePartner> CreateAsync(RemoteAssistancePartner remoteAssistancePartnerToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified RemoteAssistancePartner.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> CreateResponseAsync(RemoteAssistancePartner remoteAssistancePartnerToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified RemoteAssistancePartner.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified RemoteAssistancePartner.
+        /// Deletes the specified RemoteAssistancePartner and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The RemoteAssistancePartner.</returns>
-        System.Threading.Tasks.Task<RemoteAssistancePartner> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified RemoteAssistancePartner.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RemoteAssistancePartner.</returns>
-        System.Threading.Tasks.Task<RemoteAssistancePartner> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<RemoteAssistancePartner> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified RemoteAssistancePartner using PATCH.
+        /// Gets the specified RemoteAssistancePartner and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object.
         /// </summary>
-        /// <param name="remoteAssistancePartnerToUpdate">The RemoteAssistancePartner to update.</param>
-        /// <returns>The updated RemoteAssistancePartner.</returns>
-        System.Threading.Tasks.Task<RemoteAssistancePartner> UpdateAsync(RemoteAssistancePartner remoteAssistancePartnerToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RemoteAssistancePartner using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RemoteAssistancePartner.</returns>
-        System.Threading.Tasks.Task<RemoteAssistancePartner> UpdateAsync(RemoteAssistancePartner remoteAssistancePartnerToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<RemoteAssistancePartner> UpdateAsync(RemoteAssistancePartner remoteAssistancePartnerToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified RemoteAssistancePartner using PATCH and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object.
+        /// </summary>
+        /// <param name="remoteAssistancePartnerToUpdate">The RemoteAssistancePartner to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> UpdateResponseAsync(RemoteAssistancePartner remoteAssistancePartnerToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified RemoteAssistancePartner using PUT.
+        /// </summary>
+        /// <param name="remoteAssistancePartnerToUpdate">The RemoteAssistancePartner object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<RemoteAssistancePartner> PutAsync(RemoteAssistancePartner remoteAssistancePartnerToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified RemoteAssistancePartner using PUT and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object.
+        /// </summary>
+        /// <param name="remoteAssistancePartnerToUpdate">The RemoteAssistancePartner object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{RemoteAssistancePartner}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> PutResponseAsync(RemoteAssistancePartner remoteAssistancePartnerToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -32,12 +32,12 @@ namespace Microsoft.Graph
         public WorkbookFunctionsBeta_DistRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken x,
-            Newtonsoft.Json.Linq.JToken alpha,
-            Newtonsoft.Json.Linq.JToken beta,
-            Newtonsoft.Json.Linq.JToken cumulative,
-            Newtonsoft.Json.Linq.JToken A,
-            Newtonsoft.Json.Linq.JToken B)
+            System.Text.Json.JsonDocument x,
+            System.Text.Json.JsonDocument alpha,
+            System.Text.Json.JsonDocument beta,
+            System.Text.Json.JsonDocument cumulative,
+            System.Text.Json.JsonDocument A,
+            System.Text.Json.JsonDocument B)
             : base(requestUrl, client)
         {
             this.SetParameter("x", x, true);
@@ -60,32 +60,32 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("x"))
             {
-                request.RequestBody.X = this.GetParameter<Newtonsoft.Json.Linq.JToken>("x");
+                request.RequestBody.X = this.GetParameter<System.Text.Json.JsonDocument>("x");
             }
 
             if (this.HasParameter("alpha"))
             {
-                request.RequestBody.Alpha = this.GetParameter<Newtonsoft.Json.Linq.JToken>("alpha");
+                request.RequestBody.Alpha = this.GetParameter<System.Text.Json.JsonDocument>("alpha");
             }
 
             if (this.HasParameter("beta"))
             {
-                request.RequestBody.Beta = this.GetParameter<Newtonsoft.Json.Linq.JToken>("beta");
+                request.RequestBody.Beta = this.GetParameter<System.Text.Json.JsonDocument>("beta");
             }
 
             if (this.HasParameter("cumulative"))
             {
-                request.RequestBody.Cumulative = this.GetParameter<Newtonsoft.Json.Linq.JToken>("cumulative");
+                request.RequestBody.Cumulative = this.GetParameter<System.Text.Json.JsonDocument>("cumulative");
             }
 
             if (this.HasParameter("a"))
             {
-                request.RequestBody.A = this.GetParameter<Newtonsoft.Json.Linq.JToken>("a");
+                request.RequestBody.A = this.GetParameter<System.Text.Json.JsonDocument>("a");
             }
 
             if (this.HasParameter("b"))
             {
-                request.RequestBody.B = this.GetParameter<Newtonsoft.Json.Linq.JToken>("b");
+                request.RequestBody.B = this.GetParameter<System.Text.Json.JsonDocument>("b");
             }
 
             return request;

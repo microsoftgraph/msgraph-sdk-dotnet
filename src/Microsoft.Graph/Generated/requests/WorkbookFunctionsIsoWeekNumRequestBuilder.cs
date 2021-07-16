@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsIsoWeekNumRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken date)
+            System.Text.Json.JsonDocument date)
             : base(requestUrl, client)
         {
             this.SetParameter("date", date, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("date"))
             {
-                request.RequestBody.Date = this.GetParameter<Newtonsoft.Json.Linq.JToken>("date");
+                request.RequestBody.Date = this.GetParameter<System.Text.Json.JsonDocument>("date");
             }
 
             return request;

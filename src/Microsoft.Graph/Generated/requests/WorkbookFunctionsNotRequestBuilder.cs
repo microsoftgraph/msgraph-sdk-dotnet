@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsNotRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken logical)
+            System.Text.Json.JsonDocument logical)
             : base(requestUrl, client)
         {
             this.SetParameter("logical", logical, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("logical"))
             {
-                request.RequestBody.Logical = this.GetParameter<Newtonsoft.Json.Linq.JToken>("logical");
+                request.RequestBody.Logical = this.GetParameter<System.Text.Json.JsonDocument>("logical");
             }
 
             return request;

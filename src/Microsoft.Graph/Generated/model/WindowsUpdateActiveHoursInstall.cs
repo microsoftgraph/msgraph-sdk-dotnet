@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WindowsUpdateActiveHoursInstall.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsUpdateActiveHoursInstall : WindowsUpdateInstallScheduleType
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets activeHoursEnd.
         /// Active Hours End
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeHoursEnd", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activeHoursEnd")]
         public TimeOfDay ActiveHoursEnd { get; set; }
     
         /// <summary>
         /// Gets or sets activeHoursStart.
         /// Active Hours Start
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeHoursStart", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activeHoursStart")]
         public TimeOfDay ActiveHoursStart { get; set; }
     
     }

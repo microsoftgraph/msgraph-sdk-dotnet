@@ -66,7 +66,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookTableColumnAddRequestBuilder"/>.</returns>
         public IWorkbookTableColumnAddRequestBuilder Add(
             Int32? index = null,
-            Newtonsoft.Json.Linq.JToken values = null,
+            System.Text.Json.JsonDocument values = null,
             string name = null)
         {
             return new WorkbookTableColumnAddRequestBuilder(

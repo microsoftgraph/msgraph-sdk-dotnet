@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsCountIfRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken range,
-            Newtonsoft.Json.Linq.JToken criteria)
+            System.Text.Json.JsonDocument range,
+            System.Text.Json.JsonDocument criteria)
             : base(requestUrl, client)
         {
             this.SetParameter("range", range, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("range"))
             {
-                request.RequestBody.Range = this.GetParameter<Newtonsoft.Json.Linq.JToken>("range");
+                request.RequestBody.Range = this.GetParameter<System.Text.Json.JsonDocument>("range");
             }
 
             if (this.HasParameter("criteria"))
             {
-                request.RequestBody.Criteria = this.GetParameter<Newtonsoft.Json.Linq.JToken>("criteria");
+                request.RequestBody.Criteria = this.GetParameter<System.Text.Json.JsonDocument>("criteria");
             }
 
             return request;

@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsPermutRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken numberChosen)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument numberChosen)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("numberChosen"))
             {
-                request.RequestBody.NumberChosen = this.GetParameter<Newtonsoft.Json.Linq.JToken>("numberChosen");
+                request.RequestBody.NumberChosen = this.GetParameter<System.Text.Json.JsonDocument>("numberChosen");
             }
 
             return request;

@@ -12,24 +12,14 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Chat Message Hosted Content.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ChatMessageHostedContent : TeamworkHostedContent
     {
     
-		///<summary>
-		/// The ChatMessageHostedContent constructor
-		///</summary>
-        public ChatMessageHostedContent()
-        {
-            this.ODataType = "microsoft.graph.chatMessageHostedContent";
-        }
-	
     }
 }
 

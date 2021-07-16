@@ -12,57 +12,71 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type B2x Identity User Flow.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class B2xIdentityUserFlow : IdentityUserFlow
     {
     
-		///<summary>
-		/// The B2xIdentityUserFlow constructor
-		///</summary>
-        public B2xIdentityUserFlow()
-        {
-            this.ODataType = "microsoft.graph.b2xIdentityUserFlow";
-        }
-	
         /// <summary>
         /// Gets or sets api connector configuration.
         /// Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apiConnectorConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("apiConnectorConfiguration")]
         public UserFlowApiConnectorConfiguration ApiConnectorConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets identity providers.
         /// The identity providers included in the user flow.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityProviders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityProviders")]
         public IB2xIdentityUserFlowIdentityProvidersCollectionWithReferencesPage IdentityProviders { get; set; }
+
+        /// <summary>
+        /// Gets or sets identityProvidersNextLink.
+        /// </summary>
+        [JsonPropertyName("identityProviders@odata.nextLink")]
+        public string IdentityProvidersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets languages.
         /// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("languages")]
         public IB2xIdentityUserFlowLanguagesCollectionPage Languages { get; set; }
+
+        /// <summary>
+        /// Gets or sets languagesNextLink.
+        /// </summary>
+        [JsonPropertyName("languages@odata.nextLink")]
+        public string LanguagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user attribute assignments.
         /// The user attribute assignments included in the user flow.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userAttributeAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userAttributeAssignments")]
         public IB2xIdentityUserFlowUserAttributeAssignmentsCollectionPage UserAttributeAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets userAttributeAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("userAttributeAssignments@odata.nextLink")]
+        public string UserAttributeAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user flow identity providers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userFlowIdentityProviders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userFlowIdentityProviders")]
         public IB2xIdentityUserFlowUserFlowIdentityProvidersCollectionWithReferencesPage UserFlowIdentityProviders { get; set; }
+
+        /// <summary>
+        /// Gets or sets userFlowIdentityProvidersNextLink.
+        /// </summary>
+        [JsonPropertyName("userFlowIdentityProviders@odata.nextLink")]
+        public string UserFlowIdentityProvidersNextLink { get; set; }
     
     }
 }

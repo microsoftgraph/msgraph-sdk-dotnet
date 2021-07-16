@@ -12,50 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Planner Task Details.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<PlannerTaskDetails>))]
     public partial class PlannerTaskDetails : Entity
     {
     
-		///<summary>
-		/// The PlannerTaskDetails constructor
-		///</summary>
-        public PlannerTaskDetails()
-        {
-            this.ODataType = "microsoft.graph.plannerTaskDetails";
-        }
-	
         /// <summary>
         /// Gets or sets checklist.
         /// The collection of checklist items on the task.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checklist", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("checklist")]
         public PlannerChecklistItems Checklist { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Description of the task
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets preview type.
         /// This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("previewType")]
         public PlannerPreviewType? PreviewType { get; set; }
     
         /// <summary>
         /// Gets or sets references.
         /// The collection of references on the task.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "references", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("references")]
         public PlannerExternalReferences References { get; set; }
     
     }

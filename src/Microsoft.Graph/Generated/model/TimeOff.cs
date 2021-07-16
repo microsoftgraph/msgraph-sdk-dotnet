@@ -12,43 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Time Off.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TimeOff : ChangeTrackedEntity
     {
     
-		///<summary>
-		/// The TimeOff constructor
-		///</summary>
+        ///<summary>
+        /// The TimeOff constructor
+        ///</summary>
         public TimeOff()
         {
             this.ODataType = "microsoft.graph.timeOff";
         }
-	
+
         /// <summary>
         /// Gets or sets draft time off.
         /// The draft version of this timeOff that is viewable by managers. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "draftTimeOff", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("draftTimeOff")]
         public TimeOffItem DraftTimeOff { get; set; }
     
         /// <summary>
         /// Gets or sets shared time off.
         /// The shared version of this timeOff that is viewable by both employees and managers. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedTimeOff", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharedTimeOff")]
         public TimeOffItem SharedTimeOff { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// ID of the user assigned to the timeOff. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
     }

@@ -12,50 +12,49 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Ios Update Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<IosUpdateConfiguration>))]
     public partial class IosUpdateConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The IosUpdateConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The IosUpdateConfiguration constructor
+        ///</summary>
         public IosUpdateConfiguration()
         {
             this.ODataType = "microsoft.graph.iosUpdateConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets active hours end.
         /// Active Hours End (active hours mean the time window when updates install should not happen)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeHoursEnd", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activeHoursEnd")]
         public TimeOfDay ActiveHoursEnd { get; set; }
     
         /// <summary>
         /// Gets or sets active hours start.
         /// Active Hours Start (active hours mean the time window when updates install should not happen)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeHoursStart", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activeHoursStart")]
         public TimeOfDay ActiveHoursStart { get; set; }
     
         /// <summary>
         /// Gets or sets scheduled install days.
         /// Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledInstallDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scheduledInstallDays")]
         public IEnumerable<DayOfWeek> ScheduledInstallDays { get; set; }
     
         /// <summary>
         /// Gets or sets utc time offset in minutes.
         /// UTC Time Offset indicated in minutes
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "utcTimeOffsetInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("utcTimeOffsetInMinutes")]
         public Int32? UtcTimeOffsetInMinutes { get; set; }
     
     }

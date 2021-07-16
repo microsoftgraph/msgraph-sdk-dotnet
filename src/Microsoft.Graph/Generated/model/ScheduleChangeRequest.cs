@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Schedule Change Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ScheduleChangeRequestObject>))]
     public partial class ScheduleChangeRequestObject : ChangeTrackedEntity
     {
     
-		///<summary>
-		/// The internal ScheduleChangeRequest constructor
-		///</summary>
+        ///<summary>
+        /// The internal ScheduleChangeRequest constructor
+        ///</summary>
         protected internal ScheduleChangeRequestObject()
         {
             // Don't allow initialization of abstract entity types
@@ -33,49 +32,49 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets assigned to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedTo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedTo")]
         public ScheduleChangeRequestActor? AssignedTo { get; set; }
     
         /// <summary>
         /// Gets or sets manager action date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managerActionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managerActionDateTime")]
         public DateTimeOffset? ManagerActionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets manager action message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managerActionMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managerActionMessage")]
         public string ManagerActionMessage { get; set; }
     
         /// <summary>
         /// Gets or sets manager user id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managerUserId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managerUserId")]
         public string ManagerUserId { get; set; }
     
         /// <summary>
         /// Gets or sets sender date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "senderDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("senderDateTime")]
         public DateTimeOffset? SenderDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets sender message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "senderMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("senderMessage")]
         public string SenderMessage { get; set; }
     
         /// <summary>
         /// Gets or sets sender user id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "senderUserId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("senderUserId")]
         public string SenderUserId { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public ScheduleChangeState? State { get; set; }
     
     }

@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedEBookAssignRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedEBookAssignRequestBody
     {
     
         /// <summary>
         /// Gets or sets ManagedEBookAssignments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBookAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedEBookAssignments")]
         public IEnumerable<ManagedEBookAssignment> ManagedEBookAssignments { get; set; }
     
     }

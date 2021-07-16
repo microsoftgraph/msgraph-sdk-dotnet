@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceAppManagement using POST.
         /// </summary>
         /// <param name="deviceAppManagementToCreate">The DeviceAppManagement to create.</param>
-        /// <returns>The created DeviceAppManagement.</returns>
-        public System.Threading.Tasks.Task<DeviceAppManagement> CreateAsync(DeviceAppManagement deviceAppManagementToCreate)
-        {
-            return this.CreateAsync(deviceAppManagementToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceAppManagement using POST.
-        /// </summary>
-        /// <param name="deviceAppManagementToCreate">The DeviceAppManagement to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceAppManagement.</returns>
-        public async System.Threading.Tasks.Task<DeviceAppManagement> CreateAsync(DeviceAppManagement deviceAppManagementToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceAppManagement> CreateAsync(DeviceAppManagement deviceAppManagementToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceAppManagement>(deviceAppManagementToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceAppManagement.
+        /// Creates the specified DeviceAppManagement using POST and returns a <see cref="GraphResponse{DeviceAppManagement}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceAppManagementToCreate">The DeviceAppManagement to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagement>> CreateResponseAsync(DeviceAppManagement deviceAppManagementToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceAppManagement>(deviceAppManagementToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceAppManagement>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceAppManagement.
+        /// Deletes the specified DeviceAppManagement and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceAppManagement.</returns>
-        public System.Threading.Tasks.Task<DeviceAppManagement> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceAppManagement.</returns>
-        public async System.Threading.Tasks.Task<DeviceAppManagement> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceAppManagement> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceAppManagement>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceAppManagement using PATCH.
+        /// Gets the specified DeviceAppManagement and returns a <see cref="GraphResponse{DeviceAppManagement}"/> object.
         /// </summary>
-        /// <param name="deviceAppManagementToUpdate">The DeviceAppManagement to update.</param>
-        /// <returns>The updated DeviceAppManagement.</returns>
-        public System.Threading.Tasks.Task<DeviceAppManagement> UpdateAsync(DeviceAppManagement deviceAppManagementToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagement>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceAppManagementToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceAppManagement>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceAppManagement.</returns>
-        public async System.Threading.Tasks.Task<DeviceAppManagement> UpdateAsync(DeviceAppManagement deviceAppManagementToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceAppManagement> UpdateAsync(DeviceAppManagement deviceAppManagementToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceAppManagementToUpdate.AdditionalData != null)
-			{
-				if (deviceAppManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceAppManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAppManagementToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceAppManagementToUpdate.AdditionalData != null)
-            {
-                if (deviceAppManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceAppManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAppManagementToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceAppManagement>(deviceAppManagementToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceAppManagement using PATCH and returns a <see cref="GraphResponse{DeviceAppManagement}"/> object.
+        /// </summary>
+        /// <param name="deviceAppManagementToUpdate">The DeviceAppManagement to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagement>> UpdateResponseAsync(DeviceAppManagement deviceAppManagementToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceAppManagement>(deviceAppManagementToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceAppManagement using PUT.
+        /// </summary>
+        /// <param name="deviceAppManagementToUpdate">The DeviceAppManagement object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceAppManagement> PutAsync(DeviceAppManagement deviceAppManagementToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceAppManagement>(deviceAppManagementToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceAppManagement using PUT and returns a <see cref="GraphResponse{DeviceAppManagement}"/> object.
+        /// </summary>
+        /// <param name="deviceAppManagementToUpdate">The DeviceAppManagement object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceAppManagement}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagement>> PutResponseAsync(DeviceAppManagement deviceAppManagementToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceAppManagement>(deviceAppManagementToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,231 +244,91 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceAppManagement deviceAppManagementToInitialize)
         {
 
-            if (deviceAppManagementToInitialize != null && deviceAppManagementToInitialize.AdditionalData != null)
+            if (deviceAppManagementToInitialize != null)
             {
-
                 if (deviceAppManagementToInitialize.ManagedEBooks != null && deviceAppManagementToInitialize.ManagedEBooks.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.ManagedEBooks.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.ManagedEBooksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.ManagedEBooks.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedEBooks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.ManagedEBooks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.MobileAppCategories != null && deviceAppManagementToInitialize.MobileAppCategories.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.MobileAppCategories.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.MobileAppCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.MobileAppCategories.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("mobileAppCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.MobileAppCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.MobileAppConfigurations != null && deviceAppManagementToInitialize.MobileAppConfigurations.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.MobileAppConfigurations.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.MobileAppConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.MobileAppConfigurations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("mobileAppConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.MobileAppConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.MobileApps != null && deviceAppManagementToInitialize.MobileApps.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.MobileApps.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.MobileAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.MobileApps.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("mobileApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.MobileApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.VppTokens != null && deviceAppManagementToInitialize.VppTokens.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.VppTokens.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.VppTokensNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.VppTokens.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("vppTokens@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.VppTokens.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.AndroidManagedAppProtections != null && deviceAppManagementToInitialize.AndroidManagedAppProtections.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.AndroidManagedAppProtections.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.AndroidManagedAppProtectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.AndroidManagedAppProtections.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("androidManagedAppProtections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.AndroidManagedAppProtections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.DefaultManagedAppProtections != null && deviceAppManagementToInitialize.DefaultManagedAppProtections.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.DefaultManagedAppProtections.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.DefaultManagedAppProtectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.DefaultManagedAppProtections.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("defaultManagedAppProtections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.DefaultManagedAppProtections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.IosManagedAppProtections != null && deviceAppManagementToInitialize.IosManagedAppProtections.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.IosManagedAppProtections.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.IosManagedAppProtectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.IosManagedAppProtections.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("iosManagedAppProtections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.IosManagedAppProtections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.ManagedAppPolicies != null && deviceAppManagementToInitialize.ManagedAppPolicies.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.ManagedAppPolicies.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.ManagedAppPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.ManagedAppPolicies.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedAppPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.ManagedAppPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.ManagedAppRegistrations != null && deviceAppManagementToInitialize.ManagedAppRegistrations.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.ManagedAppRegistrations.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.ManagedAppRegistrationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.ManagedAppRegistrations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedAppRegistrations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.ManagedAppRegistrations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.ManagedAppStatuses != null && deviceAppManagementToInitialize.ManagedAppStatuses.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.ManagedAppStatuses.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.ManagedAppStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.ManagedAppStatuses.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedAppStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.ManagedAppStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies != null && deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.MdmWindowsInformationProtectionPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("mdmWindowsInformationProtectionPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.MdmWindowsInformationProtectionPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.TargetedManagedAppConfigurations != null && deviceAppManagementToInitialize.TargetedManagedAppConfigurations.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.TargetedManagedAppConfigurations.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.TargetedManagedAppConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.TargetedManagedAppConfigurations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("targetedManagedAppConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.TargetedManagedAppConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceAppManagementToInitialize.WindowsInformationProtectionPolicies != null && deviceAppManagementToInitialize.WindowsInformationProtectionPolicies.CurrentPage != null)
                 {
+                    deviceAppManagementToInitialize.WindowsInformationProtectionPolicies.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.WindowsInformationProtectionPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.WindowsInformationProtectionPolicies.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceAppManagementToInitialize.WindowsInformationProtectionPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

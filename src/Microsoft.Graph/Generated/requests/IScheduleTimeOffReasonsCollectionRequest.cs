@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IScheduleTimeOffReasonsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified TimeOffReason to the collection via POST.
-        /// </summary>
-        /// <param name="timeOffReason">The TimeOffReason to add.</param>
-        /// <returns>The created TimeOffReason.</returns>
-        System.Threading.Tasks.Task<TimeOffReason> AddAsync(TimeOffReason timeOffReason);
-
         /// <summary>
         /// Adds the specified TimeOffReason to the collection via POST.
         /// </summary>
         /// <param name="timeOffReason">The TimeOffReason to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TimeOffReason.</returns>
-        System.Threading.Tasks.Task<TimeOffReason> AddAsync(TimeOffReason timeOffReason, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TimeOffReason> AddAsync(TimeOffReason timeOffReason, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified TimeOffReason to the collection via POST and returns a <see cref="GraphResponse{TimeOffReason}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IScheduleTimeOffReasonsCollectionPage> GetAsync();
+        /// <param name="timeOffReason">The TimeOffReason to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TimeOffReason}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TimeOffReason>> AddResponseAsync(TimeOffReason timeOffReason, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IScheduleTimeOffReasonsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IScheduleTimeOffReasonsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleTimeOffReasonsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScheduleTimeOffReasonsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScheduleTimeOffReasonsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

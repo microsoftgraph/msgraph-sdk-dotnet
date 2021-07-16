@@ -12,50 +12,49 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Edition Upgrade Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<EditionUpgradeConfiguration>))]
     public partial class EditionUpgradeConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The EditionUpgradeConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The EditionUpgradeConfiguration constructor
+        ///</summary>
         public EditionUpgradeConfiguration()
         {
             this.ODataType = "microsoft.graph.editionUpgradeConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets license.
         /// Edition Upgrade License File Content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "license", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("license")]
         public string License { get; set; }
     
         /// <summary>
         /// Gets or sets license type.
         /// Edition Upgrade License Type. Possible values are: productKey, licenseFile, notConfigured.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("licenseType")]
         public EditionUpgradeLicenseType? LicenseType { get; set; }
     
         /// <summary>
         /// Gets or sets product key.
         /// Edition Upgrade Product Key.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productKey")]
         public string ProductKey { get; set; }
     
         /// <summary>
         /// Gets or sets target edition.
         /// Edition Upgrade Target Edition. Possible values are: windows10Enterprise, windows10EnterpriseN, windows10Education, windows10EducationN, windows10MobileEnterprise, windows10HolographicEnterprise, windows10Professional, windows10ProfessionalN, windows10ProfessionalEducation, windows10ProfessionalEducationN, windows10ProfessionalWorkstation, windows10ProfessionalWorkstationN, notConfigured, windows10Home, windows10HomeChina, windows10HomeN, windows10HomeSingleLanguage, windows10Mobile, windows10IoTCore, windows10IoTCoreCommercial.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetEdition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetEdition")]
         public Windows10EditionType? TargetEdition { get; set; }
     
     }

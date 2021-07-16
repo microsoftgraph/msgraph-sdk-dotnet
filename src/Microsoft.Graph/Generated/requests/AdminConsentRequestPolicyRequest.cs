@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AdminConsentRequestPolicy using POST.
         /// </summary>
         /// <param name="adminConsentRequestPolicyToCreate">The AdminConsentRequestPolicy to create.</param>
-        /// <returns>The created AdminConsentRequestPolicy.</returns>
-        public System.Threading.Tasks.Task<AdminConsentRequestPolicy> CreateAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToCreate)
-        {
-            return this.CreateAsync(adminConsentRequestPolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AdminConsentRequestPolicy using POST.
-        /// </summary>
-        /// <param name="adminConsentRequestPolicyToCreate">The AdminConsentRequestPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AdminConsentRequestPolicy.</returns>
-        public async System.Threading.Tasks.Task<AdminConsentRequestPolicy> CreateAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AdminConsentRequestPolicy> CreateAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AdminConsentRequestPolicy>(adminConsentRequestPolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AdminConsentRequestPolicy.
+        /// Creates the specified AdminConsentRequestPolicy using POST and returns a <see cref="GraphResponse{AdminConsentRequestPolicy}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="adminConsentRequestPolicyToCreate">The AdminConsentRequestPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdminConsentRequestPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdminConsentRequestPolicy>> CreateResponseAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AdminConsentRequestPolicy>(adminConsentRequestPolicyToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AdminConsentRequestPolicy>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AdminConsentRequestPolicy.
+        /// Deletes the specified AdminConsentRequestPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AdminConsentRequestPolicy.</returns>
-        public System.Threading.Tasks.Task<AdminConsentRequestPolicy> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AdminConsentRequestPolicy.</returns>
-        public async System.Threading.Tasks.Task<AdminConsentRequestPolicy> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AdminConsentRequestPolicy> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AdminConsentRequestPolicy>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AdminConsentRequestPolicy using PATCH.
+        /// Gets the specified AdminConsentRequestPolicy and returns a <see cref="GraphResponse{AdminConsentRequestPolicy}"/> object.
         /// </summary>
-        /// <param name="adminConsentRequestPolicyToUpdate">The AdminConsentRequestPolicy to update.</param>
-        /// <returns>The updated AdminConsentRequestPolicy.</returns>
-        public System.Threading.Tasks.Task<AdminConsentRequestPolicy> UpdateAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdminConsentRequestPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdminConsentRequestPolicy>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(adminConsentRequestPolicyToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AdminConsentRequestPolicy>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AdminConsentRequestPolicy.</returns>
-        public async System.Threading.Tasks.Task<AdminConsentRequestPolicy> UpdateAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AdminConsentRequestPolicy> UpdateAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToUpdate, CancellationToken cancellationToken = default)
         {
-			if (adminConsentRequestPolicyToUpdate.AdditionalData != null)
-			{
-				if (adminConsentRequestPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					adminConsentRequestPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, adminConsentRequestPolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (adminConsentRequestPolicyToUpdate.AdditionalData != null)
-            {
-                if (adminConsentRequestPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    adminConsentRequestPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, adminConsentRequestPolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AdminConsentRequestPolicy>(adminConsentRequestPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AdminConsentRequestPolicy using PATCH and returns a <see cref="GraphResponse{AdminConsentRequestPolicy}"/> object.
+        /// </summary>
+        /// <param name="adminConsentRequestPolicyToUpdate">The AdminConsentRequestPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AdminConsentRequestPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdminConsentRequestPolicy>> UpdateResponseAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AdminConsentRequestPolicy>(adminConsentRequestPolicyToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AdminConsentRequestPolicy using PUT.
+        /// </summary>
+        /// <param name="adminConsentRequestPolicyToUpdate">The AdminConsentRequestPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AdminConsentRequestPolicy> PutAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AdminConsentRequestPolicy>(adminConsentRequestPolicyToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AdminConsentRequestPolicy using PUT and returns a <see cref="GraphResponse{AdminConsentRequestPolicy}"/> object.
+        /// </summary>
+        /// <param name="adminConsentRequestPolicyToUpdate">The AdminConsentRequestPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AdminConsentRequestPolicy}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdminConsentRequestPolicy>> PutResponseAsync(AdminConsentRequestPolicy adminConsentRequestPolicyToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AdminConsentRequestPolicy>(adminConsentRequestPolicyToUpdate, cancellationToken);
         }
 
         /// <summary>

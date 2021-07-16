@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkingHours.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<WorkingHours>))]
     public partial class WorkingHours
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkingHours"/> class.
-        /// </summary>
-        public WorkingHours()
-        {
-            this.ODataType = "microsoft.graph.workingHours";
-        }
 
         /// <summary>
         /// Gets or sets daysOfWeek.
         /// The days of the week on which the user works.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "daysOfWeek", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("daysOfWeek")]
         public IEnumerable<DayOfWeek> DaysOfWeek { get; set; }
     
         /// <summary>
         /// Gets or sets endTime.
         /// The time of the day that the user stops working.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endTime")]
         public TimeOfDay EndTime { get; set; }
     
         /// <summary>
         /// Gets or sets startTime.
         /// The time of the day that the user starts working.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startTime")]
         public TimeOfDay StartTime { get; set; }
     
         /// <summary>
         /// Gets or sets timeZone.
         /// The time zone to which the working hours apply.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeZone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("timeZone")]
         public TimeZoneBase TimeZone { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

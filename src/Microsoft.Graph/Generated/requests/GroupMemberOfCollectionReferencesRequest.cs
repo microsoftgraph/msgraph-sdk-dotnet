@@ -32,27 +32,16 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DirectoryObject to the collection via POST.
-        /// </summary>
-        /// <param name="directoryObject">The DirectoryObject to add.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(DirectoryObject directoryObject)
-        {
-            return this.AddAsync(directoryObject, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DirectoryObject to the collection via POST.
         /// </summary>
         /// <param name="directoryObject">The DirectoryObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(DirectoryObject directoryObject, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AddAsync(DirectoryObject directoryObject, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
 
             if (string.IsNullOrEmpty(directoryObject.Id))
             {
@@ -61,6 +50,26 @@ namespace Microsoft.Graph
 
             var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/directoryObjects/{1}", this.Client.BaseUrl, directoryObject.Id) };
             return this.SendAsync(requestBody, cancellationToken);
+        }
+
+        /// <summary>
+        /// Adds the specified DirectoryObject to the collection via POST and returns a <see cref="GraphResponse{DirectoryObject}"/> object of the request.
+        /// </summary>
+        /// <param name="directoryObject">The DirectoryObject to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(DirectoryObject directoryObject, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+
+            if (string.IsNullOrEmpty(directoryObject.Id))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/directoryObjects/{1}", this.Client.BaseUrl, directoryObject.Id) };
+            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
         }
 
     }

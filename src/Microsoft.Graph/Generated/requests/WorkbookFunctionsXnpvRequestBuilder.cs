@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsXnpvRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken rate,
-            Newtonsoft.Json.Linq.JToken values,
-            Newtonsoft.Json.Linq.JToken dates)
+            System.Text.Json.JsonDocument rate,
+            System.Text.Json.JsonDocument values,
+            System.Text.Json.JsonDocument dates)
             : base(requestUrl, client)
         {
             this.SetParameter("rate", rate, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("rate"))
             {
-                request.RequestBody.Rate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("rate");
+                request.RequestBody.Rate = this.GetParameter<System.Text.Json.JsonDocument>("rate");
             }
 
             if (this.HasParameter("values"))
             {
-                request.RequestBody.Values = this.GetParameter<Newtonsoft.Json.Linq.JToken>("values");
+                request.RequestBody.Values = this.GetParameter<System.Text.Json.JsonDocument>("values");
             }
 
             if (this.HasParameter("dates"))
             {
-                request.RequestBody.Dates = this.GetParameter<Newtonsoft.Json.Linq.JToken>("dates");
+                request.RequestBody.Dates = this.GetParameter<System.Text.Json.JsonDocument>("dates");
             }
 
             return request;

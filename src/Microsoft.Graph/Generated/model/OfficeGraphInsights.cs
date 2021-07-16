@@ -12,44 +12,52 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Office Graph Insights.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OfficeGraphInsights : Entity
     {
     
-		///<summary>
-		/// The OfficeGraphInsights constructor
-		///</summary>
-        public OfficeGraphInsights()
-        {
-            this.ODataType = "microsoft.graph.officeGraphInsights";
-        }
-	
         /// <summary>
         /// Gets or sets shared.
         /// Access this property from the derived type itemInsights.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shared", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("shared")]
         public IOfficeGraphInsightsSharedCollectionPage Shared { get; set; }
+
+        /// <summary>
+        /// Gets or sets sharedNextLink.
+        /// </summary>
+        [JsonPropertyName("shared@odata.nextLink")]
+        public string SharedNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets trending.
         /// Access this property from the derived type itemInsights.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trending", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("trending")]
         public IOfficeGraphInsightsTrendingCollectionPage Trending { get; set; }
+
+        /// <summary>
+        /// Gets or sets trendingNextLink.
+        /// </summary>
+        [JsonPropertyName("trending@odata.nextLink")]
+        public string TrendingNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets used.
         /// Access this property from the derived type itemInsights.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "used", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("used")]
         public IOfficeGraphInsightsUsedCollectionPage Used { get; set; }
+
+        /// <summary>
+        /// Gets or sets usedNextLink.
+        /// </summary>
+        [JsonPropertyName("used@odata.nextLink")]
+        public string UsedNextLink { get; set; }
     
     }
 }

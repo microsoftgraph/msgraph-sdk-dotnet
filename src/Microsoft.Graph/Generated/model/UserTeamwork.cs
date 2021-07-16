@@ -12,30 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Teamwork.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserTeamwork : Entity
     {
     
-		///<summary>
-		/// The UserTeamwork constructor
-		///</summary>
-        public UserTeamwork()
-        {
-            this.ODataType = "microsoft.graph.userTeamwork";
-        }
-	
         /// <summary>
         /// Gets or sets installed apps.
         /// The apps installed in the personal scope of this user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installedApps")]
         public IUserTeamworkInstalledAppsCollectionPage InstalledApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets installedAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("installedApps@odata.nextLink")]
+        public string InstalledAppsNextLink { get; set; }
     
     }
 }

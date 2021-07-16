@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Thumbnail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Thumbnail>))]
     public partial class Thumbnail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Thumbnail"/> class.
-        /// </summary>
-        public Thumbnail()
-        {
-            this.ODataType = "microsoft.graph.thumbnail";
-        }
 
         /// <summary>
         /// Gets or sets content.
         /// The content stream for the thumbnail.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("content")]
         public Stream Content { get; set; }
     
         /// <summary>
         /// Gets or sets height.
         /// The height of the thumbnail, in pixels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "height", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("height")]
         public Int32? Height { get; set; }
     
         /// <summary>
         /// Gets or sets sourceItemId.
         /// The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceItemId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceItemId")]
         public string SourceItemId { get; set; }
     
         /// <summary>
         /// Gets or sets url.
         /// The URL used to fetch the thumbnail content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("url")]
         public string Url { get; set; }
     
         /// <summary>
         /// Gets or sets width.
         /// The width of the thumbnail, in pixels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "width", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("width")]
         public Int32? Width { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -8,7 +8,7 @@ namespace Microsoft.Graph
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Represents the checklist on a <see cref="PlannerTaskDetails"/>. 
@@ -20,6 +20,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="checklistItemId">The id of the checklit item.</param>
         /// <returns>The checklist item for the given checklist item id.</returns>
+        [JsonIgnore]
         public PlannerChecklistItem this[string checklistItemId]
         {
             get
@@ -29,10 +30,7 @@ namespace Microsoft.Graph
                     throw new ArgumentNullException(nameof(checklistItemId));
                 }
 
-                if (this.AdditionalData is null)
-                {
-                    this.AdditionalData = new Dictionary<string, object>();
-                }
+                EnsureDeserializedChecklist();
 
                 if (!this.AdditionalData.TryGetValue(checklistItemId, out object checklistItemObject))
                 {
@@ -91,10 +89,7 @@ namespace Microsoft.Graph
         /// <returns>Enumeration of checklist item id, checklist item pairs.</returns>
         public IEnumerator<KeyValuePair<string, PlannerChecklistItem>> GetEnumerator()
         {
-            if (this.AdditionalData is null)
-            {
-                this.AdditionalData = new Dictionary<string, object>();
-            }
+            EnsureDeserializedChecklist();
 
             return this.AdditionalData
                 .Where(kvp => kvp.Value is PlannerChecklistItem)
@@ -110,14 +105,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Ensures the ChecklistItem information is deserialized into <see cref="PlannerChecklistItem"/> objects.
         /// </summary>
-        /// <param name="context">Serialization context. This parameter is ignored.</param>
-        [OnDeserialized]
-        internal void DeserializeChecklist(StreamingContext context)
+        internal void EnsureDeserializedChecklist()
         {
-            if (this.AdditionalData is null)
-            {
-                this.AdditionalData = new Dictionary<string, object>();
-            }
+            this.AdditionalData ??= new Dictionary<string, object>();
 
             this.AdditionalData.ConvertComplexTypeProperties<PlannerChecklistItem>(PlannerChecklistItem.ODataTypeName);
         }

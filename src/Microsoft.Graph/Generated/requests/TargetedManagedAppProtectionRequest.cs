@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified TargetedManagedAppProtection using POST.
         /// </summary>
         /// <param name="targetedManagedAppProtectionToCreate">The TargetedManagedAppProtection to create.</param>
-        /// <returns>The created TargetedManagedAppProtection.</returns>
-        public System.Threading.Tasks.Task<TargetedManagedAppProtection> CreateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate)
-        {
-            return this.CreateAsync(targetedManagedAppProtectionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TargetedManagedAppProtection using POST.
-        /// </summary>
-        /// <param name="targetedManagedAppProtectionToCreate">The TargetedManagedAppProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TargetedManagedAppProtection.</returns>
-        public async System.Threading.Tasks.Task<TargetedManagedAppProtection> CreateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TargetedManagedAppProtection> CreateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<TargetedManagedAppProtection>(targetedManagedAppProtectionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified TargetedManagedAppProtection.
+        /// Creates the specified TargetedManagedAppProtection using POST and returns a <see cref="GraphResponse{TargetedManagedAppProtection}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="targetedManagedAppProtectionToCreate">The TargetedManagedAppProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtection>> CreateResponseAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<TargetedManagedAppProtection>(targetedManagedAppProtectionToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<TargetedManagedAppProtection>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified TargetedManagedAppProtection.
+        /// Deletes the specified TargetedManagedAppProtection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TargetedManagedAppProtection.</returns>
-        public System.Threading.Tasks.Task<TargetedManagedAppProtection> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TargetedManagedAppProtection.</returns>
-        public async System.Threading.Tasks.Task<TargetedManagedAppProtection> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TargetedManagedAppProtection> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<TargetedManagedAppProtection>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified TargetedManagedAppProtection using PATCH.
+        /// Gets the specified TargetedManagedAppProtection and returns a <see cref="GraphResponse{TargetedManagedAppProtection}"/> object.
         /// </summary>
-        /// <param name="targetedManagedAppProtectionToUpdate">The TargetedManagedAppProtection to update.</param>
-        /// <returns>The updated TargetedManagedAppProtection.</returns>
-        public System.Threading.Tasks.Task<TargetedManagedAppProtection> UpdateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtection>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(targetedManagedAppProtectionToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<TargetedManagedAppProtection>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TargetedManagedAppProtection.</returns>
-        public async System.Threading.Tasks.Task<TargetedManagedAppProtection> UpdateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TargetedManagedAppProtection> UpdateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToUpdate, CancellationToken cancellationToken = default)
         {
-			if (targetedManagedAppProtectionToUpdate.AdditionalData != null)
-			{
-				if (targetedManagedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					targetedManagedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, targetedManagedAppProtectionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (targetedManagedAppProtectionToUpdate.AdditionalData != null)
-            {
-                if (targetedManagedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    targetedManagedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, targetedManagedAppProtectionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<TargetedManagedAppProtection>(targetedManagedAppProtectionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TargetedManagedAppProtection using PATCH and returns a <see cref="GraphResponse{TargetedManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="targetedManagedAppProtectionToUpdate">The TargetedManagedAppProtection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtection>> UpdateResponseAsync(TargetedManagedAppProtection targetedManagedAppProtectionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<TargetedManagedAppProtection>(targetedManagedAppProtectionToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified TargetedManagedAppProtection using PUT.
+        /// </summary>
+        /// <param name="targetedManagedAppProtectionToUpdate">The TargetedManagedAppProtection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<TargetedManagedAppProtection> PutAsync(TargetedManagedAppProtection targetedManagedAppProtectionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<TargetedManagedAppProtection>(targetedManagedAppProtectionToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TargetedManagedAppProtection using PUT and returns a <see cref="GraphResponse{TargetedManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="targetedManagedAppProtectionToUpdate">The TargetedManagedAppProtection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{TargetedManagedAppProtection}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtection>> PutResponseAsync(TargetedManagedAppProtection targetedManagedAppProtectionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<TargetedManagedAppProtection>(targetedManagedAppProtectionToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TargetedManagedAppProtection targetedManagedAppProtectionToInitialize)
         {
 
-            if (targetedManagedAppProtectionToInitialize != null && targetedManagedAppProtectionToInitialize.AdditionalData != null)
+            if (targetedManagedAppProtectionToInitialize != null)
             {
-
                 if (targetedManagedAppProtectionToInitialize.Assignments != null && targetedManagedAppProtectionToInitialize.Assignments.CurrentPage != null)
                 {
+                    targetedManagedAppProtectionToInitialize.Assignments.InitializeNextPageRequest(this.Client, targetedManagedAppProtectionToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     targetedManagedAppProtectionToInitialize.Assignments.AdditionalData = targetedManagedAppProtectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    targetedManagedAppProtectionToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        targetedManagedAppProtectionToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

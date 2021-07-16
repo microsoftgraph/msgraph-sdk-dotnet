@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified EducationUser using POST.
         /// </summary>
         /// <param name="educationUserToCreate">The EducationUser to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationUser.</returns>
-        System.Threading.Tasks.Task<EducationUser> CreateAsync(EducationUser educationUserToCreate);        /// <summary>
-        /// Creates the specified EducationUser using POST.
+        System.Threading.Tasks.Task<EducationUser> CreateAsync(EducationUser educationUserToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified EducationUser using POST and returns a <see cref="GraphResponse{EducationUser}"/> object.
         /// </summary>
         /// <param name="educationUserToCreate">The EducationUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created EducationUser.</returns>
-        System.Threading.Tasks.Task<EducationUser> CreateAsync(EducationUser educationUserToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified EducationUser.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{EducationUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationUser>> CreateResponseAsync(EducationUser educationUserToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified EducationUser.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified EducationUser.
+        /// Deletes the specified EducationUser and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EducationUser.</returns>
-        System.Threading.Tasks.Task<EducationUser> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified EducationUser.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationUser.</returns>
-        System.Threading.Tasks.Task<EducationUser> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EducationUser> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified EducationUser using PATCH.
+        /// Gets the specified EducationUser and returns a <see cref="GraphResponse{EducationUser}"/> object.
         /// </summary>
-        /// <param name="educationUserToUpdate">The EducationUser to update.</param>
-        /// <returns>The updated EducationUser.</returns>
-        System.Threading.Tasks.Task<EducationUser> UpdateAsync(EducationUser educationUserToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationUser>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified EducationUser using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationUser.</returns>
-        System.Threading.Tasks.Task<EducationUser> UpdateAsync(EducationUser educationUserToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EducationUser> UpdateAsync(EducationUser educationUserToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified EducationUser using PATCH and returns a <see cref="GraphResponse{EducationUser}"/> object.
+        /// </summary>
+        /// <param name="educationUserToUpdate">The EducationUser to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationUser>> UpdateResponseAsync(EducationUser educationUserToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified EducationUser using PUT.
+        /// </summary>
+        /// <param name="educationUserToUpdate">The EducationUser object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EducationUser> PutAsync(EducationUser educationUserToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified EducationUser using PUT and returns a <see cref="GraphResponse{EducationUser}"/> object.
+        /// </summary>
+        /// <param name="educationUserToUpdate">The EducationUser object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EducationUser}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationUser>> PutResponseAsync(EducationUser educationUserToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

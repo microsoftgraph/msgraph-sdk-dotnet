@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CallRejectRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CallRejectRequestBody
     {
     
         /// <summary>
         /// Gets or sets Reason.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reason")]
         public RejectReason? Reason { get; set; }
     
         /// <summary>
         /// Gets or sets CallbackUri.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callbackUri", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callbackUri")]
         public string CallbackUri { get; set; }
     
     }

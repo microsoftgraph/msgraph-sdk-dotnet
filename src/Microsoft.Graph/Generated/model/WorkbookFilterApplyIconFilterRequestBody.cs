@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFilterApplyIconFilterRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFilterApplyIconFilterRequestBody
     {
     
         /// <summary>
         /// Gets or sets Icon.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "icon", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("icon")]
         public WorkbookIcon Icon { get; set; }
     
     }

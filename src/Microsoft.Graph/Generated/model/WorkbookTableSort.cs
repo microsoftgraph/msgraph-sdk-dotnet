@@ -12,43 +12,33 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Table Sort.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookTableSort : Entity
     {
     
-		///<summary>
-		/// The WorkbookTableSort constructor
-		///</summary>
-        public WorkbookTableSort()
-        {
-            this.ODataType = "microsoft.graph.workbookTableSort";
-        }
-	
         /// <summary>
         /// Gets or sets fields.
         /// Represents the current conditions used to last sort the table. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fields", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fields")]
         public IEnumerable<WorkbookSortField> Fields { get; set; }
     
         /// <summary>
         /// Gets or sets match case.
         /// Represents whether the casing impacted the last sort of the table. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matchCase", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("matchCase")]
         public bool? MatchCase { get; set; }
     
         /// <summary>
         /// Gets or sets method.
         /// Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "method", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("method")]
         public string Method { get; set; }
     
     }

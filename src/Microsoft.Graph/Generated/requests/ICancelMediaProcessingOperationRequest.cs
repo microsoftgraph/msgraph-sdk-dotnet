@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified CancelMediaProcessingOperation using POST.
         /// </summary>
         /// <param name="cancelMediaProcessingOperationToCreate">The CancelMediaProcessingOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CancelMediaProcessingOperation.</returns>
-        System.Threading.Tasks.Task<CancelMediaProcessingOperation> CreateAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToCreate);        /// <summary>
-        /// Creates the specified CancelMediaProcessingOperation using POST.
+        System.Threading.Tasks.Task<CancelMediaProcessingOperation> CreateAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified CancelMediaProcessingOperation using POST and returns a <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object.
         /// </summary>
         /// <param name="cancelMediaProcessingOperationToCreate">The CancelMediaProcessingOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created CancelMediaProcessingOperation.</returns>
-        System.Threading.Tasks.Task<CancelMediaProcessingOperation> CreateAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CancelMediaProcessingOperation.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> CreateResponseAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CancelMediaProcessingOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified CancelMediaProcessingOperation.
+        /// Deletes the specified CancelMediaProcessingOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The CancelMediaProcessingOperation.</returns>
-        System.Threading.Tasks.Task<CancelMediaProcessingOperation> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CancelMediaProcessingOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CancelMediaProcessingOperation.</returns>
-        System.Threading.Tasks.Task<CancelMediaProcessingOperation> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CancelMediaProcessingOperation> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified CancelMediaProcessingOperation using PATCH.
+        /// Gets the specified CancelMediaProcessingOperation and returns a <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object.
         /// </summary>
-        /// <param name="cancelMediaProcessingOperationToUpdate">The CancelMediaProcessingOperation to update.</param>
-        /// <returns>The updated CancelMediaProcessingOperation.</returns>
-        System.Threading.Tasks.Task<CancelMediaProcessingOperation> UpdateAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CancelMediaProcessingOperation using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CancelMediaProcessingOperation.</returns>
-        System.Threading.Tasks.Task<CancelMediaProcessingOperation> UpdateAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CancelMediaProcessingOperation> UpdateAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CancelMediaProcessingOperation using PATCH and returns a <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object.
+        /// </summary>
+        /// <param name="cancelMediaProcessingOperationToUpdate">The CancelMediaProcessingOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> UpdateResponseAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CancelMediaProcessingOperation using PUT.
+        /// </summary>
+        /// <param name="cancelMediaProcessingOperationToUpdate">The CancelMediaProcessingOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<CancelMediaProcessingOperation> PutAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CancelMediaProcessingOperation using PUT and returns a <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object.
+        /// </summary>
+        /// <param name="cancelMediaProcessingOperationToUpdate">The CancelMediaProcessingOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{CancelMediaProcessingOperation}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> PutResponseAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

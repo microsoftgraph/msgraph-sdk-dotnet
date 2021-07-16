@@ -12,79 +12,93 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Worksheet.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookWorksheet : Entity
     {
     
-		///<summary>
-		/// The WorkbookWorksheet constructor
-		///</summary>
-        public WorkbookWorksheet()
-        {
-            this.ODataType = "microsoft.graph.workbookWorksheet";
-        }
-	
         /// <summary>
         /// Gets or sets name.
         /// The display name of the worksheet.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets position.
         /// The zero-based position of the worksheet within the workbook.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "position", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("position")]
         public Int32? Position { get; set; }
     
         /// <summary>
         /// Gets or sets visibility.
         /// The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibility", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("visibility")]
         public string Visibility { get; set; }
     
         /// <summary>
         /// Gets or sets charts.
         /// Returns collection of charts that are part of the worksheet. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "charts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("charts")]
         public IWorkbookWorksheetChartsCollectionPage Charts { get; set; }
+
+        /// <summary>
+        /// Gets or sets chartsNextLink.
+        /// </summary>
+        [JsonPropertyName("charts@odata.nextLink")]
+        public string ChartsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets names.
         /// Returns collection of names that are associated with the worksheet. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "names", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("names")]
         public IWorkbookWorksheetNamesCollectionPage Names { get; set; }
+
+        /// <summary>
+        /// Gets or sets namesNextLink.
+        /// </summary>
+        [JsonPropertyName("names@odata.nextLink")]
+        public string NamesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets pivot tables.
         /// Collection of PivotTables that are part of the worksheet.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pivotTables", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pivotTables")]
         public IWorkbookWorksheetPivotTablesCollectionPage PivotTables { get; set; }
+
+        /// <summary>
+        /// Gets or sets pivotTablesNextLink.
+        /// </summary>
+        [JsonPropertyName("pivotTables@odata.nextLink")]
+        public string PivotTablesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets protection.
         /// Returns sheet protection object for a worksheet. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "protection", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("protection")]
         public WorkbookWorksheetProtection Protection { get; set; }
     
         /// <summary>
         /// Gets or sets tables.
         /// Collection of tables that are part of the worksheet. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tables", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tables")]
         public IWorkbookWorksheetTablesCollectionPage Tables { get; set; }
+
+        /// <summary>
+        /// Gets or sets tablesNextLink.
+        /// </summary>
+        [JsonPropertyName("tables@odata.nextLink")]
+        public string TablesNextLink { get; set; }
     
     }
 }

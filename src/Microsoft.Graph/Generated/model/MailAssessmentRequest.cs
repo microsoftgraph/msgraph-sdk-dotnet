@@ -12,43 +12,42 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mail Assessment Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MailAssessmentRequestObject>))]
     public partial class MailAssessmentRequestObject : ThreatAssessmentRequestObject
     {
     
-		///<summary>
-		/// The MailAssessmentRequest constructor
-		///</summary>
+        ///<summary>
+        /// The MailAssessmentRequest constructor
+        ///</summary>
         public MailAssessmentRequestObject()
         {
             this.ODataType = "microsoft.graph.mailAssessmentRequest";
         }
-	
+
         /// <summary>
         /// Gets or sets destination routing reason.
         /// The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationRoutingReason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("destinationRoutingReason")]
         public MailDestinationRoutingReason? DestinationRoutingReason { get; set; }
     
         /// <summary>
         /// Gets or sets message uri.
         /// The resource URI of the mail message for assessment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageUri", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("messageUri")]
         public string MessageUri { get; set; }
     
         /// <summary>
         /// Gets or sets recipient email.
         /// The mail recipient whose policies are used to assess the mail.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipientEmail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recipientEmail")]
         public string RecipientEmail { get; set; }
     
     }

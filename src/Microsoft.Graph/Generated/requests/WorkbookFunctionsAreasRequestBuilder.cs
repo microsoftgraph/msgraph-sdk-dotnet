@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsAreasRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken reference)
+            System.Text.Json.JsonDocument reference)
             : base(requestUrl, client)
         {
             this.SetParameter("reference", reference, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("reference"))
             {
-                request.RequestBody.Reference = this.GetParameter<Newtonsoft.Json.Linq.JToken>("reference");
+                request.RequestBody.Reference = this.GetParameter<System.Text.Json.JsonDocument>("reference");
             }
 
             return request;

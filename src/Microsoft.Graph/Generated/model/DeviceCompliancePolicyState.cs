@@ -12,63 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Compliance Policy State.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceCompliancePolicyState>))]
     public partial class DeviceCompliancePolicyState : Entity
     {
     
-		///<summary>
-		/// The DeviceCompliancePolicyState constructor
-		///</summary>
-        public DeviceCompliancePolicyState()
-        {
-            this.ODataType = "microsoft.graph.deviceCompliancePolicyState";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The name of the policy for this policyBase
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets platform type.
         /// Platform type that the policy applies to
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platformType")]
         public PolicyPlatformType? PlatformType { get; set; }
     
         /// <summary>
         /// Gets or sets setting count.
         /// Count of how many setting a policy holds
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingCount")]
         public Int32? SettingCount { get; set; }
     
         /// <summary>
         /// Gets or sets setting states.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingStates")]
         public IEnumerable<DeviceCompliancePolicySettingState> SettingStates { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// The compliance state of the policy
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public ComplianceStatus? State { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// The version of the policy
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public Int32? Version { get; set; }
     
     }

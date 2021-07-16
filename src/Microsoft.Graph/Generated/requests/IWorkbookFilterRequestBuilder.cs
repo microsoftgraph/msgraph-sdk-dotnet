@@ -108,7 +108,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookFilterApplyValuesFilterRequestBuilder"/>.</returns>
         IWorkbookFilterApplyValuesFilterRequestBuilder ApplyValuesFilter(
-            Newtonsoft.Json.Linq.JToken values = null);
+            System.Text.Json.JsonDocument values = null);
 
         /// <summary>
         /// Gets the request builder for WorkbookFilterClear.

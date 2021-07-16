@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsWeekdayRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken serialNumber,
-            Newtonsoft.Json.Linq.JToken returnType)
+            System.Text.Json.JsonDocument serialNumber,
+            System.Text.Json.JsonDocument returnType)
             : base(requestUrl, client)
         {
             this.SetParameter("serialNumber", serialNumber, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("serialNumber"))
             {
-                request.RequestBody.SerialNumber = this.GetParameter<Newtonsoft.Json.Linq.JToken>("serialNumber");
+                request.RequestBody.SerialNumber = this.GetParameter<System.Text.Json.JsonDocument>("serialNumber");
             }
 
             if (this.HasParameter("returnType"))
             {
-                request.RequestBody.ReturnType = this.GetParameter<Newtonsoft.Json.Linq.JToken>("returnType");
+                request.RequestBody.ReturnType = this.GetParameter<System.Text.Json.JsonDocument>("returnType");
             }
 
             return request;

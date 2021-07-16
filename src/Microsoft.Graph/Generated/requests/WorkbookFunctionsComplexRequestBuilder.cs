@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsComplexRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken realNum,
-            Newtonsoft.Json.Linq.JToken iNum,
-            Newtonsoft.Json.Linq.JToken suffix)
+            System.Text.Json.JsonDocument realNum,
+            System.Text.Json.JsonDocument iNum,
+            System.Text.Json.JsonDocument suffix)
             : base(requestUrl, client)
         {
             this.SetParameter("realNum", realNum, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("realNum"))
             {
-                request.RequestBody.RealNum = this.GetParameter<Newtonsoft.Json.Linq.JToken>("realNum");
+                request.RequestBody.RealNum = this.GetParameter<System.Text.Json.JsonDocument>("realNum");
             }
 
             if (this.HasParameter("iNum"))
             {
-                request.RequestBody.INum = this.GetParameter<Newtonsoft.Json.Linq.JToken>("iNum");
+                request.RequestBody.INum = this.GetParameter<System.Text.Json.JsonDocument>("iNum");
             }
 
             if (this.HasParameter("suffix"))
             {
-                request.RequestBody.Suffix = this.GetParameter<Newtonsoft.Json.Linq.JToken>("suffix");
+                request.RequestBody.Suffix = this.GetParameter<System.Text.Json.JsonDocument>("suffix");
             }
 
             return request;

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AgreementFileLocalization using POST.
         /// </summary>
         /// <param name="agreementFileLocalizationToCreate">The AgreementFileLocalization to create.</param>
-        /// <returns>The created AgreementFileLocalization.</returns>
-        public System.Threading.Tasks.Task<AgreementFileLocalization> CreateAsync(AgreementFileLocalization agreementFileLocalizationToCreate)
-        {
-            return this.CreateAsync(agreementFileLocalizationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AgreementFileLocalization using POST.
-        /// </summary>
-        /// <param name="agreementFileLocalizationToCreate">The AgreementFileLocalization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgreementFileLocalization.</returns>
-        public async System.Threading.Tasks.Task<AgreementFileLocalization> CreateAsync(AgreementFileLocalization agreementFileLocalizationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AgreementFileLocalization> CreateAsync(AgreementFileLocalization agreementFileLocalizationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AgreementFileLocalization>(agreementFileLocalizationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AgreementFileLocalization.
+        /// Creates the specified AgreementFileLocalization using POST and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="agreementFileLocalizationToCreate">The AgreementFileLocalization to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> CreateResponseAsync(AgreementFileLocalization agreementFileLocalizationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AgreementFileLocalization>(agreementFileLocalizationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AgreementFileLocalization>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AgreementFileLocalization.
+        /// Deletes the specified AgreementFileLocalization and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AgreementFileLocalization.</returns>
-        public System.Threading.Tasks.Task<AgreementFileLocalization> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AgreementFileLocalization.</returns>
-        public async System.Threading.Tasks.Task<AgreementFileLocalization> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AgreementFileLocalization> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AgreementFileLocalization>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AgreementFileLocalization using PATCH.
+        /// Gets the specified AgreementFileLocalization and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object.
         /// </summary>
-        /// <param name="agreementFileLocalizationToUpdate">The AgreementFileLocalization to update.</param>
-        /// <returns>The updated AgreementFileLocalization.</returns>
-        public System.Threading.Tasks.Task<AgreementFileLocalization> UpdateAsync(AgreementFileLocalization agreementFileLocalizationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(agreementFileLocalizationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AgreementFileLocalization>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AgreementFileLocalization.</returns>
-        public async System.Threading.Tasks.Task<AgreementFileLocalization> UpdateAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AgreementFileLocalization> UpdateAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (agreementFileLocalizationToUpdate.AdditionalData != null)
-			{
-				if (agreementFileLocalizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					agreementFileLocalizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agreementFileLocalizationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (agreementFileLocalizationToUpdate.AdditionalData != null)
-            {
-                if (agreementFileLocalizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    agreementFileLocalizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agreementFileLocalizationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AgreementFileLocalization>(agreementFileLocalizationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AgreementFileLocalization using PATCH and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object.
+        /// </summary>
+        /// <param name="agreementFileLocalizationToUpdate">The AgreementFileLocalization to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> UpdateResponseAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AgreementFileLocalization>(agreementFileLocalizationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AgreementFileLocalization using PUT.
+        /// </summary>
+        /// <param name="agreementFileLocalizationToUpdate">The AgreementFileLocalization object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AgreementFileLocalization> PutAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AgreementFileLocalization>(agreementFileLocalizationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AgreementFileLocalization using PUT and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object.
+        /// </summary>
+        /// <param name="agreementFileLocalizationToUpdate">The AgreementFileLocalization object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AgreementFileLocalization}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> PutResponseAsync(AgreementFileLocalization agreementFileLocalizationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AgreementFileLocalization>(agreementFileLocalizationToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AgreementFileLocalization agreementFileLocalizationToInitialize)
         {
 
-            if (agreementFileLocalizationToInitialize != null && agreementFileLocalizationToInitialize.AdditionalData != null)
+            if (agreementFileLocalizationToInitialize != null)
             {
-
                 if (agreementFileLocalizationToInitialize.Versions != null && agreementFileLocalizationToInitialize.Versions.CurrentPage != null)
                 {
+                    agreementFileLocalizationToInitialize.Versions.InitializeNextPageRequest(this.Client, agreementFileLocalizationToInitialize.VersionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     agreementFileLocalizationToInitialize.Versions.AdditionalData = agreementFileLocalizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    agreementFileLocalizationToInitialize.AdditionalData.TryGetValue("versions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        agreementFileLocalizationToInitialize.Versions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

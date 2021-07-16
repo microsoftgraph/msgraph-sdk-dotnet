@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Organizational Branding Localization.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OrganizationalBrandingLocalization : OrganizationalBrandingProperties
     {
     
-		///<summary>
-		/// The OrganizationalBrandingLocalization constructor
-		///</summary>
+        ///<summary>
+        /// The OrganizationalBrandingLocalization constructor
+        ///</summary>
         public OrganizationalBrandingLocalization()
         {
             this.ODataType = "microsoft.graph.organizationalBrandingLocalization";
         }
-	
+
     }
 }
 

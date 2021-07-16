@@ -9,30 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsAverageIfsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsAverageIfsRequestBody
     {
     
         /// <summary>
         /// Gets or sets AverageRange.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageRange", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken AverageRange { get; set; }
+        [JsonPropertyName("averageRange")]
+        public System.Text.Json.JsonDocument AverageRange { get; set; }
     
         /// <summary>
         /// Gets or sets Values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Values { get; set; }
+        [JsonPropertyName("values")]
+        public System.Text.Json.JsonDocument Values { get; set; }
     
     }
 }

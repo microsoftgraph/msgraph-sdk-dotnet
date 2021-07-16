@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IConditionalAccessRootNamedLocationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified NamedLocation to the collection via POST.
-        /// </summary>
-        /// <param name="namedLocation">The NamedLocation to add.</param>
-        /// <returns>The created NamedLocation.</returns>
-        System.Threading.Tasks.Task<NamedLocation> AddAsync(NamedLocation namedLocation);
-
         /// <summary>
         /// Adds the specified NamedLocation to the collection via POST.
         /// </summary>
         /// <param name="namedLocation">The NamedLocation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NamedLocation.</returns>
-        System.Threading.Tasks.Task<NamedLocation> AddAsync(NamedLocation namedLocation, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<NamedLocation> AddAsync(NamedLocation namedLocation, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified NamedLocation to the collection via POST and returns a <see cref="GraphResponse{NamedLocation}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IConditionalAccessRootNamedLocationsCollectionPage> GetAsync();
+        /// <param name="namedLocation">The NamedLocation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NamedLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NamedLocation>> AddResponseAsync(NamedLocation namedLocation, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IConditionalAccessRootNamedLocationsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IConditionalAccessRootNamedLocationsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ConditionalAccessRootNamedLocationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRootNamedLocationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRootNamedLocationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

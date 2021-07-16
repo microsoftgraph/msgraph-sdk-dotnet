@@ -12,24 +12,14 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Flow Language Page.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserFlowLanguagePage : Entity
     {
     
-		///<summary>
-		/// The UserFlowLanguagePage constructor
-		///</summary>
-        public UserFlowLanguagePage()
-        {
-            this.ODataType = "microsoft.graph.userFlowLanguagePage";
-        }
-	
     }
 }
 

@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsSumIfsRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken sumRange,
-            Newtonsoft.Json.Linq.JToken values)
+            System.Text.Json.JsonDocument sumRange,
+            System.Text.Json.JsonDocument values)
             : base(requestUrl, client)
         {
             this.SetParameter("sumRange", sumRange, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("sumRange"))
             {
-                request.RequestBody.SumRange = this.GetParameter<Newtonsoft.Json.Linq.JToken>("sumRange");
+                request.RequestBody.SumRange = this.GetParameter<System.Text.Json.JsonDocument>("sumRange");
             }
 
             if (this.HasParameter("values"))
             {
-                request.RequestBody.Values = this.GetParameter<Newtonsoft.Json.Linq.JToken>("values");
+                request.RequestBody.Values = this.GetParameter<System.Text.Json.JsonDocument>("values");
             }
 
             return request;

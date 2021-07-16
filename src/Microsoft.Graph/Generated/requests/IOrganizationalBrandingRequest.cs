@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified OrganizationalBranding using POST.
         /// </summary>
         /// <param name="organizationalBrandingToCreate">The OrganizationalBranding to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OrganizationalBranding.</returns>
-        System.Threading.Tasks.Task<OrganizationalBranding> CreateAsync(OrganizationalBranding organizationalBrandingToCreate);        /// <summary>
-        /// Creates the specified OrganizationalBranding using POST.
+        System.Threading.Tasks.Task<OrganizationalBranding> CreateAsync(OrganizationalBranding organizationalBrandingToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified OrganizationalBranding using POST and returns a <see cref="GraphResponse{OrganizationalBranding}"/> object.
         /// </summary>
         /// <param name="organizationalBrandingToCreate">The OrganizationalBranding to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created OrganizationalBranding.</returns>
-        System.Threading.Tasks.Task<OrganizationalBranding> CreateAsync(OrganizationalBranding organizationalBrandingToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified OrganizationalBranding.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{OrganizationalBranding}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBranding>> CreateResponseAsync(OrganizationalBranding organizationalBrandingToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified OrganizationalBranding.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified OrganizationalBranding.
+        /// Deletes the specified OrganizationalBranding and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OrganizationalBranding.</returns>
-        System.Threading.Tasks.Task<OrganizationalBranding> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified OrganizationalBranding.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OrganizationalBranding.</returns>
-        System.Threading.Tasks.Task<OrganizationalBranding> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OrganizationalBranding> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified OrganizationalBranding using PATCH.
+        /// Gets the specified OrganizationalBranding and returns a <see cref="GraphResponse{OrganizationalBranding}"/> object.
         /// </summary>
-        /// <param name="organizationalBrandingToUpdate">The OrganizationalBranding to update.</param>
-        /// <returns>The updated OrganizationalBranding.</returns>
-        System.Threading.Tasks.Task<OrganizationalBranding> UpdateAsync(OrganizationalBranding organizationalBrandingToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBranding}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBranding>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OrganizationalBranding using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OrganizationalBranding.</returns>
-        System.Threading.Tasks.Task<OrganizationalBranding> UpdateAsync(OrganizationalBranding organizationalBrandingToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OrganizationalBranding> UpdateAsync(OrganizationalBranding organizationalBrandingToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified OrganizationalBranding using PATCH and returns a <see cref="GraphResponse{OrganizationalBranding}"/> object.
+        /// </summary>
+        /// <param name="organizationalBrandingToUpdate">The OrganizationalBranding to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBranding}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBranding>> UpdateResponseAsync(OrganizationalBranding organizationalBrandingToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified OrganizationalBranding using PUT.
+        /// </summary>
+        /// <param name="organizationalBrandingToUpdate">The OrganizationalBranding object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<OrganizationalBranding> PutAsync(OrganizationalBranding organizationalBrandingToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified OrganizationalBranding using PUT and returns a <see cref="GraphResponse{OrganizationalBranding}"/> object.
+        /// </summary>
+        /// <param name="organizationalBrandingToUpdate">The OrganizationalBranding object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{OrganizationalBranding}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBranding>> PutResponseAsync(OrganizationalBranding organizationalBrandingToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

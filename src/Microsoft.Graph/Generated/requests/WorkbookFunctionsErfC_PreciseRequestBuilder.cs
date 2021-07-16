@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsErfC_PreciseRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken X)
+            System.Text.Json.JsonDocument X)
             : base(requestUrl, client)
         {
             this.SetParameter("x", X, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("x"))
             {
-                request.RequestBody.X = this.GetParameter<Newtonsoft.Json.Linq.JToken>("x");
+                request.RequestBody.X = this.GetParameter<System.Text.Json.JsonDocument>("x");
             }
 
             return request;

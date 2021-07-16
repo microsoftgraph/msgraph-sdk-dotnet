@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsBinom_InvRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsBinom_InvRequestBody
     {
     
         /// <summary>
         /// Gets or sets Trials.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trials", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Trials { get; set; }
+        [JsonPropertyName("trials")]
+        public System.Text.Json.JsonDocument Trials { get; set; }
     
         /// <summary>
         /// Gets or sets ProbabilityS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "probabilityS", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken ProbabilityS { get; set; }
+        [JsonPropertyName("probabilityS")]
+        public System.Text.Json.JsonDocument ProbabilityS { get; set; }
     
         /// <summary>
         /// Gets or sets Alpha.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alpha", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Alpha { get; set; }
+        [JsonPropertyName("alpha")]
+        public System.Text.Json.JsonDocument Alpha { get; set; }
     
     }
 }

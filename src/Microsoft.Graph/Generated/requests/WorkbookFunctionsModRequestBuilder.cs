@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsModRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken divisor)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument divisor)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("divisor"))
             {
-                request.RequestBody.Divisor = this.GetParameter<Newtonsoft.Json.Linq.JToken>("divisor");
+                request.RequestBody.Divisor = this.GetParameter<System.Text.Json.JsonDocument>("divisor");
             }
 
             return request;

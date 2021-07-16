@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AttendeeAvailability.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AttendeeAvailability>))]
     public partial class AttendeeAvailability
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AttendeeAvailability"/> class.
-        /// </summary>
-        public AttendeeAvailability()
-        {
-            this.ODataType = "microsoft.graph.attendeeAvailability";
-        }
 
         /// <summary>
         /// Gets or sets attendee.
         /// The email address and type of attendee - whether it's a person or a resource, and whether required or optional if it's a person.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attendee", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("attendee")]
         public AttendeeBase Attendee { get; set; }
     
         /// <summary>
         /// Gets or sets availability.
         /// The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availability", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("availability")]
         public FreeBusyStatus? Availability { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,92 +12,96 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Managed App Protection.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidManagedAppProtection : TargetedManagedAppProtection
     {
     
-		///<summary>
-		/// The AndroidManagedAppProtection constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidManagedAppProtection constructor
+        ///</summary>
         public AndroidManagedAppProtection()
         {
             this.ODataType = "microsoft.graph.androidManagedAppProtection";
         }
-	
+
         /// <summary>
         /// Gets or sets custom browser display name.
         /// Friendly name of the preferred custom browser to open weblink on Android.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customBrowserDisplayName")]
         public string CustomBrowserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets custom browser package id.
         /// Unique identifier of a custom browser to open weblink on Android.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserPackageId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customBrowserPackageId")]
         public string CustomBrowserPackageId { get; set; }
     
         /// <summary>
         /// Gets or sets deployed app count.
         /// Count of apps to which the current policy is deployed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployedAppCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deployedAppCount")]
         public Int32? DeployedAppCount { get; set; }
     
         /// <summary>
         /// Gets or sets disable app encryption if device encryption is enabled.
         /// When this setting is enabled, app level encryption is disabled if device level encryption is enabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableAppEncryptionIfDeviceEncryptionIsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("disableAppEncryptionIfDeviceEncryptionIsEnabled")]
         public bool? DisableAppEncryptionIfDeviceEncryptionIsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets encrypt app data.
         /// Indicates whether application data for managed apps should be encrypted
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptAppData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryptAppData")]
         public bool? EncryptAppData { get; set; }
     
         /// <summary>
         /// Gets or sets minimum required patch version.
         /// Define the oldest required Android security patch level a user can have to gain secure access to the app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumRequiredPatchVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumRequiredPatchVersion")]
         public string MinimumRequiredPatchVersion { get; set; }
     
         /// <summary>
         /// Gets or sets minimum warning patch version.
         /// Define the oldest recommended Android security patch level a user can have for secure access to the app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumWarningPatchVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumWarningPatchVersion")]
         public string MinimumWarningPatchVersion { get; set; }
     
         /// <summary>
         /// Gets or sets screen capture blocked.
         /// Indicates whether a managed user can take screen captures of managed apps
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenCaptureBlocked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("screenCaptureBlocked")]
         public bool? ScreenCaptureBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets apps.
         /// List of apps to which the policy is deployed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("apps")]
         public IAndroidManagedAppProtectionAppsCollectionPage Apps { get; set; }
+
+        /// <summary>
+        /// Gets or sets appsNextLink.
+        /// </summary>
+        [JsonPropertyName("apps@odata.nextLink")]
+        public string AppsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets deployment summary.
         /// Navigation property to deployment summary of the configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deploymentSummary")]
         public ManagedAppPolicyDeploymentSummary DeploymentSummary { get; set; }
     
     }

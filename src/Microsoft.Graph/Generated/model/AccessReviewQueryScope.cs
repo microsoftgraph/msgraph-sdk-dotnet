@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AccessReviewQueryScope.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<AccessReviewQueryScope>))]
     public partial class AccessReviewQueryScope : AccessReviewScope
     {
         /// <summary>
@@ -33,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets query.
         /// The query representing what will be reviewed in an access review.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "query", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("query")]
         public string Query { get; set; }
     
         /// <summary>
         /// Gets or sets queryRoot.
         /// In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query is specified. For example, ./manager.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queryRoot", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("queryRoot")]
         public string QueryRoot { get; set; }
     
         /// <summary>
         /// Gets or sets queryType.
         /// Indicates the type of query. Types include MicrosoftGraph and ARM.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queryType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("queryType")]
         public string QueryType { get; set; }
     
     }

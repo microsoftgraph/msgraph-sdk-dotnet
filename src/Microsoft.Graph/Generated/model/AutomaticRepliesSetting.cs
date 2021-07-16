@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AutomaticRepliesSetting.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AutomaticRepliesSetting>))]
     public partial class AutomaticRepliesSetting
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AutomaticRepliesSetting"/> class.
-        /// </summary>
-        public AutomaticRepliesSetting()
-        {
-            this.ODataType = "microsoft.graph.automaticRepliesSetting";
-        }
 
         /// <summary>
         /// Gets or sets externalAudience.
         /// The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. Possible values are: none, contactsOnly, all.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalAudience", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalAudience")]
         public ExternalAudienceScope? ExternalAudience { get; set; }
     
         /// <summary>
         /// Gets or sets externalReplyMessage.
         /// The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalReplyMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalReplyMessage")]
         public string ExternalReplyMessage { get; set; }
     
         /// <summary>
         /// Gets or sets internalReplyMessage.
         /// The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "internalReplyMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("internalReplyMessage")]
         public string InternalReplyMessage { get; set; }
     
         /// <summary>
         /// Gets or sets scheduledEndDateTime.
         /// The date and time that automatic replies are set to end, if Status is set to Scheduled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledEndDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scheduledEndDateTime")]
         public DateTimeTimeZone ScheduledEndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets scheduledStartDateTime.
         /// The date and time that automatic replies are set to begin, if Status is set to Scheduled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledStartDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scheduledStartDateTime")]
         public DateTimeTimeZone ScheduledStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Configurations status for automatic replies. Possible values are: disabled, alwaysEnabled, scheduled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public AutomaticRepliesStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

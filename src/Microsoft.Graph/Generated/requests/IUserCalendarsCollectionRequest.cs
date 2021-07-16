@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserCalendarsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Calendar to the collection via POST.
-        /// </summary>
-        /// <param name="calendar">The Calendar to add.</param>
-        /// <returns>The created Calendar.</returns>
-        System.Threading.Tasks.Task<Calendar> AddAsync(Calendar calendar);
-
         /// <summary>
         /// Adds the specified Calendar to the collection via POST.
         /// </summary>
         /// <param name="calendar">The Calendar to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Calendar.</returns>
-        System.Threading.Tasks.Task<Calendar> AddAsync(Calendar calendar, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Calendar> AddAsync(Calendar calendar, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Calendar to the collection via POST and returns a <see cref="GraphResponse{Calendar}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserCalendarsCollectionPage> GetAsync();
+        /// <param name="calendar">The Calendar to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Calendar>> AddResponseAsync(Calendar calendar, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserCalendarsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IUserCalendarsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserCalendarsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserCalendarsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserCalendarsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

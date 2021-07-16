@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPermissionGrantPolicyExcludesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PermissionGrantConditionSet to the collection via POST.
-        /// </summary>
-        /// <param name="permissionGrantConditionSet">The PermissionGrantConditionSet to add.</param>
-        /// <returns>The created PermissionGrantConditionSet.</returns>
-        System.Threading.Tasks.Task<PermissionGrantConditionSet> AddAsync(PermissionGrantConditionSet permissionGrantConditionSet);
-
         /// <summary>
         /// Adds the specified PermissionGrantConditionSet to the collection via POST.
         /// </summary>
         /// <param name="permissionGrantConditionSet">The PermissionGrantConditionSet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PermissionGrantConditionSet.</returns>
-        System.Threading.Tasks.Task<PermissionGrantConditionSet> AddAsync(PermissionGrantConditionSet permissionGrantConditionSet, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PermissionGrantConditionSet> AddAsync(PermissionGrantConditionSet permissionGrantConditionSet, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified PermissionGrantConditionSet to the collection via POST and returns a <see cref="GraphResponse{PermissionGrantConditionSet}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPermissionGrantPolicyExcludesCollectionPage> GetAsync();
+        /// <param name="permissionGrantConditionSet">The PermissionGrantConditionSet to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantConditionSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantConditionSet>> AddResponseAsync(PermissionGrantConditionSet permissionGrantConditionSet, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPermissionGrantPolicyExcludesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IPermissionGrantPolicyExcludesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PermissionGrantPolicyExcludesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantPolicyExcludesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicyExcludesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

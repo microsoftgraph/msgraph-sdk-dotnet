@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsIrrRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken values,
-            Newtonsoft.Json.Linq.JToken guess)
+            System.Text.Json.JsonDocument values,
+            System.Text.Json.JsonDocument guess)
             : base(requestUrl, client)
         {
             this.SetParameter("values", values, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("values"))
             {
-                request.RequestBody.Values = this.GetParameter<Newtonsoft.Json.Linq.JToken>("values");
+                request.RequestBody.Values = this.GetParameter<System.Text.Json.JsonDocument>("values");
             }
 
             if (this.HasParameter("guess"))
             {
-                request.RequestBody.Guess = this.GetParameter<Newtonsoft.Json.Linq.JToken>("guess");
+                request.RequestBody.Guess = this.GetParameter<System.Text.Json.JsonDocument>("guess");
             }
 
             return request;

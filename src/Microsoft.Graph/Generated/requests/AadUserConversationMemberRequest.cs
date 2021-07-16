@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AadUserConversationMember using POST.
         /// </summary>
         /// <param name="aadUserConversationMemberToCreate">The AadUserConversationMember to create.</param>
-        /// <returns>The created AadUserConversationMember.</returns>
-        public System.Threading.Tasks.Task<AadUserConversationMember> CreateAsync(AadUserConversationMember aadUserConversationMemberToCreate)
-        {
-            return this.CreateAsync(aadUserConversationMemberToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AadUserConversationMember using POST.
-        /// </summary>
-        /// <param name="aadUserConversationMemberToCreate">The AadUserConversationMember to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AadUserConversationMember.</returns>
-        public async System.Threading.Tasks.Task<AadUserConversationMember> CreateAsync(AadUserConversationMember aadUserConversationMemberToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AadUserConversationMember> CreateAsync(AadUserConversationMember aadUserConversationMemberToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AadUserConversationMember>(aadUserConversationMemberToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AadUserConversationMember.
+        /// Creates the specified AadUserConversationMember using POST and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="aadUserConversationMemberToCreate">The AadUserConversationMember to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> CreateResponseAsync(AadUserConversationMember aadUserConversationMemberToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AadUserConversationMember>(aadUserConversationMemberToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AadUserConversationMember>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AadUserConversationMember.
+        /// Deletes the specified AadUserConversationMember and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AadUserConversationMember.</returns>
-        public System.Threading.Tasks.Task<AadUserConversationMember> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AadUserConversationMember.</returns>
-        public async System.Threading.Tasks.Task<AadUserConversationMember> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AadUserConversationMember> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AadUserConversationMember>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AadUserConversationMember using PATCH.
+        /// Gets the specified AadUserConversationMember and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
         /// </summary>
-        /// <param name="aadUserConversationMemberToUpdate">The AadUserConversationMember to update.</param>
-        /// <returns>The updated AadUserConversationMember.</returns>
-        public System.Threading.Tasks.Task<AadUserConversationMember> UpdateAsync(AadUserConversationMember aadUserConversationMemberToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(aadUserConversationMemberToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AadUserConversationMember>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AadUserConversationMember.</returns>
-        public async System.Threading.Tasks.Task<AadUserConversationMember> UpdateAsync(AadUserConversationMember aadUserConversationMemberToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AadUserConversationMember> UpdateAsync(AadUserConversationMember aadUserConversationMemberToUpdate, CancellationToken cancellationToken = default)
         {
-			if (aadUserConversationMemberToUpdate.AdditionalData != null)
-			{
-				if (aadUserConversationMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					aadUserConversationMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, aadUserConversationMemberToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (aadUserConversationMemberToUpdate.AdditionalData != null)
-            {
-                if (aadUserConversationMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    aadUserConversationMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, aadUserConversationMemberToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AadUserConversationMember>(aadUserConversationMemberToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AadUserConversationMember using PATCH and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <param name="aadUserConversationMemberToUpdate">The AadUserConversationMember to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> UpdateResponseAsync(AadUserConversationMember aadUserConversationMemberToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AadUserConversationMember>(aadUserConversationMemberToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AadUserConversationMember using PUT.
+        /// </summary>
+        /// <param name="aadUserConversationMemberToUpdate">The AadUserConversationMember object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AadUserConversationMember> PutAsync(AadUserConversationMember aadUserConversationMemberToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AadUserConversationMember>(aadUserConversationMemberToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AadUserConversationMember using PUT and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <param name="aadUserConversationMemberToUpdate">The AadUserConversationMember object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AadUserConversationMember}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> PutResponseAsync(AadUserConversationMember aadUserConversationMemberToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AadUserConversationMember>(aadUserConversationMemberToUpdate, cancellationToken);
         }
 
         /// <summary>

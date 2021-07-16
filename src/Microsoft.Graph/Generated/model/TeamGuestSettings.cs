@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TeamGuestSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TeamGuestSettings>))]
     public partial class TeamGuestSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TeamGuestSettings"/> class.
-        /// </summary>
-        public TeamGuestSettings()
-        {
-            this.ODataType = "microsoft.graph.teamGuestSettings";
-        }
 
         /// <summary>
         /// Gets or sets allowCreateUpdateChannels.
         /// If set to true, guests can add and update channels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCreateUpdateChannels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowCreateUpdateChannels")]
         public bool? AllowCreateUpdateChannels { get; set; }
     
         /// <summary>
         /// Gets or sets allowDeleteChannels.
         /// If set to true, guests can delete channels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDeleteChannels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowDeleteChannels")]
         public bool? AllowDeleteChannels { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

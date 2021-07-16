@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConfigurationManagerClientEnabledFeatures.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ConfigurationManagerClientEnabledFeatures>))]
     public partial class ConfigurationManagerClientEnabledFeatures
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationManagerClientEnabledFeatures"/> class.
-        /// </summary>
-        public ConfigurationManagerClientEnabledFeatures()
-        {
-            this.ODataType = "microsoft.graph.configurationManagerClientEnabledFeatures";
-        }
 
         /// <summary>
         /// Gets or sets compliancePolicy.
         /// Whether compliance policy is managed by Intune
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("compliancePolicy")]
         public bool? CompliancePolicy { get; set; }
     
         /// <summary>
         /// Gets or sets deviceConfiguration.
         /// Whether device configuration is managed by Intune
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceConfiguration")]
         public bool? DeviceConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets inventory.
         /// Whether inventory is managed by Intune
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inventory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inventory")]
         public bool? Inventory { get; set; }
     
         /// <summary>
         /// Gets or sets modernApps.
         /// Whether modern application is managed by Intune
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modernApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modernApps")]
         public bool? ModernApps { get; set; }
     
         /// <summary>
         /// Gets or sets resourceAccess.
         /// Whether resource access is managed by Intune
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceAccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceAccess")]
         public bool? ResourceAccess { get; set; }
     
         /// <summary>
         /// Gets or sets windowsUpdateForBusiness.
         /// Whether Windows Update for Business is managed by Intune
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsUpdateForBusiness", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsUpdateForBusiness")]
         public bool? WindowsUpdateForBusiness { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

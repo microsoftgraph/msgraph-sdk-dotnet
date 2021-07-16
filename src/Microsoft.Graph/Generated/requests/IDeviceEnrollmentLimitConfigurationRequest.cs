@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceEnrollmentLimitConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentLimitConfigurationToCreate">The DeviceEnrollmentLimitConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceEnrollmentLimitConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> CreateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate);        /// <summary>
-        /// Creates the specified DeviceEnrollmentLimitConfiguration using POST.
+        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> CreateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceEnrollmentLimitConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object.
         /// </summary>
         /// <param name="deviceEnrollmentLimitConfigurationToCreate">The DeviceEnrollmentLimitConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceEnrollmentLimitConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> CreateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceEnrollmentLimitConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> CreateResponseAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceEnrollmentLimitConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceEnrollmentLimitConfiguration.
+        /// Deletes the specified DeviceEnrollmentLimitConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceEnrollmentLimitConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceEnrollmentLimitConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceEnrollmentLimitConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceEnrollmentLimitConfiguration using PATCH.
+        /// Gets the specified DeviceEnrollmentLimitConfiguration and returns a <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object.
         /// </summary>
-        /// <param name="deviceEnrollmentLimitConfigurationToUpdate">The DeviceEnrollmentLimitConfiguration to update.</param>
-        /// <returns>The updated DeviceEnrollmentLimitConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> UpdateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceEnrollmentLimitConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceEnrollmentLimitConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> UpdateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> UpdateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceEnrollmentLimitConfiguration using PATCH and returns a <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentLimitConfigurationToUpdate">The DeviceEnrollmentLimitConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> UpdateResponseAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceEnrollmentLimitConfiguration using PUT.
+        /// </summary>
+        /// <param name="deviceEnrollmentLimitConfigurationToUpdate">The DeviceEnrollmentLimitConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> PutAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceEnrollmentLimitConfiguration using PUT and returns a <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentLimitConfigurationToUpdate">The DeviceEnrollmentLimitConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> PutResponseAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

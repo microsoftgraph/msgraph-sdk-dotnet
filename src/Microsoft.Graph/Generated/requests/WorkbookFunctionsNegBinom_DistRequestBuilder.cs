@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         public WorkbookFunctionsNegBinom_DistRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken numberF,
-            Newtonsoft.Json.Linq.JToken numberS,
-            Newtonsoft.Json.Linq.JToken probabilityS,
-            Newtonsoft.Json.Linq.JToken cumulative)
+            System.Text.Json.JsonDocument numberF,
+            System.Text.Json.JsonDocument numberS,
+            System.Text.Json.JsonDocument probabilityS,
+            System.Text.Json.JsonDocument cumulative)
             : base(requestUrl, client)
         {
             this.SetParameter("numberF", numberF, true);
@@ -54,22 +54,22 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("numberF"))
             {
-                request.RequestBody.NumberF = this.GetParameter<Newtonsoft.Json.Linq.JToken>("numberF");
+                request.RequestBody.NumberF = this.GetParameter<System.Text.Json.JsonDocument>("numberF");
             }
 
             if (this.HasParameter("numberS"))
             {
-                request.RequestBody.NumberS = this.GetParameter<Newtonsoft.Json.Linq.JToken>("numberS");
+                request.RequestBody.NumberS = this.GetParameter<System.Text.Json.JsonDocument>("numberS");
             }
 
             if (this.HasParameter("probabilityS"))
             {
-                request.RequestBody.ProbabilityS = this.GetParameter<Newtonsoft.Json.Linq.JToken>("probabilityS");
+                request.RequestBody.ProbabilityS = this.GetParameter<System.Text.Json.JsonDocument>("probabilityS");
             }
 
             if (this.HasParameter("cumulative"))
             {
-                request.RequestBody.Cumulative = this.GetParameter<Newtonsoft.Json.Linq.JToken>("cumulative");
+                request.RequestBody.Cumulative = this.GetParameter<System.Text.Json.JsonDocument>("cumulative");
             }
 
             return request;

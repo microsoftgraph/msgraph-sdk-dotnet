@@ -9,30 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsEdateRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsEdateRequestBody
     {
     
         /// <summary>
         /// Gets or sets StartDate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDate", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken StartDate { get; set; }
+        [JsonPropertyName("startDate")]
+        public System.Text.Json.JsonDocument StartDate { get; set; }
     
         /// <summary>
         /// Gets or sets Months.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "months", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Months { get; set; }
+        [JsonPropertyName("months")]
+        public System.Text.Json.JsonDocument Months { get; set; }
     
     }
 }

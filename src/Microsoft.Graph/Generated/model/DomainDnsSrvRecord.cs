@@ -12,64 +12,62 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Domain Dns Srv Record.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DomainDnsSrvRecord : DomainDnsRecord
     {
     
-		///<summary>
-		/// The DomainDnsSrvRecord constructor
-		///</summary>
+        ///<summary>
+        /// The DomainDnsSrvRecord constructor
+        ///</summary>
         public DomainDnsSrvRecord()
         {
             this.ODataType = "microsoft.graph.domainDnsSrvRecord";
         }
-	
+
         /// <summary>
         /// Gets or sets name target.
         /// Value to use when configuring the Target property of the SRV record at the DNS host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nameTarget", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("nameTarget")]
         public string NameTarget { get; set; }
     
         /// <summary>
         /// Gets or sets port.
         /// Value to use when configuring the port property of the SRV record at the DNS host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "port", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("port")]
         public Int32? Port { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
         /// Value to use when configuring the priority property of the SRV record at the DNS host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("priority")]
         public Int32? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets protocol.
         /// Value to use when configuring the protocol property of the SRV record at the DNS host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "protocol", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("protocol")]
         public string Protocol { get; set; }
     
         /// <summary>
         /// Gets or sets service.
         /// Value to use when configuring the service property of the SRV record at the DNS host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("service")]
         public string Service { get; set; }
     
         /// <summary>
         /// Gets or sets weight.
         /// Value to use when configuring the weight property of the SRV record at the DNS host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "weight", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("weight")]
         public Int32? Weight { get; set; }
     
     }

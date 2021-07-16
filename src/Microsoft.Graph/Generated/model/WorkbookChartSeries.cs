@@ -12,44 +12,40 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Chart Series.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookChartSeries : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartSeries constructor
-		///</summary>
-        public WorkbookChartSeries()
-        {
-            this.ODataType = "microsoft.graph.workbookChartSeries";
-        }
-	
         /// <summary>
         /// Gets or sets name.
         /// Represents the name of a series in a chart.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets format.
         /// Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("format")]
         public WorkbookChartSeriesFormat Format { get; set; }
     
         /// <summary>
         /// Gets or sets points.
         /// Represents a collection of all points in the series. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "points", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("points")]
         public IWorkbookChartSeriesPointsCollectionPage Points { get; set; }
+
+        /// <summary>
+        /// Gets or sets pointsNextLink.
+        /// </summary>
+        [JsonPropertyName("points@odata.nextLink")]
+        public string PointsNextLink { get; set; }
     
     }
 }

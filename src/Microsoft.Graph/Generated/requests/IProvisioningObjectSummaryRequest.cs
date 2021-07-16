@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ProvisioningObjectSummary using POST.
         /// </summary>
         /// <param name="provisioningObjectSummaryToCreate">The ProvisioningObjectSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ProvisioningObjectSummary.</returns>
-        System.Threading.Tasks.Task<ProvisioningObjectSummary> CreateAsync(ProvisioningObjectSummary provisioningObjectSummaryToCreate);        /// <summary>
-        /// Creates the specified ProvisioningObjectSummary using POST.
+        System.Threading.Tasks.Task<ProvisioningObjectSummary> CreateAsync(ProvisioningObjectSummary provisioningObjectSummaryToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ProvisioningObjectSummary using POST and returns a <see cref="GraphResponse{ProvisioningObjectSummary}"/> object.
         /// </summary>
         /// <param name="provisioningObjectSummaryToCreate">The ProvisioningObjectSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ProvisioningObjectSummary.</returns>
-        System.Threading.Tasks.Task<ProvisioningObjectSummary> CreateAsync(ProvisioningObjectSummary provisioningObjectSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ProvisioningObjectSummary.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ProvisioningObjectSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProvisioningObjectSummary>> CreateResponseAsync(ProvisioningObjectSummary provisioningObjectSummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ProvisioningObjectSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ProvisioningObjectSummary.
+        /// Deletes the specified ProvisioningObjectSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ProvisioningObjectSummary.</returns>
-        System.Threading.Tasks.Task<ProvisioningObjectSummary> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ProvisioningObjectSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ProvisioningObjectSummary.</returns>
-        System.Threading.Tasks.Task<ProvisioningObjectSummary> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ProvisioningObjectSummary> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ProvisioningObjectSummary using PATCH.
+        /// Gets the specified ProvisioningObjectSummary and returns a <see cref="GraphResponse{ProvisioningObjectSummary}"/> object.
         /// </summary>
-        /// <param name="provisioningObjectSummaryToUpdate">The ProvisioningObjectSummary to update.</param>
-        /// <returns>The updated ProvisioningObjectSummary.</returns>
-        System.Threading.Tasks.Task<ProvisioningObjectSummary> UpdateAsync(ProvisioningObjectSummary provisioningObjectSummaryToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProvisioningObjectSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProvisioningObjectSummary>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ProvisioningObjectSummary using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ProvisioningObjectSummary.</returns>
-        System.Threading.Tasks.Task<ProvisioningObjectSummary> UpdateAsync(ProvisioningObjectSummary provisioningObjectSummaryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ProvisioningObjectSummary> UpdateAsync(ProvisioningObjectSummary provisioningObjectSummaryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ProvisioningObjectSummary using PATCH and returns a <see cref="GraphResponse{ProvisioningObjectSummary}"/> object.
+        /// </summary>
+        /// <param name="provisioningObjectSummaryToUpdate">The ProvisioningObjectSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ProvisioningObjectSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProvisioningObjectSummary>> UpdateResponseAsync(ProvisioningObjectSummary provisioningObjectSummaryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ProvisioningObjectSummary using PUT.
+        /// </summary>
+        /// <param name="provisioningObjectSummaryToUpdate">The ProvisioningObjectSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ProvisioningObjectSummary> PutAsync(ProvisioningObjectSummary provisioningObjectSummaryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ProvisioningObjectSummary using PUT and returns a <see cref="GraphResponse{ProvisioningObjectSummary}"/> object.
+        /// </summary>
+        /// <param name="provisioningObjectSummaryToUpdate">The ProvisioningObjectSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ProvisioningObjectSummary}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProvisioningObjectSummary>> PutResponseAsync(ProvisioningObjectSummary provisioningObjectSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

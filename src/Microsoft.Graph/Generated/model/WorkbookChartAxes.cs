@@ -12,43 +12,33 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Chart Axes.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookChartAxes : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartAxes constructor
-		///</summary>
-        public WorkbookChartAxes()
-        {
-            this.ODataType = "microsoft.graph.workbookChartAxes";
-        }
-	
         /// <summary>
         /// Gets or sets category axis.
         /// Represents the category axis in a chart. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categoryAxis", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("categoryAxis")]
         public WorkbookChartAxis CategoryAxis { get; set; }
     
         /// <summary>
         /// Gets or sets series axis.
         /// Represents the series axis of a 3-dimensional chart. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "seriesAxis", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("seriesAxis")]
         public WorkbookChartAxis SeriesAxis { get; set; }
     
         /// <summary>
         /// Gets or sets value axis.
         /// Represents the value axis in an axis. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueAxis", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("valueAxis")]
         public WorkbookChartAxis ValueAxis { get; set; }
     
     }

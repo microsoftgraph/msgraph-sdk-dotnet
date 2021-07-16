@@ -12,141 +12,140 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSCompliance Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSCompliancePolicy>))]
     public partial class MacOSCompliancePolicy : DeviceCompliancePolicy
     {
     
-		///<summary>
-		/// The MacOSCompliancePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSCompliancePolicy constructor
+        ///</summary>
         public MacOSCompliancePolicy()
         {
             this.ODataType = "microsoft.graph.macOSCompliancePolicy";
         }
-	
+
         /// <summary>
         /// Gets or sets device threat protection enabled.
         /// Require that devices have enabled device threat protection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceThreatProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceThreatProtectionEnabled")]
         public bool? DeviceThreatProtectionEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets device threat protection required security level.
         /// Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceThreatProtectionRequiredSecurityLevel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceThreatProtectionRequiredSecurityLevel")]
         public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel { get; set; }
     
         /// <summary>
         /// Gets or sets firewall block all incoming.
         /// Corresponds to the 'Block all incoming connections' option.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallBlockAllIncoming", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firewallBlockAllIncoming")]
         public bool? FirewallBlockAllIncoming { get; set; }
     
         /// <summary>
         /// Gets or sets firewall enabled.
         /// Whether the firewall should be enabled or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firewallEnabled")]
         public bool? FirewallEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets firewall enable stealth mode.
         /// Corresponds to 'Enable stealth mode.'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallEnableStealthMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firewallEnableStealthMode")]
         public bool? FirewallEnableStealthMode { get; set; }
     
         /// <summary>
         /// Gets or sets os maximum version.
         /// Maximum MacOS version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osMaximumVersion")]
         public string OsMaximumVersion { get; set; }
     
         /// <summary>
         /// Gets or sets os minimum version.
         /// Minimum MacOS version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osMinimumVersion")]
         public string OsMinimumVersion { get; set; }
     
         /// <summary>
         /// Gets or sets password block simple.
         /// Indicates whether or not to block simple passwords.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordBlockSimple", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordBlockSimple")]
         public bool? PasswordBlockSimple { get; set; }
     
         /// <summary>
         /// Gets or sets password expiration days.
         /// Number of days before the password expires. Valid values 1 to 65535
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordExpirationDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordExpirationDays")]
         public Int32? PasswordExpirationDays { get; set; }
     
         /// <summary>
         /// Gets or sets password minimum character set count.
         /// The number of character sets required in the password.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordMinimumCharacterSetCount")]
         public Int32? PasswordMinimumCharacterSetCount { get; set; }
     
         /// <summary>
         /// Gets or sets password minimum length.
         /// Minimum length of password. Valid values 4 to 14
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumLength", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordMinimumLength")]
         public Int32? PasswordMinimumLength { get; set; }
     
         /// <summary>
         /// Gets or sets password minutes of inactivity before lock.
         /// Minutes of inactivity before a password is required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinutesOfInactivityBeforeLock", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordMinutesOfInactivityBeforeLock")]
         public Int32? PasswordMinutesOfInactivityBeforeLock { get; set; }
     
         /// <summary>
         /// Gets or sets password previous password block count.
         /// Number of previous passwords to block. Valid values 1 to 24
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordPreviousPasswordBlockCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordPreviousPasswordBlockCount")]
         public Int32? PasswordPreviousPasswordBlockCount { get; set; }
     
         /// <summary>
         /// Gets or sets password required.
         /// Whether or not to require a password.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordRequired")]
         public bool? PasswordRequired { get; set; }
     
         /// <summary>
         /// Gets or sets password required type.
         /// The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordRequiredType")]
         public RequiredPasswordType? PasswordRequiredType { get; set; }
     
         /// <summary>
         /// Gets or sets storage require encryption.
         /// Require encryption on Mac OS devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageRequireEncryption", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("storageRequireEncryption")]
         public bool? StorageRequireEncryption { get; set; }
     
         /// <summary>
         /// Gets or sets system integrity protection enabled.
         /// Require that devices have enabled system integrity protection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemIntegrityProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemIntegrityProtectionEnabled")]
         public bool? SystemIntegrityProtectionEnabled { get; set; }
     
     }

@@ -19,18 +19,19 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IServicePrincipalClaimsMappingPoliciesCollectionReferencesRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ClaimsMappingPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
-        System.Threading.Tasks.Task AddAsync(ClaimsMappingPolicy claimsMappingPolicy);
-
         /// <summary>
         /// Adds the specified ClaimsMappingPolicy to the collection via POST.
         /// </summary>
         /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task AddAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified ClaimsMappingPolicy to the collection via POST and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken = default);
+
     }
 }

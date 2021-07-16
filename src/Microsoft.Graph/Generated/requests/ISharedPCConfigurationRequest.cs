@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified SharedPCConfiguration using POST.
         /// </summary>
         /// <param name="sharedPCConfigurationToCreate">The SharedPCConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedPCConfiguration.</returns>
-        System.Threading.Tasks.Task<SharedPCConfiguration> CreateAsync(SharedPCConfiguration sharedPCConfigurationToCreate);        /// <summary>
-        /// Creates the specified SharedPCConfiguration using POST.
+        System.Threading.Tasks.Task<SharedPCConfiguration> CreateAsync(SharedPCConfiguration sharedPCConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified SharedPCConfiguration using POST and returns a <see cref="GraphResponse{SharedPCConfiguration}"/> object.
         /// </summary>
         /// <param name="sharedPCConfigurationToCreate">The SharedPCConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created SharedPCConfiguration.</returns>
-        System.Threading.Tasks.Task<SharedPCConfiguration> CreateAsync(SharedPCConfiguration sharedPCConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SharedPCConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{SharedPCConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedPCConfiguration>> CreateResponseAsync(SharedPCConfiguration sharedPCConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SharedPCConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified SharedPCConfiguration.
+        /// Deletes the specified SharedPCConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SharedPCConfiguration.</returns>
-        System.Threading.Tasks.Task<SharedPCConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SharedPCConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SharedPCConfiguration.</returns>
-        System.Threading.Tasks.Task<SharedPCConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SharedPCConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified SharedPCConfiguration using PATCH.
+        /// Gets the specified SharedPCConfiguration and returns a <see cref="GraphResponse{SharedPCConfiguration}"/> object.
         /// </summary>
-        /// <param name="sharedPCConfigurationToUpdate">The SharedPCConfiguration to update.</param>
-        /// <returns>The updated SharedPCConfiguration.</returns>
-        System.Threading.Tasks.Task<SharedPCConfiguration> UpdateAsync(SharedPCConfiguration sharedPCConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedPCConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedPCConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SharedPCConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharedPCConfiguration.</returns>
-        System.Threading.Tasks.Task<SharedPCConfiguration> UpdateAsync(SharedPCConfiguration sharedPCConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SharedPCConfiguration> UpdateAsync(SharedPCConfiguration sharedPCConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SharedPCConfiguration using PATCH and returns a <see cref="GraphResponse{SharedPCConfiguration}"/> object.
+        /// </summary>
+        /// <param name="sharedPCConfigurationToUpdate">The SharedPCConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SharedPCConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedPCConfiguration>> UpdateResponseAsync(SharedPCConfiguration sharedPCConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SharedPCConfiguration using PUT.
+        /// </summary>
+        /// <param name="sharedPCConfigurationToUpdate">The SharedPCConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SharedPCConfiguration> PutAsync(SharedPCConfiguration sharedPCConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SharedPCConfiguration using PUT and returns a <see cref="GraphResponse{SharedPCConfiguration}"/> object.
+        /// </summary>
+        /// <param name="sharedPCConfigurationToUpdate">The SharedPCConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SharedPCConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedPCConfiguration>> PutResponseAsync(SharedPCConfiguration sharedPCConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

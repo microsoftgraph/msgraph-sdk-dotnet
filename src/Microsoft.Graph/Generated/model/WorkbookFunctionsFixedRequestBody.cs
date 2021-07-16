@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsFixedRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsFixedRequestBody
     {
     
         /// <summary>
         /// Gets or sets Number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Number { get; set; }
+        [JsonPropertyName("number")]
+        public System.Text.Json.JsonDocument Number { get; set; }
     
         /// <summary>
         /// Gets or sets Decimals.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decimals", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Decimals { get; set; }
+        [JsonPropertyName("decimals")]
+        public System.Text.Json.JsonDocument Decimals { get; set; }
     
         /// <summary>
         /// Gets or sets NoCommas.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "noCommas", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken NoCommas { get; set; }
+        [JsonPropertyName("noCommas")]
+        public System.Text.Json.JsonDocument NoCommas { get; set; }
     
     }
 }

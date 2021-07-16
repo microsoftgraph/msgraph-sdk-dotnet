@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDirectoryAdministrativeUnitsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AdministrativeUnit to the collection via POST.
-        /// </summary>
-        /// <param name="administrativeUnit">The AdministrativeUnit to add.</param>
-        /// <returns>The created AdministrativeUnit.</returns>
-        System.Threading.Tasks.Task<AdministrativeUnit> AddAsync(AdministrativeUnit administrativeUnit);
-
         /// <summary>
         /// Adds the specified AdministrativeUnit to the collection via POST.
         /// </summary>
         /// <param name="administrativeUnit">The AdministrativeUnit to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AdministrativeUnit.</returns>
-        System.Threading.Tasks.Task<AdministrativeUnit> AddAsync(AdministrativeUnit administrativeUnit, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AdministrativeUnit> AddAsync(AdministrativeUnit administrativeUnit, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AdministrativeUnit to the collection via POST and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDirectoryAdministrativeUnitsCollectionPage> GetAsync();
+        /// <param name="administrativeUnit">The AdministrativeUnit to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> AddResponseAsync(AdministrativeUnit administrativeUnit, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDirectoryAdministrativeUnitsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDirectoryAdministrativeUnitsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DirectoryAdministrativeUnitsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryAdministrativeUnitsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryAdministrativeUnitsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

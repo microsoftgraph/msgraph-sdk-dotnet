@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPolicyRootConditionalAccessPoliciesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ConditionalAccessPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="conditionalAccessPolicy">The ConditionalAccessPolicy to add.</param>
-        /// <returns>The created ConditionalAccessPolicy.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicy> AddAsync(ConditionalAccessPolicy conditionalAccessPolicy);
-
         /// <summary>
         /// Adds the specified ConditionalAccessPolicy to the collection via POST.
         /// </summary>
         /// <param name="conditionalAccessPolicy">The ConditionalAccessPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConditionalAccessPolicy.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicy> AddAsync(ConditionalAccessPolicy conditionalAccessPolicy, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ConditionalAccessPolicy> AddAsync(ConditionalAccessPolicy conditionalAccessPolicy, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ConditionalAccessPolicy to the collection via POST and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicyRootConditionalAccessPoliciesCollectionPage> GetAsync();
+        /// <param name="conditionalAccessPolicy">The ConditionalAccessPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> AddResponseAsync(ConditionalAccessPolicy conditionalAccessPolicy, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicyRootConditionalAccessPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IPolicyRootConditionalAccessPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootConditionalAccessPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRootConditionalAccessPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRootConditionalAccessPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

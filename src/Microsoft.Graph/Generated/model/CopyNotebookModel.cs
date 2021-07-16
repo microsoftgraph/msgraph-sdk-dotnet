@@ -12,124 +12,115 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CopyNotebookModel.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<CopyNotebookModel>))]
     public partial class CopyNotebookModel
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CopyNotebookModel"/> class.
-        /// </summary>
-        public CopyNotebookModel()
-        {
-            this.ODataType = "microsoft.graph.CopyNotebookModel";
-        }
 
         /// <summary>
         /// Gets or sets createdBy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public string CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets createdByIdentity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdByIdentity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdByIdentity")]
         public IdentitySet CreatedByIdentity { get; set; }
     
         /// <summary>
         /// Gets or sets createdTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdTime")]
         public DateTimeOffset? CreatedTime { get; set; }
     
         /// <summary>
         /// Gets or sets id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets isDefault.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDefault")]
         public bool? IsDefault { get; set; }
     
         /// <summary>
         /// Gets or sets isShared.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isShared", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isShared")]
         public bool? IsShared { get; set; }
     
         /// <summary>
         /// Gets or sets lastModifiedBy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedBy")]
         public string LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets lastModifiedByIdentity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedByIdentity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedByIdentity")]
         public IdentitySet LastModifiedByIdentity { get; set; }
     
         /// <summary>
         /// Gets or sets lastModifiedTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedTime")]
         public DateTimeOffset? LastModifiedTime { get; set; }
     
         /// <summary>
         /// Gets or sets links.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "links", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("links")]
         public NotebookLinks Links { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets sectionGroupsUrl.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sectionGroupsUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sectionGroupsUrl")]
         public string SectionGroupsUrl { get; set; }
     
         /// <summary>
         /// Gets or sets sectionsUrl.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sectionsUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sectionsUrl")]
         public string SectionsUrl { get; set; }
     
         /// <summary>
         /// Gets or sets self.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "self", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("self")]
         public string Self { get; set; }
     
         /// <summary>
         /// Gets or sets userRole.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRole", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userRole")]
         public OnenoteUserRole? UserRole { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

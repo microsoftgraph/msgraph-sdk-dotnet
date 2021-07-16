@@ -4,33 +4,22 @@
 
 namespace Microsoft.Graph
 {
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-
     /// <summary>
     /// Represents an assignment on a <see cref="PlannerTask"/>.
     /// </summary>
     public partial class PlannerAssignment
     {
         /// <summary>
+        /// Constructor for PlannerAssignment resource.
+        /// </summary>
+        public PlannerAssignment()
+        {
+            this.ODataType = ODataTypeName;
+        }
+
+        /// <summary>
         /// OData type name for PlannerAssignment resource.
         /// </summary>
         internal const string ODataTypeName = "#microsoft.graph.plannerAssignment";
-
-        /// <summary>
-        /// Ensures that @odata.type property is included when this object is serialized. 
-        /// This is required since this object is used as a value in dynamic properties of open types. 
-        /// </summary>
-        /// <param name="context">Serialization context. This parameter is ignored.</param>
-        [OnSerializing]
-        internal void AddODataType(StreamingContext context)
-        {
-            if (this.AdditionalData == null)
-            {
-                this.AdditionalData = new Dictionary<string, object>();
-            }
-
-            this.AdditionalData.Add(CoreConstants.Serialization.ODataType, ODataTypeName);
-        }
     }
 }

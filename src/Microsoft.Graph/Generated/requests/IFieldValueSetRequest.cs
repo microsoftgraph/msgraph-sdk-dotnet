@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified FieldValueSet using POST.
         /// </summary>
         /// <param name="fieldValueSetToCreate">The FieldValueSet to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FieldValueSet.</returns>
-        System.Threading.Tasks.Task<FieldValueSet> CreateAsync(FieldValueSet fieldValueSetToCreate);        /// <summary>
-        /// Creates the specified FieldValueSet using POST.
+        System.Threading.Tasks.Task<FieldValueSet> CreateAsync(FieldValueSet fieldValueSetToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified FieldValueSet using POST and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
         /// </summary>
         /// <param name="fieldValueSetToCreate">The FieldValueSet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created FieldValueSet.</returns>
-        System.Threading.Tasks.Task<FieldValueSet> CreateAsync(FieldValueSet fieldValueSetToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified FieldValueSet.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{FieldValueSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> CreateResponseAsync(FieldValueSet fieldValueSetToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified FieldValueSet.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified FieldValueSet.
+        /// Deletes the specified FieldValueSet and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The FieldValueSet.</returns>
-        System.Threading.Tasks.Task<FieldValueSet> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified FieldValueSet.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The FieldValueSet.</returns>
-        System.Threading.Tasks.Task<FieldValueSet> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<FieldValueSet> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified FieldValueSet using PATCH.
+        /// Gets the specified FieldValueSet and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
         /// </summary>
-        /// <param name="fieldValueSetToUpdate">The FieldValueSet to update.</param>
-        /// <returns>The updated FieldValueSet.</returns>
-        System.Threading.Tasks.Task<FieldValueSet> UpdateAsync(FieldValueSet fieldValueSetToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FieldValueSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified FieldValueSet using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FieldValueSet.</returns>
-        System.Threading.Tasks.Task<FieldValueSet> UpdateAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<FieldValueSet> UpdateAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified FieldValueSet using PATCH and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
+        /// </summary>
+        /// <param name="fieldValueSetToUpdate">The FieldValueSet to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{FieldValueSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> UpdateResponseAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified FieldValueSet using PUT.
+        /// </summary>
+        /// <param name="fieldValueSetToUpdate">The FieldValueSet object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<FieldValueSet> PutAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified FieldValueSet using PUT and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
+        /// </summary>
+        /// <param name="fieldValueSetToUpdate">The FieldValueSet object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{FieldValueSet}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> PutResponseAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified TargetedManagedAppPolicyAssignment using POST.
         /// </summary>
         /// <param name="targetedManagedAppPolicyAssignmentToCreate">The TargetedManagedAppPolicyAssignment to create.</param>
-        /// <returns>The created TargetedManagedAppPolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> CreateAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignmentToCreate)
-        {
-            return this.CreateAsync(targetedManagedAppPolicyAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TargetedManagedAppPolicyAssignment using POST.
-        /// </summary>
-        /// <param name="targetedManagedAppPolicyAssignmentToCreate">The TargetedManagedAppPolicyAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TargetedManagedAppPolicyAssignment.</returns>
-        public async System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> CreateAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> CreateAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<TargetedManagedAppPolicyAssignment>(targetedManagedAppPolicyAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified TargetedManagedAppPolicyAssignment.
+        /// Creates the specified TargetedManagedAppPolicyAssignment using POST and returns a <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="targetedManagedAppPolicyAssignmentToCreate">The TargetedManagedAppPolicyAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppPolicyAssignment>> CreateResponseAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<TargetedManagedAppPolicyAssignment>(targetedManagedAppPolicyAssignmentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<TargetedManagedAppPolicyAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified TargetedManagedAppPolicyAssignment.
+        /// Deletes the specified TargetedManagedAppPolicyAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TargetedManagedAppPolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TargetedManagedAppPolicyAssignment.</returns>
-        public async System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<TargetedManagedAppPolicyAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified TargetedManagedAppPolicyAssignment using PATCH.
+        /// Gets the specified TargetedManagedAppPolicyAssignment and returns a <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object.
         /// </summary>
-        /// <param name="targetedManagedAppPolicyAssignmentToUpdate">The TargetedManagedAppPolicyAssignment to update.</param>
-        /// <returns>The updated TargetedManagedAppPolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> UpdateAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignmentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppPolicyAssignment>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(targetedManagedAppPolicyAssignmentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<TargetedManagedAppPolicyAssignment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TargetedManagedAppPolicyAssignment.</returns>
-        public async System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> UpdateAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> UpdateAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignmentToUpdate, CancellationToken cancellationToken = default)
         {
-			if (targetedManagedAppPolicyAssignmentToUpdate.AdditionalData != null)
-			{
-				if (targetedManagedAppPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					targetedManagedAppPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, targetedManagedAppPolicyAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (targetedManagedAppPolicyAssignmentToUpdate.AdditionalData != null)
-            {
-                if (targetedManagedAppPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    targetedManagedAppPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, targetedManagedAppPolicyAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<TargetedManagedAppPolicyAssignment>(targetedManagedAppPolicyAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TargetedManagedAppPolicyAssignment using PATCH and returns a <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="targetedManagedAppPolicyAssignmentToUpdate">The TargetedManagedAppPolicyAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppPolicyAssignment>> UpdateResponseAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<TargetedManagedAppPolicyAssignment>(targetedManagedAppPolicyAssignmentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified TargetedManagedAppPolicyAssignment using PUT.
+        /// </summary>
+        /// <param name="targetedManagedAppPolicyAssignmentToUpdate">The TargetedManagedAppPolicyAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> PutAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<TargetedManagedAppPolicyAssignment>(targetedManagedAppPolicyAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TargetedManagedAppPolicyAssignment using PUT and returns a <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="targetedManagedAppPolicyAssignmentToUpdate">The TargetedManagedAppPolicyAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppPolicyAssignment>> PutResponseAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<TargetedManagedAppPolicyAssignment>(targetedManagedAppPolicyAssignmentToUpdate, cancellationToken);
         }
 
         /// <summary>

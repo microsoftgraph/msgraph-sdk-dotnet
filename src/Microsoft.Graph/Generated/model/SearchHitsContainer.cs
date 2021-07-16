@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SearchHitsContainer.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SearchHitsContainer>))]
     public partial class SearchHitsContainer
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchHitsContainer"/> class.
-        /// </summary>
-        public SearchHitsContainer()
-        {
-            this.ODataType = "microsoft.graph.searchHitsContainer";
-        }
 
         /// <summary>
         /// Gets or sets hits.
         /// A collection of the search results.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hits", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hits")]
         public IEnumerable<SearchHit> Hits { get; set; }
     
         /// <summary>
         /// Gets or sets moreResultsAvailable.
         /// Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "moreResultsAvailable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("moreResultsAvailable")]
         public bool? MoreResultsAvailable { get; set; }
     
         /// <summary>
         /// Gets or sets total.
         /// The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "total", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("total")]
         public Int32? Total { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -9,42 +9,40 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsF_DistRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsF_DistRequestBody
     {
     
         /// <summary>
         /// Gets or sets X.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "x", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken X { get; set; }
+        [JsonPropertyName("x")]
+        public System.Text.Json.JsonDocument X { get; set; }
     
         /// <summary>
         /// Gets or sets DegFreedom1.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "degFreedom1", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken DegFreedom1 { get; set; }
+        [JsonPropertyName("degFreedom1")]
+        public System.Text.Json.JsonDocument DegFreedom1 { get; set; }
     
         /// <summary>
         /// Gets or sets DegFreedom2.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "degFreedom2", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken DegFreedom2 { get; set; }
+        [JsonPropertyName("degFreedom2")]
+        public System.Text.Json.JsonDocument DegFreedom2 { get; set; }
     
         /// <summary>
         /// Gets or sets Cumulative.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cumulative", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Cumulative { get; set; }
+        [JsonPropertyName("cumulative")]
+        public System.Text.Json.JsonDocument Cumulative { get; set; }
     
     }
 }

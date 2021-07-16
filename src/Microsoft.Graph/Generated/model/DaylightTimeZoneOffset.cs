@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DaylightTimeZoneOffset.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DaylightTimeZoneOffset : StandardTimeZoneOffset
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets daylightBias.
         /// The time offset from Coordinated Universal Time (UTC) for daylight saving time. This value is in minutes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "daylightBias", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("daylightBias")]
         public Int32? DaylightBias { get; set; }
     
     }

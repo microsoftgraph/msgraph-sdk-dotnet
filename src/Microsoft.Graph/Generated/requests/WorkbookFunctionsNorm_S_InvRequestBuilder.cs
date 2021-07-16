@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsNorm_S_InvRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken probability)
+            System.Text.Json.JsonDocument probability)
             : base(requestUrl, client)
         {
             this.SetParameter("probability", probability, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("probability"))
             {
-                request.RequestBody.Probability = this.GetParameter<Newtonsoft.Json.Linq.JToken>("probability");
+                request.RequestBody.Probability = this.GetParameter<System.Text.Json.JsonDocument>("probability");
             }
 
             return request;

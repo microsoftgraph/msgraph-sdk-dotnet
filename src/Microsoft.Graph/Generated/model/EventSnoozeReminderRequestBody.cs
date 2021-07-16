@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EventSnoozeReminderRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EventSnoozeReminderRequestBody
     {
     
         /// <summary>
         /// Gets or sets NewReminderTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "NewReminderTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("NewReminderTime")]
         public DateTimeTimeZone NewReminderTime { get; set; }
     
     }

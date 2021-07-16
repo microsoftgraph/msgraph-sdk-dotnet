@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Schedule using POST.
         /// </summary>
         /// <param name="scheduleToCreate">The Schedule to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Schedule.</returns>
-        System.Threading.Tasks.Task<Schedule> CreateAsync(Schedule scheduleToCreate);        /// <summary>
-        /// Creates the specified Schedule using POST.
+        System.Threading.Tasks.Task<Schedule> CreateAsync(Schedule scheduleToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Schedule using POST and returns a <see cref="GraphResponse{Schedule}"/> object.
         /// </summary>
         /// <param name="scheduleToCreate">The Schedule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Schedule.</returns>
-        System.Threading.Tasks.Task<Schedule> CreateAsync(Schedule scheduleToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Schedule.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Schedule>> CreateResponseAsync(Schedule scheduleToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Schedule.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Schedule.
+        /// Deletes the specified Schedule and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Schedule.</returns>
-        System.Threading.Tasks.Task<Schedule> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Schedule.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Schedule.</returns>
-        System.Threading.Tasks.Task<Schedule> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Schedule> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Schedule using PATCH.
+        /// Gets the specified Schedule and returns a <see cref="GraphResponse{Schedule}"/> object.
         /// </summary>
-        /// <param name="scheduleToUpdate">The Schedule to update.</param>
-        /// <returns>The updated Schedule.</returns>
-        System.Threading.Tasks.Task<Schedule> UpdateAsync(Schedule scheduleToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Schedule>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Schedule using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Schedule.</returns>
-        System.Threading.Tasks.Task<Schedule> UpdateAsync(Schedule scheduleToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Schedule> UpdateAsync(Schedule scheduleToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Schedule using PATCH and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <param name="scheduleToUpdate">The Schedule to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Schedule>> UpdateResponseAsync(Schedule scheduleToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Schedule using PUT.
+        /// </summary>
+        /// <param name="scheduleToUpdate">The Schedule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Schedule> PutAsync(Schedule scheduleToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Schedule using PUT and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <param name="scheduleToUpdate">The Schedule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Schedule}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Schedule>> PutResponseAsync(Schedule scheduleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

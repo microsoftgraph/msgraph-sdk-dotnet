@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IOfficeGraphInsightsSharedCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<OfficeGraphInsightsSharedCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<OfficeGraphInsightsSharedCollectionPage>))]
     public interface IOfficeGraphInsightsSharedCollectionPage : ICollectionPage<SharedInsight>
     {
         /// <summary>

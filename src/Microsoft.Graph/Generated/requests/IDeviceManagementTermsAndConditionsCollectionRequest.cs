@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementTermsAndConditionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified TermsAndConditions to the collection via POST.
-        /// </summary>
-        /// <param name="termsAndConditions">The TermsAndConditions to add.</param>
-        /// <returns>The created TermsAndConditions.</returns>
-        System.Threading.Tasks.Task<TermsAndConditions> AddAsync(TermsAndConditions termsAndConditions);
-
         /// <summary>
         /// Adds the specified TermsAndConditions to the collection via POST.
         /// </summary>
         /// <param name="termsAndConditions">The TermsAndConditions to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TermsAndConditions.</returns>
-        System.Threading.Tasks.Task<TermsAndConditions> AddAsync(TermsAndConditions termsAndConditions, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TermsAndConditions> AddAsync(TermsAndConditions termsAndConditions, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified TermsAndConditions to the collection via POST and returns a <see cref="GraphResponse{TermsAndConditions}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementTermsAndConditionsCollectionPage> GetAsync();
+        /// <param name="termsAndConditions">The TermsAndConditions to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> AddResponseAsync(TermsAndConditions termsAndConditions, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementTermsAndConditionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementTermsAndConditionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementTermsAndConditionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTermsAndConditionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTermsAndConditionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

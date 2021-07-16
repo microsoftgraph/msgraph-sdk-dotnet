@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookRangeInsertRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookRangeInsertRequestBody
     {
     
         /// <summary>
         /// Gets or sets Shift.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shift", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("shift")]
         public string Shift { get; set; }
     
     }

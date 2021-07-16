@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedDeviceCleanWindowsDeviceRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedDeviceCleanWindowsDeviceRequestBody
     {
     
         /// <summary>
         /// Gets or sets KeepUserData.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keepUserData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keepUserData")]
         public bool KeepUserData { get; set; }
     
     }

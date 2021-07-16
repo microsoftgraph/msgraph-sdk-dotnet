@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ProvisionedIdentity.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ProvisionedIdentity : Identity
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets details.
         /// Details of the identity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("details")]
         public DetailsInfo Details { get; set; }
     
         /// <summary>
         /// Gets or sets identityType.
         /// Type of identity that has been provisioned, such as 'user' or 'group'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityType")]
         public string IdentityType { get; set; }
     
     }

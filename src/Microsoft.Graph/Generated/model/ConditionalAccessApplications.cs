@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConditionalAccessApplications.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessApplications>))]
     public partial class ConditionalAccessApplications
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessApplications"/> class.
-        /// </summary>
-        public ConditionalAccessApplications()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessApplications";
-        }
 
         /// <summary>
         /// Gets or sets excludeApplications.
         /// The list of application IDs explicitly excluded from the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeApplications", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludeApplications")]
         public IEnumerable<string> ExcludeApplications { get; set; }
     
         /// <summary>
         /// Gets or sets includeApplications.
         /// The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeApplications", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeApplications")]
         public IEnumerable<string> IncludeApplications { get; set; }
     
         /// <summary>
         /// Gets or sets includeUserActions.
         /// User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeUserActions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeUserActions")]
         public IEnumerable<string> IncludeUserActions { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -10,13 +10,12 @@
 namespace Microsoft.Graph.CallRecords
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ICallRecordSessionsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.InterfaceConverter<CallRecordSessionsCollectionPage>))]
+    [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<CallRecordSessionsCollectionPage>))]
     public interface ICallRecordSessionsCollectionPage : Microsoft.Graph.ICollectionPage<Session>
     {
         /// <summary>

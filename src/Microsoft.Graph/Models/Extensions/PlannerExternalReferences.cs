@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -8,7 +8,7 @@ namespace Microsoft.Graph
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Represents the external references on a <see cref="PlannerTaskDetails"/>.
@@ -25,6 +25,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="url">The url of the reference.</param>
         /// <returns>The external reference data for the given url.</returns>
+        [JsonIgnore]
         public PlannerExternalReference this[string url]
         {
             get
@@ -34,10 +35,7 @@ namespace Microsoft.Graph
                     throw new ArgumentNullException(nameof(url));
                 }
 
-                if (this.AdditionalData is null)
-                {
-                    this.AdditionalData = new Dictionary<string, object>();
-                }
+                EnsureDeserializedReferences();
 
                 if (!this.AdditionalData.TryGetValue(Encode(url), out object referenceObject))
                 {
@@ -101,10 +99,7 @@ namespace Microsoft.Graph
         /// <returns>Enumeration of external reference ulr, external reference data pairs.</returns>
         public IEnumerator<KeyValuePair<string, PlannerExternalReference>> GetEnumerator()
         {
-            if (this.AdditionalData is null)
-            {
-                this.AdditionalData = new Dictionary<string, object>();
-            }
+            EnsureDeserializedReferences();
 
             return this.AdditionalData
                .Where(kvp => kvp.Value is PlannerExternalReference)
@@ -120,14 +115,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Ensures the ExternalReference information is deserialized into <see cref="PlannerExternalReference"/> objects.
         /// </summary>
-        /// <param name="context">Serialization context. This parameter is ignored.</param>
-        [OnDeserialized]
-        internal void DeserializeReferences(StreamingContext context)
+        internal void EnsureDeserializedReferences()
         {
-            if (this.AdditionalData is null)
-            {
-                this.AdditionalData = new Dictionary<string, object>();
-            }
+            this.AdditionalData ??= new Dictionary<string, object>();
 
             this.AdditionalData.ConvertComplexTypeProperties<PlannerExternalReference>(PlannerExternalReference.ODataTypeName);
         }

@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type FileHash.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<FileHash>))]
     public partial class FileHash
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FileHash"/> class.
-        /// </summary>
-        public FileHash()
-        {
-            this.ODataType = "microsoft.graph.fileHash";
-        }
 
         /// <summary>
         /// Gets or sets hashType.
         /// File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hashType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hashType")]
         public FileHashType? HashType { get; set; }
     
         /// <summary>
         /// Gets or sets hashValue.
         /// Value of the file hash.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hashValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hashValue")]
         public string HashValue { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

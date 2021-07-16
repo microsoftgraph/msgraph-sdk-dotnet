@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsMatchRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsMatchRequestBody
     {
     
         /// <summary>
         /// Gets or sets LookupValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lookupValue", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken LookupValue { get; set; }
+        [JsonPropertyName("lookupValue")]
+        public System.Text.Json.JsonDocument LookupValue { get; set; }
     
         /// <summary>
         /// Gets or sets LookupArray.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lookupArray", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken LookupArray { get; set; }
+        [JsonPropertyName("lookupArray")]
+        public System.Text.Json.JsonDocument LookupArray { get; set; }
     
         /// <summary>
         /// Gets or sets MatchType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matchType", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken MatchType { get; set; }
+        [JsonPropertyName("matchType")]
+        public System.Text.Json.JsonDocument MatchType { get; set; }
     
     }
 }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified OnenoteEntitySchemaObjectModel using POST.
         /// </summary>
         /// <param name="onenoteEntitySchemaObjectModelToCreate">The OnenoteEntitySchemaObjectModel to create.</param>
-        /// <returns>The created OnenoteEntitySchemaObjectModel.</returns>
-        public System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> CreateAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToCreate)
-        {
-            return this.CreateAsync(onenoteEntitySchemaObjectModelToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OnenoteEntitySchemaObjectModel using POST.
-        /// </summary>
-        /// <param name="onenoteEntitySchemaObjectModelToCreate">The OnenoteEntitySchemaObjectModel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenoteEntitySchemaObjectModel.</returns>
-        public async System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> CreateAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> CreateAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<OnenoteEntitySchemaObjectModel>(onenoteEntitySchemaObjectModelToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified OnenoteEntitySchemaObjectModel.
+        /// Creates the specified OnenoteEntitySchemaObjectModel using POST and returns a <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="onenoteEntitySchemaObjectModelToCreate">The OnenoteEntitySchemaObjectModel to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteEntitySchemaObjectModel>> CreateResponseAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<OnenoteEntitySchemaObjectModel>(onenoteEntitySchemaObjectModelToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<OnenoteEntitySchemaObjectModel>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified OnenoteEntitySchemaObjectModel.
+        /// Deletes the specified OnenoteEntitySchemaObjectModel and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OnenoteEntitySchemaObjectModel.</returns>
-        public System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnenoteEntitySchemaObjectModel.</returns>
-        public async System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<OnenoteEntitySchemaObjectModel>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified OnenoteEntitySchemaObjectModel using PATCH.
+        /// Gets the specified OnenoteEntitySchemaObjectModel and returns a <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object.
         /// </summary>
-        /// <param name="onenoteEntitySchemaObjectModelToUpdate">The OnenoteEntitySchemaObjectModel to update.</param>
-        /// <returns>The updated OnenoteEntitySchemaObjectModel.</returns>
-        public System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> UpdateAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteEntitySchemaObjectModel>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(onenoteEntitySchemaObjectModelToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<OnenoteEntitySchemaObjectModel>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnenoteEntitySchemaObjectModel.</returns>
-        public async System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> UpdateAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> UpdateAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToUpdate, CancellationToken cancellationToken = default)
         {
-			if (onenoteEntitySchemaObjectModelToUpdate.AdditionalData != null)
-			{
-				if (onenoteEntitySchemaObjectModelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					onenoteEntitySchemaObjectModelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteEntitySchemaObjectModelToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (onenoteEntitySchemaObjectModelToUpdate.AdditionalData != null)
-            {
-                if (onenoteEntitySchemaObjectModelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    onenoteEntitySchemaObjectModelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteEntitySchemaObjectModelToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<OnenoteEntitySchemaObjectModel>(onenoteEntitySchemaObjectModelToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OnenoteEntitySchemaObjectModel using PATCH and returns a <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntitySchemaObjectModelToUpdate">The OnenoteEntitySchemaObjectModel to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteEntitySchemaObjectModel>> UpdateResponseAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<OnenoteEntitySchemaObjectModel>(onenoteEntitySchemaObjectModelToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified OnenoteEntitySchemaObjectModel using PUT.
+        /// </summary>
+        /// <param name="onenoteEntitySchemaObjectModelToUpdate">The OnenoteEntitySchemaObjectModel object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> PutAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<OnenoteEntitySchemaObjectModel>(onenoteEntitySchemaObjectModelToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OnenoteEntitySchemaObjectModel using PUT and returns a <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntitySchemaObjectModelToUpdate">The OnenoteEntitySchemaObjectModel object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteEntitySchemaObjectModel>> PutResponseAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<OnenoteEntitySchemaObjectModel>(onenoteEntitySchemaObjectModelToUpdate, cancellationToken);
         }
 
         /// <summary>

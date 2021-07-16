@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SecurityVendorInformation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SecurityVendorInformation>))]
     public partial class SecurityVendorInformation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecurityVendorInformation"/> class.
-        /// </summary>
-        public SecurityVendorInformation()
-        {
-            this.ODataType = "microsoft.graph.securityVendorInformation";
-        }
 
         /// <summary>
         /// Gets or sets provider.
         /// Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provider", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provider")]
         public string Provider { get; set; }
     
         /// <summary>
         /// Gets or sets providerVersion.
         /// Version of the provider or subprovider, if it exists, that generated the alert. Required
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("providerVersion")]
         public string ProviderVersion { get; set; }
     
         /// <summary>
         /// Gets or sets subProvider.
         /// Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subProvider", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subProvider")]
         public string SubProvider { get; set; }
     
         /// <summary>
         /// Gets or sets vendor.
         /// Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vendor")]
         public string Vendor { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

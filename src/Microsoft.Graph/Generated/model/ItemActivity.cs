@@ -12,50 +12,40 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Item Activity.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ItemActivity : Entity
     {
     
-		///<summary>
-		/// The ItemActivity constructor
-		///</summary>
-        public ItemActivity()
-        {
-            this.ODataType = "microsoft.graph.itemActivity";
-        }
-	
         /// <summary>
         /// Gets or sets access.
         /// An item was accessed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "access", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("access")]
         public AccessAction Access { get; set; }
     
         /// <summary>
         /// Gets or sets activity date time.
         /// Details about when the activity took place. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityDateTime")]
         public DateTimeOffset? ActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets actor.
         /// Identity of who performed the action. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actor")]
         public IdentitySet Actor { get; set; }
     
         /// <summary>
         /// Gets or sets drive item.
         /// Exposes the driveItem that was the target of this activity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "driveItem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("driveItem")]
         public DriveItem DriveItem { get; set; }
     
     }

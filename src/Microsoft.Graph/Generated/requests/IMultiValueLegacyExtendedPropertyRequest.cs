@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MultiValueLegacyExtendedProperty using POST.
         /// </summary>
         /// <param name="multiValueLegacyExtendedPropertyToCreate">The MultiValueLegacyExtendedProperty to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MultiValueLegacyExtendedProperty.</returns>
-        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> CreateAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToCreate);        /// <summary>
-        /// Creates the specified MultiValueLegacyExtendedProperty using POST.
+        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> CreateAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified MultiValueLegacyExtendedProperty using POST and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object.
         /// </summary>
         /// <param name="multiValueLegacyExtendedPropertyToCreate">The MultiValueLegacyExtendedProperty to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MultiValueLegacyExtendedProperty.</returns>
-        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> CreateAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MultiValueLegacyExtendedProperty.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> CreateResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MultiValueLegacyExtendedProperty.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified MultiValueLegacyExtendedProperty.
+        /// Deletes the specified MultiValueLegacyExtendedProperty and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MultiValueLegacyExtendedProperty.</returns>
-        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MultiValueLegacyExtendedProperty.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MultiValueLegacyExtendedProperty.</returns>
-        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified MultiValueLegacyExtendedProperty using PATCH.
+        /// Gets the specified MultiValueLegacyExtendedProperty and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object.
         /// </summary>
-        /// <param name="multiValueLegacyExtendedPropertyToUpdate">The MultiValueLegacyExtendedProperty to update.</param>
-        /// <returns>The updated MultiValueLegacyExtendedProperty.</returns>
-        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> UpdateAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MultiValueLegacyExtendedProperty using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MultiValueLegacyExtendedProperty.</returns>
-        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> UpdateAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> UpdateAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MultiValueLegacyExtendedProperty using PATCH and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object.
+        /// </summary>
+        /// <param name="multiValueLegacyExtendedPropertyToUpdate">The MultiValueLegacyExtendedProperty to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> UpdateResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MultiValueLegacyExtendedProperty using PUT.
+        /// </summary>
+        /// <param name="multiValueLegacyExtendedPropertyToUpdate">The MultiValueLegacyExtendedProperty object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> PutAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MultiValueLegacyExtendedProperty using PUT and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object.
+        /// </summary>
+        /// <param name="multiValueLegacyExtendedPropertyToUpdate">The MultiValueLegacyExtendedProperty object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> PutResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

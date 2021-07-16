@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DirectoryObjectGetAvailableExtensionPropertiesRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DirectoryObjectGetAvailableExtensionPropertiesRequestBody
     {
     
         /// <summary>
         /// Gets or sets IsSyncedFromOnPremises.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSyncedFromOnPremises", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isSyncedFromOnPremises")]
         public bool? IsSyncedFromOnPremises { get; set; }
     
     }

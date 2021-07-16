@@ -12,78 +12,77 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Enrollment Troubleshooting Event.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<EnrollmentTroubleshootingEvent>))]
     public partial class EnrollmentTroubleshootingEvent : DeviceManagementTroubleshootingEvent
     {
     
-		///<summary>
-		/// The EnrollmentTroubleshootingEvent constructor
-		///</summary>
+        ///<summary>
+        /// The EnrollmentTroubleshootingEvent constructor
+        ///</summary>
         public EnrollmentTroubleshootingEvent()
         {
             this.ODataType = "microsoft.graph.enrollmentTroubleshootingEvent";
         }
-	
+
         /// <summary>
         /// Gets or sets device id.
         /// Azure AD device identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment type.
         /// Type of the enrollment. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentType")]
         public DeviceEnrollmentType? EnrollmentType { get; set; }
     
         /// <summary>
         /// Gets or sets failure category.
         /// Highlevel failure category. Possible values are: unknown, authentication, authorization, accountValidation, userValidation, deviceNotSupported, inMaintenance, badRequest, featureNotSupported, enrollmentRestrictionsEnforced, clientDisconnected, userAbandonment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureCategory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failureCategory")]
         public DeviceEnrollmentFailureReason? FailureCategory { get; set; }
     
         /// <summary>
         /// Gets or sets failure reason.
         /// Detailed failure reason.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureReason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failureReason")]
         public string FailureReason { get; set; }
     
         /// <summary>
         /// Gets or sets managed device identifier.
         /// Device identifier created or collected by Intune.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceIdentifier")]
         public string ManagedDeviceIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets operating system.
         /// Operating System.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operatingSystem")]
         public string OperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
         /// OS Version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// Identifier for the user that tried to enroll the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
     }

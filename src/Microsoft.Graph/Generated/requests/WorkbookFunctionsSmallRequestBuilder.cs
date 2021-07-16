@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsSmallRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken array,
-            Newtonsoft.Json.Linq.JToken k)
+            System.Text.Json.JsonDocument array,
+            System.Text.Json.JsonDocument k)
             : base(requestUrl, client)
         {
             this.SetParameter("array", array, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("array"))
             {
-                request.RequestBody.Array = this.GetParameter<Newtonsoft.Json.Linq.JToken>("array");
+                request.RequestBody.Array = this.GetParameter<System.Text.Json.JsonDocument>("array");
             }
 
             if (this.HasParameter("k"))
             {
-                request.RequestBody.K = this.GetParameter<Newtonsoft.Json.Linq.JToken>("k");
+                request.RequestBody.K = this.GetParameter<System.Text.Json.JsonDocument>("k");
             }
 
             return request;

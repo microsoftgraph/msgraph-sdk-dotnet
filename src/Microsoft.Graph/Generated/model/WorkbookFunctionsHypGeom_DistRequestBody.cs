@@ -9,48 +9,46 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsHypGeom_DistRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsHypGeom_DistRequestBody
     {
     
         /// <summary>
         /// Gets or sets SampleS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sampleS", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken SampleS { get; set; }
+        [JsonPropertyName("sampleS")]
+        public System.Text.Json.JsonDocument SampleS { get; set; }
     
         /// <summary>
         /// Gets or sets NumberSample.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberSample", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken NumberSample { get; set; }
+        [JsonPropertyName("numberSample")]
+        public System.Text.Json.JsonDocument NumberSample { get; set; }
     
         /// <summary>
         /// Gets or sets PopulationS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "populationS", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken PopulationS { get; set; }
+        [JsonPropertyName("populationS")]
+        public System.Text.Json.JsonDocument PopulationS { get; set; }
     
         /// <summary>
         /// Gets or sets NumberPop.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberPop", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken NumberPop { get; set; }
+        [JsonPropertyName("numberPop")]
+        public System.Text.Json.JsonDocument NumberPop { get; set; }
     
         /// <summary>
         /// Gets or sets Cumulative.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cumulative", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Cumulative { get; set; }
+        [JsonPropertyName("cumulative")]
+        public System.Text.Json.JsonDocument Cumulative { get; set; }
     
     }
 }

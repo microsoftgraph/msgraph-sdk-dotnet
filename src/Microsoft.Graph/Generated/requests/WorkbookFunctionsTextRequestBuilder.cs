@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsTextRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken value,
-            Newtonsoft.Json.Linq.JToken formatText)
+            System.Text.Json.JsonDocument value,
+            System.Text.Json.JsonDocument formatText)
             : base(requestUrl, client)
         {
             this.SetParameter("value", value, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("value"))
             {
-                request.RequestBody.Value = this.GetParameter<Newtonsoft.Json.Linq.JToken>("value");
+                request.RequestBody.Value = this.GetParameter<System.Text.Json.JsonDocument>("value");
             }
 
             if (this.HasParameter("formatText"))
             {
-                request.RequestBody.FormatText = this.GetParameter<Newtonsoft.Json.Linq.JToken>("formatText");
+                request.RequestBody.FormatText = this.GetParameter<System.Text.Json.JsonDocument>("formatText");
             }
 
             return request;

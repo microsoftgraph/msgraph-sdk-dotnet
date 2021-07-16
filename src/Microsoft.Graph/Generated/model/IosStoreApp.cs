@@ -12,50 +12,48 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Ios Store App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosStoreApp : MobileApp
     {
     
-		///<summary>
-		/// The IosStoreApp constructor
-		///</summary>
+        ///<summary>
+        /// The IosStoreApp constructor
+        ///</summary>
         public IosStoreApp()
         {
             this.ODataType = "microsoft.graph.iosStoreApp";
         }
-	
+
         /// <summary>
         /// Gets or sets applicable device type.
         /// The iOS architecture for which this app can run on.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicableDeviceType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicableDeviceType")]
         public IosDeviceType ApplicableDeviceType { get; set; }
     
         /// <summary>
         /// Gets or sets app store url.
         /// The Apple App Store URL
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appStoreUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appStoreUrl")]
         public string AppStoreUrl { get; set; }
     
         /// <summary>
         /// Gets or sets bundle id.
         /// The Identity Name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bundleId")]
         public string BundleId { get; set; }
     
         /// <summary>
         /// Gets or sets minimum supported operating system.
         /// The value for the minimum applicable operating system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumSupportedOperatingSystem")]
         public IosMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
     
     }

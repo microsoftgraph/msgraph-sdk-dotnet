@@ -12,42 +12,50 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Security.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Security : Entity
     {
     
-		///<summary>
-		/// The Security constructor
-		///</summary>
-        public Security()
-        {
-            this.ODataType = "microsoft.graph.security";
-        }
-	
         /// <summary>
         /// Gets or sets alerts.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alerts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alerts")]
         public ISecurityAlertsCollectionPage Alerts { get; set; }
+
+        /// <summary>
+        /// Gets or sets alertsNextLink.
+        /// </summary>
+        [JsonPropertyName("alerts@odata.nextLink")]
+        public string AlertsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets secure score control profiles.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secureScoreControlProfiles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("secureScoreControlProfiles")]
         public ISecuritySecureScoreControlProfilesCollectionPage SecureScoreControlProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets secureScoreControlProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("secureScoreControlProfiles@odata.nextLink")]
+        public string SecureScoreControlProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets secure scores.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secureScores", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("secureScores")]
         public ISecuritySecureScoresCollectionPage SecureScores { get; set; }
+
+        /// <summary>
+        /// Gets or sets secureScoresNextLink.
+        /// </summary>
+        [JsonPropertyName("secureScores@odata.nextLink")]
+        public string SecureScoresNextLink { get; set; }
     
     }
 }

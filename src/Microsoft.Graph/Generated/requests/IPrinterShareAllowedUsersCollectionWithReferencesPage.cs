@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IPrinterShareAllowedUsersCollectionWithReferencesPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<PrinterShareAllowedUsersCollectionWithReferencesPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<PrinterShareAllowedUsersCollectionWithReferencesPage>))]
     public interface IPrinterShareAllowedUsersCollectionWithReferencesPage : ICollectionPage<User>
     {
         /// <summary>

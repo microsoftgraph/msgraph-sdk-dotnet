@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Home Realm Discovery Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class HomeRealmDiscoveryPolicy : StsPolicy
     {
     
-		///<summary>
-		/// The HomeRealmDiscoveryPolicy constructor
-		///</summary>
+        ///<summary>
+        /// The HomeRealmDiscoveryPolicy constructor
+        ///</summary>
         public HomeRealmDiscoveryPolicy()
         {
             this.ODataType = "microsoft.graph.homeRealmDiscoveryPolicy";
         }
-	
+
     }
 }
 

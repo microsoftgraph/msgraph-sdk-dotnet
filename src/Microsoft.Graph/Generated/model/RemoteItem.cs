@@ -12,167 +12,158 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RemoteItem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RemoteItem>))]
     public partial class RemoteItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RemoteItem"/> class.
-        /// </summary>
-        public RemoteItem()
-        {
-            this.ODataType = "microsoft.graph.remoteItem";
-        }
 
         /// <summary>
         /// Gets or sets createdBy.
         /// Identity of the user, device, and application which created the item. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets createdDateTime.
         /// Date and time of item creation. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets file.
         /// Indicates that the remote item is a file. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "file", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("file")]
         public File File { get; set; }
     
         /// <summary>
         /// Gets or sets fileSystemInfo.
         /// Information about the remote item from the local file system. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileSystemInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileSystemInfo")]
         public FileSystemInfo FileSystemInfo { get; set; }
     
         /// <summary>
         /// Gets or sets folder.
         /// Indicates that the remote item is a folder. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "folder", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("folder")]
         public Folder Folder { get; set; }
     
         /// <summary>
         /// Gets or sets id.
         /// Unique identifier for the remote item in its drive. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets image.
         /// Image metadata, if the item is an image. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "image", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("image")]
         public Image Image { get; set; }
     
         /// <summary>
         /// Gets or sets lastModifiedBy.
         /// Identity of the user, device, and application which last modified the item. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedBy")]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets lastModifiedDateTime.
         /// Date and time the item was last modified. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// Optional. Filename of the remote item. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets package.
         /// If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "package", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("package")]
         public Package Package { get; set; }
     
         /// <summary>
         /// Gets or sets parentReference.
         /// Properties of the parent of the remote item. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentReference", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parentReference")]
         public ItemReference ParentReference { get; set; }
     
         /// <summary>
         /// Gets or sets shared.
         /// Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shared", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("shared")]
         public Shared Shared { get; set; }
     
         /// <summary>
         /// Gets or sets sharepointIds.
         /// Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharepointIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharepointIds")]
         public SharepointIds SharepointIds { get; set; }
     
         /// <summary>
         /// Gets or sets size.
         /// Size of the remote item. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("size")]
         public Int64? Size { get; set; }
     
         /// <summary>
         /// Gets or sets specialFolder.
         /// If the current item is also available as a special folder, this facet is returned. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "specialFolder", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("specialFolder")]
         public SpecialFolder SpecialFolder { get; set; }
     
         /// <summary>
         /// Gets or sets video.
         /// Video metadata, if the item is a video. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "video", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("video")]
         public Video Video { get; set; }
     
         /// <summary>
         /// Gets or sets webDavUrl.
         /// DAV compatible URL for the item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webDavUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webDavUrl")]
         public string WebDavUrl { get; set; }
     
         /// <summary>
         /// Gets or sets webUrl.
         /// URL that displays the resource in the browser. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

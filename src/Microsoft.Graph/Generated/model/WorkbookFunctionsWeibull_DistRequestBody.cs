@@ -9,42 +9,40 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsWeibull_DistRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsWeibull_DistRequestBody
     {
     
         /// <summary>
         /// Gets or sets X.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "x", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken X { get; set; }
+        [JsonPropertyName("x")]
+        public System.Text.Json.JsonDocument X { get; set; }
     
         /// <summary>
         /// Gets or sets Alpha.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alpha", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Alpha { get; set; }
+        [JsonPropertyName("alpha")]
+        public System.Text.Json.JsonDocument Alpha { get; set; }
     
         /// <summary>
         /// Gets or sets Beta.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "beta", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Beta { get; set; }
+        [JsonPropertyName("beta")]
+        public System.Text.Json.JsonDocument Beta { get; set; }
     
         /// <summary>
         /// Gets or sets Cumulative.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cumulative", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Cumulative { get; set; }
+        [JsonPropertyName("cumulative")]
+        public System.Text.Json.JsonDocument Cumulative { get; set; }
     
     }
 }

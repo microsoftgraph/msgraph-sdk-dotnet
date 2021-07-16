@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IWorkbookRangeFormatBordersCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<WorkbookRangeFormatBordersCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<WorkbookRangeFormatBordersCollectionPage>))]
     public interface IWorkbookRangeFormatBordersCollectionPage : ICollectionPage<WorkbookRangeBorder>
     {
         /// <summary>

@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -10,13 +10,12 @@
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     using Microsoft.Graph.DotnetCore.Test.Requests.Functional.Resources;
-    using Newtonsoft.Json.Linq;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Net.Http;
-    using System.Reflection;
+    using System.Text.Json;
     using System.Threading.Tasks;
     using Xunit;
     /// <summary>
@@ -133,13 +132,34 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                                                               .GetAsync();
 
                 // Forming the JSON for the updated values
-                var arr = rangeToUpdate.Values as JArray;
-                var arrInner = arr[0] as JArray;
-                arrInner[0] = $"{arrInner[0] + "C"}"; // JToken
+                using MemoryStream memoryStream = new MemoryStream();
+                using Utf8JsonWriter utf8JsonWriter = new Utf8JsonWriter(memoryStream);
+                utf8JsonWriter.WriteStartArray(); // open the outer array
+                foreach (var row in rangeToUpdate.Values.RootElement.EnumerateArray())
+                {
+                    utf8JsonWriter.WriteStartArray(); // open the inner array
+                    int count = 0;
+                    foreach (var column in row.EnumerateArray())
+                    {
+                        string updatedData = column.GetString();
+                        if (count == 0)
+                        {
+                            updatedData = $"{column.GetString() + "C"}";
+                        }
+                        utf8JsonWriter.WriteStringValue(updatedData);
+                        count++;
+                    }
+                    utf8JsonWriter.WriteEndArray(); // open the inner array
+                }
+                utf8JsonWriter.WriteEndArray(); // close the outer array
+
+                // flush the json writing
+                await utf8JsonWriter.FlushAsync();
+                await memoryStream.FlushAsync();
 
                 // Create a dummy WorkbookRange object so that we only PATCH the values we want to update.
                 var dummyWorkbookRange = new WorkbookRange();
-                dummyWorkbookRange.Values = arr;
+                dummyWorkbookRange.Values = JsonDocument.Parse(memoryStream);
 
                 // Update the range values.
                 var workbookRange = await graphClient.Me.Drive.Items[excelFileId]
@@ -174,7 +194,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 var rangeAddress = "E2";
 
                 // Forming the JSON for 
-                var arr = JArray.Parse(@"[['$#,##0.00;[Red]$#,##0.00']]"); // Currency format
+                var arr = JsonDocument.Parse(@"[['$#,##0.00;[Red]$#,##0.00']]"); // Currency format
 
                 var dummyWorkbookRange = new WorkbookRange();
                 dummyWorkbookRange.NumberFormat = arr;
@@ -209,7 +229,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 await OneDriveUploadTestFileContent(excelFileId);
 
                 // Get the absolute value of -10
-                var inputNumber = JToken.Parse("-10");
+                var inputNumber = JsonDocument.Parse("-10");
 
                 var workbookFunctionResult = await graphClient.Me.Drive.Items[excelFileId].Workbook.Functions.Abs(inputNumber).Request().PostAsync();
 
@@ -235,7 +255,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 await OneDriveUploadTestFileContent(excelFileId);
 
                 // Forming the JSON for updating the formula
-                var arr = JArray.Parse(@"[['=A4*B4']]");
+                var arr = JsonDocument.Parse(@"[['=A4*B4']]");
 
                 // We want to use a dummy workbook object so that we only send the property we want to update.
                 var dummyWorkbookRange = new WorkbookRange();
@@ -320,7 +340,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 // You'll want to make sure you give a JSON array that matches the size of the table.
                 var newWorkbookTableRow = new WorkbookTableRow();
                 newWorkbookTableRow.Index = 0;
-                var myArr = JArray.Parse("[[\"ValueA2\",\"ValueA3\"]]");
+                var myArr = JsonDocument.Parse("[[\"ValueA2\",\"ValueA3\"]]");
                 newWorkbookTableRow.Values = myArr;
 
                 //// Insert a new row. This results in a call to the service.
@@ -392,7 +412,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                                           .Tables["FilterTableValues"]
                                           .Columns["1"] // This is a one based index.
                                           .Filter
-                                          .ApplyValuesFilter(JArray.Parse("[\"2\"]"))
+                                          .ApplyValuesFilter(JsonDocument.Parse("[\"2\"]"))
                                           .Request()
                                           .PostAsync();
 
@@ -427,7 +447,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                                                               .Workbook
                                                               .Worksheets["CreateChartFromTable"] // Set in excelTestResource.xlsx
                                                               .Charts
-                                                              .Add("ColumnStacked", "Auto", tableRange.Address)
+                                                              .Add("ColumnStacked", "Auto", JsonDocument.Parse(tableRange.Address))
                                                               .Request()
                                                               .PostAsync();
 
@@ -462,7 +482,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                                                                 .Workbook
                                                                 .Worksheets["CreateChartFromTable"] // Set in excelTestResource.xlsx
                                                                 .Charts
-                                                                .Add("ColumnStacked", "Auto", tableRange.Address)
+                                                                .Add("ColumnStacked", "Auto", JsonDocument.Parse(tableRange.Address))
                                                                 .Request()
                                                                 .PostAsync();
 
@@ -491,10 +511,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 {
                     var content = await response.Content.ReadAsStringAsync();
 
-                    JObject imageObject = JObject.Parse(content);
-                    JToken obj = imageObject.GetValue("value");
+                    JsonDocument imageObject = JsonDocument.Parse(content);
+                    JsonElement obj = imageObject.RootElement.GetProperty("value");
 
-                    Assert.NotNull(obj);
+                    Assert.NotEqual(JsonValueKind.Undefined, obj.ValueKind);
                 }
                 else
                     throw new ServiceException(
@@ -535,7 +555,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 var dummyWorkbookRange = new WorkbookRange()
                 {
-                    Values = JArray.Parse("[[\"This should not work\"]]")
+                    Values = JsonDocument.Parse("[[\"This should not work\"]]")
                 };
 
                 // Try to write to the worksheet. Expect an exception.

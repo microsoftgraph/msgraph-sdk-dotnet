@@ -12,49 +12,63 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Audit Log Root.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AuditLogRoot : Entity
     {
     
-		///<summary>
-		/// The AuditLogRoot constructor
-		///</summary>
-        public AuditLogRoot()
-        {
-            this.ODataType = "microsoft.graph.auditLogRoot";
-        }
-	
         /// <summary>
         /// Gets or sets directory audits.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directoryAudits", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("directoryAudits")]
         public IAuditLogRootDirectoryAuditsCollectionPage DirectoryAudits { get; set; }
+
+        /// <summary>
+        /// Gets or sets directoryAuditsNextLink.
+        /// </summary>
+        [JsonPropertyName("directoryAudits@odata.nextLink")]
+        public string DirectoryAuditsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioning", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provisioning")]
         public IAuditLogRootProvisioningCollectionPage Provisioning { get; set; }
+
+        /// <summary>
+        /// Gets or sets provisioningNextLink.
+        /// </summary>
+        [JsonPropertyName("provisioning@odata.nextLink")]
+        public string ProvisioningNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets restricted sign ins.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictedSignIns", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("restrictedSignIns")]
         public IAuditLogRootRestrictedSignInsCollectionPage RestrictedSignIns { get; set; }
+
+        /// <summary>
+        /// Gets or sets restrictedSignInsNextLink.
+        /// </summary>
+        [JsonPropertyName("restrictedSignIns@odata.nextLink")]
+        public string RestrictedSignInsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sign ins.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signIns", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("signIns")]
         public IAuditLogRootSignInsCollectionPage SignIns { get; set; }
+
+        /// <summary>
+        /// Gets or sets signInsNextLink.
+        /// </summary>
+        [JsonPropertyName("signIns@odata.nextLink")]
+        public string SignInsNextLink { get; set; }
     
     }
 }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DriveItem using POST.
         /// </summary>
         /// <param name="driveItemToCreate">The DriveItem to create.</param>
-        /// <returns>The created DriveItem.</returns>
-        public System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate)
-        {
-            return this.CreateAsync(driveItemToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DriveItem using POST.
-        /// </summary>
-        /// <param name="driveItemToCreate">The DriveItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DriveItem.</returns>
-        public async System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DriveItem>(driveItemToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DriveItem.
+        /// Creates the specified DriveItem using POST and returns a <see cref="GraphResponse{DriveItem}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="driveItemToCreate">The DriveItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItem>> CreateResponseAsync(DriveItem driveItemToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DriveItem>(driveItemToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DriveItem>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DriveItem.
+        /// Deletes the specified DriveItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DriveItem.</returns>
-        public System.Threading.Tasks.Task<DriveItem> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DriveItem.</returns>
-        public async System.Threading.Tasks.Task<DriveItem> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DriveItem> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DriveItem>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DriveItem using PATCH.
+        /// Gets the specified DriveItem and returns a <see cref="GraphResponse{DriveItem}"/> object.
         /// </summary>
-        /// <param name="driveItemToUpdate">The DriveItem to update.</param>
-        /// <returns>The updated DriveItem.</returns>
-        public System.Threading.Tasks.Task<DriveItem> UpdateAsync(DriveItem driveItemToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItem>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(driveItemToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DriveItem>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DriveItem.</returns>
-        public async System.Threading.Tasks.Task<DriveItem> UpdateAsync(DriveItem driveItemToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DriveItem> UpdateAsync(DriveItem driveItemToUpdate, CancellationToken cancellationToken = default)
         {
-			if (driveItemToUpdate.AdditionalData != null)
-			{
-				if (driveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					driveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, driveItemToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (driveItemToUpdate.AdditionalData != null)
-            {
-                if (driveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    driveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, driveItemToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DriveItem>(driveItemToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DriveItem using PATCH and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="driveItemToUpdate">The DriveItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItem>> UpdateResponseAsync(DriveItem driveItemToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DriveItem>(driveItemToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DriveItem using PUT.
+        /// </summary>
+        /// <param name="driveItemToUpdate">The DriveItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DriveItem> PutAsync(DriveItem driveItemToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DriveItem>(driveItemToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DriveItem using PUT and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="driveItemToUpdate">The DriveItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DriveItem}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItem>> PutResponseAsync(DriveItem driveItemToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DriveItem>(driveItemToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DriveItem driveItemToInitialize)
         {
 
-            if (driveItemToInitialize != null && driveItemToInitialize.AdditionalData != null)
+            if (driveItemToInitialize != null)
             {
-
                 if (driveItemToInitialize.Children != null && driveItemToInitialize.Children.CurrentPage != null)
                 {
+                    driveItemToInitialize.Children.InitializeNextPageRequest(this.Client, driveItemToInitialize.ChildrenNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveItemToInitialize.Children.AdditionalData = driveItemToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    driveItemToInitialize.AdditionalData.TryGetValue("children@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        driveItemToInitialize.Children.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (driveItemToInitialize.Permissions != null && driveItemToInitialize.Permissions.CurrentPage != null)
                 {
+                    driveItemToInitialize.Permissions.InitializeNextPageRequest(this.Client, driveItemToInitialize.PermissionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveItemToInitialize.Permissions.AdditionalData = driveItemToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    driveItemToInitialize.AdditionalData.TryGetValue("permissions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        driveItemToInitialize.Permissions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (driveItemToInitialize.Subscriptions != null && driveItemToInitialize.Subscriptions.CurrentPage != null)
                 {
+                    driveItemToInitialize.Subscriptions.InitializeNextPageRequest(this.Client, driveItemToInitialize.SubscriptionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveItemToInitialize.Subscriptions.AdditionalData = driveItemToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    driveItemToInitialize.AdditionalData.TryGetValue("subscriptions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        driveItemToInitialize.Subscriptions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (driveItemToInitialize.Thumbnails != null && driveItemToInitialize.Thumbnails.CurrentPage != null)
                 {
+                    driveItemToInitialize.Thumbnails.InitializeNextPageRequest(this.Client, driveItemToInitialize.ThumbnailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveItemToInitialize.Thumbnails.AdditionalData = driveItemToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    driveItemToInitialize.AdditionalData.TryGetValue("thumbnails@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        driveItemToInitialize.Thumbnails.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (driveItemToInitialize.Versions != null && driveItemToInitialize.Versions.CurrentPage != null)
                 {
+                    driveItemToInitialize.Versions.InitializeNextPageRequest(this.Client, driveItemToInitialize.VersionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveItemToInitialize.Versions.AdditionalData = driveItemToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    driveItemToInitialize.AdditionalData.TryGetValue("versions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        driveItemToInitialize.Versions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IRbacApplicationRoleAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="unifiedRoleAssignment">The UnifiedRoleAssignment to add.</param>
-        /// <returns>The created UnifiedRoleAssignment.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignment> AddAsync(UnifiedRoleAssignment unifiedRoleAssignment);
-
         /// <summary>
         /// Adds the specified UnifiedRoleAssignment to the collection via POST.
         /// </summary>
         /// <param name="unifiedRoleAssignment">The UnifiedRoleAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleAssignment.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignment> AddAsync(UnifiedRoleAssignment unifiedRoleAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleAssignment> AddAsync(UnifiedRoleAssignment unifiedRoleAssignment, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UnifiedRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleAssignment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRbacApplicationRoleAssignmentsCollectionPage> GetAsync();
+        /// <param name="unifiedRoleAssignment">The UnifiedRoleAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignment>> AddResponseAsync(UnifiedRoleAssignment unifiedRoleAssignment, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRbacApplicationRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IRbacApplicationRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{RbacApplicationRoleAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationRoleAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

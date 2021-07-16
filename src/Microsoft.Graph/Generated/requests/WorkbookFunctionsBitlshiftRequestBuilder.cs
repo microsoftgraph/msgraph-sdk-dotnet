@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsBitlshiftRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken shiftAmount)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument shiftAmount)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("shiftAmount"))
             {
-                request.RequestBody.ShiftAmount = this.GetParameter<Newtonsoft.Json.Linq.JToken>("shiftAmount");
+                request.RequestBody.ShiftAmount = this.GetParameter<System.Text.Json.JsonDocument>("shiftAmount");
             }
 
             return request;

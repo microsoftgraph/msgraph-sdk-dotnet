@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Organization using POST.
         /// </summary>
         /// <param name="organizationToCreate">The Organization to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Organization.</returns>
-        System.Threading.Tasks.Task<Organization> CreateAsync(Organization organizationToCreate);        /// <summary>
-        /// Creates the specified Organization using POST.
+        System.Threading.Tasks.Task<Organization> CreateAsync(Organization organizationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Organization using POST and returns a <see cref="GraphResponse{Organization}"/> object.
         /// </summary>
         /// <param name="organizationToCreate">The Organization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Organization.</returns>
-        System.Threading.Tasks.Task<Organization> CreateAsync(Organization organizationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Organization.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Organization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Organization>> CreateResponseAsync(Organization organizationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Organization.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Organization.
+        /// Deletes the specified Organization and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Organization.</returns>
-        System.Threading.Tasks.Task<Organization> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Organization.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Organization.</returns>
-        System.Threading.Tasks.Task<Organization> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Organization> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Organization using PATCH.
+        /// Gets the specified Organization and returns a <see cref="GraphResponse{Organization}"/> object.
         /// </summary>
-        /// <param name="organizationToUpdate">The Organization to update.</param>
-        /// <returns>The updated Organization.</returns>
-        System.Threading.Tasks.Task<Organization> UpdateAsync(Organization organizationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Organization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Organization>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Organization using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Organization.</returns>
-        System.Threading.Tasks.Task<Organization> UpdateAsync(Organization organizationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Organization> UpdateAsync(Organization organizationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Organization using PATCH and returns a <see cref="GraphResponse{Organization}"/> object.
+        /// </summary>
+        /// <param name="organizationToUpdate">The Organization to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Organization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Organization>> UpdateResponseAsync(Organization organizationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Organization using PUT.
+        /// </summary>
+        /// <param name="organizationToUpdate">The Organization object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Organization> PutAsync(Organization organizationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Organization using PUT and returns a <see cref="GraphResponse{Organization}"/> object.
+        /// </summary>
+        /// <param name="organizationToUpdate">The Organization object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Organization}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Organization>> PutResponseAsync(Organization organizationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed App Registration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedAppRegistration>))]
     public partial class ManagedAppRegistration : Entity
     {
     
-		///<summary>
-		/// The internal ManagedAppRegistration constructor
-		///</summary>
+        ///<summary>
+        /// The internal ManagedAppRegistration constructor
+        ///</summary>
         protected internal ManagedAppRegistration()
         {
             // Don't allow initialization of abstract entity types
@@ -34,106 +33,124 @@ namespace Microsoft.Graph
         /// Gets or sets app identifier.
         /// The app package Identifier
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appIdentifier")]
         public MobileAppIdentifier AppIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets application version.
         /// App version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicationVersion")]
         public string ApplicationVersion { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// Date and time of creation
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets device name.
         /// Host device name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets device tag.
         /// App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceTag", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceTag")]
         public string DeviceTag { get; set; }
     
         /// <summary>
         /// Gets or sets device type.
         /// Host device type
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceType")]
         public string DeviceType { get; set; }
     
         /// <summary>
         /// Gets or sets flagged reasons.
         /// Zero or more reasons an app registration is flagged. E.g. app running on rooted device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "flaggedReasons", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("flaggedReasons")]
         public IEnumerable<ManagedAppFlaggedReason> FlaggedReasons { get; set; }
     
         /// <summary>
         /// Gets or sets last sync date time.
         /// Date and time of last the app synced with management service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSyncDateTime")]
         public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets management sdk version.
         /// App management SDK version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementSdkVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managementSdkVersion")]
         public string ManagementSdkVersion { get; set; }
     
         /// <summary>
         /// Gets or sets platform version.
         /// Operating System version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platformVersion")]
         public string PlatformVersion { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// The user Id to who this app registration belongs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// Version of the entity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
         /// <summary>
         /// Gets or sets applied policies.
         /// Zero or more policys already applied on the registered app when it last synchronized with managment service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appliedPolicies")]
         public IManagedAppRegistrationAppliedPoliciesCollectionPage AppliedPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets appliedPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("appliedPolicies@odata.nextLink")]
+        public string AppliedPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets intended policies.
         /// Zero or more policies admin intended for the app as of now.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intendedPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("intendedPolicies")]
         public IManagedAppRegistrationIntendedPoliciesCollectionPage IntendedPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets intendedPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("intendedPolicies@odata.nextLink")]
+        public string IntendedPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
         /// Zero or more long running operations triggered on the app registration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operations")]
         public IManagedAppRegistrationOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        public string OperationsNextLink { get; set; }
     
     }
 }

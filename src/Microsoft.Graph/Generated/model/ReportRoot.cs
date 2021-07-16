@@ -12,47 +12,61 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Report Root.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ReportRoot : Entity
     {
     
-		///<summary>
-		/// The ReportRoot constructor
-		///</summary>
-        public ReportRoot()
-        {
-            this.ODataType = "microsoft.graph.reportRoot";
-        }
-	
         /// <summary>
         /// Gets or sets daily print usage by printer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dailyPrintUsageByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dailyPrintUsageByPrinter")]
         public IReportRootDailyPrintUsageByPrinterCollectionPage DailyPrintUsageByPrinter { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageByPrinterNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageByPrinter@odata.nextLink")]
+        public string DailyPrintUsageByPrinterNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets daily print usage by user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dailyPrintUsageByUser", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dailyPrintUsageByUser")]
         public IReportRootDailyPrintUsageByUserCollectionPage DailyPrintUsageByUser { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageByUserNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageByUser@odata.nextLink")]
+        public string DailyPrintUsageByUserNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage by printer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "monthlyPrintUsageByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("monthlyPrintUsageByPrinter")]
         public IReportRootMonthlyPrintUsageByPrinterCollectionPage MonthlyPrintUsageByPrinter { get; set; }
+
+        /// <summary>
+        /// Gets or sets monthlyPrintUsageByPrinterNextLink.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageByPrinter@odata.nextLink")]
+        public string MonthlyPrintUsageByPrinterNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage by user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "monthlyPrintUsageByUser", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("monthlyPrintUsageByUser")]
         public IReportRootMonthlyPrintUsageByUserCollectionPage MonthlyPrintUsageByUser { get; set; }
+
+        /// <summary>
+        /// Gets or sets monthlyPrintUsageByUserNextLink.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageByUser@odata.nextLink")]
+        public string MonthlyPrintUsageByUserNextLink { get; set; }
     
     }
 }

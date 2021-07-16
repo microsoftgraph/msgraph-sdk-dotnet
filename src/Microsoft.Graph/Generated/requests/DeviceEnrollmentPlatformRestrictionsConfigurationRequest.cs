@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToCreate">The DeviceEnrollmentPlatformRestrictionsConfiguration to create.</param>
-        /// <returns>The created DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        public System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> CreateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate)
-        {
-            return this.CreateAsync(deviceEnrollmentPlatformRestrictionsConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using POST.
-        /// </summary>
-        /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToCreate">The DeviceEnrollmentPlatformRestrictionsConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        public async System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> CreateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> CreateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceEnrollmentPlatformRestrictionsConfiguration>(deviceEnrollmentPlatformRestrictionsConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceEnrollmentPlatformRestrictionsConfiguration.
+        /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToCreate">The DeviceEnrollmentPlatformRestrictionsConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>> CreateResponseAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>(deviceEnrollmentPlatformRestrictionsConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceEnrollmentPlatformRestrictionsConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceEnrollmentPlatformRestrictionsConfiguration.
+        /// Deletes the specified DeviceEnrollmentPlatformRestrictionsConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        public System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        public async System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceEnrollmentPlatformRestrictionsConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using PATCH.
+        /// Gets the specified DeviceEnrollmentPlatformRestrictionsConfiguration and returns a <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object.
         /// </summary>
-        /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToUpdate">The DeviceEnrollmentPlatformRestrictionsConfiguration to update.</param>
-        /// <returns>The updated DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        public System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> UpdateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        public async System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> UpdateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> UpdateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.AdditionalData != null)
-			{
-				if (deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.AdditionalData != null)
-            {
-                if (deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceEnrollmentPlatformRestrictionsConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceEnrollmentPlatformRestrictionsConfiguration>(deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using PATCH and returns a <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToUpdate">The DeviceEnrollmentPlatformRestrictionsConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>> UpdateResponseAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>(deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using PUT.
+        /// </summary>
+        /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToUpdate">The DeviceEnrollmentPlatformRestrictionsConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> PutAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceEnrollmentPlatformRestrictionsConfiguration>(deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using PUT and returns a <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToUpdate">The DeviceEnrollmentPlatformRestrictionsConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>> PutResponseAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>(deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

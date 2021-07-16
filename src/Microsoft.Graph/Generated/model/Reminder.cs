@@ -12,90 +12,81 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Reminder.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Reminder>))]
     public partial class Reminder
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Reminder"/> class.
-        /// </summary>
-        public Reminder()
-        {
-            this.ODataType = "microsoft.graph.reminder";
-        }
 
         /// <summary>
         /// Gets or sets changeKey.
         /// Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("changeKey")]
         public string ChangeKey { get; set; }
     
         /// <summary>
         /// Gets or sets eventEndTime.
         /// The date, time and time zone that the event ends.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventEndTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eventEndTime")]
         public DateTimeTimeZone EventEndTime { get; set; }
     
         /// <summary>
         /// Gets or sets eventId.
         /// The unique ID of the event. Read only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eventId")]
         public string EventId { get; set; }
     
         /// <summary>
         /// Gets or sets eventLocation.
         /// The location of the event.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eventLocation")]
         public Location EventLocation { get; set; }
     
         /// <summary>
         /// Gets or sets eventStartTime.
         /// The date, time, and time zone that the event starts.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventStartTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eventStartTime")]
         public DateTimeTimeZone EventStartTime { get; set; }
     
         /// <summary>
         /// Gets or sets eventSubject.
         /// The text of the event's subject line.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventSubject", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eventSubject")]
         public string EventSubject { get; set; }
     
         /// <summary>
         /// Gets or sets eventWebLink.
         /// The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventWebLink", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eventWebLink")]
         public string EventWebLink { get; set; }
     
         /// <summary>
         /// Gets or sets reminderFireTime.
         /// The date, time, and time zone that the reminder is set to occur.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reminderFireTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reminderFireTime")]
         public DateTimeTimeZone ReminderFireTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

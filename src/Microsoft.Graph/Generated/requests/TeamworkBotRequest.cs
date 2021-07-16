@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified TeamworkBot using POST.
         /// </summary>
         /// <param name="teamworkBotToCreate">The TeamworkBot to create.</param>
-        /// <returns>The created TeamworkBot.</returns>
-        public System.Threading.Tasks.Task<TeamworkBot> CreateAsync(TeamworkBot teamworkBotToCreate)
-        {
-            return this.CreateAsync(teamworkBotToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TeamworkBot using POST.
-        /// </summary>
-        /// <param name="teamworkBotToCreate">The TeamworkBot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamworkBot.</returns>
-        public async System.Threading.Tasks.Task<TeamworkBot> CreateAsync(TeamworkBot teamworkBotToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamworkBot> CreateAsync(TeamworkBot teamworkBotToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<TeamworkBot>(teamworkBotToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified TeamworkBot.
+        /// Creates the specified TeamworkBot using POST and returns a <see cref="GraphResponse{TeamworkBot}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="teamworkBotToCreate">The TeamworkBot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamworkBot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamworkBot>> CreateResponseAsync(TeamworkBot teamworkBotToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<TeamworkBot>(teamworkBotToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<TeamworkBot>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified TeamworkBot.
+        /// Deletes the specified TeamworkBot and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TeamworkBot.</returns>
-        public System.Threading.Tasks.Task<TeamworkBot> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamworkBot.</returns>
-        public async System.Threading.Tasks.Task<TeamworkBot> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamworkBot> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<TeamworkBot>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified TeamworkBot using PATCH.
+        /// Gets the specified TeamworkBot and returns a <see cref="GraphResponse{TeamworkBot}"/> object.
         /// </summary>
-        /// <param name="teamworkBotToUpdate">The TeamworkBot to update.</param>
-        /// <returns>The updated TeamworkBot.</returns>
-        public System.Threading.Tasks.Task<TeamworkBot> UpdateAsync(TeamworkBot teamworkBotToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamworkBot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamworkBot>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(teamworkBotToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<TeamworkBot>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamworkBot.</returns>
-        public async System.Threading.Tasks.Task<TeamworkBot> UpdateAsync(TeamworkBot teamworkBotToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamworkBot> UpdateAsync(TeamworkBot teamworkBotToUpdate, CancellationToken cancellationToken = default)
         {
-			if (teamworkBotToUpdate.AdditionalData != null)
-			{
-				if (teamworkBotToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					teamworkBotToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamworkBotToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (teamworkBotToUpdate.AdditionalData != null)
-            {
-                if (teamworkBotToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    teamworkBotToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamworkBotToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<TeamworkBot>(teamworkBotToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TeamworkBot using PATCH and returns a <see cref="GraphResponse{TeamworkBot}"/> object.
+        /// </summary>
+        /// <param name="teamworkBotToUpdate">The TeamworkBot to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamworkBot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamworkBot>> UpdateResponseAsync(TeamworkBot teamworkBotToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<TeamworkBot>(teamworkBotToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified TeamworkBot using PUT.
+        /// </summary>
+        /// <param name="teamworkBotToUpdate">The TeamworkBot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<TeamworkBot> PutAsync(TeamworkBot teamworkBotToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<TeamworkBot>(teamworkBotToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TeamworkBot using PUT and returns a <see cref="GraphResponse{TeamworkBot}"/> object.
+        /// </summary>
+        /// <param name="teamworkBotToUpdate">The TeamworkBot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{TeamworkBot}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamworkBot>> PutResponseAsync(TeamworkBot teamworkBotToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<TeamworkBot>(teamworkBotToUpdate, cancellationToken);
         }
 
         /// <summary>

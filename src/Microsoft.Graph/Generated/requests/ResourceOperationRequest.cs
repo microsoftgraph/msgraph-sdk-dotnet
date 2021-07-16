@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ResourceOperation using POST.
         /// </summary>
         /// <param name="resourceOperationToCreate">The ResourceOperation to create.</param>
-        /// <returns>The created ResourceOperation.</returns>
-        public System.Threading.Tasks.Task<ResourceOperation> CreateAsync(ResourceOperation resourceOperationToCreate)
-        {
-            return this.CreateAsync(resourceOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ResourceOperation using POST.
-        /// </summary>
-        /// <param name="resourceOperationToCreate">The ResourceOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ResourceOperation.</returns>
-        public async System.Threading.Tasks.Task<ResourceOperation> CreateAsync(ResourceOperation resourceOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ResourceOperation> CreateAsync(ResourceOperation resourceOperationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ResourceOperation>(resourceOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ResourceOperation.
+        /// Creates the specified ResourceOperation using POST and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="resourceOperationToCreate">The ResourceOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> CreateResponseAsync(ResourceOperation resourceOperationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ResourceOperation>(resourceOperationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ResourceOperation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ResourceOperation.
+        /// Deletes the specified ResourceOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ResourceOperation.</returns>
-        public System.Threading.Tasks.Task<ResourceOperation> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ResourceOperation.</returns>
-        public async System.Threading.Tasks.Task<ResourceOperation> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ResourceOperation> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ResourceOperation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ResourceOperation using PATCH.
+        /// Gets the specified ResourceOperation and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
         /// </summary>
-        /// <param name="resourceOperationToUpdate">The ResourceOperation to update.</param>
-        /// <returns>The updated ResourceOperation.</returns>
-        public System.Threading.Tasks.Task<ResourceOperation> UpdateAsync(ResourceOperation resourceOperationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(resourceOperationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ResourceOperation>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ResourceOperation.</returns>
-        public async System.Threading.Tasks.Task<ResourceOperation> UpdateAsync(ResourceOperation resourceOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ResourceOperation> UpdateAsync(ResourceOperation resourceOperationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (resourceOperationToUpdate.AdditionalData != null)
-			{
-				if (resourceOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					resourceOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, resourceOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (resourceOperationToUpdate.AdditionalData != null)
-            {
-                if (resourceOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    resourceOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, resourceOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ResourceOperation>(resourceOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ResourceOperation using PATCH and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
+        /// </summary>
+        /// <param name="resourceOperationToUpdate">The ResourceOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ResourceOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> UpdateResponseAsync(ResourceOperation resourceOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ResourceOperation>(resourceOperationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ResourceOperation using PUT.
+        /// </summary>
+        /// <param name="resourceOperationToUpdate">The ResourceOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ResourceOperation> PutAsync(ResourceOperation resourceOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ResourceOperation>(resourceOperationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ResourceOperation using PUT and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
+        /// </summary>
+        /// <param name="resourceOperationToUpdate">The ResourceOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ResourceOperation}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> PutResponseAsync(ResourceOperation resourceOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ResourceOperation>(resourceOperationToUpdate, cancellationToken);
         }
 
         /// <summary>

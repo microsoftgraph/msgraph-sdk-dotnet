@@ -34,33 +34,26 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the GET request.
         /// </summary>
-        public System.Threading.Tasks.Task<WorkbookRangeView> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Issues the GET request.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<WorkbookRangeView> GetAsync(
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             return this.SendAsync<WorkbookRangeView>(null, cancellationToken);
         }
 
-
         /// <summary>
-        /// Issues the PATCH request.
+        /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="workbookrangeview">The WorkbookRangeView object set with the properties to update.</param>
-        /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeView> PatchAsync(WorkbookRangeView workbookrangeview)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.PatchAsync(workbookrangeview, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeView>(null, cancellationToken);
         }
+
 
         /// <summary>
         /// Issues the PATCH request.
@@ -69,20 +62,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<WorkbookRangeView> PatchAsync(WorkbookRangeView workbookrangeview,
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
-            this.Method = "PATCH";
+            this.Method = HttpMethods.PATCH;
             return this.SendAsync<WorkbookRangeView>(workbookrangeview, cancellationToken);
         }
 
         /// <summary>
-        /// Issues the PUT request.
+        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="workbookrangeview">The WorkbookRangeView object to update.</param>
-        /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeView> PutAsync(WorkbookRangeView workbookrangeview)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="workbookrangeview">The WorkbookRangeView object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> PatchResponseAsync(WorkbookRangeView workbookrangeview, CancellationToken cancellationToken = default)
         {
-            return this.PutAsync(workbookrangeview, CancellationToken.None);
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeView>(workbookrangeview, cancellationToken);
         }
 
         /// <summary>
@@ -92,10 +87,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<WorkbookRangeView> PutAsync(WorkbookRangeView workbookrangeview,
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
-            this.Method = "PUT";
+            this.Method = HttpMethods.PUT;
             return this.SendAsync<WorkbookRangeView>(workbookrangeview, cancellationToken);
+        }
+
+        /// <summary>
+        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="workbookrangeview">The WorkbookRangeView object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> PutResponseAsync(WorkbookRangeView workbookrangeview, CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeView>(workbookrangeview, cancellationToken);
         }
 
         /// <summary>

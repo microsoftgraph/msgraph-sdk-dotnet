@@ -12,29 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Chart Axis Title Format.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookChartAxisTitleFormat : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartAxisTitleFormat constructor
-		///</summary>
-        public WorkbookChartAxisTitleFormat()
-        {
-            this.ODataType = "microsoft.graph.workbookChartAxisTitleFormat";
-        }
-	
         /// <summary>
         /// Gets or sets font.
         /// Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "font", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("font")]
         public WorkbookChartFont Font { get; set; }
     
     }

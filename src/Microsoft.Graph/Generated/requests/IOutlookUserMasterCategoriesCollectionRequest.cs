@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IOutlookUserMasterCategoriesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified OutlookCategory to the collection via POST.
-        /// </summary>
-        /// <param name="outlookCategory">The OutlookCategory to add.</param>
-        /// <returns>The created OutlookCategory.</returns>
-        System.Threading.Tasks.Task<OutlookCategory> AddAsync(OutlookCategory outlookCategory);
-
         /// <summary>
         /// Adds the specified OutlookCategory to the collection via POST.
         /// </summary>
         /// <param name="outlookCategory">The OutlookCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookCategory.</returns>
-        System.Threading.Tasks.Task<OutlookCategory> AddAsync(OutlookCategory outlookCategory, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OutlookCategory> AddAsync(OutlookCategory outlookCategory, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified OutlookCategory to the collection via POST and returns a <see cref="GraphResponse{OutlookCategory}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOutlookUserMasterCategoriesCollectionPage> GetAsync();
+        /// <param name="outlookCategory">The OutlookCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> AddResponseAsync(OutlookCategory outlookCategory, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOutlookUserMasterCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IOutlookUserMasterCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OutlookUserMasterCategoriesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookUserMasterCategoriesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookUserMasterCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

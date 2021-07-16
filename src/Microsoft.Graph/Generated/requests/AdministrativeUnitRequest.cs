@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AdministrativeUnit using POST.
         /// </summary>
         /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
-        /// <returns>The created AdministrativeUnit.</returns>
-        public System.Threading.Tasks.Task<AdministrativeUnit> CreateAsync(AdministrativeUnit administrativeUnitToCreate)
-        {
-            return this.CreateAsync(administrativeUnitToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AdministrativeUnit using POST.
-        /// </summary>
-        /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AdministrativeUnit.</returns>
-        public async System.Threading.Tasks.Task<AdministrativeUnit> CreateAsync(AdministrativeUnit administrativeUnitToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AdministrativeUnit> CreateAsync(AdministrativeUnit administrativeUnitToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AdministrativeUnit>(administrativeUnitToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AdministrativeUnit.
+        /// Creates the specified AdministrativeUnit using POST and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> CreateResponseAsync(AdministrativeUnit administrativeUnitToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AdministrativeUnit>(administrativeUnitToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AdministrativeUnit>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AdministrativeUnit.
+        /// Deletes the specified AdministrativeUnit and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AdministrativeUnit.</returns>
-        public System.Threading.Tasks.Task<AdministrativeUnit> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AdministrativeUnit.</returns>
-        public async System.Threading.Tasks.Task<AdministrativeUnit> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AdministrativeUnit> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AdministrativeUnit>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AdministrativeUnit using PATCH.
+        /// Gets the specified AdministrativeUnit and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
         /// </summary>
-        /// <param name="administrativeUnitToUpdate">The AdministrativeUnit to update.</param>
-        /// <returns>The updated AdministrativeUnit.</returns>
-        public System.Threading.Tasks.Task<AdministrativeUnit> UpdateAsync(AdministrativeUnit administrativeUnitToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(administrativeUnitToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AdministrativeUnit>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AdministrativeUnit.</returns>
-        public async System.Threading.Tasks.Task<AdministrativeUnit> UpdateAsync(AdministrativeUnit administrativeUnitToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AdministrativeUnit> UpdateAsync(AdministrativeUnit administrativeUnitToUpdate, CancellationToken cancellationToken = default)
         {
-			if (administrativeUnitToUpdate.AdditionalData != null)
-			{
-				if (administrativeUnitToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					administrativeUnitToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, administrativeUnitToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (administrativeUnitToUpdate.AdditionalData != null)
-            {
-                if (administrativeUnitToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    administrativeUnitToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, administrativeUnitToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AdministrativeUnit>(administrativeUnitToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AdministrativeUnit using PATCH and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToUpdate">The AdministrativeUnit to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> UpdateResponseAsync(AdministrativeUnit administrativeUnitToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AdministrativeUnit>(administrativeUnitToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AdministrativeUnit using PUT.
+        /// </summary>
+        /// <param name="administrativeUnitToUpdate">The AdministrativeUnit object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AdministrativeUnit> PutAsync(AdministrativeUnit administrativeUnitToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AdministrativeUnit>(administrativeUnitToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AdministrativeUnit using PUT and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToUpdate">The AdministrativeUnit object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AdministrativeUnit}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> PutResponseAsync(AdministrativeUnit administrativeUnitToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AdministrativeUnit>(administrativeUnitToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AdministrativeUnit administrativeUnitToInitialize)
         {
 
-            if (administrativeUnitToInitialize != null && administrativeUnitToInitialize.AdditionalData != null)
+            if (administrativeUnitToInitialize != null)
             {
-
                 if (administrativeUnitToInitialize.Members != null && administrativeUnitToInitialize.Members.CurrentPage != null)
                 {
+                    administrativeUnitToInitialize.Members.InitializeNextPageRequest(this.Client, administrativeUnitToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     administrativeUnitToInitialize.Members.AdditionalData = administrativeUnitToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    administrativeUnitToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        administrativeUnitToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (administrativeUnitToInitialize.ScopedRoleMembers != null && administrativeUnitToInitialize.ScopedRoleMembers.CurrentPage != null)
                 {
+                    administrativeUnitToInitialize.ScopedRoleMembers.InitializeNextPageRequest(this.Client, administrativeUnitToInitialize.ScopedRoleMembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     administrativeUnitToInitialize.ScopedRoleMembers.AdditionalData = administrativeUnitToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    administrativeUnitToInitialize.AdditionalData.TryGetValue("scopedRoleMembers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        administrativeUnitToInitialize.ScopedRoleMembers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (administrativeUnitToInitialize.Extensions != null && administrativeUnitToInitialize.Extensions.CurrentPage != null)
                 {
+                    administrativeUnitToInitialize.Extensions.InitializeNextPageRequest(this.Client, administrativeUnitToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     administrativeUnitToInitialize.Extensions.AdditionalData = administrativeUnitToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    administrativeUnitToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        administrativeUnitToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph.CallRecords
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ParticipantEndpoint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ParticipantEndpoint : Endpoint
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph.CallRecords
         /// Gets or sets feedback.
         /// The feedback provided by the user of this endpoint about the quality of the session.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedback", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("feedback")]
         public UserFeedback Feedback { get; set; }
     
         /// <summary>
         /// Gets or sets identity.
         /// Identity associated with the endpoint.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identity")]
         public Microsoft.Graph.IdentitySet Identity { get; set; }
     
     }

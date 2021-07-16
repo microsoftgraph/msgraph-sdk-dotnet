@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CustomTimeZone.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CustomTimeZone : TimeZoneBase
     {
         /// <summary>
@@ -33,21 +31,21 @@ namespace Microsoft.Graph
         /// Gets or sets bias.
         /// The time offset of the time zone from Coordinated Universal Time (UTC). This value is in minutes. Time zones that are ahead of UTC have a positive offset; time zones that are behind UTC have a negative offset.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bias", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bias")]
         public Int32? Bias { get; set; }
     
         /// <summary>
         /// Gets or sets daylightOffset.
         /// Specifies when the time zone switches from standard time to daylight saving time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "daylightOffset", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("daylightOffset")]
         public DaylightTimeZoneOffset DaylightOffset { get; set; }
     
         /// <summary>
         /// Gets or sets standardOffset.
         /// Specifies when the time zone switches from daylight saving time to standard time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "standardOffset", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("standardOffset")]
         public StandardTimeZoneOffset StandardOffset { get; set; }
     
     }

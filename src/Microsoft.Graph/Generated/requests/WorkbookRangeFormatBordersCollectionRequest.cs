@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WorkbookRangeBorder to the collection via POST.
-        /// </summary>
-        /// <param name="workbookRangeBorder">The WorkbookRangeBorder to add.</param>
-        /// <returns>The created WorkbookRangeBorder.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeBorder> AddAsync(WorkbookRangeBorder workbookRangeBorder)
-        {
-            return this.AddAsync(workbookRangeBorder, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WorkbookRangeBorder to the collection via POST.
         /// </summary>
         /// <param name="workbookRangeBorder">The WorkbookRangeBorder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeBorder.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeBorder> AddAsync(WorkbookRangeBorder workbookRangeBorder, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WorkbookRangeBorder> AddAsync(WorkbookRangeBorder workbookRangeBorder, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<WorkbookRangeBorder>(workbookRangeBorder, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified WorkbookRangeBorder to the collection via POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IWorkbookRangeFormatBordersCollectionPage> GetAsync()
+        /// <param name="workbookRangeBorder">The WorkbookRangeBorder to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> AddResponseAsync(WorkbookRangeBorder workbookRangeBorder, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeBorder>(workbookRangeBorder, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IWorkbookRangeFormatBordersCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IWorkbookRangeFormatBordersCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<WorkbookRangeFormatBordersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookRangeFormatBordersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFormatBordersCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFormatBordersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeFormatBordersCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

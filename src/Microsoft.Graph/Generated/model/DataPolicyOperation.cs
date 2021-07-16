@@ -12,64 +12,55 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Data Policy Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DataPolicyOperation>))]
     public partial class DataPolicyOperation : Entity
     {
     
-		///<summary>
-		/// The DataPolicyOperation constructor
-		///</summary>
-        public DataPolicyOperation()
-        {
-            this.ODataType = "microsoft.graph.dataPolicyOperation";
-        }
-	
         /// <summary>
         /// Gets or sets completed date time.
         /// Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completedDateTime")]
         public DateTimeOffset? CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets progress.
         /// Specifies the progress of an operation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "progress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("progress")]
         public double? Progress { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Possible values are: notStarted, running, complete, failed, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public DataPolicyOperationStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets storage location.
         /// The URL location to where data is being exported for export requests.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("storageLocation")]
         public string StorageLocation { get; set; }
     
         /// <summary>
         /// Gets or sets submitted date time.
         /// Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "submittedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("submittedDateTime")]
         public DateTimeOffset? SubmittedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// The id for the user on whom the operation is performed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
     }

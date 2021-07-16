@@ -12,43 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSCustom Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MacOSCustomConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The MacOSCustomConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSCustomConfiguration constructor
+        ///</summary>
         public MacOSCustomConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSCustomConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets payload.
         /// Payload. (UTF8 encoded byte array)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payload", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("payload")]
         public byte[] Payload { get; set; }
     
         /// <summary>
         /// Gets or sets payload file name.
         /// Payload file name (.mobileconfig
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadFileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("payloadFileName")]
         public string PayloadFileName { get; set; }
     
         /// <summary>
         /// Gets or sets payload name.
         /// Name that is displayed to the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("payloadName")]
         public string PayloadName { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IosVppAppAssignmentSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosVppAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets useDeviceLicensing.
         /// Whether or not to use device licensing.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useDeviceLicensing", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("useDeviceLicensing")]
         public bool? UseDeviceLicensing { get; set; }
     
         /// <summary>
         /// Gets or sets vpnConfigurationId.
         /// The VPN Configuration Id to apply for this app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vpnConfigurationId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vpnConfigurationId")]
         public string VpnConfigurationId { get; set; }
     
     }

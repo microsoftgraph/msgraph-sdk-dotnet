@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ListInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ListInfo>))]
     public partial class ListInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ListInfo"/> class.
-        /// </summary>
-        public ListInfo()
-        {
-            this.ODataType = "microsoft.graph.listInfo";
-        }
 
         /// <summary>
         /// Gets or sets contentTypesEnabled.
         /// If true, indicates that content types are enabled for this list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentTypesEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentTypesEnabled")]
         public bool? ContentTypesEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets hidden.
         /// If true, indicates that the list is not normally visible in the SharePoint user experience.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hidden", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hidden")]
         public bool? Hidden { get; set; }
     
         /// <summary>
         /// Gets or sets template.
         /// An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "template", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("template")]
         public string Template { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

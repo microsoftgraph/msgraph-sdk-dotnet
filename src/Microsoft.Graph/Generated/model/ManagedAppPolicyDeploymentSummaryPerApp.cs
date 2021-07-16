@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedAppPolicyDeploymentSummaryPerApp.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedAppPolicyDeploymentSummaryPerApp>))]
     public partial class ManagedAppPolicyDeploymentSummaryPerApp
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagedAppPolicyDeploymentSummaryPerApp"/> class.
-        /// </summary>
-        public ManagedAppPolicyDeploymentSummaryPerApp()
-        {
-            this.ODataType = "microsoft.graph.managedAppPolicyDeploymentSummaryPerApp";
-        }
 
         /// <summary>
         /// Gets or sets configurationAppliedUserCount.
         /// Number of users the policy is applied.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationAppliedUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurationAppliedUserCount")]
         public Int32? ConfigurationAppliedUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets mobileAppIdentifier.
         /// Deployment of an app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mobileAppIdentifier")]
         public MobileAppIdentifier MobileAppIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

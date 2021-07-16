@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IReportRootDailyPrintUsageByUserCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PrintUsageByUser to the collection via POST.
-        /// </summary>
-        /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
-        /// <returns>The created PrintUsageByUser.</returns>
-        System.Threading.Tasks.Task<PrintUsageByUser> AddAsync(PrintUsageByUser printUsageByUser);
-
         /// <summary>
         /// Adds the specified PrintUsageByUser to the collection via POST.
         /// </summary>
         /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintUsageByUser.</returns>
-        System.Threading.Tasks.Task<PrintUsageByUser> AddAsync(PrintUsageByUser printUsageByUser, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PrintUsageByUser> AddAsync(PrintUsageByUser printUsageByUser, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified PrintUsageByUser to the collection via POST and returns a <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IReportRootDailyPrintUsageByUserCollectionPage> GetAsync();
+        /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> AddResponseAsync(PrintUsageByUser printUsageByUser, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IReportRootDailyPrintUsageByUserCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IReportRootDailyPrintUsageByUserCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ReportRootDailyPrintUsageByUserCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ReportRootDailyPrintUsageByUserCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReportRootDailyPrintUsageByUserCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

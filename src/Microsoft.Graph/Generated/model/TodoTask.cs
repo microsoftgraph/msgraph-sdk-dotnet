@@ -12,121 +12,124 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Todo Task.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<TodoTask>))]
     public partial class TodoTask : Entity
     {
     
-		///<summary>
-		/// The TodoTask constructor
-		///</summary>
-        public TodoTask()
-        {
-            this.ODataType = "microsoft.graph.todoTask";
-        }
-	
         /// <summary>
         /// Gets or sets body.
         /// The task body that typically contains information about the task.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "body", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("body")]
         public ItemBody Body { get; set; }
     
         /// <summary>
         /// Gets or sets body last modified date time.
         /// The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bodyLastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bodyLastModifiedDateTime")]
         public DateTimeOffset? BodyLastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets completed date time.
         /// The date in the specified time zone that the task was finished.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completedDateTime")]
         public DateTimeTimeZone CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets due date time.
         /// The date in the specified time zone that the task is to be finished.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dueDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dueDateTime")]
         public DateTimeTimeZone DueDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets importance.
         /// The importance of the task. Possible values are: low, normal, high.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importance", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("importance")]
         public Importance? Importance { get; set; }
     
         /// <summary>
         /// Gets or sets is reminder on.
         /// Set to true if an alert is set to remind the user of the task.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isReminderOn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isReminderOn")]
         public bool? IsReminderOn { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets recurrence.
         /// The recurrence pattern for the task.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recurrence")]
         public PatternedRecurrence Recurrence { get; set; }
     
         /// <summary>
         /// Gets or sets reminder date time.
         /// The date and time for a reminder alert of the task to occur.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reminderDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reminderDateTime")]
         public DateTimeTimeZone ReminderDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public TaskStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets title.
         /// A brief description of the task.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
         /// The collection of open extensions defined for the task. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("extensions")]
         public ITodoTaskExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets linked resources.
         /// A collection of resources linked to the task.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linkedResources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("linkedResources")]
         public ITodoTaskLinkedResourcesCollectionPage LinkedResources { get; set; }
+
+        /// <summary>
+        /// Gets or sets linkedResourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("linkedResources@odata.nextLink")]
+        public string LinkedResourcesNextLink { get; set; }
     
     }
 }

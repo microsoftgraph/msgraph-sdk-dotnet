@@ -9,41 +9,39 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedDeviceWipeRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedDeviceWipeRequestBody
     {
     
         /// <summary>
         /// Gets or sets KeepEnrollmentData.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keepEnrollmentData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keepEnrollmentData")]
         public bool? KeepEnrollmentData { get; set; }
     
         /// <summary>
         /// Gets or sets KeepUserData.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keepUserData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keepUserData")]
         public bool? KeepUserData { get; set; }
     
         /// <summary>
         /// Gets or sets MacOsUnlockCode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOsUnlockCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("macOsUnlockCode")]
         public string MacOsUnlockCode { get; set; }
     
         /// <summary>
         /// Gets or sets PersistEsimDataPlan.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "persistEsimDataPlan", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("persistEsimDataPlan")]
         public bool? PersistEsimDataPlan { get; set; }
     
     }

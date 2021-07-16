@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WindowsInformationProtectionIPRangeCollection.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsInformationProtectionIPRangeCollection>))]
     public partial class WindowsInformationProtectionIPRangeCollection
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WindowsInformationProtectionIPRangeCollection"/> class.
-        /// </summary>
-        public WindowsInformationProtectionIPRangeCollection()
-        {
-            this.ODataType = "microsoft.graph.windowsInformationProtectionIPRangeCollection";
-        }
 
         /// <summary>
         /// Gets or sets displayName.
         /// Display name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets ranges.
         /// Collection of ip ranges
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ranges", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ranges")]
         public IEnumerable<IpRange> Ranges { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

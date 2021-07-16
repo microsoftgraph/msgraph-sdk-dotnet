@@ -32,27 +32,16 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MobileAppCategory to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppCategory">The MobileAppCategory to add.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(MobileAppCategory mobileAppCategory)
-        {
-            return this.AddAsync(mobileAppCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MobileAppCategory to the collection via POST.
         /// </summary>
         /// <param name="mobileAppCategory">The MobileAppCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AddAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
 
             if (string.IsNullOrEmpty(mobileAppCategory.Id))
             {
@@ -61,6 +50,26 @@ namespace Microsoft.Graph
 
             var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/deviceAppManagement/categories/{1}", this.Client.BaseUrl, mobileAppCategory.Id) };
             return this.SendAsync(requestBody, cancellationToken);
+        }
+
+        /// <summary>
+        /// Adds the specified MobileAppCategory to the collection via POST and returns a <see cref="GraphResponse{MobileAppCategory}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileAppCategory">The MobileAppCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+
+            if (string.IsNullOrEmpty(mobileAppCategory.Id))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/deviceAppManagement/categories/{1}", this.Client.BaseUrl, mobileAppCategory.Id) };
+            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
         }
 
     }

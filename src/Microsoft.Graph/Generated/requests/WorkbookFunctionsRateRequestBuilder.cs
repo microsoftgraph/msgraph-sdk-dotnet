@@ -32,12 +32,12 @@ namespace Microsoft.Graph
         public WorkbookFunctionsRateRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken nper,
-            Newtonsoft.Json.Linq.JToken pmt,
-            Newtonsoft.Json.Linq.JToken pv,
-            Newtonsoft.Json.Linq.JToken fv,
-            Newtonsoft.Json.Linq.JToken type,
-            Newtonsoft.Json.Linq.JToken guess)
+            System.Text.Json.JsonDocument nper,
+            System.Text.Json.JsonDocument pmt,
+            System.Text.Json.JsonDocument pv,
+            System.Text.Json.JsonDocument fv,
+            System.Text.Json.JsonDocument type,
+            System.Text.Json.JsonDocument guess)
             : base(requestUrl, client)
         {
             this.SetParameter("nper", nper, true);
@@ -60,32 +60,32 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("nper"))
             {
-                request.RequestBody.Nper = this.GetParameter<Newtonsoft.Json.Linq.JToken>("nper");
+                request.RequestBody.Nper = this.GetParameter<System.Text.Json.JsonDocument>("nper");
             }
 
             if (this.HasParameter("pmt"))
             {
-                request.RequestBody.Pmt = this.GetParameter<Newtonsoft.Json.Linq.JToken>("pmt");
+                request.RequestBody.Pmt = this.GetParameter<System.Text.Json.JsonDocument>("pmt");
             }
 
             if (this.HasParameter("pv"))
             {
-                request.RequestBody.Pv = this.GetParameter<Newtonsoft.Json.Linq.JToken>("pv");
+                request.RequestBody.Pv = this.GetParameter<System.Text.Json.JsonDocument>("pv");
             }
 
             if (this.HasParameter("fv"))
             {
-                request.RequestBody.Fv = this.GetParameter<Newtonsoft.Json.Linq.JToken>("fv");
+                request.RequestBody.Fv = this.GetParameter<System.Text.Json.JsonDocument>("fv");
             }
 
             if (this.HasParameter("type"))
             {
-                request.RequestBody.Type = this.GetParameter<Newtonsoft.Json.Linq.JToken>("type");
+                request.RequestBody.Type = this.GetParameter<System.Text.Json.JsonDocument>("type");
             }
 
             if (this.HasParameter("guess"))
             {
-                request.RequestBody.Guess = this.GetParameter<Newtonsoft.Json.Linq.JToken>("guess");
+                request.RequestBody.Guess = this.GetParameter<System.Text.Json.JsonDocument>("guess");
             }
 
             return request;

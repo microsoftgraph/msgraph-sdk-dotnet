@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ISitePermissionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Permission to the collection via POST.
-        /// </summary>
-        /// <param name="permission">The Permission to add.</param>
-        /// <returns>The created Permission.</returns>
-        System.Threading.Tasks.Task<Permission> AddAsync(Permission permission);
-
         /// <summary>
         /// Adds the specified Permission to the collection via POST.
         /// </summary>
         /// <param name="permission">The Permission to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Permission.</returns>
-        System.Threading.Tasks.Task<Permission> AddAsync(Permission permission, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Permission> AddAsync(Permission permission, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Permission to the collection via POST and returns a <see cref="GraphResponse{Permission}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISitePermissionsCollectionPage> GetAsync();
+        /// <param name="permission">The Permission to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Permission>> AddResponseAsync(Permission permission, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISitePermissionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ISitePermissionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SitePermissionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SitePermissionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SitePermissionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

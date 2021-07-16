@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IEducationSubmissionOutcomesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<EducationSubmissionOutcomesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<EducationSubmissionOutcomesCollectionPage>))]
     public interface IEducationSubmissionOutcomesCollectionPage : ICollectionPage<EducationOutcome>
     {
         /// <summary>

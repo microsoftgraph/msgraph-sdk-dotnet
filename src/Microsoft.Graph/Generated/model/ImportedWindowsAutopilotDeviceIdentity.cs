@@ -12,71 +12,61 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Imported Windows Autopilot Device Identity.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ImportedWindowsAutopilotDeviceIdentity : Entity
     {
     
-		///<summary>
-		/// The ImportedWindowsAutopilotDeviceIdentity constructor
-		///</summary>
-        public ImportedWindowsAutopilotDeviceIdentity()
-        {
-            this.ODataType = "microsoft.graph.importedWindowsAutopilotDeviceIdentity";
-        }
-	
         /// <summary>
         /// Gets or sets assigned user principal name.
         /// UPN of the user the device will be assigned
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedUserPrincipalName")]
         public string AssignedUserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets group tag.
         /// Group Tag of the Windows autopilot device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupTag", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupTag")]
         public string GroupTag { get; set; }
     
         /// <summary>
         /// Gets or sets hardware identifier.
         /// Hardware Blob of the Windows autopilot device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hardwareIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hardwareIdentifier")]
         public byte[] HardwareIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets import id.
         /// The Import Id of the Windows autopilot device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("importId")]
         public string ImportId { get; set; }
     
         /// <summary>
         /// Gets or sets product key.
         /// Product Key of the Windows autopilot device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productKey")]
         public string ProductKey { get; set; }
     
         /// <summary>
         /// Gets or sets serial number.
         /// Serial number of the Windows autopilot device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serialNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("serialNumber")]
         public string SerialNumber { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// Current state of the imported device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public ImportedWindowsAutopilotDeviceIdentityState State { get; set; }
     
     }

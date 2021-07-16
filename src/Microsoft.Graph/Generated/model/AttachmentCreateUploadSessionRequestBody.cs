@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AttachmentCreateUploadSessionRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AttachmentCreateUploadSessionRequestBody
     {
     
         /// <summary>
         /// Gets or sets AttachmentItem.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "AttachmentItem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("AttachmentItem")]
         public AttachmentItem AttachmentItem { get; set; }
     
     }

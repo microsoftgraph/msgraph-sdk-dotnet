@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IServicePrincipalDeltaCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ServicePrincipalDeltaCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ServicePrincipalDeltaCollectionPage>))]
     public interface IServicePrincipalDeltaCollectionPage : ICollectionPage<ServicePrincipal>
     {
         /// <summary>

@@ -12,36 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Inference Classification Override.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<InferenceClassificationOverride>))]
     public partial class InferenceClassificationOverride : Entity
     {
     
-		///<summary>
-		/// The InferenceClassificationOverride constructor
-		///</summary>
-        public InferenceClassificationOverride()
-        {
-            this.ODataType = "microsoft.graph.inferenceClassificationOverride";
-        }
-	
         /// <summary>
         /// Gets or sets classify as.
         /// Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classifyAs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classifyAs")]
         public InferenceClassificationType? ClassifyAs { get; set; }
     
         /// <summary>
         /// Gets or sets sender email address.
         /// The email address information of the sender for whom the override is created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "senderEmailAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("senderEmailAddress")]
         public EmailAddress SenderEmailAddress { get; set; }
     
     }

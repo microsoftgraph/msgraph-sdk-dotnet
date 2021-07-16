@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsFvscheduleRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken principal,
-            Newtonsoft.Json.Linq.JToken schedule)
+            System.Text.Json.JsonDocument principal,
+            System.Text.Json.JsonDocument schedule)
             : base(requestUrl, client)
         {
             this.SetParameter("principal", principal, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("principal"))
             {
-                request.RequestBody.Principal = this.GetParameter<Newtonsoft.Json.Linq.JToken>("principal");
+                request.RequestBody.Principal = this.GetParameter<System.Text.Json.JsonDocument>("principal");
             }
 
             if (this.HasParameter("schedule"))
             {
-                request.RequestBody.Schedule = this.GetParameter<Newtonsoft.Json.Linq.JToken>("schedule");
+                request.RequestBody.Schedule = this.GetParameter<System.Text.Json.JsonDocument>("schedule");
             }
 
             return request;

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsImCscRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken inumber)
+            System.Text.Json.JsonDocument inumber)
             : base(requestUrl, client)
         {
             this.SetParameter("inumber", inumber, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("inumber"))
             {
-                request.RequestBody.Inumber = this.GetParameter<Newtonsoft.Json.Linq.JToken>("inumber");
+                request.RequestBody.Inumber = this.GetParameter<System.Text.Json.JsonDocument>("inumber");
             }
 
             return request;

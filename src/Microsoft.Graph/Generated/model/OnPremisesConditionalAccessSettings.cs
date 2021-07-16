@@ -12,50 +12,40 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type On Premises Conditional Access Settings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OnPremisesConditionalAccessSettings : Entity
     {
     
-		///<summary>
-		/// The OnPremisesConditionalAccessSettings constructor
-		///</summary>
-        public OnPremisesConditionalAccessSettings()
-        {
-            this.ODataType = "microsoft.graph.onPremisesConditionalAccessSettings";
-        }
-	
         /// <summary>
         /// Gets or sets enabled.
         /// Indicates if on premises conditional access is enabled for this organization
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
     
         /// <summary>
         /// Gets or sets excluded groups.
         /// User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludedGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludedGroups")]
         public IEnumerable<Guid> ExcludedGroups { get; set; }
     
         /// <summary>
         /// Gets or sets included groups.
         /// User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includedGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includedGroups")]
         public IEnumerable<Guid> IncludedGroups { get; set; }
     
         /// <summary>
         /// Gets or sets override default rule.
         /// Override the default access rule when allowing a device to ensure access is granted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overrideDefaultRule", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("overrideDefaultRule")]
         public bool? OverrideDefaultRule { get; set; }
     
     }

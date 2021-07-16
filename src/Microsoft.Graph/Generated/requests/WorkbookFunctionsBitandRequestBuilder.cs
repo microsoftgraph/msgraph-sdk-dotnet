@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsBitandRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number1,
-            Newtonsoft.Json.Linq.JToken number2)
+            System.Text.Json.JsonDocument number1,
+            System.Text.Json.JsonDocument number2)
             : base(requestUrl, client)
         {
             this.SetParameter("number1", number1, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number1"))
             {
-                request.RequestBody.Number1 = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number1");
+                request.RequestBody.Number1 = this.GetParameter<System.Text.Json.JsonDocument>("number1");
             }
 
             if (this.HasParameter("number2"))
             {
-                request.RequestBody.Number2 = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number2");
+                request.RequestBody.Number2 = this.GetParameter<System.Text.Json.JsonDocument>("number2");
             }
 
             return request;

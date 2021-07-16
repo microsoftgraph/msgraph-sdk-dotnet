@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed EBook.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedEBook>))]
     public partial class ManagedEBook : Entity
     {
     
-		///<summary>
-		/// The internal ManagedEBook constructor
-		///</summary>
+        ///<summary>
+        /// The internal ManagedEBook constructor
+        ///</summary>
         protected internal ManagedEBook()
         {
             // Don't allow initialization of abstract entity types
@@ -34,92 +33,110 @@ namespace Microsoft.Graph
         /// Gets or sets created date time.
         /// The date and time when the eBook file was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Name of the eBook.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets information url.
         /// The more information Url.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "informationUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("informationUrl")]
         public string InformationUrl { get; set; }
     
         /// <summary>
         /// Gets or sets large cover.
         /// Book cover.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "largeCover", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("largeCover")]
         public MimeContent LargeCover { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time when the eBook was last modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets privacy information url.
         /// The privacy statement Url.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyInformationUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("privacyInformationUrl")]
         public string PrivacyInformationUrl { get; set; }
     
         /// <summary>
         /// Gets or sets published date time.
         /// The date and time when the eBook was published.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishedDateTime")]
         public DateTimeOffset? PublishedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets publisher.
         /// Publisher.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publisher")]
         public string Publisher { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// The list of assignments for this eBook.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IManagedEBookAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device states.
         /// The list of installation states for this eBook.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceStates")]
         public IManagedEBookDeviceStatesCollectionPage DeviceStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceStates@odata.nextLink")]
+        public string DeviceStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets install summary.
         /// Mobile App Install Summary.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installSummary")]
         public EBookInstallSummary InstallSummary { get; set; }
     
         /// <summary>
         /// Gets or sets user state summary.
         /// The list of installation states for this eBook.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStateSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userStateSummary")]
         public IManagedEBookUserStateSummaryCollectionPage UserStateSummary { get; set; }
+
+        /// <summary>
+        /// Gets or sets userStateSummaryNextLink.
+        /// </summary>
+        [JsonPropertyName("userStateSummary@odata.nextLink")]
+        public string UserStateSummaryNextLink { get; set; }
     
     }
 }

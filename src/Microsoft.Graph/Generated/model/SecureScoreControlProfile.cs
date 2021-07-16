@@ -12,154 +12,144 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Secure Score Control Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SecureScoreControlProfile : Entity
     {
     
-		///<summary>
-		/// The SecureScoreControlProfile constructor
-		///</summary>
-        public SecureScoreControlProfile()
-        {
-            this.ODataType = "microsoft.graph.secureScoreControlProfile";
-        }
-	
         /// <summary>
         /// Gets or sets action type.
         /// Control action type (Config, Review, Behavior).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionType")]
         public string ActionType { get; set; }
     
         /// <summary>
         /// Gets or sets action url.
         /// URL to where the control can be actioned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionUrl")]
         public string ActionUrl { get; set; }
     
         /// <summary>
         /// Gets or sets azure tenant id.
         /// GUID string for tenant ID.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureTenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureTenantId")]
         public string AzureTenantId { get; set; }
     
         /// <summary>
         /// Gets or sets compliance information.
         /// The collection of compliance information associated with secure score control
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceInformation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("complianceInformation")]
         public IEnumerable<ComplianceInformation> ComplianceInformation { get; set; }
     
         /// <summary>
         /// Gets or sets control category.
         /// Control action category (Account, Data, Device, Apps, Infrastructure).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controlCategory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("controlCategory")]
         public string ControlCategory { get; set; }
     
         /// <summary>
         /// Gets or sets control state updates.
         /// Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controlStateUpdates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("controlStateUpdates")]
         public IEnumerable<SecureScoreControlStateUpdate> ControlStateUpdates { get; set; }
     
         /// <summary>
         /// Gets or sets deprecated.
         /// Flag to indicate if a control is depreciated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deprecated", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deprecated")]
         public bool? Deprecated { get; set; }
     
         /// <summary>
         /// Gets or sets implementation cost.
         /// Resource cost of implemmentating control (low, moderate, high).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "implementationCost", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("implementationCost")]
         public string ImplementationCost { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// Time at which the control profile entity was last modified. The Timestamp type represents date and time
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets max score.
         /// Current obtained max score on specified date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxScore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maxScore")]
         public double? MaxScore { get; set; }
     
         /// <summary>
         /// Gets or sets rank.
         /// Microsoft's stack ranking of control.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rank", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rank")]
         public Int32? Rank { get; set; }
     
         /// <summary>
         /// Gets or sets remediation.
         /// Description of what the control will help remediate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remediation")]
         public string Remediation { get; set; }
     
         /// <summary>
         /// Gets or sets remediation impact.
         /// Description of the impact on users of the remediation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationImpact", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remediationImpact")]
         public string RemediationImpact { get; set; }
     
         /// <summary>
         /// Gets or sets service.
         /// Service that owns the control (Exchange, Sharepoint, Azure AD).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("service")]
         public string Service { get; set; }
     
         /// <summary>
         /// Gets or sets threats.
         /// List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "threats", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("threats")]
         public IEnumerable<string> Threats { get; set; }
     
         /// <summary>
         /// Gets or sets tier.
         /// Control tier (Core, Defense in Depth, Advanced.)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tier")]
         public string Tier { get; set; }
     
         /// <summary>
         /// Gets or sets title.
         /// Title of the control.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
     
         /// <summary>
         /// Gets or sets user impact.
         /// User impact of implementing control (low, moderate, high).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userImpact", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userImpact")]
         public string UserImpact { get; set; }
     
         /// <summary>
         /// Gets or sets vendor information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendorInformation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vendorInformation")]
         public SecurityVendorInformation VendorInformation { get; set; }
     
     }

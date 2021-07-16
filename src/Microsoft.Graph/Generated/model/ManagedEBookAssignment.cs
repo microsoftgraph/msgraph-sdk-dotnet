@@ -12,36 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed EBook Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedEBookAssignment>))]
     public partial class ManagedEBookAssignment : Entity
     {
     
-		///<summary>
-		/// The ManagedEBookAssignment constructor
-		///</summary>
-        public ManagedEBookAssignment()
-        {
-            this.ODataType = "microsoft.graph.managedEBookAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets install intent.
         /// The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installIntent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installIntent")]
         public InstallIntent? InstallIntent { get; set; }
     
         /// <summary>
         /// Gets or sets target.
         /// The assignment target for eBook.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("target")]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }

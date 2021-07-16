@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type GroupAssignLicenseRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupAssignLicenseRequestBody
     {
     
         /// <summary>
         /// Gets or sets AddLicenses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addLicenses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("addLicenses")]
         public IEnumerable<AssignedLicense> AddLicenses { get; set; }
     
         /// <summary>
         /// Gets or sets RemoveLicenses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeLicenses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("removeLicenses")]
         public IEnumerable<Guid> RemoveLicenses { get; set; }
     
     }

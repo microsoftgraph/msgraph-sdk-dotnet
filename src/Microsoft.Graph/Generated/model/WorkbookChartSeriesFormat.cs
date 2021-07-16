@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Chart Series Format.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookChartSeriesFormat : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartSeriesFormat constructor
-		///</summary>
-        public WorkbookChartSeriesFormat()
-        {
-            this.ODataType = "microsoft.graph.workbookChartSeriesFormat";
-        }
-	
         /// <summary>
         /// Gets or sets fill.
         /// Represents the fill format of a chart series, which includes background formating information. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fill", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fill")]
         public WorkbookChartFill Fill { get; set; }
     
         /// <summary>
         /// Gets or sets line.
         /// Represents line formatting. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "line", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("line")]
         public WorkbookChartLineFormat Line { get; set; }
     
     }

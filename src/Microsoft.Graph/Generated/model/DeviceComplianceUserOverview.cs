@@ -12,71 +12,61 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Compliance User Overview.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceComplianceUserOverview : Entity
     {
     
-		///<summary>
-		/// The DeviceComplianceUserOverview constructor
-		///</summary>
-        public DeviceComplianceUserOverview()
-        {
-            this.ODataType = "microsoft.graph.deviceComplianceUserOverview";
-        }
-	
         /// <summary>
         /// Gets or sets configuration version.
         /// Version of the policy for that overview
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurationVersion")]
         public Int32? ConfigurationVersion { get; set; }
     
         /// <summary>
         /// Gets or sets error count.
         /// Number of error Users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCount")]
         public Int32? ErrorCount { get; set; }
     
         /// <summary>
         /// Gets or sets failed count.
         /// Number of failed Users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failedCount")]
         public Int32? FailedCount { get; set; }
     
         /// <summary>
         /// Gets or sets last update date time.
         /// Last update time
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastUpdateDateTime")]
         public DateTimeOffset? LastUpdateDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets not applicable count.
         /// Number of not applicable users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notApplicableCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notApplicableCount")]
         public Int32? NotApplicableCount { get; set; }
     
         /// <summary>
         /// Gets or sets pending count.
         /// Number of pending Users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pendingCount")]
         public Int32? PendingCount { get; set; }
     
         /// <summary>
         /// Gets or sets success count.
         /// Number of succeeded Users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("successCount")]
         public Int32? SuccessCount { get; set; }
     
     }

@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ProvisioningStep.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ProvisioningStep>))]
     public partial class ProvisioningStep
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProvisioningStep"/> class.
-        /// </summary>
-        public ProvisioningStep()
-        {
-            this.ODataType = "microsoft.graph.provisioningStep";
-        }
 
         /// <summary>
         /// Gets or sets description.
         /// Summary of what occurred during the step.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets details.
         /// Details of what occurred during the step.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("details")]
         public DetailsInfo Details { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// Name of the step.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets provisioningStepType.
         /// Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningStepType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provisioningStepType")]
         public ProvisioningStepType? ProvisioningStepType { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public ProvisioningResult? Status { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

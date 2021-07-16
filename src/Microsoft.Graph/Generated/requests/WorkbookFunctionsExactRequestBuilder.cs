@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsExactRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken text1,
-            Newtonsoft.Json.Linq.JToken text2)
+            System.Text.Json.JsonDocument text1,
+            System.Text.Json.JsonDocument text2)
             : base(requestUrl, client)
         {
             this.SetParameter("text1", text1, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("text1"))
             {
-                request.RequestBody.Text1 = this.GetParameter<Newtonsoft.Json.Linq.JToken>("text1");
+                request.RequestBody.Text1 = this.GetParameter<System.Text.Json.JsonDocument>("text1");
             }
 
             if (this.HasParameter("text2"))
             {
-                request.RequestBody.Text2 = this.GetParameter<Newtonsoft.Json.Linq.JToken>("text2");
+                request.RequestBody.Text2 = this.GetParameter<System.Text.Json.JsonDocument>("text2");
             }
 
             return request;

@@ -34,14 +34,14 @@ namespace Microsoft.Graph
         public WorkbookFunctionsAccrIntRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken issue,
-            Newtonsoft.Json.Linq.JToken firstInterest,
-            Newtonsoft.Json.Linq.JToken settlement,
-            Newtonsoft.Json.Linq.JToken rate,
-            Newtonsoft.Json.Linq.JToken par,
-            Newtonsoft.Json.Linq.JToken frequency,
-            Newtonsoft.Json.Linq.JToken basis,
-            Newtonsoft.Json.Linq.JToken calcMethod)
+            System.Text.Json.JsonDocument issue,
+            System.Text.Json.JsonDocument firstInterest,
+            System.Text.Json.JsonDocument settlement,
+            System.Text.Json.JsonDocument rate,
+            System.Text.Json.JsonDocument par,
+            System.Text.Json.JsonDocument frequency,
+            System.Text.Json.JsonDocument basis,
+            System.Text.Json.JsonDocument calcMethod)
             : base(requestUrl, client)
         {
             this.SetParameter("issue", issue, true);
@@ -66,42 +66,42 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("issue"))
             {
-                request.RequestBody.Issue = this.GetParameter<Newtonsoft.Json.Linq.JToken>("issue");
+                request.RequestBody.Issue = this.GetParameter<System.Text.Json.JsonDocument>("issue");
             }
 
             if (this.HasParameter("firstInterest"))
             {
-                request.RequestBody.FirstInterest = this.GetParameter<Newtonsoft.Json.Linq.JToken>("firstInterest");
+                request.RequestBody.FirstInterest = this.GetParameter<System.Text.Json.JsonDocument>("firstInterest");
             }
 
             if (this.HasParameter("settlement"))
             {
-                request.RequestBody.Settlement = this.GetParameter<Newtonsoft.Json.Linq.JToken>("settlement");
+                request.RequestBody.Settlement = this.GetParameter<System.Text.Json.JsonDocument>("settlement");
             }
 
             if (this.HasParameter("rate"))
             {
-                request.RequestBody.Rate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("rate");
+                request.RequestBody.Rate = this.GetParameter<System.Text.Json.JsonDocument>("rate");
             }
 
             if (this.HasParameter("par"))
             {
-                request.RequestBody.Par = this.GetParameter<Newtonsoft.Json.Linq.JToken>("par");
+                request.RequestBody.Par = this.GetParameter<System.Text.Json.JsonDocument>("par");
             }
 
             if (this.HasParameter("frequency"))
             {
-                request.RequestBody.Frequency = this.GetParameter<Newtonsoft.Json.Linq.JToken>("frequency");
+                request.RequestBody.Frequency = this.GetParameter<System.Text.Json.JsonDocument>("frequency");
             }
 
             if (this.HasParameter("basis"))
             {
-                request.RequestBody.Basis = this.GetParameter<Newtonsoft.Json.Linq.JToken>("basis");
+                request.RequestBody.Basis = this.GetParameter<System.Text.Json.JsonDocument>("basis");
             }
 
             if (this.HasParameter("calcMethod"))
             {
-                request.RequestBody.CalcMethod = this.GetParameter<Newtonsoft.Json.Linq.JToken>("calcMethod");
+                request.RequestBody.CalcMethod = this.GetParameter<System.Text.Json.JsonDocument>("calcMethod");
             }
 
             return request;

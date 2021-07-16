@@ -12,46 +12,44 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Calendar Sharing Message.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CalendarSharingMessage : Message
     {
     
-		///<summary>
-		/// The CalendarSharingMessage constructor
-		///</summary>
+        ///<summary>
+        /// The CalendarSharingMessage constructor
+        ///</summary>
         public CalendarSharingMessage()
         {
             this.ODataType = "microsoft.graph.calendarSharingMessage";
         }
-	
+
         /// <summary>
         /// Gets or sets can accept.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "canAccept", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("canAccept")]
         public bool? CanAccept { get; set; }
     
         /// <summary>
         /// Gets or sets sharing message action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingMessageAction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharingMessageAction")]
         public CalendarSharingMessageAction SharingMessageAction { get; set; }
     
         /// <summary>
         /// Gets or sets sharing message actions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingMessageActions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharingMessageActions")]
         public IEnumerable<CalendarSharingMessageAction> SharingMessageActions { get; set; }
     
         /// <summary>
         /// Gets or sets suggested calendar name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "suggestedCalendarName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("suggestedCalendarName")]
         public string SuggestedCalendarName { get; set; }
     
     }

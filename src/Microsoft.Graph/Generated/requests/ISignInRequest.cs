@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified SignIn using POST.
         /// </summary>
         /// <param name="signInToCreate">The SignIn to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SignIn.</returns>
-        System.Threading.Tasks.Task<SignIn> CreateAsync(SignIn signInToCreate);        /// <summary>
-        /// Creates the specified SignIn using POST.
+        System.Threading.Tasks.Task<SignIn> CreateAsync(SignIn signInToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified SignIn using POST and returns a <see cref="GraphResponse{SignIn}"/> object.
         /// </summary>
         /// <param name="signInToCreate">The SignIn to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created SignIn.</returns>
-        System.Threading.Tasks.Task<SignIn> CreateAsync(SignIn signInToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SignIn.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{SignIn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SignIn>> CreateResponseAsync(SignIn signInToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SignIn.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified SignIn.
+        /// Deletes the specified SignIn and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SignIn.</returns>
-        System.Threading.Tasks.Task<SignIn> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SignIn.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SignIn.</returns>
-        System.Threading.Tasks.Task<SignIn> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SignIn> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified SignIn using PATCH.
+        /// Gets the specified SignIn and returns a <see cref="GraphResponse{SignIn}"/> object.
         /// </summary>
-        /// <param name="signInToUpdate">The SignIn to update.</param>
-        /// <returns>The updated SignIn.</returns>
-        System.Threading.Tasks.Task<SignIn> UpdateAsync(SignIn signInToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SignIn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SignIn>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SignIn using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SignIn.</returns>
-        System.Threading.Tasks.Task<SignIn> UpdateAsync(SignIn signInToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SignIn> UpdateAsync(SignIn signInToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SignIn using PATCH and returns a <see cref="GraphResponse{SignIn}"/> object.
+        /// </summary>
+        /// <param name="signInToUpdate">The SignIn to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SignIn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SignIn>> UpdateResponseAsync(SignIn signInToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SignIn using PUT.
+        /// </summary>
+        /// <param name="signInToUpdate">The SignIn object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SignIn> PutAsync(SignIn signInToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SignIn using PUT and returns a <see cref="GraphResponse{SignIn}"/> object.
+        /// </summary>
+        /// <param name="signInToUpdate">The SignIn object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SignIn}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SignIn>> PutResponseAsync(SignIn signInToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

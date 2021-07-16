@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsTimevalueRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken timeText)
+            System.Text.Json.JsonDocument timeText)
             : base(requestUrl, client)
         {
             this.SetParameter("timeText", timeText, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("timeText"))
             {
-                request.RequestBody.TimeText = this.GetParameter<Newtonsoft.Json.Linq.JToken>("timeText");
+                request.RequestBody.TimeText = this.GetParameter<System.Text.Json.JsonDocument>("timeText");
             }
 
             return request;

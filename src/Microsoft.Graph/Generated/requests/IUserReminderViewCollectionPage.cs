@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUserReminderViewCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<UserReminderViewCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<UserReminderViewCollectionPage>))]
     public interface IUserReminderViewCollectionPage : ICollectionPage<Reminder>
     {
         /// <summary>

@@ -12,86 +12,108 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type List.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class List : BaseItem
     {
     
-		///<summary>
-		/// The List constructor
-		///</summary>
+        ///<summary>
+        /// The List constructor
+        ///</summary>
         public List()
         {
             this.ODataType = "microsoft.graph.list";
         }
-	
+
         /// <summary>
         /// Gets or sets display name.
         /// The displayable title of the list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets list.
         /// Provides additional details about the list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "list", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("list")]
         public ListInfo ListInfo { get; set; }
     
         /// <summary>
         /// Gets or sets sharepoint ids.
         /// Returns identifiers useful for SharePoint REST compatibility. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharepointIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharepointIds")]
         public SharepointIds SharepointIds { get; set; }
     
         /// <summary>
         /// Gets or sets system.
         /// If present, indicates that this is a system-managed list. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "system", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("system")]
         public SystemFacet System { get; set; }
     
         /// <summary>
         /// Gets or sets columns.
         /// The collection of field definitions for this list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "columns", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("columns")]
         public IListColumnsCollectionPage Columns { get; set; }
+
+        /// <summary>
+        /// Gets or sets columnsNextLink.
+        /// </summary>
+        [JsonPropertyName("columns@odata.nextLink")]
+        public string ColumnsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets content types.
         /// The collection of content types present in this list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentTypes")]
         public IListContentTypesCollectionPage ContentTypes { get; set; }
+
+        /// <summary>
+        /// Gets or sets contentTypesNextLink.
+        /// </summary>
+        [JsonPropertyName("contentTypes@odata.nextLink")]
+        public string ContentTypesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets drive.
         /// Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "drive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("drive")]
         public Drive Drive { get; set; }
     
         /// <summary>
         /// Gets or sets items.
         /// All items contained in the list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("items")]
         public IListItemsCollectionPage Items { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemsNextLink.
+        /// </summary>
+        [JsonPropertyName("items@odata.nextLink")]
+        public string ItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets subscriptions.
         /// The set of subscriptions on the list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subscriptions")]
         public IListSubscriptionsCollectionPage Subscriptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets subscriptionsNextLink.
+        /// </summary>
+        [JsonPropertyName("subscriptions@odata.nextLink")]
+        public string SubscriptionsNextLink { get; set; }
     
     }
 }

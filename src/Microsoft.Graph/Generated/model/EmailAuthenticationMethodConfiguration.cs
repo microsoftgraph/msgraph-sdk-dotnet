@@ -12,37 +12,42 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Email Authentication Method Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<EmailAuthenticationMethodConfiguration>))]
     public partial class EmailAuthenticationMethodConfiguration : AuthenticationMethodConfiguration
     {
     
-		///<summary>
-		/// The EmailAuthenticationMethodConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The EmailAuthenticationMethodConfiguration constructor
+        ///</summary>
         public EmailAuthenticationMethodConfiguration()
         {
             this.ODataType = "microsoft.graph.emailAuthenticationMethodConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets allow external id to use email otp.
         /// Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowExternalIdToUseEmailOtp", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowExternalIdToUseEmailOtp")]
         public ExternalEmailOtpState? AllowExternalIdToUseEmailOtp { get; set; }
     
         /// <summary>
         /// Gets or sets include targets.
         /// A collection of users or groups who are enabled to use the authentication method.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeTargets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeTargets")]
         public IEmailAuthenticationMethodConfigurationIncludeTargetsCollectionPage IncludeTargets { get; set; }
+
+        /// <summary>
+        /// Gets or sets includeTargetsNextLink.
+        /// </summary>
+        [JsonPropertyName("includeTargets@odata.nextLink")]
+        public string IncludeTargetsNextLink { get; set; }
     
     }
 }

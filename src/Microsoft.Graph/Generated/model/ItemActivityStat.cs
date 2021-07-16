@@ -12,93 +12,89 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Item Activity Stat.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ItemActivityStat : Entity
     {
     
-		///<summary>
-		/// The ItemActivityStat constructor
-		///</summary>
-        public ItemActivityStat()
-        {
-            this.ODataType = "microsoft.graph.itemActivityStat";
-        }
-	
         /// <summary>
         /// Gets or sets access.
         /// Statistics about the access actions in this interval. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "access", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("access")]
         public ItemActionStat Access { get; set; }
     
         /// <summary>
         /// Gets or sets create.
         /// Statistics about the create actions in this interval. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "create", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("create")]
         public ItemActionStat Create { get; set; }
     
         /// <summary>
         /// Gets or sets delete.
         /// Statistics about the delete actions in this interval. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delete", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("delete")]
         public ItemActionStat Delete { get; set; }
     
         /// <summary>
         /// Gets or sets edit.
         /// Statistics about the edit actions in this interval. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edit", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("edit")]
         public ItemActionStat Edit { get; set; }
     
         /// <summary>
         /// Gets or sets end date time.
         /// When the interval ends. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets incomplete data.
         /// Indicates that the statistics in this interval are based on incomplete data. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incompleteData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("incompleteData")]
         public IncompleteData IncompleteData { get; set; }
     
         /// <summary>
         /// Gets or sets is trending.
         /// Indicates whether the item is 'trending.' Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isTrending", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isTrending")]
         public bool? IsTrending { get; set; }
     
         /// <summary>
         /// Gets or sets move.
         /// Statistics about the move actions in this interval. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "move", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("move")]
         public ItemActionStat Move { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
         /// When the interval starts. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets activities.
         /// Exposes the itemActivities represented in this itemActivityStat resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activities")]
         public IItemActivityStatActivitiesCollectionPage Activities { get; set; }
+
+        /// <summary>
+        /// Gets or sets activitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("activities@odata.nextLink")]
+        public string ActivitiesNextLink { get; set; }
     
     }
 }

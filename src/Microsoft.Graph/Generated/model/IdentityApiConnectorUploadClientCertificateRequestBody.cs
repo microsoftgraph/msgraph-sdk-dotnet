@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IdentityApiConnectorUploadClientCertificateRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IdentityApiConnectorUploadClientCertificateRequestBody
     {
     
         /// <summary>
         /// Gets or sets Pkcs12Value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pkcs12Value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pkcs12Value")]
         public string Pkcs12Value { get; set; }
     
         /// <summary>
         /// Gets or sets Password.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "password", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("password")]
         public string Password { get; set; }
     
     }

@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Quota.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Quota>))]
     public partial class Quota
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Quota"/> class.
-        /// </summary>
-        public Quota()
-        {
-            this.ODataType = "microsoft.graph.quota";
-        }
 
         /// <summary>
         /// Gets or sets deleted.
         /// Total space consumed by files in the recycle bin, in bytes. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deleted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deleted")]
         public Int64? Deleted { get; set; }
     
         /// <summary>
         /// Gets or sets remaining.
         /// Total space remaining before reaching the quota limit, in bytes. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remaining", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remaining")]
         public Int64? Remaining { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// Enumeration value that indicates the state of the storage space. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public string State { get; set; }
     
         /// <summary>
         /// Gets or sets storagePlanInformation.
         /// Information about the drive's storage quota plans. Only in Personal OneDrive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storagePlanInformation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("storagePlanInformation")]
         public StoragePlanInformation StoragePlanInformation { get; set; }
     
         /// <summary>
         /// Gets or sets total.
         /// Total allowed storage space, in bytes. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "total", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("total")]
         public Int64? Total { get; set; }
     
         /// <summary>
         /// Gets or sets used.
         /// Total space used, in bytes. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "used", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("used")]
         public Int64? Used { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

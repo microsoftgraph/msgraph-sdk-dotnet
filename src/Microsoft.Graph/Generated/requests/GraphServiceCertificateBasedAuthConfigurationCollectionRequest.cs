@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified CertificateBasedAuthConfiguration to the collection via POST.
-        /// </summary>
-        /// <param name="certificateBasedAuthConfiguration">The CertificateBasedAuthConfiguration to add.</param>
-        /// <returns>The created CertificateBasedAuthConfiguration.</returns>
-        public System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> AddAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfiguration)
-        {
-            return this.AddAsync(certificateBasedAuthConfiguration, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified CertificateBasedAuthConfiguration to the collection via POST.
         /// </summary>
         /// <param name="certificateBasedAuthConfiguration">The CertificateBasedAuthConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CertificateBasedAuthConfiguration.</returns>
-        public System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> AddAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfiguration, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> AddAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfiguration, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<CertificateBasedAuthConfiguration>(certificateBasedAuthConfiguration, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified CertificateBasedAuthConfiguration to the collection via POST and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceCertificateBasedAuthConfigurationCollectionPage> GetAsync()
+        /// <param name="certificateBasedAuthConfiguration">The CertificateBasedAuthConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> AddResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfiguration, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<CertificateBasedAuthConfiguration>(certificateBasedAuthConfiguration, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceCertificateBasedAuthConfigurationCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceCertificateBasedAuthConfigurationCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GraphServiceCertificateBasedAuthConfigurationCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceCertificateBasedAuthConfigurationCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceCertificateBasedAuthConfigurationCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceCertificateBasedAuthConfigurationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GraphServiceCertificateBasedAuthConfigurationCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

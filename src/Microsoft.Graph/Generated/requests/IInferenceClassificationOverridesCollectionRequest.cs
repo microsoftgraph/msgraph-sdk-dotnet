@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IInferenceClassificationOverridesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified InferenceClassificationOverride to the collection via POST.
-        /// </summary>
-        /// <param name="inferenceClassificationOverride">The InferenceClassificationOverride to add.</param>
-        /// <returns>The created InferenceClassificationOverride.</returns>
-        System.Threading.Tasks.Task<InferenceClassificationOverride> AddAsync(InferenceClassificationOverride inferenceClassificationOverride);
-
         /// <summary>
         /// Adds the specified InferenceClassificationOverride to the collection via POST.
         /// </summary>
         /// <param name="inferenceClassificationOverride">The InferenceClassificationOverride to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created InferenceClassificationOverride.</returns>
-        System.Threading.Tasks.Task<InferenceClassificationOverride> AddAsync(InferenceClassificationOverride inferenceClassificationOverride, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<InferenceClassificationOverride> AddAsync(InferenceClassificationOverride inferenceClassificationOverride, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified InferenceClassificationOverride to the collection via POST and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IInferenceClassificationOverridesCollectionPage> GetAsync();
+        /// <param name="inferenceClassificationOverride">The InferenceClassificationOverride to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> AddResponseAsync(InferenceClassificationOverride inferenceClassificationOverride, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IInferenceClassificationOverridesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IInferenceClassificationOverridesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{InferenceClassificationOverridesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverridesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverridesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

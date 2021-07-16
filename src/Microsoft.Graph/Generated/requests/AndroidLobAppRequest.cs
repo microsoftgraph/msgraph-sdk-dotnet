@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidLobApp using POST.
         /// </summary>
         /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
-        /// <returns>The created AndroidLobApp.</returns>
-        public System.Threading.Tasks.Task<AndroidLobApp> CreateAsync(AndroidLobApp androidLobAppToCreate)
-        {
-            return this.CreateAsync(androidLobAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidLobApp using POST.
-        /// </summary>
-        /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidLobApp.</returns>
-        public async System.Threading.Tasks.Task<AndroidLobApp> CreateAsync(AndroidLobApp androidLobAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidLobApp> CreateAsync(AndroidLobApp androidLobAppToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidLobApp>(androidLobAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidLobApp.
+        /// Creates the specified AndroidLobApp using POST and returns a <see cref="GraphResponse{AndroidLobApp}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> CreateResponseAsync(AndroidLobApp androidLobAppToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidLobApp>(androidLobAppToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidLobApp>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidLobApp.
+        /// Deletes the specified AndroidLobApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidLobApp.</returns>
-        public System.Threading.Tasks.Task<AndroidLobApp> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidLobApp.</returns>
-        public async System.Threading.Tasks.Task<AndroidLobApp> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidLobApp> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidLobApp>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidLobApp using PATCH.
+        /// Gets the specified AndroidLobApp and returns a <see cref="GraphResponse{AndroidLobApp}"/> object.
         /// </summary>
-        /// <param name="androidLobAppToUpdate">The AndroidLobApp to update.</param>
-        /// <returns>The updated AndroidLobApp.</returns>
-        public System.Threading.Tasks.Task<AndroidLobApp> UpdateAsync(AndroidLobApp androidLobAppToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(androidLobAppToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidLobApp>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidLobApp.</returns>
-        public async System.Threading.Tasks.Task<AndroidLobApp> UpdateAsync(AndroidLobApp androidLobAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidLobApp> UpdateAsync(AndroidLobApp androidLobAppToUpdate, CancellationToken cancellationToken = default)
         {
-			if (androidLobAppToUpdate.AdditionalData != null)
-			{
-				if (androidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidLobAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidLobAppToUpdate.AdditionalData != null)
-            {
-                if (androidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidLobAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidLobApp>(androidLobAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidLobApp using PATCH and returns a <see cref="GraphResponse{AndroidLobApp}"/> object.
+        /// </summary>
+        /// <param name="androidLobAppToUpdate">The AndroidLobApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> UpdateResponseAsync(AndroidLobApp androidLobAppToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidLobApp>(androidLobAppToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidLobApp using PUT.
+        /// </summary>
+        /// <param name="androidLobAppToUpdate">The AndroidLobApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidLobApp> PutAsync(AndroidLobApp androidLobAppToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidLobApp>(androidLobAppToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidLobApp using PUT and returns a <see cref="GraphResponse{AndroidLobApp}"/> object.
+        /// </summary>
+        /// <param name="androidLobAppToUpdate">The AndroidLobApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidLobApp}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> PutResponseAsync(AndroidLobApp androidLobAppToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidLobApp>(androidLobAppToUpdate, cancellationToken);
         }
 
         /// <summary>

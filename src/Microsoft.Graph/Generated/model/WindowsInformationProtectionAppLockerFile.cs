@@ -12,50 +12,40 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Information Protection App Locker File.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsInformationProtectionAppLockerFile : Entity
     {
     
-		///<summary>
-		/// The WindowsInformationProtectionAppLockerFile constructor
-		///</summary>
-        public WindowsInformationProtectionAppLockerFile()
-        {
-            this.ODataType = "microsoft.graph.windowsInformationProtectionAppLockerFile";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The friendly name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets file.
         /// File as a byte array
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "file", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("file")]
         public byte[] File { get; set; }
     
         /// <summary>
         /// Gets or sets file hash.
         /// SHA256 hash of the file
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileHash", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileHash")]
         public string FileHash { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// Version of the entity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
     }

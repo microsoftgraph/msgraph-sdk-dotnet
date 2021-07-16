@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<OrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<OrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage>))]
     public interface IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage : ICollectionPage<CertificateBasedAuthConfiguration>
     {
         /// <summary>

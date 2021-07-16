@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified TeamworkHostedContent using POST.
         /// </summary>
         /// <param name="teamworkHostedContentToCreate">The TeamworkHostedContent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamworkHostedContent.</returns>
-        System.Threading.Tasks.Task<TeamworkHostedContent> CreateAsync(TeamworkHostedContent teamworkHostedContentToCreate);        /// <summary>
-        /// Creates the specified TeamworkHostedContent using POST.
+        System.Threading.Tasks.Task<TeamworkHostedContent> CreateAsync(TeamworkHostedContent teamworkHostedContentToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified TeamworkHostedContent using POST and returns a <see cref="GraphResponse{TeamworkHostedContent}"/> object.
         /// </summary>
         /// <param name="teamworkHostedContentToCreate">The TeamworkHostedContent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TeamworkHostedContent.</returns>
-        System.Threading.Tasks.Task<TeamworkHostedContent> CreateAsync(TeamworkHostedContent teamworkHostedContentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TeamworkHostedContent.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{TeamworkHostedContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamworkHostedContent>> CreateResponseAsync(TeamworkHostedContent teamworkHostedContentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TeamworkHostedContent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified TeamworkHostedContent.
+        /// Deletes the specified TeamworkHostedContent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TeamworkHostedContent.</returns>
-        System.Threading.Tasks.Task<TeamworkHostedContent> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TeamworkHostedContent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamworkHostedContent.</returns>
-        System.Threading.Tasks.Task<TeamworkHostedContent> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TeamworkHostedContent> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified TeamworkHostedContent using PATCH.
+        /// Gets the specified TeamworkHostedContent and returns a <see cref="GraphResponse{TeamworkHostedContent}"/> object.
         /// </summary>
-        /// <param name="teamworkHostedContentToUpdate">The TeamworkHostedContent to update.</param>
-        /// <returns>The updated TeamworkHostedContent.</returns>
-        System.Threading.Tasks.Task<TeamworkHostedContent> UpdateAsync(TeamworkHostedContent teamworkHostedContentToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamworkHostedContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamworkHostedContent>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TeamworkHostedContent using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamworkHostedContent.</returns>
-        System.Threading.Tasks.Task<TeamworkHostedContent> UpdateAsync(TeamworkHostedContent teamworkHostedContentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TeamworkHostedContent> UpdateAsync(TeamworkHostedContent teamworkHostedContentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TeamworkHostedContent using PATCH and returns a <see cref="GraphResponse{TeamworkHostedContent}"/> object.
+        /// </summary>
+        /// <param name="teamworkHostedContentToUpdate">The TeamworkHostedContent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamworkHostedContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamworkHostedContent>> UpdateResponseAsync(TeamworkHostedContent teamworkHostedContentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TeamworkHostedContent using PUT.
+        /// </summary>
+        /// <param name="teamworkHostedContentToUpdate">The TeamworkHostedContent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TeamworkHostedContent> PutAsync(TeamworkHostedContent teamworkHostedContentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TeamworkHostedContent using PUT and returns a <see cref="GraphResponse{TeamworkHostedContent}"/> object.
+        /// </summary>
+        /// <param name="teamworkHostedContentToUpdate">The TeamworkHostedContent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TeamworkHostedContent}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamworkHostedContent>> PutResponseAsync(TeamworkHostedContent teamworkHostedContentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

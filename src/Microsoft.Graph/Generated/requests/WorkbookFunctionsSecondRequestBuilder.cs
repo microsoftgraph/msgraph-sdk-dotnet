@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsSecondRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken serialNumber)
+            System.Text.Json.JsonDocument serialNumber)
             : base(requestUrl, client)
         {
             this.SetParameter("serialNumber", serialNumber, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("serialNumber"))
             {
-                request.RequestBody.SerialNumber = this.GetParameter<Newtonsoft.Json.Linq.JToken>("serialNumber");
+                request.RequestBody.SerialNumber = this.GetParameter<System.Text.Json.JsonDocument>("serialNumber");
             }
 
             return request;

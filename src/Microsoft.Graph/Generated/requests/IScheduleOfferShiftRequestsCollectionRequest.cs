@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IScheduleOfferShiftRequestsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified OfferShiftRequestObject to the collection via POST.
-        /// </summary>
-        /// <param name="offerShiftRequest">The OfferShiftRequestObject to add.</param>
-        /// <returns>The created OfferShiftRequestObject.</returns>
-        System.Threading.Tasks.Task<OfferShiftRequestObject> AddAsync(OfferShiftRequestObject offerShiftRequest);
-
         /// <summary>
         /// Adds the specified OfferShiftRequestObject to the collection via POST.
         /// </summary>
         /// <param name="offerShiftRequest">The OfferShiftRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OfferShiftRequestObject.</returns>
-        System.Threading.Tasks.Task<OfferShiftRequestObject> AddAsync(OfferShiftRequestObject offerShiftRequest, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OfferShiftRequestObject> AddAsync(OfferShiftRequestObject offerShiftRequest, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified OfferShiftRequestObject to the collection via POST and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IScheduleOfferShiftRequestsCollectionPage> GetAsync();
+        /// <param name="offerShiftRequest">The OfferShiftRequestObject to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> AddResponseAsync(OfferShiftRequestObject offerShiftRequest, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IScheduleOfferShiftRequestsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IScheduleOfferShiftRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleOfferShiftRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScheduleOfferShiftRequestsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScheduleOfferShiftRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Worksheet Protection.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookWorksheetProtection : Entity
     {
     
-		///<summary>
-		/// The WorkbookWorksheetProtection constructor
-		///</summary>
-        public WorkbookWorksheetProtection()
-        {
-            this.ODataType = "microsoft.graph.workbookWorksheetProtection";
-        }
-	
         /// <summary>
         /// Gets or sets options.
         /// Sheet protection options. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "options", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("options")]
         public WorkbookWorksheetProtectionOptions Options { get; set; }
     
         /// <summary>
         /// Gets or sets protected.
         /// Indicates if the worksheet is protected.  Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "protected", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("protected")]
         public bool? Protected { get; set; }
     
     }

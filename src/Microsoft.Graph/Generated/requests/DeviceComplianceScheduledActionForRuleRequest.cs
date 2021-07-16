@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceComplianceScheduledActionForRule using POST.
         /// </summary>
         /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
-        /// <returns>The created DeviceComplianceScheduledActionForRule.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> CreateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate)
-        {
-            return this.CreateAsync(deviceComplianceScheduledActionForRuleToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceComplianceScheduledActionForRule using POST.
-        /// </summary>
-        /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceScheduledActionForRule.</returns>
-        public async System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> CreateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> CreateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceComplianceScheduledActionForRule>(deviceComplianceScheduledActionForRuleToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceComplianceScheduledActionForRule.
+        /// Creates the specified DeviceComplianceScheduledActionForRule using POST and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> CreateResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScheduledActionForRule>(deviceComplianceScheduledActionForRuleToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceComplianceScheduledActionForRule>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceComplianceScheduledActionForRule.
+        /// Deletes the specified DeviceComplianceScheduledActionForRule and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceComplianceScheduledActionForRule.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceComplianceScheduledActionForRule.</returns>
-        public async System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceComplianceScheduledActionForRule>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceComplianceScheduledActionForRule using PATCH.
+        /// Gets the specified DeviceComplianceScheduledActionForRule and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
         /// </summary>
-        /// <param name="deviceComplianceScheduledActionForRuleToUpdate">The DeviceComplianceScheduledActionForRule to update.</param>
-        /// <returns>The updated DeviceComplianceScheduledActionForRule.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> UpdateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceComplianceScheduledActionForRuleToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScheduledActionForRule>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceComplianceScheduledActionForRule.</returns>
-        public async System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> UpdateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> UpdateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceComplianceScheduledActionForRuleToUpdate.AdditionalData != null)
-			{
-				if (deviceComplianceScheduledActionForRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceComplianceScheduledActionForRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceScheduledActionForRuleToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceComplianceScheduledActionForRuleToUpdate.AdditionalData != null)
-            {
-                if (deviceComplianceScheduledActionForRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceComplianceScheduledActionForRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceScheduledActionForRuleToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceComplianceScheduledActionForRule>(deviceComplianceScheduledActionForRuleToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceScheduledActionForRule using PATCH and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceScheduledActionForRuleToUpdate">The DeviceComplianceScheduledActionForRule to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> UpdateResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScheduledActionForRule>(deviceComplianceScheduledActionForRuleToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceScheduledActionForRule using PUT.
+        /// </summary>
+        /// <param name="deviceComplianceScheduledActionForRuleToUpdate">The DeviceComplianceScheduledActionForRule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> PutAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceComplianceScheduledActionForRule>(deviceComplianceScheduledActionForRuleToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceScheduledActionForRule using PUT and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceScheduledActionForRuleToUpdate">The DeviceComplianceScheduledActionForRule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> PutResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScheduledActionForRule>(deviceComplianceScheduledActionForRuleToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToInitialize)
         {
 
-            if (deviceComplianceScheduledActionForRuleToInitialize != null && deviceComplianceScheduledActionForRuleToInitialize.AdditionalData != null)
+            if (deviceComplianceScheduledActionForRuleToInitialize != null)
             {
-
                 if (deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations != null && deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.CurrentPage != null)
                 {
+                    deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.InitializeNextPageRequest(this.Client, deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.AdditionalData = deviceComplianceScheduledActionForRuleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceComplianceScheduledActionForRuleToInitialize.AdditionalData.TryGetValue("scheduledActionConfigurations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceComplianceScheduledActionForRuleToInitialize.ScheduledActionConfigurations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

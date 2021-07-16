@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPrinterTaskTriggersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PrintTaskTrigger to the collection via POST.
-        /// </summary>
-        /// <param name="printTaskTrigger">The PrintTaskTrigger to add.</param>
-        /// <returns>The created PrintTaskTrigger.</returns>
-        System.Threading.Tasks.Task<PrintTaskTrigger> AddAsync(PrintTaskTrigger printTaskTrigger);
-
         /// <summary>
         /// Adds the specified PrintTaskTrigger to the collection via POST.
         /// </summary>
         /// <param name="printTaskTrigger">The PrintTaskTrigger to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintTaskTrigger.</returns>
-        System.Threading.Tasks.Task<PrintTaskTrigger> AddAsync(PrintTaskTrigger printTaskTrigger, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PrintTaskTrigger> AddAsync(PrintTaskTrigger printTaskTrigger, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified PrintTaskTrigger to the collection via POST and returns a <see cref="GraphResponse{PrintTaskTrigger}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPrinterTaskTriggersCollectionPage> GetAsync();
+        /// <param name="printTaskTrigger">The PrintTaskTrigger to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintTaskTrigger}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintTaskTrigger>> AddResponseAsync(PrintTaskTrigger printTaskTrigger, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPrinterTaskTriggersCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IPrinterTaskTriggersCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PrinterTaskTriggersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrinterTaskTriggersCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrinterTaskTriggersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

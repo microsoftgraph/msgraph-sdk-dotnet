@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConditionalAccessUsers.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessUsers>))]
     public partial class ConditionalAccessUsers
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessUsers"/> class.
-        /// </summary>
-        public ConditionalAccessUsers()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessUsers";
-        }
 
         /// <summary>
         /// Gets or sets excludeGroups.
         /// Group IDs excluded from scope of policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludeGroups")]
         public IEnumerable<string> ExcludeGroups { get; set; }
     
         /// <summary>
         /// Gets or sets excludeRoles.
         /// Role IDs excluded from scope of policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeRoles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludeRoles")]
         public IEnumerable<string> ExcludeRoles { get; set; }
     
         /// <summary>
         /// Gets or sets excludeUsers.
         /// User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeUsers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludeUsers")]
         public IEnumerable<string> ExcludeUsers { get; set; }
     
         /// <summary>
         /// Gets or sets includeGroups.
         /// Group IDs in scope of policy unless explicitly excluded, or All.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeGroups")]
         public IEnumerable<string> IncludeGroups { get; set; }
     
         /// <summary>
         /// Gets or sets includeRoles.
         /// Role IDs in scope of policy unless explicitly excluded, or All.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeRoles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeRoles")]
         public IEnumerable<string> IncludeRoles { get; set; }
     
         /// <summary>
         /// Gets or sets includeUsers.
         /// User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeUsers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeUsers")]
         public IEnumerable<string> IncludeUsers { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

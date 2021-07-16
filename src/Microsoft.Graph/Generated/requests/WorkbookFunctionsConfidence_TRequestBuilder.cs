@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsConfidence_TRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken alpha,
-            Newtonsoft.Json.Linq.JToken standardDev,
-            Newtonsoft.Json.Linq.JToken size)
+            System.Text.Json.JsonDocument alpha,
+            System.Text.Json.JsonDocument standardDev,
+            System.Text.Json.JsonDocument size)
             : base(requestUrl, client)
         {
             this.SetParameter("alpha", alpha, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("alpha"))
             {
-                request.RequestBody.Alpha = this.GetParameter<Newtonsoft.Json.Linq.JToken>("alpha");
+                request.RequestBody.Alpha = this.GetParameter<System.Text.Json.JsonDocument>("alpha");
             }
 
             if (this.HasParameter("standardDev"))
             {
-                request.RequestBody.StandardDev = this.GetParameter<Newtonsoft.Json.Linq.JToken>("standardDev");
+                request.RequestBody.StandardDev = this.GetParameter<System.Text.Json.JsonDocument>("standardDev");
             }
 
             if (this.HasParameter("size"))
             {
-                request.RequestBody.Size = this.GetParameter<Newtonsoft.Json.Linq.JToken>("size");
+                request.RequestBody.Size = this.GetParameter<System.Text.Json.JsonDocument>("size");
             }
 
             return request;

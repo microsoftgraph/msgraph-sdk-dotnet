@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Onenote using POST.
         /// </summary>
         /// <param name="onenoteToCreate">The Onenote to create.</param>
-        /// <returns>The created Onenote.</returns>
-        public System.Threading.Tasks.Task<Onenote> CreateAsync(Onenote onenoteToCreate)
-        {
-            return this.CreateAsync(onenoteToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Onenote using POST.
-        /// </summary>
-        /// <param name="onenoteToCreate">The Onenote to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Onenote.</returns>
-        public async System.Threading.Tasks.Task<Onenote> CreateAsync(Onenote onenoteToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Onenote> CreateAsync(Onenote onenoteToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Onenote>(onenoteToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Onenote.
+        /// Creates the specified Onenote using POST and returns a <see cref="GraphResponse{Onenote}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="onenoteToCreate">The Onenote to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Onenote}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Onenote>> CreateResponseAsync(Onenote onenoteToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Onenote>(onenoteToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Onenote>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Onenote.
+        /// Deletes the specified Onenote and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Onenote.</returns>
-        public System.Threading.Tasks.Task<Onenote> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Onenote.</returns>
-        public async System.Threading.Tasks.Task<Onenote> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Onenote> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Onenote>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Onenote using PATCH.
+        /// Gets the specified Onenote and returns a <see cref="GraphResponse{Onenote}"/> object.
         /// </summary>
-        /// <param name="onenoteToUpdate">The Onenote to update.</param>
-        /// <returns>The updated Onenote.</returns>
-        public System.Threading.Tasks.Task<Onenote> UpdateAsync(Onenote onenoteToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Onenote}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Onenote>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(onenoteToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Onenote>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Onenote.</returns>
-        public async System.Threading.Tasks.Task<Onenote> UpdateAsync(Onenote onenoteToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Onenote> UpdateAsync(Onenote onenoteToUpdate, CancellationToken cancellationToken = default)
         {
-			if (onenoteToUpdate.AdditionalData != null)
-			{
-				if (onenoteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					onenoteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (onenoteToUpdate.AdditionalData != null)
-            {
-                if (onenoteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    onenoteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Onenote>(onenoteToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Onenote using PATCH and returns a <see cref="GraphResponse{Onenote}"/> object.
+        /// </summary>
+        /// <param name="onenoteToUpdate">The Onenote to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Onenote}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Onenote>> UpdateResponseAsync(Onenote onenoteToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Onenote>(onenoteToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Onenote using PUT.
+        /// </summary>
+        /// <param name="onenoteToUpdate">The Onenote object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Onenote> PutAsync(Onenote onenoteToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Onenote>(onenoteToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Onenote using PUT and returns a <see cref="GraphResponse{Onenote}"/> object.
+        /// </summary>
+        /// <param name="onenoteToUpdate">The Onenote object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Onenote}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Onenote>> PutResponseAsync(Onenote onenoteToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Onenote>(onenoteToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,103 +244,43 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Onenote onenoteToInitialize)
         {
 
-            if (onenoteToInitialize != null && onenoteToInitialize.AdditionalData != null)
+            if (onenoteToInitialize != null)
             {
-
                 if (onenoteToInitialize.Notebooks != null && onenoteToInitialize.Notebooks.CurrentPage != null)
                 {
+                    onenoteToInitialize.Notebooks.InitializeNextPageRequest(this.Client, onenoteToInitialize.NotebooksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteToInitialize.Notebooks.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("notebooks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.Notebooks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onenoteToInitialize.Operations != null && onenoteToInitialize.Operations.CurrentPage != null)
                 {
+                    onenoteToInitialize.Operations.InitializeNextPageRequest(this.Client, onenoteToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteToInitialize.Operations.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onenoteToInitialize.Pages != null && onenoteToInitialize.Pages.CurrentPage != null)
                 {
+                    onenoteToInitialize.Pages.InitializeNextPageRequest(this.Client, onenoteToInitialize.PagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteToInitialize.Pages.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("pages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.Pages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onenoteToInitialize.Resources != null && onenoteToInitialize.Resources.CurrentPage != null)
                 {
+                    onenoteToInitialize.Resources.InitializeNextPageRequest(this.Client, onenoteToInitialize.ResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteToInitialize.Resources.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("resources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.Resources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onenoteToInitialize.SectionGroups != null && onenoteToInitialize.SectionGroups.CurrentPage != null)
                 {
+                    onenoteToInitialize.SectionGroups.InitializeNextPageRequest(this.Client, onenoteToInitialize.SectionGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteToInitialize.SectionGroups.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("sectionGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.SectionGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (onenoteToInitialize.Sections != null && onenoteToInitialize.Sections.CurrentPage != null)
                 {
+                    onenoteToInitialize.Sections.InitializeNextPageRequest(this.Client, onenoteToInitialize.SectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onenoteToInitialize.Sections.AdditionalData = onenoteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onenoteToInitialize.AdditionalData.TryGetValue("sections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onenoteToInitialize.Sections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

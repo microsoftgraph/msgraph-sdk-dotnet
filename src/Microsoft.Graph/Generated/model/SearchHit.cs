@@ -12,68 +12,59 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SearchHit.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SearchHit>))]
     public partial class SearchHit
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchHit"/> class.
-        /// </summary>
-        public SearchHit()
-        {
-            this.ODataType = "microsoft.graph.searchHit";
-        }
 
         /// <summary>
         /// Gets or sets contentSource.
         /// The name of the content source which the externalItem is part of .
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentSource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentSource")]
         public string ContentSource { get; set; }
     
         /// <summary>
         /// Gets or sets hitId.
         /// The internal identifier for the item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hitId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hitId")]
         public string HitId { get; set; }
     
         /// <summary>
         /// Gets or sets rank.
         /// The rank or the order of the result.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rank", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rank")]
         public Int32? Rank { get; set; }
     
         /// <summary>
         /// Gets or sets summary.
         /// A summary of the result, if a summary is available.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("summary")]
         public string Summary { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resource")]
         public Entity Resource { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IdentityUserFlowAttributeAssignmentSetOrderRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IdentityUserFlowAttributeAssignmentSetOrderRequestBody
     {
     
         /// <summary>
         /// Gets or sets NewAssignmentOrder.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "newAssignmentOrder", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("newAssignmentOrder")]
         public AssignmentOrder NewAssignmentOrder { get; set; }
     
     }

@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsBinom_InvRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken trials,
-            Newtonsoft.Json.Linq.JToken probabilityS,
-            Newtonsoft.Json.Linq.JToken alpha)
+            System.Text.Json.JsonDocument trials,
+            System.Text.Json.JsonDocument probabilityS,
+            System.Text.Json.JsonDocument alpha)
             : base(requestUrl, client)
         {
             this.SetParameter("trials", trials, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("trials"))
             {
-                request.RequestBody.Trials = this.GetParameter<Newtonsoft.Json.Linq.JToken>("trials");
+                request.RequestBody.Trials = this.GetParameter<System.Text.Json.JsonDocument>("trials");
             }
 
             if (this.HasParameter("probabilityS"))
             {
-                request.RequestBody.ProbabilityS = this.GetParameter<Newtonsoft.Json.Linq.JToken>("probabilityS");
+                request.RequestBody.ProbabilityS = this.GetParameter<System.Text.Json.JsonDocument>("probabilityS");
             }
 
             if (this.HasParameter("alpha"))
             {
-                request.RequestBody.Alpha = this.GetParameter<Newtonsoft.Json.Linq.JToken>("alpha");
+                request.RequestBody.Alpha = this.GetParameter<System.Text.Json.JsonDocument>("alpha");
             }
 
             return request;

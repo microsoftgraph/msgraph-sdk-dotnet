@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed App Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedAppConfiguration>))]
     public partial class ManagedAppConfiguration : ManagedAppPolicy
     {
     
-		///<summary>
-		/// The internal ManagedAppConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The internal ManagedAppConfiguration constructor
+        ///</summary>
         protected internal ManagedAppConfiguration()
         {
             // Don't allow initialization of abstract entity types
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets custom settings.
         /// A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customSettings")]
         public IEnumerable<KeyValuePair> CustomSettings { get; set; }
     
     }

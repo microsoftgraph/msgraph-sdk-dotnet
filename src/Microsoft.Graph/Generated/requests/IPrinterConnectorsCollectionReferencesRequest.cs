@@ -19,18 +19,19 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPrinterConnectorsCollectionReferencesRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PrintConnector to the collection via POST.
-        /// </summary>
-        /// <param name="printConnector">The PrintConnector to add.</param>
-        System.Threading.Tasks.Task AddAsync(PrintConnector printConnector);
-
         /// <summary>
         /// Adds the specified PrintConnector to the collection via POST.
         /// </summary>
         /// <param name="printConnector">The PrintConnector to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(PrintConnector printConnector, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task AddAsync(PrintConnector printConnector, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified PrintConnector to the collection via POST and returns a <see cref="GraphResponse{PrintConnector}"/> object of the request.
+        /// </summary>
+        /// <param name="printConnector">The PrintConnector to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(PrintConnector printConnector, CancellationToken cancellationToken = default);
+
     }
 }

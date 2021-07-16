@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedDeviceOverview using POST.
         /// </summary>
         /// <param name="managedDeviceOverviewToCreate">The ManagedDeviceOverview to create.</param>
-        /// <returns>The created ManagedDeviceOverview.</returns>
-        public System.Threading.Tasks.Task<ManagedDeviceOverview> CreateAsync(ManagedDeviceOverview managedDeviceOverviewToCreate)
-        {
-            return this.CreateAsync(managedDeviceOverviewToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedDeviceOverview using POST.
-        /// </summary>
-        /// <param name="managedDeviceOverviewToCreate">The ManagedDeviceOverview to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceOverview.</returns>
-        public async System.Threading.Tasks.Task<ManagedDeviceOverview> CreateAsync(ManagedDeviceOverview managedDeviceOverviewToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedDeviceOverview> CreateAsync(ManagedDeviceOverview managedDeviceOverviewToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ManagedDeviceOverview>(managedDeviceOverviewToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ManagedDeviceOverview.
+        /// Creates the specified ManagedDeviceOverview using POST and returns a <see cref="GraphResponse{ManagedDeviceOverview}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="managedDeviceOverviewToCreate">The ManagedDeviceOverview to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceOverview}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceOverview>> CreateResponseAsync(ManagedDeviceOverview managedDeviceOverviewToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ManagedDeviceOverview>(managedDeviceOverviewToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ManagedDeviceOverview>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ManagedDeviceOverview.
+        /// Deletes the specified ManagedDeviceOverview and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagedDeviceOverview.</returns>
-        public System.Threading.Tasks.Task<ManagedDeviceOverview> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedDeviceOverview.</returns>
-        public async System.Threading.Tasks.Task<ManagedDeviceOverview> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedDeviceOverview> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ManagedDeviceOverview>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ManagedDeviceOverview using PATCH.
+        /// Gets the specified ManagedDeviceOverview and returns a <see cref="GraphResponse{ManagedDeviceOverview}"/> object.
         /// </summary>
-        /// <param name="managedDeviceOverviewToUpdate">The ManagedDeviceOverview to update.</param>
-        /// <returns>The updated ManagedDeviceOverview.</returns>
-        public System.Threading.Tasks.Task<ManagedDeviceOverview> UpdateAsync(ManagedDeviceOverview managedDeviceOverviewToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceOverview}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceOverview>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(managedDeviceOverviewToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ManagedDeviceOverview>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedDeviceOverview.</returns>
-        public async System.Threading.Tasks.Task<ManagedDeviceOverview> UpdateAsync(ManagedDeviceOverview managedDeviceOverviewToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedDeviceOverview> UpdateAsync(ManagedDeviceOverview managedDeviceOverviewToUpdate, CancellationToken cancellationToken = default)
         {
-			if (managedDeviceOverviewToUpdate.AdditionalData != null)
-			{
-				if (managedDeviceOverviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedDeviceOverviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceOverviewToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedDeviceOverviewToUpdate.AdditionalData != null)
-            {
-                if (managedDeviceOverviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedDeviceOverviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceOverviewToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ManagedDeviceOverview>(managedDeviceOverviewToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceOverview using PATCH and returns a <see cref="GraphResponse{ManagedDeviceOverview}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceOverviewToUpdate">The ManagedDeviceOverview to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceOverview}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceOverview>> UpdateResponseAsync(ManagedDeviceOverview managedDeviceOverviewToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ManagedDeviceOverview>(managedDeviceOverviewToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceOverview using PUT.
+        /// </summary>
+        /// <param name="managedDeviceOverviewToUpdate">The ManagedDeviceOverview object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ManagedDeviceOverview> PutAsync(ManagedDeviceOverview managedDeviceOverviewToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ManagedDeviceOverview>(managedDeviceOverviewToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceOverview using PUT and returns a <see cref="GraphResponse{ManagedDeviceOverview}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceOverviewToUpdate">The ManagedDeviceOverview object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ManagedDeviceOverview}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceOverview>> PutResponseAsync(ManagedDeviceOverview managedDeviceOverviewToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ManagedDeviceOverview>(managedDeviceOverviewToUpdate, cancellationToken);
         }
 
         /// <summary>

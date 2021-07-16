@@ -24,15 +24,18 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the GET request.
         /// </summary>
-        System.Threading.Tasks.Task<IDriveSharedWithMeCollectionPage> GetAsync();
-
-        /// <summary>
-        /// Issues the GET request.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IDriveSharedWithMeCollectionPage> GetAsync(
-            CancellationToken cancellationToken);
+            CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveSharedWithMeCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
+
 
 
         /// <summary>

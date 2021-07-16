@@ -38,117 +38,102 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified HomeRealmDiscoveryPolicy.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The HomeRealmDiscoveryPolicy.</returns>
-        public System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> GetAsync()
+        public async System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> GetAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<HomeRealmDiscoveryPolicy>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified HomeRealmDiscoveryPolicy.
+        /// Gets the specified HomeRealmDiscoveryPolicy and returns a <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The HomeRealmDiscoveryPolicy.</returns>
-        public async System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<HomeRealmDiscoveryPolicy>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<HomeRealmDiscoveryPolicy>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified HomeRealmDiscoveryPolicy using POST.
         /// </summary>
         /// <param name="homeRealmDiscoveryPolicyToCreate">The HomeRealmDiscoveryPolicy to create.</param>
-        /// <returns>The created HomeRealmDiscoveryPolicy.</returns>
-        public System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> CreateAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicyToCreate)
-        {
-            return this.CreateAsync(homeRealmDiscoveryPolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified HomeRealmDiscoveryPolicy using POST.
-        /// </summary>
-        /// <param name="homeRealmDiscoveryPolicyToCreate">The HomeRealmDiscoveryPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created HomeRealmDiscoveryPolicy.</returns>
-        public async System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> CreateAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> CreateAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicyToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<HomeRealmDiscoveryPolicy>(homeRealmDiscoveryPolicyToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified HomeRealmDiscoveryPolicy using PATCH.
+        /// Creates the specified HomeRealmDiscoveryPolicy using POST and returns a <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object.
         /// </summary>
-        /// <param name="homeRealmDiscoveryPolicyToUpdate">The HomeRealmDiscoveryPolicy to update.</param>
-        /// <returns>The updated HomeRealmDiscoveryPolicy.</returns>
-        public System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> UpdateAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicyToUpdate)
+        /// <param name="homeRealmDiscoveryPolicyToCreate">The HomeRealmDiscoveryPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> CreateResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicyToCreate, CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(homeRealmDiscoveryPolicyToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<HomeRealmDiscoveryPolicy>(homeRealmDiscoveryPolicyToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified HomeRealmDiscoveryPolicy using PATCH.
         /// </summary>
         /// <param name="homeRealmDiscoveryPolicyToUpdate">The HomeRealmDiscoveryPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated HomeRealmDiscoveryPolicy.</returns>
-        public async System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> UpdateAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> UpdateAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicyToUpdate, CancellationToken cancellationToken = default)
         {
-			if (homeRealmDiscoveryPolicyToUpdate.AdditionalData != null)
-			{
-				if (homeRealmDiscoveryPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					homeRealmDiscoveryPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, homeRealmDiscoveryPolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (homeRealmDiscoveryPolicyToUpdate.AdditionalData != null)
-            {
-                if (homeRealmDiscoveryPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    homeRealmDiscoveryPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, homeRealmDiscoveryPolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<HomeRealmDiscoveryPolicy>(homeRealmDiscoveryPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified HomeRealmDiscoveryPolicy.
+        /// Updates the specified HomeRealmDiscoveryPolicy using PATCH and returns a <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="homeRealmDiscoveryPolicyToUpdate">The HomeRealmDiscoveryPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> UpdateResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicyToUpdate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<HomeRealmDiscoveryPolicy>(homeRealmDiscoveryPolicyToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified HomeRealmDiscoveryPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<HomeRealmDiscoveryPolicy>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified HomeRealmDiscoveryPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceSharesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified SharedDriveItem to the collection via POST.
-        /// </summary>
-        /// <param name="sharedDriveItem">The SharedDriveItem to add.</param>
-        /// <returns>The created SharedDriveItem.</returns>
-        System.Threading.Tasks.Task<SharedDriveItem> AddAsync(SharedDriveItem sharedDriveItem);
-
         /// <summary>
         /// Adds the specified SharedDriveItem to the collection via POST.
         /// </summary>
         /// <param name="sharedDriveItem">The SharedDriveItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedDriveItem.</returns>
-        System.Threading.Tasks.Task<SharedDriveItem> AddAsync(SharedDriveItem sharedDriveItem, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SharedDriveItem> AddAsync(SharedDriveItem sharedDriveItem, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified SharedDriveItem to the collection via POST and returns a <see cref="GraphResponse{SharedDriveItem}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceSharesCollectionPage> GetAsync();
+        /// <param name="sharedDriveItem">The SharedDriveItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> AddResponseAsync(SharedDriveItem sharedDriveItem, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceSharesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IGraphServiceSharesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceSharesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceSharesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceSharesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

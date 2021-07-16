@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AccessReviewReviewerScope.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AccessReviewReviewerScope>))]
     public partial class AccessReviewReviewerScope
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AccessReviewReviewerScope"/> class.
-        /// </summary>
-        public AccessReviewReviewerScope()
-        {
-            this.ODataType = "microsoft.graph.accessReviewReviewerScope";
-        }
 
         /// <summary>
         /// Gets or sets query.
         /// The query specifying who will be the reviewer. See table for examples.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "query", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("query")]
         public string Query { get; set; }
     
         /// <summary>
         /// Gets or sets queryRoot.
         /// In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queryRoot", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("queryRoot")]
         public string QueryRoot { get; set; }
     
         /// <summary>
         /// Gets or sets queryType.
         /// The type of query. Examples include MicrosoftGraph and ARM.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queryType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("queryType")]
         public string QueryType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IosCustomConfiguration using POST.
         /// </summary>
         /// <param name="iosCustomConfigurationToCreate">The IosCustomConfiguration to create.</param>
-        /// <returns>The created IosCustomConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosCustomConfiguration> CreateAsync(IosCustomConfiguration iosCustomConfigurationToCreate)
-        {
-            return this.CreateAsync(iosCustomConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosCustomConfiguration using POST.
-        /// </summary>
-        /// <param name="iosCustomConfigurationToCreate">The IosCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosCustomConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosCustomConfiguration> CreateAsync(IosCustomConfiguration iosCustomConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosCustomConfiguration> CreateAsync(IosCustomConfiguration iosCustomConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IosCustomConfiguration>(iosCustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IosCustomConfiguration.
+        /// Creates the specified IosCustomConfiguration using POST and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="iosCustomConfigurationToCreate">The IosCustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosCustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> CreateResponseAsync(IosCustomConfiguration iosCustomConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IosCustomConfiguration>(iosCustomConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IosCustomConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IosCustomConfiguration.
+        /// Deletes the specified IosCustomConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IosCustomConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosCustomConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosCustomConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosCustomConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosCustomConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IosCustomConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IosCustomConfiguration using PATCH.
+        /// Gets the specified IosCustomConfiguration and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
         /// </summary>
-        /// <param name="iosCustomConfigurationToUpdate">The IosCustomConfiguration to update.</param>
-        /// <returns>The updated IosCustomConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosCustomConfiguration> UpdateAsync(IosCustomConfiguration iosCustomConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosCustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(iosCustomConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IosCustomConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosCustomConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosCustomConfiguration> UpdateAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosCustomConfiguration> UpdateAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (iosCustomConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCustomConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosCustomConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCustomConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IosCustomConfiguration>(iosCustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosCustomConfiguration using PATCH and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosCustomConfigurationToUpdate">The IosCustomConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosCustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> UpdateResponseAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IosCustomConfiguration>(iosCustomConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified IosCustomConfiguration using PUT.
+        /// </summary>
+        /// <param name="iosCustomConfigurationToUpdate">The IosCustomConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IosCustomConfiguration> PutAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IosCustomConfiguration>(iosCustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosCustomConfiguration using PUT and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosCustomConfigurationToUpdate">The IosCustomConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IosCustomConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> PutResponseAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IosCustomConfiguration>(iosCustomConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

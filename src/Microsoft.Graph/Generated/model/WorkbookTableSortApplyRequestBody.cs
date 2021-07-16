@@ -9,35 +9,33 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookTableSortApplyRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookTableSortApplyRequestBody
     {
     
         /// <summary>
         /// Gets or sets Fields.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fields", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fields")]
         public IEnumerable<WorkbookSortField> Fields { get; set; }
     
         /// <summary>
         /// Gets or sets MatchCase.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matchCase", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("matchCase")]
         public bool MatchCase { get; set; }
     
         /// <summary>
         /// Gets or sets Method.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "method", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("method")]
         public string Method { get; set; }
     
     }

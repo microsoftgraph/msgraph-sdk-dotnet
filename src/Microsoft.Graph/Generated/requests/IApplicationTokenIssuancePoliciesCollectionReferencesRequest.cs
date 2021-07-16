@@ -19,18 +19,19 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IApplicationTokenIssuancePoliciesCollectionReferencesRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified TokenIssuancePolicy to the collection via POST.
-        /// </summary>
-        /// <param name="tokenIssuancePolicy">The TokenIssuancePolicy to add.</param>
-        System.Threading.Tasks.Task AddAsync(TokenIssuancePolicy tokenIssuancePolicy);
-
         /// <summary>
         /// Adds the specified TokenIssuancePolicy to the collection via POST.
         /// </summary>
         /// <param name="tokenIssuancePolicy">The TokenIssuancePolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(TokenIssuancePolicy tokenIssuancePolicy, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task AddAsync(TokenIssuancePolicy tokenIssuancePolicy, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified TokenIssuancePolicy to the collection via POST and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="tokenIssuancePolicy">The TokenIssuancePolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(TokenIssuancePolicy tokenIssuancePolicy, CancellationToken cancellationToken = default);
+
     }
 }

@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IAppConsentApprovalRouteAppConsentRequestsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<AppConsentApprovalRouteAppConsentRequestsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<AppConsentApprovalRouteAppConsentRequestsCollectionPage>))]
     public interface IAppConsentApprovalRouteAppConsentRequestsCollectionPage : ICollectionPage<AppConsentRequestObject>
     {
         /// <summary>

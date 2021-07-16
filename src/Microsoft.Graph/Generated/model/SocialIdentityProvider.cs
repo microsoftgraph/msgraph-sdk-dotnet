@@ -12,43 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Social Identity Provider.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SocialIdentityProvider : IdentityProviderBase
     {
     
-		///<summary>
-		/// The SocialIdentityProvider constructor
-		///</summary>
+        ///<summary>
+        /// The SocialIdentityProvider constructor
+        ///</summary>
         public SocialIdentityProvider()
         {
             this.ODataType = "microsoft.graph.socialIdentityProvider";
         }
-	
+
         /// <summary>
         /// Gets or sets client id.
         /// The client identifier for the application obtained when registering the application with the identity provider. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientId")]
         public string ClientId { get; set; }
     
         /// <summary>
         /// Gets or sets client secret.
         /// The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns '****'. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientSecret", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientSecret")]
         public string ClientSecret { get; set; }
     
         /// <summary>
         /// Gets or sets identity provider type.
         /// For a B2B scenario, possible values: Google, Facebook. For a B2C scenario, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityProviderType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityProviderType")]
         public string IdentityProviderType { get; set; }
     
     }

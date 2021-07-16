@@ -12,57 +12,47 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed App Policy Deployment Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedAppPolicyDeploymentSummary : Entity
     {
     
-		///<summary>
-		/// The ManagedAppPolicyDeploymentSummary constructor
-		///</summary>
-        public ManagedAppPolicyDeploymentSummary()
-        {
-            this.ODataType = "microsoft.graph.managedAppPolicyDeploymentSummary";
-        }
-	
         /// <summary>
         /// Gets or sets configuration deployed user count.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationDeployedUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurationDeployedUserCount")]
         public Int32? ConfigurationDeployedUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets configuration deployment summary per app.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationDeploymentSummaryPerApp", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurationDeploymentSummaryPerApp")]
         public IEnumerable<ManagedAppPolicyDeploymentSummaryPerApp> ConfigurationDeploymentSummaryPerApp { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last refresh time.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastRefreshTime")]
         public DateTimeOffset? LastRefreshTime { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// Version of the entity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
     }

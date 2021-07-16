@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         public WorkbookFunctionsSydRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken cost,
-            Newtonsoft.Json.Linq.JToken salvage,
-            Newtonsoft.Json.Linq.JToken life,
-            Newtonsoft.Json.Linq.JToken per)
+            System.Text.Json.JsonDocument cost,
+            System.Text.Json.JsonDocument salvage,
+            System.Text.Json.JsonDocument life,
+            System.Text.Json.JsonDocument per)
             : base(requestUrl, client)
         {
             this.SetParameter("cost", cost, true);
@@ -54,22 +54,22 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("cost"))
             {
-                request.RequestBody.Cost = this.GetParameter<Newtonsoft.Json.Linq.JToken>("cost");
+                request.RequestBody.Cost = this.GetParameter<System.Text.Json.JsonDocument>("cost");
             }
 
             if (this.HasParameter("salvage"))
             {
-                request.RequestBody.Salvage = this.GetParameter<Newtonsoft.Json.Linq.JToken>("salvage");
+                request.RequestBody.Salvage = this.GetParameter<System.Text.Json.JsonDocument>("salvage");
             }
 
             if (this.HasParameter("life"))
             {
-                request.RequestBody.Life = this.GetParameter<Newtonsoft.Json.Linq.JToken>("life");
+                request.RequestBody.Life = this.GetParameter<System.Text.Json.JsonDocument>("life");
             }
 
             if (this.HasParameter("per"))
             {
-                request.RequestBody.Per = this.GetParameter<Newtonsoft.Json.Linq.JToken>("per");
+                request.RequestBody.Per = this.GetParameter<System.Text.Json.JsonDocument>("per");
             }
 
             return request;

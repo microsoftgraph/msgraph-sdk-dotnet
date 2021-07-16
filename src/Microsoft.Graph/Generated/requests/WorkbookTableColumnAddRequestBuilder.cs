@@ -30,7 +30,7 @@ namespace Microsoft.Graph
             string requestUrl,
             IBaseClient client,
             Int32? index,
-            Newtonsoft.Json.Linq.JToken values,
+            System.Text.Json.JsonDocument values,
             string name)
             : base(requestUrl, client)
         {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("values"))
             {
-                request.RequestBody.Values = this.GetParameter<Newtonsoft.Json.Linq.JToken>("values");
+                request.RequestBody.Values = this.GetParameter<System.Text.Json.JsonDocument>("values");
             }
 
             if (this.HasParameter("name"))

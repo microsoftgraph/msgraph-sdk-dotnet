@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFilterApplyTopItemsFilterRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFilterApplyTopItemsFilterRequestBody
     {
     
         /// <summary>
         /// Gets or sets Count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "count", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("count")]
         public Int32 Count { get; set; }
     
     }

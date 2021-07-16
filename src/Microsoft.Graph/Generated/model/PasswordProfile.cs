@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PasswordProfile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PasswordProfile>))]
     public partial class PasswordProfile
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PasswordProfile"/> class.
-        /// </summary>
-        public PasswordProfile()
-        {
-            this.ODataType = "microsoft.graph.passwordProfile";
-        }
 
         /// <summary>
         /// Gets or sets forceChangePasswordNextSignIn.
         /// If true, at next sign-in, the user must change their password. After a password change, this property will be automatically reset to false. If not set, default is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "forceChangePasswordNextSignIn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("forceChangePasswordNextSignIn")]
         public bool? ForceChangePasswordNextSignIn { get; set; }
     
         /// <summary>
         /// Gets or sets forceChangePasswordNextSignInWithMfa.
         /// If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "forceChangePasswordNextSignInWithMfa", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("forceChangePasswordNextSignInWithMfa")]
         public bool? ForceChangePasswordNextSignInWithMfa { get; set; }
     
         /// <summary>
         /// Gets or sets password.
         /// The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "password", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("password")]
         public string Password { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

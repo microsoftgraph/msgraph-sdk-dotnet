@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Identity Security Defaults Enforcement Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IdentitySecurityDefaultsEnforcementPolicy : PolicyBase
     {
     
-		///<summary>
-		/// The IdentitySecurityDefaultsEnforcementPolicy constructor
-		///</summary>
+        ///<summary>
+        /// The IdentitySecurityDefaultsEnforcementPolicy constructor
+        ///</summary>
         public IdentitySecurityDefaultsEnforcementPolicy()
         {
             this.ODataType = "microsoft.graph.identitySecurityDefaultsEnforcementPolicy";
         }
-	
+
         /// <summary>
         /// Gets or sets is enabled.
         /// If set to true, Azure Active Directory security defaults is enabled for the tenant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
     }

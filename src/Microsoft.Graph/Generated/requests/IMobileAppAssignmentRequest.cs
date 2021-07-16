@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppAssignment using POST.
         /// </summary>
         /// <param name="mobileAppAssignmentToCreate">The MobileAppAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppAssignment> CreateAsync(MobileAppAssignment mobileAppAssignmentToCreate);        /// <summary>
-        /// Creates the specified MobileAppAssignment using POST.
+        System.Threading.Tasks.Task<MobileAppAssignment> CreateAsync(MobileAppAssignment mobileAppAssignmentToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified MobileAppAssignment using POST and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
         /// </summary>
         /// <param name="mobileAppAssignmentToCreate">The MobileAppAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MobileAppAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppAssignment> CreateAsync(MobileAppAssignment mobileAppAssignmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MobileAppAssignment.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> CreateResponseAsync(MobileAppAssignment mobileAppAssignmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MobileAppAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified MobileAppAssignment.
+        /// Deletes the specified MobileAppAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MobileAppAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppAssignment> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MobileAppAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppAssignment> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppAssignment> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified MobileAppAssignment using PATCH.
+        /// Gets the specified MobileAppAssignment and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
         /// </summary>
-        /// <param name="mobileAppAssignmentToUpdate">The MobileAppAssignment to update.</param>
-        /// <returns>The updated MobileAppAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppAssignment> UpdateAsync(MobileAppAssignment mobileAppAssignmentToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MobileAppAssignment using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppAssignment> UpdateAsync(MobileAppAssignment mobileAppAssignmentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppAssignment> UpdateAsync(MobileAppAssignment mobileAppAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MobileAppAssignment using PATCH and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppAssignmentToUpdate">The MobileAppAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> UpdateResponseAsync(MobileAppAssignment mobileAppAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MobileAppAssignment using PUT.
+        /// </summary>
+        /// <param name="mobileAppAssignmentToUpdate">The MobileAppAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MobileAppAssignment> PutAsync(MobileAppAssignment mobileAppAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MobileAppAssignment using PUT and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppAssignmentToUpdate">The MobileAppAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MobileAppAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> PutResponseAsync(MobileAppAssignment mobileAppAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsError_TypeRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken errorVal)
+            System.Text.Json.JsonDocument errorVal)
             : base(requestUrl, client)
         {
             this.SetParameter("errorVal", errorVal, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("errorVal"))
             {
-                request.RequestBody.ErrorVal = this.GetParameter<Newtonsoft.Json.Linq.JToken>("errorVal");
+                request.RequestBody.ErrorVal = this.GetParameter<System.Text.Json.JsonDocument>("errorVal");
             }
 
             return request;

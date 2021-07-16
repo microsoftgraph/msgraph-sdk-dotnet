@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified OpenTypeExtension using POST.
         /// </summary>
         /// <param name="openTypeExtensionToCreate">The OpenTypeExtension to create.</param>
-        /// <returns>The created OpenTypeExtension.</returns>
-        public System.Threading.Tasks.Task<OpenTypeExtension> CreateAsync(OpenTypeExtension openTypeExtensionToCreate)
-        {
-            return this.CreateAsync(openTypeExtensionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OpenTypeExtension using POST.
-        /// </summary>
-        /// <param name="openTypeExtensionToCreate">The OpenTypeExtension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OpenTypeExtension.</returns>
-        public async System.Threading.Tasks.Task<OpenTypeExtension> CreateAsync(OpenTypeExtension openTypeExtensionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OpenTypeExtension> CreateAsync(OpenTypeExtension openTypeExtensionToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<OpenTypeExtension>(openTypeExtensionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified OpenTypeExtension.
+        /// Creates the specified OpenTypeExtension using POST and returns a <see cref="GraphResponse{OpenTypeExtension}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="openTypeExtensionToCreate">The OpenTypeExtension to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenTypeExtension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenTypeExtension>> CreateResponseAsync(OpenTypeExtension openTypeExtensionToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<OpenTypeExtension>(openTypeExtensionToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<OpenTypeExtension>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified OpenTypeExtension.
+        /// Deletes the specified OpenTypeExtension and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OpenTypeExtension.</returns>
-        public System.Threading.Tasks.Task<OpenTypeExtension> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OpenTypeExtension.</returns>
-        public async System.Threading.Tasks.Task<OpenTypeExtension> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OpenTypeExtension> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<OpenTypeExtension>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified OpenTypeExtension using PATCH.
+        /// Gets the specified OpenTypeExtension and returns a <see cref="GraphResponse{OpenTypeExtension}"/> object.
         /// </summary>
-        /// <param name="openTypeExtensionToUpdate">The OpenTypeExtension to update.</param>
-        /// <returns>The updated OpenTypeExtension.</returns>
-        public System.Threading.Tasks.Task<OpenTypeExtension> UpdateAsync(OpenTypeExtension openTypeExtensionToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenTypeExtension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenTypeExtension>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(openTypeExtensionToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<OpenTypeExtension>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OpenTypeExtension.</returns>
-        public async System.Threading.Tasks.Task<OpenTypeExtension> UpdateAsync(OpenTypeExtension openTypeExtensionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OpenTypeExtension> UpdateAsync(OpenTypeExtension openTypeExtensionToUpdate, CancellationToken cancellationToken = default)
         {
-			if (openTypeExtensionToUpdate.AdditionalData != null)
-			{
-				if (openTypeExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					openTypeExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, openTypeExtensionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (openTypeExtensionToUpdate.AdditionalData != null)
-            {
-                if (openTypeExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    openTypeExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, openTypeExtensionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<OpenTypeExtension>(openTypeExtensionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OpenTypeExtension using PATCH and returns a <see cref="GraphResponse{OpenTypeExtension}"/> object.
+        /// </summary>
+        /// <param name="openTypeExtensionToUpdate">The OpenTypeExtension to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OpenTypeExtension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenTypeExtension>> UpdateResponseAsync(OpenTypeExtension openTypeExtensionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<OpenTypeExtension>(openTypeExtensionToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified OpenTypeExtension using PUT.
+        /// </summary>
+        /// <param name="openTypeExtensionToUpdate">The OpenTypeExtension object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<OpenTypeExtension> PutAsync(OpenTypeExtension openTypeExtensionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<OpenTypeExtension>(openTypeExtensionToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OpenTypeExtension using PUT and returns a <see cref="GraphResponse{OpenTypeExtension}"/> object.
+        /// </summary>
+        /// <param name="openTypeExtensionToUpdate">The OpenTypeExtension object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{OpenTypeExtension}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenTypeExtension>> PutResponseAsync(OpenTypeExtension openTypeExtensionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<OpenTypeExtension>(openTypeExtensionToUpdate, cancellationToken);
         }
 
         /// <summary>

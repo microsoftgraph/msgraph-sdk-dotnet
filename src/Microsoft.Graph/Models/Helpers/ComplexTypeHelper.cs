@@ -7,8 +7,7 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
+    using System.Text.Json;
 
     /// <summary>
     /// This class provides internal functionality that allows converting complex typed values in dynamic properties of open types to their native types. 
@@ -27,18 +26,16 @@ namespace Microsoft.Graph
         /// </remarks>
         public static void ConvertComplexTypeProperties<TObject>(this IDictionary<string, object> additionalData, string odataType)
         {
-            Lazy<JsonSerializer> serializer = new Lazy<JsonSerializer>(JsonSerializer.Create);
-
             // Create a list of entries so we can modify the dictionary while enumerating.
             foreach (var item in additionalData.ToList())
             {
                 // JSON serializer creates JObject type when the type of the structure is not known.
-                JObject complexValue = item.Value as JObject;
-                if (complexValue != null)
+                JsonElement complexValue = item.Value is JsonElement ? (JsonElement) item.Value : default;
+                if (complexValue.ValueKind != JsonValueKind.Undefined)
                 {
-                    if (complexValue.TryGetValue(CoreConstants.Serialization.ODataType, out JToken value) && value.Value<string>() == odataType)
+                    if (complexValue.TryGetProperty(CoreConstants.Serialization.ODataType, out JsonElement value) && value.GetString() == odataType)
                     {
-                        additionalData[item.Key] = serializer.Value.Deserialize<TObject>(complexValue.CreateReader());
+                        additionalData[item.Key] = JsonSerializer.Deserialize<TObject>(complexValue.GetRawText());
                     }
                 }
             }

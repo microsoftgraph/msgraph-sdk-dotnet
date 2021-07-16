@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IPermissionGrantPolicyExcludesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<PermissionGrantPolicyExcludesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<PermissionGrantPolicyExcludesCollectionPage>))]
     public interface IPermissionGrantPolicyExcludesCollectionPage : ICollectionPage<PermissionGrantConditionSet>
     {
         /// <summary>

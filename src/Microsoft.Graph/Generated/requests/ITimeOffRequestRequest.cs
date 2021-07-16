@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified TimeOffRequestObject using POST.
         /// </summary>
         /// <param name="timeOffRequestObjectToCreate">The TimeOffRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TimeOffRequestObject.</returns>
-        System.Threading.Tasks.Task<TimeOffRequestObject> CreateAsync(TimeOffRequestObject timeOffRequestObjectToCreate);        /// <summary>
-        /// Creates the specified TimeOffRequestObject using POST.
+        System.Threading.Tasks.Task<TimeOffRequestObject> CreateAsync(TimeOffRequestObject timeOffRequestObjectToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified TimeOffRequestObject using POST and returns a <see cref="GraphResponse{TimeOffRequestObject}"/> object.
         /// </summary>
         /// <param name="timeOffRequestObjectToCreate">The TimeOffRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TimeOffRequestObject.</returns>
-        System.Threading.Tasks.Task<TimeOffRequestObject> CreateAsync(TimeOffRequestObject timeOffRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TimeOffRequestObject.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{TimeOffRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TimeOffRequestObject>> CreateResponseAsync(TimeOffRequestObject timeOffRequestObjectToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TimeOffRequestObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified TimeOffRequestObject.
+        /// Deletes the specified TimeOffRequestObject and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TimeOffRequestObject.</returns>
-        System.Threading.Tasks.Task<TimeOffRequestObject> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TimeOffRequestObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TimeOffRequestObject.</returns>
-        System.Threading.Tasks.Task<TimeOffRequestObject> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TimeOffRequestObject> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified TimeOffRequestObject using PATCH.
+        /// Gets the specified TimeOffRequestObject and returns a <see cref="GraphResponse{TimeOffRequestObject}"/> object.
         /// </summary>
-        /// <param name="timeOffRequestObjectToUpdate">The TimeOffRequestObject to update.</param>
-        /// <returns>The updated TimeOffRequestObject.</returns>
-        System.Threading.Tasks.Task<TimeOffRequestObject> UpdateAsync(TimeOffRequestObject timeOffRequestObjectToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TimeOffRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TimeOffRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TimeOffRequestObject using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TimeOffRequestObject.</returns>
-        System.Threading.Tasks.Task<TimeOffRequestObject> UpdateAsync(TimeOffRequestObject timeOffRequestObjectToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TimeOffRequestObject> UpdateAsync(TimeOffRequestObject timeOffRequestObjectToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TimeOffRequestObject using PATCH and returns a <see cref="GraphResponse{TimeOffRequestObject}"/> object.
+        /// </summary>
+        /// <param name="timeOffRequestObjectToUpdate">The TimeOffRequestObject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TimeOffRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TimeOffRequestObject>> UpdateResponseAsync(TimeOffRequestObject timeOffRequestObjectToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TimeOffRequestObject using PUT.
+        /// </summary>
+        /// <param name="timeOffRequestObjectToUpdate">The TimeOffRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TimeOffRequestObject> PutAsync(TimeOffRequestObject timeOffRequestObjectToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TimeOffRequestObject using PUT and returns a <see cref="GraphResponse{TimeOffRequestObject}"/> object.
+        /// </summary>
+        /// <param name="timeOffRequestObjectToUpdate">The TimeOffRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TimeOffRequestObject}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TimeOffRequestObject>> PutResponseAsync(TimeOffRequestObject timeOffRequestObjectToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

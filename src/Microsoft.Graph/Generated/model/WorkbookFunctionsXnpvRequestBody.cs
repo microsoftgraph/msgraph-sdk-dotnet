@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsXnpvRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsXnpvRequestBody
     {
     
         /// <summary>
         /// Gets or sets Rate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rate", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Rate { get; set; }
+        [JsonPropertyName("rate")]
+        public System.Text.Json.JsonDocument Rate { get; set; }
     
         /// <summary>
         /// Gets or sets Values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Values { get; set; }
+        [JsonPropertyName("values")]
+        public System.Text.Json.JsonDocument Values { get; set; }
     
         /// <summary>
         /// Gets or sets Dates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dates", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Dates { get; set; }
+        [JsonPropertyName("dates")]
+        public System.Text.Json.JsonDocument Dates { get; set; }
     
     }
 }

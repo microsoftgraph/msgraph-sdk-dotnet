@@ -29,7 +29,7 @@ namespace Microsoft.Graph
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
-            this.ContentType = "application/json";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.RequestBody = new GroupLifecyclePolicyRemoveGroupRequestBody();
         }
 
@@ -41,24 +41,26 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the POST request.
         /// </summary>
-        public System.Threading.Tasks.Task<bool?> PostAsync()
-        {
-            return this.PostAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Issues the POST request.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<bool?> PostAsync(
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
-            this.Method = "POST";
+            this.Method = HttpMethods.POST;
             var response = await this.SendAsync<ODataMethodBooleanResponse>(this.RequestBody, cancellationToken);
             return response.Value;
         }
 
+        /// <summary>
+        /// Issues the POST request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ODataMethodBooleanResponse>> PostResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ODataMethodBooleanResponse>(this.RequestBody, cancellationToken);
+        }
 
 
 

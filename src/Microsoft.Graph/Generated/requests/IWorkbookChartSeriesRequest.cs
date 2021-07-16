@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookChartSeries using POST.
         /// </summary>
         /// <param name="workbookChartSeriesToCreate">The WorkbookChartSeries to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartSeries.</returns>
-        System.Threading.Tasks.Task<WorkbookChartSeries> CreateAsync(WorkbookChartSeries workbookChartSeriesToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartSeries using POST.
+        System.Threading.Tasks.Task<WorkbookChartSeries> CreateAsync(WorkbookChartSeries workbookChartSeriesToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartSeries using POST and returns a <see cref="GraphResponse{WorkbookChartSeries}"/> object.
         /// </summary>
         /// <param name="workbookChartSeriesToCreate">The WorkbookChartSeries to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WorkbookChartSeries.</returns>
-        System.Threading.Tasks.Task<WorkbookChartSeries> CreateAsync(WorkbookChartSeries workbookChartSeriesToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookChartSeries.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WorkbookChartSeries}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> CreateResponseAsync(WorkbookChartSeries workbookChartSeriesToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WorkbookChartSeries.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified WorkbookChartSeries.
+        /// Deletes the specified WorkbookChartSeries and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookChartSeries.</returns>
-        System.Threading.Tasks.Task<WorkbookChartSeries> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WorkbookChartSeries.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookChartSeries.</returns>
-        System.Threading.Tasks.Task<WorkbookChartSeries> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookChartSeries> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified WorkbookChartSeries using PATCH.
+        /// Gets the specified WorkbookChartSeries and returns a <see cref="GraphResponse{WorkbookChartSeries}"/> object.
         /// </summary>
-        /// <param name="workbookChartSeriesToUpdate">The WorkbookChartSeries to update.</param>
-        /// <returns>The updated WorkbookChartSeries.</returns>
-        System.Threading.Tasks.Task<WorkbookChartSeries> UpdateAsync(WorkbookChartSeries workbookChartSeriesToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartSeries}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkbookChartSeries using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartSeries.</returns>
-        System.Threading.Tasks.Task<WorkbookChartSeries> UpdateAsync(WorkbookChartSeries workbookChartSeriesToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookChartSeries> UpdateAsync(WorkbookChartSeries workbookChartSeriesToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookChartSeries using PATCH and returns a <see cref="GraphResponse{WorkbookChartSeries}"/> object.
+        /// </summary>
+        /// <param name="workbookChartSeriesToUpdate">The WorkbookChartSeries to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartSeries}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> UpdateResponseAsync(WorkbookChartSeries workbookChartSeriesToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookChartSeries using PUT.
+        /// </summary>
+        /// <param name="workbookChartSeriesToUpdate">The WorkbookChartSeries object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkbookChartSeries> PutAsync(WorkbookChartSeries workbookChartSeriesToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookChartSeries using PUT and returns a <see cref="GraphResponse{WorkbookChartSeries}"/> object.
+        /// </summary>
+        /// <param name="workbookChartSeriesToUpdate">The WorkbookChartSeries object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkbookChartSeries}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> PutResponseAsync(WorkbookChartSeries workbookChartSeriesToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

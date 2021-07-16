@@ -12,50 +12,40 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Teams Tab.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TeamsTab : Entity
     {
     
-		///<summary>
-		/// The TeamsTab constructor
-		///</summary>
-        public TeamsTab()
-        {
-            this.ODataType = "microsoft.graph.teamsTab";
-        }
-	
         /// <summary>
         /// Gets or sets configuration.
         /// Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configuration")]
         public TeamsTabConfiguration Configuration { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Name of the tab.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets web url.
         /// Deep link URL of the tab instance. Read only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets teams app.
         /// The application that is linked to the tab.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsApp", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teamsApp")]
         public TeamsApp TeamsApp { get; set; }
     
     }

@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConvertIdResult.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ConvertIdResult>))]
     public partial class ConvertIdResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConvertIdResult"/> class.
-        /// </summary>
-        public ConvertIdResult()
-        {
-            this.ODataType = "microsoft.graph.convertIdResult";
-        }
 
         /// <summary>
         /// Gets or sets errorDetails.
         /// An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorDetails")]
         public GenericError ErrorDetails { get; set; }
     
         /// <summary>
         /// Gets or sets sourceId.
         /// The identifier that was converted. This value is the original, un-converted identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceId")]
         public string SourceId { get; set; }
     
         /// <summary>
         /// Gets or sets targetId.
         /// The converted identifier. This value is not present if the conversion failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetId")]
         public string TargetId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

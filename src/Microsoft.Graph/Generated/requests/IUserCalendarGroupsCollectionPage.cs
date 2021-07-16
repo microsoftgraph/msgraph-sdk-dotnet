@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUserCalendarGroupsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<UserCalendarGroupsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<UserCalendarGroupsCollectionPage>))]
     public interface IUserCalendarGroupsCollectionPage : ICollectionPage<CalendarGroup>
     {
         /// <summary>

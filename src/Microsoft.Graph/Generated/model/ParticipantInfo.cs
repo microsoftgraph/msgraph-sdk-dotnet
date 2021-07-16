@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ParticipantInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ParticipantInfo>))]
     public partial class ParticipantInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ParticipantInfo"/> class.
-        /// </summary>
-        public ParticipantInfo()
-        {
-            this.ODataType = "microsoft.graph.participantInfo";
-        }
 
         /// <summary>
         /// Gets or sets countryCode.
         /// The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countryCode")]
         public string CountryCode { get; set; }
     
         /// <summary>
         /// Gets or sets endpointType.
         /// The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endpointType")]
         public EndpointType? EndpointType { get; set; }
     
         /// <summary>
         /// Gets or sets identity.
         /// The identitySet associated with this participant. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identity")]
         public IdentitySet Identity { get; set; }
     
         /// <summary>
         /// Gets or sets languageId.
         /// The language culture string. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("languageId")]
         public string LanguageId { get; set; }
     
         /// <summary>
         /// Gets or sets region.
         /// The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "region", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("region")]
         public string Region { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

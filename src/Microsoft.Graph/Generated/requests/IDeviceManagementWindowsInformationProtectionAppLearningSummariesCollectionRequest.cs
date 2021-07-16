@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified WindowsInformationProtectionAppLearningSummary to the collection via POST.
-        /// </summary>
-        /// <param name="windowsInformationProtectionAppLearningSummary">The WindowsInformationProtectionAppLearningSummary to add.</param>
-        /// <returns>The created WindowsInformationProtectionAppLearningSummary.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> AddAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummary);
-
         /// <summary>
         /// Adds the specified WindowsInformationProtectionAppLearningSummary to the collection via POST.
         /// </summary>
         /// <param name="windowsInformationProtectionAppLearningSummary">The WindowsInformationProtectionAppLearningSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionAppLearningSummary.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> AddAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummary, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> AddAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummary, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified WindowsInformationProtectionAppLearningSummary to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionPage> GetAsync();
+        /// <param name="windowsInformationProtectionAppLearningSummary">The WindowsInformationProtectionAppLearningSummary to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> AddResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummary, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

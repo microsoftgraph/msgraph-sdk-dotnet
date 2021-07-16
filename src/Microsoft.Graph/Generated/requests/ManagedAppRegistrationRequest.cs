@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedAppRegistration using POST.
         /// </summary>
         /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
-        /// <returns>The created ManagedAppRegistration.</returns>
-        public System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate)
-        {
-            return this.CreateAsync(managedAppRegistrationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedAppRegistration using POST.
-        /// </summary>
-        /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppRegistration.</returns>
-        public async System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ManagedAppRegistration>(managedAppRegistrationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ManagedAppRegistration.
+        /// Creates the specified ManagedAppRegistration using POST and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> CreateResponseAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ManagedAppRegistration>(managedAppRegistrationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ManagedAppRegistration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ManagedAppRegistration.
+        /// Deletes the specified ManagedAppRegistration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagedAppRegistration.</returns>
-        public System.Threading.Tasks.Task<ManagedAppRegistration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedAppRegistration.</returns>
-        public async System.Threading.Tasks.Task<ManagedAppRegistration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedAppRegistration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ManagedAppRegistration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ManagedAppRegistration using PATCH.
+        /// Gets the specified ManagedAppRegistration and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
         /// </summary>
-        /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration to update.</param>
-        /// <returns>The updated ManagedAppRegistration.</returns>
-        public System.Threading.Tasks.Task<ManagedAppRegistration> UpdateAsync(ManagedAppRegistration managedAppRegistrationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(managedAppRegistrationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ManagedAppRegistration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedAppRegistration.</returns>
-        public async System.Threading.Tasks.Task<ManagedAppRegistration> UpdateAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedAppRegistration> UpdateAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (managedAppRegistrationToUpdate.AdditionalData != null)
-			{
-				if (managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppRegistrationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedAppRegistrationToUpdate.AdditionalData != null)
-            {
-                if (managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppRegistrationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ManagedAppRegistration>(managedAppRegistrationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedAppRegistration using PATCH and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> UpdateResponseAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ManagedAppRegistration>(managedAppRegistrationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedAppRegistration using PUT.
+        /// </summary>
+        /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ManagedAppRegistration> PutAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ManagedAppRegistration>(managedAppRegistrationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedAppRegistration using PUT and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ManagedAppRegistration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> PutResponseAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ManagedAppRegistration>(managedAppRegistrationToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagedAppRegistration managedAppRegistrationToInitialize)
         {
 
-            if (managedAppRegistrationToInitialize != null && managedAppRegistrationToInitialize.AdditionalData != null)
+            if (managedAppRegistrationToInitialize != null)
             {
-
                 if (managedAppRegistrationToInitialize.AppliedPolicies != null && managedAppRegistrationToInitialize.AppliedPolicies.CurrentPage != null)
                 {
+                    managedAppRegistrationToInitialize.AppliedPolicies.InitializeNextPageRequest(this.Client, managedAppRegistrationToInitialize.AppliedPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedAppRegistrationToInitialize.AppliedPolicies.AdditionalData = managedAppRegistrationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedAppRegistrationToInitialize.AdditionalData.TryGetValue("appliedPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedAppRegistrationToInitialize.AppliedPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedAppRegistrationToInitialize.IntendedPolicies != null && managedAppRegistrationToInitialize.IntendedPolicies.CurrentPage != null)
                 {
+                    managedAppRegistrationToInitialize.IntendedPolicies.InitializeNextPageRequest(this.Client, managedAppRegistrationToInitialize.IntendedPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedAppRegistrationToInitialize.IntendedPolicies.AdditionalData = managedAppRegistrationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedAppRegistrationToInitialize.AdditionalData.TryGetValue("intendedPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedAppRegistrationToInitialize.IntendedPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedAppRegistrationToInitialize.Operations != null && managedAppRegistrationToInitialize.Operations.CurrentPage != null)
                 {
+                    managedAppRegistrationToInitialize.Operations.InitializeNextPageRequest(this.Client, managedAppRegistrationToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedAppRegistrationToInitialize.Operations.AdditionalData = managedAppRegistrationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedAppRegistrationToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedAppRegistrationToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

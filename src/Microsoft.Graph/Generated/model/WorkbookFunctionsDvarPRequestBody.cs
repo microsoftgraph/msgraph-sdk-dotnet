@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsDvarPRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsDvarPRequestBody
     {
     
         /// <summary>
         /// Gets or sets Database.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "database", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Database { get; set; }
+        [JsonPropertyName("database")]
+        public System.Text.Json.JsonDocument Database { get; set; }
     
         /// <summary>
         /// Gets or sets Field.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "field", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Field { get; set; }
+        [JsonPropertyName("field")]
+        public System.Text.Json.JsonDocument Field { get; set; }
     
         /// <summary>
         /// Gets or sets Criteria.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "criteria", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Criteria { get; set; }
+        [JsonPropertyName("criteria")]
+        public System.Text.Json.JsonDocument Criteria { get; set; }
     
     }
 }

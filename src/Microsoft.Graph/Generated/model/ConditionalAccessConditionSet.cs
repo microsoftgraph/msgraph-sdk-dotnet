@@ -12,83 +12,74 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConditionalAccessConditionSet.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessConditionSet>))]
     public partial class ConditionalAccessConditionSet
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessConditionSet"/> class.
-        /// </summary>
-        public ConditionalAccessConditionSet()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessConditionSet";
-        }
 
         /// <summary>
         /// Gets or sets applications.
         /// Applications and user actions included in and excluded from the policy. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applications", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applications")]
         public ConditionalAccessApplications Applications { get; set; }
     
         /// <summary>
         /// Gets or sets clientAppTypes.
         /// Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientAppTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientAppTypes")]
         public IEnumerable<ConditionalAccessClientApp> ClientAppTypes { get; set; }
     
         /// <summary>
         /// Gets or sets locations.
         /// Locations included in and excluded from the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("locations")]
         public ConditionalAccessLocations Locations { get; set; }
     
         /// <summary>
         /// Gets or sets platforms.
         /// Platforms included in and excluded from the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platforms", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platforms")]
         public ConditionalAccessPlatforms Platforms { get; set; }
     
         /// <summary>
         /// Gets or sets signInRiskLevels.
         /// Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInRiskLevels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("signInRiskLevels")]
         public IEnumerable<RiskLevel> SignInRiskLevels { get; set; }
     
         /// <summary>
         /// Gets or sets userRiskLevels.
         /// User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRiskLevels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userRiskLevels")]
         public IEnumerable<RiskLevel> UserRiskLevels { get; set; }
     
         /// <summary>
         /// Gets or sets users.
         /// Users, groups, and roles included in and excluded from the policy. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "users", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("users")]
         public ConditionalAccessUsers Users { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

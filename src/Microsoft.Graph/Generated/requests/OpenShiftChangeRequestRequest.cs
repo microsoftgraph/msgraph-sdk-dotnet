@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified OpenShiftChangeRequestObject using POST.
         /// </summary>
         /// <param name="openShiftChangeRequestObjectToCreate">The OpenShiftChangeRequestObject to create.</param>
-        /// <returns>The created OpenShiftChangeRequestObject.</returns>
-        public System.Threading.Tasks.Task<OpenShiftChangeRequestObject> CreateAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToCreate)
-        {
-            return this.CreateAsync(openShiftChangeRequestObjectToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OpenShiftChangeRequestObject using POST.
-        /// </summary>
-        /// <param name="openShiftChangeRequestObjectToCreate">The OpenShiftChangeRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OpenShiftChangeRequestObject.</returns>
-        public async System.Threading.Tasks.Task<OpenShiftChangeRequestObject> CreateAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OpenShiftChangeRequestObject> CreateAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<OpenShiftChangeRequestObject>(openShiftChangeRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified OpenShiftChangeRequest.
+        /// Creates the specified OpenShiftChangeRequestObject using POST and returns a <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="openShiftChangeRequestObjectToCreate">The OpenShiftChangeRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenShiftChangeRequestObject>> CreateResponseAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<OpenShiftChangeRequestObject>(openShiftChangeRequestObjectToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<OpenShiftChangeRequestObject>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified OpenShiftChangeRequestObject.
+        /// Deletes the specified OpenShiftChangeRequest and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OpenShiftChangeRequestObject.</returns>
-        public System.Threading.Tasks.Task<OpenShiftChangeRequestObject> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OpenShiftChangeRequestObject.</returns>
-        public async System.Threading.Tasks.Task<OpenShiftChangeRequestObject> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OpenShiftChangeRequestObject> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<OpenShiftChangeRequestObject>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified OpenShiftChangeRequestObject using PATCH.
+        /// Gets the specified OpenShiftChangeRequestObject and returns a <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object.
         /// </summary>
-        /// <param name="openShiftChangeRequestObjectToUpdate">The OpenShiftChangeRequestObject to update.</param>
-        /// <returns>The updated OpenShiftChangeRequestObject.</returns>
-        public System.Threading.Tasks.Task<OpenShiftChangeRequestObject> UpdateAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenShiftChangeRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(openShiftChangeRequestObjectToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<OpenShiftChangeRequestObject>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OpenShiftChangeRequestObject.</returns>
-        public async System.Threading.Tasks.Task<OpenShiftChangeRequestObject> UpdateAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OpenShiftChangeRequestObject> UpdateAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToUpdate, CancellationToken cancellationToken = default)
         {
-			if (openShiftChangeRequestObjectToUpdate.AdditionalData != null)
-			{
-				if (openShiftChangeRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					openShiftChangeRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, openShiftChangeRequestObjectToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (openShiftChangeRequestObjectToUpdate.AdditionalData != null)
-            {
-                if (openShiftChangeRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    openShiftChangeRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, openShiftChangeRequestObjectToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<OpenShiftChangeRequestObject>(openShiftChangeRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OpenShiftChangeRequestObject using PATCH and returns a <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object.
+        /// </summary>
+        /// <param name="openShiftChangeRequestObjectToUpdate">The OpenShiftChangeRequestObject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenShiftChangeRequestObject>> UpdateResponseAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<OpenShiftChangeRequestObject>(openShiftChangeRequestObjectToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified OpenShiftChangeRequestObject using PUT.
+        /// </summary>
+        /// <param name="openShiftChangeRequestObjectToUpdate">The OpenShiftChangeRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<OpenShiftChangeRequestObject> PutAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<OpenShiftChangeRequestObject>(openShiftChangeRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OpenShiftChangeRequestObject using PUT and returns a <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object.
+        /// </summary>
+        /// <param name="openShiftChangeRequestObjectToUpdate">The OpenShiftChangeRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{OpenShiftChangeRequestObject}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenShiftChangeRequestObject>> PutResponseAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<OpenShiftChangeRequestObject>(openShiftChangeRequestObjectToUpdate, cancellationToken);
         }
 
         /// <summary>

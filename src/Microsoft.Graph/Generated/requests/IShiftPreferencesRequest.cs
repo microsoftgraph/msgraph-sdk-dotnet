@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ShiftPreferences using POST.
         /// </summary>
         /// <param name="shiftPreferencesToCreate">The ShiftPreferences to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ShiftPreferences.</returns>
-        System.Threading.Tasks.Task<ShiftPreferences> CreateAsync(ShiftPreferences shiftPreferencesToCreate);        /// <summary>
-        /// Creates the specified ShiftPreferences using POST.
+        System.Threading.Tasks.Task<ShiftPreferences> CreateAsync(ShiftPreferences shiftPreferencesToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ShiftPreferences using POST and returns a <see cref="GraphResponse{ShiftPreferences}"/> object.
         /// </summary>
         /// <param name="shiftPreferencesToCreate">The ShiftPreferences to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ShiftPreferences.</returns>
-        System.Threading.Tasks.Task<ShiftPreferences> CreateAsync(ShiftPreferences shiftPreferencesToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ShiftPreferences.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> CreateResponseAsync(ShiftPreferences shiftPreferencesToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ShiftPreferences.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ShiftPreferences.
+        /// Deletes the specified ShiftPreferences and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ShiftPreferences.</returns>
-        System.Threading.Tasks.Task<ShiftPreferences> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ShiftPreferences.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ShiftPreferences.</returns>
-        System.Threading.Tasks.Task<ShiftPreferences> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ShiftPreferences> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ShiftPreferences using PATCH.
+        /// Gets the specified ShiftPreferences and returns a <see cref="GraphResponse{ShiftPreferences}"/> object.
         /// </summary>
-        /// <param name="shiftPreferencesToUpdate">The ShiftPreferences to update.</param>
-        /// <returns>The updated ShiftPreferences.</returns>
-        System.Threading.Tasks.Task<ShiftPreferences> UpdateAsync(ShiftPreferences shiftPreferencesToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ShiftPreferences using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ShiftPreferences.</returns>
-        System.Threading.Tasks.Task<ShiftPreferences> UpdateAsync(ShiftPreferences shiftPreferencesToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ShiftPreferences> UpdateAsync(ShiftPreferences shiftPreferencesToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ShiftPreferences using PATCH and returns a <see cref="GraphResponse{ShiftPreferences}"/> object.
+        /// </summary>
+        /// <param name="shiftPreferencesToUpdate">The ShiftPreferences to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> UpdateResponseAsync(ShiftPreferences shiftPreferencesToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ShiftPreferences using PUT.
+        /// </summary>
+        /// <param name="shiftPreferencesToUpdate">The ShiftPreferences object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ShiftPreferences> PutAsync(ShiftPreferences shiftPreferencesToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ShiftPreferences using PUT and returns a <see cref="GraphResponse{ShiftPreferences}"/> object.
+        /// </summary>
+        /// <param name="shiftPreferencesToUpdate">The ShiftPreferences object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ShiftPreferences}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> PutResponseAsync(ShiftPreferences shiftPreferencesToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

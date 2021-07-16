@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SignInLocation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SignInLocation>))]
     public partial class SignInLocation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SignInLocation"/> class.
-        /// </summary>
-        public SignInLocation()
-        {
-            this.ODataType = "microsoft.graph.signInLocation";
-        }
 
         /// <summary>
         /// Gets or sets city.
         /// Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "city", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("city")]
         public string City { get; set; }
     
         /// <summary>
         /// Gets or sets countryOrRegion.
         /// Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryOrRegion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countryOrRegion")]
         public string CountryOrRegion { get; set; }
     
         /// <summary>
         /// Gets or sets geoCoordinates.
         /// Provides the latitude, longitude and altitude where the sign-in originated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "geoCoordinates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("geoCoordinates")]
         public GeoCoordinates GeoCoordinates { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public string State { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

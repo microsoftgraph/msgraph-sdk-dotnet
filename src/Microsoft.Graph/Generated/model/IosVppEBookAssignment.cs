@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Ios Vpp EBook Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosVppEBookAssignment : ManagedEBookAssignment
     {
     
-		///<summary>
-		/// The IosVppEBookAssignment constructor
-		///</summary>
+        ///<summary>
+        /// The IosVppEBookAssignment constructor
+        ///</summary>
         public IosVppEBookAssignment()
         {
             this.ODataType = "microsoft.graph.iosVppEBookAssignment";
         }
-	
+
     }
 }
 

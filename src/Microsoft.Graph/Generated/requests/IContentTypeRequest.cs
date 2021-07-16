@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ContentType using POST.
         /// </summary>
         /// <param name="contentTypeToCreate">The ContentType to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ContentType.</returns>
-        System.Threading.Tasks.Task<ContentType> CreateAsync(ContentType contentTypeToCreate);        /// <summary>
-        /// Creates the specified ContentType using POST.
+        System.Threading.Tasks.Task<ContentType> CreateAsync(ContentType contentTypeToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ContentType using POST and returns a <see cref="GraphResponse{ContentType}"/> object.
         /// </summary>
         /// <param name="contentTypeToCreate">The ContentType to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ContentType.</returns>
-        System.Threading.Tasks.Task<ContentType> CreateAsync(ContentType contentTypeToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ContentType.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ContentType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ContentType>> CreateResponseAsync(ContentType contentTypeToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ContentType.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ContentType.
+        /// Deletes the specified ContentType and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ContentType.</returns>
-        System.Threading.Tasks.Task<ContentType> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ContentType.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ContentType.</returns>
-        System.Threading.Tasks.Task<ContentType> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ContentType> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ContentType using PATCH.
+        /// Gets the specified ContentType and returns a <see cref="GraphResponse{ContentType}"/> object.
         /// </summary>
-        /// <param name="contentTypeToUpdate">The ContentType to update.</param>
-        /// <returns>The updated ContentType.</returns>
-        System.Threading.Tasks.Task<ContentType> UpdateAsync(ContentType contentTypeToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ContentType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ContentType>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ContentType using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ContentType.</returns>
-        System.Threading.Tasks.Task<ContentType> UpdateAsync(ContentType contentTypeToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ContentType> UpdateAsync(ContentType contentTypeToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ContentType using PATCH and returns a <see cref="GraphResponse{ContentType}"/> object.
+        /// </summary>
+        /// <param name="contentTypeToUpdate">The ContentType to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ContentType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ContentType>> UpdateResponseAsync(ContentType contentTypeToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ContentType using PUT.
+        /// </summary>
+        /// <param name="contentTypeToUpdate">The ContentType object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ContentType> PutAsync(ContentType contentTypeToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ContentType using PUT and returns a <see cref="GraphResponse{ContentType}"/> object.
+        /// </summary>
+        /// <param name="contentTypeToUpdate">The ContentType object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ContentType}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ContentType>> PutResponseAsync(ContentType contentTypeToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

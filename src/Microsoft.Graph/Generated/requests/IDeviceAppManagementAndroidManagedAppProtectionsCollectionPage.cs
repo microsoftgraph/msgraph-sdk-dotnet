@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceAppManagementAndroidManagedAppProtectionsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceAppManagementAndroidManagedAppProtectionsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceAppManagementAndroidManagedAppProtectionsCollectionPage>))]
     public interface IDeviceAppManagementAndroidManagedAppProtectionsCollectionPage : ICollectionPage<AndroidManagedAppProtection>
     {
         /// <summary>

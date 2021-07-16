@@ -56,7 +56,7 @@ namespace Microsoft.Graph
         public IWorkbookChartAddRequestBuilder Add(
             string type,
             string seriesBy,
-            Newtonsoft.Json.Linq.JToken sourceData)
+            System.Text.Json.JsonDocument sourceData)
         {
             return new WorkbookChartAddRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.add"),
@@ -167,7 +167,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookChartSetDataRequestBuilder"/>.</returns>
         public IWorkbookChartSetDataRequestBuilder SetData(
             string seriesBy,
-            Newtonsoft.Json.Linq.JToken sourceData)
+            System.Text.Json.JsonDocument sourceData)
         {
             return new WorkbookChartSetDataRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.setData"),
@@ -182,8 +182,8 @@ namespace Microsoft.Graph
         /// <param name="endCell">A endCell parameter for the OData method call.</param>
         /// <returns>The <see cref="IWorkbookChartSetPositionRequestBuilder"/>.</returns>
         public IWorkbookChartSetPositionRequestBuilder SetPosition(
-            Newtonsoft.Json.Linq.JToken startCell,
-            Newtonsoft.Json.Linq.JToken endCell)
+            System.Text.Json.JsonDocument startCell,
+            System.Text.Json.JsonDocument endCell)
         {
             return new WorkbookChartSetPositionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.setPosition"),

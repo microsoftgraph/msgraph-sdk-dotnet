@@ -9,41 +9,39 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CalendarGetScheduleRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CalendarGetScheduleRequestBody
     {
     
         /// <summary>
         /// Gets or sets Schedules.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Schedules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("Schedules")]
         public IEnumerable<string> Schedules { get; set; }
     
         /// <summary>
         /// Gets or sets EndTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "EndTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("EndTime")]
         public DateTimeTimeZone EndTime { get; set; }
     
         /// <summary>
         /// Gets or sets StartTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "StartTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("StartTime")]
         public DateTimeTimeZone StartTime { get; set; }
     
         /// <summary>
         /// Gets or sets AvailabilityViewInterval.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "AvailabilityViewInterval", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("AvailabilityViewInterval")]
         public Int32? AvailabilityViewInterval { get; set; }
     
     }

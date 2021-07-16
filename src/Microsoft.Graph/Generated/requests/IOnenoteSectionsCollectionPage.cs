@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IOnenoteSectionsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<OnenoteSectionsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<OnenoteSectionsCollectionPage>))]
     public interface IOnenoteSectionsCollectionPage : ICollectionPage<OnenoteSection>
     {
         /// <summary>

@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsMirrRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken values,
-            Newtonsoft.Json.Linq.JToken financeRate,
-            Newtonsoft.Json.Linq.JToken reinvestRate)
+            System.Text.Json.JsonDocument values,
+            System.Text.Json.JsonDocument financeRate,
+            System.Text.Json.JsonDocument reinvestRate)
             : base(requestUrl, client)
         {
             this.SetParameter("values", values, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("values"))
             {
-                request.RequestBody.Values = this.GetParameter<Newtonsoft.Json.Linq.JToken>("values");
+                request.RequestBody.Values = this.GetParameter<System.Text.Json.JsonDocument>("values");
             }
 
             if (this.HasParameter("financeRate"))
             {
-                request.RequestBody.FinanceRate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("financeRate");
+                request.RequestBody.FinanceRate = this.GetParameter<System.Text.Json.JsonDocument>("financeRate");
             }
 
             if (this.HasParameter("reinvestRate"))
             {
-                request.RequestBody.ReinvestRate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("reinvestRate");
+                request.RequestBody.ReinvestRate = this.GetParameter<System.Text.Json.JsonDocument>("reinvestRate");
             }
 
             return request;

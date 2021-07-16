@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         public WorkbookFunctionsVlookupRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken lookupValue,
-            Newtonsoft.Json.Linq.JToken tableArray,
-            Newtonsoft.Json.Linq.JToken colIndexNum,
-            Newtonsoft.Json.Linq.JToken rangeLookup)
+            System.Text.Json.JsonDocument lookupValue,
+            System.Text.Json.JsonDocument tableArray,
+            System.Text.Json.JsonDocument colIndexNum,
+            System.Text.Json.JsonDocument rangeLookup)
             : base(requestUrl, client)
         {
             this.SetParameter("lookupValue", lookupValue, true);
@@ -54,22 +54,22 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("lookupValue"))
             {
-                request.RequestBody.LookupValue = this.GetParameter<Newtonsoft.Json.Linq.JToken>("lookupValue");
+                request.RequestBody.LookupValue = this.GetParameter<System.Text.Json.JsonDocument>("lookupValue");
             }
 
             if (this.HasParameter("tableArray"))
             {
-                request.RequestBody.TableArray = this.GetParameter<Newtonsoft.Json.Linq.JToken>("tableArray");
+                request.RequestBody.TableArray = this.GetParameter<System.Text.Json.JsonDocument>("tableArray");
             }
 
             if (this.HasParameter("colIndexNum"))
             {
-                request.RequestBody.ColIndexNum = this.GetParameter<Newtonsoft.Json.Linq.JToken>("colIndexNum");
+                request.RequestBody.ColIndexNum = this.GetParameter<System.Text.Json.JsonDocument>("colIndexNum");
             }
 
             if (this.HasParameter("rangeLookup"))
             {
-                request.RequestBody.RangeLookup = this.GetParameter<Newtonsoft.Json.Linq.JToken>("rangeLookup");
+                request.RequestBody.RangeLookup = this.GetParameter<System.Text.Json.JsonDocument>("rangeLookup");
             }
 
             return request;

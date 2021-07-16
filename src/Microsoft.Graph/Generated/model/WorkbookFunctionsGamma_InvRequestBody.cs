@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsGamma_InvRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsGamma_InvRequestBody
     {
     
         /// <summary>
         /// Gets or sets Probability.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "probability", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Probability { get; set; }
+        [JsonPropertyName("probability")]
+        public System.Text.Json.JsonDocument Probability { get; set; }
     
         /// <summary>
         /// Gets or sets Alpha.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alpha", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Alpha { get; set; }
+        [JsonPropertyName("alpha")]
+        public System.Text.Json.JsonDocument Alpha { get; set; }
     
         /// <summary>
         /// Gets or sets Beta.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "beta", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Beta { get; set; }
+        [JsonPropertyName("beta")]
+        public System.Text.Json.JsonDocument Beta { get; set; }
     
     }
 }

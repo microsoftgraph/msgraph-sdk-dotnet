@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Conversation Member.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ConversationMember>))]
     public partial class ConversationMember : Entity
     {
     
-		///<summary>
-		/// The internal ConversationMember constructor
-		///</summary>
+        ///<summary>
+        /// The internal ConversationMember constructor
+        ///</summary>
         protected internal ConversationMember()
         {
             // Don't allow initialization of abstract entity types
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets display name.
         /// The display name of the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets roles.
         /// The roles for that user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roles")]
         public IEnumerable<string> Roles { get; set; }
     
         /// <summary>
         /// Gets or sets visible history start date time.
         /// The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibleHistoryStartDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("visibleHistoryStartDateTime")]
         public DateTimeOffset? VisibleHistoryStartDateTime { get; set; }
     
     }

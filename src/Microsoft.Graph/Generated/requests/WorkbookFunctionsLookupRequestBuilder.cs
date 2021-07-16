@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsLookupRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken lookupValue,
-            Newtonsoft.Json.Linq.JToken lookupVector,
-            Newtonsoft.Json.Linq.JToken resultVector)
+            System.Text.Json.JsonDocument lookupValue,
+            System.Text.Json.JsonDocument lookupVector,
+            System.Text.Json.JsonDocument resultVector)
             : base(requestUrl, client)
         {
             this.SetParameter("lookupValue", lookupValue, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("lookupValue"))
             {
-                request.RequestBody.LookupValue = this.GetParameter<Newtonsoft.Json.Linq.JToken>("lookupValue");
+                request.RequestBody.LookupValue = this.GetParameter<System.Text.Json.JsonDocument>("lookupValue");
             }
 
             if (this.HasParameter("lookupVector"))
             {
-                request.RequestBody.LookupVector = this.GetParameter<Newtonsoft.Json.Linq.JToken>("lookupVector");
+                request.RequestBody.LookupVector = this.GetParameter<System.Text.Json.JsonDocument>("lookupVector");
             }
 
             if (this.HasParameter("resultVector"))
             {
-                request.RequestBody.ResultVector = this.GetParameter<Newtonsoft.Json.Linq.JToken>("resultVector");
+                request.RequestBody.ResultVector = this.GetParameter<System.Text.Json.JsonDocument>("resultVector");
             }
 
             return request;

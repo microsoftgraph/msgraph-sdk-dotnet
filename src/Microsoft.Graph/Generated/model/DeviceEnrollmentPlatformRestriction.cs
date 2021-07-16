@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceEnrollmentPlatformRestriction.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceEnrollmentPlatformRestriction>))]
     public partial class DeviceEnrollmentPlatformRestriction
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceEnrollmentPlatformRestriction"/> class.
-        /// </summary>
-        public DeviceEnrollmentPlatformRestriction()
-        {
-            this.ODataType = "microsoft.graph.deviceEnrollmentPlatformRestriction";
-        }
 
         /// <summary>
         /// Gets or sets osMaximumVersion.
         /// Max OS version supported
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osMaximumVersion")]
         public string OsMaximumVersion { get; set; }
     
         /// <summary>
         /// Gets or sets osMinimumVersion.
         /// Min OS version supported
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osMinimumVersion")]
         public string OsMinimumVersion { get; set; }
     
         /// <summary>
         /// Gets or sets personalDeviceEnrollmentBlocked.
         /// Block personally owned devices from enrolling
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personalDeviceEnrollmentBlocked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("personalDeviceEnrollmentBlocked")]
         public bool? PersonalDeviceEnrollmentBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets platformBlocked.
         /// Block the platform from enrolling
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformBlocked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platformBlocked")]
         public bool? PlatformBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

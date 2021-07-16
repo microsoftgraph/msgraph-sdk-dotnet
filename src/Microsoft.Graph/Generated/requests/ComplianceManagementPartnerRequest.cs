@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ComplianceManagementPartner using POST.
         /// </summary>
         /// <param name="complianceManagementPartnerToCreate">The ComplianceManagementPartner to create.</param>
-        /// <returns>The created ComplianceManagementPartner.</returns>
-        public System.Threading.Tasks.Task<ComplianceManagementPartner> CreateAsync(ComplianceManagementPartner complianceManagementPartnerToCreate)
-        {
-            return this.CreateAsync(complianceManagementPartnerToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ComplianceManagementPartner using POST.
-        /// </summary>
-        /// <param name="complianceManagementPartnerToCreate">The ComplianceManagementPartner to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ComplianceManagementPartner.</returns>
-        public async System.Threading.Tasks.Task<ComplianceManagementPartner> CreateAsync(ComplianceManagementPartner complianceManagementPartnerToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ComplianceManagementPartner> CreateAsync(ComplianceManagementPartner complianceManagementPartnerToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ComplianceManagementPartner>(complianceManagementPartnerToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ComplianceManagementPartner.
+        /// Creates the specified ComplianceManagementPartner using POST and returns a <see cref="GraphResponse{ComplianceManagementPartner}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="complianceManagementPartnerToCreate">The ComplianceManagementPartner to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ComplianceManagementPartner}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ComplianceManagementPartner>> CreateResponseAsync(ComplianceManagementPartner complianceManagementPartnerToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ComplianceManagementPartner>(complianceManagementPartnerToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ComplianceManagementPartner>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ComplianceManagementPartner.
+        /// Deletes the specified ComplianceManagementPartner and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ComplianceManagementPartner.</returns>
-        public System.Threading.Tasks.Task<ComplianceManagementPartner> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ComplianceManagementPartner.</returns>
-        public async System.Threading.Tasks.Task<ComplianceManagementPartner> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ComplianceManagementPartner> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ComplianceManagementPartner>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ComplianceManagementPartner using PATCH.
+        /// Gets the specified ComplianceManagementPartner and returns a <see cref="GraphResponse{ComplianceManagementPartner}"/> object.
         /// </summary>
-        /// <param name="complianceManagementPartnerToUpdate">The ComplianceManagementPartner to update.</param>
-        /// <returns>The updated ComplianceManagementPartner.</returns>
-        public System.Threading.Tasks.Task<ComplianceManagementPartner> UpdateAsync(ComplianceManagementPartner complianceManagementPartnerToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ComplianceManagementPartner}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ComplianceManagementPartner>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(complianceManagementPartnerToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ComplianceManagementPartner>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ComplianceManagementPartner.</returns>
-        public async System.Threading.Tasks.Task<ComplianceManagementPartner> UpdateAsync(ComplianceManagementPartner complianceManagementPartnerToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ComplianceManagementPartner> UpdateAsync(ComplianceManagementPartner complianceManagementPartnerToUpdate, CancellationToken cancellationToken = default)
         {
-			if (complianceManagementPartnerToUpdate.AdditionalData != null)
-			{
-				if (complianceManagementPartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					complianceManagementPartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, complianceManagementPartnerToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (complianceManagementPartnerToUpdate.AdditionalData != null)
-            {
-                if (complianceManagementPartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    complianceManagementPartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, complianceManagementPartnerToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ComplianceManagementPartner>(complianceManagementPartnerToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ComplianceManagementPartner using PATCH and returns a <see cref="GraphResponse{ComplianceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="complianceManagementPartnerToUpdate">The ComplianceManagementPartner to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ComplianceManagementPartner}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ComplianceManagementPartner>> UpdateResponseAsync(ComplianceManagementPartner complianceManagementPartnerToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ComplianceManagementPartner>(complianceManagementPartnerToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ComplianceManagementPartner using PUT.
+        /// </summary>
+        /// <param name="complianceManagementPartnerToUpdate">The ComplianceManagementPartner object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ComplianceManagementPartner> PutAsync(ComplianceManagementPartner complianceManagementPartnerToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ComplianceManagementPartner>(complianceManagementPartnerToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ComplianceManagementPartner using PUT and returns a <see cref="GraphResponse{ComplianceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="complianceManagementPartnerToUpdate">The ComplianceManagementPartner object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ComplianceManagementPartner}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ComplianceManagementPartner>> PutResponseAsync(ComplianceManagementPartner complianceManagementPartnerToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ComplianceManagementPartner>(complianceManagementPartnerToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -9,24 +9,22 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsError_TypeRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsError_TypeRequestBody
     {
     
         /// <summary>
         /// Gets or sets ErrorVal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorVal", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken ErrorVal { get; set; }
+        [JsonPropertyName("errorVal")]
+        public System.Text.Json.JsonDocument ErrorVal { get; set; }
     
     }
 }

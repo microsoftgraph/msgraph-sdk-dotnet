@@ -12,104 +12,95 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ChangeNotification.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ChangeNotification>))]
     public partial class ChangeNotification
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChangeNotification"/> class.
-        /// </summary>
-        public ChangeNotification()
-        {
-            this.ODataType = "microsoft.graph.changeNotification";
-        }
 
         /// <summary>
         /// Gets or sets changeType.
         /// Indicates the type of change that will raise the change notification. The supported values are: created, updated, deleted. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("changeType")]
         public ChangeType? ChangeType { get; set; }
     
         /// <summary>
         /// Gets or sets clientState.
         /// Value of the clientState property sent specified in the subscription request (if any). The maximum length is 255 characters. The client can check whether the change notification came from the service by comparing the values of the clientState property. The value of the clientState property sent with the subscription is compared with the value of the clientState property received with each change notification. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientState")]
         public string ClientState { get; set; }
     
         /// <summary>
         /// Gets or sets encryptedContent.
         /// (Preview) Encrypted content attached with the change notification. Only provided if encryptionCertificate and includeResourceData were defined during the subscription request and if the resource supports it. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptedContent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryptedContent")]
         public ChangeNotificationEncryptedContent EncryptedContent { get; set; }
     
         /// <summary>
         /// Gets or sets id.
         /// Unique ID for the notification. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets lifecycleEvent.
         /// The type of lifecycle notification if the current notification is a lifecycle notification. Optional. Supported values are missed, removed, reauthorizationRequired.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lifecycleEvent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lifecycleEvent")]
         public LifecycleEventType? LifecycleEvent { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
         /// The URI of the resource that emitted the change notification relative to https://graph.microsoft.com. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resource")]
         public string Resource { get; set; }
     
         /// <summary>
         /// Gets or sets resourceData.
         /// The content of this property depends on the type of resource being subscribed to. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceData")]
         public ResourceData ResourceData { get; set; }
     
         /// <summary>
         /// Gets or sets subscriptionExpirationDateTime.
         /// The expiration time for the subscription. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subscriptionExpirationDateTime")]
         public DateTimeOffset? SubscriptionExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets subscriptionId.
         /// The unique identifier of the subscription that generated the notification.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subscriptionId")]
         public Guid? SubscriptionId { get; set; }
     
         /// <summary>
         /// Gets or sets tenantId.
         /// The unique identifier of the tenant from which the change notification originated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantId")]
         public Guid? TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

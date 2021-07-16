@@ -12,53 +12,43 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Identity Governance.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<IdentityGovernance>))]
     public partial class IdentityGovernance
     {
     
-		///<summary>
-		/// The IdentityGovernance constructor
-		///</summary>
-        public IdentityGovernance()
-        {
-            this.ODataType = "microsoft.graph.identityGovernance";
-        }
-	
         /// <summary>
         /// Gets or sets access reviews.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessReviews", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessReviews")]
         public AccessReviewSet AccessReviews { get; set; }
     
         /// <summary>
         /// Gets or sets app consent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appConsent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appConsent")]
         public AppConsentApprovalRoute AppConsent { get; set; }
     
         /// <summary>
         /// Gets or sets terms of use.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsOfUse", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("termsOfUse")]
         public TermsOfUseContainer TermsOfUse { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true, WriteData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     
     }

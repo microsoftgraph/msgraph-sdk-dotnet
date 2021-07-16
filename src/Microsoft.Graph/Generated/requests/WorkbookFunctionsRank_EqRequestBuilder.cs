@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsRank_EqRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken @ref,
-            Newtonsoft.Json.Linq.JToken order)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument @ref,
+            System.Text.Json.JsonDocument order)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("ref"))
             {
-                request.RequestBody.Ref = this.GetParameter<Newtonsoft.Json.Linq.JToken>("ref");
+                request.RequestBody.Ref = this.GetParameter<System.Text.Json.JsonDocument>("ref");
             }
 
             if (this.HasParameter("order"))
             {
-                request.RequestBody.Order = this.GetParameter<Newtonsoft.Json.Linq.JToken>("order");
+                request.RequestBody.Order = this.GetParameter<System.Text.Json.JsonDocument>("order");
             }
 
             return request;

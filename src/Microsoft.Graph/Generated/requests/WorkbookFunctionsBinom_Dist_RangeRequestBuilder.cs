@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         public WorkbookFunctionsBinom_Dist_RangeRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken trials,
-            Newtonsoft.Json.Linq.JToken probabilityS,
-            Newtonsoft.Json.Linq.JToken numberS,
-            Newtonsoft.Json.Linq.JToken numberS2)
+            System.Text.Json.JsonDocument trials,
+            System.Text.Json.JsonDocument probabilityS,
+            System.Text.Json.JsonDocument numberS,
+            System.Text.Json.JsonDocument numberS2)
             : base(requestUrl, client)
         {
             this.SetParameter("trials", trials, true);
@@ -54,22 +54,22 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("trials"))
             {
-                request.RequestBody.Trials = this.GetParameter<Newtonsoft.Json.Linq.JToken>("trials");
+                request.RequestBody.Trials = this.GetParameter<System.Text.Json.JsonDocument>("trials");
             }
 
             if (this.HasParameter("probabilityS"))
             {
-                request.RequestBody.ProbabilityS = this.GetParameter<Newtonsoft.Json.Linq.JToken>("probabilityS");
+                request.RequestBody.ProbabilityS = this.GetParameter<System.Text.Json.JsonDocument>("probabilityS");
             }
 
             if (this.HasParameter("numberS"))
             {
-                request.RequestBody.NumberS = this.GetParameter<Newtonsoft.Json.Linq.JToken>("numberS");
+                request.RequestBody.NumberS = this.GetParameter<System.Text.Json.JsonDocument>("numberS");
             }
 
             if (this.HasParameter("numberS2"))
             {
-                request.RequestBody.NumberS2 = this.GetParameter<Newtonsoft.Json.Linq.JToken>("numberS2");
+                request.RequestBody.NumberS2 = this.GetParameter<System.Text.Json.JsonDocument>("numberS2");
             }
 
             return request;

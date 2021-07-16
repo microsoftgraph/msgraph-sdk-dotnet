@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IMailFolderMessageRulesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MessageRule to the collection via POST.
-        /// </summary>
-        /// <param name="messageRule">The MessageRule to add.</param>
-        /// <returns>The created MessageRule.</returns>
-        System.Threading.Tasks.Task<MessageRule> AddAsync(MessageRule messageRule);
-
         /// <summary>
         /// Adds the specified MessageRule to the collection via POST.
         /// </summary>
         /// <param name="messageRule">The MessageRule to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MessageRule.</returns>
-        System.Threading.Tasks.Task<MessageRule> AddAsync(MessageRule messageRule, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MessageRule> AddAsync(MessageRule messageRule, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MessageRule to the collection via POST and returns a <see cref="GraphResponse{MessageRule}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMailFolderMessageRulesCollectionPage> GetAsync();
+        /// <param name="messageRule">The MessageRule to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MessageRule>> AddResponseAsync(MessageRule messageRule, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMailFolderMessageRulesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IMailFolderMessageRulesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MailFolderMessageRulesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailFolderMessageRulesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailFolderMessageRulesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

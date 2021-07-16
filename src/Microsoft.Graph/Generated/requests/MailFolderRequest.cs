@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified MailFolder using POST.
         /// </summary>
         /// <param name="mailFolderToCreate">The MailFolder to create.</param>
-        /// <returns>The created MailFolder.</returns>
-        public System.Threading.Tasks.Task<MailFolder> CreateAsync(MailFolder mailFolderToCreate)
-        {
-            return this.CreateAsync(mailFolderToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MailFolder using POST.
-        /// </summary>
-        /// <param name="mailFolderToCreate">The MailFolder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MailFolder.</returns>
-        public async System.Threading.Tasks.Task<MailFolder> CreateAsync(MailFolder mailFolderToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MailFolder> CreateAsync(MailFolder mailFolderToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<MailFolder>(mailFolderToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified MailFolder.
+        /// Creates the specified MailFolder using POST and returns a <see cref="GraphResponse{MailFolder}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="mailFolderToCreate">The MailFolder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailFolder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailFolder>> CreateResponseAsync(MailFolder mailFolderToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MailFolder>(mailFolderToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<MailFolder>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified MailFolder.
+        /// Deletes the specified MailFolder and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MailFolder.</returns>
-        public System.Threading.Tasks.Task<MailFolder> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MailFolder.</returns>
-        public async System.Threading.Tasks.Task<MailFolder> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MailFolder> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<MailFolder>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified MailFolder using PATCH.
+        /// Gets the specified MailFolder and returns a <see cref="GraphResponse{MailFolder}"/> object.
         /// </summary>
-        /// <param name="mailFolderToUpdate">The MailFolder to update.</param>
-        /// <returns>The updated MailFolder.</returns>
-        public System.Threading.Tasks.Task<MailFolder> UpdateAsync(MailFolder mailFolderToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailFolder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailFolder>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(mailFolderToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<MailFolder>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MailFolder.</returns>
-        public async System.Threading.Tasks.Task<MailFolder> UpdateAsync(MailFolder mailFolderToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MailFolder> UpdateAsync(MailFolder mailFolderToUpdate, CancellationToken cancellationToken = default)
         {
-			if (mailFolderToUpdate.AdditionalData != null)
-			{
-				if (mailFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mailFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailFolderToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mailFolderToUpdate.AdditionalData != null)
-            {
-                if (mailFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mailFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailFolderToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<MailFolder>(mailFolderToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MailFolder using PATCH and returns a <see cref="GraphResponse{MailFolder}"/> object.
+        /// </summary>
+        /// <param name="mailFolderToUpdate">The MailFolder to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MailFolder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailFolder>> UpdateResponseAsync(MailFolder mailFolderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<MailFolder>(mailFolderToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified MailFolder using PUT.
+        /// </summary>
+        /// <param name="mailFolderToUpdate">The MailFolder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MailFolder> PutAsync(MailFolder mailFolderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MailFolder>(mailFolderToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MailFolder using PUT and returns a <see cref="GraphResponse{MailFolder}"/> object.
+        /// </summary>
+        /// <param name="mailFolderToUpdate">The MailFolder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MailFolder}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailFolder>> PutResponseAsync(MailFolder mailFolderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MailFolder>(mailFolderToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MailFolder mailFolderToInitialize)
         {
 
-            if (mailFolderToInitialize != null && mailFolderToInitialize.AdditionalData != null)
+            if (mailFolderToInitialize != null)
             {
-
                 if (mailFolderToInitialize.ChildFolders != null && mailFolderToInitialize.ChildFolders.CurrentPage != null)
                 {
+                    mailFolderToInitialize.ChildFolders.InitializeNextPageRequest(this.Client, mailFolderToInitialize.ChildFoldersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.ChildFolders.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("childFolders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.ChildFolders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mailFolderToInitialize.MessageRules != null && mailFolderToInitialize.MessageRules.CurrentPage != null)
                 {
+                    mailFolderToInitialize.MessageRules.InitializeNextPageRequest(this.Client, mailFolderToInitialize.MessageRulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.MessageRules.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("messageRules@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.MessageRules.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mailFolderToInitialize.Messages != null && mailFolderToInitialize.Messages.CurrentPage != null)
                 {
+                    mailFolderToInitialize.Messages.InitializeNextPageRequest(this.Client, mailFolderToInitialize.MessagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.Messages.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("messages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.Messages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mailFolderToInitialize.MultiValueExtendedProperties != null && mailFolderToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    mailFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, mailFolderToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.MultiValueExtendedProperties.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (mailFolderToInitialize.SingleValueExtendedProperties != null && mailFolderToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    mailFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, mailFolderToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mailFolderToInitialize.SingleValueExtendedProperties.AdditionalData = mailFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mailFolderToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mailFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ParticipantInviteRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ParticipantInviteRequestBody
     {
     
         /// <summary>
         /// Gets or sets Participants.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participants", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("participants")]
         public IEnumerable<InvitationParticipantInfo> Participants { get; set; }
     
         /// <summary>
         /// Gets or sets ClientContext.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientContext", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientContext")]
         public string ClientContext { get; set; }
     
     }

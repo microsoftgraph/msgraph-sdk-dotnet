@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsRandBetweenRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken bottom,
-            Newtonsoft.Json.Linq.JToken top)
+            System.Text.Json.JsonDocument bottom,
+            System.Text.Json.JsonDocument top)
             : base(requestUrl, client)
         {
             this.SetParameter("bottom", bottom, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("bottom"))
             {
-                request.RequestBody.Bottom = this.GetParameter<Newtonsoft.Json.Linq.JToken>("bottom");
+                request.RequestBody.Bottom = this.GetParameter<System.Text.Json.JsonDocument>("bottom");
             }
 
             if (this.HasParameter("top"))
             {
-                request.RequestBody.Top = this.GetParameter<Newtonsoft.Json.Linq.JToken>("top");
+                request.RequestBody.Top = this.GetParameter<System.Text.Json.JsonDocument>("top");
             }
 
             return request;

@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IManagedDeviceMobileAppConfigurationAssignmentsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ManagedDeviceMobileAppConfigurationAssignmentsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ManagedDeviceMobileAppConfigurationAssignmentsCollectionPage>))]
     public interface IManagedDeviceMobileAppConfigurationAssignmentsCollectionPage : ICollectionPage<ManagedDeviceMobileAppConfigurationAssignment>
     {
         /// <summary>

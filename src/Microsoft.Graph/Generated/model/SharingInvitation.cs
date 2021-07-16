@@ -12,61 +12,52 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SharingInvitation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SharingInvitation>))]
     public partial class SharingInvitation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SharingInvitation"/> class.
-        /// </summary>
-        public SharingInvitation()
-        {
-            this.ODataType = "microsoft.graph.sharingInvitation";
-        }
 
         /// <summary>
         /// Gets or sets email.
         /// The email address provided for the recipient of the sharing invitation. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("email")]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets invitedBy.
         /// Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invitedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("invitedBy")]
         public IdentitySet InvitedBy { get; set; }
     
         /// <summary>
         /// Gets or sets redeemedBy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "redeemedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("redeemedBy")]
         public string RedeemedBy { get; set; }
     
         /// <summary>
         /// Gets or sets signInRequired.
         /// If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("signInRequired")]
         public bool? SignInRequired { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

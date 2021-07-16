@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookApplication using POST.
         /// </summary>
         /// <param name="workbookApplicationToCreate">The WorkbookApplication to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookApplication.</returns>
-        System.Threading.Tasks.Task<WorkbookApplication> CreateAsync(WorkbookApplication workbookApplicationToCreate);        /// <summary>
-        /// Creates the specified WorkbookApplication using POST.
+        System.Threading.Tasks.Task<WorkbookApplication> CreateAsync(WorkbookApplication workbookApplicationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified WorkbookApplication using POST and returns a <see cref="GraphResponse{WorkbookApplication}"/> object.
         /// </summary>
         /// <param name="workbookApplicationToCreate">The WorkbookApplication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WorkbookApplication.</returns>
-        System.Threading.Tasks.Task<WorkbookApplication> CreateAsync(WorkbookApplication workbookApplicationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookApplication.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WorkbookApplication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> CreateResponseAsync(WorkbookApplication workbookApplicationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WorkbookApplication.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified WorkbookApplication.
+        /// Deletes the specified WorkbookApplication and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookApplication.</returns>
-        System.Threading.Tasks.Task<WorkbookApplication> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WorkbookApplication.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookApplication.</returns>
-        System.Threading.Tasks.Task<WorkbookApplication> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookApplication> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified WorkbookApplication using PATCH.
+        /// Gets the specified WorkbookApplication and returns a <see cref="GraphResponse{WorkbookApplication}"/> object.
         /// </summary>
-        /// <param name="workbookApplicationToUpdate">The WorkbookApplication to update.</param>
-        /// <returns>The updated WorkbookApplication.</returns>
-        System.Threading.Tasks.Task<WorkbookApplication> UpdateAsync(WorkbookApplication workbookApplicationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookApplication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkbookApplication using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookApplication.</returns>
-        System.Threading.Tasks.Task<WorkbookApplication> UpdateAsync(WorkbookApplication workbookApplicationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookApplication> UpdateAsync(WorkbookApplication workbookApplicationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookApplication using PATCH and returns a <see cref="GraphResponse{WorkbookApplication}"/> object.
+        /// </summary>
+        /// <param name="workbookApplicationToUpdate">The WorkbookApplication to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookApplication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> UpdateResponseAsync(WorkbookApplication workbookApplicationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookApplication using PUT.
+        /// </summary>
+        /// <param name="workbookApplicationToUpdate">The WorkbookApplication object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkbookApplication> PutAsync(WorkbookApplication workbookApplicationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookApplication using PUT and returns a <see cref="GraphResponse{WorkbookApplication}"/> object.
+        /// </summary>
+        /// <param name="workbookApplicationToUpdate">The WorkbookApplication object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkbookApplication}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> PutResponseAsync(WorkbookApplication workbookApplicationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

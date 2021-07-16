@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="deviceManagementTroubleshootingEventToCreate">The DeviceManagementTroubleshootingEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> CreateAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementTroubleshootingEvent using POST.
+        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> CreateAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementTroubleshootingEvent using POST and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object.
         /// </summary>
         /// <param name="deviceManagementTroubleshootingEventToCreate">The DeviceManagementTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceManagementTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> CreateAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementTroubleshootingEvent.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> CreateResponseAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementTroubleshootingEvent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceManagementTroubleshootingEvent.
+        /// Deletes the specified DeviceManagementTroubleshootingEvent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementTroubleshootingEvent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceManagementTroubleshootingEvent using PATCH.
+        /// Gets the specified DeviceManagementTroubleshootingEvent and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object.
         /// </summary>
-        /// <param name="deviceManagementTroubleshootingEventToUpdate">The DeviceManagementTroubleshootingEvent to update.</param>
-        /// <returns>The updated DeviceManagementTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> UpdateAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementTroubleshootingEvent using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> UpdateAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> UpdateAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementTroubleshootingEvent using PATCH and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementTroubleshootingEventToUpdate">The DeviceManagementTroubleshootingEvent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> UpdateResponseAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementTroubleshootingEvent using PUT.
+        /// </summary>
+        /// <param name="deviceManagementTroubleshootingEventToUpdate">The DeviceManagementTroubleshootingEvent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> PutAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementTroubleshootingEvent using PUT and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementTroubleshootingEventToUpdate">The DeviceManagementTroubleshootingEvent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> PutResponseAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsQuotientRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken numerator,
-            Newtonsoft.Json.Linq.JToken denominator)
+            System.Text.Json.JsonDocument numerator,
+            System.Text.Json.JsonDocument denominator)
             : base(requestUrl, client)
         {
             this.SetParameter("numerator", numerator, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("numerator"))
             {
-                request.RequestBody.Numerator = this.GetParameter<Newtonsoft.Json.Linq.JToken>("numerator");
+                request.RequestBody.Numerator = this.GetParameter<System.Text.Json.JsonDocument>("numerator");
             }
 
             if (this.HasParameter("denominator"))
             {
-                request.RequestBody.Denominator = this.GetParameter<Newtonsoft.Json.Linq.JToken>("denominator");
+                request.RequestBody.Denominator = this.GetParameter<System.Text.Json.JsonDocument>("denominator");
             }
 
             return request;

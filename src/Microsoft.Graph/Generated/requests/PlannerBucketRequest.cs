@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified PlannerBucket using POST.
         /// </summary>
         /// <param name="plannerBucketToCreate">The PlannerBucket to create.</param>
-        /// <returns>The created PlannerBucket.</returns>
-        public System.Threading.Tasks.Task<PlannerBucket> CreateAsync(PlannerBucket plannerBucketToCreate)
-        {
-            return this.CreateAsync(plannerBucketToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PlannerBucket using POST.
-        /// </summary>
-        /// <param name="plannerBucketToCreate">The PlannerBucket to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerBucket.</returns>
-        public async System.Threading.Tasks.Task<PlannerBucket> CreateAsync(PlannerBucket plannerBucketToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PlannerBucket> CreateAsync(PlannerBucket plannerBucketToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PlannerBucket>(plannerBucketToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified PlannerBucket.
+        /// Creates the specified PlannerBucket using POST and returns a <see cref="GraphResponse{PlannerBucket}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="plannerBucketToCreate">The PlannerBucket to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerBucket}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerBucket>> CreateResponseAsync(PlannerBucket plannerBucketToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PlannerBucket>(plannerBucketToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PlannerBucket>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified PlannerBucket.
+        /// Deletes the specified PlannerBucket and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PlannerBucket.</returns>
-        public System.Threading.Tasks.Task<PlannerBucket> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PlannerBucket.</returns>
-        public async System.Threading.Tasks.Task<PlannerBucket> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PlannerBucket> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PlannerBucket>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified PlannerBucket using PATCH.
+        /// Gets the specified PlannerBucket and returns a <see cref="GraphResponse{PlannerBucket}"/> object.
         /// </summary>
-        /// <param name="plannerBucketToUpdate">The PlannerBucket to update.</param>
-        /// <returns>The updated PlannerBucket.</returns>
-        public System.Threading.Tasks.Task<PlannerBucket> UpdateAsync(PlannerBucket plannerBucketToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerBucket}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerBucket>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(plannerBucketToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PlannerBucket>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PlannerBucket.</returns>
-        public async System.Threading.Tasks.Task<PlannerBucket> UpdateAsync(PlannerBucket plannerBucketToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PlannerBucket> UpdateAsync(PlannerBucket plannerBucketToUpdate, CancellationToken cancellationToken = default)
         {
-			if (plannerBucketToUpdate.AdditionalData != null)
-			{
-				if (plannerBucketToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					plannerBucketToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerBucketToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (plannerBucketToUpdate.AdditionalData != null)
-            {
-                if (plannerBucketToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    plannerBucketToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerBucketToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PlannerBucket>(plannerBucketToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerBucket using PATCH and returns a <see cref="GraphResponse{PlannerBucket}"/> object.
+        /// </summary>
+        /// <param name="plannerBucketToUpdate">The PlannerBucket to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PlannerBucket}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerBucket>> UpdateResponseAsync(PlannerBucket plannerBucketToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<PlannerBucket>(plannerBucketToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerBucket using PUT.
+        /// </summary>
+        /// <param name="plannerBucketToUpdate">The PlannerBucket object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PlannerBucket> PutAsync(PlannerBucket plannerBucketToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PlannerBucket>(plannerBucketToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerBucket using PUT and returns a <see cref="GraphResponse{PlannerBucket}"/> object.
+        /// </summary>
+        /// <param name="plannerBucketToUpdate">The PlannerBucket object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PlannerBucket}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerBucket>> PutResponseAsync(PlannerBucket plannerBucketToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PlannerBucket>(plannerBucketToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PlannerBucket plannerBucketToInitialize)
         {
 
-            if (plannerBucketToInitialize != null && plannerBucketToInitialize.AdditionalData != null)
+            if (plannerBucketToInitialize != null)
             {
-
                 if (plannerBucketToInitialize.Tasks != null && plannerBucketToInitialize.Tasks.CurrentPage != null)
                 {
+                    plannerBucketToInitialize.Tasks.InitializeNextPageRequest(this.Client, plannerBucketToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerBucketToInitialize.Tasks.AdditionalData = plannerBucketToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    plannerBucketToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        plannerBucketToInitialize.Tasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ApplePushNotificationCertificate using POST.
         /// </summary>
         /// <param name="applePushNotificationCertificateToCreate">The ApplePushNotificationCertificate to create.</param>
-        /// <returns>The created ApplePushNotificationCertificate.</returns>
-        public System.Threading.Tasks.Task<ApplePushNotificationCertificate> CreateAsync(ApplePushNotificationCertificate applePushNotificationCertificateToCreate)
-        {
-            return this.CreateAsync(applePushNotificationCertificateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ApplePushNotificationCertificate using POST.
-        /// </summary>
-        /// <param name="applePushNotificationCertificateToCreate">The ApplePushNotificationCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApplePushNotificationCertificate.</returns>
-        public async System.Threading.Tasks.Task<ApplePushNotificationCertificate> CreateAsync(ApplePushNotificationCertificate applePushNotificationCertificateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ApplePushNotificationCertificate> CreateAsync(ApplePushNotificationCertificate applePushNotificationCertificateToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ApplePushNotificationCertificate>(applePushNotificationCertificateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ApplePushNotificationCertificate.
+        /// Creates the specified ApplePushNotificationCertificate using POST and returns a <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="applePushNotificationCertificateToCreate">The ApplePushNotificationCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApplePushNotificationCertificate>> CreateResponseAsync(ApplePushNotificationCertificate applePushNotificationCertificateToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ApplePushNotificationCertificate>(applePushNotificationCertificateToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ApplePushNotificationCertificate>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ApplePushNotificationCertificate.
+        /// Deletes the specified ApplePushNotificationCertificate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ApplePushNotificationCertificate.</returns>
-        public System.Threading.Tasks.Task<ApplePushNotificationCertificate> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ApplePushNotificationCertificate.</returns>
-        public async System.Threading.Tasks.Task<ApplePushNotificationCertificate> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ApplePushNotificationCertificate> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ApplePushNotificationCertificate>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ApplePushNotificationCertificate using PATCH.
+        /// Gets the specified ApplePushNotificationCertificate and returns a <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object.
         /// </summary>
-        /// <param name="applePushNotificationCertificateToUpdate">The ApplePushNotificationCertificate to update.</param>
-        /// <returns>The updated ApplePushNotificationCertificate.</returns>
-        public System.Threading.Tasks.Task<ApplePushNotificationCertificate> UpdateAsync(ApplePushNotificationCertificate applePushNotificationCertificateToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApplePushNotificationCertificate>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(applePushNotificationCertificateToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ApplePushNotificationCertificate>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ApplePushNotificationCertificate.</returns>
-        public async System.Threading.Tasks.Task<ApplePushNotificationCertificate> UpdateAsync(ApplePushNotificationCertificate applePushNotificationCertificateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ApplePushNotificationCertificate> UpdateAsync(ApplePushNotificationCertificate applePushNotificationCertificateToUpdate, CancellationToken cancellationToken = default)
         {
-			if (applePushNotificationCertificateToUpdate.AdditionalData != null)
-			{
-				if (applePushNotificationCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					applePushNotificationCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, applePushNotificationCertificateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (applePushNotificationCertificateToUpdate.AdditionalData != null)
-            {
-                if (applePushNotificationCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    applePushNotificationCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, applePushNotificationCertificateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ApplePushNotificationCertificate>(applePushNotificationCertificateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ApplePushNotificationCertificate using PATCH and returns a <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object.
+        /// </summary>
+        /// <param name="applePushNotificationCertificateToUpdate">The ApplePushNotificationCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApplePushNotificationCertificate>> UpdateResponseAsync(ApplePushNotificationCertificate applePushNotificationCertificateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ApplePushNotificationCertificate>(applePushNotificationCertificateToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ApplePushNotificationCertificate using PUT.
+        /// </summary>
+        /// <param name="applePushNotificationCertificateToUpdate">The ApplePushNotificationCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ApplePushNotificationCertificate> PutAsync(ApplePushNotificationCertificate applePushNotificationCertificateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ApplePushNotificationCertificate>(applePushNotificationCertificateToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ApplePushNotificationCertificate using PUT and returns a <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object.
+        /// </summary>
+        /// <param name="applePushNotificationCertificateToUpdate">The ApplePushNotificationCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ApplePushNotificationCertificate}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApplePushNotificationCertificate>> PutResponseAsync(ApplePushNotificationCertificate applePushNotificationCertificateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ApplePushNotificationCertificate>(applePushNotificationCertificateToUpdate, cancellationToken);
         }
 
         /// <summary>

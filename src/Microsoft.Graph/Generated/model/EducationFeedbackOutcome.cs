@@ -12,36 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education Feedback Outcome.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EducationFeedbackOutcome : EducationOutcome
     {
     
-		///<summary>
-		/// The EducationFeedbackOutcome constructor
-		///</summary>
+        ///<summary>
+        /// The EducationFeedbackOutcome constructor
+        ///</summary>
         public EducationFeedbackOutcome()
         {
             this.ODataType = "microsoft.graph.educationFeedbackOutcome";
         }
-	
+
         /// <summary>
         /// Gets or sets feedback.
         /// Teacher's written feedback to the student.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedback", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("feedback")]
         public EducationFeedback Feedback { get; set; }
     
         /// <summary>
         /// Gets or sets published feedback.
         /// A copy of the feedback property that is made when the grade is released to the student.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedFeedback", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishedFeedback")]
         public EducationFeedback PublishedFeedback { get; set; }
     
     }

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified PolicyRoot using POST.
         /// </summary>
         /// <param name="policyRootToCreate">The PolicyRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicyRoot.</returns>
-        System.Threading.Tasks.Task<PolicyRoot> CreateAsync(PolicyRoot policyRootToCreate);        /// <summary>
-        /// Creates the specified PolicyRoot using POST.
+        System.Threading.Tasks.Task<PolicyRoot> CreateAsync(PolicyRoot policyRootToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified PolicyRoot using POST and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
         /// </summary>
         /// <param name="policyRootToCreate">The PolicyRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PolicyRoot.</returns>
-        System.Threading.Tasks.Task<PolicyRoot> CreateAsync(PolicyRoot policyRootToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PolicyRoot.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> CreateResponseAsync(PolicyRoot policyRootToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PolicyRoot.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified PolicyRoot.
+        /// Deletes the specified PolicyRoot and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PolicyRoot.</returns>
-        System.Threading.Tasks.Task<PolicyRoot> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PolicyRoot.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PolicyRoot.</returns>
-        System.Threading.Tasks.Task<PolicyRoot> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PolicyRoot> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified PolicyRoot using PATCH.
+        /// Gets the specified PolicyRoot and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
         /// </summary>
-        /// <param name="policyRootToUpdate">The PolicyRoot to update.</param>
-        /// <returns>The updated PolicyRoot.</returns>
-        System.Threading.Tasks.Task<PolicyRoot> UpdateAsync(PolicyRoot policyRootToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PolicyRoot using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PolicyRoot.</returns>
-        System.Threading.Tasks.Task<PolicyRoot> UpdateAsync(PolicyRoot policyRootToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PolicyRoot> UpdateAsync(PolicyRoot policyRootToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified PolicyRoot using PATCH and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <param name="policyRootToUpdate">The PolicyRoot to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> UpdateResponseAsync(PolicyRoot policyRootToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified PolicyRoot using PUT.
+        /// </summary>
+        /// <param name="policyRootToUpdate">The PolicyRoot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<PolicyRoot> PutAsync(PolicyRoot policyRootToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified PolicyRoot using PUT and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <param name="policyRootToUpdate">The PolicyRoot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{PolicyRoot}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> PutResponseAsync(PolicyRoot policyRootToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

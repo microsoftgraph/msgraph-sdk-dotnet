@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IWindowsInformationProtectionProtectedAppLockerFilesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<WindowsInformationProtectionProtectedAppLockerFilesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<WindowsInformationProtectionProtectedAppLockerFilesCollectionPage>))]
     public interface IWindowsInformationProtectionProtectedAppLockerFilesCollectionPage : ICollectionPage<WindowsInformationProtectionAppLockerFile>
     {
         /// <summary>

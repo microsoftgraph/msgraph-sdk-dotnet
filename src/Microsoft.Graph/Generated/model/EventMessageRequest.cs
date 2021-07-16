@@ -12,63 +12,62 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Event Message Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<EventMessageRequestObject>))]
     public partial class EventMessageRequestObject : EventMessage
     {
     
-		///<summary>
-		/// The EventMessageRequest constructor
-		///</summary>
+        ///<summary>
+        /// The EventMessageRequest constructor
+        ///</summary>
         public EventMessageRequestObject()
         {
             this.ODataType = "microsoft.graph.eventMessageRequest";
         }
-	
+
         /// <summary>
         /// Gets or sets allow new time proposals.
         /// True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewTimeProposals", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowNewTimeProposals")]
         public bool? AllowNewTimeProposals { get; set; }
     
         /// <summary>
         /// Gets or sets meeting request type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingRequestType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("meetingRequestType")]
         public MeetingRequestType? MeetingRequestType { get; set; }
     
         /// <summary>
         /// Gets or sets previous end date time.
         /// If the meeting update changes the meeting end time, this property specifies the previous meeting end time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previousEndDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("previousEndDateTime")]
         public DateTimeTimeZone PreviousEndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets previous location.
         /// If the meeting update changes the meeting location, this property specifies the previous meeting location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previousLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("previousLocation")]
         public Location PreviousLocation { get; set; }
     
         /// <summary>
         /// Gets or sets previous start date time.
         /// If the meeting update changes the meeting start time, this property specifies the previous meeting start time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previousStartDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("previousStartDateTime")]
         public DateTimeTimeZone PreviousStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets response requested.
         /// Set to true if the sender would like the invitee to send a response to the requested meeting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responseRequested", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("responseRequested")]
         public bool? ResponseRequested { get; set; }
     
     }

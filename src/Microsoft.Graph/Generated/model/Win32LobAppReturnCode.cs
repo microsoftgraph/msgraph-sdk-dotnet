@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Win32LobAppReturnCode.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppReturnCode>))]
     public partial class Win32LobAppReturnCode
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Win32LobAppReturnCode"/> class.
-        /// </summary>
-        public Win32LobAppReturnCode()
-        {
-            this.ODataType = "microsoft.graph.win32LobAppReturnCode";
-        }
 
         /// <summary>
         /// Gets or sets returnCode.
         /// Return code.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "returnCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("returnCode")]
         public Int32? ReturnCode { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// The type of return code. Possible values are: failed, success, softReboot, hardReboot, retry.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public Win32LobAppReturnCodeType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Shared.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Shared>))]
     public partial class Shared
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Shared"/> class.
-        /// </summary>
-        public Shared()
-        {
-            this.ODataType = "microsoft.graph.shared";
-        }
 
         /// <summary>
         /// Gets or sets owner.
         /// The identity of the owner of the shared item. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("owner")]
         public IdentitySet Owner { get; set; }
     
         /// <summary>
         /// Gets or sets scope.
         /// Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scope")]
         public string Scope { get; set; }
     
         /// <summary>
         /// Gets or sets sharedBy.
         /// The identity of the user who shared the item. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharedBy")]
         public IdentitySet SharedBy { get; set; }
     
         /// <summary>
         /// Gets or sets sharedDateTime.
         /// The UTC date and time when the item was shared. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharedDateTime")]
         public DateTimeOffset? SharedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

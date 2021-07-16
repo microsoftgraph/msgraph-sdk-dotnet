@@ -12,29 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Certificate Based Auth Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CertificateBasedAuthConfiguration : Entity
     {
     
-		///<summary>
-		/// The CertificateBasedAuthConfiguration constructor
-		///</summary>
-        public CertificateBasedAuthConfiguration()
-        {
-            this.ODataType = "microsoft.graph.certificateBasedAuthConfiguration";
-        }
-	
         /// <summary>
         /// Gets or sets certificate authorities.
         /// Collection of certificate authorities which creates a trusted certificate chain.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateAuthorities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certificateAuthorities")]
         public IEnumerable<CertificateAuthority> CertificateAuthorities { get; set; }
     
     }

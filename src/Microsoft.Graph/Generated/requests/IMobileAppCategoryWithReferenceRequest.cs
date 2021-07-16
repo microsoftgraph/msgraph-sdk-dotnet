@@ -23,57 +23,64 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MobileAppCategory.
         /// </summary>
-        /// <returns>The MobileAppCategory.</returns>
-        System.Threading.Tasks.Task<MobileAppCategory> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MobileAppCategory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppCategory.</returns>
-        System.Threading.Tasks.Task<MobileAppCategory> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppCategory> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the specified MobileAppCategory and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> GetResponseAsync(CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Creates the specified MobileAppCategory using POST.
         /// </summary>
         /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppCategory.</returns>
-        System.Threading.Tasks.Task<MobileAppCategory> CreateAsync(MobileAppCategory mobileAppCategoryToCreate);        /// <summary>
-        /// Creates the specified MobileAppCategory using POST.
+        System.Threading.Tasks.Task<MobileAppCategory> CreateAsync(MobileAppCategory mobileAppCategoryToCreate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Creates the specified MobileAppCategory using POST and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
         /// </summary>
         /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MobileAppCategory.</returns>
-        System.Threading.Tasks.Task<MobileAppCategory> CreateAsync(MobileAppCategory mobileAppCategoryToCreate, CancellationToken cancellationToken);
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> CreateResponseAsync(MobileAppCategory mobileAppCategoryToCreate, CancellationToken cancellationToken = default);
 
 		/// <summary>
-        /// Updates the specified MobileAppCategory using PATCH.
-        /// </summary>
-        /// <param name="mobileAppCategoryToUpdate">The MobileAppCategory to update.</param>
-        /// <returns>The updated MobileAppCategory.</returns>
-        System.Threading.Tasks.Task<MobileAppCategory> UpdateAsync(MobileAppCategory mobileAppCategoryToUpdate);
-
-        /// <summary>
         /// Updates the specified MobileAppCategory using PATCH.
         /// </summary>
         /// <param name="mobileAppCategoryToUpdate">The MobileAppCategory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppCategory.</returns>
-        System.Threading.Tasks.Task<MobileAppCategory> UpdateAsync(MobileAppCategory mobileAppCategoryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppCategory> UpdateAsync(MobileAppCategory mobileAppCategoryToUpdate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Updates the specified MobileAppCategory using PATCH and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
+        /// </summary>
+        /// <param name="mobileAppCategoryToUpdate">The MobileAppCategory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> UpdateResponseAsync(MobileAppCategory mobileAppCategoryToUpdate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Deletes the specified MobileAppCategory.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified MobileAppCategory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Deletes the specified MobileAppCategory and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

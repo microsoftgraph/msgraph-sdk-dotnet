@@ -12,57 +12,48 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Domain Dns Record.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DomainDnsRecord>))]
     public partial class DomainDnsRecord : Entity
     {
     
-		///<summary>
-		/// The DomainDnsRecord constructor
-		///</summary>
-        public DomainDnsRecord()
-        {
-            this.ODataType = "microsoft.graph.domainDnsRecord";
-        }
-	
         /// <summary>
         /// Gets or sets is optional.
         /// If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOptional", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isOptional")]
         public bool? IsOptional { get; set; }
     
         /// <summary>
         /// Gets or sets label.
         /// Value used when configuring the name of the DNS record at the DNS host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "label", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("label")]
         public string Label { get; set; }
     
         /// <summary>
         /// Gets or sets record type.
         /// Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, TxtKey
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recordType")]
         public string RecordType { get; set; }
     
         /// <summary>
         /// Gets or sets supported service.
         /// Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedService", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supportedService")]
         public string SupportedService { get; set; }
     
         /// <summary>
         /// Gets or sets ttl.
         /// Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ttl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ttl")]
         public Int32? Ttl { get; set; }
     
     }

@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsNorm_S_DistRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken z,
-            Newtonsoft.Json.Linq.JToken cumulative)
+            System.Text.Json.JsonDocument z,
+            System.Text.Json.JsonDocument cumulative)
             : base(requestUrl, client)
         {
             this.SetParameter("z", z, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("z"))
             {
-                request.RequestBody.Z = this.GetParameter<Newtonsoft.Json.Linq.JToken>("z");
+                request.RequestBody.Z = this.GetParameter<System.Text.Json.JsonDocument>("z");
             }
 
             if (this.HasParameter("cumulative"))
             {
-                request.RequestBody.Cumulative = this.GetParameter<Newtonsoft.Json.Linq.JToken>("cumulative");
+                request.RequestBody.Cumulative = this.GetParameter<System.Text.Json.JsonDocument>("cumulative");
             }
 
             return request;

@@ -32,12 +32,12 @@ namespace Microsoft.Graph
         public WorkbookFunctionsYieldMatRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken settlement,
-            Newtonsoft.Json.Linq.JToken maturity,
-            Newtonsoft.Json.Linq.JToken issue,
-            Newtonsoft.Json.Linq.JToken rate,
-            Newtonsoft.Json.Linq.JToken pr,
-            Newtonsoft.Json.Linq.JToken basis)
+            System.Text.Json.JsonDocument settlement,
+            System.Text.Json.JsonDocument maturity,
+            System.Text.Json.JsonDocument issue,
+            System.Text.Json.JsonDocument rate,
+            System.Text.Json.JsonDocument pr,
+            System.Text.Json.JsonDocument basis)
             : base(requestUrl, client)
         {
             this.SetParameter("settlement", settlement, true);
@@ -60,32 +60,32 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("settlement"))
             {
-                request.RequestBody.Settlement = this.GetParameter<Newtonsoft.Json.Linq.JToken>("settlement");
+                request.RequestBody.Settlement = this.GetParameter<System.Text.Json.JsonDocument>("settlement");
             }
 
             if (this.HasParameter("maturity"))
             {
-                request.RequestBody.Maturity = this.GetParameter<Newtonsoft.Json.Linq.JToken>("maturity");
+                request.RequestBody.Maturity = this.GetParameter<System.Text.Json.JsonDocument>("maturity");
             }
 
             if (this.HasParameter("issue"))
             {
-                request.RequestBody.Issue = this.GetParameter<Newtonsoft.Json.Linq.JToken>("issue");
+                request.RequestBody.Issue = this.GetParameter<System.Text.Json.JsonDocument>("issue");
             }
 
             if (this.HasParameter("rate"))
             {
-                request.RequestBody.Rate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("rate");
+                request.RequestBody.Rate = this.GetParameter<System.Text.Json.JsonDocument>("rate");
             }
 
             if (this.HasParameter("pr"))
             {
-                request.RequestBody.Pr = this.GetParameter<Newtonsoft.Json.Linq.JToken>("pr");
+                request.RequestBody.Pr = this.GetParameter<System.Text.Json.JsonDocument>("pr");
             }
 
             if (this.HasParameter("basis"))
             {
-                request.RequestBody.Basis = this.GetParameter<Newtonsoft.Json.Linq.JToken>("basis");
+                request.RequestBody.Basis = this.GetParameter<System.Text.Json.JsonDocument>("basis");
             }
 
             return request;

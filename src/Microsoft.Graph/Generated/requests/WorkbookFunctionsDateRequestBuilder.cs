@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsDateRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken year,
-            Newtonsoft.Json.Linq.JToken month,
-            Newtonsoft.Json.Linq.JToken day)
+            System.Text.Json.JsonDocument year,
+            System.Text.Json.JsonDocument month,
+            System.Text.Json.JsonDocument day)
             : base(requestUrl, client)
         {
             this.SetParameter("year", year, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("year"))
             {
-                request.RequestBody.Year = this.GetParameter<Newtonsoft.Json.Linq.JToken>("year");
+                request.RequestBody.Year = this.GetParameter<System.Text.Json.JsonDocument>("year");
             }
 
             if (this.HasParameter("month"))
             {
-                request.RequestBody.Month = this.GetParameter<Newtonsoft.Json.Linq.JToken>("month");
+                request.RequestBody.Month = this.GetParameter<System.Text.Json.JsonDocument>("month");
             }
 
             if (this.HasParameter("day"))
             {
-                request.RequestBody.Day = this.GetParameter<Newtonsoft.Json.Linq.JToken>("day");
+                request.RequestBody.Day = this.GetParameter<System.Text.Json.JsonDocument>("day");
             }
 
             return request;

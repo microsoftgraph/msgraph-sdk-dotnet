@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                 userId,
                 givenName);
 
-            var user = this.serializer.DeserializeObject<DirectoryObject>(stringToDeserialize) as User;
+            var user = this.serializer.DeserializeObject<Entity>(stringToDeserialize) as User;
 
             Assert.NotNull(user);
             Assert.Equal(userId, user.Id);
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             Assert.NotNull(directoryObject);
             Assert.Equal(directoryObjectId, directoryObject.Id);
             Assert.NotNull(directoryObject.AdditionalData);
-            Assert.Equal(givenName, directoryObject.AdditionalData["givenName"] as string);
+            Assert.Equal(givenName, directoryObject.AdditionalData["givenName"].ToString());
         }
 
         [Fact]
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             Assert.Equal(bodyContent, itemBody.Content);
             Assert.Null(itemBody.ContentType);
             Assert.NotNull(itemBody.AdditionalData);
-            Assert.Equal(enumValue, itemBody.AdditionalData["contentType"] as string);
+            Assert.Equal(enumValue, itemBody.AdditionalData["contentType"].ToString());
         }
 
         [Fact]
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             Assert.NotNull(entity);
             Assert.Equal(entityId, entity.Id);
             Assert.NotNull(entity.AdditionalData);
-            Assert.Equal(additionalValue, entity.AdditionalData[additionalKey] as string);
+            Assert.Equal(additionalValue, entity.AdditionalData[additionalKey].ToString());
         }
 
         [Fact]
@@ -129,6 +129,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
         {
             var itemBody = new ItemBody
             {
+                ODataType = "microsoft.graph.itemBody",
                 Content = "bodyContent",
                 ContentType = BodyType.Text,
             };
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
         {
             var now = DateTimeOffset.UtcNow;
 
-            var expectedSerializedString = string.Format("{{\"startDate\":\"{0}\",\"@odata.type\":\"microsoft.graph.recurrenceRange\"}}", now.ToString("yyyy-MM-dd"));
+            var expectedSerializedString = string.Format("{{\"startDate\":\"{0}\"}}", now.ToString("yyyy-MM-dd"));
 
             var recurrence = new RecurrenceRange
             {

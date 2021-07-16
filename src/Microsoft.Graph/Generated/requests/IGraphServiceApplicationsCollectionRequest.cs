@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceApplicationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Application to the collection via POST.
-        /// </summary>
-        /// <param name="application">The Application to add.</param>
-        /// <returns>The created Application.</returns>
-        System.Threading.Tasks.Task<Application> AddAsync(Application application);
-
         /// <summary>
         /// Adds the specified Application to the collection via POST.
         /// </summary>
         /// <param name="application">The Application to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Application.</returns>
-        System.Threading.Tasks.Task<Application> AddAsync(Application application, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Application> AddAsync(Application application, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Application to the collection via POST and returns a <see cref="GraphResponse{Application}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceApplicationsCollectionPage> GetAsync();
+        /// <param name="application">The Application to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Application}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Application>> AddResponseAsync(Application application, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceApplicationsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IGraphServiceApplicationsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceApplicationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceApplicationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceApplicationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

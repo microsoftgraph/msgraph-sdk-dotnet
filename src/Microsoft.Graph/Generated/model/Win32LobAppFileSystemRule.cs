@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Win32LobAppFileSystemRule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppFileSystemRule>))]
     public partial class Win32LobAppFileSystemRule : Win32LobAppRule
     {
         /// <summary>
@@ -33,42 +32,42 @@ namespace Microsoft.Graph
         /// Gets or sets check32BitOn64System.
         /// A value indicating whether to expand environment variables in the 32-bit context on 64-bit systems.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "check32BitOn64System", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("check32BitOn64System")]
         public bool? Check32BitOn64System { get; set; }
     
         /// <summary>
         /// Gets or sets comparisonValue.
         /// The file or folder comparison value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comparisonValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("comparisonValue")]
         public string ComparisonValue { get; set; }
     
         /// <summary>
         /// Gets or sets fileOrFolderName.
         /// The file or folder name to look up.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileOrFolderName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileOrFolderName")]
         public string FileOrFolderName { get; set; }
     
         /// <summary>
         /// Gets or sets operationType.
         /// The file system operation type. Possible values are: notConfigured, exists, modifiedDate, createdDate, version, sizeInMB, doesNotExist.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operationType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operationType")]
         public Win32LobAppFileSystemOperationType? OperationType { get; set; }
     
         /// <summary>
         /// Gets or sets operator.
         /// The operator for file or folder detection. Possible values are: notConfigured, equal, notEqual, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operator")]
         public Win32LobAppRuleOperator? Operator { get; set; }
     
         /// <summary>
         /// Gets or sets path.
         /// The file or folder path to look up.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "path", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("path")]
         public string Path { get; set; }
     
     }

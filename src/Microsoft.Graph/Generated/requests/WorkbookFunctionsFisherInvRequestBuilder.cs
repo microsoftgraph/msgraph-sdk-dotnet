@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsFisherInvRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken y)
+            System.Text.Json.JsonDocument y)
             : base(requestUrl, client)
         {
             this.SetParameter("y", y, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("y"))
             {
-                request.RequestBody.Y = this.GetParameter<Newtonsoft.Json.Linq.JToken>("y");
+                request.RequestBody.Y = this.GetParameter<System.Text.Json.JsonDocument>("y");
             }
 
             return request;

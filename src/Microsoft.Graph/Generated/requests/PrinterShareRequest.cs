@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified PrinterShare using POST.
         /// </summary>
         /// <param name="printerShareToCreate">The PrinterShare to create.</param>
-        /// <returns>The created PrinterShare.</returns>
-        public System.Threading.Tasks.Task<PrinterShare> CreateAsync(PrinterShare printerShareToCreate)
-        {
-            return this.CreateAsync(printerShareToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrinterShare using POST.
-        /// </summary>
-        /// <param name="printerShareToCreate">The PrinterShare to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrinterShare.</returns>
-        public async System.Threading.Tasks.Task<PrinterShare> CreateAsync(PrinterShare printerShareToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrinterShare> CreateAsync(PrinterShare printerShareToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PrinterShare>(printerShareToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified PrinterShare.
+        /// Creates the specified PrinterShare using POST and returns a <see cref="GraphResponse{PrinterShare}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="printerShareToCreate">The PrinterShare to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrinterShare}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrinterShare>> CreateResponseAsync(PrinterShare printerShareToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PrinterShare>(printerShareToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PrinterShare>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified PrinterShare.
+        /// Deletes the specified PrinterShare and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PrinterShare.</returns>
-        public System.Threading.Tasks.Task<PrinterShare> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrinterShare.</returns>
-        public async System.Threading.Tasks.Task<PrinterShare> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrinterShare> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PrinterShare>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified PrinterShare using PATCH.
+        /// Gets the specified PrinterShare and returns a <see cref="GraphResponse{PrinterShare}"/> object.
         /// </summary>
-        /// <param name="printerShareToUpdate">The PrinterShare to update.</param>
-        /// <returns>The updated PrinterShare.</returns>
-        public System.Threading.Tasks.Task<PrinterShare> UpdateAsync(PrinterShare printerShareToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrinterShare}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrinterShare>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(printerShareToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PrinterShare>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrinterShare.</returns>
-        public async System.Threading.Tasks.Task<PrinterShare> UpdateAsync(PrinterShare printerShareToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrinterShare> UpdateAsync(PrinterShare printerShareToUpdate, CancellationToken cancellationToken = default)
         {
-			if (printerShareToUpdate.AdditionalData != null)
-			{
-				if (printerShareToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					printerShareToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printerShareToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (printerShareToUpdate.AdditionalData != null)
-            {
-                if (printerShareToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    printerShareToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printerShareToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PrinterShare>(printerShareToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PrinterShare using PATCH and returns a <see cref="GraphResponse{PrinterShare}"/> object.
+        /// </summary>
+        /// <param name="printerShareToUpdate">The PrinterShare to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PrinterShare}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrinterShare>> UpdateResponseAsync(PrinterShare printerShareToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<PrinterShare>(printerShareToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified PrinterShare using PUT.
+        /// </summary>
+        /// <param name="printerShareToUpdate">The PrinterShare object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PrinterShare> PutAsync(PrinterShare printerShareToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PrinterShare>(printerShareToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PrinterShare using PUT and returns a <see cref="GraphResponse{PrinterShare}"/> object.
+        /// </summary>
+        /// <param name="printerShareToUpdate">The PrinterShare object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PrinterShare}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrinterShare>> PutResponseAsync(PrinterShare printerShareToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PrinterShare>(printerShareToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PrinterShare printerShareToInitialize)
         {
 
-            if (printerShareToInitialize != null && printerShareToInitialize.AdditionalData != null)
+            if (printerShareToInitialize != null)
             {
-
                 if (printerShareToInitialize.AllowedGroups != null && printerShareToInitialize.AllowedGroups.CurrentPage != null)
                 {
+                    printerShareToInitialize.AllowedGroups.InitializeNextPageRequest(this.Client, printerShareToInitialize.AllowedGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printerShareToInitialize.AllowedGroups.AdditionalData = printerShareToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printerShareToInitialize.AdditionalData.TryGetValue("allowedGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printerShareToInitialize.AllowedGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (printerShareToInitialize.AllowedUsers != null && printerShareToInitialize.AllowedUsers.CurrentPage != null)
                 {
+                    printerShareToInitialize.AllowedUsers.InitializeNextPageRequest(this.Client, printerShareToInitialize.AllowedUsersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printerShareToInitialize.AllowedUsers.AdditionalData = printerShareToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printerShareToInitialize.AdditionalData.TryGetValue("allowedUsers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printerShareToInitialize.AllowedUsers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

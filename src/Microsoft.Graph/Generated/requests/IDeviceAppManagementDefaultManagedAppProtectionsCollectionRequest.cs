@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceAppManagementDefaultManagedAppProtectionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DefaultManagedAppProtection to the collection via POST.
-        /// </summary>
-        /// <param name="defaultManagedAppProtection">The DefaultManagedAppProtection to add.</param>
-        /// <returns>The created DefaultManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<DefaultManagedAppProtection> AddAsync(DefaultManagedAppProtection defaultManagedAppProtection);
-
         /// <summary>
         /// Adds the specified DefaultManagedAppProtection to the collection via POST.
         /// </summary>
         /// <param name="defaultManagedAppProtection">The DefaultManagedAppProtection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DefaultManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<DefaultManagedAppProtection> AddAsync(DefaultManagedAppProtection defaultManagedAppProtection, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DefaultManagedAppProtection> AddAsync(DefaultManagedAppProtection defaultManagedAppProtection, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DefaultManagedAppProtection to the collection via POST and returns a <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementDefaultManagedAppProtectionsCollectionPage> GetAsync();
+        /// <param name="defaultManagedAppProtection">The DefaultManagedAppProtection to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtection>> AddResponseAsync(DefaultManagedAppProtection defaultManagedAppProtection, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementDefaultManagedAppProtectionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceAppManagementDefaultManagedAppProtectionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementDefaultManagedAppProtectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementDefaultManagedAppProtectionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementDefaultManagedAppProtectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

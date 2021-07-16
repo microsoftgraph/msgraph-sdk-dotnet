@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PlannerAssignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PlannerAssignment>))]
     public partial class PlannerAssignment
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PlannerAssignment"/> class.
-        /// </summary>
-        public PlannerAssignment()
-        {
-            this.ODataType = "microsoft.graph.plannerAssignment";
-        }
 
         /// <summary>
         /// Gets or sets assignedBy.
         /// The identity of the user that performed the assignment of the task, i.e. the assignor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedBy")]
         public IdentitySet AssignedBy { get; set; }
     
         /// <summary>
         /// Gets or sets assignedDateTime.
         /// The time at which the task was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedDateTime")]
         public DateTimeOffset? AssignedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets orderHint.
         /// Hint used to order assignees in a task. The format is defined as outlined here.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderHint", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("orderHint")]
         public string OrderHint { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

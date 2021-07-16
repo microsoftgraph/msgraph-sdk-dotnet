@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PhysicalOfficeAddress.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PhysicalOfficeAddress>))]
     public partial class PhysicalOfficeAddress
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PhysicalOfficeAddress"/> class.
-        /// </summary>
-        public PhysicalOfficeAddress()
-        {
-            this.ODataType = "microsoft.graph.physicalOfficeAddress";
-        }
 
         /// <summary>
         /// Gets or sets city.
         /// The city.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "city", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("city")]
         public string City { get; set; }
     
         /// <summary>
         /// Gets or sets countryOrRegion.
         /// The country or region. It's a free-format string value, for example, 'United States'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryOrRegion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countryOrRegion")]
         public string CountryOrRegion { get; set; }
     
         /// <summary>
         /// Gets or sets officeLocation.
         /// Office location such as building and office number for an organizational contact.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("officeLocation")]
         public string OfficeLocation { get; set; }
     
         /// <summary>
         /// Gets or sets postalCode.
         /// The postal code.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postalCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("postalCode")]
         public string PostalCode { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// The state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public string State { get; set; }
     
         /// <summary>
         /// Gets or sets street.
         /// The street.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "street", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("street")]
         public string Street { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

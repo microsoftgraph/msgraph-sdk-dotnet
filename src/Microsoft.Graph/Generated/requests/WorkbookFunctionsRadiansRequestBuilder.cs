@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsRadiansRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken angle)
+            System.Text.Json.JsonDocument angle)
             : base(requestUrl, client)
         {
             this.SetParameter("angle", angle, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("angle"))
             {
-                request.RequestBody.Angle = this.GetParameter<Newtonsoft.Json.Linq.JToken>("angle");
+                request.RequestBody.Angle = this.GetParameter<System.Text.Json.JsonDocument>("angle");
             }
 
             return request;

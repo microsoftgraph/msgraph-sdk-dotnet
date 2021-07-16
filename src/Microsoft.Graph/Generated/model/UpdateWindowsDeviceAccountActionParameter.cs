@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UpdateWindowsDeviceAccountActionParameter.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UpdateWindowsDeviceAccountActionParameter>))]
     public partial class UpdateWindowsDeviceAccountActionParameter
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateWindowsDeviceAccountActionParameter"/> class.
-        /// </summary>
-        public UpdateWindowsDeviceAccountActionParameter()
-        {
-            this.ODataType = "microsoft.graph.updateWindowsDeviceAccountActionParameter";
-        }
 
         /// <summary>
         /// Gets or sets calendarSyncEnabled.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarSyncEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calendarSyncEnabled")]
         public bool? CalendarSyncEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets deviceAccount.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceAccount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceAccount")]
         public WindowsDeviceAccount DeviceAccount { get; set; }
     
         /// <summary>
         /// Gets or sets deviceAccountEmail.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceAccountEmail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceAccountEmail")]
         public string DeviceAccountEmail { get; set; }
     
         /// <summary>
         /// Gets or sets exchangeServer.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeServer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exchangeServer")]
         public string ExchangeServer { get; set; }
     
         /// <summary>
         /// Gets or sets passwordRotationEnabled.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRotationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordRotationEnabled")]
         public bool? PasswordRotationEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets sessionInitiationProtocalAddress.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sessionInitiationProtocalAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sessionInitiationProtocalAddress")]
         public string SessionInitiationProtocalAddress { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

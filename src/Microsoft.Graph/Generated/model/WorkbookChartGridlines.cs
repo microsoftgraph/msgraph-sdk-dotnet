@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Chart Gridlines.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookChartGridlines : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartGridlines constructor
-		///</summary>
-        public WorkbookChartGridlines()
-        {
-            this.ODataType = "microsoft.graph.workbookChartGridlines";
-        }
-	
         /// <summary>
         /// Gets or sets visible.
         /// Boolean value representing if the axis gridlines are visible or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visible", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("visible")]
         public bool? Visible { get; set; }
     
         /// <summary>
         /// Gets or sets format.
         /// Represents the formatting of chart gridlines. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("format")]
         public WorkbookChartGridlinesFormat Format { get; set; }
     
     }

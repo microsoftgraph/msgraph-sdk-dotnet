@@ -23,57 +23,64 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Group.
         /// </summary>
-        /// <returns>The Group.</returns>
-        System.Threading.Tasks.Task<Group> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Group.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Group.</returns>
-        System.Threading.Tasks.Task<Group> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Group> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the specified Group and returns a <see cref="GraphResponse{Group}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Group}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Group>> GetResponseAsync(CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Creates the specified Group using POST.
         /// </summary>
         /// <param name="groupToCreate">The Group to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Group.</returns>
-        System.Threading.Tasks.Task<Group> CreateAsync(Group groupToCreate);        /// <summary>
-        /// Creates the specified Group using POST.
+        System.Threading.Tasks.Task<Group> CreateAsync(Group groupToCreate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Creates the specified Group using POST and returns a <see cref="GraphResponse{Group}"/> object.
         /// </summary>
         /// <param name="groupToCreate">The Group to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Group.</returns>
-        System.Threading.Tasks.Task<Group> CreateAsync(Group groupToCreate, CancellationToken cancellationToken);
+        /// <returns>The <see cref="GraphResponse{Group}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Group>> CreateResponseAsync(Group groupToCreate, CancellationToken cancellationToken = default);
 
 		/// <summary>
-        /// Updates the specified Group using PATCH.
-        /// </summary>
-        /// <param name="groupToUpdate">The Group to update.</param>
-        /// <returns>The updated Group.</returns>
-        System.Threading.Tasks.Task<Group> UpdateAsync(Group groupToUpdate);
-
-        /// <summary>
         /// Updates the specified Group using PATCH.
         /// </summary>
         /// <param name="groupToUpdate">The Group to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Group.</returns>
-        System.Threading.Tasks.Task<Group> UpdateAsync(Group groupToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Group> UpdateAsync(Group groupToUpdate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Updates the specified Group using PATCH and returns a <see cref="GraphResponse{Group}"/> object.
+        /// </summary>
+        /// <param name="groupToUpdate">The Group to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Group}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Group>> UpdateResponseAsync(Group groupToUpdate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Deletes the specified Group.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified Group.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Deletes the specified Group and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

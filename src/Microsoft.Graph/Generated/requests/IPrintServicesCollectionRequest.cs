@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPrintServicesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PrintService to the collection via POST.
-        /// </summary>
-        /// <param name="printService">The PrintService to add.</param>
-        /// <returns>The created PrintService.</returns>
-        System.Threading.Tasks.Task<PrintService> AddAsync(PrintService printService);
-
         /// <summary>
         /// Adds the specified PrintService to the collection via POST.
         /// </summary>
         /// <param name="printService">The PrintService to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintService.</returns>
-        System.Threading.Tasks.Task<PrintService> AddAsync(PrintService printService, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PrintService> AddAsync(PrintService printService, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified PrintService to the collection via POST and returns a <see cref="GraphResponse{PrintService}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPrintServicesCollectionPage> GetAsync();
+        /// <param name="printService">The PrintService to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintService}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintService>> AddResponseAsync(PrintService printService, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPrintServicesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IPrintServicesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PrintServicesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintServicesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintServicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsXirrRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsXirrRequestBody
     {
     
         /// <summary>
         /// Gets or sets Values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Values { get; set; }
+        [JsonPropertyName("values")]
+        public System.Text.Json.JsonDocument Values { get; set; }
     
         /// <summary>
         /// Gets or sets Dates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dates", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Dates { get; set; }
+        [JsonPropertyName("dates")]
+        public System.Text.Json.JsonDocument Dates { get; set; }
     
         /// <summary>
         /// Gets or sets Guess.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "guess", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Guess { get; set; }
+        [JsonPropertyName("guess")]
+        public System.Text.Json.JsonDocument Guess { get; set; }
     
     }
 }

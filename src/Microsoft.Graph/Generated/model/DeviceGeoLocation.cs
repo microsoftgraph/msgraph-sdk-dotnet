@@ -12,90 +12,81 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceGeoLocation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceGeoLocation>))]
     public partial class DeviceGeoLocation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceGeoLocation"/> class.
-        /// </summary>
-        public DeviceGeoLocation()
-        {
-            this.ODataType = "microsoft.graph.deviceGeoLocation";
-        }
 
         /// <summary>
         /// Gets or sets altitude.
         /// Altitude, given in meters above sea level
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitude", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("altitude")]
         public double? Altitude { get; set; }
     
         /// <summary>
         /// Gets or sets heading.
         /// Heading in degrees from true north
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "heading", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("heading")]
         public double? Heading { get; set; }
     
         /// <summary>
         /// Gets or sets horizontalAccuracy.
         /// Accuracy of longitude and latitude in meters
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "horizontalAccuracy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("horizontalAccuracy")]
         public double? HorizontalAccuracy { get; set; }
     
         /// <summary>
         /// Gets or sets lastCollectedDateTime.
         /// Time at which location was recorded, relative to UTC
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCollectedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastCollectedDateTime")]
         public DateTimeOffset? LastCollectedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets latitude.
         /// Latitude coordinate of the device's location
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latitude", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("latitude")]
         public double? Latitude { get; set; }
     
         /// <summary>
         /// Gets or sets longitude.
         /// Longitude coordinate of the device's location
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longitude", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("longitude")]
         public double? Longitude { get; set; }
     
         /// <summary>
         /// Gets or sets speed.
         /// Speed the device is traveling in meters per second
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "speed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("speed")]
         public double? Speed { get; set; }
     
         /// <summary>
         /// Gets or sets verticalAccuracy.
         /// Accuracy of altitude in meters
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "verticalAccuracy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("verticalAccuracy")]
         public double? VerticalAccuracy { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

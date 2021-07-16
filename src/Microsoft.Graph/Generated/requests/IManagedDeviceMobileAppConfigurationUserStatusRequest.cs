@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedDeviceMobileAppConfigurationUserStatus using POST.
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationUserStatusToCreate">The ManagedDeviceMobileAppConfigurationUserStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceMobileAppConfigurationUserStatus.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> CreateAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToCreate);        /// <summary>
-        /// Creates the specified ManagedDeviceMobileAppConfigurationUserStatus using POST.
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> CreateAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationUserStatus using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object.
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationUserStatusToCreate">The ManagedDeviceMobileAppConfigurationUserStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ManagedDeviceMobileAppConfigurationUserStatus.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> CreateAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ManagedDeviceMobileAppConfigurationUserStatus.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ManagedDeviceMobileAppConfigurationUserStatus.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ManagedDeviceMobileAppConfigurationUserStatus.
+        /// Deletes the specified ManagedDeviceMobileAppConfigurationUserStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagedDeviceMobileAppConfigurationUserStatus.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ManagedDeviceMobileAppConfigurationUserStatus.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedDeviceMobileAppConfigurationUserStatus.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ManagedDeviceMobileAppConfigurationUserStatus using PATCH.
+        /// Gets the specified ManagedDeviceMobileAppConfigurationUserStatus and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object.
         /// </summary>
-        /// <param name="managedDeviceMobileAppConfigurationUserStatusToUpdate">The ManagedDeviceMobileAppConfigurationUserStatus to update.</param>
-        /// <returns>The updated ManagedDeviceMobileAppConfigurationUserStatus.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> UpdateAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ManagedDeviceMobileAppConfigurationUserStatus using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedDeviceMobileAppConfigurationUserStatus.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> UpdateAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> UpdateAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceMobileAppConfigurationUserStatus using PATCH and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationUserStatusToUpdate">The ManagedDeviceMobileAppConfigurationUserStatus to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>> UpdateResponseAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceMobileAppConfigurationUserStatus using PUT.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationUserStatusToUpdate">The ManagedDeviceMobileAppConfigurationUserStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> PutAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceMobileAppConfigurationUserStatus using PUT and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationUserStatusToUpdate">The ManagedDeviceMobileAppConfigurationUserStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>> PutResponseAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

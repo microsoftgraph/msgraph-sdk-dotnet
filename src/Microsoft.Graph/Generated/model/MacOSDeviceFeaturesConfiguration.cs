@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSDevice Features Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MacOSDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase
     {
     
-		///<summary>
-		/// The MacOSDeviceFeaturesConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSDeviceFeaturesConfiguration constructor
+        ///</summary>
         public MacOSDeviceFeaturesConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSDeviceFeaturesConfiguration";
         }
-	
+
     }
 }
 

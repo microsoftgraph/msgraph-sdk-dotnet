@@ -12,83 +12,74 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type FileEncryptionInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<FileEncryptionInfo>))]
     public partial class FileEncryptionInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FileEncryptionInfo"/> class.
-        /// </summary>
-        public FileEncryptionInfo()
-        {
-            this.ODataType = "microsoft.graph.fileEncryptionInfo";
-        }
 
         /// <summary>
         /// Gets or sets encryptionKey.
         /// The key used to encrypt the file content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryptionKey")]
         public byte[] EncryptionKey { get; set; }
     
         /// <summary>
         /// Gets or sets fileDigest.
         /// The file digest prior to encryption.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileDigest", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileDigest")]
         public byte[] FileDigest { get; set; }
     
         /// <summary>
         /// Gets or sets fileDigestAlgorithm.
         /// The file digest algorithm.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileDigestAlgorithm", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileDigestAlgorithm")]
         public string FileDigestAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets initializationVector.
         /// The initialization vector used for the encryption algorithm.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initializationVector", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("initializationVector")]
         public byte[] InitializationVector { get; set; }
     
         /// <summary>
         /// Gets or sets mac.
         /// The hash of the encrypted file content + IV (content hash).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mac", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mac")]
         public byte[] Mac { get; set; }
     
         /// <summary>
         /// Gets or sets macKey.
         /// The key used to get mac.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("macKey")]
         public byte[] MacKey { get; set; }
     
         /// <summary>
         /// Gets or sets profileIdentifier.
         /// The the profile identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("profileIdentifier")]
         public string ProfileIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

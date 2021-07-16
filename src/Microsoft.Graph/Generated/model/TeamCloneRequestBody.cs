@@ -9,53 +9,51 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TeamCloneRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TeamCloneRequestBody
     {
     
         /// <summary>
         /// Gets or sets DisplayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets Description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets MailNickname.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNickname", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mailNickname")]
         public string MailNickname { get; set; }
     
         /// <summary>
         /// Gets or sets Classification.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classification")]
         public string Classification { get; set; }
     
         /// <summary>
         /// Gets or sets Visibility.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibility", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("visibility")]
         public TeamVisibilityType Visibility { get; set; }
     
         /// <summary>
         /// Gets or sets PartsToClone.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partsToClone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("partsToClone")]
         public ClonableTeamParts PartsToClone { get; set; }
     
     }

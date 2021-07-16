@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MobileAppContentFileCommitRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MobileAppContentFileCommitRequestBody
     {
     
         /// <summary>
         /// Gets or sets FileEncryptionInfo.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileEncryptionInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileEncryptionInfo")]
         public FileEncryptionInfo FileEncryptionInfo { get; set; }
     
     }

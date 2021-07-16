@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsSubtotalRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken functionNum,
-            Newtonsoft.Json.Linq.JToken values)
+            System.Text.Json.JsonDocument functionNum,
+            System.Text.Json.JsonDocument values)
             : base(requestUrl, client)
         {
             this.SetParameter("functionNum", functionNum, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("functionNum"))
             {
-                request.RequestBody.FunctionNum = this.GetParameter<Newtonsoft.Json.Linq.JToken>("functionNum");
+                request.RequestBody.FunctionNum = this.GetParameter<System.Text.Json.JsonDocument>("functionNum");
             }
 
             if (this.HasParameter("values"))
             {
-                request.RequestBody.Values = this.GetParameter<Newtonsoft.Json.Linq.JToken>("values");
+                request.RequestBody.Values = this.GetParameter<System.Text.Json.JsonDocument>("values");
             }
 
             return request;

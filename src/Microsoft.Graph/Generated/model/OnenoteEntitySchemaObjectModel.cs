@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Onenote Entity Schema Object Model.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<OnenoteEntitySchemaObjectModel>))]
     public partial class OnenoteEntitySchemaObjectModel : OnenoteEntityBaseModel
     {
     
-		///<summary>
-		/// The internal OnenoteEntitySchemaObjectModel constructor
-		///</summary>
+        ///<summary>
+        /// The internal OnenoteEntitySchemaObjectModel constructor
+        ///</summary>
         protected internal OnenoteEntitySchemaObjectModel()
         {
             // Don't allow initialization of abstract entity types
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets created date time.
         /// The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
     }

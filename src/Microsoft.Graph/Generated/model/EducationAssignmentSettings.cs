@@ -12,29 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education Assignment Settings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EducationAssignmentSettings : Entity
     {
     
-		///<summary>
-		/// The EducationAssignmentSettings constructor
-		///</summary>
-        public EducationAssignmentSettings()
-        {
-            this.ODataType = "microsoft.graph.educationAssignmentSettings";
-        }
-	
         /// <summary>
         /// Gets or sets submission animation disabled.
         /// Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "submissionAnimationDisabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("submissionAnimationDisabled")]
         public bool? SubmissionAnimationDisabled { get; set; }
     
     }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified TermsOfUseContainer using POST.
         /// </summary>
         /// <param name="termsOfUseContainerToCreate">The TermsOfUseContainer to create.</param>
-        /// <returns>The created TermsOfUseContainer.</returns>
-        public System.Threading.Tasks.Task<TermsOfUseContainer> CreateAsync(TermsOfUseContainer termsOfUseContainerToCreate)
-        {
-            return this.CreateAsync(termsOfUseContainerToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TermsOfUseContainer using POST.
-        /// </summary>
-        /// <param name="termsOfUseContainerToCreate">The TermsOfUseContainer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TermsOfUseContainer.</returns>
-        public async System.Threading.Tasks.Task<TermsOfUseContainer> CreateAsync(TermsOfUseContainer termsOfUseContainerToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TermsOfUseContainer> CreateAsync(TermsOfUseContainer termsOfUseContainerToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<TermsOfUseContainer>(termsOfUseContainerToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified TermsOfUseContainer.
+        /// Creates the specified TermsOfUseContainer using POST and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="termsOfUseContainerToCreate">The TermsOfUseContainer to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsOfUseContainer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> CreateResponseAsync(TermsOfUseContainer termsOfUseContainerToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<TermsOfUseContainer>(termsOfUseContainerToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<TermsOfUseContainer>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified TermsOfUseContainer.
+        /// Deletes the specified TermsOfUseContainer and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TermsOfUseContainer.</returns>
-        public System.Threading.Tasks.Task<TermsOfUseContainer> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TermsOfUseContainer.</returns>
-        public async System.Threading.Tasks.Task<TermsOfUseContainer> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TermsOfUseContainer> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<TermsOfUseContainer>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified TermsOfUseContainer using PATCH.
+        /// Gets the specified TermsOfUseContainer and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
         /// </summary>
-        /// <param name="termsOfUseContainerToUpdate">The TermsOfUseContainer to update.</param>
-        /// <returns>The updated TermsOfUseContainer.</returns>
-        public System.Threading.Tasks.Task<TermsOfUseContainer> UpdateAsync(TermsOfUseContainer termsOfUseContainerToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsOfUseContainer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(termsOfUseContainerToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<TermsOfUseContainer>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TermsOfUseContainer.</returns>
-        public async System.Threading.Tasks.Task<TermsOfUseContainer> UpdateAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TermsOfUseContainer> UpdateAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken = default)
         {
-			if (termsOfUseContainerToUpdate.AdditionalData != null)
-			{
-				if (termsOfUseContainerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					termsOfUseContainerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsOfUseContainerToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (termsOfUseContainerToUpdate.AdditionalData != null)
-            {
-                if (termsOfUseContainerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    termsOfUseContainerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsOfUseContainerToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<TermsOfUseContainer>(termsOfUseContainerToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TermsOfUseContainer using PATCH and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
+        /// </summary>
+        /// <param name="termsOfUseContainerToUpdate">The TermsOfUseContainer to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TermsOfUseContainer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> UpdateResponseAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<TermsOfUseContainer>(termsOfUseContainerToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified TermsOfUseContainer using PUT.
+        /// </summary>
+        /// <param name="termsOfUseContainerToUpdate">The TermsOfUseContainer object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<TermsOfUseContainer> PutAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<TermsOfUseContainer>(termsOfUseContainerToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TermsOfUseContainer using PUT and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
+        /// </summary>
+        /// <param name="termsOfUseContainerToUpdate">The TermsOfUseContainer object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{TermsOfUseContainer}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> PutResponseAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<TermsOfUseContainer>(termsOfUseContainerToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TermsOfUseContainer termsOfUseContainerToInitialize)
         {
 
-            if (termsOfUseContainerToInitialize != null && termsOfUseContainerToInitialize.AdditionalData != null)
+            if (termsOfUseContainerToInitialize != null)
             {
-
                 if (termsOfUseContainerToInitialize.AgreementAcceptances != null && termsOfUseContainerToInitialize.AgreementAcceptances.CurrentPage != null)
                 {
+                    termsOfUseContainerToInitialize.AgreementAcceptances.InitializeNextPageRequest(this.Client, termsOfUseContainerToInitialize.AgreementAcceptancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     termsOfUseContainerToInitialize.AgreementAcceptances.AdditionalData = termsOfUseContainerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    termsOfUseContainerToInitialize.AdditionalData.TryGetValue("agreementAcceptances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        termsOfUseContainerToInitialize.AgreementAcceptances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (termsOfUseContainerToInitialize.Agreements != null && termsOfUseContainerToInitialize.Agreements.CurrentPage != null)
                 {
+                    termsOfUseContainerToInitialize.Agreements.InitializeNextPageRequest(this.Client, termsOfUseContainerToInitialize.AgreementsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     termsOfUseContainerToInitialize.Agreements.AdditionalData = termsOfUseContainerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    termsOfUseContainerToInitialize.AdditionalData.TryGetValue("agreements@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        termsOfUseContainerToInitialize.Agreements.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

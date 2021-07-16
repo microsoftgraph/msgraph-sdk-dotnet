@@ -12,62 +12,52 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Shared Insight.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SharedInsight : Entity
     {
     
-		///<summary>
-		/// The SharedInsight constructor
-		///</summary>
-        public SharedInsight()
-        {
-            this.ODataType = "microsoft.graph.sharedInsight";
-        }
-	
         /// <summary>
         /// Gets or sets last shared.
         /// Details about the shared item. Read only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastShared", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastShared")]
         public SharingDetail LastShared { get; set; }
     
         /// <summary>
         /// Gets or sets resource reference.
         /// Reference properties of the shared document, such as the url and type of the document. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceReference", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceReference")]
         public ResourceReference ResourceReference { get; set; }
     
         /// <summary>
         /// Gets or sets resource visualization.
         /// Properties that you can use to visualize the document in your experience. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceVisualization", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceVisualization")]
         public ResourceVisualization ResourceVisualization { get; set; }
     
         /// <summary>
         /// Gets or sets sharing history.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingHistory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharingHistory")]
         public IEnumerable<SharingDetail> SharingHistory { get; set; }
     
         /// <summary>
         /// Gets or sets last shared method.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSharedMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSharedMethod")]
         public Entity LastSharedMethod { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
         /// Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resource")]
         public Entity Resource { get; set; }
     
     }

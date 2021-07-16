@@ -12,68 +12,59 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SharingDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SharingDetail>))]
     public partial class SharingDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SharingDetail"/> class.
-        /// </summary>
-        public SharingDetail()
-        {
-            this.ODataType = "microsoft.graph.sharingDetail";
-        }
 
         /// <summary>
         /// Gets or sets sharedBy.
         /// The user who shared the document.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharedBy")]
         public InsightIdentity SharedBy { get; set; }
     
         /// <summary>
         /// Gets or sets sharedDateTime.
         /// The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharedDateTime")]
         public DateTimeOffset? SharedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets sharingReference.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingReference", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharingReference")]
         public ResourceReference SharingReference { get; set; }
     
         /// <summary>
         /// Gets or sets sharingSubject.
         /// The subject with which the document was shared.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingSubject", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharingSubject")]
         public string SharingSubject { get; set; }
     
         /// <summary>
         /// Gets or sets sharingType.
         /// Determines the way the document was shared, can be by a 'Link', 'Attachment', 'Group', 'Site'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharingType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharingType")]
         public string SharingType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

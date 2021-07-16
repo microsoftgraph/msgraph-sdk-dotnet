@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsFindBRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken findText,
-            Newtonsoft.Json.Linq.JToken withinText,
-            Newtonsoft.Json.Linq.JToken startNum)
+            System.Text.Json.JsonDocument findText,
+            System.Text.Json.JsonDocument withinText,
+            System.Text.Json.JsonDocument startNum)
             : base(requestUrl, client)
         {
             this.SetParameter("findText", findText, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("findText"))
             {
-                request.RequestBody.FindText = this.GetParameter<Newtonsoft.Json.Linq.JToken>("findText");
+                request.RequestBody.FindText = this.GetParameter<System.Text.Json.JsonDocument>("findText");
             }
 
             if (this.HasParameter("withinText"))
             {
-                request.RequestBody.WithinText = this.GetParameter<Newtonsoft.Json.Linq.JToken>("withinText");
+                request.RequestBody.WithinText = this.GetParameter<System.Text.Json.JsonDocument>("withinText");
             }
 
             if (this.HasParameter("startNum"))
             {
-                request.RequestBody.StartNum = this.GetParameter<Newtonsoft.Json.Linq.JToken>("startNum");
+                request.RequestBody.StartNum = this.GetParameter<System.Text.Json.JsonDocument>("startNum");
             }
 
             return request;

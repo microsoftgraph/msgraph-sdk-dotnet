@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsImPowerRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken inumber,
-            Newtonsoft.Json.Linq.JToken number)
+            System.Text.Json.JsonDocument inumber,
+            System.Text.Json.JsonDocument number)
             : base(requestUrl, client)
         {
             this.SetParameter("inumber", inumber, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("inumber"))
             {
-                request.RequestBody.Inumber = this.GetParameter<Newtonsoft.Json.Linq.JToken>("inumber");
+                request.RequestBody.Inumber = this.GetParameter<System.Text.Json.JsonDocument>("inumber");
             }
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             return request;

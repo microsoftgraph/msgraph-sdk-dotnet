@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookChartPoint using POST.
         /// </summary>
         /// <param name="workbookChartPointToCreate">The WorkbookChartPoint to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartPoint.</returns>
-        System.Threading.Tasks.Task<WorkbookChartPoint> CreateAsync(WorkbookChartPoint workbookChartPointToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartPoint using POST.
+        System.Threading.Tasks.Task<WorkbookChartPoint> CreateAsync(WorkbookChartPoint workbookChartPointToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartPoint using POST and returns a <see cref="GraphResponse{WorkbookChartPoint}"/> object.
         /// </summary>
         /// <param name="workbookChartPointToCreate">The WorkbookChartPoint to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WorkbookChartPoint.</returns>
-        System.Threading.Tasks.Task<WorkbookChartPoint> CreateAsync(WorkbookChartPoint workbookChartPointToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookChartPoint.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> CreateResponseAsync(WorkbookChartPoint workbookChartPointToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WorkbookChartPoint.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified WorkbookChartPoint.
+        /// Deletes the specified WorkbookChartPoint and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookChartPoint.</returns>
-        System.Threading.Tasks.Task<WorkbookChartPoint> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WorkbookChartPoint.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookChartPoint.</returns>
-        System.Threading.Tasks.Task<WorkbookChartPoint> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookChartPoint> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified WorkbookChartPoint using PATCH.
+        /// Gets the specified WorkbookChartPoint and returns a <see cref="GraphResponse{WorkbookChartPoint}"/> object.
         /// </summary>
-        /// <param name="workbookChartPointToUpdate">The WorkbookChartPoint to update.</param>
-        /// <returns>The updated WorkbookChartPoint.</returns>
-        System.Threading.Tasks.Task<WorkbookChartPoint> UpdateAsync(WorkbookChartPoint workbookChartPointToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkbookChartPoint using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartPoint.</returns>
-        System.Threading.Tasks.Task<WorkbookChartPoint> UpdateAsync(WorkbookChartPoint workbookChartPointToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookChartPoint> UpdateAsync(WorkbookChartPoint workbookChartPointToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookChartPoint using PATCH and returns a <see cref="GraphResponse{WorkbookChartPoint}"/> object.
+        /// </summary>
+        /// <param name="workbookChartPointToUpdate">The WorkbookChartPoint to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> UpdateResponseAsync(WorkbookChartPoint workbookChartPointToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookChartPoint using PUT.
+        /// </summary>
+        /// <param name="workbookChartPointToUpdate">The WorkbookChartPoint object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkbookChartPoint> PutAsync(WorkbookChartPoint workbookChartPointToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookChartPoint using PUT and returns a <see cref="GraphResponse{WorkbookChartPoint}"/> object.
+        /// </summary>
+        /// <param name="workbookChartPointToUpdate">The WorkbookChartPoint object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkbookChartPoint}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> PutResponseAsync(WorkbookChartPoint workbookChartPointToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

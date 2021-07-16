@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         public WorkbookFunctionsWorkDay_IntlRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken startDate,
-            Newtonsoft.Json.Linq.JToken days,
-            Newtonsoft.Json.Linq.JToken weekend,
-            Newtonsoft.Json.Linq.JToken holidays)
+            System.Text.Json.JsonDocument startDate,
+            System.Text.Json.JsonDocument days,
+            System.Text.Json.JsonDocument weekend,
+            System.Text.Json.JsonDocument holidays)
             : base(requestUrl, client)
         {
             this.SetParameter("startDate", startDate, true);
@@ -54,22 +54,22 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("startDate"))
             {
-                request.RequestBody.StartDate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("startDate");
+                request.RequestBody.StartDate = this.GetParameter<System.Text.Json.JsonDocument>("startDate");
             }
 
             if (this.HasParameter("days"))
             {
-                request.RequestBody.Days = this.GetParameter<Newtonsoft.Json.Linq.JToken>("days");
+                request.RequestBody.Days = this.GetParameter<System.Text.Json.JsonDocument>("days");
             }
 
             if (this.HasParameter("weekend"))
             {
-                request.RequestBody.Weekend = this.GetParameter<Newtonsoft.Json.Linq.JToken>("weekend");
+                request.RequestBody.Weekend = this.GetParameter<System.Text.Json.JsonDocument>("weekend");
             }
 
             if (this.HasParameter("holidays"))
             {
-                request.RequestBody.Holidays = this.GetParameter<Newtonsoft.Json.Linq.JToken>("holidays");
+                request.RequestBody.Holidays = this.GetParameter<System.Text.Json.JsonDocument>("holidays");
             }
 
             return request;

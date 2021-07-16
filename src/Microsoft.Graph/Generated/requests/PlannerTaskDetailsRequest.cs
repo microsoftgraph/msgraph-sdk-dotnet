@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified PlannerTaskDetails using POST.
         /// </summary>
         /// <param name="plannerTaskDetailsToCreate">The PlannerTaskDetails to create.</param>
-        /// <returns>The created PlannerTaskDetails.</returns>
-        public System.Threading.Tasks.Task<PlannerTaskDetails> CreateAsync(PlannerTaskDetails plannerTaskDetailsToCreate)
-        {
-            return this.CreateAsync(plannerTaskDetailsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PlannerTaskDetails using POST.
-        /// </summary>
-        /// <param name="plannerTaskDetailsToCreate">The PlannerTaskDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerTaskDetails.</returns>
-        public async System.Threading.Tasks.Task<PlannerTaskDetails> CreateAsync(PlannerTaskDetails plannerTaskDetailsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PlannerTaskDetails> CreateAsync(PlannerTaskDetails plannerTaskDetailsToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PlannerTaskDetails>(plannerTaskDetailsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified PlannerTaskDetails.
+        /// Creates the specified PlannerTaskDetails using POST and returns a <see cref="GraphResponse{PlannerTaskDetails}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="plannerTaskDetailsToCreate">The PlannerTaskDetails to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerTaskDetails}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerTaskDetails>> CreateResponseAsync(PlannerTaskDetails plannerTaskDetailsToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PlannerTaskDetails>(plannerTaskDetailsToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PlannerTaskDetails>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified PlannerTaskDetails.
+        /// Deletes the specified PlannerTaskDetails and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PlannerTaskDetails.</returns>
-        public System.Threading.Tasks.Task<PlannerTaskDetails> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PlannerTaskDetails.</returns>
-        public async System.Threading.Tasks.Task<PlannerTaskDetails> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PlannerTaskDetails> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PlannerTaskDetails>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified PlannerTaskDetails using PATCH.
+        /// Gets the specified PlannerTaskDetails and returns a <see cref="GraphResponse{PlannerTaskDetails}"/> object.
         /// </summary>
-        /// <param name="plannerTaskDetailsToUpdate">The PlannerTaskDetails to update.</param>
-        /// <returns>The updated PlannerTaskDetails.</returns>
-        public System.Threading.Tasks.Task<PlannerTaskDetails> UpdateAsync(PlannerTaskDetails plannerTaskDetailsToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerTaskDetails}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerTaskDetails>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(plannerTaskDetailsToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PlannerTaskDetails>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PlannerTaskDetails.</returns>
-        public async System.Threading.Tasks.Task<PlannerTaskDetails> UpdateAsync(PlannerTaskDetails plannerTaskDetailsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PlannerTaskDetails> UpdateAsync(PlannerTaskDetails plannerTaskDetailsToUpdate, CancellationToken cancellationToken = default)
         {
-			if (plannerTaskDetailsToUpdate.AdditionalData != null)
-			{
-				if (plannerTaskDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					plannerTaskDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerTaskDetailsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (plannerTaskDetailsToUpdate.AdditionalData != null)
-            {
-                if (plannerTaskDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    plannerTaskDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerTaskDetailsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PlannerTaskDetails>(plannerTaskDetailsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerTaskDetails using PATCH and returns a <see cref="GraphResponse{PlannerTaskDetails}"/> object.
+        /// </summary>
+        /// <param name="plannerTaskDetailsToUpdate">The PlannerTaskDetails to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PlannerTaskDetails}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerTaskDetails>> UpdateResponseAsync(PlannerTaskDetails plannerTaskDetailsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<PlannerTaskDetails>(plannerTaskDetailsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerTaskDetails using PUT.
+        /// </summary>
+        /// <param name="plannerTaskDetailsToUpdate">The PlannerTaskDetails object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PlannerTaskDetails> PutAsync(PlannerTaskDetails plannerTaskDetailsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PlannerTaskDetails>(plannerTaskDetailsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerTaskDetails using PUT and returns a <see cref="GraphResponse{PlannerTaskDetails}"/> object.
+        /// </summary>
+        /// <param name="plannerTaskDetailsToUpdate">The PlannerTaskDetails object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PlannerTaskDetails}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerTaskDetails>> PutResponseAsync(PlannerTaskDetails plannerTaskDetailsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PlannerTaskDetails>(plannerTaskDetailsToUpdate, cancellationToken);
         }
 
         /// <summary>

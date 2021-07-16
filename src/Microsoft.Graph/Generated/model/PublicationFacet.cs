@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PublicationFacet.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PublicationFacet>))]
     public partial class PublicationFacet
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PublicationFacet"/> class.
-        /// </summary>
-        public PublicationFacet()
-        {
-            this.ODataType = "microsoft.graph.publicationFacet";
-        }
 
         /// <summary>
         /// Gets or sets level.
         /// The state of publication for this document. Either published or checkout. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "level", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("level")]
         public string Level { get; set; }
     
         /// <summary>
         /// Gets or sets versionId.
         /// The unique identifier for the version that is visible to the current caller. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("versionId")]
         public string VersionId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

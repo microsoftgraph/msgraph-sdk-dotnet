@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsMroundRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken multiple)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument multiple)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("multiple"))
             {
-                request.RequestBody.Multiple = this.GetParameter<Newtonsoft.Json.Linq.JToken>("multiple");
+                request.RequestBody.Multiple = this.GetParameter<System.Text.Json.JsonDocument>("multiple");
             }
 
             return request;

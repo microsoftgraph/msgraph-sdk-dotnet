@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Windows81GeneralConfiguration using POST.
         /// </summary>
         /// <param name="windows81GeneralConfigurationToCreate">The Windows81GeneralConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows81GeneralConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows81GeneralConfiguration> CreateAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToCreate);        /// <summary>
-        /// Creates the specified Windows81GeneralConfiguration using POST.
+        System.Threading.Tasks.Task<Windows81GeneralConfiguration> CreateAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Windows81GeneralConfiguration using POST and returns a <see cref="GraphResponse{Windows81GeneralConfiguration}"/> object.
         /// </summary>
         /// <param name="windows81GeneralConfigurationToCreate">The Windows81GeneralConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Windows81GeneralConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows81GeneralConfiguration> CreateAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Windows81GeneralConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Windows81GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows81GeneralConfiguration>> CreateResponseAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows81GeneralConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Windows81GeneralConfiguration.
+        /// Deletes the specified Windows81GeneralConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Windows81GeneralConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows81GeneralConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows81GeneralConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows81GeneralConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows81GeneralConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Windows81GeneralConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Windows81GeneralConfiguration using PATCH.
+        /// Gets the specified Windows81GeneralConfiguration and returns a <see cref="GraphResponse{Windows81GeneralConfiguration}"/> object.
         /// </summary>
-        /// <param name="windows81GeneralConfigurationToUpdate">The Windows81GeneralConfiguration to update.</param>
-        /// <returns>The updated Windows81GeneralConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows81GeneralConfiguration> UpdateAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows81GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows81GeneralConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows81GeneralConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows81GeneralConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows81GeneralConfiguration> UpdateAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Windows81GeneralConfiguration> UpdateAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Windows81GeneralConfiguration using PATCH and returns a <see cref="GraphResponse{Windows81GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows81GeneralConfigurationToUpdate">The Windows81GeneralConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows81GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows81GeneralConfiguration>> UpdateResponseAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Windows81GeneralConfiguration using PUT.
+        /// </summary>
+        /// <param name="windows81GeneralConfigurationToUpdate">The Windows81GeneralConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Windows81GeneralConfiguration> PutAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Windows81GeneralConfiguration using PUT and returns a <see cref="GraphResponse{Windows81GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows81GeneralConfigurationToUpdate">The Windows81GeneralConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Windows81GeneralConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows81GeneralConfiguration>> PutResponseAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

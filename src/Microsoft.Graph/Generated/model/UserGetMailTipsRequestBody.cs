@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserGetMailTipsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserGetMailTipsRequestBody
     {
     
         /// <summary>
         /// Gets or sets EmailAddresses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "EmailAddresses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("EmailAddresses")]
         public IEnumerable<string> EmailAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets MailTipsOptions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "MailTipsOptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("MailTipsOptions")]
         public MailTipsType? MailTipsOptions { get; set; }
     
     }

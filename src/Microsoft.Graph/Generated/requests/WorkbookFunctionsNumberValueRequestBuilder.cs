@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsNumberValueRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken text,
-            Newtonsoft.Json.Linq.JToken decimalSeparator,
-            Newtonsoft.Json.Linq.JToken groupSeparator)
+            System.Text.Json.JsonDocument text,
+            System.Text.Json.JsonDocument decimalSeparator,
+            System.Text.Json.JsonDocument groupSeparator)
             : base(requestUrl, client)
         {
             this.SetParameter("text", text, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("text"))
             {
-                request.RequestBody.Text = this.GetParameter<Newtonsoft.Json.Linq.JToken>("text");
+                request.RequestBody.Text = this.GetParameter<System.Text.Json.JsonDocument>("text");
             }
 
             if (this.HasParameter("decimalSeparator"))
             {
-                request.RequestBody.DecimalSeparator = this.GetParameter<Newtonsoft.Json.Linq.JToken>("decimalSeparator");
+                request.RequestBody.DecimalSeparator = this.GetParameter<System.Text.Json.JsonDocument>("decimalSeparator");
             }
 
             if (this.HasParameter("groupSeparator"))
             {
-                request.RequestBody.GroupSeparator = this.GetParameter<Newtonsoft.Json.Linq.JToken>("groupSeparator");
+                request.RequestBody.GroupSeparator = this.GetParameter<System.Text.Json.JsonDocument>("groupSeparator");
             }
 
             return request;

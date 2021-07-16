@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsZ_TestRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsZ_TestRequestBody
     {
     
         /// <summary>
         /// Gets or sets Array.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "array", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Array { get; set; }
+        [JsonPropertyName("array")]
+        public System.Text.Json.JsonDocument Array { get; set; }
     
         /// <summary>
         /// Gets or sets X.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "x", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken X { get; set; }
+        [JsonPropertyName("x")]
+        public System.Text.Json.JsonDocument X { get; set; }
     
         /// <summary>
         /// Gets or sets Sigma.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sigma", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Sigma { get; set; }
+        [JsonPropertyName("sigma")]
+        public System.Text.Json.JsonDocument Sigma { get; set; }
     
     }
 }

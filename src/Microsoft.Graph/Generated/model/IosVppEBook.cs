@@ -12,78 +12,76 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Ios Vpp EBook.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosVppEBook : ManagedEBook
     {
     
-		///<summary>
-		/// The IosVppEBook constructor
-		///</summary>
+        ///<summary>
+        /// The IosVppEBook constructor
+        ///</summary>
         public IosVppEBook()
         {
             this.ODataType = "microsoft.graph.iosVppEBook";
         }
-	
+
         /// <summary>
         /// Gets or sets apple id.
         /// The Apple ID associated with Vpp token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appleId")]
         public string AppleId { get; set; }
     
         /// <summary>
         /// Gets or sets genres.
         /// Genres.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "genres", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("genres")]
         public IEnumerable<string> Genres { get; set; }
     
         /// <summary>
         /// Gets or sets language.
         /// Language.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "language", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("language")]
         public string Language { get; set; }
     
         /// <summary>
         /// Gets or sets seller.
         /// Seller.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "seller", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("seller")]
         public string Seller { get; set; }
     
         /// <summary>
         /// Gets or sets total license count.
         /// Total license count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicenseCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalLicenseCount")]
         public Int32? TotalLicenseCount { get; set; }
     
         /// <summary>
         /// Gets or sets used license count.
         /// Used license count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedLicenseCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usedLicenseCount")]
         public Int32? UsedLicenseCount { get; set; }
     
         /// <summary>
         /// Gets or sets vpp organization name.
         /// The Vpp token's organization name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppOrganizationName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vppOrganizationName")]
         public string VppOrganizationName { get; set; }
     
         /// <summary>
         /// Gets or sets vpp token id.
         /// The Vpp token ID.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppTokenId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vppTokenId")]
         public Guid? VppTokenId { get; set; }
     
     }

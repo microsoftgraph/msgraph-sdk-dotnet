@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Agreement using POST.
         /// </summary>
         /// <param name="agreementToCreate">The Agreement to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Agreement.</returns>
-        System.Threading.Tasks.Task<Agreement> CreateAsync(Agreement agreementToCreate);        /// <summary>
-        /// Creates the specified Agreement using POST.
+        System.Threading.Tasks.Task<Agreement> CreateAsync(Agreement agreementToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Agreement using POST and returns a <see cref="GraphResponse{Agreement}"/> object.
         /// </summary>
         /// <param name="agreementToCreate">The Agreement to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Agreement.</returns>
-        System.Threading.Tasks.Task<Agreement> CreateAsync(Agreement agreementToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Agreement.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Agreement}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Agreement>> CreateResponseAsync(Agreement agreementToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Agreement.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Agreement.
+        /// Deletes the specified Agreement and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Agreement.</returns>
-        System.Threading.Tasks.Task<Agreement> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Agreement.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Agreement.</returns>
-        System.Threading.Tasks.Task<Agreement> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Agreement> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Agreement using PATCH.
+        /// Gets the specified Agreement and returns a <see cref="GraphResponse{Agreement}"/> object.
         /// </summary>
-        /// <param name="agreementToUpdate">The Agreement to update.</param>
-        /// <returns>The updated Agreement.</returns>
-        System.Threading.Tasks.Task<Agreement> UpdateAsync(Agreement agreementToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Agreement}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Agreement>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Agreement using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Agreement.</returns>
-        System.Threading.Tasks.Task<Agreement> UpdateAsync(Agreement agreementToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Agreement> UpdateAsync(Agreement agreementToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Agreement using PATCH and returns a <see cref="GraphResponse{Agreement}"/> object.
+        /// </summary>
+        /// <param name="agreementToUpdate">The Agreement to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Agreement}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Agreement>> UpdateResponseAsync(Agreement agreementToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Agreement using PUT.
+        /// </summary>
+        /// <param name="agreementToUpdate">The Agreement object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Agreement> PutAsync(Agreement agreementToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Agreement using PUT and returns a <see cref="GraphResponse{Agreement}"/> object.
+        /// </summary>
+        /// <param name="agreementToUpdate">The Agreement object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Agreement}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Agreement>> PutResponseAsync(Agreement agreementToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

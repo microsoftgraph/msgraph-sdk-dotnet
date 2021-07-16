@@ -12,28 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Directory Object.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DirectoryObject>))]
     public partial class DirectoryObject : Entity
     {
     
-		///<summary>
-		/// The DirectoryObject constructor
-		///</summary>
-        public DirectoryObject()
-        {
-            this.ODataType = "microsoft.graph.directoryObject";
-        }
-	
         /// <summary>
         /// Gets or sets deleted date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deletedDateTime")]
         public DateTimeOffset? DeletedDateTime { get; set; }
     
     }

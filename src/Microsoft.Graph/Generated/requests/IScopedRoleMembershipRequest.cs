@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ScopedRoleMembership using POST.
         /// </summary>
         /// <param name="scopedRoleMembershipToCreate">The ScopedRoleMembership to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ScopedRoleMembership.</returns>
-        System.Threading.Tasks.Task<ScopedRoleMembership> CreateAsync(ScopedRoleMembership scopedRoleMembershipToCreate);        /// <summary>
-        /// Creates the specified ScopedRoleMembership using POST.
+        System.Threading.Tasks.Task<ScopedRoleMembership> CreateAsync(ScopedRoleMembership scopedRoleMembershipToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ScopedRoleMembership using POST and returns a <see cref="GraphResponse{ScopedRoleMembership}"/> object.
         /// </summary>
         /// <param name="scopedRoleMembershipToCreate">The ScopedRoleMembership to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ScopedRoleMembership.</returns>
-        System.Threading.Tasks.Task<ScopedRoleMembership> CreateAsync(ScopedRoleMembership scopedRoleMembershipToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ScopedRoleMembership.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> CreateResponseAsync(ScopedRoleMembership scopedRoleMembershipToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ScopedRoleMembership.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ScopedRoleMembership.
+        /// Deletes the specified ScopedRoleMembership and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ScopedRoleMembership.</returns>
-        System.Threading.Tasks.Task<ScopedRoleMembership> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ScopedRoleMembership.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ScopedRoleMembership.</returns>
-        System.Threading.Tasks.Task<ScopedRoleMembership> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ScopedRoleMembership> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ScopedRoleMembership using PATCH.
+        /// Gets the specified ScopedRoleMembership and returns a <see cref="GraphResponse{ScopedRoleMembership}"/> object.
         /// </summary>
-        /// <param name="scopedRoleMembershipToUpdate">The ScopedRoleMembership to update.</param>
-        /// <returns>The updated ScopedRoleMembership.</returns>
-        System.Threading.Tasks.Task<ScopedRoleMembership> UpdateAsync(ScopedRoleMembership scopedRoleMembershipToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ScopedRoleMembership using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ScopedRoleMembership.</returns>
-        System.Threading.Tasks.Task<ScopedRoleMembership> UpdateAsync(ScopedRoleMembership scopedRoleMembershipToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ScopedRoleMembership> UpdateAsync(ScopedRoleMembership scopedRoleMembershipToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ScopedRoleMembership using PATCH and returns a <see cref="GraphResponse{ScopedRoleMembership}"/> object.
+        /// </summary>
+        /// <param name="scopedRoleMembershipToUpdate">The ScopedRoleMembership to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> UpdateResponseAsync(ScopedRoleMembership scopedRoleMembershipToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ScopedRoleMembership using PUT.
+        /// </summary>
+        /// <param name="scopedRoleMembershipToUpdate">The ScopedRoleMembership object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ScopedRoleMembership> PutAsync(ScopedRoleMembership scopedRoleMembershipToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ScopedRoleMembership using PUT and returns a <see cref="GraphResponse{ScopedRoleMembership}"/> object.
+        /// </summary>
+        /// <param name="scopedRoleMembershipToUpdate">The ScopedRoleMembership object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ScopedRoleMembership}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> PutResponseAsync(ScopedRoleMembership scopedRoleMembershipToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

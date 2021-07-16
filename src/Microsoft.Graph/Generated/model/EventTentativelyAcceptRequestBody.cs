@@ -9,35 +9,33 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EventTentativelyAcceptRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EventTentativelyAcceptRequestBody
     {
     
         /// <summary>
         /// Gets or sets Comment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Comment", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("Comment")]
         public string Comment { get; set; }
     
         /// <summary>
         /// Gets or sets SendResponse.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "SendResponse", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("SendResponse")]
         public bool? SendResponse { get; set; }
     
         /// <summary>
         /// Gets or sets ProposedNewTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ProposedNewTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ProposedNewTime")]
         public TimeSlot ProposedNewTime { get; set; }
     
     }

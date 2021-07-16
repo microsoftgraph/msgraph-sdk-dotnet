@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookRangeView using POST.
         /// </summary>
         /// <param name="workbookRangeViewToCreate">The WorkbookRangeView to create.</param>
-        /// <returns>The created WorkbookRangeView.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeView> CreateAsync(WorkbookRangeView workbookRangeViewToCreate)
-        {
-            return this.CreateAsync(workbookRangeViewToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookRangeView using POST.
-        /// </summary>
-        /// <param name="workbookRangeViewToCreate">The WorkbookRangeView to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeView.</returns>
-        public async System.Threading.Tasks.Task<WorkbookRangeView> CreateAsync(WorkbookRangeView workbookRangeViewToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookRangeView> CreateAsync(WorkbookRangeView workbookRangeViewToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WorkbookRangeView>(workbookRangeViewToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WorkbookRangeView.
+        /// Creates the specified WorkbookRangeView using POST and returns a <see cref="GraphResponse{WorkbookRangeView}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="workbookRangeViewToCreate">The WorkbookRangeView to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> CreateResponseAsync(WorkbookRangeView workbookRangeViewToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeView>(workbookRangeViewToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WorkbookRangeView>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WorkbookRangeView.
+        /// Deletes the specified WorkbookRangeView and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookRangeView.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeView> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookRangeView.</returns>
-        public async System.Threading.Tasks.Task<WorkbookRangeView> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookRangeView> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WorkbookRangeView>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WorkbookRangeView using PATCH.
+        /// Gets the specified WorkbookRangeView and returns a <see cref="GraphResponse{WorkbookRangeView}"/> object.
         /// </summary>
-        /// <param name="workbookRangeViewToUpdate">The WorkbookRangeView to update.</param>
-        /// <returns>The updated WorkbookRangeView.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeView> UpdateAsync(WorkbookRangeView workbookRangeViewToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(workbookRangeViewToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeView>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookRangeView.</returns>
-        public async System.Threading.Tasks.Task<WorkbookRangeView> UpdateAsync(WorkbookRangeView workbookRangeViewToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookRangeView> UpdateAsync(WorkbookRangeView workbookRangeViewToUpdate, CancellationToken cancellationToken = default)
         {
-			if (workbookRangeViewToUpdate.AdditionalData != null)
-			{
-				if (workbookRangeViewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookRangeViewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookRangeViewToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookRangeViewToUpdate.AdditionalData != null)
-            {
-                if (workbookRangeViewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookRangeViewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookRangeViewToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WorkbookRangeView>(workbookRangeViewToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookRangeView using PATCH and returns a <see cref="GraphResponse{WorkbookRangeView}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeViewToUpdate">The WorkbookRangeView to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> UpdateResponseAsync(WorkbookRangeView workbookRangeViewToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeView>(workbookRangeViewToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookRangeView using PUT.
+        /// </summary>
+        /// <param name="workbookRangeViewToUpdate">The WorkbookRangeView object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WorkbookRangeView> PutAsync(WorkbookRangeView workbookRangeViewToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WorkbookRangeView>(workbookRangeViewToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookRangeView using PUT and returns a <see cref="GraphResponse{WorkbookRangeView}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeViewToUpdate">The WorkbookRangeView object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WorkbookRangeView}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> PutResponseAsync(WorkbookRangeView workbookRangeViewToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeView>(workbookRangeViewToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WorkbookRangeView workbookRangeViewToInitialize)
         {
 
-            if (workbookRangeViewToInitialize != null && workbookRangeViewToInitialize.AdditionalData != null)
+            if (workbookRangeViewToInitialize != null)
             {
-
                 if (workbookRangeViewToInitialize.Rows != null && workbookRangeViewToInitialize.Rows.CurrentPage != null)
                 {
+                    workbookRangeViewToInitialize.Rows.InitializeNextPageRequest(this.Client, workbookRangeViewToInitialize.RowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookRangeViewToInitialize.Rows.AdditionalData = workbookRangeViewToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookRangeViewToInitialize.AdditionalData.TryGetValue("rows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookRangeViewToInitialize.Rows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

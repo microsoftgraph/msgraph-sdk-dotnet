@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementNotificationMessageTemplatesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified NotificationMessageTemplate to the collection via POST.
-        /// </summary>
-        /// <param name="notificationMessageTemplate">The NotificationMessageTemplate to add.</param>
-        /// <returns>The created NotificationMessageTemplate.</returns>
-        System.Threading.Tasks.Task<NotificationMessageTemplate> AddAsync(NotificationMessageTemplate notificationMessageTemplate);
-
         /// <summary>
         /// Adds the specified NotificationMessageTemplate to the collection via POST.
         /// </summary>
         /// <param name="notificationMessageTemplate">The NotificationMessageTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NotificationMessageTemplate.</returns>
-        System.Threading.Tasks.Task<NotificationMessageTemplate> AddAsync(NotificationMessageTemplate notificationMessageTemplate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<NotificationMessageTemplate> AddAsync(NotificationMessageTemplate notificationMessageTemplate, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified NotificationMessageTemplate to the collection via POST and returns a <see cref="GraphResponse{NotificationMessageTemplate}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementNotificationMessageTemplatesCollectionPage> GetAsync();
+        /// <param name="notificationMessageTemplate">The NotificationMessageTemplate to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NotificationMessageTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplate>> AddResponseAsync(NotificationMessageTemplate notificationMessageTemplate, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementNotificationMessageTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementNotificationMessageTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementNotificationMessageTemplatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementNotificationMessageTemplatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementNotificationMessageTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

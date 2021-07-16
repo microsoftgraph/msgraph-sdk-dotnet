@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CloudAppSecuritySessionControl.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<CloudAppSecuritySessionControl>))]
     public partial class CloudAppSecuritySessionControl : ConditionalAccessSessionControl
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets cloudAppSecurityType.
         /// Possible values are: mcasConfigured, monitorOnly, blockDownloads. Learn more about these values here: https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad#step-1-create-an-azure-ad-conditional-access-test-policy-
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudAppSecurityType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudAppSecurityType")]
         public CloudAppSecuritySessionControlType? CloudAppSecurityType { get; set; }
     
     }

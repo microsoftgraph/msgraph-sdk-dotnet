@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceTeamsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Team to the collection via POST.
-        /// </summary>
-        /// <param name="team">The Team to add.</param>
-        /// <returns>The created Team.</returns>
-        System.Threading.Tasks.Task<Team> AddAsync(Team team);
-
         /// <summary>
         /// Adds the specified Team to the collection via POST.
         /// </summary>
         /// <param name="team">The Team to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Team.</returns>
-        System.Threading.Tasks.Task<Team> AddAsync(Team team, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Team> AddAsync(Team team, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Team to the collection via POST and returns a <see cref="GraphResponse{Team}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceTeamsCollectionPage> GetAsync();
+        /// <param name="team">The Team to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Team>> AddResponseAsync(Team team, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceTeamsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IGraphServiceTeamsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceTeamsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceTeamsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceTeamsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

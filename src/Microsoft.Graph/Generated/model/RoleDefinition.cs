@@ -12,58 +12,55 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Role Definition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<RoleDefinition>))]
     public partial class RoleDefinition : Entity
     {
     
-		///<summary>
-		/// The RoleDefinition constructor
-		///</summary>
-        public RoleDefinition()
-        {
-            this.ODataType = "microsoft.graph.roleDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Description of the Role definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Display Name of the Role definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is built in.
         /// Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltIn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isBuiltIn")]
         public bool? IsBuiltIn { get; set; }
     
         /// <summary>
         /// Gets or sets role permissions.
         /// List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rolePermissions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rolePermissions")]
         public IEnumerable<RolePermission> RolePermissions { get; set; }
     
         /// <summary>
         /// Gets or sets role assignments.
         /// List of Role assignments for this role definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleAssignments")]
         public IRoleDefinitionRoleAssignmentsCollectionPage RoleAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleAssignments@odata.nextLink")]
+        public string RoleAssignmentsNextLink { get; set; }
     
     }
 }

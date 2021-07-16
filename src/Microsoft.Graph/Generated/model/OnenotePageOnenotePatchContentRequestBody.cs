@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type OnenotePageOnenotePatchContentRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OnenotePageOnenotePatchContentRequestBody
     {
     
         /// <summary>
         /// Gets or sets Commands.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "commands", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("commands")]
         public IEnumerable<OnenotePatchContentCommand> Commands { get; set; }
     
     }

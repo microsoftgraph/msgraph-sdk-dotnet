@@ -8,7 +8,7 @@ namespace Microsoft.Graph
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Represents assignments of a <see cref="PlannerTask"/>.
@@ -18,14 +18,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the ids of the users assigned to the task. 
         /// </summary>
+        [JsonIgnore]
         public IEnumerable<string> Assignees
         {
             get
             {
-                if (this.AdditionalData is null)
-                {
-                    this.AdditionalData = new Dictionary<string, object>();
-                }
+                EnsureDeserializedAssignments();
                 return this.AdditionalData.Where(kvp => kvp.Value is PlannerAssignment).Select(kvp => kvp.Key);
             }
         }
@@ -33,6 +31,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the number of assignees on the task.
         /// </summary>
+        [JsonIgnore]
         public int Count => this.Assignees.Count();
 
         /// <summary>
@@ -40,6 +39,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userId">The id of the user.</param>
         /// <returns>The assignment information for the given assignee.</returns>
+        [JsonIgnore]
         public PlannerAssignment this[string userId]
         {
             get
@@ -49,10 +49,7 @@ namespace Microsoft.Graph
                     throw new ArgumentNullException(nameof(userId));
                 }
 
-                if (this.AdditionalData is null)
-                {
-                    this.AdditionalData = new Dictionary<string, object>();
-                }
+                EnsureDeserializedAssignments();
 
                 if (!this.AdditionalData.TryGetValue(userId, out object assignmentObject))
                 {
@@ -108,10 +105,7 @@ namespace Microsoft.Graph
         /// <returns>Enumeration of user id, assignment information pairs.</returns>
         public IEnumerator<KeyValuePair<string, PlannerAssignment>> GetEnumerator()
         {
-            if (this.AdditionalData is null)
-            {
-                this.AdditionalData = new Dictionary<string, object>();
-            }
+            EnsureDeserializedAssignments();
 
             return this.AdditionalData
                 .Where(kvp => kvp.Value is PlannerAssignment)
@@ -127,14 +121,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Ensures the Assignment information is deserialized into <see cref="PlannerAssignment"/> objects.
         /// </summary>
-        /// <param name="context">Serialization context. This parameter is ignored.</param>
-        [OnDeserialized]
-        internal void DeserializeAssignments(StreamingContext context)
+        internal void EnsureDeserializedAssignments()
         {
-            if (this.AdditionalData is null)
-            {
-                this.AdditionalData = new Dictionary<string, object>();
-            }
+            this.AdditionalData ??= new Dictionary<string, object>();
 
             this.AdditionalData.ConvertComplexTypeProperties<PlannerAssignment>(PlannerAssignment.ODataTypeName);
         }

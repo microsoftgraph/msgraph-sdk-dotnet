@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified OutlookUser using POST.
         /// </summary>
         /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookUser.</returns>
-        System.Threading.Tasks.Task<OutlookUser> CreateAsync(OutlookUser outlookUserToCreate);        /// <summary>
-        /// Creates the specified OutlookUser using POST.
+        System.Threading.Tasks.Task<OutlookUser> CreateAsync(OutlookUser outlookUserToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified OutlookUser using POST and returns a <see cref="GraphResponse{OutlookUser}"/> object.
         /// </summary>
         /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created OutlookUser.</returns>
-        System.Threading.Tasks.Task<OutlookUser> CreateAsync(OutlookUser outlookUserToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified OutlookUser.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookUser>> CreateResponseAsync(OutlookUser outlookUserToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified OutlookUser.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified OutlookUser.
+        /// Deletes the specified OutlookUser and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OutlookUser.</returns>
-        System.Threading.Tasks.Task<OutlookUser> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified OutlookUser.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OutlookUser.</returns>
-        System.Threading.Tasks.Task<OutlookUser> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OutlookUser> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified OutlookUser using PATCH.
+        /// Gets the specified OutlookUser and returns a <see cref="GraphResponse{OutlookUser}"/> object.
         /// </summary>
-        /// <param name="outlookUserToUpdate">The OutlookUser to update.</param>
-        /// <returns>The updated OutlookUser.</returns>
-        System.Threading.Tasks.Task<OutlookUser> UpdateAsync(OutlookUser outlookUserToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookUser>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OutlookUser using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OutlookUser.</returns>
-        System.Threading.Tasks.Task<OutlookUser> UpdateAsync(OutlookUser outlookUserToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OutlookUser> UpdateAsync(OutlookUser outlookUserToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified OutlookUser using PATCH and returns a <see cref="GraphResponse{OutlookUser}"/> object.
+        /// </summary>
+        /// <param name="outlookUserToUpdate">The OutlookUser to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookUser>> UpdateResponseAsync(OutlookUser outlookUserToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified OutlookUser using PUT.
+        /// </summary>
+        /// <param name="outlookUserToUpdate">The OutlookUser object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<OutlookUser> PutAsync(OutlookUser outlookUserToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified OutlookUser using PUT and returns a <see cref="GraphResponse{OutlookUser}"/> object.
+        /// </summary>
+        /// <param name="outlookUserToUpdate">The OutlookUser object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{OutlookUser}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookUser>> PutResponseAsync(OutlookUser outlookUserToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

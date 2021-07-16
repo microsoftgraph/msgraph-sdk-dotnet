@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified EnrollmentTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="enrollmentTroubleshootingEventToCreate">The EnrollmentTroubleshootingEvent to create.</param>
-        /// <returns>The created EnrollmentTroubleshootingEvent.</returns>
-        public System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> CreateAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToCreate)
-        {
-            return this.CreateAsync(enrollmentTroubleshootingEventToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EnrollmentTroubleshootingEvent using POST.
-        /// </summary>
-        /// <param name="enrollmentTroubleshootingEventToCreate">The EnrollmentTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EnrollmentTroubleshootingEvent.</returns>
-        public async System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> CreateAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> CreateAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<EnrollmentTroubleshootingEvent>(enrollmentTroubleshootingEventToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified EnrollmentTroubleshootingEvent.
+        /// Creates the specified EnrollmentTroubleshootingEvent using POST and returns a <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="enrollmentTroubleshootingEventToCreate">The EnrollmentTroubleshootingEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentTroubleshootingEvent>> CreateResponseAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<EnrollmentTroubleshootingEvent>(enrollmentTroubleshootingEventToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<EnrollmentTroubleshootingEvent>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified EnrollmentTroubleshootingEvent.
+        /// Deletes the specified EnrollmentTroubleshootingEvent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EnrollmentTroubleshootingEvent.</returns>
-        public System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EnrollmentTroubleshootingEvent.</returns>
-        public async System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<EnrollmentTroubleshootingEvent>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified EnrollmentTroubleshootingEvent using PATCH.
+        /// Gets the specified EnrollmentTroubleshootingEvent and returns a <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object.
         /// </summary>
-        /// <param name="enrollmentTroubleshootingEventToUpdate">The EnrollmentTroubleshootingEvent to update.</param>
-        /// <returns>The updated EnrollmentTroubleshootingEvent.</returns>
-        public System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> UpdateAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentTroubleshootingEvent>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(enrollmentTroubleshootingEventToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<EnrollmentTroubleshootingEvent>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EnrollmentTroubleshootingEvent.</returns>
-        public async System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> UpdateAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> UpdateAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToUpdate, CancellationToken cancellationToken = default)
         {
-			if (enrollmentTroubleshootingEventToUpdate.AdditionalData != null)
-			{
-				if (enrollmentTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					enrollmentTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, enrollmentTroubleshootingEventToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (enrollmentTroubleshootingEventToUpdate.AdditionalData != null)
-            {
-                if (enrollmentTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    enrollmentTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, enrollmentTroubleshootingEventToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<EnrollmentTroubleshootingEvent>(enrollmentTroubleshootingEventToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EnrollmentTroubleshootingEvent using PATCH and returns a <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="enrollmentTroubleshootingEventToUpdate">The EnrollmentTroubleshootingEvent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentTroubleshootingEvent>> UpdateResponseAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<EnrollmentTroubleshootingEvent>(enrollmentTroubleshootingEventToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified EnrollmentTroubleshootingEvent using PUT.
+        /// </summary>
+        /// <param name="enrollmentTroubleshootingEventToUpdate">The EnrollmentTroubleshootingEvent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> PutAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<EnrollmentTroubleshootingEvent>(enrollmentTroubleshootingEventToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EnrollmentTroubleshootingEvent using PUT and returns a <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="enrollmentTroubleshootingEventToUpdate">The EnrollmentTroubleshootingEvent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentTroubleshootingEvent>> PutResponseAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<EnrollmentTroubleshootingEvent>(enrollmentTroubleshootingEventToUpdate, cancellationToken);
         }
 
         /// <summary>

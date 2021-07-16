@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PermissionGrantRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PermissionGrantRequestBody
     {
     
         /// <summary>
         /// Gets or sets Roles.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roles")]
         public IEnumerable<string> Roles { get; set; }
     
         /// <summary>
         /// Gets or sets Recipients.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipients", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recipients")]
         public IEnumerable<DriveRecipient> Recipients { get; set; }
     
     }

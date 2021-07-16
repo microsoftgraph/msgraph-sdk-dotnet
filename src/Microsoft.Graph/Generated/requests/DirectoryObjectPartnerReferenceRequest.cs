@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DirectoryObjectPartnerReference using POST.
         /// </summary>
         /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
-        /// <returns>The created DirectoryObjectPartnerReference.</returns>
-        public System.Threading.Tasks.Task<DirectoryObjectPartnerReference> CreateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate)
-        {
-            return this.CreateAsync(directoryObjectPartnerReferenceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DirectoryObjectPartnerReference using POST.
-        /// </summary>
-        /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryObjectPartnerReference.</returns>
-        public async System.Threading.Tasks.Task<DirectoryObjectPartnerReference> CreateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DirectoryObjectPartnerReference> CreateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DirectoryObjectPartnerReference>(directoryObjectPartnerReferenceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DirectoryObjectPartnerReference.
+        /// Creates the specified DirectoryObjectPartnerReference using POST and returns a <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryObjectPartnerReference>> CreateResponseAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DirectoryObjectPartnerReference>(directoryObjectPartnerReferenceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DirectoryObjectPartnerReference>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DirectoryObjectPartnerReference.
+        /// Deletes the specified DirectoryObjectPartnerReference and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DirectoryObjectPartnerReference.</returns>
-        public System.Threading.Tasks.Task<DirectoryObjectPartnerReference> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DirectoryObjectPartnerReference.</returns>
-        public async System.Threading.Tasks.Task<DirectoryObjectPartnerReference> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DirectoryObjectPartnerReference> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DirectoryObjectPartnerReference>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DirectoryObjectPartnerReference using PATCH.
+        /// Gets the specified DirectoryObjectPartnerReference and returns a <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object.
         /// </summary>
-        /// <param name="directoryObjectPartnerReferenceToUpdate">The DirectoryObjectPartnerReference to update.</param>
-        /// <returns>The updated DirectoryObjectPartnerReference.</returns>
-        public System.Threading.Tasks.Task<DirectoryObjectPartnerReference> UpdateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryObjectPartnerReference>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(directoryObjectPartnerReferenceToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DirectoryObjectPartnerReference>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DirectoryObjectPartnerReference.</returns>
-        public async System.Threading.Tasks.Task<DirectoryObjectPartnerReference> UpdateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DirectoryObjectPartnerReference> UpdateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate, CancellationToken cancellationToken = default)
         {
-			if (directoryObjectPartnerReferenceToUpdate.AdditionalData != null)
-			{
-				if (directoryObjectPartnerReferenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					directoryObjectPartnerReferenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryObjectPartnerReferenceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (directoryObjectPartnerReferenceToUpdate.AdditionalData != null)
-            {
-                if (directoryObjectPartnerReferenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    directoryObjectPartnerReferenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryObjectPartnerReferenceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DirectoryObjectPartnerReference>(directoryObjectPartnerReferenceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DirectoryObjectPartnerReference using PATCH and returns a <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object.
+        /// </summary>
+        /// <param name="directoryObjectPartnerReferenceToUpdate">The DirectoryObjectPartnerReference to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryObjectPartnerReference>> UpdateResponseAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DirectoryObjectPartnerReference>(directoryObjectPartnerReferenceToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DirectoryObjectPartnerReference using PUT.
+        /// </summary>
+        /// <param name="directoryObjectPartnerReferenceToUpdate">The DirectoryObjectPartnerReference object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DirectoryObjectPartnerReference> PutAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DirectoryObjectPartnerReference>(directoryObjectPartnerReferenceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DirectoryObjectPartnerReference using PUT and returns a <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object.
+        /// </summary>
+        /// <param name="directoryObjectPartnerReferenceToUpdate">The DirectoryObjectPartnerReference object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DirectoryObjectPartnerReference}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryObjectPartnerReference>> PutResponseAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DirectoryObjectPartnerReference>(directoryObjectPartnerReferenceToUpdate, cancellationToken);
         }
 
         /// <summary>

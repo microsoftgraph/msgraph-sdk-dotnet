@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidManagedAppProtection using POST.
         /// </summary>
         /// <param name="androidManagedAppProtectionToCreate">The AndroidManagedAppProtection to create.</param>
-        /// <returns>The created AndroidManagedAppProtection.</returns>
-        public System.Threading.Tasks.Task<AndroidManagedAppProtection> CreateAsync(AndroidManagedAppProtection androidManagedAppProtectionToCreate)
-        {
-            return this.CreateAsync(androidManagedAppProtectionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidManagedAppProtection using POST.
-        /// </summary>
-        /// <param name="androidManagedAppProtectionToCreate">The AndroidManagedAppProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidManagedAppProtection.</returns>
-        public async System.Threading.Tasks.Task<AndroidManagedAppProtection> CreateAsync(AndroidManagedAppProtection androidManagedAppProtectionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidManagedAppProtection> CreateAsync(AndroidManagedAppProtection androidManagedAppProtectionToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidManagedAppProtection>(androidManagedAppProtectionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidManagedAppProtection.
+        /// Creates the specified AndroidManagedAppProtection using POST and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidManagedAppProtectionToCreate">The AndroidManagedAppProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> CreateResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidManagedAppProtection>(androidManagedAppProtectionToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidManagedAppProtection>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidManagedAppProtection.
+        /// Deletes the specified AndroidManagedAppProtection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidManagedAppProtection.</returns>
-        public System.Threading.Tasks.Task<AndroidManagedAppProtection> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidManagedAppProtection.</returns>
-        public async System.Threading.Tasks.Task<AndroidManagedAppProtection> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidManagedAppProtection> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidManagedAppProtection>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidManagedAppProtection using PATCH.
+        /// Gets the specified AndroidManagedAppProtection and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object.
         /// </summary>
-        /// <param name="androidManagedAppProtectionToUpdate">The AndroidManagedAppProtection to update.</param>
-        /// <returns>The updated AndroidManagedAppProtection.</returns>
-        public System.Threading.Tasks.Task<AndroidManagedAppProtection> UpdateAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(androidManagedAppProtectionToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidManagedAppProtection>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidManagedAppProtection.</returns>
-        public async System.Threading.Tasks.Task<AndroidManagedAppProtection> UpdateAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidManagedAppProtection> UpdateAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default)
         {
-			if (androidManagedAppProtectionToUpdate.AdditionalData != null)
-			{
-				if (androidManagedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidManagedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidManagedAppProtectionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidManagedAppProtectionToUpdate.AdditionalData != null)
-            {
-                if (androidManagedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidManagedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidManagedAppProtectionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidManagedAppProtection>(androidManagedAppProtectionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidManagedAppProtection using PATCH and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="androidManagedAppProtectionToUpdate">The AndroidManagedAppProtection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> UpdateResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidManagedAppProtection>(androidManagedAppProtectionToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidManagedAppProtection using PUT.
+        /// </summary>
+        /// <param name="androidManagedAppProtectionToUpdate">The AndroidManagedAppProtection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidManagedAppProtection> PutAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidManagedAppProtection>(androidManagedAppProtectionToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidManagedAppProtection using PUT and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="androidManagedAppProtectionToUpdate">The AndroidManagedAppProtection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidManagedAppProtection}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> PutResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidManagedAppProtection>(androidManagedAppProtectionToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AndroidManagedAppProtection androidManagedAppProtectionToInitialize)
         {
 
-            if (androidManagedAppProtectionToInitialize != null && androidManagedAppProtectionToInitialize.AdditionalData != null)
+            if (androidManagedAppProtectionToInitialize != null)
             {
-
                 if (androidManagedAppProtectionToInitialize.Apps != null && androidManagedAppProtectionToInitialize.Apps.CurrentPage != null)
                 {
+                    androidManagedAppProtectionToInitialize.Apps.InitializeNextPageRequest(this.Client, androidManagedAppProtectionToInitialize.AppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     androidManagedAppProtectionToInitialize.Apps.AdditionalData = androidManagedAppProtectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    androidManagedAppProtectionToInitialize.AdditionalData.TryGetValue("apps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        androidManagedAppProtectionToInitialize.Apps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

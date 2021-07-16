@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserChangePasswordRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserChangePasswordRequestBody
     {
     
         /// <summary>
         /// Gets or sets CurrentPassword.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentPassword", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("currentPassword")]
         public string CurrentPassword { get; set; }
     
         /// <summary>
         /// Gets or sets NewPassword.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "newPassword", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("newPassword")]
         public string NewPassword { get; set; }
     
     }

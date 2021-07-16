@@ -24,47 +24,45 @@ namespace Microsoft.Graph.CallRecords
         /// Creates the specified CallRecord using POST.
         /// </summary>
         /// <param name="callRecordToCreate">The CallRecord to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CallRecord.</returns>
-        System.Threading.Tasks.Task<CallRecord> CreateAsync(CallRecord callRecordToCreate);        /// <summary>
-        /// Creates the specified CallRecord using POST.
+        System.Threading.Tasks.Task<CallRecord> CreateAsync(CallRecord callRecordToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified CallRecord using POST and returns a <see cref="GraphResponse{CallRecord}"/> object.
         /// </summary>
         /// <param name="callRecordToCreate">The CallRecord to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created CallRecord.</returns>
-        System.Threading.Tasks.Task<CallRecord> CreateAsync(CallRecord callRecordToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CallRecord.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{CallRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CallRecord>> CreateResponseAsync(CallRecord callRecordToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CallRecord.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified CallRecord.
+        /// Deletes the specified CallRecord and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The CallRecord.</returns>
-        System.Threading.Tasks.Task<CallRecord> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CallRecord.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CallRecord.</returns>
-        System.Threading.Tasks.Task<CallRecord> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CallRecord> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified CallRecord using PATCH.
+        /// Gets the specified CallRecord and returns a <see cref="GraphResponse{CallRecord}"/> object.
         /// </summary>
-        /// <param name="callRecordToUpdate">The CallRecord to update.</param>
-        /// <returns>The updated CallRecord.</returns>
-        System.Threading.Tasks.Task<CallRecord> UpdateAsync(CallRecord callRecordToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CallRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CallRecord>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CallRecord using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.CallRecords
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CallRecord.</returns>
-        System.Threading.Tasks.Task<CallRecord> UpdateAsync(CallRecord callRecordToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CallRecord> UpdateAsync(CallRecord callRecordToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CallRecord using PATCH and returns a <see cref="GraphResponse{CallRecord}"/> object.
+        /// </summary>
+        /// <param name="callRecordToUpdate">The CallRecord to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CallRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CallRecord>> UpdateResponseAsync(CallRecord callRecordToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CallRecord using PUT.
+        /// </summary>
+        /// <param name="callRecordToUpdate">The CallRecord object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<CallRecord> PutAsync(CallRecord callRecordToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CallRecord using PUT and returns a <see cref="GraphResponse{CallRecord}"/> object.
+        /// </summary>
+        /// <param name="callRecordToUpdate">The CallRecord object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{CallRecord}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CallRecord>> PutResponseAsync(CallRecord callRecordToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

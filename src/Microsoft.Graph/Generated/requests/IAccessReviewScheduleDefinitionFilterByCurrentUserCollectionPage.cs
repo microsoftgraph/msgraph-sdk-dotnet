@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IAccessReviewScheduleDefinitionFilterByCurrentUserCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<AccessReviewScheduleDefinitionFilterByCurrentUserCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<AccessReviewScheduleDefinitionFilterByCurrentUserCollectionPage>))]
     public interface IAccessReviewScheduleDefinitionFilterByCurrentUserCollectionPage : ICollectionPage<AccessReviewScheduleDefinition>
     {
         /// <summary>

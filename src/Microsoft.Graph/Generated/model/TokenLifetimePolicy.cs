@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Token Lifetime Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TokenLifetimePolicy : StsPolicy
     {
     
-		///<summary>
-		/// The TokenLifetimePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The TokenLifetimePolicy constructor
+        ///</summary>
         public TokenLifetimePolicy()
         {
             this.ODataType = "microsoft.graph.tokenLifetimePolicy";
         }
-	
+
     }
 }
 

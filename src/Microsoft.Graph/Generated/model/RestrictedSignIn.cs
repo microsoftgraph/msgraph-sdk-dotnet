@@ -12,28 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Restricted Sign In.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class RestrictedSignIn : SignIn
     {
     
-		///<summary>
-		/// The RestrictedSignIn constructor
-		///</summary>
+        ///<summary>
+        /// The RestrictedSignIn constructor
+        ///</summary>
         public RestrictedSignIn()
         {
             this.ODataType = "microsoft.graph.restrictedSignIn";
         }
-	
+
         /// <summary>
         /// Gets or sets target tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetTenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetTenantId")]
         public Guid? TargetTenantId { get; set; }
     
     }

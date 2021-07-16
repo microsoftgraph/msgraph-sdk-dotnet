@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PrintMargin.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PrintMargin>))]
     public partial class PrintMargin
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrintMargin"/> class.
-        /// </summary>
-        public PrintMargin()
-        {
-            this.ODataType = "microsoft.graph.printMargin";
-        }
 
         /// <summary>
         /// Gets or sets bottom.
         /// The margin in microns from the bottom edge.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bottom", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bottom")]
         public Int32? Bottom { get; set; }
     
         /// <summary>
         /// Gets or sets left.
         /// The margin in microns from the left edge.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "left", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("left")]
         public Int32? Left { get; set; }
     
         /// <summary>
         /// Gets or sets right.
         /// The margin in microns from the right edge.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "right", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("right")]
         public Int32? Right { get; set; }
     
         /// <summary>
         /// Gets or sets top.
         /// The margin in microns from the top edge.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "top", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("top")]
         public Int32? Top { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

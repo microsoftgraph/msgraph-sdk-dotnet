@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Managed App Registration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidManagedAppRegistration : ManagedAppRegistration
     {
     
-		///<summary>
-		/// The AndroidManagedAppRegistration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidManagedAppRegistration constructor
+        ///</summary>
         public AndroidManagedAppRegistration()
         {
             this.ODataType = "microsoft.graph.androidManagedAppRegistration";
         }
-	
+
     }
 }
 

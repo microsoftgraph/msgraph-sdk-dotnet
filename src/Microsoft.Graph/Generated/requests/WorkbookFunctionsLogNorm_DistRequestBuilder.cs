@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         public WorkbookFunctionsLogNorm_DistRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken x,
-            Newtonsoft.Json.Linq.JToken mean,
-            Newtonsoft.Json.Linq.JToken standardDev,
-            Newtonsoft.Json.Linq.JToken cumulative)
+            System.Text.Json.JsonDocument x,
+            System.Text.Json.JsonDocument mean,
+            System.Text.Json.JsonDocument standardDev,
+            System.Text.Json.JsonDocument cumulative)
             : base(requestUrl, client)
         {
             this.SetParameter("x", x, true);
@@ -54,22 +54,22 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("x"))
             {
-                request.RequestBody.X = this.GetParameter<Newtonsoft.Json.Linq.JToken>("x");
+                request.RequestBody.X = this.GetParameter<System.Text.Json.JsonDocument>("x");
             }
 
             if (this.HasParameter("mean"))
             {
-                request.RequestBody.Mean = this.GetParameter<Newtonsoft.Json.Linq.JToken>("mean");
+                request.RequestBody.Mean = this.GetParameter<System.Text.Json.JsonDocument>("mean");
             }
 
             if (this.HasParameter("standardDev"))
             {
-                request.RequestBody.StandardDev = this.GetParameter<Newtonsoft.Json.Linq.JToken>("standardDev");
+                request.RequestBody.StandardDev = this.GetParameter<System.Text.Json.JsonDocument>("standardDev");
             }
 
             if (this.HasParameter("cumulative"))
             {
-                request.RequestBody.Cumulative = this.GetParameter<Newtonsoft.Json.Linq.JToken>("cumulative");
+                request.RequestBody.Cumulative = this.GetParameter<System.Text.Json.JsonDocument>("cumulative");
             }
 
             return request;

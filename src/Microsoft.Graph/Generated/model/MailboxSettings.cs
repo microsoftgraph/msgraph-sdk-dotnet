@@ -12,90 +12,81 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MailboxSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MailboxSettings>))]
     public partial class MailboxSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MailboxSettings"/> class.
-        /// </summary>
-        public MailboxSettings()
-        {
-            this.ODataType = "microsoft.graph.mailboxSettings";
-        }
 
         /// <summary>
         /// Gets or sets archiveFolder.
         /// Folder ID of an archive folder for the user. Read only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "archiveFolder", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("archiveFolder")]
         public string ArchiveFolder { get; set; }
     
         /// <summary>
         /// Gets or sets automaticRepliesSetting.
         /// Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "automaticRepliesSetting", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("automaticRepliesSetting")]
         public AutomaticRepliesSetting AutomaticRepliesSetting { get; set; }
     
         /// <summary>
         /// Gets or sets dateFormat.
         /// The date format for the user's mailbox.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dateFormat", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dateFormat")]
         public string DateFormat { get; set; }
     
         /// <summary>
         /// Gets or sets delegateMeetingMessageDeliveryOptions.
         /// If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly. The default is sendToDelegateOnly.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delegateMeetingMessageDeliveryOptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("delegateMeetingMessageDeliveryOptions")]
         public DelegateMeetingMessageDeliveryOptions? DelegateMeetingMessageDeliveryOptions { get; set; }
     
         /// <summary>
         /// Gets or sets language.
         /// The locale information for the user, including the preferred language and country/region.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "language", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("language")]
         public LocaleInfo Language { get; set; }
     
         /// <summary>
         /// Gets or sets timeFormat.
         /// The time format for the user's mailbox.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeFormat", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("timeFormat")]
         public string TimeFormat { get; set; }
     
         /// <summary>
         /// Gets or sets timeZone.
         /// The default time zone for the user's mailbox.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeZone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("timeZone")]
         public string TimeZone { get; set; }
     
         /// <summary>
         /// Gets or sets workingHours.
         /// The days of the week and hours in a specific time zone that the user works.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workingHours", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("workingHours")]
         public WorkingHours WorkingHours { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

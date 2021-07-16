@@ -23,57 +23,64 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnifiedRoleDefinition.
         /// </summary>
-        /// <returns>The UnifiedRoleDefinition.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleDefinition> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleDefinition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleDefinition.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleDefinition> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleDefinition> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the specified UnifiedRoleDefinition and returns a <see cref="GraphResponse{UnifiedRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleDefinition>> GetResponseAsync(CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Creates the specified UnifiedRoleDefinition using POST.
         /// </summary>
         /// <param name="unifiedRoleDefinitionToCreate">The UnifiedRoleDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleDefinition.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleDefinition> CreateAsync(UnifiedRoleDefinition unifiedRoleDefinitionToCreate);        /// <summary>
-        /// Creates the specified UnifiedRoleDefinition using POST.
+        System.Threading.Tasks.Task<UnifiedRoleDefinition> CreateAsync(UnifiedRoleDefinition unifiedRoleDefinitionToCreate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Creates the specified UnifiedRoleDefinition using POST and returns a <see cref="GraphResponse{UnifiedRoleDefinition}"/> object.
         /// </summary>
         /// <param name="unifiedRoleDefinitionToCreate">The UnifiedRoleDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UnifiedRoleDefinition.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleDefinition> CreateAsync(UnifiedRoleDefinition unifiedRoleDefinitionToCreate, CancellationToken cancellationToken);
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleDefinition>> CreateResponseAsync(UnifiedRoleDefinition unifiedRoleDefinitionToCreate, CancellationToken cancellationToken = default);
 
 		/// <summary>
-        /// Updates the specified UnifiedRoleDefinition using PATCH.
-        /// </summary>
-        /// <param name="unifiedRoleDefinitionToUpdate">The UnifiedRoleDefinition to update.</param>
-        /// <returns>The updated UnifiedRoleDefinition.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleDefinition> UpdateAsync(UnifiedRoleDefinition unifiedRoleDefinitionToUpdate);
-
-        /// <summary>
         /// Updates the specified UnifiedRoleDefinition using PATCH.
         /// </summary>
         /// <param name="unifiedRoleDefinitionToUpdate">The UnifiedRoleDefinition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleDefinition.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleDefinition> UpdateAsync(UnifiedRoleDefinition unifiedRoleDefinitionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleDefinition> UpdateAsync(UnifiedRoleDefinition unifiedRoleDefinitionToUpdate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Updates the specified UnifiedRoleDefinition using PATCH and returns a <see cref="GraphResponse{UnifiedRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleDefinitionToUpdate">The UnifiedRoleDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleDefinition>> UpdateResponseAsync(UnifiedRoleDefinition unifiedRoleDefinitionToUpdate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Deletes the specified UnifiedRoleDefinition.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified UnifiedRoleDefinition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Deletes the specified UnifiedRoleDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

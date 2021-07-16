@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceCategory using POST.
         /// </summary>
         /// <param name="deviceCategoryToCreate">The DeviceCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceCategory.</returns>
-        System.Threading.Tasks.Task<DeviceCategory> CreateAsync(DeviceCategory deviceCategoryToCreate);        /// <summary>
-        /// Creates the specified DeviceCategory using POST.
+        System.Threading.Tasks.Task<DeviceCategory> CreateAsync(DeviceCategory deviceCategoryToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceCategory using POST and returns a <see cref="GraphResponse{DeviceCategory}"/> object.
         /// </summary>
         /// <param name="deviceCategoryToCreate">The DeviceCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceCategory.</returns>
-        System.Threading.Tasks.Task<DeviceCategory> CreateAsync(DeviceCategory deviceCategoryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceCategory.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCategory>> CreateResponseAsync(DeviceCategory deviceCategoryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceCategory.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceCategory.
+        /// Deletes the specified DeviceCategory and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceCategory.</returns>
-        System.Threading.Tasks.Task<DeviceCategory> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceCategory.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceCategory.</returns>
-        System.Threading.Tasks.Task<DeviceCategory> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceCategory> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceCategory using PATCH.
+        /// Gets the specified DeviceCategory and returns a <see cref="GraphResponse{DeviceCategory}"/> object.
         /// </summary>
-        /// <param name="deviceCategoryToUpdate">The DeviceCategory to update.</param>
-        /// <returns>The updated DeviceCategory.</returns>
-        System.Threading.Tasks.Task<DeviceCategory> UpdateAsync(DeviceCategory deviceCategoryToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCategory>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceCategory using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceCategory.</returns>
-        System.Threading.Tasks.Task<DeviceCategory> UpdateAsync(DeviceCategory deviceCategoryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceCategory> UpdateAsync(DeviceCategory deviceCategoryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceCategory using PATCH and returns a <see cref="GraphResponse{DeviceCategory}"/> object.
+        /// </summary>
+        /// <param name="deviceCategoryToUpdate">The DeviceCategory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCategory>> UpdateResponseAsync(DeviceCategory deviceCategoryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceCategory using PUT.
+        /// </summary>
+        /// <param name="deviceCategoryToUpdate">The DeviceCategory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceCategory> PutAsync(DeviceCategory deviceCategoryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceCategory using PUT and returns a <see cref="GraphResponse{DeviceCategory}"/> object.
+        /// </summary>
+        /// <param name="deviceCategoryToUpdate">The DeviceCategory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceCategory}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCategory>> PutResponseAsync(DeviceCategory deviceCategoryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

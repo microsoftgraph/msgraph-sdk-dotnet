@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDomainVerificationDnsRecordsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DomainVerificationDnsRecordsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DomainVerificationDnsRecordsCollectionPage>))]
     public interface IDomainVerificationDnsRecordsCollectionPage : ICollectionPage<DomainDnsRecord>
     {
         /// <summary>

@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mdm Windows Information Protection Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MdmWindowsInformationProtectionPolicy : WindowsInformationProtection
     {
     
-		///<summary>
-		/// The MdmWindowsInformationProtectionPolicy constructor
-		///</summary>
+        ///<summary>
+        /// The MdmWindowsInformationProtectionPolicy constructor
+        ///</summary>
         public MdmWindowsInformationProtectionPolicy()
         {
             this.ODataType = "microsoft.graph.mdmWindowsInformationProtectionPolicy";
         }
-	
+
     }
 }
 

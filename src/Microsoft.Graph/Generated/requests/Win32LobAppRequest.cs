@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Win32LobApp using POST.
         /// </summary>
         /// <param name="win32LobAppToCreate">The Win32LobApp to create.</param>
-        /// <returns>The created Win32LobApp.</returns>
-        public System.Threading.Tasks.Task<Win32LobApp> CreateAsync(Win32LobApp win32LobAppToCreate)
-        {
-            return this.CreateAsync(win32LobAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Win32LobApp using POST.
-        /// </summary>
-        /// <param name="win32LobAppToCreate">The Win32LobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Win32LobApp.</returns>
-        public async System.Threading.Tasks.Task<Win32LobApp> CreateAsync(Win32LobApp win32LobAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Win32LobApp> CreateAsync(Win32LobApp win32LobAppToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Win32LobApp>(win32LobAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Win32LobApp.
+        /// Creates the specified Win32LobApp using POST and returns a <see cref="GraphResponse{Win32LobApp}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="win32LobAppToCreate">The Win32LobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Win32LobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Win32LobApp>> CreateResponseAsync(Win32LobApp win32LobAppToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Win32LobApp>(win32LobAppToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Win32LobApp>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Win32LobApp.
+        /// Deletes the specified Win32LobApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Win32LobApp.</returns>
-        public System.Threading.Tasks.Task<Win32LobApp> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Win32LobApp.</returns>
-        public async System.Threading.Tasks.Task<Win32LobApp> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Win32LobApp> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Win32LobApp>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Win32LobApp using PATCH.
+        /// Gets the specified Win32LobApp and returns a <see cref="GraphResponse{Win32LobApp}"/> object.
         /// </summary>
-        /// <param name="win32LobAppToUpdate">The Win32LobApp to update.</param>
-        /// <returns>The updated Win32LobApp.</returns>
-        public System.Threading.Tasks.Task<Win32LobApp> UpdateAsync(Win32LobApp win32LobAppToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Win32LobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Win32LobApp>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(win32LobAppToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Win32LobApp>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Win32LobApp.</returns>
-        public async System.Threading.Tasks.Task<Win32LobApp> UpdateAsync(Win32LobApp win32LobAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Win32LobApp> UpdateAsync(Win32LobApp win32LobAppToUpdate, CancellationToken cancellationToken = default)
         {
-			if (win32LobAppToUpdate.AdditionalData != null)
-			{
-				if (win32LobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					win32LobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, win32LobAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (win32LobAppToUpdate.AdditionalData != null)
-            {
-                if (win32LobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    win32LobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, win32LobAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Win32LobApp>(win32LobAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Win32LobApp using PATCH and returns a <see cref="GraphResponse{Win32LobApp}"/> object.
+        /// </summary>
+        /// <param name="win32LobAppToUpdate">The Win32LobApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Win32LobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Win32LobApp>> UpdateResponseAsync(Win32LobApp win32LobAppToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Win32LobApp>(win32LobAppToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Win32LobApp using PUT.
+        /// </summary>
+        /// <param name="win32LobAppToUpdate">The Win32LobApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Win32LobApp> PutAsync(Win32LobApp win32LobAppToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Win32LobApp>(win32LobAppToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Win32LobApp using PUT and returns a <see cref="GraphResponse{Win32LobApp}"/> object.
+        /// </summary>
+        /// <param name="win32LobAppToUpdate">The Win32LobApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Win32LobApp}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Win32LobApp>> PutResponseAsync(Win32LobApp win32LobAppToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Win32LobApp>(win32LobAppToUpdate, cancellationToken);
         }
 
         /// <summary>

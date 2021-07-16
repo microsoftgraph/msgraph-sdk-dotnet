@@ -12,93 +12,90 @@ namespace Microsoft.Graph.CallRecords
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Call Record.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<CallRecord>))]
     public partial class CallRecord : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The CallRecord constructor
-		///</summary>
-        public CallRecord()
-        {
-            this.ODataType = "microsoft.graph.callRecords.callRecord";
-        }
-	
         /// <summary>
         /// Gets or sets end date time.
         /// UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets join web url.
         /// Meeting URL associated to the call. May not be available for a peerToPeer call record type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinWebUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("joinWebUrl")]
         public string JoinWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets modalities.
         /// List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modalities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modalities")]
         public IEnumerable<Modality> Modalities { get; set; }
     
         /// <summary>
         /// Gets or sets organizer.
         /// The organizing party's identity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("organizer")]
         public Microsoft.Graph.IdentitySet Organizer { get; set; }
     
         /// <summary>
         /// Gets or sets participants.
         /// List of distinct identities involved in the call.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participants", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("participants")]
         public IEnumerable<Microsoft.Graph.IdentitySet> Participants { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
         /// UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// Indicates the type of the call. Possible values are: unknown, groupCall, peerToPeer, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public CallType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public Int64? Version { get; set; }
     
         /// <summary>
         /// Gets or sets sessions.
         /// List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sessions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sessions")]
         public ICallRecordSessionsCollectionPage Sessions { get; set; }
+
+        /// <summary>
+        /// Gets or sets sessionsNextLink.
+        /// </summary>
+        [JsonPropertyName("sessions@odata.nextLink")]
+        public string SessionsNextLink { get; set; }
     
     }
 }

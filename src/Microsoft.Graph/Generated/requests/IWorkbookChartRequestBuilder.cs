@@ -79,15 +79,15 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookChartSetDataRequestBuilder"/>.</returns>
         IWorkbookChartSetDataRequestBuilder SetData(
             string seriesBy,
-            Newtonsoft.Json.Linq.JToken sourceData = null);
+            System.Text.Json.JsonDocument sourceData = null);
 
         /// <summary>
         /// Gets the request builder for WorkbookChartSetPosition.
         /// </summary>
         /// <returns>The <see cref="IWorkbookChartSetPositionRequestBuilder"/>.</returns>
         IWorkbookChartSetPositionRequestBuilder SetPosition(
-            Newtonsoft.Json.Linq.JToken startCell = null,
-            Newtonsoft.Json.Linq.JToken endCell = null);
+            System.Text.Json.JsonDocument startCell = null,
+            System.Text.Json.JsonDocument endCell = null);
 
         /// <summary>
         /// Gets the request builder for WorkbookChartImage.

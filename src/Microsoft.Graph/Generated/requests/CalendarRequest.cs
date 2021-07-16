@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Calendar using POST.
         /// </summary>
         /// <param name="calendarToCreate">The Calendar to create.</param>
-        /// <returns>The created Calendar.</returns>
-        public System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate)
-        {
-            return this.CreateAsync(calendarToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Calendar using POST.
-        /// </summary>
-        /// <param name="calendarToCreate">The Calendar to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Calendar.</returns>
-        public async System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Calendar>(calendarToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Calendar.
+        /// Creates the specified Calendar using POST and returns a <see cref="GraphResponse{Calendar}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="calendarToCreate">The Calendar to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Calendar>> CreateResponseAsync(Calendar calendarToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Calendar>(calendarToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Calendar>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Calendar.
+        /// Deletes the specified Calendar and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Calendar.</returns>
-        public System.Threading.Tasks.Task<Calendar> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Calendar.</returns>
-        public async System.Threading.Tasks.Task<Calendar> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Calendar> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Calendar>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Calendar using PATCH.
+        /// Gets the specified Calendar and returns a <see cref="GraphResponse{Calendar}"/> object.
         /// </summary>
-        /// <param name="calendarToUpdate">The Calendar to update.</param>
-        /// <returns>The updated Calendar.</returns>
-        public System.Threading.Tasks.Task<Calendar> UpdateAsync(Calendar calendarToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Calendar>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(calendarToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Calendar>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Calendar.</returns>
-        public async System.Threading.Tasks.Task<Calendar> UpdateAsync(Calendar calendarToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Calendar> UpdateAsync(Calendar calendarToUpdate, CancellationToken cancellationToken = default)
         {
-			if (calendarToUpdate.AdditionalData != null)
-			{
-				if (calendarToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					calendarToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, calendarToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (calendarToUpdate.AdditionalData != null)
-            {
-                if (calendarToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    calendarToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, calendarToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Calendar>(calendarToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Calendar using PATCH and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <param name="calendarToUpdate">The Calendar to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Calendar>> UpdateResponseAsync(Calendar calendarToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Calendar>(calendarToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Calendar using PUT.
+        /// </summary>
+        /// <param name="calendarToUpdate">The Calendar object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Calendar> PutAsync(Calendar calendarToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Calendar>(calendarToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Calendar using PUT and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <param name="calendarToUpdate">The Calendar object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Calendar}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Calendar>> PutResponseAsync(Calendar calendarToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Calendar>(calendarToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Calendar calendarToInitialize)
         {
 
-            if (calendarToInitialize != null && calendarToInitialize.AdditionalData != null)
+            if (calendarToInitialize != null)
             {
-
                 if (calendarToInitialize.CalendarPermissions != null && calendarToInitialize.CalendarPermissions.CurrentPage != null)
                 {
+                    calendarToInitialize.CalendarPermissions.InitializeNextPageRequest(this.Client, calendarToInitialize.CalendarPermissionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     calendarToInitialize.CalendarPermissions.AdditionalData = calendarToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("calendarPermissions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        calendarToInitialize.CalendarPermissions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (calendarToInitialize.CalendarView != null && calendarToInitialize.CalendarView.CurrentPage != null)
                 {
+                    calendarToInitialize.CalendarView.InitializeNextPageRequest(this.Client, calendarToInitialize.CalendarViewNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     calendarToInitialize.CalendarView.AdditionalData = calendarToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        calendarToInitialize.CalendarView.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (calendarToInitialize.Events != null && calendarToInitialize.Events.CurrentPage != null)
                 {
+                    calendarToInitialize.Events.InitializeNextPageRequest(this.Client, calendarToInitialize.EventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     calendarToInitialize.Events.AdditionalData = calendarToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("events@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        calendarToInitialize.Events.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (calendarToInitialize.MultiValueExtendedProperties != null && calendarToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    calendarToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, calendarToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     calendarToInitialize.MultiValueExtendedProperties.AdditionalData = calendarToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        calendarToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (calendarToInitialize.SingleValueExtendedProperties != null && calendarToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    calendarToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, calendarToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     calendarToInitialize.SingleValueExtendedProperties.AdditionalData = calendarToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    calendarToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        calendarToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

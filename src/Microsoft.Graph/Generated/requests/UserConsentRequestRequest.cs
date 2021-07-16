@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UserConsentRequestObject using POST.
         /// </summary>
         /// <param name="userConsentRequestObjectToCreate">The UserConsentRequestObject to create.</param>
-        /// <returns>The created UserConsentRequestObject.</returns>
-        public System.Threading.Tasks.Task<UserConsentRequestObject> CreateAsync(UserConsentRequestObject userConsentRequestObjectToCreate)
-        {
-            return this.CreateAsync(userConsentRequestObjectToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserConsentRequestObject using POST.
-        /// </summary>
-        /// <param name="userConsentRequestObjectToCreate">The UserConsentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserConsentRequestObject.</returns>
-        public async System.Threading.Tasks.Task<UserConsentRequestObject> CreateAsync(UserConsentRequestObject userConsentRequestObjectToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserConsentRequestObject> CreateAsync(UserConsentRequestObject userConsentRequestObjectToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UserConsentRequestObject>(userConsentRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UserConsentRequest.
+        /// Creates the specified UserConsentRequestObject using POST and returns a <see cref="GraphResponse{UserConsentRequestObject}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="userConsentRequestObjectToCreate">The UserConsentRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> CreateResponseAsync(UserConsentRequestObject userConsentRequestObjectToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserConsentRequestObject>(userConsentRequestObjectToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UserConsentRequestObject>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UserConsentRequestObject.
+        /// Deletes the specified UserConsentRequest and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserConsentRequestObject.</returns>
-        public System.Threading.Tasks.Task<UserConsentRequestObject> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserConsentRequestObject.</returns>
-        public async System.Threading.Tasks.Task<UserConsentRequestObject> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserConsentRequestObject> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UserConsentRequestObject>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UserConsentRequestObject using PATCH.
+        /// Gets the specified UserConsentRequestObject and returns a <see cref="GraphResponse{UserConsentRequestObject}"/> object.
         /// </summary>
-        /// <param name="userConsentRequestObjectToUpdate">The UserConsentRequestObject to update.</param>
-        /// <returns>The updated UserConsentRequestObject.</returns>
-        public System.Threading.Tasks.Task<UserConsentRequestObject> UpdateAsync(UserConsentRequestObject userConsentRequestObjectToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(userConsentRequestObjectToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserConsentRequestObject>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserConsentRequestObject.</returns>
-        public async System.Threading.Tasks.Task<UserConsentRequestObject> UpdateAsync(UserConsentRequestObject userConsentRequestObjectToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserConsentRequestObject> UpdateAsync(UserConsentRequestObject userConsentRequestObjectToUpdate, CancellationToken cancellationToken = default)
         {
-			if (userConsentRequestObjectToUpdate.AdditionalData != null)
-			{
-				if (userConsentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userConsentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userConsentRequestObjectToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userConsentRequestObjectToUpdate.AdditionalData != null)
-            {
-                if (userConsentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userConsentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userConsentRequestObjectToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UserConsentRequestObject>(userConsentRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserConsentRequestObject using PATCH and returns a <see cref="GraphResponse{UserConsentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="userConsentRequestObjectToUpdate">The UserConsentRequestObject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> UpdateResponseAsync(UserConsentRequestObject userConsentRequestObjectToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UserConsentRequestObject>(userConsentRequestObjectToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UserConsentRequestObject using PUT.
+        /// </summary>
+        /// <param name="userConsentRequestObjectToUpdate">The UserConsentRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserConsentRequestObject> PutAsync(UserConsentRequestObject userConsentRequestObjectToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserConsentRequestObject>(userConsentRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserConsentRequestObject using PUT and returns a <see cref="GraphResponse{UserConsentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="userConsentRequestObjectToUpdate">The UserConsentRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserConsentRequestObject}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> PutResponseAsync(UserConsentRequestObject userConsentRequestObjectToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserConsentRequestObject>(userConsentRequestObjectToUpdate, cancellationToken);
         }
 
         /// <summary>

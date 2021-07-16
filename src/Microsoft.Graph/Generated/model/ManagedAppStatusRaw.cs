@@ -12,30 +12,28 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed App Status Raw.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedAppStatusRaw : ManagedAppStatus
     {
     
-		///<summary>
-		/// The ManagedAppStatusRaw constructor
-		///</summary>
+        ///<summary>
+        /// The ManagedAppStatusRaw constructor
+        ///</summary>
         public ManagedAppStatusRaw()
         {
             this.ODataType = "microsoft.graph.managedAppStatusRaw";
         }
-	
+
         /// <summary>
         /// Gets or sets content.
         /// Status report content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Content { get; set; }
+        [JsonPropertyName("content")]
+        public System.Text.Json.JsonDocument Content { get; set; }
     
     }
 }

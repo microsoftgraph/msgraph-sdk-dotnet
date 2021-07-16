@@ -19,18 +19,19 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDetectedAppManagedDevicesCollectionReferencesRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ManagedDevice to the collection via POST.
-        /// </summary>
-        /// <param name="managedDevice">The ManagedDevice to add.</param>
-        System.Threading.Tasks.Task AddAsync(ManagedDevice managedDevice);
-
         /// <summary>
         /// Adds the specified ManagedDevice to the collection via POST.
         /// </summary>
         /// <param name="managedDevice">The ManagedDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(ManagedDevice managedDevice, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task AddAsync(ManagedDevice managedDevice, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified ManagedDevice to the collection via POST and returns a <see cref="GraphResponse{ManagedDevice}"/> object of the request.
+        /// </summary>
+        /// <param name="managedDevice">The ManagedDevice to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagedDevice managedDevice, CancellationToken cancellationToken = default);
+
     }
 }

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified User using POST.
         /// </summary>
         /// <param name="userToCreate">The User to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created User.</returns>
-        System.Threading.Tasks.Task<User> CreateAsync(User userToCreate);        /// <summary>
-        /// Creates the specified User using POST.
+        System.Threading.Tasks.Task<User> CreateAsync(User userToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified User using POST and returns a <see cref="GraphResponse{User}"/> object.
         /// </summary>
         /// <param name="userToCreate">The User to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created User.</returns>
-        System.Threading.Tasks.Task<User> CreateAsync(User userToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified User.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{User}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<User>> CreateResponseAsync(User userToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified User.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified User.
+        /// Deletes the specified User and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The User.</returns>
-        System.Threading.Tasks.Task<User> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified User.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The User.</returns>
-        System.Threading.Tasks.Task<User> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<User> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified User using PATCH.
+        /// Gets the specified User and returns a <see cref="GraphResponse{User}"/> object.
         /// </summary>
-        /// <param name="userToUpdate">The User to update.</param>
-        /// <returns>The updated User.</returns>
-        System.Threading.Tasks.Task<User> UpdateAsync(User userToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{User}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<User>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified User using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated User.</returns>
-        System.Threading.Tasks.Task<User> UpdateAsync(User userToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<User> UpdateAsync(User userToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified User using PATCH and returns a <see cref="GraphResponse{User}"/> object.
+        /// </summary>
+        /// <param name="userToUpdate">The User to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{User}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<User>> UpdateResponseAsync(User userToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified User using PUT.
+        /// </summary>
+        /// <param name="userToUpdate">The User object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<User> PutAsync(User userToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified User using PUT and returns a <see cref="GraphResponse{User}"/> object.
+        /// </summary>
+        /// <param name="userToUpdate">The User object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{User}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<User>> PutResponseAsync(User userToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

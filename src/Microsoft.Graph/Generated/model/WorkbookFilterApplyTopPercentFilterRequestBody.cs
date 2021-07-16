@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFilterApplyTopPercentFilterRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFilterApplyTopPercentFilterRequestBody
     {
     
         /// <summary>
         /// Gets or sets Percent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "percent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("percent")]
         public Int32 Percent { get; set; }
     
     }

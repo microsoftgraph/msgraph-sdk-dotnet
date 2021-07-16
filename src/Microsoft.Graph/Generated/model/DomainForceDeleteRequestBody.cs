@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DomainForceDeleteRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DomainForceDeleteRequestBody
     {
     
         /// <summary>
         /// Gets or sets DisableUserAccounts.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableUserAccounts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("disableUserAccounts")]
         public bool? DisableUserAccounts { get; set; }
     
     }

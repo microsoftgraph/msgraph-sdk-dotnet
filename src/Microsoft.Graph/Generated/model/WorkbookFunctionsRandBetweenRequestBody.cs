@@ -9,30 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsRandBetweenRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsRandBetweenRequestBody
     {
     
         /// <summary>
         /// Gets or sets Bottom.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bottom", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Bottom { get; set; }
+        [JsonPropertyName("bottom")]
+        public System.Text.Json.JsonDocument Bottom { get; set; }
     
         /// <summary>
         /// Gets or sets Top.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "top", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Top { get; set; }
+        [JsonPropertyName("top")]
+        public System.Text.Json.JsonDocument Top { get; set; }
     
     }
 }

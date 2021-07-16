@@ -12,59 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education Root.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<EducationRoot>))]
     public partial class EducationRoot
     {
     
-		///<summary>
-		/// The EducationRoot constructor
-		///</summary>
-        public EducationRoot()
-        {
-            this.ODataType = "microsoft.graph.educationRoot";
-        }
-	
         /// <summary>
         /// Gets or sets classes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classes")]
         public IEducationRootClassesCollectionPage Classes { get; set; }
+
+        /// <summary>
+        /// Gets or sets classesNextLink.
+        /// </summary>
+        [JsonPropertyName("classes@odata.nextLink")]
+        public string ClassesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets me.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "me", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("me")]
         public EducationUser Me { get; set; }
     
         /// <summary>
         /// Gets or sets schools.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schools", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schools")]
         public IEducationRootSchoolsCollectionPage Schools { get; set; }
+
+        /// <summary>
+        /// Gets or sets schoolsNextLink.
+        /// </summary>
+        [JsonPropertyName("schools@odata.nextLink")]
+        public string SchoolsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets users.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "users", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("users")]
         public IEducationRootUsersCollectionPage Users { get; set; }
+
+        /// <summary>
+        /// Gets or sets usersNextLink.
+        /// </summary>
+        [JsonPropertyName("users@odata.nextLink")]
+        public string UsersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true, WriteData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     
     }

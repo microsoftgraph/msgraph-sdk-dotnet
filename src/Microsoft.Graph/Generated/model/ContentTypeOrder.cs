@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ContentTypeOrder.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ContentTypeOrder>))]
     public partial class ContentTypeOrder
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ContentTypeOrder"/> class.
-        /// </summary>
-        public ContentTypeOrder()
-        {
-            this.ODataType = "microsoft.graph.contentTypeOrder";
-        }
 
         /// <summary>
         /// Gets or sets default.
         /// Whether this is the default Content Type
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "default", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("default")]
         public bool? Default { get; set; }
     
         /// <summary>
         /// Gets or sets position.
         /// Specifies the position in which the Content Type appears in the selection UI.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "position", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("position")]
         public Int32? Position { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

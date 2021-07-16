@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IosNetworkUsageRule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<IosNetworkUsageRule>))]
     public partial class IosNetworkUsageRule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosNetworkUsageRule"/> class.
-        /// </summary>
-        public IosNetworkUsageRule()
-        {
-            this.ODataType = "microsoft.graph.iosNetworkUsageRule";
-        }
 
         /// <summary>
         /// Gets or sets cellularDataBlocked.
         /// If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellularDataBlocked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cellularDataBlocked")]
         public bool? CellularDataBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets cellularDataBlockWhenRoaming.
         /// If set to true, corresponding managed apps will not be allowed to use cellular data when roaming.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellularDataBlockWhenRoaming", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cellularDataBlockWhenRoaming")]
         public bool? CellularDataBlockWhenRoaming { get; set; }
     
         /// <summary>
         /// Gets or sets managedApps.
         /// Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedApps")]
         public IEnumerable<AppListItem> ManagedApps { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

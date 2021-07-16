@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DataPolicyOperation using POST.
         /// </summary>
         /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
-        /// <returns>The created DataPolicyOperation.</returns>
-        public System.Threading.Tasks.Task<DataPolicyOperation> CreateAsync(DataPolicyOperation dataPolicyOperationToCreate)
-        {
-            return this.CreateAsync(dataPolicyOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DataPolicyOperation using POST.
-        /// </summary>
-        /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataPolicyOperation.</returns>
-        public async System.Threading.Tasks.Task<DataPolicyOperation> CreateAsync(DataPolicyOperation dataPolicyOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DataPolicyOperation> CreateAsync(DataPolicyOperation dataPolicyOperationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DataPolicyOperation>(dataPolicyOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DataPolicyOperation.
+        /// Creates the specified DataPolicyOperation using POST and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> CreateResponseAsync(DataPolicyOperation dataPolicyOperationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DataPolicyOperation>(dataPolicyOperationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DataPolicyOperation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DataPolicyOperation.
+        /// Deletes the specified DataPolicyOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DataPolicyOperation.</returns>
-        public System.Threading.Tasks.Task<DataPolicyOperation> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DataPolicyOperation.</returns>
-        public async System.Threading.Tasks.Task<DataPolicyOperation> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DataPolicyOperation> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DataPolicyOperation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DataPolicyOperation using PATCH.
+        /// Gets the specified DataPolicyOperation and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
         /// </summary>
-        /// <param name="dataPolicyOperationToUpdate">The DataPolicyOperation to update.</param>
-        /// <returns>The updated DataPolicyOperation.</returns>
-        public System.Threading.Tasks.Task<DataPolicyOperation> UpdateAsync(DataPolicyOperation dataPolicyOperationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(dataPolicyOperationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DataPolicyOperation>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DataPolicyOperation.</returns>
-        public async System.Threading.Tasks.Task<DataPolicyOperation> UpdateAsync(DataPolicyOperation dataPolicyOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DataPolicyOperation> UpdateAsync(DataPolicyOperation dataPolicyOperationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (dataPolicyOperationToUpdate.AdditionalData != null)
-			{
-				if (dataPolicyOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					dataPolicyOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataPolicyOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (dataPolicyOperationToUpdate.AdditionalData != null)
-            {
-                if (dataPolicyOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    dataPolicyOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataPolicyOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DataPolicyOperation>(dataPolicyOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DataPolicyOperation using PATCH and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="dataPolicyOperationToUpdate">The DataPolicyOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> UpdateResponseAsync(DataPolicyOperation dataPolicyOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DataPolicyOperation>(dataPolicyOperationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DataPolicyOperation using PUT.
+        /// </summary>
+        /// <param name="dataPolicyOperationToUpdate">The DataPolicyOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DataPolicyOperation> PutAsync(DataPolicyOperation dataPolicyOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DataPolicyOperation>(dataPolicyOperationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DataPolicyOperation using PUT and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="dataPolicyOperationToUpdate">The DataPolicyOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DataPolicyOperation}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> PutResponseAsync(DataPolicyOperation dataPolicyOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DataPolicyOperation>(dataPolicyOperationToUpdate, cancellationToken);
         }
 
         /// <summary>

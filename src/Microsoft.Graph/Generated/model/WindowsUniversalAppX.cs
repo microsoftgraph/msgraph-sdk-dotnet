@@ -12,78 +12,77 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Universal App X.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsUniversalAppX>))]
     public partial class WindowsUniversalAppX : MobileLobApp
     {
     
-		///<summary>
-		/// The WindowsUniversalAppX constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsUniversalAppX constructor
+        ///</summary>
         public WindowsUniversalAppX()
         {
             this.ODataType = "microsoft.graph.windowsUniversalAppX";
         }
-	
+
         /// <summary>
         /// Gets or sets applicable architectures.
         /// The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicableArchitectures", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicableArchitectures")]
         public WindowsArchitecture? ApplicableArchitectures { get; set; }
     
         /// <summary>
         /// Gets or sets applicable device types.
         /// The Windows device type(s) for which this app can run on. Possible values are: none, desktop, mobile, holographic, team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicableDeviceTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicableDeviceTypes")]
         public WindowsDeviceType? ApplicableDeviceTypes { get; set; }
     
         /// <summary>
         /// Gets or sets identity name.
         /// The Identity Name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityName")]
         public string IdentityName { get; set; }
     
         /// <summary>
         /// Gets or sets identity publisher hash.
         /// The Identity Publisher Hash.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityPublisherHash", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityPublisherHash")]
         public string IdentityPublisherHash { get; set; }
     
         /// <summary>
         /// Gets or sets identity resource identifier.
         /// The Identity Resource Identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityResourceIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityResourceIdentifier")]
         public string IdentityResourceIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets identity version.
         /// The identity version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityVersion")]
         public string IdentityVersion { get; set; }
     
         /// <summary>
         /// Gets or sets is bundle.
         /// Whether or not the app is a bundle.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBundle", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isBundle")]
         public bool? IsBundle { get; set; }
     
         /// <summary>
         /// Gets or sets minimum supported operating system.
         /// The value for the minimum applicable operating system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumSupportedOperatingSystem")]
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
     
     }

@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ProvisionedPlan.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ProvisionedPlan>))]
     public partial class ProvisionedPlan
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProvisionedPlan"/> class.
-        /// </summary>
-        public ProvisionedPlan()
-        {
-            this.ODataType = "microsoft.graph.provisionedPlan";
-        }
 
         /// <summary>
         /// Gets or sets capabilityStatus.
         /// For example, 'Enabled'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "capabilityStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("capabilityStatus")]
         public string CapabilityStatus { get; set; }
     
         /// <summary>
         /// Gets or sets provisioningStatus.
         /// For example, 'Success'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provisioningStatus")]
         public string ProvisioningStatus { get; set; }
     
         /// <summary>
         /// Gets or sets service.
         /// The name of the service; for example, 'AccessControlS2S'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("service")]
         public string Service { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPolicyRootFeatureRolloutPoliciesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified FeatureRolloutPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="featureRolloutPolicy">The FeatureRolloutPolicy to add.</param>
-        /// <returns>The created FeatureRolloutPolicy.</returns>
-        System.Threading.Tasks.Task<FeatureRolloutPolicy> AddAsync(FeatureRolloutPolicy featureRolloutPolicy);
-
         /// <summary>
         /// Adds the specified FeatureRolloutPolicy to the collection via POST.
         /// </summary>
         /// <param name="featureRolloutPolicy">The FeatureRolloutPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FeatureRolloutPolicy.</returns>
-        System.Threading.Tasks.Task<FeatureRolloutPolicy> AddAsync(FeatureRolloutPolicy featureRolloutPolicy, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<FeatureRolloutPolicy> AddAsync(FeatureRolloutPolicy featureRolloutPolicy, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified FeatureRolloutPolicy to the collection via POST and returns a <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicyRootFeatureRolloutPoliciesCollectionPage> GetAsync();
+        /// <param name="featureRolloutPolicy">The FeatureRolloutPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FeatureRolloutPolicy>> AddResponseAsync(FeatureRolloutPolicy featureRolloutPolicy, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicyRootFeatureRolloutPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IPolicyRootFeatureRolloutPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootFeatureRolloutPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRootFeatureRolloutPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRootFeatureRolloutPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

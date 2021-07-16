@@ -12,50 +12,48 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Contract.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Contract : DirectoryObject
     {
     
-		///<summary>
-		/// The Contract constructor
-		///</summary>
+        ///<summary>
+        /// The Contract constructor
+        ///</summary>
         public Contract()
         {
             this.ODataType = "microsoft.graph.contract";
         }
-	
+
         /// <summary>
         /// Gets or sets contract type.
         /// Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contractType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contractType")]
         public string ContractType { get; set; }
     
         /// <summary>
         /// Gets or sets customer id.
         /// The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customerId")]
         public Guid? CustomerId { get; set; }
     
         /// <summary>
         /// Gets or sets default domain name.
         /// A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDomainName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultDomainName")]
         public string DefaultDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
     }

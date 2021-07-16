@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookWorksheetProtectionProtectRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookWorksheetProtectionProtectRequestBody
     {
     
         /// <summary>
         /// Gets or sets Options.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "options", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("options")]
         public WorkbookWorksheetProtectionOptions Options { get; set; }
     
     }

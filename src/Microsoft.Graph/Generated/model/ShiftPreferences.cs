@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Shift Preferences.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ShiftPreferences : ChangeTrackedEntity
     {
     
-		///<summary>
-		/// The ShiftPreferences constructor
-		///</summary>
+        ///<summary>
+        /// The ShiftPreferences constructor
+        ///</summary>
         public ShiftPreferences()
         {
             this.ODataType = "microsoft.graph.shiftPreferences";
         }
-	
+
         /// <summary>
         /// Gets or sets availability.
         /// Availability of the user to be scheduled for work and its recurrence pattern.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availability", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("availability")]
         public IEnumerable<ShiftAvailability> Availability { get; set; }
     
     }

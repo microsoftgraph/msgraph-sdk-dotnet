@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsRriRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken nper,
-            Newtonsoft.Json.Linq.JToken pv,
-            Newtonsoft.Json.Linq.JToken fv)
+            System.Text.Json.JsonDocument nper,
+            System.Text.Json.JsonDocument pv,
+            System.Text.Json.JsonDocument fv)
             : base(requestUrl, client)
         {
             this.SetParameter("nper", nper, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("nper"))
             {
-                request.RequestBody.Nper = this.GetParameter<Newtonsoft.Json.Linq.JToken>("nper");
+                request.RequestBody.Nper = this.GetParameter<System.Text.Json.JsonDocument>("nper");
             }
 
             if (this.HasParameter("pv"))
             {
-                request.RequestBody.Pv = this.GetParameter<Newtonsoft.Json.Linq.JToken>("pv");
+                request.RequestBody.Pv = this.GetParameter<System.Text.Json.JsonDocument>("pv");
             }
 
             if (this.HasParameter("fv"))
             {
-                request.RequestBody.Fv = this.GetParameter<Newtonsoft.Json.Linq.JToken>("fv");
+                request.RequestBody.Fv = this.GetParameter<System.Text.Json.JsonDocument>("fv");
             }
 
             return request;

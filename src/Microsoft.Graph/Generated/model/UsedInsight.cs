@@ -12,50 +12,40 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Used Insight.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UsedInsight : Entity
     {
     
-		///<summary>
-		/// The UsedInsight constructor
-		///</summary>
-        public UsedInsight()
-        {
-            this.ODataType = "microsoft.graph.usedInsight";
-        }
-	
         /// <summary>
         /// Gets or sets last used.
         /// Information about when the item was last viewed or modified by the user. Read only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUsed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastUsed")]
         public UsageDetails LastUsed { get; set; }
     
         /// <summary>
         /// Gets or sets resource reference.
         /// Reference properties of the used document, such as the url and type of the document. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceReference", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceReference")]
         public ResourceReference ResourceReference { get; set; }
     
         /// <summary>
         /// Gets or sets resource visualization.
         /// Properties that you can use to visualize the document in your experience. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceVisualization", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceVisualization")]
         public ResourceVisualization ResourceVisualization { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
         /// Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resource")]
         public Entity Resource { get; set; }
     
     }

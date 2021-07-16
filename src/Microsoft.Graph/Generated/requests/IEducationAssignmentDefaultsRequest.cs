@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified EducationAssignmentDefaults using POST.
         /// </summary>
         /// <param name="educationAssignmentDefaultsToCreate">The EducationAssignmentDefaults to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationAssignmentDefaults.</returns>
-        System.Threading.Tasks.Task<EducationAssignmentDefaults> CreateAsync(EducationAssignmentDefaults educationAssignmentDefaultsToCreate);        /// <summary>
-        /// Creates the specified EducationAssignmentDefaults using POST.
+        System.Threading.Tasks.Task<EducationAssignmentDefaults> CreateAsync(EducationAssignmentDefaults educationAssignmentDefaultsToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified EducationAssignmentDefaults using POST and returns a <see cref="GraphResponse{EducationAssignmentDefaults}"/> object.
         /// </summary>
         /// <param name="educationAssignmentDefaultsToCreate">The EducationAssignmentDefaults to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created EducationAssignmentDefaults.</returns>
-        System.Threading.Tasks.Task<EducationAssignmentDefaults> CreateAsync(EducationAssignmentDefaults educationAssignmentDefaultsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified EducationAssignmentDefaults.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{EducationAssignmentDefaults}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationAssignmentDefaults>> CreateResponseAsync(EducationAssignmentDefaults educationAssignmentDefaultsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified EducationAssignmentDefaults.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified EducationAssignmentDefaults.
+        /// Deletes the specified EducationAssignmentDefaults and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EducationAssignmentDefaults.</returns>
-        System.Threading.Tasks.Task<EducationAssignmentDefaults> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified EducationAssignmentDefaults.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationAssignmentDefaults.</returns>
-        System.Threading.Tasks.Task<EducationAssignmentDefaults> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EducationAssignmentDefaults> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified EducationAssignmentDefaults using PATCH.
+        /// Gets the specified EducationAssignmentDefaults and returns a <see cref="GraphResponse{EducationAssignmentDefaults}"/> object.
         /// </summary>
-        /// <param name="educationAssignmentDefaultsToUpdate">The EducationAssignmentDefaults to update.</param>
-        /// <returns>The updated EducationAssignmentDefaults.</returns>
-        System.Threading.Tasks.Task<EducationAssignmentDefaults> UpdateAsync(EducationAssignmentDefaults educationAssignmentDefaultsToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationAssignmentDefaults}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationAssignmentDefaults>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified EducationAssignmentDefaults using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationAssignmentDefaults.</returns>
-        System.Threading.Tasks.Task<EducationAssignmentDefaults> UpdateAsync(EducationAssignmentDefaults educationAssignmentDefaultsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EducationAssignmentDefaults> UpdateAsync(EducationAssignmentDefaults educationAssignmentDefaultsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified EducationAssignmentDefaults using PATCH and returns a <see cref="GraphResponse{EducationAssignmentDefaults}"/> object.
+        /// </summary>
+        /// <param name="educationAssignmentDefaultsToUpdate">The EducationAssignmentDefaults to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationAssignmentDefaults}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationAssignmentDefaults>> UpdateResponseAsync(EducationAssignmentDefaults educationAssignmentDefaultsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified EducationAssignmentDefaults using PUT.
+        /// </summary>
+        /// <param name="educationAssignmentDefaultsToUpdate">The EducationAssignmentDefaults object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EducationAssignmentDefaults> PutAsync(EducationAssignmentDefaults educationAssignmentDefaultsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified EducationAssignmentDefaults using PUT and returns a <see cref="GraphResponse{EducationAssignmentDefaults}"/> object.
+        /// </summary>
+        /// <param name="educationAssignmentDefaultsToUpdate">The EducationAssignmentDefaults object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EducationAssignmentDefaults}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationAssignmentDefaults>> PutResponseAsync(EducationAssignmentDefaults educationAssignmentDefaultsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

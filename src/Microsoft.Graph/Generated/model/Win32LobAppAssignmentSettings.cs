@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Win32LobAppAssignmentSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppAssignmentSettings>))]
     public partial class Win32LobAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>
@@ -33,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets installTimeSettings.
         /// The install time settings to apply for this app assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installTimeSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installTimeSettings")]
         public MobileAppInstallTimeSettings InstallTimeSettings { get; set; }
     
         /// <summary>
         /// Gets or sets notifications.
         /// The notification status for this app assignment. Possible values are: showAll, showReboot, hideAll.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifications", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notifications")]
         public Win32LobAppNotification? Notifications { get; set; }
     
         /// <summary>
         /// Gets or sets restartSettings.
         /// The reboot settings to apply for this app assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("restartSettings")]
         public Win32LobAppRestartSettings RestartSettings { get; set; }
     
     }

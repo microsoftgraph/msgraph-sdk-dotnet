@@ -12,43 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Delegated Permission Classification.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DelegatedPermissionClassification>))]
     public partial class DelegatedPermissionClassification : Entity
     {
     
-		///<summary>
-		/// The DelegatedPermissionClassification constructor
-		///</summary>
-        public DelegatedPermissionClassification()
-        {
-            this.ODataType = "microsoft.graph.delegatedPermissionClassification";
-        }
-	
         /// <summary>
         /// Gets or sets classification.
         /// The classification value being given. Possible value: low. Does not support $filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classification")]
         public PermissionClassificationType? Classification { get; set; }
     
         /// <summary>
         /// Gets or sets permission id.
         /// The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("permissionId")]
         public string PermissionId { get; set; }
     
         /// <summary>
         /// Gets or sets permission name.
         /// The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("permissionName")]
         public string PermissionName { get; set; }
     
     }

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IEducationUserRubricsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified EducationRubric to the collection via POST.
-        /// </summary>
-        /// <param name="educationRubric">The EducationRubric to add.</param>
-        /// <returns>The created EducationRubric.</returns>
-        System.Threading.Tasks.Task<EducationRubric> AddAsync(EducationRubric educationRubric);
-
         /// <summary>
         /// Adds the specified EducationRubric to the collection via POST.
         /// </summary>
         /// <param name="educationRubric">The EducationRubric to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationRubric.</returns>
-        System.Threading.Tasks.Task<EducationRubric> AddAsync(EducationRubric educationRubric, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EducationRubric> AddAsync(EducationRubric educationRubric, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified EducationRubric to the collection via POST and returns a <see cref="GraphResponse{EducationRubric}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEducationUserRubricsCollectionPage> GetAsync();
+        /// <param name="educationRubric">The EducationRubric to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRubric}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRubric>> AddResponseAsync(EducationRubric educationRubric, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEducationUserRubricsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IEducationUserRubricsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EducationUserRubricsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationUserRubricsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationUserRubricsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

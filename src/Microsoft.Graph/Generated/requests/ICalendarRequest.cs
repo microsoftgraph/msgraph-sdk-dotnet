@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Calendar using POST.
         /// </summary>
         /// <param name="calendarToCreate">The Calendar to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Calendar.</returns>
-        System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate);        /// <summary>
-        /// Creates the specified Calendar using POST.
+        System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Calendar using POST and returns a <see cref="GraphResponse{Calendar}"/> object.
         /// </summary>
         /// <param name="calendarToCreate">The Calendar to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Calendar.</returns>
-        System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Calendar.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Calendar>> CreateResponseAsync(Calendar calendarToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Calendar.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Calendar.
+        /// Deletes the specified Calendar and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Calendar.</returns>
-        System.Threading.Tasks.Task<Calendar> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Calendar.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Calendar.</returns>
-        System.Threading.Tasks.Task<Calendar> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Calendar> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Calendar using PATCH.
+        /// Gets the specified Calendar and returns a <see cref="GraphResponse{Calendar}"/> object.
         /// </summary>
-        /// <param name="calendarToUpdate">The Calendar to update.</param>
-        /// <returns>The updated Calendar.</returns>
-        System.Threading.Tasks.Task<Calendar> UpdateAsync(Calendar calendarToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Calendar>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Calendar using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Calendar.</returns>
-        System.Threading.Tasks.Task<Calendar> UpdateAsync(Calendar calendarToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Calendar> UpdateAsync(Calendar calendarToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Calendar using PATCH and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <param name="calendarToUpdate">The Calendar to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Calendar>> UpdateResponseAsync(Calendar calendarToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Calendar using PUT.
+        /// </summary>
+        /// <param name="calendarToUpdate">The Calendar object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Calendar> PutAsync(Calendar calendarToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Calendar using PUT and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <param name="calendarToUpdate">The Calendar object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Calendar}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Calendar>> PutResponseAsync(Calendar calendarToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

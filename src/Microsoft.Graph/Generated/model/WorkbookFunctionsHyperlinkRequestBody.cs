@@ -9,30 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsHyperlinkRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsHyperlinkRequestBody
     {
     
         /// <summary>
         /// Gets or sets LinkLocation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linkLocation", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken LinkLocation { get; set; }
+        [JsonPropertyName("linkLocation")]
+        public System.Text.Json.JsonDocument LinkLocation { get; set; }
     
         /// <summary>
         /// Gets or sets FriendlyName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "friendlyName", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken FriendlyName { get; set; }
+        [JsonPropertyName("friendlyName")]
+        public System.Text.Json.JsonDocument FriendlyName { get; set; }
     
     }
 }

@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IGraphServiceOauth2PermissionGrantsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<GraphServiceOauth2PermissionGrantsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<GraphServiceOauth2PermissionGrantsCollectionPage>))]
     public interface IGraphServiceOauth2PermissionGrantsCollectionPage : ICollectionPage<OAuth2PermissionGrant>
     {
         /// <summary>

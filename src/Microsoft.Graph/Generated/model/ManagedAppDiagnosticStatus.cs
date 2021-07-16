@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedAppDiagnosticStatus.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedAppDiagnosticStatus>))]
     public partial class ManagedAppDiagnosticStatus
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagedAppDiagnosticStatus"/> class.
-        /// </summary>
-        public ManagedAppDiagnosticStatus()
-        {
-            this.ODataType = "microsoft.graph.managedAppDiagnosticStatus";
-        }
 
         /// <summary>
         /// Gets or sets mitigationInstruction.
         /// Instruction on how to mitigate a failed validation
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mitigationInstruction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mitigationInstruction")]
         public string MitigationInstruction { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// The state of the operation
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public string State { get; set; }
     
         /// <summary>
         /// Gets or sets validationName.
         /// The validation friendly name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "validationName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("validationName")]
         public string ValidationName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

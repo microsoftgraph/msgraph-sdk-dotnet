@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IIdentityContainerApiConnectorsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified IdentityApiConnector to the collection via POST.
-        /// </summary>
-        /// <param name="identityApiConnector">The IdentityApiConnector to add.</param>
-        /// <returns>The created IdentityApiConnector.</returns>
-        System.Threading.Tasks.Task<IdentityApiConnector> AddAsync(IdentityApiConnector identityApiConnector);
-
         /// <summary>
         /// Adds the specified IdentityApiConnector to the collection via POST.
         /// </summary>
         /// <param name="identityApiConnector">The IdentityApiConnector to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityApiConnector.</returns>
-        System.Threading.Tasks.Task<IdentityApiConnector> AddAsync(IdentityApiConnector identityApiConnector, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IdentityApiConnector> AddAsync(IdentityApiConnector identityApiConnector, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified IdentityApiConnector to the collection via POST and returns a <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IIdentityContainerApiConnectorsCollectionPage> GetAsync();
+        /// <param name="identityApiConnector">The IdentityApiConnector to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityApiConnector>> AddResponseAsync(IdentityApiConnector identityApiConnector, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IIdentityContainerApiConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IIdentityContainerApiConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{IdentityContainerApiConnectorsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityContainerApiConnectorsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityContainerApiConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

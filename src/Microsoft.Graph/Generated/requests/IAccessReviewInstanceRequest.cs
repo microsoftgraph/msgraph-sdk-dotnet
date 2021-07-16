@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AccessReviewInstance using POST.
         /// </summary>
         /// <param name="accessReviewInstanceToCreate">The AccessReviewInstance to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewInstance.</returns>
-        System.Threading.Tasks.Task<AccessReviewInstance> CreateAsync(AccessReviewInstance accessReviewInstanceToCreate);        /// <summary>
-        /// Creates the specified AccessReviewInstance using POST.
+        System.Threading.Tasks.Task<AccessReviewInstance> CreateAsync(AccessReviewInstance accessReviewInstanceToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AccessReviewInstance using POST and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object.
         /// </summary>
         /// <param name="accessReviewInstanceToCreate">The AccessReviewInstance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AccessReviewInstance.</returns>
-        System.Threading.Tasks.Task<AccessReviewInstance> CreateAsync(AccessReviewInstance accessReviewInstanceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AccessReviewInstance.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> CreateResponseAsync(AccessReviewInstance accessReviewInstanceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AccessReviewInstance.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AccessReviewInstance.
+        /// Deletes the specified AccessReviewInstance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AccessReviewInstance.</returns>
-        System.Threading.Tasks.Task<AccessReviewInstance> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AccessReviewInstance.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessReviewInstance.</returns>
-        System.Threading.Tasks.Task<AccessReviewInstance> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessReviewInstance> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AccessReviewInstance using PATCH.
+        /// Gets the specified AccessReviewInstance and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object.
         /// </summary>
-        /// <param name="accessReviewInstanceToUpdate">The AccessReviewInstance to update.</param>
-        /// <returns>The updated AccessReviewInstance.</returns>
-        System.Threading.Tasks.Task<AccessReviewInstance> UpdateAsync(AccessReviewInstance accessReviewInstanceToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AccessReviewInstance using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessReviewInstance.</returns>
-        System.Threading.Tasks.Task<AccessReviewInstance> UpdateAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessReviewInstance> UpdateAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AccessReviewInstance using PATCH and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object.
+        /// </summary>
+        /// <param name="accessReviewInstanceToUpdate">The AccessReviewInstance to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> UpdateResponseAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AccessReviewInstance using PUT.
+        /// </summary>
+        /// <param name="accessReviewInstanceToUpdate">The AccessReviewInstance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AccessReviewInstance> PutAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AccessReviewInstance using PUT and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object.
+        /// </summary>
+        /// <param name="accessReviewInstanceToUpdate">The AccessReviewInstance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AccessReviewInstance}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> PutResponseAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookChartLegendFormat using POST.
         /// </summary>
         /// <param name="workbookChartLegendFormatToCreate">The WorkbookChartLegendFormat to create.</param>
-        /// <returns>The created WorkbookChartLegendFormat.</returns>
-        public System.Threading.Tasks.Task<WorkbookChartLegendFormat> CreateAsync(WorkbookChartLegendFormat workbookChartLegendFormatToCreate)
-        {
-            return this.CreateAsync(workbookChartLegendFormatToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookChartLegendFormat using POST.
-        /// </summary>
-        /// <param name="workbookChartLegendFormatToCreate">The WorkbookChartLegendFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartLegendFormat.</returns>
-        public async System.Threading.Tasks.Task<WorkbookChartLegendFormat> CreateAsync(WorkbookChartLegendFormat workbookChartLegendFormatToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookChartLegendFormat> CreateAsync(WorkbookChartLegendFormat workbookChartLegendFormatToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WorkbookChartLegendFormat>(workbookChartLegendFormatToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WorkbookChartLegendFormat.
+        /// Creates the specified WorkbookChartLegendFormat using POST and returns a <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="workbookChartLegendFormatToCreate">The WorkbookChartLegendFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegendFormat>> CreateResponseAsync(WorkbookChartLegendFormat workbookChartLegendFormatToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WorkbookChartLegendFormat>(workbookChartLegendFormatToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WorkbookChartLegendFormat>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WorkbookChartLegendFormat.
+        /// Deletes the specified WorkbookChartLegendFormat and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookChartLegendFormat.</returns>
-        public System.Threading.Tasks.Task<WorkbookChartLegendFormat> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookChartLegendFormat.</returns>
-        public async System.Threading.Tasks.Task<WorkbookChartLegendFormat> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookChartLegendFormat> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WorkbookChartLegendFormat>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WorkbookChartLegendFormat using PATCH.
+        /// Gets the specified WorkbookChartLegendFormat and returns a <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object.
         /// </summary>
-        /// <param name="workbookChartLegendFormatToUpdate">The WorkbookChartLegendFormat to update.</param>
-        /// <returns>The updated WorkbookChartLegendFormat.</returns>
-        public System.Threading.Tasks.Task<WorkbookChartLegendFormat> UpdateAsync(WorkbookChartLegendFormat workbookChartLegendFormatToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegendFormat>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(workbookChartLegendFormatToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WorkbookChartLegendFormat>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartLegendFormat.</returns>
-        public async System.Threading.Tasks.Task<WorkbookChartLegendFormat> UpdateAsync(WorkbookChartLegendFormat workbookChartLegendFormatToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookChartLegendFormat> UpdateAsync(WorkbookChartLegendFormat workbookChartLegendFormatToUpdate, CancellationToken cancellationToken = default)
         {
-			if (workbookChartLegendFormatToUpdate.AdditionalData != null)
-			{
-				if (workbookChartLegendFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookChartLegendFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartLegendFormatToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookChartLegendFormatToUpdate.AdditionalData != null)
-            {
-                if (workbookChartLegendFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookChartLegendFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartLegendFormatToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WorkbookChartLegendFormat>(workbookChartLegendFormatToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookChartLegendFormat using PATCH and returns a <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartLegendFormatToUpdate">The WorkbookChartLegendFormat to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegendFormat>> UpdateResponseAsync(WorkbookChartLegendFormat workbookChartLegendFormatToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WorkbookChartLegendFormat>(workbookChartLegendFormatToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookChartLegendFormat using PUT.
+        /// </summary>
+        /// <param name="workbookChartLegendFormatToUpdate">The WorkbookChartLegendFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WorkbookChartLegendFormat> PutAsync(WorkbookChartLegendFormat workbookChartLegendFormatToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WorkbookChartLegendFormat>(workbookChartLegendFormatToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookChartLegendFormat using PUT and returns a <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartLegendFormatToUpdate">The WorkbookChartLegendFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WorkbookChartLegendFormat}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegendFormat>> PutResponseAsync(WorkbookChartLegendFormat workbookChartLegendFormatToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WorkbookChartLegendFormat>(workbookChartLegendFormatToUpdate, cancellationToken);
         }
 
         /// <summary>

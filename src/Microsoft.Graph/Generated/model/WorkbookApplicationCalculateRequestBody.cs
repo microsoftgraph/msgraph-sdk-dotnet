@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookApplicationCalculateRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookApplicationCalculateRequestBody
     {
     
         /// <summary>
         /// Gets or sets CalculationType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calculationType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calculationType")]
         public string CalculationType { get; set; }
     
     }

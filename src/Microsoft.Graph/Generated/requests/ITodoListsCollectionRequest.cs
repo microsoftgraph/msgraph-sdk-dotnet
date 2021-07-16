@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ITodoListsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified TodoTaskList to the collection via POST.
-        /// </summary>
-        /// <param name="todoTaskList">The TodoTaskList to add.</param>
-        /// <returns>The created TodoTaskList.</returns>
-        System.Threading.Tasks.Task<TodoTaskList> AddAsync(TodoTaskList todoTaskList);
-
         /// <summary>
         /// Adds the specified TodoTaskList to the collection via POST.
         /// </summary>
         /// <param name="todoTaskList">The TodoTaskList to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TodoTaskList.</returns>
-        System.Threading.Tasks.Task<TodoTaskList> AddAsync(TodoTaskList todoTaskList, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TodoTaskList> AddAsync(TodoTaskList todoTaskList, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified TodoTaskList to the collection via POST and returns a <see cref="GraphResponse{TodoTaskList}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITodoListsCollectionPage> GetAsync();
+        /// <param name="todoTaskList">The TodoTaskList to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TodoTaskList}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> AddResponseAsync(TodoTaskList todoTaskList, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITodoListsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ITodoListsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TodoListsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TodoListsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TodoListsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsEoMonthRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken startDate,
-            Newtonsoft.Json.Linq.JToken months)
+            System.Text.Json.JsonDocument startDate,
+            System.Text.Json.JsonDocument months)
             : base(requestUrl, client)
         {
             this.SetParameter("startDate", startDate, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("startDate"))
             {
-                request.RequestBody.StartDate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("startDate");
+                request.RequestBody.StartDate = this.GetParameter<System.Text.Json.JsonDocument>("startDate");
             }
 
             if (this.HasParameter("months"))
             {
-                request.RequestBody.Months = this.GetParameter<Newtonsoft.Json.Linq.JToken>("months");
+                request.RequestBody.Months = this.GetParameter<System.Text.Json.JsonDocument>("months");
             }
 
             return request;

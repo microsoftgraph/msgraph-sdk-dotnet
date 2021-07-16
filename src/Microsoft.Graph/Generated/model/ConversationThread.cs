@@ -12,86 +12,82 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Conversation Thread.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ConversationThread : Entity
     {
     
-		///<summary>
-		/// The ConversationThread constructor
-		///</summary>
-        public ConversationThread()
-        {
-            this.ODataType = "microsoft.graph.conversationThread";
-        }
-	
         /// <summary>
         /// Gets or sets cc recipients.
         /// The Cc: recipients for the thread.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ccRecipients", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ccRecipients")]
         public IEnumerable<Recipient> CcRecipients { get; set; }
     
         /// <summary>
         /// Gets or sets has attachments.
         /// Indicates whether any of the posts within this thread has at least one attachment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasAttachments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hasAttachments")]
         public bool? HasAttachments { get; set; }
     
         /// <summary>
         /// Gets or sets is locked.
         /// Indicates if the thread is locked.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isLocked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isLocked")]
         public bool? IsLocked { get; set; }
     
         /// <summary>
         /// Gets or sets last delivered date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastDeliveredDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastDeliveredDateTime")]
         public DateTimeOffset? LastDeliveredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets preview.
         /// A short summary from the body of the latest post in this conversation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preview", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("preview")]
         public string Preview { get; set; }
     
         /// <summary>
         /// Gets or sets topic.
         /// The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topic", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("topic")]
         public string Topic { get; set; }
     
         /// <summary>
         /// Gets or sets to recipients.
         /// The To: recipients for the thread.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "toRecipients", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("toRecipients")]
         public IEnumerable<Recipient> ToRecipients { get; set; }
     
         /// <summary>
         /// Gets or sets unique senders.
         /// All the users that sent a message to this thread.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueSenders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uniqueSenders")]
         public IEnumerable<string> UniqueSenders { get; set; }
     
         /// <summary>
         /// Gets or sets posts.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "posts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("posts")]
         public IConversationThreadPostsCollectionPage Posts { get; set; }
+
+        /// <summary>
+        /// Gets or sets postsNextLink.
+        /// </summary>
+        [JsonPropertyName("posts@odata.nextLink")]
+        public string PostsNextLink { get; set; }
     
     }
 }

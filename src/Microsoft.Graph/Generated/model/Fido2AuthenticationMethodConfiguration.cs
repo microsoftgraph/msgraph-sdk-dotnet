@@ -12,51 +12,55 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Fido2Authentication Method Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Fido2AuthenticationMethodConfiguration : AuthenticationMethodConfiguration
     {
     
-		///<summary>
-		/// The Fido2AuthenticationMethodConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Fido2AuthenticationMethodConfiguration constructor
+        ///</summary>
         public Fido2AuthenticationMethodConfiguration()
         {
             this.ODataType = "microsoft.graph.fido2AuthenticationMethodConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets is attestation enforced.
         /// Determines whether attestation must be enforced for FIDO2 security key registration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAttestationEnforced", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isAttestationEnforced")]
         public bool? IsAttestationEnforced { get; set; }
     
         /// <summary>
         /// Gets or sets is self service registration allowed.
         /// Determines if users can register new FIDO2 security keys.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSelfServiceRegistrationAllowed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isSelfServiceRegistrationAllowed")]
         public bool? IsSelfServiceRegistrationAllowed { get; set; }
     
         /// <summary>
         /// Gets or sets key restrictions.
         /// Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyRestrictions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keyRestrictions")]
         public Fido2KeyRestrictions KeyRestrictions { get; set; }
     
         /// <summary>
         /// Gets or sets include targets.
         /// A collection of users or groups who are enabled to use the authentication method.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeTargets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeTargets")]
         public IFido2AuthenticationMethodConfigurationIncludeTargetsCollectionPage IncludeTargets { get; set; }
+
+        /// <summary>
+        /// Gets or sets includeTargetsNextLink.
+        /// </summary>
+        [JsonPropertyName("includeTargets@odata.nextLink")]
+        public string IncludeTargetsNextLink { get; set; }
     
     }
 }

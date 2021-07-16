@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type InformationalUrl.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<InformationalUrl>))]
     public partial class InformationalUrl
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InformationalUrl"/> class.
-        /// </summary>
-        public InformationalUrl()
-        {
-            this.ODataType = "microsoft.graph.informationalUrl";
-        }
 
         /// <summary>
         /// Gets or sets logoUrl.
         /// CDN URL to the application's logo, Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logoUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("logoUrl")]
         public string LogoUrl { get; set; }
     
         /// <summary>
         /// Gets or sets marketingUrl.
         /// Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "marketingUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("marketingUrl")]
         public string MarketingUrl { get; set; }
     
         /// <summary>
         /// Gets or sets privacyStatementUrl.
         /// Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyStatementUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("privacyStatementUrl")]
         public string PrivacyStatementUrl { get; set; }
     
         /// <summary>
         /// Gets or sets supportUrl.
         /// Link to the application's support page. For example, https://www.contoso.com/app/support
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supportUrl")]
         public string SupportUrl { get; set; }
     
         /// <summary>
         /// Gets or sets termsOfServiceUrl.
         /// Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsOfServiceUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("termsOfServiceUrl")]
         public string TermsOfServiceUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

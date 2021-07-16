@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookCreateSessionRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookCreateSessionRequestBody
     {
     
         /// <summary>
         /// Gets or sets PersistChanges.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "persistChanges", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("persistChanges")]
         public bool PersistChanges { get; set; }
     
     }

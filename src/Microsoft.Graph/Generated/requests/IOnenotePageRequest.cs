@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified OnenotePage using POST.
         /// </summary>
         /// <param name="onenotePageToCreate">The OnenotePage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenotePage.</returns>
-        System.Threading.Tasks.Task<OnenotePage> CreateAsync(OnenotePage onenotePageToCreate);        /// <summary>
-        /// Creates the specified OnenotePage using POST.
+        System.Threading.Tasks.Task<OnenotePage> CreateAsync(OnenotePage onenotePageToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified OnenotePage using POST and returns a <see cref="GraphResponse{OnenotePage}"/> object.
         /// </summary>
         /// <param name="onenotePageToCreate">The OnenotePage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created OnenotePage.</returns>
-        System.Threading.Tasks.Task<OnenotePage> CreateAsync(OnenotePage onenotePageToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified OnenotePage.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{OnenotePage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenotePage>> CreateResponseAsync(OnenotePage onenotePageToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified OnenotePage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified OnenotePage.
+        /// Deletes the specified OnenotePage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OnenotePage.</returns>
-        System.Threading.Tasks.Task<OnenotePage> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified OnenotePage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnenotePage.</returns>
-        System.Threading.Tasks.Task<OnenotePage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OnenotePage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified OnenotePage using PATCH.
+        /// Gets the specified OnenotePage and returns a <see cref="GraphResponse{OnenotePage}"/> object.
         /// </summary>
-        /// <param name="onenotePageToUpdate">The OnenotePage to update.</param>
-        /// <returns>The updated OnenotePage.</returns>
-        System.Threading.Tasks.Task<OnenotePage> UpdateAsync(OnenotePage onenotePageToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenotePage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenotePage>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OnenotePage using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnenotePage.</returns>
-        System.Threading.Tasks.Task<OnenotePage> UpdateAsync(OnenotePage onenotePageToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OnenotePage> UpdateAsync(OnenotePage onenotePageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified OnenotePage using PATCH and returns a <see cref="GraphResponse{OnenotePage}"/> object.
+        /// </summary>
+        /// <param name="onenotePageToUpdate">The OnenotePage to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnenotePage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenotePage>> UpdateResponseAsync(OnenotePage onenotePageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified OnenotePage using PUT.
+        /// </summary>
+        /// <param name="onenotePageToUpdate">The OnenotePage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<OnenotePage> PutAsync(OnenotePage onenotePageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified OnenotePage using PUT and returns a <see cref="GraphResponse{OnenotePage}"/> object.
+        /// </summary>
+        /// <param name="onenotePageToUpdate">The OnenotePage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{OnenotePage}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenotePage>> PutResponseAsync(OnenotePage onenotePageToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

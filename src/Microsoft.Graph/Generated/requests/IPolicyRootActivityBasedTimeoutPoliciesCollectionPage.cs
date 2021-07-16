@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IPolicyRootActivityBasedTimeoutPoliciesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<PolicyRootActivityBasedTimeoutPoliciesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<PolicyRootActivityBasedTimeoutPoliciesCollectionPage>))]
     public interface IPolicyRootActivityBasedTimeoutPoliciesCollectionPage : ICollectionPage<ActivityBasedTimeoutPolicy>
     {
         /// <summary>

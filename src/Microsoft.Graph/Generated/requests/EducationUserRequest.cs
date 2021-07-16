@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified EducationUser using POST.
         /// </summary>
         /// <param name="educationUserToCreate">The EducationUser to create.</param>
-        /// <returns>The created EducationUser.</returns>
-        public System.Threading.Tasks.Task<EducationUser> CreateAsync(EducationUser educationUserToCreate)
-        {
-            return this.CreateAsync(educationUserToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EducationUser using POST.
-        /// </summary>
-        /// <param name="educationUserToCreate">The EducationUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationUser.</returns>
-        public async System.Threading.Tasks.Task<EducationUser> CreateAsync(EducationUser educationUserToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationUser> CreateAsync(EducationUser educationUserToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<EducationUser>(educationUserToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified EducationUser.
+        /// Creates the specified EducationUser using POST and returns a <see cref="GraphResponse{EducationUser}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="educationUserToCreate">The EducationUser to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationUser}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationUser>> CreateResponseAsync(EducationUser educationUserToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<EducationUser>(educationUserToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<EducationUser>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified EducationUser.
+        /// Deletes the specified EducationUser and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EducationUser.</returns>
-        public System.Threading.Tasks.Task<EducationUser> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationUser.</returns>
-        public async System.Threading.Tasks.Task<EducationUser> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationUser> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<EducationUser>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified EducationUser using PATCH.
+        /// Gets the specified EducationUser and returns a <see cref="GraphResponse{EducationUser}"/> object.
         /// </summary>
-        /// <param name="educationUserToUpdate">The EducationUser to update.</param>
-        /// <returns>The updated EducationUser.</returns>
-        public System.Threading.Tasks.Task<EducationUser> UpdateAsync(EducationUser educationUserToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationUser}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationUser>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(educationUserToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<EducationUser>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationUser.</returns>
-        public async System.Threading.Tasks.Task<EducationUser> UpdateAsync(EducationUser educationUserToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationUser> UpdateAsync(EducationUser educationUserToUpdate, CancellationToken cancellationToken = default)
         {
-			if (educationUserToUpdate.AdditionalData != null)
-			{
-				if (educationUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					educationUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationUserToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (educationUserToUpdate.AdditionalData != null)
-            {
-                if (educationUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    educationUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationUserToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<EducationUser>(educationUserToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EducationUser using PATCH and returns a <see cref="GraphResponse{EducationUser}"/> object.
+        /// </summary>
+        /// <param name="educationUserToUpdate">The EducationUser to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationUser}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationUser>> UpdateResponseAsync(EducationUser educationUserToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<EducationUser>(educationUserToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified EducationUser using PUT.
+        /// </summary>
+        /// <param name="educationUserToUpdate">The EducationUser object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<EducationUser> PutAsync(EducationUser educationUserToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<EducationUser>(educationUserToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EducationUser using PUT and returns a <see cref="GraphResponse{EducationUser}"/> object.
+        /// </summary>
+        /// <param name="educationUserToUpdate">The EducationUser object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{EducationUser}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationUser>> PutResponseAsync(EducationUser educationUserToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<EducationUser>(educationUserToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EducationUser educationUserToInitialize)
         {
 
-            if (educationUserToInitialize != null && educationUserToInitialize.AdditionalData != null)
+            if (educationUserToInitialize != null)
             {
-
                 if (educationUserToInitialize.Rubrics != null && educationUserToInitialize.Rubrics.CurrentPage != null)
                 {
+                    educationUserToInitialize.Rubrics.InitializeNextPageRequest(this.Client, educationUserToInitialize.RubricsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationUserToInitialize.Rubrics.AdditionalData = educationUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("rubrics@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationUserToInitialize.Rubrics.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (educationUserToInitialize.Classes != null && educationUserToInitialize.Classes.CurrentPage != null)
                 {
+                    educationUserToInitialize.Classes.InitializeNextPageRequest(this.Client, educationUserToInitialize.ClassesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationUserToInitialize.Classes.AdditionalData = educationUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("classes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationUserToInitialize.Classes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (educationUserToInitialize.Schools != null && educationUserToInitialize.Schools.CurrentPage != null)
                 {
+                    educationUserToInitialize.Schools.InitializeNextPageRequest(this.Client, educationUserToInitialize.SchoolsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationUserToInitialize.Schools.AdditionalData = educationUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("schools@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationUserToInitialize.Schools.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (educationUserToInitialize.TaughtClasses != null && educationUserToInitialize.TaughtClasses.CurrentPage != null)
                 {
+                    educationUserToInitialize.TaughtClasses.InitializeNextPageRequest(this.Client, educationUserToInitialize.TaughtClassesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationUserToInitialize.TaughtClasses.AdditionalData = educationUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("taughtClasses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationUserToInitialize.TaughtClasses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

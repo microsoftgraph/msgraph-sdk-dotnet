@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified OfferShiftRequestObject to the collection via POST.
-        /// </summary>
-        /// <param name="offerShiftRequest">The OfferShiftRequestObject to add.</param>
-        /// <returns>The created OfferShiftRequestObject.</returns>
-        public System.Threading.Tasks.Task<OfferShiftRequestObject> AddAsync(OfferShiftRequestObject offerShiftRequest)
-        {
-            return this.AddAsync(offerShiftRequest, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OfferShiftRequestObject to the collection via POST.
         /// </summary>
         /// <param name="offerShiftRequest">The OfferShiftRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OfferShiftRequestObject.</returns>
-        public System.Threading.Tasks.Task<OfferShiftRequestObject> AddAsync(OfferShiftRequestObject offerShiftRequest, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<OfferShiftRequestObject> AddAsync(OfferShiftRequestObject offerShiftRequest, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<OfferShiftRequestObject>(offerShiftRequest, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified OfferShiftRequestObject to the collection via POST and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IScheduleOfferShiftRequestsCollectionPage> GetAsync()
+        /// <param name="offerShiftRequest">The OfferShiftRequestObject to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> AddResponseAsync(OfferShiftRequestObject offerShiftRequest, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<OfferShiftRequestObject>(offerShiftRequest, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IScheduleOfferShiftRequestsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IScheduleOfferShiftRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ScheduleOfferShiftRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleOfferShiftRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScheduleOfferShiftRequestsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ScheduleOfferShiftRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ScheduleOfferShiftRequestsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

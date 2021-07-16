@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsDateRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsDateRequestBody
     {
     
         /// <summary>
         /// Gets or sets Year.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "year", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Year { get; set; }
+        [JsonPropertyName("year")]
+        public System.Text.Json.JsonDocument Year { get; set; }
     
         /// <summary>
         /// Gets or sets Month.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "month", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Month { get; set; }
+        [JsonPropertyName("month")]
+        public System.Text.Json.JsonDocument Month { get; set; }
     
         /// <summary>
         /// Gets or sets Day.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "day", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Day { get; set; }
+        [JsonPropertyName("day")]
+        public System.Text.Json.JsonDocument Day { get; set; }
     
     }
 }

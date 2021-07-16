@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         public WorkbookFunctionsIspmtRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken rate,
-            Newtonsoft.Json.Linq.JToken per,
-            Newtonsoft.Json.Linq.JToken nper,
-            Newtonsoft.Json.Linq.JToken pv)
+            System.Text.Json.JsonDocument rate,
+            System.Text.Json.JsonDocument per,
+            System.Text.Json.JsonDocument nper,
+            System.Text.Json.JsonDocument pv)
             : base(requestUrl, client)
         {
             this.SetParameter("rate", rate, true);
@@ -54,22 +54,22 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("rate"))
             {
-                request.RequestBody.Rate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("rate");
+                request.RequestBody.Rate = this.GetParameter<System.Text.Json.JsonDocument>("rate");
             }
 
             if (this.HasParameter("per"))
             {
-                request.RequestBody.Per = this.GetParameter<Newtonsoft.Json.Linq.JToken>("per");
+                request.RequestBody.Per = this.GetParameter<System.Text.Json.JsonDocument>("per");
             }
 
             if (this.HasParameter("nper"))
             {
-                request.RequestBody.Nper = this.GetParameter<Newtonsoft.Json.Linq.JToken>("nper");
+                request.RequestBody.Nper = this.GetParameter<System.Text.Json.JsonDocument>("nper");
             }
 
             if (this.HasParameter("pv"))
             {
-                request.RequestBody.Pv = this.GetParameter<Newtonsoft.Json.Linq.JToken>("pv");
+                request.RequestBody.Pv = this.GetParameter<System.Text.Json.JsonDocument>("pv");
             }
 
             return request;

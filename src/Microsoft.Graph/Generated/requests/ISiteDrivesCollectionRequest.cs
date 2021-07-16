@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ISiteDrivesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Drive to the collection via POST.
-        /// </summary>
-        /// <param name="drive">The Drive to add.</param>
-        /// <returns>The created Drive.</returns>
-        System.Threading.Tasks.Task<Drive> AddAsync(Drive drive);
-
         /// <summary>
         /// Adds the specified Drive to the collection via POST.
         /// </summary>
         /// <param name="drive">The Drive to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Drive.</returns>
-        System.Threading.Tasks.Task<Drive> AddAsync(Drive drive, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Drive> AddAsync(Drive drive, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Drive to the collection via POST and returns a <see cref="GraphResponse{Drive}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISiteDrivesCollectionPage> GetAsync();
+        /// <param name="drive">The Drive to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Drive}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Drive>> AddResponseAsync(Drive drive, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISiteDrivesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ISiteDrivesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SiteDrivesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SiteDrivesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SiteDrivesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

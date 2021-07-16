@@ -36,22 +36,25 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the stream.
         /// </summary>
-        /// <returns>The stream.</returns>
-        public System.Threading.Tasks.Task<Stream> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the stream.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
         /// <returns>The stream.</returns>
-        public System.Threading.Tasks.Task<Stream> GetAsync(CancellationToken cancellationToken, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead)
+        public System.Threading.Tasks.Task<Stream> GetAsync(CancellationToken cancellationToken = default, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             return this.SendStreamRequestAsync(null, cancellationToken, completionOption);
+        }
+
+        /// <summary>
+        /// Gets the <see cref="GraphResponse"/> object of the request.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken, completionOption);
         }
     
         /// <summary>
@@ -59,25 +62,29 @@ namespace Microsoft.Graph
         /// </summary>
         /// <typeparam name="T">The type returned by the PUT call.</typeparam>
         /// <param name="backgroundImage">The stream to PUT.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
         /// <returns>The object returned by the PUT call.</returns>
-        public System.Threading.Tasks.Task<T> PutAsync<T>(Stream backgroundImage) where T : OrganizationalBrandingProperties
+        public System.Threading.Tasks.Task<T> PutAsync<T>(Stream backgroundImage, CancellationToken cancellationToken = default, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : OrganizationalBrandingProperties
         {
-            return this.PutAsync<T>(backgroundImage, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Stream;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsync<T>(backgroundImage, cancellationToken, completionOption);
         }
 
         /// <summary>
-        /// PUTs the specified stream.
+        /// PUTs the specified stream and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <typeparam name="T">The type returned by the PUT call.</typeparam>
         /// <param name="backgroundImage">The stream to PUT.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
-        /// <returns>The object returned by the PUT call.</returns>
-        public System.Threading.Tasks.Task<T> PutAsync<T>(Stream backgroundImage, CancellationToken cancellationToken, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : OrganizationalBrandingProperties
+        /// <returns>The <see cref="GraphResponse"/> object returned by the PUT call.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<T>> PutResponseAsync<T>(Stream backgroundImage, CancellationToken cancellationToken = default, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : OrganizationalBrandingProperties
         {
-            this.ContentType = "application/octet-stream";
-            this.Method = "PUT";
-            return this.SendAsync<T>(backgroundImage, cancellationToken, completionOption);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Stream;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<T>(backgroundImage, cancellationToken, completionOption);
         }
     
     }

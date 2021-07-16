@@ -12,36 +12,38 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Directory.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Directory : Entity
     {
     
-		///<summary>
-		/// The Directory constructor
-		///</summary>
-        public Directory()
-        {
-            this.ODataType = "microsoft.graph.directory";
-        }
-	
         /// <summary>
         /// Gets or sets administrative units.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "administrativeUnits", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("administrativeUnits")]
         public IDirectoryAdministrativeUnitsCollectionPage AdministrativeUnits { get; set; }
+
+        /// <summary>
+        /// Gets or sets administrativeUnitsNextLink.
+        /// </summary>
+        [JsonPropertyName("administrativeUnits@odata.nextLink")]
+        public string AdministrativeUnitsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets deleted items.
         /// Recently deleted items. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedItems", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deletedItems")]
         public IDirectoryDeletedItemsCollectionPage DeletedItems { get; set; }
+
+        /// <summary>
+        /// Gets or sets deletedItemsNextLink.
+        /// </summary>
+        [JsonPropertyName("deletedItems@odata.nextLink")]
+        public string DeletedItemsNextLink { get; set; }
     
     }
 }

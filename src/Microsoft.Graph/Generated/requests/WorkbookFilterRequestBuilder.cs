@@ -189,7 +189,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookFilterApplyValuesFilterRequestBuilder"/>.</returns>
         public IWorkbookFilterApplyValuesFilterRequestBuilder ApplyValuesFilter(
-            Newtonsoft.Json.Linq.JToken values = null)
+            System.Text.Json.JsonDocument values = null)
         {
             return new WorkbookFilterApplyValuesFilterRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.applyValuesFilter"),

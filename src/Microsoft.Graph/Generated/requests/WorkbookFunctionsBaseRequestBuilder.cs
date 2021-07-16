@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsBaseRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken radix,
-            Newtonsoft.Json.Linq.JToken minLength)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument radix,
+            System.Text.Json.JsonDocument minLength)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("radix"))
             {
-                request.RequestBody.Radix = this.GetParameter<Newtonsoft.Json.Linq.JToken>("radix");
+                request.RequestBody.Radix = this.GetParameter<System.Text.Json.JsonDocument>("radix");
             }
 
             if (this.HasParameter("minLength"))
             {
-                request.RequestBody.MinLength = this.GetParameter<Newtonsoft.Json.Linq.JToken>("minLength");
+                request.RequestBody.MinLength = this.GetParameter<System.Text.Json.JsonDocument>("minLength");
             }
 
             return request;

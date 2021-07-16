@@ -12,36 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education Points Outcome.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EducationPointsOutcome : EducationOutcome
     {
     
-		///<summary>
-		/// The EducationPointsOutcome constructor
-		///</summary>
+        ///<summary>
+        /// The EducationPointsOutcome constructor
+        ///</summary>
         public EducationPointsOutcome()
         {
             this.ODataType = "microsoft.graph.educationPointsOutcome";
         }
-	
+
         /// <summary>
         /// Gets or sets points.
         /// The numeric grade the teacher has given the student for this assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "points", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("points")]
         public EducationAssignmentPointsGrade Points { get; set; }
     
         /// <summary>
         /// Gets or sets published points.
         /// A copy of the points property that is made when the grade is released to the student.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedPoints", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishedPoints")]
         public EducationAssignmentPointsGrade PublishedPoints { get; set; }
     
     }

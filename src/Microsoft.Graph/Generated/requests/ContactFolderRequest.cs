@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ContactFolder using POST.
         /// </summary>
         /// <param name="contactFolderToCreate">The ContactFolder to create.</param>
-        /// <returns>The created ContactFolder.</returns>
-        public System.Threading.Tasks.Task<ContactFolder> CreateAsync(ContactFolder contactFolderToCreate)
-        {
-            return this.CreateAsync(contactFolderToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ContactFolder using POST.
-        /// </summary>
-        /// <param name="contactFolderToCreate">The ContactFolder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ContactFolder.</returns>
-        public async System.Threading.Tasks.Task<ContactFolder> CreateAsync(ContactFolder contactFolderToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ContactFolder> CreateAsync(ContactFolder contactFolderToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ContactFolder>(contactFolderToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ContactFolder.
+        /// Creates the specified ContactFolder using POST and returns a <see cref="GraphResponse{ContactFolder}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="contactFolderToCreate">The ContactFolder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ContactFolder>> CreateResponseAsync(ContactFolder contactFolderToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ContactFolder>(contactFolderToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ContactFolder>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ContactFolder.
+        /// Deletes the specified ContactFolder and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ContactFolder.</returns>
-        public System.Threading.Tasks.Task<ContactFolder> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ContactFolder.</returns>
-        public async System.Threading.Tasks.Task<ContactFolder> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ContactFolder> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ContactFolder>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ContactFolder using PATCH.
+        /// Gets the specified ContactFolder and returns a <see cref="GraphResponse{ContactFolder}"/> object.
         /// </summary>
-        /// <param name="contactFolderToUpdate">The ContactFolder to update.</param>
-        /// <returns>The updated ContactFolder.</returns>
-        public System.Threading.Tasks.Task<ContactFolder> UpdateAsync(ContactFolder contactFolderToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ContactFolder>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(contactFolderToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ContactFolder>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ContactFolder.</returns>
-        public async System.Threading.Tasks.Task<ContactFolder> UpdateAsync(ContactFolder contactFolderToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ContactFolder> UpdateAsync(ContactFolder contactFolderToUpdate, CancellationToken cancellationToken = default)
         {
-			if (contactFolderToUpdate.AdditionalData != null)
-			{
-				if (contactFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					contactFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, contactFolderToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (contactFolderToUpdate.AdditionalData != null)
-            {
-                if (contactFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    contactFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, contactFolderToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ContactFolder>(contactFolderToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ContactFolder using PATCH and returns a <see cref="GraphResponse{ContactFolder}"/> object.
+        /// </summary>
+        /// <param name="contactFolderToUpdate">The ContactFolder to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ContactFolder>> UpdateResponseAsync(ContactFolder contactFolderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ContactFolder>(contactFolderToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ContactFolder using PUT.
+        /// </summary>
+        /// <param name="contactFolderToUpdate">The ContactFolder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ContactFolder> PutAsync(ContactFolder contactFolderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ContactFolder>(contactFolderToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ContactFolder using PUT and returns a <see cref="GraphResponse{ContactFolder}"/> object.
+        /// </summary>
+        /// <param name="contactFolderToUpdate">The ContactFolder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ContactFolder}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ContactFolder>> PutResponseAsync(ContactFolder contactFolderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ContactFolder>(contactFolderToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ContactFolder contactFolderToInitialize)
         {
 
-            if (contactFolderToInitialize != null && contactFolderToInitialize.AdditionalData != null)
+            if (contactFolderToInitialize != null)
             {
-
                 if (contactFolderToInitialize.ChildFolders != null && contactFolderToInitialize.ChildFolders.CurrentPage != null)
                 {
+                    contactFolderToInitialize.ChildFolders.InitializeNextPageRequest(this.Client, contactFolderToInitialize.ChildFoldersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactFolderToInitialize.ChildFolders.AdditionalData = contactFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("childFolders@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactFolderToInitialize.ChildFolders.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (contactFolderToInitialize.Contacts != null && contactFolderToInitialize.Contacts.CurrentPage != null)
                 {
+                    contactFolderToInitialize.Contacts.InitializeNextPageRequest(this.Client, contactFolderToInitialize.ContactsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactFolderToInitialize.Contacts.AdditionalData = contactFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("contacts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactFolderToInitialize.Contacts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (contactFolderToInitialize.MultiValueExtendedProperties != null && contactFolderToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    contactFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, contactFolderToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactFolderToInitialize.MultiValueExtendedProperties.AdditionalData = contactFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (contactFolderToInitialize.SingleValueExtendedProperties != null && contactFolderToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    contactFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, contactFolderToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     contactFolderToInitialize.SingleValueExtendedProperties.AdditionalData = contactFolderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    contactFolderToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        contactFolderToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

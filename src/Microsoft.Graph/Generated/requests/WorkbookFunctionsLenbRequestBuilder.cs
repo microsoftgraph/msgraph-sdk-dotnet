@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsLenbRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken text)
+            System.Text.Json.JsonDocument text)
             : base(requestUrl, client)
         {
             this.SetParameter("text", text, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("text"))
             {
-                request.RequestBody.Text = this.GetParameter<Newtonsoft.Json.Linq.JToken>("text");
+                request.RequestBody.Text = this.GetParameter<System.Text.Json.JsonDocument>("text");
             }
 
             return request;

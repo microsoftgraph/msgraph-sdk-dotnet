@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsAtanRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number)
+            System.Text.Json.JsonDocument number)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             return request;

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EdgeSearchEngine.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<EdgeSearchEngine>))]
     public partial class EdgeSearchEngine : EdgeSearchEngineBase
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets edgeSearchEngineType.
         /// Allows IT admins to set a predefined default search engine for MDM-Controlled devices. Possible values are: default, bing.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeSearchEngineType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("edgeSearchEngineType")]
         public EdgeSearchEngineType? EdgeSearchEngineType { get; set; }
     
     }

@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceComplianceSettingState to the collection via POST.
-        /// </summary>
-        /// <param name="deviceComplianceSettingState">The DeviceComplianceSettingState to add.</param>
-        /// <returns>The created DeviceComplianceSettingState.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceSettingState> AddAsync(DeviceComplianceSettingState deviceComplianceSettingState)
-        {
-            return this.AddAsync(deviceComplianceSettingState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceComplianceSettingState to the collection via POST.
         /// </summary>
         /// <param name="deviceComplianceSettingState">The DeviceComplianceSettingState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceSettingState.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceSettingState> AddAsync(DeviceComplianceSettingState deviceComplianceSettingState, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceComplianceSettingState> AddAsync(DeviceComplianceSettingState deviceComplianceSettingState, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<DeviceComplianceSettingState>(deviceComplianceSettingState, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceComplianceSettingState to the collection via POST and returns a <see cref="GraphResponse{DeviceComplianceSettingState}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionPage> GetAsync()
+        /// <param name="deviceComplianceSettingState">The DeviceComplianceSettingState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceSettingState}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceSettingState>> AddResponseAsync(DeviceComplianceSettingState deviceComplianceSettingState, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceSettingState>(deviceComplianceSettingState, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

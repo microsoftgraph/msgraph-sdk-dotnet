@@ -68,7 +68,7 @@ namespace Microsoft.Graph
         public IWorkbookChartAddRequestBuilder Add(
             string type,
             string seriesBy,
-            Newtonsoft.Json.Linq.JToken sourceData = null)
+            System.Text.Json.JsonDocument sourceData = null)
         {
             return new WorkbookChartAddRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.add"),

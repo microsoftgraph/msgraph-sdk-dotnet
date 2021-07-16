@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10NetworkProxyServer.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Windows10NetworkProxyServer>))]
     public partial class Windows10NetworkProxyServer
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Windows10NetworkProxyServer"/> class.
-        /// </summary>
-        public Windows10NetworkProxyServer()
-        {
-            this.ODataType = "microsoft.graph.windows10NetworkProxyServer";
-        }
 
         /// <summary>
         /// Gets or sets address.
         /// Address to the proxy server. Specify an address in the format [':']
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("address")]
         public string Address { get; set; }
     
         /// <summary>
         /// Gets or sets exceptions.
         /// Addresses that should not use the proxy server. The system will not use the proxy server for addresses beginning with what is specified in this node.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exceptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exceptions")]
         public IEnumerable<string> Exceptions { get; set; }
     
         /// <summary>
         /// Gets or sets useForLocalAddresses.
         /// Specifies whether the proxy server should be used for local (intranet) addresses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useForLocalAddresses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("useForLocalAddresses")]
         public bool? UseForLocalAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

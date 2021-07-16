@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SecurityResource.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SecurityResource>))]
     public partial class SecurityResource
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecurityResource"/> class.
-        /// </summary>
-        public SecurityResource()
-        {
-            this.ODataType = "microsoft.graph.securityResource";
-        }
 
         /// <summary>
         /// Gets or sets resource.
         /// Name of the resource that is related to current alert. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resource")]
         public string Resource { get; set; }
     
         /// <summary>
         /// Gets or sets resourceType.
         /// Represents type of security resources related to an alert. Possible values are: attacked, related.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceType")]
         public SecurityResourceType? ResourceType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

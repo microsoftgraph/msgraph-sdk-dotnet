@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidWorkProfileCustomConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileCustomConfigurationToCreate">The AndroidWorkProfileCustomConfiguration to create.</param>
-        /// <returns>The created AndroidWorkProfileCustomConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> CreateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate)
-        {
-            return this.CreateAsync(androidWorkProfileCustomConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidWorkProfileCustomConfiguration using POST.
-        /// </summary>
-        /// <param name="androidWorkProfileCustomConfigurationToCreate">The AndroidWorkProfileCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidWorkProfileCustomConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> CreateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> CreateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidWorkProfileCustomConfiguration>(androidWorkProfileCustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidWorkProfileCustomConfiguration.
+        /// Creates the specified AndroidWorkProfileCustomConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidWorkProfileCustomConfigurationToCreate">The AndroidWorkProfileCustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> CreateResponseAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidWorkProfileCustomConfiguration>(androidWorkProfileCustomConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidWorkProfileCustomConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidWorkProfileCustomConfiguration.
+        /// Deletes the specified AndroidWorkProfileCustomConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidWorkProfileCustomConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidWorkProfileCustomConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidWorkProfileCustomConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidWorkProfileCustomConfiguration using PATCH.
+        /// Gets the specified AndroidWorkProfileCustomConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object.
         /// </summary>
-        /// <param name="androidWorkProfileCustomConfigurationToUpdate">The AndroidWorkProfileCustomConfiguration to update.</param>
-        /// <returns>The updated AndroidWorkProfileCustomConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> UpdateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(androidWorkProfileCustomConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidWorkProfileCustomConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWorkProfileCustomConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> UpdateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> UpdateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (androidWorkProfileCustomConfigurationToUpdate.AdditionalData != null)
-			{
-				if (androidWorkProfileCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidWorkProfileCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileCustomConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidWorkProfileCustomConfigurationToUpdate.AdditionalData != null)
-            {
-                if (androidWorkProfileCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidWorkProfileCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileCustomConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidWorkProfileCustomConfiguration>(androidWorkProfileCustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileCustomConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileCustomConfigurationToUpdate">The AndroidWorkProfileCustomConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> UpdateResponseAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidWorkProfileCustomConfiguration>(androidWorkProfileCustomConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileCustomConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidWorkProfileCustomConfigurationToUpdate">The AndroidWorkProfileCustomConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> PutAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidWorkProfileCustomConfiguration>(androidWorkProfileCustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileCustomConfiguration using PUT and returns a <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileCustomConfigurationToUpdate">The AndroidWorkProfileCustomConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> PutResponseAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidWorkProfileCustomConfiguration>(androidWorkProfileCustomConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

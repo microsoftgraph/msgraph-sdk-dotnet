@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserEventsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Event to the collection via POST.
-        /// </summary>
-        /// <param name="eventsEvent">The Event to add.</param>
-        /// <returns>The created Event.</returns>
-        System.Threading.Tasks.Task<Event> AddAsync(Event eventsEvent);
-
         /// <summary>
         /// Adds the specified Event to the collection via POST.
         /// </summary>
         /// <param name="eventsEvent">The Event to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Event.</returns>
-        System.Threading.Tasks.Task<Event> AddAsync(Event eventsEvent, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Event> AddAsync(Event eventsEvent, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Event to the collection via POST and returns a <see cref="GraphResponse{Event}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserEventsCollectionPage> GetAsync();
+        /// <param name="eventsEvent">The Event to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Event>> AddResponseAsync(Event eventsEvent, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserEventsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IUserEventsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserEventsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserEventsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

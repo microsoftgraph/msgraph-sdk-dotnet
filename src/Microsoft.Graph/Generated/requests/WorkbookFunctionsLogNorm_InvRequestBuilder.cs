@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsLogNorm_InvRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken probability,
-            Newtonsoft.Json.Linq.JToken mean,
-            Newtonsoft.Json.Linq.JToken standardDev)
+            System.Text.Json.JsonDocument probability,
+            System.Text.Json.JsonDocument mean,
+            System.Text.Json.JsonDocument standardDev)
             : base(requestUrl, client)
         {
             this.SetParameter("probability", probability, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("probability"))
             {
-                request.RequestBody.Probability = this.GetParameter<Newtonsoft.Json.Linq.JToken>("probability");
+                request.RequestBody.Probability = this.GetParameter<System.Text.Json.JsonDocument>("probability");
             }
 
             if (this.HasParameter("mean"))
             {
-                request.RequestBody.Mean = this.GetParameter<Newtonsoft.Json.Linq.JToken>("mean");
+                request.RequestBody.Mean = this.GetParameter<System.Text.Json.JsonDocument>("mean");
             }
 
             if (this.HasParameter("standardDev"))
             {
-                request.RequestBody.StandardDev = this.GetParameter<Newtonsoft.Json.Linq.JToken>("standardDev");
+                request.RequestBody.StandardDev = this.GetParameter<System.Text.Json.JsonDocument>("standardDev");
             }
 
             return request;

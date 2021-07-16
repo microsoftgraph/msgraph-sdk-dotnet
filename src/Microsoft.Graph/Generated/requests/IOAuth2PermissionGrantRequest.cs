@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified OAuth2PermissionGrant using POST.
         /// </summary>
         /// <param name="oAuth2PermissionGrantToCreate">The OAuth2PermissionGrant to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OAuth2PermissionGrant.</returns>
-        System.Threading.Tasks.Task<OAuth2PermissionGrant> CreateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate);        /// <summary>
-        /// Creates the specified OAuth2PermissionGrant using POST.
+        System.Threading.Tasks.Task<OAuth2PermissionGrant> CreateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified OAuth2PermissionGrant using POST and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
         /// </summary>
         /// <param name="oAuth2PermissionGrantToCreate">The OAuth2PermissionGrant to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created OAuth2PermissionGrant.</returns>
-        System.Threading.Tasks.Task<OAuth2PermissionGrant> CreateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified OAuth2PermissionGrant.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> CreateResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified OAuth2PermissionGrant.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified OAuth2PermissionGrant.
+        /// Deletes the specified OAuth2PermissionGrant and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OAuth2PermissionGrant.</returns>
-        System.Threading.Tasks.Task<OAuth2PermissionGrant> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified OAuth2PermissionGrant.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OAuth2PermissionGrant.</returns>
-        System.Threading.Tasks.Task<OAuth2PermissionGrant> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OAuth2PermissionGrant> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified OAuth2PermissionGrant using PATCH.
+        /// Gets the specified OAuth2PermissionGrant and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
         /// </summary>
-        /// <param name="oAuth2PermissionGrantToUpdate">The OAuth2PermissionGrant to update.</param>
-        /// <returns>The updated OAuth2PermissionGrant.</returns>
-        System.Threading.Tasks.Task<OAuth2PermissionGrant> UpdateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OAuth2PermissionGrant using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OAuth2PermissionGrant.</returns>
-        System.Threading.Tasks.Task<OAuth2PermissionGrant> UpdateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OAuth2PermissionGrant> UpdateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified OAuth2PermissionGrant using PATCH and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="oAuth2PermissionGrantToUpdate">The OAuth2PermissionGrant to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> UpdateResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified OAuth2PermissionGrant using PUT.
+        /// </summary>
+        /// <param name="oAuth2PermissionGrantToUpdate">The OAuth2PermissionGrant object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<OAuth2PermissionGrant> PutAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified OAuth2PermissionGrant using PUT and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="oAuth2PermissionGrantToUpdate">The OAuth2PermissionGrant object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{OAuth2PermissionGrant}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> PutResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

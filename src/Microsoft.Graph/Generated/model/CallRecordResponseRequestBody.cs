@@ -9,65 +9,63 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CallRecordResponseRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CallRecordResponseRequestBody
     {
     
         /// <summary>
         /// Gets or sets Prompts.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prompts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("prompts")]
         public IEnumerable<Prompt> Prompts { get; set; }
     
         /// <summary>
         /// Gets or sets BargeInAllowed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bargeInAllowed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bargeInAllowed")]
         public bool? BargeInAllowed { get; set; }
     
         /// <summary>
         /// Gets or sets InitialSilenceTimeoutInSeconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initialSilenceTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("initialSilenceTimeoutInSeconds")]
         public Int32? InitialSilenceTimeoutInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets MaxSilenceTimeoutInSeconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxSilenceTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maxSilenceTimeoutInSeconds")]
         public Int32? MaxSilenceTimeoutInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets MaxRecordDurationInSeconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxRecordDurationInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maxRecordDurationInSeconds")]
         public Int32? MaxRecordDurationInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets PlayBeep.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "playBeep", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("playBeep")]
         public bool? PlayBeep { get; set; }
     
         /// <summary>
         /// Gets or sets StopTones.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stopTones", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("stopTones")]
         public IEnumerable<string> StopTones { get; set; }
     
         /// <summary>
         /// Gets or sets ClientContext.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientContext", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientContext")]
         public string ClientContext { get; set; }
     
     }

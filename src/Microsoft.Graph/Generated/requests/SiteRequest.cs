@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Site using POST.
         /// </summary>
         /// <param name="siteToCreate">The Site to create.</param>
-        /// <returns>The created Site.</returns>
-        public System.Threading.Tasks.Task<Site> CreateAsync(Site siteToCreate)
-        {
-            return this.CreateAsync(siteToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Site using POST.
-        /// </summary>
-        /// <param name="siteToCreate">The Site to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Site.</returns>
-        public async System.Threading.Tasks.Task<Site> CreateAsync(Site siteToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Site> CreateAsync(Site siteToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Site>(siteToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Site.
+        /// Creates the specified Site using POST and returns a <see cref="GraphResponse{Site}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="siteToCreate">The Site to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Site>> CreateResponseAsync(Site siteToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Site>(siteToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Site>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Site.
+        /// Deletes the specified Site and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Site.</returns>
-        public System.Threading.Tasks.Task<Site> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Site.</returns>
-        public async System.Threading.Tasks.Task<Site> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Site> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Site>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Site using PATCH.
+        /// Gets the specified Site and returns a <see cref="GraphResponse{Site}"/> object.
         /// </summary>
-        /// <param name="siteToUpdate">The Site to update.</param>
-        /// <returns>The updated Site.</returns>
-        public System.Threading.Tasks.Task<Site> UpdateAsync(Site siteToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Site>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(siteToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Site>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Site.</returns>
-        public async System.Threading.Tasks.Task<Site> UpdateAsync(Site siteToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Site> UpdateAsync(Site siteToUpdate, CancellationToken cancellationToken = default)
         {
-			if (siteToUpdate.AdditionalData != null)
-			{
-				if (siteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					siteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, siteToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (siteToUpdate.AdditionalData != null)
-            {
-                if (siteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    siteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, siteToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Site>(siteToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Site using PATCH and returns a <see cref="GraphResponse{Site}"/> object.
+        /// </summary>
+        /// <param name="siteToUpdate">The Site to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Site>> UpdateResponseAsync(Site siteToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Site>(siteToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Site using PUT.
+        /// </summary>
+        /// <param name="siteToUpdate">The Site object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Site> PutAsync(Site siteToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Site>(siteToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Site using PUT and returns a <see cref="GraphResponse{Site}"/> object.
+        /// </summary>
+        /// <param name="siteToUpdate">The Site object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Site}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Site>> PutResponseAsync(Site siteToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Site>(siteToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,119 +244,49 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Site siteToInitialize)
         {
 
-            if (siteToInitialize != null && siteToInitialize.AdditionalData != null)
+            if (siteToInitialize != null)
             {
-
                 if (siteToInitialize.Columns != null && siteToInitialize.Columns.CurrentPage != null)
                 {
+                    siteToInitialize.Columns.InitializeNextPageRequest(this.Client, siteToInitialize.ColumnsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Columns.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("columns@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Columns.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.ContentTypes != null && siteToInitialize.ContentTypes.CurrentPage != null)
                 {
+                    siteToInitialize.ContentTypes.InitializeNextPageRequest(this.Client, siteToInitialize.ContentTypesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.ContentTypes.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("contentTypes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.ContentTypes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.Drives != null && siteToInitialize.Drives.CurrentPage != null)
                 {
+                    siteToInitialize.Drives.InitializeNextPageRequest(this.Client, siteToInitialize.DrivesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Drives.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("drives@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Drives.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.Items != null && siteToInitialize.Items.CurrentPage != null)
                 {
+                    siteToInitialize.Items.InitializeNextPageRequest(this.Client, siteToInitialize.ItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Items.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("items@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Items.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.Lists != null && siteToInitialize.Lists.CurrentPage != null)
                 {
+                    siteToInitialize.Lists.InitializeNextPageRequest(this.Client, siteToInitialize.ListsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Lists.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("lists@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Lists.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.Permissions != null && siteToInitialize.Permissions.CurrentPage != null)
                 {
+                    siteToInitialize.Permissions.InitializeNextPageRequest(this.Client, siteToInitialize.PermissionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Permissions.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("permissions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Permissions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (siteToInitialize.Sites != null && siteToInitialize.Sites.CurrentPage != null)
                 {
+                    siteToInitialize.Sites.InitializeNextPageRequest(this.Client, siteToInitialize.SitesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Sites.AdditionalData = siteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    siteToInitialize.AdditionalData.TryGetValue("sites@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        siteToInitialize.Sites.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

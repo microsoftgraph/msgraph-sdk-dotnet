@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsFixedRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken decimals,
-            Newtonsoft.Json.Linq.JToken noCommas)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument decimals,
+            System.Text.Json.JsonDocument noCommas)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("decimals"))
             {
-                request.RequestBody.Decimals = this.GetParameter<Newtonsoft.Json.Linq.JToken>("decimals");
+                request.RequestBody.Decimals = this.GetParameter<System.Text.Json.JsonDocument>("decimals");
             }
 
             if (this.HasParameter("noCommas"))
             {
-                request.RequestBody.NoCommas = this.GetParameter<Newtonsoft.Json.Linq.JToken>("noCommas");
+                request.RequestBody.NoCommas = this.GetParameter<System.Text.Json.JsonDocument>("noCommas");
             }
 
             return request;

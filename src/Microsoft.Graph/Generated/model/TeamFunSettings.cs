@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TeamFunSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TeamFunSettings>))]
     public partial class TeamFunSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TeamFunSettings"/> class.
-        /// </summary>
-        public TeamFunSettings()
-        {
-            this.ODataType = "microsoft.graph.teamFunSettings";
-        }
 
         /// <summary>
         /// Gets or sets allowCustomMemes.
         /// If set to true, enables users to include custom memes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCustomMemes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowCustomMemes")]
         public bool? AllowCustomMemes { get; set; }
     
         /// <summary>
         /// Gets or sets allowGiphy.
         /// If set to true, enables Giphy use.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowGiphy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowGiphy")]
         public bool? AllowGiphy { get; set; }
     
         /// <summary>
         /// Gets or sets allowStickersAndMemes.
         /// If set to true, enables users to include stickers and memes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowStickersAndMemes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowStickersAndMemes")]
         public bool? AllowStickersAndMemes { get; set; }
     
         /// <summary>
         /// Gets or sets giphyContentRating.
         /// Giphy content rating. Possible values are: moderate, strict.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "giphyContentRating", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("giphyContentRating")]
         public GiphyRatingType? GiphyContentRating { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

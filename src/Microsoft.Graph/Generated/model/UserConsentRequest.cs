@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Consent Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserConsentRequestObject : RequestObject
     {
     
-		///<summary>
-		/// The UserConsentRequest constructor
-		///</summary>
-        public UserConsentRequestObject()
-        {
-            this.ODataType = "microsoft.graph.userConsentRequest";
-        }
-	
         /// <summary>
         /// Gets or sets reason.
         /// The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reason")]
         public string Reason { get; set; }
     
         /// <summary>
         /// Gets or sets approval.
         /// Approval decisions associated with a request.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approval", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("approval")]
         public Approval Approval { get; set; }
     
     }

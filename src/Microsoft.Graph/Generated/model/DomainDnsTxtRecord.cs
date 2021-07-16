@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Domain Dns Txt Record.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DomainDnsTxtRecord : DomainDnsRecord
     {
     
-		///<summary>
-		/// The DomainDnsTxtRecord constructor
-		///</summary>
+        ///<summary>
+        /// The DomainDnsTxtRecord constructor
+        ///</summary>
         public DomainDnsTxtRecord()
         {
             this.ODataType = "microsoft.graph.domainDnsTxtRecord";
         }
-	
+
         /// <summary>
         /// Gets or sets text.
         /// Value used when configuring the text property at the DNS host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
     
     }

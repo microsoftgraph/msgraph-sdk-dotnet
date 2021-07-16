@@ -3,6 +3,7 @@ branches:
   only:
   - dev
   - master
+  - feature/2.0
 image: Visual Studio 2019
 
 before_build:

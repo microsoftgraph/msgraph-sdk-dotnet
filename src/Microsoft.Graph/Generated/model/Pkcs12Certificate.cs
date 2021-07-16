@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Pkcs12Certificate.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Pkcs12Certificate : ApiAuthenticationConfigurationBase
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets password.
         /// This is the password for the pfx file. Required. If no password is used, must still provide a value of ''.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "password", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("password")]
         public string Password { get; set; }
     
         /// <summary>
         /// Gets or sets pkcs12Value.
         /// This is the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pkcs12Value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pkcs12Value")]
         public string Pkcs12Value { get; set; }
     
     }

@@ -9,30 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookChartSetPositionRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookChartSetPositionRequestBody
     {
     
         /// <summary>
         /// Gets or sets StartCell.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startCell", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken StartCell { get; set; }
+        [JsonPropertyName("startCell")]
+        public System.Text.Json.JsonDocument StartCell { get; set; }
     
         /// <summary>
         /// Gets or sets EndCell.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endCell", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken EndCell { get; set; }
+        [JsonPropertyName("endCell")]
+        public System.Text.Json.JsonDocument EndCell { get; set; }
     
     }
 }

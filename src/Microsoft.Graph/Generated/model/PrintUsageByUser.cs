@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Print Usage By User.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PrintUsageByUser : PrintUsage
     {
     
-		///<summary>
-		/// The PrintUsageByUser constructor
-		///</summary>
+        ///<summary>
+        /// The PrintUsageByUser constructor
+        ///</summary>
         public PrintUsageByUser()
         {
             this.ODataType = "microsoft.graph.printUsageByUser";
         }
-	
+
         /// <summary>
         /// Gets or sets user principal name.
         /// The UPN of the user represented by these statistics.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
     }

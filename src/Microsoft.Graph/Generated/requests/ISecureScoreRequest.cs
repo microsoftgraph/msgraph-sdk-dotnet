@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified SecureScore using POST.
         /// </summary>
         /// <param name="secureScoreToCreate">The SecureScore to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecureScore.</returns>
-        System.Threading.Tasks.Task<SecureScore> CreateAsync(SecureScore secureScoreToCreate);        /// <summary>
-        /// Creates the specified SecureScore using POST.
+        System.Threading.Tasks.Task<SecureScore> CreateAsync(SecureScore secureScoreToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified SecureScore using POST and returns a <see cref="GraphResponse{SecureScore}"/> object.
         /// </summary>
         /// <param name="secureScoreToCreate">The SecureScore to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created SecureScore.</returns>
-        System.Threading.Tasks.Task<SecureScore> CreateAsync(SecureScore secureScoreToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SecureScore.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScore>> CreateResponseAsync(SecureScore secureScoreToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SecureScore.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified SecureScore.
+        /// Deletes the specified SecureScore and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SecureScore.</returns>
-        System.Threading.Tasks.Task<SecureScore> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SecureScore.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SecureScore.</returns>
-        System.Threading.Tasks.Task<SecureScore> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SecureScore> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified SecureScore using PATCH.
+        /// Gets the specified SecureScore and returns a <see cref="GraphResponse{SecureScore}"/> object.
         /// </summary>
-        /// <param name="secureScoreToUpdate">The SecureScore to update.</param>
-        /// <returns>The updated SecureScore.</returns>
-        System.Threading.Tasks.Task<SecureScore> UpdateAsync(SecureScore secureScoreToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScore>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SecureScore using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SecureScore.</returns>
-        System.Threading.Tasks.Task<SecureScore> UpdateAsync(SecureScore secureScoreToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SecureScore> UpdateAsync(SecureScore secureScoreToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SecureScore using PATCH and returns a <see cref="GraphResponse{SecureScore}"/> object.
+        /// </summary>
+        /// <param name="secureScoreToUpdate">The SecureScore to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScore>> UpdateResponseAsync(SecureScore secureScoreToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SecureScore using PUT.
+        /// </summary>
+        /// <param name="secureScoreToUpdate">The SecureScore object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SecureScore> PutAsync(SecureScore secureScoreToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SecureScore using PUT and returns a <see cref="GraphResponse{SecureScore}"/> object.
+        /// </summary>
+        /// <param name="secureScoreToUpdate">The SecureScore object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SecureScore}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScore>> PutResponseAsync(SecureScore secureScoreToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

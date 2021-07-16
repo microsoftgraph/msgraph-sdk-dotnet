@@ -12,65 +12,79 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Contact Folder.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ContactFolder : Entity
     {
     
-		///<summary>
-		/// The ContactFolder constructor
-		///</summary>
-        public ContactFolder()
-        {
-            this.ODataType = "microsoft.graph.contactFolder";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The folder's display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets parent folder id.
         /// The ID of the folder's parent folder.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentFolderId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parentFolderId")]
         public string ParentFolderId { get; set; }
     
         /// <summary>
         /// Gets or sets child folders.
         /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "childFolders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("childFolders")]
         public IContactFolderChildFoldersCollectionPage ChildFolders { get; set; }
+
+        /// <summary>
+        /// Gets or sets childFoldersNextLink.
+        /// </summary>
+        [JsonPropertyName("childFolders@odata.nextLink")]
+        public string ChildFoldersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets contacts.
         /// The contacts in the folder. Navigation property. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contacts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contacts")]
         public IContactFolderContactsCollectionPage Contacts { get; set; }
+
+        /// <summary>
+        /// Gets or sets contactsNextLink.
+        /// </summary>
+        [JsonPropertyName("contacts@odata.nextLink")]
+        public string ContactsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
         /// The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("multiValueExtendedProperties")]
         public IContactFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets multiValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("multiValueExtendedProperties@odata.nextLink")]
+        public string MultiValueExtendedPropertiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
         /// The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("singleValueExtendedProperties")]
         public IContactFolderSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets singleValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("singleValueExtendedProperties@odata.nextLink")]
+        public string SingleValueExtendedPropertiesNextLink { get; set; }
     
     }
 }

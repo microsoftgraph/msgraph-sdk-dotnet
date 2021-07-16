@@ -12,71 +12,69 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type App Role Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AppRoleAssignment : DirectoryObject
     {
     
-		///<summary>
-		/// The AppRoleAssignment constructor
-		///</summary>
+        ///<summary>
+        /// The AppRoleAssignment constructor
+        ///</summary>
         public AppRoleAssignment()
         {
             this.ODataType = "microsoft.graph.appRoleAssignment";
         }
-	
+
         /// <summary>
         /// Gets or sets app role id.
         /// The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appRoleId")]
         public Guid? AppRoleId { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets principal display name.
         /// The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("principalDisplayName")]
         public string PrincipalDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets principal id.
         /// The unique identifier (id) for the user, group or service principal being granted the app role. Required on create.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("principalId")]
         public Guid? PrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets principal type.
         /// The type of the assigned principal. This can either be User, Group or ServicePrincipal. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("principalType")]
         public string PrincipalType { get; set; }
     
         /// <summary>
         /// Gets or sets resource display name.
         /// The display name of the resource app's service principal to which the assignment is made.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceDisplayName")]
         public string ResourceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets resource id.
         /// The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceId")]
         public Guid? ResourceId { get; set; }
     
     }

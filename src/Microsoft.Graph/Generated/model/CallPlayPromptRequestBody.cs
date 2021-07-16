@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CallPlayPromptRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CallPlayPromptRequestBody
     {
     
         /// <summary>
         /// Gets or sets Prompts.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prompts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("prompts")]
         public IEnumerable<Prompt> Prompts { get; set; }
     
         /// <summary>
         /// Gets or sets ClientContext.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientContext", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientContext")]
         public string ClientContext { get; set; }
     
     }

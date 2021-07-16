@@ -12,36 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type File Assessment Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class FileAssessmentRequestObject : ThreatAssessmentRequestObject
     {
     
-		///<summary>
-		/// The FileAssessmentRequest constructor
-		///</summary>
+        ///<summary>
+        /// The FileAssessmentRequest constructor
+        ///</summary>
         public FileAssessmentRequestObject()
         {
             this.ODataType = "microsoft.graph.fileAssessmentRequest";
         }
-	
+
         /// <summary>
         /// Gets or sets content data.
         /// Base64 encoded file content. The file content cannot fetch back because it isn't stored.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentData")]
         public string ContentData { get; set; }
     
         /// <summary>
         /// Gets or sets file name.
         /// The file name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileName")]
         public string FileName { get; set; }
     
     }

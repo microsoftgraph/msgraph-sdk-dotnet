@@ -19,18 +19,19 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPrinterSharesCollectionReferencesRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PrinterShare to the collection via POST.
-        /// </summary>
-        /// <param name="printerShare">The PrinterShare to add.</param>
-        System.Threading.Tasks.Task AddAsync(PrinterShare printerShare);
-
         /// <summary>
         /// Adds the specified PrinterShare to the collection via POST.
         /// </summary>
         /// <param name="printerShare">The PrinterShare to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(PrinterShare printerShare, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task AddAsync(PrinterShare printerShare, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified PrinterShare to the collection via POST and returns a <see cref="GraphResponse{PrinterShare}"/> object of the request.
+        /// </summary>
+        /// <param name="printerShare">The PrinterShare to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(PrinterShare printerShare, CancellationToken cancellationToken = default);
+
     }
 }

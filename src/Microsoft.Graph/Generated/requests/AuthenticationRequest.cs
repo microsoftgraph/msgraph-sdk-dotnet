@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Authentication using POST.
         /// </summary>
         /// <param name="authenticationToCreate">The Authentication to create.</param>
-        /// <returns>The created Authentication.</returns>
-        public System.Threading.Tasks.Task<Authentication> CreateAsync(Authentication authenticationToCreate)
-        {
-            return this.CreateAsync(authenticationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Authentication using POST.
-        /// </summary>
-        /// <param name="authenticationToCreate">The Authentication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Authentication.</returns>
-        public async System.Threading.Tasks.Task<Authentication> CreateAsync(Authentication authenticationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Authentication> CreateAsync(Authentication authenticationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Authentication>(authenticationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Authentication.
+        /// Creates the specified Authentication using POST and returns a <see cref="GraphResponse{Authentication}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="authenticationToCreate">The Authentication to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Authentication>> CreateResponseAsync(Authentication authenticationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Authentication>(authenticationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Authentication>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Authentication.
+        /// Deletes the specified Authentication and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Authentication.</returns>
-        public System.Threading.Tasks.Task<Authentication> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Authentication.</returns>
-        public async System.Threading.Tasks.Task<Authentication> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Authentication> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Authentication>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Authentication using PATCH.
+        /// Gets the specified Authentication and returns a <see cref="GraphResponse{Authentication}"/> object.
         /// </summary>
-        /// <param name="authenticationToUpdate">The Authentication to update.</param>
-        /// <returns>The updated Authentication.</returns>
-        public System.Threading.Tasks.Task<Authentication> UpdateAsync(Authentication authenticationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Authentication>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(authenticationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Authentication>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Authentication.</returns>
-        public async System.Threading.Tasks.Task<Authentication> UpdateAsync(Authentication authenticationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Authentication> UpdateAsync(Authentication authenticationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (authenticationToUpdate.AdditionalData != null)
-			{
-				if (authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (authenticationToUpdate.AdditionalData != null)
-            {
-                if (authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Authentication>(authenticationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Authentication using PATCH and returns a <see cref="GraphResponse{Authentication}"/> object.
+        /// </summary>
+        /// <param name="authenticationToUpdate">The Authentication to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Authentication>> UpdateResponseAsync(Authentication authenticationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Authentication>(authenticationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Authentication using PUT.
+        /// </summary>
+        /// <param name="authenticationToUpdate">The Authentication object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Authentication> PutAsync(Authentication authenticationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Authentication>(authenticationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Authentication using PUT and returns a <see cref="GraphResponse{Authentication}"/> object.
+        /// </summary>
+        /// <param name="authenticationToUpdate">The Authentication object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Authentication}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Authentication>> PutResponseAsync(Authentication authenticationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Authentication>(authenticationToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Authentication authenticationToInitialize)
         {
 
-            if (authenticationToInitialize != null && authenticationToInitialize.AdditionalData != null)
+            if (authenticationToInitialize != null)
             {
-
                 if (authenticationToInitialize.Fido2Methods != null && authenticationToInitialize.Fido2Methods.CurrentPage != null)
                 {
+                    authenticationToInitialize.Fido2Methods.InitializeNextPageRequest(this.Client, authenticationToInitialize.Fido2MethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.Fido2Methods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("fido2Methods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.Fido2Methods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (authenticationToInitialize.Methods != null && authenticationToInitialize.Methods.CurrentPage != null)
                 {
+                    authenticationToInitialize.Methods.InitializeNextPageRequest(this.Client, authenticationToInitialize.MethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.Methods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("methods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.Methods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (authenticationToInitialize.MicrosoftAuthenticatorMethods != null && authenticationToInitialize.MicrosoftAuthenticatorMethods.CurrentPage != null)
                 {
+                    authenticationToInitialize.MicrosoftAuthenticatorMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.MicrosoftAuthenticatorMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.MicrosoftAuthenticatorMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("microsoftAuthenticatorMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.MicrosoftAuthenticatorMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (authenticationToInitialize.WindowsHelloForBusinessMethods != null && authenticationToInitialize.WindowsHelloForBusinessMethods.CurrentPage != null)
                 {
+                    authenticationToInitialize.WindowsHelloForBusinessMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.WindowsHelloForBusinessMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.WindowsHelloForBusinessMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("windowsHelloForBusinessMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.WindowsHelloForBusinessMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

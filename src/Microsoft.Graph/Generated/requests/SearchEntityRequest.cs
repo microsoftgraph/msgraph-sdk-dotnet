@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified SearchEntity using POST.
         /// </summary>
         /// <param name="searchEntityToCreate">The SearchEntity to create.</param>
-        /// <returns>The created SearchEntity.</returns>
-        public System.Threading.Tasks.Task<SearchEntity> CreateAsync(SearchEntity searchEntityToCreate)
-        {
-            return this.CreateAsync(searchEntityToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SearchEntity using POST.
-        /// </summary>
-        /// <param name="searchEntityToCreate">The SearchEntity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SearchEntity.</returns>
-        public async System.Threading.Tasks.Task<SearchEntity> CreateAsync(SearchEntity searchEntityToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SearchEntity> CreateAsync(SearchEntity searchEntityToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<SearchEntity>(searchEntityToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified SearchEntity.
+        /// Creates the specified SearchEntity using POST and returns a <see cref="GraphResponse{SearchEntity}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="searchEntityToCreate">The SearchEntity to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SearchEntity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SearchEntity>> CreateResponseAsync(SearchEntity searchEntityToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SearchEntity>(searchEntityToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<SearchEntity>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified SearchEntity.
+        /// Deletes the specified SearchEntity and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SearchEntity.</returns>
-        public System.Threading.Tasks.Task<SearchEntity> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SearchEntity.</returns>
-        public async System.Threading.Tasks.Task<SearchEntity> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SearchEntity> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<SearchEntity>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified SearchEntity using PATCH.
+        /// Gets the specified SearchEntity and returns a <see cref="GraphResponse{SearchEntity}"/> object.
         /// </summary>
-        /// <param name="searchEntityToUpdate">The SearchEntity to update.</param>
-        /// <returns>The updated SearchEntity.</returns>
-        public System.Threading.Tasks.Task<SearchEntity> UpdateAsync(SearchEntity searchEntityToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SearchEntity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SearchEntity>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(searchEntityToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SearchEntity>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SearchEntity.</returns>
-        public async System.Threading.Tasks.Task<SearchEntity> UpdateAsync(SearchEntity searchEntityToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SearchEntity> UpdateAsync(SearchEntity searchEntityToUpdate, CancellationToken cancellationToken = default)
         {
-			if (searchEntityToUpdate.AdditionalData != null)
-			{
-				if (searchEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					searchEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, searchEntityToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (searchEntityToUpdate.AdditionalData != null)
-            {
-                if (searchEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    searchEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, searchEntityToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<SearchEntity>(searchEntityToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SearchEntity using PATCH and returns a <see cref="GraphResponse{SearchEntity}"/> object.
+        /// </summary>
+        /// <param name="searchEntityToUpdate">The SearchEntity to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SearchEntity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SearchEntity>> UpdateResponseAsync(SearchEntity searchEntityToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<SearchEntity>(searchEntityToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified SearchEntity using PUT.
+        /// </summary>
+        /// <param name="searchEntityToUpdate">The SearchEntity object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SearchEntity> PutAsync(SearchEntity searchEntityToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SearchEntity>(searchEntityToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SearchEntity using PUT and returns a <see cref="GraphResponse{SearchEntity}"/> object.
+        /// </summary>
+        /// <param name="searchEntityToUpdate">The SearchEntity object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SearchEntity}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SearchEntity>> PutResponseAsync(SearchEntity searchEntityToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SearchEntity>(searchEntityToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IManagedEBookDeviceStatesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceInstallState to the collection via POST.
-        /// </summary>
-        /// <param name="deviceInstallState">The DeviceInstallState to add.</param>
-        /// <returns>The created DeviceInstallState.</returns>
-        System.Threading.Tasks.Task<DeviceInstallState> AddAsync(DeviceInstallState deviceInstallState);
-
         /// <summary>
         /// Adds the specified DeviceInstallState to the collection via POST.
         /// </summary>
         /// <param name="deviceInstallState">The DeviceInstallState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceInstallState.</returns>
-        System.Threading.Tasks.Task<DeviceInstallState> AddAsync(DeviceInstallState deviceInstallState, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceInstallState> AddAsync(DeviceInstallState deviceInstallState, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceInstallState to the collection via POST and returns a <see cref="GraphResponse{DeviceInstallState}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedEBookDeviceStatesCollectionPage> GetAsync();
+        /// <param name="deviceInstallState">The DeviceInstallState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> AddResponseAsync(DeviceInstallState deviceInstallState, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedEBookDeviceStatesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IManagedEBookDeviceStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedEBookDeviceStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookDeviceStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBookDeviceStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SharedPCAccountManagerPolicy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SharedPCAccountManagerPolicy>))]
     public partial class SharedPCAccountManagerPolicy
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SharedPCAccountManagerPolicy"/> class.
-        /// </summary>
-        public SharedPCAccountManagerPolicy()
-        {
-            this.ODataType = "microsoft.graph.sharedPCAccountManagerPolicy";
-        }
 
         /// <summary>
         /// Gets or sets accountDeletionPolicy.
         /// Configures when accounts are deleted. Possible values are: immediate, diskSpaceThreshold, diskSpaceThresholdOrInactiveThreshold.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountDeletionPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accountDeletionPolicy")]
         public SharedPCAccountDeletionPolicyType? AccountDeletionPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets cacheAccountsAboveDiskFreePercentage.
         /// Sets the percentage of available disk space a PC should have before it stops deleting cached shared PC accounts. Only applies when AccountDeletionPolicy is DiskSpaceThreshold or DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cacheAccountsAboveDiskFreePercentage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cacheAccountsAboveDiskFreePercentage")]
         public Int32? CacheAccountsAboveDiskFreePercentage { get; set; }
     
         /// <summary>
         /// Gets or sets inactiveThresholdDays.
         /// Specifies when the accounts will start being deleted when they have not been logged on during the specified period, given as number of days. Only applies when AccountDeletionPolicy is DiskSpaceThreshold or DiskSpaceThresholdOrInactiveThreshold.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inactiveThresholdDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inactiveThresholdDays")]
         public Int32? InactiveThresholdDays { get; set; }
     
         /// <summary>
         /// Gets or sets removeAccountsBelowDiskFreePercentage.
         /// Sets the percentage of disk space remaining on a PC before cached accounts will be deleted to free disk space. Accounts that have been inactive the longest will be deleted first. Only applies when AccountDeletionPolicy is DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeAccountsBelowDiskFreePercentage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("removeAccountsBelowDiskFreePercentage")]
         public Int32? RemoveAccountsBelowDiskFreePercentage { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

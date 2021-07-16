@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsDecimalRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken radix)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument radix)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("radix"))
             {
-                request.RequestBody.Radix = this.GetParameter<Newtonsoft.Json.Linq.JToken>("radix");
+                request.RequestBody.Radix = this.GetParameter<System.Text.Json.JsonDocument>("radix");
             }
 
             return request;

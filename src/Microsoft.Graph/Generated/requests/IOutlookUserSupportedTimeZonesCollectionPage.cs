@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IOutlookUserSupportedTimeZonesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<OutlookUserSupportedTimeZonesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<OutlookUserSupportedTimeZonesCollectionPage>))]
     public interface IOutlookUserSupportedTimeZonesCollectionPage : ICollectionPage<TimeZoneInformation>
     {
         /// <summary>

@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IServicePrincipalTransitiveMemberOfCollectionWithReferencesPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ServicePrincipalTransitiveMemberOfCollectionWithReferencesPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ServicePrincipalTransitiveMemberOfCollectionWithReferencesPage>))]
     public interface IServicePrincipalTransitiveMemberOfCollectionWithReferencesPage : ICollectionPage<DirectoryObject>
     {
         /// <summary>

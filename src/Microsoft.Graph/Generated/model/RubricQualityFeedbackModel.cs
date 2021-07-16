@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RubricQualityFeedbackModel.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RubricQualityFeedbackModel>))]
     public partial class RubricQualityFeedbackModel
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RubricQualityFeedbackModel"/> class.
-        /// </summary>
-        public RubricQualityFeedbackModel()
-        {
-            this.ODataType = "microsoft.graph.rubricQualityFeedbackModel";
-        }
 
         /// <summary>
         /// Gets or sets feedback.
         /// Specific feedback for one quality of this rubric.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedback", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("feedback")]
         public EducationItemBody Feedback { get; set; }
     
         /// <summary>
         /// Gets or sets qualityId.
         /// The ID of the rubricQuality that this feedback is related to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("qualityId")]
         public string QualityId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

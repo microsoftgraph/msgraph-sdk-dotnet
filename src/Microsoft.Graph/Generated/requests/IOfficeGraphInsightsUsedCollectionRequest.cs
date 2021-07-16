@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IOfficeGraphInsightsUsedCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UsedInsight to the collection via POST.
-        /// </summary>
-        /// <param name="usedInsight">The UsedInsight to add.</param>
-        /// <returns>The created UsedInsight.</returns>
-        System.Threading.Tasks.Task<UsedInsight> AddAsync(UsedInsight usedInsight);
-
         /// <summary>
         /// Adds the specified UsedInsight to the collection via POST.
         /// </summary>
         /// <param name="usedInsight">The UsedInsight to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UsedInsight.</returns>
-        System.Threading.Tasks.Task<UsedInsight> AddAsync(UsedInsight usedInsight, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UsedInsight> AddAsync(UsedInsight usedInsight, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UsedInsight to the collection via POST and returns a <see cref="GraphResponse{UsedInsight}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOfficeGraphInsightsUsedCollectionPage> GetAsync();
+        /// <param name="usedInsight">The UsedInsight to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UsedInsight>> AddResponseAsync(UsedInsight usedInsight, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOfficeGraphInsightsUsedCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IOfficeGraphInsightsUsedCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OfficeGraphInsightsUsedCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeGraphInsightsUsedCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsightsUsedCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

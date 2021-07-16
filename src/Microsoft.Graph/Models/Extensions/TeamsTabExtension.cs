@@ -1,13 +1,12 @@
-﻿using Newtonsoft.Json;
-
-namespace Microsoft.Graph
+﻿namespace Microsoft.Graph
 {
+    using System.Text.Json.Serialization;
     public partial class TeamsTab 
     {
         /// <summary>
         /// Gets or sets an associated existing app with a teams tab.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsApp@odata.bind", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teamsApp@odata.bind")]
         public string ODataBind { get; set; }
 
     }

@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsCeiling_MathRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken significance,
-            Newtonsoft.Json.Linq.JToken mode)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument significance,
+            System.Text.Json.JsonDocument mode)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("significance"))
             {
-                request.RequestBody.Significance = this.GetParameter<Newtonsoft.Json.Linq.JToken>("significance");
+                request.RequestBody.Significance = this.GetParameter<System.Text.Json.JsonDocument>("significance");
             }
 
             if (this.HasParameter("mode"))
             {
-                request.RequestBody.Mode = this.GetParameter<Newtonsoft.Json.Linq.JToken>("mode");
+                request.RequestBody.Mode = this.GetParameter<System.Text.Json.JsonDocument>("mode");
             }
 
             return request;

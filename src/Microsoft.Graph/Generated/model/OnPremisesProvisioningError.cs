@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type OnPremisesProvisioningError.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<OnPremisesProvisioningError>))]
     public partial class OnPremisesProvisioningError
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OnPremisesProvisioningError"/> class.
-        /// </summary>
-        public OnPremisesProvisioningError()
-        {
-            this.ODataType = "microsoft.graph.onPremisesProvisioningError";
-        }
 
         /// <summary>
         /// Gets or sets category.
         /// Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("category")]
         public string Category { get; set; }
     
         /// <summary>
         /// Gets or sets occurredDateTime.
         /// The date and time at which the error occurred.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "occurredDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("occurredDateTime")]
         public DateTimeOffset? OccurredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets propertyCausingError.
         /// Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "propertyCausingError", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("propertyCausingError")]
         public string PropertyCausingError { get; set; }
     
         /// <summary>
         /// Gets or sets value.
         /// Value of the property causing the error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public string Value { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

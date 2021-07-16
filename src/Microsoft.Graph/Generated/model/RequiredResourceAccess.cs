@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RequiredResourceAccess.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RequiredResourceAccess>))]
     public partial class RequiredResourceAccess
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RequiredResourceAccess"/> class.
-        /// </summary>
-        public RequiredResourceAccess()
-        {
-            this.ODataType = "microsoft.graph.requiredResourceAccess";
-        }
 
         /// <summary>
         /// Gets or sets resourceAccess.
         /// The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceAccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceAccess")]
         public IEnumerable<ResourceAccess> ResourceAccess { get; set; }
     
         /// <summary>
         /// Gets or sets resourceAppId.
         /// The unique identifier for the resource that the application requires access to.  This should be equal to the appId declared on the target resource application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceAppId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceAppId")]
         public string ResourceAppId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

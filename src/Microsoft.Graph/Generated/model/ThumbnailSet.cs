@@ -12,50 +12,40 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Thumbnail Set.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ThumbnailSet : Entity
     {
     
-		///<summary>
-		/// The ThumbnailSet constructor
-		///</summary>
-        public ThumbnailSet()
-        {
-            this.ODataType = "microsoft.graph.thumbnailSet";
-        }
-	
         /// <summary>
         /// Gets or sets large.
         /// A 1920x1920 scaled thumbnail.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "large", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("large")]
         public Thumbnail Large { get; set; }
     
         /// <summary>
         /// Gets or sets medium.
         /// A 176x176 scaled thumbnail.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "medium", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("medium")]
         public Thumbnail Medium { get; set; }
     
         /// <summary>
         /// Gets or sets small.
         /// A 48x48 cropped thumbnail.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "small", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("small")]
         public Thumbnail Small { get; set; }
     
         /// <summary>
         /// Gets or sets source.
         /// A custom thumbnail image or the original image used to generate other thumbnails.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("source")]
         public Thumbnail Source { get; set; }
     
     }

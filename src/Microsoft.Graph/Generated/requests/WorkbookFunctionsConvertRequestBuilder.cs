@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsConvertRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken fromUnit,
-            Newtonsoft.Json.Linq.JToken toUnit)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument fromUnit,
+            System.Text.Json.JsonDocument toUnit)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("fromUnit"))
             {
-                request.RequestBody.FromUnit = this.GetParameter<Newtonsoft.Json.Linq.JToken>("fromUnit");
+                request.RequestBody.FromUnit = this.GetParameter<System.Text.Json.JsonDocument>("fromUnit");
             }
 
             if (this.HasParameter("toUnit"))
             {
-                request.RequestBody.ToUnit = this.GetParameter<Newtonsoft.Json.Linq.JToken>("toUnit");
+                request.RequestBody.ToUnit = this.GetParameter<System.Text.Json.JsonDocument>("toUnit");
             }
 
             return request;

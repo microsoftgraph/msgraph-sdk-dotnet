@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WebApplication.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<WebApplication>))]
     public partial class WebApplication
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WebApplication"/> class.
-        /// </summary>
-        public WebApplication()
-        {
-            this.ODataType = "microsoft.graph.webApplication";
-        }
 
         /// <summary>
         /// Gets or sets homePageUrl.
         /// Home page or landing page of the application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homePageUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("homePageUrl")]
         public string HomePageUrl { get; set; }
     
         /// <summary>
         /// Gets or sets implicitGrantSettings.
         /// Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "implicitGrantSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("implicitGrantSettings")]
         public ImplicitGrantSettings ImplicitGrantSettings { get; set; }
     
         /// <summary>
         /// Gets or sets logoutUrl.
         /// Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logoutUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("logoutUrl")]
         public string LogoutUrl { get; set; }
     
         /// <summary>
         /// Gets or sets redirectUris.
         /// Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "redirectUris", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("redirectUris")]
         public IEnumerable<string> RedirectUris { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

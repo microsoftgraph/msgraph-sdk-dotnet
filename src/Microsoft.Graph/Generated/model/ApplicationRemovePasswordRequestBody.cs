@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ApplicationRemovePasswordRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ApplicationRemovePasswordRequestBody
     {
     
         /// <summary>
         /// Gets or sets KeyId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keyId")]
         public Guid KeyId { get; set; }
     
     }

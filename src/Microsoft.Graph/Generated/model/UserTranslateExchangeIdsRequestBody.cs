@@ -9,35 +9,33 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserTranslateExchangeIdsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserTranslateExchangeIdsRequestBody
     {
     
         /// <summary>
         /// Gets or sets InputIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "InputIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("InputIds")]
         public IEnumerable<string> InputIds { get; set; }
     
         /// <summary>
         /// Gets or sets TargetIdType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "TargetIdType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("TargetIdType")]
         public ExchangeIdFormat TargetIdType { get; set; }
     
         /// <summary>
         /// Gets or sets SourceIdType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "SourceIdType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("SourceIdType")]
         public ExchangeIdFormat SourceIdType { get; set; }
     
     }

@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed Device Mobile App Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedDeviceMobileAppConfiguration>))]
     public partial class ManagedDeviceMobileAppConfiguration : Entity
     {
     
-		///<summary>
-		/// The internal ManagedDeviceMobileAppConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The internal ManagedDeviceMobileAppConfiguration constructor
+        ///</summary>
         protected internal ManagedDeviceMobileAppConfiguration()
         {
             // Don't allow initialization of abstract entity types
@@ -34,77 +33,95 @@ namespace Microsoft.Graph
         /// Gets or sets created date time.
         /// DateTime the object was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Admin provided description of the Device Configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Admin provided name of the device configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// DateTime the object was last modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets targeted mobile apps.
         /// the associated app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedMobileApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedMobileApps")]
         public IEnumerable<string> TargetedMobileApps { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// Version of the device configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public Int32? Version { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// The list of group assignemenets for app configration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IManagedDeviceMobileAppConfigurationAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device statuses.
         /// List of ManagedDeviceMobileAppConfigurationDeviceStatus.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatuses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceStatuses")]
         public IManagedDeviceMobileAppConfigurationDeviceStatusesCollectionPage DeviceStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceStatuses@odata.nextLink")]
+        public string DeviceStatusesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device status summary.
         /// App configuration device status summary.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatusSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceStatusSummary")]
         public ManagedDeviceMobileAppConfigurationDeviceSummary DeviceStatusSummary { get; set; }
     
         /// <summary>
         /// Gets or sets user statuses.
         /// List of ManagedDeviceMobileAppConfigurationUserStatus.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userStatuses")]
         public IManagedDeviceMobileAppConfigurationUserStatusesCollectionPage UserStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets userStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("userStatuses@odata.nextLink")]
+        public string UserStatusesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user status summary.
         /// App configuration user status summary.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatusSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userStatusSummary")]
         public ManagedDeviceMobileAppConfigurationUserSummary UserStatusSummary { get; set; }
     
     }

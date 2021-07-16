@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsChiSq_InvRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken probability,
-            Newtonsoft.Json.Linq.JToken degFreedom)
+            System.Text.Json.JsonDocument probability,
+            System.Text.Json.JsonDocument degFreedom)
             : base(requestUrl, client)
         {
             this.SetParameter("probability", probability, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("probability"))
             {
-                request.RequestBody.Probability = this.GetParameter<Newtonsoft.Json.Linq.JToken>("probability");
+                request.RequestBody.Probability = this.GetParameter<System.Text.Json.JsonDocument>("probability");
             }
 
             if (this.HasParameter("degFreedom"))
             {
-                request.RequestBody.DegFreedom = this.GetParameter<Newtonsoft.Json.Linq.JToken>("degFreedom");
+                request.RequestBody.DegFreedom = this.GetParameter<System.Text.Json.JsonDocument>("degFreedom");
             }
 
             return request;

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified PrinterShare using POST.
         /// </summary>
         /// <param name="printerShareToCreate">The PrinterShare to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrinterShare.</returns>
-        System.Threading.Tasks.Task<PrinterShare> CreateAsync(PrinterShare printerShareToCreate);        /// <summary>
-        /// Creates the specified PrinterShare using POST.
+        System.Threading.Tasks.Task<PrinterShare> CreateAsync(PrinterShare printerShareToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified PrinterShare using POST and returns a <see cref="GraphResponse{PrinterShare}"/> object.
         /// </summary>
         /// <param name="printerShareToCreate">The PrinterShare to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PrinterShare.</returns>
-        System.Threading.Tasks.Task<PrinterShare> CreateAsync(PrinterShare printerShareToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PrinterShare.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{PrinterShare}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrinterShare>> CreateResponseAsync(PrinterShare printerShareToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PrinterShare.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified PrinterShare.
+        /// Deletes the specified PrinterShare and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PrinterShare.</returns>
-        System.Threading.Tasks.Task<PrinterShare> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PrinterShare.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrinterShare.</returns>
-        System.Threading.Tasks.Task<PrinterShare> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PrinterShare> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified PrinterShare using PATCH.
+        /// Gets the specified PrinterShare and returns a <see cref="GraphResponse{PrinterShare}"/> object.
         /// </summary>
-        /// <param name="printerShareToUpdate">The PrinterShare to update.</param>
-        /// <returns>The updated PrinterShare.</returns>
-        System.Threading.Tasks.Task<PrinterShare> UpdateAsync(PrinterShare printerShareToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrinterShare}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrinterShare>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrinterShare using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrinterShare.</returns>
-        System.Threading.Tasks.Task<PrinterShare> UpdateAsync(PrinterShare printerShareToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PrinterShare> UpdateAsync(PrinterShare printerShareToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified PrinterShare using PATCH and returns a <see cref="GraphResponse{PrinterShare}"/> object.
+        /// </summary>
+        /// <param name="printerShareToUpdate">The PrinterShare to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PrinterShare}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrinterShare>> UpdateResponseAsync(PrinterShare printerShareToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified PrinterShare using PUT.
+        /// </summary>
+        /// <param name="printerShareToUpdate">The PrinterShare object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<PrinterShare> PutAsync(PrinterShare printerShareToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified PrinterShare using PUT and returns a <see cref="GraphResponse{PrinterShare}"/> object.
+        /// </summary>
+        /// <param name="printerShareToUpdate">The PrinterShare object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{PrinterShare}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrinterShare>> PutResponseAsync(PrinterShare printerShareToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

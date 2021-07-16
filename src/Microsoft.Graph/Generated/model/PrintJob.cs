@@ -12,86 +12,88 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Print Job.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PrintJob : Entity
     {
     
-		///<summary>
-		/// The PrintJob constructor
-		///</summary>
-        public PrintJob()
-        {
-            this.ODataType = "microsoft.graph.printJob";
-        }
-	
         /// <summary>
         /// Gets or sets configuration.
         /// A group of settings that a printer should use to print a job.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configuration")]
         public PrintJobConfiguration Configuration { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public UserIdentity CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The DateTimeOffset when the job was created. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets is fetchable.
         /// If true, document can be fetched by printer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFetchable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isFetchable")]
         public bool? IsFetchable { get; set; }
     
         /// <summary>
         /// Gets or sets redirected from.
         /// Contains the source job URL, if the job has been redirected from another printer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "redirectedFrom", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("redirectedFrom")]
         public string RedirectedFrom { get; set; }
     
         /// <summary>
         /// Gets or sets redirected to.
         /// Contains the destination job URL, if the job has been redirected to another printer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "redirectedTo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("redirectedTo")]
         public string RedirectedTo { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// The status of the print job. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public PrintJobStatus Status { get; set; }
     
         /// <summary>
         /// Gets or sets documents.
         /// Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documents", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("documents")]
         public IPrintJobDocumentsCollectionPage Documents { get; set; }
+
+        /// <summary>
+        /// Gets or sets documentsNextLink.
+        /// </summary>
+        [JsonPropertyName("documents@odata.nextLink")]
+        public string DocumentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
         /// A list of printTasks that were triggered by this print job.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tasks")]
         public IPrintJobTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        public string TasksNextLink { get; set; }
     
     }
 }

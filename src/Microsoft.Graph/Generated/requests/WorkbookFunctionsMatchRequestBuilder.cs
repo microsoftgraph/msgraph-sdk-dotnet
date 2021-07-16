@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsMatchRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken lookupValue,
-            Newtonsoft.Json.Linq.JToken lookupArray,
-            Newtonsoft.Json.Linq.JToken matchType)
+            System.Text.Json.JsonDocument lookupValue,
+            System.Text.Json.JsonDocument lookupArray,
+            System.Text.Json.JsonDocument matchType)
             : base(requestUrl, client)
         {
             this.SetParameter("lookupValue", lookupValue, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("lookupValue"))
             {
-                request.RequestBody.LookupValue = this.GetParameter<Newtonsoft.Json.Linq.JToken>("lookupValue");
+                request.RequestBody.LookupValue = this.GetParameter<System.Text.Json.JsonDocument>("lookupValue");
             }
 
             if (this.HasParameter("lookupArray"))
             {
-                request.RequestBody.LookupArray = this.GetParameter<Newtonsoft.Json.Linq.JToken>("lookupArray");
+                request.RequestBody.LookupArray = this.GetParameter<System.Text.Json.JsonDocument>("lookupArray");
             }
 
             if (this.HasParameter("matchType"))
             {
-                request.RequestBody.MatchType = this.GetParameter<Newtonsoft.Json.Linq.JToken>("matchType");
+                request.RequestBody.MatchType = this.GetParameter<System.Text.Json.JsonDocument>("matchType");
             }
 
             return request;

@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IosDeviceType.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<IosDeviceType>))]
     public partial class IosDeviceType
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosDeviceType"/> class.
-        /// </summary>
-        public IosDeviceType()
-        {
-            this.ODataType = "microsoft.graph.iosDeviceType";
-        }
 
         /// <summary>
         /// Gets or sets iPad.
         /// Whether the app should run on iPads.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iPad", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("iPad")]
         public bool? IPad { get; set; }
     
         /// <summary>
         /// Gets or sets iPhoneAndIPod.
         /// Whether the app should run on iPhones and iPods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iPhoneAndIPod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("iPhoneAndIPod")]
         public bool? IPhoneAndIPod { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

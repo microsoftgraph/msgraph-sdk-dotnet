@@ -12,64 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Admin Consent Request Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AdminConsentRequestPolicy : Entity
     {
     
-		///<summary>
-		/// The AdminConsentRequestPolicy constructor
-		///</summary>
-        public AdminConsentRequestPolicy()
-        {
-            this.ODataType = "microsoft.graph.adminConsentRequestPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets is enabled.
         /// Specifies whether the admin consent request feature is enabled or disabled. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets notify reviewers.
         /// Specifies whether reviewers will receive notifications. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifyReviewers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notifyReviewers")]
         public bool? NotifyReviewers { get; set; }
     
         /// <summary>
         /// Gets or sets reminders enabled.
         /// Specifies whether reviewers will receive reminder emails. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remindersEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remindersEnabled")]
         public bool? RemindersEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets request duration in days.
         /// Specifies the duration the request is active before it automatically expires if no decision is applied.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestDurationInDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestDurationInDays")]
         public Int32? RequestDurationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets reviewers.
         /// Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewers")]
         public IEnumerable<AccessReviewReviewerScope> Reviewers { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public Int32? Version { get; set; }
     
     }

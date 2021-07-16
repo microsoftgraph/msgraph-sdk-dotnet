@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MdmWindowsInformationProtectionPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="mdmWindowsInformationProtectionPolicy">The MdmWindowsInformationProtectionPolicy to add.</param>
-        /// <returns>The created MdmWindowsInformationProtectionPolicy.</returns>
-        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> AddAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicy);
-
         /// <summary>
         /// Adds the specified MdmWindowsInformationProtectionPolicy to the collection via POST.
         /// </summary>
         /// <param name="mdmWindowsInformationProtectionPolicy">The MdmWindowsInformationProtectionPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MdmWindowsInformationProtectionPolicy.</returns>
-        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> AddAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicy, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> AddAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicy, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MdmWindowsInformationProtectionPolicy to the collection via POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionPage> GetAsync();
+        /// <param name="mdmWindowsInformationProtectionPolicy">The MdmWindowsInformationProtectionPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> AddResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicy, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

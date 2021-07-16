@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education Submission Resource.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EducationSubmissionResource : Entity
     {
     
-		///<summary>
-		/// The EducationSubmissionResource constructor
-		///</summary>
-        public EducationSubmissionResource()
-        {
-            this.ODataType = "microsoft.graph.educationSubmissionResource";
-        }
-	
         /// <summary>
         /// Gets or sets assignment resource url.
         /// Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentResourceUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentResourceUrl")]
         public string AssignmentResourceUrl { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
         /// Resource object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resource")]
         public EducationResource Resource { get; set; }
     
     }

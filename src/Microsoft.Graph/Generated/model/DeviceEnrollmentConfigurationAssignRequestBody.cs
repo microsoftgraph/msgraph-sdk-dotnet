@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceEnrollmentConfigurationAssignRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceEnrollmentConfigurationAssignRequestBody
     {
     
         /// <summary>
         /// Gets or sets EnrollmentConfigurationAssignments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentConfigurationAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentConfigurationAssignments")]
         public IEnumerable<EnrollmentConfigurationAssignment> EnrollmentConfigurationAssignments { get; set; }
     
     }

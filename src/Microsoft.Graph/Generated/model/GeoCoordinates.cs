@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type GeoCoordinates.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<GeoCoordinates>))]
     public partial class GeoCoordinates
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GeoCoordinates"/> class.
-        /// </summary>
-        public GeoCoordinates()
-        {
-            this.ODataType = "microsoft.graph.geoCoordinates";
-        }
 
         /// <summary>
         /// Gets or sets altitude.
         /// Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitude", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("altitude")]
         public double? Altitude { get; set; }
     
         /// <summary>
         /// Gets or sets latitude.
         /// Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latitude", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("latitude")]
         public double? Latitude { get; set; }
     
         /// <summary>
         /// Gets or sets longitude.
         /// Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longitude", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("longitude")]
         public double? Longitude { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

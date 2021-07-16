@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsDollarFrRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken decimalDollar,
-            Newtonsoft.Json.Linq.JToken fraction)
+            System.Text.Json.JsonDocument decimalDollar,
+            System.Text.Json.JsonDocument fraction)
             : base(requestUrl, client)
         {
             this.SetParameter("decimalDollar", decimalDollar, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("decimalDollar"))
             {
-                request.RequestBody.DecimalDollar = this.GetParameter<Newtonsoft.Json.Linq.JToken>("decimalDollar");
+                request.RequestBody.DecimalDollar = this.GetParameter<System.Text.Json.JsonDocument>("decimalDollar");
             }
 
             if (this.HasParameter("fraction"))
             {
-                request.RequestBody.Fraction = this.GetParameter<Newtonsoft.Json.Linq.JToken>("fraction");
+                request.RequestBody.Fraction = this.GetParameter<System.Text.Json.JsonDocument>("fraction");
             }
 
             return request;

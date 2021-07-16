@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IManagedAppRegistrationGetUserIdsWithFlaggedAppRegistrationCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ManagedAppRegistrationGetUserIdsWithFlaggedAppRegistrationCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ManagedAppRegistrationGetUserIdsWithFlaggedAppRegistrationCollectionPage>))]
     public interface IManagedAppRegistrationGetUserIdsWithFlaggedAppRegistrationCollectionPage : ICollectionPage<string>
     {
         /// <summary>

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IAppCatalogsTeamsAppsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified TeamsApp to the collection via POST.
-        /// </summary>
-        /// <param name="teamsApp">The TeamsApp to add.</param>
-        /// <returns>The created TeamsApp.</returns>
-        System.Threading.Tasks.Task<TeamsApp> AddAsync(TeamsApp teamsApp);
-
         /// <summary>
         /// Adds the specified TeamsApp to the collection via POST.
         /// </summary>
         /// <param name="teamsApp">The TeamsApp to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsApp.</returns>
-        System.Threading.Tasks.Task<TeamsApp> AddAsync(TeamsApp teamsApp, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TeamsApp> AddAsync(TeamsApp teamsApp, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified TeamsApp to the collection via POST and returns a <see cref="GraphResponse{TeamsApp}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAppCatalogsTeamsAppsCollectionPage> GetAsync();
+        /// <param name="teamsApp">The TeamsApp to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsApp>> AddResponseAsync(TeamsApp teamsApp, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAppCatalogsTeamsAppsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IAppCatalogsTeamsAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AppCatalogsTeamsAppsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppCatalogsTeamsAppsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppCatalogsTeamsAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

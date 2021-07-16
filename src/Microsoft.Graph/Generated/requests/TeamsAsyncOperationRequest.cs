@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified TeamsAsyncOperation using POST.
         /// </summary>
         /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
-        /// <returns>The created TeamsAsyncOperation.</returns>
-        public System.Threading.Tasks.Task<TeamsAsyncOperation> CreateAsync(TeamsAsyncOperation teamsAsyncOperationToCreate)
-        {
-            return this.CreateAsync(teamsAsyncOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TeamsAsyncOperation using POST.
-        /// </summary>
-        /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsAsyncOperation.</returns>
-        public async System.Threading.Tasks.Task<TeamsAsyncOperation> CreateAsync(TeamsAsyncOperation teamsAsyncOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsAsyncOperation> CreateAsync(TeamsAsyncOperation teamsAsyncOperationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<TeamsAsyncOperation>(teamsAsyncOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified TeamsAsyncOperation.
+        /// Creates the specified TeamsAsyncOperation using POST and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> CreateResponseAsync(TeamsAsyncOperation teamsAsyncOperationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<TeamsAsyncOperation>(teamsAsyncOperationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<TeamsAsyncOperation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified TeamsAsyncOperation.
+        /// Deletes the specified TeamsAsyncOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TeamsAsyncOperation.</returns>
-        public System.Threading.Tasks.Task<TeamsAsyncOperation> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsAsyncOperation.</returns>
-        public async System.Threading.Tasks.Task<TeamsAsyncOperation> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsAsyncOperation> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<TeamsAsyncOperation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified TeamsAsyncOperation using PATCH.
+        /// Gets the specified TeamsAsyncOperation and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
         /// </summary>
-        /// <param name="teamsAsyncOperationToUpdate">The TeamsAsyncOperation to update.</param>
-        /// <returns>The updated TeamsAsyncOperation.</returns>
-        public System.Threading.Tasks.Task<TeamsAsyncOperation> UpdateAsync(TeamsAsyncOperation teamsAsyncOperationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(teamsAsyncOperationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<TeamsAsyncOperation>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsAsyncOperation.</returns>
-        public async System.Threading.Tasks.Task<TeamsAsyncOperation> UpdateAsync(TeamsAsyncOperation teamsAsyncOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsAsyncOperation> UpdateAsync(TeamsAsyncOperation teamsAsyncOperationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (teamsAsyncOperationToUpdate.AdditionalData != null)
-			{
-				if (teamsAsyncOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					teamsAsyncOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAsyncOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (teamsAsyncOperationToUpdate.AdditionalData != null)
-            {
-                if (teamsAsyncOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    teamsAsyncOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAsyncOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<TeamsAsyncOperation>(teamsAsyncOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsAsyncOperation using PATCH and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
+        /// </summary>
+        /// <param name="teamsAsyncOperationToUpdate">The TeamsAsyncOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> UpdateResponseAsync(TeamsAsyncOperation teamsAsyncOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<TeamsAsyncOperation>(teamsAsyncOperationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsAsyncOperation using PUT.
+        /// </summary>
+        /// <param name="teamsAsyncOperationToUpdate">The TeamsAsyncOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<TeamsAsyncOperation> PutAsync(TeamsAsyncOperation teamsAsyncOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<TeamsAsyncOperation>(teamsAsyncOperationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsAsyncOperation using PUT and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
+        /// </summary>
+        /// <param name="teamsAsyncOperationToUpdate">The TeamsAsyncOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{TeamsAsyncOperation}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> PutResponseAsync(TeamsAsyncOperation teamsAsyncOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<TeamsAsyncOperation>(teamsAsyncOperationToUpdate, cancellationToken);
         }
 
         /// <summary>

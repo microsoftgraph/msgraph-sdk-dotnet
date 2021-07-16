@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsChooseRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken indexNum,
-            Newtonsoft.Json.Linq.JToken values)
+            System.Text.Json.JsonDocument indexNum,
+            System.Text.Json.JsonDocument values)
             : base(requestUrl, client)
         {
             this.SetParameter("indexNum", indexNum, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("indexNum"))
             {
-                request.RequestBody.IndexNum = this.GetParameter<Newtonsoft.Json.Linq.JToken>("indexNum");
+                request.RequestBody.IndexNum = this.GetParameter<System.Text.Json.JsonDocument>("indexNum");
             }
 
             if (this.HasParameter("values"))
             {
-                request.RequestBody.Values = this.GetParameter<Newtonsoft.Json.Linq.JToken>("values");
+                request.RequestBody.Values = this.GetParameter<System.Text.Json.JsonDocument>("values");
             }
 
             return request;

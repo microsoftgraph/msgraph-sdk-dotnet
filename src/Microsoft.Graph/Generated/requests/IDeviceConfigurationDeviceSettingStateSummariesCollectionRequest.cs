@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceConfigurationDeviceSettingStateSummariesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified SettingStateDeviceSummary to the collection via POST.
-        /// </summary>
-        /// <param name="settingStateDeviceSummary">The SettingStateDeviceSummary to add.</param>
-        /// <returns>The created SettingStateDeviceSummary.</returns>
-        System.Threading.Tasks.Task<SettingStateDeviceSummary> AddAsync(SettingStateDeviceSummary settingStateDeviceSummary);
-
         /// <summary>
         /// Adds the specified SettingStateDeviceSummary to the collection via POST.
         /// </summary>
         /// <param name="settingStateDeviceSummary">The SettingStateDeviceSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SettingStateDeviceSummary.</returns>
-        System.Threading.Tasks.Task<SettingStateDeviceSummary> AddAsync(SettingStateDeviceSummary settingStateDeviceSummary, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SettingStateDeviceSummary> AddAsync(SettingStateDeviceSummary settingStateDeviceSummary, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified SettingStateDeviceSummary to the collection via POST and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceConfigurationDeviceSettingStateSummariesCollectionPage> GetAsync();
+        /// <param name="settingStateDeviceSummary">The SettingStateDeviceSummary to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> AddResponseAsync(SettingStateDeviceSummary settingStateDeviceSummary, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceConfigurationDeviceSettingStateSummariesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceConfigurationDeviceSettingStateSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceConfigurationDeviceSettingStateSummariesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationDeviceSettingStateSummariesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceSettingStateSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

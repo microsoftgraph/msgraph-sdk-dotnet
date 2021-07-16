@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Chart Legend Format.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookChartLegendFormat : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartLegendFormat constructor
-		///</summary>
-        public WorkbookChartLegendFormat()
-        {
-            this.ODataType = "microsoft.graph.workbookChartLegendFormat";
-        }
-	
         /// <summary>
         /// Gets or sets fill.
         /// Represents the fill format of an object, which includes background formating information. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fill", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fill")]
         public WorkbookChartFill Fill { get; set; }
     
         /// <summary>
         /// Gets or sets font.
         /// Represents the font attributes such as font name, font size, color, etc. of a chart legend. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "font", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("font")]
         public WorkbookChartFont Font { get; set; }
     
     }

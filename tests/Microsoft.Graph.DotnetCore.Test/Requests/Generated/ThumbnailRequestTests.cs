@@ -81,7 +81,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var expectedThumbnail = new Thumbnail { Url = "https://localhost" };
 
                 this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<Thumbnail>(It.IsAny<string>()))
+                    serializer => serializer.DeserializeObject<Thumbnail>(It.IsAny<Stream>()))
                     .Returns(expectedThumbnail);
 
                 var responseThumbnail = await this.graphServiceClient.Me.Drive.Items["id"].Thumbnails["0"]["id"].Content.Request().PutAsync<Thumbnail>(requestStream);

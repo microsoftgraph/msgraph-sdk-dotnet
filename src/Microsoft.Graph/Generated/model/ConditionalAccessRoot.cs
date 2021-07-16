@@ -12,35 +12,37 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Conditional Access Root.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ConditionalAccessRoot : Entity
     {
     
-		///<summary>
-		/// The ConditionalAccessRoot constructor
-		///</summary>
-        public ConditionalAccessRoot()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessRoot";
-        }
-	
         /// <summary>
         /// Gets or sets named locations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "namedLocations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("namedLocations")]
         public IConditionalAccessRootNamedLocationsCollectionPage NamedLocations { get; set; }
+
+        /// <summary>
+        /// Gets or sets namedLocationsNextLink.
+        /// </summary>
+        [JsonPropertyName("namedLocations@odata.nextLink")]
+        public string NamedLocationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policies")]
         public IConditionalAccessRootPoliciesCollectionPage Policies { get; set; }
+
+        /// <summary>
+        /// Gets or sets policiesNextLink.
+        /// </summary>
+        [JsonPropertyName("policies@odata.nextLink")]
+        public string PoliciesNextLink { get; set; }
     
     }
 }

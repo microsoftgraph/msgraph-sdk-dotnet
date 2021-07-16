@@ -12,30 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Planner Group.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PlannerGroup : Entity
     {
     
-		///<summary>
-		/// The PlannerGroup constructor
-		///</summary>
-        public PlannerGroup()
-        {
-            this.ODataType = "microsoft.graph.plannerGroup";
-        }
-	
         /// <summary>
         /// Gets or sets plans.
         /// Read-only. Nullable. Returns the plannerPlans owned by the group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plans", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("plans")]
         public IPlannerGroupPlansCollectionPage Plans { get; set; }
+
+        /// <summary>
+        /// Gets or sets plansNextLink.
+        /// </summary>
+        [JsonPropertyName("plans@odata.nextLink")]
+        public string PlansNextLink { get; set; }
     
     }
 }

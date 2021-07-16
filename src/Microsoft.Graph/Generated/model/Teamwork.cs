@@ -12,29 +12,25 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Teamwork.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Teamwork : Entity
     {
     
-		///<summary>
-		/// The Teamwork constructor
-		///</summary>
-        public Teamwork()
-        {
-            this.ODataType = "microsoft.graph.teamwork";
-        }
-	
         /// <summary>
         /// Gets or sets workforce integrations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workforceIntegrations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("workforceIntegrations")]
         public ITeamworkWorkforceIntegrationsCollectionPage WorkforceIntegrations { get; set; }
+
+        /// <summary>
+        /// Gets or sets workforceIntegrationsNextLink.
+        /// </summary>
+        [JsonPropertyName("workforceIntegrations@odata.nextLink")]
+        public string WorkforceIntegrationsNextLink { get; set; }
     
     }
 }

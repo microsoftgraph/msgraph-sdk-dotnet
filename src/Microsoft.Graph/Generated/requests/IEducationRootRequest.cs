@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified EducationRoot using POST.
         /// </summary>
         /// <param name="educationRootToCreate">The EducationRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationRoot.</returns>
-        System.Threading.Tasks.Task<EducationRoot> CreateAsync(EducationRoot educationRootToCreate);        /// <summary>
-        /// Creates the specified EducationRoot using POST.
+        System.Threading.Tasks.Task<EducationRoot> CreateAsync(EducationRoot educationRootToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified EducationRoot using POST and returns a <see cref="GraphResponse{EducationRoot}"/> object.
         /// </summary>
         /// <param name="educationRootToCreate">The EducationRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created EducationRoot.</returns>
-        System.Threading.Tasks.Task<EducationRoot> CreateAsync(EducationRoot educationRootToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified EducationRoot.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{EducationRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRoot>> CreateResponseAsync(EducationRoot educationRootToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified EducationRoot.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified EducationRoot.
+        /// Deletes the specified EducationRoot and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EducationRoot.</returns>
-        System.Threading.Tasks.Task<EducationRoot> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified EducationRoot.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationRoot.</returns>
-        System.Threading.Tasks.Task<EducationRoot> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EducationRoot> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified EducationRoot using PATCH.
+        /// Gets the specified EducationRoot and returns a <see cref="GraphResponse{EducationRoot}"/> object.
         /// </summary>
-        /// <param name="educationRootToUpdate">The EducationRoot to update.</param>
-        /// <returns>The updated EducationRoot.</returns>
-        System.Threading.Tasks.Task<EducationRoot> UpdateAsync(EducationRoot educationRootToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRoot>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified EducationRoot using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationRoot.</returns>
-        System.Threading.Tasks.Task<EducationRoot> UpdateAsync(EducationRoot educationRootToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EducationRoot> UpdateAsync(EducationRoot educationRootToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified EducationRoot using PATCH and returns a <see cref="GraphResponse{EducationRoot}"/> object.
+        /// </summary>
+        /// <param name="educationRootToUpdate">The EducationRoot to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRoot>> UpdateResponseAsync(EducationRoot educationRootToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified EducationRoot using PUT.
+        /// </summary>
+        /// <param name="educationRootToUpdate">The EducationRoot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EducationRoot> PutAsync(EducationRoot educationRootToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified EducationRoot using PUT and returns a <see cref="GraphResponse{EducationRoot}"/> object.
+        /// </summary>
+        /// <param name="educationRootToUpdate">The EducationRoot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EducationRoot}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRoot>> PutResponseAsync(EducationRoot educationRootToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

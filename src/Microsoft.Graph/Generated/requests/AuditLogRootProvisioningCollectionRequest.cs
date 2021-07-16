@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ProvisioningObjectSummary to the collection via POST.
-        /// </summary>
-        /// <param name="provisioningObjectSummary">The ProvisioningObjectSummary to add.</param>
-        /// <returns>The created ProvisioningObjectSummary.</returns>
-        public System.Threading.Tasks.Task<ProvisioningObjectSummary> AddAsync(ProvisioningObjectSummary provisioningObjectSummary)
-        {
-            return this.AddAsync(provisioningObjectSummary, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ProvisioningObjectSummary to the collection via POST.
         /// </summary>
         /// <param name="provisioningObjectSummary">The ProvisioningObjectSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ProvisioningObjectSummary.</returns>
-        public System.Threading.Tasks.Task<ProvisioningObjectSummary> AddAsync(ProvisioningObjectSummary provisioningObjectSummary, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ProvisioningObjectSummary> AddAsync(ProvisioningObjectSummary provisioningObjectSummary, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ProvisioningObjectSummary>(provisioningObjectSummary, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ProvisioningObjectSummary to the collection via POST and returns a <see cref="GraphResponse{ProvisioningObjectSummary}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAuditLogRootProvisioningCollectionPage> GetAsync()
+        /// <param name="provisioningObjectSummary">The ProvisioningObjectSummary to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProvisioningObjectSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ProvisioningObjectSummary>> AddResponseAsync(ProvisioningObjectSummary provisioningObjectSummary, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ProvisioningObjectSummary>(provisioningObjectSummary, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAuditLogRootProvisioningCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAuditLogRootProvisioningCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AuditLogRootProvisioningCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuditLogRootProvisioningCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuditLogRootProvisioningCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuditLogRootProvisioningCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AuditLogRootProvisioningCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

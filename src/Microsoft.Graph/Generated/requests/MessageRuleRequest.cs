@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified MessageRule using POST.
         /// </summary>
         /// <param name="messageRuleToCreate">The MessageRule to create.</param>
-        /// <returns>The created MessageRule.</returns>
-        public System.Threading.Tasks.Task<MessageRule> CreateAsync(MessageRule messageRuleToCreate)
-        {
-            return this.CreateAsync(messageRuleToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MessageRule using POST.
-        /// </summary>
-        /// <param name="messageRuleToCreate">The MessageRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MessageRule.</returns>
-        public async System.Threading.Tasks.Task<MessageRule> CreateAsync(MessageRule messageRuleToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MessageRule> CreateAsync(MessageRule messageRuleToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<MessageRule>(messageRuleToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified MessageRule.
+        /// Creates the specified MessageRule using POST and returns a <see cref="GraphResponse{MessageRule}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="messageRuleToCreate">The MessageRule to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MessageRule>> CreateResponseAsync(MessageRule messageRuleToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MessageRule>(messageRuleToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<MessageRule>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified MessageRule.
+        /// Deletes the specified MessageRule and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MessageRule.</returns>
-        public System.Threading.Tasks.Task<MessageRule> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MessageRule.</returns>
-        public async System.Threading.Tasks.Task<MessageRule> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MessageRule> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<MessageRule>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified MessageRule using PATCH.
+        /// Gets the specified MessageRule and returns a <see cref="GraphResponse{MessageRule}"/> object.
         /// </summary>
-        /// <param name="messageRuleToUpdate">The MessageRule to update.</param>
-        /// <returns>The updated MessageRule.</returns>
-        public System.Threading.Tasks.Task<MessageRule> UpdateAsync(MessageRule messageRuleToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MessageRule>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(messageRuleToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<MessageRule>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MessageRule.</returns>
-        public async System.Threading.Tasks.Task<MessageRule> UpdateAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MessageRule> UpdateAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken = default)
         {
-			if (messageRuleToUpdate.AdditionalData != null)
-			{
-				if (messageRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					messageRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, messageRuleToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (messageRuleToUpdate.AdditionalData != null)
-            {
-                if (messageRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    messageRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, messageRuleToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<MessageRule>(messageRuleToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MessageRule using PATCH and returns a <see cref="GraphResponse{MessageRule}"/> object.
+        /// </summary>
+        /// <param name="messageRuleToUpdate">The MessageRule to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MessageRule>> UpdateResponseAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<MessageRule>(messageRuleToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified MessageRule using PUT.
+        /// </summary>
+        /// <param name="messageRuleToUpdate">The MessageRule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MessageRule> PutAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MessageRule>(messageRuleToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MessageRule using PUT and returns a <see cref="GraphResponse{MessageRule}"/> object.
+        /// </summary>
+        /// <param name="messageRuleToUpdate">The MessageRule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MessageRule}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MessageRule>> PutResponseAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MessageRule>(messageRuleToUpdate, cancellationToken);
         }
 
         /// <summary>

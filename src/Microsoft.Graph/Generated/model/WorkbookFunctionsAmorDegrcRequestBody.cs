@@ -9,60 +9,58 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsAmorDegrcRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsAmorDegrcRequestBody
     {
     
         /// <summary>
         /// Gets or sets Cost.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cost", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Cost { get; set; }
+        [JsonPropertyName("cost")]
+        public System.Text.Json.JsonDocument Cost { get; set; }
     
         /// <summary>
         /// Gets or sets DatePurchased.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "datePurchased", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken DatePurchased { get; set; }
+        [JsonPropertyName("datePurchased")]
+        public System.Text.Json.JsonDocument DatePurchased { get; set; }
     
         /// <summary>
         /// Gets or sets FirstPeriod.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firstPeriod", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken FirstPeriod { get; set; }
+        [JsonPropertyName("firstPeriod")]
+        public System.Text.Json.JsonDocument FirstPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets Salvage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salvage", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Salvage { get; set; }
+        [JsonPropertyName("salvage")]
+        public System.Text.Json.JsonDocument Salvage { get; set; }
     
         /// <summary>
         /// Gets or sets Period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "period", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Period { get; set; }
+        [JsonPropertyName("period")]
+        public System.Text.Json.JsonDocument Period { get; set; }
     
         /// <summary>
         /// Gets or sets Rate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rate", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Rate { get; set; }
+        [JsonPropertyName("rate")]
+        public System.Text.Json.JsonDocument Rate { get; set; }
     
         /// <summary>
         /// Gets or sets Basis.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "basis", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Basis { get; set; }
+        [JsonPropertyName("basis")]
+        public System.Text.Json.JsonDocument Basis { get; set; }
     
     }
 }

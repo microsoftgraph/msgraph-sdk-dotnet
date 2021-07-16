@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsAverageIfsRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken averageRange,
-            Newtonsoft.Json.Linq.JToken values)
+            System.Text.Json.JsonDocument averageRange,
+            System.Text.Json.JsonDocument values)
             : base(requestUrl, client)
         {
             this.SetParameter("averageRange", averageRange, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("averageRange"))
             {
-                request.RequestBody.AverageRange = this.GetParameter<Newtonsoft.Json.Linq.JToken>("averageRange");
+                request.RequestBody.AverageRange = this.GetParameter<System.Text.Json.JsonDocument>("averageRange");
             }
 
             if (this.HasParameter("values"))
             {
-                request.RequestBody.Values = this.GetParameter<Newtonsoft.Json.Linq.JToken>("values");
+                request.RequestBody.Values = this.GetParameter<System.Text.Json.JsonDocument>("values");
             }
 
             return request;

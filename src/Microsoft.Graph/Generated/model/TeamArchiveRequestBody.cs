@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TeamArchiveRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TeamArchiveRequestBody
     {
     
         /// <summary>
         /// Gets or sets ShouldSetSpoSiteReadOnlyForMembers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shouldSetSpoSiteReadOnlyForMembers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("shouldSetSpoSiteReadOnlyForMembers")]
         public bool? ShouldSetSpoSiteReadOnlyForMembers { get; set; }
     
     }

@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CallRoute.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<CallRoute>))]
     public partial class CallRoute
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CallRoute"/> class.
-        /// </summary>
-        public CallRoute()
-        {
-            this.ODataType = "microsoft.graph.callRoute";
-        }
 
         /// <summary>
         /// Gets or sets final.
         /// The identity that was resolved to in the call.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "final", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("final")]
         public IdentitySet Final { get; set; }
     
         /// <summary>
         /// Gets or sets original.
         /// The identity that was originally used in the call.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("original")]
         public IdentitySet Original { get; set; }
     
         /// <summary>
         /// Gets or sets routingType.
         /// Possible values are: forwarded, lookup, selfFork.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "routingType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("routingType")]
         public RoutingType? RoutingType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

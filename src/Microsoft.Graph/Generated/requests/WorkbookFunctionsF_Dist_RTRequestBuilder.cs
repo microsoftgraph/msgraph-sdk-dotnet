@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsF_Dist_RTRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken x,
-            Newtonsoft.Json.Linq.JToken degFreedom1,
-            Newtonsoft.Json.Linq.JToken degFreedom2)
+            System.Text.Json.JsonDocument x,
+            System.Text.Json.JsonDocument degFreedom1,
+            System.Text.Json.JsonDocument degFreedom2)
             : base(requestUrl, client)
         {
             this.SetParameter("x", x, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("x"))
             {
-                request.RequestBody.X = this.GetParameter<Newtonsoft.Json.Linq.JToken>("x");
+                request.RequestBody.X = this.GetParameter<System.Text.Json.JsonDocument>("x");
             }
 
             if (this.HasParameter("degFreedom1"))
             {
-                request.RequestBody.DegFreedom1 = this.GetParameter<Newtonsoft.Json.Linq.JToken>("degFreedom1");
+                request.RequestBody.DegFreedom1 = this.GetParameter<System.Text.Json.JsonDocument>("degFreedom1");
             }
 
             if (this.HasParameter("degFreedom2"))
             {
-                request.RequestBody.DegFreedom2 = this.GetParameter<Newtonsoft.Json.Linq.JToken>("degFreedom2");
+                request.RequestBody.DegFreedom2 = this.GetParameter<System.Text.Json.JsonDocument>("degFreedom2");
             }
 
             return request;

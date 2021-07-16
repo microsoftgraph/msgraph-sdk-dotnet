@@ -12,43 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type File Attachment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class FileAttachment : Attachment
     {
     
-		///<summary>
-		/// The FileAttachment constructor
-		///</summary>
+        ///<summary>
+        /// The FileAttachment constructor
+        ///</summary>
         public FileAttachment()
         {
             this.ODataType = "microsoft.graph.fileAttachment";
         }
-	
+
         /// <summary>
         /// Gets or sets content bytes.
         /// The base64-encoded contents of the file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentBytes")]
         public byte[] ContentBytes { get; set; }
     
         /// <summary>
         /// Gets or sets content id.
         /// The ID of the attachment in the Exchange store.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentId")]
         public string ContentId { get; set; }
     
         /// <summary>
         /// Gets or sets content location.
         /// Do not use this property as it is not supported.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentLocation")]
         public string ContentLocation { get; set; }
     
     }

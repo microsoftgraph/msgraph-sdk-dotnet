@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ITargetedManagedAppProtectionAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified TargetedManagedAppPolicyAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="targetedManagedAppPolicyAssignment">The TargetedManagedAppPolicyAssignment to add.</param>
-        /// <returns>The created TargetedManagedAppPolicyAssignment.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> AddAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignment);
-
         /// <summary>
         /// Adds the specified TargetedManagedAppPolicyAssignment to the collection via POST.
         /// </summary>
         /// <param name="targetedManagedAppPolicyAssignment">The TargetedManagedAppPolicyAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TargetedManagedAppPolicyAssignment.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> AddAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> AddAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignment, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified TargetedManagedAppPolicyAssignment to the collection via POST and returns a <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITargetedManagedAppProtectionAssignmentsCollectionPage> GetAsync();
+        /// <param name="targetedManagedAppPolicyAssignment">The TargetedManagedAppPolicyAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppPolicyAssignment>> AddResponseAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignment, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITargetedManagedAppProtectionAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ITargetedManagedAppProtectionAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TargetedManagedAppProtectionAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtectionAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtectionAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

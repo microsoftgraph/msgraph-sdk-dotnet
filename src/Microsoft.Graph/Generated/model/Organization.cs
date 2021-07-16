@@ -12,194 +12,205 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Organization.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<Organization>))]
     public partial class Organization : DirectoryObject
     {
     
-		///<summary>
-		/// The Organization constructor
-		///</summary>
+        ///<summary>
+        /// The Organization constructor
+        ///</summary>
         public Organization()
         {
             this.ODataType = "microsoft.graph.organization";
         }
-	
+
         /// <summary>
         /// Gets or sets assigned plans.
         /// The collection of service plans associated with the tenant. Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedPlans", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedPlans")]
         public IEnumerable<AssignedPlan> AssignedPlans { get; set; }
     
         /// <summary>
         /// Gets or sets business phones.
         /// Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessPhones", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("businessPhones")]
         public IEnumerable<string> BusinessPhones { get; set; }
     
         /// <summary>
         /// Gets or sets city.
         /// City name of the address for the organization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "city", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("city")]
         public string City { get; set; }
     
         /// <summary>
         /// Gets or sets country.
         /// Country/region name of the address for the organization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "country", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("country")]
         public string Country { get; set; }
     
         /// <summary>
         /// Gets or sets country letter code.
         /// Country/region abbreviation for the organization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryLetterCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countryLetterCode")]
         public string CountryLetterCode { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name for the tenant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets marketing notification emails.
         /// Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "marketingNotificationEmails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("marketingNotificationEmails")]
         public IEnumerable<string> MarketingNotificationEmails { get; set; }
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
         /// The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesLastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesLastSyncDateTime")]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sync enabled.
         /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSyncEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesSyncEnabled")]
         public bool? OnPremisesSyncEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets postal code.
         /// Postal code of the address for the organization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postalCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("postalCode")]
         public string PostalCode { get; set; }
     
         /// <summary>
         /// Gets or sets preferred language.
         /// The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredLanguage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("preferredLanguage")]
         public string PreferredLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets privacy profile.
         /// The privacy profile of an organization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyProfile", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("privacyProfile")]
         public PrivacyProfile PrivacyProfile { get; set; }
     
         /// <summary>
         /// Gets or sets provisioned plans.
         /// Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisionedPlans", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provisionedPlans")]
         public IEnumerable<ProvisionedPlan> ProvisionedPlans { get; set; }
     
         /// <summary>
         /// Gets or sets security compliance notification mails.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityComplianceNotificationMails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("securityComplianceNotificationMails")]
         public IEnumerable<string> SecurityComplianceNotificationMails { get; set; }
     
         /// <summary>
         /// Gets or sets security compliance notification phones.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityComplianceNotificationPhones", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("securityComplianceNotificationPhones")]
         public IEnumerable<string> SecurityComplianceNotificationPhones { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// State name of the address for the organization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public string State { get; set; }
     
         /// <summary>
         /// Gets or sets street.
         /// Street name of the address for organization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "street", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("street")]
         public string Street { get; set; }
     
         /// <summary>
         /// Gets or sets technical notification mails.
         /// Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "technicalNotificationMails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("technicalNotificationMails")]
         public IEnumerable<string> TechnicalNotificationMails { get; set; }
     
         /// <summary>
         /// Gets or sets tenant type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantType")]
         public string TenantType { get; set; }
     
         /// <summary>
         /// Gets or sets verified domains.
         /// The collection of domains associated with this tenant. Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "verifiedDomains", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("verifiedDomains")]
         public IEnumerable<VerifiedDomain> VerifiedDomains { get; set; }
     
         /// <summary>
         /// Gets or sets mobile device management authority.
         /// Mobile device management authority. Possible values are: unknown, intune, sccm, office365.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileDeviceManagementAuthority", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mobileDeviceManagementAuthority")]
         public MdmAuthority? MobileDeviceManagementAuthority { get; set; }
     
         /// <summary>
         /// Gets or sets branding.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "branding", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("branding")]
         public OrganizationalBranding Branding { get; set; }
     
         /// <summary>
         /// Gets or sets certificate based auth configuration.
         /// Navigation property to manage  certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateBasedAuthConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certificateBasedAuthConfiguration")]
         public IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage CertificateBasedAuthConfiguration { get; set; }
+
+        /// <summary>
+        /// Gets or sets certificateBasedAuthConfigurationNextLink.
+        /// </summary>
+        [JsonPropertyName("certificateBasedAuthConfiguration@odata.nextLink")]
+        public string CertificateBasedAuthConfigurationNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
         /// The collection of open extensions defined for the organization resource. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("extensions")]
         public IOrganizationExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
     }
 }

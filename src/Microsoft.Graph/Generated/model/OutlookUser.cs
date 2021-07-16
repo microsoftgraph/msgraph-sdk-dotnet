@@ -12,30 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Outlook User.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OutlookUser : Entity
     {
     
-		///<summary>
-		/// The OutlookUser constructor
-		///</summary>
-        public OutlookUser()
-        {
-            this.ODataType = "microsoft.graph.outlookUser";
-        }
-	
         /// <summary>
         /// Gets or sets master categories.
         /// A list of categories defined for the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "masterCategories", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("masterCategories")]
         public IOutlookUserMasterCategoriesCollectionPage MasterCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets masterCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("masterCategories@odata.nextLink")]
+        public string MasterCategoriesNextLink { get; set; }
     
     }
 }

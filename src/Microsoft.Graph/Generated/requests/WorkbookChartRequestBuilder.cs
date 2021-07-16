@@ -140,7 +140,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookChartSetDataRequestBuilder"/>.</returns>
         public IWorkbookChartSetDataRequestBuilder SetData(
             string seriesBy,
-            Newtonsoft.Json.Linq.JToken sourceData = null)
+            System.Text.Json.JsonDocument sourceData = null)
         {
             return new WorkbookChartSetDataRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.setData"),
@@ -154,8 +154,8 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookChartSetPositionRequestBuilder"/>.</returns>
         public IWorkbookChartSetPositionRequestBuilder SetPosition(
-            Newtonsoft.Json.Linq.JToken startCell = null,
-            Newtonsoft.Json.Linq.JToken endCell = null)
+            System.Text.Json.JsonDocument startCell = null,
+            System.Text.Json.JsonDocument endCell = null)
         {
             return new WorkbookChartSetPositionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.setPosition"),

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UserTeamwork using POST.
         /// </summary>
         /// <param name="userTeamworkToCreate">The UserTeamwork to create.</param>
-        /// <returns>The created UserTeamwork.</returns>
-        public System.Threading.Tasks.Task<UserTeamwork> CreateAsync(UserTeamwork userTeamworkToCreate)
-        {
-            return this.CreateAsync(userTeamworkToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserTeamwork using POST.
-        /// </summary>
-        /// <param name="userTeamworkToCreate">The UserTeamwork to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserTeamwork.</returns>
-        public async System.Threading.Tasks.Task<UserTeamwork> CreateAsync(UserTeamwork userTeamworkToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserTeamwork> CreateAsync(UserTeamwork userTeamworkToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UserTeamwork>(userTeamworkToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UserTeamwork.
+        /// Creates the specified UserTeamwork using POST and returns a <see cref="GraphResponse{UserTeamwork}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="userTeamworkToCreate">The UserTeamwork to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserTeamwork}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> CreateResponseAsync(UserTeamwork userTeamworkToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserTeamwork>(userTeamworkToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UserTeamwork>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UserTeamwork.
+        /// Deletes the specified UserTeamwork and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserTeamwork.</returns>
-        public System.Threading.Tasks.Task<UserTeamwork> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserTeamwork.</returns>
-        public async System.Threading.Tasks.Task<UserTeamwork> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserTeamwork> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UserTeamwork>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UserTeamwork using PATCH.
+        /// Gets the specified UserTeamwork and returns a <see cref="GraphResponse{UserTeamwork}"/> object.
         /// </summary>
-        /// <param name="userTeamworkToUpdate">The UserTeamwork to update.</param>
-        /// <returns>The updated UserTeamwork.</returns>
-        public System.Threading.Tasks.Task<UserTeamwork> UpdateAsync(UserTeamwork userTeamworkToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserTeamwork}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(userTeamworkToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserTeamwork>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserTeamwork.</returns>
-        public async System.Threading.Tasks.Task<UserTeamwork> UpdateAsync(UserTeamwork userTeamworkToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserTeamwork> UpdateAsync(UserTeamwork userTeamworkToUpdate, CancellationToken cancellationToken = default)
         {
-			if (userTeamworkToUpdate.AdditionalData != null)
-			{
-				if (userTeamworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userTeamworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userTeamworkToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userTeamworkToUpdate.AdditionalData != null)
-            {
-                if (userTeamworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userTeamworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userTeamworkToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UserTeamwork>(userTeamworkToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserTeamwork using PATCH and returns a <see cref="GraphResponse{UserTeamwork}"/> object.
+        /// </summary>
+        /// <param name="userTeamworkToUpdate">The UserTeamwork to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserTeamwork}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> UpdateResponseAsync(UserTeamwork userTeamworkToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UserTeamwork>(userTeamworkToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UserTeamwork using PUT.
+        /// </summary>
+        /// <param name="userTeamworkToUpdate">The UserTeamwork object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserTeamwork> PutAsync(UserTeamwork userTeamworkToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserTeamwork>(userTeamworkToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserTeamwork using PUT and returns a <see cref="GraphResponse{UserTeamwork}"/> object.
+        /// </summary>
+        /// <param name="userTeamworkToUpdate">The UserTeamwork object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserTeamwork}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> PutResponseAsync(UserTeamwork userTeamworkToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserTeamwork>(userTeamworkToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserTeamwork userTeamworkToInitialize)
         {
 
-            if (userTeamworkToInitialize != null && userTeamworkToInitialize.AdditionalData != null)
+            if (userTeamworkToInitialize != null)
             {
-
                 if (userTeamworkToInitialize.InstalledApps != null && userTeamworkToInitialize.InstalledApps.CurrentPage != null)
                 {
+                    userTeamworkToInitialize.InstalledApps.InitializeNextPageRequest(this.Client, userTeamworkToInitialize.InstalledAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userTeamworkToInitialize.InstalledApps.AdditionalData = userTeamworkToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userTeamworkToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userTeamworkToInitialize.InstalledApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

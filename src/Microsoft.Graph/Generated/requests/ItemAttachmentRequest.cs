@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ItemAttachment using POST.
         /// </summary>
         /// <param name="itemAttachmentToCreate">The ItemAttachment to create.</param>
-        /// <returns>The created ItemAttachment.</returns>
-        public System.Threading.Tasks.Task<ItemAttachment> CreateAsync(ItemAttachment itemAttachmentToCreate)
-        {
-            return this.CreateAsync(itemAttachmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ItemAttachment using POST.
-        /// </summary>
-        /// <param name="itemAttachmentToCreate">The ItemAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemAttachment.</returns>
-        public async System.Threading.Tasks.Task<ItemAttachment> CreateAsync(ItemAttachment itemAttachmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemAttachment> CreateAsync(ItemAttachment itemAttachmentToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ItemAttachment>(itemAttachmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ItemAttachment.
+        /// Creates the specified ItemAttachment using POST and returns a <see cref="GraphResponse{ItemAttachment}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="itemAttachmentToCreate">The ItemAttachment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAttachment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAttachment>> CreateResponseAsync(ItemAttachment itemAttachmentToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ItemAttachment>(itemAttachmentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ItemAttachment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ItemAttachment.
+        /// Deletes the specified ItemAttachment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ItemAttachment.</returns>
-        public System.Threading.Tasks.Task<ItemAttachment> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemAttachment.</returns>
-        public async System.Threading.Tasks.Task<ItemAttachment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemAttachment> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ItemAttachment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ItemAttachment using PATCH.
+        /// Gets the specified ItemAttachment and returns a <see cref="GraphResponse{ItemAttachment}"/> object.
         /// </summary>
-        /// <param name="itemAttachmentToUpdate">The ItemAttachment to update.</param>
-        /// <returns>The updated ItemAttachment.</returns>
-        public System.Threading.Tasks.Task<ItemAttachment> UpdateAsync(ItemAttachment itemAttachmentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAttachment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAttachment>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(itemAttachmentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ItemAttachment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemAttachment.</returns>
-        public async System.Threading.Tasks.Task<ItemAttachment> UpdateAsync(ItemAttachment itemAttachmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemAttachment> UpdateAsync(ItemAttachment itemAttachmentToUpdate, CancellationToken cancellationToken = default)
         {
-			if (itemAttachmentToUpdate.AdditionalData != null)
-			{
-				if (itemAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					itemAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemAttachmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (itemAttachmentToUpdate.AdditionalData != null)
-            {
-                if (itemAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    itemAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemAttachmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ItemAttachment>(itemAttachmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ItemAttachment using PATCH and returns a <see cref="GraphResponse{ItemAttachment}"/> object.
+        /// </summary>
+        /// <param name="itemAttachmentToUpdate">The ItemAttachment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ItemAttachment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAttachment>> UpdateResponseAsync(ItemAttachment itemAttachmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ItemAttachment>(itemAttachmentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ItemAttachment using PUT.
+        /// </summary>
+        /// <param name="itemAttachmentToUpdate">The ItemAttachment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ItemAttachment> PutAsync(ItemAttachment itemAttachmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ItemAttachment>(itemAttachmentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ItemAttachment using PUT and returns a <see cref="GraphResponse{ItemAttachment}"/> object.
+        /// </summary>
+        /// <param name="itemAttachmentToUpdate">The ItemAttachment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ItemAttachment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAttachment>> PutResponseAsync(ItemAttachment itemAttachmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ItemAttachment>(itemAttachmentToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type StandardTimeZoneOffset.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<StandardTimeZoneOffset>))]
     public partial class StandardTimeZoneOffset
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="StandardTimeZoneOffset"/> class.
-        /// </summary>
-        public StandardTimeZoneOffset()
-        {
-            this.ODataType = "microsoft.graph.standardTimeZoneOffset";
-        }
 
         /// <summary>
         /// Gets or sets dayOccurrence.
         /// Represents the nth occurrence of the day of week that the transition from daylight saving time to standard time occurs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dayOccurrence", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dayOccurrence")]
         public Int32? DayOccurrence { get; set; }
     
         /// <summary>
         /// Gets or sets dayOfWeek.
         /// Represents the day of the week when the transition from daylight saving time to standard time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dayOfWeek", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dayOfWeek")]
         public DayOfWeek? DayOfWeek { get; set; }
     
         /// <summary>
         /// Gets or sets month.
         /// Represents the month of the year when the transition from daylight saving time to standard time occurs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "month", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("month")]
         public Int32? Month { get; set; }
     
         /// <summary>
         /// Gets or sets time.
         /// Represents the time of day when the transition from daylight saving time to standard time occurs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "time", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("time")]
         public TimeOfDay Time { get; set; }
     
         /// <summary>
         /// Gets or sets year.
         /// Represents how frequently in terms of years the change from daylight saving time to standard time occurs. For example, a value of 0 means every year.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "year", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("year")]
         public Int32? Year { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

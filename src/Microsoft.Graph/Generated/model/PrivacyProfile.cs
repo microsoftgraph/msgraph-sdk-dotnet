@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PrivacyProfile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PrivacyProfile>))]
     public partial class PrivacyProfile
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrivacyProfile"/> class.
-        /// </summary>
-        public PrivacyProfile()
-        {
-            this.ODataType = "microsoft.graph.privacyProfile";
-        }
 
         /// <summary>
         /// Gets or sets contactEmail.
         /// A valid smtp email address for the privacy statement contact. Not required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactEmail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contactEmail")]
         public string ContactEmail { get; set; }
     
         /// <summary>
         /// Gets or sets statementUrl.
         /// A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statementUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("statementUrl")]
         public string StatementUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ApplicationRemoveKeyRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ApplicationRemoveKeyRequestBody
     {
     
         /// <summary>
         /// Gets or sets KeyId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keyId")]
         public Guid KeyId { get; set; }
     
         /// <summary>
         /// Gets or sets Proof.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proof", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proof")]
         public string Proof { get; set; }
     
     }

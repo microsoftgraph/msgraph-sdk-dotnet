@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementRemoteAssistancePartnersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified RemoteAssistancePartner to the collection via POST.
-        /// </summary>
-        /// <param name="remoteAssistancePartner">The RemoteAssistancePartner to add.</param>
-        /// <returns>The created RemoteAssistancePartner.</returns>
-        System.Threading.Tasks.Task<RemoteAssistancePartner> AddAsync(RemoteAssistancePartner remoteAssistancePartner);
-
         /// <summary>
         /// Adds the specified RemoteAssistancePartner to the collection via POST.
         /// </summary>
         /// <param name="remoteAssistancePartner">The RemoteAssistancePartner to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RemoteAssistancePartner.</returns>
-        System.Threading.Tasks.Task<RemoteAssistancePartner> AddAsync(RemoteAssistancePartner remoteAssistancePartner, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<RemoteAssistancePartner> AddAsync(RemoteAssistancePartner remoteAssistancePartner, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified RemoteAssistancePartner to the collection via POST and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementRemoteAssistancePartnersCollectionPage> GetAsync();
+        /// <param name="remoteAssistancePartner">The RemoteAssistancePartner to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> AddResponseAsync(RemoteAssistancePartner remoteAssistancePartner, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementRemoteAssistancePartnersCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementRemoteAssistancePartnersCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementRemoteAssistancePartnersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementRemoteAssistancePartnersCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementRemoteAssistancePartnersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

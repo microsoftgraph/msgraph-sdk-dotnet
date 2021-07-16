@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Built In Identity Provider.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class BuiltInIdentityProvider : IdentityProviderBase
     {
     
-		///<summary>
-		/// The BuiltInIdentityProvider constructor
-		///</summary>
+        ///<summary>
+        /// The BuiltInIdentityProvider constructor
+        ///</summary>
         public BuiltInIdentityProvider()
         {
             this.ODataType = "microsoft.graph.builtInIdentityProvider";
         }
-	
+
         /// <summary>
         /// Gets or sets identity provider type.
         /// The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityProviderType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityProviderType")]
         public string IdentityProviderType { get; set; }
     
     }

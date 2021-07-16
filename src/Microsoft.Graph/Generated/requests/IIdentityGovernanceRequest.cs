@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified IdentityGovernance using POST.
         /// </summary>
         /// <param name="identityGovernanceToCreate">The IdentityGovernance to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityGovernance.</returns>
-        System.Threading.Tasks.Task<IdentityGovernance> CreateAsync(IdentityGovernance identityGovernanceToCreate);        /// <summary>
-        /// Creates the specified IdentityGovernance using POST.
+        System.Threading.Tasks.Task<IdentityGovernance> CreateAsync(IdentityGovernance identityGovernanceToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified IdentityGovernance using POST and returns a <see cref="GraphResponse{IdentityGovernance}"/> object.
         /// </summary>
         /// <param name="identityGovernanceToCreate">The IdentityGovernance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created IdentityGovernance.</returns>
-        System.Threading.Tasks.Task<IdentityGovernance> CreateAsync(IdentityGovernance identityGovernanceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IdentityGovernance.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{IdentityGovernance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> CreateResponseAsync(IdentityGovernance identityGovernanceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified IdentityGovernance.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified IdentityGovernance.
+        /// Deletes the specified IdentityGovernance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IdentityGovernance.</returns>
-        System.Threading.Tasks.Task<IdentityGovernance> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified IdentityGovernance.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentityGovernance.</returns>
-        System.Threading.Tasks.Task<IdentityGovernance> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IdentityGovernance> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified IdentityGovernance using PATCH.
+        /// Gets the specified IdentityGovernance and returns a <see cref="GraphResponse{IdentityGovernance}"/> object.
         /// </summary>
-        /// <param name="identityGovernanceToUpdate">The IdentityGovernance to update.</param>
-        /// <returns>The updated IdentityGovernance.</returns>
-        System.Threading.Tasks.Task<IdentityGovernance> UpdateAsync(IdentityGovernance identityGovernanceToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityGovernance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IdentityGovernance using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IdentityGovernance.</returns>
-        System.Threading.Tasks.Task<IdentityGovernance> UpdateAsync(IdentityGovernance identityGovernanceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IdentityGovernance> UpdateAsync(IdentityGovernance identityGovernanceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IdentityGovernance using PATCH and returns a <see cref="GraphResponse{IdentityGovernance}"/> object.
+        /// </summary>
+        /// <param name="identityGovernanceToUpdate">The IdentityGovernance to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IdentityGovernance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> UpdateResponseAsync(IdentityGovernance identityGovernanceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IdentityGovernance using PUT.
+        /// </summary>
+        /// <param name="identityGovernanceToUpdate">The IdentityGovernance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IdentityGovernance> PutAsync(IdentityGovernance identityGovernanceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IdentityGovernance using PUT and returns a <see cref="GraphResponse{IdentityGovernance}"/> object.
+        /// </summary>
+        /// <param name="identityGovernanceToUpdate">The IdentityGovernance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IdentityGovernance}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> PutResponseAsync(IdentityGovernance identityGovernanceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

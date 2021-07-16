@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Apple Device Features Configuration Base.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<AppleDeviceFeaturesConfigurationBase>))]
     public partial class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration
     {
     
-		///<summary>
-		/// The internal AppleDeviceFeaturesConfigurationBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal AppleDeviceFeaturesConfigurationBase constructor
+        ///</summary>
         protected internal AppleDeviceFeaturesConfigurationBase()
         {
             // Don't allow initialization of abstract entity types

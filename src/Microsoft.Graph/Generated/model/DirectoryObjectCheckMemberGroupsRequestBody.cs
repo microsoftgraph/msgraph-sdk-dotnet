@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DirectoryObjectCheckMemberGroupsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DirectoryObjectCheckMemberGroupsRequestBody
     {
     
         /// <summary>
         /// Gets or sets GroupIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupIds")]
         public IEnumerable<string> GroupIds { get; set; }
     
     }

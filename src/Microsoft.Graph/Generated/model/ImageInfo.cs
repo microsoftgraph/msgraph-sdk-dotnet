@@ -12,61 +12,52 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ImageInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ImageInfo>))]
     public partial class ImageInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ImageInfo"/> class.
-        /// </summary>
-        public ImageInfo()
-        {
-            this.ODataType = "microsoft.graph.imageInfo";
-        }
 
         /// <summary>
         /// Gets or sets addImageQuery.
         /// Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addImageQuery", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("addImageQuery")]
         public bool? AddImageQuery { get; set; }
     
         /// <summary>
         /// Gets or sets alternateText.
         /// Optional; alt-text accessible content for the image
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternateText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alternateText")]
         public string AlternateText { get; set; }
     
         /// <summary>
         /// Gets or sets alternativeText.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternativeText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alternativeText")]
         public string AlternativeText { get; set; }
     
         /// <summary>
         /// Gets or sets iconUrl.
         /// Optional; URI that points to an icon which represents the application used to generate the activity
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iconUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("iconUrl")]
         public string IconUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

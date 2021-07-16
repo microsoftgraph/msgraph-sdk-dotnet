@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsNumberValueRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsNumberValueRequestBody
     {
     
         /// <summary>
         /// Gets or sets Text.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Text { get; set; }
+        [JsonPropertyName("text")]
+        public System.Text.Json.JsonDocument Text { get; set; }
     
         /// <summary>
         /// Gets or sets DecimalSeparator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decimalSeparator", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken DecimalSeparator { get; set; }
+        [JsonPropertyName("decimalSeparator")]
+        public System.Text.Json.JsonDocument DecimalSeparator { get; set; }
     
         /// <summary>
         /// Gets or sets GroupSeparator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupSeparator", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken GroupSeparator { get; set; }
+        [JsonPropertyName("groupSeparator")]
+        public System.Text.Json.JsonDocument GroupSeparator { get; set; }
     
     }
 }

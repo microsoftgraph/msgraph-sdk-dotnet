@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsErfRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken lowerLimit,
-            Newtonsoft.Json.Linq.JToken upperLimit)
+            System.Text.Json.JsonDocument lowerLimit,
+            System.Text.Json.JsonDocument upperLimit)
             : base(requestUrl, client)
         {
             this.SetParameter("lowerLimit", lowerLimit, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("lowerLimit"))
             {
-                request.RequestBody.LowerLimit = this.GetParameter<Newtonsoft.Json.Linq.JToken>("lowerLimit");
+                request.RequestBody.LowerLimit = this.GetParameter<System.Text.Json.JsonDocument>("lowerLimit");
             }
 
             if (this.HasParameter("upperLimit"))
             {
-                request.RequestBody.UpperLimit = this.GetParameter<Newtonsoft.Json.Linq.JToken>("upperLimit");
+                request.RequestBody.UpperLimit = this.GetParameter<System.Text.Json.JsonDocument>("upperLimit");
             }
 
             return request;

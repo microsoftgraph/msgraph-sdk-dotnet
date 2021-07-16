@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type InvitedUserMessageInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<InvitedUserMessageInfo>))]
     public partial class InvitedUserMessageInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InvitedUserMessageInfo"/> class.
-        /// </summary>
-        public InvitedUserMessageInfo()
-        {
-            this.ODataType = "microsoft.graph.invitedUserMessageInfo";
-        }
 
         /// <summary>
         /// Gets or sets ccRecipients.
         /// Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ccRecipients", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ccRecipients")]
         public IEnumerable<Recipient> CcRecipients { get; set; }
     
         /// <summary>
         /// Gets or sets customizedMessageBody.
         /// Customized message body you want to send if you don't want the default message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customizedMessageBody", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customizedMessageBody")]
         public string CustomizedMessageBody { get; set; }
     
         /// <summary>
         /// Gets or sets messageLanguage.
         /// The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageLanguage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("messageLanguage")]
         public string MessageLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

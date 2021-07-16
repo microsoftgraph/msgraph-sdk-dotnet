@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Ios Certificate Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<IosCertificateProfile>))]
     public partial class IosCertificateProfile : DeviceConfiguration
     {
     
-		///<summary>
-		/// The internal IosCertificateProfile constructor
-		///</summary>
+        ///<summary>
+        /// The internal IosCertificateProfile constructor
+        ///</summary>
         protected internal IosCertificateProfile()
         {
             // Don't allow initialization of abstract entity types

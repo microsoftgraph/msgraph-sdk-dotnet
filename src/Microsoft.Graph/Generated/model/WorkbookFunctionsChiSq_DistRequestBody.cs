@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsChiSq_DistRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsChiSq_DistRequestBody
     {
     
         /// <summary>
         /// Gets or sets X.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "x", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken X { get; set; }
+        [JsonPropertyName("x")]
+        public System.Text.Json.JsonDocument X { get; set; }
     
         /// <summary>
         /// Gets or sets DegFreedom.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "degFreedom", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken DegFreedom { get; set; }
+        [JsonPropertyName("degFreedom")]
+        public System.Text.Json.JsonDocument DegFreedom { get; set; }
     
         /// <summary>
         /// Gets or sets Cumulative.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cumulative", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Cumulative { get; set; }
+        [JsonPropertyName("cumulative")]
+        public System.Text.Json.JsonDocument Cumulative { get; set; }
     
     }
 }

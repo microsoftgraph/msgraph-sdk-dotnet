@@ -33,13 +33,13 @@ namespace Microsoft.Graph
         public WorkbookFunctionsVdbRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken cost,
-            Newtonsoft.Json.Linq.JToken salvage,
-            Newtonsoft.Json.Linq.JToken life,
-            Newtonsoft.Json.Linq.JToken startPeriod,
-            Newtonsoft.Json.Linq.JToken endPeriod,
-            Newtonsoft.Json.Linq.JToken factor,
-            Newtonsoft.Json.Linq.JToken noSwitch)
+            System.Text.Json.JsonDocument cost,
+            System.Text.Json.JsonDocument salvage,
+            System.Text.Json.JsonDocument life,
+            System.Text.Json.JsonDocument startPeriod,
+            System.Text.Json.JsonDocument endPeriod,
+            System.Text.Json.JsonDocument factor,
+            System.Text.Json.JsonDocument noSwitch)
             : base(requestUrl, client)
         {
             this.SetParameter("cost", cost, true);
@@ -63,37 +63,37 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("cost"))
             {
-                request.RequestBody.Cost = this.GetParameter<Newtonsoft.Json.Linq.JToken>("cost");
+                request.RequestBody.Cost = this.GetParameter<System.Text.Json.JsonDocument>("cost");
             }
 
             if (this.HasParameter("salvage"))
             {
-                request.RequestBody.Salvage = this.GetParameter<Newtonsoft.Json.Linq.JToken>("salvage");
+                request.RequestBody.Salvage = this.GetParameter<System.Text.Json.JsonDocument>("salvage");
             }
 
             if (this.HasParameter("life"))
             {
-                request.RequestBody.Life = this.GetParameter<Newtonsoft.Json.Linq.JToken>("life");
+                request.RequestBody.Life = this.GetParameter<System.Text.Json.JsonDocument>("life");
             }
 
             if (this.HasParameter("startPeriod"))
             {
-                request.RequestBody.StartPeriod = this.GetParameter<Newtonsoft.Json.Linq.JToken>("startPeriod");
+                request.RequestBody.StartPeriod = this.GetParameter<System.Text.Json.JsonDocument>("startPeriod");
             }
 
             if (this.HasParameter("endPeriod"))
             {
-                request.RequestBody.EndPeriod = this.GetParameter<Newtonsoft.Json.Linq.JToken>("endPeriod");
+                request.RequestBody.EndPeriod = this.GetParameter<System.Text.Json.JsonDocument>("endPeriod");
             }
 
             if (this.HasParameter("factor"))
             {
-                request.RequestBody.Factor = this.GetParameter<Newtonsoft.Json.Linq.JToken>("factor");
+                request.RequestBody.Factor = this.GetParameter<System.Text.Json.JsonDocument>("factor");
             }
 
             if (this.HasParameter("noSwitch"))
             {
-                request.RequestBody.NoSwitch = this.GetParameter<Newtonsoft.Json.Linq.JToken>("noSwitch");
+                request.RequestBody.NoSwitch = this.GetParameter<System.Text.Json.JsonDocument>("noSwitch");
             }
 
             return request;

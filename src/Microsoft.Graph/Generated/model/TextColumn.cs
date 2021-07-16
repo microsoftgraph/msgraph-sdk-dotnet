@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TextColumn.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TextColumn>))]
     public partial class TextColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TextColumn"/> class.
-        /// </summary>
-        public TextColumn()
-        {
-            this.ODataType = "microsoft.graph.textColumn";
-        }
 
         /// <summary>
         /// Gets or sets allowMultipleLines.
         /// Whether to allow multiple lines of text.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowMultipleLines", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowMultipleLines")]
         public bool? AllowMultipleLines { get; set; }
     
         /// <summary>
         /// Gets or sets appendChangesToExistingText.
         /// Whether updates to this column should replace existing text, or append to it.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appendChangesToExistingText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appendChangesToExistingText")]
         public bool? AppendChangesToExistingText { get; set; }
     
         /// <summary>
         /// Gets or sets linesForEditing.
         /// The size of the text box.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linesForEditing", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("linesForEditing")]
         public Int32? LinesForEditing { get; set; }
     
         /// <summary>
         /// Gets or sets maxLength.
         /// The maximum number of characters for the value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxLength", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maxLength")]
         public Int32? MaxLength { get; set; }
     
         /// <summary>
         /// Gets or sets textType.
         /// The type of text being stored. Must be one of plain or richText
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "textType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("textType")]
         public string TextType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

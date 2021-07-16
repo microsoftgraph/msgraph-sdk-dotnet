@@ -36,7 +36,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<OnenotePage> AddAsync(MultipartContent onenotePage, CancellationToken cancellationToken)
         {
             //this.ContentType = contentType;
-            this.Method = "POST";
+            this.Method = HttpMethods.POST;
             return this.SendMultiPartAsync<OnenotePage>(onenotePage, cancellationToken);
         }
         
@@ -61,7 +61,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<OnenotePage> AddAsync(Stream onenotePage, string contentType, CancellationToken cancellationToken)
         {
             this.ContentType = contentType;
-            this.Method = "POST";
+            this.Method = HttpMethods.POST;
             return this.SendAsync<OnenotePage>(onenotePage, cancellationToken);
         }
 
@@ -86,7 +86,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<OnenotePage> AddAsync(string onenotePage, string contentType, CancellationToken cancellationToken)
         {
             this.ContentType = contentType;
-            this.Method = "POST";
+            this.Method = HttpMethods.POST;
             return this.SendAsync<OnenotePage>(onenotePage, cancellationToken);
         }
     }

@@ -12,118 +12,109 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Process.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Process>))]
     public partial class Process
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Process"/> class.
-        /// </summary>
-        public Process()
-        {
-            this.ODataType = "microsoft.graph.process";
-        }
 
         /// <summary>
         /// Gets or sets accountName.
         /// User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accountName")]
         public string AccountName { get; set; }
     
         /// <summary>
         /// Gets or sets commandLine.
         /// The full process invocation commandline including all parameters.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "commandLine", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("commandLine")]
         public string CommandLine { get; set; }
     
         /// <summary>
         /// Gets or sets createdDateTime.
         /// Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets fileHash.
         /// Complex type containing file hashes (cryptographic and location-sensitive).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileHash", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileHash")]
         public FileHash FileHash { get; set; }
     
         /// <summary>
         /// Gets or sets integrityLevel.
         /// The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "integrityLevel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("integrityLevel")]
         public ProcessIntegrityLevel? IntegrityLevel { get; set; }
     
         /// <summary>
         /// Gets or sets isElevated.
         /// True if the process is elevated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isElevated", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isElevated")]
         public bool? IsElevated { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// The name of the process' Image file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets parentProcessCreatedDateTime.
         /// DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentProcessCreatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parentProcessCreatedDateTime")]
         public DateTimeOffset? ParentProcessCreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets parentProcessId.
         /// The Process ID (PID) of the parent process.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentProcessId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parentProcessId")]
         public Int32? ParentProcessId { get; set; }
     
         /// <summary>
         /// Gets or sets parentProcessName.
         /// The name of the image file of the parent process.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentProcessName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parentProcessName")]
         public string ParentProcessName { get; set; }
     
         /// <summary>
         /// Gets or sets path.
         /// Full path, including filename.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "path", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("path")]
         public string Path { get; set; }
     
         /// <summary>
         /// Gets or sets processId.
         /// The Process ID (PID) of the process.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("processId")]
         public Int32? ProcessId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

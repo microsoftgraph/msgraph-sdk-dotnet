@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsMirrRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsMirrRequestBody
     {
     
         /// <summary>
         /// Gets or sets Values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Values { get; set; }
+        [JsonPropertyName("values")]
+        public System.Text.Json.JsonDocument Values { get; set; }
     
         /// <summary>
         /// Gets or sets FinanceRate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "financeRate", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken FinanceRate { get; set; }
+        [JsonPropertyName("financeRate")]
+        public System.Text.Json.JsonDocument FinanceRate { get; set; }
     
         /// <summary>
         /// Gets or sets ReinvestRate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reinvestRate", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken ReinvestRate { get; set; }
+        [JsonPropertyName("reinvestRate")]
+        public System.Text.Json.JsonDocument ReinvestRate { get; set; }
     
     }
 }

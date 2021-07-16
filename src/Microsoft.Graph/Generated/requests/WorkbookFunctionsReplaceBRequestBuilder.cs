@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         public WorkbookFunctionsReplaceBRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken oldText,
-            Newtonsoft.Json.Linq.JToken startNum,
-            Newtonsoft.Json.Linq.JToken numBytes,
-            Newtonsoft.Json.Linq.JToken newText)
+            System.Text.Json.JsonDocument oldText,
+            System.Text.Json.JsonDocument startNum,
+            System.Text.Json.JsonDocument numBytes,
+            System.Text.Json.JsonDocument newText)
             : base(requestUrl, client)
         {
             this.SetParameter("oldText", oldText, true);
@@ -54,22 +54,22 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("oldText"))
             {
-                request.RequestBody.OldText = this.GetParameter<Newtonsoft.Json.Linq.JToken>("oldText");
+                request.RequestBody.OldText = this.GetParameter<System.Text.Json.JsonDocument>("oldText");
             }
 
             if (this.HasParameter("startNum"))
             {
-                request.RequestBody.StartNum = this.GetParameter<Newtonsoft.Json.Linq.JToken>("startNum");
+                request.RequestBody.StartNum = this.GetParameter<System.Text.Json.JsonDocument>("startNum");
             }
 
             if (this.HasParameter("numBytes"))
             {
-                request.RequestBody.NumBytes = this.GetParameter<Newtonsoft.Json.Linq.JToken>("numBytes");
+                request.RequestBody.NumBytes = this.GetParameter<System.Text.Json.JsonDocument>("numBytes");
             }
 
             if (this.HasParameter("newText"))
             {
-                request.RequestBody.NewText = this.GetParameter<Newtonsoft.Json.Linq.JToken>("newText");
+                request.RequestBody.NewText = this.GetParameter<System.Text.Json.JsonDocument>("newText");
             }
 
             return request;

@@ -12,46 +12,37 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type OnenotePagePreview.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<OnenotePagePreview>))]
     public partial class OnenotePagePreview
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OnenotePagePreview"/> class.
-        /// </summary>
-        public OnenotePagePreview()
-        {
-            this.ODataType = "microsoft.graph.onenotePagePreview";
-        }
 
         /// <summary>
         /// Gets or sets links.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "links", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("links")]
         public OnenotePagePreviewLinks Links { get; set; }
     
         /// <summary>
         /// Gets or sets previewText.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("previewText")]
         public string PreviewText { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

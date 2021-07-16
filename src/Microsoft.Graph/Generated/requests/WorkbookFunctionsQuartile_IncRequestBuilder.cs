@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsQuartile_IncRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken array,
-            Newtonsoft.Json.Linq.JToken quart)
+            System.Text.Json.JsonDocument array,
+            System.Text.Json.JsonDocument quart)
             : base(requestUrl, client)
         {
             this.SetParameter("array", array, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("array"))
             {
-                request.RequestBody.Array = this.GetParameter<Newtonsoft.Json.Linq.JToken>("array");
+                request.RequestBody.Array = this.GetParameter<System.Text.Json.JsonDocument>("array");
             }
 
             if (this.HasParameter("quart"))
             {
-                request.RequestBody.Quart = this.GetParameter<Newtonsoft.Json.Linq.JToken>("quart");
+                request.RequestBody.Quart = this.GetParameter<System.Text.Json.JsonDocument>("quart");
             }
 
             return request;

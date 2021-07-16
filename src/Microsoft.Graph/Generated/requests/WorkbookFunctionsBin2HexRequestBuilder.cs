@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsBin2HexRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken places)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument places)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("places"))
             {
-                request.RequestBody.Places = this.GetParameter<Newtonsoft.Json.Linq.JToken>("places");
+                request.RequestBody.Places = this.GetParameter<System.Text.Json.JsonDocument>("places");
             }
 
             return request;

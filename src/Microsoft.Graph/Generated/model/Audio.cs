@@ -12,146 +12,137 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Audio.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Audio>))]
     public partial class Audio
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Audio"/> class.
-        /// </summary>
-        public Audio()
-        {
-            this.ODataType = "microsoft.graph.audio";
-        }
 
         /// <summary>
         /// Gets or sets album.
         /// The title of the album for this audio file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "album", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("album")]
         public string Album { get; set; }
     
         /// <summary>
         /// Gets or sets albumArtist.
         /// The artist named on the album for the audio file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "albumArtist", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("albumArtist")]
         public string AlbumArtist { get; set; }
     
         /// <summary>
         /// Gets or sets artist.
         /// The performing artist for the audio file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "artist", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("artist")]
         public string Artist { get; set; }
     
         /// <summary>
         /// Gets or sets bitrate.
         /// Bitrate expressed in kbps.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitrate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bitrate")]
         public Int64? Bitrate { get; set; }
     
         /// <summary>
         /// Gets or sets composers.
         /// The name of the composer of the audio file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "composers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("composers")]
         public string Composers { get; set; }
     
         /// <summary>
         /// Gets or sets copyright.
         /// Copyright information for the audio file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "copyright", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("copyright")]
         public string Copyright { get; set; }
     
         /// <summary>
         /// Gets or sets disc.
         /// The number of the disc this audio file came from.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disc", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("disc")]
         public Int16? Disc { get; set; }
     
         /// <summary>
         /// Gets or sets discCount.
         /// The total number of discs in this album.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("discCount")]
         public Int16? DiscCount { get; set; }
     
         /// <summary>
         /// Gets or sets duration.
         /// Duration of the audio file, expressed in milliseconds
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("duration")]
         public Int64? Duration { get; set; }
     
         /// <summary>
         /// Gets or sets genre.
         /// The genre of this audio file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "genre", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("genre")]
         public string Genre { get; set; }
     
         /// <summary>
         /// Gets or sets hasDrm.
         /// Indicates if the file is protected with digital rights management.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasDrm", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hasDrm")]
         public bool? HasDrm { get; set; }
     
         /// <summary>
         /// Gets or sets isVariableBitrate.
         /// Indicates if the file is encoded with a variable bitrate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isVariableBitrate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isVariableBitrate")]
         public bool? IsVariableBitrate { get; set; }
     
         /// <summary>
         /// Gets or sets title.
         /// The title of the audio file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
     
         /// <summary>
         /// Gets or sets track.
         /// The number of the track on the original disc for this audio file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "track", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("track")]
         public Int32? Track { get; set; }
     
         /// <summary>
         /// Gets or sets trackCount.
         /// The total number of tracks on the original disc for this audio file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trackCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("trackCount")]
         public Int32? TrackCount { get; set; }
     
         /// <summary>
         /// Gets or sets year.
         /// The year the audio file was recorded.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "year", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("year")]
         public Int32? Year { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

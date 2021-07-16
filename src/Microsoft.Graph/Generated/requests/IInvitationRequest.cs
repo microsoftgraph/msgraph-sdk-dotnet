@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Invitation using POST.
         /// </summary>
         /// <param name="invitationToCreate">The Invitation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Invitation.</returns>
-        System.Threading.Tasks.Task<Invitation> CreateAsync(Invitation invitationToCreate);        /// <summary>
-        /// Creates the specified Invitation using POST.
+        System.Threading.Tasks.Task<Invitation> CreateAsync(Invitation invitationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Invitation using POST and returns a <see cref="GraphResponse{Invitation}"/> object.
         /// </summary>
         /// <param name="invitationToCreate">The Invitation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Invitation.</returns>
-        System.Threading.Tasks.Task<Invitation> CreateAsync(Invitation invitationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Invitation.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Invitation>> CreateResponseAsync(Invitation invitationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Invitation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Invitation.
+        /// Deletes the specified Invitation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Invitation.</returns>
-        System.Threading.Tasks.Task<Invitation> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Invitation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Invitation.</returns>
-        System.Threading.Tasks.Task<Invitation> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Invitation> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Invitation using PATCH.
+        /// Gets the specified Invitation and returns a <see cref="GraphResponse{Invitation}"/> object.
         /// </summary>
-        /// <param name="invitationToUpdate">The Invitation to update.</param>
-        /// <returns>The updated Invitation.</returns>
-        System.Threading.Tasks.Task<Invitation> UpdateAsync(Invitation invitationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Invitation>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Invitation using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Invitation.</returns>
-        System.Threading.Tasks.Task<Invitation> UpdateAsync(Invitation invitationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Invitation> UpdateAsync(Invitation invitationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Invitation using PATCH and returns a <see cref="GraphResponse{Invitation}"/> object.
+        /// </summary>
+        /// <param name="invitationToUpdate">The Invitation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Invitation>> UpdateResponseAsync(Invitation invitationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Invitation using PUT.
+        /// </summary>
+        /// <param name="invitationToUpdate">The Invitation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Invitation> PutAsync(Invitation invitationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Invitation using PUT and returns a <see cref="GraphResponse{Invitation}"/> object.
+        /// </summary>
+        /// <param name="invitationToUpdate">The Invitation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Invitation}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Invitation>> PutResponseAsync(Invitation invitationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

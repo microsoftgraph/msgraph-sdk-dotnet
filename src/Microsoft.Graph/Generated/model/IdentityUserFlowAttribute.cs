@@ -12,50 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Identity User Flow Attribute.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<IdentityUserFlowAttribute>))]
     public partial class IdentityUserFlowAttribute : Entity
     {
     
-		///<summary>
-		/// The IdentityUserFlowAttribute constructor
-		///</summary>
-        public IdentityUserFlowAttribute()
-        {
-            this.ODataType = "microsoft.graph.identityUserFlowAttribute";
-        }
-	
         /// <summary>
         /// Gets or sets data type.
         /// The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataType")]
         public IdentityUserFlowAttributeDataType? DataType { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The description of the user flow attribute that's shown to the user at the time of sign-up.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the user flow attribute.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets user flow attribute type.
         /// The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property will be builtIn, custom, or required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userFlowAttributeType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userFlowAttributeType")]
         public IdentityUserFlowAttributeType? UserFlowAttributeType { get; set; }
     
     }

@@ -9,48 +9,46 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsYieldDiscRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsYieldDiscRequestBody
     {
     
         /// <summary>
         /// Gets or sets Settlement.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settlement", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Settlement { get; set; }
+        [JsonPropertyName("settlement")]
+        public System.Text.Json.JsonDocument Settlement { get; set; }
     
         /// <summary>
         /// Gets or sets Maturity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maturity", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Maturity { get; set; }
+        [JsonPropertyName("maturity")]
+        public System.Text.Json.JsonDocument Maturity { get; set; }
     
         /// <summary>
         /// Gets or sets Pr.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pr", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Pr { get; set; }
+        [JsonPropertyName("pr")]
+        public System.Text.Json.JsonDocument Pr { get; set; }
     
         /// <summary>
         /// Gets or sets Redemption.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "redemption", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Redemption { get; set; }
+        [JsonPropertyName("redemption")]
+        public System.Text.Json.JsonDocument Redemption { get; set; }
     
         /// <summary>
         /// Gets or sets Basis.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "basis", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Basis { get; set; }
+        [JsonPropertyName("basis")]
+        public System.Text.Json.JsonDocument Basis { get; set; }
     
     }
 }

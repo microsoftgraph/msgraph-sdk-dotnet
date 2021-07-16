@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceServicePrincipalsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ServicePrincipal to the collection via POST.
-        /// </summary>
-        /// <param name="servicePrincipal">The ServicePrincipal to add.</param>
-        /// <returns>The created ServicePrincipal.</returns>
-        System.Threading.Tasks.Task<ServicePrincipal> AddAsync(ServicePrincipal servicePrincipal);
-
         /// <summary>
         /// Adds the specified ServicePrincipal to the collection via POST.
         /// </summary>
         /// <param name="servicePrincipal">The ServicePrincipal to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServicePrincipal.</returns>
-        System.Threading.Tasks.Task<ServicePrincipal> AddAsync(ServicePrincipal servicePrincipal, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ServicePrincipal> AddAsync(ServicePrincipal servicePrincipal, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ServicePrincipal to the collection via POST and returns a <see cref="GraphResponse{ServicePrincipal}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceServicePrincipalsCollectionPage> GetAsync();
+        /// <param name="servicePrincipal">The ServicePrincipal to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> AddResponseAsync(ServicePrincipal servicePrincipal, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceServicePrincipalsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IGraphServiceServicePrincipalsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceServicePrincipalsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceServicePrincipalsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceServicePrincipalsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

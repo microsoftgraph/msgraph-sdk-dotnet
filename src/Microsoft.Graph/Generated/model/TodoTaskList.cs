@@ -12,65 +12,68 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Todo Task List.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<TodoTaskList>))]
     public partial class TodoTaskList : Entity
     {
     
-		///<summary>
-		/// The TodoTaskList constructor
-		///</summary>
-        public TodoTaskList()
-        {
-            this.ODataType = "microsoft.graph.todoTaskList";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// The name of the task list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is owner.
         /// True if the user is owner of the given task list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOwner", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isOwner")]
         public bool? IsOwner { get; set; }
     
         /// <summary>
         /// Gets or sets is shared.
         /// True if the task list is shared with other users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isShared", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isShared")]
         public bool? IsShared { get; set; }
     
         /// <summary>
         /// Gets or sets wellknown list name.
         /// Property indicating the list name if the given list is a well-known list. Possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wellknownListName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("wellknownListName")]
         public WellknownListName? WellknownListName { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
         /// The collection of open extensions defined for the task list. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("extensions")]
         public ITodoTaskListExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
         /// The tasks in this task list. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tasks")]
         public ITodoTaskListTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        public string TasksNextLink { get; set; }
     
     }
 }

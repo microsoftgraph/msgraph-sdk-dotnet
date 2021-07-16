@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified TargetedManagedAppProtection using POST.
         /// </summary>
         /// <param name="targetedManagedAppProtectionToCreate">The TargetedManagedAppProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TargetedManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppProtection> CreateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate);        /// <summary>
-        /// Creates the specified TargetedManagedAppProtection using POST.
+        System.Threading.Tasks.Task<TargetedManagedAppProtection> CreateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified TargetedManagedAppProtection using POST and returns a <see cref="GraphResponse{TargetedManagedAppProtection}"/> object.
         /// </summary>
         /// <param name="targetedManagedAppProtectionToCreate">The TargetedManagedAppProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TargetedManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppProtection> CreateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TargetedManagedAppProtection.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtection>> CreateResponseAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TargetedManagedAppProtection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified TargetedManagedAppProtection.
+        /// Deletes the specified TargetedManagedAppProtection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TargetedManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppProtection> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TargetedManagedAppProtection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TargetedManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppProtection> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TargetedManagedAppProtection> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified TargetedManagedAppProtection using PATCH.
+        /// Gets the specified TargetedManagedAppProtection and returns a <see cref="GraphResponse{TargetedManagedAppProtection}"/> object.
         /// </summary>
-        /// <param name="targetedManagedAppProtectionToUpdate">The TargetedManagedAppProtection to update.</param>
-        /// <returns>The updated TargetedManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppProtection> UpdateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtection>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TargetedManagedAppProtection using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TargetedManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppProtection> UpdateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TargetedManagedAppProtection> UpdateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TargetedManagedAppProtection using PATCH and returns a <see cref="GraphResponse{TargetedManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="targetedManagedAppProtectionToUpdate">The TargetedManagedAppProtection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtection>> UpdateResponseAsync(TargetedManagedAppProtection targetedManagedAppProtectionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TargetedManagedAppProtection using PUT.
+        /// </summary>
+        /// <param name="targetedManagedAppProtectionToUpdate">The TargetedManagedAppProtection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TargetedManagedAppProtection> PutAsync(TargetedManagedAppProtection targetedManagedAppProtectionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TargetedManagedAppProtection using PUT and returns a <see cref="GraphResponse{TargetedManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="targetedManagedAppProtectionToUpdate">The TargetedManagedAppProtection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TargetedManagedAppProtection}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtection>> PutResponseAsync(TargetedManagedAppProtection targetedManagedAppProtectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

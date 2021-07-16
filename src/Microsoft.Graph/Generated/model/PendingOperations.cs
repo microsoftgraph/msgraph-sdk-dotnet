@@ -12,41 +12,32 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PendingOperations.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PendingOperations>))]
     public partial class PendingOperations
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PendingOperations"/> class.
-        /// </summary>
-        public PendingOperations()
-        {
-            this.ODataType = "microsoft.graph.pendingOperations";
-        }
 
         /// <summary>
         /// Gets or sets pendingContentUpdate.
         /// A property that indicates that an operation that might update the binary content of a file is pending completion.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingContentUpdate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pendingContentUpdate")]
         public PendingContentUpdate PendingContentUpdate { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

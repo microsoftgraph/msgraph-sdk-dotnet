@@ -12,134 +12,125 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Provisioning Object Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ProvisioningObjectSummary>))]
     public partial class ProvisioningObjectSummary : Entity
     {
     
-		///<summary>
-		/// The ProvisioningObjectSummary constructor
-		///</summary>
-        public ProvisioningObjectSummary()
-        {
-            this.ODataType = "microsoft.graph.provisioningObjectSummary";
-        }
-	
         /// <summary>
         /// Gets or sets activity date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityDateTime")]
         public DateTimeOffset? ActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets change id.
         /// Unique ID of this change in this cycle.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("changeId")]
         public string ChangeId { get; set; }
     
         /// <summary>
         /// Gets or sets cycle id.
         /// Unique ID per job iteration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cycleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cycleId")]
         public string CycleId { get; set; }
     
         /// <summary>
         /// Gets or sets duration in milliseconds.
         /// Indicates how long this provisioning action took to finish. Measured in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInMilliseconds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("durationInMilliseconds")]
         public Int32? DurationInMilliseconds { get; set; }
     
         /// <summary>
         /// Gets or sets initiated by.
         /// Details of who initiated this provisioning.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiatedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("initiatedBy")]
         public Initiator InitiatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets job id.
         /// The unique ID for the whole provisioning job.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("jobId")]
         public string JobId { get; set; }
     
         /// <summary>
         /// Gets or sets modified properties.
         /// Details of each property that was modified in this provisioning action on this object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedProperties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modifiedProperties")]
         public IEnumerable<ModifiedProperty> ModifiedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning action.
         /// Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningAction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provisioningAction")]
         public ProvisioningAction? ProvisioningAction { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning status info.
         /// Details of provisioning status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningStatusInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provisioningStatusInfo")]
         public ProvisioningStatusInfo ProvisioningStatusInfo { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning steps.
         /// Details of each step in provisioning.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningSteps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provisioningSteps")]
         public IEnumerable<ProvisioningStep> ProvisioningSteps { get; set; }
     
         /// <summary>
         /// Gets or sets service principal.
         /// Represents the service principal used for provisioning.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipal", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("servicePrincipal")]
         public ProvisioningServicePrincipal ServicePrincipal { get; set; }
     
         /// <summary>
         /// Gets or sets source identity.
         /// Details of source object being provisioned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceIdentity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceIdentity")]
         public ProvisionedIdentity SourceIdentity { get; set; }
     
         /// <summary>
         /// Gets or sets source system.
         /// Details of source system of the object being provisioned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceSystem")]
         public ProvisioningSystem SourceSystem { get; set; }
     
         /// <summary>
         /// Gets or sets target identity.
         /// Details of target object being provisioned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetIdentity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetIdentity")]
         public ProvisionedIdentity TargetIdentity { get; set; }
     
         /// <summary>
         /// Gets or sets target system.
         /// Details of target system of the object being provisioned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetSystem")]
         public ProvisioningSystem TargetSystem { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
         /// Unique Azure AD tenant ID.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
     }

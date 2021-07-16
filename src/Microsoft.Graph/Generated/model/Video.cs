@@ -12,104 +12,95 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Video.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Video>))]
     public partial class Video
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Video"/> class.
-        /// </summary>
-        public Video()
-        {
-            this.ODataType = "microsoft.graph.video";
-        }
 
         /// <summary>
         /// Gets or sets audioBitsPerSample.
         /// Number of audio bits per sample.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioBitsPerSample", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("audioBitsPerSample")]
         public Int32? AudioBitsPerSample { get; set; }
     
         /// <summary>
         /// Gets or sets audioChannels.
         /// Number of audio channels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioChannels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("audioChannels")]
         public Int32? AudioChannels { get; set; }
     
         /// <summary>
         /// Gets or sets audioFormat.
         /// Name of the audio format (AAC, MP3, etc.).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioFormat", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("audioFormat")]
         public string AudioFormat { get; set; }
     
         /// <summary>
         /// Gets or sets audioSamplesPerSecond.
         /// Number of audio samples per second.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioSamplesPerSecond", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("audioSamplesPerSecond")]
         public Int32? AudioSamplesPerSecond { get; set; }
     
         /// <summary>
         /// Gets or sets bitrate.
         /// Bit rate of the video in bits per second.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitrate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bitrate")]
         public Int32? Bitrate { get; set; }
     
         /// <summary>
         /// Gets or sets duration.
         /// Duration of the file in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("duration")]
         public Int64? Duration { get; set; }
     
         /// <summary>
         /// Gets or sets fourCC.
         /// 'Four character code' name of the video format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fourCC", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fourCC")]
         public string FourCC { get; set; }
     
         /// <summary>
         /// Gets or sets frameRate.
         /// Frame rate of the video.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "frameRate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("frameRate")]
         public double? FrameRate { get; set; }
     
         /// <summary>
         /// Gets or sets height.
         /// Height of the video, in pixels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "height", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("height")]
         public Int32? Height { get; set; }
     
         /// <summary>
         /// Gets or sets width.
         /// Width of the video, in pixels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "width", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("width")]
         public Int32? Width { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

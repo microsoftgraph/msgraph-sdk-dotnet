@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementPartner using POST.
         /// </summary>
         /// <param name="deviceManagementPartnerToCreate">The DeviceManagementPartner to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementPartner.</returns>
-        System.Threading.Tasks.Task<DeviceManagementPartner> CreateAsync(DeviceManagementPartner deviceManagementPartnerToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementPartner using POST.
+        System.Threading.Tasks.Task<DeviceManagementPartner> CreateAsync(DeviceManagementPartner deviceManagementPartnerToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementPartner using POST and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object.
         /// </summary>
         /// <param name="deviceManagementPartnerToCreate">The DeviceManagementPartner to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceManagementPartner.</returns>
-        System.Threading.Tasks.Task<DeviceManagementPartner> CreateAsync(DeviceManagementPartner deviceManagementPartnerToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementPartner.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> CreateResponseAsync(DeviceManagementPartner deviceManagementPartnerToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementPartner.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceManagementPartner.
+        /// Deletes the specified DeviceManagementPartner and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementPartner.</returns>
-        System.Threading.Tasks.Task<DeviceManagementPartner> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementPartner.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementPartner.</returns>
-        System.Threading.Tasks.Task<DeviceManagementPartner> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementPartner> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceManagementPartner using PATCH.
+        /// Gets the specified DeviceManagementPartner and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object.
         /// </summary>
-        /// <param name="deviceManagementPartnerToUpdate">The DeviceManagementPartner to update.</param>
-        /// <returns>The updated DeviceManagementPartner.</returns>
-        System.Threading.Tasks.Task<DeviceManagementPartner> UpdateAsync(DeviceManagementPartner deviceManagementPartnerToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementPartner using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementPartner.</returns>
-        System.Threading.Tasks.Task<DeviceManagementPartner> UpdateAsync(DeviceManagementPartner deviceManagementPartnerToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementPartner> UpdateAsync(DeviceManagementPartner deviceManagementPartnerToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementPartner using PATCH and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementPartnerToUpdate">The DeviceManagementPartner to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> UpdateResponseAsync(DeviceManagementPartner deviceManagementPartnerToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementPartner using PUT.
+        /// </summary>
+        /// <param name="deviceManagementPartnerToUpdate">The DeviceManagementPartner object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementPartner> PutAsync(DeviceManagementPartner deviceManagementPartnerToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementPartner using PUT and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementPartnerToUpdate">The DeviceManagementPartner object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementPartner}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> PutResponseAsync(DeviceManagementPartner deviceManagementPartnerToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,44 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Imported Windows Autopilot Device Identity Upload.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ImportedWindowsAutopilotDeviceIdentityUpload>))]
     public partial class ImportedWindowsAutopilotDeviceIdentityUpload : Entity
     {
     
-		///<summary>
-		/// The ImportedWindowsAutopilotDeviceIdentityUpload constructor
-		///</summary>
-        public ImportedWindowsAutopilotDeviceIdentityUpload()
-        {
-            this.ODataType = "microsoft.graph.importedWindowsAutopilotDeviceIdentityUpload";
-        }
-	
         /// <summary>
         /// Gets or sets created date time utc.
         /// DateTime when the entity is created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTimeUtc", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTimeUtc")]
         public DateTimeOffset? CreatedDateTimeUtc { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Upload status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public ImportedWindowsAutopilotDeviceIdentityUploadStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets device identities.
         /// Collection of all Autopilot devices as a part of this upload.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceIdentities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceIdentities")]
         public IImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionPage DeviceIdentities { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceIdentitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceIdentities@odata.nextLink")]
+        public string DeviceIdentitiesNextLink { get; set; }
     
     }
 }

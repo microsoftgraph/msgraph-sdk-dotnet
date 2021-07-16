@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PrintJobRedirectRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PrintJobRedirectRequestBody
     {
     
         /// <summary>
         /// Gets or sets DestinationPrinterId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationPrinterId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("destinationPrinterId")]
         public string DestinationPrinterId { get; set; }
     
         /// <summary>
         /// Gets or sets Configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configuration")]
         public PrintJobConfiguration Configuration { get; set; }
     
     }

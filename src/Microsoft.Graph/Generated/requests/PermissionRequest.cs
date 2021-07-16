@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Permission using POST.
         /// </summary>
         /// <param name="permissionToCreate">The Permission to create.</param>
-        /// <returns>The created Permission.</returns>
-        public System.Threading.Tasks.Task<Permission> CreateAsync(Permission permissionToCreate)
-        {
-            return this.CreateAsync(permissionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Permission using POST.
-        /// </summary>
-        /// <param name="permissionToCreate">The Permission to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Permission.</returns>
-        public async System.Threading.Tasks.Task<Permission> CreateAsync(Permission permissionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Permission> CreateAsync(Permission permissionToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Permission>(permissionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Permission.
+        /// Creates the specified Permission using POST and returns a <see cref="GraphResponse{Permission}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="permissionToCreate">The Permission to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Permission>> CreateResponseAsync(Permission permissionToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Permission>(permissionToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Permission>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Permission.
+        /// Deletes the specified Permission and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Permission.</returns>
-        public System.Threading.Tasks.Task<Permission> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Permission.</returns>
-        public async System.Threading.Tasks.Task<Permission> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Permission> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Permission>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Permission using PATCH.
+        /// Gets the specified Permission and returns a <see cref="GraphResponse{Permission}"/> object.
         /// </summary>
-        /// <param name="permissionToUpdate">The Permission to update.</param>
-        /// <returns>The updated Permission.</returns>
-        public System.Threading.Tasks.Task<Permission> UpdateAsync(Permission permissionToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Permission>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(permissionToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Permission>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Permission.</returns>
-        public async System.Threading.Tasks.Task<Permission> UpdateAsync(Permission permissionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Permission> UpdateAsync(Permission permissionToUpdate, CancellationToken cancellationToken = default)
         {
-			if (permissionToUpdate.AdditionalData != null)
-			{
-				if (permissionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					permissionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, permissionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (permissionToUpdate.AdditionalData != null)
-            {
-                if (permissionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    permissionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, permissionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Permission>(permissionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Permission using PATCH and returns a <see cref="GraphResponse{Permission}"/> object.
+        /// </summary>
+        /// <param name="permissionToUpdate">The Permission to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Permission>> UpdateResponseAsync(Permission permissionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Permission>(permissionToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Permission using PUT.
+        /// </summary>
+        /// <param name="permissionToUpdate">The Permission object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Permission> PutAsync(Permission permissionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Permission>(permissionToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Permission using PUT and returns a <see cref="GraphResponse{Permission}"/> object.
+        /// </summary>
+        /// <param name="permissionToUpdate">The Permission object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Permission}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Permission>> PutResponseAsync(Permission permissionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Permission>(permissionToUpdate, cancellationToken);
         }
 
         /// <summary>

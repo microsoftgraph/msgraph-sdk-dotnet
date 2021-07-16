@@ -12,43 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Scheduling Group.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SchedulingGroup : ChangeTrackedEntity
     {
     
-		///<summary>
-		/// The SchedulingGroup constructor
-		///</summary>
+        ///<summary>
+        /// The SchedulingGroup constructor
+        ///</summary>
         public SchedulingGroup()
         {
             this.ODataType = "microsoft.graph.schedulingGroup";
         }
-	
+
         /// <summary>
         /// Gets or sets display name.
         /// The display name for the schedulingGroup. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is active.
         /// Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isActive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isActive")]
         public bool? IsActive { get; set; }
     
         /// <summary>
         /// Gets or sets user ids.
         /// The list of user IDs that are a member of the schedulingGroup. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userIds")]
         public IEnumerable<string> UserIds { get; set; }
     
     }

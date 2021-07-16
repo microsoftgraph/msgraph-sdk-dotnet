@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified FileAttachment using POST.
         /// </summary>
         /// <param name="fileAttachmentToCreate">The FileAttachment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FileAttachment.</returns>
-        System.Threading.Tasks.Task<FileAttachment> CreateAsync(FileAttachment fileAttachmentToCreate);        /// <summary>
-        /// Creates the specified FileAttachment using POST.
+        System.Threading.Tasks.Task<FileAttachment> CreateAsync(FileAttachment fileAttachmentToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified FileAttachment using POST and returns a <see cref="GraphResponse{FileAttachment}"/> object.
         /// </summary>
         /// <param name="fileAttachmentToCreate">The FileAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created FileAttachment.</returns>
-        System.Threading.Tasks.Task<FileAttachment> CreateAsync(FileAttachment fileAttachmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified FileAttachment.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{FileAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileAttachment>> CreateResponseAsync(FileAttachment fileAttachmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified FileAttachment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified FileAttachment.
+        /// Deletes the specified FileAttachment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The FileAttachment.</returns>
-        System.Threading.Tasks.Task<FileAttachment> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified FileAttachment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The FileAttachment.</returns>
-        System.Threading.Tasks.Task<FileAttachment> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<FileAttachment> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified FileAttachment using PATCH.
+        /// Gets the specified FileAttachment and returns a <see cref="GraphResponse{FileAttachment}"/> object.
         /// </summary>
-        /// <param name="fileAttachmentToUpdate">The FileAttachment to update.</param>
-        /// <returns>The updated FileAttachment.</returns>
-        System.Threading.Tasks.Task<FileAttachment> UpdateAsync(FileAttachment fileAttachmentToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FileAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileAttachment>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified FileAttachment using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FileAttachment.</returns>
-        System.Threading.Tasks.Task<FileAttachment> UpdateAsync(FileAttachment fileAttachmentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<FileAttachment> UpdateAsync(FileAttachment fileAttachmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified FileAttachment using PATCH and returns a <see cref="GraphResponse{FileAttachment}"/> object.
+        /// </summary>
+        /// <param name="fileAttachmentToUpdate">The FileAttachment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{FileAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileAttachment>> UpdateResponseAsync(FileAttachment fileAttachmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified FileAttachment using PUT.
+        /// </summary>
+        /// <param name="fileAttachmentToUpdate">The FileAttachment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<FileAttachment> PutAsync(FileAttachment fileAttachmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified FileAttachment using PUT and returns a <see cref="GraphResponse{FileAttachment}"/> object.
+        /// </summary>
+        /// <param name="fileAttachmentToUpdate">The FileAttachment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{FileAttachment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileAttachment>> PutResponseAsync(FileAttachment fileAttachmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

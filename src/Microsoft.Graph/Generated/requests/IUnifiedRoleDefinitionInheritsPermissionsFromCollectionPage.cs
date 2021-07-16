@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUnifiedRoleDefinitionInheritsPermissionsFromCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<UnifiedRoleDefinitionInheritsPermissionsFromCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<UnifiedRoleDefinitionInheritsPermissionsFromCollectionPage>))]
     public interface IUnifiedRoleDefinitionInheritsPermissionsFromCollectionPage : ICollectionPage<UnifiedRoleDefinition>
     {
         /// <summary>

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified EnrollmentConfigurationAssignment using POST.
         /// </summary>
         /// <param name="enrollmentConfigurationAssignmentToCreate">The EnrollmentConfigurationAssignment to create.</param>
-        /// <returns>The created EnrollmentConfigurationAssignment.</returns>
-        public System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> CreateAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToCreate)
-        {
-            return this.CreateAsync(enrollmentConfigurationAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EnrollmentConfigurationAssignment using POST.
-        /// </summary>
-        /// <param name="enrollmentConfigurationAssignmentToCreate">The EnrollmentConfigurationAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EnrollmentConfigurationAssignment.</returns>
-        public async System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> CreateAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> CreateAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<EnrollmentConfigurationAssignment>(enrollmentConfigurationAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified EnrollmentConfigurationAssignment.
+        /// Creates the specified EnrollmentConfigurationAssignment using POST and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="enrollmentConfigurationAssignmentToCreate">The EnrollmentConfigurationAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> CreateResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<EnrollmentConfigurationAssignment>(enrollmentConfigurationAssignmentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<EnrollmentConfigurationAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified EnrollmentConfigurationAssignment.
+        /// Deletes the specified EnrollmentConfigurationAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EnrollmentConfigurationAssignment.</returns>
-        public System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EnrollmentConfigurationAssignment.</returns>
-        public async System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<EnrollmentConfigurationAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified EnrollmentConfigurationAssignment using PATCH.
+        /// Gets the specified EnrollmentConfigurationAssignment and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
         /// </summary>
-        /// <param name="enrollmentConfigurationAssignmentToUpdate">The EnrollmentConfigurationAssignment to update.</param>
-        /// <returns>The updated EnrollmentConfigurationAssignment.</returns>
-        public System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> UpdateAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(enrollmentConfigurationAssignmentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<EnrollmentConfigurationAssignment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EnrollmentConfigurationAssignment.</returns>
-        public async System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> UpdateAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> UpdateAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate, CancellationToken cancellationToken = default)
         {
-			if (enrollmentConfigurationAssignmentToUpdate.AdditionalData != null)
-			{
-				if (enrollmentConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					enrollmentConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, enrollmentConfigurationAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (enrollmentConfigurationAssignmentToUpdate.AdditionalData != null)
-            {
-                if (enrollmentConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    enrollmentConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, enrollmentConfigurationAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<EnrollmentConfigurationAssignment>(enrollmentConfigurationAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EnrollmentConfigurationAssignment using PATCH and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignmentToUpdate">The EnrollmentConfigurationAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> UpdateResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<EnrollmentConfigurationAssignment>(enrollmentConfigurationAssignmentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified EnrollmentConfigurationAssignment using PUT.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignmentToUpdate">The EnrollmentConfigurationAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> PutAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<EnrollmentConfigurationAssignment>(enrollmentConfigurationAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EnrollmentConfigurationAssignment using PUT and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignmentToUpdate">The EnrollmentConfigurationAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> PutResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<EnrollmentConfigurationAssignment>(enrollmentConfigurationAssignmentToUpdate, cancellationToken);
         }
 
         /// <summary>

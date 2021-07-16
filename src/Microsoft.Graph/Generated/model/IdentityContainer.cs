@@ -12,53 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Identity Container.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IdentityContainer : Entity
     {
     
-		///<summary>
-		/// The IdentityContainer constructor
-		///</summary>
-        public IdentityContainer()
-        {
-            this.ODataType = "microsoft.graph.identityContainer";
-        }
-	
         /// <summary>
         /// Gets or sets conditional access.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conditionalAccess")]
         public ConditionalAccessRoot ConditionalAccess { get; set; }
     
         /// <summary>
         /// Gets or sets api connectors.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apiConnectors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("apiConnectors")]
         public IIdentityContainerApiConnectorsCollectionPage ApiConnectors { get; set; }
+
+        /// <summary>
+        /// Gets or sets apiConnectorsNextLink.
+        /// </summary>
+        [JsonPropertyName("apiConnectors@odata.nextLink")]
+        public string ApiConnectorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets b2x user flows.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "b2xUserFlows", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("b2xUserFlows")]
         public IIdentityContainerB2xUserFlowsCollectionPage B2xUserFlows { get; set; }
+
+        /// <summary>
+        /// Gets or sets b2xUserFlowsNextLink.
+        /// </summary>
+        [JsonPropertyName("b2xUserFlows@odata.nextLink")]
+        public string B2xUserFlowsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets identity providers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityProviders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityProviders")]
         public IIdentityContainerIdentityProvidersCollectionPage IdentityProviders { get; set; }
+
+        /// <summary>
+        /// Gets or sets identityProvidersNextLink.
+        /// </summary>
+        [JsonPropertyName("identityProviders@odata.nextLink")]
+        public string IdentityProvidersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user flow attributes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userFlowAttributes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userFlowAttributes")]
         public IIdentityContainerUserFlowAttributesCollectionPage UserFlowAttributes { get; set; }
+
+        /// <summary>
+        /// Gets or sets userFlowAttributesNextLink.
+        /// </summary>
+        [JsonPropertyName("userFlowAttributes@odata.nextLink")]
+        public string UserFlowAttributesNextLink { get; set; }
     
     }
 }

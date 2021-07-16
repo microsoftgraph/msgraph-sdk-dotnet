@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedMobileLobApp using POST.
         /// </summary>
         /// <param name="managedMobileLobAppToCreate">The ManagedMobileLobApp to create.</param>
-        /// <returns>The created ManagedMobileLobApp.</returns>
-        public System.Threading.Tasks.Task<ManagedMobileLobApp> CreateAsync(ManagedMobileLobApp managedMobileLobAppToCreate)
-        {
-            return this.CreateAsync(managedMobileLobAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedMobileLobApp using POST.
-        /// </summary>
-        /// <param name="managedMobileLobAppToCreate">The ManagedMobileLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedMobileLobApp.</returns>
-        public async System.Threading.Tasks.Task<ManagedMobileLobApp> CreateAsync(ManagedMobileLobApp managedMobileLobAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedMobileLobApp> CreateAsync(ManagedMobileLobApp managedMobileLobAppToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ManagedMobileLobApp>(managedMobileLobAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ManagedMobileLobApp.
+        /// Creates the specified ManagedMobileLobApp using POST and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="managedMobileLobAppToCreate">The ManagedMobileLobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> CreateResponseAsync(ManagedMobileLobApp managedMobileLobAppToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ManagedMobileLobApp>(managedMobileLobAppToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ManagedMobileLobApp>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ManagedMobileLobApp.
+        /// Deletes the specified ManagedMobileLobApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagedMobileLobApp.</returns>
-        public System.Threading.Tasks.Task<ManagedMobileLobApp> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedMobileLobApp.</returns>
-        public async System.Threading.Tasks.Task<ManagedMobileLobApp> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedMobileLobApp> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ManagedMobileLobApp>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ManagedMobileLobApp using PATCH.
+        /// Gets the specified ManagedMobileLobApp and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
         /// </summary>
-        /// <param name="managedMobileLobAppToUpdate">The ManagedMobileLobApp to update.</param>
-        /// <returns>The updated ManagedMobileLobApp.</returns>
-        public System.Threading.Tasks.Task<ManagedMobileLobApp> UpdateAsync(ManagedMobileLobApp managedMobileLobAppToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(managedMobileLobAppToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ManagedMobileLobApp>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedMobileLobApp.</returns>
-        public async System.Threading.Tasks.Task<ManagedMobileLobApp> UpdateAsync(ManagedMobileLobApp managedMobileLobAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedMobileLobApp> UpdateAsync(ManagedMobileLobApp managedMobileLobAppToUpdate, CancellationToken cancellationToken = default)
         {
-			if (managedMobileLobAppToUpdate.AdditionalData != null)
-			{
-				if (managedMobileLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedMobileLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedMobileLobAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedMobileLobAppToUpdate.AdditionalData != null)
-            {
-                if (managedMobileLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedMobileLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedMobileLobAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ManagedMobileLobApp>(managedMobileLobAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedMobileLobApp using PATCH and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedMobileLobAppToUpdate">The ManagedMobileLobApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> UpdateResponseAsync(ManagedMobileLobApp managedMobileLobAppToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ManagedMobileLobApp>(managedMobileLobAppToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedMobileLobApp using PUT.
+        /// </summary>
+        /// <param name="managedMobileLobAppToUpdate">The ManagedMobileLobApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ManagedMobileLobApp> PutAsync(ManagedMobileLobApp managedMobileLobAppToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ManagedMobileLobApp>(managedMobileLobAppToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedMobileLobApp using PUT and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedMobileLobAppToUpdate">The ManagedMobileLobApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ManagedMobileLobApp}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> PutResponseAsync(ManagedMobileLobApp managedMobileLobAppToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ManagedMobileLobApp>(managedMobileLobAppToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagedMobileLobApp managedMobileLobAppToInitialize)
         {
 
-            if (managedMobileLobAppToInitialize != null && managedMobileLobAppToInitialize.AdditionalData != null)
+            if (managedMobileLobAppToInitialize != null)
             {
-
                 if (managedMobileLobAppToInitialize.ContentVersions != null && managedMobileLobAppToInitialize.ContentVersions.CurrentPage != null)
                 {
+                    managedMobileLobAppToInitialize.ContentVersions.InitializeNextPageRequest(this.Client, managedMobileLobAppToInitialize.ContentVersionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedMobileLobAppToInitialize.ContentVersions.AdditionalData = managedMobileLobAppToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedMobileLobAppToInitialize.AdditionalData.TryGetValue("contentVersions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedMobileLobAppToInitialize.ContentVersions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

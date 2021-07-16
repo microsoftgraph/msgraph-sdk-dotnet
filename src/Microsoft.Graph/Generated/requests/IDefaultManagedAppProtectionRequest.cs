@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DefaultManagedAppProtection using POST.
         /// </summary>
         /// <param name="defaultManagedAppProtectionToCreate">The DefaultManagedAppProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DefaultManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<DefaultManagedAppProtection> CreateAsync(DefaultManagedAppProtection defaultManagedAppProtectionToCreate);        /// <summary>
-        /// Creates the specified DefaultManagedAppProtection using POST.
+        System.Threading.Tasks.Task<DefaultManagedAppProtection> CreateAsync(DefaultManagedAppProtection defaultManagedAppProtectionToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DefaultManagedAppProtection using POST and returns a <see cref="GraphResponse{DefaultManagedAppProtection}"/> object.
         /// </summary>
         /// <param name="defaultManagedAppProtectionToCreate">The DefaultManagedAppProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DefaultManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<DefaultManagedAppProtection> CreateAsync(DefaultManagedAppProtection defaultManagedAppProtectionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DefaultManagedAppProtection.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtection>> CreateResponseAsync(DefaultManagedAppProtection defaultManagedAppProtectionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DefaultManagedAppProtection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DefaultManagedAppProtection.
+        /// Deletes the specified DefaultManagedAppProtection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DefaultManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<DefaultManagedAppProtection> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DefaultManagedAppProtection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DefaultManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<DefaultManagedAppProtection> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DefaultManagedAppProtection> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DefaultManagedAppProtection using PATCH.
+        /// Gets the specified DefaultManagedAppProtection and returns a <see cref="GraphResponse{DefaultManagedAppProtection}"/> object.
         /// </summary>
-        /// <param name="defaultManagedAppProtectionToUpdate">The DefaultManagedAppProtection to update.</param>
-        /// <returns>The updated DefaultManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<DefaultManagedAppProtection> UpdateAsync(DefaultManagedAppProtection defaultManagedAppProtectionToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtection>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DefaultManagedAppProtection using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DefaultManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<DefaultManagedAppProtection> UpdateAsync(DefaultManagedAppProtection defaultManagedAppProtectionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DefaultManagedAppProtection> UpdateAsync(DefaultManagedAppProtection defaultManagedAppProtectionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DefaultManagedAppProtection using PATCH and returns a <see cref="GraphResponse{DefaultManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="defaultManagedAppProtectionToUpdate">The DefaultManagedAppProtection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtection>> UpdateResponseAsync(DefaultManagedAppProtection defaultManagedAppProtectionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DefaultManagedAppProtection using PUT.
+        /// </summary>
+        /// <param name="defaultManagedAppProtectionToUpdate">The DefaultManagedAppProtection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DefaultManagedAppProtection> PutAsync(DefaultManagedAppProtection defaultManagedAppProtectionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DefaultManagedAppProtection using PUT and returns a <see cref="GraphResponse{DefaultManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="defaultManagedAppProtectionToUpdate">The DefaultManagedAppProtection object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DefaultManagedAppProtection}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtection>> PutResponseAsync(DefaultManagedAppProtection defaultManagedAppProtectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

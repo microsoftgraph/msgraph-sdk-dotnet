@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IosUpdateDeviceStatus using POST.
         /// </summary>
         /// <param name="iosUpdateDeviceStatusToCreate">The IosUpdateDeviceStatus to create.</param>
-        /// <returns>The created IosUpdateDeviceStatus.</returns>
-        public System.Threading.Tasks.Task<IosUpdateDeviceStatus> CreateAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToCreate)
-        {
-            return this.CreateAsync(iosUpdateDeviceStatusToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosUpdateDeviceStatus using POST.
-        /// </summary>
-        /// <param name="iosUpdateDeviceStatusToCreate">The IosUpdateDeviceStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosUpdateDeviceStatus.</returns>
-        public async System.Threading.Tasks.Task<IosUpdateDeviceStatus> CreateAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosUpdateDeviceStatus> CreateAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IosUpdateDeviceStatus>(iosUpdateDeviceStatusToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IosUpdateDeviceStatus.
+        /// Creates the specified IosUpdateDeviceStatus using POST and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="iosUpdateDeviceStatusToCreate">The IosUpdateDeviceStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> CreateResponseAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IosUpdateDeviceStatus>(iosUpdateDeviceStatusToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IosUpdateDeviceStatus>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IosUpdateDeviceStatus.
+        /// Deletes the specified IosUpdateDeviceStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IosUpdateDeviceStatus.</returns>
-        public System.Threading.Tasks.Task<IosUpdateDeviceStatus> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosUpdateDeviceStatus.</returns>
-        public async System.Threading.Tasks.Task<IosUpdateDeviceStatus> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosUpdateDeviceStatus> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IosUpdateDeviceStatus>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IosUpdateDeviceStatus using PATCH.
+        /// Gets the specified IosUpdateDeviceStatus and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object.
         /// </summary>
-        /// <param name="iosUpdateDeviceStatusToUpdate">The IosUpdateDeviceStatus to update.</param>
-        /// <returns>The updated IosUpdateDeviceStatus.</returns>
-        public System.Threading.Tasks.Task<IosUpdateDeviceStatus> UpdateAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(iosUpdateDeviceStatusToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IosUpdateDeviceStatus>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosUpdateDeviceStatus.</returns>
-        public async System.Threading.Tasks.Task<IosUpdateDeviceStatus> UpdateAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosUpdateDeviceStatus> UpdateAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToUpdate, CancellationToken cancellationToken = default)
         {
-			if (iosUpdateDeviceStatusToUpdate.AdditionalData != null)
-			{
-				if (iosUpdateDeviceStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosUpdateDeviceStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosUpdateDeviceStatusToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosUpdateDeviceStatusToUpdate.AdditionalData != null)
-            {
-                if (iosUpdateDeviceStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosUpdateDeviceStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosUpdateDeviceStatusToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IosUpdateDeviceStatus>(iosUpdateDeviceStatusToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosUpdateDeviceStatus using PATCH and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object.
+        /// </summary>
+        /// <param name="iosUpdateDeviceStatusToUpdate">The IosUpdateDeviceStatus to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> UpdateResponseAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IosUpdateDeviceStatus>(iosUpdateDeviceStatusToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified IosUpdateDeviceStatus using PUT.
+        /// </summary>
+        /// <param name="iosUpdateDeviceStatusToUpdate">The IosUpdateDeviceStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IosUpdateDeviceStatus> PutAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IosUpdateDeviceStatus>(iosUpdateDeviceStatusToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosUpdateDeviceStatus using PUT and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object.
+        /// </summary>
+        /// <param name="iosUpdateDeviceStatusToUpdate">The IosUpdateDeviceStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IosUpdateDeviceStatus}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> PutResponseAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IosUpdateDeviceStatus>(iosUpdateDeviceStatusToUpdate, cancellationToken);
         }
 
         /// <summary>

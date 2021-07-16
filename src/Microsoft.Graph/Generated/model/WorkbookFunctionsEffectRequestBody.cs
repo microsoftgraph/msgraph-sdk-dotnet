@@ -9,30 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsEffectRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsEffectRequestBody
     {
     
         /// <summary>
         /// Gets or sets NominalRate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nominalRate", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken NominalRate { get; set; }
+        [JsonPropertyName("nominalRate")]
+        public System.Text.Json.JsonDocument NominalRate { get; set; }
     
         /// <summary>
         /// Gets or sets Npery.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "npery", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Npery { get; set; }
+        [JsonPropertyName("npery")]
+        public System.Text.Json.JsonDocument Npery { get; set; }
     
     }
 }

@@ -66,7 +66,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookTableRowAddRequestBuilder"/>.</returns>
         public IWorkbookTableRowAddRequestBuilder Add(
             Int32? index = null,
-            Newtonsoft.Json.Linq.JToken values = null)
+            System.Text.Json.JsonDocument values = null)
         {
             return new WorkbookTableRowAddRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.add"),

@@ -9,42 +9,40 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsHlookupRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsHlookupRequestBody
     {
     
         /// <summary>
         /// Gets or sets LookupValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lookupValue", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken LookupValue { get; set; }
+        [JsonPropertyName("lookupValue")]
+        public System.Text.Json.JsonDocument LookupValue { get; set; }
     
         /// <summary>
         /// Gets or sets TableArray.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tableArray", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken TableArray { get; set; }
+        [JsonPropertyName("tableArray")]
+        public System.Text.Json.JsonDocument TableArray { get; set; }
     
         /// <summary>
         /// Gets or sets RowIndexNum.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rowIndexNum", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken RowIndexNum { get; set; }
+        [JsonPropertyName("rowIndexNum")]
+        public System.Text.Json.JsonDocument RowIndexNum { get; set; }
     
         /// <summary>
         /// Gets or sets RangeLookup.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rangeLookup", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken RangeLookup { get; set; }
+        [JsonPropertyName("rangeLookup")]
+        public System.Text.Json.JsonDocument RangeLookup { get; set; }
     
     }
 }

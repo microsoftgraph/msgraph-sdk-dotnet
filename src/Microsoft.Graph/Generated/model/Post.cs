@@ -12,114 +12,136 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Post.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Post : OutlookItem
     {
     
-		///<summary>
-		/// The Post constructor
-		///</summary>
+        ///<summary>
+        /// The Post constructor
+        ///</summary>
         public Post()
         {
             this.ODataType = "microsoft.graph.post";
         }
-	
+
         /// <summary>
         /// Gets or sets body.
         /// The contents of the post. This is a default property. This property can be null.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "body", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("body")]
         public ItemBody Body { get; set; }
     
         /// <summary>
         /// Gets or sets conversation id.
         /// Unique ID of the conversation. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversationId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conversationId")]
         public string ConversationId { get; set; }
     
         /// <summary>
         /// Gets or sets conversation thread id.
         /// Unique ID of the conversation thread. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversationThreadId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conversationThreadId")]
         public string ConversationThreadId { get; set; }
     
         /// <summary>
         /// Gets or sets from.
         /// Used in delegate access scenarios. Indicates who posted the message on behalf of another user. This is a default property.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("from")]
         public Recipient From { get; set; }
     
         /// <summary>
         /// Gets or sets has attachments.
         /// Indicates whether the post has at least one attachment. This is a default property.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasAttachments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hasAttachments")]
         public bool? HasAttachments { get; set; }
     
         /// <summary>
         /// Gets or sets new participants.
         /// Conversation participants that were added to the thread as part of this post.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "newParticipants", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("newParticipants")]
         public IEnumerable<Recipient> NewParticipants { get; set; }
     
         /// <summary>
         /// Gets or sets received date time.
         /// Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receivedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("receivedDateTime")]
         public DateTimeOffset? ReceivedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets sender.
         /// Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sender", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sender")]
         public Recipient Sender { get; set; }
     
         /// <summary>
         /// Gets or sets attachments.
         /// The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("attachments")]
         public IPostAttachmentsCollectionPage Attachments { get; set; }
+
+        /// <summary>
+        /// Gets or sets attachmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("attachments@odata.nextLink")]
+        public string AttachmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
         /// The collection of open extensions defined for the post. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("extensions")]
         public IPostExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets in reply to.
         /// The earlier post that this post is replying to in the conversationThread. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inReplyTo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inReplyTo")]
         public Post InReplyTo { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
         /// The collection of multi-value extended properties defined for the post. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("multiValueExtendedProperties")]
         public IPostMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets multiValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("multiValueExtendedProperties@odata.nextLink")]
+        public string MultiValueExtendedPropertiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
         /// The collection of single-value extended properties defined for the post. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("singleValueExtendedProperties")]
         public IPostSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets singleValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("singleValueExtendedProperties@odata.nextLink")]
+        public string SingleValueExtendedPropertiesNextLink { get; set; }
     
     }
 }

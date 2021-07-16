@@ -9,59 +9,57 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PrinterCreateRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PrinterCreateRequestBody
     {
     
         /// <summary>
         /// Gets or sets DisplayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets Manufacturer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("manufacturer")]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets Model.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("model")]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets PhysicalDeviceId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "physicalDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("physicalDeviceId")]
         public string PhysicalDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets HasPhysicalDevice.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasPhysicalDevice", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hasPhysicalDevice")]
         public bool? HasPhysicalDevice { get; set; }
     
         /// <summary>
         /// Gets or sets CertificateSigningRequest.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateSigningRequest", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certificateSigningRequest")]
         public PrintCertificateSigningRequestObject CertificateSigningRequest { get; set; }
     
         /// <summary>
         /// Gets or sets ConnectorId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectorId")]
         public string ConnectorId { get; set; }
     
     }

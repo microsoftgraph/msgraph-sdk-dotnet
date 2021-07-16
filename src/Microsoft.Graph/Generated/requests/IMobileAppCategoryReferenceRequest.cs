@@ -21,22 +21,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MobileAppCategory reference.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified MobileAppCategory reference.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Puts the specified MobileAppCategory reference.
+        /// Deletes the specified MobileAppCategory reference and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="id">The MobileAppCategory reference reference to update.</param>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task PutAsync(string id);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Puts the specified MobileAppCategory reference.
@@ -44,6 +38,14 @@ namespace Microsoft.Graph
         /// <param name="id">The MobileAppCategory reference reference to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task PutAsync(string id, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task PutAsync(string id, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Puts the specified MobileAppCategory reference and returns a <see cref="GraphResponse"/> object
+        /// </summary>
+        /// <param name="id">The MobileAppCategory reference reference to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> PutResponseAsync(string id, CancellationToken cancellationToken = default);
     }
 }

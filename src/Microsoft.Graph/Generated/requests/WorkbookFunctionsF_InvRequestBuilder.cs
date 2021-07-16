@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsF_InvRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken probability,
-            Newtonsoft.Json.Linq.JToken degFreedom1,
-            Newtonsoft.Json.Linq.JToken degFreedom2)
+            System.Text.Json.JsonDocument probability,
+            System.Text.Json.JsonDocument degFreedom1,
+            System.Text.Json.JsonDocument degFreedom2)
             : base(requestUrl, client)
         {
             this.SetParameter("probability", probability, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("probability"))
             {
-                request.RequestBody.Probability = this.GetParameter<Newtonsoft.Json.Linq.JToken>("probability");
+                request.RequestBody.Probability = this.GetParameter<System.Text.Json.JsonDocument>("probability");
             }
 
             if (this.HasParameter("degFreedom1"))
             {
-                request.RequestBody.DegFreedom1 = this.GetParameter<Newtonsoft.Json.Linq.JToken>("degFreedom1");
+                request.RequestBody.DegFreedom1 = this.GetParameter<System.Text.Json.JsonDocument>("degFreedom1");
             }
 
             if (this.HasParameter("degFreedom2"))
             {
-                request.RequestBody.DegFreedom2 = this.GetParameter<Newtonsoft.Json.Linq.JToken>("degFreedom2");
+                request.RequestBody.DegFreedom2 = this.GetParameter<System.Text.Json.JsonDocument>("degFreedom2");
             }
 
             return request;

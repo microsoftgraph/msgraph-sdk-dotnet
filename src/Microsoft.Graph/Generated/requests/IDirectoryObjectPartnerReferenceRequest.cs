@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DirectoryObjectPartnerReference using POST.
         /// </summary>
         /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryObjectPartnerReference.</returns>
-        System.Threading.Tasks.Task<DirectoryObjectPartnerReference> CreateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate);        /// <summary>
-        /// Creates the specified DirectoryObjectPartnerReference using POST.
+        System.Threading.Tasks.Task<DirectoryObjectPartnerReference> CreateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DirectoryObjectPartnerReference using POST and returns a <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object.
         /// </summary>
         /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DirectoryObjectPartnerReference.</returns>
-        System.Threading.Tasks.Task<DirectoryObjectPartnerReference> CreateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DirectoryObjectPartnerReference.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryObjectPartnerReference>> CreateResponseAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DirectoryObjectPartnerReference.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DirectoryObjectPartnerReference.
+        /// Deletes the specified DirectoryObjectPartnerReference and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DirectoryObjectPartnerReference.</returns>
-        System.Threading.Tasks.Task<DirectoryObjectPartnerReference> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DirectoryObjectPartnerReference.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DirectoryObjectPartnerReference.</returns>
-        System.Threading.Tasks.Task<DirectoryObjectPartnerReference> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DirectoryObjectPartnerReference> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DirectoryObjectPartnerReference using PATCH.
+        /// Gets the specified DirectoryObjectPartnerReference and returns a <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object.
         /// </summary>
-        /// <param name="directoryObjectPartnerReferenceToUpdate">The DirectoryObjectPartnerReference to update.</param>
-        /// <returns>The updated DirectoryObjectPartnerReference.</returns>
-        System.Threading.Tasks.Task<DirectoryObjectPartnerReference> UpdateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryObjectPartnerReference>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DirectoryObjectPartnerReference using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DirectoryObjectPartnerReference.</returns>
-        System.Threading.Tasks.Task<DirectoryObjectPartnerReference> UpdateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DirectoryObjectPartnerReference> UpdateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DirectoryObjectPartnerReference using PATCH and returns a <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object.
+        /// </summary>
+        /// <param name="directoryObjectPartnerReferenceToUpdate">The DirectoryObjectPartnerReference to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryObjectPartnerReference>> UpdateResponseAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DirectoryObjectPartnerReference using PUT.
+        /// </summary>
+        /// <param name="directoryObjectPartnerReferenceToUpdate">The DirectoryObjectPartnerReference object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DirectoryObjectPartnerReference> PutAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DirectoryObjectPartnerReference using PUT and returns a <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object.
+        /// </summary>
+        /// <param name="directoryObjectPartnerReferenceToUpdate">The DirectoryObjectPartnerReference object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryObjectPartnerReference>> PutResponseAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

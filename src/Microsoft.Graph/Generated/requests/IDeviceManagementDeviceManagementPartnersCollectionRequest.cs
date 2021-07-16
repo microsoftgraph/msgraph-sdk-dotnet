@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementDeviceManagementPartnersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementPartner to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementPartner">The DeviceManagementPartner to add.</param>
-        /// <returns>The created DeviceManagementPartner.</returns>
-        System.Threading.Tasks.Task<DeviceManagementPartner> AddAsync(DeviceManagementPartner deviceManagementPartner);
-
         /// <summary>
         /// Adds the specified DeviceManagementPartner to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementPartner">The DeviceManagementPartner to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementPartner.</returns>
-        System.Threading.Tasks.Task<DeviceManagementPartner> AddAsync(DeviceManagementPartner deviceManagementPartner, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementPartner> AddAsync(DeviceManagementPartner deviceManagementPartner, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceManagementPartner to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementDeviceManagementPartnersCollectionPage> GetAsync();
+        /// <param name="deviceManagementPartner">The DeviceManagementPartner to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> AddResponseAsync(DeviceManagementPartner deviceManagementPartner, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementDeviceManagementPartnersCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementDeviceManagementPartnersCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceManagementPartnersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceManagementPartnersCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceManagementPartnersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

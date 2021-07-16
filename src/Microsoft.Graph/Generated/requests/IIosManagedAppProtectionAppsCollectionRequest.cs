@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IIosManagedAppProtectionAppsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ManagedMobileApp to the collection via POST.
-        /// </summary>
-        /// <param name="managedMobileApp">The ManagedMobileApp to add.</param>
-        /// <returns>The created ManagedMobileApp.</returns>
-        System.Threading.Tasks.Task<ManagedMobileApp> AddAsync(ManagedMobileApp managedMobileApp);
-
         /// <summary>
         /// Adds the specified ManagedMobileApp to the collection via POST.
         /// </summary>
         /// <param name="managedMobileApp">The ManagedMobileApp to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedMobileApp.</returns>
-        System.Threading.Tasks.Task<ManagedMobileApp> AddAsync(ManagedMobileApp managedMobileApp, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagedMobileApp> AddAsync(ManagedMobileApp managedMobileApp, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ManagedMobileApp to the collection via POST and returns a <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IIosManagedAppProtectionAppsCollectionPage> GetAsync();
+        /// <param name="managedMobileApp">The ManagedMobileApp to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> AddResponseAsync(ManagedMobileApp managedMobileApp, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IIosManagedAppProtectionAppsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IIosManagedAppProtectionAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{IosManagedAppProtectionAppsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtectionAppsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtectionAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

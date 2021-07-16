@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookChartFill using POST.
         /// </summary>
         /// <param name="workbookChartFillToCreate">The WorkbookChartFill to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartFill.</returns>
-        System.Threading.Tasks.Task<WorkbookChartFill> CreateAsync(WorkbookChartFill workbookChartFillToCreate);        /// <summary>
-        /// Creates the specified WorkbookChartFill using POST.
+        System.Threading.Tasks.Task<WorkbookChartFill> CreateAsync(WorkbookChartFill workbookChartFillToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartFill using POST and returns a <see cref="GraphResponse{WorkbookChartFill}"/> object.
         /// </summary>
         /// <param name="workbookChartFillToCreate">The WorkbookChartFill to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WorkbookChartFill.</returns>
-        System.Threading.Tasks.Task<WorkbookChartFill> CreateAsync(WorkbookChartFill workbookChartFillToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookChartFill.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFill}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFill>> CreateResponseAsync(WorkbookChartFill workbookChartFillToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WorkbookChartFill.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified WorkbookChartFill.
+        /// Deletes the specified WorkbookChartFill and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookChartFill.</returns>
-        System.Threading.Tasks.Task<WorkbookChartFill> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WorkbookChartFill.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookChartFill.</returns>
-        System.Threading.Tasks.Task<WorkbookChartFill> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookChartFill> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified WorkbookChartFill using PATCH.
+        /// Gets the specified WorkbookChartFill and returns a <see cref="GraphResponse{WorkbookChartFill}"/> object.
         /// </summary>
-        /// <param name="workbookChartFillToUpdate">The WorkbookChartFill to update.</param>
-        /// <returns>The updated WorkbookChartFill.</returns>
-        System.Threading.Tasks.Task<WorkbookChartFill> UpdateAsync(WorkbookChartFill workbookChartFillToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFill}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFill>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkbookChartFill using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartFill.</returns>
-        System.Threading.Tasks.Task<WorkbookChartFill> UpdateAsync(WorkbookChartFill workbookChartFillToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookChartFill> UpdateAsync(WorkbookChartFill workbookChartFillToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookChartFill using PATCH and returns a <see cref="GraphResponse{WorkbookChartFill}"/> object.
+        /// </summary>
+        /// <param name="workbookChartFillToUpdate">The WorkbookChartFill to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFill}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFill>> UpdateResponseAsync(WorkbookChartFill workbookChartFillToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookChartFill using PUT.
+        /// </summary>
+        /// <param name="workbookChartFillToUpdate">The WorkbookChartFill object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkbookChartFill> PutAsync(WorkbookChartFill workbookChartFillToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookChartFill using PUT and returns a <see cref="GraphResponse{WorkbookChartFill}"/> object.
+        /// </summary>
+        /// <param name="workbookChartFillToUpdate">The WorkbookChartFill object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkbookChartFill}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFill>> PutResponseAsync(WorkbookChartFill workbookChartFillToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

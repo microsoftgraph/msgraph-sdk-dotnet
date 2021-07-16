@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ProxiedDomain.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ProxiedDomain>))]
     public partial class ProxiedDomain
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProxiedDomain"/> class.
-        /// </summary>
-        public ProxiedDomain()
-        {
-            this.ODataType = "microsoft.graph.proxiedDomain";
-        }
 
         /// <summary>
         /// Gets or sets ipAddressOrFQDN.
         /// The IP address or FQDN
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddressOrFQDN", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ipAddressOrFQDN")]
         public string IpAddressOrFQDN { get; set; }
     
         /// <summary>
         /// Gets or sets proxy.
         /// Proxy IP or FQDN
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxy")]
         public string Proxy { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

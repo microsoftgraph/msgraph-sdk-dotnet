@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified IosCustomConfiguration using POST.
         /// </summary>
         /// <param name="iosCustomConfigurationToCreate">The IosCustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<IosCustomConfiguration> CreateAsync(IosCustomConfiguration iosCustomConfigurationToCreate);        /// <summary>
-        /// Creates the specified IosCustomConfiguration using POST.
+        System.Threading.Tasks.Task<IosCustomConfiguration> CreateAsync(IosCustomConfiguration iosCustomConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified IosCustomConfiguration using POST and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
         /// </summary>
         /// <param name="iosCustomConfigurationToCreate">The IosCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created IosCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<IosCustomConfiguration> CreateAsync(IosCustomConfiguration iosCustomConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IosCustomConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{IosCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> CreateResponseAsync(IosCustomConfiguration iosCustomConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified IosCustomConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified IosCustomConfiguration.
+        /// Deletes the specified IosCustomConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IosCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<IosCustomConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified IosCustomConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<IosCustomConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IosCustomConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified IosCustomConfiguration using PATCH.
+        /// Gets the specified IosCustomConfiguration and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
         /// </summary>
-        /// <param name="iosCustomConfigurationToUpdate">The IosCustomConfiguration to update.</param>
-        /// <returns>The updated IosCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<IosCustomConfiguration> UpdateAsync(IosCustomConfiguration iosCustomConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IosCustomConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<IosCustomConfiguration> UpdateAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IosCustomConfiguration> UpdateAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IosCustomConfiguration using PATCH and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosCustomConfigurationToUpdate">The IosCustomConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> UpdateResponseAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IosCustomConfiguration using PUT.
+        /// </summary>
+        /// <param name="iosCustomConfigurationToUpdate">The IosCustomConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IosCustomConfiguration> PutAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IosCustomConfiguration using PUT and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosCustomConfigurationToUpdate">The IosCustomConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IosCustomConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> PutResponseAsync(IosCustomConfiguration iosCustomConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AutomaticRepliesMailTips.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AutomaticRepliesMailTips>))]
     public partial class AutomaticRepliesMailTips
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AutomaticRepliesMailTips"/> class.
-        /// </summary>
-        public AutomaticRepliesMailTips()
-        {
-            this.ODataType = "microsoft.graph.automaticRepliesMailTips";
-        }
 
         /// <summary>
         /// Gets or sets message.
         /// The automatic reply message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("message")]
         public string Message { get; set; }
     
         /// <summary>
         /// Gets or sets messageLanguage.
         /// The language that the automatic reply message is in.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageLanguage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("messageLanguage")]
         public LocaleInfo MessageLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets scheduledEndTime.
         /// The date and time that automatic replies are set to end.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledEndTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scheduledEndTime")]
         public DateTimeTimeZone ScheduledEndTime { get; set; }
     
         /// <summary>
         /// Gets or sets scheduledStartTime.
         /// The date and time that automatic replies are set to begin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledStartTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scheduledStartTime")]
         public DateTimeTimeZone ScheduledStartTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

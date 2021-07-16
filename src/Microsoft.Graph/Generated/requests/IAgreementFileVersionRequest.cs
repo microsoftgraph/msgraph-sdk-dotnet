@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AgreementFileVersion using POST.
         /// </summary>
         /// <param name="agreementFileVersionToCreate">The AgreementFileVersion to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgreementFileVersion.</returns>
-        System.Threading.Tasks.Task<AgreementFileVersion> CreateAsync(AgreementFileVersion agreementFileVersionToCreate);        /// <summary>
-        /// Creates the specified AgreementFileVersion using POST.
+        System.Threading.Tasks.Task<AgreementFileVersion> CreateAsync(AgreementFileVersion agreementFileVersionToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AgreementFileVersion using POST and returns a <see cref="GraphResponse{AgreementFileVersion}"/> object.
         /// </summary>
         /// <param name="agreementFileVersionToCreate">The AgreementFileVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AgreementFileVersion.</returns>
-        System.Threading.Tasks.Task<AgreementFileVersion> CreateAsync(AgreementFileVersion agreementFileVersionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AgreementFileVersion.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileVersion>> CreateResponseAsync(AgreementFileVersion agreementFileVersionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AgreementFileVersion.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AgreementFileVersion.
+        /// Deletes the specified AgreementFileVersion and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AgreementFileVersion.</returns>
-        System.Threading.Tasks.Task<AgreementFileVersion> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AgreementFileVersion.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AgreementFileVersion.</returns>
-        System.Threading.Tasks.Task<AgreementFileVersion> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AgreementFileVersion> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AgreementFileVersion using PATCH.
+        /// Gets the specified AgreementFileVersion and returns a <see cref="GraphResponse{AgreementFileVersion}"/> object.
         /// </summary>
-        /// <param name="agreementFileVersionToUpdate">The AgreementFileVersion to update.</param>
-        /// <returns>The updated AgreementFileVersion.</returns>
-        System.Threading.Tasks.Task<AgreementFileVersion> UpdateAsync(AgreementFileVersion agreementFileVersionToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileVersion>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AgreementFileVersion using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AgreementFileVersion.</returns>
-        System.Threading.Tasks.Task<AgreementFileVersion> UpdateAsync(AgreementFileVersion agreementFileVersionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AgreementFileVersion> UpdateAsync(AgreementFileVersion agreementFileVersionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AgreementFileVersion using PATCH and returns a <see cref="GraphResponse{AgreementFileVersion}"/> object.
+        /// </summary>
+        /// <param name="agreementFileVersionToUpdate">The AgreementFileVersion to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileVersion>> UpdateResponseAsync(AgreementFileVersion agreementFileVersionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AgreementFileVersion using PUT.
+        /// </summary>
+        /// <param name="agreementFileVersionToUpdate">The AgreementFileVersion object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AgreementFileVersion> PutAsync(AgreementFileVersion agreementFileVersionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AgreementFileVersion using PUT and returns a <see cref="GraphResponse{AgreementFileVersion}"/> object.
+        /// </summary>
+        /// <param name="agreementFileVersionToUpdate">The AgreementFileVersion object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AgreementFileVersion}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileVersion>> PutResponseAsync(AgreementFileVersion agreementFileVersionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

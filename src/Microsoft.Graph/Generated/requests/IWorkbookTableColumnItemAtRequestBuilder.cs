@@ -33,7 +33,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookTableColumnAddRequestBuilder"/>.</returns>
         IWorkbookTableColumnAddRequestBuilder Add(
             Int32? index,
-            Newtonsoft.Json.Linq.JToken values,
+            System.Text.Json.JsonDocument values,
             string name);
         /// <summary>
         /// Gets the request builder for WorkbookTableColumnCountRequestBuilder.

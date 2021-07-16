@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserSendMailRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserSendMailRequestBody
     {
     
         /// <summary>
         /// Gets or sets Message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Message", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("Message")]
         public Message Message { get; set; }
     
         /// <summary>
         /// Gets or sets SaveToSentItems.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "SaveToSentItems", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("SaveToSentItems")]
         public bool? SaveToSentItems { get; set; }
     
     }

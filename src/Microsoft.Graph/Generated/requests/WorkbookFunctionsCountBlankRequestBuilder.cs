@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsCountBlankRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken range)
+            System.Text.Json.JsonDocument range)
             : base(requestUrl, client)
         {
             this.SetParameter("range", range, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("range"))
             {
-                request.RequestBody.Range = this.GetParameter<Newtonsoft.Json.Linq.JToken>("range");
+                request.RequestBody.Range = this.GetParameter<System.Text.Json.JsonDocument>("range");
             }
 
             return request;

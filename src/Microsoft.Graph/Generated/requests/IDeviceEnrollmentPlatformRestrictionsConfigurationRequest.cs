@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToCreate">The DeviceEnrollmentPlatformRestrictionsConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> CreateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate);        /// <summary>
-        /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using POST.
+        System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> CreateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object.
         /// </summary>
         /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToCreate">The DeviceEnrollmentPlatformRestrictionsConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> CreateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceEnrollmentPlatformRestrictionsConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>> CreateResponseAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceEnrollmentPlatformRestrictionsConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceEnrollmentPlatformRestrictionsConfiguration.
+        /// Deletes the specified DeviceEnrollmentPlatformRestrictionsConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceEnrollmentPlatformRestrictionsConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using PATCH.
+        /// Gets the specified DeviceEnrollmentPlatformRestrictionsConfiguration and returns a <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object.
         /// </summary>
-        /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToUpdate">The DeviceEnrollmentPlatformRestrictionsConfiguration to update.</param>
-        /// <returns>The updated DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> UpdateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> UpdateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> UpdateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using PATCH and returns a <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToUpdate">The DeviceEnrollmentPlatformRestrictionsConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>> UpdateResponseAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using PUT.
+        /// </summary>
+        /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToUpdate">The DeviceEnrollmentPlatformRestrictionsConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> PutAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using PUT and returns a <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToUpdate">The DeviceEnrollmentPlatformRestrictionsConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>> PutResponseAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

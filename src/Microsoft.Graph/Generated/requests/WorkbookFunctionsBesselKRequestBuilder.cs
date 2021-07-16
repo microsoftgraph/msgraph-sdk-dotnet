@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsBesselKRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken x,
-            Newtonsoft.Json.Linq.JToken n)
+            System.Text.Json.JsonDocument x,
+            System.Text.Json.JsonDocument n)
             : base(requestUrl, client)
         {
             this.SetParameter("x", x, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("x"))
             {
-                request.RequestBody.X = this.GetParameter<Newtonsoft.Json.Linq.JToken>("x");
+                request.RequestBody.X = this.GetParameter<System.Text.Json.JsonDocument>("x");
             }
 
             if (this.HasParameter("n"))
             {
-                request.RequestBody.N = this.GetParameter<Newtonsoft.Json.Linq.JToken>("n");
+                request.RequestBody.N = this.GetParameter<System.Text.Json.JsonDocument>("n");
             }
 
             return request;

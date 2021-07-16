@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IOAuth2PermissionGrantDeltaCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<OAuth2PermissionGrantDeltaCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<OAuth2PermissionGrantDeltaCollectionPage>))]
     public interface IOAuth2PermissionGrantDeltaCollectionPage : ICollectionPage<OAuth2PermissionGrant>
     {
         /// <summary>

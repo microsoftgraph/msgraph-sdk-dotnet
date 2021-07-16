@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AppConfigurationSettingItem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AppConfigurationSettingItem>))]
     public partial class AppConfigurationSettingItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppConfigurationSettingItem"/> class.
-        /// </summary>
-        public AppConfigurationSettingItem()
-        {
-            this.ODataType = "microsoft.graph.appConfigurationSettingItem";
-        }
 
         /// <summary>
         /// Gets or sets appConfigKey.
         /// app configuration key.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appConfigKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appConfigKey")]
         public string AppConfigKey { get; set; }
     
         /// <summary>
         /// Gets or sets appConfigKeyType.
         /// app configuration key type. Possible values are: stringType, integerType, realType, booleanType, tokenType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appConfigKeyType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appConfigKeyType")]
         public MdmAppConfigKeyType? AppConfigKeyType { get; set; }
     
         /// <summary>
         /// Gets or sets appConfigKeyValue.
         /// app configuration key value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appConfigKeyValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appConfigKeyValue")]
         public string AppConfigKeyValue { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

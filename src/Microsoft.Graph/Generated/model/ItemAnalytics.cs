@@ -12,40 +12,36 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Item Analytics.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ItemAnalytics : Entity
     {
     
-		///<summary>
-		/// The ItemAnalytics constructor
-		///</summary>
-        public ItemAnalytics()
-        {
-            this.ODataType = "microsoft.graph.itemAnalytics";
-        }
-	
         /// <summary>
         /// Gets or sets all time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allTime")]
         public ItemActivityStat AllTime { get; set; }
     
         /// <summary>
         /// Gets or sets item activity stats.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemActivityStats", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("itemActivityStats")]
         public IItemAnalyticsItemActivityStatsCollectionPage ItemActivityStats { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemActivityStatsNextLink.
+        /// </summary>
+        [JsonPropertyName("itemActivityStats@odata.nextLink")]
+        public string ItemActivityStatsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets last seven days.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSevenDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSevenDays")]
         public ItemActivityStat LastSevenDays { get; set; }
     
     }

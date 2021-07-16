@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Format Protection.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFormatProtection : Entity
     {
     
-		///<summary>
-		/// The WorkbookFormatProtection constructor
-		///</summary>
-        public WorkbookFormatProtection()
-        {
-            this.ODataType = "microsoft.graph.workbookFormatProtection";
-        }
-	
         /// <summary>
         /// Gets or sets formula hidden.
         /// Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "formulaHidden", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("formulaHidden")]
         public bool? FormulaHidden { get; set; }
     
         /// <summary>
         /// Gets or sets locked.
         /// Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("locked")]
         public bool? Locked { get; set; }
     
     }

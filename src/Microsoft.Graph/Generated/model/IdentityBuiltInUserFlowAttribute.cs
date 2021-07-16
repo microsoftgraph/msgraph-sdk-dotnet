@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Identity Built In User Flow Attribute.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IdentityBuiltInUserFlowAttribute : IdentityUserFlowAttribute
     {
     
-		///<summary>
-		/// The IdentityBuiltInUserFlowAttribute constructor
-		///</summary>
+        ///<summary>
+        /// The IdentityBuiltInUserFlowAttribute constructor
+        ///</summary>
         public IdentityBuiltInUserFlowAttribute()
         {
             this.ODataType = "microsoft.graph.identityBuiltInUserFlowAttribute";
         }
-	
+
     }
 }
 

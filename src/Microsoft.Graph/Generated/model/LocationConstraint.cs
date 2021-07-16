@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type LocationConstraint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<LocationConstraint>))]
     public partial class LocationConstraint
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LocationConstraint"/> class.
-        /// </summary>
-        public LocationConstraint()
-        {
-            this.ODataType = "microsoft.graph.locationConstraint";
-        }
 
         /// <summary>
         /// Gets or sets isRequired.
         /// The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRequired")]
         public bool? IsRequired { get; set; }
     
         /// <summary>
         /// Gets or sets locations.
         /// Constraint information for one or more locations that the client requests for the meeting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("locations")]
         public IEnumerable<LocationConstraintItem> Locations { get; set; }
     
         /// <summary>
         /// Gets or sets suggestLocation.
         /// The client requests the service to suggest one or more meeting locations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "suggestLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("suggestLocation")]
         public bool? SuggestLocation { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

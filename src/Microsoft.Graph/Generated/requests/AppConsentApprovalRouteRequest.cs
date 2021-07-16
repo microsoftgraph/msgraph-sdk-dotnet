@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AppConsentApprovalRoute using POST.
         /// </summary>
         /// <param name="appConsentApprovalRouteToCreate">The AppConsentApprovalRoute to create.</param>
-        /// <returns>The created AppConsentApprovalRoute.</returns>
-        public System.Threading.Tasks.Task<AppConsentApprovalRoute> CreateAsync(AppConsentApprovalRoute appConsentApprovalRouteToCreate)
-        {
-            return this.CreateAsync(appConsentApprovalRouteToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AppConsentApprovalRoute using POST.
-        /// </summary>
-        /// <param name="appConsentApprovalRouteToCreate">The AppConsentApprovalRoute to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppConsentApprovalRoute.</returns>
-        public async System.Threading.Tasks.Task<AppConsentApprovalRoute> CreateAsync(AppConsentApprovalRoute appConsentApprovalRouteToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppConsentApprovalRoute> CreateAsync(AppConsentApprovalRoute appConsentApprovalRouteToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AppConsentApprovalRoute>(appConsentApprovalRouteToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AppConsentApprovalRoute.
+        /// Creates the specified AppConsentApprovalRoute using POST and returns a <see cref="GraphResponse{AppConsentApprovalRoute}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="appConsentApprovalRouteToCreate">The AppConsentApprovalRoute to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppConsentApprovalRoute}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppConsentApprovalRoute>> CreateResponseAsync(AppConsentApprovalRoute appConsentApprovalRouteToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AppConsentApprovalRoute>(appConsentApprovalRouteToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AppConsentApprovalRoute>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AppConsentApprovalRoute.
+        /// Deletes the specified AppConsentApprovalRoute and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AppConsentApprovalRoute.</returns>
-        public System.Threading.Tasks.Task<AppConsentApprovalRoute> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppConsentApprovalRoute.</returns>
-        public async System.Threading.Tasks.Task<AppConsentApprovalRoute> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppConsentApprovalRoute> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AppConsentApprovalRoute>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AppConsentApprovalRoute using PATCH.
+        /// Gets the specified AppConsentApprovalRoute and returns a <see cref="GraphResponse{AppConsentApprovalRoute}"/> object.
         /// </summary>
-        /// <param name="appConsentApprovalRouteToUpdate">The AppConsentApprovalRoute to update.</param>
-        /// <returns>The updated AppConsentApprovalRoute.</returns>
-        public System.Threading.Tasks.Task<AppConsentApprovalRoute> UpdateAsync(AppConsentApprovalRoute appConsentApprovalRouteToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppConsentApprovalRoute}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppConsentApprovalRoute>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(appConsentApprovalRouteToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AppConsentApprovalRoute>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AppConsentApprovalRoute.</returns>
-        public async System.Threading.Tasks.Task<AppConsentApprovalRoute> UpdateAsync(AppConsentApprovalRoute appConsentApprovalRouteToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppConsentApprovalRoute> UpdateAsync(AppConsentApprovalRoute appConsentApprovalRouteToUpdate, CancellationToken cancellationToken = default)
         {
-			if (appConsentApprovalRouteToUpdate.AdditionalData != null)
-			{
-				if (appConsentApprovalRouteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					appConsentApprovalRouteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appConsentApprovalRouteToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (appConsentApprovalRouteToUpdate.AdditionalData != null)
-            {
-                if (appConsentApprovalRouteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    appConsentApprovalRouteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appConsentApprovalRouteToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AppConsentApprovalRoute>(appConsentApprovalRouteToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AppConsentApprovalRoute using PATCH and returns a <see cref="GraphResponse{AppConsentApprovalRoute}"/> object.
+        /// </summary>
+        /// <param name="appConsentApprovalRouteToUpdate">The AppConsentApprovalRoute to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AppConsentApprovalRoute}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppConsentApprovalRoute>> UpdateResponseAsync(AppConsentApprovalRoute appConsentApprovalRouteToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AppConsentApprovalRoute>(appConsentApprovalRouteToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AppConsentApprovalRoute using PUT.
+        /// </summary>
+        /// <param name="appConsentApprovalRouteToUpdate">The AppConsentApprovalRoute object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AppConsentApprovalRoute> PutAsync(AppConsentApprovalRoute appConsentApprovalRouteToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AppConsentApprovalRoute>(appConsentApprovalRouteToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AppConsentApprovalRoute using PUT and returns a <see cref="GraphResponse{AppConsentApprovalRoute}"/> object.
+        /// </summary>
+        /// <param name="appConsentApprovalRouteToUpdate">The AppConsentApprovalRoute object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AppConsentApprovalRoute}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppConsentApprovalRoute>> PutResponseAsync(AppConsentApprovalRoute appConsentApprovalRouteToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AppConsentApprovalRoute>(appConsentApprovalRouteToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AppConsentApprovalRoute appConsentApprovalRouteToInitialize)
         {
 
-            if (appConsentApprovalRouteToInitialize != null && appConsentApprovalRouteToInitialize.AdditionalData != null)
+            if (appConsentApprovalRouteToInitialize != null)
             {
-
                 if (appConsentApprovalRouteToInitialize.AppConsentRequests != null && appConsentApprovalRouteToInitialize.AppConsentRequests.CurrentPage != null)
                 {
+                    appConsentApprovalRouteToInitialize.AppConsentRequests.InitializeNextPageRequest(this.Client, appConsentApprovalRouteToInitialize.AppConsentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     appConsentApprovalRouteToInitialize.AppConsentRequests.AdditionalData = appConsentApprovalRouteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    appConsentApprovalRouteToInitialize.AdditionalData.TryGetValue("appConsentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        appConsentApprovalRouteToInitialize.AppConsentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

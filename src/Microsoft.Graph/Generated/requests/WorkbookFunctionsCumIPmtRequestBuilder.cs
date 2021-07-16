@@ -32,12 +32,12 @@ namespace Microsoft.Graph
         public WorkbookFunctionsCumIPmtRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken rate,
-            Newtonsoft.Json.Linq.JToken nper,
-            Newtonsoft.Json.Linq.JToken pv,
-            Newtonsoft.Json.Linq.JToken startPeriod,
-            Newtonsoft.Json.Linq.JToken endPeriod,
-            Newtonsoft.Json.Linq.JToken type)
+            System.Text.Json.JsonDocument rate,
+            System.Text.Json.JsonDocument nper,
+            System.Text.Json.JsonDocument pv,
+            System.Text.Json.JsonDocument startPeriod,
+            System.Text.Json.JsonDocument endPeriod,
+            System.Text.Json.JsonDocument type)
             : base(requestUrl, client)
         {
             this.SetParameter("rate", rate, true);
@@ -60,32 +60,32 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("rate"))
             {
-                request.RequestBody.Rate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("rate");
+                request.RequestBody.Rate = this.GetParameter<System.Text.Json.JsonDocument>("rate");
             }
 
             if (this.HasParameter("nper"))
             {
-                request.RequestBody.Nper = this.GetParameter<Newtonsoft.Json.Linq.JToken>("nper");
+                request.RequestBody.Nper = this.GetParameter<System.Text.Json.JsonDocument>("nper");
             }
 
             if (this.HasParameter("pv"))
             {
-                request.RequestBody.Pv = this.GetParameter<Newtonsoft.Json.Linq.JToken>("pv");
+                request.RequestBody.Pv = this.GetParameter<System.Text.Json.JsonDocument>("pv");
             }
 
             if (this.HasParameter("startPeriod"))
             {
-                request.RequestBody.StartPeriod = this.GetParameter<Newtonsoft.Json.Linq.JToken>("startPeriod");
+                request.RequestBody.StartPeriod = this.GetParameter<System.Text.Json.JsonDocument>("startPeriod");
             }
 
             if (this.HasParameter("endPeriod"))
             {
-                request.RequestBody.EndPeriod = this.GetParameter<Newtonsoft.Json.Linq.JToken>("endPeriod");
+                request.RequestBody.EndPeriod = this.GetParameter<System.Text.Json.JsonDocument>("endPeriod");
             }
 
             if (this.HasParameter("type"))
             {
-                request.RequestBody.Type = this.GetParameter<Newtonsoft.Json.Linq.JToken>("type");
+                request.RequestBody.Type = this.GetParameter<System.Text.Json.JsonDocument>("type");
             }
 
             return request;

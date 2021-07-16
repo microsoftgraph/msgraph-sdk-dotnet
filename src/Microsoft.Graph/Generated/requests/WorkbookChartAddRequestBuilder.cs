@@ -31,7 +31,7 @@ namespace Microsoft.Graph
             IBaseClient client,
             string type,
             string seriesBy,
-            Newtonsoft.Json.Linq.JToken sourceData)
+            System.Text.Json.JsonDocument sourceData)
             : base(requestUrl, client)
         {
             this.SetParameter("type", type, false);
@@ -61,7 +61,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("sourceData"))
             {
-                request.RequestBody.SourceData = this.GetParameter<Newtonsoft.Json.Linq.JToken>("sourceData");
+                request.RequestBody.SourceData = this.GetParameter<System.Text.Json.JsonDocument>("sourceData");
             }
 
             return request;

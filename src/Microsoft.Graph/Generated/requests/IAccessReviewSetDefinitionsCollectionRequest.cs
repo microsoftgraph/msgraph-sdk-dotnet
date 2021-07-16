@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IAccessReviewSetDefinitionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AccessReviewScheduleDefinition to the collection via POST.
-        /// </summary>
-        /// <param name="accessReviewScheduleDefinition">The AccessReviewScheduleDefinition to add.</param>
-        /// <returns>The created AccessReviewScheduleDefinition.</returns>
-        System.Threading.Tasks.Task<AccessReviewScheduleDefinition> AddAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinition);
-
         /// <summary>
         /// Adds the specified AccessReviewScheduleDefinition to the collection via POST.
         /// </summary>
         /// <param name="accessReviewScheduleDefinition">The AccessReviewScheduleDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewScheduleDefinition.</returns>
-        System.Threading.Tasks.Task<AccessReviewScheduleDefinition> AddAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinition, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessReviewScheduleDefinition> AddAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinition, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AccessReviewScheduleDefinition to the collection via POST and returns a <see cref="GraphResponse{AccessReviewScheduleDefinition}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAccessReviewSetDefinitionsCollectionPage> GetAsync();
+        /// <param name="accessReviewScheduleDefinition">The AccessReviewScheduleDefinition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewScheduleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewScheduleDefinition>> AddResponseAsync(AccessReviewScheduleDefinition accessReviewScheduleDefinition, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAccessReviewSetDefinitionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IAccessReviewSetDefinitionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AccessReviewSetDefinitionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewSetDefinitionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewSetDefinitionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

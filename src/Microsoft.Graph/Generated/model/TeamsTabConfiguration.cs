@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TeamsTabConfiguration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TeamsTabConfiguration>))]
     public partial class TeamsTabConfiguration
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TeamsTabConfiguration"/> class.
-        /// </summary>
-        public TeamsTabConfiguration()
-        {
-            this.ODataType = "microsoft.graph.teamsTabConfiguration";
-        }
 
         /// <summary>
         /// Gets or sets contentUrl.
         /// Url used for rendering tab contents in Teams. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentUrl")]
         public string ContentUrl { get; set; }
     
         /// <summary>
         /// Gets or sets entityId.
         /// Identifier for the entity hosted by the tab provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entityId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("entityId")]
         public string EntityId { get; set; }
     
         /// <summary>
         /// Gets or sets removeUrl.
         /// Url called by Teams client when a Tab is removed using the Teams Client.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("removeUrl")]
         public string RemoveUrl { get; set; }
     
         /// <summary>
         /// Gets or sets websiteUrl.
         /// Url for showing tab contents outside of Teams.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "websiteUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("websiteUrl")]
         public string WebsiteUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

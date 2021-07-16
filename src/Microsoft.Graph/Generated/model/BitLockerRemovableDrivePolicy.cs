@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type BitLockerRemovableDrivePolicy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<BitLockerRemovableDrivePolicy>))]
     public partial class BitLockerRemovableDrivePolicy
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BitLockerRemovableDrivePolicy"/> class.
-        /// </summary>
-        public BitLockerRemovableDrivePolicy()
-        {
-            this.ODataType = "microsoft.graph.bitLockerRemovableDrivePolicy";
-        }
 
         /// <summary>
         /// Gets or sets blockCrossOrganizationWriteAccess.
         /// This policy setting determines whether BitLocker protection is required for removable data drives to be writable on a computer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockCrossOrganizationWriteAccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("blockCrossOrganizationWriteAccess")]
         public bool? BlockCrossOrganizationWriteAccess { get; set; }
     
         /// <summary>
         /// Gets or sets encryptionMethod.
         /// Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryptionMethod")]
         public BitLockerEncryptionMethod? EncryptionMethod { get; set; }
     
         /// <summary>
         /// Gets or sets requireEncryptionForWriteAccess.
         /// Indicates whether to block write access to devices configured in another organization.  If requireEncryptionForWriteAccess is false, this value does not affect.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireEncryptionForWriteAccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requireEncryptionForWriteAccess")]
         public bool? RequireEncryptionForWriteAccess { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IScheduleOpenShiftsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified OpenShift to the collection via POST.
-        /// </summary>
-        /// <param name="openShift">The OpenShift to add.</param>
-        /// <returns>The created OpenShift.</returns>
-        System.Threading.Tasks.Task<OpenShift> AddAsync(OpenShift openShift);
-
         /// <summary>
         /// Adds the specified OpenShift to the collection via POST.
         /// </summary>
         /// <param name="openShift">The OpenShift to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OpenShift.</returns>
-        System.Threading.Tasks.Task<OpenShift> AddAsync(OpenShift openShift, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OpenShift> AddAsync(OpenShift openShift, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified OpenShift to the collection via POST and returns a <see cref="GraphResponse{OpenShift}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IScheduleOpenShiftsCollectionPage> GetAsync();
+        /// <param name="openShift">The OpenShift to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenShift>> AddResponseAsync(OpenShift openShift, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IScheduleOpenShiftsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IScheduleOpenShiftsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleOpenShiftsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScheduleOpenShiftsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScheduleOpenShiftsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

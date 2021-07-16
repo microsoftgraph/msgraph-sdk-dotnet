@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ServicePrincipalAddPasswordRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ServicePrincipalAddPasswordRequestBody
     {
     
         /// <summary>
         /// Gets or sets PasswordCredential.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordCredential", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordCredential")]
         public PasswordCredential PasswordCredential { get; set; }
     
     }

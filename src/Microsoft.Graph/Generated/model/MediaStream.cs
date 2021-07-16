@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MediaStream.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MediaStream>))]
     public partial class MediaStream
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MediaStream"/> class.
-        /// </summary>
-        public MediaStream()
-        {
-            this.ODataType = "microsoft.graph.mediaStream";
-        }
 
         /// <summary>
         /// Gets or sets direction.
         /// The direction. The possible values are inactive, sendOnly, receiveOnly, sendReceive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "direction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("direction")]
         public MediaDirection? Direction { get; set; }
     
         /// <summary>
         /// Gets or sets label.
         /// The media stream label.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "label", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("label")]
         public string Label { get; set; }
     
         /// <summary>
         /// Gets or sets mediaType.
         /// The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mediaType")]
         public Modality? MediaType { get; set; }
     
         /// <summary>
         /// Gets or sets serverMuted.
         /// Indicates whether the media is muted by the server.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serverMuted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("serverMuted")]
         public bool? ServerMuted { get; set; }
     
         /// <summary>
         /// Gets or sets sourceId.
         /// The source ID.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceId")]
         public string SourceId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

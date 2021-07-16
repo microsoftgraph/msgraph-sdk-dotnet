@@ -12,24 +12,14 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Agreement File Version.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AgreementFileVersion : AgreementFileProperties
     {
     
-		///<summary>
-		/// The AgreementFileVersion constructor
-		///</summary>
-        public AgreementFileVersion()
-        {
-            this.ODataType = "microsoft.graph.agreementFileVersion";
-        }
-	
     }
 }
 

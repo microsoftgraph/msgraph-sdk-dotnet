@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceInvitationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Invitation to the collection via POST.
-        /// </summary>
-        /// <param name="invitation">The Invitation to add.</param>
-        /// <returns>The created Invitation.</returns>
-        System.Threading.Tasks.Task<Invitation> AddAsync(Invitation invitation);
-
         /// <summary>
         /// Adds the specified Invitation to the collection via POST.
         /// </summary>
         /// <param name="invitation">The Invitation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Invitation.</returns>
-        System.Threading.Tasks.Task<Invitation> AddAsync(Invitation invitation, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Invitation> AddAsync(Invitation invitation, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Invitation to the collection via POST and returns a <see cref="GraphResponse{Invitation}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceInvitationsCollectionPage> GetAsync();
+        /// <param name="invitation">The Invitation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Invitation>> AddResponseAsync(Invitation invitation, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceInvitationsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IGraphServiceInvitationsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceInvitationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceInvitationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceInvitationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

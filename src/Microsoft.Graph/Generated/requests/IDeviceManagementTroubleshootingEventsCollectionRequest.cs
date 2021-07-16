@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementTroubleshootingEventsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementTroubleshootingEvent to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementTroubleshootingEvent">The DeviceManagementTroubleshootingEvent to add.</param>
-        /// <returns>The created DeviceManagementTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> AddAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEvent);
-
         /// <summary>
         /// Adds the specified DeviceManagementTroubleshootingEvent to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementTroubleshootingEvent">The DeviceManagementTroubleshootingEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> AddAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEvent, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> AddAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEvent, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceManagementTroubleshootingEvent to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementTroubleshootingEventsCollectionPage> GetAsync();
+        /// <param name="deviceManagementTroubleshootingEvent">The DeviceManagementTroubleshootingEvent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> AddResponseAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEvent, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementTroubleshootingEventsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementTroubleshootingEventsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEventsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEventsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

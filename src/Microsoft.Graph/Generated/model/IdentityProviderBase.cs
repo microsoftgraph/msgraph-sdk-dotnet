@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Identity Provider Base.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<IdentityProviderBase>))]
     public partial class IdentityProviderBase : Entity
     {
     
-		///<summary>
-		/// The internal IdentityProviderBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal IdentityProviderBase constructor
+        ///</summary>
         protected internal IdentityProviderBase()
         {
             // Don't allow initialization of abstract entity types
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets display name.
         /// The display name of the identity provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
     }

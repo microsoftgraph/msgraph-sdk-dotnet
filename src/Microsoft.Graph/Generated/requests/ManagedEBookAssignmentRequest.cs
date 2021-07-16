@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedEBookAssignment using POST.
         /// </summary>
         /// <param name="managedEBookAssignmentToCreate">The ManagedEBookAssignment to create.</param>
-        /// <returns>The created ManagedEBookAssignment.</returns>
-        public System.Threading.Tasks.Task<ManagedEBookAssignment> CreateAsync(ManagedEBookAssignment managedEBookAssignmentToCreate)
-        {
-            return this.CreateAsync(managedEBookAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedEBookAssignment using POST.
-        /// </summary>
-        /// <param name="managedEBookAssignmentToCreate">The ManagedEBookAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedEBookAssignment.</returns>
-        public async System.Threading.Tasks.Task<ManagedEBookAssignment> CreateAsync(ManagedEBookAssignment managedEBookAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedEBookAssignment> CreateAsync(ManagedEBookAssignment managedEBookAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ManagedEBookAssignment>(managedEBookAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ManagedEBookAssignment.
+        /// Creates the specified ManagedEBookAssignment using POST and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="managedEBookAssignmentToCreate">The ManagedEBookAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> CreateResponseAsync(ManagedEBookAssignment managedEBookAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ManagedEBookAssignment>(managedEBookAssignmentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ManagedEBookAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ManagedEBookAssignment.
+        /// Deletes the specified ManagedEBookAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagedEBookAssignment.</returns>
-        public System.Threading.Tasks.Task<ManagedEBookAssignment> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedEBookAssignment.</returns>
-        public async System.Threading.Tasks.Task<ManagedEBookAssignment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedEBookAssignment> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ManagedEBookAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ManagedEBookAssignment using PATCH.
+        /// Gets the specified ManagedEBookAssignment and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object.
         /// </summary>
-        /// <param name="managedEBookAssignmentToUpdate">The ManagedEBookAssignment to update.</param>
-        /// <returns>The updated ManagedEBookAssignment.</returns>
-        public System.Threading.Tasks.Task<ManagedEBookAssignment> UpdateAsync(ManagedEBookAssignment managedEBookAssignmentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(managedEBookAssignmentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ManagedEBookAssignment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedEBookAssignment.</returns>
-        public async System.Threading.Tasks.Task<ManagedEBookAssignment> UpdateAsync(ManagedEBookAssignment managedEBookAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedEBookAssignment> UpdateAsync(ManagedEBookAssignment managedEBookAssignmentToUpdate, CancellationToken cancellationToken = default)
         {
-			if (managedEBookAssignmentToUpdate.AdditionalData != null)
-			{
-				if (managedEBookAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedEBookAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedEBookAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedEBookAssignmentToUpdate.AdditionalData != null)
-            {
-                if (managedEBookAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedEBookAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedEBookAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ManagedEBookAssignment>(managedEBookAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedEBookAssignment using PATCH and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="managedEBookAssignmentToUpdate">The ManagedEBookAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> UpdateResponseAsync(ManagedEBookAssignment managedEBookAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ManagedEBookAssignment>(managedEBookAssignmentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedEBookAssignment using PUT.
+        /// </summary>
+        /// <param name="managedEBookAssignmentToUpdate">The ManagedEBookAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ManagedEBookAssignment> PutAsync(ManagedEBookAssignment managedEBookAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ManagedEBookAssignment>(managedEBookAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedEBookAssignment using PUT and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="managedEBookAssignmentToUpdate">The ManagedEBookAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ManagedEBookAssignment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> PutResponseAsync(ManagedEBookAssignment managedEBookAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ManagedEBookAssignment>(managedEBookAssignmentToUpdate, cancellationToken);
         }
 
         /// <summary>

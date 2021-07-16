@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PatternedRecurrence.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PatternedRecurrence>))]
     public partial class PatternedRecurrence
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PatternedRecurrence"/> class.
-        /// </summary>
-        public PatternedRecurrence()
-        {
-            this.ODataType = "microsoft.graph.patternedRecurrence";
-        }
 
         /// <summary>
         /// Gets or sets pattern.
         /// The frequency of an event. Do not specify for a one-time access review.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pattern", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pattern")]
         public RecurrencePattern Pattern { get; set; }
     
         /// <summary>
         /// Gets or sets range.
         /// The duration of an event.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "range", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("range")]
         public RecurrenceRange Range { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

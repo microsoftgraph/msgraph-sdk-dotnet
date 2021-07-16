@@ -12,83 +12,74 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AlertHistoryState.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AlertHistoryState>))]
     public partial class AlertHistoryState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AlertHistoryState"/> class.
-        /// </summary>
-        public AlertHistoryState()
-        {
-            this.ODataType = "microsoft.graph.alertHistoryState";
-        }
 
         /// <summary>
         /// Gets or sets appId.
         /// The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appId")]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets assignedTo.
         /// UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedTo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedTo")]
         public string AssignedTo { get; set; }
     
         /// <summary>
         /// Gets or sets comments.
         /// Comment entered by signed-in user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("comments")]
         public IEnumerable<string> Comments { get; set; }
     
         /// <summary>
         /// Gets or sets feedback.
         /// Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedback", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("feedback")]
         public AlertFeedback? Feedback { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public AlertStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets updatedDateTime.
         /// Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("updatedDateTime")]
         public DateTimeOffset? UpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets user.
         /// UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "user", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("user")]
         public string User { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

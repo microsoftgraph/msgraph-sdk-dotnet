@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceManagementGetEffectivePermissionsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceManagementGetEffectivePermissionsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceManagementGetEffectivePermissionsCollectionPage>))]
     public interface IDeviceManagementGetEffectivePermissionsCollectionPage : ICollectionPage<RolePermission>
     {
         /// <summary>

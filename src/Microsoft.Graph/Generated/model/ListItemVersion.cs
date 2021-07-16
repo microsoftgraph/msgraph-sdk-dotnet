@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type List Item Version.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ListItemVersion : BaseItemVersion
     {
     
-		///<summary>
-		/// The ListItemVersion constructor
-		///</summary>
+        ///<summary>
+        /// The ListItemVersion constructor
+        ///</summary>
         public ListItemVersion()
         {
             this.ODataType = "microsoft.graph.listItemVersion";
         }
-	
+
         /// <summary>
         /// Gets or sets fields.
         /// A collection of the fields and values for this version of the list item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fields", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fields")]
         public FieldValueSet Fields { get; set; }
     
     }

@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PersonOrGroupColumn.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PersonOrGroupColumn>))]
     public partial class PersonOrGroupColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PersonOrGroupColumn"/> class.
-        /// </summary>
-        public PersonOrGroupColumn()
-        {
-            this.ODataType = "microsoft.graph.personOrGroupColumn";
-        }
 
         /// <summary>
         /// Gets or sets allowMultipleSelection.
         /// Indicates whether multiple values can be selected from the source.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowMultipleSelection", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowMultipleSelection")]
         public bool? AllowMultipleSelection { get; set; }
     
         /// <summary>
         /// Gets or sets chooseFromType.
         /// Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chooseFromType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("chooseFromType")]
         public string ChooseFromType { get; set; }
     
         /// <summary>
         /// Gets or sets displayAs.
         /// How to display the information about the person or group chosen. See below.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayAs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayAs")]
         public string DisplayAs { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

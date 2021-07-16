@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Win32LobAppProductCodeRule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppProductCodeRule>))]
     public partial class Win32LobAppProductCodeRule : Win32LobAppRule
     {
         /// <summary>
@@ -33,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets productCode.
         /// The product code of the app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productCode")]
         public string ProductCode { get; set; }
     
         /// <summary>
         /// Gets or sets productVersion.
         /// The product version comparison value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productVersion")]
         public string ProductVersion { get; set; }
     
         /// <summary>
         /// Gets or sets productVersionOperator.
         /// The product version comparison operator. Possible values are: notConfigured, equal, notEqual, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productVersionOperator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productVersionOperator")]
         public Win32LobAppRuleOperator? ProductVersionOperator { get; set; }
     
     }

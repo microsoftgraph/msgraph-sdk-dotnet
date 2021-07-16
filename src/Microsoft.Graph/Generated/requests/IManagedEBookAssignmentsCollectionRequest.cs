@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IManagedEBookAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ManagedEBookAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="managedEBookAssignment">The ManagedEBookAssignment to add.</param>
-        /// <returns>The created ManagedEBookAssignment.</returns>
-        System.Threading.Tasks.Task<ManagedEBookAssignment> AddAsync(ManagedEBookAssignment managedEBookAssignment);
-
         /// <summary>
         /// Adds the specified ManagedEBookAssignment to the collection via POST.
         /// </summary>
         /// <param name="managedEBookAssignment">The ManagedEBookAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedEBookAssignment.</returns>
-        System.Threading.Tasks.Task<ManagedEBookAssignment> AddAsync(ManagedEBookAssignment managedEBookAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagedEBookAssignment> AddAsync(ManagedEBookAssignment managedEBookAssignment, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ManagedEBookAssignment to the collection via POST and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedEBookAssignmentsCollectionPage> GetAsync();
+        /// <param name="managedEBookAssignment">The ManagedEBookAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> AddResponseAsync(ManagedEBookAssignment managedEBookAssignment, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedEBookAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IManagedEBookAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedEBookAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

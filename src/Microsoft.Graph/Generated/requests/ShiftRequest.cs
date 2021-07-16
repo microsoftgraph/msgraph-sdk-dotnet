@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Shift using POST.
         /// </summary>
         /// <param name="shiftToCreate">The Shift to create.</param>
-        /// <returns>The created Shift.</returns>
-        public System.Threading.Tasks.Task<Shift> CreateAsync(Shift shiftToCreate)
-        {
-            return this.CreateAsync(shiftToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Shift using POST.
-        /// </summary>
-        /// <param name="shiftToCreate">The Shift to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Shift.</returns>
-        public async System.Threading.Tasks.Task<Shift> CreateAsync(Shift shiftToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Shift> CreateAsync(Shift shiftToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Shift>(shiftToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Shift.
+        /// Creates the specified Shift using POST and returns a <see cref="GraphResponse{Shift}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="shiftToCreate">The Shift to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Shift>> CreateResponseAsync(Shift shiftToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Shift>(shiftToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Shift>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Shift.
+        /// Deletes the specified Shift and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Shift.</returns>
-        public System.Threading.Tasks.Task<Shift> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Shift.</returns>
-        public async System.Threading.Tasks.Task<Shift> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Shift> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Shift>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Shift using PATCH.
+        /// Gets the specified Shift and returns a <see cref="GraphResponse{Shift}"/> object.
         /// </summary>
-        /// <param name="shiftToUpdate">The Shift to update.</param>
-        /// <returns>The updated Shift.</returns>
-        public System.Threading.Tasks.Task<Shift> UpdateAsync(Shift shiftToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Shift>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(shiftToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Shift>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Shift.</returns>
-        public async System.Threading.Tasks.Task<Shift> UpdateAsync(Shift shiftToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Shift> UpdateAsync(Shift shiftToUpdate, CancellationToken cancellationToken = default)
         {
-			if (shiftToUpdate.AdditionalData != null)
-			{
-				if (shiftToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					shiftToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, shiftToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (shiftToUpdate.AdditionalData != null)
-            {
-                if (shiftToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    shiftToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, shiftToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Shift>(shiftToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Shift using PATCH and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <param name="shiftToUpdate">The Shift to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Shift>> UpdateResponseAsync(Shift shiftToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Shift>(shiftToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Shift using PUT.
+        /// </summary>
+        /// <param name="shiftToUpdate">The Shift object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Shift> PutAsync(Shift shiftToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Shift>(shiftToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Shift using PUT and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <param name="shiftToUpdate">The Shift object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Shift}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Shift>> PutResponseAsync(Shift shiftToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Shift>(shiftToUpdate, cancellationToken);
         }
 
         /// <summary>

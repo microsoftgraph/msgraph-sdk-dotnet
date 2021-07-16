@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsGeStepRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken step)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument step)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("step"))
             {
-                request.RequestBody.Step = this.GetParameter<Newtonsoft.Json.Linq.JToken>("step");
+                request.RequestBody.Step = this.GetParameter<System.Text.Json.JsonDocument>("step");
             }
 
             return request;

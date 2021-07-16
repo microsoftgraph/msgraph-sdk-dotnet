@@ -12,29 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education Category.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EducationCategory : Entity
     {
     
-		///<summary>
-		/// The EducationCategory constructor
-		///</summary>
-        public EducationCategory()
-        {
-            this.ODataType = "microsoft.graph.educationCategory";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// Unique identifier for the category.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
     }

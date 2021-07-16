@@ -12,54 +12,45 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UnifiedRolePermission.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UnifiedRolePermission>))]
     public partial class UnifiedRolePermission
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UnifiedRolePermission"/> class.
-        /// </summary>
-        public UnifiedRolePermission()
-        {
-            this.ODataType = "microsoft.graph.unifiedRolePermission";
-        }
 
         /// <summary>
         /// Gets or sets allowedResourceActions.
         /// Set of tasks that can be performed on a resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedResourceActions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedResourceActions")]
         public IEnumerable<string> AllowedResourceActions { get; set; }
     
         /// <summary>
         /// Gets or sets condition.
         /// Optional constraints that must be met for the permission to be effective.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "condition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("condition")]
         public string Condition { get; set; }
     
         /// <summary>
         /// Gets or sets excludedResourceActions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludedResourceActions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludedResourceActions")]
         public IEnumerable<string> ExcludedResourceActions { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DirectoryObjectGetByIdsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DirectoryObjectGetByIdsRequestBody
     {
     
         /// <summary>
         /// Gets or sets Ids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ids", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ids")]
         public IEnumerable<string> Ids { get; set; }
     
         /// <summary>
         /// Gets or sets Types.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "types", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("types")]
         public IEnumerable<string> Types { get; set; }
     
     }

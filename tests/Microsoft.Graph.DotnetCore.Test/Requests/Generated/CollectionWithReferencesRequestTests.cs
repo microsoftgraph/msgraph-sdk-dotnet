@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -51,6 +52,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 
                 var requestUrl = string.Format("{0}/groups/groupId/members", this.graphBaseUrl);
                 var nextPageRequestUrl = string.Format("{0}?{1}={2}", requestUrl, nextQueryKey, nextQueryValue);
+                var nextPageRequestUrlElement = JsonDocument.Parse(string.Format("\"{0}\"", nextPageRequestUrl)).RootElement;
 
                 this.httpProvider.Setup(
                     provider => provider.SendAsync(
@@ -69,11 +71,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var membersCollectionResponse = new GroupMembersCollectionWithReferencesResponse
                 {
                     Value = membersCollectionPage,
-                    AdditionalData = new Dictionary<string, object> { { Constants.OdataInstanceAnnotations.NextLink, nextPageRequestUrl } },
+                    NextLink = nextPageRequestUrl
                 };
 
                 this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<GroupMembersCollectionWithReferencesResponse>(It.IsAny<string>()))
+                    serializer => serializer.DeserializeObject<GroupMembersCollectionWithReferencesResponse>(It.IsAny<Stream>()))
                     .Returns(membersCollectionResponse);
 
                 var returnedCollectionPage = await this.graphServiceClient.Groups["groupId"].Members.Request().GetAsync() as GroupMembersCollectionWithReferencesPage;

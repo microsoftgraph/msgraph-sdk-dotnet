@@ -14,7 +14,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests
         protected MockAuthenticationProvider authenticationProvider;
         protected MockHttpProvider httpProvider;
         protected HttpResponseMessage httpResponseMessage;
-        protected IGraphServiceClient graphServiceClient;
+        protected GraphServiceClient graphServiceClient;
         protected MockSerializer serializer;
 
         public RequestTestBase()

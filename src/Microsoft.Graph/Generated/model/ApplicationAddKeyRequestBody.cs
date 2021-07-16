@@ -9,35 +9,33 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ApplicationAddKeyRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ApplicationAddKeyRequestBody
     {
     
         /// <summary>
         /// Gets or sets KeyCredential.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyCredential", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keyCredential")]
         public KeyCredential KeyCredential { get; set; }
     
         /// <summary>
         /// Gets or sets PasswordCredential.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordCredential", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordCredential")]
         public PasswordCredential PasswordCredential { get; set; }
     
         /// <summary>
         /// Gets or sets Proof.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proof", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proof")]
         public string Proof { get; set; }
     
     }

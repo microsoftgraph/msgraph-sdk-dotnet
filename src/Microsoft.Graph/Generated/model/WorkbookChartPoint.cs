@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Chart Point.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookChartPoint : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartPoint constructor
-		///</summary>
-        public WorkbookChartPoint()
-        {
-            this.ODataType = "microsoft.graph.workbookChartPoint";
-        }
-	
         /// <summary>
         /// Gets or sets value.
         /// Returns the value of a chart point. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Value { get; set; }
+        [JsonPropertyName("value")]
+        public System.Text.Json.JsonDocument Value { get; set; }
     
         /// <summary>
         /// Gets or sets format.
         /// Encapsulates the format properties chart point. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("format")]
         public WorkbookChartPointFormat Format { get; set; }
     
     }

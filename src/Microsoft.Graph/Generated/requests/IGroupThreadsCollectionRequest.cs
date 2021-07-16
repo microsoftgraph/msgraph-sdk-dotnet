@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGroupThreadsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ConversationThread to the collection via POST.
-        /// </summary>
-        /// <param name="conversationThread">The ConversationThread to add.</param>
-        /// <returns>The created ConversationThread.</returns>
-        System.Threading.Tasks.Task<ConversationThread> AddAsync(ConversationThread conversationThread);
-
         /// <summary>
         /// Adds the specified ConversationThread to the collection via POST.
         /// </summary>
         /// <param name="conversationThread">The ConversationThread to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConversationThread.</returns>
-        System.Threading.Tasks.Task<ConversationThread> AddAsync(ConversationThread conversationThread, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ConversationThread> AddAsync(ConversationThread conversationThread, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ConversationThread to the collection via POST and returns a <see cref="GraphResponse{ConversationThread}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGroupThreadsCollectionPage> GetAsync();
+        /// <param name="conversationThread">The ConversationThread to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConversationThread}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConversationThread>> AddResponseAsync(ConversationThread conversationThread, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGroupThreadsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IGroupThreadsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GroupThreadsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupThreadsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupThreadsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

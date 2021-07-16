@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConditionalAccessLocations.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessLocations>))]
     public partial class ConditionalAccessLocations
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessLocations"/> class.
-        /// </summary>
-        public ConditionalAccessLocations()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessLocations";
-        }
 
         /// <summary>
         /// Gets or sets excludeLocations.
         /// Location IDs excluded from scope of policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeLocations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludeLocations")]
         public IEnumerable<string> ExcludeLocations { get; set; }
     
         /// <summary>
         /// Gets or sets includeLocations.
         /// Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeLocations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeLocations")]
         public IEnumerable<string> IncludeLocations { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

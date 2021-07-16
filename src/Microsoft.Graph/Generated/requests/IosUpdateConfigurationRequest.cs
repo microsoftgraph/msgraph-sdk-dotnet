@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IosUpdateConfiguration using POST.
         /// </summary>
         /// <param name="iosUpdateConfigurationToCreate">The IosUpdateConfiguration to create.</param>
-        /// <returns>The created IosUpdateConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosUpdateConfiguration> CreateAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate)
-        {
-            return this.CreateAsync(iosUpdateConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosUpdateConfiguration using POST.
-        /// </summary>
-        /// <param name="iosUpdateConfigurationToCreate">The IosUpdateConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosUpdateConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosUpdateConfiguration> CreateAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosUpdateConfiguration> CreateAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IosUpdateConfiguration>(iosUpdateConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IosUpdateConfiguration.
+        /// Creates the specified IosUpdateConfiguration using POST and returns a <see cref="GraphResponse{IosUpdateConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="iosUpdateConfigurationToCreate">The IosUpdateConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosUpdateConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> CreateResponseAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IosUpdateConfiguration>(iosUpdateConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IosUpdateConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IosUpdateConfiguration.
+        /// Deletes the specified IosUpdateConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IosUpdateConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosUpdateConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosUpdateConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosUpdateConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosUpdateConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IosUpdateConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IosUpdateConfiguration using PATCH.
+        /// Gets the specified IosUpdateConfiguration and returns a <see cref="GraphResponse{IosUpdateConfiguration}"/> object.
         /// </summary>
-        /// <param name="iosUpdateConfigurationToUpdate">The IosUpdateConfiguration to update.</param>
-        /// <returns>The updated IosUpdateConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosUpdateConfiguration> UpdateAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosUpdateConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(iosUpdateConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IosUpdateConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosUpdateConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosUpdateConfiguration> UpdateAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosUpdateConfiguration> UpdateAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (iosUpdateConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosUpdateConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosUpdateConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosUpdateConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosUpdateConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosUpdateConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosUpdateConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosUpdateConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IosUpdateConfiguration>(iosUpdateConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosUpdateConfiguration using PATCH and returns a <see cref="GraphResponse{IosUpdateConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosUpdateConfigurationToUpdate">The IosUpdateConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosUpdateConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> UpdateResponseAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IosUpdateConfiguration>(iosUpdateConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified IosUpdateConfiguration using PUT.
+        /// </summary>
+        /// <param name="iosUpdateConfigurationToUpdate">The IosUpdateConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IosUpdateConfiguration> PutAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IosUpdateConfiguration>(iosUpdateConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosUpdateConfiguration using PUT and returns a <see cref="GraphResponse{IosUpdateConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosUpdateConfigurationToUpdate">The IosUpdateConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IosUpdateConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> PutResponseAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IosUpdateConfiguration>(iosUpdateConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

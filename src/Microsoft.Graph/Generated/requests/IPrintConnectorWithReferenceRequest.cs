@@ -23,57 +23,64 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PrintConnector.
         /// </summary>
-        /// <returns>The PrintConnector.</returns>
-        System.Threading.Tasks.Task<PrintConnector> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PrintConnector.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrintConnector.</returns>
-        System.Threading.Tasks.Task<PrintConnector> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PrintConnector> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the specified PrintConnector and returns a <see cref="GraphResponse{PrintConnector}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintConnector>> GetResponseAsync(CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Creates the specified PrintConnector using POST.
         /// </summary>
         /// <param name="printConnectorToCreate">The PrintConnector to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintConnector.</returns>
-        System.Threading.Tasks.Task<PrintConnector> CreateAsync(PrintConnector printConnectorToCreate);        /// <summary>
-        /// Creates the specified PrintConnector using POST.
+        System.Threading.Tasks.Task<PrintConnector> CreateAsync(PrintConnector printConnectorToCreate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Creates the specified PrintConnector using POST and returns a <see cref="GraphResponse{PrintConnector}"/> object.
         /// </summary>
         /// <param name="printConnectorToCreate">The PrintConnector to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PrintConnector.</returns>
-        System.Threading.Tasks.Task<PrintConnector> CreateAsync(PrintConnector printConnectorToCreate, CancellationToken cancellationToken);
+        /// <returns>The <see cref="GraphResponse{PrintConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintConnector>> CreateResponseAsync(PrintConnector printConnectorToCreate, CancellationToken cancellationToken = default);
 
 		/// <summary>
-        /// Updates the specified PrintConnector using PATCH.
-        /// </summary>
-        /// <param name="printConnectorToUpdate">The PrintConnector to update.</param>
-        /// <returns>The updated PrintConnector.</returns>
-        System.Threading.Tasks.Task<PrintConnector> UpdateAsync(PrintConnector printConnectorToUpdate);
-
-        /// <summary>
         /// Updates the specified PrintConnector using PATCH.
         /// </summary>
         /// <param name="printConnectorToUpdate">The PrintConnector to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrintConnector.</returns>
-        System.Threading.Tasks.Task<PrintConnector> UpdateAsync(PrintConnector printConnectorToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PrintConnector> UpdateAsync(PrintConnector printConnectorToUpdate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Updates the specified PrintConnector using PATCH and returns a <see cref="GraphResponse{PrintConnector}"/> object.
+        /// </summary>
+        /// <param name="printConnectorToUpdate">The PrintConnector to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PrintConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintConnector>> UpdateResponseAsync(PrintConnector printConnectorToUpdate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Deletes the specified PrintConnector.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified PrintConnector.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Deletes the specified PrintConnector and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

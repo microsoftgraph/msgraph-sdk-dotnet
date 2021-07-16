@@ -12,58 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Detected App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DetectedApp : Entity
     {
     
-		///<summary>
-		/// The DetectedApp constructor
-		///</summary>
-        public DetectedApp()
-        {
-            this.ODataType = "microsoft.graph.detectedApp";
-        }
-	
         /// <summary>
         /// Gets or sets device count.
         /// The number of devices that have installed this application
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceCount")]
         public Int32? DeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Name of the discovered application. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets size in byte.
         /// Discovered application size in bytes. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sizeInByte", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sizeInByte")]
         public Int64? SizeInByte { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// Version of the discovered application. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
         /// <summary>
         /// Gets or sets managed devices.
         /// The devices that have the discovered application installed
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDevices")]
         public IDetectedAppManagedDevicesCollectionWithReferencesPage ManagedDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedDevices@odata.nextLink")]
+        public string ManagedDevicesNextLink { get; set; }
     
     }
 }

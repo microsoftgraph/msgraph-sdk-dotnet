@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ChatInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ChatInfo>))]
     public partial class ChatInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChatInfo"/> class.
-        /// </summary>
-        public ChatInfo()
-        {
-            this.ODataType = "microsoft.graph.chatInfo";
-        }
 
         /// <summary>
         /// Gets or sets messageId.
         /// The unique identifier for a message in a Microsoft Teams channel.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("messageId")]
         public string MessageId { get; set; }
     
         /// <summary>
         /// Gets or sets replyChainMessageId.
         /// The ID of the reply message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyChainMessageId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("replyChainMessageId")]
         public string ReplyChainMessageId { get; set; }
     
         /// <summary>
         /// Gets or sets threadId.
         /// The unique identifier for a thread in Microsoft Teams.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "threadId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("threadId")]
         public string ThreadId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

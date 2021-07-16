@@ -9,53 +9,51 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TeamSendActivityNotificationRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TeamSendActivityNotificationRequestBody
     {
     
         /// <summary>
         /// Gets or sets Topic.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topic", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("topic")]
         public TeamworkActivityTopic Topic { get; set; }
     
         /// <summary>
         /// Gets or sets ActivityType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityType")]
         public string ActivityType { get; set; }
     
         /// <summary>
         /// Gets or sets ChainId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chainId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("chainId")]
         public Int64? ChainId { get; set; }
     
         /// <summary>
         /// Gets or sets PreviewText.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("previewText")]
         public ItemBody PreviewText { get; set; }
     
         /// <summary>
         /// Gets or sets TemplateParameters.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateParameters", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateParameters")]
         public IEnumerable<KeyValuePair> TemplateParameters { get; set; }
     
         /// <summary>
         /// Gets or sets Recipient.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipient", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recipient")]
         public TeamworkNotificationRecipient Recipient { get; set; }
     
     }

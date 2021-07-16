@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified IdentityUserFlowAttribute using POST.
         /// </summary>
         /// <param name="identityUserFlowAttributeToCreate">The IdentityUserFlowAttribute to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityUserFlowAttribute.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlowAttribute> CreateAsync(IdentityUserFlowAttribute identityUserFlowAttributeToCreate);        /// <summary>
-        /// Creates the specified IdentityUserFlowAttribute using POST.
+        System.Threading.Tasks.Task<IdentityUserFlowAttribute> CreateAsync(IdentityUserFlowAttribute identityUserFlowAttributeToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified IdentityUserFlowAttribute using POST and returns a <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object.
         /// </summary>
         /// <param name="identityUserFlowAttributeToCreate">The IdentityUserFlowAttribute to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created IdentityUserFlowAttribute.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlowAttribute> CreateAsync(IdentityUserFlowAttribute identityUserFlowAttributeToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IdentityUserFlowAttribute.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> CreateResponseAsync(IdentityUserFlowAttribute identityUserFlowAttributeToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified IdentityUserFlowAttribute.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified IdentityUserFlowAttribute.
+        /// Deletes the specified IdentityUserFlowAttribute and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IdentityUserFlowAttribute.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlowAttribute> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified IdentityUserFlowAttribute.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentityUserFlowAttribute.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlowAttribute> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IdentityUserFlowAttribute> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified IdentityUserFlowAttribute using PATCH.
+        /// Gets the specified IdentityUserFlowAttribute and returns a <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object.
         /// </summary>
-        /// <param name="identityUserFlowAttributeToUpdate">The IdentityUserFlowAttribute to update.</param>
-        /// <returns>The updated IdentityUserFlowAttribute.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlowAttribute> UpdateAsync(IdentityUserFlowAttribute identityUserFlowAttributeToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IdentityUserFlowAttribute using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IdentityUserFlowAttribute.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlowAttribute> UpdateAsync(IdentityUserFlowAttribute identityUserFlowAttributeToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IdentityUserFlowAttribute> UpdateAsync(IdentityUserFlowAttribute identityUserFlowAttributeToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IdentityUserFlowAttribute using PATCH and returns a <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object.
+        /// </summary>
+        /// <param name="identityUserFlowAttributeToUpdate">The IdentityUserFlowAttribute to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> UpdateResponseAsync(IdentityUserFlowAttribute identityUserFlowAttributeToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IdentityUserFlowAttribute using PUT.
+        /// </summary>
+        /// <param name="identityUserFlowAttributeToUpdate">The IdentityUserFlowAttribute object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IdentityUserFlowAttribute> PutAsync(IdentityUserFlowAttribute identityUserFlowAttributeToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IdentityUserFlowAttribute using PUT and returns a <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object.
+        /// </summary>
+        /// <param name="identityUserFlowAttributeToUpdate">The IdentityUserFlowAttribute object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IdentityUserFlowAttribute}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> PutResponseAsync(IdentityUserFlowAttribute identityUserFlowAttributeToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

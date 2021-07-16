@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ISiteColumnsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<SiteColumnsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<SiteColumnsCollectionPage>))]
     public interface ISiteColumnsCollectionPage : ICollectionPage<ColumnDefinition>
     {
         /// <summary>

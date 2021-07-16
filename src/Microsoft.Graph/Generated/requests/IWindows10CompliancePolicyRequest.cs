@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10CompliancePolicy using POST.
         /// </summary>
         /// <param name="windows10CompliancePolicyToCreate">The Windows10CompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10CompliancePolicy.</returns>
-        System.Threading.Tasks.Task<Windows10CompliancePolicy> CreateAsync(Windows10CompliancePolicy windows10CompliancePolicyToCreate);        /// <summary>
-        /// Creates the specified Windows10CompliancePolicy using POST.
+        System.Threading.Tasks.Task<Windows10CompliancePolicy> CreateAsync(Windows10CompliancePolicy windows10CompliancePolicyToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Windows10CompliancePolicy using POST and returns a <see cref="GraphResponse{Windows10CompliancePolicy}"/> object.
         /// </summary>
         /// <param name="windows10CompliancePolicyToCreate">The Windows10CompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Windows10CompliancePolicy.</returns>
-        System.Threading.Tasks.Task<Windows10CompliancePolicy> CreateAsync(Windows10CompliancePolicy windows10CompliancePolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Windows10CompliancePolicy.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Windows10CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CompliancePolicy>> CreateResponseAsync(Windows10CompliancePolicy windows10CompliancePolicyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows10CompliancePolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Windows10CompliancePolicy.
+        /// Deletes the specified Windows10CompliancePolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Windows10CompliancePolicy.</returns>
-        System.Threading.Tasks.Task<Windows10CompliancePolicy> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows10CompliancePolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10CompliancePolicy.</returns>
-        System.Threading.Tasks.Task<Windows10CompliancePolicy> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Windows10CompliancePolicy> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Windows10CompliancePolicy using PATCH.
+        /// Gets the specified Windows10CompliancePolicy and returns a <see cref="GraphResponse{Windows10CompliancePolicy}"/> object.
         /// </summary>
-        /// <param name="windows10CompliancePolicyToUpdate">The Windows10CompliancePolicy to update.</param>
-        /// <returns>The updated Windows10CompliancePolicy.</returns>
-        System.Threading.Tasks.Task<Windows10CompliancePolicy> UpdateAsync(Windows10CompliancePolicy windows10CompliancePolicyToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10CompliancePolicy using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10CompliancePolicy.</returns>
-        System.Threading.Tasks.Task<Windows10CompliancePolicy> UpdateAsync(Windows10CompliancePolicy windows10CompliancePolicyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Windows10CompliancePolicy> UpdateAsync(Windows10CompliancePolicy windows10CompliancePolicyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Windows10CompliancePolicy using PATCH and returns a <see cref="GraphResponse{Windows10CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows10CompliancePolicyToUpdate">The Windows10CompliancePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CompliancePolicy>> UpdateResponseAsync(Windows10CompliancePolicy windows10CompliancePolicyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Windows10CompliancePolicy using PUT.
+        /// </summary>
+        /// <param name="windows10CompliancePolicyToUpdate">The Windows10CompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Windows10CompliancePolicy> PutAsync(Windows10CompliancePolicy windows10CompliancePolicyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Windows10CompliancePolicy using PUT and returns a <see cref="GraphResponse{Windows10CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows10CompliancePolicyToUpdate">The Windows10CompliancePolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Windows10CompliancePolicy}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CompliancePolicy>> PutResponseAsync(Windows10CompliancePolicy windows10CompliancePolicyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

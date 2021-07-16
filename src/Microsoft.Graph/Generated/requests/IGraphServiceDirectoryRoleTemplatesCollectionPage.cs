@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IGraphServiceDirectoryRoleTemplatesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<GraphServiceDirectoryRoleTemplatesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<GraphServiceDirectoryRoleTemplatesCollectionPage>))]
     public interface IGraphServiceDirectoryRoleTemplatesCollectionPage : ICollectionPage<DirectoryRoleTemplate>
     {
         /// <summary>

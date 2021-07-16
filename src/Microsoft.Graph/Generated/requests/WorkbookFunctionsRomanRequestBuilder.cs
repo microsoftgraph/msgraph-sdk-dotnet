@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsRomanRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken number,
-            Newtonsoft.Json.Linq.JToken form)
+            System.Text.Json.JsonDocument number,
+            System.Text.Json.JsonDocument form)
             : base(requestUrl, client)
         {
             this.SetParameter("number", number, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("number"))
             {
-                request.RequestBody.Number = this.GetParameter<Newtonsoft.Json.Linq.JToken>("number");
+                request.RequestBody.Number = this.GetParameter<System.Text.Json.JsonDocument>("number");
             }
 
             if (this.HasParameter("form"))
             {
-                request.RequestBody.Form = this.GetParameter<Newtonsoft.Json.Linq.JToken>("form");
+                request.RequestBody.Form = this.GetParameter<System.Text.Json.JsonDocument>("form");
             }
 
             return request;

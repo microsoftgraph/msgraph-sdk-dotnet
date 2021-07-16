@@ -12,50 +12,48 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed Android Lob App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedAndroidLobApp : ManagedMobileLobApp
     {
     
-		///<summary>
-		/// The ManagedAndroidLobApp constructor
-		///</summary>
+        ///<summary>
+        /// The ManagedAndroidLobApp constructor
+        ///</summary>
         public ManagedAndroidLobApp()
         {
             this.ODataType = "microsoft.graph.managedAndroidLobApp";
         }
-	
+
         /// <summary>
         /// Gets or sets minimum supported operating system.
         /// The value for the minimum applicable operating system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumSupportedOperatingSystem")]
         public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets package id.
         /// The package identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("packageId")]
         public string PackageId { get; set; }
     
         /// <summary>
         /// Gets or sets version code.
         /// The version code of managed Android Line of Business (LoB) app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("versionCode")]
         public string VersionCode { get; set; }
     
         /// <summary>
         /// Gets or sets version name.
         /// The version name of managed Android Line of Business (LoB) app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("versionName")]
         public string VersionName { get; set; }
     
     }

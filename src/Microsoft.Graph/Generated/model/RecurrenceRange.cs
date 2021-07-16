@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RecurrenceRange.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RecurrenceRange>))]
     public partial class RecurrenceRange
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RecurrenceRange"/> class.
-        /// </summary>
-        public RecurrenceRange()
-        {
-            this.ODataType = "microsoft.graph.recurrenceRange";
-        }
 
         /// <summary>
         /// Gets or sets endDate.
         /// The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endDate")]
         public Date EndDate { get; set; }
     
         /// <summary>
         /// Gets or sets numberOfOccurrences.
         /// The number of times to repeat the event. Required and must be positive if type is numbered.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberOfOccurrences", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("numberOfOccurrences")]
         public Int32? NumberOfOccurrences { get; set; }
     
         /// <summary>
         /// Gets or sets recurrenceTimeZone.
         /// Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceTimeZone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recurrenceTimeZone")]
         public string RecurrenceTimeZone { get; set; }
     
         /// <summary>
         /// Gets or sets startDate.
         /// The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDate")]
         public Date StartDate { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// The recurrence range. Possible values are: endDate, noEnd, numbered. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public RecurrenceRangeType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EdgeSearchEngineCustom.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EdgeSearchEngineCustom : EdgeSearchEngineBase
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets edgeSearchEngineOpenSearchXmlUrl.
         /// Points to a https link containing the OpenSearch xml file that contains, at minimum, the short name and the URL to the search Engine.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeSearchEngineOpenSearchXmlUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("edgeSearchEngineOpenSearchXmlUrl")]
         public string EdgeSearchEngineOpenSearchXmlUrl { get; set; }
     
     }

@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookChartSetPositionRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken startCell,
-            Newtonsoft.Json.Linq.JToken endCell)
+            System.Text.Json.JsonDocument startCell,
+            System.Text.Json.JsonDocument endCell)
             : base(requestUrl, client)
         {
             this.SetParameter("startCell", startCell, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("startCell"))
             {
-                request.RequestBody.StartCell = this.GetParameter<Newtonsoft.Json.Linq.JToken>("startCell");
+                request.RequestBody.StartCell = this.GetParameter<System.Text.Json.JsonDocument>("startCell");
             }
 
             if (this.HasParameter("endCell"))
             {
-                request.RequestBody.EndCell = this.GetParameter<Newtonsoft.Json.Linq.JToken>("endCell");
+                request.RequestBody.EndCell = this.GetParameter<System.Text.Json.JsonDocument>("endCell");
             }
 
             return request;

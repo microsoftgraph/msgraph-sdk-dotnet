@@ -12,57 +12,55 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Endpoint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Endpoint : DirectoryObject
     {
     
-		///<summary>
-		/// The Endpoint constructor
-		///</summary>
+        ///<summary>
+        /// The Endpoint constructor
+        ///</summary>
         public Endpoint()
         {
             this.ODataType = "microsoft.graph.endpoint";
         }
-	
+
         /// <summary>
         /// Gets or sets capability.
         /// Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "capability", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("capability")]
         public string Capability { get; set; }
     
         /// <summary>
         /// Gets or sets provider id.
         /// Application id of the publishing underlying service. Not nullable. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("providerId")]
         public string ProviderId { get; set; }
     
         /// <summary>
         /// Gets or sets provider name.
         /// Name of the publishing underlying service. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("providerName")]
         public string ProviderName { get; set; }
     
         /// <summary>
         /// Gets or sets provider resource id.
         /// For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerResourceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("providerResourceId")]
         public string ProviderResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets uri.
         /// URL of the published resource. Not nullable. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uri", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uri")]
         public string Uri { get; set; }
     
     }

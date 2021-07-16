@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type OptionalClaims.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<OptionalClaims>))]
     public partial class OptionalClaims
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OptionalClaims"/> class.
-        /// </summary>
-        public OptionalClaims()
-        {
-            this.ODataType = "microsoft.graph.optionalClaims";
-        }
 
         /// <summary>
         /// Gets or sets accessToken.
         /// The optional claims returned in the JWT access token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessToken", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessToken")]
         public IEnumerable<OptionalClaim> AccessToken { get; set; }
     
         /// <summary>
         /// Gets or sets idToken.
         /// The optional claims returned in the JWT ID token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "idToken", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("idToken")]
         public IEnumerable<OptionalClaim> IdToken { get; set; }
     
         /// <summary>
         /// Gets or sets saml2Token.
         /// The optional claims returned in the SAML token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "saml2Token", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("saml2Token")]
         public IEnumerable<OptionalClaim> Saml2Token { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

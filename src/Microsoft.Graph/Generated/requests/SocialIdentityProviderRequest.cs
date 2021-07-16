@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified SocialIdentityProvider using POST.
         /// </summary>
         /// <param name="socialIdentityProviderToCreate">The SocialIdentityProvider to create.</param>
-        /// <returns>The created SocialIdentityProvider.</returns>
-        public System.Threading.Tasks.Task<SocialIdentityProvider> CreateAsync(SocialIdentityProvider socialIdentityProviderToCreate)
-        {
-            return this.CreateAsync(socialIdentityProviderToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SocialIdentityProvider using POST.
-        /// </summary>
-        /// <param name="socialIdentityProviderToCreate">The SocialIdentityProvider to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SocialIdentityProvider.</returns>
-        public async System.Threading.Tasks.Task<SocialIdentityProvider> CreateAsync(SocialIdentityProvider socialIdentityProviderToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SocialIdentityProvider> CreateAsync(SocialIdentityProvider socialIdentityProviderToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<SocialIdentityProvider>(socialIdentityProviderToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified SocialIdentityProvider.
+        /// Creates the specified SocialIdentityProvider using POST and returns a <see cref="GraphResponse{SocialIdentityProvider}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="socialIdentityProviderToCreate">The SocialIdentityProvider to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SocialIdentityProvider}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SocialIdentityProvider>> CreateResponseAsync(SocialIdentityProvider socialIdentityProviderToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SocialIdentityProvider>(socialIdentityProviderToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<SocialIdentityProvider>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified SocialIdentityProvider.
+        /// Deletes the specified SocialIdentityProvider and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SocialIdentityProvider.</returns>
-        public System.Threading.Tasks.Task<SocialIdentityProvider> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SocialIdentityProvider.</returns>
-        public async System.Threading.Tasks.Task<SocialIdentityProvider> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SocialIdentityProvider> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<SocialIdentityProvider>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified SocialIdentityProvider using PATCH.
+        /// Gets the specified SocialIdentityProvider and returns a <see cref="GraphResponse{SocialIdentityProvider}"/> object.
         /// </summary>
-        /// <param name="socialIdentityProviderToUpdate">The SocialIdentityProvider to update.</param>
-        /// <returns>The updated SocialIdentityProvider.</returns>
-        public System.Threading.Tasks.Task<SocialIdentityProvider> UpdateAsync(SocialIdentityProvider socialIdentityProviderToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SocialIdentityProvider}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SocialIdentityProvider>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(socialIdentityProviderToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SocialIdentityProvider>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SocialIdentityProvider.</returns>
-        public async System.Threading.Tasks.Task<SocialIdentityProvider> UpdateAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SocialIdentityProvider> UpdateAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken = default)
         {
-			if (socialIdentityProviderToUpdate.AdditionalData != null)
-			{
-				if (socialIdentityProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					socialIdentityProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, socialIdentityProviderToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (socialIdentityProviderToUpdate.AdditionalData != null)
-            {
-                if (socialIdentityProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    socialIdentityProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, socialIdentityProviderToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<SocialIdentityProvider>(socialIdentityProviderToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SocialIdentityProvider using PATCH and returns a <see cref="GraphResponse{SocialIdentityProvider}"/> object.
+        /// </summary>
+        /// <param name="socialIdentityProviderToUpdate">The SocialIdentityProvider to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SocialIdentityProvider}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SocialIdentityProvider>> UpdateResponseAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<SocialIdentityProvider>(socialIdentityProviderToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified SocialIdentityProvider using PUT.
+        /// </summary>
+        /// <param name="socialIdentityProviderToUpdate">The SocialIdentityProvider object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SocialIdentityProvider> PutAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SocialIdentityProvider>(socialIdentityProviderToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SocialIdentityProvider using PUT and returns a <see cref="GraphResponse{SocialIdentityProvider}"/> object.
+        /// </summary>
+        /// <param name="socialIdentityProviderToUpdate">The SocialIdentityProvider object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SocialIdentityProvider}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SocialIdentityProvider>> PutResponseAsync(SocialIdentityProvider socialIdentityProviderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SocialIdentityProvider>(socialIdentityProviderToUpdate, cancellationToken);
         }
 
         /// <summary>

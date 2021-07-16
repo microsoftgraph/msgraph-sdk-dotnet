@@ -12,57 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Targeted Managed App Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TargetedManagedAppConfiguration : ManagedAppConfiguration
     {
     
-		///<summary>
-		/// The TargetedManagedAppConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The TargetedManagedAppConfiguration constructor
+        ///</summary>
         public TargetedManagedAppConfiguration()
         {
             this.ODataType = "microsoft.graph.targetedManagedAppConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets deployed app count.
         /// Count of apps to which the current policy is deployed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployedAppCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deployedAppCount")]
         public Int32? DeployedAppCount { get; set; }
     
         /// <summary>
         /// Gets or sets is assigned.
         /// Indicates if the policy is deployed to any inclusion groups or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAssigned", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isAssigned")]
         public bool? IsAssigned { get; set; }
     
         /// <summary>
         /// Gets or sets apps.
         /// List of apps to which the policy is deployed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("apps")]
         public ITargetedManagedAppConfigurationAppsCollectionPage Apps { get; set; }
+
+        /// <summary>
+        /// Gets or sets appsNextLink.
+        /// </summary>
+        [JsonPropertyName("apps@odata.nextLink")]
+        public string AppsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public ITargetedManagedAppConfigurationAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets deployment summary.
         /// Navigation property to deployment summary of the configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deploymentSummary")]
         public ManagedAppPolicyDeploymentSummary DeploymentSummary { get; set; }
     
     }

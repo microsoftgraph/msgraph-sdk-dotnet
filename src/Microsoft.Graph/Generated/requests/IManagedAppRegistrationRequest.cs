@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedAppRegistration using POST.
         /// </summary>
         /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate);        /// <summary>
-        /// Creates the specified ManagedAppRegistration using POST.
+        System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ManagedAppRegistration using POST and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
         /// </summary>
         /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ManagedAppRegistration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> CreateResponseAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ManagedAppRegistration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ManagedAppRegistration.
+        /// Deletes the specified ManagedAppRegistration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<ManagedAppRegistration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ManagedAppRegistration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<ManagedAppRegistration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagedAppRegistration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ManagedAppRegistration using PATCH.
+        /// Gets the specified ManagedAppRegistration and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
         /// </summary>
-        /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration to update.</param>
-        /// <returns>The updated ManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<ManagedAppRegistration> UpdateAsync(ManagedAppRegistration managedAppRegistrationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ManagedAppRegistration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<ManagedAppRegistration> UpdateAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagedAppRegistration> UpdateAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ManagedAppRegistration using PATCH and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> UpdateResponseAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ManagedAppRegistration using PUT.
+        /// </summary>
+        /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ManagedAppRegistration> PutAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ManagedAppRegistration using PUT and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ManagedAppRegistration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> PutResponseAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedApp>))]
     public partial class ManagedApp : MobileApp
     {
     
-		///<summary>
-		/// The internal ManagedApp constructor
-		///</summary>
+        ///<summary>
+        /// The internal ManagedApp constructor
+        ///</summary>
         protected internal ManagedApp()
         {
             // Don't allow initialization of abstract entity types
@@ -34,14 +33,14 @@ namespace Microsoft.Graph
         /// Gets or sets app availability.
         /// The Application's availability. Possible values are: global, lineOfBusiness.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appAvailability", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appAvailability")]
         public ManagedAppAvailability? AppAvailability { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// The Application's version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
     }

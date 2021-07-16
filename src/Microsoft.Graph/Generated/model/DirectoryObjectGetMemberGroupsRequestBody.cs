@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DirectoryObjectGetMemberGroupsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DirectoryObjectGetMemberGroupsRequestBody
     {
     
         /// <summary>
         /// Gets or sets SecurityEnabledOnly.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityEnabledOnly", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("securityEnabledOnly")]
         public bool? SecurityEnabledOnly { get; set; }
     
     }

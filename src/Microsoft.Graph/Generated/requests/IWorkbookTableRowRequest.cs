@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookTableRow using POST.
         /// </summary>
         /// <param name="workbookTableRowToCreate">The WorkbookTableRow to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookTableRow.</returns>
-        System.Threading.Tasks.Task<WorkbookTableRow> CreateAsync(WorkbookTableRow workbookTableRowToCreate);        /// <summary>
-        /// Creates the specified WorkbookTableRow using POST.
+        System.Threading.Tasks.Task<WorkbookTableRow> CreateAsync(WorkbookTableRow workbookTableRowToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified WorkbookTableRow using POST and returns a <see cref="GraphResponse{WorkbookTableRow}"/> object.
         /// </summary>
         /// <param name="workbookTableRowToCreate">The WorkbookTableRow to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WorkbookTableRow.</returns>
-        System.Threading.Tasks.Task<WorkbookTableRow> CreateAsync(WorkbookTableRow workbookTableRowToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookTableRow.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WorkbookTableRow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableRow>> CreateResponseAsync(WorkbookTableRow workbookTableRowToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WorkbookTableRow.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified WorkbookTableRow.
+        /// Deletes the specified WorkbookTableRow and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookTableRow.</returns>
-        System.Threading.Tasks.Task<WorkbookTableRow> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WorkbookTableRow.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookTableRow.</returns>
-        System.Threading.Tasks.Task<WorkbookTableRow> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookTableRow> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified WorkbookTableRow using PATCH.
+        /// Gets the specified WorkbookTableRow and returns a <see cref="GraphResponse{WorkbookTableRow}"/> object.
         /// </summary>
-        /// <param name="workbookTableRowToUpdate">The WorkbookTableRow to update.</param>
-        /// <returns>The updated WorkbookTableRow.</returns>
-        System.Threading.Tasks.Task<WorkbookTableRow> UpdateAsync(WorkbookTableRow workbookTableRowToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableRow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableRow>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkbookTableRow using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookTableRow.</returns>
-        System.Threading.Tasks.Task<WorkbookTableRow> UpdateAsync(WorkbookTableRow workbookTableRowToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookTableRow> UpdateAsync(WorkbookTableRow workbookTableRowToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookTableRow using PATCH and returns a <see cref="GraphResponse{WorkbookTableRow}"/> object.
+        /// </summary>
+        /// <param name="workbookTableRowToUpdate">The WorkbookTableRow to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableRow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableRow>> UpdateResponseAsync(WorkbookTableRow workbookTableRowToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookTableRow using PUT.
+        /// </summary>
+        /// <param name="workbookTableRowToUpdate">The WorkbookTableRow object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkbookTableRow> PutAsync(WorkbookTableRow workbookTableRowToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookTableRow using PUT and returns a <see cref="GraphResponse{WorkbookTableRow}"/> object.
+        /// </summary>
+        /// <param name="workbookTableRowToUpdate">The WorkbookTableRow object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkbookTableRow}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableRow>> PutResponseAsync(WorkbookTableRow workbookTableRowToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

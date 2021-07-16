@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDriveItemThumbnailsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ThumbnailSet to the collection via POST.
-        /// </summary>
-        /// <param name="thumbnailSet">The ThumbnailSet to add.</param>
-        /// <returns>The created ThumbnailSet.</returns>
-        System.Threading.Tasks.Task<ThumbnailSet> AddAsync(ThumbnailSet thumbnailSet);
-
         /// <summary>
         /// Adds the specified ThumbnailSet to the collection via POST.
         /// </summary>
         /// <param name="thumbnailSet">The ThumbnailSet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ThumbnailSet.</returns>
-        System.Threading.Tasks.Task<ThumbnailSet> AddAsync(ThumbnailSet thumbnailSet, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ThumbnailSet> AddAsync(ThumbnailSet thumbnailSet, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ThumbnailSet to the collection via POST and returns a <see cref="GraphResponse{ThumbnailSet}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDriveItemThumbnailsCollectionPage> GetAsync();
+        /// <param name="thumbnailSet">The ThumbnailSet to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> AddResponseAsync(ThumbnailSet thumbnailSet, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDriveItemThumbnailsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDriveItemThumbnailsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemThumbnailsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItemThumbnailsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItemThumbnailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified CloudCommunications using POST.
         /// </summary>
         /// <param name="cloudCommunicationsToCreate">The CloudCommunications to create.</param>
-        /// <returns>The created CloudCommunications.</returns>
-        public System.Threading.Tasks.Task<CloudCommunications> CreateAsync(CloudCommunications cloudCommunicationsToCreate)
-        {
-            return this.CreateAsync(cloudCommunicationsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CloudCommunications using POST.
-        /// </summary>
-        /// <param name="cloudCommunicationsToCreate">The CloudCommunications to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudCommunications.</returns>
-        public async System.Threading.Tasks.Task<CloudCommunications> CreateAsync(CloudCommunications cloudCommunicationsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CloudCommunications> CreateAsync(CloudCommunications cloudCommunicationsToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<CloudCommunications>(cloudCommunicationsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified CloudCommunications.
+        /// Creates the specified CloudCommunications using POST and returns a <see cref="GraphResponse{CloudCommunications}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="cloudCommunicationsToCreate">The CloudCommunications to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudCommunications}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudCommunications>> CreateResponseAsync(CloudCommunications cloudCommunicationsToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<CloudCommunications>(cloudCommunicationsToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<CloudCommunications>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified CloudCommunications.
+        /// Deletes the specified CloudCommunications and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The CloudCommunications.</returns>
-        public System.Threading.Tasks.Task<CloudCommunications> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CloudCommunications.</returns>
-        public async System.Threading.Tasks.Task<CloudCommunications> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CloudCommunications> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<CloudCommunications>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified CloudCommunications using PATCH.
+        /// Gets the specified CloudCommunications and returns a <see cref="GraphResponse{CloudCommunications}"/> object.
         /// </summary>
-        /// <param name="cloudCommunicationsToUpdate">The CloudCommunications to update.</param>
-        /// <returns>The updated CloudCommunications.</returns>
-        public System.Threading.Tasks.Task<CloudCommunications> UpdateAsync(CloudCommunications cloudCommunicationsToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudCommunications}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudCommunications>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(cloudCommunicationsToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<CloudCommunications>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CloudCommunications.</returns>
-        public async System.Threading.Tasks.Task<CloudCommunications> UpdateAsync(CloudCommunications cloudCommunicationsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CloudCommunications> UpdateAsync(CloudCommunications cloudCommunicationsToUpdate, CancellationToken cancellationToken = default)
         {
-			if (cloudCommunicationsToUpdate.AdditionalData != null)
-			{
-				if (cloudCommunicationsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					cloudCommunicationsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cloudCommunicationsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (cloudCommunicationsToUpdate.AdditionalData != null)
-            {
-                if (cloudCommunicationsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    cloudCommunicationsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cloudCommunicationsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<CloudCommunications>(cloudCommunicationsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CloudCommunications using PATCH and returns a <see cref="GraphResponse{CloudCommunications}"/> object.
+        /// </summary>
+        /// <param name="cloudCommunicationsToUpdate">The CloudCommunications to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CloudCommunications}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudCommunications>> UpdateResponseAsync(CloudCommunications cloudCommunicationsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<CloudCommunications>(cloudCommunicationsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified CloudCommunications using PUT.
+        /// </summary>
+        /// <param name="cloudCommunicationsToUpdate">The CloudCommunications object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<CloudCommunications> PutAsync(CloudCommunications cloudCommunicationsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<CloudCommunications>(cloudCommunicationsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CloudCommunications using PUT and returns a <see cref="GraphResponse{CloudCommunications}"/> object.
+        /// </summary>
+        /// <param name="cloudCommunicationsToUpdate">The CloudCommunications object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{CloudCommunications}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudCommunications>> PutResponseAsync(CloudCommunications cloudCommunicationsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<CloudCommunications>(cloudCommunicationsToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(CloudCommunications cloudCommunicationsToInitialize)
         {
 
-            if (cloudCommunicationsToInitialize != null && cloudCommunicationsToInitialize.AdditionalData != null)
+            if (cloudCommunicationsToInitialize != null)
             {
-
                 if (cloudCommunicationsToInitialize.Calls != null && cloudCommunicationsToInitialize.Calls.CurrentPage != null)
                 {
+                    cloudCommunicationsToInitialize.Calls.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.CallsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.Calls.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("calls@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        cloudCommunicationsToInitialize.Calls.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (cloudCommunicationsToInitialize.CallRecords != null && cloudCommunicationsToInitialize.CallRecords.CurrentPage != null)
                 {
+                    cloudCommunicationsToInitialize.CallRecords.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.CallRecordsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.CallRecords.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("callRecords@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        cloudCommunicationsToInitialize.CallRecords.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (cloudCommunicationsToInitialize.OnlineMeetings != null && cloudCommunicationsToInitialize.OnlineMeetings.CurrentPage != null)
                 {
+                    cloudCommunicationsToInitialize.OnlineMeetings.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.OnlineMeetingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.OnlineMeetings.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        cloudCommunicationsToInitialize.OnlineMeetings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (cloudCommunicationsToInitialize.Presences != null && cloudCommunicationsToInitialize.Presences.CurrentPage != null)
                 {
+                    cloudCommunicationsToInitialize.Presences.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.PresencesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.Presences.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("presences@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        cloudCommunicationsToInitialize.Presences.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

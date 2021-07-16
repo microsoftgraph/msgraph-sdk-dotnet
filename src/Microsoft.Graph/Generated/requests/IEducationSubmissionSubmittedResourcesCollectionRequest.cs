@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IEducationSubmissionSubmittedResourcesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified EducationSubmissionResource to the collection via POST.
-        /// </summary>
-        /// <param name="educationSubmissionResource">The EducationSubmissionResource to add.</param>
-        /// <returns>The created EducationSubmissionResource.</returns>
-        System.Threading.Tasks.Task<EducationSubmissionResource> AddAsync(EducationSubmissionResource educationSubmissionResource);
-
         /// <summary>
         /// Adds the specified EducationSubmissionResource to the collection via POST.
         /// </summary>
         /// <param name="educationSubmissionResource">The EducationSubmissionResource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationSubmissionResource.</returns>
-        System.Threading.Tasks.Task<EducationSubmissionResource> AddAsync(EducationSubmissionResource educationSubmissionResource, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EducationSubmissionResource> AddAsync(EducationSubmissionResource educationSubmissionResource, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified EducationSubmissionResource to the collection via POST and returns a <see cref="GraphResponse{EducationSubmissionResource}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEducationSubmissionSubmittedResourcesCollectionPage> GetAsync();
+        /// <param name="educationSubmissionResource">The EducationSubmissionResource to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSubmissionResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSubmissionResource>> AddResponseAsync(EducationSubmissionResource educationSubmissionResource, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEducationSubmissionSubmittedResourcesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IEducationSubmissionSubmittedResourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EducationSubmissionSubmittedResourcesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSubmissionSubmittedResourcesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSubmissionSubmittedResourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

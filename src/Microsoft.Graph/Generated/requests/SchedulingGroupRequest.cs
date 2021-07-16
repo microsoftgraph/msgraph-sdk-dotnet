@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified SchedulingGroup using POST.
         /// </summary>
         /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
-        /// <returns>The created SchedulingGroup.</returns>
-        public System.Threading.Tasks.Task<SchedulingGroup> CreateAsync(SchedulingGroup schedulingGroupToCreate)
-        {
-            return this.CreateAsync(schedulingGroupToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SchedulingGroup using POST.
-        /// </summary>
-        /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SchedulingGroup.</returns>
-        public async System.Threading.Tasks.Task<SchedulingGroup> CreateAsync(SchedulingGroup schedulingGroupToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SchedulingGroup> CreateAsync(SchedulingGroup schedulingGroupToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<SchedulingGroup>(schedulingGroupToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified SchedulingGroup.
+        /// Creates the specified SchedulingGroup using POST and returns a <see cref="GraphResponse{SchedulingGroup}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> CreateResponseAsync(SchedulingGroup schedulingGroupToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SchedulingGroup>(schedulingGroupToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<SchedulingGroup>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified SchedulingGroup.
+        /// Deletes the specified SchedulingGroup and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SchedulingGroup.</returns>
-        public System.Threading.Tasks.Task<SchedulingGroup> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SchedulingGroup.</returns>
-        public async System.Threading.Tasks.Task<SchedulingGroup> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SchedulingGroup> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<SchedulingGroup>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified SchedulingGroup using PATCH.
+        /// Gets the specified SchedulingGroup and returns a <see cref="GraphResponse{SchedulingGroup}"/> object.
         /// </summary>
-        /// <param name="schedulingGroupToUpdate">The SchedulingGroup to update.</param>
-        /// <returns>The updated SchedulingGroup.</returns>
-        public System.Threading.Tasks.Task<SchedulingGroup> UpdateAsync(SchedulingGroup schedulingGroupToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(schedulingGroupToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SchedulingGroup>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SchedulingGroup.</returns>
-        public async System.Threading.Tasks.Task<SchedulingGroup> UpdateAsync(SchedulingGroup schedulingGroupToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SchedulingGroup> UpdateAsync(SchedulingGroup schedulingGroupToUpdate, CancellationToken cancellationToken = default)
         {
-			if (schedulingGroupToUpdate.AdditionalData != null)
-			{
-				if (schedulingGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					schedulingGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, schedulingGroupToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (schedulingGroupToUpdate.AdditionalData != null)
-            {
-                if (schedulingGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    schedulingGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, schedulingGroupToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<SchedulingGroup>(schedulingGroupToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SchedulingGroup using PATCH and returns a <see cref="GraphResponse{SchedulingGroup}"/> object.
+        /// </summary>
+        /// <param name="schedulingGroupToUpdate">The SchedulingGroup to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> UpdateResponseAsync(SchedulingGroup schedulingGroupToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<SchedulingGroup>(schedulingGroupToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified SchedulingGroup using PUT.
+        /// </summary>
+        /// <param name="schedulingGroupToUpdate">The SchedulingGroup object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SchedulingGroup> PutAsync(SchedulingGroup schedulingGroupToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SchedulingGroup>(schedulingGroupToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SchedulingGroup using PUT and returns a <see cref="GraphResponse{SchedulingGroup}"/> object.
+        /// </summary>
+        /// <param name="schedulingGroupToUpdate">The SchedulingGroup object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SchedulingGroup}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> PutResponseAsync(SchedulingGroup schedulingGroupToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SchedulingGroup>(schedulingGroupToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -12,57 +12,47 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Telecom Expense Management Partner.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TelecomExpenseManagementPartner : Entity
     {
     
-		///<summary>
-		/// The TelecomExpenseManagementPartner constructor
-		///</summary>
-        public TelecomExpenseManagementPartner()
-        {
-            this.ODataType = "microsoft.graph.telecomExpenseManagementPartner";
-        }
-	
         /// <summary>
         /// Gets or sets app authorized.
         /// Whether the partner's AAD app has been authorized to access Intune.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appAuthorized", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appAuthorized")]
         public bool? AppAuthorized { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Display name of the TEM partner.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets enabled.
         /// Whether Intune's connection to the TEM service is currently enabled or disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
     
         /// <summary>
         /// Gets or sets last connection date time.
         /// Timestamp of the last request sent to Intune by the TEM partner.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastConnectionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastConnectionDateTime")]
         public DateTimeOffset? LastConnectionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets url.
         /// URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("url")]
         public string Url { get; set; }
     
     }

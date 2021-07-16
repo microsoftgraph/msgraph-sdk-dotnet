@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified BuiltInIdentityProvider using POST.
         /// </summary>
         /// <param name="builtInIdentityProviderToCreate">The BuiltInIdentityProvider to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BuiltInIdentityProvider.</returns>
-        System.Threading.Tasks.Task<BuiltInIdentityProvider> CreateAsync(BuiltInIdentityProvider builtInIdentityProviderToCreate);        /// <summary>
-        /// Creates the specified BuiltInIdentityProvider using POST.
+        System.Threading.Tasks.Task<BuiltInIdentityProvider> CreateAsync(BuiltInIdentityProvider builtInIdentityProviderToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified BuiltInIdentityProvider using POST and returns a <see cref="GraphResponse{BuiltInIdentityProvider}"/> object.
         /// </summary>
         /// <param name="builtInIdentityProviderToCreate">The BuiltInIdentityProvider to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created BuiltInIdentityProvider.</returns>
-        System.Threading.Tasks.Task<BuiltInIdentityProvider> CreateAsync(BuiltInIdentityProvider builtInIdentityProviderToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified BuiltInIdentityProvider.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{BuiltInIdentityProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BuiltInIdentityProvider>> CreateResponseAsync(BuiltInIdentityProvider builtInIdentityProviderToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified BuiltInIdentityProvider.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified BuiltInIdentityProvider.
+        /// Deletes the specified BuiltInIdentityProvider and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The BuiltInIdentityProvider.</returns>
-        System.Threading.Tasks.Task<BuiltInIdentityProvider> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified BuiltInIdentityProvider.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BuiltInIdentityProvider.</returns>
-        System.Threading.Tasks.Task<BuiltInIdentityProvider> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<BuiltInIdentityProvider> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified BuiltInIdentityProvider using PATCH.
+        /// Gets the specified BuiltInIdentityProvider and returns a <see cref="GraphResponse{BuiltInIdentityProvider}"/> object.
         /// </summary>
-        /// <param name="builtInIdentityProviderToUpdate">The BuiltInIdentityProvider to update.</param>
-        /// <returns>The updated BuiltInIdentityProvider.</returns>
-        System.Threading.Tasks.Task<BuiltInIdentityProvider> UpdateAsync(BuiltInIdentityProvider builtInIdentityProviderToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BuiltInIdentityProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BuiltInIdentityProvider>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified BuiltInIdentityProvider using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BuiltInIdentityProvider.</returns>
-        System.Threading.Tasks.Task<BuiltInIdentityProvider> UpdateAsync(BuiltInIdentityProvider builtInIdentityProviderToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<BuiltInIdentityProvider> UpdateAsync(BuiltInIdentityProvider builtInIdentityProviderToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified BuiltInIdentityProvider using PATCH and returns a <see cref="GraphResponse{BuiltInIdentityProvider}"/> object.
+        /// </summary>
+        /// <param name="builtInIdentityProviderToUpdate">The BuiltInIdentityProvider to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BuiltInIdentityProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BuiltInIdentityProvider>> UpdateResponseAsync(BuiltInIdentityProvider builtInIdentityProviderToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified BuiltInIdentityProvider using PUT.
+        /// </summary>
+        /// <param name="builtInIdentityProviderToUpdate">The BuiltInIdentityProvider object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<BuiltInIdentityProvider> PutAsync(BuiltInIdentityProvider builtInIdentityProviderToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified BuiltInIdentityProvider using PUT and returns a <see cref="GraphResponse{BuiltInIdentityProvider}"/> object.
+        /// </summary>
+        /// <param name="builtInIdentityProviderToUpdate">The BuiltInIdentityProvider object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{BuiltInIdentityProvider}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BuiltInIdentityProvider>> PutResponseAsync(BuiltInIdentityProvider builtInIdentityProviderToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

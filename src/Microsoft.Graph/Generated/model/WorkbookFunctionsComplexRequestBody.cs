@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsComplexRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsComplexRequestBody
     {
     
         /// <summary>
         /// Gets or sets RealNum.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "realNum", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken RealNum { get; set; }
+        [JsonPropertyName("realNum")]
+        public System.Text.Json.JsonDocument RealNum { get; set; }
     
         /// <summary>
         /// Gets or sets INum.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iNum", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken INum { get; set; }
+        [JsonPropertyName("iNum")]
+        public System.Text.Json.JsonDocument INum { get; set; }
     
         /// <summary>
         /// Gets or sets Suffix.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "suffix", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Suffix { get; set; }
+        [JsonPropertyName("suffix")]
+        public System.Text.Json.JsonDocument Suffix { get; set; }
     
     }
 }

@@ -12,54 +12,45 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type File.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<File>))]
     public partial class File
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="File"/> class.
-        /// </summary>
-        public File()
-        {
-            this.ODataType = "microsoft.graph.file";
-        }
 
         /// <summary>
         /// Gets or sets hashes.
         /// Hashes of the file's binary content, if available. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hashes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hashes")]
         public Hashes Hashes { get; set; }
     
         /// <summary>
         /// Gets or sets mimeType.
         /// The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mimeType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mimeType")]
         public string MimeType { get; set; }
     
         /// <summary>
         /// Gets or sets processingMetadata.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingMetadata", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("processingMetadata")]
         public bool? ProcessingMetadata { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

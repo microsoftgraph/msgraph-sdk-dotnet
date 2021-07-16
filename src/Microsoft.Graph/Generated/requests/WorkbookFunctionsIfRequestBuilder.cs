@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsIfRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken logicalTest,
-            Newtonsoft.Json.Linq.JToken valueIfTrue,
-            Newtonsoft.Json.Linq.JToken valueIfFalse)
+            System.Text.Json.JsonDocument logicalTest,
+            System.Text.Json.JsonDocument valueIfTrue,
+            System.Text.Json.JsonDocument valueIfFalse)
             : base(requestUrl, client)
         {
             this.SetParameter("logicalTest", logicalTest, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("logicalTest"))
             {
-                request.RequestBody.LogicalTest = this.GetParameter<Newtonsoft.Json.Linq.JToken>("logicalTest");
+                request.RequestBody.LogicalTest = this.GetParameter<System.Text.Json.JsonDocument>("logicalTest");
             }
 
             if (this.HasParameter("valueIfTrue"))
             {
-                request.RequestBody.ValueIfTrue = this.GetParameter<Newtonsoft.Json.Linq.JToken>("valueIfTrue");
+                request.RequestBody.ValueIfTrue = this.GetParameter<System.Text.Json.JsonDocument>("valueIfTrue");
             }
 
             if (this.HasParameter("valueIfFalse"))
             {
-                request.RequestBody.ValueIfFalse = this.GetParameter<Newtonsoft.Json.Linq.JToken>("valueIfFalse");
+                request.RequestBody.ValueIfFalse = this.GetParameter<System.Text.Json.JsonDocument>("valueIfFalse");
             }
 
             return request;

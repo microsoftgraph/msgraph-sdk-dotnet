@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsAtan2RequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken xNum,
-            Newtonsoft.Json.Linq.JToken yNum)
+            System.Text.Json.JsonDocument xNum,
+            System.Text.Json.JsonDocument yNum)
             : base(requestUrl, client)
         {
             this.SetParameter("xNum", xNum, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("xNum"))
             {
-                request.RequestBody.XNum = this.GetParameter<Newtonsoft.Json.Linq.JToken>("xNum");
+                request.RequestBody.XNum = this.GetParameter<System.Text.Json.JsonDocument>("xNum");
             }
 
             if (this.HasParameter("yNum"))
             {
-                request.RequestBody.YNum = this.GetParameter<Newtonsoft.Json.Linq.JToken>("yNum");
+                request.RequestBody.YNum = this.GetParameter<System.Text.Json.JsonDocument>("yNum");
             }
 
             return request;

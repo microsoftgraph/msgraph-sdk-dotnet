@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUserConsentRequestFilterByCurrentUserCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<UserConsentRequestFilterByCurrentUserCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<UserConsentRequestFilterByCurrentUserCollectionPage>))]
     public interface IUserConsentRequestFilterByCurrentUserCollectionPage : ICollectionPage<UserConsentRequestObject>
     {
         /// <summary>

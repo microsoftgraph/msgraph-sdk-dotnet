@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified GroupSettingTemplate using POST.
         /// </summary>
         /// <param name="groupSettingTemplateToCreate">The GroupSettingTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupSettingTemplate.</returns>
-        System.Threading.Tasks.Task<GroupSettingTemplate> CreateAsync(GroupSettingTemplate groupSettingTemplateToCreate);        /// <summary>
-        /// Creates the specified GroupSettingTemplate using POST.
+        System.Threading.Tasks.Task<GroupSettingTemplate> CreateAsync(GroupSettingTemplate groupSettingTemplateToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified GroupSettingTemplate using POST and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
         /// </summary>
         /// <param name="groupSettingTemplateToCreate">The GroupSettingTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created GroupSettingTemplate.</returns>
-        System.Threading.Tasks.Task<GroupSettingTemplate> CreateAsync(GroupSettingTemplate groupSettingTemplateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupSettingTemplate.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> CreateResponseAsync(GroupSettingTemplate groupSettingTemplateToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified GroupSettingTemplate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified GroupSettingTemplate.
+        /// Deletes the specified GroupSettingTemplate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The GroupSettingTemplate.</returns>
-        System.Threading.Tasks.Task<GroupSettingTemplate> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified GroupSettingTemplate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupSettingTemplate.</returns>
-        System.Threading.Tasks.Task<GroupSettingTemplate> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GroupSettingTemplate> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified GroupSettingTemplate using PATCH.
+        /// Gets the specified GroupSettingTemplate and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
         /// </summary>
-        /// <param name="groupSettingTemplateToUpdate">The GroupSettingTemplate to update.</param>
-        /// <returns>The updated GroupSettingTemplate.</returns>
-        System.Threading.Tasks.Task<GroupSettingTemplate> UpdateAsync(GroupSettingTemplate groupSettingTemplateToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified GroupSettingTemplate using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupSettingTemplate.</returns>
-        System.Threading.Tasks.Task<GroupSettingTemplate> UpdateAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GroupSettingTemplate> UpdateAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified GroupSettingTemplate using PATCH and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="groupSettingTemplateToUpdate">The GroupSettingTemplate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> UpdateResponseAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified GroupSettingTemplate using PUT.
+        /// </summary>
+        /// <param name="groupSettingTemplateToUpdate">The GroupSettingTemplate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<GroupSettingTemplate> PutAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified GroupSettingTemplate using PUT and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="groupSettingTemplateToUpdate">The GroupSettingTemplate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{GroupSettingTemplate}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> PutResponseAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

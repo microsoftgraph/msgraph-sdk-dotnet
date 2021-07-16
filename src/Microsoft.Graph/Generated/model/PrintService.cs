@@ -12,30 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Print Service.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PrintService : Entity
     {
     
-		///<summary>
-		/// The PrintService constructor
-		///</summary>
-        public PrintService()
-        {
-            this.ODataType = "microsoft.graph.printService";
-        }
-	
         /// <summary>
         /// Gets or sets endpoints.
         /// Endpoints that can be used to access the service. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpoints", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endpoints")]
         public IPrintServiceEndpointsCollectionPage Endpoints { get; set; }
+
+        /// <summary>
+        /// Gets or sets endpointsNextLink.
+        /// </summary>
+        [JsonPropertyName("endpoints@odata.nextLink")]
+        public string EndpointsNextLink { get; set; }
     
     }
 }

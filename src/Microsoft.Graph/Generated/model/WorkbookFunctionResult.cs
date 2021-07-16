@@ -12,35 +12,25 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Function Result.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionResult : Entity
     {
     
-		///<summary>
-		/// The WorkbookFunctionResult constructor
-		///</summary>
-        public WorkbookFunctionResult()
-        {
-            this.ODataType = "microsoft.graph.workbookFunctionResult";
-        }
-	
         /// <summary>
         /// Gets or sets error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("error")]
         public string Error { get; set; }
     
         /// <summary>
         /// Gets or sets value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Value { get; set; }
+        [JsonPropertyName("value")]
+        public System.Text.Json.JsonDocument Value { get; set; }
     
     }
 }

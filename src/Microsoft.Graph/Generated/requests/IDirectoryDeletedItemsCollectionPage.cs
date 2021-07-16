@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDirectoryDeletedItemsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DirectoryDeletedItemsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DirectoryDeletedItemsCollectionPage>))]
     public interface IDirectoryDeletedItemsCollectionPage : ICollectionPage<DirectoryObject>
     {
         /// <summary>

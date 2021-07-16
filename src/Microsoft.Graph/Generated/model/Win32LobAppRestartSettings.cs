@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Win32LobAppRestartSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppRestartSettings>))]
     public partial class Win32LobAppRestartSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Win32LobAppRestartSettings"/> class.
-        /// </summary>
-        public Win32LobAppRestartSettings()
-        {
-            this.ODataType = "microsoft.graph.win32LobAppRestartSettings";
-        }
 
         /// <summary>
         /// Gets or sets countdownDisplayBeforeRestartInMinutes.
         /// The number of minutes before the restart time to display the countdown dialog for pending restarts.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countdownDisplayBeforeRestartInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countdownDisplayBeforeRestartInMinutes")]
         public Int32? CountdownDisplayBeforeRestartInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets gracePeriodInMinutes.
         /// The number of minutes to wait before restarting the device after an app installation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gracePeriodInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("gracePeriodInMinutes")]
         public Int32? GracePeriodInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets restartNotificationSnoozeDurationInMinutes.
         /// The number of minutes to snooze the restart notification dialog when the snooze button is selected.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartNotificationSnoozeDurationInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("restartNotificationSnoozeDurationInMinutes")]
         public Int32? RestartNotificationSnoozeDurationInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

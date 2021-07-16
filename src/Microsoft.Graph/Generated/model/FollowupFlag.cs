@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type FollowupFlag.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<FollowupFlag>))]
     public partial class FollowupFlag
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FollowupFlag"/> class.
-        /// </summary>
-        public FollowupFlag()
-        {
-            this.ODataType = "microsoft.graph.followupFlag";
-        }
 
         /// <summary>
         /// Gets or sets completedDateTime.
         /// The date and time that the follow-up was finished.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completedDateTime")]
         public DateTimeTimeZone CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets dueDateTime.
         /// The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dueDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dueDateTime")]
         public DateTimeTimeZone DueDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets flagStatus.
         /// The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "flagStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("flagStatus")]
         public FollowupFlagStatus? FlagStatus { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
         /// The date and time that the follow-up is to begin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeTimeZone StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         public WorkbookFunctionsSeriesSumRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken x,
-            Newtonsoft.Json.Linq.JToken n,
-            Newtonsoft.Json.Linq.JToken m,
-            Newtonsoft.Json.Linq.JToken coefficients)
+            System.Text.Json.JsonDocument x,
+            System.Text.Json.JsonDocument n,
+            System.Text.Json.JsonDocument m,
+            System.Text.Json.JsonDocument coefficients)
             : base(requestUrl, client)
         {
             this.SetParameter("x", x, true);
@@ -54,22 +54,22 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("x"))
             {
-                request.RequestBody.X = this.GetParameter<Newtonsoft.Json.Linq.JToken>("x");
+                request.RequestBody.X = this.GetParameter<System.Text.Json.JsonDocument>("x");
             }
 
             if (this.HasParameter("n"))
             {
-                request.RequestBody.N = this.GetParameter<Newtonsoft.Json.Linq.JToken>("n");
+                request.RequestBody.N = this.GetParameter<System.Text.Json.JsonDocument>("n");
             }
 
             if (this.HasParameter("m"))
             {
-                request.RequestBody.M = this.GetParameter<Newtonsoft.Json.Linq.JToken>("m");
+                request.RequestBody.M = this.GetParameter<System.Text.Json.JsonDocument>("m");
             }
 
             if (this.HasParameter("coefficients"))
             {
-                request.RequestBody.Coefficients = this.GetParameter<Newtonsoft.Json.Linq.JToken>("coefficients");
+                request.RequestBody.Coefficients = this.GetParameter<System.Text.Json.JsonDocument>("coefficients");
             }
 
             return request;

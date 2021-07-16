@@ -38,117 +38,102 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TeamsTemplate.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsTemplate.</returns>
-        public System.Threading.Tasks.Task<TeamsTemplate> GetAsync()
+        public async System.Threading.Tasks.Task<TeamsTemplate> GetAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<TeamsTemplate>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified TeamsTemplate.
+        /// Gets the specified TeamsTemplate and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The TeamsTemplate.</returns>
-        public async System.Threading.Tasks.Task<TeamsTemplate> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<TeamsTemplate>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<TeamsTemplate>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified TeamsTemplate using POST.
         /// </summary>
         /// <param name="teamsTemplateToCreate">The TeamsTemplate to create.</param>
-        /// <returns>The created TeamsTemplate.</returns>
-        public System.Threading.Tasks.Task<TeamsTemplate> CreateAsync(TeamsTemplate teamsTemplateToCreate)
-        {
-            return this.CreateAsync(teamsTemplateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TeamsTemplate using POST.
-        /// </summary>
-        /// <param name="teamsTemplateToCreate">The TeamsTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsTemplate.</returns>
-        public async System.Threading.Tasks.Task<TeamsTemplate> CreateAsync(TeamsTemplate teamsTemplateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsTemplate> CreateAsync(TeamsTemplate teamsTemplateToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<TeamsTemplate>(teamsTemplateToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified TeamsTemplate using PATCH.
+        /// Creates the specified TeamsTemplate using POST and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
         /// </summary>
-        /// <param name="teamsTemplateToUpdate">The TeamsTemplate to update.</param>
-        /// <returns>The updated TeamsTemplate.</returns>
-        public System.Threading.Tasks.Task<TeamsTemplate> UpdateAsync(TeamsTemplate teamsTemplateToUpdate)
+        /// <param name="teamsTemplateToCreate">The TeamsTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> CreateResponseAsync(TeamsTemplate teamsTemplateToCreate, CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(teamsTemplateToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<TeamsTemplate>(teamsTemplateToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified TeamsTemplate using PATCH.
         /// </summary>
         /// <param name="teamsTemplateToUpdate">The TeamsTemplate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsTemplate.</returns>
-        public async System.Threading.Tasks.Task<TeamsTemplate> UpdateAsync(TeamsTemplate teamsTemplateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsTemplate> UpdateAsync(TeamsTemplate teamsTemplateToUpdate, CancellationToken cancellationToken = default)
         {
-			if (teamsTemplateToUpdate.AdditionalData != null)
-			{
-				if (teamsTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					teamsTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsTemplateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (teamsTemplateToUpdate.AdditionalData != null)
-            {
-                if (teamsTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    teamsTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsTemplateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<TeamsTemplate>(teamsTemplateToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified TeamsTemplate.
+        /// Updates the specified TeamsTemplate using PATCH and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="teamsTemplateToUpdate">The TeamsTemplate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> UpdateResponseAsync(TeamsTemplate teamsTemplateToUpdate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<TeamsTemplate>(teamsTemplateToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified TeamsTemplate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<TeamsTemplate>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified TeamsTemplate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

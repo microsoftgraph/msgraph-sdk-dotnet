@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IChatMessageDeltaCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ChatMessageDeltaCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ChatMessageDeltaCollectionPage>))]
     public interface IChatMessageDeltaCollectionPage : ICollectionPage<ChatMessage>
     {
         /// <summary>

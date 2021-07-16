@@ -12,60 +12,51 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ScoredEmailAddress.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ScoredEmailAddress>))]
     public partial class ScoredEmailAddress
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ScoredEmailAddress"/> class.
-        /// </summary>
-        public ScoredEmailAddress()
-        {
-            this.ODataType = "microsoft.graph.scoredEmailAddress";
-        }
 
         /// <summary>
         /// Gets or sets address.
         /// The email address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("address")]
         public string Address { get; set; }
     
         /// <summary>
         /// Gets or sets itemId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("itemId")]
         public string ItemId { get; set; }
     
         /// <summary>
         /// Gets or sets relevanceScore.
         /// The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relevanceScore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("relevanceScore")]
         public double? RelevanceScore { get; set; }
     
         /// <summary>
         /// Gets or sets selectionLikelihood.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "selectionLikelihood", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("selectionLikelihood")]
         public SelectionLikelihoodInfo? SelectionLikelihood { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

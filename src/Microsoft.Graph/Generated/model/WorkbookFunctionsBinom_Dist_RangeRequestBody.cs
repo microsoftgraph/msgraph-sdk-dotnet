@@ -9,42 +9,40 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsBinom_Dist_RangeRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsBinom_Dist_RangeRequestBody
     {
     
         /// <summary>
         /// Gets or sets Trials.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trials", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Trials { get; set; }
+        [JsonPropertyName("trials")]
+        public System.Text.Json.JsonDocument Trials { get; set; }
     
         /// <summary>
         /// Gets or sets ProbabilityS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "probabilityS", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken ProbabilityS { get; set; }
+        [JsonPropertyName("probabilityS")]
+        public System.Text.Json.JsonDocument ProbabilityS { get; set; }
     
         /// <summary>
         /// Gets or sets NumberS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberS", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken NumberS { get; set; }
+        [JsonPropertyName("numberS")]
+        public System.Text.Json.JsonDocument NumberS { get; set; }
     
         /// <summary>
         /// Gets or sets NumberS2.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numberS2", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken NumberS2 { get; set; }
+        [JsonPropertyName("numberS2")]
+        public System.Text.Json.JsonDocument NumberS2 { get; set; }
     
     }
 }

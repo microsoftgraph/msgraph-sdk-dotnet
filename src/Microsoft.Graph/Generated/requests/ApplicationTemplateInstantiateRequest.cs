@@ -29,7 +29,7 @@ namespace Microsoft.Graph
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
-            this.ContentType = "application/json";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.RequestBody = new ApplicationTemplateInstantiateRequestBody();
         }
 
@@ -41,23 +41,25 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the POST request.
         /// </summary>
-        public System.Threading.Tasks.Task<ApplicationServicePrincipal> PostAsync()
-        {
-            return this.PostAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Issues the POST request.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<ApplicationServicePrincipal> PostAsync(
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
-            this.Method = "POST";
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ApplicationServicePrincipal>(this.RequestBody, cancellationToken);
         }
 
+        /// <summary>
+        /// Issues the POST request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApplicationServicePrincipal>> PostResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ApplicationServicePrincipal>(this.RequestBody, cancellationToken);
+        }
 
 
 

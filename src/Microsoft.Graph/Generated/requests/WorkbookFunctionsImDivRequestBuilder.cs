@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsImDivRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken inumber1,
-            Newtonsoft.Json.Linq.JToken inumber2)
+            System.Text.Json.JsonDocument inumber1,
+            System.Text.Json.JsonDocument inumber2)
             : base(requestUrl, client)
         {
             this.SetParameter("inumber1", inumber1, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("inumber1"))
             {
-                request.RequestBody.Inumber1 = this.GetParameter<Newtonsoft.Json.Linq.JToken>("inumber1");
+                request.RequestBody.Inumber1 = this.GetParameter<System.Text.Json.JsonDocument>("inumber1");
             }
 
             if (this.HasParameter("inumber2"))
             {
-                request.RequestBody.Inumber2 = this.GetParameter<Newtonsoft.Json.Linq.JToken>("inumber2");
+                request.RequestBody.Inumber2 = this.GetParameter<System.Text.Json.JsonDocument>("inumber2");
             }
 
             return request;

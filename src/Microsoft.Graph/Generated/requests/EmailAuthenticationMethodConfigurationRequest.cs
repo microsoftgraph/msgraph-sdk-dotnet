@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified EmailAuthenticationMethodConfiguration using POST.
         /// </summary>
         /// <param name="emailAuthenticationMethodConfigurationToCreate">The EmailAuthenticationMethodConfiguration to create.</param>
-        /// <returns>The created EmailAuthenticationMethodConfiguration.</returns>
-        public System.Threading.Tasks.Task<EmailAuthenticationMethodConfiguration> CreateAsync(EmailAuthenticationMethodConfiguration emailAuthenticationMethodConfigurationToCreate)
-        {
-            return this.CreateAsync(emailAuthenticationMethodConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EmailAuthenticationMethodConfiguration using POST.
-        /// </summary>
-        /// <param name="emailAuthenticationMethodConfigurationToCreate">The EmailAuthenticationMethodConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmailAuthenticationMethodConfiguration.</returns>
-        public async System.Threading.Tasks.Task<EmailAuthenticationMethodConfiguration> CreateAsync(EmailAuthenticationMethodConfiguration emailAuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmailAuthenticationMethodConfiguration> CreateAsync(EmailAuthenticationMethodConfiguration emailAuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<EmailAuthenticationMethodConfiguration>(emailAuthenticationMethodConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified EmailAuthenticationMethodConfiguration.
+        /// Creates the specified EmailAuthenticationMethodConfiguration using POST and returns a <see cref="GraphResponse{EmailAuthenticationMethodConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="emailAuthenticationMethodConfigurationToCreate">The EmailAuthenticationMethodConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAuthenticationMethodConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethodConfiguration>> CreateResponseAsync(EmailAuthenticationMethodConfiguration emailAuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<EmailAuthenticationMethodConfiguration>(emailAuthenticationMethodConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<EmailAuthenticationMethodConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified EmailAuthenticationMethodConfiguration.
+        /// Deletes the specified EmailAuthenticationMethodConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EmailAuthenticationMethodConfiguration.</returns>
-        public System.Threading.Tasks.Task<EmailAuthenticationMethodConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EmailAuthenticationMethodConfiguration.</returns>
-        public async System.Threading.Tasks.Task<EmailAuthenticationMethodConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmailAuthenticationMethodConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<EmailAuthenticationMethodConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified EmailAuthenticationMethodConfiguration using PATCH.
+        /// Gets the specified EmailAuthenticationMethodConfiguration and returns a <see cref="GraphResponse{EmailAuthenticationMethodConfiguration}"/> object.
         /// </summary>
-        /// <param name="emailAuthenticationMethodConfigurationToUpdate">The EmailAuthenticationMethodConfiguration to update.</param>
-        /// <returns>The updated EmailAuthenticationMethodConfiguration.</returns>
-        public System.Threading.Tasks.Task<EmailAuthenticationMethodConfiguration> UpdateAsync(EmailAuthenticationMethodConfiguration emailAuthenticationMethodConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAuthenticationMethodConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethodConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(emailAuthenticationMethodConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<EmailAuthenticationMethodConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmailAuthenticationMethodConfiguration.</returns>
-        public async System.Threading.Tasks.Task<EmailAuthenticationMethodConfiguration> UpdateAsync(EmailAuthenticationMethodConfiguration emailAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmailAuthenticationMethodConfiguration> UpdateAsync(EmailAuthenticationMethodConfiguration emailAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (emailAuthenticationMethodConfigurationToUpdate.AdditionalData != null)
-			{
-				if (emailAuthenticationMethodConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					emailAuthenticationMethodConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailAuthenticationMethodConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (emailAuthenticationMethodConfigurationToUpdate.AdditionalData != null)
-            {
-                if (emailAuthenticationMethodConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    emailAuthenticationMethodConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailAuthenticationMethodConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<EmailAuthenticationMethodConfiguration>(emailAuthenticationMethodConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EmailAuthenticationMethodConfiguration using PATCH and returns a <see cref="GraphResponse{EmailAuthenticationMethodConfiguration}"/> object.
+        /// </summary>
+        /// <param name="emailAuthenticationMethodConfigurationToUpdate">The EmailAuthenticationMethodConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EmailAuthenticationMethodConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethodConfiguration>> UpdateResponseAsync(EmailAuthenticationMethodConfiguration emailAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<EmailAuthenticationMethodConfiguration>(emailAuthenticationMethodConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified EmailAuthenticationMethodConfiguration using PUT.
+        /// </summary>
+        /// <param name="emailAuthenticationMethodConfigurationToUpdate">The EmailAuthenticationMethodConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<EmailAuthenticationMethodConfiguration> PutAsync(EmailAuthenticationMethodConfiguration emailAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<EmailAuthenticationMethodConfiguration>(emailAuthenticationMethodConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EmailAuthenticationMethodConfiguration using PUT and returns a <see cref="GraphResponse{EmailAuthenticationMethodConfiguration}"/> object.
+        /// </summary>
+        /// <param name="emailAuthenticationMethodConfigurationToUpdate">The EmailAuthenticationMethodConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{EmailAuthenticationMethodConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethodConfiguration>> PutResponseAsync(EmailAuthenticationMethodConfiguration emailAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<EmailAuthenticationMethodConfiguration>(emailAuthenticationMethodConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EmailAuthenticationMethodConfiguration emailAuthenticationMethodConfigurationToInitialize)
         {
 
-            if (emailAuthenticationMethodConfigurationToInitialize != null && emailAuthenticationMethodConfigurationToInitialize.AdditionalData != null)
+            if (emailAuthenticationMethodConfigurationToInitialize != null)
             {
-
                 if (emailAuthenticationMethodConfigurationToInitialize.IncludeTargets != null && emailAuthenticationMethodConfigurationToInitialize.IncludeTargets.CurrentPage != null)
                 {
+                    emailAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(this.Client, emailAuthenticationMethodConfigurationToInitialize.IncludeTargetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     emailAuthenticationMethodConfigurationToInitialize.IncludeTargets.AdditionalData = emailAuthenticationMethodConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    emailAuthenticationMethodConfigurationToInitialize.AdditionalData.TryGetValue("includeTargets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        emailAuthenticationMethodConfigurationToInitialize.IncludeTargets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

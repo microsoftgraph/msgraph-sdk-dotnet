@@ -12,82 +12,73 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFilterCriteria.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<WorkbookFilterCriteria>))]
     public partial class WorkbookFilterCriteria
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkbookFilterCriteria"/> class.
-        /// </summary>
-        public WorkbookFilterCriteria()
-        {
-            this.ODataType = "microsoft.graph.workbookFilterCriteria";
-        }
 
         /// <summary>
         /// Gets or sets color.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "color", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("color")]
         public string Color { get; set; }
     
         /// <summary>
         /// Gets or sets criterion1.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "criterion1", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("criterion1")]
         public string Criterion1 { get; set; }
     
         /// <summary>
         /// Gets or sets criterion2.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "criterion2", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("criterion2")]
         public string Criterion2 { get; set; }
     
         /// <summary>
         /// Gets or sets dynamicCriteria.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dynamicCriteria", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dynamicCriteria")]
         public string DynamicCriteria { get; set; }
     
         /// <summary>
         /// Gets or sets filterOn.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filterOn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("filterOn")]
         public string FilterOn { get; set; }
     
         /// <summary>
         /// Gets or sets icon.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "icon", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("icon")]
         public WorkbookIcon Icon { get; set; }
     
         /// <summary>
         /// Gets or sets operator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operator")]
         public string Operator { get; set; }
     
         /// <summary>
         /// Gets or sets values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Values { get; set; }
+        [JsonPropertyName("values")]
+        public System.Text.Json.JsonDocument Values { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

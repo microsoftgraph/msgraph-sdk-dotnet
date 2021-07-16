@@ -30,7 +30,7 @@ namespace Microsoft.Graph
             string requestUrl,
             IBaseClient client,
             string name,
-            Newtonsoft.Json.Linq.JToken reference,
+            System.Text.Json.JsonDocument reference,
             string comment)
             : base(requestUrl, client)
         {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("reference"))
             {
-                request.RequestBody.Reference = this.GetParameter<Newtonsoft.Json.Linq.JToken>("reference");
+                request.RequestBody.Reference = this.GetParameter<System.Text.Json.JsonDocument>("reference");
             }
 
             if (this.HasParameter("comment"))

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Directory using POST.
         /// </summary>
         /// <param name="directoryToCreate">The Directory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Directory.</returns>
-        System.Threading.Tasks.Task<Directory> CreateAsync(Directory directoryToCreate);        /// <summary>
-        /// Creates the specified Directory using POST.
+        System.Threading.Tasks.Task<Directory> CreateAsync(Directory directoryToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Directory using POST and returns a <see cref="GraphResponse{Directory}"/> object.
         /// </summary>
         /// <param name="directoryToCreate">The Directory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Directory.</returns>
-        System.Threading.Tasks.Task<Directory> CreateAsync(Directory directoryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Directory.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Directory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Directory>> CreateResponseAsync(Directory directoryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Directory.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Directory.
+        /// Deletes the specified Directory and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Directory.</returns>
-        System.Threading.Tasks.Task<Directory> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Directory.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Directory.</returns>
-        System.Threading.Tasks.Task<Directory> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Directory> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Directory using PATCH.
+        /// Gets the specified Directory and returns a <see cref="GraphResponse{Directory}"/> object.
         /// </summary>
-        /// <param name="directoryToUpdate">The Directory to update.</param>
-        /// <returns>The updated Directory.</returns>
-        System.Threading.Tasks.Task<Directory> UpdateAsync(Directory directoryToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Directory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Directory>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Directory using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Directory.</returns>
-        System.Threading.Tasks.Task<Directory> UpdateAsync(Directory directoryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Directory> UpdateAsync(Directory directoryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Directory using PATCH and returns a <see cref="GraphResponse{Directory}"/> object.
+        /// </summary>
+        /// <param name="directoryToUpdate">The Directory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Directory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Directory>> UpdateResponseAsync(Directory directoryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Directory using PUT.
+        /// </summary>
+        /// <param name="directoryToUpdate">The Directory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Directory> PutAsync(Directory directoryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Directory using PUT and returns a <see cref="GraphResponse{Directory}"/> object.
+        /// </summary>
+        /// <param name="directoryToUpdate">The Directory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Directory}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Directory>> PutResponseAsync(Directory directoryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

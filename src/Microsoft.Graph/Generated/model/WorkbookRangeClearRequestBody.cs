@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookRangeClearRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookRangeClearRequestBody
     {
     
         /// <summary>
         /// Gets or sets ApplyTo.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyTo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applyTo")]
         public string ApplyTo { get; set; }
     
     }

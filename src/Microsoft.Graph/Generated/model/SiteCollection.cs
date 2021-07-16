@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SiteCollection.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SiteCollection>))]
     public partial class SiteCollection
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SiteCollection"/> class.
-        /// </summary>
-        public SiteCollection()
-        {
-            this.ODataType = "microsoft.graph.siteCollection";
-        }
 
         /// <summary>
         /// Gets or sets dataLocationCode.
         /// The geographic region code for where this site collection resides. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataLocationCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataLocationCode")]
         public string DataLocationCode { get; set; }
     
         /// <summary>
         /// Gets or sets hostname.
         /// The hostname for the site collection. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostname", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hostname")]
         public string Hostname { get; set; }
     
         /// <summary>
         /// Gets or sets root.
         /// If present, indicates that this is a root site collection in SharePoint. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "root", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("root")]
         public Root Root { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

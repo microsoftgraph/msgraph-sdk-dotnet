@@ -12,120 +12,130 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education School.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EducationSchool : EducationOrganization
     {
     
-		///<summary>
-		/// The EducationSchool constructor
-		///</summary>
+        ///<summary>
+        /// The EducationSchool constructor
+        ///</summary>
         public EducationSchool()
         {
             this.ODataType = "microsoft.graph.educationSchool";
         }
-	
+
         /// <summary>
         /// Gets or sets address.
         /// Address of the school.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("address")]
         public PhysicalAddress Address { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
         /// Entity who created the school.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
         /// ID of school in syncing system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalId")]
         public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets external principal id.
         /// ID of principal in syncing system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalPrincipalId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalPrincipalId")]
         public string ExternalPrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets fax.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fax", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fax")]
         public string Fax { get; set; }
     
         /// <summary>
         /// Gets or sets highest grade.
         /// Highest grade taught.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "highestGrade", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("highestGrade")]
         public string HighestGrade { get; set; }
     
         /// <summary>
         /// Gets or sets lowest grade.
         /// Lowest grade taught.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lowestGrade", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lowestGrade")]
         public string LowestGrade { get; set; }
     
         /// <summary>
         /// Gets or sets phone.
         /// Phone number of school.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("phone")]
         public string Phone { get; set; }
     
         /// <summary>
         /// Gets or sets principal email.
         /// Email address of the principal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalEmail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("principalEmail")]
         public string PrincipalEmail { get; set; }
     
         /// <summary>
         /// Gets or sets principal name.
         /// Name of the principal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("principalName")]
         public string PrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets school number.
         /// School Number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schoolNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schoolNumber")]
         public string SchoolNumber { get; set; }
     
         /// <summary>
         /// Gets or sets administrative unit.
         /// The underlying administrativeUnit for this school.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "administrativeUnit", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("administrativeUnit")]
         public AdministrativeUnit AdministrativeUnit { get; set; }
     
         /// <summary>
         /// Gets or sets classes.
         /// Classes taught at the school. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classes")]
         public IEducationSchoolClassesCollectionWithReferencesPage Classes { get; set; }
+
+        /// <summary>
+        /// Gets or sets classesNextLink.
+        /// </summary>
+        [JsonPropertyName("classes@odata.nextLink")]
+        public string ClassesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets users.
         /// Users in the school. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "users", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("users")]
         public IEducationSchoolUsersCollectionWithReferencesPage Users { get; set; }
+
+        /// <summary>
+        /// Gets or sets usersNextLink.
+        /// </summary>
+        [JsonPropertyName("users@odata.nextLink")]
+        public string UsersNextLink { get; set; }
     
     }
 }

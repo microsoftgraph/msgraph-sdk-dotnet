@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICloudCommunicationsOnlineMeetingsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified OnlineMeeting to the collection via POST.
-        /// </summary>
-        /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
-        /// <returns>The created OnlineMeeting.</returns>
-        System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting onlineMeeting);
-
         /// <summary>
         /// Adds the specified OnlineMeeting to the collection via POST.
         /// </summary>
         /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnlineMeeting.</returns>
-        System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting onlineMeeting, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting onlineMeeting, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified OnlineMeeting to the collection via POST and returns a <see cref="GraphResponse{OnlineMeeting}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICloudCommunicationsOnlineMeetingsCollectionPage> GetAsync();
+        /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> AddResponseAsync(OnlineMeeting onlineMeeting, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICloudCommunicationsOnlineMeetingsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICloudCommunicationsOnlineMeetingsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CloudCommunicationsOnlineMeetingsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudCommunicationsOnlineMeetingsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudCommunicationsOnlineMeetingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

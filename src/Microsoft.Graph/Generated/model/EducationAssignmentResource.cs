@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education Assignment Resource.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EducationAssignmentResource : Entity
     {
     
-		///<summary>
-		/// The EducationAssignmentResource constructor
-		///</summary>
-        public EducationAssignmentResource()
-        {
-            this.ODataType = "microsoft.graph.educationAssignmentResource";
-        }
-	
         /// <summary>
         /// Gets or sets distribute for student work.
         /// Indicates whether this resource should be copied to each student submission for modification and submission.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "distributeForStudentWork", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("distributeForStudentWork")]
         public bool? DistributeForStudentWork { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
         /// Resource object that has been associated with this assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resource")]
         public EducationResource Resource { get; set; }
     
     }

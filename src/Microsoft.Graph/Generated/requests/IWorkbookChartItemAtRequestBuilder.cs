@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         IWorkbookChartAddRequestBuilder Add(
             string type,
             string seriesBy,
-            Newtonsoft.Json.Linq.JToken sourceData);
+            System.Text.Json.JsonDocument sourceData);
         /// <summary>
         /// Gets the request builder for WorkbookChartCountRequestBuilder.
         /// </summary>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookChartSetDataRequestBuilder"/>.</returns>
         IWorkbookChartSetDataRequestBuilder SetData(
             string seriesBy,
-            Newtonsoft.Json.Linq.JToken sourceData);
+            System.Text.Json.JsonDocument sourceData);
         /// <summary>
         /// Gets the request builder for WorkbookChartSetPositionRequestBuilder.
         /// </summary>
@@ -102,8 +102,8 @@ namespace Microsoft.Graph
         /// <param name="endCell">A endCell parameter for the OData method call.</param>
         /// <returns>The <see cref="IWorkbookChartSetPositionRequestBuilder"/>.</returns>
         IWorkbookChartSetPositionRequestBuilder SetPosition(
-            Newtonsoft.Json.Linq.JToken startCell,
-            Newtonsoft.Json.Linq.JToken endCell);
+            System.Text.Json.JsonDocument startCell,
+            System.Text.Json.JsonDocument endCell);
         /// <summary>
         /// Gets the request builder for Axes.
         /// Represents chart axes. Read-only.

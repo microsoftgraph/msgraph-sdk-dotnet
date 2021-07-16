@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         public WorkbookFunctionsCoupDayBsRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken settlement,
-            Newtonsoft.Json.Linq.JToken maturity,
-            Newtonsoft.Json.Linq.JToken frequency,
-            Newtonsoft.Json.Linq.JToken basis)
+            System.Text.Json.JsonDocument settlement,
+            System.Text.Json.JsonDocument maturity,
+            System.Text.Json.JsonDocument frequency,
+            System.Text.Json.JsonDocument basis)
             : base(requestUrl, client)
         {
             this.SetParameter("settlement", settlement, true);
@@ -54,22 +54,22 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("settlement"))
             {
-                request.RequestBody.Settlement = this.GetParameter<Newtonsoft.Json.Linq.JToken>("settlement");
+                request.RequestBody.Settlement = this.GetParameter<System.Text.Json.JsonDocument>("settlement");
             }
 
             if (this.HasParameter("maturity"))
             {
-                request.RequestBody.Maturity = this.GetParameter<Newtonsoft.Json.Linq.JToken>("maturity");
+                request.RequestBody.Maturity = this.GetParameter<System.Text.Json.JsonDocument>("maturity");
             }
 
             if (this.HasParameter("frequency"))
             {
-                request.RequestBody.Frequency = this.GetParameter<Newtonsoft.Json.Linq.JToken>("frequency");
+                request.RequestBody.Frequency = this.GetParameter<System.Text.Json.JsonDocument>("frequency");
             }
 
             if (this.HasParameter("basis"))
             {
-                request.RequestBody.Basis = this.GetParameter<Newtonsoft.Json.Linq.JToken>("basis");
+                request.RequestBody.Basis = this.GetParameter<System.Text.Json.JsonDocument>("basis");
             }
 
             return request;

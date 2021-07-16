@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10Enterprise Modern App Management Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Windows10EnterpriseModernAppManagementConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The Windows10EnterpriseModernAppManagementConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10EnterpriseModernAppManagementConfiguration constructor
+        ///</summary>
         public Windows10EnterpriseModernAppManagementConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10EnterpriseModernAppManagementConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets uninstall built in apps.
         /// Indicates whether or not to uninstall a fixed list of built-in Windows apps.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uninstallBuiltInApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uninstallBuiltInApps")]
         public bool? UninstallBuiltInApps { get; set; }
     
     }

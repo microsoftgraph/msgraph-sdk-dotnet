@@ -12,57 +12,56 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Microsoft Store For Business App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MicrosoftStoreForBusinessApp>))]
     public partial class MicrosoftStoreForBusinessApp : MobileApp
     {
     
-		///<summary>
-		/// The MicrosoftStoreForBusinessApp constructor
-		///</summary>
+        ///<summary>
+        /// The MicrosoftStoreForBusinessApp constructor
+        ///</summary>
         public MicrosoftStoreForBusinessApp()
         {
             this.ODataType = "microsoft.graph.microsoftStoreForBusinessApp";
         }
-	
+
         /// <summary>
         /// Gets or sets license type.
         /// The app license type. Possible values are: offline, online.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("licenseType")]
         public MicrosoftStoreForBusinessLicenseType? LicenseType { get; set; }
     
         /// <summary>
         /// Gets or sets package identity name.
         /// The app package identifier
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageIdentityName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("packageIdentityName")]
         public string PackageIdentityName { get; set; }
     
         /// <summary>
         /// Gets or sets product key.
         /// The app product key
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productKey")]
         public string ProductKey { get; set; }
     
         /// <summary>
         /// Gets or sets total license count.
         /// The total number of Microsoft Store for Business licenses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicenseCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalLicenseCount")]
         public Int32? TotalLicenseCount { get; set; }
     
         /// <summary>
         /// Gets or sets used license count.
         /// The number of Microsoft Store for Business licenses in use.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedLicenseCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usedLicenseCount")]
         public Int32? UsedLicenseCount { get; set; }
     
     }

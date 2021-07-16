@@ -9,35 +9,33 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type GroupValidatePropertiesRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupValidatePropertiesRequestBody
     {
     
         /// <summary>
         /// Gets or sets DisplayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets MailNickname.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNickname", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mailNickname")]
         public string MailNickname { get; set; }
     
         /// <summary>
         /// Gets or sets OnBehalfOfUserId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onBehalfOfUserId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onBehalfOfUserId")]
         public Guid? OnBehalfOfUserId { get; set; }
     
     }

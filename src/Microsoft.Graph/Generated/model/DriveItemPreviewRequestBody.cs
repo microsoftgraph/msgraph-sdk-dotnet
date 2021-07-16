@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DriveItemPreviewRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DriveItemPreviewRequestBody
     {
     
         /// <summary>
         /// Gets or sets Page.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "page", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("page")]
         public string Page { get; set; }
     
         /// <summary>
         /// Gets or sets Zoom.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "zoom", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("zoom")]
         public double? Zoom { get; set; }
     
     }

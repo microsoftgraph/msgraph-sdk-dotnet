@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         public WorkbookFunctionsBeta_InvRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken probability,
-            Newtonsoft.Json.Linq.JToken alpha,
-            Newtonsoft.Json.Linq.JToken beta,
-            Newtonsoft.Json.Linq.JToken A,
-            Newtonsoft.Json.Linq.JToken B)
+            System.Text.Json.JsonDocument probability,
+            System.Text.Json.JsonDocument alpha,
+            System.Text.Json.JsonDocument beta,
+            System.Text.Json.JsonDocument A,
+            System.Text.Json.JsonDocument B)
             : base(requestUrl, client)
         {
             this.SetParameter("probability", probability, true);
@@ -57,27 +57,27 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("probability"))
             {
-                request.RequestBody.Probability = this.GetParameter<Newtonsoft.Json.Linq.JToken>("probability");
+                request.RequestBody.Probability = this.GetParameter<System.Text.Json.JsonDocument>("probability");
             }
 
             if (this.HasParameter("alpha"))
             {
-                request.RequestBody.Alpha = this.GetParameter<Newtonsoft.Json.Linq.JToken>("alpha");
+                request.RequestBody.Alpha = this.GetParameter<System.Text.Json.JsonDocument>("alpha");
             }
 
             if (this.HasParameter("beta"))
             {
-                request.RequestBody.Beta = this.GetParameter<Newtonsoft.Json.Linq.JToken>("beta");
+                request.RequestBody.Beta = this.GetParameter<System.Text.Json.JsonDocument>("beta");
             }
 
             if (this.HasParameter("a"))
             {
-                request.RequestBody.A = this.GetParameter<Newtonsoft.Json.Linq.JToken>("a");
+                request.RequestBody.A = this.GetParameter<System.Text.Json.JsonDocument>("a");
             }
 
             if (this.HasParameter("b"))
             {
-                request.RequestBody.B = this.GetParameter<Newtonsoft.Json.Linq.JToken>("b");
+                request.RequestBody.B = this.GetParameter<System.Text.Json.JsonDocument>("b");
             }
 
             return request;

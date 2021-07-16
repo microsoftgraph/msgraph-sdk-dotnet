@@ -19,18 +19,19 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IEducationClassSchoolsCollectionReferencesRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified EducationSchool to the collection via POST.
-        /// </summary>
-        /// <param name="educationSchool">The EducationSchool to add.</param>
-        System.Threading.Tasks.Task AddAsync(EducationSchool educationSchool);
-
         /// <summary>
         /// Adds the specified EducationSchool to the collection via POST.
         /// </summary>
         /// <param name="educationSchool">The EducationSchool to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(EducationSchool educationSchool, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task AddAsync(EducationSchool educationSchool, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified EducationSchool to the collection via POST and returns a <see cref="GraphResponse{EducationSchool}"/> object of the request.
+        /// </summary>
+        /// <param name="educationSchool">The EducationSchool to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(EducationSchool educationSchool, CancellationToken cancellationToken = default);
+
     }
 }

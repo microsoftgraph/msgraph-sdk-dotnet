@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Extension.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<Extension>))]
     public partial class Extension : Entity
     {
     
-		///<summary>
-		/// The internal Extension constructor
-		///</summary>
+        ///<summary>
+        /// The internal Extension constructor
+        ///</summary>
         protected internal Extension()
         {
             // Don't allow initialization of abstract entity types

@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDriveSearchCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DriveSearchCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DriveSearchCollectionPage>))]
     public interface IDriveSearchCollectionPage : ICollectionPage<DriveItem>
     {
         /// <summary>

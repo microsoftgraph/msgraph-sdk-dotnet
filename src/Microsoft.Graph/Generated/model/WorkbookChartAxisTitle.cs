@@ -12,43 +12,33 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Chart Axis Title.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookChartAxisTitle : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartAxisTitle constructor
-		///</summary>
-        public WorkbookChartAxisTitle()
-        {
-            this.ODataType = "microsoft.graph.workbookChartAxisTitle";
-        }
-	
         /// <summary>
         /// Gets or sets text.
         /// Represents the axis title.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
     
         /// <summary>
         /// Gets or sets visible.
         /// A boolean that specifies the visibility of an axis title.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visible", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("visible")]
         public bool? Visible { get; set; }
     
         /// <summary>
         /// Gets or sets format.
         /// Represents the formatting of chart axis title. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("format")]
         public WorkbookChartAxisTitleFormat Format { get; set; }
     
     }

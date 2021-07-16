@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DomainDnsTxtRecord using POST.
         /// </summary>
         /// <param name="domainDnsTxtRecordToCreate">The DomainDnsTxtRecord to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DomainDnsTxtRecord.</returns>
-        System.Threading.Tasks.Task<DomainDnsTxtRecord> CreateAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate);        /// <summary>
-        /// Creates the specified DomainDnsTxtRecord using POST.
+        System.Threading.Tasks.Task<DomainDnsTxtRecord> CreateAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DomainDnsTxtRecord using POST and returns a <see cref="GraphResponse{DomainDnsTxtRecord}"/> object.
         /// </summary>
         /// <param name="domainDnsTxtRecordToCreate">The DomainDnsTxtRecord to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DomainDnsTxtRecord.</returns>
-        System.Threading.Tasks.Task<DomainDnsTxtRecord> CreateAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DomainDnsTxtRecord.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DomainDnsTxtRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> CreateResponseAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DomainDnsTxtRecord.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DomainDnsTxtRecord.
+        /// Deletes the specified DomainDnsTxtRecord and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DomainDnsTxtRecord.</returns>
-        System.Threading.Tasks.Task<DomainDnsTxtRecord> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DomainDnsTxtRecord.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DomainDnsTxtRecord.</returns>
-        System.Threading.Tasks.Task<DomainDnsTxtRecord> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DomainDnsTxtRecord> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DomainDnsTxtRecord using PATCH.
+        /// Gets the specified DomainDnsTxtRecord and returns a <see cref="GraphResponse{DomainDnsTxtRecord}"/> object.
         /// </summary>
-        /// <param name="domainDnsTxtRecordToUpdate">The DomainDnsTxtRecord to update.</param>
-        /// <returns>The updated DomainDnsTxtRecord.</returns>
-        System.Threading.Tasks.Task<DomainDnsTxtRecord> UpdateAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsTxtRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DomainDnsTxtRecord using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DomainDnsTxtRecord.</returns>
-        System.Threading.Tasks.Task<DomainDnsTxtRecord> UpdateAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DomainDnsTxtRecord> UpdateAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DomainDnsTxtRecord using PATCH and returns a <see cref="GraphResponse{DomainDnsTxtRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsTxtRecordToUpdate">The DomainDnsTxtRecord to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DomainDnsTxtRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> UpdateResponseAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DomainDnsTxtRecord using PUT.
+        /// </summary>
+        /// <param name="domainDnsTxtRecordToUpdate">The DomainDnsTxtRecord object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DomainDnsTxtRecord> PutAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DomainDnsTxtRecord using PUT and returns a <see cref="GraphResponse{DomainDnsTxtRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsTxtRecordToUpdate">The DomainDnsTxtRecord object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DomainDnsTxtRecord}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> PutResponseAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

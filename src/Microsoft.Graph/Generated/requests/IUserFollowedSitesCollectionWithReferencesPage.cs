@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUserFollowedSitesCollectionWithReferencesPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<UserFollowedSitesCollectionWithReferencesPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<UserFollowedSitesCollectionWithReferencesPage>))]
     public interface IUserFollowedSitesCollectionWithReferencesPage : ICollectionPage<Site>
     {
         /// <summary>

@@ -12,65 +12,69 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type List Item.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ListItem : BaseItem
     {
     
-		///<summary>
-		/// The ListItem constructor
-		///</summary>
+        ///<summary>
+        /// The ListItem constructor
+        ///</summary>
         public ListItem()
         {
             this.ODataType = "microsoft.graph.listItem";
         }
-	
+
         /// <summary>
         /// Gets or sets content type.
         /// The content type of this list item
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentType")]
         public ContentTypeInfo ContentType { get; set; }
     
         /// <summary>
         /// Gets or sets sharepoint ids.
         /// Returns identifiers useful for SharePoint REST compatibility. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharepointIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharepointIds")]
         public SharepointIds SharepointIds { get; set; }
     
         /// <summary>
         /// Gets or sets analytics.
         /// Analytics about the view activities that took place on this item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "analytics", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("analytics")]
         public ItemAnalytics Analytics { get; set; }
     
         /// <summary>
         /// Gets or sets drive item.
         /// For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "driveItem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("driveItem")]
         public DriveItem DriveItem { get; set; }
     
         /// <summary>
         /// Gets or sets fields.
         /// The values of the columns set on this list item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fields", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fields")]
         public FieldValueSet Fields { get; set; }
     
         /// <summary>
         /// Gets or sets versions.
         /// The list of previous versions of the list item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("versions")]
         public IListItemVersionsCollectionPage Versions { get; set; }
+
+        /// <summary>
+        /// Gets or sets versionsNextLink.
+        /// </summary>
+        [JsonPropertyName("versions@odata.nextLink")]
+        public string VersionsNextLink { get; set; }
     
     }
 }

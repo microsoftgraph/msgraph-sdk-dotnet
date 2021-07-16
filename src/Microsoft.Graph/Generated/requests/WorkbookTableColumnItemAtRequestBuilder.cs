@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookTableColumnAddRequestBuilder"/>.</returns>
         public IWorkbookTableColumnAddRequestBuilder Add(
             Int32? index,
-            Newtonsoft.Json.Linq.JToken values,
+            System.Text.Json.JsonDocument values,
             string name)
         {
             return new WorkbookTableColumnAddRequestBuilder(

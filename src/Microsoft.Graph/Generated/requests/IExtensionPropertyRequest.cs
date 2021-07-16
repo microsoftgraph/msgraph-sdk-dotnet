@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ExtensionProperty using POST.
         /// </summary>
         /// <param name="extensionPropertyToCreate">The ExtensionProperty to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExtensionProperty.</returns>
-        System.Threading.Tasks.Task<ExtensionProperty> CreateAsync(ExtensionProperty extensionPropertyToCreate);        /// <summary>
-        /// Creates the specified ExtensionProperty using POST.
+        System.Threading.Tasks.Task<ExtensionProperty> CreateAsync(ExtensionProperty extensionPropertyToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ExtensionProperty using POST and returns a <see cref="GraphResponse{ExtensionProperty}"/> object.
         /// </summary>
         /// <param name="extensionPropertyToCreate">The ExtensionProperty to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ExtensionProperty.</returns>
-        System.Threading.Tasks.Task<ExtensionProperty> CreateAsync(ExtensionProperty extensionPropertyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ExtensionProperty.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> CreateResponseAsync(ExtensionProperty extensionPropertyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ExtensionProperty.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ExtensionProperty.
+        /// Deletes the specified ExtensionProperty and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ExtensionProperty.</returns>
-        System.Threading.Tasks.Task<ExtensionProperty> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ExtensionProperty.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ExtensionProperty.</returns>
-        System.Threading.Tasks.Task<ExtensionProperty> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ExtensionProperty> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ExtensionProperty using PATCH.
+        /// Gets the specified ExtensionProperty and returns a <see cref="GraphResponse{ExtensionProperty}"/> object.
         /// </summary>
-        /// <param name="extensionPropertyToUpdate">The ExtensionProperty to update.</param>
-        /// <returns>The updated ExtensionProperty.</returns>
-        System.Threading.Tasks.Task<ExtensionProperty> UpdateAsync(ExtensionProperty extensionPropertyToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ExtensionProperty using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ExtensionProperty.</returns>
-        System.Threading.Tasks.Task<ExtensionProperty> UpdateAsync(ExtensionProperty extensionPropertyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ExtensionProperty> UpdateAsync(ExtensionProperty extensionPropertyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ExtensionProperty using PATCH and returns a <see cref="GraphResponse{ExtensionProperty}"/> object.
+        /// </summary>
+        /// <param name="extensionPropertyToUpdate">The ExtensionProperty to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> UpdateResponseAsync(ExtensionProperty extensionPropertyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ExtensionProperty using PUT.
+        /// </summary>
+        /// <param name="extensionPropertyToUpdate">The ExtensionProperty object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ExtensionProperty> PutAsync(ExtensionProperty extensionPropertyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ExtensionProperty using PUT and returns a <see cref="GraphResponse{ExtensionProperty}"/> object.
+        /// </summary>
+        /// <param name="extensionPropertyToUpdate">The ExtensionProperty object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ExtensionProperty}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> PutResponseAsync(ExtensionProperty extensionPropertyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

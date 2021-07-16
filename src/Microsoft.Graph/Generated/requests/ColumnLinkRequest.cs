@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ColumnLink using POST.
         /// </summary>
         /// <param name="columnLinkToCreate">The ColumnLink to create.</param>
-        /// <returns>The created ColumnLink.</returns>
-        public System.Threading.Tasks.Task<ColumnLink> CreateAsync(ColumnLink columnLinkToCreate)
-        {
-            return this.CreateAsync(columnLinkToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ColumnLink using POST.
-        /// </summary>
-        /// <param name="columnLinkToCreate">The ColumnLink to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ColumnLink.</returns>
-        public async System.Threading.Tasks.Task<ColumnLink> CreateAsync(ColumnLink columnLinkToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ColumnLink> CreateAsync(ColumnLink columnLinkToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ColumnLink>(columnLinkToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ColumnLink.
+        /// Creates the specified ColumnLink using POST and returns a <see cref="GraphResponse{ColumnLink}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="columnLinkToCreate">The ColumnLink to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ColumnLink>> CreateResponseAsync(ColumnLink columnLinkToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ColumnLink>(columnLinkToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ColumnLink>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ColumnLink.
+        /// Deletes the specified ColumnLink and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ColumnLink.</returns>
-        public System.Threading.Tasks.Task<ColumnLink> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ColumnLink.</returns>
-        public async System.Threading.Tasks.Task<ColumnLink> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ColumnLink> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ColumnLink>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ColumnLink using PATCH.
+        /// Gets the specified ColumnLink and returns a <see cref="GraphResponse{ColumnLink}"/> object.
         /// </summary>
-        /// <param name="columnLinkToUpdate">The ColumnLink to update.</param>
-        /// <returns>The updated ColumnLink.</returns>
-        public System.Threading.Tasks.Task<ColumnLink> UpdateAsync(ColumnLink columnLinkToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ColumnLink>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(columnLinkToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ColumnLink>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ColumnLink.</returns>
-        public async System.Threading.Tasks.Task<ColumnLink> UpdateAsync(ColumnLink columnLinkToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ColumnLink> UpdateAsync(ColumnLink columnLinkToUpdate, CancellationToken cancellationToken = default)
         {
-			if (columnLinkToUpdate.AdditionalData != null)
-			{
-				if (columnLinkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					columnLinkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, columnLinkToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (columnLinkToUpdate.AdditionalData != null)
-            {
-                if (columnLinkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    columnLinkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, columnLinkToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ColumnLink>(columnLinkToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ColumnLink using PATCH and returns a <see cref="GraphResponse{ColumnLink}"/> object.
+        /// </summary>
+        /// <param name="columnLinkToUpdate">The ColumnLink to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ColumnLink>> UpdateResponseAsync(ColumnLink columnLinkToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ColumnLink>(columnLinkToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ColumnLink using PUT.
+        /// </summary>
+        /// <param name="columnLinkToUpdate">The ColumnLink object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ColumnLink> PutAsync(ColumnLink columnLinkToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ColumnLink>(columnLinkToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ColumnLink using PUT and returns a <see cref="GraphResponse{ColumnLink}"/> object.
+        /// </summary>
+        /// <param name="columnLinkToUpdate">The ColumnLink object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ColumnLink}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ColumnLink>> PutResponseAsync(ColumnLink columnLinkToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ColumnLink>(columnLinkToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsT_DistRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken x,
-            Newtonsoft.Json.Linq.JToken degFreedom,
-            Newtonsoft.Json.Linq.JToken cumulative)
+            System.Text.Json.JsonDocument x,
+            System.Text.Json.JsonDocument degFreedom,
+            System.Text.Json.JsonDocument cumulative)
             : base(requestUrl, client)
         {
             this.SetParameter("x", x, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("x"))
             {
-                request.RequestBody.X = this.GetParameter<Newtonsoft.Json.Linq.JToken>("x");
+                request.RequestBody.X = this.GetParameter<System.Text.Json.JsonDocument>("x");
             }
 
             if (this.HasParameter("degFreedom"))
             {
-                request.RequestBody.DegFreedom = this.GetParameter<Newtonsoft.Json.Linq.JToken>("degFreedom");
+                request.RequestBody.DegFreedom = this.GetParameter<System.Text.Json.JsonDocument>("degFreedom");
             }
 
             if (this.HasParameter("cumulative"))
             {
-                request.RequestBody.Cumulative = this.GetParameter<Newtonsoft.Json.Linq.JToken>("cumulative");
+                request.RequestBody.Cumulative = this.GetParameter<System.Text.Json.JsonDocument>("cumulative");
             }
 
             return request;

@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceExchangeAccessStateSummary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceExchangeAccessStateSummary>))]
     public partial class DeviceExchangeAccessStateSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceExchangeAccessStateSummary"/> class.
-        /// </summary>
-        public DeviceExchangeAccessStateSummary()
-        {
-            this.ODataType = "microsoft.graph.deviceExchangeAccessStateSummary";
-        }
 
         /// <summary>
         /// Gets or sets allowedDeviceCount.
         /// Total count of devices with Exchange Access State: Allowed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedDeviceCount")]
         public Int32? AllowedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets blockedDeviceCount.
         /// Total count of devices with Exchange Access State: Blocked.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("blockedDeviceCount")]
         public Int32? BlockedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets quarantinedDeviceCount.
         /// Total count of devices with Exchange Access State: Quarantined.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "quarantinedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("quarantinedDeviceCount")]
         public Int32? QuarantinedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets unavailableDeviceCount.
         /// Total count of devices for which no Exchange Access State could be found.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unavailableDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unavailableDeviceCount")]
         public Int32? UnavailableDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets unknownDeviceCount.
         /// Total count of devices with Exchange Access State: Unknown.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unknownDeviceCount")]
         public Int32? UnknownDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

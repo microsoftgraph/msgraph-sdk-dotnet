@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsHelloForBusinessAuthenticationMethod using POST.
         /// </summary>
         /// <param name="windowsHelloForBusinessAuthenticationMethodToCreate">The WindowsHelloForBusinessAuthenticationMethod to create.</param>
-        /// <returns>The created WindowsHelloForBusinessAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> CreateAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToCreate)
-        {
-            return this.CreateAsync(windowsHelloForBusinessAuthenticationMethodToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsHelloForBusinessAuthenticationMethod using POST.
-        /// </summary>
-        /// <param name="windowsHelloForBusinessAuthenticationMethodToCreate">The WindowsHelloForBusinessAuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsHelloForBusinessAuthenticationMethod.</returns>
-        public async System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> CreateAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> CreateAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(windowsHelloForBusinessAuthenticationMethodToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsHelloForBusinessAuthenticationMethod.
+        /// Creates the specified WindowsHelloForBusinessAuthenticationMethod using POST and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsHelloForBusinessAuthenticationMethodToCreate">The WindowsHelloForBusinessAuthenticationMethod to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> CreateResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsHelloForBusinessAuthenticationMethod>(windowsHelloForBusinessAuthenticationMethodToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsHelloForBusinessAuthenticationMethod.
+        /// Deletes the specified WindowsHelloForBusinessAuthenticationMethod and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsHelloForBusinessAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsHelloForBusinessAuthenticationMethod.</returns>
-        public async System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsHelloForBusinessAuthenticationMethod using PATCH.
+        /// Gets the specified WindowsHelloForBusinessAuthenticationMethod and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object.
         /// </summary>
-        /// <param name="windowsHelloForBusinessAuthenticationMethodToUpdate">The WindowsHelloForBusinessAuthenticationMethod to update.</param>
-        /// <returns>The updated WindowsHelloForBusinessAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> UpdateAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsHelloForBusinessAuthenticationMethod>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsHelloForBusinessAuthenticationMethod.</returns>
-        public async System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> UpdateAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> UpdateAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default)
         {
-			if (windowsHelloForBusinessAuthenticationMethodToUpdate.AdditionalData != null)
-			{
-				if (windowsHelloForBusinessAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsHelloForBusinessAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsHelloForBusinessAuthenticationMethodToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsHelloForBusinessAuthenticationMethodToUpdate.AdditionalData != null)
-            {
-                if (windowsHelloForBusinessAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsHelloForBusinessAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsHelloForBusinessAuthenticationMethodToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(windowsHelloForBusinessAuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsHelloForBusinessAuthenticationMethod using PATCH and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="windowsHelloForBusinessAuthenticationMethodToUpdate">The WindowsHelloForBusinessAuthenticationMethod to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> UpdateResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsHelloForBusinessAuthenticationMethod>(windowsHelloForBusinessAuthenticationMethodToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsHelloForBusinessAuthenticationMethod using PUT.
+        /// </summary>
+        /// <param name="windowsHelloForBusinessAuthenticationMethodToUpdate">The WindowsHelloForBusinessAuthenticationMethod object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> PutAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(windowsHelloForBusinessAuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsHelloForBusinessAuthenticationMethod using PUT and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="windowsHelloForBusinessAuthenticationMethodToUpdate">The WindowsHelloForBusinessAuthenticationMethod object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> PutResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsHelloForBusinessAuthenticationMethod>(windowsHelloForBusinessAuthenticationMethodToUpdate, cancellationToken);
         }
 
         /// <summary>

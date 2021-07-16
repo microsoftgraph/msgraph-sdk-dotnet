@@ -12,820 +12,1010 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class User : DirectoryObject
     {
     
-		///<summary>
-		/// The User constructor
-		///</summary>
+        ///<summary>
+        /// The User constructor
+        ///</summary>
         public User()
         {
             this.ODataType = "microsoft.graph.user";
         }
-	
+
         /// <summary>
         /// Gets or sets account enabled.
         /// true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, NOT, and in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accountEnabled")]
         public bool? AccountEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets age group.
         /// Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, NOT, and in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ageGroup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ageGroup")]
         public string AgeGroup { get; set; }
     
         /// <summary>
         /// Gets or sets assigned licenses.
         /// The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq and NOT).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedLicenses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedLicenses")]
         public IEnumerable<AssignedLicense> AssignedLicenses { get; set; }
     
         /// <summary>
         /// Gets or sets assigned plans.
         /// The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and NOT).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedPlans", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedPlans")]
         public IEnumerable<AssignedPlan> AssignedPlans { get; set; }
     
         /// <summary>
         /// Gets or sets business phones.
         /// The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq and NOT).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessPhones", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("businessPhones")]
         public IEnumerable<string> BusinessPhones { get; set; }
     
         /// <summary>
         /// Gets or sets city.
         /// The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "city", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("city")]
         public string City { get; set; }
     
         /// <summary>
         /// Gets or sets company name.
         /// The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("companyName")]
         public string CompanyName { get; set; }
     
         /// <summary>
         /// Gets or sets consent provided for minor.
         /// Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, NOT, and in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "consentProvidedForMinor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("consentProvidedForMinor")]
         public string ConsentProvidedForMinor { get; set; }
     
         /// <summary>
         /// Gets or sets country.
         /// The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "country", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("country")]
         public string Country { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, NOT , ge, le, and in operators) and $orderBy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets creation type.
         /// Indicates whether the user account was created as a regular school or work account (null), an external account (Invitation), a local account for an Azure Active Directory B2C tenant (LocalAccount) or self-service sign-up using email verification (EmailVerified). Read-only. Supports $filter (eq, ne, NOT, and in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creationType")]
         public string CreationType { get; set; }
     
         /// <summary>
         /// Gets or sets department.
         /// The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, NOT , ge, le, and in operators).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "department", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("department")]
         public string Department { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, NOT , ge, le, in, startsWith), $orderBy, and $search.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets employee hire date.
         /// The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, NOT , ge, le, in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeHireDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("employeeHireDate")]
         public DateTimeOffset? EmployeeHireDate { get; set; }
     
         /// <summary>
         /// Gets or sets employee id.
         /// The employee identifier assigned to the user by the organization. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("employeeId")]
         public string EmployeeId { get; set; }
     
         /// <summary>
         /// Gets or sets employee org data.
         /// Represents organization data (e.g. division and costCenter) associated with a user. Supports $filter (eq, ne, NOT , ge, le, in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeOrgData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("employeeOrgData")]
         public EmployeeOrgData EmployeeOrgData { get; set; }
     
         /// <summary>
         /// Gets or sets employee type.
         /// Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("employeeType")]
         public string EmployeeType { get; set; }
     
         /// <summary>
         /// Gets or sets external user state.
         /// For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, NOT , in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalUserState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalUserState")]
         public string ExternalUserState { get; set; }
     
         /// <summary>
         /// Gets or sets external user state change date time.
         /// Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, NOT , in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalUserStateChangeDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalUserStateChangeDateTime")]
         public DateTimeOffset? ExternalUserStateChangeDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets fax number.
         /// The fax number of the user. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "faxNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("faxNumber")]
         public string FaxNumber { get; set; }
     
         /// <summary>
         /// Gets or sets given name.
         /// The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "givenName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("givenName")]
         public string GivenName { get; set; }
     
         /// <summary>
         /// Gets or sets identities.
         /// Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) only where the signInType is not userPrincipalName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identities")]
         public IEnumerable<ObjectIdentity> Identities { get; set; }
     
         /// <summary>
         /// Gets or sets im addresses.
         /// The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, NOT, ge, le, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imAddresses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("imAddresses")]
         public IEnumerable<string> ImAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets is resource account.
         /// Do not use – reserved for future use.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isResourceAccount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isResourceAccount")]
         public bool? IsResourceAccount { get; set; }
     
         /// <summary>
         /// Gets or sets job title.
         /// The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobTitle", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("jobTitle")]
         public string JobTitle { get; set; }
     
         /// <summary>
         /// Gets or sets last password change date time.
         /// The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastPasswordChangeDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastPasswordChangeDateTime")]
         public DateTimeOffset? LastPasswordChangeDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets legal age group classification.
         /// Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "legalAgeGroupClassification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("legalAgeGroupClassification")]
         public string LegalAgeGroupClassification { get; set; }
     
         /// <summary>
         /// Gets or sets license assignment states.
         /// State of license assignments for this user. Read-only. Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseAssignmentStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("licenseAssignmentStates")]
         public IEnumerable<LicenseAssignmentState> LicenseAssignmentStates { get; set; }
     
         /// <summary>
         /// Gets or sets mail.
         /// The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mail")]
         public string Mail { get; set; }
     
         /// <summary>
         /// Gets or sets mail nickname.
         /// The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNickname", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mailNickname")]
         public string MailNickname { get; set; }
     
         /// <summary>
         /// Gets or sets mobile phone.
         /// The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobilePhone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mobilePhone")]
         public string MobilePhone { get; set; }
     
         /// <summary>
         /// Gets or sets office location.
         /// The office location in the user's place of business. Maximum length is 128 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("officeLocation")]
         public string OfficeLocation { get; set; }
     
         /// <summary>
         /// Gets or sets on premises distinguished name.
         /// Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesDistinguishedName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesDistinguishedName")]
         public string OnPremisesDistinguishedName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises domain name.
         /// Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesDomainName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesDomainName")]
         public string OnPremisesDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises extension attributes.
         /// Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15. Supports $filter (eq, NOT, ge, le, in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesExtensionAttributes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesExtensionAttributes")]
         public OnPremisesExtensionAttributes OnPremisesExtensionAttributes { get; set; }
     
         /// <summary>
         /// Gets or sets on premises immutable id.
         /// This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters cannot be used when specifying this property. Supports $filter (eq, ne, NOT, ge, le, in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesImmutableId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesImmutableId")]
         public string OnPremisesImmutableId { get; set; }
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
         /// Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le, in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesLastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesLastSyncDateTime")]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets on premises provisioning errors.
         /// Errors when using Microsoft synchronization product during provisioning.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesProvisioningErrors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesProvisioningErrors")]
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sam account name.
         /// Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSamAccountName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesSamAccountName")]
         public string OnPremisesSamAccountName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises security identifier.
         /// Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq, ne, NOT, in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSecurityIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesSecurityIdentifier")]
         public string OnPremisesSecurityIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sync enabled.
         /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSyncEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesSyncEnabled")]
         public bool? OnPremisesSyncEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets on premises user principal name.
         /// Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesUserPrincipalName")]
         public string OnPremisesUserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets other mails.
         /// A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user.Supports $filter (eq, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "otherMails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("otherMails")]
         public IEnumerable<string> OtherMails { get; set; }
     
         /// <summary>
         /// Gets or sets password policies.
         /// Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.Supports $filter (eq, ne, NOT).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordPolicies")]
         public string PasswordPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets password profile.
         /// Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordProfile", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordProfile")]
         public PasswordProfile PasswordProfile { get; set; }
     
         /// <summary>
         /// Gets or sets postal code.
         /// The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postalCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("postalCode")]
         public string PostalCode { get; set; }
     
         /// <summary>
         /// Gets or sets preferred language.
         /// The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredLanguage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("preferredLanguage")]
         public string PreferredLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets provisioned plans.
         /// The plans that are provisioned for the user. Read-only. Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisionedPlans", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provisionedPlans")]
         public IEnumerable<ProvisionedPlan> ProvisionedPlans { get; set; }
     
         /// <summary>
         /// Gets or sets proxy addresses.
         /// For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Read-only, Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyAddresses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxyAddresses")]
         public IEnumerable<string> ProxyAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets show in address list.
         /// true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, NOT, in).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showInAddressList", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("showInAddressList")]
         public bool? ShowInAddressList { get; set; }
     
         /// <summary>
         /// Gets or sets sign in sessions valid from date time.
         /// Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInSessionsValidFromDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("signInSessionsValidFromDateTime")]
         public DateTimeOffset? SignInSessionsValidFromDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public string State { get; set; }
     
         /// <summary>
         /// Gets or sets street address.
         /// The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "streetAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("streetAddress")]
         public string StreetAddress { get; set; }
     
         /// <summary>
         /// Gets or sets surname.
         /// The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "surname", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("surname")]
         public string Surname { get; set; }
     
         /// <summary>
         /// Gets or sets usage location.
         /// A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usageLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usageLocation")]
         public string UsageLocation { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith) and $orderBy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets user type.
         /// A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, NOT, in, startsWith, endsWith).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userType")]
         public string UserType { get; set; }
     
         /// <summary>
         /// Gets or sets mailbox settings.
         /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailboxSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mailboxSettings")]
         public MailboxSettings MailboxSettings { get; set; }
     
         /// <summary>
         /// Gets or sets device enrollment limit.
         /// The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceEnrollmentLimit", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceEnrollmentLimit")]
         public Int32? DeviceEnrollmentLimit { get; set; }
     
         /// <summary>
         /// Gets or sets about me.
         /// A freeform text entry field for the user to describe themselves. Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aboutMe", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("aboutMe")]
         public string AboutMe { get; set; }
     
         /// <summary>
         /// Gets or sets birthday.
         /// The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "birthday", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("birthday")]
         public DateTimeOffset? Birthday { get; set; }
     
         /// <summary>
         /// Gets or sets hire date.
         /// The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hireDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hireDate")]
         public DateTimeOffset? HireDate { get; set; }
     
         /// <summary>
         /// Gets or sets interests.
         /// A list for the user to describe their interests. Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "interests", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("interests")]
         public IEnumerable<string> Interests { get; set; }
     
         /// <summary>
         /// Gets or sets my site.
         /// The URL for the user's personal site. Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mySite", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mySite")]
         public string MySite { get; set; }
     
         /// <summary>
         /// Gets or sets past projects.
         /// A list for the user to enumerate their past projects. Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pastProjects", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pastProjects")]
         public IEnumerable<string> PastProjects { get; set; }
     
         /// <summary>
         /// Gets or sets preferred name.
         /// The preferred name for the user. Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("preferredName")]
         public string PreferredName { get; set; }
     
         /// <summary>
         /// Gets or sets responsibilities.
         /// A list for the user to enumerate their responsibilities. Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsibilities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("responsibilities")]
         public IEnumerable<string> Responsibilities { get; set; }
     
         /// <summary>
         /// Gets or sets schools.
         /// A list for the user to enumerate the schools they have attended. Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schools", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schools")]
         public IEnumerable<string> Schools { get; set; }
     
         /// <summary>
         /// Gets or sets skills.
         /// A list for the user to enumerate their skills. Returned only on $select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skills", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("skills")]
         public IEnumerable<string> Skills { get; set; }
     
         /// <summary>
         /// Gets or sets app role assignments.
         /// Represents the app roles a user has been granted for an application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appRoleAssignments")]
         public IUserAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets appRoleAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("appRoleAssignments@odata.nextLink")]
+        public string AppRoleAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets created objects.
         /// Directory objects that were created by the user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdObjects", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdObjects")]
         public IUserCreatedObjectsCollectionWithReferencesPage CreatedObjects { get; set; }
+
+        /// <summary>
+        /// Gets or sets createdObjectsNextLink.
+        /// </summary>
+        [JsonPropertyName("createdObjects@odata.nextLink")]
+        public string CreatedObjectsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets direct reports.
         /// The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directReports", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("directReports")]
         public IUserDirectReportsCollectionWithReferencesPage DirectReports { get; set; }
+
+        /// <summary>
+        /// Gets or sets directReportsNextLink.
+        /// </summary>
+        [JsonPropertyName("directReports@odata.nextLink")]
+        public string DirectReportsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets license details.
         /// A collection of this user's license details. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("licenseDetails")]
         public IUserLicenseDetailsCollectionPage LicenseDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets licenseDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("licenseDetails@odata.nextLink")]
+        public string LicenseDetailsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets manager.
         /// The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("manager")]
         public DirectoryObject Manager { get; set; }
     
         /// <summary>
         /// Gets or sets member of.
         /// The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberOf", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("memberOf")]
         public IUserMemberOfCollectionWithReferencesPage MemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets memberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("memberOf@odata.nextLink")]
+        public string MemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets oauth2permission grants.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oauth2PermissionGrants", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("oauth2PermissionGrants")]
         public IUserOauth2PermissionGrantsCollectionWithReferencesPage Oauth2PermissionGrants { get; set; }
+
+        /// <summary>
+        /// Gets or sets oauth2PermissionGrantsNextLink.
+        /// </summary>
+        [JsonPropertyName("oauth2PermissionGrants@odata.nextLink")]
+        public string Oauth2PermissionGrantsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets owned devices.
         /// Devices that are owned by the user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownedDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownedDevices")]
         public IUserOwnedDevicesCollectionWithReferencesPage OwnedDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets ownedDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("ownedDevices@odata.nextLink")]
+        public string OwnedDevicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets owned objects.
         /// Directory objects that are owned by the user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownedObjects", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownedObjects")]
         public IUserOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
+
+        /// <summary>
+        /// Gets or sets ownedObjectsNextLink.
+        /// </summary>
+        [JsonPropertyName("ownedObjects@odata.nextLink")]
+        public string OwnedObjectsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets registered devices.
         /// Devices that are registered for the user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registeredDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("registeredDevices")]
         public IUserRegisteredDevicesCollectionWithReferencesPage RegisteredDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets registeredDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("registeredDevices@odata.nextLink")]
+        public string RegisteredDevicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets scoped role member of.
         /// The scoped-role administrative unit memberships for this user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopedRoleMemberOf", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scopedRoleMemberOf")]
         public IUserScopedRoleMemberOfCollectionPage ScopedRoleMemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets scopedRoleMemberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("scopedRoleMemberOf@odata.nextLink")]
+        public string ScopedRoleMemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets transitive member of.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("transitiveMemberOf")]
         public IUserTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
+
+        /// <summary>
+        /// Gets or sets transitiveMemberOfNextLink.
+        /// </summary>
+        [JsonPropertyName("transitiveMemberOf@odata.nextLink")]
+        public string TransitiveMemberOfNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets calendar.
         /// The user's primary calendar. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendar", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calendar")]
         public Calendar Calendar { get; set; }
     
         /// <summary>
         /// Gets or sets calendar groups.
         /// The user's calendar groups. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calendarGroups")]
         public IUserCalendarGroupsCollectionPage CalendarGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets calendarGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("calendarGroups@odata.nextLink")]
+        public string CalendarGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets calendars.
         /// The user's calendars. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendars", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calendars")]
         public IUserCalendarsCollectionPage Calendars { get; set; }
+
+        /// <summary>
+        /// Gets or sets calendarsNextLink.
+        /// </summary>
+        [JsonPropertyName("calendars@odata.nextLink")]
+        public string CalendarsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets calendar view.
         /// The calendar view for the calendar. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarView", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calendarView")]
         public IUserCalendarViewCollectionPage CalendarView { get; set; }
+
+        /// <summary>
+        /// Gets or sets calendarViewNextLink.
+        /// </summary>
+        [JsonPropertyName("calendarView@odata.nextLink")]
+        public string CalendarViewNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets contact folders.
         /// The user's contacts folders. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactFolders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contactFolders")]
         public IUserContactFoldersCollectionPage ContactFolders { get; set; }
+
+        /// <summary>
+        /// Gets or sets contactFoldersNextLink.
+        /// </summary>
+        [JsonPropertyName("contactFolders@odata.nextLink")]
+        public string ContactFoldersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets contacts.
         /// The user's contacts. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contacts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contacts")]
         public IUserContactsCollectionPage Contacts { get; set; }
+
+        /// <summary>
+        /// Gets or sets contactsNextLink.
+        /// </summary>
+        [JsonPropertyName("contacts@odata.nextLink")]
+        public string ContactsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets events.
         /// The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "events", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("events")]
         public IUserEventsCollectionPage Events { get; set; }
+
+        /// <summary>
+        /// Gets or sets eventsNextLink.
+        /// </summary>
+        [JsonPropertyName("events@odata.nextLink")]
+        public string EventsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets inference classification.
         /// Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inferenceClassification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inferenceClassification")]
         public InferenceClassification InferenceClassification { get; set; }
     
         /// <summary>
         /// Gets or sets mail folders.
         /// The user's mail folders. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailFolders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mailFolders")]
         public IUserMailFoldersCollectionPage MailFolders { get; set; }
+
+        /// <summary>
+        /// Gets or sets mailFoldersNextLink.
+        /// </summary>
+        [JsonPropertyName("mailFolders@odata.nextLink")]
+        public string MailFoldersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets messages.
         /// The messages in a mailbox or folder. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("messages")]
         public IUserMessagesCollectionPage Messages { get; set; }
+
+        /// <summary>
+        /// Gets or sets messagesNextLink.
+        /// </summary>
+        [JsonPropertyName("messages@odata.nextLink")]
+        public string MessagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets outlook.
         /// Selective Outlook services available to the user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlook", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outlook")]
         public OutlookUser Outlook { get; set; }
     
         /// <summary>
         /// Gets or sets people.
         /// Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "people", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("people")]
         public IUserPeopleCollectionPage People { get; set; }
+
+        /// <summary>
+        /// Gets or sets peopleNextLink.
+        /// </summary>
+        [JsonPropertyName("people@odata.nextLink")]
+        public string PeopleNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets photo.
         /// The user's profile photo. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("photo")]
         public ProfilePhoto Photo { get; set; }
     
         /// <summary>
         /// Gets or sets photos.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photos", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("photos")]
         public IUserPhotosCollectionPage Photos { get; set; }
+
+        /// <summary>
+        /// Gets or sets photosNextLink.
+        /// </summary>
+        [JsonPropertyName("photos@odata.nextLink")]
+        public string PhotosNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets drive.
         /// The user's OneDrive. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "drive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("drive")]
         public Drive Drive { get; set; }
     
         /// <summary>
         /// Gets or sets drives.
         /// A collection of drives available for this user. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "drives", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("drives")]
         public IUserDrivesCollectionPage Drives { get; set; }
+
+        /// <summary>
+        /// Gets or sets drivesNextLink.
+        /// </summary>
+        [JsonPropertyName("drives@odata.nextLink")]
+        public string DrivesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets followed sites.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "followedSites", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("followedSites")]
         public IUserFollowedSitesCollectionWithReferencesPage FollowedSites { get; set; }
+
+        /// <summary>
+        /// Gets or sets followedSitesNextLink.
+        /// </summary>
+        [JsonPropertyName("followedSites@odata.nextLink")]
+        public string FollowedSitesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
         /// The collection of open extensions defined for the user. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("extensions")]
         public IUserExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets agreement acceptances.
         /// The user's terms of use acceptance statuses. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreementAcceptances", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("agreementAcceptances")]
         public IUserAgreementAcceptancesCollectionWithReferencesPage AgreementAcceptances { get; set; }
+
+        /// <summary>
+        /// Gets or sets agreementAcceptancesNextLink.
+        /// </summary>
+        [JsonPropertyName("agreementAcceptances@odata.nextLink")]
+        public string AgreementAcceptancesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed devices.
         /// The managed devices associated with the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDevices")]
         public IUserManagedDevicesCollectionPage ManagedDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedDevices@odata.nextLink")]
+        public string ManagedDevicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed app registrations.
         /// Zero or more managed app registrations that belong to the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedAppRegistrations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedAppRegistrations")]
         public IUserManagedAppRegistrationsCollectionWithReferencesPage ManagedAppRegistrations { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedAppRegistrationsNextLink.
+        /// </summary>
+        [JsonPropertyName("managedAppRegistrations@odata.nextLink")]
+        public string ManagedAppRegistrationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device management troubleshooting events.
         /// The list of troubleshooting events for this user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementTroubleshootingEvents", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceManagementTroubleshootingEvents")]
         public IUserDeviceManagementTroubleshootingEventsCollectionPage DeviceManagementTroubleshootingEvents { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceManagementTroubleshootingEventsNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceManagementTroubleshootingEvents@odata.nextLink")]
+        public string DeviceManagementTroubleshootingEventsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets planner.
         /// Selective Planner services available to the user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "planner", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("planner")]
         public PlannerUser Planner { get; set; }
     
         /// <summary>
         /// Gets or sets insights.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "insights", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("insights")]
         public OfficeGraphInsights Insights { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public UserSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets onenote.
         /// Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onenote", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onenote")]
         public Onenote Onenote { get; set; }
     
         /// <summary>
         /// Gets or sets activities.
         /// The user's activities across devices. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activities")]
         public IUserActivitiesCollectionPage Activities { get; set; }
+
+        /// <summary>
+        /// Gets or sets activitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("activities@odata.nextLink")]
+        public string ActivitiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets online meetings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onlineMeetings")]
         public IUserOnlineMeetingsCollectionPage OnlineMeetings { get; set; }
+
+        /// <summary>
+        /// Gets or sets onlineMeetingsNextLink.
+        /// </summary>
+        [JsonPropertyName("onlineMeetings@odata.nextLink")]
+        public string OnlineMeetingsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets presence.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "presence", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("presence")]
         public Presence Presence { get; set; }
     
         /// <summary>
         /// Gets or sets authentication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authentication", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authentication")]
         public Authentication Authentication { get; set; }
     
         /// <summary>
         /// Gets or sets chats.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chats", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("chats")]
         public IUserChatsCollectionPage Chats { get; set; }
+
+        /// <summary>
+        /// Gets or sets chatsNextLink.
+        /// </summary>
+        [JsonPropertyName("chats@odata.nextLink")]
+        public string ChatsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets joined teams.
         /// The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinedTeams", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("joinedTeams")]
         public IUserJoinedTeamsCollectionPage JoinedTeams { get; set; }
+
+        /// <summary>
+        /// Gets or sets joinedTeamsNextLink.
+        /// </summary>
+        [JsonPropertyName("joinedTeams@odata.nextLink")]
+        public string JoinedTeamsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets teamwork.
         /// A container for Microsoft Teams features available for the user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamwork", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teamwork")]
         public UserTeamwork Teamwork { get; set; }
     
         /// <summary>
         /// Gets or sets todo.
         /// Represents the To Do services available to a user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "todo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("todo")]
         public Todo Todo { get; set; }
     
     }

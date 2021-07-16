@@ -9,30 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsT_Inv_2TRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsT_Inv_2TRequestBody
     {
     
         /// <summary>
         /// Gets or sets Probability.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "probability", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Probability { get; set; }
+        [JsonPropertyName("probability")]
+        public System.Text.Json.JsonDocument Probability { get; set; }
     
         /// <summary>
         /// Gets or sets DegFreedom.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "degFreedom", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken DegFreedom { get; set; }
+        [JsonPropertyName("degFreedom")]
+        public System.Text.Json.JsonDocument DegFreedom { get; set; }
     
     }
 }

@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         public WorkbookFunctionsSubstituteRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken text,
-            Newtonsoft.Json.Linq.JToken oldText,
-            Newtonsoft.Json.Linq.JToken newText,
-            Newtonsoft.Json.Linq.JToken instanceNum)
+            System.Text.Json.JsonDocument text,
+            System.Text.Json.JsonDocument oldText,
+            System.Text.Json.JsonDocument newText,
+            System.Text.Json.JsonDocument instanceNum)
             : base(requestUrl, client)
         {
             this.SetParameter("text", text, true);
@@ -54,22 +54,22 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("text"))
             {
-                request.RequestBody.Text = this.GetParameter<Newtonsoft.Json.Linq.JToken>("text");
+                request.RequestBody.Text = this.GetParameter<System.Text.Json.JsonDocument>("text");
             }
 
             if (this.HasParameter("oldText"))
             {
-                request.RequestBody.OldText = this.GetParameter<Newtonsoft.Json.Linq.JToken>("oldText");
+                request.RequestBody.OldText = this.GetParameter<System.Text.Json.JsonDocument>("oldText");
             }
 
             if (this.HasParameter("newText"))
             {
-                request.RequestBody.NewText = this.GetParameter<Newtonsoft.Json.Linq.JToken>("newText");
+                request.RequestBody.NewText = this.GetParameter<System.Text.Json.JsonDocument>("newText");
             }
 
             if (this.HasParameter("instanceNum"))
             {
-                request.RequestBody.InstanceNum = this.GetParameter<Newtonsoft.Json.Linq.JToken>("instanceNum");
+                request.RequestBody.InstanceNum = this.GetParameter<System.Text.Json.JsonDocument>("instanceNum");
             }
 
             return request;

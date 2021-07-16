@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ScheduleItem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ScheduleItem>))]
     public partial class ScheduleItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ScheduleItem"/> class.
-        /// </summary>
-        public ScheduleItem()
-        {
-            this.ODataType = "microsoft.graph.scheduleItem";
-        }
 
         /// <summary>
         /// Gets or sets end.
         /// The date, time, and time zone that the corresponding event ends.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "end", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("end")]
         public DateTimeTimeZone End { get; set; }
     
         /// <summary>
         /// Gets or sets isPrivate.
         /// The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPrivate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isPrivate")]
         public bool? IsPrivate { get; set; }
     
         /// <summary>
         /// Gets or sets location.
         /// The location where the corresponding event is held or attended from. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("location")]
         public string Location { get; set; }
     
         /// <summary>
         /// Gets or sets start.
         /// The date, time, and time zone that the corresponding event starts.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("start")]
         public DateTimeTimeZone Start { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public FreeBusyStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets subject.
         /// The corresponding event's subject line. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subject")]
         public string Subject { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

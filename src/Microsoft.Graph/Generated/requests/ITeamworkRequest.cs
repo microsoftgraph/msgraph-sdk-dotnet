@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Teamwork using POST.
         /// </summary>
         /// <param name="teamworkToCreate">The Teamwork to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Teamwork.</returns>
-        System.Threading.Tasks.Task<Teamwork> CreateAsync(Teamwork teamworkToCreate);        /// <summary>
-        /// Creates the specified Teamwork using POST.
+        System.Threading.Tasks.Task<Teamwork> CreateAsync(Teamwork teamworkToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Teamwork using POST and returns a <see cref="GraphResponse{Teamwork}"/> object.
         /// </summary>
         /// <param name="teamworkToCreate">The Teamwork to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Teamwork.</returns>
-        System.Threading.Tasks.Task<Teamwork> CreateAsync(Teamwork teamworkToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Teamwork.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Teamwork}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Teamwork>> CreateResponseAsync(Teamwork teamworkToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Teamwork.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Teamwork.
+        /// Deletes the specified Teamwork and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Teamwork.</returns>
-        System.Threading.Tasks.Task<Teamwork> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Teamwork.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Teamwork.</returns>
-        System.Threading.Tasks.Task<Teamwork> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Teamwork> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Teamwork using PATCH.
+        /// Gets the specified Teamwork and returns a <see cref="GraphResponse{Teamwork}"/> object.
         /// </summary>
-        /// <param name="teamworkToUpdate">The Teamwork to update.</param>
-        /// <returns>The updated Teamwork.</returns>
-        System.Threading.Tasks.Task<Teamwork> UpdateAsync(Teamwork teamworkToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Teamwork}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Teamwork>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Teamwork using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Teamwork.</returns>
-        System.Threading.Tasks.Task<Teamwork> UpdateAsync(Teamwork teamworkToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Teamwork> UpdateAsync(Teamwork teamworkToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Teamwork using PATCH and returns a <see cref="GraphResponse{Teamwork}"/> object.
+        /// </summary>
+        /// <param name="teamworkToUpdate">The Teamwork to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Teamwork}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Teamwork>> UpdateResponseAsync(Teamwork teamworkToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Teamwork using PUT.
+        /// </summary>
+        /// <param name="teamworkToUpdate">The Teamwork object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Teamwork> PutAsync(Teamwork teamworkToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Teamwork using PUT and returns a <see cref="GraphResponse{Teamwork}"/> object.
+        /// </summary>
+        /// <param name="teamworkToUpdate">The Teamwork object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Teamwork}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Teamwork>> PutResponseAsync(Teamwork teamworkToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

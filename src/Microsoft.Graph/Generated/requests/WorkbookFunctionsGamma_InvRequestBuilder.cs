@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsGamma_InvRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken probability,
-            Newtonsoft.Json.Linq.JToken alpha,
-            Newtonsoft.Json.Linq.JToken beta)
+            System.Text.Json.JsonDocument probability,
+            System.Text.Json.JsonDocument alpha,
+            System.Text.Json.JsonDocument beta)
             : base(requestUrl, client)
         {
             this.SetParameter("probability", probability, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("probability"))
             {
-                request.RequestBody.Probability = this.GetParameter<Newtonsoft.Json.Linq.JToken>("probability");
+                request.RequestBody.Probability = this.GetParameter<System.Text.Json.JsonDocument>("probability");
             }
 
             if (this.HasParameter("alpha"))
             {
-                request.RequestBody.Alpha = this.GetParameter<Newtonsoft.Json.Linq.JToken>("alpha");
+                request.RequestBody.Alpha = this.GetParameter<System.Text.Json.JsonDocument>("alpha");
             }
 
             if (this.HasParameter("beta"))
             {
-                request.RequestBody.Beta = this.GetParameter<Newtonsoft.Json.Linq.JToken>("beta");
+                request.RequestBody.Beta = this.GetParameter<System.Text.Json.JsonDocument>("beta");
             }
 
             return request;

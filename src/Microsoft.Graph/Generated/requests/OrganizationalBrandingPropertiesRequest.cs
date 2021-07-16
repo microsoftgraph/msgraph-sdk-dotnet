@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified OrganizationalBrandingProperties using POST.
         /// </summary>
         /// <param name="organizationalBrandingPropertiesToCreate">The OrganizationalBrandingProperties to create.</param>
-        /// <returns>The created OrganizationalBrandingProperties.</returns>
-        public System.Threading.Tasks.Task<OrganizationalBrandingProperties> CreateAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToCreate)
-        {
-            return this.CreateAsync(organizationalBrandingPropertiesToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OrganizationalBrandingProperties using POST.
-        /// </summary>
-        /// <param name="organizationalBrandingPropertiesToCreate">The OrganizationalBrandingProperties to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OrganizationalBrandingProperties.</returns>
-        public async System.Threading.Tasks.Task<OrganizationalBrandingProperties> CreateAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OrganizationalBrandingProperties> CreateAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<OrganizationalBrandingProperties>(organizationalBrandingPropertiesToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified OrganizationalBrandingProperties.
+        /// Creates the specified OrganizationalBrandingProperties using POST and returns a <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="organizationalBrandingPropertiesToCreate">The OrganizationalBrandingProperties to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingProperties>> CreateResponseAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<OrganizationalBrandingProperties>(organizationalBrandingPropertiesToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<OrganizationalBrandingProperties>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified OrganizationalBrandingProperties.
+        /// Deletes the specified OrganizationalBrandingProperties and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OrganizationalBrandingProperties.</returns>
-        public System.Threading.Tasks.Task<OrganizationalBrandingProperties> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OrganizationalBrandingProperties.</returns>
-        public async System.Threading.Tasks.Task<OrganizationalBrandingProperties> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OrganizationalBrandingProperties> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<OrganizationalBrandingProperties>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified OrganizationalBrandingProperties using PATCH.
+        /// Gets the specified OrganizationalBrandingProperties and returns a <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object.
         /// </summary>
-        /// <param name="organizationalBrandingPropertiesToUpdate">The OrganizationalBrandingProperties to update.</param>
-        /// <returns>The updated OrganizationalBrandingProperties.</returns>
-        public System.Threading.Tasks.Task<OrganizationalBrandingProperties> UpdateAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingProperties>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(organizationalBrandingPropertiesToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<OrganizationalBrandingProperties>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OrganizationalBrandingProperties.</returns>
-        public async System.Threading.Tasks.Task<OrganizationalBrandingProperties> UpdateAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OrganizationalBrandingProperties> UpdateAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToUpdate, CancellationToken cancellationToken = default)
         {
-			if (organizationalBrandingPropertiesToUpdate.AdditionalData != null)
-			{
-				if (organizationalBrandingPropertiesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					organizationalBrandingPropertiesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationalBrandingPropertiesToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (organizationalBrandingPropertiesToUpdate.AdditionalData != null)
-            {
-                if (organizationalBrandingPropertiesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    organizationalBrandingPropertiesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationalBrandingPropertiesToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<OrganizationalBrandingProperties>(organizationalBrandingPropertiesToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OrganizationalBrandingProperties using PATCH and returns a <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object.
+        /// </summary>
+        /// <param name="organizationalBrandingPropertiesToUpdate">The OrganizationalBrandingProperties to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingProperties>> UpdateResponseAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<OrganizationalBrandingProperties>(organizationalBrandingPropertiesToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified OrganizationalBrandingProperties using PUT.
+        /// </summary>
+        /// <param name="organizationalBrandingPropertiesToUpdate">The OrganizationalBrandingProperties object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<OrganizationalBrandingProperties> PutAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<OrganizationalBrandingProperties>(organizationalBrandingPropertiesToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OrganizationalBrandingProperties using PUT and returns a <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object.
+        /// </summary>
+        /// <param name="organizationalBrandingPropertiesToUpdate">The OrganizationalBrandingProperties object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{OrganizationalBrandingProperties}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingProperties>> PutResponseAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<OrganizationalBrandingProperties>(organizationalBrandingPropertiesToUpdate, cancellationToken);
         }
 
         /// <summary>

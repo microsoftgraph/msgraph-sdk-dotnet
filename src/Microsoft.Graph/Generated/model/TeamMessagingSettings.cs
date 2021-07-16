@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TeamMessagingSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TeamMessagingSettings>))]
     public partial class TeamMessagingSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TeamMessagingSettings"/> class.
-        /// </summary>
-        public TeamMessagingSettings()
-        {
-            this.ODataType = "microsoft.graph.teamMessagingSettings";
-        }
 
         /// <summary>
         /// Gets or sets allowChannelMentions.
         /// If set to true, @channel mentions are allowed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowChannelMentions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowChannelMentions")]
         public bool? AllowChannelMentions { get; set; }
     
         /// <summary>
         /// Gets or sets allowOwnerDeleteMessages.
         /// If set to true, owners can delete any message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowOwnerDeleteMessages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowOwnerDeleteMessages")]
         public bool? AllowOwnerDeleteMessages { get; set; }
     
         /// <summary>
         /// Gets or sets allowTeamMentions.
         /// If set to true, @team mentions are allowed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowTeamMentions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowTeamMentions")]
         public bool? AllowTeamMentions { get; set; }
     
         /// <summary>
         /// Gets or sets allowUserDeleteMessages.
         /// If set to true, users can delete their messages.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowUserDeleteMessages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowUserDeleteMessages")]
         public bool? AllowUserDeleteMessages { get; set; }
     
         /// <summary>
         /// Gets or sets allowUserEditMessages.
         /// If set to true, users can edit their messages.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowUserEditMessages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowUserEditMessages")]
         public bool? AllowUserEditMessages { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

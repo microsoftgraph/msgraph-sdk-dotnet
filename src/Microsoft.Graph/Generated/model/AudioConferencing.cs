@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AudioConferencing.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AudioConferencing>))]
     public partial class AudioConferencing
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AudioConferencing"/> class.
-        /// </summary>
-        public AudioConferencing()
-        {
-            this.ODataType = "microsoft.graph.audioConferencing";
-        }
 
         /// <summary>
         /// Gets or sets conferenceId.
         /// The conference id of the online meeting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conferenceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conferenceId")]
         public string ConferenceId { get; set; }
     
         /// <summary>
         /// Gets or sets dialinUrl.
         /// A URL to the externally-accessible web page that contains dial-in information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dialinUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dialinUrl")]
         public string DialinUrl { get; set; }
     
         /// <summary>
         /// Gets or sets tollFreeNumber.
         /// The toll-free number that connects to the Audio Conference Provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tollFreeNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tollFreeNumber")]
         public string TollFreeNumber { get; set; }
     
         /// <summary>
         /// Gets or sets tollNumber.
         /// The toll number that connects to the Audio Conference Provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tollNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tollNumber")]
         public string TollNumber { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

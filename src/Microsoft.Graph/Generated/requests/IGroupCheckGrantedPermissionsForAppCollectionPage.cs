@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IGroupCheckGrantedPermissionsForAppCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<GroupCheckGrantedPermissionsForAppCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<GroupCheckGrantedPermissionsForAppCollectionPage>))]
     public interface IGroupCheckGrantedPermissionsForAppCollectionPage : ICollectionPage<ResourceSpecificPermissionGrant>
     {
         /// <summary>

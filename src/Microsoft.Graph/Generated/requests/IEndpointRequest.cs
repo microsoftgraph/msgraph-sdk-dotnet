@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Endpoint using POST.
         /// </summary>
         /// <param name="endpointToCreate">The Endpoint to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Endpoint.</returns>
-        System.Threading.Tasks.Task<Endpoint> CreateAsync(Endpoint endpointToCreate);        /// <summary>
-        /// Creates the specified Endpoint using POST.
+        System.Threading.Tasks.Task<Endpoint> CreateAsync(Endpoint endpointToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Endpoint using POST and returns a <see cref="GraphResponse{Endpoint}"/> object.
         /// </summary>
         /// <param name="endpointToCreate">The Endpoint to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Endpoint.</returns>
-        System.Threading.Tasks.Task<Endpoint> CreateAsync(Endpoint endpointToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Endpoint.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Endpoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Endpoint>> CreateResponseAsync(Endpoint endpointToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Endpoint.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Endpoint.
+        /// Deletes the specified Endpoint and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Endpoint.</returns>
-        System.Threading.Tasks.Task<Endpoint> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Endpoint.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Endpoint.</returns>
-        System.Threading.Tasks.Task<Endpoint> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Endpoint> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Endpoint using PATCH.
+        /// Gets the specified Endpoint and returns a <see cref="GraphResponse{Endpoint}"/> object.
         /// </summary>
-        /// <param name="endpointToUpdate">The Endpoint to update.</param>
-        /// <returns>The updated Endpoint.</returns>
-        System.Threading.Tasks.Task<Endpoint> UpdateAsync(Endpoint endpointToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Endpoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Endpoint>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Endpoint using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Endpoint.</returns>
-        System.Threading.Tasks.Task<Endpoint> UpdateAsync(Endpoint endpointToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Endpoint> UpdateAsync(Endpoint endpointToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Endpoint using PATCH and returns a <see cref="GraphResponse{Endpoint}"/> object.
+        /// </summary>
+        /// <param name="endpointToUpdate">The Endpoint to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Endpoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Endpoint>> UpdateResponseAsync(Endpoint endpointToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Endpoint using PUT.
+        /// </summary>
+        /// <param name="endpointToUpdate">The Endpoint object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Endpoint> PutAsync(Endpoint endpointToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Endpoint using PUT and returns a <see cref="GraphResponse{Endpoint}"/> object.
+        /// </summary>
+        /// <param name="endpointToUpdate">The Endpoint object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Endpoint}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Endpoint>> PutResponseAsync(Endpoint endpointToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

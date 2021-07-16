@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<UserActivity> AddUserActivityAsync(UserActivity userActivity, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
-            this.Method = "PUT";
+            this.Method = HttpMethods.PUT;
             this.AppendSegmentToRequestUrl(userActivity.AppActivityId);
             return this.SendAsync<UserActivity>(userActivity, cancellationToken);
         }

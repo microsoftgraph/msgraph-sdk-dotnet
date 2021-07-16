@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Chart Data Label Format.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookChartDataLabelFormat : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartDataLabelFormat constructor
-		///</summary>
-        public WorkbookChartDataLabelFormat()
-        {
-            this.ODataType = "microsoft.graph.workbookChartDataLabelFormat";
-        }
-	
         /// <summary>
         /// Gets or sets fill.
         /// Represents the fill format of the current chart data label. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fill", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fill")]
         public WorkbookChartFill Fill { get; set; }
     
         /// <summary>
         /// Gets or sets font.
         /// Represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "font", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("font")]
         public WorkbookChartFont Font { get; set; }
     
     }

@@ -19,11 +19,6 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ITeamworkHostedContentContentRequest : IBaseRequest
     {
-        /// <summary>
-        /// Gets the stream.
-        /// </summary>
-        /// <returns>The stream.</returns>
-        System.Threading.Tasks.Task<Stream> GetAsync();
 
         /// <summary>
         /// Gets the stream.
@@ -31,15 +26,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
         /// <returns>The stream.</returns>
-        System.Threading.Tasks.Task<Stream> GetAsync(CancellationToken cancellationToken, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead);
-
+        System.Threading.Tasks.Task<Stream> GetAsync(CancellationToken cancellationToken = default, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead);
 
         /// <summary>
-        /// PUTs the specified stream.
+        /// Gets the <see cref="GraphResponse"/> object of the request.
         /// </summary>
-        /// <param name="content">The stream to PUT.</param>
-        /// <returns>The updated stream.</returns>
-        System.Threading.Tasks.Task<Stream> PutAsync(Stream content);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead);
+
 
         /// <summary>
         /// PUTs the specified stream.
@@ -48,7 +44,16 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
         /// <returns>The updated stream.</returns>
-        System.Threading.Tasks.Task<Stream> PutAsync(Stream content, CancellationToken cancellationToken, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead);
+        System.Threading.Tasks.Task<Stream> PutAsync(Stream content, CancellationToken cancellationToken = default, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead);
+
+        /// <summary>
+        /// PUTs the specified stream and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="content">The stream to PUT.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
+        /// <returns>The <see cref="GraphResponse"/> object returned by the PUT call.</returns>
+        System.Threading.Tasks.Task<GraphResponse> PutResponseAsync(Stream content, CancellationToken cancellationToken = default, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead);
     
     }
 }

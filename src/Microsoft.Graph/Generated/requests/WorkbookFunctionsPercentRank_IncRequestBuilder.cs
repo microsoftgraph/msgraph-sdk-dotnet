@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsPercentRank_IncRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken array,
-            Newtonsoft.Json.Linq.JToken x,
-            Newtonsoft.Json.Linq.JToken significance)
+            System.Text.Json.JsonDocument array,
+            System.Text.Json.JsonDocument x,
+            System.Text.Json.JsonDocument significance)
             : base(requestUrl, client)
         {
             this.SetParameter("array", array, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("array"))
             {
-                request.RequestBody.Array = this.GetParameter<Newtonsoft.Json.Linq.JToken>("array");
+                request.RequestBody.Array = this.GetParameter<System.Text.Json.JsonDocument>("array");
             }
 
             if (this.HasParameter("x"))
             {
-                request.RequestBody.X = this.GetParameter<Newtonsoft.Json.Linq.JToken>("x");
+                request.RequestBody.X = this.GetParameter<System.Text.Json.JsonDocument>("x");
             }
 
             if (this.HasParameter("significance"))
             {
-                request.RequestBody.Significance = this.GetParameter<Newtonsoft.Json.Linq.JToken>("significance");
+                request.RequestBody.Significance = this.GetParameter<System.Text.Json.JsonDocument>("significance");
             }
 
             return request;

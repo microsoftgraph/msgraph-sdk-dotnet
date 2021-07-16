@@ -9,30 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsQuotientRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsQuotientRequestBody
     {
     
         /// <summary>
         /// Gets or sets Numerator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numerator", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Numerator { get; set; }
+        [JsonPropertyName("numerator")]
+        public System.Text.Json.JsonDocument Numerator { get; set; }
     
         /// <summary>
         /// Gets or sets Denominator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "denominator", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Denominator { get; set; }
+        [JsonPropertyName("denominator")]
+        public System.Text.Json.JsonDocument Denominator { get; set; }
     
     }
 }

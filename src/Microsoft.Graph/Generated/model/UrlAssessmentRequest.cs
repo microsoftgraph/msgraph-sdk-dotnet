@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Url Assessment Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UrlAssessmentRequestObject : ThreatAssessmentRequestObject
     {
     
-		///<summary>
-		/// The UrlAssessmentRequest constructor
-		///</summary>
+        ///<summary>
+        /// The UrlAssessmentRequest constructor
+        ///</summary>
         public UrlAssessmentRequestObject()
         {
             this.ODataType = "microsoft.graph.urlAssessmentRequest";
         }
-	
+
         /// <summary>
         /// Gets or sets url.
         /// The URL string.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("url")]
         public string Url { get; set; }
     
     }

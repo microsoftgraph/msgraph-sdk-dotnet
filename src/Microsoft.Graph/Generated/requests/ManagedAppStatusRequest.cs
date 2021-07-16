@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedAppStatus using POST.
         /// </summary>
         /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
-        /// <returns>The created ManagedAppStatus.</returns>
-        public System.Threading.Tasks.Task<ManagedAppStatus> CreateAsync(ManagedAppStatus managedAppStatusToCreate)
-        {
-            return this.CreateAsync(managedAppStatusToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedAppStatus using POST.
-        /// </summary>
-        /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppStatus.</returns>
-        public async System.Threading.Tasks.Task<ManagedAppStatus> CreateAsync(ManagedAppStatus managedAppStatusToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedAppStatus> CreateAsync(ManagedAppStatus managedAppStatusToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ManagedAppStatus>(managedAppStatusToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ManagedAppStatus.
+        /// Creates the specified ManagedAppStatus using POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> CreateResponseAsync(ManagedAppStatus managedAppStatusToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ManagedAppStatus>(managedAppStatusToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ManagedAppStatus>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ManagedAppStatus.
+        /// Deletes the specified ManagedAppStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagedAppStatus.</returns>
-        public System.Threading.Tasks.Task<ManagedAppStatus> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedAppStatus.</returns>
-        public async System.Threading.Tasks.Task<ManagedAppStatus> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedAppStatus> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ManagedAppStatus>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ManagedAppStatus using PATCH.
+        /// Gets the specified ManagedAppStatus and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
         /// </summary>
-        /// <param name="managedAppStatusToUpdate">The ManagedAppStatus to update.</param>
-        /// <returns>The updated ManagedAppStatus.</returns>
-        public System.Threading.Tasks.Task<ManagedAppStatus> UpdateAsync(ManagedAppStatus managedAppStatusToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(managedAppStatusToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ManagedAppStatus>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedAppStatus.</returns>
-        public async System.Threading.Tasks.Task<ManagedAppStatus> UpdateAsync(ManagedAppStatus managedAppStatusToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedAppStatus> UpdateAsync(ManagedAppStatus managedAppStatusToUpdate, CancellationToken cancellationToken = default)
         {
-			if (managedAppStatusToUpdate.AdditionalData != null)
-			{
-				if (managedAppStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedAppStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppStatusToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedAppStatusToUpdate.AdditionalData != null)
-            {
-                if (managedAppStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedAppStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppStatusToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ManagedAppStatus>(managedAppStatusToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedAppStatus using PATCH and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
+        /// </summary>
+        /// <param name="managedAppStatusToUpdate">The ManagedAppStatus to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> UpdateResponseAsync(ManagedAppStatus managedAppStatusToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ManagedAppStatus>(managedAppStatusToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedAppStatus using PUT.
+        /// </summary>
+        /// <param name="managedAppStatusToUpdate">The ManagedAppStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ManagedAppStatus> PutAsync(ManagedAppStatus managedAppStatusToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ManagedAppStatus>(managedAppStatusToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedAppStatus using PUT and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
+        /// </summary>
+        /// <param name="managedAppStatusToUpdate">The ManagedAppStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ManagedAppStatus}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> PutResponseAsync(ManagedAppStatus managedAppStatusToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ManagedAppStatus>(managedAppStatusToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsIfRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsIfRequestBody
     {
     
         /// <summary>
         /// Gets or sets LogicalTest.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logicalTest", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken LogicalTest { get; set; }
+        [JsonPropertyName("logicalTest")]
+        public System.Text.Json.JsonDocument LogicalTest { get; set; }
     
         /// <summary>
         /// Gets or sets ValueIfTrue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueIfTrue", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken ValueIfTrue { get; set; }
+        [JsonPropertyName("valueIfTrue")]
+        public System.Text.Json.JsonDocument ValueIfTrue { get; set; }
     
         /// <summary>
         /// Gets or sets ValueIfFalse.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueIfFalse", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken ValueIfFalse { get; set; }
+        [JsonPropertyName("valueIfFalse")]
+        public System.Text.Json.JsonDocument ValueIfFalse { get; set; }
     
     }
 }

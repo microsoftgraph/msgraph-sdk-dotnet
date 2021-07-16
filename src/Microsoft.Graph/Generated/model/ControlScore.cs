@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ControlScore.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ControlScore>))]
     public partial class ControlScore
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ControlScore"/> class.
-        /// </summary>
-        public ControlScore()
-        {
-            this.ODataType = "microsoft.graph.controlScore";
-        }
 
         /// <summary>
         /// Gets or sets controlCategory.
         /// Control action category (Identity, Data, Device, Apps, Infrastructure).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controlCategory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("controlCategory")]
         public string ControlCategory { get; set; }
     
         /// <summary>
         /// Gets or sets controlName.
         /// Control unique name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controlName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("controlName")]
         public string ControlName { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Description of the control.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets score.
         /// Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "score", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("score")]
         public double? Score { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

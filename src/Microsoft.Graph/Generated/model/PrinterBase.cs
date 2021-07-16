@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Printer Base.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<PrinterBase>))]
     public partial class PrinterBase : Entity
     {
     
-		///<summary>
-		/// The internal PrinterBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal PrinterBase constructor
+        ///</summary>
         protected internal PrinterBase()
         {
             // Don't allow initialization of abstract entity types
@@ -34,64 +33,70 @@ namespace Microsoft.Graph
         /// Gets or sets capabilities.
         /// The capabilities of the printer/printerShare.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "capabilities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("capabilities")]
         public PrinterCapabilities Capabilities { get; set; }
     
         /// <summary>
         /// Gets or sets defaults.
         /// The default print settings of printer/printerShare.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaults", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaults")]
         public PrinterDefaults Defaults { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The name of the printer/printerShare.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is accepting jobs.
         /// Whether the printer/printerShare is currently accepting new print jobs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAcceptingJobs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isAcceptingJobs")]
         public bool? IsAcceptingJobs { get; set; }
     
         /// <summary>
         /// Gets or sets location.
         /// The physical and/or organizational location of the printer/printerShare.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("location")]
         public PrinterLocation Location { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
         /// The manufacturer of the printer/printerShare.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("manufacturer")]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
         /// The model name of the printer/printerShare.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("model")]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// The processing status of the printer/printerShare, including any errors.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public PrinterStatus Status { get; set; }
     
         /// <summary>
         /// Gets or sets jobs.
         /// The list of jobs that are queued for printing by the printer/printerShare.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("jobs")]
         public IPrinterBaseJobsCollectionPage Jobs { get; set; }
+
+        /// <summary>
+        /// Gets or sets jobsNextLink.
+        /// </summary>
+        [JsonPropertyName("jobs@odata.nextLink")]
+        public string JobsNextLink { get; set; }
     
     }
 }

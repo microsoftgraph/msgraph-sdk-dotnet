@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedDeviceMobileAppConfiguration using POST.
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationToCreate">The ManagedDeviceMobileAppConfiguration to create.</param>
-        /// <returns>The created ManagedDeviceMobileAppConfiguration.</returns>
-        public System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> CreateAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToCreate)
-        {
-            return this.CreateAsync(managedDeviceMobileAppConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedDeviceMobileAppConfiguration using POST.
-        /// </summary>
-        /// <param name="managedDeviceMobileAppConfigurationToCreate">The ManagedDeviceMobileAppConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceMobileAppConfiguration.</returns>
-        public async System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> CreateAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> CreateAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ManagedDeviceMobileAppConfiguration>(managedDeviceMobileAppConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ManagedDeviceMobileAppConfiguration.
+        /// Creates the specified ManagedDeviceMobileAppConfiguration using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="managedDeviceMobileAppConfigurationToCreate">The ManagedDeviceMobileAppConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfiguration>> CreateResponseAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfiguration>(managedDeviceMobileAppConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ManagedDeviceMobileAppConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ManagedDeviceMobileAppConfiguration.
+        /// Deletes the specified ManagedDeviceMobileAppConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagedDeviceMobileAppConfiguration.</returns>
-        public System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedDeviceMobileAppConfiguration.</returns>
-        public async System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ManagedDeviceMobileAppConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ManagedDeviceMobileAppConfiguration using PATCH.
+        /// Gets the specified ManagedDeviceMobileAppConfiguration and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object.
         /// </summary>
-        /// <param name="managedDeviceMobileAppConfigurationToUpdate">The ManagedDeviceMobileAppConfiguration to update.</param>
-        /// <returns>The updated ManagedDeviceMobileAppConfiguration.</returns>
-        public System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> UpdateAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(managedDeviceMobileAppConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedDeviceMobileAppConfiguration.</returns>
-        public async System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> UpdateAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> UpdateAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (managedDeviceMobileAppConfigurationToUpdate.AdditionalData != null)
-			{
-				if (managedDeviceMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedDeviceMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceMobileAppConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedDeviceMobileAppConfigurationToUpdate.AdditionalData != null)
-            {
-                if (managedDeviceMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedDeviceMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceMobileAppConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ManagedDeviceMobileAppConfiguration>(managedDeviceMobileAppConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceMobileAppConfiguration using PATCH and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationToUpdate">The ManagedDeviceMobileAppConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfiguration>> UpdateResponseAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfiguration>(managedDeviceMobileAppConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceMobileAppConfiguration using PUT.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationToUpdate">The ManagedDeviceMobileAppConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> PutAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ManagedDeviceMobileAppConfiguration>(managedDeviceMobileAppConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceMobileAppConfiguration using PUT and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationToUpdate">The ManagedDeviceMobileAppConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfiguration>> PutResponseAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfiguration>(managedDeviceMobileAppConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToInitialize)
         {
 
-            if (managedDeviceMobileAppConfigurationToInitialize != null && managedDeviceMobileAppConfigurationToInitialize.AdditionalData != null)
+            if (managedDeviceMobileAppConfigurationToInitialize != null)
             {
-
                 if (managedDeviceMobileAppConfigurationToInitialize.Assignments != null && managedDeviceMobileAppConfigurationToInitialize.Assignments.CurrentPage != null)
                 {
+                    managedDeviceMobileAppConfigurationToInitialize.Assignments.InitializeNextPageRequest(this.Client, managedDeviceMobileAppConfigurationToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceMobileAppConfigurationToInitialize.Assignments.AdditionalData = managedDeviceMobileAppConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceMobileAppConfigurationToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses != null && managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.CurrentPage != null)
                 {
+                    managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(this.Client, managedDeviceMobileAppConfigurationToInitialize.DeviceStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.AdditionalData = managedDeviceMobileAppConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("deviceStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceMobileAppConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (managedDeviceMobileAppConfigurationToInitialize.UserStatuses != null && managedDeviceMobileAppConfigurationToInitialize.UserStatuses.CurrentPage != null)
                 {
+                    managedDeviceMobileAppConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(this.Client, managedDeviceMobileAppConfigurationToInitialize.UserStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceMobileAppConfigurationToInitialize.UserStatuses.AdditionalData = managedDeviceMobileAppConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedDeviceMobileAppConfigurationToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedDeviceMobileAppConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

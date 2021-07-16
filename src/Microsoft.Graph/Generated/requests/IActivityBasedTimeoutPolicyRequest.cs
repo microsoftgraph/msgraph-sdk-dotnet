@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ActivityBasedTimeoutPolicy using POST.
         /// </summary>
         /// <param name="activityBasedTimeoutPolicyToCreate">The ActivityBasedTimeoutPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ActivityBasedTimeoutPolicy.</returns>
-        System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> CreateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToCreate);        /// <summary>
-        /// Creates the specified ActivityBasedTimeoutPolicy using POST.
+        System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> CreateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ActivityBasedTimeoutPolicy using POST and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object.
         /// </summary>
         /// <param name="activityBasedTimeoutPolicyToCreate">The ActivityBasedTimeoutPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ActivityBasedTimeoutPolicy.</returns>
-        System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> CreateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ActivityBasedTimeoutPolicy.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> CreateResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ActivityBasedTimeoutPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ActivityBasedTimeoutPolicy.
+        /// Deletes the specified ActivityBasedTimeoutPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ActivityBasedTimeoutPolicy.</returns>
-        System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ActivityBasedTimeoutPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ActivityBasedTimeoutPolicy.</returns>
-        System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ActivityBasedTimeoutPolicy using PATCH.
+        /// Gets the specified ActivityBasedTimeoutPolicy and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object.
         /// </summary>
-        /// <param name="activityBasedTimeoutPolicyToUpdate">The ActivityBasedTimeoutPolicy to update.</param>
-        /// <returns>The updated ActivityBasedTimeoutPolicy.</returns>
-        System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> UpdateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ActivityBasedTimeoutPolicy using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ActivityBasedTimeoutPolicy.</returns>
-        System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> UpdateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> UpdateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ActivityBasedTimeoutPolicy using PATCH and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object.
+        /// </summary>
+        /// <param name="activityBasedTimeoutPolicyToUpdate">The ActivityBasedTimeoutPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> UpdateResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ActivityBasedTimeoutPolicy using PUT.
+        /// </summary>
+        /// <param name="activityBasedTimeoutPolicyToUpdate">The ActivityBasedTimeoutPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> PutAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ActivityBasedTimeoutPolicy using PUT and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object.
+        /// </summary>
+        /// <param name="activityBasedTimeoutPolicyToUpdate">The ActivityBasedTimeoutPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> PutResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

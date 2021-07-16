@@ -12,44 +12,40 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Comment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookComment : Entity
     {
     
-		///<summary>
-		/// The WorkbookComment constructor
-		///</summary>
-        public WorkbookComment()
-        {
-            this.ODataType = "microsoft.graph.workbookComment";
-        }
-	
         /// <summary>
         /// Gets or sets content.
         /// The content of the comment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("content")]
         public string Content { get; set; }
     
         /// <summary>
         /// Gets or sets content type.
         /// Indicates the type for the comment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentType")]
         public string ContentType { get; set; }
     
         /// <summary>
         /// Gets or sets replies.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("replies")]
         public IWorkbookCommentRepliesCollectionPage Replies { get; set; }
+
+        /// <summary>
+        /// Gets or sets repliesNextLink.
+        /// </summary>
+        [JsonPropertyName("replies@odata.nextLink")]
+        public string RepliesNextLink { get; set; }
     
     }
 }

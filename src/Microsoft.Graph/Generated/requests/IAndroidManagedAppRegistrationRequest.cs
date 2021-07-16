@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidManagedAppRegistration using POST.
         /// </summary>
         /// <param name="androidManagedAppRegistrationToCreate">The AndroidManagedAppRegistration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<AndroidManagedAppRegistration> CreateAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToCreate);        /// <summary>
-        /// Creates the specified AndroidManagedAppRegistration using POST.
+        System.Threading.Tasks.Task<AndroidManagedAppRegistration> CreateAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AndroidManagedAppRegistration using POST and returns a <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object.
         /// </summary>
         /// <param name="androidManagedAppRegistrationToCreate">The AndroidManagedAppRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AndroidManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<AndroidManagedAppRegistration> CreateAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidManagedAppRegistration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppRegistration>> CreateResponseAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidManagedAppRegistration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AndroidManagedAppRegistration.
+        /// Deletes the specified AndroidManagedAppRegistration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<AndroidManagedAppRegistration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidManagedAppRegistration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<AndroidManagedAppRegistration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidManagedAppRegistration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AndroidManagedAppRegistration using PATCH.
+        /// Gets the specified AndroidManagedAppRegistration and returns a <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object.
         /// </summary>
-        /// <param name="androidManagedAppRegistrationToUpdate">The AndroidManagedAppRegistration to update.</param>
-        /// <returns>The updated AndroidManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<AndroidManagedAppRegistration> UpdateAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppRegistration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidManagedAppRegistration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<AndroidManagedAppRegistration> UpdateAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidManagedAppRegistration> UpdateAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidManagedAppRegistration using PATCH and returns a <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="androidManagedAppRegistrationToUpdate">The AndroidManagedAppRegistration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppRegistration>> UpdateResponseAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidManagedAppRegistration using PUT.
+        /// </summary>
+        /// <param name="androidManagedAppRegistrationToUpdate">The AndroidManagedAppRegistration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidManagedAppRegistration> PutAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidManagedAppRegistration using PUT and returns a <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="androidManagedAppRegistrationToUpdate">The AndroidManagedAppRegistration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidManagedAppRegistration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppRegistration>> PutResponseAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

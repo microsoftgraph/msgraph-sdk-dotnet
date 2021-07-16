@@ -60,7 +60,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var expectedManager = new User();
 
                 this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<DirectoryObject>(It.IsAny<string>()))
+                    serializer => serializer.DeserializeObject<DirectoryObject>(It.IsAny<Stream>()))
                     .Returns(expectedManager);
 
                 var returnedManager = await this.graphServiceClient.Me.Manager.Request().GetAsync();

@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type VisualInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<VisualInfo>))]
     public partial class VisualInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VisualInfo"/> class.
-        /// </summary>
-        public VisualInfo()
-        {
-            this.ODataType = "microsoft.graph.visualInfo";
-        }
 
         /// <summary>
         /// Gets or sets attribution.
         /// Optional. JSON object used to represent an icon which represents the application used to generate the activity
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attribution", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("attribution")]
         public ImageInfo Attribution { get; set; }
     
         /// <summary>
         /// Gets or sets backgroundColor.
         /// Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "backgroundColor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("backgroundColor")]
         public string BackgroundColor { get; set; }
     
         /// <summary>
         /// Gets or sets content.
         /// Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Content { get; set; }
+        [JsonPropertyName("content")]
+        public System.Text.Json.JsonDocument Content { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayText.
         /// Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayText")]
         public string DisplayText { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

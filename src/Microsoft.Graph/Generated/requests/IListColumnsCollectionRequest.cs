@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IListColumnsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ColumnDefinition to the collection via POST.
-        /// </summary>
-        /// <param name="columnDefinition">The ColumnDefinition to add.</param>
-        /// <returns>The created ColumnDefinition.</returns>
-        System.Threading.Tasks.Task<ColumnDefinition> AddAsync(ColumnDefinition columnDefinition);
-
         /// <summary>
         /// Adds the specified ColumnDefinition to the collection via POST.
         /// </summary>
         /// <param name="columnDefinition">The ColumnDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ColumnDefinition.</returns>
-        System.Threading.Tasks.Task<ColumnDefinition> AddAsync(ColumnDefinition columnDefinition, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ColumnDefinition> AddAsync(ColumnDefinition columnDefinition, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ColumnDefinition to the collection via POST and returns a <see cref="GraphResponse{ColumnDefinition}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IListColumnsCollectionPage> GetAsync();
+        /// <param name="columnDefinition">The ColumnDefinition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> AddResponseAsync(ColumnDefinition columnDefinition, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IListColumnsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IListColumnsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ListColumnsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ListColumnsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ListColumnsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

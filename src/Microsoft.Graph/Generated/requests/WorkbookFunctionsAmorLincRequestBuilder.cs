@@ -33,13 +33,13 @@ namespace Microsoft.Graph
         public WorkbookFunctionsAmorLincRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken cost,
-            Newtonsoft.Json.Linq.JToken datePurchased,
-            Newtonsoft.Json.Linq.JToken firstPeriod,
-            Newtonsoft.Json.Linq.JToken salvage,
-            Newtonsoft.Json.Linq.JToken period,
-            Newtonsoft.Json.Linq.JToken rate,
-            Newtonsoft.Json.Linq.JToken basis)
+            System.Text.Json.JsonDocument cost,
+            System.Text.Json.JsonDocument datePurchased,
+            System.Text.Json.JsonDocument firstPeriod,
+            System.Text.Json.JsonDocument salvage,
+            System.Text.Json.JsonDocument period,
+            System.Text.Json.JsonDocument rate,
+            System.Text.Json.JsonDocument basis)
             : base(requestUrl, client)
         {
             this.SetParameter("cost", cost, true);
@@ -63,37 +63,37 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("cost"))
             {
-                request.RequestBody.Cost = this.GetParameter<Newtonsoft.Json.Linq.JToken>("cost");
+                request.RequestBody.Cost = this.GetParameter<System.Text.Json.JsonDocument>("cost");
             }
 
             if (this.HasParameter("datePurchased"))
             {
-                request.RequestBody.DatePurchased = this.GetParameter<Newtonsoft.Json.Linq.JToken>("datePurchased");
+                request.RequestBody.DatePurchased = this.GetParameter<System.Text.Json.JsonDocument>("datePurchased");
             }
 
             if (this.HasParameter("firstPeriod"))
             {
-                request.RequestBody.FirstPeriod = this.GetParameter<Newtonsoft.Json.Linq.JToken>("firstPeriod");
+                request.RequestBody.FirstPeriod = this.GetParameter<System.Text.Json.JsonDocument>("firstPeriod");
             }
 
             if (this.HasParameter("salvage"))
             {
-                request.RequestBody.Salvage = this.GetParameter<Newtonsoft.Json.Linq.JToken>("salvage");
+                request.RequestBody.Salvage = this.GetParameter<System.Text.Json.JsonDocument>("salvage");
             }
 
             if (this.HasParameter("period"))
             {
-                request.RequestBody.Period = this.GetParameter<Newtonsoft.Json.Linq.JToken>("period");
+                request.RequestBody.Period = this.GetParameter<System.Text.Json.JsonDocument>("period");
             }
 
             if (this.HasParameter("rate"))
             {
-                request.RequestBody.Rate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("rate");
+                request.RequestBody.Rate = this.GetParameter<System.Text.Json.JsonDocument>("rate");
             }
 
             if (this.HasParameter("basis"))
             {
-                request.RequestBody.Basis = this.GetParameter<Newtonsoft.Json.Linq.JToken>("basis");
+                request.RequestBody.Basis = this.GetParameter<System.Text.Json.JsonDocument>("basis");
             }
 
             return request;

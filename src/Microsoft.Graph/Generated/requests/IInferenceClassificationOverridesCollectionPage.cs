@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IInferenceClassificationOverridesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<InferenceClassificationOverridesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<InferenceClassificationOverridesCollectionPage>))]
     public interface IInferenceClassificationOverridesCollectionPage : ICollectionPage<InferenceClassificationOverride>
     {
         /// <summary>

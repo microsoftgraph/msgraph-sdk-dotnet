@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Security using POST.
         /// </summary>
         /// <param name="securityToCreate">The Security to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Security.</returns>
-        System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate);        /// <summary>
-        /// Creates the specified Security using POST.
+        System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Security using POST and returns a <see cref="GraphResponse{Security}"/> object.
         /// </summary>
         /// <param name="securityToCreate">The Security to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Security.</returns>
-        System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Security.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Security>> CreateResponseAsync(Security securityToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Security.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Security.
+        /// Deletes the specified Security and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Security.</returns>
-        System.Threading.Tasks.Task<Security> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Security.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Security.</returns>
-        System.Threading.Tasks.Task<Security> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Security> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Security using PATCH.
+        /// Gets the specified Security and returns a <see cref="GraphResponse{Security}"/> object.
         /// </summary>
-        /// <param name="securityToUpdate">The Security to update.</param>
-        /// <returns>The updated Security.</returns>
-        System.Threading.Tasks.Task<Security> UpdateAsync(Security securityToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Security>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Security using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Security.</returns>
-        System.Threading.Tasks.Task<Security> UpdateAsync(Security securityToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Security> UpdateAsync(Security securityToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Security using PATCH and returns a <see cref="GraphResponse{Security}"/> object.
+        /// </summary>
+        /// <param name="securityToUpdate">The Security to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Security>> UpdateResponseAsync(Security securityToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Security using PUT.
+        /// </summary>
+        /// <param name="securityToUpdate">The Security object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Security> PutAsync(Security securityToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Security using PUT and returns a <see cref="GraphResponse{Security}"/> object.
+        /// </summary>
+        /// <param name="securityToUpdate">The Security object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Security}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Security>> PutResponseAsync(Security securityToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

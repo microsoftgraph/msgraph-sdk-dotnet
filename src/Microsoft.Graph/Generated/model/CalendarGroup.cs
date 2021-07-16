@@ -12,51 +12,47 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Calendar Group.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CalendarGroup : Entity
     {
     
-		///<summary>
-		/// The CalendarGroup constructor
-		///</summary>
-        public CalendarGroup()
-        {
-            this.ODataType = "microsoft.graph.calendarGroup";
-        }
-	
         /// <summary>
         /// Gets or sets change key.
         /// Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("changeKey")]
         public string ChangeKey { get; set; }
     
         /// <summary>
         /// Gets or sets class id.
         /// The class identifier. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classId")]
         public Guid? ClassId { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// The group name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets calendars.
         /// The calendars in the calendar group. Navigation property. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendars", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calendars")]
         public ICalendarGroupCalendarsCollectionPage Calendars { get; set; }
+
+        /// <summary>
+        /// Gets or sets calendarsNextLink.
+        /// </summary>
+        [JsonPropertyName("calendars@odata.nextLink")]
+        public string CalendarsNextLink { get; set; }
     
     }
 }

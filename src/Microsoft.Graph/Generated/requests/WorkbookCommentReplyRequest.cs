@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookCommentReply using POST.
         /// </summary>
         /// <param name="workbookCommentReplyToCreate">The WorkbookCommentReply to create.</param>
-        /// <returns>The created WorkbookCommentReply.</returns>
-        public System.Threading.Tasks.Task<WorkbookCommentReply> CreateAsync(WorkbookCommentReply workbookCommentReplyToCreate)
-        {
-            return this.CreateAsync(workbookCommentReplyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookCommentReply using POST.
-        /// </summary>
-        /// <param name="workbookCommentReplyToCreate">The WorkbookCommentReply to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookCommentReply.</returns>
-        public async System.Threading.Tasks.Task<WorkbookCommentReply> CreateAsync(WorkbookCommentReply workbookCommentReplyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookCommentReply> CreateAsync(WorkbookCommentReply workbookCommentReplyToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WorkbookCommentReply>(workbookCommentReplyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WorkbookCommentReply.
+        /// Creates the specified WorkbookCommentReply using POST and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="workbookCommentReplyToCreate">The WorkbookCommentReply to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> CreateResponseAsync(WorkbookCommentReply workbookCommentReplyToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WorkbookCommentReply>(workbookCommentReplyToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WorkbookCommentReply>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WorkbookCommentReply.
+        /// Deletes the specified WorkbookCommentReply and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookCommentReply.</returns>
-        public System.Threading.Tasks.Task<WorkbookCommentReply> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookCommentReply.</returns>
-        public async System.Threading.Tasks.Task<WorkbookCommentReply> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookCommentReply> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WorkbookCommentReply>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WorkbookCommentReply using PATCH.
+        /// Gets the specified WorkbookCommentReply and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object.
         /// </summary>
-        /// <param name="workbookCommentReplyToUpdate">The WorkbookCommentReply to update.</param>
-        /// <returns>The updated WorkbookCommentReply.</returns>
-        public System.Threading.Tasks.Task<WorkbookCommentReply> UpdateAsync(WorkbookCommentReply workbookCommentReplyToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(workbookCommentReplyToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WorkbookCommentReply>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookCommentReply.</returns>
-        public async System.Threading.Tasks.Task<WorkbookCommentReply> UpdateAsync(WorkbookCommentReply workbookCommentReplyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookCommentReply> UpdateAsync(WorkbookCommentReply workbookCommentReplyToUpdate, CancellationToken cancellationToken = default)
         {
-			if (workbookCommentReplyToUpdate.AdditionalData != null)
-			{
-				if (workbookCommentReplyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookCommentReplyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookCommentReplyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookCommentReplyToUpdate.AdditionalData != null)
-            {
-                if (workbookCommentReplyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookCommentReplyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookCommentReplyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WorkbookCommentReply>(workbookCommentReplyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookCommentReply using PATCH and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object.
+        /// </summary>
+        /// <param name="workbookCommentReplyToUpdate">The WorkbookCommentReply to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> UpdateResponseAsync(WorkbookCommentReply workbookCommentReplyToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WorkbookCommentReply>(workbookCommentReplyToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookCommentReply using PUT.
+        /// </summary>
+        /// <param name="workbookCommentReplyToUpdate">The WorkbookCommentReply object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WorkbookCommentReply> PutAsync(WorkbookCommentReply workbookCommentReplyToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WorkbookCommentReply>(workbookCommentReplyToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookCommentReply using PUT and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object.
+        /// </summary>
+        /// <param name="workbookCommentReplyToUpdate">The WorkbookCommentReply object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WorkbookCommentReply}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> PutResponseAsync(WorkbookCommentReply workbookCommentReplyToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WorkbookCommentReply>(workbookCommentReplyToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ResponseStatus.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ResponseStatus>))]
     public partial class ResponseStatus
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ResponseStatus"/> class.
-        /// </summary>
-        public ResponseStatus()
-        {
-            this.ODataType = "microsoft.graph.responseStatus";
-        }
 
         /// <summary>
         /// Gets or sets response.
         /// The response type. Possible values are: None, Organizer, TentativelyAccepted, Accepted, Declined, NotResponded.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "response", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("response")]
         public ResponseType? Response { get; set; }
     
         /// <summary>
         /// Gets or sets time.
         /// The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "time", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("time")]
         public DateTimeOffset? Time { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

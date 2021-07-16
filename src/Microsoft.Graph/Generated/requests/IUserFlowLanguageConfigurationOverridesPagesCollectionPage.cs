@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUserFlowLanguageConfigurationOverridesPagesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<UserFlowLanguageConfigurationOverridesPagesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<UserFlowLanguageConfigurationOverridesPagesCollectionPage>))]
     public interface IUserFlowLanguageConfigurationOverridesPagesCollectionPage : ICollectionPage<UserFlowLanguagePage>
     {
         /// <summary>

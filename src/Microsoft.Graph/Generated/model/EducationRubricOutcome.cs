@@ -12,50 +12,48 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education Rubric Outcome.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EducationRubricOutcome : EducationOutcome
     {
     
-		///<summary>
-		/// The EducationRubricOutcome constructor
-		///</summary>
+        ///<summary>
+        /// The EducationRubricOutcome constructor
+        ///</summary>
         public EducationRubricOutcome()
         {
             this.ODataType = "microsoft.graph.educationRubricOutcome";
         }
-	
+
         /// <summary>
         /// Gets or sets published rubric quality feedback.
         /// A copy of the rubricQualityFeedback property that is made when the grade is released to the student.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedRubricQualityFeedback", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishedRubricQualityFeedback")]
         public IEnumerable<RubricQualityFeedbackModel> PublishedRubricQualityFeedback { get; set; }
     
         /// <summary>
         /// Gets or sets published rubric quality selected levels.
         /// A copy of the rubricQualitySelectedLevels property that is made when the grade is released to the student.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedRubricQualitySelectedLevels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishedRubricQualitySelectedLevels")]
         public IEnumerable<RubricQualitySelectedColumnModel> PublishedRubricQualitySelectedLevels { get; set; }
     
         /// <summary>
         /// Gets or sets rubric quality feedback.
         /// A collection of specific feedback for each quality of this rubric.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rubricQualityFeedback", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rubricQualityFeedback")]
         public IEnumerable<RubricQualityFeedbackModel> RubricQualityFeedback { get; set; }
     
         /// <summary>
         /// Gets or sets rubric quality selected levels.
         /// The level that the teacher has selected for each quality while grading this assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rubricQualitySelectedLevels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rubricQualitySelectedLevels")]
         public IEnumerable<RubricQualitySelectedColumnModel> RubricQualitySelectedLevels { get; set; }
     
     }

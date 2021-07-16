@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Event using POST.
         /// </summary>
         /// <param name="eventToCreate">The Event to create.</param>
-        /// <returns>The created Event.</returns>
-        public System.Threading.Tasks.Task<Event> CreateAsync(Event eventToCreate)
-        {
-            return this.CreateAsync(eventToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Event using POST.
-        /// </summary>
-        /// <param name="eventToCreate">The Event to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Event.</returns>
-        public async System.Threading.Tasks.Task<Event> CreateAsync(Event eventToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Event> CreateAsync(Event eventToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Event>(eventToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Event.
+        /// Creates the specified Event using POST and returns a <see cref="GraphResponse{Event}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="eventToCreate">The Event to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Event>> CreateResponseAsync(Event eventToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Event>(eventToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Event>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Event.
+        /// Deletes the specified Event and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Event.</returns>
-        public System.Threading.Tasks.Task<Event> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Event.</returns>
-        public async System.Threading.Tasks.Task<Event> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Event> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Event>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Event using PATCH.
+        /// Gets the specified Event and returns a <see cref="GraphResponse{Event}"/> object.
         /// </summary>
-        /// <param name="eventToUpdate">The Event to update.</param>
-        /// <returns>The updated Event.</returns>
-        public System.Threading.Tasks.Task<Event> UpdateAsync(Event eventToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Event>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(eventToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Event>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Event.</returns>
-        public async System.Threading.Tasks.Task<Event> UpdateAsync(Event eventToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Event> UpdateAsync(Event eventToUpdate, CancellationToken cancellationToken = default)
         {
-			if (eventToUpdate.AdditionalData != null)
-			{
-				if (eventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					eventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eventToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (eventToUpdate.AdditionalData != null)
-            {
-                if (eventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    eventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eventToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Event>(eventToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Event using PATCH and returns a <see cref="GraphResponse{Event}"/> object.
+        /// </summary>
+        /// <param name="eventToUpdate">The Event to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Event>> UpdateResponseAsync(Event eventToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Event>(eventToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Event using PUT.
+        /// </summary>
+        /// <param name="eventToUpdate">The Event object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Event> PutAsync(Event eventToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Event>(eventToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Event using PUT and returns a <see cref="GraphResponse{Event}"/> object.
+        /// </summary>
+        /// <param name="eventToUpdate">The Event object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Event}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Event>> PutResponseAsync(Event eventToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Event>(eventToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Event eventToInitialize)
         {
 
-            if (eventToInitialize != null && eventToInitialize.AdditionalData != null)
+            if (eventToInitialize != null)
             {
-
                 if (eventToInitialize.Attachments != null && eventToInitialize.Attachments.CurrentPage != null)
                 {
+                    eventToInitialize.Attachments.InitializeNextPageRequest(this.Client, eventToInitialize.AttachmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.Attachments.AdditionalData = eventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        eventToInitialize.Attachments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (eventToInitialize.Extensions != null && eventToInitialize.Extensions.CurrentPage != null)
                 {
+                    eventToInitialize.Extensions.InitializeNextPageRequest(this.Client, eventToInitialize.ExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.Extensions.AdditionalData = eventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        eventToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (eventToInitialize.Instances != null && eventToInitialize.Instances.CurrentPage != null)
                 {
+                    eventToInitialize.Instances.InitializeNextPageRequest(this.Client, eventToInitialize.InstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.Instances.AdditionalData = eventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        eventToInitialize.Instances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (eventToInitialize.MultiValueExtendedProperties != null && eventToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
+                    eventToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(this.Client, eventToInitialize.MultiValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.MultiValueExtendedProperties.AdditionalData = eventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        eventToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (eventToInitialize.SingleValueExtendedProperties != null && eventToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
+                    eventToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(this.Client, eventToInitialize.SingleValueExtendedPropertiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     eventToInitialize.SingleValueExtendedProperties.AdditionalData = eventToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    eventToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        eventToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

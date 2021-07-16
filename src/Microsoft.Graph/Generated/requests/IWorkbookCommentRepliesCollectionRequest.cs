@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IWorkbookCommentRepliesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified WorkbookCommentReply to the collection via POST.
-        /// </summary>
-        /// <param name="workbookCommentReply">The WorkbookCommentReply to add.</param>
-        /// <returns>The created WorkbookCommentReply.</returns>
-        System.Threading.Tasks.Task<WorkbookCommentReply> AddAsync(WorkbookCommentReply workbookCommentReply);
-
         /// <summary>
         /// Adds the specified WorkbookCommentReply to the collection via POST.
         /// </summary>
         /// <param name="workbookCommentReply">The WorkbookCommentReply to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookCommentReply.</returns>
-        System.Threading.Tasks.Task<WorkbookCommentReply> AddAsync(WorkbookCommentReply workbookCommentReply, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookCommentReply> AddAsync(WorkbookCommentReply workbookCommentReply, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified WorkbookCommentReply to the collection via POST and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWorkbookCommentRepliesCollectionPage> GetAsync();
+        /// <param name="workbookCommentReply">The WorkbookCommentReply to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> AddResponseAsync(WorkbookCommentReply workbookCommentReply, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWorkbookCommentRepliesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IWorkbookCommentRepliesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookCommentRepliesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentRepliesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookCommentRepliesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

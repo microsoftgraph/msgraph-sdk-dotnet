@@ -12,36 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Directory Role Template.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DirectoryRoleTemplate : DirectoryObject
     {
     
-		///<summary>
-		/// The DirectoryRoleTemplate constructor
-		///</summary>
+        ///<summary>
+        /// The DirectoryRoleTemplate constructor
+        ///</summary>
         public DirectoryRoleTemplate()
         {
             this.ODataType = "microsoft.graph.directoryRoleTemplate";
         }
-	
+
         /// <summary>
         /// Gets or sets description.
         /// The description to set for the directory role. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name to set for the directory role. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
     }

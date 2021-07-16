@@ -12,36 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Profile Photo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ProfilePhoto : Entity
     {
     
-		///<summary>
-		/// The ProfilePhoto constructor
-		///</summary>
-        public ProfilePhoto()
-        {
-            this.ODataType = "microsoft.graph.profilePhoto";
-        }
-	
         /// <summary>
         /// Gets or sets height.
         /// The height of the photo. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "height", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("height")]
         public Int32? Height { get; set; }
     
         /// <summary>
         /// Gets or sets width.
         /// The width of the photo. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "width", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("width")]
         public Int32? Width { get; set; }
     
     }

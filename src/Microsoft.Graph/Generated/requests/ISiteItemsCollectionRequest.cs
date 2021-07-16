@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ISiteItemsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified BaseItem to the collection via POST.
-        /// </summary>
-        /// <param name="baseItem">The BaseItem to add.</param>
-        /// <returns>The created BaseItem.</returns>
-        System.Threading.Tasks.Task<BaseItem> AddAsync(BaseItem baseItem);
-
         /// <summary>
         /// Adds the specified BaseItem to the collection via POST.
         /// </summary>
         /// <param name="baseItem">The BaseItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BaseItem.</returns>
-        System.Threading.Tasks.Task<BaseItem> AddAsync(BaseItem baseItem, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<BaseItem> AddAsync(BaseItem baseItem, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified BaseItem to the collection via POST and returns a <see cref="GraphResponse{BaseItem}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISiteItemsCollectionPage> GetAsync();
+        /// <param name="baseItem">The BaseItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BaseItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BaseItem>> AddResponseAsync(BaseItem baseItem, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISiteItemsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ISiteItemsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SiteItemsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SiteItemsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SiteItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

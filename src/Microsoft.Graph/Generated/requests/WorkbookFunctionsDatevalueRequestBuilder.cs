@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsDatevalueRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken dateText)
+            System.Text.Json.JsonDocument dateText)
             : base(requestUrl, client)
         {
             this.SetParameter("dateText", dateText, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("dateText"))
             {
-                request.RequestBody.DateText = this.GetParameter<Newtonsoft.Json.Linq.JToken>("dateText");
+                request.RequestBody.DateText = this.GetParameter<System.Text.Json.JsonDocument>("dateText");
             }
 
             return request;

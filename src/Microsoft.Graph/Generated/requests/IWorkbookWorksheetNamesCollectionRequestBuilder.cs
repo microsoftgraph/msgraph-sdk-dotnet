@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookNamedItemAddRequestBuilder"/>.</returns>
         IWorkbookNamedItemAddRequestBuilder Add(
             string name = null,
-            Newtonsoft.Json.Linq.JToken reference = null,
+            System.Text.Json.JsonDocument reference = null,
             string comment = null);
 
         /// <summary>

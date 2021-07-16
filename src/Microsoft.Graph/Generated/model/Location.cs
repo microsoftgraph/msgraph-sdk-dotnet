@@ -12,90 +12,81 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Location.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Location>))]
     public partial class Location
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Location"/> class.
-        /// </summary>
-        public Location()
-        {
-            this.ODataType = "microsoft.graph.location";
-        }
 
         /// <summary>
         /// Gets or sets address.
         /// The street address of the location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("address")]
         public PhysicalAddress Address { get; set; }
     
         /// <summary>
         /// Gets or sets coordinates.
         /// The geographic coordinates and elevation of the location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coordinates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("coordinates")]
         public OutlookGeoCoordinates Coordinates { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// The name associated with the location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets locationEmailAddress.
         /// Optional email address of the location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationEmailAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("locationEmailAddress")]
         public string LocationEmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets locationType.
         /// The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("locationType")]
         public LocationType? LocationType { get; set; }
     
         /// <summary>
         /// Gets or sets locationUri.
         /// Optional URI representing the location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationUri", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("locationUri")]
         public string LocationUri { get; set; }
     
         /// <summary>
         /// Gets or sets uniqueId.
         /// For internal use only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uniqueId")]
         public string UniqueId { get; set; }
     
         /// <summary>
         /// Gets or sets uniqueIdType.
         /// For internal use only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueIdType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uniqueIdType")]
         public LocationUniqueIdType? UniqueIdType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

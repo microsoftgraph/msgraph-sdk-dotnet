@@ -12,47 +12,38 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TimeConstraint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TimeConstraint>))]
     public partial class TimeConstraint
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TimeConstraint"/> class.
-        /// </summary>
-        public TimeConstraint()
-        {
-            this.ODataType = "microsoft.graph.timeConstraint";
-        }
 
         /// <summary>
         /// Gets or sets activityDomain.
         /// The nature of the activity, optional. Possible values are: work, personal, unrestricted, or unknown.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDomain", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityDomain")]
         public ActivityDomain? ActivityDomain { get; set; }
     
         /// <summary>
         /// Gets or sets timeSlots.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeSlots", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("timeSlots")]
         public IEnumerable<TimeSlot> TimeSlots { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

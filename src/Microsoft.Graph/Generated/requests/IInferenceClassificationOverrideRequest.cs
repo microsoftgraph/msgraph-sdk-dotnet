@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified InferenceClassificationOverride using POST.
         /// </summary>
         /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created InferenceClassificationOverride.</returns>
-        System.Threading.Tasks.Task<InferenceClassificationOverride> CreateAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate);        /// <summary>
-        /// Creates the specified InferenceClassificationOverride using POST.
+        System.Threading.Tasks.Task<InferenceClassificationOverride> CreateAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified InferenceClassificationOverride using POST and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
         /// </summary>
         /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created InferenceClassificationOverride.</returns>
-        System.Threading.Tasks.Task<InferenceClassificationOverride> CreateAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified InferenceClassificationOverride.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> CreateResponseAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified InferenceClassificationOverride.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified InferenceClassificationOverride.
+        /// Deletes the specified InferenceClassificationOverride and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The InferenceClassificationOverride.</returns>
-        System.Threading.Tasks.Task<InferenceClassificationOverride> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified InferenceClassificationOverride.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The InferenceClassificationOverride.</returns>
-        System.Threading.Tasks.Task<InferenceClassificationOverride> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<InferenceClassificationOverride> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified InferenceClassificationOverride using PATCH.
+        /// Gets the specified InferenceClassificationOverride and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
         /// </summary>
-        /// <param name="inferenceClassificationOverrideToUpdate">The InferenceClassificationOverride to update.</param>
-        /// <returns>The updated InferenceClassificationOverride.</returns>
-        System.Threading.Tasks.Task<InferenceClassificationOverride> UpdateAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified InferenceClassificationOverride using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated InferenceClassificationOverride.</returns>
-        System.Threading.Tasks.Task<InferenceClassificationOverride> UpdateAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<InferenceClassificationOverride> UpdateAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified InferenceClassificationOverride using PATCH and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationOverrideToUpdate">The InferenceClassificationOverride to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> UpdateResponseAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified InferenceClassificationOverride using PUT.
+        /// </summary>
+        /// <param name="inferenceClassificationOverrideToUpdate">The InferenceClassificationOverride object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<InferenceClassificationOverride> PutAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified InferenceClassificationOverride using PUT and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationOverrideToUpdate">The InferenceClassificationOverride object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{InferenceClassificationOverride}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> PutResponseAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

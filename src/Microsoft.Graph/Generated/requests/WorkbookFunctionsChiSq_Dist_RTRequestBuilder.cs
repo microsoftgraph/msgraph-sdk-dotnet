@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsChiSq_Dist_RTRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken x,
-            Newtonsoft.Json.Linq.JToken degFreedom)
+            System.Text.Json.JsonDocument x,
+            System.Text.Json.JsonDocument degFreedom)
             : base(requestUrl, client)
         {
             this.SetParameter("x", x, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("x"))
             {
-                request.RequestBody.X = this.GetParameter<Newtonsoft.Json.Linq.JToken>("x");
+                request.RequestBody.X = this.GetParameter<System.Text.Json.JsonDocument>("x");
             }
 
             if (this.HasParameter("degFreedom"))
             {
-                request.RequestBody.DegFreedom = this.GetParameter<Newtonsoft.Json.Linq.JToken>("degFreedom");
+                request.RequestBody.DegFreedom = this.GetParameter<System.Text.Json.JsonDocument>("degFreedom");
             }
 
             return request;

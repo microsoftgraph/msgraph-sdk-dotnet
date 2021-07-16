@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MicrosoftStoreForBusinessAppAssignmentSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MicrosoftStoreForBusinessAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets useDeviceContext.
         /// Whether or not to use device execution context for Microsoft Store for Business mobile app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useDeviceContext", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("useDeviceContext")]
         public bool? UseDeviceContext { get; set; }
     
     }

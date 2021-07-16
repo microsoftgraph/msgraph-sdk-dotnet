@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceDirectoryRolesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DirectoryRole to the collection via POST.
-        /// </summary>
-        /// <param name="directoryRole">The DirectoryRole to add.</param>
-        /// <returns>The created DirectoryRole.</returns>
-        System.Threading.Tasks.Task<DirectoryRole> AddAsync(DirectoryRole directoryRole);
-
         /// <summary>
         /// Adds the specified DirectoryRole to the collection via POST.
         /// </summary>
         /// <param name="directoryRole">The DirectoryRole to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryRole.</returns>
-        System.Threading.Tasks.Task<DirectoryRole> AddAsync(DirectoryRole directoryRole, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DirectoryRole> AddAsync(DirectoryRole directoryRole, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DirectoryRole to the collection via POST and returns a <see cref="GraphResponse{DirectoryRole}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceDirectoryRolesCollectionPage> GetAsync();
+        /// <param name="directoryRole">The DirectoryRole to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> AddResponseAsync(DirectoryRole directoryRole, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceDirectoryRolesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IGraphServiceDirectoryRolesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDirectoryRolesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceDirectoryRolesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceDirectoryRolesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

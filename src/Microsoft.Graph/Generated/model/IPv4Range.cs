@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IPv4Range.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IPv4Range : IpRange
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets lowerAddress.
         /// Lower address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lowerAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lowerAddress")]
         public string LowerAddress { get; set; }
     
         /// <summary>
         /// Gets or sets upperAddress.
         /// Upper address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upperAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("upperAddress")]
         public string UpperAddress { get; set; }
     
     }

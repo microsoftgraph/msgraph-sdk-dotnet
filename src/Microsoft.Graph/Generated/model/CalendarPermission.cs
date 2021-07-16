@@ -12,57 +12,48 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Calendar Permission.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<CalendarPermission>))]
     public partial class CalendarPermission : Entity
     {
     
-		///<summary>
-		/// The CalendarPermission constructor
-		///</summary>
-        public CalendarPermission()
-        {
-            this.ODataType = "microsoft.graph.calendarPermission";
-        }
-	
         /// <summary>
         /// Gets or sets allowed roles.
         /// List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedRoles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedRoles")]
         public IEnumerable<CalendarRoleType> AllowedRoles { get; set; }
     
         /// <summary>
         /// Gets or sets email address.
         /// Represents a sharee or delegate who has access to the calendar. For the 'My Organization' sharee, the address property is null. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("emailAddress")]
         public EmailAddress EmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets is inside organization.
         /// True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInsideOrganization", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isInsideOrganization")]
         public bool? IsInsideOrganization { get; set; }
     
         /// <summary>
         /// Gets or sets is removable.
         /// True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRemovable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRemovable")]
         public bool? IsRemovable { get; set; }
     
         /// <summary>
         /// Gets or sets role.
         /// Current permission level of the calendar sharee or delegate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("role")]
         public CalendarRoleType? Role { get; set; }
     
     }

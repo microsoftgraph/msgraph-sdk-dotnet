@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPolicyRootClaimsMappingPoliciesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ClaimsMappingPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
-        /// <returns>The created ClaimsMappingPolicy.</returns>
-        System.Threading.Tasks.Task<ClaimsMappingPolicy> AddAsync(ClaimsMappingPolicy claimsMappingPolicy);
-
         /// <summary>
         /// Adds the specified ClaimsMappingPolicy to the collection via POST.
         /// </summary>
         /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ClaimsMappingPolicy.</returns>
-        System.Threading.Tasks.Task<ClaimsMappingPolicy> AddAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ClaimsMappingPolicy> AddAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ClaimsMappingPolicy to the collection via POST and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicyRootClaimsMappingPoliciesCollectionPage> GetAsync();
+        /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> AddResponseAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicyRootClaimsMappingPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IPolicyRootClaimsMappingPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootClaimsMappingPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRootClaimsMappingPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRootClaimsMappingPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

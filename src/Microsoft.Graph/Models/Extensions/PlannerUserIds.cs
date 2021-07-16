@@ -8,6 +8,7 @@ namespace Microsoft.Graph
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Represents a collection of user ids.
@@ -17,6 +18,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Number of user ids in the collection.
         /// </summary>
+        [JsonIgnore]
         public int Count => this.UserIds.Count();
 
         /// <summary>

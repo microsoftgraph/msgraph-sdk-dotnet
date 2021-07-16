@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SignInStatus.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SignInStatus>))]
     public partial class SignInStatus
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SignInStatus"/> class.
-        /// </summary>
-        public SignInStatus()
-        {
-            this.ODataType = "microsoft.graph.signInStatus";
-        }
 
         /// <summary>
         /// Gets or sets additionalDetails.
         /// Provides additional details on the sign-in activity
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("additionalDetails")]
         public string AdditionalDetails { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.
         /// Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCode")]
         public Int32? ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets failureReason.
         /// Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureReason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failureReason")]
         public string FailureReason { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

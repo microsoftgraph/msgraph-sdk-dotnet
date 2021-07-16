@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Enrollment Limit Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceEnrollmentLimitConfiguration : DeviceEnrollmentConfiguration
     {
     
-		///<summary>
-		/// The DeviceEnrollmentLimitConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceEnrollmentLimitConfiguration constructor
+        ///</summary>
         public DeviceEnrollmentLimitConfiguration()
         {
             this.ODataType = "microsoft.graph.deviceEnrollmentLimitConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets limit.
         /// The maximum number of devices that a user can enroll
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "limit", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("limit")]
         public Int32? Limit { get; set; }
     
     }

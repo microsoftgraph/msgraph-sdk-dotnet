@@ -12,76 +12,67 @@ namespace Microsoft.Graph.CallRecords
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Media.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<Media>))]
     public partial class Media
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Media"/> class.
-        /// </summary>
-        public Media()
-        {
-            this.ODataType = "microsoft.graph.callRecords.media";
-        }
 
         /// <summary>
         /// Gets or sets calleeDevice.
         /// Device information associated with the callee endpoint of this media.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calleeDevice", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calleeDevice")]
         public DeviceInfo CalleeDevice { get; set; }
     
         /// <summary>
         /// Gets or sets calleeNetwork.
         /// Network information associated with the callee endpoint of this media.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calleeNetwork", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calleeNetwork")]
         public NetworkInfo CalleeNetwork { get; set; }
     
         /// <summary>
         /// Gets or sets callerDevice.
         /// Device information associated with the caller endpoint of this media.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callerDevice", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callerDevice")]
         public DeviceInfo CallerDevice { get; set; }
     
         /// <summary>
         /// Gets or sets callerNetwork.
         /// Network information associated with the caller endpoint of this media.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callerNetwork", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callerNetwork")]
         public NetworkInfo CallerNetwork { get; set; }
     
         /// <summary>
         /// Gets or sets label.
         /// How the media was identified during media negotiation stage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "label", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("label")]
         public string Label { get; set; }
     
         /// <summary>
         /// Gets or sets streams.
         /// Network streams associated with this media.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "streams", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("streams")]
         public IEnumerable<MediaStream> Streams { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

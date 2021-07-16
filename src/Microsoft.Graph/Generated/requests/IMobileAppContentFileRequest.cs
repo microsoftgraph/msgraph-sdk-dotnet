@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppContentFile using POST.
         /// </summary>
         /// <param name="mobileAppContentFileToCreate">The MobileAppContentFile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppContentFile.</returns>
-        System.Threading.Tasks.Task<MobileAppContentFile> CreateAsync(MobileAppContentFile mobileAppContentFileToCreate);        /// <summary>
-        /// Creates the specified MobileAppContentFile using POST.
+        System.Threading.Tasks.Task<MobileAppContentFile> CreateAsync(MobileAppContentFile mobileAppContentFileToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified MobileAppContentFile using POST and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
         /// </summary>
         /// <param name="mobileAppContentFileToCreate">The MobileAppContentFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MobileAppContentFile.</returns>
-        System.Threading.Tasks.Task<MobileAppContentFile> CreateAsync(MobileAppContentFile mobileAppContentFileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MobileAppContentFile.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> CreateResponseAsync(MobileAppContentFile mobileAppContentFileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MobileAppContentFile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified MobileAppContentFile.
+        /// Deletes the specified MobileAppContentFile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MobileAppContentFile.</returns>
-        System.Threading.Tasks.Task<MobileAppContentFile> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MobileAppContentFile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppContentFile.</returns>
-        System.Threading.Tasks.Task<MobileAppContentFile> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppContentFile> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified MobileAppContentFile using PATCH.
+        /// Gets the specified MobileAppContentFile and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
         /// </summary>
-        /// <param name="mobileAppContentFileToUpdate">The MobileAppContentFile to update.</param>
-        /// <returns>The updated MobileAppContentFile.</returns>
-        System.Threading.Tasks.Task<MobileAppContentFile> UpdateAsync(MobileAppContentFile mobileAppContentFileToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MobileAppContentFile using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppContentFile.</returns>
-        System.Threading.Tasks.Task<MobileAppContentFile> UpdateAsync(MobileAppContentFile mobileAppContentFileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppContentFile> UpdateAsync(MobileAppContentFile mobileAppContentFileToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MobileAppContentFile using PATCH and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentFileToUpdate">The MobileAppContentFile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> UpdateResponseAsync(MobileAppContentFile mobileAppContentFileToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MobileAppContentFile using PUT.
+        /// </summary>
+        /// <param name="mobileAppContentFileToUpdate">The MobileAppContentFile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MobileAppContentFile> PutAsync(MobileAppContentFile mobileAppContentFileToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MobileAppContentFile using PUT and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentFileToUpdate">The MobileAppContentFile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MobileAppContentFile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> PutResponseAsync(MobileAppContentFile mobileAppContentFileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

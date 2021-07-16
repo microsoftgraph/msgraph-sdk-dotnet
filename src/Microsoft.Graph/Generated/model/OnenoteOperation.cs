@@ -12,50 +12,40 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Onenote Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OnenoteOperation : Operation
     {
     
-		///<summary>
-		/// The OnenoteOperation constructor
-		///</summary>
-        public OnenoteOperation()
-        {
-            this.ODataType = "microsoft.graph.onenoteOperation";
-        }
-	
         /// <summary>
         /// Gets or sets error.
         /// The error returned by the operation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("error")]
         public OnenoteOperationError Error { get; set; }
     
         /// <summary>
         /// Gets or sets percent complete.
         /// The operation percent complete if the operation is still in running status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "percentComplete", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("percentComplete")]
         public string PercentComplete { get; set; }
     
         /// <summary>
         /// Gets or sets resource id.
         /// The resource id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceId")]
         public string ResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets resource location.
         /// The resource URI for the object. For example, the resource URI for a copied page or section.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceLocation")]
         public string ResourceLocation { get; set; }
     
     }

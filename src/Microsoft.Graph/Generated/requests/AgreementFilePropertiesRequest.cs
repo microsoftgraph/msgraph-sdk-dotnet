@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AgreementFileProperties using POST.
         /// </summary>
         /// <param name="agreementFilePropertiesToCreate">The AgreementFileProperties to create.</param>
-        /// <returns>The created AgreementFileProperties.</returns>
-        public System.Threading.Tasks.Task<AgreementFileProperties> CreateAsync(AgreementFileProperties agreementFilePropertiesToCreate)
-        {
-            return this.CreateAsync(agreementFilePropertiesToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AgreementFileProperties using POST.
-        /// </summary>
-        /// <param name="agreementFilePropertiesToCreate">The AgreementFileProperties to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgreementFileProperties.</returns>
-        public async System.Threading.Tasks.Task<AgreementFileProperties> CreateAsync(AgreementFileProperties agreementFilePropertiesToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AgreementFileProperties> CreateAsync(AgreementFileProperties agreementFilePropertiesToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AgreementFileProperties>(agreementFilePropertiesToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AgreementFileProperties.
+        /// Creates the specified AgreementFileProperties using POST and returns a <see cref="GraphResponse{AgreementFileProperties}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="agreementFilePropertiesToCreate">The AgreementFileProperties to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFileProperties}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFileProperties>> CreateResponseAsync(AgreementFileProperties agreementFilePropertiesToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AgreementFileProperties>(agreementFilePropertiesToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AgreementFileProperties>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AgreementFileProperties.
+        /// Deletes the specified AgreementFileProperties and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AgreementFileProperties.</returns>
-        public System.Threading.Tasks.Task<AgreementFileProperties> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AgreementFileProperties.</returns>
-        public async System.Threading.Tasks.Task<AgreementFileProperties> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AgreementFileProperties> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AgreementFileProperties>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AgreementFileProperties using PATCH.
+        /// Gets the specified AgreementFileProperties and returns a <see cref="GraphResponse{AgreementFileProperties}"/> object.
         /// </summary>
-        /// <param name="agreementFilePropertiesToUpdate">The AgreementFileProperties to update.</param>
-        /// <returns>The updated AgreementFileProperties.</returns>
-        public System.Threading.Tasks.Task<AgreementFileProperties> UpdateAsync(AgreementFileProperties agreementFilePropertiesToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFileProperties}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFileProperties>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(agreementFilePropertiesToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AgreementFileProperties>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AgreementFileProperties.</returns>
-        public async System.Threading.Tasks.Task<AgreementFileProperties> UpdateAsync(AgreementFileProperties agreementFilePropertiesToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AgreementFileProperties> UpdateAsync(AgreementFileProperties agreementFilePropertiesToUpdate, CancellationToken cancellationToken = default)
         {
-			if (agreementFilePropertiesToUpdate.AdditionalData != null)
-			{
-				if (agreementFilePropertiesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					agreementFilePropertiesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agreementFilePropertiesToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (agreementFilePropertiesToUpdate.AdditionalData != null)
-            {
-                if (agreementFilePropertiesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    agreementFilePropertiesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agreementFilePropertiesToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AgreementFileProperties>(agreementFilePropertiesToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AgreementFileProperties using PATCH and returns a <see cref="GraphResponse{AgreementFileProperties}"/> object.
+        /// </summary>
+        /// <param name="agreementFilePropertiesToUpdate">The AgreementFileProperties to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AgreementFileProperties}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFileProperties>> UpdateResponseAsync(AgreementFileProperties agreementFilePropertiesToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AgreementFileProperties>(agreementFilePropertiesToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AgreementFileProperties using PUT.
+        /// </summary>
+        /// <param name="agreementFilePropertiesToUpdate">The AgreementFileProperties object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AgreementFileProperties> PutAsync(AgreementFileProperties agreementFilePropertiesToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AgreementFileProperties>(agreementFilePropertiesToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AgreementFileProperties using PUT and returns a <see cref="GraphResponse{AgreementFileProperties}"/> object.
+        /// </summary>
+        /// <param name="agreementFilePropertiesToUpdate">The AgreementFileProperties object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AgreementFileProperties}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFileProperties>> PutResponseAsync(AgreementFileProperties agreementFilePropertiesToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AgreementFileProperties>(agreementFilePropertiesToUpdate, cancellationToken);
         }
 
         /// <summary>

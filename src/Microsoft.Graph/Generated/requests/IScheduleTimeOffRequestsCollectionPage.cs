@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IScheduleTimeOffRequestsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ScheduleTimeOffRequestsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ScheduleTimeOffRequestsCollectionPage>))]
     public interface IScheduleTimeOffRequestsCollectionPage : ICollectionPage<TimeOffRequestObject>
     {
         /// <summary>

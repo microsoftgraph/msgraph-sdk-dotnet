@@ -12,83 +12,74 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SearchRequest.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SearchRequestObject>))]
     public partial class SearchRequestObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchRequestObject"/> class.
-        /// </summary>
-        public SearchRequestObject()
-        {
-            this.ODataType = "microsoft.graph.searchRequest";
-        }
 
         /// <summary>
         /// Gets or sets contentSources.
         /// Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentSources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentSources")]
         public IEnumerable<string> ContentSources { get; set; }
     
         /// <summary>
         /// Gets or sets enableTopResults.
         /// This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableTopResults", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableTopResults")]
         public bool? EnableTopResults { get; set; }
     
         /// <summary>
         /// Gets or sets entityTypes.
         /// One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entityTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("entityTypes")]
         public IEnumerable<EntityType> EntityTypes { get; set; }
     
         /// <summary>
         /// Gets or sets fields.
         /// Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fields", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fields")]
         public IEnumerable<string> Fields { get; set; }
     
         /// <summary>
         /// Gets or sets from.
         /// Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("from")]
         public Int32? From { get; set; }
     
         /// <summary>
         /// Gets or sets query.
         /// Contains the query terms. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "query", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("query")]
         public SearchQuery Query { get; set; }
     
         /// <summary>
         /// Gets or sets size.
         /// The size of the page to be retrieved. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("size")]
         public Int32? Size { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

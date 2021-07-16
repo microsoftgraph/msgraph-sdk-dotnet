@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedEBookAssignment using POST.
         /// </summary>
         /// <param name="managedEBookAssignmentToCreate">The ManagedEBookAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedEBookAssignment.</returns>
-        System.Threading.Tasks.Task<ManagedEBookAssignment> CreateAsync(ManagedEBookAssignment managedEBookAssignmentToCreate);        /// <summary>
-        /// Creates the specified ManagedEBookAssignment using POST.
+        System.Threading.Tasks.Task<ManagedEBookAssignment> CreateAsync(ManagedEBookAssignment managedEBookAssignmentToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ManagedEBookAssignment using POST and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object.
         /// </summary>
         /// <param name="managedEBookAssignmentToCreate">The ManagedEBookAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ManagedEBookAssignment.</returns>
-        System.Threading.Tasks.Task<ManagedEBookAssignment> CreateAsync(ManagedEBookAssignment managedEBookAssignmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ManagedEBookAssignment.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> CreateResponseAsync(ManagedEBookAssignment managedEBookAssignmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ManagedEBookAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ManagedEBookAssignment.
+        /// Deletes the specified ManagedEBookAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagedEBookAssignment.</returns>
-        System.Threading.Tasks.Task<ManagedEBookAssignment> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ManagedEBookAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedEBookAssignment.</returns>
-        System.Threading.Tasks.Task<ManagedEBookAssignment> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagedEBookAssignment> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ManagedEBookAssignment using PATCH.
+        /// Gets the specified ManagedEBookAssignment and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object.
         /// </summary>
-        /// <param name="managedEBookAssignmentToUpdate">The ManagedEBookAssignment to update.</param>
-        /// <returns>The updated ManagedEBookAssignment.</returns>
-        System.Threading.Tasks.Task<ManagedEBookAssignment> UpdateAsync(ManagedEBookAssignment managedEBookAssignmentToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ManagedEBookAssignment using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedEBookAssignment.</returns>
-        System.Threading.Tasks.Task<ManagedEBookAssignment> UpdateAsync(ManagedEBookAssignment managedEBookAssignmentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagedEBookAssignment> UpdateAsync(ManagedEBookAssignment managedEBookAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ManagedEBookAssignment using PATCH and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="managedEBookAssignmentToUpdate">The ManagedEBookAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> UpdateResponseAsync(ManagedEBookAssignment managedEBookAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ManagedEBookAssignment using PUT.
+        /// </summary>
+        /// <param name="managedEBookAssignmentToUpdate">The ManagedEBookAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ManagedEBookAssignment> PutAsync(ManagedEBookAssignment managedEBookAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ManagedEBookAssignment using PUT and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="managedEBookAssignmentToUpdate">The ManagedEBookAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ManagedEBookAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> PutResponseAsync(ManagedEBookAssignment managedEBookAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

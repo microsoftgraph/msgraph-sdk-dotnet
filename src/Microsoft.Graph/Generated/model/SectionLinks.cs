@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SectionLinks.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SectionLinks>))]
     public partial class SectionLinks
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SectionLinks"/> class.
-        /// </summary>
-        public SectionLinks()
-        {
-            this.ODataType = "microsoft.graph.sectionLinks";
-        }
 
         /// <summary>
         /// Gets or sets oneNoteClientUrl.
         /// Opens the section in the OneNote native client if it's installed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneNoteClientUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("oneNoteClientUrl")]
         public ExternalLink OneNoteClientUrl { get; set; }
     
         /// <summary>
         /// Gets or sets oneNoteWebUrl.
         /// Opens the section in OneNote on the web.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneNoteWebUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("oneNoteWebUrl")]
         public ExternalLink OneNoteWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

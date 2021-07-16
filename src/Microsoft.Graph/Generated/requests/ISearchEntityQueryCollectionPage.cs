@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ISearchEntityQueryCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<SearchEntityQueryCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<SearchEntityQueryCollectionPage>))]
     public interface ISearchEntityQueryCollectionPage : ICollectionPage<SearchResponse>
     {
         /// <summary>

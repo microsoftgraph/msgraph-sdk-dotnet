@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified PrintJob using POST.
         /// </summary>
         /// <param name="printJobToCreate">The PrintJob to create.</param>
-        /// <returns>The created PrintJob.</returns>
-        public System.Threading.Tasks.Task<PrintJob> CreateAsync(PrintJob printJobToCreate)
-        {
-            return this.CreateAsync(printJobToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrintJob using POST.
-        /// </summary>
-        /// <param name="printJobToCreate">The PrintJob to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintJob.</returns>
-        public async System.Threading.Tasks.Task<PrintJob> CreateAsync(PrintJob printJobToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrintJob> CreateAsync(PrintJob printJobToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PrintJob>(printJobToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified PrintJob.
+        /// Creates the specified PrintJob using POST and returns a <see cref="GraphResponse{PrintJob}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="printJobToCreate">The PrintJob to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintJob>> CreateResponseAsync(PrintJob printJobToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PrintJob>(printJobToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PrintJob>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified PrintJob.
+        /// Deletes the specified PrintJob and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PrintJob.</returns>
-        public System.Threading.Tasks.Task<PrintJob> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrintJob.</returns>
-        public async System.Threading.Tasks.Task<PrintJob> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrintJob> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PrintJob>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified PrintJob using PATCH.
+        /// Gets the specified PrintJob and returns a <see cref="GraphResponse{PrintJob}"/> object.
         /// </summary>
-        /// <param name="printJobToUpdate">The PrintJob to update.</param>
-        /// <returns>The updated PrintJob.</returns>
-        public System.Threading.Tasks.Task<PrintJob> UpdateAsync(PrintJob printJobToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintJob>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(printJobToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PrintJob>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrintJob.</returns>
-        public async System.Threading.Tasks.Task<PrintJob> UpdateAsync(PrintJob printJobToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrintJob> UpdateAsync(PrintJob printJobToUpdate, CancellationToken cancellationToken = default)
         {
-			if (printJobToUpdate.AdditionalData != null)
-			{
-				if (printJobToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					printJobToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printJobToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (printJobToUpdate.AdditionalData != null)
-            {
-                if (printJobToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    printJobToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printJobToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PrintJob>(printJobToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PrintJob using PATCH and returns a <see cref="GraphResponse{PrintJob}"/> object.
+        /// </summary>
+        /// <param name="printJobToUpdate">The PrintJob to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintJob>> UpdateResponseAsync(PrintJob printJobToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<PrintJob>(printJobToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified PrintJob using PUT.
+        /// </summary>
+        /// <param name="printJobToUpdate">The PrintJob object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PrintJob> PutAsync(PrintJob printJobToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PrintJob>(printJobToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PrintJob using PUT and returns a <see cref="GraphResponse{PrintJob}"/> object.
+        /// </summary>
+        /// <param name="printJobToUpdate">The PrintJob object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PrintJob}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintJob>> PutResponseAsync(PrintJob printJobToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PrintJob>(printJobToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PrintJob printJobToInitialize)
         {
 
-            if (printJobToInitialize != null && printJobToInitialize.AdditionalData != null)
+            if (printJobToInitialize != null)
             {
-
                 if (printJobToInitialize.Documents != null && printJobToInitialize.Documents.CurrentPage != null)
                 {
+                    printJobToInitialize.Documents.InitializeNextPageRequest(this.Client, printJobToInitialize.DocumentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printJobToInitialize.Documents.AdditionalData = printJobToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printJobToInitialize.AdditionalData.TryGetValue("documents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printJobToInitialize.Documents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (printJobToInitialize.Tasks != null && printJobToInitialize.Tasks.CurrentPage != null)
                 {
+                    printJobToInitialize.Tasks.InitializeNextPageRequest(this.Client, printJobToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     printJobToInitialize.Tasks.AdditionalData = printJobToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printJobToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printJobToInitialize.Tasks.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WebApp using POST.
         /// </summary>
         /// <param name="webAppToCreate">The WebApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WebApp.</returns>
-        System.Threading.Tasks.Task<WebApp> CreateAsync(WebApp webAppToCreate);        /// <summary>
-        /// Creates the specified WebApp using POST.
+        System.Threading.Tasks.Task<WebApp> CreateAsync(WebApp webAppToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified WebApp using POST and returns a <see cref="GraphResponse{WebApp}"/> object.
         /// </summary>
         /// <param name="webAppToCreate">The WebApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WebApp.</returns>
-        System.Threading.Tasks.Task<WebApp> CreateAsync(WebApp webAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WebApp.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WebApp>> CreateResponseAsync(WebApp webAppToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WebApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified WebApp.
+        /// Deletes the specified WebApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WebApp.</returns>
-        System.Threading.Tasks.Task<WebApp> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WebApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WebApp.</returns>
-        System.Threading.Tasks.Task<WebApp> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WebApp> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified WebApp using PATCH.
+        /// Gets the specified WebApp and returns a <see cref="GraphResponse{WebApp}"/> object.
         /// </summary>
-        /// <param name="webAppToUpdate">The WebApp to update.</param>
-        /// <returns>The updated WebApp.</returns>
-        System.Threading.Tasks.Task<WebApp> UpdateAsync(WebApp webAppToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WebApp>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WebApp using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WebApp.</returns>
-        System.Threading.Tasks.Task<WebApp> UpdateAsync(WebApp webAppToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WebApp> UpdateAsync(WebApp webAppToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WebApp using PATCH and returns a <see cref="GraphResponse{WebApp}"/> object.
+        /// </summary>
+        /// <param name="webAppToUpdate">The WebApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WebApp>> UpdateResponseAsync(WebApp webAppToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WebApp using PUT.
+        /// </summary>
+        /// <param name="webAppToUpdate">The WebApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WebApp> PutAsync(WebApp webAppToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WebApp using PUT and returns a <see cref="GraphResponse{WebApp}"/> object.
+        /// </summary>
+        /// <param name="webAppToUpdate">The WebApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WebApp}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WebApp>> PutResponseAsync(WebApp webAppToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

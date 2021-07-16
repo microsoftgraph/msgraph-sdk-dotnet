@@ -9,47 +9,45 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type NotebookCopyNotebookRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class NotebookCopyNotebookRequestBody
     {
     
         /// <summary>
         /// Gets or sets GroupId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupId")]
         public string GroupId { get; set; }
     
         /// <summary>
         /// Gets or sets RenameAs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renameAs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("renameAs")]
         public string RenameAs { get; set; }
     
         /// <summary>
         /// Gets or sets NotebookFolder.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notebookFolder", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notebookFolder")]
         public string NotebookFolder { get; set; }
     
         /// <summary>
         /// Gets or sets SiteCollectionId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteCollectionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("siteCollectionId")]
         public string SiteCollectionId { get; set; }
     
         /// <summary>
         /// Gets or sets SiteId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("siteId")]
         public string SiteId { get; set; }
     
     }

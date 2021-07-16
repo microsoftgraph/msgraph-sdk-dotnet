@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IAuthenticationFido2MethodsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<AuthenticationFido2MethodsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<AuthenticationFido2MethodsCollectionPage>))]
     public interface IAuthenticationFido2MethodsCollectionPage : ICollectionPage<Fido2AuthenticationMethod>
     {
         /// <summary>

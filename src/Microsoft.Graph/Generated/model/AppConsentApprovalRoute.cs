@@ -12,29 +12,25 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type App Consent Approval Route.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AppConsentApprovalRoute : Entity
     {
     
-		///<summary>
-		/// The AppConsentApprovalRoute constructor
-		///</summary>
-        public AppConsentApprovalRoute()
-        {
-            this.ODataType = "microsoft.graph.appConsentApprovalRoute";
-        }
-	
         /// <summary>
         /// Gets or sets app consent requests.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appConsentRequests", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appConsentRequests")]
         public IAppConsentApprovalRouteAppConsentRequestsCollectionPage AppConsentRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets appConsentRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("appConsentRequests@odata.nextLink")]
+        public string AppConsentRequestsNextLink { get; set; }
     
     }
 }

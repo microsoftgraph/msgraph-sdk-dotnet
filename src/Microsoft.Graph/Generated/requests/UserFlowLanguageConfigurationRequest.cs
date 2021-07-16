@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UserFlowLanguageConfiguration using POST.
         /// </summary>
         /// <param name="userFlowLanguageConfigurationToCreate">The UserFlowLanguageConfiguration to create.</param>
-        /// <returns>The created UserFlowLanguageConfiguration.</returns>
-        public System.Threading.Tasks.Task<UserFlowLanguageConfiguration> CreateAsync(UserFlowLanguageConfiguration userFlowLanguageConfigurationToCreate)
-        {
-            return this.CreateAsync(userFlowLanguageConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserFlowLanguageConfiguration using POST.
-        /// </summary>
-        /// <param name="userFlowLanguageConfigurationToCreate">The UserFlowLanguageConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserFlowLanguageConfiguration.</returns>
-        public async System.Threading.Tasks.Task<UserFlowLanguageConfiguration> CreateAsync(UserFlowLanguageConfiguration userFlowLanguageConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserFlowLanguageConfiguration> CreateAsync(UserFlowLanguageConfiguration userFlowLanguageConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UserFlowLanguageConfiguration>(userFlowLanguageConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UserFlowLanguageConfiguration.
+        /// Creates the specified UserFlowLanguageConfiguration using POST and returns a <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="userFlowLanguageConfigurationToCreate">The UserFlowLanguageConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfiguration>> CreateResponseAsync(UserFlowLanguageConfiguration userFlowLanguageConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserFlowLanguageConfiguration>(userFlowLanguageConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UserFlowLanguageConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UserFlowLanguageConfiguration.
+        /// Deletes the specified UserFlowLanguageConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserFlowLanguageConfiguration.</returns>
-        public System.Threading.Tasks.Task<UserFlowLanguageConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserFlowLanguageConfiguration.</returns>
-        public async System.Threading.Tasks.Task<UserFlowLanguageConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserFlowLanguageConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UserFlowLanguageConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UserFlowLanguageConfiguration using PATCH.
+        /// Gets the specified UserFlowLanguageConfiguration and returns a <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object.
         /// </summary>
-        /// <param name="userFlowLanguageConfigurationToUpdate">The UserFlowLanguageConfiguration to update.</param>
-        /// <returns>The updated UserFlowLanguageConfiguration.</returns>
-        public System.Threading.Tasks.Task<UserFlowLanguageConfiguration> UpdateAsync(UserFlowLanguageConfiguration userFlowLanguageConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(userFlowLanguageConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserFlowLanguageConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserFlowLanguageConfiguration.</returns>
-        public async System.Threading.Tasks.Task<UserFlowLanguageConfiguration> UpdateAsync(UserFlowLanguageConfiguration userFlowLanguageConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserFlowLanguageConfiguration> UpdateAsync(UserFlowLanguageConfiguration userFlowLanguageConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (userFlowLanguageConfigurationToUpdate.AdditionalData != null)
-			{
-				if (userFlowLanguageConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userFlowLanguageConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userFlowLanguageConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userFlowLanguageConfigurationToUpdate.AdditionalData != null)
-            {
-                if (userFlowLanguageConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userFlowLanguageConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userFlowLanguageConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UserFlowLanguageConfiguration>(userFlowLanguageConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserFlowLanguageConfiguration using PATCH and returns a <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object.
+        /// </summary>
+        /// <param name="userFlowLanguageConfigurationToUpdate">The UserFlowLanguageConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfiguration>> UpdateResponseAsync(UserFlowLanguageConfiguration userFlowLanguageConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UserFlowLanguageConfiguration>(userFlowLanguageConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UserFlowLanguageConfiguration using PUT.
+        /// </summary>
+        /// <param name="userFlowLanguageConfigurationToUpdate">The UserFlowLanguageConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserFlowLanguageConfiguration> PutAsync(UserFlowLanguageConfiguration userFlowLanguageConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserFlowLanguageConfiguration>(userFlowLanguageConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserFlowLanguageConfiguration using PUT and returns a <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object.
+        /// </summary>
+        /// <param name="userFlowLanguageConfigurationToUpdate">The UserFlowLanguageConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserFlowLanguageConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfiguration>> PutResponseAsync(UserFlowLanguageConfiguration userFlowLanguageConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserFlowLanguageConfiguration>(userFlowLanguageConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserFlowLanguageConfiguration userFlowLanguageConfigurationToInitialize)
         {
 
-            if (userFlowLanguageConfigurationToInitialize != null && userFlowLanguageConfigurationToInitialize.AdditionalData != null)
+            if (userFlowLanguageConfigurationToInitialize != null)
             {
-
                 if (userFlowLanguageConfigurationToInitialize.DefaultPages != null && userFlowLanguageConfigurationToInitialize.DefaultPages.CurrentPage != null)
                 {
+                    userFlowLanguageConfigurationToInitialize.DefaultPages.InitializeNextPageRequest(this.Client, userFlowLanguageConfigurationToInitialize.DefaultPagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userFlowLanguageConfigurationToInitialize.DefaultPages.AdditionalData = userFlowLanguageConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userFlowLanguageConfigurationToInitialize.AdditionalData.TryGetValue("defaultPages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userFlowLanguageConfigurationToInitialize.DefaultPages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (userFlowLanguageConfigurationToInitialize.OverridesPages != null && userFlowLanguageConfigurationToInitialize.OverridesPages.CurrentPage != null)
                 {
+                    userFlowLanguageConfigurationToInitialize.OverridesPages.InitializeNextPageRequest(this.Client, userFlowLanguageConfigurationToInitialize.OverridesPagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userFlowLanguageConfigurationToInitialize.OverridesPages.AdditionalData = userFlowLanguageConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userFlowLanguageConfigurationToInitialize.AdditionalData.TryGetValue("overridesPages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userFlowLanguageConfigurationToInitialize.OverridesPages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

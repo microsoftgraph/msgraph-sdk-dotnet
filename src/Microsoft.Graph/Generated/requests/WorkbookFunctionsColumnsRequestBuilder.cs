@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         public WorkbookFunctionsColumnsRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken array)
+            System.Text.Json.JsonDocument array)
             : base(requestUrl, client)
         {
             this.SetParameter("array", array, true);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("array"))
             {
-                request.RequestBody.Array = this.GetParameter<Newtonsoft.Json.Linq.JToken>("array");
+                request.RequestBody.Array = this.GetParameter<System.Text.Json.JsonDocument>("array");
             }
 
             return request;

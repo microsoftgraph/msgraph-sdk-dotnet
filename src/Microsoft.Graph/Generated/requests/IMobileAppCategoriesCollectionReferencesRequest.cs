@@ -19,18 +19,19 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IMobileAppCategoriesCollectionReferencesRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MobileAppCategory to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppCategory">The MobileAppCategory to add.</param>
-        System.Threading.Tasks.Task AddAsync(MobileAppCategory mobileAppCategory);
-
         /// <summary>
         /// Adds the specified MobileAppCategory to the collection via POST.
         /// </summary>
         /// <param name="mobileAppCategory">The MobileAppCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task AddAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified MobileAppCategory to the collection via POST and returns a <see cref="GraphResponse{MobileAppCategory}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileAppCategory">The MobileAppCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken = default);
+
     }
 }

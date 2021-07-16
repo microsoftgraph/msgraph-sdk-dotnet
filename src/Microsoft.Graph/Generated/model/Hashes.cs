@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Hashes.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Hashes>))]
     public partial class Hashes
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Hashes"/> class.
-        /// </summary>
-        public Hashes()
-        {
-            this.ODataType = "microsoft.graph.hashes";
-        }
 
         /// <summary>
         /// Gets or sets crc32Hash.
         /// The CRC32 value of the file (if available). Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "crc32Hash", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("crc32Hash")]
         public string Crc32Hash { get; set; }
     
         /// <summary>
         /// Gets or sets quickXorHash.
         /// A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "quickXorHash", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("quickXorHash")]
         public string QuickXorHash { get; set; }
     
         /// <summary>
         /// Gets or sets sha1Hash.
         /// SHA1 hash for the contents of the file (if available). Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sha1Hash", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sha1Hash")]
         public string Sha1Hash { get; set; }
     
         /// <summary>
         /// Gets or sets sha256Hash.
         /// SHA256 hash for the contents of the file (if available). Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sha256Hash", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sha256Hash")]
         public string Sha256Hash { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

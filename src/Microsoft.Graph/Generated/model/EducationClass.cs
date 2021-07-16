@@ -12,160 +12,181 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education Class.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<EducationClass>))]
     public partial class EducationClass : Entity
     {
     
-		///<summary>
-		/// The EducationClass constructor
-		///</summary>
-        public EducationClass()
-        {
-            this.ODataType = "microsoft.graph.educationClass";
-        }
-	
         /// <summary>
         /// Gets or sets class code.
         /// Class code used by the school to identify the class.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classCode")]
         public string ClassCode { get; set; }
     
         /// <summary>
         /// Gets or sets course.
         /// Course information for the class
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "course", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("course")]
         public EducationCourse Course { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
         /// Entity who created the class
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Description of the class.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Name of the class.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
         /// ID of the class from the syncing system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalId")]
         public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets external name.
         /// Name of the class in the syncing system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalName")]
         public string ExternalName { get; set; }
     
         /// <summary>
         /// Gets or sets external source.
         /// The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalSource")]
         public EducationExternalSource? ExternalSource { get; set; }
     
         /// <summary>
         /// Gets or sets external source detail.
         /// The name of the external source this resources was generated from.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSourceDetail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalSourceDetail")]
         public string ExternalSourceDetail { get; set; }
     
         /// <summary>
         /// Gets or sets grade.
         /// Grade level of the class.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grade", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("grade")]
         public string Grade { get; set; }
     
         /// <summary>
         /// Gets or sets mail nickname.
         /// Mail name for sending email to all members, if this is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNickname", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mailNickname")]
         public string MailNickname { get; set; }
     
         /// <summary>
         /// Gets or sets term.
         /// Term for the class.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "term", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("term")]
         public EducationTerm Term { get; set; }
     
         /// <summary>
         /// Gets or sets assignment categories.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentCategories", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentCategories")]
         public IEducationClassAssignmentCategoriesCollectionPage AssignmentCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("assignmentCategories@odata.nextLink")]
+        public string AssignmentCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets assignment defaults.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentDefaults", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentDefaults")]
         public EducationAssignmentDefaults AssignmentDefaults { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// All assignments associated with this class. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IEducationClassAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets assignment settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentSettings")]
         public EducationAssignmentSettings AssignmentSettings { get; set; }
     
         /// <summary>
         /// Gets or sets group.
         /// The underlying Microsoft 365 group object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("group")]
         public Group Group { get; set; }
     
         /// <summary>
         /// Gets or sets members.
         /// All users in the class. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("members")]
         public IEducationClassMembersCollectionWithReferencesPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets schools.
         /// All schools that this class is associated with. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schools", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schools")]
         public IEducationClassSchoolsCollectionWithReferencesPage Schools { get; set; }
+
+        /// <summary>
+        /// Gets or sets schoolsNextLink.
+        /// </summary>
+        [JsonPropertyName("schools@odata.nextLink")]
+        public string SchoolsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets teachers.
         /// All teachers in the class. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teachers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teachers")]
         public IEducationClassTeachersCollectionWithReferencesPage Teachers { get; set; }
+
+        /// <summary>
+        /// Gets or sets teachersNextLink.
+        /// </summary>
+        [JsonPropertyName("teachers@odata.nextLink")]
+        public string TeachersNextLink { get; set; }
     
     }
 }

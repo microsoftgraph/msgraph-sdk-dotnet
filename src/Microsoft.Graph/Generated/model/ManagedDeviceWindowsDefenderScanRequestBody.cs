@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedDeviceWindowsDefenderScanRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedDeviceWindowsDefenderScanRequestBody
     {
     
         /// <summary>
         /// Gets or sets QuickScan.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "quickScan", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("quickScan")]
         public bool QuickScan { get; set; }
     
     }

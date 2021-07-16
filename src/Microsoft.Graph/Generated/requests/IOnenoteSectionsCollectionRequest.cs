@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IOnenoteSectionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified OnenoteSection to the collection via POST.
-        /// </summary>
-        /// <param name="onenoteSection">The OnenoteSection to add.</param>
-        /// <returns>The created OnenoteSection.</returns>
-        System.Threading.Tasks.Task<OnenoteSection> AddAsync(OnenoteSection onenoteSection);
-
         /// <summary>
         /// Adds the specified OnenoteSection to the collection via POST.
         /// </summary>
         /// <param name="onenoteSection">The OnenoteSection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenoteSection.</returns>
-        System.Threading.Tasks.Task<OnenoteSection> AddAsync(OnenoteSection onenoteSection, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OnenoteSection> AddAsync(OnenoteSection onenoteSection, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified OnenoteSection to the collection via POST and returns a <see cref="GraphResponse{OnenoteSection}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOnenoteSectionsCollectionPage> GetAsync();
+        /// <param name="onenoteSection">The OnenoteSection to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> AddResponseAsync(OnenoteSection onenoteSection, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOnenoteSectionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IOnenoteSectionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OnenoteSectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteSectionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteSectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

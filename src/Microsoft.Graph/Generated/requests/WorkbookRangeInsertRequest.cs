@@ -29,7 +29,7 @@ namespace Microsoft.Graph
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
-            this.ContentType = "application/json";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.RequestBody = new WorkbookRangeInsertRequestBody();
         }
 
@@ -41,23 +41,25 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the POST request.
         /// </summary>
-        public System.Threading.Tasks.Task<WorkbookRange> PostAsync()
-        {
-            return this.PostAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Issues the POST request.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<WorkbookRange> PostAsync(
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
-            this.Method = "POST";
+            this.Method = HttpMethods.POST;
             return this.SendAsync<WorkbookRange>(this.RequestBody, cancellationToken);
         }
 
+        /// <summary>
+        /// Issues the POST request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRange>> PostResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WorkbookRange>(this.RequestBody, cancellationToken);
+        }
 
 
 

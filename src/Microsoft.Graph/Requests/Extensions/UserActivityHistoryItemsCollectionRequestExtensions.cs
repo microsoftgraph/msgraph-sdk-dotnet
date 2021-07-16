@@ -29,7 +29,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<ActivityHistoryItem> AddActivityHistoryAsync(ActivityHistoryItem activityHistoryItem, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
-            this.Method = "PUT";
+            this.Method = HttpMethods.PUT;
             this.AppendSegmentToRequestUrl(activityHistoryItem.Id ?? Guid.NewGuid().ToString());
             return this.SendAsync<ActivityHistoryItem>(activityHistoryItem, cancellationToken);
         }

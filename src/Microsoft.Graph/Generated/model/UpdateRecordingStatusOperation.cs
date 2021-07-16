@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Update Recording Status Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UpdateRecordingStatusOperation : CommsOperation
     {
     
-		///<summary>
-		/// The UpdateRecordingStatusOperation constructor
-		///</summary>
+        ///<summary>
+        /// The UpdateRecordingStatusOperation constructor
+        ///</summary>
         public UpdateRecordingStatusOperation()
         {
             this.ODataType = "microsoft.graph.updateRecordingStatusOperation";
         }
-	
+
     }
 }
 

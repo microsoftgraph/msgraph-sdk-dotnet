@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookFunctions using POST.
         /// </summary>
         /// <param name="workbookFunctionsToCreate">The WorkbookFunctions to create.</param>
-        /// <returns>The created WorkbookFunctions.</returns>
-        public System.Threading.Tasks.Task<WorkbookFunctions> CreateAsync(WorkbookFunctions workbookFunctionsToCreate)
-        {
-            return this.CreateAsync(workbookFunctionsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookFunctions using POST.
-        /// </summary>
-        /// <param name="workbookFunctionsToCreate">The WorkbookFunctions to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookFunctions.</returns>
-        public async System.Threading.Tasks.Task<WorkbookFunctions> CreateAsync(WorkbookFunctions workbookFunctionsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookFunctions> CreateAsync(WorkbookFunctions workbookFunctionsToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WorkbookFunctions>(workbookFunctionsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WorkbookFunctions.
+        /// Creates the specified WorkbookFunctions using POST and returns a <see cref="GraphResponse{WorkbookFunctions}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="workbookFunctionsToCreate">The WorkbookFunctions to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctions}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookFunctions>> CreateResponseAsync(WorkbookFunctions workbookFunctionsToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WorkbookFunctions>(workbookFunctionsToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WorkbookFunctions>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WorkbookFunctions.
+        /// Deletes the specified WorkbookFunctions and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookFunctions.</returns>
-        public System.Threading.Tasks.Task<WorkbookFunctions> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookFunctions.</returns>
-        public async System.Threading.Tasks.Task<WorkbookFunctions> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookFunctions> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WorkbookFunctions>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WorkbookFunctions using PATCH.
+        /// Gets the specified WorkbookFunctions and returns a <see cref="GraphResponse{WorkbookFunctions}"/> object.
         /// </summary>
-        /// <param name="workbookFunctionsToUpdate">The WorkbookFunctions to update.</param>
-        /// <returns>The updated WorkbookFunctions.</returns>
-        public System.Threading.Tasks.Task<WorkbookFunctions> UpdateAsync(WorkbookFunctions workbookFunctionsToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctions}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookFunctions>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(workbookFunctionsToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WorkbookFunctions>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookFunctions.</returns>
-        public async System.Threading.Tasks.Task<WorkbookFunctions> UpdateAsync(WorkbookFunctions workbookFunctionsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookFunctions> UpdateAsync(WorkbookFunctions workbookFunctionsToUpdate, CancellationToken cancellationToken = default)
         {
-			if (workbookFunctionsToUpdate.AdditionalData != null)
-			{
-				if (workbookFunctionsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookFunctionsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookFunctionsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookFunctionsToUpdate.AdditionalData != null)
-            {
-                if (workbookFunctionsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookFunctionsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookFunctionsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WorkbookFunctions>(workbookFunctionsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookFunctions using PATCH and returns a <see cref="GraphResponse{WorkbookFunctions}"/> object.
+        /// </summary>
+        /// <param name="workbookFunctionsToUpdate">The WorkbookFunctions to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctions}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookFunctions>> UpdateResponseAsync(WorkbookFunctions workbookFunctionsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WorkbookFunctions>(workbookFunctionsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookFunctions using PUT.
+        /// </summary>
+        /// <param name="workbookFunctionsToUpdate">The WorkbookFunctions object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WorkbookFunctions> PutAsync(WorkbookFunctions workbookFunctionsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WorkbookFunctions>(workbookFunctionsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookFunctions using PUT and returns a <see cref="GraphResponse{WorkbookFunctions}"/> object.
+        /// </summary>
+        /// <param name="workbookFunctionsToUpdate">The WorkbookFunctions object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WorkbookFunctions}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookFunctions>> PutResponseAsync(WorkbookFunctions workbookFunctionsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WorkbookFunctions>(workbookFunctionsToUpdate, cancellationToken);
         }
 
         /// <summary>

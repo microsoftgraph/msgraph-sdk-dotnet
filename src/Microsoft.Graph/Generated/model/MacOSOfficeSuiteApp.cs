@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSOffice Suite App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MacOSOfficeSuiteApp : MobileApp
     {
     
-		///<summary>
-		/// The MacOSOfficeSuiteApp constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSOfficeSuiteApp constructor
+        ///</summary>
         public MacOSOfficeSuiteApp()
         {
             this.ODataType = "microsoft.graph.macOSOfficeSuiteApp";
         }
-	
+
     }
 }
 

@@ -12,46 +12,37 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type InstanceResourceAccess.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<InstanceResourceAccess>))]
     public partial class InstanceResourceAccess
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InstanceResourceAccess"/> class.
-        /// </summary>
-        public InstanceResourceAccess()
-        {
-            this.ODataType = "microsoft.graph.instanceResourceAccess";
-        }
 
         /// <summary>
         /// Gets or sets permissions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("permissions")]
         public IEnumerable<ResourcePermission> Permissions { get; set; }
     
         /// <summary>
         /// Gets or sets resourceAppId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceAppId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceAppId")]
         public string ResourceAppId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

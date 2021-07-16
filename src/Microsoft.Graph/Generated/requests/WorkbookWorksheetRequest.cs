@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookWorksheet using POST.
         /// </summary>
         /// <param name="workbookWorksheetToCreate">The WorkbookWorksheet to create.</param>
-        /// <returns>The created WorkbookWorksheet.</returns>
-        public System.Threading.Tasks.Task<WorkbookWorksheet> CreateAsync(WorkbookWorksheet workbookWorksheetToCreate)
-        {
-            return this.CreateAsync(workbookWorksheetToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookWorksheet using POST.
-        /// </summary>
-        /// <param name="workbookWorksheetToCreate">The WorkbookWorksheet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookWorksheet.</returns>
-        public async System.Threading.Tasks.Task<WorkbookWorksheet> CreateAsync(WorkbookWorksheet workbookWorksheetToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookWorksheet> CreateAsync(WorkbookWorksheet workbookWorksheetToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WorkbookWorksheet>(workbookWorksheetToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WorkbookWorksheet.
+        /// Creates the specified WorkbookWorksheet using POST and returns a <see cref="GraphResponse{WorkbookWorksheet}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="workbookWorksheetToCreate">The WorkbookWorksheet to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheet}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheet>> CreateResponseAsync(WorkbookWorksheet workbookWorksheetToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WorkbookWorksheet>(workbookWorksheetToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WorkbookWorksheet>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WorkbookWorksheet.
+        /// Deletes the specified WorkbookWorksheet and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookWorksheet.</returns>
-        public System.Threading.Tasks.Task<WorkbookWorksheet> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookWorksheet.</returns>
-        public async System.Threading.Tasks.Task<WorkbookWorksheet> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookWorksheet> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WorkbookWorksheet>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WorkbookWorksheet using PATCH.
+        /// Gets the specified WorkbookWorksheet and returns a <see cref="GraphResponse{WorkbookWorksheet}"/> object.
         /// </summary>
-        /// <param name="workbookWorksheetToUpdate">The WorkbookWorksheet to update.</param>
-        /// <returns>The updated WorkbookWorksheet.</returns>
-        public System.Threading.Tasks.Task<WorkbookWorksheet> UpdateAsync(WorkbookWorksheet workbookWorksheetToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheet}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheet>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(workbookWorksheetToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WorkbookWorksheet>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookWorksheet.</returns>
-        public async System.Threading.Tasks.Task<WorkbookWorksheet> UpdateAsync(WorkbookWorksheet workbookWorksheetToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookWorksheet> UpdateAsync(WorkbookWorksheet workbookWorksheetToUpdate, CancellationToken cancellationToken = default)
         {
-			if (workbookWorksheetToUpdate.AdditionalData != null)
-			{
-				if (workbookWorksheetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookWorksheetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookWorksheetToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookWorksheetToUpdate.AdditionalData != null)
-            {
-                if (workbookWorksheetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookWorksheetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookWorksheetToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WorkbookWorksheet>(workbookWorksheetToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookWorksheet using PATCH and returns a <see cref="GraphResponse{WorkbookWorksheet}"/> object.
+        /// </summary>
+        /// <param name="workbookWorksheetToUpdate">The WorkbookWorksheet to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheet}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheet>> UpdateResponseAsync(WorkbookWorksheet workbookWorksheetToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WorkbookWorksheet>(workbookWorksheetToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookWorksheet using PUT.
+        /// </summary>
+        /// <param name="workbookWorksheetToUpdate">The WorkbookWorksheet object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WorkbookWorksheet> PutAsync(WorkbookWorksheet workbookWorksheetToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WorkbookWorksheet>(workbookWorksheetToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookWorksheet using PUT and returns a <see cref="GraphResponse{WorkbookWorksheet}"/> object.
+        /// </summary>
+        /// <param name="workbookWorksheetToUpdate">The WorkbookWorksheet object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WorkbookWorksheet}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheet>> PutResponseAsync(WorkbookWorksheet workbookWorksheetToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WorkbookWorksheet>(workbookWorksheetToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WorkbookWorksheet workbookWorksheetToInitialize)
         {
 
-            if (workbookWorksheetToInitialize != null && workbookWorksheetToInitialize.AdditionalData != null)
+            if (workbookWorksheetToInitialize != null)
             {
-
                 if (workbookWorksheetToInitialize.Charts != null && workbookWorksheetToInitialize.Charts.CurrentPage != null)
                 {
+                    workbookWorksheetToInitialize.Charts.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.ChartsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.Charts.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookWorksheetToInitialize.AdditionalData.TryGetValue("charts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookWorksheetToInitialize.Charts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookWorksheetToInitialize.Names != null && workbookWorksheetToInitialize.Names.CurrentPage != null)
                 {
+                    workbookWorksheetToInitialize.Names.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.NamesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.Names.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookWorksheetToInitialize.AdditionalData.TryGetValue("names@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookWorksheetToInitialize.Names.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookWorksheetToInitialize.PivotTables != null && workbookWorksheetToInitialize.PivotTables.CurrentPage != null)
                 {
+                    workbookWorksheetToInitialize.PivotTables.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.PivotTablesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.PivotTables.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookWorksheetToInitialize.AdditionalData.TryGetValue("pivotTables@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookWorksheetToInitialize.PivotTables.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookWorksheetToInitialize.Tables != null && workbookWorksheetToInitialize.Tables.CurrentPage != null)
                 {
+                    workbookWorksheetToInitialize.Tables.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.TablesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.Tables.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookWorksheetToInitialize.AdditionalData.TryGetValue("tables@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookWorksheetToInitialize.Tables.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -12,97 +12,88 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Photo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Photo>))]
     public partial class Photo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Photo"/> class.
-        /// </summary>
-        public Photo()
-        {
-            this.ODataType = "microsoft.graph.photo";
-        }
 
         /// <summary>
         /// Gets or sets cameraMake.
         /// Camera manufacturer. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cameraMake", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cameraMake")]
         public string CameraMake { get; set; }
     
         /// <summary>
         /// Gets or sets cameraModel.
         /// Camera model. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cameraModel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cameraModel")]
         public string CameraModel { get; set; }
     
         /// <summary>
         /// Gets or sets exposureDenominator.
         /// The denominator for the exposure time fraction from the camera. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exposureDenominator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exposureDenominator")]
         public double? ExposureDenominator { get; set; }
     
         /// <summary>
         /// Gets or sets exposureNumerator.
         /// The numerator for the exposure time fraction from the camera. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exposureNumerator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exposureNumerator")]
         public double? ExposureNumerator { get; set; }
     
         /// <summary>
         /// Gets or sets fNumber.
         /// The F-stop value from the camera. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fNumber")]
         public double? FNumber { get; set; }
     
         /// <summary>
         /// Gets or sets focalLength.
         /// The focal length from the camera. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "focalLength", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("focalLength")]
         public double? FocalLength { get; set; }
     
         /// <summary>
         /// Gets or sets iso.
         /// The ISO value from the camera. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iso", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("iso")]
         public Int32? Iso { get; set; }
     
         /// <summary>
         /// Gets or sets orientation.
         /// The orientation value from the camera. Writable on OneDrive Personal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orientation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("orientation")]
         public Int16? Orientation { get; set; }
     
         /// <summary>
         /// Gets or sets takenDateTime.
         /// The date and time the photo was taken in UTC time. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "takenDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("takenDateTime")]
         public DateTimeOffset? TakenDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

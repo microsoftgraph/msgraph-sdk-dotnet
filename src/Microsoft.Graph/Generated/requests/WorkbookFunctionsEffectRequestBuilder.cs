@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsEffectRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken nominalRate,
-            Newtonsoft.Json.Linq.JToken npery)
+            System.Text.Json.JsonDocument nominalRate,
+            System.Text.Json.JsonDocument npery)
             : base(requestUrl, client)
         {
             this.SetParameter("nominalRate", nominalRate, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("nominalRate"))
             {
-                request.RequestBody.NominalRate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("nominalRate");
+                request.RequestBody.NominalRate = this.GetParameter<System.Text.Json.JsonDocument>("nominalRate");
             }
 
             if (this.HasParameter("npery"))
             {
-                request.RequestBody.Npery = this.GetParameter<Newtonsoft.Json.Linq.JToken>("npery");
+                request.RequestBody.Npery = this.GetParameter<System.Text.Json.JsonDocument>("npery");
             }
 
             return request;

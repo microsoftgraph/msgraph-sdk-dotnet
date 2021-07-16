@@ -9,42 +9,40 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsReplaceRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsReplaceRequestBody
     {
     
         /// <summary>
         /// Gets or sets OldText.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oldText", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken OldText { get; set; }
+        [JsonPropertyName("oldText")]
+        public System.Text.Json.JsonDocument OldText { get; set; }
     
         /// <summary>
         /// Gets or sets StartNum.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startNum", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken StartNum { get; set; }
+        [JsonPropertyName("startNum")]
+        public System.Text.Json.JsonDocument StartNum { get; set; }
     
         /// <summary>
         /// Gets or sets NumChars.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "numChars", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken NumChars { get; set; }
+        [JsonPropertyName("numChars")]
+        public System.Text.Json.JsonDocument NumChars { get; set; }
     
         /// <summary>
         /// Gets or sets NewText.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "newText", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken NewText { get; set; }
+        [JsonPropertyName("newText")]
+        public System.Text.Json.JsonDocument NewText { get; set; }
     
     }
 }

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementRoleDefinitionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified RoleDefinition to the collection via POST.
-        /// </summary>
-        /// <param name="roleDefinition">The RoleDefinition to add.</param>
-        /// <returns>The created RoleDefinition.</returns>
-        System.Threading.Tasks.Task<RoleDefinition> AddAsync(RoleDefinition roleDefinition);
-
         /// <summary>
         /// Adds the specified RoleDefinition to the collection via POST.
         /// </summary>
         /// <param name="roleDefinition">The RoleDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoleDefinition.</returns>
-        System.Threading.Tasks.Task<RoleDefinition> AddAsync(RoleDefinition roleDefinition, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<RoleDefinition> AddAsync(RoleDefinition roleDefinition, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified RoleDefinition to the collection via POST and returns a <see cref="GraphResponse{RoleDefinition}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementRoleDefinitionsCollectionPage> GetAsync();
+        /// <param name="roleDefinition">The RoleDefinition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> AddResponseAsync(RoleDefinition roleDefinition, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementRoleDefinitionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementRoleDefinitionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementRoleDefinitionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementRoleDefinitionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementRoleDefinitionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

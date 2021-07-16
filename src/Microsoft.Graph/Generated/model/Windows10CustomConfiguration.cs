@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10Custom Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Windows10CustomConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The Windows10CustomConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10CustomConfiguration constructor
+        ///</summary>
         public Windows10CustomConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10CustomConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets oma settings.
         /// OMA settings. This collection can contain a maximum of 1000 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "omaSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("omaSettings")]
         public IEnumerable<OmaSetting> OmaSettings { get; set; }
     
     }

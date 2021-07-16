@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookRangeFormat using POST.
         /// </summary>
         /// <param name="workbookRangeFormatToCreate">The WorkbookRangeFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeFormat> CreateAsync(WorkbookRangeFormat workbookRangeFormatToCreate);        /// <summary>
-        /// Creates the specified WorkbookRangeFormat using POST.
+        System.Threading.Tasks.Task<WorkbookRangeFormat> CreateAsync(WorkbookRangeFormat workbookRangeFormatToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeFormat using POST and returns a <see cref="GraphResponse{WorkbookRangeFormat}"/> object.
         /// </summary>
         /// <param name="workbookRangeFormatToCreate">The WorkbookRangeFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WorkbookRangeFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeFormat> CreateAsync(WorkbookRangeFormat workbookRangeFormatToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookRangeFormat.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFormat>> CreateResponseAsync(WorkbookRangeFormat workbookRangeFormatToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WorkbookRangeFormat.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified WorkbookRangeFormat.
+        /// Deletes the specified WorkbookRangeFormat and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WorkbookRangeFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeFormat> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WorkbookRangeFormat.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookRangeFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeFormat> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookRangeFormat> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified WorkbookRangeFormat using PATCH.
+        /// Gets the specified WorkbookRangeFormat and returns a <see cref="GraphResponse{WorkbookRangeFormat}"/> object.
         /// </summary>
-        /// <param name="workbookRangeFormatToUpdate">The WorkbookRangeFormat to update.</param>
-        /// <returns>The updated WorkbookRangeFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeFormat> UpdateAsync(WorkbookRangeFormat workbookRangeFormatToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFormat>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkbookRangeFormat using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookRangeFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeFormat> UpdateAsync(WorkbookRangeFormat workbookRangeFormatToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookRangeFormat> UpdateAsync(WorkbookRangeFormat workbookRangeFormatToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookRangeFormat using PATCH and returns a <see cref="GraphResponse{WorkbookRangeFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeFormatToUpdate">The WorkbookRangeFormat to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFormat>> UpdateResponseAsync(WorkbookRangeFormat workbookRangeFormatToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookRangeFormat using PUT.
+        /// </summary>
+        /// <param name="workbookRangeFormatToUpdate">The WorkbookRangeFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WorkbookRangeFormat> PutAsync(WorkbookRangeFormat workbookRangeFormatToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WorkbookRangeFormat using PUT and returns a <see cref="GraphResponse{WorkbookRangeFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeFormatToUpdate">The WorkbookRangeFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WorkbookRangeFormat}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFormat>> PutResponseAsync(WorkbookRangeFormat workbookRangeFormatToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

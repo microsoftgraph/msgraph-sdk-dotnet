@@ -12,104 +12,95 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RegistryKeyState.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RegistryKeyState>))]
     public partial class RegistryKeyState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RegistryKeyState"/> class.
-        /// </summary>
-        public RegistryKeyState()
-        {
-            this.ODataType = "microsoft.graph.registryKeyState";
-        }
 
         /// <summary>
         /// Gets or sets hive.
         /// A Windows registry hive : HKEY_CURRENT_CONFIG HKEY_CURRENT_USER HKEY_LOCAL_MACHINE/SAM HKEY_LOCAL_MACHINE/Security HKEY_LOCAL_MACHINE/Software HKEY_LOCAL_MACHINE/System HKEY_USERS/.Default. Possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hive")]
         public RegistryHive? Hive { get; set; }
     
         /// <summary>
         /// Gets or sets key.
         /// Current (i.e. changed) registry key (excludes HIVE).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "key", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("key")]
         public string Key { get; set; }
     
         /// <summary>
         /// Gets or sets oldKey.
         /// Previous (i.e. before changed) registry key (excludes HIVE).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oldKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("oldKey")]
         public string OldKey { get; set; }
     
         /// <summary>
         /// Gets or sets oldValueData.
         /// Previous (i.e. before changed) registry key value data (contents).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oldValueData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("oldValueData")]
         public string OldValueData { get; set; }
     
         /// <summary>
         /// Gets or sets oldValueName.
         /// Previous (i.e. before changed) registry key value name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oldValueName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("oldValueName")]
         public string OldValueName { get; set; }
     
         /// <summary>
         /// Gets or sets operation.
         /// Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operation")]
         public RegistryOperation? Operation { get; set; }
     
         /// <summary>
         /// Gets or sets processId.
         /// Process ID (PID) of the process that modified the registry key (process details will appear in the alert 'processes' collection).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("processId")]
         public Int32? ProcessId { get; set; }
     
         /// <summary>
         /// Gets or sets valueData.
         /// Current (i.e. changed) registry key value data (contents).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("valueData")]
         public string ValueData { get; set; }
     
         /// <summary>
         /// Gets or sets valueName.
         /// Current (i.e. changed) registry key value name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("valueName")]
         public string ValueName { get; set; }
     
         /// <summary>
         /// Gets or sets valueType.
         /// Registry key value type REG_BINARY REG_DWORD REG_DWORD_LITTLE_ENDIAN REG_DWORD_BIG_ENDIANREG_EXPAND_SZ REG_LINK REG_MULTI_SZ REG_NONE REG_QWORD REG_QWORD_LITTLE_ENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("valueType")]
         public RegistryValueType? ValueType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

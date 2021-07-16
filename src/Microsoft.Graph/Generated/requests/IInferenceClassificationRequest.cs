@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified InferenceClassification using POST.
         /// </summary>
         /// <param name="inferenceClassificationToCreate">The InferenceClassification to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created InferenceClassification.</returns>
-        System.Threading.Tasks.Task<InferenceClassification> CreateAsync(InferenceClassification inferenceClassificationToCreate);        /// <summary>
-        /// Creates the specified InferenceClassification using POST.
+        System.Threading.Tasks.Task<InferenceClassification> CreateAsync(InferenceClassification inferenceClassificationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified InferenceClassification using POST and returns a <see cref="GraphResponse{InferenceClassification}"/> object.
         /// </summary>
         /// <param name="inferenceClassificationToCreate">The InferenceClassification to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created InferenceClassification.</returns>
-        System.Threading.Tasks.Task<InferenceClassification> CreateAsync(InferenceClassification inferenceClassificationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified InferenceClassification.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{InferenceClassification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassification>> CreateResponseAsync(InferenceClassification inferenceClassificationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified InferenceClassification.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified InferenceClassification.
+        /// Deletes the specified InferenceClassification and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The InferenceClassification.</returns>
-        System.Threading.Tasks.Task<InferenceClassification> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified InferenceClassification.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The InferenceClassification.</returns>
-        System.Threading.Tasks.Task<InferenceClassification> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<InferenceClassification> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified InferenceClassification using PATCH.
+        /// Gets the specified InferenceClassification and returns a <see cref="GraphResponse{InferenceClassification}"/> object.
         /// </summary>
-        /// <param name="inferenceClassificationToUpdate">The InferenceClassification to update.</param>
-        /// <returns>The updated InferenceClassification.</returns>
-        System.Threading.Tasks.Task<InferenceClassification> UpdateAsync(InferenceClassification inferenceClassificationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassification>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified InferenceClassification using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated InferenceClassification.</returns>
-        System.Threading.Tasks.Task<InferenceClassification> UpdateAsync(InferenceClassification inferenceClassificationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<InferenceClassification> UpdateAsync(InferenceClassification inferenceClassificationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified InferenceClassification using PATCH and returns a <see cref="GraphResponse{InferenceClassification}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationToUpdate">The InferenceClassification to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{InferenceClassification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassification>> UpdateResponseAsync(InferenceClassification inferenceClassificationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified InferenceClassification using PUT.
+        /// </summary>
+        /// <param name="inferenceClassificationToUpdate">The InferenceClassification object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<InferenceClassification> PutAsync(InferenceClassification inferenceClassificationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified InferenceClassification using PUT and returns a <see cref="GraphResponse{InferenceClassification}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationToUpdate">The InferenceClassification object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{InferenceClassification}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassification>> PutResponseAsync(InferenceClassification inferenceClassificationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MailFolderCopyRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MailFolderCopyRequestBody
     {
     
         /// <summary>
         /// Gets or sets DestinationId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "DestinationId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("DestinationId")]
         public string DestinationId { get; set; }
     
     }

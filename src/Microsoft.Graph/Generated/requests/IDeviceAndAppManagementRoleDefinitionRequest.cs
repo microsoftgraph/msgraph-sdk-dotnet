@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceAndAppManagementRoleDefinition using POST.
         /// </summary>
         /// <param name="deviceAndAppManagementRoleDefinitionToCreate">The DeviceAndAppManagementRoleDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceAndAppManagementRoleDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> CreateAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToCreate);        /// <summary>
-        /// Creates the specified DeviceAndAppManagementRoleDefinition using POST.
+        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> CreateAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceAndAppManagementRoleDefinition using POST and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object.
         /// </summary>
         /// <param name="deviceAndAppManagementRoleDefinitionToCreate">The DeviceAndAppManagementRoleDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceAndAppManagementRoleDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> CreateAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceAndAppManagementRoleDefinition.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> CreateResponseAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceAndAppManagementRoleDefinition.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceAndAppManagementRoleDefinition.
+        /// Deletes the specified DeviceAndAppManagementRoleDefinition and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceAndAppManagementRoleDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceAndAppManagementRoleDefinition.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceAndAppManagementRoleDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceAndAppManagementRoleDefinition using PATCH.
+        /// Gets the specified DeviceAndAppManagementRoleDefinition and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object.
         /// </summary>
-        /// <param name="deviceAndAppManagementRoleDefinitionToUpdate">The DeviceAndAppManagementRoleDefinition to update.</param>
-        /// <returns>The updated DeviceAndAppManagementRoleDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> UpdateAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceAndAppManagementRoleDefinition using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceAndAppManagementRoleDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> UpdateAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> UpdateAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceAndAppManagementRoleDefinition using PATCH and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleDefinitionToUpdate">The DeviceAndAppManagementRoleDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> UpdateResponseAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceAndAppManagementRoleDefinition using PUT.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleDefinitionToUpdate">The DeviceAndAppManagementRoleDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> PutAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceAndAppManagementRoleDefinition using PUT and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleDefinitionToUpdate">The DeviceAndAppManagementRoleDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> PutResponseAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

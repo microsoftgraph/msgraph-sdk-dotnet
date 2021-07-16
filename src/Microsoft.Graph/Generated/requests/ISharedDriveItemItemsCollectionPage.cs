@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ISharedDriveItemItemsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<SharedDriveItemItemsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<SharedDriveItemItemsCollectionPage>))]
     public interface ISharedDriveItemItemsCollectionPage : ICollectionPage<DriveItem>
     {
         /// <summary>

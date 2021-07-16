@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ICalendarAllowedCalendarSharingRolesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<CalendarAllowedCalendarSharingRolesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<CalendarAllowedCalendarSharingRolesCollectionPage>))]
     public interface ICalendarAllowedCalendarSharingRolesCollectionPage : ICollectionPage<CalendarRoleType>
     {
         /// <summary>

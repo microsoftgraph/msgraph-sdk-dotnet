@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AssignedPlan.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AssignedPlan>))]
     public partial class AssignedPlan
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AssignedPlan"/> class.
-        /// </summary>
-        public AssignedPlan()
-        {
-            this.ODataType = "microsoft.graph.assignedPlan";
-        }
 
         /// <summary>
         /// Gets or sets assignedDateTime.
         /// The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedDateTime")]
         public DateTimeOffset? AssignedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets capabilityStatus.
         /// Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "capabilityStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("capabilityStatus")]
         public string CapabilityStatus { get; set; }
     
         /// <summary>
         /// Gets or sets service.
         /// The name of the service; for example, 'Exchange'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("service")]
         public string Service { get; set; }
     
         /// <summary>
         /// Gets or sets servicePlanId.
         /// A GUID that identifies the service plan.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePlanId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("servicePlanId")]
         public Guid? ServicePlanId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

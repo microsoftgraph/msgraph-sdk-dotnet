@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified InferenceClassificationOverride using POST.
         /// </summary>
         /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
-        /// <returns>The created InferenceClassificationOverride.</returns>
-        public System.Threading.Tasks.Task<InferenceClassificationOverride> CreateAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate)
-        {
-            return this.CreateAsync(inferenceClassificationOverrideToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified InferenceClassificationOverride using POST.
-        /// </summary>
-        /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created InferenceClassificationOverride.</returns>
-        public async System.Threading.Tasks.Task<InferenceClassificationOverride> CreateAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<InferenceClassificationOverride> CreateAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<InferenceClassificationOverride>(inferenceClassificationOverrideToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified InferenceClassificationOverride.
+        /// Creates the specified InferenceClassificationOverride using POST and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> CreateResponseAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<InferenceClassificationOverride>(inferenceClassificationOverrideToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<InferenceClassificationOverride>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified InferenceClassificationOverride.
+        /// Deletes the specified InferenceClassificationOverride and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The InferenceClassificationOverride.</returns>
-        public System.Threading.Tasks.Task<InferenceClassificationOverride> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The InferenceClassificationOverride.</returns>
-        public async System.Threading.Tasks.Task<InferenceClassificationOverride> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<InferenceClassificationOverride> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<InferenceClassificationOverride>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified InferenceClassificationOverride using PATCH.
+        /// Gets the specified InferenceClassificationOverride and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
         /// </summary>
-        /// <param name="inferenceClassificationOverrideToUpdate">The InferenceClassificationOverride to update.</param>
-        /// <returns>The updated InferenceClassificationOverride.</returns>
-        public System.Threading.Tasks.Task<InferenceClassificationOverride> UpdateAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(inferenceClassificationOverrideToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<InferenceClassificationOverride>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated InferenceClassificationOverride.</returns>
-        public async System.Threading.Tasks.Task<InferenceClassificationOverride> UpdateAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<InferenceClassificationOverride> UpdateAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken = default)
         {
-			if (inferenceClassificationOverrideToUpdate.AdditionalData != null)
-			{
-				if (inferenceClassificationOverrideToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					inferenceClassificationOverrideToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, inferenceClassificationOverrideToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (inferenceClassificationOverrideToUpdate.AdditionalData != null)
-            {
-                if (inferenceClassificationOverrideToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    inferenceClassificationOverrideToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, inferenceClassificationOverrideToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<InferenceClassificationOverride>(inferenceClassificationOverrideToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified InferenceClassificationOverride using PATCH and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationOverrideToUpdate">The InferenceClassificationOverride to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> UpdateResponseAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<InferenceClassificationOverride>(inferenceClassificationOverrideToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified InferenceClassificationOverride using PUT.
+        /// </summary>
+        /// <param name="inferenceClassificationOverrideToUpdate">The InferenceClassificationOverride object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<InferenceClassificationOverride> PutAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<InferenceClassificationOverride>(inferenceClassificationOverrideToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified InferenceClassificationOverride using PUT and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationOverrideToUpdate">The InferenceClassificationOverride object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{InferenceClassificationOverride}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> PutResponseAsync(InferenceClassificationOverride inferenceClassificationOverrideToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<InferenceClassificationOverride>(inferenceClassificationOverrideToUpdate, cancellationToken);
         }
 
         /// <summary>

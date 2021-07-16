@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsMobileMSI using POST.
         /// </summary>
         /// <param name="windowsMobileMSIToCreate">The WindowsMobileMSI to create.</param>
-        /// <returns>The created WindowsMobileMSI.</returns>
-        public System.Threading.Tasks.Task<WindowsMobileMSI> CreateAsync(WindowsMobileMSI windowsMobileMSIToCreate)
-        {
-            return this.CreateAsync(windowsMobileMSIToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsMobileMSI using POST.
-        /// </summary>
-        /// <param name="windowsMobileMSIToCreate">The WindowsMobileMSI to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsMobileMSI.</returns>
-        public async System.Threading.Tasks.Task<WindowsMobileMSI> CreateAsync(WindowsMobileMSI windowsMobileMSIToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsMobileMSI> CreateAsync(WindowsMobileMSI windowsMobileMSIToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsMobileMSI>(windowsMobileMSIToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsMobileMSI.
+        /// Creates the specified WindowsMobileMSI using POST and returns a <see cref="GraphResponse{WindowsMobileMSI}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsMobileMSIToCreate">The WindowsMobileMSI to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsMobileMSI}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> CreateResponseAsync(WindowsMobileMSI windowsMobileMSIToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsMobileMSI>(windowsMobileMSIToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsMobileMSI>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsMobileMSI.
+        /// Deletes the specified WindowsMobileMSI and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsMobileMSI.</returns>
-        public System.Threading.Tasks.Task<WindowsMobileMSI> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsMobileMSI.</returns>
-        public async System.Threading.Tasks.Task<WindowsMobileMSI> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsMobileMSI> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsMobileMSI>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsMobileMSI using PATCH.
+        /// Gets the specified WindowsMobileMSI and returns a <see cref="GraphResponse{WindowsMobileMSI}"/> object.
         /// </summary>
-        /// <param name="windowsMobileMSIToUpdate">The WindowsMobileMSI to update.</param>
-        /// <returns>The updated WindowsMobileMSI.</returns>
-        public System.Threading.Tasks.Task<WindowsMobileMSI> UpdateAsync(WindowsMobileMSI windowsMobileMSIToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsMobileMSI}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(windowsMobileMSIToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsMobileMSI>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsMobileMSI.</returns>
-        public async System.Threading.Tasks.Task<WindowsMobileMSI> UpdateAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsMobileMSI> UpdateAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken = default)
         {
-			if (windowsMobileMSIToUpdate.AdditionalData != null)
-			{
-				if (windowsMobileMSIToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsMobileMSIToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsMobileMSIToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsMobileMSIToUpdate.AdditionalData != null)
-            {
-                if (windowsMobileMSIToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsMobileMSIToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsMobileMSIToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsMobileMSI>(windowsMobileMSIToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsMobileMSI using PATCH and returns a <see cref="GraphResponse{WindowsMobileMSI}"/> object.
+        /// </summary>
+        /// <param name="windowsMobileMSIToUpdate">The WindowsMobileMSI to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsMobileMSI}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> UpdateResponseAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsMobileMSI>(windowsMobileMSIToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsMobileMSI using PUT.
+        /// </summary>
+        /// <param name="windowsMobileMSIToUpdate">The WindowsMobileMSI object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsMobileMSI> PutAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsMobileMSI>(windowsMobileMSIToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsMobileMSI using PUT and returns a <see cref="GraphResponse{WindowsMobileMSI}"/> object.
+        /// </summary>
+        /// <param name="windowsMobileMSIToUpdate">The WindowsMobileMSI object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsMobileMSI}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> PutResponseAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsMobileMSI>(windowsMobileMSIToUpdate, cancellationToken);
         }
 
         /// <summary>

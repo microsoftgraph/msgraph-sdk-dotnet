@@ -12,41 +12,32 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TeamClassSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TeamClassSettings>))]
     public partial class TeamClassSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TeamClassSettings"/> class.
-        /// </summary>
-        public TeamClassSettings()
-        {
-            this.ODataType = "microsoft.graph.teamClassSettings";
-        }
 
         /// <summary>
         /// Gets or sets notifyGuardiansAboutAssignments.
         /// If set to true, enables sending of weekly assignments digest emails to parents/guardians, provided the tenant admin has enabled the setting globally.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifyGuardiansAboutAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notifyGuardiansAboutAssignments")]
         public bool? NotifyGuardiansAboutAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

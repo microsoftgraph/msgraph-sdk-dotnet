@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsConfidence_TRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsConfidence_TRequestBody
     {
     
         /// <summary>
         /// Gets or sets Alpha.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alpha", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Alpha { get; set; }
+        [JsonPropertyName("alpha")]
+        public System.Text.Json.JsonDocument Alpha { get; set; }
     
         /// <summary>
         /// Gets or sets StandardDev.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "standardDev", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken StandardDev { get; set; }
+        [JsonPropertyName("standardDev")]
+        public System.Text.Json.JsonDocument StandardDev { get; set; }
     
         /// <summary>
         /// Gets or sets Size.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Size { get; set; }
+        [JsonPropertyName("size")]
+        public System.Text.Json.JsonDocument Size { get; set; }
     
     }
 }

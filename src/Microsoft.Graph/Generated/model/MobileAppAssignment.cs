@@ -12,43 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mobile App Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MobileAppAssignment>))]
     public partial class MobileAppAssignment : Entity
     {
     
-		///<summary>
-		/// The MobileAppAssignment constructor
-		///</summary>
-        public MobileAppAssignment()
-        {
-            this.ODataType = "microsoft.graph.mobileAppAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets intent.
         /// The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("intent")]
         public InstallIntent? Intent { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
         /// The settings for target assignment defined by the admin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public MobileAppAssignmentSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets target.
         /// The target group assignment defined by the admin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("target")]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }

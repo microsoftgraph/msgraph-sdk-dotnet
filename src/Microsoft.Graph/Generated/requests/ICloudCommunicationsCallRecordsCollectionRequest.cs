@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICloudCommunicationsCallRecordsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Microsoft.Graph.CallRecords.CallRecord to the collection via POST.
-        /// </summary>
-        /// <param name="callRecord">The Microsoft.Graph.CallRecords.CallRecord to add.</param>
-        /// <returns>The created Microsoft.Graph.CallRecords.CallRecord.</returns>
-        System.Threading.Tasks.Task<Microsoft.Graph.CallRecords.CallRecord> AddAsync(Microsoft.Graph.CallRecords.CallRecord callRecord);
-
         /// <summary>
         /// Adds the specified Microsoft.Graph.CallRecords.CallRecord to the collection via POST.
         /// </summary>
         /// <param name="callRecord">The Microsoft.Graph.CallRecords.CallRecord to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Microsoft.Graph.CallRecords.CallRecord.</returns>
-        System.Threading.Tasks.Task<Microsoft.Graph.CallRecords.CallRecord> AddAsync(Microsoft.Graph.CallRecords.CallRecord callRecord, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Microsoft.Graph.CallRecords.CallRecord> AddAsync(Microsoft.Graph.CallRecords.CallRecord callRecord, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Microsoft.Graph.CallRecords.CallRecord to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.CallRecords.CallRecord}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICloudCommunicationsCallRecordsCollectionPage> GetAsync();
+        /// <param name="callRecord">The Microsoft.Graph.CallRecords.CallRecord to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Microsoft.Graph.CallRecords.CallRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Microsoft.Graph.CallRecords.CallRecord>> AddResponseAsync(Microsoft.Graph.CallRecords.CallRecord callRecord, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICloudCommunicationsCallRecordsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICloudCommunicationsCallRecordsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CloudCommunicationsCallRecordsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudCommunicationsCallRecordsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudCommunicationsCallRecordsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

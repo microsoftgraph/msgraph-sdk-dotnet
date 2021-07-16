@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CloudCommunicationsGetPresencesByUserIdRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CloudCommunicationsGetPresencesByUserIdRequestBody
     {
     
         /// <summary>
         /// Gets or sets Ids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ids", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ids")]
         public IEnumerable<string> Ids { get; set; }
     
     }

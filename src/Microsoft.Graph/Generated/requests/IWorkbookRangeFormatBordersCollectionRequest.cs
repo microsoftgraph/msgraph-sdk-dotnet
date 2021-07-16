@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IWorkbookRangeFormatBordersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified WorkbookRangeBorder to the collection via POST.
-        /// </summary>
-        /// <param name="workbookRangeBorder">The WorkbookRangeBorder to add.</param>
-        /// <returns>The created WorkbookRangeBorder.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeBorder> AddAsync(WorkbookRangeBorder workbookRangeBorder);
-
         /// <summary>
         /// Adds the specified WorkbookRangeBorder to the collection via POST.
         /// </summary>
         /// <param name="workbookRangeBorder">The WorkbookRangeBorder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeBorder.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeBorder> AddAsync(WorkbookRangeBorder workbookRangeBorder, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WorkbookRangeBorder> AddAsync(WorkbookRangeBorder workbookRangeBorder, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified WorkbookRangeBorder to the collection via POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWorkbookRangeFormatBordersCollectionPage> GetAsync();
+        /// <param name="workbookRangeBorder">The WorkbookRangeBorder to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> AddResponseAsync(WorkbookRangeBorder workbookRangeBorder, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWorkbookRangeFormatBordersCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IWorkbookRangeFormatBordersCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookRangeFormatBordersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFormatBordersCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFormatBordersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

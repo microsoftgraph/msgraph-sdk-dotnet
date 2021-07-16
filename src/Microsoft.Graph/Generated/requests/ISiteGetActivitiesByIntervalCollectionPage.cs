@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ISiteGetActivitiesByIntervalCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<SiteGetActivitiesByIntervalCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<SiteGetActivitiesByIntervalCollectionPage>))]
     public interface ISiteGetActivitiesByIntervalCollectionPage : ICollectionPage<ItemActivityStat>
     {
         /// <summary>

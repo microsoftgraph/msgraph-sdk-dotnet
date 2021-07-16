@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IncomingContext.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<IncomingContext>))]
     public partial class IncomingContext
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IncomingContext"/> class.
-        /// </summary>
-        public IncomingContext()
-        {
-            this.ODataType = "microsoft.graph.incomingContext";
-        }
 
         /// <summary>
         /// Gets or sets observedParticipantId.
         /// The id of the participant that is under observation. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "observedParticipantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("observedParticipantId")]
         public string ObservedParticipantId { get; set; }
     
         /// <summary>
         /// Gets or sets onBehalfOf.
         /// The identity that the call is happening on behalf of.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onBehalfOf", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onBehalfOf")]
         public IdentitySet OnBehalfOf { get; set; }
     
         /// <summary>
         /// Gets or sets sourceParticipantId.
         /// The id of the participant that triggered the incoming call. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceParticipantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceParticipantId")]
         public string SourceParticipantId { get; set; }
     
         /// <summary>
         /// Gets or sets transferor.
         /// The identity that transferred the call.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transferor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("transferor")]
         public IdentitySet Transferor { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

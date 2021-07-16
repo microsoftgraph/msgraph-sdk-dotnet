@@ -32,27 +32,16 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified OAuth2PermissionGrant to the collection via POST.
-        /// </summary>
-        /// <param name="oAuth2PermissionGrant">The OAuth2PermissionGrant to add.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(OAuth2PermissionGrant oAuth2PermissionGrant)
-        {
-            return this.AddAsync(oAuth2PermissionGrant, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OAuth2PermissionGrant to the collection via POST.
         /// </summary>
         /// <param name="oAuth2PermissionGrant">The OAuth2PermissionGrant to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(OAuth2PermissionGrant oAuth2PermissionGrant, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AddAsync(OAuth2PermissionGrant oAuth2PermissionGrant, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
 
             if (string.IsNullOrEmpty(oAuth2PermissionGrant.Id))
             {
@@ -61,6 +50,26 @@ namespace Microsoft.Graph
 
             var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/oauth2PermissionGrants/{1}", this.Client.BaseUrl, oAuth2PermissionGrant.Id) };
             return this.SendAsync(requestBody, cancellationToken);
+        }
+
+        /// <summary>
+        /// Adds the specified OAuth2PermissionGrant to the collection via POST and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.
+        /// </summary>
+        /// <param name="oAuth2PermissionGrant">The OAuth2PermissionGrant to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrant, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+
+            if (string.IsNullOrEmpty(oAuth2PermissionGrant.Id))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/oauth2PermissionGrants/{1}", this.Client.BaseUrl, oAuth2PermissionGrant.Id) };
+            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
         }
 
     }

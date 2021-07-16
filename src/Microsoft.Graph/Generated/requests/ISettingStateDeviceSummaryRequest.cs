@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified SettingStateDeviceSummary using POST.
         /// </summary>
         /// <param name="settingStateDeviceSummaryToCreate">The SettingStateDeviceSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SettingStateDeviceSummary.</returns>
-        System.Threading.Tasks.Task<SettingStateDeviceSummary> CreateAsync(SettingStateDeviceSummary settingStateDeviceSummaryToCreate);        /// <summary>
-        /// Creates the specified SettingStateDeviceSummary using POST.
+        System.Threading.Tasks.Task<SettingStateDeviceSummary> CreateAsync(SettingStateDeviceSummary settingStateDeviceSummaryToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified SettingStateDeviceSummary using POST and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
         /// </summary>
         /// <param name="settingStateDeviceSummaryToCreate">The SettingStateDeviceSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created SettingStateDeviceSummary.</returns>
-        System.Threading.Tasks.Task<SettingStateDeviceSummary> CreateAsync(SettingStateDeviceSummary settingStateDeviceSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SettingStateDeviceSummary.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> CreateResponseAsync(SettingStateDeviceSummary settingStateDeviceSummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SettingStateDeviceSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified SettingStateDeviceSummary.
+        /// Deletes the specified SettingStateDeviceSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SettingStateDeviceSummary.</returns>
-        System.Threading.Tasks.Task<SettingStateDeviceSummary> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SettingStateDeviceSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SettingStateDeviceSummary.</returns>
-        System.Threading.Tasks.Task<SettingStateDeviceSummary> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SettingStateDeviceSummary> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified SettingStateDeviceSummary using PATCH.
+        /// Gets the specified SettingStateDeviceSummary and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
         /// </summary>
-        /// <param name="settingStateDeviceSummaryToUpdate">The SettingStateDeviceSummary to update.</param>
-        /// <returns>The updated SettingStateDeviceSummary.</returns>
-        System.Threading.Tasks.Task<SettingStateDeviceSummary> UpdateAsync(SettingStateDeviceSummary settingStateDeviceSummaryToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SettingStateDeviceSummary using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SettingStateDeviceSummary.</returns>
-        System.Threading.Tasks.Task<SettingStateDeviceSummary> UpdateAsync(SettingStateDeviceSummary settingStateDeviceSummaryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SettingStateDeviceSummary> UpdateAsync(SettingStateDeviceSummary settingStateDeviceSummaryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SettingStateDeviceSummary using PATCH and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
+        /// </summary>
+        /// <param name="settingStateDeviceSummaryToUpdate">The SettingStateDeviceSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> UpdateResponseAsync(SettingStateDeviceSummary settingStateDeviceSummaryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SettingStateDeviceSummary using PUT.
+        /// </summary>
+        /// <param name="settingStateDeviceSummaryToUpdate">The SettingStateDeviceSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SettingStateDeviceSummary> PutAsync(SettingStateDeviceSummary settingStateDeviceSummaryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SettingStateDeviceSummary using PUT and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
+        /// </summary>
+        /// <param name="settingStateDeviceSummaryToUpdate">The SettingStateDeviceSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SettingStateDeviceSummary}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> PutResponseAsync(SettingStateDeviceSummary settingStateDeviceSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified OnenoteOperation using POST.
         /// </summary>
         /// <param name="onenoteOperationToCreate">The OnenoteOperation to create.</param>
-        /// <returns>The created OnenoteOperation.</returns>
-        public System.Threading.Tasks.Task<OnenoteOperation> CreateAsync(OnenoteOperation onenoteOperationToCreate)
-        {
-            return this.CreateAsync(onenoteOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OnenoteOperation using POST.
-        /// </summary>
-        /// <param name="onenoteOperationToCreate">The OnenoteOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenoteOperation.</returns>
-        public async System.Threading.Tasks.Task<OnenoteOperation> CreateAsync(OnenoteOperation onenoteOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OnenoteOperation> CreateAsync(OnenoteOperation onenoteOperationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<OnenoteOperation>(onenoteOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified OnenoteOperation.
+        /// Creates the specified OnenoteOperation using POST and returns a <see cref="GraphResponse{OnenoteOperation}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="onenoteOperationToCreate">The OnenoteOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteOperation>> CreateResponseAsync(OnenoteOperation onenoteOperationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<OnenoteOperation>(onenoteOperationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<OnenoteOperation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified OnenoteOperation.
+        /// Deletes the specified OnenoteOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OnenoteOperation.</returns>
-        public System.Threading.Tasks.Task<OnenoteOperation> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnenoteOperation.</returns>
-        public async System.Threading.Tasks.Task<OnenoteOperation> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OnenoteOperation> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<OnenoteOperation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified OnenoteOperation using PATCH.
+        /// Gets the specified OnenoteOperation and returns a <see cref="GraphResponse{OnenoteOperation}"/> object.
         /// </summary>
-        /// <param name="onenoteOperationToUpdate">The OnenoteOperation to update.</param>
-        /// <returns>The updated OnenoteOperation.</returns>
-        public System.Threading.Tasks.Task<OnenoteOperation> UpdateAsync(OnenoteOperation onenoteOperationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteOperation>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(onenoteOperationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<OnenoteOperation>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnenoteOperation.</returns>
-        public async System.Threading.Tasks.Task<OnenoteOperation> UpdateAsync(OnenoteOperation onenoteOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OnenoteOperation> UpdateAsync(OnenoteOperation onenoteOperationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (onenoteOperationToUpdate.AdditionalData != null)
-			{
-				if (onenoteOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					onenoteOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (onenoteOperationToUpdate.AdditionalData != null)
-            {
-                if (onenoteOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    onenoteOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<OnenoteOperation>(onenoteOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OnenoteOperation using PATCH and returns a <see cref="GraphResponse{OnenoteOperation}"/> object.
+        /// </summary>
+        /// <param name="onenoteOperationToUpdate">The OnenoteOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnenoteOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteOperation>> UpdateResponseAsync(OnenoteOperation onenoteOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<OnenoteOperation>(onenoteOperationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified OnenoteOperation using PUT.
+        /// </summary>
+        /// <param name="onenoteOperationToUpdate">The OnenoteOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<OnenoteOperation> PutAsync(OnenoteOperation onenoteOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<OnenoteOperation>(onenoteOperationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OnenoteOperation using PUT and returns a <see cref="GraphResponse{OnenoteOperation}"/> object.
+        /// </summary>
+        /// <param name="onenoteOperationToUpdate">The OnenoteOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{OnenoteOperation}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteOperation>> PutResponseAsync(OnenoteOperation onenoteOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<OnenoteOperation>(onenoteOperationToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MailFolder using POST.
         /// </summary>
         /// <param name="mailFolderToCreate">The MailFolder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MailFolder.</returns>
-        System.Threading.Tasks.Task<MailFolder> CreateAsync(MailFolder mailFolderToCreate);        /// <summary>
-        /// Creates the specified MailFolder using POST.
+        System.Threading.Tasks.Task<MailFolder> CreateAsync(MailFolder mailFolderToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified MailFolder using POST and returns a <see cref="GraphResponse{MailFolder}"/> object.
         /// </summary>
         /// <param name="mailFolderToCreate">The MailFolder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MailFolder.</returns>
-        System.Threading.Tasks.Task<MailFolder> CreateAsync(MailFolder mailFolderToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MailFolder.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MailFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailFolder>> CreateResponseAsync(MailFolder mailFolderToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MailFolder.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified MailFolder.
+        /// Deletes the specified MailFolder and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MailFolder.</returns>
-        System.Threading.Tasks.Task<MailFolder> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MailFolder.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MailFolder.</returns>
-        System.Threading.Tasks.Task<MailFolder> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MailFolder> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified MailFolder using PATCH.
+        /// Gets the specified MailFolder and returns a <see cref="GraphResponse{MailFolder}"/> object.
         /// </summary>
-        /// <param name="mailFolderToUpdate">The MailFolder to update.</param>
-        /// <returns>The updated MailFolder.</returns>
-        System.Threading.Tasks.Task<MailFolder> UpdateAsync(MailFolder mailFolderToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailFolder>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MailFolder using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MailFolder.</returns>
-        System.Threading.Tasks.Task<MailFolder> UpdateAsync(MailFolder mailFolderToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MailFolder> UpdateAsync(MailFolder mailFolderToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MailFolder using PATCH and returns a <see cref="GraphResponse{MailFolder}"/> object.
+        /// </summary>
+        /// <param name="mailFolderToUpdate">The MailFolder to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MailFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailFolder>> UpdateResponseAsync(MailFolder mailFolderToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MailFolder using PUT.
+        /// </summary>
+        /// <param name="mailFolderToUpdate">The MailFolder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MailFolder> PutAsync(MailFolder mailFolderToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MailFolder using PUT and returns a <see cref="GraphResponse{MailFolder}"/> object.
+        /// </summary>
+        /// <param name="mailFolderToUpdate">The MailFolder object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MailFolder}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailFolder>> PutResponseAsync(MailFolder mailFolderToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

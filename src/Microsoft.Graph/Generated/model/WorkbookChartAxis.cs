@@ -12,78 +12,68 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Chart Axis.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookChartAxis : Entity
     {
     
-		///<summary>
-		/// The WorkbookChartAxis constructor
-		///</summary>
-        public WorkbookChartAxis()
-        {
-            this.ODataType = "microsoft.graph.workbookChartAxis";
-        }
-	
         /// <summary>
         /// Gets or sets major unit.
         /// Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "majorUnit", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken MajorUnit { get; set; }
+        [JsonPropertyName("majorUnit")]
+        public System.Text.Json.JsonDocument MajorUnit { get; set; }
     
         /// <summary>
         /// Gets or sets maximum.
         /// Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximum", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Maximum { get; set; }
+        [JsonPropertyName("maximum")]
+        public System.Text.Json.JsonDocument Maximum { get; set; }
     
         /// <summary>
         /// Gets or sets minimum.
         /// Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimum", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Minimum { get; set; }
+        [JsonPropertyName("minimum")]
+        public System.Text.Json.JsonDocument Minimum { get; set; }
     
         /// <summary>
         /// Gets or sets minor unit.
         /// Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minorUnit", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken MinorUnit { get; set; }
+        [JsonPropertyName("minorUnit")]
+        public System.Text.Json.JsonDocument MinorUnit { get; set; }
     
         /// <summary>
         /// Gets or sets format.
         /// Represents the formatting of a chart object, which includes line and font formatting. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("format")]
         public WorkbookChartAxisFormat Format { get; set; }
     
         /// <summary>
         /// Gets or sets major gridlines.
         /// Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "majorGridlines", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("majorGridlines")]
         public WorkbookChartGridlines MajorGridlines { get; set; }
     
         /// <summary>
         /// Gets or sets minor gridlines.
         /// Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minorGridlines", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minorGridlines")]
         public WorkbookChartGridlines MinorGridlines { get; set; }
     
         /// <summary>
         /// Gets or sets title.
         /// Represents the axis title. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("title")]
         public WorkbookChartAxisTitle Title { get; set; }
     
     }

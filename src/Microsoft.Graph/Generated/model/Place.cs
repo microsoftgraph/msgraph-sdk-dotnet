@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Place.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<Place>))]
     public partial class Place : Entity
     {
     
-		///<summary>
-		/// The internal Place constructor
-		///</summary>
+        ///<summary>
+        /// The internal Place constructor
+        ///</summary>
         protected internal Place()
         {
             // Don't allow initialization of abstract entity types
@@ -34,28 +33,28 @@ namespace Microsoft.Graph
         /// Gets or sets address.
         /// The street address of the place.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("address")]
         public PhysicalAddress Address { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The name associated with the place.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets geo coordinates.
         /// Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "geoCoordinates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("geoCoordinates")]
         public OutlookGeoCoordinates GeoCoordinates { get; set; }
     
         /// <summary>
         /// Gets or sets phone.
         /// The phone number of the place.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("phone")]
         public string Phone { get; set; }
     
     }

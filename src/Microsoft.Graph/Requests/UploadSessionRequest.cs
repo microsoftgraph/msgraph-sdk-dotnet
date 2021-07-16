@@ -44,7 +44,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async Task<UploadSession> DeleteAsync(CancellationToken cancellationToken)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             return await this.SendAsync<UploadSession>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -64,7 +64,7 @@ namespace Microsoft.Graph
         /// <returns>The Item.</returns>
         public async Task<UploadSession> GetAsync(CancellationToken cancellationToken)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UploadSession>(null, cancellationToken).ConfigureAwait(false);
             return retrievedEntity;
         }

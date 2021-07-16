@@ -16,6 +16,7 @@ namespace Microsoft.Graph
     /// to use small chunks if the connection is slow). Also allows the client to
     /// pause an upload and resume later.
     /// </summary>
+    [Obsolete("ChunkedUploadProvider is now deprecated. Please use the LargeFileUploadTask for the upload of large files using an UploadSession.")]
     public class ChunkedUploadProvider
     {
         private const int DefaultMaxChunkSize = 5 * 1024 * 1024;

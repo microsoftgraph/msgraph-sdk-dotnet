@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Permission using POST.
         /// </summary>
         /// <param name="permissionToCreate">The Permission to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Permission.</returns>
-        System.Threading.Tasks.Task<Permission> CreateAsync(Permission permissionToCreate);        /// <summary>
-        /// Creates the specified Permission using POST.
+        System.Threading.Tasks.Task<Permission> CreateAsync(Permission permissionToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Permission using POST and returns a <see cref="GraphResponse{Permission}"/> object.
         /// </summary>
         /// <param name="permissionToCreate">The Permission to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Permission.</returns>
-        System.Threading.Tasks.Task<Permission> CreateAsync(Permission permissionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Permission.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Permission>> CreateResponseAsync(Permission permissionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Permission.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Permission.
+        /// Deletes the specified Permission and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Permission.</returns>
-        System.Threading.Tasks.Task<Permission> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Permission.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Permission.</returns>
-        System.Threading.Tasks.Task<Permission> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Permission> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Permission using PATCH.
+        /// Gets the specified Permission and returns a <see cref="GraphResponse{Permission}"/> object.
         /// </summary>
-        /// <param name="permissionToUpdate">The Permission to update.</param>
-        /// <returns>The updated Permission.</returns>
-        System.Threading.Tasks.Task<Permission> UpdateAsync(Permission permissionToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Permission>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Permission using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Permission.</returns>
-        System.Threading.Tasks.Task<Permission> UpdateAsync(Permission permissionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Permission> UpdateAsync(Permission permissionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Permission using PATCH and returns a <see cref="GraphResponse{Permission}"/> object.
+        /// </summary>
+        /// <param name="permissionToUpdate">The Permission to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Permission>> UpdateResponseAsync(Permission permissionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Permission using PUT.
+        /// </summary>
+        /// <param name="permissionToUpdate">The Permission object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Permission> PutAsync(Permission permissionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Permission using PUT and returns a <see cref="GraphResponse{Permission}"/> object.
+        /// </summary>
+        /// <param name="permissionToUpdate">The Permission object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Permission}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Permission>> PutResponseAsync(Permission permissionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

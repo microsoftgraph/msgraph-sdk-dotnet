@@ -28,8 +28,8 @@ namespace Microsoft.Graph
         public WorkbookFunctionsHyperlinkRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken linkLocation,
-            Newtonsoft.Json.Linq.JToken friendlyName)
+            System.Text.Json.JsonDocument linkLocation,
+            System.Text.Json.JsonDocument friendlyName)
             : base(requestUrl, client)
         {
             this.SetParameter("linkLocation", linkLocation, true);
@@ -48,12 +48,12 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("linkLocation"))
             {
-                request.RequestBody.LinkLocation = this.GetParameter<Newtonsoft.Json.Linq.JToken>("linkLocation");
+                request.RequestBody.LinkLocation = this.GetParameter<System.Text.Json.JsonDocument>("linkLocation");
             }
 
             if (this.HasParameter("friendlyName"))
             {
-                request.RequestBody.FriendlyName = this.GetParameter<Newtonsoft.Json.Linq.JToken>("friendlyName");
+                request.RequestBody.FriendlyName = this.GetParameter<System.Text.Json.JsonDocument>("friendlyName");
             }
 
             return request;

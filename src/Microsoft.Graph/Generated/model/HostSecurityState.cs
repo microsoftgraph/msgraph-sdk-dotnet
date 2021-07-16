@@ -12,95 +12,86 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type HostSecurityState.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<HostSecurityState>))]
     public partial class HostSecurityState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HostSecurityState"/> class.
-        /// </summary>
-        public HostSecurityState()
-        {
-            this.ODataType = "microsoft.graph.hostSecurityState";
-        }
 
         /// <summary>
         /// Gets or sets fqdn.
         /// Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fqdn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fqdn")]
         public string Fqdn { get; set; }
     
         /// <summary>
         /// Gets or sets isAzureAdJoined.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAzureAdJoined", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isAzureAdJoined")]
         public bool? IsAzureAdJoined { get; set; }
     
         /// <summary>
         /// Gets or sets isAzureAdRegistered.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAzureAdRegistered", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isAzureAdRegistered")]
         public bool? IsAzureAdRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets isHybridAzureDomainJoined.
         /// True if the host is domain joined to an on-premises Active Directory domain.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isHybridAzureDomainJoined", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isHybridAzureDomainJoined")]
         public bool? IsHybridAzureDomainJoined { get; set; }
     
         /// <summary>
         /// Gets or sets netBiosName.
         /// The local host name, without the DNS domain name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "netBiosName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("netBiosName")]
         public string NetBiosName { get; set; }
     
         /// <summary>
         /// Gets or sets os.
         /// Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "os", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("os")]
         public string Os { get; set; }
     
         /// <summary>
         /// Gets or sets privateIpAddress.
         /// Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privateIpAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("privateIpAddress")]
         public string PrivateIpAddress { get; set; }
     
         /// <summary>
         /// Gets or sets publicIpAddress.
         /// Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publicIpAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publicIpAddress")]
         public string PublicIpAddress { get; set; }
     
         /// <summary>
         /// Gets or sets riskScore.
         /// Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskScore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("riskScore")]
         public string RiskScore { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

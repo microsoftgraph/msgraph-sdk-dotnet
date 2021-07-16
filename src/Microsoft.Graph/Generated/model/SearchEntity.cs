@@ -12,24 +12,14 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Search Entity.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SearchEntity : Entity
     {
     
-		///<summary>
-		/// The SearchEntity constructor
-		///</summary>
-        public SearchEntity()
-        {
-            this.ODataType = "microsoft.graph.searchEntity";
-        }
-	
     }
 }
 

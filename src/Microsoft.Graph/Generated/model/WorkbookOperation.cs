@@ -12,43 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<WorkbookOperation>))]
     public partial class WorkbookOperation : Entity
     {
     
-		///<summary>
-		/// The WorkbookOperation constructor
-		///</summary>
-        public WorkbookOperation()
-        {
-            this.ODataType = "microsoft.graph.workbookOperation";
-        }
-	
         /// <summary>
         /// Gets or sets error.
         /// The error returned by the operation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("error")]
         public WorkbookOperationError Error { get; set; }
     
         /// <summary>
         /// Gets or sets resource location.
         /// The resource URI for the result.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceLocation")]
         public string ResourceLocation { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// The current status of the operation. Possible values are: notStarted, running, succeeded, failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public WorkbookOperationStatus? Status { get; set; }
     
     }

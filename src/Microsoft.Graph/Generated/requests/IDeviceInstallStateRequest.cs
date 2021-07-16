@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceInstallState using POST.
         /// </summary>
         /// <param name="deviceInstallStateToCreate">The DeviceInstallState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceInstallState.</returns>
-        System.Threading.Tasks.Task<DeviceInstallState> CreateAsync(DeviceInstallState deviceInstallStateToCreate);        /// <summary>
-        /// Creates the specified DeviceInstallState using POST.
+        System.Threading.Tasks.Task<DeviceInstallState> CreateAsync(DeviceInstallState deviceInstallStateToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceInstallState using POST and returns a <see cref="GraphResponse{DeviceInstallState}"/> object.
         /// </summary>
         /// <param name="deviceInstallStateToCreate">The DeviceInstallState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceInstallState.</returns>
-        System.Threading.Tasks.Task<DeviceInstallState> CreateAsync(DeviceInstallState deviceInstallStateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceInstallState.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> CreateResponseAsync(DeviceInstallState deviceInstallStateToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceInstallState.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceInstallState.
+        /// Deletes the specified DeviceInstallState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceInstallState.</returns>
-        System.Threading.Tasks.Task<DeviceInstallState> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceInstallState.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceInstallState.</returns>
-        System.Threading.Tasks.Task<DeviceInstallState> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceInstallState> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceInstallState using PATCH.
+        /// Gets the specified DeviceInstallState and returns a <see cref="GraphResponse{DeviceInstallState}"/> object.
         /// </summary>
-        /// <param name="deviceInstallStateToUpdate">The DeviceInstallState to update.</param>
-        /// <returns>The updated DeviceInstallState.</returns>
-        System.Threading.Tasks.Task<DeviceInstallState> UpdateAsync(DeviceInstallState deviceInstallStateToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceInstallState using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceInstallState.</returns>
-        System.Threading.Tasks.Task<DeviceInstallState> UpdateAsync(DeviceInstallState deviceInstallStateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceInstallState> UpdateAsync(DeviceInstallState deviceInstallStateToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceInstallState using PATCH and returns a <see cref="GraphResponse{DeviceInstallState}"/> object.
+        /// </summary>
+        /// <param name="deviceInstallStateToUpdate">The DeviceInstallState to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> UpdateResponseAsync(DeviceInstallState deviceInstallStateToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceInstallState using PUT.
+        /// </summary>
+        /// <param name="deviceInstallStateToUpdate">The DeviceInstallState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceInstallState> PutAsync(DeviceInstallState deviceInstallStateToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceInstallState using PUT and returns a <see cref="GraphResponse{DeviceInstallState}"/> object.
+        /// </summary>
+        /// <param name="deviceInstallStateToUpdate">The DeviceInstallState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceInstallState}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> PutResponseAsync(DeviceInstallState deviceInstallStateToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

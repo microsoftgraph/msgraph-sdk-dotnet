@@ -12,47 +12,61 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Authentication.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Authentication : Entity
     {
     
-		///<summary>
-		/// The Authentication constructor
-		///</summary>
-        public Authentication()
-        {
-            this.ODataType = "microsoft.graph.authentication";
-        }
-	
         /// <summary>
         /// Gets or sets fido2methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fido2Methods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fido2Methods")]
         public IAuthenticationFido2MethodsCollectionPage Fido2Methods { get; set; }
+
+        /// <summary>
+        /// Gets or sets fido2MethodsNextLink.
+        /// </summary>
+        [JsonPropertyName("fido2Methods@odata.nextLink")]
+        public string Fido2MethodsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "methods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("methods")]
         public IAuthenticationMethodsCollectionPage Methods { get; set; }
+
+        /// <summary>
+        /// Gets or sets methodsNextLink.
+        /// </summary>
+        [JsonPropertyName("methods@odata.nextLink")]
+        public string MethodsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft authenticator methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftAuthenticatorMethods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("microsoftAuthenticatorMethods")]
         public IAuthenticationMicrosoftAuthenticatorMethodsCollectionPage MicrosoftAuthenticatorMethods { get; set; }
+
+        /// <summary>
+        /// Gets or sets microsoftAuthenticatorMethodsNextLink.
+        /// </summary>
+        [JsonPropertyName("microsoftAuthenticatorMethods@odata.nextLink")]
+        public string MicrosoftAuthenticatorMethodsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows hello for business methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsHelloForBusinessMethods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsHelloForBusinessMethods")]
         public IAuthenticationWindowsHelloForBusinessMethodsCollectionPage WindowsHelloForBusinessMethods { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsHelloForBusinessMethodsNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsHelloForBusinessMethods@odata.nextLink")]
+        public string WindowsHelloForBusinessMethodsNextLink { get; set; }
     
     }
 }

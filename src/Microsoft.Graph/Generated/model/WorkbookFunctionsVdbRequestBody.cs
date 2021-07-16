@@ -9,60 +9,58 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsVdbRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsVdbRequestBody
     {
     
         /// <summary>
         /// Gets or sets Cost.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cost", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Cost { get; set; }
+        [JsonPropertyName("cost")]
+        public System.Text.Json.JsonDocument Cost { get; set; }
     
         /// <summary>
         /// Gets or sets Salvage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salvage", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Salvage { get; set; }
+        [JsonPropertyName("salvage")]
+        public System.Text.Json.JsonDocument Salvage { get; set; }
     
         /// <summary>
         /// Gets or sets Life.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "life", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Life { get; set; }
+        [JsonPropertyName("life")]
+        public System.Text.Json.JsonDocument Life { get; set; }
     
         /// <summary>
         /// Gets or sets StartPeriod.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startPeriod", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken StartPeriod { get; set; }
+        [JsonPropertyName("startPeriod")]
+        public System.Text.Json.JsonDocument StartPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets EndPeriod.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endPeriod", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken EndPeriod { get; set; }
+        [JsonPropertyName("endPeriod")]
+        public System.Text.Json.JsonDocument EndPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets Factor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "factor", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Factor { get; set; }
+        [JsonPropertyName("factor")]
+        public System.Text.Json.JsonDocument Factor { get; set; }
     
         /// <summary>
         /// Gets or sets NoSwitch.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "noSwitch", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken NoSwitch { get; set; }
+        [JsonPropertyName("noSwitch")]
+        public System.Text.Json.JsonDocument NoSwitch { get; set; }
     
     }
 }

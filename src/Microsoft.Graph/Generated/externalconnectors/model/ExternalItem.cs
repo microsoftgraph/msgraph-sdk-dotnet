@@ -12,34 +12,24 @@ namespace Microsoft.Graph.ExternalConnectors
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type External Item.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ExternalItem : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ExternalItem constructor
-		///</summary>
-        public ExternalItem()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.externalItem";
-        }
-	
         /// <summary>
         /// Gets or sets content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("content")]
         public ExternalItemContent Content { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "properties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("properties")]
         public Properties Properties { get; set; }
     
     }

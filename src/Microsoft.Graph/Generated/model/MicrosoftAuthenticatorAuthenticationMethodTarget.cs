@@ -12,36 +12,35 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Microsoft Authenticator Authentication Method Target.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MicrosoftAuthenticatorAuthenticationMethodTarget>))]
     public partial class MicrosoftAuthenticatorAuthenticationMethodTarget : AuthenticationMethodTarget
     {
     
-		///<summary>
-		/// The MicrosoftAuthenticatorAuthenticationMethodTarget constructor
-		///</summary>
+        ///<summary>
+        /// The MicrosoftAuthenticatorAuthenticationMethodTarget constructor
+        ///</summary>
         public MicrosoftAuthenticatorAuthenticationMethodTarget()
         {
             this.ODataType = "microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget";
         }
-	
+
         /// <summary>
         /// Gets or sets authentication mode.
         /// Determines which types of notifications can be used for sign-in. Possible values are: any, deviceBasedPush (passwordless only), push.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationMode")]
         public MicrosoftAuthenticatorAuthenticationMode? AuthenticationMode { get; set; }
     
         /// <summary>
         /// Gets or sets feature settings.
         /// Determines what additional settings should be applied to Microsoft Authenticator. Possible values are: null, requireNumberMatching (Requires number matching for MFA notifications. Value is ignored for phone sign-in notifications).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("featureSettings")]
         public AuthenticatorAppFeatureSettings? FeatureSettings { get; set; }
     
     }

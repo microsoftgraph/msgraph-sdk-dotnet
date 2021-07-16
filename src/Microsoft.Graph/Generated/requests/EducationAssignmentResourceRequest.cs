@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified EducationAssignmentResource using POST.
         /// </summary>
         /// <param name="educationAssignmentResourceToCreate">The EducationAssignmentResource to create.</param>
-        /// <returns>The created EducationAssignmentResource.</returns>
-        public System.Threading.Tasks.Task<EducationAssignmentResource> CreateAsync(EducationAssignmentResource educationAssignmentResourceToCreate)
-        {
-            return this.CreateAsync(educationAssignmentResourceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EducationAssignmentResource using POST.
-        /// </summary>
-        /// <param name="educationAssignmentResourceToCreate">The EducationAssignmentResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationAssignmentResource.</returns>
-        public async System.Threading.Tasks.Task<EducationAssignmentResource> CreateAsync(EducationAssignmentResource educationAssignmentResourceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationAssignmentResource> CreateAsync(EducationAssignmentResource educationAssignmentResourceToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<EducationAssignmentResource>(educationAssignmentResourceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified EducationAssignmentResource.
+        /// Creates the specified EducationAssignmentResource using POST and returns a <see cref="GraphResponse{EducationAssignmentResource}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="educationAssignmentResourceToCreate">The EducationAssignmentResource to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationAssignmentResource}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationAssignmentResource>> CreateResponseAsync(EducationAssignmentResource educationAssignmentResourceToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<EducationAssignmentResource>(educationAssignmentResourceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<EducationAssignmentResource>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified EducationAssignmentResource.
+        /// Deletes the specified EducationAssignmentResource and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EducationAssignmentResource.</returns>
-        public System.Threading.Tasks.Task<EducationAssignmentResource> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationAssignmentResource.</returns>
-        public async System.Threading.Tasks.Task<EducationAssignmentResource> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationAssignmentResource> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<EducationAssignmentResource>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified EducationAssignmentResource using PATCH.
+        /// Gets the specified EducationAssignmentResource and returns a <see cref="GraphResponse{EducationAssignmentResource}"/> object.
         /// </summary>
-        /// <param name="educationAssignmentResourceToUpdate">The EducationAssignmentResource to update.</param>
-        /// <returns>The updated EducationAssignmentResource.</returns>
-        public System.Threading.Tasks.Task<EducationAssignmentResource> UpdateAsync(EducationAssignmentResource educationAssignmentResourceToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationAssignmentResource}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationAssignmentResource>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(educationAssignmentResourceToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<EducationAssignmentResource>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationAssignmentResource.</returns>
-        public async System.Threading.Tasks.Task<EducationAssignmentResource> UpdateAsync(EducationAssignmentResource educationAssignmentResourceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationAssignmentResource> UpdateAsync(EducationAssignmentResource educationAssignmentResourceToUpdate, CancellationToken cancellationToken = default)
         {
-			if (educationAssignmentResourceToUpdate.AdditionalData != null)
-			{
-				if (educationAssignmentResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					educationAssignmentResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationAssignmentResourceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (educationAssignmentResourceToUpdate.AdditionalData != null)
-            {
-                if (educationAssignmentResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    educationAssignmentResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationAssignmentResourceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<EducationAssignmentResource>(educationAssignmentResourceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EducationAssignmentResource using PATCH and returns a <see cref="GraphResponse{EducationAssignmentResource}"/> object.
+        /// </summary>
+        /// <param name="educationAssignmentResourceToUpdate">The EducationAssignmentResource to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationAssignmentResource}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationAssignmentResource>> UpdateResponseAsync(EducationAssignmentResource educationAssignmentResourceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<EducationAssignmentResource>(educationAssignmentResourceToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified EducationAssignmentResource using PUT.
+        /// </summary>
+        /// <param name="educationAssignmentResourceToUpdate">The EducationAssignmentResource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<EducationAssignmentResource> PutAsync(EducationAssignmentResource educationAssignmentResourceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<EducationAssignmentResource>(educationAssignmentResourceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EducationAssignmentResource using PUT and returns a <see cref="GraphResponse{EducationAssignmentResource}"/> object.
+        /// </summary>
+        /// <param name="educationAssignmentResourceToUpdate">The EducationAssignmentResource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{EducationAssignmentResource}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationAssignmentResource>> PutResponseAsync(EducationAssignmentResource educationAssignmentResourceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<EducationAssignmentResource>(educationAssignmentResourceToUpdate, cancellationToken);
         }
 
         /// <summary>

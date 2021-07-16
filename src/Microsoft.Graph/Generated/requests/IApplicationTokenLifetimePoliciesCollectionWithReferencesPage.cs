@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IApplicationTokenLifetimePoliciesCollectionWithReferencesPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ApplicationTokenLifetimePoliciesCollectionWithReferencesPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ApplicationTokenLifetimePoliciesCollectionWithReferencesPage>))]
     public interface IApplicationTokenLifetimePoliciesCollectionWithReferencesPage : ICollectionPage<TokenLifetimePolicy>
     {
         /// <summary>

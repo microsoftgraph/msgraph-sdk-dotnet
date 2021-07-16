@@ -9,36 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsTimeRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsTimeRequestBody
     {
     
         /// <summary>
         /// Gets or sets Hour.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hour", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Hour { get; set; }
+        [JsonPropertyName("hour")]
+        public System.Text.Json.JsonDocument Hour { get; set; }
     
         /// <summary>
         /// Gets or sets Minute.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minute", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Minute { get; set; }
+        [JsonPropertyName("minute")]
+        public System.Text.Json.JsonDocument Minute { get; set; }
     
         /// <summary>
         /// Gets or sets Second.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "second", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Second { get; set; }
+        [JsonPropertyName("second")]
+        public System.Text.Json.JsonDocument Second { get; set; }
     
     }
 }

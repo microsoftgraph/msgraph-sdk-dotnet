@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type LobbyBypassSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<LobbyBypassSettings>))]
     public partial class LobbyBypassSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LobbyBypassSettings"/> class.
-        /// </summary>
-        public LobbyBypassSettings()
-        {
-            this.ODataType = "microsoft.graph.lobbyBypassSettings";
-        }
 
         /// <summary>
         /// Gets or sets isDialInBypassEnabled.
         /// Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDialInBypassEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDialInBypassEnabled")]
         public bool? IsDialInBypassEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets scope.
         /// Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Possible values are listed in the following table. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scope")]
         public LobbyBypassScope? Scope { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

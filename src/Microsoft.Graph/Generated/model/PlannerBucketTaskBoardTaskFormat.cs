@@ -12,29 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Planner Bucket Task Board Task Format.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PlannerBucketTaskBoardTaskFormat : Entity
     {
     
-		///<summary>
-		/// The PlannerBucketTaskBoardTaskFormat constructor
-		///</summary>
-        public PlannerBucketTaskBoardTaskFormat()
-        {
-            this.ODataType = "microsoft.graph.plannerBucketTaskBoardTaskFormat";
-        }
-	
         /// <summary>
         /// Gets or sets order hint.
         /// Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderHint", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("orderHint")]
         public string OrderHint { get; set; }
     
     }

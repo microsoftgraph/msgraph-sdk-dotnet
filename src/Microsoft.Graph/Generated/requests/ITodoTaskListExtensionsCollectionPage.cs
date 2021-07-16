@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ITodoTaskListExtensionsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<TodoTaskListExtensionsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<TodoTaskListExtensionsCollectionPage>))]
     public interface ITodoTaskListExtensionsCollectionPage : ICollectionPage<Extension>
     {
         /// <summary>

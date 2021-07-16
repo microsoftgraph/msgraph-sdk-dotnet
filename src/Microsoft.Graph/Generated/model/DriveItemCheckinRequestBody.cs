@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DriveItemCheckinRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DriveItemCheckinRequestBody
     {
     
         /// <summary>
         /// Gets or sets CheckInAs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checkInAs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("checkInAs")]
         public string CheckInAs { get; set; }
     
         /// <summary>
         /// Gets or sets Comment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comment", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("comment")]
         public string Comment { get; set; }
     
     }

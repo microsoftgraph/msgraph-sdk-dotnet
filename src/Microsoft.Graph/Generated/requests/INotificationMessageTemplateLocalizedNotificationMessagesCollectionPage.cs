@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface INotificationMessageTemplateLocalizedNotificationMessagesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<NotificationMessageTemplateLocalizedNotificationMessagesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<NotificationMessageTemplateLocalizedNotificationMessagesCollectionPage>))]
     public interface INotificationMessageTemplateLocalizedNotificationMessagesCollectionPage : ICollectionPage<LocalizedNotificationMessage>
     {
         /// <summary>

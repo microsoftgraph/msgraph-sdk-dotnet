@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CloudAppSecurityState.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<CloudAppSecurityState>))]
     public partial class CloudAppSecurityState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CloudAppSecurityState"/> class.
-        /// </summary>
-        public CloudAppSecurityState()
-        {
-            this.ODataType = "microsoft.graph.cloudAppSecurityState";
-        }
 
         /// <summary>
         /// Gets or sets destinationServiceIp.
         /// Destination IP Address of the connection to the cloud application/service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationServiceIp", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("destinationServiceIp")]
         public string DestinationServiceIp { get; set; }
     
         /// <summary>
         /// Gets or sets destinationServiceName.
         /// Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationServiceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("destinationServiceName")]
         public string DestinationServiceName { get; set; }
     
         /// <summary>
         /// Gets or sets riskScore.
         /// Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskScore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("riskScore")]
         public string RiskScore { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

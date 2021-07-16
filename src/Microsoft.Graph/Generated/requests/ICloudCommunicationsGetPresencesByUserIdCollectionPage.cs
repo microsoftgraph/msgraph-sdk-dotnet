@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ICloudCommunicationsGetPresencesByUserIdCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<CloudCommunicationsGetPresencesByUserIdCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<CloudCommunicationsGetPresencesByUserIdCollectionPage>))]
     public interface ICloudCommunicationsGetPresencesByUserIdCollectionPage : ICollectionPage<Presence>
     {
         /// <summary>

@@ -9,30 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsFvscheduleRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsFvscheduleRequestBody
     {
     
         /// <summary>
         /// Gets or sets Principal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principal", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Principal { get; set; }
+        [JsonPropertyName("principal")]
+        public System.Text.Json.JsonDocument Principal { get; set; }
     
         /// <summary>
         /// Gets or sets Schedule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken Schedule { get; set; }
+        [JsonPropertyName("schedule")]
+        public System.Text.Json.JsonDocument Schedule { get; set; }
     
     }
 }

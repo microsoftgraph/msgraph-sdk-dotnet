@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CalculatedColumn.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<CalculatedColumn>))]
     public partial class CalculatedColumn
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CalculatedColumn"/> class.
-        /// </summary>
-        public CalculatedColumn()
-        {
-            this.ODataType = "microsoft.graph.calculatedColumn";
-        }
 
         /// <summary>
         /// Gets or sets format.
         /// For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("format")]
         public string Format { get; set; }
     
         /// <summary>
         /// Gets or sets formula.
         /// The formula used to compute the value for this column.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "formula", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("formula")]
         public string Formula { get; set; }
     
         /// <summary>
         /// Gets or sets outputType.
         /// The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outputType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outputType")]
         public string OutputType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

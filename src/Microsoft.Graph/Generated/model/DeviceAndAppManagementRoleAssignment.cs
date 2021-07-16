@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device And App Management Role Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceAndAppManagementRoleAssignment : RoleAssignment
     {
     
-		///<summary>
-		/// The DeviceAndAppManagementRoleAssignment constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceAndAppManagementRoleAssignment constructor
+        ///</summary>
         public DeviceAndAppManagementRoleAssignment()
         {
             this.ODataType = "microsoft.graph.deviceAndAppManagementRoleAssignment";
         }
-	
+
         /// <summary>
         /// Gets or sets members.
         /// The list of ids of role member security groups. These are IDs from Azure Active Directory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("members")]
         public IEnumerable<string> Members { get; set; }
     
     }

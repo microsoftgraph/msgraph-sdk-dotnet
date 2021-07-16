@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DriveRecipient.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DriveRecipient>))]
     public partial class DriveRecipient
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DriveRecipient"/> class.
-        /// </summary>
-        public DriveRecipient()
-        {
-            this.ODataType = "microsoft.graph.driveRecipient";
-        }
 
         /// <summary>
         /// Gets or sets alias.
         /// The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alias", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alias")]
         public string Alias { get; set; }
     
         /// <summary>
         /// Gets or sets email.
         /// The email address for the recipient, if the recipient has an associated email address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("email")]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets objectId.
         /// The unique identifier for the recipient in the directory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "objectId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("objectId")]
         public string ObjectId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

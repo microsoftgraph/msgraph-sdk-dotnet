@@ -9,30 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WorkbookFunctionsErfRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFunctionsErfRequestBody
     {
     
         /// <summary>
         /// Gets or sets LowerLimit.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lowerLimit", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken LowerLimit { get; set; }
+        [JsonPropertyName("lowerLimit")]
+        public System.Text.Json.JsonDocument LowerLimit { get; set; }
     
         /// <summary>
         /// Gets or sets UpperLimit.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upperLimit", Required = Newtonsoft.Json.Required.Default)]
-        public Newtonsoft.Json.Linq.JToken UpperLimit { get; set; }
+        [JsonPropertyName("upperLimit")]
+        public System.Text.Json.JsonDocument UpperLimit { get; set; }
     
     }
 }

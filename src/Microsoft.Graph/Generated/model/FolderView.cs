@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type FolderView.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<FolderView>))]
     public partial class FolderView
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FolderView"/> class.
-        /// </summary>
-        public FolderView()
-        {
-            this.ODataType = "microsoft.graph.folderView";
-        }
 
         /// <summary>
         /// Gets or sets sortBy.
         /// The method by which the folder should be sorted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sortBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sortBy")]
         public string SortBy { get; set; }
     
         /// <summary>
         /// Gets or sets sortOrder.
         /// If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sortOrder", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sortOrder")]
         public string SortOrder { get; set; }
     
         /// <summary>
         /// Gets or sets viewType.
         /// The type of view that should be used to represent the folder.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "viewType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("viewType")]
         public string ViewType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WindowsInformationProtectionDataRecoveryCertificate.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsInformationProtectionDataRecoveryCertificate>))]
     public partial class WindowsInformationProtectionDataRecoveryCertificate
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WindowsInformationProtectionDataRecoveryCertificate"/> class.
-        /// </summary>
-        public WindowsInformationProtectionDataRecoveryCertificate()
-        {
-            this.ODataType = "microsoft.graph.windowsInformationProtectionDataRecoveryCertificate";
-        }
 
         /// <summary>
         /// Gets or sets certificate.
         /// Data recovery Certificate
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certificate")]
         public byte[] Certificate { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Data recovery Certificate description
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets expirationDateTime.
         /// Data recovery Certificate expiration datetime
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets subjectName.
         /// Data recovery Certificate subject name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subjectName")]
         public string SubjectName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

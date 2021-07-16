@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PreAuthorizedApplication.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PreAuthorizedApplication>))]
     public partial class PreAuthorizedApplication
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PreAuthorizedApplication"/> class.
-        /// </summary>
-        public PreAuthorizedApplication()
-        {
-            this.ODataType = "microsoft.graph.preAuthorizedApplication";
-        }
 
         /// <summary>
         /// Gets or sets appId.
         /// The unique identifier for the application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appId")]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets delegatedPermissionIds.
         /// The unique identifier for the oauth2PermissionScopes the application requires.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delegatedPermissionIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("delegatedPermissionIds")]
         public IEnumerable<string> DelegatedPermissionIds { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

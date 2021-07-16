@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Workbook using POST.
         /// </summary>
         /// <param name="workbookToCreate">The Workbook to create.</param>
-        /// <returns>The created Workbook.</returns>
-        public System.Threading.Tasks.Task<Workbook> CreateAsync(Workbook workbookToCreate)
-        {
-            return this.CreateAsync(workbookToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Workbook using POST.
-        /// </summary>
-        /// <param name="workbookToCreate">The Workbook to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Workbook.</returns>
-        public async System.Threading.Tasks.Task<Workbook> CreateAsync(Workbook workbookToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Workbook> CreateAsync(Workbook workbookToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Workbook>(workbookToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Workbook.
+        /// Creates the specified Workbook using POST and returns a <see cref="GraphResponse{Workbook}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="workbookToCreate">The Workbook to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Workbook}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Workbook>> CreateResponseAsync(Workbook workbookToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Workbook>(workbookToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Workbook>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Workbook.
+        /// Deletes the specified Workbook and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Workbook.</returns>
-        public System.Threading.Tasks.Task<Workbook> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Workbook.</returns>
-        public async System.Threading.Tasks.Task<Workbook> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Workbook> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Workbook>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Workbook using PATCH.
+        /// Gets the specified Workbook and returns a <see cref="GraphResponse{Workbook}"/> object.
         /// </summary>
-        /// <param name="workbookToUpdate">The Workbook to update.</param>
-        /// <returns>The updated Workbook.</returns>
-        public System.Threading.Tasks.Task<Workbook> UpdateAsync(Workbook workbookToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Workbook}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Workbook>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(workbookToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Workbook>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Workbook.</returns>
-        public async System.Threading.Tasks.Task<Workbook> UpdateAsync(Workbook workbookToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Workbook> UpdateAsync(Workbook workbookToUpdate, CancellationToken cancellationToken = default)
         {
-			if (workbookToUpdate.AdditionalData != null)
-			{
-				if (workbookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookToUpdate.AdditionalData != null)
-            {
-                if (workbookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Workbook>(workbookToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Workbook using PATCH and returns a <see cref="GraphResponse{Workbook}"/> object.
+        /// </summary>
+        /// <param name="workbookToUpdate">The Workbook to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Workbook}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Workbook>> UpdateResponseAsync(Workbook workbookToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Workbook>(workbookToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Workbook using PUT.
+        /// </summary>
+        /// <param name="workbookToUpdate">The Workbook object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Workbook> PutAsync(Workbook workbookToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Workbook>(workbookToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Workbook using PUT and returns a <see cref="GraphResponse{Workbook}"/> object.
+        /// </summary>
+        /// <param name="workbookToUpdate">The Workbook object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Workbook}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Workbook>> PutResponseAsync(Workbook workbookToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Workbook>(workbookToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Workbook workbookToInitialize)
         {
 
-            if (workbookToInitialize != null && workbookToInitialize.AdditionalData != null)
+            if (workbookToInitialize != null)
             {
-
                 if (workbookToInitialize.Comments != null && workbookToInitialize.Comments.CurrentPage != null)
                 {
+                    workbookToInitialize.Comments.InitializeNextPageRequest(this.Client, workbookToInitialize.CommentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Comments.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("comments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookToInitialize.Comments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookToInitialize.Names != null && workbookToInitialize.Names.CurrentPage != null)
                 {
+                    workbookToInitialize.Names.InitializeNextPageRequest(this.Client, workbookToInitialize.NamesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Names.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("names@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookToInitialize.Names.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookToInitialize.Operations != null && workbookToInitialize.Operations.CurrentPage != null)
                 {
+                    workbookToInitialize.Operations.InitializeNextPageRequest(this.Client, workbookToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Operations.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookToInitialize.Tables != null && workbookToInitialize.Tables.CurrentPage != null)
                 {
+                    workbookToInitialize.Tables.InitializeNextPageRequest(this.Client, workbookToInitialize.TablesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Tables.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("tables@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookToInitialize.Tables.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (workbookToInitialize.Worksheets != null && workbookToInitialize.Worksheets.CurrentPage != null)
                 {
+                    workbookToInitialize.Worksheets.InitializeNextPageRequest(this.Client, workbookToInitialize.WorksheetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     workbookToInitialize.Worksheets.AdditionalData = workbookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    workbookToInitialize.AdditionalData.TryGetValue("worksheets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        workbookToInitialize.Worksheets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

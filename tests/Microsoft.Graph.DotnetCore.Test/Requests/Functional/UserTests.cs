@@ -314,7 +314,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 var directoryObjectGetMemberGroupsCollectionPage = await getMemberGroupsRequest.PostAsync();
 
                 Assert.NotNull(directoryObjectGetMemberGroupsCollectionPage);
-                Assert.Equal("POST", getMemberGroupsRequest.Method);
+                Assert.Equal("POST", getMemberGroupsRequest.Method.ToString());
                 Assert.True(getMemberGroupsRequest.RequestBody.SecurityEnabledOnly.Value);
             }
             catch (Microsoft.Graph.ServiceException e)

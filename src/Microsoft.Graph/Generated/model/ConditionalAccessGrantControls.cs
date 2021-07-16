@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConditionalAccessGrantControls.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessGrantControls>))]
     public partial class ConditionalAccessGrantControls
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConditionalAccessGrantControls"/> class.
-        /// </summary>
-        public ConditionalAccessGrantControls()
-        {
-            this.ODataType = "microsoft.graph.conditionalAccessGrantControls";
-        }
 
         /// <summary>
         /// Gets or sets builtInControls.
         /// List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "builtInControls", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("builtInControls")]
         public IEnumerable<ConditionalAccessGrantControl> BuiltInControls { get; set; }
     
         /// <summary>
         /// Gets or sets customAuthenticationFactors.
         /// List of custom controls IDs required by the policy. Learn more about custom controls here: https://docs.microsoft.com/azure/active-directory/conditional-access/controls#custom-controls-preview
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customAuthenticationFactors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customAuthenticationFactors")]
         public IEnumerable<string> CustomAuthenticationFactors { get; set; }
     
         /// <summary>
         /// Gets or sets operator.
         /// Defines the relationship of the grant controls. Possible values: AND, OR.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operator")]
         public string Operator { get; set; }
     
         /// <summary>
         /// Gets or sets termsOfUse.
         /// List of terms of use IDs required by the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsOfUse", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("termsOfUse")]
         public IEnumerable<string> TermsOfUse { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsTimeRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken hour,
-            Newtonsoft.Json.Linq.JToken minute,
-            Newtonsoft.Json.Linq.JToken second)
+            System.Text.Json.JsonDocument hour,
+            System.Text.Json.JsonDocument minute,
+            System.Text.Json.JsonDocument second)
             : base(requestUrl, client)
         {
             this.SetParameter("hour", hour, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("hour"))
             {
-                request.RequestBody.Hour = this.GetParameter<Newtonsoft.Json.Linq.JToken>("hour");
+                request.RequestBody.Hour = this.GetParameter<System.Text.Json.JsonDocument>("hour");
             }
 
             if (this.HasParameter("minute"))
             {
-                request.RequestBody.Minute = this.GetParameter<Newtonsoft.Json.Linq.JToken>("minute");
+                request.RequestBody.Minute = this.GetParameter<System.Text.Json.JsonDocument>("minute");
             }
 
             if (this.HasParameter("second"))
             {
-                request.RequestBody.Second = this.GetParameter<Newtonsoft.Json.Linq.JToken>("second");
+                request.RequestBody.Second = this.GetParameter<System.Text.Json.JsonDocument>("second");
             }
 
             return request;

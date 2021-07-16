@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Claims Mapping Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ClaimsMappingPolicy : StsPolicy
     {
     
-		///<summary>
-		/// The ClaimsMappingPolicy constructor
-		///</summary>
+        ///<summary>
+        /// The ClaimsMappingPolicy constructor
+        ///</summary>
         public ClaimsMappingPolicy()
         {
             this.ODataType = "microsoft.graph.claimsMappingPolicy";
         }
-	
+
     }
 }
 

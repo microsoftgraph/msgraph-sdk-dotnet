@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceAppManagementManagedEBooksCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceAppManagementManagedEBooksCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceAppManagementManagedEBooksCollectionPage>))]
     public interface IDeviceAppManagementManagedEBooksCollectionPage : ICollectionPage<ManagedEBook>
     {
         /// <summary>

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IpNamedLocation using POST.
         /// </summary>
         /// <param name="ipNamedLocationToCreate">The IpNamedLocation to create.</param>
-        /// <returns>The created IpNamedLocation.</returns>
-        public System.Threading.Tasks.Task<IpNamedLocation> CreateAsync(IpNamedLocation ipNamedLocationToCreate)
-        {
-            return this.CreateAsync(ipNamedLocationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IpNamedLocation using POST.
-        /// </summary>
-        /// <param name="ipNamedLocationToCreate">The IpNamedLocation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IpNamedLocation.</returns>
-        public async System.Threading.Tasks.Task<IpNamedLocation> CreateAsync(IpNamedLocation ipNamedLocationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IpNamedLocation> CreateAsync(IpNamedLocation ipNamedLocationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IpNamedLocation>(ipNamedLocationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IpNamedLocation.
+        /// Creates the specified IpNamedLocation using POST and returns a <see cref="GraphResponse{IpNamedLocation}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="ipNamedLocationToCreate">The IpNamedLocation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IpNamedLocation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> CreateResponseAsync(IpNamedLocation ipNamedLocationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IpNamedLocation>(ipNamedLocationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IpNamedLocation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IpNamedLocation.
+        /// Deletes the specified IpNamedLocation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IpNamedLocation.</returns>
-        public System.Threading.Tasks.Task<IpNamedLocation> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IpNamedLocation.</returns>
-        public async System.Threading.Tasks.Task<IpNamedLocation> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IpNamedLocation> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IpNamedLocation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IpNamedLocation using PATCH.
+        /// Gets the specified IpNamedLocation and returns a <see cref="GraphResponse{IpNamedLocation}"/> object.
         /// </summary>
-        /// <param name="ipNamedLocationToUpdate">The IpNamedLocation to update.</param>
-        /// <returns>The updated IpNamedLocation.</returns>
-        public System.Threading.Tasks.Task<IpNamedLocation> UpdateAsync(IpNamedLocation ipNamedLocationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IpNamedLocation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(ipNamedLocationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IpNamedLocation>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IpNamedLocation.</returns>
-        public async System.Threading.Tasks.Task<IpNamedLocation> UpdateAsync(IpNamedLocation ipNamedLocationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IpNamedLocation> UpdateAsync(IpNamedLocation ipNamedLocationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (ipNamedLocationToUpdate.AdditionalData != null)
-			{
-				if (ipNamedLocationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					ipNamedLocationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, ipNamedLocationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (ipNamedLocationToUpdate.AdditionalData != null)
-            {
-                if (ipNamedLocationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    ipNamedLocationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, ipNamedLocationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IpNamedLocation>(ipNamedLocationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IpNamedLocation using PATCH and returns a <see cref="GraphResponse{IpNamedLocation}"/> object.
+        /// </summary>
+        /// <param name="ipNamedLocationToUpdate">The IpNamedLocation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IpNamedLocation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> UpdateResponseAsync(IpNamedLocation ipNamedLocationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IpNamedLocation>(ipNamedLocationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified IpNamedLocation using PUT.
+        /// </summary>
+        /// <param name="ipNamedLocationToUpdate">The IpNamedLocation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IpNamedLocation> PutAsync(IpNamedLocation ipNamedLocationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IpNamedLocation>(ipNamedLocationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IpNamedLocation using PUT and returns a <see cref="GraphResponse{IpNamedLocation}"/> object.
+        /// </summary>
+        /// <param name="ipNamedLocationToUpdate">The IpNamedLocation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IpNamedLocation}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> PutResponseAsync(IpNamedLocation ipNamedLocationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IpNamedLocation>(ipNamedLocationToUpdate, cancellationToken);
         }
 
         /// <summary>

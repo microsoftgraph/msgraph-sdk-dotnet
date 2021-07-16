@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceAppManagementMobileAppCategoriesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MobileAppCategory to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppCategory">The MobileAppCategory to add.</param>
-        /// <returns>The created MobileAppCategory.</returns>
-        System.Threading.Tasks.Task<MobileAppCategory> AddAsync(MobileAppCategory mobileAppCategory);
-
         /// <summary>
         /// Adds the specified MobileAppCategory to the collection via POST.
         /// </summary>
         /// <param name="mobileAppCategory">The MobileAppCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppCategory.</returns>
-        System.Threading.Tasks.Task<MobileAppCategory> AddAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppCategory> AddAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MobileAppCategory to the collection via POST and returns a <see cref="GraphResponse{MobileAppCategory}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementMobileAppCategoriesCollectionPage> GetAsync();
+        /// <param name="mobileAppCategory">The MobileAppCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> AddResponseAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementMobileAppCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceAppManagementMobileAppCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementMobileAppCategoriesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementMobileAppCategoriesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementMobileAppCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

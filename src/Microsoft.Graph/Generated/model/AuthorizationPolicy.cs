@@ -12,71 +12,70 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Authorization Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<AuthorizationPolicy>))]
     public partial class AuthorizationPolicy : PolicyBase
     {
     
-		///<summary>
-		/// The AuthorizationPolicy constructor
-		///</summary>
+        ///<summary>
+        /// The AuthorizationPolicy constructor
+        ///</summary>
         public AuthorizationPolicy()
         {
             this.ODataType = "microsoft.graph.authorizationPolicy";
         }
-	
+
         /// <summary>
         /// Gets or sets allowed to sign up email based subscriptions.
         /// Indicates whether users can sign up for email based subscriptions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedToSignUpEmailBasedSubscriptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedToSignUpEmailBasedSubscriptions")]
         public bool? AllowedToSignUpEmailBasedSubscriptions { get; set; }
     
         /// <summary>
         /// Gets or sets allowed to use sspr.
         /// Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedToUseSSPR", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedToUseSSPR")]
         public bool? AllowedToUseSSPR { get; set; }
     
         /// <summary>
         /// Gets or sets allow email verified users to join organization.
         /// Indicates whether a user can join the tenant by email validation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowEmailVerifiedUsersToJoinOrganization", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowEmailVerifiedUsersToJoinOrganization")]
         public bool? AllowEmailVerifiedUsersToJoinOrganization { get; set; }
     
         /// <summary>
         /// Gets or sets allow invites from.
         /// Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowInvitesFrom", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowInvitesFrom")]
         public AllowInvitesFrom? AllowInvitesFrom { get; set; }
     
         /// <summary>
         /// Gets or sets block msol power shell.
         /// To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockMsolPowerShell", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("blockMsolPowerShell")]
         public bool? BlockMsolPowerShell { get; set; }
     
         /// <summary>
         /// Gets or sets default user role permissions.
         /// Specifies certain customizable permissions for default user role.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultUserRolePermissions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultUserRolePermissions")]
         public DefaultUserRolePermissions DefaultUserRolePermissions { get; set; }
     
         /// <summary>
         /// Gets or sets guest user role id.
         /// Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "guestUserRoleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("guestUserRoleId")]
         public Guid? GuestUserRoleId { get; set; }
     
     }

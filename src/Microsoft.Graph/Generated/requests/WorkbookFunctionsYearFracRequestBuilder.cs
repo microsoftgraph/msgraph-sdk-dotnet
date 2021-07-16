@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsYearFracRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken startDate,
-            Newtonsoft.Json.Linq.JToken endDate,
-            Newtonsoft.Json.Linq.JToken basis)
+            System.Text.Json.JsonDocument startDate,
+            System.Text.Json.JsonDocument endDate,
+            System.Text.Json.JsonDocument basis)
             : base(requestUrl, client)
         {
             this.SetParameter("startDate", startDate, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("startDate"))
             {
-                request.RequestBody.StartDate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("startDate");
+                request.RequestBody.StartDate = this.GetParameter<System.Text.Json.JsonDocument>("startDate");
             }
 
             if (this.HasParameter("endDate"))
             {
-                request.RequestBody.EndDate = this.GetParameter<Newtonsoft.Json.Linq.JToken>("endDate");
+                request.RequestBody.EndDate = this.GetParameter<System.Text.Json.JsonDocument>("endDate");
             }
 
             if (this.HasParameter("basis"))
             {
-                request.RequestBody.Basis = this.GetParameter<Newtonsoft.Json.Linq.JToken>("basis");
+                request.RequestBody.Basis = this.GetParameter<System.Text.Json.JsonDocument>("basis");
             }
 
             return request;

@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ToneInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ToneInfo>))]
     public partial class ToneInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ToneInfo"/> class.
-        /// </summary>
-        public ToneInfo()
-        {
-            this.ODataType = "microsoft.graph.toneInfo";
-        }
 
         /// <summary>
         /// Gets or sets sequenceId.
         /// An incremental identifier used for ordering DTMF events.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sequenceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sequenceId")]
         public Int64? SequenceId { get; set; }
     
         /// <summary>
         /// Gets or sets tone.
         /// Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tone")]
         public Tone? Tone { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

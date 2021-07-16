@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ICalendarGetScheduleCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<CalendarGetScheduleCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<CalendarGetScheduleCollectionPage>))]
     public interface ICalendarGetScheduleCollectionPage : ICollectionPage<ScheduleInformation>
     {
         /// <summary>

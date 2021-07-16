@@ -29,9 +29,9 @@ namespace Microsoft.Graph
         public WorkbookFunctionsDcountARequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Newtonsoft.Json.Linq.JToken database,
-            Newtonsoft.Json.Linq.JToken field,
-            Newtonsoft.Json.Linq.JToken criteria)
+            System.Text.Json.JsonDocument database,
+            System.Text.Json.JsonDocument field,
+            System.Text.Json.JsonDocument criteria)
             : base(requestUrl, client)
         {
             this.SetParameter("database", database, true);
@@ -51,17 +51,17 @@ namespace Microsoft.Graph
 
             if (this.HasParameter("database"))
             {
-                request.RequestBody.Database = this.GetParameter<Newtonsoft.Json.Linq.JToken>("database");
+                request.RequestBody.Database = this.GetParameter<System.Text.Json.JsonDocument>("database");
             }
 
             if (this.HasParameter("field"))
             {
-                request.RequestBody.Field = this.GetParameter<Newtonsoft.Json.Linq.JToken>("field");
+                request.RequestBody.Field = this.GetParameter<System.Text.Json.JsonDocument>("field");
             }
 
             if (this.HasParameter("criteria"))
             {
-                request.RequestBody.Criteria = this.GetParameter<Newtonsoft.Json.Linq.JToken>("criteria");
+                request.RequestBody.Criteria = this.GetParameter<System.Text.Json.JsonDocument>("criteria");
             }
 
             return request;

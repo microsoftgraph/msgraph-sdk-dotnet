@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified PlannerProgressTaskBoardTaskFormat using POST.
         /// </summary>
         /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
-        /// <returns>The created PlannerProgressTaskBoardTaskFormat.</returns>
-        public System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> CreateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate)
-        {
-            return this.CreateAsync(plannerProgressTaskBoardTaskFormatToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PlannerProgressTaskBoardTaskFormat using POST.
-        /// </summary>
-        /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerProgressTaskBoardTaskFormat.</returns>
-        public async System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> CreateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> CreateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PlannerProgressTaskBoardTaskFormat>(plannerProgressTaskBoardTaskFormatToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified PlannerProgressTaskBoardTaskFormat.
+        /// Creates the specified PlannerProgressTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> CreateResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PlannerProgressTaskBoardTaskFormat>(plannerProgressTaskBoardTaskFormatToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PlannerProgressTaskBoardTaskFormat>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified PlannerProgressTaskBoardTaskFormat.
+        /// Deletes the specified PlannerProgressTaskBoardTaskFormat and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PlannerProgressTaskBoardTaskFormat.</returns>
-        public System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PlannerProgressTaskBoardTaskFormat.</returns>
-        public async System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PlannerProgressTaskBoardTaskFormat>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified PlannerProgressTaskBoardTaskFormat using PATCH.
+        /// Gets the specified PlannerProgressTaskBoardTaskFormat and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
         /// </summary>
-        /// <param name="plannerProgressTaskBoardTaskFormatToUpdate">The PlannerProgressTaskBoardTaskFormat to update.</param>
-        /// <returns>The updated PlannerProgressTaskBoardTaskFormat.</returns>
-        public System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> UpdateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(plannerProgressTaskBoardTaskFormatToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PlannerProgressTaskBoardTaskFormat>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PlannerProgressTaskBoardTaskFormat.</returns>
-        public async System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> UpdateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> UpdateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default)
         {
-			if (plannerProgressTaskBoardTaskFormatToUpdate.AdditionalData != null)
-			{
-				if (plannerProgressTaskBoardTaskFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					plannerProgressTaskBoardTaskFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerProgressTaskBoardTaskFormatToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (plannerProgressTaskBoardTaskFormatToUpdate.AdditionalData != null)
-            {
-                if (plannerProgressTaskBoardTaskFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    plannerProgressTaskBoardTaskFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerProgressTaskBoardTaskFormatToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PlannerProgressTaskBoardTaskFormat>(plannerProgressTaskBoardTaskFormatToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerProgressTaskBoardTaskFormat using PATCH and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerProgressTaskBoardTaskFormatToUpdate">The PlannerProgressTaskBoardTaskFormat to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> UpdateResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<PlannerProgressTaskBoardTaskFormat>(plannerProgressTaskBoardTaskFormatToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerProgressTaskBoardTaskFormat using PUT.
+        /// </summary>
+        /// <param name="plannerProgressTaskBoardTaskFormatToUpdate">The PlannerProgressTaskBoardTaskFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> PutAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PlannerProgressTaskBoardTaskFormat>(plannerProgressTaskBoardTaskFormatToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerProgressTaskBoardTaskFormat using PUT and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerProgressTaskBoardTaskFormatToUpdate">The PlannerProgressTaskBoardTaskFormat object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> PutResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PlannerProgressTaskBoardTaskFormat>(plannerProgressTaskBoardTaskFormatToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceContactsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified OrgContact to the collection via POST.
-        /// </summary>
-        /// <param name="orgContact">The OrgContact to add.</param>
-        /// <returns>The created OrgContact.</returns>
-        System.Threading.Tasks.Task<OrgContact> AddAsync(OrgContact orgContact);
-
         /// <summary>
         /// Adds the specified OrgContact to the collection via POST.
         /// </summary>
         /// <param name="orgContact">The OrgContact to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OrgContact.</returns>
-        System.Threading.Tasks.Task<OrgContact> AddAsync(OrgContact orgContact, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OrgContact> AddAsync(OrgContact orgContact, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified OrgContact to the collection via POST and returns a <see cref="GraphResponse{OrgContact}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceContactsCollectionPage> GetAsync();
+        /// <param name="orgContact">The OrgContact to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrgContact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrgContact>> AddResponseAsync(OrgContact orgContact, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceContactsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IGraphServiceContactsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceContactsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceContactsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceContactsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.
