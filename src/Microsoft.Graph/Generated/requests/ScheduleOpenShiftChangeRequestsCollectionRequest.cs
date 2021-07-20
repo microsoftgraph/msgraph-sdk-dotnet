@@ -54,7 +54,6 @@ namespace Microsoft.Graph
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            openShiftChangeRequest.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(openShiftChangeRequest.GetType().FullName));
             return this.SendAsync<OpenShiftChangeRequestObject>(openShiftChangeRequest, cancellationToken);
         }
 

@@ -158,7 +158,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets required.
-        /// Specifies whether the column value is not optional.
+        /// Specifies whether the column value isn't optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
         public bool? Required { get; set; }

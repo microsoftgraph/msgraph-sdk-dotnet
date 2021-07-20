@@ -142,11 +142,6 @@ namespace Microsoft.Graph
         IGraphServiceSubscribedSkusCollectionRequestBuilder SubscribedSkus { get; }
     
         /// <summary>
-        /// Gets the GraphServiceWorkbooks request builder.
-        /// </summary>
-        IGraphServiceWorkbooksCollectionRequestBuilder Workbooks { get; }
-    
-        /// <summary>
         /// Gets the GraphServicePlaces request builder.
         /// </summary>
         IGraphServicePlacesCollectionRequestBuilder Places { get; }
@@ -195,6 +190,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceSubscriptions request builder.
         /// </summary>
         IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceConnections request builder.
+        /// </summary>
+        IGraphServiceConnectionsCollectionRequestBuilder Connections { get; }
     
         /// <summary>
         /// Gets the GraphServiceChats request builder.
@@ -305,6 +305,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceSecurity request builder.
         /// </summary>
         ISecurityRequestBuilder Security { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceExternal request builder.
+        /// </summary>
+        Microsoft.Graph.ExternalConnectors.IExternalRequestBuilder External { get; }
     
         /// <summary>
         /// Gets the GraphServiceAppCatalogs request builder.

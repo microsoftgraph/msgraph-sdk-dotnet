@@ -59,7 +59,8 @@ namespace Microsoft.Graph
         ICallAnswerRequestBuilder Answer(
             string callbackUri,
             MediaConfig mediaConfig,
-            IEnumerable<Modality> acceptedModalities = null);
+            IEnumerable<Modality> acceptedModalities = null,
+            Int32? participantCapacity = null);
 
         /// <summary>
         /// Gets the request builder for CallCancelMediaProcessing.

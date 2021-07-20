@@ -31,13 +31,22 @@ namespace Microsoft.Graph.ExternalConnectors
         }
 	
         /// <summary>
+        /// Gets or sets acl.
+        /// An array of access control entries. Each entry specifies the access granted to a user or group. Required.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acl", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Acl> Acl { get; set; }
+    
+        /// <summary>
         /// Gets or sets content.
+        /// A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
         public ExternalItemContent Content { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
+        /// A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "properties", Required = Newtonsoft.Json.Required.Default)]
         public Properties Properties { get; set; }

@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IAppConsentApprovalRouteRequestBuilder AppConsent { get; }
 
         /// <summary>
+        /// Gets the request builder for EntitlementManagement.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementRequestBuilder"/>.</returns>
+        IEntitlementManagementRequestBuilder EntitlementManagement { get; }
+
+        /// <summary>
         /// Gets the request builder for TermsOfUse.
         /// </summary>
         /// <returns>The <see cref="ITermsOfUseContainerRequestBuilder"/>.</returns>

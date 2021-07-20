@@ -74,6 +74,19 @@ namespace Microsoft.Graph
         IApplicationLogoRequestBuilder Logo { get; }
     
         /// <summary>
+        /// Gets the request builder for ApplicationSetVerifiedPublisher.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationSetVerifiedPublisherRequestBuilder"/>.</returns>
+        IApplicationSetVerifiedPublisherRequestBuilder SetVerifiedPublisher(
+            string verifiedPublisherId);
+
+        /// <summary>
+        /// Gets the request builder for ApplicationUnsetVerifiedPublisher.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationUnsetVerifiedPublisherRequestBuilder"/>.</returns>
+        IApplicationUnsetVerifiedPublisherRequestBuilder UnsetVerifiedPublisher();
+
+        /// <summary>
         /// Gets the request builder for ApplicationAddKey.
         /// </summary>
         /// <returns>The <see cref="IApplicationAddKeyRequestBuilder"/>.</returns>

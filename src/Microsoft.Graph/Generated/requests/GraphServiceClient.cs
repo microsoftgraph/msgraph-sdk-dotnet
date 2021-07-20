@@ -330,17 +330,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceWorkbooks request builder.
-        /// </summary>
-        public IGraphServiceWorkbooksCollectionRequestBuilder Workbooks
-        {
-            get
-            {
-                return new GraphServiceWorkbooksCollectionRequestBuilder(this.BaseUrl + "/workbooks", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServicePlaces request builder.
         /// </summary>
         public IGraphServicePlacesCollectionRequestBuilder Places
@@ -447,6 +436,17 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceSubscriptionsCollectionRequestBuilder(this.BaseUrl + "/subscriptions", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceConnections request builder.
+        /// </summary>
+        public IGraphServiceConnectionsCollectionRequestBuilder Connections
+        {
+            get
+            {
+                return new GraphServiceConnectionsCollectionRequestBuilder(this.BaseUrl + "/connections", this);
             }
         }
     
@@ -689,6 +689,17 @@ namespace Microsoft.Graph
             get
             {
                 return new SecurityRequestBuilder(this.BaseUrl + "/security", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceExternal request builder.
+        /// </summary>
+        public Microsoft.Graph.ExternalConnectors.IExternalRequestBuilder External
+        {
+            get
+            {
+                return new Microsoft.Graph.ExternalConnectors.ExternalRequestBuilder(this.BaseUrl + "/external", this);
             }
         }
     
