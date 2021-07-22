@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets membership type.
-        /// The type of the channel. Can be set during creation and cannot be changed. Default: standard.
+        /// The type of the channel. Can be set during creation and can't be changed. Default: standard.
         /// </summary>
         [JsonPropertyName("membershipType")]
         public ChannelMembershipType? MembershipType { get; set; }

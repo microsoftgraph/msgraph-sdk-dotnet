@@ -40,7 +40,7 @@ namespace Microsoft.Graph
         /// The user who reacted to the message.
         /// </summary>
         [JsonPropertyName("user")]
-        public IdentitySet User { get; set; }
+        public ChatMessageReactionIdentitySet User { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -29,14 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets principalScopes.
-        /// Defines the scopes of the principals to be included in an access review.
+        /// Defines the scopes of the principals whose access to resources are reviewed in the access review.
         /// </summary>
         [JsonPropertyName("principalScopes")]
         public IEnumerable<AccessReviewScope> PrincipalScopes { get; set; }
     
         /// <summary>
         /// Gets or sets resourceScopes.
-        /// Defines the scopes of the resources for which access will be reviewed.
+        /// Defines the scopes of the resources for which access is reviewed.
         /// </summary>
         [JsonPropertyName("resourceScopes")]
         public IEnumerable<AccessReviewScope> ResourceScopes { get; set; }

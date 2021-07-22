@@ -22,11 +22,39 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets allow attendee to enable camera.
+        /// Indicates whether attendees can turn on their camera.
+        /// </summary>
+        [JsonPropertyName("allowAttendeeToEnableCamera")]
+        public bool? AllowAttendeeToEnableCamera { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow attendee to enable mic.
+        /// Indicates whether attendees can turn on their microphone.
+        /// </summary>
+        [JsonPropertyName("allowAttendeeToEnableMic")]
+        public bool? AllowAttendeeToEnableMic { get; set; }
+    
+        /// <summary>
         /// Gets or sets allowed presenters.
         /// Specifies who can be a presenter in a meeting. Possible values are everyone, organization, roleIsPresenter, organizer, and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("allowedPresenters")]
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow meeting chat.
+        /// Specifies the mode of meeting chat.
+        /// </summary>
+        [JsonPropertyName("allowMeetingChat")]
+        public MeetingChatMode? AllowMeetingChat { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow teamwork reactions.
+        /// Indicates if Teams reactions are enabled for the meeting.
+        /// </summary>
+        [JsonPropertyName("allowTeamworkReactions")]
+        public bool? AllowTeamworkReactions { get; set; }
     
         /// <summary>
         /// Gets or sets audio conferencing.

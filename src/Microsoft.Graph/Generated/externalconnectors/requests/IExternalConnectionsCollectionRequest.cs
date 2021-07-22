@@ -7,7 +7,7 @@
 
 // Template Source: IEntityCollectionRequest.cs.tt
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.ExternalConnectors
 {
     using System;
     using System.Collections.Generic;
@@ -16,25 +16,25 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The interface IGraphServiceWorkbooksCollectionRequest.
+    /// The interface IExternalConnectionsCollectionRequest.
     /// </summary>
-    public partial interface IGraphServiceWorkbooksCollectionRequest : IBaseRequest
+    public partial interface IExternalConnectionsCollectionRequest : Microsoft.Graph.IBaseRequest
     {
         /// <summary>
-        /// Adds the specified DriveItem to the collection via POST.
+        /// Adds the specified ExternalConnection to the collection via POST.
         /// </summary>
-        /// <param name="driveItem">The DriveItem to add.</param>
+        /// <param name="externalConnection">The ExternalConnection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DriveItem.</returns>
-        System.Threading.Tasks.Task<DriveItem> AddAsync(DriveItem driveItem, CancellationToken cancellationToken = default);
+        /// <returns>The created ExternalConnection.</returns>
+        System.Threading.Tasks.Task<ExternalConnection> AddAsync(ExternalConnection externalConnection, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Adds the specified DriveItem to the collection via POST and returns a <see cref="GraphResponse{DriveItem}"/> object of the request.
+        /// Adds the specified ExternalConnection to the collection via POST and returns a <see cref="GraphResponse{ExternalConnection}"/> object of the request.
         /// </summary>
-        /// <param name="driveItem">The DriveItem to add.</param>
+        /// <param name="externalConnection">The ExternalConnection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DriveItem>> AddResponseAsync(DriveItem driveItem, CancellationToken cancellationToken = default);
+        /// <returns>The <see cref="GraphResponse{ExternalConnection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> AddResponseAsync(ExternalConnection externalConnection, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,69 +42,69 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceWorkbooksCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<IExternalConnectionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceWorkbooksCollectionResponse}"/> object.
+        /// Gets the collection page and returns a <see cref="GraphResponse{ExternalConnectionsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{GraphServiceWorkbooksCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceWorkbooksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
+        /// <returns>The <see cref="GraphResponse{ExternalConnectionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExternalConnectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        IGraphServiceWorkbooksCollectionRequest Expand(string value);
+        IExternalConnectionsCollectionRequest Expand(string value);
 
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IGraphServiceWorkbooksCollectionRequest Expand(Expression<Func<DriveItem, object>> expandExpression);
+        IExternalConnectionsCollectionRequest Expand(Expression<Func<ExternalConnection, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        IGraphServiceWorkbooksCollectionRequest Select(string value);
+        IExternalConnectionsCollectionRequest Select(string value);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IGraphServiceWorkbooksCollectionRequest Select(Expression<Func<DriveItem, object>> selectExpression);
+        IExternalConnectionsCollectionRequest Select(Expression<Func<ExternalConnection, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.
         /// </summary>
         /// <param name="value">The top value.</param>
         /// <returns>The request object to send.</returns>
-        IGraphServiceWorkbooksCollectionRequest Top(int value);
+        IExternalConnectionsCollectionRequest Top(int value);
 
         /// <summary>
         /// Adds the specified filter value to the request.
         /// </summary>
         /// <param name="value">The filter value.</param>
         /// <returns>The request object to send.</returns>
-        IGraphServiceWorkbooksCollectionRequest Filter(string value);
+        IExternalConnectionsCollectionRequest Filter(string value);
 
         /// <summary>
         /// Adds the specified skip value to the request.
         /// </summary>
         /// <param name="value">The skip value.</param>
         /// <returns>The request object to send.</returns>
-        IGraphServiceWorkbooksCollectionRequest Skip(int value);
+        IExternalConnectionsCollectionRequest Skip(int value);
 
         /// <summary>
         /// Adds the specified orderby value to the request.
         /// </summary>
         /// <param name="value">The orderby value.</param>
         /// <returns>The request object to send.</returns>
-        IGraphServiceWorkbooksCollectionRequest OrderBy(string value);
+        IExternalConnectionsCollectionRequest OrderBy(string value);
     }
 }

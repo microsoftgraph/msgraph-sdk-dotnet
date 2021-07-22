@@ -10,6 +10,7 @@
 
 namespace Microsoft.Graph.ExternalConnectors
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>

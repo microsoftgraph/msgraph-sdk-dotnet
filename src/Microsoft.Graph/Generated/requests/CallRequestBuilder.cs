@@ -98,14 +98,16 @@ namespace Microsoft.Graph
         public ICallAnswerRequestBuilder Answer(
             string callbackUri,
             MediaConfig mediaConfig,
-            IEnumerable<Modality> acceptedModalities = null)
+            IEnumerable<Modality> acceptedModalities = null,
+            Int32? participantCapacity = null)
         {
             return new CallAnswerRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.answer"),
                 this.Client,
                 callbackUri,
                 mediaConfig,
-                acceptedModalities);
+                acceptedModalities,
+                participantCapacity);
         }
 
         /// <summary>

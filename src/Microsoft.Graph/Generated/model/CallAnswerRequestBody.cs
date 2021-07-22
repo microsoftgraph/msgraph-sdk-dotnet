@@ -38,5 +38,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("acceptedModalities")]
         public IEnumerable<Modality> AcceptedModalities { get; set; }
     
+        /// <summary>
+        /// Gets or sets ParticipantCapacity.
+        /// </summary>
+        [JsonPropertyName("participantCapacity")]
+        public Int32? ParticipantCapacity { get; set; }
+    
     }
 }

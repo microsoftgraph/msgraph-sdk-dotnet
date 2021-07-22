@@ -30,21 +30,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets account enabled.
-        /// true if the account is enabled; otherwise, false. default is true.
+        /// true if the account is enabled; otherwise, false. Default is true. Supports $filter (eq, ne, NOT, in).
         /// </summary>
         [JsonPropertyName("accountEnabled")]
         public bool? AccountEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets alternative security ids.
-        /// For internal use only. Not nullable.
+        /// For internal use only. Not nullable. Supports $filter (eq, NOT, ge, le).
         /// </summary>
         [JsonPropertyName("alternativeSecurityIds")]
         public IEnumerable<AlternativeSecurityId> AlternativeSecurityIds { get; set; }
     
         /// <summary>
         /// Gets or sets approximate last sign in date time.
-        /// The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+        /// The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le) and $orderBy.
         /// </summary>
         [JsonPropertyName("approximateLastSignInDateTime")]
         public DateTimeOffset? ApproximateLastSignInDateTime { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device id.
-        /// Identifier set by Azure Device Registration Service at the time of registration.
+        /// Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, NOT, startsWith).
         /// </summary>
         [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
@@ -79,63 +79,63 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the device. Required.
+        /// The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is compliant.
-        /// true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.
+        /// true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, NOT).
         /// </summary>
         [JsonPropertyName("isCompliant")]
         public bool? IsCompliant { get; set; }
     
         /// <summary>
         /// Gets or sets is managed.
-        /// true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.
+        /// true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, NOT).
         /// </summary>
         [JsonPropertyName("isManaged")]
         public bool? IsManaged { get; set; }
     
         /// <summary>
         /// Gets or sets mdm app id.
-        /// Application identifier used to register device into MDM. Read-only. Supports $filter.
+        /// Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, NOT, startsWith).
         /// </summary>
         [JsonPropertyName("mdmAppId")]
         public string MdmAppId { get; set; }
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only.
+        /// The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, NOT, ge, le, in).
         /// </summary>
         [JsonPropertyName("onPremisesLastSyncDateTime")]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sync enabled.
-        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only.
+        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).
         /// </summary>
         [JsonPropertyName("onPremisesSyncEnabled")]
         public bool? OnPremisesSyncEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets operating system.
-        /// The type of operating system on the device. Required.
+        /// The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("operatingSystem")]
         public string OperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets operating system version.
-        /// Operating system version of the device. Required.
+        /// Operating system version of the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("operatingSystemVersion")]
         public string OperatingSystemVersion { get; set; }
     
         /// <summary>
         /// Gets or sets physical ids.
-        /// For internal use only. Not nullable.
+        /// For internal use only. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("physicalIds")]
         public IEnumerable<string> PhysicalIds { get; set; }
@@ -163,7 +163,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets member of.
-        /// Groups that this device is a member of. Read-only. Nullable.
+        /// Groups that this device is a member of. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("memberOf")]
         public IDeviceMemberOfCollectionWithReferencesPage MemberOf { get; set; }
@@ -176,7 +176,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets registered owners.
-        /// The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.
+        /// The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("registeredOwners")]
         public IDeviceRegisteredOwnersCollectionWithReferencesPage RegisteredOwners { get; set; }
@@ -189,7 +189,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets registered users.
-        /// Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.
+        /// Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("registeredUsers")]
         public IDeviceRegisteredUsersCollectionWithReferencesPage RegisteredUsers { get; set; }
@@ -202,7 +202,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transitive member of.
-        /// Groups that this device is a member of. This operation is transitive.
+        /// Groups that this device is a member of. This operation is transitive. Supports $expand.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf")]
         public IDeviceTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }

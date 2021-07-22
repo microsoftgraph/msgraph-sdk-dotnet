@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets permission.
-        /// The name of the permission. Read-only.
+        /// The name of the resource-specific permission. Read-only.
         /// </summary>
         [JsonPropertyName("permission")]
         public string Permission { get; set; }

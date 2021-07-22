@@ -23,12 +23,14 @@ namespace Microsoft.Graph.ExternalConnectors
 
         /// <summary>
         /// Gets or sets type.
+        /// The type of content in the value property. Possible values are text and html. Required.
         /// </summary>
         [JsonPropertyName("type")]
         public ExternalItemContentType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets value.
+        /// The content for the externalItem. Required.
         /// </summary>
         [JsonPropertyName("value")]
         public string Value { get; set; }

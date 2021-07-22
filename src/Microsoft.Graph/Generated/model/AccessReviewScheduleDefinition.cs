@@ -22,14 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created by.
-        /// User who created this review.
+        /// User who created this review. Read-only.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public UserIdentity CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Timestamp when the access review series was created. Supports $select.
+        /// Timestamp when the access review series was created. Supports $select. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -50,14 +50,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// Name of the access review series. Required on create. Supports $select.
+        /// Name of the access review series. Supports $select and $orderBy. Required on create.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets fallback reviewers.
-        /// This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select.
+        /// This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select.
         /// </summary>
         [JsonPropertyName("fallbackReviewers")]
         public IEnumerable<AccessReviewReviewerScope> FallbackReviewers { get; set; }
@@ -71,14 +71,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// Timestamp when the access review series was last modified. Supports $select.
+        /// Timestamp when the access review series was last modified. Supports $select. Read-only.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets reviewers.
-        /// This collection of access review scopes is used to define who are the reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
+        /// This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
         /// </summary>
         [JsonPropertyName("reviewers")]
         public IEnumerable<AccessReviewReviewerScope> Reviewers { get; set; }
@@ -92,14 +92,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets settings.
-        /// The settings for an access review series, see type definition below. Supports $select.
+        /// The settings for an access review series, see type definition below. Supports $select. Required on create.
         /// </summary>
         [JsonPropertyName("settings")]
         public AccessReviewScheduleSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only).
+        /// This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.
         /// </summary>
         [JsonPropertyName("status")]
         public string Status { get; set; }

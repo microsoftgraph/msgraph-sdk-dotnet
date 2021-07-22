@@ -65,27 +65,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+        /// The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, NOT, ge, le, in) and $orderBy.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// An optional description of the application. Returned by default. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets disabled by microsoft status.
-        /// Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
+        /// Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).
         /// </summary>
         [JsonPropertyName("disabledByMicrosoftStatus")]
         public string DisabledByMicrosoftStatus { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the application.
+        /// The display name for the application. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -99,14 +100,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets identifier uris.
-        /// The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information, see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.
+        /// The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information, see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("identifierUris")]
         public IEnumerable<string> IdentifierUris { get; set; }
     
         /// <summary>
         /// Gets or sets info.
-        /// Basic profile information of the application, such as it's marketing, support, terms of service, and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more information, see How to: Add Terms of service and privacy statement for registered Azure AD apps.
+        /// Basic profile information of the application, such as it's marketing, support, terms of service, and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more information, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le).
         /// </summary>
         [JsonPropertyName("info")]
         public InformationalUrl Info { get; set; }
@@ -127,7 +128,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets key credentials.
-        /// The collection of key credentials associated with the application. Not nullable.
+        /// The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, NOT, ge, le).
         /// </summary>
         [JsonPropertyName("keyCredentials")]
         public IEnumerable<KeyCredential> KeyCredentials { get; set; }
@@ -182,21 +183,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets publisher domain.
-        /// The verified publisher domain for the application. Read-only.
+        /// The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("publisherDomain")]
         public string PublisherDomain { get; set; }
     
         /// <summary>
         /// Gets or sets required resource access.
-        /// Specifies the resources that the application needs to access. This property also specifies the set of OAuth permission scopes and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. Not nullable.
+        /// Specifies the resources that the application needs to access. This property also specifies the set of OAuth permission scopes and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. Not nullable. Supports $filter (eq, NOT, ge, le).
         /// </summary>
         [JsonPropertyName("requiredResourceAccess")]
         public IEnumerable<RequiredResourceAccess> RequiredResourceAccess { get; set; }
     
         /// <summary>
         /// Gets or sets sign in audience.
-        /// Specifies the Microsoft accounts that are supported for the current application. Supported values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, PersonalMicrosoftAccount. See more in the table below.
+        /// Specifies the Microsoft accounts that are supported for the current application. Supported values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, NOT).
         /// </summary>
         [JsonPropertyName("signInAudience")]
         public string SignInAudience { get; set; }
@@ -210,7 +211,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tags.
-        /// Custom strings that can be used to categorize and identify the application. Not nullable.
+        /// Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, NOT, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }
@@ -221,6 +222,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tokenEncryptionKeyId")]
         public Guid? TokenEncryptionKeyId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets verified publisher.
+        /// Specifies the verified publisher of the application.
+        /// </summary>
+        [JsonPropertyName("verifiedPublisher")]
+        public VerifiedPublisher VerifiedPublisher { get; set; }
     
         /// <summary>
         /// Gets or sets web.
@@ -263,7 +271,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owners.
-        /// Directory objects that are owners of the application. Read-only. Nullable.
+        /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("owners")]
         public IApplicationOwnersCollectionWithReferencesPage Owners { get; set; }
@@ -288,7 +296,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets token lifetime policies.
-        /// The tokenLifetimePolicies assigned to this application.
+        /// The tokenLifetimePolicies assigned to this application. Supports $expand.
         /// </summary>
         [JsonPropertyName("tokenLifetimePolicies")]
         public IApplicationTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }

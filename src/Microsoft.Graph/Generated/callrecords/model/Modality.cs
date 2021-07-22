@@ -10,6 +10,7 @@
 
 namespace Microsoft.Graph.CallRecords
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>

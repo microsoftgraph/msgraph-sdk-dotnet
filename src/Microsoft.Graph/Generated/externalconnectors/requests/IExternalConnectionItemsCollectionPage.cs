@@ -7,25 +7,25 @@
 
 // Template Source: IEntityCollectionPage.cs.tt
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.ExternalConnectors
 {
     using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The interface IGraphServiceWorkbooksCollectionPage.
+    /// The interface IExternalConnectionItemsCollectionPage.
     /// </summary>
-    [InterfaceConverter(typeof(InterfaceConverter<GraphServiceWorkbooksCollectionPage>))]
-    public interface IGraphServiceWorkbooksCollectionPage : ICollectionPage<DriveItem>
+    [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<ExternalConnectionItemsCollectionPage>))]
+    public interface IExternalConnectionItemsCollectionPage : Microsoft.Graph.ICollectionPage<ExternalItem>
     {
         /// <summary>
-        /// Gets the next page <see cref="IGraphServiceWorkbooksCollectionRequest"/> instance.
+        /// Gets the next page <see cref="IExternalConnectionItemsCollectionRequest"/> instance.
         /// </summary>
-        IGraphServiceWorkbooksCollectionRequest NextPageRequest { get; }
+        IExternalConnectionItemsCollectionRequest NextPageRequest { get; }
 
         /// <summary>
         /// Initializes the NextPageRequest property.
         /// </summary>
-        void InitializeNextPageRequest(IBaseClient client, string nextPageLinkString);
+        void InitializeNextPageRequest(Microsoft.Graph.IBaseClient client, string nextPageLinkString);
     }
 }

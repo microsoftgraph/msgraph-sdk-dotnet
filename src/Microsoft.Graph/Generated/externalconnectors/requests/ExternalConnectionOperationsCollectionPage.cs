@@ -7,28 +7,28 @@
 
 // Template Source: EntityCollectionPage.cs.tt
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.ExternalConnectors
 {
     using System;
 
     /// <summary>
-    /// The type GraphServiceWorkbooksCollectionPage.
+    /// The type ExternalConnectionOperationsCollectionPage.
     /// </summary>
-    public partial class GraphServiceWorkbooksCollectionPage : CollectionPage<DriveItem>, IGraphServiceWorkbooksCollectionPage
+    public partial class ExternalConnectionOperationsCollectionPage : Microsoft.Graph.CollectionPage<ConnectionOperation>, IExternalConnectionOperationsCollectionPage
     {
         /// <summary>
-        /// Gets the next page <see cref="IGraphServiceWorkbooksCollectionRequest"/> instance.
+        /// Gets the next page <see cref="IExternalConnectionOperationsCollectionRequest"/> instance.
         /// </summary>
-        public IGraphServiceWorkbooksCollectionRequest NextPageRequest { get; private set; }
+        public IExternalConnectionOperationsCollectionRequest NextPageRequest { get; private set; }
 
         /// <summary>
         /// Initializes the NextPageRequest property.
         /// </summary>
-        public void InitializeNextPageRequest(IBaseClient client, string nextPageLinkString)
+        public void InitializeNextPageRequest(Microsoft.Graph.IBaseClient client, string nextPageLinkString)
         {
             if (!string.IsNullOrEmpty(nextPageLinkString))
             {
-                this.NextPageRequest = new GraphServiceWorkbooksCollectionRequest(
+                this.NextPageRequest = new ExternalConnectionOperationsCollectionRequest(
                     nextPageLinkString,
                     client,
                     null);

@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// Type of the property in the key:value pair for interpretation. For example, String, Boolean, etc.
+        /// Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

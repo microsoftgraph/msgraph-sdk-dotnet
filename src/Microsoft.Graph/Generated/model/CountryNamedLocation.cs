@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Country Named Location.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CountryNamedLocation>))]
     public partial class CountryNamedLocation : NamedLocation
     {
     
@@ -34,6 +35,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("countriesAndRegions")]
         public IEnumerable<string> CountriesAndRegions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets country lookup method.
+        /// Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress and authenticatorAppGps.
+        /// </summary>
+        [JsonPropertyName("countryLookupMethod")]
+        public CountryLookupMethodType? CountryLookupMethod { get; set; }
     
         /// <summary>
         /// Gets or sets include unknown countries and regions.

@@ -17,18 +17,17 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Open Shift Change Request.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<OpenShiftChangeRequestObject>))]
     public partial class OpenShiftChangeRequestObject : ScheduleChangeRequestObject
     {
     
         ///<summary>
-        /// The internal OpenShiftChangeRequest constructor
+        /// The OpenShiftChangeRequest constructor
         ///</summary>
-        protected internal OpenShiftChangeRequestObject()
+        public OpenShiftChangeRequestObject()
         {
-            // Don't allow initialization of abstract entity types
+            this.ODataType = "microsoft.graph.openShiftChangeRequest";
         }
-    
+
         /// <summary>
         /// Gets or sets open shift id.
         /// ID for the open shift.

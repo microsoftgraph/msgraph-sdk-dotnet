@@ -29,7 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets capability status.
-        /// Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
+        /// Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
         /// </summary>
         [JsonPropertyName("capabilityStatus")]
         public string CapabilityStatus { get; set; }

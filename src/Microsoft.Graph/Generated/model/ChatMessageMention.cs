@@ -30,10 +30,10 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mentioned.
-        /// The entity (user, application, team, or channel) that was mentioned.  If it was a channel or team that was @mentioned, the identitySet contains a conversation property giving the ID of the team/channel, and a conversationIdentityType property that represents either the team or channel.
+        /// The entity (user, application, team, or channel) that was @mentioned.
         /// </summary>
         [JsonPropertyName("mentioned")]
-        public IdentitySet Mentioned { get; set; }
+        public ChatMessageMentionedIdentitySet Mentioned { get; set; }
     
         /// <summary>
         /// Gets or sets mentionText.

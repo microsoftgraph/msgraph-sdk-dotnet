@@ -75,7 +75,7 @@ namespace Microsoft.Graph
         /// Read only. Details of the sender of the chat message.
         /// </summary>
         [JsonPropertyName("from")]
-        public IdentitySet From { get; set; }
+        public ChatMessageFromIdentitySet From { get; set; }
     
         /// <summary>
         /// Gets or sets importance.
@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets message type.
-        /// The type of chat message. The possible value is: message.
+        /// The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.
         /// </summary>
         [JsonPropertyName("messageType")]
         public ChatMessageType? MessageType { get; set; }

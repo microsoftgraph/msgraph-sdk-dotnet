@@ -23,21 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets enabled.
-        /// The number of units that are enabled.
+        /// The number of units that are enabled for the active subscription of the service SKU.
         /// </summary>
         [JsonPropertyName("enabled")]
         public Int32? Enabled { get; set; }
     
         /// <summary>
         /// Gets or sets suspended.
-        /// The number of units that are suspended.
+        /// The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
         /// </summary>
         [JsonPropertyName("suspended")]
         public Int32? Suspended { get; set; }
     
         /// <summary>
         /// Gets or sets warning.
-        /// The number of units that are in warning status.
+        /// The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).
         /// </summary>
         [JsonPropertyName("warning")]
         public Int32? Warning { get; set; }
