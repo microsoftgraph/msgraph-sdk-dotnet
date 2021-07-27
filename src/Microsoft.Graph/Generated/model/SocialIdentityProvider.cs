@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets client secret.
-        /// The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns '****'. Required.
+        /// The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns ****. Required.
         /// </summary>
         [JsonPropertyName("clientSecret")]
         public string ClientSecret { get; set; }

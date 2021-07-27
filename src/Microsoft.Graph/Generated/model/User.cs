@@ -226,7 +226,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mail.
-        /// The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith).
+        /// The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith).
         /// </summary>
         [JsonPropertyName("mail")]
         public string Mail { get; set; }
@@ -324,7 +324,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets other mails.
-        /// A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user.Supports $filter (eq, NOT, ge, le, in, startsWith).
+        /// A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, NOT, ge, le, in, startsWith).
         /// </summary>
         [JsonPropertyName("otherMails")]
         public IEnumerable<string> OtherMails { get; set; }
@@ -415,7 +415,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith) and $orderBy.
+        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith) and $orderBy.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }

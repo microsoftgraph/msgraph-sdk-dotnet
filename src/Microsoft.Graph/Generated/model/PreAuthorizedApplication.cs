@@ -30,7 +30,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets delegatedPermissionIds.
-        /// The unique identifier for the oauth2PermissionScopes the application requires.
         /// </summary>
         [JsonPropertyName("delegatedPermissionIds")]
         public IEnumerable<string> DelegatedPermissionIds { get; set; }
