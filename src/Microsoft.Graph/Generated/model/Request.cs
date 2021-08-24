@@ -23,36 +23,42 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets approval id.
+        /// The identifier of the approval of the request.
         /// </summary>
         [JsonPropertyName("approvalId")]
         public string ApprovalId { get; set; }
     
         /// <summary>
         /// Gets or sets completed date time.
+        /// The request completion date time.
         /// </summary>
         [JsonPropertyName("completedDateTime")]
         public DateTimeOffset? CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// The user who created this request.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The request creation date time.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets custom data.
+        /// Free text field to define any custom data for the request. Not used.
         /// </summary>
         [JsonPropertyName("customData")]
         public string CustomData { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.
         /// </summary>
         [JsonPropertyName("status")]
         public string Status { get; set; }

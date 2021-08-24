@@ -22,42 +22,42 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Date and time of term creation. Read-only
+        /// Date and time of term creation. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets descriptions.
-        /// Description about term that is dependent on the languageTag
+        /// Description about term that is dependent on the languageTag.
         /// </summary>
         [JsonPropertyName("descriptions")]
         public IEnumerable<LocalizedDescription> Descriptions { get; set; }
     
         /// <summary>
         /// Gets or sets labels.
-        /// Label metadata for a term
+        /// Label metadata for a term.
         /// </summary>
         [JsonPropertyName("labels")]
         public IEnumerable<LocalizedLabel> Labels { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// Last date and time of term modification. Read-only
+        /// Last date and time of term modification. Read-only.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
-        /// Collection of properties on the term
+        /// Collection of properties on the term.
         /// </summary>
         [JsonPropertyName("properties")]
         public IEnumerable<Microsoft.Graph.KeyValue> Properties { get; set; }
     
         /// <summary>
         /// Gets or sets children.
-        /// Children of current term
+        /// Children of current term.
         /// </summary>
         [JsonPropertyName("children")]
         public ITermChildrenCollectionPage Children { get; set; }
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets relations.
-        /// To indicate which terms are related to the current term as either pinned or reused
+        /// To indicate which terms are related to the current term as either pinned or reused.
         /// </summary>
         [JsonPropertyName("relations")]
         public ITermRelationsCollectionPage Relations { get; set; }
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets set.
-        /// The [set] in which the term is created
+        /// The [set] in which the term is created.
         /// </summary>
         [JsonPropertyName("set")]
         public Set Set { get; set; }
