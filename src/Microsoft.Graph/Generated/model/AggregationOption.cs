@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets field.
-        /// Specifies the field in the schema of the specified entity type that aggregation should be computed on. Required.
+        /// Computes aggregation on the field while the field exists in current entity type. Required.
         /// </summary>
         [JsonPropertyName("field")]
         public string Field { get; set; }

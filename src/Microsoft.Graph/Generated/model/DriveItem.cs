@@ -99,6 +99,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets malware.
+        /// Malware metadata, if the item was detected to contain malware. Read-only.
         /// </summary>
         [JsonPropertyName("malware")]
         public Malware Malware { get; set; }

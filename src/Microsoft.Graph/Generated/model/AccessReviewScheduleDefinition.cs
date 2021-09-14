@@ -43,7 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description for reviewers.
-        /// Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Supports $select.
+        /// Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Email notifications support up to 256 characters. Supports $select.
         /// </summary>
         [JsonPropertyName("descriptionForReviewers")]
         public string DescriptionForReviewers { get; set; }

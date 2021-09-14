@@ -31,14 +31,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// Description for this policy.
+        /// Description for this policy. Required.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Display name for this policy.
+        /// Display name for this policy. Required.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
