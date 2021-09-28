@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets granted to.
         /// For user type permissions, the details of the users &amp; applications for this permission. Read-only.
         /// </summary>
+        [Obsolete("The grantedTo property is deprecated. Please refer to grantedToV2")]
         [JsonPropertyName("grantedTo")]
         public IdentitySet GrantedTo { get; set; }
     
@@ -38,8 +39,21 @@ namespace Microsoft.Graph
         /// Gets or sets granted to identities.
         /// For link type permissions, the details of the users to whom permission was granted. Read-only.
         /// </summary>
+        [Obsolete("The grantedToIdentities property is deprecated. Please refer to grantedToIdentitiesV2")]
         [JsonPropertyName("grantedToIdentities")]
         public IEnumerable<IdentitySet> GrantedToIdentities { get; set; }
+    
+        /// <summary>
+        /// Gets or sets granted to identities v2.
+        /// </summary>
+        [JsonPropertyName("grantedToIdentitiesV2")]
+        public IEnumerable<SharePointIdentitySet> GrantedToIdentitiesV2 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets granted to v2.
+        /// </summary>
+        [JsonPropertyName("grantedToV2")]
+        public SharePointIdentitySet GrantedToV2 { get; set; }
     
         /// <summary>
         /// Gets or sets has password.

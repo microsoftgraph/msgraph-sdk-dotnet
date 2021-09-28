@@ -15,25 +15,18 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SearchResponse.
+    /// The type ResultTemplateOption.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<SearchResponse>))]
-    public partial class SearchResponse
+    [JsonConverter(typeof(DerivedTypeConverter<ResultTemplateOption>))]
+    public partial class ResultTemplateOption
     {
 
         /// <summary>
-        /// Gets or sets queryAlterationResponse.
-        /// Provides details of query alteration response for spelling correction.
+        /// Gets or sets enableResultTemplate.
+        /// Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.
         /// </summary>
-        [JsonPropertyName("queryAlterationResponse")]
-        public AlterationResponse QueryAlterationResponse { get; set; }
-    
-        /// <summary>
-        /// Gets or sets value.
-        /// Represents results from a search query, and the terms used for the query.
-        /// </summary>
-        [JsonPropertyName("value")]
-        public IEnumerable<SearchResultSet> Value { get; set; }
+        [JsonPropertyName("enableResultTemplate")]
+        public bool? EnableResultTemplate { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

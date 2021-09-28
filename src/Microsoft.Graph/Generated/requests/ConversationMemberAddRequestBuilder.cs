@@ -14,26 +14,23 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type SearchEntityQueryRequestBuilder.
+    /// The type ConversationMemberAddRequestBuilder.
     /// </summary>
-    public partial class SearchEntityQueryRequestBuilder : BaseActionMethodRequestBuilder<ISearchEntityQueryRequest>, ISearchEntityQueryRequestBuilder
+    public partial class ConversationMemberAddRequestBuilder : BaseActionMethodRequestBuilder<IConversationMemberAddRequest>, IConversationMemberAddRequestBuilder
     {
         /// <summary>
-        /// Constructs a new <see cref="SearchEntityQueryRequestBuilder"/>.
+        /// Constructs a new <see cref="ConversationMemberAddRequestBuilder"/>.
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="requests">A requests parameter for the OData method call.</param>
-        /// <param name="queryAlterationOptions">A queryAlterationOptions parameter for the OData method call.</param>
-        public SearchEntityQueryRequestBuilder(
+        /// <param name="values">A values parameter for the OData method call.</param>
+        public ConversationMemberAddRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            IEnumerable<SearchRequestObject> requests,
-            SearchAlterationOptions queryAlterationOptions)
+            IEnumerable<ConversationMember> values)
             : base(requestUrl, client)
         {
-            this.SetParameter("requests", requests, false);
-            this.SetParameter("queryAlterationOptions", queryAlterationOptions, true);
+            this.SetParameter("values", values, true);
         }
 
         /// <summary>
@@ -42,18 +39,13 @@ namespace Microsoft.Graph
         /// <param name="functionUrl">The request URL to </param>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>An instance of a specific request class.</returns>
-        protected override ISearchEntityQueryRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
+        protected override IConversationMemberAddRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
-            var request = new SearchEntityQueryRequest(functionUrl, this.Client, options);
+            var request = new ConversationMemberAddRequest(functionUrl, this.Client, options);
 
-            if (this.HasParameter("requests"))
+            if (this.HasParameter("values"))
             {
-                request.RequestBody.Requests = this.GetParameter<IEnumerable<SearchRequestObject>>("requests");
-            }
-
-            if (this.HasParameter("queryAlterationOptions"))
-            {
-                request.RequestBody.QueryAlterationOptions = this.GetParameter<SearchAlterationOptions>("queryAlterationOptions");
+                request.RequestBody.Values = this.GetParameter<IEnumerable<ConversationMember>>("values");
             }
 
             return request;

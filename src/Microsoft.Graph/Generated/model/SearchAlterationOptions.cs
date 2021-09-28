@@ -15,25 +15,25 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SearchResponse.
+    /// The type SearchAlterationOptions.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<SearchResponse>))]
-    public partial class SearchResponse
+    [JsonConverter(typeof(DerivedTypeConverter<SearchAlterationOptions>))]
+    public partial class SearchAlterationOptions
     {
 
         /// <summary>
-        /// Gets or sets queryAlterationResponse.
-        /// Provides details of query alteration response for spelling correction.
+        /// Gets or sets enableModification.
+        /// Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.
         /// </summary>
-        [JsonPropertyName("queryAlterationResponse")]
-        public AlterationResponse QueryAlterationResponse { get; set; }
+        [JsonPropertyName("enableModification")]
+        public bool? EnableModification { get; set; }
     
         /// <summary>
-        /// Gets or sets value.
-        /// Represents results from a search query, and the terms used for the query.
+        /// Gets or sets enableSuggestion.
+        /// Indicates whether spelling suggestions are enabled. If enabled, user will get the search results for original search query and suggesting spelling correction in queryAlterationResponse property of the response for typos in query. Optional.
         /// </summary>
-        [JsonPropertyName("value")]
-        public IEnumerable<SearchResultSet> Value { get; set; }
+        [JsonPropertyName("enableSuggestion")]
+        public bool? EnableSuggestion { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

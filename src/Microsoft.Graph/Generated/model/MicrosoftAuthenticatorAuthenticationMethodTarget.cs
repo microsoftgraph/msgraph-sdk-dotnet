@@ -36,13 +36,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("authenticationMode")]
         public MicrosoftAuthenticatorAuthenticationMode? AuthenticationMode { get; set; }
     
-        /// <summary>
-        /// Gets or sets feature settings.
-        /// Determines what additional settings should be applied to Microsoft Authenticator. Possible values are: null, requireNumberMatching (Requires number matching for MFA notifications. Value is ignored for phone sign-in notifications).
-        /// </summary>
-        [JsonPropertyName("featureSettings")]
-        public AuthenticatorAppFeatureSettings? FeatureSettings { get; set; }
-    
     }
 }
 

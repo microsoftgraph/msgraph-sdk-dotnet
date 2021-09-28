@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for ConversationMemberAdd.
+        /// </summary>
+        /// <returns>The <see cref="IConversationMemberAddRequestBuilder"/>.</returns>
+        public IConversationMemberAddRequestBuilder Add(
+            IEnumerable<ConversationMember> values = null)
+        {
+            return new ConversationMemberAddRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.add"),
+                this.Client,
+                values);
+        }
     }
 }

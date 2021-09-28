@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IConversationMemberRequestBuilder"/>.</returns>
         IConversationMemberRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for ConversationMemberAdd.
+        /// </summary>
+        /// <returns>The <see cref="IConversationMemberAddRequestBuilder"/>.</returns>
+        IConversationMemberAddRequestBuilder Add(
+            IEnumerable<ConversationMember> values = null);
     }
 }

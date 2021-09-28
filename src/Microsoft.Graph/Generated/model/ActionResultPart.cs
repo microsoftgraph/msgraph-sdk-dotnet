@@ -15,25 +15,18 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SearchResponse.
+    /// The type ActionResultPart.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<SearchResponse>))]
-    public partial class SearchResponse
+    [JsonConverter(typeof(DerivedTypeConverter<ActionResultPart>))]
+    public abstract partial class ActionResultPart
     {
 
         /// <summary>
-        /// Gets or sets queryAlterationResponse.
-        /// Provides details of query alteration response for spelling correction.
+        /// Gets or sets error.
+        /// The error that occurred, if any, during the course of the bulk operation.
         /// </summary>
-        [JsonPropertyName("queryAlterationResponse")]
-        public AlterationResponse QueryAlterationResponse { get; set; }
-    
-        /// <summary>
-        /// Gets or sets value.
-        /// Represents results from a search query, and the terms used for the query.
-        /// </summary>
-        [JsonPropertyName("value")]
-        public IEnumerable<SearchResultSet> Value { get; set; }
+        [JsonPropertyName("error")]
+        public PublicError Error { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -15,25 +15,32 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SearchResponse.
+    /// The type SearchAlteration.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<SearchResponse>))]
-    public partial class SearchResponse
+    [JsonConverter(typeof(DerivedTypeConverter<SearchAlteration>))]
+    public partial class SearchAlteration
     {
 
         /// <summary>
-        /// Gets or sets queryAlterationResponse.
-        /// Provides details of query alteration response for spelling correction.
+        /// Gets or sets alteredHighlightedQueryString.
+        /// Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)
         /// </summary>
-        [JsonPropertyName("queryAlterationResponse")]
-        public AlterationResponse QueryAlterationResponse { get; set; }
+        [JsonPropertyName("alteredHighlightedQueryString")]
+        public string AlteredHighlightedQueryString { get; set; }
     
         /// <summary>
-        /// Gets or sets value.
-        /// Represents results from a search query, and the terms used for the query.
+        /// Gets or sets alteredQueryString.
+        /// Defines the altered query string with spelling correction.
         /// </summary>
-        [JsonPropertyName("value")]
-        public IEnumerable<SearchResultSet> Value { get; set; }
+        [JsonPropertyName("alteredQueryString")]
+        public string AlteredQueryString { get; set; }
+    
+        /// <summary>
+        /// Gets or sets alteredQueryTokens.
+        /// Represents changed segments with respect to original query.
+        /// </summary>
+        [JsonPropertyName("alteredQueryTokens")]
+        public IEnumerable<AlteredQueryToken> AlteredQueryTokens { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

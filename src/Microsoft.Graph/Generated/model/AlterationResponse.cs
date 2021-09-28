@@ -15,25 +15,32 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SearchResponse.
+    /// The type AlterationResponse.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<SearchResponse>))]
-    public partial class SearchResponse
+    [JsonConverter(typeof(DerivedTypeConverter<AlterationResponse>))]
+    public partial class AlterationResponse
     {
 
         /// <summary>
-        /// Gets or sets queryAlterationResponse.
-        /// Provides details of query alteration response for spelling correction.
+        /// Gets or sets originalQueryString.
+        /// Defines the original user query string.
         /// </summary>
-        [JsonPropertyName("queryAlterationResponse")]
-        public AlterationResponse QueryAlterationResponse { get; set; }
+        [JsonPropertyName("originalQueryString")]
+        public string OriginalQueryString { get; set; }
     
         /// <summary>
-        /// Gets or sets value.
-        /// Represents results from a search query, and the terms used for the query.
+        /// Gets or sets queryAlteration.
+        /// Defines the details of alteration information for the spelling correction.
         /// </summary>
-        [JsonPropertyName("value")]
-        public IEnumerable<SearchResultSet> Value { get; set; }
+        [JsonPropertyName("queryAlteration")]
+        public SearchAlteration QueryAlteration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets queryAlterationType.
+        /// Defines the type of the spelling correction. Possible values are suggestion, modification.
+        /// </summary>
+        [JsonPropertyName("queryAlterationType")]
+        public SearchAlterationType? QueryAlterationType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

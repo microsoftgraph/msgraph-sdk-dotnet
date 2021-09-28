@@ -15,25 +15,32 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SearchResponse.
+    /// The type SearchResultSet.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<SearchResponse>))]
-    public partial class SearchResponse
+    [JsonConverter(typeof(DerivedTypeConverter<SearchResultSet>))]
+    public partial class SearchResultSet
     {
 
         /// <summary>
-        /// Gets or sets queryAlterationResponse.
-        /// Provides details of query alteration response for spelling correction.
+        /// Gets or sets hitsContainers.
+        /// A collection of search results.
         /// </summary>
-        [JsonPropertyName("queryAlterationResponse")]
-        public AlterationResponse QueryAlterationResponse { get; set; }
+        [JsonPropertyName("hitsContainers")]
+        public IEnumerable<SearchHitsContainer> HitsContainers { get; set; }
     
         /// <summary>
-        /// Gets or sets value.
-        /// Represents results from a search query, and the terms used for the query.
+        /// Gets or sets resultTemplates.
+        /// A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
         /// </summary>
-        [JsonPropertyName("value")]
-        public IEnumerable<SearchResultSet> Value { get; set; }
+        [JsonPropertyName("resultTemplates")]
+        public ResultTemplateDictionary ResultTemplates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets searchTerms.
+        /// Contains the search terms sent in the initial search query.
+        /// </summary>
+        [JsonPropertyName("searchTerms")]
+        public IEnumerable<string> SearchTerms { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

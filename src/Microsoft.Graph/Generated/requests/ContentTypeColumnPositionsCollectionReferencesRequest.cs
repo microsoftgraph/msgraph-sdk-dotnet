@@ -32,7 +32,43 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        
+        /// <summary>
+        /// Adds the specified ReferenceRequestBody to the collection via POST.
+        /// </summary>
+        /// <param name="columnDefinitionReference">The ReferenceRequestBody to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public System.Threading.Tasks.Task AddAsync(ReferenceRequestBody columnDefinitionReference, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+
+            if (string.IsNullOrEmpty(columnDefinitionReference.ODataId))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            return this.SendAsync(columnDefinitionReference, cancellationToken);
+        }
+
+        /// <summary>
+        /// Adds the specified ReferenceRequestBody to the collection via POST and returns a <see cref="GraphResponse{ReferenceRequestBody}"/> object of the request.
+        /// </summary>
+        /// <param name="columnDefinitionReference">The ReferenceRequestBody to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ReferenceRequestBody columnDefinitionReference, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+
+            if (string.IsNullOrEmpty(columnDefinitionReference.ODataId))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            return this.SendAsyncWithGraphResponse(columnDefinitionReference, cancellationToken);
+        }
+
     }
 }

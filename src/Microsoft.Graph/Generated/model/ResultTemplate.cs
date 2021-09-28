@@ -15,25 +15,25 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SearchResponse.
+    /// The type ResultTemplate.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<SearchResponse>))]
-    public partial class SearchResponse
+    [JsonConverter(typeof(DerivedTypeConverter<ResultTemplate>))]
+    public partial class ResultTemplate
     {
 
         /// <summary>
-        /// Gets or sets queryAlterationResponse.
-        /// Provides details of query alteration response for spelling correction.
+        /// Gets or sets body.
+        /// JSON schema of the result template.
         /// </summary>
-        [JsonPropertyName("queryAlterationResponse")]
-        public AlterationResponse QueryAlterationResponse { get; set; }
+        [JsonPropertyName("body")]
+        public System.Text.Json.JsonDocument Body { get; set; }
     
         /// <summary>
-        /// Gets or sets value.
-        /// Represents results from a search query, and the terms used for the query.
+        /// Gets or sets displayName.
+        /// Name of the result template.
         /// </summary>
-        [JsonPropertyName("value")]
-        public IEnumerable<SearchResultSet> Value { get; set; }
+        [JsonPropertyName("displayName")]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

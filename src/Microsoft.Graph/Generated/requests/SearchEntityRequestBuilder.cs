@@ -55,12 +55,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISearchEntityQueryRequestBuilder"/>.</returns>
         public ISearchEntityQueryRequestBuilder Query(
-            IEnumerable<SearchRequestObject> requests)
+            IEnumerable<SearchRequestObject> requests,
+            SearchAlterationOptions queryAlterationOptions = null)
         {
             return new SearchEntityQueryRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.query"),
                 this.Client,
-                requests);
+                requests,
+                queryAlterationOptions);
         }
     
     }

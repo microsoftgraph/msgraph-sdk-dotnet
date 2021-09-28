@@ -10,14 +10,14 @@
 namespace Microsoft.Graph
 {
     /// <summary>
-    /// The type SearchEntityQueryCollectionPage.
+    /// The type ConversationMemberAddCollectionPage.
     /// </summary>
-    public partial class SearchEntityQueryCollectionPage : CollectionPage<SearchResponse>, ISearchEntityQueryCollectionPage
+    public partial class ConversationMemberAddCollectionPage : CollectionPage<ActionResultPart>, IConversationMemberAddCollectionPage
     {
         /// <summary>
-        /// Gets the next page <see cref="ISearchEntityQueryRequest"/> instance.
+        /// Gets the next page <see cref="IConversationMemberAddRequest"/> instance.
         /// </summary>
-        public ISearchEntityQueryRequest NextPageRequest { get; private set; }
+        public IConversationMemberAddRequest NextPageRequest { get; private set; }
 
         /// <summary>
         /// Initializes the NextPageRequest property.
@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         {
             if (!string.IsNullOrEmpty(nextPageLinkString))
             {
-                this.NextPageRequest = new SearchEntityQueryRequest(
+                this.NextPageRequest = new ConversationMemberAddRequest(
                     nextPageLinkString,
                     client,
                     null);

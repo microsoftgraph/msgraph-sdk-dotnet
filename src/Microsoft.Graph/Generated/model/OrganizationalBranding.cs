@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets localizations.
+        /// Add different branding based on a locale.
         /// </summary>
         [JsonPropertyName("localizations")]
         public IOrganizationalBrandingLocalizationsCollectionPage Localizations { get; set; }
