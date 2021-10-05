@@ -24,13 +24,16 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="transferTarget">A transferTarget parameter for the OData method call.</param>
+        /// <param name="transferee">A transferee parameter for the OData method call.</param>
         public CallTransferRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            InvitationParticipantInfo transferTarget)
+            InvitationParticipantInfo transferTarget,
+            ParticipantInfo transferee)
             : base(requestUrl, client)
         {
             this.SetParameter("transferTarget", transferTarget, false);
+            this.SetParameter("transferee", transferee, true);
         }
 
         /// <summary>
@@ -46,6 +49,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("transferTarget"))
             {
                 request.RequestBody.TransferTarget = this.GetParameter<InvitationParticipantInfo>("transferTarget");
+            }
+
+            if (this.HasParameter("transferee"))
+            {
+                request.RequestBody.Transferee = this.GetParameter<ParticipantInfo>("transferee");
             }
 
             return request;

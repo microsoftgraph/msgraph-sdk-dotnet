@@ -339,30 +339,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Photo.
-        /// </summary>
-        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
-        public IProfilePhotoRequestBuilder Photo
-        {
-            get
-            {
-                return new ProfilePhotoRequestBuilder(this.AppendSegmentToRequestUrl("photo"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Photos.
-        /// </summary>
-        /// <returns>The <see cref="IUserPhotosCollectionRequestBuilder"/>.</returns>
-        public IUserPhotosCollectionRequestBuilder Photos
-        {
-            get
-            {
-                return new UserPhotosCollectionRequestBuilder(this.AppendSegmentToRequestUrl("photos"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Drive.
         /// </summary>
         /// <returns>The <see cref="IDriveRequestBuilder"/>.</returns>
@@ -503,6 +479,30 @@ namespace Microsoft.Graph
             get
             {
                 return new OnenoteRequestBuilder(this.AppendSegmentToRequestUrl("onenote"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Photo.
+        /// </summary>
+        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
+        public IProfilePhotoRequestBuilder Photo
+        {
+            get
+            {
+                return new ProfilePhotoRequestBuilder(this.AppendSegmentToRequestUrl("photo"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Photos.
+        /// </summary>
+        /// <returns>The <see cref="IUserPhotosCollectionRequestBuilder"/>.</returns>
+        public IUserPhotosCollectionRequestBuilder Photos
+        {
+            get
+            {
+                return new UserPhotosCollectionRequestBuilder(this.AppendSegmentToRequestUrl("photos"), this.Client);
             }
         }
 

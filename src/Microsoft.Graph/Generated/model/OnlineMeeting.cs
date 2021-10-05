@@ -57,6 +57,13 @@ namespace Microsoft.Graph
         public bool? AllowTeamworkReactions { get; set; }
     
         /// <summary>
+        /// Gets or sets attendee report.
+        /// The content stream of the attendee report of a live event. Read-only.
+        /// </summary>
+        [JsonPropertyName("attendeeReport")]
+        public Stream AttendeeReport { get; set; }
+    
+        /// <summary>
         /// Gets or sets audio conferencing.
         /// The phone access (dial-in) information for an online meeting. Read-only.
         /// </summary>
@@ -139,6 +146,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("participants")]
         public MeetingParticipants Participants { get; set; }
+    
+        /// <summary>
+        /// Gets or sets record automatically.
+        /// Indicates whether to record the meeting automatically.
+        /// </summary>
+        [JsonPropertyName("recordAutomatically")]
+        public bool? RecordAutomatically { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.

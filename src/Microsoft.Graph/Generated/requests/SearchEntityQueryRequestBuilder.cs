@@ -24,13 +24,16 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="requests">A requests parameter for the OData method call.</param>
+        /// <param name="queryAlterationOptions">A queryAlterationOptions parameter for the OData method call.</param>
         public SearchEntityQueryRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            IEnumerable<SearchRequestObject> requests)
+            IEnumerable<SearchRequestObject> requests,
+            SearchAlterationOptions queryAlterationOptions)
             : base(requestUrl, client)
         {
             this.SetParameter("requests", requests, false);
+            this.SetParameter("queryAlterationOptions", queryAlterationOptions, true);
         }
 
         /// <summary>
@@ -46,6 +49,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("requests"))
             {
                 request.RequestBody.Requests = this.GetParameter<IEnumerable<SearchRequestObject>>("requests");
+            }
+
+            if (this.HasParameter("queryAlterationOptions"))
+            {
+                request.RequestBody.QueryAlterationOptions = this.GetParameter<SearchAlterationOptions>("queryAlterationOptions");
             }
 
             return request;

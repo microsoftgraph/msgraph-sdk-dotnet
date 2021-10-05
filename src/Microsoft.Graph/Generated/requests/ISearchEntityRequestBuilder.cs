@@ -36,7 +36,8 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISearchEntityQueryRequestBuilder"/>.</returns>
         ISearchEntityQueryRequestBuilder Query(
-            IEnumerable<SearchRequestObject> requests);
+            IEnumerable<SearchRequestObject> requests,
+            SearchAlterationOptions queryAlterationOptions = null);
     
     }
 }

@@ -62,6 +62,34 @@ namespace Microsoft.Graph
                 this.Client,
                 clientContext);
         }
+
+        /// <summary>
+        /// Gets the request builder for ParticipantStartHoldMusic.
+        /// </summary>
+        /// <returns>The <see cref="IParticipantStartHoldMusicRequestBuilder"/>.</returns>
+        public IParticipantStartHoldMusicRequestBuilder StartHoldMusic(
+            Prompt customPrompt = null,
+            string clientContext = null)
+        {
+            return new ParticipantStartHoldMusicRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.startHoldMusic"),
+                this.Client,
+                customPrompt,
+                clientContext);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ParticipantStopHoldMusic.
+        /// </summary>
+        /// <returns>The <see cref="IParticipantStopHoldMusicRequestBuilder"/>.</returns>
+        public IParticipantStopHoldMusicRequestBuilder StopHoldMusic(
+            string clientContext = null)
+        {
+            return new ParticipantStopHoldMusicRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.stopHoldMusic"),
+                this.Client,
+                clientContext);
+        }
     
     }
 }

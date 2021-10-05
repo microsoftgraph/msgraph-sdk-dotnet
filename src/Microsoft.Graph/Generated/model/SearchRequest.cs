@@ -78,6 +78,13 @@ namespace Microsoft.Graph
         public SearchQuery Query { get; set; }
     
         /// <summary>
+        /// Gets or sets resultTemplateOptions.
+        /// Provides the search result templates options for rendering connectors search results.
+        /// </summary>
+        [JsonPropertyName("resultTemplateOptions")]
+        public ResultTemplateOption ResultTemplateOptions { get; set; }
+    
+        /// <summary>
         /// Gets or sets size.
         /// The size of the page to be retrieved. Optional.
         /// </summary>

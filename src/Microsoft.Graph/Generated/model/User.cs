@@ -818,27 +818,6 @@ namespace Microsoft.Graph
         public string PeopleNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets photo.
-        /// The user's profile photo. Read-only.
-        /// </summary>
-        [JsonPropertyName("photo")]
-        public ProfilePhoto Photo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets photos.
-        /// Read-only. Nullable.
-        /// </summary>
-        [JsonPropertyName("photos")]
-        public IUserPhotosCollectionPage Photos { get; set; }
-
-        /// <summary>
-        /// Gets or sets photosNextLink.
-        /// </summary>
-        [JsonPropertyName("photos@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string PhotosNextLink { get; set; }
-    
-        /// <summary>
         /// Gets or sets drive.
         /// The user's OneDrive. Read-only.
         /// </summary>
@@ -969,6 +948,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("onenote")]
         public Onenote Onenote { get; set; }
+    
+        /// <summary>
+        /// Gets or sets photo.
+        /// The user's profile photo. Read-only.
+        /// </summary>
+        [JsonPropertyName("photo")]
+        public ProfilePhoto Photo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets photos.
+        /// Read-only. Nullable.
+        /// </summary>
+        [JsonPropertyName("photos")]
+        public IUserPhotosCollectionPage Photos { get; set; }
+
+        /// <summary>
+        /// Gets or sets photosNextLink.
+        /// </summary>
+        [JsonPropertyName("photos@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string PhotosNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets activities.

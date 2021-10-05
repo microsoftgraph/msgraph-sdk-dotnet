@@ -50,6 +50,18 @@ namespace Microsoft.Graph
             return new OnlineMeetingRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for AttendeeReport.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingAttendeeReportRequestBuilder"/>.</returns>
+        public IOnlineMeetingAttendeeReportRequestBuilder AttendeeReport
+        {
+            get
+            {
+                return new OnlineMeetingAttendeeReportRequestBuilder(this.AppendSegmentToRequestUrl("attendeeReport"), this.Client);
+            }
+        }
+    
         
     
     }

@@ -37,6 +37,21 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IParticipantMuteRequestBuilder"/>.</returns>
         IParticipantMuteRequestBuilder Mute(
             string clientContext = null);
+
+        /// <summary>
+        /// Gets the request builder for ParticipantStartHoldMusic.
+        /// </summary>
+        /// <returns>The <see cref="IParticipantStartHoldMusicRequestBuilder"/>.</returns>
+        IParticipantStartHoldMusicRequestBuilder StartHoldMusic(
+            Prompt customPrompt = null,
+            string clientContext = null);
+
+        /// <summary>
+        /// Gets the request builder for ParticipantStopHoldMusic.
+        /// </summary>
+        /// <returns>The <see cref="IParticipantStopHoldMusicRequestBuilder"/>.</returns>
+        IParticipantStopHoldMusicRequestBuilder StopHoldMusic(
+            string clientContext = null);
     
     }
 }

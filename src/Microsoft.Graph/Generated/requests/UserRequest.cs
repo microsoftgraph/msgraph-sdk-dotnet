@@ -366,12 +366,6 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.People.AdditionalData = userToInitialize.AdditionalData;
                 }
-                if (userToInitialize.Photos != null && userToInitialize.Photos.CurrentPage != null)
-                {
-                    userToInitialize.Photos.InitializeNextPageRequest(this.Client, userToInitialize.PhotosNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    userToInitialize.Photos.AdditionalData = userToInitialize.AdditionalData;
-                }
                 if (userToInitialize.Drives != null && userToInitialize.Drives.CurrentPage != null)
                 {
                     userToInitialize.Drives.InitializeNextPageRequest(this.Client, userToInitialize.DrivesNextLink);
@@ -413,6 +407,12 @@ namespace Microsoft.Graph
                     userToInitialize.DeviceManagementTroubleshootingEvents.InitializeNextPageRequest(this.Client, userToInitialize.DeviceManagementTroubleshootingEventsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.DeviceManagementTroubleshootingEvents.AdditionalData = userToInitialize.AdditionalData;
+                }
+                if (userToInitialize.Photos != null && userToInitialize.Photos.CurrentPage != null)
+                {
+                    userToInitialize.Photos.InitializeNextPageRequest(this.Client, userToInitialize.PhotosNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    userToInitialize.Photos.AdditionalData = userToInitialize.AdditionalData;
                 }
                 if (userToInitialize.Activities != null && userToInitialize.Activities.CurrentPage != null)
                 {

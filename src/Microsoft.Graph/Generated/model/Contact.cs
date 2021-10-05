@@ -135,126 +135,108 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets im addresses.
-        /// The contact's instant messaging (IM) addresses.
         /// </summary>
         [JsonPropertyName("imAddresses")]
         public IEnumerable<string> ImAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets initials.
-        /// The contact's initials.
         /// </summary>
         [JsonPropertyName("initials")]
         public string Initials { get; set; }
     
         /// <summary>
         /// Gets or sets job title.
-        /// The contact’s job title.
         /// </summary>
         [JsonPropertyName("jobTitle")]
         public string JobTitle { get; set; }
     
         /// <summary>
         /// Gets or sets manager.
-        /// The name of the contact's manager.
         /// </summary>
         [JsonPropertyName("manager")]
         public string Manager { get; set; }
     
         /// <summary>
         /// Gets or sets middle name.
-        /// The contact's middle name.
         /// </summary>
         [JsonPropertyName("middleName")]
         public string MiddleName { get; set; }
     
         /// <summary>
         /// Gets or sets mobile phone.
-        /// The contact's mobile phone number.
         /// </summary>
         [JsonPropertyName("mobilePhone")]
         public string MobilePhone { get; set; }
     
         /// <summary>
         /// Gets or sets nick name.
-        /// The contact's nickname.
         /// </summary>
         [JsonPropertyName("nickName")]
         public string NickName { get; set; }
     
         /// <summary>
         /// Gets or sets office location.
-        /// The location of the contact's office.
         /// </summary>
         [JsonPropertyName("officeLocation")]
         public string OfficeLocation { get; set; }
     
         /// <summary>
         /// Gets or sets other address.
-        /// Other addresses for the contact.
         /// </summary>
         [JsonPropertyName("otherAddress")]
         public PhysicalAddress OtherAddress { get; set; }
     
         /// <summary>
         /// Gets or sets parent folder id.
-        /// The ID of the contact's parent folder.
         /// </summary>
         [JsonPropertyName("parentFolderId")]
         public string ParentFolderId { get; set; }
     
         /// <summary>
         /// Gets or sets personal notes.
-        /// The user's notes about the contact.
         /// </summary>
         [JsonPropertyName("personalNotes")]
         public string PersonalNotes { get; set; }
     
         /// <summary>
         /// Gets or sets profession.
-        /// The contact's profession.
         /// </summary>
         [JsonPropertyName("profession")]
         public string Profession { get; set; }
     
         /// <summary>
         /// Gets or sets spouse name.
-        /// The name of the contact's spouse/partner.
         /// </summary>
         [JsonPropertyName("spouseName")]
         public string SpouseName { get; set; }
     
         /// <summary>
         /// Gets or sets surname.
-        /// The contact's surname.
         /// </summary>
         [JsonPropertyName("surname")]
         public string Surname { get; set; }
     
         /// <summary>
         /// Gets or sets title.
-        /// The contact's title.
         /// </summary>
         [JsonPropertyName("title")]
         public string Title { get; set; }
     
         /// <summary>
         /// Gets or sets yomi company name.
-        /// The phonetic Japanese company name of the contact.
         /// </summary>
         [JsonPropertyName("yomiCompanyName")]
         public string YomiCompanyName { get; set; }
     
         /// <summary>
         /// Gets or sets yomi given name.
-        /// The phonetic Japanese given name (first name) of the contact.
         /// </summary>
         [JsonPropertyName("yomiGivenName")]
         public string YomiGivenName { get; set; }
     
         /// <summary>
         /// Gets or sets yomi surname.
-        /// The phonetic Japanese surname (last name)  of the contact.
         /// </summary>
         [JsonPropertyName("yomiSurname")]
         public string YomiSurname { get; set; }

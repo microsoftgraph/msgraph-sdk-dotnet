@@ -26,5 +26,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("transferTarget")]
         public InvitationParticipantInfo TransferTarget { get; set; }
     
+        /// <summary>
+        /// Gets or sets Transferee.
+        /// </summary>
+        [JsonPropertyName("transferee")]
+        public ParticipantInfo Transferee { get; set; }
+    
     }
 }

@@ -235,12 +235,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICallTransferRequestBuilder"/>.</returns>
         public ICallTransferRequestBuilder Transfer(
-            InvitationParticipantInfo transferTarget)
+            InvitationParticipantInfo transferTarget,
+            ParticipantInfo transferee = null)
         {
             return new CallTransferRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.transfer"),
                 this.Client,
-                transferTarget);
+                transferTarget,
+                transferee);
         }
 
         /// <summary>

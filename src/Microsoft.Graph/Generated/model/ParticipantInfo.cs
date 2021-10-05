@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         public string LanguageId { get; set; }
     
         /// <summary>
+        /// Gets or sets participantId.
+        /// </summary>
+        [JsonPropertyName("participantId")]
+        public string ParticipantId { get; set; }
+    
+        /// <summary>
         /// Gets or sets region.
         /// The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
         /// </summary>

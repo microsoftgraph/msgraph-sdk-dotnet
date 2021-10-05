@@ -44,7 +44,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is delegated.
-        /// True if this meeting request is accessible to a delegate, false otherwise. Default is false.
         /// </summary>
         [JsonPropertyName("isDelegated")]
         public bool? IsDelegated { get; set; }
@@ -63,7 +62,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets meeting message type.
-        /// The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTenativelyAccepted, meetingDeclined.
         /// </summary>
         [JsonPropertyName("meetingMessageType")]
         public MeetingMessageType? MeetingMessageType { get; set; }
