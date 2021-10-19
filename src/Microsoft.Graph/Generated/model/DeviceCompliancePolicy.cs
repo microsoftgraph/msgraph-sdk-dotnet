@@ -115,7 +115,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scheduled actions for rule.
-        /// The list of scheduled action for this rule
+        /// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
         /// </summary>
         [JsonPropertyName("scheduledActionsForRule")]
         public IDeviceCompliancePolicyScheduledActionsForRuleCollectionPage ScheduledActionsForRule { get; set; }
