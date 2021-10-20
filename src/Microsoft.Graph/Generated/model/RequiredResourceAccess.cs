@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resourceAppId.
-        /// The unique identifier for the resource that the application requires access to.  This should be equal to the appId declared on the target resource application.
+        /// The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
         /// </summary>
         [JsonPropertyName("resourceAppId")]
         public string ResourceAppId { get; set; }

@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are Scope or Role.
+        /// Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

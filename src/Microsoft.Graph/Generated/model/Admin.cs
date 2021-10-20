@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service announcement.
+        /// A container for service communications resources. Read-only.
         /// </summary>
         [JsonPropertyName("serviceAnnouncement")]
         public ServiceAnnouncement ServiceAnnouncement { get; set; }
