@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets approximate last sign in date time.
-        /// The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le) and $orderBy.
+        /// The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le, and eq on null values) and $orderBy.
         /// </summary>
         [JsonPropertyName("approximateLastSignInDateTime")]
         public DateTimeOffset? ApproximateLastSignInDateTime { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+        /// The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -114,21 +114,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises sync enabled.
-        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).
+        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).
         /// </summary>
         [JsonPropertyName("onPremisesSyncEnabled")]
         public bool? OnPremisesSyncEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets operating system.
-        /// The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).
+        /// The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("operatingSystem")]
         public string OperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets operating system version.
-        /// The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).
+        /// The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("operatingSystemVersion")]
         public string OperatingSystemVersion { get; set; }

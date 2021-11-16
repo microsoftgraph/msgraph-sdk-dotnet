@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets related contacts.
+        /// Related records related to the user. Possible relationships are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue
+        /// </summary>
+        [JsonPropertyName("relatedContacts")]
+        public IEnumerable<RelatedContact> RelatedContacts { get; set; }
+    
+        /// <summary>
         /// Gets or sets account enabled.
         /// True if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.
         /// </summary>

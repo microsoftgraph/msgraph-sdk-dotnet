@@ -8,47 +8,56 @@
 // Template Source: EnumType.cs.tt
 
 
-namespace Microsoft.Graph.Ediscovery
+namespace Microsoft.Graph
 {
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum DataSourceScopes.
+    /// The enum ContactRelationship.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-	[System.Flags]
-    public enum DataSourceScopes
+    public enum ContactRelationship
     {
     
         /// <summary>
-        /// None
+        /// Parent
         /// </summary>
-        None = 0,
+        Parent = 0,
 	
         /// <summary>
-        /// All Tenant Mailboxes
+        /// Relative
         /// </summary>
-        AllTenantMailboxes = 1,
+        Relative = 1,
 	
         /// <summary>
-        /// All Tenant Sites
+        /// Aide
         /// </summary>
-        AllTenantSites = 2,
+        Aide = 2,
 	
         /// <summary>
-        /// All Case Custodians
+        /// Doctor
         /// </summary>
-        AllCaseCustodians = 4,
+        Doctor = 3,
 	
         /// <summary>
-        /// All Case Noncustodial Data Sources
+        /// Guardian
         /// </summary>
-        AllCaseNoncustodialDataSources = 8,
+        Guardian = 4,
+	
+        /// <summary>
+        /// Child
+        /// </summary>
+        Child = 5,
+	
+        /// <summary>
+        /// Other
+        /// </summary>
+        Other = 6,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 16,
+        UnknownFutureValue = 7,
 	
     }
 }

@@ -50,17 +50,5 @@ namespace Microsoft.Graph
             return new ComplianceRequest(this.RequestUrl, this.Client, options);
         }
     
-        /// <summary>
-        /// Gets the request builder for Ediscovery.
-        /// </summary>
-        /// <returns>The <see cref="Microsoft.Graph.Ediscovery.IEdiscoveryrootRequestBuilder"/>.</returns>
-        public Microsoft.Graph.Ediscovery.IEdiscoveryrootRequestBuilder Ediscovery
-        {
-            get
-            {
-                return new Microsoft.Graph.Ediscovery.EdiscoveryrootRequestBuilder(this.AppendSegmentToRequestUrl("ediscovery"), this.Client);
-            }
-        }
-    
     }
 }

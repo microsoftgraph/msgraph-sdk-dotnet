@@ -44,11 +44,32 @@ namespace Microsoft.Graph
         public Stream BackgroundImage { get; set; }
     
         /// <summary>
+        /// Gets or sets background image relative url.
+        /// A relative URL for the backgroundImage property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+        /// </summary>
+        [JsonPropertyName("backgroundImageRelativeUrl")]
+        public string BackgroundImageRelativeUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets banner logo.
         /// A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
         /// </summary>
         [JsonPropertyName("bannerLogo")]
         public Stream BannerLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets banner logo relative url.
+        /// A relative url for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
+        /// </summary>
+        [JsonPropertyName("bannerLogoRelativeUrl")]
+        public string BannerLogoRelativeUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cdn list.
+        /// A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
+        /// </summary>
+        [JsonPropertyName("cdnList")]
+        public IEnumerable<string> CdnList { get; set; }
     
         /// <summary>
         /// Gets or sets sign in page text.
@@ -63,6 +84,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("squareLogo")]
         public Stream SquareLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets square logo relative url.
+        /// A relative url for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+        /// </summary>
+        [JsonPropertyName("squareLogoRelativeUrl")]
+        public string SquareLogoRelativeUrl { get; set; }
     
         /// <summary>
         /// Gets or sets username hint text.
