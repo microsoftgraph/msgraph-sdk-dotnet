@@ -43,7 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets visibleHistoryStartDateTime.
-        /// The timestamp denoting how far back a conversation's history is shared with the conversation members.
+        /// The timestamp that denotes how far back a conversation's history is shared with the conversation members.
         /// </summary>
         [JsonPropertyName("visibleHistoryStartDateTime")]
         public DateTimeOffset? VisibleHistoryStartDateTime { get; set; }

@@ -29,7 +29,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets granted to.
-        /// For user type permissions, the details of the users &amp; applications for this permission. Read-only.
         /// </summary>
         [Obsolete("The grantedTo property is deprecated. Please refer to grantedToV2")]
         [JsonPropertyName("grantedTo")]
@@ -37,7 +36,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets granted to identities.
-        /// For link type permissions, the details of the users to whom permission was granted. Read-only.
         /// </summary>
         [Obsolete("The grantedToIdentities property is deprecated. Please refer to grantedToIdentitiesV2")]
         [JsonPropertyName("grantedToIdentities")]
@@ -45,19 +43,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets granted to identities v2.
+        /// For link type permissions, the details of the users to whom permission was granted. Read-only.
         /// </summary>
         [JsonPropertyName("grantedToIdentitiesV2")]
         public IEnumerable<SharePointIdentitySet> GrantedToIdentitiesV2 { get; set; }
     
         /// <summary>
         /// Gets or sets granted to v2.
+        /// For user type permissions, the details of the users and applications for this permission. Read-only.
         /// </summary>
         [JsonPropertyName("grantedToV2")]
         public SharePointIdentitySet GrantedToV2 { get; set; }
     
         /// <summary>
         /// Gets or sets has password.
-        /// This indicates whether password is set for this permission, it's only showing in response. Optional and Read-only and for OneDrive Personal only.
+        /// Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
         /// </summary>
         [JsonPropertyName("hasPassword")]
         public bool? HasPassword { get; set; }
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets roles.
-        /// The type of permission, e.g. read. See below for the full list of roles. Read-only.
+        /// The type of permission, for example, read. See below for the full list of roles. Read-only.
         /// </summary>
         [JsonPropertyName("roles")]
         public IEnumerable<string> Roles { get; set; }

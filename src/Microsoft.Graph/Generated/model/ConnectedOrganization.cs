@@ -44,6 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets identity sources.
+        /// The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
         /// </summary>
         [JsonPropertyName("identitySources")]
         public IEnumerable<IdentitySource> IdentitySources { get; set; }
@@ -57,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
-        /// The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
+        /// The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("state")]
         public ConnectedOrganizationState? State { get; set; }

@@ -36,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets groupId.
+        /// The ID of the group in Azure AD.
         /// </summary>
         [JsonPropertyName("groupId")]
         public string GroupId { get; set; }

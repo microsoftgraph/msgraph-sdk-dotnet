@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets expiration.
+        /// When the access should expire.
         /// </summary>
         [JsonPropertyName("expiration")]
         public ExpirationPattern Expiration { get; set; }
     
         /// <summary>
         /// Gets or sets recurrence.
+        /// For recurring access. Not used at present.
         /// </summary>
         [JsonPropertyName("recurrence")]
         public PatternedRecurrence Recurrence { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }

@@ -57,6 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets catalog.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("catalog")]
         public AccessPackageCatalog Catalog { get; set; }

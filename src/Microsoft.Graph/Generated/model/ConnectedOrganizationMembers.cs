@@ -29,13 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets connectedOrganizationId.
+        /// The ID of the connected organization in entitlement management.
         /// </summary>
         [JsonPropertyName("connectedOrganizationId")]
         public string ConnectedOrganizationId { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// The name of the connected organization. Read only.
+        /// The name of the connected organization.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }

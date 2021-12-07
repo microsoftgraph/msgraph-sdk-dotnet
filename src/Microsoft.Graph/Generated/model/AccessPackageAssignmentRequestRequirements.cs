@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowCustomAssignmentSchedule.
+        /// Indicates whether the requestor is allowed to set a custom schedule.
         /// </summary>
         [JsonPropertyName("allowCustomAssignmentSchedule")]
         public bool? AllowCustomAssignmentSchedule { get; set; }
     
         /// <summary>
         /// Gets or sets isApprovalRequiredForAdd.
+        /// Indicates whether a request to add must be approved by an approver.
         /// </summary>
         [JsonPropertyName("isApprovalRequiredForAdd")]
         public bool? IsApprovalRequiredForAdd { get; set; }
     
         /// <summary>
         /// Gets or sets isApprovalRequiredForUpdate.
+        /// Indicates whether a request to update must be approved by an approver.
         /// </summary>
         [JsonPropertyName("isApprovalRequiredForUpdate")]
         public bool? IsApprovalRequiredForUpdate { get; set; }

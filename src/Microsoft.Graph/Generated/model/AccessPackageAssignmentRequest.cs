@@ -36,26 +36,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets request type.
-        /// One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+        /// The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
         /// </summary>
         [JsonPropertyName("requestType")]
         public AccessPackageRequestType? RequestType { get; set; }
     
         /// <summary>
         /// Gets or sets schedule.
-        /// The range of dates that access is to be assigned to the requestor. Read-only.
+        /// The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
         /// </summary>
         [JsonPropertyName("schedule")]
         public EntitlementManagementSchedule Schedule { get; set; }
     
         /// <summary>
         /// Gets or sets state.
+        /// The state of the request. The possible values are: submitted, pendingApproval, delivering, delivered, deliveryFailed, denied, scheduled, canceled, partiallyDelivered, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("state")]
         public AccessPackageRequestState? State { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// More information on the request processing status. Read-only.
         /// </summary>
         [JsonPropertyName("status")]
         public string Status { get; set; }
@@ -69,6 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignment.
+        /// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
         /// </summary>
         [JsonPropertyName("assignment")]
         public AccessPackageAssignment Assignment { get; set; }

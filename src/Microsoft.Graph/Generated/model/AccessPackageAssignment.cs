@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets expired date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("expiredDateTime")]
         public DateTimeOffset? ExpiredDateTime { get; set; }
@@ -37,12 +37,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
+        /// The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("state")]
         public AccessPackageAssignmentState? State { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
         /// </summary>
         [JsonPropertyName("status")]
         public string Status { get; set; }

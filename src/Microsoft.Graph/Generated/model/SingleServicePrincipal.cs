@@ -29,12 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
+        /// Description of this service principal.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets servicePrincipalId.
+        /// ID of the servicePrincipal.
         /// </summary>
         [JsonPropertyName("servicePrincipalId")]
         public string ServicePrincipalId { get; set; }

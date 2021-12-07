@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets application template id.
-        /// Unique identifier of the applicationTemplate.
+        /// Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
         /// </summary>
         [JsonPropertyName("applicationTemplateId")]
         public string ApplicationTemplateId { get; set; }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+        /// Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }

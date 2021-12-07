@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// The requestor's desired expiration pattern type.
+        /// The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
         /// </summary>
         [JsonPropertyName("type")]
         public ExpirationPatternType? Type { get; set; }

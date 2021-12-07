@@ -36,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets userId.
+        /// The ID of the user in Azure AD.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets catalog type.
-        /// One of UserManaged or ServiceDefault.
+        /// Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("catalogType")]
         public AccessPackageCatalogType? CatalogType { get; set; }
@@ -65,6 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
+        /// Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("state")]
         public AccessPackageCatalogState? State { get; set; }

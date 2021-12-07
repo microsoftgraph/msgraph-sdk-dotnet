@@ -29,18 +29,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets group.
+        /// The group associated with this action. Optional.
         /// </summary>
         [JsonPropertyName("group")]
         public Identity Group { get; set; }
     
         /// <summary>
         /// Gets or sets siteGroup.
+        /// The SharePoint group associated with this action. Optional.
         /// </summary>
         [JsonPropertyName("siteGroup")]
         public SharePointIdentity SiteGroup { get; set; }
     
         /// <summary>
         /// Gets or sets siteUser.
+        /// The SharePoint user associated with this action. Optional.
         /// </summary>
         [JsonPropertyName("siteUser")]
         public SharePointIdentity SiteUser { get; set; }

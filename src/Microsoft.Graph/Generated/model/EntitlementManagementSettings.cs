@@ -23,13 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets duration until external user deleted after blocked.
+        /// If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
         /// </summary>
         [JsonPropertyName("durationUntilExternalUserDeletedAfterBlocked")]
         public Duration DurationUntilExternalUserDeletedAfterBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets external user lifecycle action.
-        /// One of None, BlockSignIn, or BlockSignInAndDelete.
+        /// Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("externalUserLifecycleAction")]
         public AccessPackageExternalUserLifecycleAction? ExternalUserLifecycleAction { get; set; }

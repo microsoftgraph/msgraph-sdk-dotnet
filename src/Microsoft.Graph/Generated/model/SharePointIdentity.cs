@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets loginName.
+        /// The sign in name of the SharePoint identity.
         /// </summary>
         [JsonPropertyName("loginName")]
         public string LoginName { get; set; }

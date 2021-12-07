@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
-        /// An optional description for the administrative unit.
+        /// An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith).
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Display name for the administrative unit.
+        /// Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets members.
-        /// Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
+        /// Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
         /// </summary>
         [JsonPropertyName("members")]
         public IAdministrativeUnitMembersCollectionWithReferencesPage Members { get; set; }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scoped role members.
-        /// Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
+        /// Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
         /// </summary>
         [JsonPropertyName("scopedRoleMembers")]
         public IAdministrativeUnitScopedRoleMembersCollectionPage ScopedRoleMembers { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets extensions.
-        /// The collection of open extensions defined for this Administrative Unit. Nullable.
+        /// The collection of open extensions defined for this administrative unit. Nullable.
         /// </summary>
         [JsonPropertyName("extensions")]
         public IAdministrativeUnitExtensionsCollectionPage Extensions { get; set; }
