@@ -14,6 +14,7 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
+using Task = System.Threading.Tasks.Task;
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 {

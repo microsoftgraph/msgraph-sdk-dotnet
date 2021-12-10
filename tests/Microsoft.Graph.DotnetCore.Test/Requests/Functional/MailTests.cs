@@ -11,6 +11,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
     using System.IO;
     using System.Threading.Tasks;
     using Xunit;
+    using Task = System.Threading.Tasks.Task;
+
     public class MailTests : GraphTestBase
     {
         public async Task<Message> createEmail(string emailBody)
