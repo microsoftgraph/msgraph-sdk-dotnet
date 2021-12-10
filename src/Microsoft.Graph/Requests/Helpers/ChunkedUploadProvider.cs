@@ -147,7 +147,7 @@ namespace Microsoft.Graph
                 if (uploadTries < maxTries)
                 {
                     // Exponential backoff in case of failures.
-                    await Task.Delay(2000 * uploadTries * uploadTries).ConfigureAwait(false);
+                    await System.Threading.Tasks.Task.Delay(2000 * uploadTries * uploadTries).ConfigureAwait(false);
                 }
             }
 
