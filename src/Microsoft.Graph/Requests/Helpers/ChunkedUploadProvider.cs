@@ -9,7 +9,6 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
     using System.IO;
     using System.Threading.Tasks;
-    using Task = System.Threading.Tasks.Task;
 
     /// <summary>
     /// Use this class to make resumable uploads or to upload large files. This
@@ -148,7 +147,7 @@ namespace Microsoft.Graph
                 if (uploadTries < maxTries)
                 {
                     // Exponential backoff in case of failures.
-                    await Task.Delay(2000 * uploadTries * uploadTries).ConfigureAwait(false);
+                    await System.Threading.Tasks.Task.Delay(2000 * uploadTries * uploadTries).ConfigureAwait(false);
                 }
             }
 
