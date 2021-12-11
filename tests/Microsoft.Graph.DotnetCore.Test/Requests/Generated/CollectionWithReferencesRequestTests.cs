@@ -13,7 +13,6 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
-using Task = System.Threading.Tasks.Task;
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 {
@@ -40,7 +39,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         /// Tests the GetAsync() method on the request for an entity collection that has a $ref navigation.
         /// </summary>
         [Fact]
-        public async Task GetAsync()
+        public async System.Threading.Tasks.Task GetAsync()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())

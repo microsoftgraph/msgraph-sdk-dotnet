@@ -12,7 +12,6 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
-using Task = System.Threading.Tasks.Task;
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 {
@@ -39,7 +38,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         /// Tests the DeleteAsync() method on an entity's $ref navigation.
         /// </summary>
         [Fact]
-        public async Task DeleteAsync()
+        public async System.Threading.Tasks.Task DeleteAsync()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())

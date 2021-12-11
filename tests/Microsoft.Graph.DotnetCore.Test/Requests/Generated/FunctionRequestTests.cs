@@ -13,7 +13,6 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
-using Task = System.Threading.Tasks.Task;
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 {
@@ -129,7 +128,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         /// Tests the GetAsync() method for a function that returns a collection (reminderView).
         /// </summary>
         [Fact]
-        public async Task CollectionReturnType_GetAsync()
+        public async System.Threading.Tasks.Task CollectionReturnType_GetAsync()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())

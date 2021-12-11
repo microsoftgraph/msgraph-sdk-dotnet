@@ -12,7 +12,6 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
-using Task = System.Threading.Tasks.Task;
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 {
@@ -29,7 +28,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         }
 
         [Fact]
-        public async Task GetAsync()
+        public async System.Threading.Tasks.Task GetAsync()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())
@@ -55,7 +54,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         }
 
         [Fact]
-        public async Task PutAsync()
+        public async System.Threading.Tasks.Task PutAsync()
         {
             using (var requestStream = new MemoryStream())
             using (var httpResponseMessage = new HttpResponseMessage())
