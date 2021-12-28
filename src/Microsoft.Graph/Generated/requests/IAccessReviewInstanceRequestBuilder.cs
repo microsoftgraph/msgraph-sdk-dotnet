@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IAccessReviewInstanceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for ContactedReviewers.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceContactedReviewersCollectionRequestBuilder"/>.</returns>
+        IAccessReviewInstanceContactedReviewersCollectionRequestBuilder ContactedReviewers { get; }
+
+        /// <summary>
         /// Gets the request builder for Decisions.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewInstanceDecisionsCollectionRequestBuilder"/>.</returns>

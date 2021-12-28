@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 4,
 	
+        /// <summary>
+        /// Certificate Based Authentication
+        /// </summary>
+        CertificateBasedAuthentication = 5,
+	
     }
 }

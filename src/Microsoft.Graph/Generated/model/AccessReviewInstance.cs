@@ -63,6 +63,20 @@ namespace Microsoft.Graph
         public string Status { get; set; }
     
         /// <summary>
+        /// Gets or sets contacted reviewers.
+        /// Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
+        /// </summary>
+        [JsonPropertyName("contactedReviewers")]
+        public IAccessReviewInstanceContactedReviewersCollectionPage ContactedReviewers { get; set; }
+
+        /// <summary>
+        /// Gets or sets contactedReviewersNextLink.
+        /// </summary>
+        [JsonPropertyName("contactedReviewers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ContactedReviewersNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets decisions.
         /// Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
         /// </summary>

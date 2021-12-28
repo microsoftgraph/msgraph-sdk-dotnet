@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ContactedReviewers.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceContactedReviewersCollectionRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceContactedReviewersCollectionRequestBuilder ContactedReviewers
+        {
+            get
+            {
+                return new AccessReviewInstanceContactedReviewersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("contactedReviewers"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Decisions.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewInstanceDecisionsCollectionRequestBuilder"/>.</returns>

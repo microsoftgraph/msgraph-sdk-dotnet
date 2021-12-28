@@ -17,17 +17,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type AccessReviewInstanceRequest.
+    /// The type AccessReviewReviewerRequest.
     /// </summary>
-    public partial class AccessReviewInstanceRequest : BaseRequest, IAccessReviewInstanceRequest
+    public partial class AccessReviewReviewerRequest : BaseRequest, IAccessReviewReviewerRequest
     {
         /// <summary>
-        /// Constructs a new AccessReviewInstanceRequest.
+        /// Constructs a new AccessReviewReviewerRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public AccessReviewInstanceRequest(
+        public AccessReviewReviewerRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -36,46 +36,46 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified AccessReviewInstance using POST.
+        /// Creates the specified AccessReviewReviewer using POST.
         /// </summary>
-        /// <param name="accessReviewInstanceToCreate">The AccessReviewInstance to create.</param>
+        /// <param name="accessReviewReviewerToCreate">The AccessReviewReviewer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AccessReviewInstance.</returns>
-        public async System.Threading.Tasks.Task<AccessReviewInstance> CreateAsync(AccessReviewInstance accessReviewInstanceToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The created AccessReviewReviewer.</returns>
+        public async System.Threading.Tasks.Task<AccessReviewReviewer> CreateAsync(AccessReviewReviewer accessReviewReviewerToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            var newEntity = await this.SendAsync<AccessReviewInstance>(accessReviewInstanceToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<AccessReviewReviewer>(accessReviewReviewerToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Creates the specified AccessReviewInstance using POST and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object.
+        /// Creates the specified AccessReviewReviewer using POST and returns a <see cref="GraphResponse{AccessReviewReviewer}"/> object.
         /// </summary>
-        /// <param name="accessReviewInstanceToCreate">The AccessReviewInstance to create.</param>
+        /// <param name="accessReviewReviewerToCreate">The AccessReviewReviewer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{AccessReviewInstance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> CreateResponseAsync(AccessReviewInstance accessReviewInstanceToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{AccessReviewReviewer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewReviewer>> CreateResponseAsync(AccessReviewReviewer accessReviewReviewerToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<AccessReviewInstance>(accessReviewInstanceToCreate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<AccessReviewReviewer>(accessReviewReviewerToCreate, cancellationToken);
         }
 
         /// <summary>
-        /// Deletes the specified AccessReviewInstance.
+        /// Deletes the specified AccessReviewReviewer.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
-            await this.SendAsync<AccessReviewInstance>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<AccessReviewReviewer>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Deletes the specified AccessReviewInstance and returns a <see cref="GraphResponse"/> object.
+        /// Deletes the specified AccessReviewReviewer and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
@@ -86,85 +86,85 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the specified AccessReviewInstance.
+        /// Gets the specified AccessReviewReviewer.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The AccessReviewInstance.</returns>
-        public async System.Threading.Tasks.Task<AccessReviewInstance> GetAsync(CancellationToken cancellationToken = default)
+        /// <returns>The AccessReviewReviewer.</returns>
+        public async System.Threading.Tasks.Task<AccessReviewReviewer> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            var retrievedEntity = await this.SendAsync<AccessReviewInstance>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<AccessReviewReviewer>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified AccessReviewInstance and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object.
+        /// Gets the specified AccessReviewReviewer and returns a <see cref="GraphResponse{AccessReviewReviewer}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{AccessReviewInstance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> GetResponseAsync(CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{AccessReviewReviewer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewReviewer>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<AccessReviewInstance>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<AccessReviewReviewer>(null, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified AccessReviewInstance using PATCH.
+        /// Updates the specified AccessReviewReviewer using PATCH.
         /// </summary>
-        /// <param name="accessReviewInstanceToUpdate">The AccessReviewInstance to update.</param>
+        /// <param name="accessReviewReviewerToUpdate">The AccessReviewReviewer to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated AccessReviewInstance.</returns>
-        public async System.Threading.Tasks.Task<AccessReviewInstance> UpdateAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The updated AccessReviewReviewer.</returns>
+        public async System.Threading.Tasks.Task<AccessReviewReviewer> UpdateAsync(AccessReviewReviewer accessReviewReviewerToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            var updatedEntity = await this.SendAsync<AccessReviewInstance>(accessReviewInstanceToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<AccessReviewReviewer>(accessReviewReviewerToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AccessReviewInstance using PATCH and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object.
+        /// Updates the specified AccessReviewReviewer using PATCH and returns a <see cref="GraphResponse{AccessReviewReviewer}"/> object.
         /// </summary>
-        /// <param name="accessReviewInstanceToUpdate">The AccessReviewInstance to update.</param>
+        /// <param name="accessReviewReviewerToUpdate">The AccessReviewReviewer to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The <see cref="GraphResponse{AccessReviewInstance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> UpdateResponseAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{AccessReviewReviewer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewReviewer>> UpdateResponseAsync(AccessReviewReviewer accessReviewReviewerToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            return this.SendAsyncWithGraphResponse<AccessReviewInstance>(accessReviewInstanceToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<AccessReviewReviewer>(accessReviewReviewerToUpdate, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified AccessReviewInstance using PUT.
+        /// Updates the specified AccessReviewReviewer using PUT.
         /// </summary>
-        /// <param name="accessReviewInstanceToUpdate">The AccessReviewInstance object to update.</param>
+        /// <param name="accessReviewReviewerToUpdate">The AccessReviewReviewer object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<AccessReviewInstance> PutAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<AccessReviewReviewer> PutAsync(AccessReviewReviewer accessReviewReviewerToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            var updatedEntity = await this.SendAsync<AccessReviewInstance>(accessReviewInstanceToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<AccessReviewReviewer>(accessReviewReviewerToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AccessReviewInstance using PUT and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object.
+        /// Updates the specified AccessReviewReviewer using PUT and returns a <see cref="GraphResponse{AccessReviewReviewer}"/> object.
         /// </summary>
-        /// <param name="accessReviewInstanceToUpdate">The AccessReviewInstance object to update.</param>
+        /// <param name="accessReviewReviewerToUpdate">The AccessReviewReviewer object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await of <see cref="GraphResponse{AccessReviewInstance}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> PutResponseAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The task to await of <see cref="GraphResponse{AccessReviewReviewer}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewReviewer>> PutResponseAsync(AccessReviewReviewer accessReviewReviewerToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            return this.SendAsyncWithGraphResponse<AccessReviewInstance>(accessReviewInstanceToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<AccessReviewReviewer>(accessReviewReviewerToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IAccessReviewInstanceRequest Expand(string value)
+        public IAccessReviewReviewerRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IAccessReviewInstanceRequest Expand(Expression<Func<AccessReviewInstance, object>> expandExpression)
+        public IAccessReviewReviewerRequest Expand(Expression<Func<AccessReviewReviewer, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -207,7 +207,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IAccessReviewInstanceRequest Select(string value)
+        public IAccessReviewReviewerRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IAccessReviewInstanceRequest Select(Expression<Func<AccessReviewInstance, object>> selectExpression)
+        public IAccessReviewReviewerRequest Select(Expression<Func<AccessReviewReviewer, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -240,27 +240,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="accessReviewInstanceToInitialize">The <see cref="AccessReviewInstance"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(AccessReviewInstance accessReviewInstanceToInitialize)
+        /// <param name="accessReviewReviewerToInitialize">The <see cref="AccessReviewReviewer"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(AccessReviewReviewer accessReviewReviewerToInitialize)
         {
-
-            if (accessReviewInstanceToInitialize != null)
-            {
-                if (accessReviewInstanceToInitialize.ContactedReviewers != null && accessReviewInstanceToInitialize.ContactedReviewers.CurrentPage != null)
-                {
-                    accessReviewInstanceToInitialize.ContactedReviewers.InitializeNextPageRequest(this.Client, accessReviewInstanceToInitialize.ContactedReviewersNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    accessReviewInstanceToInitialize.ContactedReviewers.AdditionalData = accessReviewInstanceToInitialize.AdditionalData;
-                }
-                if (accessReviewInstanceToInitialize.Decisions != null && accessReviewInstanceToInitialize.Decisions.CurrentPage != null)
-                {
-                    accessReviewInstanceToInitialize.Decisions.InitializeNextPageRequest(this.Client, accessReviewInstanceToInitialize.DecisionsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    accessReviewInstanceToInitialize.Decisions.AdditionalData = accessReviewInstanceToInitialize.AdditionalData;
-                }
-
-            }
-
 
         }
     }
