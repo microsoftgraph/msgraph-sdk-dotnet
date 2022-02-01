@@ -63,7 +63,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication method configurations.
-        /// Represents the settings for each authentication method.
+        /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
         /// </summary>
         [JsonPropertyName("authenticationMethodConfigurations")]
         public IAuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionPage AuthenticationMethodConfigurations { get; set; }
