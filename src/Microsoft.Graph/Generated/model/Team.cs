@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets channels.
-        /// The collection of channels &amp; messages associated with the team.
+        /// The collection of channels and messages associated with the team.
         /// </summary>
         [JsonPropertyName("channels")]
         public ITeamChannelsCollectionPage Channels { get; set; }
