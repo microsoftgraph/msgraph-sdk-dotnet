@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? AutoSubscribeNewMembers { get; set; }
         /// <summary>The group's calendar. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar Calendar { get; set; }
+        public Calendar Calendar { get; set; }
         /// <summary>The calendar view for the calendar. Read-only.</summary>
         public List<Event> CalendarView { get; set; }
         /// <summary>Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).</summary>
@@ -34,9 +34,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.</summary>
         public string DisplayName { get; set; }
         /// <summary>The group's default drive. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Drive Drive { get; set; }
+        public Drive Drive { get; set; }
         /// <summary>The group's drives. Read-only.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive> Drives { get; set; }
+        public List<Drive> Drives { get; set; }
         /// <summary>The group's calendar events.</summary>
         public List<Event> Events { get; set; }
         /// <summary>Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.</summary>
@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A list of group members with license errors from this group-based license assignment. Read-only.</summary>
         public List<DirectoryObject> MembersWithLicenseErrors { get; set; }
         /// <summary>Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote Onenote { get; set; }
+        public Onenote Onenote { get; set; }
         /// <summary>Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.</summary>
         public string OnPremisesDomainName { get; set; }
         /// <summary>Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).</summary>
@@ -119,8 +119,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Read-only. Nullable.</summary>
         public List<GroupSetting> Settings { get; set; }
         /// <summary>The list of SharePoint sites in this group. Access the default site with /sites/root.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Site> Sites { get; set; }
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Team Team { get; set; }
+        public List<Site> Sites { get; set; }
+        public Team Team { get; set; }
         /// <summary>Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.</summary>
         public string Theme { get; set; }
         /// <summary>The group's conversation threads. Nullable.</summary>
@@ -142,7 +142,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"assignedLabels", (o,n) => { (o as Group).AssignedLabels = n.GetCollectionOfObjectValues<AssignedLabel>().ToList(); } },
                 {"assignedLicenses", (o,n) => { (o as Group).AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>().ToList(); } },
                 {"autoSubscribeNewMembers", (o,n) => { (o as Group).AutoSubscribeNewMembers = n.GetBoolValue(); } },
-                {"calendar", (o,n) => { (o as Group).Calendar = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(); } },
+                {"calendar", (o,n) => { (o as Group).Calendar = n.GetObjectValue<Calendar>(); } },
                 {"calendarView", (o,n) => { (o as Group).CalendarView = n.GetCollectionOfObjectValues<Event>().ToList(); } },
                 {"classification", (o,n) => { (o as Group).Classification = n.GetStringValue(); } },
                 {"conversations", (o,n) => { (o as Group).Conversations = n.GetCollectionOfObjectValues<Conversation>().ToList(); } },
@@ -150,8 +150,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"createdOnBehalfOf", (o,n) => { (o as Group).CreatedOnBehalfOf = n.GetObjectValue<DirectoryObject>(); } },
                 {"description", (o,n) => { (o as Group).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as Group).DisplayName = n.GetStringValue(); } },
-                {"drive", (o,n) => { (o as Group).Drive = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>(); } },
-                {"drives", (o,n) => { (o as Group).Drives = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>().ToList(); } },
+                {"drive", (o,n) => { (o as Group).Drive = n.GetObjectValue<Drive>(); } },
+                {"drives", (o,n) => { (o as Group).Drives = n.GetCollectionOfObjectValues<Drive>().ToList(); } },
                 {"events", (o,n) => { (o as Group).Events = n.GetCollectionOfObjectValues<Event>().ToList(); } },
                 {"expirationDateTime", (o,n) => { (o as Group).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"extensions", (o,n) => { (o as Group).Extensions = n.GetCollectionOfObjectValues<Extension>().ToList(); } },
@@ -172,7 +172,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"membershipRule", (o,n) => { (o as Group).MembershipRule = n.GetStringValue(); } },
                 {"membershipRuleProcessingState", (o,n) => { (o as Group).MembershipRuleProcessingState = n.GetStringValue(); } },
                 {"membersWithLicenseErrors", (o,n) => { (o as Group).MembersWithLicenseErrors = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
-                {"onenote", (o,n) => { (o as Group).Onenote = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote>(); } },
+                {"onenote", (o,n) => { (o as Group).Onenote = n.GetObjectValue<Onenote>(); } },
                 {"onPremisesDomainName", (o,n) => { (o as Group).OnPremisesDomainName = n.GetStringValue(); } },
                 {"onPremisesLastSyncDateTime", (o,n) => { (o as Group).OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 {"onPremisesNetBiosName", (o,n) => { (o as Group).OnPremisesNetBiosName = n.GetStringValue(); } },
@@ -193,8 +193,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"securityEnabled", (o,n) => { (o as Group).SecurityEnabled = n.GetBoolValue(); } },
                 {"securityIdentifier", (o,n) => { (o as Group).SecurityIdentifier = n.GetStringValue(); } },
                 {"settings", (o,n) => { (o as Group).Settings = n.GetCollectionOfObjectValues<GroupSetting>().ToList(); } },
-                {"sites", (o,n) => { (o as Group).Sites = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>().ToList(); } },
-                {"team", (o,n) => { (o as Group).Team = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Team>(); } },
+                {"sites", (o,n) => { (o as Group).Sites = n.GetCollectionOfObjectValues<Site>().ToList(); } },
+                {"team", (o,n) => { (o as Group).Team = n.GetObjectValue<Team>(); } },
                 {"theme", (o,n) => { (o as Group).Theme = n.GetStringValue(); } },
                 {"threads", (o,n) => { (o as Group).Threads = n.GetCollectionOfObjectValues<ConversationThread>().ToList(); } },
                 {"transitiveMemberOf", (o,n) => { (o as Group).TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
@@ -216,7 +216,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<AssignedLabel>("assignedLabels", AssignedLabels);
             writer.WriteCollectionOfObjectValues<AssignedLicense>("assignedLicenses", AssignedLicenses);
             writer.WriteBoolValue("autoSubscribeNewMembers", AutoSubscribeNewMembers);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>("calendar", Calendar);
+            writer.WriteObjectValue<Calendar>("calendar", Calendar);
             writer.WriteCollectionOfObjectValues<Event>("calendarView", CalendarView);
             writer.WriteStringValue("classification", Classification);
             writer.WriteCollectionOfObjectValues<Conversation>("conversations", Conversations);
@@ -224,8 +224,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>("drive", Drive);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>("drives", Drives);
+            writer.WriteObjectValue<Drive>("drive", Drive);
+            writer.WriteCollectionOfObjectValues<Drive>("drives", Drives);
             writer.WriteCollectionOfObjectValues<Event>("events", Events);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
@@ -246,7 +246,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("membershipRule", MembershipRule);
             writer.WriteStringValue("membershipRuleProcessingState", MembershipRuleProcessingState);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("membersWithLicenseErrors", MembersWithLicenseErrors);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote>("onenote", Onenote);
+            writer.WriteObjectValue<Onenote>("onenote", Onenote);
             writer.WriteStringValue("onPremisesDomainName", OnPremisesDomainName);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteStringValue("onPremisesNetBiosName", OnPremisesNetBiosName);
@@ -267,8 +267,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteBoolValue("securityEnabled", SecurityEnabled);
             writer.WriteStringValue("securityIdentifier", SecurityIdentifier);
             writer.WriteCollectionOfObjectValues<GroupSetting>("settings", Settings);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>("sites", Sites);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Team>("team", Team);
+            writer.WriteCollectionOfObjectValues<Site>("sites", Sites);
+            writer.WriteObjectValue<Team>("team", Team);
             writer.WriteStringValue("theme", Theme);
             writer.WriteCollectionOfObjectValues<ConversationThread>("threads", Threads);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);

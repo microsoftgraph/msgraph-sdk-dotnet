@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string AdministrativeUnitId { get; set; }
         /// <summary>Unique identifier for the directory role that the member is in.</summary>
         public string RoleId { get; set; }
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Identity RoleMemberInfo { get; set; }
+        public Identity RoleMemberInfo { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -17,7 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"administrativeUnitId", (o,n) => { (o as ScopedRoleMembership).AdministrativeUnitId = n.GetStringValue(); } },
                 {"roleId", (o,n) => { (o as ScopedRoleMembership).RoleId = n.GetStringValue(); } },
-                {"roleMemberInfo", (o,n) => { (o as ScopedRoleMembership).RoleMemberInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(); } },
+                {"roleMemberInfo", (o,n) => { (o as ScopedRoleMembership).RoleMemberInfo = n.GetObjectValue<Identity>(); } },
             };
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteStringValue("administrativeUnitId", AdministrativeUnitId);
             writer.WriteStringValue("roleId", RoleId);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>("roleMemberInfo", RoleMemberInfo);
+            writer.WriteObjectValue<Identity>("roleMemberInfo", RoleMemberInfo);
         }
     }
 }

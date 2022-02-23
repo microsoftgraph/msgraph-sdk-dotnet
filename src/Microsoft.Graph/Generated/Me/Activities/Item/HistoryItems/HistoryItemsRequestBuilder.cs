@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Me.Activities.Item.HistoryItems {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.activities.item.historyItems.item collection</summary>
-        public ActivityHistoryItemRequestBuilder this[string position] { get {
+        public ActivityHistoryItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("activityHistoryItem_id", position);
-            return new ActivityHistoryItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new ActivityHistoryItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new HistoryItemsRequestBuilder and sets the default values.

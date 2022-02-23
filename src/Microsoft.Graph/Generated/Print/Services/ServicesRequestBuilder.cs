@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Print.Services {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.print.services.item collection</summary>
-        public PrintServiceRequestBuilder this[string position] { get {
+        public PrintServiceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printService_id", position);
-            return new PrintServiceRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintServiceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ServicesRequestBuilder and sets the default values.

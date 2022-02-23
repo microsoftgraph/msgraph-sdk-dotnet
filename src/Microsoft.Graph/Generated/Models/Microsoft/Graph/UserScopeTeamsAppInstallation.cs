@@ -6,13 +6,13 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserScopeTeamsAppInstallation : TeamsAppInstallation, IParsable {
         /// <summary>The chat between the user and Teams app.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Chat Chat { get; set; }
+        public Chat Chat { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"chat", (o,n) => { (o as UserScopeTeamsAppInstallation).Chat = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat>(); } },
+                {"chat", (o,n) => { (o as UserScopeTeamsAppInstallation).Chat = n.GetObjectValue<Chat>(); } },
             };
         }
         /// <summary>
@@ -22,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat>("chat", Chat);
+            writer.WriteObjectValue<Chat>("chat", Chat);
         }
     }
 }

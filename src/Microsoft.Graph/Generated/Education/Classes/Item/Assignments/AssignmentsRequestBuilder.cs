@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Education.Classes.Item.Assignments {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.education.classes.item.assignments.item collection</summary>
-        public EducationAssignmentRequestBuilder this[string position] { get {
+        public EducationAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationAssignment_id", position);
-            return new EducationAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

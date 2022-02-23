@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Solutions.BookingBusinesses.Item.CalendarView {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.solutions.bookingBusinesses.item.calendarView.item collection</summary>
-        public BookingAppointmentRequestBuilder this[string position] { get {
+        public BookingAppointmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingAppointment_id", position);
-            return new BookingAppointmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new BookingAppointmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CalendarViewRequestBuilder and sets the default values.

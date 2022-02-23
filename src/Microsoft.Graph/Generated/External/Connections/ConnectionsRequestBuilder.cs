@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.External.Connections {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.external.connections.item collection</summary>
-        public ExternalConnectionRequestBuilder this[string position] { get {
+        public ExternalConnectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("externalConnection_id", position);
-            return new ExternalConnectionRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExternalConnectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConnectionsRequestBuilder and sets the default values.

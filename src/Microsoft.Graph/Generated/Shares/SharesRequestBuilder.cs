@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Shares {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.shares.item collection</summary>
-        public SharedDriveItemRequestBuilder this[string position] { get {
+        public SharedDriveItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sharedDriveItem_id", position);
-            return new SharedDriveItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new SharedDriveItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SharesRequestBuilder and sets the default values.

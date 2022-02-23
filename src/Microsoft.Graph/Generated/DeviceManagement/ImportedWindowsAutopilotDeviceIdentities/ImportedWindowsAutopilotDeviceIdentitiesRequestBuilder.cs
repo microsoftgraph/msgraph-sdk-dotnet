@@ -22,10 +22,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.ImportedWindowsAutopilotDeviceIdent
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.importedWindowsAutopilotDeviceIdentities.item collection</summary>
-        public ImportedWindowsAutopilotDeviceIdentityRequestBuilder this[string position] { get {
+        public ImportedWindowsAutopilotDeviceIdentityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("importedWindowsAutopilotDeviceIdentity_id", position);
-            return new ImportedWindowsAutopilotDeviceIdentityRequestBuilder(urlTplParams, RequestAdapter);
+            return new ImportedWindowsAutopilotDeviceIdentityItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder and sets the default values.

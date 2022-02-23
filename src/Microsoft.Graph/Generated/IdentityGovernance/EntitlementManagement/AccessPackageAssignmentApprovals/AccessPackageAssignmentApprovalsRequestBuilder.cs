@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.entitlementManagement.accessPackageAssignmentApprovals.item collection</summary>
-        public ApprovalRequestBuilder this[string position] { get {
+        public ApprovalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approval_id", position);
-            return new ApprovalRequestBuilder(urlTplParams, RequestAdapter);
+            return new ApprovalItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AccessPackageAssignmentApprovalsRequestBuilder and sets the default values.

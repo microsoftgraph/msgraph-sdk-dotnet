@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AppConsent.AppConsentRequests {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.appConsent.appConsentRequests.item collection</summary>
-        public AppConsentRequestRequestBuilder this[string position] { get {
+        public AppConsentRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appConsentRequest_id", position);
-            return new AppConsentRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new AppConsentRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppConsentRequestsRequestBuilder and sets the default values.

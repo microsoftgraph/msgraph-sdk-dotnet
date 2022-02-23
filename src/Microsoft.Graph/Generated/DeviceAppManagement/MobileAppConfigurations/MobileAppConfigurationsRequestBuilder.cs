@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.mobileAppConfigurations.item collection</summary>
-        public ManagedDeviceMobileAppConfigurationRequestBuilder this[string position] { get {
+        public ManagedDeviceMobileAppConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceMobileAppConfiguration_id", position);
-            return new ManagedDeviceMobileAppConfigurationRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceMobileAppConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobileAppConfigurationsRequestBuilder and sets the default values.

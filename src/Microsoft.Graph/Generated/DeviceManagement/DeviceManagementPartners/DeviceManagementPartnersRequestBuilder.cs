@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceManagementPartners {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceManagementPartners.item collection</summary>
-        public DeviceManagementPartnerRequestBuilder this[string position] { get {
+        public DeviceManagementPartnerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementPartner_id", position);
-            return new DeviceManagementPartnerRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementPartnerItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceManagementPartnersRequestBuilder and sets the default values.

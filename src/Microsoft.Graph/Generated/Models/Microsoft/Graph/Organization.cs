@@ -11,7 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Telephone number for the organization. Although this is a string collection, only one number can be set for this property.</summary>
         public List<string> BusinessPhones { get; set; }
         /// <summary>Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateBasedAuthConfiguration> CertificateBasedAuthConfiguration { get; set; }
+        public List<CertificateBasedAuthConfiguration> CertificateBasedAuthConfiguration { get; set; }
         /// <summary>City name of the address for the organization.</summary>
         public string City { get; set; }
         /// <summary>Country/region name of the address for the organization.</summary>
@@ -59,7 +59,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"assignedPlans", (o,n) => { (o as Organization).AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>().ToList(); } },
                 {"branding", (o,n) => { (o as Organization).Branding = n.GetObjectValue<OrganizationalBranding>(); } },
                 {"businessPhones", (o,n) => { (o as Organization).BusinessPhones = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"certificateBasedAuthConfiguration", (o,n) => { (o as Organization).CertificateBasedAuthConfiguration = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateBasedAuthConfiguration>().ToList(); } },
+                {"certificateBasedAuthConfiguration", (o,n) => { (o as Organization).CertificateBasedAuthConfiguration = n.GetCollectionOfObjectValues<CertificateBasedAuthConfiguration>().ToList(); } },
                 {"city", (o,n) => { (o as Organization).City = n.GetStringValue(); } },
                 {"country", (o,n) => { (o as Organization).Country = n.GetStringValue(); } },
                 {"countryLetterCode", (o,n) => { (o as Organization).CountryLetterCode = n.GetStringValue(); } },
@@ -93,7 +93,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<AssignedPlan>("assignedPlans", AssignedPlans);
             writer.WriteObjectValue<OrganizationalBranding>("branding", Branding);
             writer.WriteCollectionOfPrimitiveValues<string>("businessPhones", BusinessPhones);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateBasedAuthConfiguration>("certificateBasedAuthConfiguration", CertificateBasedAuthConfiguration);
+            writer.WriteCollectionOfObjectValues<CertificateBasedAuthConfiguration>("certificateBasedAuthConfiguration", CertificateBasedAuthConfiguration);
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("countryLetterCode", CountryLetterCode);

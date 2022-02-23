@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
         /// <summary>The type of relation. Possible values are: pin, reuse.</summary>
         public RelationType? Relationship { get; set; }
         /// <summary>The [set] in which the relation is relevant.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set Set { get; set; }
+        public Set Set { get; set; }
         /// <summary>The to [term] of the relation. The term to which the relationship is defined.</summary>
         public Term ToTerm { get; set; }
         /// <summary>
@@ -20,7 +20,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"fromTerm", (o,n) => { (o as Relation).FromTerm = n.GetObjectValue<Term>(); } },
                 {"relationship", (o,n) => { (o as Relation).Relationship = n.GetEnumValue<RelationType>(); } },
-                {"set", (o,n) => { (o as Relation).Set = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>(); } },
+                {"set", (o,n) => { (o as Relation).Set = n.GetObjectValue<Set>(); } },
                 {"toTerm", (o,n) => { (o as Relation).ToTerm = n.GetObjectValue<Term>(); } },
             };
         }
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
             base.Serialize(writer);
             writer.WriteObjectValue<Term>("fromTerm", FromTerm);
             writer.WriteEnumValue<RelationType>("relationship", Relationship);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>("set", Set);
+            writer.WriteObjectValue<Set>("set", Set);
             writer.WriteObjectValue<Term>("toTerm", ToTerm);
         }
     }

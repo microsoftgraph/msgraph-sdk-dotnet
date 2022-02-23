@@ -42,10 +42,10 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.admin.serviceAnnouncement.messages.item collection</summary>
-        public ServiceUpdateMessageRequestBuilder this[string position] { get {
+        public ServiceUpdateMessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceUpdateMessage_id", position);
-            return new ServiceUpdateMessageRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServiceUpdateMessageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MessagesRequestBuilder and sets the default values.

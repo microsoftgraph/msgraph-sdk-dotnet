@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleDefinitions.Item.Inheri
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.directory.roleDefinitions.item.inheritsPermissionsFrom.item collection</summary>
-        public UnifiedRoleDefinitionRequestBuilder this[string position] { get {
+        public UnifiedRoleDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleDefinition_id1", position);
-            return new UnifiedRoleDefinitionRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InheritsPermissionsFromRequestBuilder and sets the default values.

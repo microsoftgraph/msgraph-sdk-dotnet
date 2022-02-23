@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.Item.Sched
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceCompliancePolicies.item.scheduledActionsForRule.item.scheduledActionConfigurations.item collection</summary>
-        public DeviceComplianceActionItemRequestBuilder this[string position] { get {
+        public DeviceComplianceActionItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceComplianceActionItem_id", position);
-            return new DeviceComplianceActionItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceComplianceActionItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ScheduledActionConfigurationsRequestBuilder and sets the default values.

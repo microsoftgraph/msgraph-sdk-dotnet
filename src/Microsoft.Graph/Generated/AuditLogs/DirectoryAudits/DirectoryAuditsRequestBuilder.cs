@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.AuditLogs.DirectoryAudits {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.auditLogs.directoryAudits.item collection</summary>
-        public DirectoryAuditRequestBuilder this[string position] { get {
+        public DirectoryAuditItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryAudit_id", position);
-            return new DirectoryAuditRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryAuditItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectoryAuditsRequestBuilder and sets the default values.

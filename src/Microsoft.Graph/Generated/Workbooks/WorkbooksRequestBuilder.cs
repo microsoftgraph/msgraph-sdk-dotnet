@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Workbooks {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item collection</summary>
-        public DriveItemRequestBuilder this[string position] { get {
+        public DriveItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("driveItem_id", position);
-            return new DriveItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new DriveItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WorkbooksRequestBuilder and sets the default values.

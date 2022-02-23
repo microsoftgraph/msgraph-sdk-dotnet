@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.In
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.accessReviews.definitions.item.instances.item collection</summary>
-        public AccessReviewInstanceRequestBuilder this[string position] { get {
+        public AccessReviewInstanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstance_id", position);
-            return new AccessReviewInstanceRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewInstanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InstancesRequestBuilder and sets the default values.

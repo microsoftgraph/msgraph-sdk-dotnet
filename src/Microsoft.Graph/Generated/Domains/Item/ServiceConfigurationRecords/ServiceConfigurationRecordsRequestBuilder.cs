@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Domains.Item.ServiceConfigurationRecords {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.domains.item.serviceConfigurationRecords.item collection</summary>
-        public DomainDnsRecordRequestBuilder this[string position] { get {
+        public DomainDnsRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("domainDnsRecord_id", position);
-            return new DomainDnsRecordRequestBuilder(urlTplParams, RequestAdapter);
+            return new DomainDnsRecordItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ServiceConfigurationRecordsRequestBuilder and sets the default values.

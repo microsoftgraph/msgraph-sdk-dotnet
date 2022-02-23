@@ -17,7 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>Settings to configure use of Giphy, memes, and stickers in the team.</summary>
         public TeamFunSettings FunSettings { get; set; }
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Group Group { get; set; }
+        public Group Group { get; set; }
         /// <summary>Settings to configure whether guests can create, update, or delete channels in the team.</summary>
         public TeamGuestSettings GuestSettings { get; set; }
         /// <summary>The apps installed in this team.</summary>
@@ -37,7 +37,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The general channel for the team.</summary>
         public Channel PrimaryChannel { get; set; }
         /// <summary>The schedule of shifts for this team.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Schedule Schedule { get; set; }
+        public Schedule Schedule { get; set; }
         /// <summary>Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.</summary>
         public TeamSpecialization? Specialization { get; set; }
         /// <summary>The template this team was created from. See available templates.</summary>
@@ -57,7 +57,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as Team).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as Team).DisplayName = n.GetStringValue(); } },
                 {"funSettings", (o,n) => { (o as Team).FunSettings = n.GetObjectValue<TeamFunSettings>(); } },
-                {"group", (o,n) => { (o as Team).Group = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>(); } },
+                {"group", (o,n) => { (o as Team).Group = n.GetObjectValue<Group>(); } },
                 {"guestSettings", (o,n) => { (o as Team).GuestSettings = n.GetObjectValue<TeamGuestSettings>(); } },
                 {"installedApps", (o,n) => { (o as Team).InstalledApps = n.GetCollectionOfObjectValues<TeamsAppInstallation>().ToList(); } },
                 {"internalId", (o,n) => { (o as Team).InternalId = n.GetStringValue(); } },
@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"messagingSettings", (o,n) => { (o as Team).MessagingSettings = n.GetObjectValue<TeamMessagingSettings>(); } },
                 {"operations", (o,n) => { (o as Team).Operations = n.GetCollectionOfObjectValues<TeamsAsyncOperation>().ToList(); } },
                 {"primaryChannel", (o,n) => { (o as Team).PrimaryChannel = n.GetObjectValue<Channel>(); } },
-                {"schedule", (o,n) => { (o as Team).Schedule = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Schedule>(); } },
+                {"schedule", (o,n) => { (o as Team).Schedule = n.GetObjectValue<Schedule>(); } },
                 {"specialization", (o,n) => { (o as Team).Specialization = n.GetEnumValue<TeamSpecialization>(); } },
                 {"template", (o,n) => { (o as Team).Template = n.GetObjectValue<TeamsTemplate>(); } },
                 {"visibility", (o,n) => { (o as Team).Visibility = n.GetEnumValue<TeamVisibilityType>(); } },
@@ -87,7 +87,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<TeamFunSettings>("funSettings", FunSettings);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>("group", Group);
+            writer.WriteObjectValue<Group>("group", Group);
             writer.WriteObjectValue<TeamGuestSettings>("guestSettings", GuestSettings);
             writer.WriteCollectionOfObjectValues<TeamsAppInstallation>("installedApps", InstalledApps);
             writer.WriteStringValue("internalId", InternalId);
@@ -97,7 +97,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<TeamMessagingSettings>("messagingSettings", MessagingSettings);
             writer.WriteCollectionOfObjectValues<TeamsAsyncOperation>("operations", Operations);
             writer.WriteObjectValue<Channel>("primaryChannel", PrimaryChannel);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Schedule>("schedule", Schedule);
+            writer.WriteObjectValue<Schedule>("schedule", Schedule);
             writer.WriteEnumValue<TeamSpecialization>("specialization", Specialization);
             writer.WriteObjectValue<TeamsTemplate>("template", Template);
             writer.WriteEnumValue<TeamVisibilityType>("visibility", Visibility);

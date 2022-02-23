@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.TelecomExpenseManagementPartners {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.telecomExpenseManagementPartners.item collection</summary>
-        public TelecomExpenseManagementPartnerRequestBuilder this[string position] { get {
+        public TelecomExpenseManagementPartnerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("telecomExpenseManagementPartner_id", position);
-            return new TelecomExpenseManagementPartnerRequestBuilder(urlTplParams, RequestAdapter);
+            return new TelecomExpenseManagementPartnerItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TelecomExpenseManagementPartnersRequestBuilder and sets the default values.

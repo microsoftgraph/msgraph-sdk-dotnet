@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.RoleDefinitions.Item.RoleAssignment
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.roleDefinitions.item.roleAssignments.item collection</summary>
-        public RoleAssignmentRequestBuilder this[string position] { get {
+        public RoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("roleAssignment_id", position);
-            return new RoleAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new RoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleAssignmentsRequestBuilder and sets the default values.

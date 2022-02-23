@@ -8,20 +8,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
         /// <summary>Default language of the term store.</summary>
         public string DefaultLanguageTag { get; set; }
         /// <summary>Collection of all groups available in the term store.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group> Groups { get; set; }
+        public List<Group> Groups { get; set; }
         /// <summary>List of languages for the term store.</summary>
         public List<string> LanguageTags { get; set; }
         /// <summary>Collection of all sets available in the term store.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set> Sets { get; set; }
+        public List<Set> Sets { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"defaultLanguageTag", (o,n) => { (o as Store).DefaultLanguageTag = n.GetStringValue(); } },
-                {"groups", (o,n) => { (o as Store).Groups = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group>().ToList(); } },
+                {"groups", (o,n) => { (o as Store).Groups = n.GetCollectionOfObjectValues<Group>().ToList(); } },
                 {"languageTags", (o,n) => { (o as Store).LanguageTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"sets", (o,n) => { (o as Store).Sets = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>().ToList(); } },
+                {"sets", (o,n) => { (o as Store).Sets = n.GetCollectionOfObjectValues<Set>().ToList(); } },
             };
         }
         /// <summary>
@@ -32,9 +32,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("defaultLanguageTag", DefaultLanguageTag);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group>("groups", Groups);
+            writer.WriteCollectionOfObjectValues<Group>("groups", Groups);
             writer.WriteCollectionOfPrimitiveValues<string>("languageTags", LanguageTags);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>("sets", Sets);
+            writer.WriteCollectionOfObjectValues<Set>("sets", Sets);
         }
     }
 }

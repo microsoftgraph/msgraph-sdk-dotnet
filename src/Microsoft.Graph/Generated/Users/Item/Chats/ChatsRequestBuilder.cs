@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Users.Item.Chats {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.chats.item collection</summary>
-        public ChatRequestBuilder this[string position] { get {
+        public ChatItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chat_id", position);
-            return new ChatRequestBuilder(urlTplParams, RequestAdapter);
+            return new ChatItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChatsRequestBuilder and sets the default values.

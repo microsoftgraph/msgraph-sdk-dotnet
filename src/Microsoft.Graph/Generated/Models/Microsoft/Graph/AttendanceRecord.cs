@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Email address of the user associated with this atttendance record.</summary>
         public string EmailAddress { get; set; }
         /// <summary>Identity of the user associated with this atttendance record.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Identity Identity { get; set; }
+        public Identity Identity { get; set; }
         /// <summary>Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.</summary>
         public string Role { get; set; }
         /// <summary>Total duration of the attendances in seconds.</summary>
@@ -22,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"attendanceIntervals", (o,n) => { (o as AttendanceRecord).AttendanceIntervals = n.GetCollectionOfObjectValues<AttendanceInterval>().ToList(); } },
                 {"emailAddress", (o,n) => { (o as AttendanceRecord).EmailAddress = n.GetStringValue(); } },
-                {"identity", (o,n) => { (o as AttendanceRecord).Identity = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(); } },
+                {"identity", (o,n) => { (o as AttendanceRecord).Identity = n.GetObjectValue<Identity>(); } },
                 {"role", (o,n) => { (o as AttendanceRecord).Role = n.GetStringValue(); } },
                 {"totalAttendanceInSeconds", (o,n) => { (o as AttendanceRecord).TotalAttendanceInSeconds = n.GetIntValue(); } },
             };
@@ -36,7 +36,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AttendanceInterval>("attendanceIntervals", AttendanceIntervals);
             writer.WriteStringValue("emailAddress", EmailAddress);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>("identity", Identity);
+            writer.WriteObjectValue<Identity>("identity", Identity);
             writer.WriteStringValue("role", Role);
             writer.WriteIntValue("totalAttendanceInSeconds", TotalAttendanceInSeconds);
         }

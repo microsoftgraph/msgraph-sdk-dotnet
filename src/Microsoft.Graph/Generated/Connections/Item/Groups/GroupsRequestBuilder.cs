@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Connections.Item.Groups {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.connections.item.groups.item collection</summary>
-        public ExternalGroupRequestBuilder this[string position] { get {
+        public ExternalGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("externalGroup_id", position);
-            return new ExternalGroupRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExternalGroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupsRequestBuilder and sets the default values.

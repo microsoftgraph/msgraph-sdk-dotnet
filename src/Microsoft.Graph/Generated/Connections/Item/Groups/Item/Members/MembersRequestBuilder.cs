@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Connections.Item.Groups.Item.Members {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.connections.item.groups.item.members.item collection</summary>
-        public IdentityRequestBuilder this[string position] { get {
+        public IdentityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identity_id", position);
-            return new IdentityRequestBuilder(urlTplParams, RequestAdapter);
+            return new IdentityItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MembersRequestBuilder and sets the default values.

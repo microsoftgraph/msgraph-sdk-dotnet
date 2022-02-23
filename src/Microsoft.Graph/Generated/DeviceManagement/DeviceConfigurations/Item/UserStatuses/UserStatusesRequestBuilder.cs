@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.UserStatu
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceConfigurations.item.userStatuses.item collection</summary>
-        public DeviceConfigurationUserStatusRequestBuilder this[string position] { get {
+        public DeviceConfigurationUserStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceConfigurationUserStatus_id", position);
-            return new DeviceConfigurationUserStatusRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceConfigurationUserStatusItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserStatusesRequestBuilder and sets the default values.

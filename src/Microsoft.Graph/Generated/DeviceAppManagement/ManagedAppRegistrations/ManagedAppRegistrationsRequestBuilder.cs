@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.managedAppRegistrations.item collection</summary>
-        public ManagedAppRegistrationRequestBuilder this[string position] { get {
+        public ManagedAppRegistrationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedAppRegistration_id", position);
-            return new ManagedAppRegistrationRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedAppRegistrationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedAppRegistrationsRequestBuilder and sets the default values.

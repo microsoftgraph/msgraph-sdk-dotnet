@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.OfferShiftRequests {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.schedule.offerShiftRequests.item collection</summary>
-        public OfferShiftRequestRequestBuilder this[string position] { get {
+        public OfferShiftRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("offerShiftRequest_id", position);
-            return new OfferShiftRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new OfferShiftRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OfferShiftRequestsRequestBuilder and sets the default values.

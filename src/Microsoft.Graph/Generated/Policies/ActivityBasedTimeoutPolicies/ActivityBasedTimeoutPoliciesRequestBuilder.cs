@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Policies.ActivityBasedTimeoutPolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.policies.activityBasedTimeoutPolicies.item collection</summary>
-        public ActivityBasedTimeoutPolicyRequestBuilder this[string position] { get {
+        public ActivityBasedTimeoutPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("activityBasedTimeoutPolicy_id", position);
-            return new ActivityBasedTimeoutPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new ActivityBasedTimeoutPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ActivityBasedTimeoutPoliciesRequestBuilder and sets the default values.

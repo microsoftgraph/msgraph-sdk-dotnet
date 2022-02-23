@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Users.Item.ScopedRoleMemberOf {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.scopedRoleMemberOf.item collection</summary>
-        public ScopedRoleMembershipRequestBuilder this[string position] { get {
+        public ScopedRoleMembershipItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("scopedRoleMembership_id", position);
-            return new ScopedRoleMembershipRequestBuilder(urlTplParams, RequestAdapter);
+            return new ScopedRoleMembershipItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ScopedRoleMemberOfRequestBuilder and sets the default values.

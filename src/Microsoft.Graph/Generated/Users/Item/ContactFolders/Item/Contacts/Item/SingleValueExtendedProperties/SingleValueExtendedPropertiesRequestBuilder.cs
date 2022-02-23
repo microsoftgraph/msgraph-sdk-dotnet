@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Users.Item.ContactFolders.Item.Contacts.Item.SingleV
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.contactFolders.item.contacts.item.singleValueExtendedProperties.item collection</summary>
-        public SingleValueLegacyExtendedPropertyRequestBuilder this[string position] { get {
+        public SingleValueLegacyExtendedPropertyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("singleValueLegacyExtendedProperty_id", position);
-            return new SingleValueLegacyExtendedPropertyRequestBuilder(urlTplParams, RequestAdapter);
+            return new SingleValueLegacyExtendedPropertyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SingleValueExtendedPropertiesRequestBuilder and sets the default values.

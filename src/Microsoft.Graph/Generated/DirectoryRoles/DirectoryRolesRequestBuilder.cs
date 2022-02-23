@@ -31,10 +31,10 @@ namespace MicrosoftGraphSdk.DirectoryRoles {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraphSdk.directoryRoles.item collection</summary>
-        public DirectoryRoleRequestBuilder this[string position] { get {
+        public DirectoryRoleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryRole_id", position);
-            return new DirectoryRoleRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryRoleItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectoryRolesRequestBuilder and sets the default values.

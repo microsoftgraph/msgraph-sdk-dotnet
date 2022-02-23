@@ -30,10 +30,10 @@ namespace MicrosoftGraphSdk.GroupSettingTemplates {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraphSdk.groupSettingTemplates.item collection</summary>
-        public GroupSettingTemplateRequestBuilder this[string position] { get {
+        public GroupSettingTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupSettingTemplate_id", position);
-            return new GroupSettingTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupSettingTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupSettingTemplatesRequestBuilder and sets the default values.

@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.Oauth2PermissionGrants {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.oauth2PermissionGrants.item collection</summary>
-        public OAuth2PermissionGrantRequestBuilder this[string position] { get {
+        public OAuth2PermissionGrantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("oAuth2PermissionGrant_id", position);
-            return new OAuth2PermissionGrantRequestBuilder(urlTplParams, RequestAdapter);
+            return new OAuth2PermissionGrantItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new Oauth2PermissionGrantsRequestBuilder and sets the default values.

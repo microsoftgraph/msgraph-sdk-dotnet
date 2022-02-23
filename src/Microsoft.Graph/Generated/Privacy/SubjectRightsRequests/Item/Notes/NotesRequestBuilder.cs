@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.Notes {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.privacy.subjectRightsRequests.item.notes.item collection</summary>
-        public AuthoredNoteRequestBuilder this[string position] { get {
+        public AuthoredNoteItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authoredNote_id", position);
-            return new AuthoredNoteRequestBuilder(urlTplParams, RequestAdapter);
+            return new AuthoredNoteItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NotesRequestBuilder and sets the default values.

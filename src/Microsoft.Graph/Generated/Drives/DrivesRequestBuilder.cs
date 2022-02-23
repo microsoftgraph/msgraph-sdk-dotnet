@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Drives {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.drives.item collection</summary>
-        public DriveRequestBuilder this[string position] { get {
+        public DriveItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("drive_id", position);
-            return new DriveRequestBuilder(urlTplParams, RequestAdapter);
+            return new DriveItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DrivesRequestBuilder and sets the default values.

@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Me.Insights.Used {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.insights.used.item collection</summary>
-        public UsedInsightRequestBuilder this[string position] { get {
+        public UsedInsightItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("usedInsight_id", position);
-            return new UsedInsightRequestBuilder(urlTplParams, RequestAdapter);
+            return new UsedInsightItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UsedRequestBuilder and sets the default values.

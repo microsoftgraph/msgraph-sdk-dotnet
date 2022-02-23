@@ -22,10 +22,10 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Worksheet.PivotT
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.tables.item.worksheet.pivotTables.item collection</summary>
-        public WorkbookPivotTableRequestBuilder this[string position] { get {
+        public WorkbookPivotTableItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookPivotTable_id", position);
-            return new WorkbookPivotTableRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookPivotTableItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PivotTablesRequestBuilder and sets the default values.

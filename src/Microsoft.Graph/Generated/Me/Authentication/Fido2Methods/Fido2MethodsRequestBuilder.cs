@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Me.Authentication.Fido2Methods {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.authentication.fido2Methods.item collection</summary>
-        public Fido2AuthenticationMethodRequestBuilder this[string position] { get {
+        public Fido2AuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("fido2AuthenticationMethod_id", position);
-            return new Fido2AuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
+            return new Fido2AuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new Fido2MethodsRequestBuilder and sets the default values.

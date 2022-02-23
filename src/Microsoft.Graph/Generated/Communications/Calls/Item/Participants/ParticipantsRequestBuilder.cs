@@ -22,10 +22,10 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Participants {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.communications.calls.item.participants.item collection</summary>
-        public ParticipantRequestBuilder this[string position] { get {
+        public ParticipantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("participant_id", position);
-            return new ParticipantRequestBuilder(urlTplParams, RequestAdapter);
+            return new ParticipantItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ParticipantsRequestBuilder and sets the default values.

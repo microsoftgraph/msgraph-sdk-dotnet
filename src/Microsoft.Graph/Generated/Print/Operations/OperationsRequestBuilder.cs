@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Print.Operations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.print.operations.item collection</summary>
-        public PrintOperationRequestBuilder this[string position] { get {
+        public PrintOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printOperation_id", position);
-            return new PrintOperationRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintOperationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OperationsRequestBuilder and sets the default values.

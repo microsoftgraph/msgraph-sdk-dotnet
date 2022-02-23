@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppStatuses {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.managedAppStatuses.item collection</summary>
-        public ManagedAppStatusRequestBuilder this[string position] { get {
+        public ManagedAppStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedAppStatus_id", position);
-            return new ManagedAppStatusRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedAppStatusItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedAppStatusesRequestBuilder and sets the default values.

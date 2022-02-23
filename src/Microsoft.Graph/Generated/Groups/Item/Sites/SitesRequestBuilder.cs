@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Groups.Item.Sites {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.sites.item collection</summary>
-        public SiteRequestBuilder this[string position] { get {
+        public SiteItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("site_id", position);
-            return new SiteRequestBuilder(urlTplParams, RequestAdapter);
+            return new SiteItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SitesRequestBuilder and sets the default values.

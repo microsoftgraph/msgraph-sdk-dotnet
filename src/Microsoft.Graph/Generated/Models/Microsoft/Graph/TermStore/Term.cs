@@ -20,7 +20,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
         /// <summary>To indicate which terms are related to the current term as either pinned or reused.</summary>
         public List<Relation> Relations { get; set; }
         /// <summary>The [set] in which the term is created.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set Set { get; set; }
+        public Set Set { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
                 {"lastModifiedDateTime", (o,n) => { (o as Term).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"properties", (o,n) => { (o as Term).Properties = n.GetCollectionOfObjectValues<KeyValue>().ToList(); } },
                 {"relations", (o,n) => { (o as Term).Relations = n.GetCollectionOfObjectValues<Relation>().ToList(); } },
-                {"set", (o,n) => { (o as Term).Set = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>(); } },
+                {"set", (o,n) => { (o as Term).Set = n.GetObjectValue<Set>(); } },
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfObjectValues<KeyValue>("properties", Properties);
             writer.WriteCollectionOfObjectValues<Relation>("relations", Relations);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>("set", Set);
+            writer.WriteObjectValue<Set>("set", Set);
         }
     }
 }

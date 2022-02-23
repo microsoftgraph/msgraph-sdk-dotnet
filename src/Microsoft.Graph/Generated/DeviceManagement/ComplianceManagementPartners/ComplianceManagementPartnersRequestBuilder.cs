@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComplianceManagementPartners {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.complianceManagementPartners.item collection</summary>
-        public ComplianceManagementPartnerRequestBuilder this[string position] { get {
+        public ComplianceManagementPartnerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("complianceManagementPartner_id", position);
-            return new ComplianceManagementPartnerRequestBuilder(urlTplParams, RequestAdapter);
+            return new ComplianceManagementPartnerItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ComplianceManagementPartnersRequestBuilder and sets the default values.

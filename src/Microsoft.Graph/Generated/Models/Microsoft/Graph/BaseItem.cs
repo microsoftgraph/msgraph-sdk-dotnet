@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Identity of the user, device, or application which created the item. Read-only.</summary>
         public IdentitySet CreatedBy { get; set; }
         /// <summary>Identity of the user who created the item. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.User CreatedByUser { get; set; }
+        public User CreatedByUser { get; set; }
         /// <summary>Date and time of item creation. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Provides a user-visible description of the item. Optional.</summary>
@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Identity of the user, device, and application which last modified the item. Read-only.</summary>
         public IdentitySet LastModifiedBy { get; set; }
         /// <summary>Identity of the user who last modified the item. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.User LastModifiedByUser { get; set; }
+        public User LastModifiedByUser { get; set; }
         /// <summary>Date and time the item was last modified. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>The name of the item. Read-write.</summary>
@@ -33,12 +33,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"createdBy", (o,n) => { (o as BaseItem).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
-                {"createdByUser", (o,n) => { (o as BaseItem).CreatedByUser = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.User>(); } },
+                {"createdByUser", (o,n) => { (o as BaseItem).CreatedByUser = n.GetObjectValue<User>(); } },
                 {"createdDateTime", (o,n) => { (o as BaseItem).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as BaseItem).Description = n.GetStringValue(); } },
                 {"eTag", (o,n) => { (o as BaseItem).ETag = n.GetStringValue(); } },
                 {"lastModifiedBy", (o,n) => { (o as BaseItem).LastModifiedBy = n.GetObjectValue<IdentitySet>(); } },
-                {"lastModifiedByUser", (o,n) => { (o as BaseItem).LastModifiedByUser = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.User>(); } },
+                {"lastModifiedByUser", (o,n) => { (o as BaseItem).LastModifiedByUser = n.GetObjectValue<User>(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as BaseItem).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"name", (o,n) => { (o as BaseItem).Name = n.GetStringValue(); } },
                 {"parentReference", (o,n) => { (o as BaseItem).ParentReference = n.GetObjectValue<ItemReference>(); } },
@@ -53,12 +53,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.User>("createdByUser", CreatedByUser);
+            writer.WriteObjectValue<User>("createdByUser", CreatedByUser);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("eTag", ETag);
             writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.User>("lastModifiedByUser", LastModifiedByUser);
+            writer.WriteObjectValue<User>("lastModifiedByUser", LastModifiedByUser);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<ItemReference>("parentReference", ParentReference);

@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Me.Calendars {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.calendars.item collection</summary>
-        public CalendarRequestBuilder this[string position] { get {
+        public CalendarItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("calendar_id", position);
-            return new CalendarRequestBuilder(urlTplParams, RequestAdapter);
+            return new CalendarItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CalendarsRequestBuilder and sets the default values.

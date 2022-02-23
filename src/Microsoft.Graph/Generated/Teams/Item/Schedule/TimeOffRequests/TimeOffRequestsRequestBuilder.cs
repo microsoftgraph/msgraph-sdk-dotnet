@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeOffRequests {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.schedule.timeOffRequests.item collection</summary>
-        public TimeOffRequestRequestBuilder this[string position] { get {
+        public TimeOffRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("timeOffRequest_id", position);
-            return new TimeOffRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new TimeOffRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TimeOffRequestsRequestBuilder and sets the default values.

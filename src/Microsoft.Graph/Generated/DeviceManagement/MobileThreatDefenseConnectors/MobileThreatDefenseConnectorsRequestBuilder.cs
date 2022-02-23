@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.MobileThreatDefenseConnectors {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.mobileThreatDefenseConnectors.item collection</summary>
-        public MobileThreatDefenseConnectorRequestBuilder this[string position] { get {
+        public MobileThreatDefenseConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileThreatDefenseConnector_id", position);
-            return new MobileThreatDefenseConnectorRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobileThreatDefenseConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobileThreatDefenseConnectorsRequestBuilder and sets the default values.

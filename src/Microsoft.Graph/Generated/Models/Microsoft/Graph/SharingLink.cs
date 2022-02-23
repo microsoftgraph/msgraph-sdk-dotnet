@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The app the link is associated with.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Identity Application { get; set; }
+        public Identity Application { get; set; }
         /// <summary>If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.</summary>
         public bool? PreventsDownload { get; set; }
         /// <summary>The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.</summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"application", (o,n) => { (o as SharingLink).Application = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(); } },
+                {"application", (o,n) => { (o as SharingLink).Application = n.GetObjectValue<Identity>(); } },
                 {"preventsDownload", (o,n) => { (o as SharingLink).PreventsDownload = n.GetBoolValue(); } },
                 {"scope", (o,n) => { (o as SharingLink).Scope = n.GetStringValue(); } },
                 {"type", (o,n) => { (o as SharingLink).Type = n.GetStringValue(); } },
@@ -44,7 +44,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>("application", Application);
+            writer.WriteObjectValue<Identity>("application", Application);
             writer.WriteBoolValue("preventsDownload", PreventsDownload);
             writer.WriteStringValue("scope", Scope);
             writer.WriteStringValue("type", Type);

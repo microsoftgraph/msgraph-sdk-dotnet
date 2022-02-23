@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsInformationProtectionNetwork
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsInformationProtectionNetworkLearningSummaries.item collection</summary>
-        public WindowsInformationProtectionNetworkLearningSummaryRequestBuilder this[string position] { get {
+        public WindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsInformationProtectionNetworkLearningSummary_id", position);
-            return new WindowsInformationProtectionNetworkLearningSummaryRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsInformationProtectionNetworkLearningSummariesRequestBuilder and sets the default values.

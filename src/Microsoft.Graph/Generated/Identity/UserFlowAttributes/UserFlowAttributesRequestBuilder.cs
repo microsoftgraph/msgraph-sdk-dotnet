@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Identity.UserFlowAttributes {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identity.userFlowAttributes.item collection</summary>
-        public IdentityUserFlowAttributeRequestBuilder this[string position] { get {
+        public IdentityUserFlowAttributeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityUserFlowAttribute_id", position);
-            return new IdentityUserFlowAttributeRequestBuilder(urlTplParams, RequestAdapter);
+            return new IdentityUserFlowAttributeItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserFlowAttributesRequestBuilder and sets the default values.

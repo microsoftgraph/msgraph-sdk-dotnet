@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Print.Connectors {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.print.connectors.item collection</summary>
-        public PrintConnectorRequestBuilder this[string position] { get {
+        public PrintConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printConnector_id", position);
-            return new PrintConnectorRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConnectorsRequestBuilder and sets the default values.

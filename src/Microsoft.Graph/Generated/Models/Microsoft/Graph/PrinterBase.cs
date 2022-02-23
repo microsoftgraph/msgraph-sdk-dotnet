@@ -14,7 +14,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Whether the printer/printerShare is currently accepting new print jobs.</summary>
         public bool? IsAcceptingJobs { get; set; }
         /// <summary>The list of jobs that are queued for printing by the printer/printerShare.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.PrintJob> Jobs { get; set; }
+        public List<PrintJob> Jobs { get; set; }
         /// <summary>The physical and/or organizational location of the printer/printerShare.</summary>
         public PrinterLocation Location { get; set; }
         /// <summary>The manufacturer of the printer/printerShare.</summary>
@@ -31,7 +31,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"defaults", (o,n) => { (o as PrinterBase).Defaults = n.GetObjectValue<PrinterDefaults>(); } },
                 {"displayName", (o,n) => { (o as PrinterBase).DisplayName = n.GetStringValue(); } },
                 {"isAcceptingJobs", (o,n) => { (o as PrinterBase).IsAcceptingJobs = n.GetBoolValue(); } },
-                {"jobs", (o,n) => { (o as PrinterBase).Jobs = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.PrintJob>().ToList(); } },
+                {"jobs", (o,n) => { (o as PrinterBase).Jobs = n.GetCollectionOfObjectValues<PrintJob>().ToList(); } },
                 {"location", (o,n) => { (o as PrinterBase).Location = n.GetObjectValue<PrinterLocation>(); } },
                 {"manufacturer", (o,n) => { (o as PrinterBase).Manufacturer = n.GetStringValue(); } },
                 {"model", (o,n) => { (o as PrinterBase).Model = n.GetStringValue(); } },
@@ -49,7 +49,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<PrinterDefaults>("defaults", Defaults);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isAcceptingJobs", IsAcceptingJobs);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.PrintJob>("jobs", Jobs);
+            writer.WriteCollectionOfObjectValues<PrintJob>("jobs", Jobs);
             writer.WriteObjectValue<PrinterLocation>("location", Location);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);

@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.Assignments
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.termsAndConditions.item.assignments.item collection</summary>
-        public TermsAndConditionsAssignmentRequestBuilder this[string position] { get {
+        public TermsAndConditionsAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("termsAndConditionsAssignment_id", position);
-            return new TermsAndConditionsAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new TermsAndConditionsAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

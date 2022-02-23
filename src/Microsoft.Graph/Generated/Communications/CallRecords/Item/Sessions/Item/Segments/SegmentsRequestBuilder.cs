@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions.Item.Segmen
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.communications.callRecords.item.sessions.item.segments.item collection</summary>
-        public SegmentRequestBuilder this[string position] { get {
+        public SegmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("segment_id", position);
-            return new SegmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new SegmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SegmentsRequestBuilder and sets the default values.

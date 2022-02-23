@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Places {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.places.item collection</summary>
-        public PlaceRequestBuilder this[string position] { get {
+        public PlaceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("place_id", position);
-            return new PlaceRequestBuilder(urlTplParams, RequestAdapter);
+            return new PlaceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PlacesRequestBuilder and sets the default values.

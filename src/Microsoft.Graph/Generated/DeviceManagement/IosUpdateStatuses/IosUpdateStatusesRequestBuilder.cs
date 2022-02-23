@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.IosUpdateStatuses {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.iosUpdateStatuses.item collection</summary>
-        public IosUpdateDeviceStatusRequestBuilder this[string position] { get {
+        public IosUpdateDeviceStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("iosUpdateDeviceStatus_id", position);
-            return new IosUpdateDeviceStatusRequestBuilder(urlTplParams, RequestAdapter);
+            return new IosUpdateDeviceStatusItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IosUpdateStatusesRequestBuilder and sets the default values.

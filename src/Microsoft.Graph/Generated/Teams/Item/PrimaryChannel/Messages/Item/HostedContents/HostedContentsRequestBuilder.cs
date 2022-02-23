@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.HostedConten
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.primaryChannel.messages.item.hostedContents.item collection</summary>
-        public ChatMessageHostedContentRequestBuilder this[string position] { get {
+        public ChatMessageHostedContentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chatMessageHostedContent_id", position);
-            return new ChatMessageHostedContentRequestBuilder(urlTplParams, RequestAdapter);
+            return new ChatMessageHostedContentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new HostedContentsRequestBuilder and sets the default values.

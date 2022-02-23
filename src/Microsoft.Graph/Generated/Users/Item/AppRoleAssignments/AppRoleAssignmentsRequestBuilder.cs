@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Users.Item.AppRoleAssignments {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.appRoleAssignments.item collection</summary>
-        public AppRoleAssignmentRequestBuilder this[string position] { get {
+        public AppRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appRoleAssignment_id", position);
-            return new AppRoleAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new AppRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppRoleAssignmentsRequestBuilder and sets the default values.

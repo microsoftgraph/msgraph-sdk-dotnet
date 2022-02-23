@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Solutions.BookingCurrencies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.solutions.bookingCurrencies.item collection</summary>
-        public BookingCurrencyRequestBuilder this[string position] { get {
+        public BookingCurrencyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingCurrency_id", position);
-            return new BookingCurrencyRequestBuilder(urlTplParams, RequestAdapter);
+            return new BookingCurrencyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new BookingCurrenciesRequestBuilder and sets the default values.

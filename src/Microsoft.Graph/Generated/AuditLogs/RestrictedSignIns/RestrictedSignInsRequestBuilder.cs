@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.AuditLogs.RestrictedSignIns {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.auditLogs.restrictedSignIns.item collection</summary>
-        public RestrictedSignInRequestBuilder this[string position] { get {
+        public RestrictedSignInItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("restrictedSignIn_id", position);
-            return new RestrictedSignInRequestBuilder(urlTplParams, RequestAdapter);
+            return new RestrictedSignInItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RestrictedSignInsRequestBuilder and sets the default values.

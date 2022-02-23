@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.IosManagedAppProtections {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.iosManagedAppProtections.item collection</summary>
-        public IosManagedAppProtectionRequestBuilder this[string position] { get {
+        public IosManagedAppProtectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("iosManagedAppProtection_id", position);
-            return new IosManagedAppProtectionRequestBuilder(urlTplParams, RequestAdapter);
+            return new IosManagedAppProtectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IosManagedAppProtectionsRequestBuilder and sets the default values.

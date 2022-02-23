@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.WindowsHelloForBusinessMet
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.authentication.windowsHelloForBusinessMethods.item collection</summary>
-        public WindowsHelloForBusinessAuthenticationMethodRequestBuilder this[string position] { get {
+        public WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsHelloForBusinessAuthenticationMethod_id", position);
-            return new WindowsHelloForBusinessAuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsHelloForBusinessMethodsRequestBuilder and sets the default values.

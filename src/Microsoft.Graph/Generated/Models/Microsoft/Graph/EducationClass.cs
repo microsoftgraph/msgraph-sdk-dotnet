@@ -31,7 +31,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Grade level of the class.</summary>
         public string Grade { get; set; }
         /// <summary>The underlying Microsoft 365 group object.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Group Group { get; set; }
+        public Group Group { get; set; }
         /// <summary>Mail name for sending email to all members, if this is enabled.</summary>
         public string MailNickname { get; set; }
         /// <summary>All users in the class. Nullable.</summary>
@@ -61,7 +61,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"externalSource", (o,n) => { (o as EducationClass).ExternalSource = n.GetEnumValue<EducationExternalSource>(); } },
                 {"externalSourceDetail", (o,n) => { (o as EducationClass).ExternalSourceDetail = n.GetStringValue(); } },
                 {"grade", (o,n) => { (o as EducationClass).Grade = n.GetStringValue(); } },
-                {"group", (o,n) => { (o as EducationClass).Group = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>(); } },
+                {"group", (o,n) => { (o as EducationClass).Group = n.GetObjectValue<Group>(); } },
                 {"mailNickname", (o,n) => { (o as EducationClass).MailNickname = n.GetStringValue(); } },
                 {"members", (o,n) => { (o as EducationClass).Members = n.GetCollectionOfObjectValues<EducationUser>().ToList(); } },
                 {"schools", (o,n) => { (o as EducationClass).Schools = n.GetCollectionOfObjectValues<EducationSchool>().ToList(); } },
@@ -90,7 +90,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteEnumValue<EducationExternalSource>("externalSource", ExternalSource);
             writer.WriteStringValue("externalSourceDetail", ExternalSourceDetail);
             writer.WriteStringValue("grade", Grade);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>("group", Group);
+            writer.WriteObjectValue<Group>("group", Group);
             writer.WriteStringValue("mailNickname", MailNickname);
             writer.WriteCollectionOfObjectValues<EducationUser>("members", Members);
             writer.WriteCollectionOfObjectValues<EducationSchool>("schools", Schools);

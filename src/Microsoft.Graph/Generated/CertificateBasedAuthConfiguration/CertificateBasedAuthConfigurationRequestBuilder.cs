@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.CertificateBasedAuthConfiguration.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraphSdk.CertificateBasedAuthConfiguration {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.certificateBasedAuthConfiguration.item collection</summary>
-        public CertificateBasedAuthConfigurationRequestBuilder this[string position] { get {
+        public CertificateBasedAuthConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("certificateBasedAuthConfiguration_id", position);
-            return new CertificateBasedAuthConfigurationRequestBuilder(urlTplParams, RequestAdapter);
+            return new CertificateBasedAuthConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CertificateBasedAuthConfigurationRequestBuilder and sets the default values.

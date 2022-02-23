@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UnifiedRoleAssignment : Entity, IParsable {
         /// <summary>Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope AppScope { get; set; }
+        public AppScope AppScope { get; set; }
         /// <summary>Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).</summary>
         public string AppScopeId { get; set; }
         public string Condition { get; set; }
@@ -27,7 +27,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appScope", (o,n) => { (o as UnifiedRoleAssignment).AppScope = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope>(); } },
+                {"appScope", (o,n) => { (o as UnifiedRoleAssignment).AppScope = n.GetObjectValue<AppScope>(); } },
                 {"appScopeId", (o,n) => { (o as UnifiedRoleAssignment).AppScopeId = n.GetStringValue(); } },
                 {"condition", (o,n) => { (o as UnifiedRoleAssignment).Condition = n.GetStringValue(); } },
                 {"directoryScope", (o,n) => { (o as UnifiedRoleAssignment).DirectoryScope = n.GetObjectValue<DirectoryObject>(); } },
@@ -45,7 +45,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope>("appScope", AppScope);
+            writer.WriteObjectValue<AppScope>("appScope", AppScope);
             writer.WriteStringValue("appScopeId", AppScopeId);
             writer.WriteStringValue("condition", Condition);
             writer.WriteObjectValue<DirectoryObject>("directoryScope", DirectoryScope);

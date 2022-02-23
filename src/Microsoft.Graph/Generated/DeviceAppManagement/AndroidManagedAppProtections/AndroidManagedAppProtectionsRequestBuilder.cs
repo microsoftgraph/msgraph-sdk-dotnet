@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.androidManagedAppProtections.item collection</summary>
-        public AndroidManagedAppProtectionRequestBuilder this[string position] { get {
+        public AndroidManagedAppProtectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidManagedAppProtection_id", position);
-            return new AndroidManagedAppProtectionRequestBuilder(urlTplParams, RequestAdapter);
+            return new AndroidManagedAppProtectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AndroidManagedAppProtectionsRequestBuilder and sets the default values.

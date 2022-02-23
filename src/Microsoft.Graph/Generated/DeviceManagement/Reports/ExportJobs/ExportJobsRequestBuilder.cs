@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.Reports.ExportJobs {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.reports.exportJobs.item collection</summary>
-        public DeviceManagementExportJobRequestBuilder this[string position] { get {
+        public DeviceManagementExportJobItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementExportJob_id", position);
-            return new DeviceManagementExportJobRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementExportJobItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExportJobsRequestBuilder and sets the default values.

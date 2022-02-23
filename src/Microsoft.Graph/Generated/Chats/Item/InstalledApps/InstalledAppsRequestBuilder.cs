@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Chats.Item.InstalledApps {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.chats.item.installedApps.item collection</summary>
-        public TeamsAppInstallationRequestBuilder this[string position] { get {
+        public TeamsAppInstallationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsAppInstallation_id", position);
-            return new TeamsAppInstallationRequestBuilder(urlTplParams, RequestAdapter);
+            return new TeamsAppInstallationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InstalledAppsRequestBuilder and sets the default values.

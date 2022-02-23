@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.ResourceOperations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.resourceOperations.item collection</summary>
-        public ResourceOperationRequestBuilder this[string position] { get {
+        public ResourceOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("resourceOperation_id", position);
-            return new ResourceOperationRequestBuilder(urlTplParams, RequestAdapter);
+            return new ResourceOperationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResourceOperationsRequestBuilder and sets the default values.

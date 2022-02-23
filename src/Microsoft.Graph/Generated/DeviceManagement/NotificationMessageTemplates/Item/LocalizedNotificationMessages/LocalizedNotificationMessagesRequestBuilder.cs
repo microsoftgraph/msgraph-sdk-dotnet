@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.NotificationMessageTemplates.Item.L
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.notificationMessageTemplates.item.localizedNotificationMessages.item collection</summary>
-        public LocalizedNotificationMessageRequestBuilder this[string position] { get {
+        public LocalizedNotificationMessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("localizedNotificationMessage_id", position);
-            return new LocalizedNotificationMessageRequestBuilder(urlTplParams, RequestAdapter);
+            return new LocalizedNotificationMessageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LocalizedNotificationMessagesRequestBuilder and sets the default values.

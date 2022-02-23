@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.mailFolders.item collection</summary>
-        public MailFolderRequestBuilder this[string position] { get {
+        public MailFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mailFolder_id", position);
-            return new MailFolderRequestBuilder(urlTplParams, RequestAdapter);
+            return new MailFolderItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MailFoldersRequestBuilder and sets the default values.

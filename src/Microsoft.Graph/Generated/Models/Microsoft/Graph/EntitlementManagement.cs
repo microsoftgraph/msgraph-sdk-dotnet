@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class EntitlementManagement : Entity, IParsable {
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Approval> AccessPackageAssignmentApprovals { get; set; }
+        public List<Approval> AccessPackageAssignmentApprovals { get; set; }
         /// <summary>Represents access package objects.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage> AccessPackages { get; set; }
+        public List<AccessPackage> AccessPackages { get; set; }
         /// <summary>Represents access package assignment requests created by or on behalf of a user.</summary>
         public List<AccessPackageAssignmentRequest> AssignmentRequests { get; set; }
         /// <summary>Represents the grant of an access package to a subject (user or group).</summary>
@@ -23,8 +23,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageAssignmentApprovals", (o,n) => { (o as EntitlementManagement).AccessPackageAssignmentApprovals = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Approval>().ToList(); } },
-                {"accessPackages", (o,n) => { (o as EntitlementManagement).AccessPackages = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage>().ToList(); } },
+                {"accessPackageAssignmentApprovals", (o,n) => { (o as EntitlementManagement).AccessPackageAssignmentApprovals = n.GetCollectionOfObjectValues<Approval>().ToList(); } },
+                {"accessPackages", (o,n) => { (o as EntitlementManagement).AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>().ToList(); } },
                 {"assignmentRequests", (o,n) => { (o as EntitlementManagement).AssignmentRequests = n.GetCollectionOfObjectValues<AccessPackageAssignmentRequest>().ToList(); } },
                 {"assignments", (o,n) => { (o as EntitlementManagement).Assignments = n.GetCollectionOfObjectValues<AccessPackageAssignment>().ToList(); } },
                 {"catalogs", (o,n) => { (o as EntitlementManagement).Catalogs = n.GetCollectionOfObjectValues<AccessPackageCatalog>().ToList(); } },
@@ -39,8 +39,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Approval>("accessPackageAssignmentApprovals", AccessPackageAssignmentApprovals);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage>("accessPackages", AccessPackages);
+            writer.WriteCollectionOfObjectValues<Approval>("accessPackageAssignmentApprovals", AccessPackageAssignmentApprovals);
+            writer.WriteCollectionOfObjectValues<AccessPackage>("accessPackages", AccessPackages);
             writer.WriteCollectionOfObjectValues<AccessPackageAssignmentRequest>("assignmentRequests", AssignmentRequests);
             writer.WriteCollectionOfObjectValues<AccessPackageAssignment>("assignments", Assignments);
             writer.WriteCollectionOfObjectValues<AccessPackageCatalog>("catalogs", Catalogs);

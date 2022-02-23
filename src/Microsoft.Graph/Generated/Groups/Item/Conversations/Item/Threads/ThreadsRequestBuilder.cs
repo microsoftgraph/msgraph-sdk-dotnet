@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.conversations.item.threads.item collection</summary>
-        public ConversationThreadRequestBuilder this[string position] { get {
+        public ConversationThreadItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conversationThread_id", position);
-            return new ConversationThreadRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConversationThreadItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ThreadsRequestBuilder and sets the default values.

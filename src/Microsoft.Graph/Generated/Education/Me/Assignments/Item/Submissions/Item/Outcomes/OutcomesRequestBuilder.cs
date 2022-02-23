@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Education.Me.Assignments.Item.Submissions.Item.Outco
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.education.me.assignments.item.submissions.item.outcomes.item collection</summary>
-        public EducationOutcomeRequestBuilder this[string position] { get {
+        public EducationOutcomeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationOutcome_id", position);
-            return new EducationOutcomeRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationOutcomeItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OutcomesRequestBuilder and sets the default values.

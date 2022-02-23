@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Groups.Item.PermissionGrants {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.permissionGrants.item collection</summary>
-        public ResourceSpecificPermissionGrantRequestBuilder this[string position] { get {
+        public ResourceSpecificPermissionGrantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("resourceSpecificPermissionGrant_id", position);
-            return new ResourceSpecificPermissionGrantRequestBuilder(urlTplParams, RequestAdapter);
+            return new ResourceSpecificPermissionGrantItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PermissionGrantsRequestBuilder and sets the default values.

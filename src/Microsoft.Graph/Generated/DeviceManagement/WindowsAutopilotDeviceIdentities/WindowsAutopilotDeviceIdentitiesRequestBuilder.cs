@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsAutopilotDeviceIdentities.item collection</summary>
-        public WindowsAutopilotDeviceIdentityRequestBuilder this[string position] { get {
+        public WindowsAutopilotDeviceIdentityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsAutopilotDeviceIdentity_id", position);
-            return new WindowsAutopilotDeviceIdentityRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsAutopilotDeviceIdentityItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsAutopilotDeviceIdentitiesRequestBuilder and sets the default values.

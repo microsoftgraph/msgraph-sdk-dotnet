@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskDetections {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityProtection.riskDetections.item collection</summary>
-        public RiskDetectionRequestBuilder this[string position] { get {
+        public RiskDetectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskDetection_id", position);
-            return new RiskDetectionRequestBuilder(urlTplParams, RequestAdapter);
+            return new RiskDetectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RiskDetectionsRequestBuilder and sets the default values.

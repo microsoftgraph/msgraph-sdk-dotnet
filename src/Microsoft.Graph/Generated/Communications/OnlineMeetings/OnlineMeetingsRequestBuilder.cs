@@ -22,10 +22,10 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.communications.onlineMeetings.item collection</summary>
-        public OnlineMeetingRequestBuilder this[string position] { get {
+        public OnlineMeetingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onlineMeeting_id", position);
-            return new OnlineMeetingRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnlineMeetingItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OnlineMeetingsRequestBuilder and sets the default values.

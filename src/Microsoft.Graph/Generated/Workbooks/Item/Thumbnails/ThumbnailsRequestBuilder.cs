@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Thumbnails {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.thumbnails.item collection</summary>
-        public ThumbnailSetRequestBuilder this[string position] { get {
+        public ThumbnailSetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("thumbnailSet_id", position);
-            return new ThumbnailSetRequestBuilder(urlTplParams, RequestAdapter);
+            return new ThumbnailSetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ThumbnailsRequestBuilder and sets the default values.

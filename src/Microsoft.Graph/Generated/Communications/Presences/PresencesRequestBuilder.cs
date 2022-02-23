@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Communications.Presences {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.communications.presences.item collection</summary>
-        public PresenceRequestBuilder this[string position] { get {
+        public PresenceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("presence_id", position);
-            return new PresenceRequestBuilder(urlTplParams, RequestAdapter);
+            return new PresenceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PresencesRequestBuilder and sets the default values.

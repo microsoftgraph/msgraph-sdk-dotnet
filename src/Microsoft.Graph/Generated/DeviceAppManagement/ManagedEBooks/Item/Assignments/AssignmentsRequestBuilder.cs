@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedEBooks.Item.Assignments {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.managedEBooks.item.assignments.item collection</summary>
-        public ManagedEBookAssignmentRequestBuilder this[string position] { get {
+        public ManagedEBookAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedEBookAssignment_id", position);
-            return new ManagedEBookAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedEBookAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

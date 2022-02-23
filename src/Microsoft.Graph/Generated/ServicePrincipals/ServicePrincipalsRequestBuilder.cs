@@ -31,10 +31,10 @@ namespace MicrosoftGraphSdk.ServicePrincipals {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraphSdk.servicePrincipals.item collection</summary>
-        public ServicePrincipalRequestBuilder this[string position] { get {
+        public ServicePrincipalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("servicePrincipal_id", position);
-            return new ServicePrincipalRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServicePrincipalItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ServicePrincipalsRequestBuilder and sets the default values.

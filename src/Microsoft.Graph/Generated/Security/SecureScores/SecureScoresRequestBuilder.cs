@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Security.SecureScores {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.security.secureScores.item collection</summary>
-        public SecureScoreRequestBuilder this[string position] { get {
+        public SecureScoreItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("secureScore_id", position);
-            return new SecureScoreRequestBuilder(urlTplParams, RequestAdapter);
+            return new SecureScoreItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SecureScoresRequestBuilder and sets the default values.

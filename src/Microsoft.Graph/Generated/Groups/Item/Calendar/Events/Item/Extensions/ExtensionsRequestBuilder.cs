@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.Extensions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.calendar.events.item.extensions.item collection</summary>
-        public ExtensionRequestBuilder this[string position] { get {
+        public ExtensionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("extension_id", position);
-            return new ExtensionRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExtensionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExtensionsRequestBuilder and sets the default values.

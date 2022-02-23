@@ -22,10 +22,10 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.Members {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.channels.item.members.item collection</summary>
-        public ConversationMemberRequestBuilder this[string position] { get {
+        public ConversationMemberItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conversationMember_id", position);
-            return new ConversationMemberRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConversationMemberItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MembersRequestBuilder and sets the default values.

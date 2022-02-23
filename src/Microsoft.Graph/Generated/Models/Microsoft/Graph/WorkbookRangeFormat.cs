@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.</summary>
         public double? ColumnWidth { get; set; }
         /// <summary>Returns the fill object defined on the overall range. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRangeFill Fill { get; set; }
+        public WorkbookRangeFill Fill { get; set; }
         /// <summary>Returns the font object defined on the overall range selected Read-only.</summary>
         public WorkbookRangeFont Font { get; set; }
         /// <summary>Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.</summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"borders", (o,n) => { (o as WorkbookRangeFormat).Borders = n.GetCollectionOfObjectValues<WorkbookRangeBorder>().ToList(); } },
                 {"columnWidth", (o,n) => { (o as WorkbookRangeFormat).ColumnWidth = n.GetDoubleValue(); } },
-                {"fill", (o,n) => { (o as WorkbookRangeFormat).Fill = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRangeFill>(); } },
+                {"fill", (o,n) => { (o as WorkbookRangeFormat).Fill = n.GetObjectValue<WorkbookRangeFill>(); } },
                 {"font", (o,n) => { (o as WorkbookRangeFormat).Font = n.GetObjectValue<WorkbookRangeFont>(); } },
                 {"horizontalAlignment", (o,n) => { (o as WorkbookRangeFormat).HorizontalAlignment = n.GetStringValue(); } },
                 {"protection", (o,n) => { (o as WorkbookRangeFormat).Protection = n.GetObjectValue<WorkbookFormatProtection>(); } },
@@ -48,7 +48,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<WorkbookRangeBorder>("borders", Borders);
             writer.WriteDoubleValue("columnWidth", ColumnWidth);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRangeFill>("fill", Fill);
+            writer.WriteObjectValue<WorkbookRangeFill>("fill", Fill);
             writer.WriteObjectValue<WorkbookRangeFont>("font", Font);
             writer.WriteStringValue("horizontalAlignment", HorizontalAlignment);
             writer.WriteObjectValue<WorkbookFormatProtection>("protection", Protection);

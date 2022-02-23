@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Teamwork.WorkforceIntegrations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.teamwork.workforceIntegrations.item collection</summary>
-        public WorkforceIntegrationRequestBuilder this[string position] { get {
+        public WorkforceIntegrationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workforceIntegration_id", position);
-            return new WorkforceIntegrationRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkforceIntegrationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WorkforceIntegrationsRequestBuilder and sets the default values.

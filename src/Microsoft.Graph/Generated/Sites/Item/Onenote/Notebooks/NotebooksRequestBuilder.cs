@@ -23,10 +23,10 @@ namespace MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.onenote.notebooks.item collection</summary>
-        public NotebookRequestBuilder this[string position] { get {
+        public NotebookItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("notebook_id", position);
-            return new NotebookRequestBuilder(urlTplParams, RequestAdapter);
+            return new NotebookItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NotebooksRequestBuilder and sets the default values.

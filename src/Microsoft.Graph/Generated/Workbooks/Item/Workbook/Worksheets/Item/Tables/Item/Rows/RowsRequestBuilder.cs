@@ -24,10 +24,10 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.worksheets.item.tables.item.rows.item collection</summary>
-        public WorkbookTableRowRequestBuilder this[string position] { get {
+        public WorkbookTableRowItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookTableRow_id", position);
-            return new WorkbookTableRowRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookTableRowItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RowsRequestBuilder and sets the default values.

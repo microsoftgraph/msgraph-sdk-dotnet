@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.Chats.Item.Messages {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.chats.item.messages.item collection</summary>
-        public ChatMessageRequestBuilder this[string position] { get {
+        public ChatMessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chatMessage_id", position);
-            return new ChatMessageRequestBuilder(urlTplParams, RequestAdapter);
+            return new ChatMessageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MessagesRequestBuilder and sets the default values.

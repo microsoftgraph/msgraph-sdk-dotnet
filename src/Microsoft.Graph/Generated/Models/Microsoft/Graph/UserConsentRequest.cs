@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserConsentRequest : Request, IParsable {
         /// <summary>Approval decisions associated with a request.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Approval Approval { get; set; }
+        public Approval Approval { get; set; }
         /// <summary>The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.</summary>
         public string Reason { get; set; }
         /// <summary>
@@ -14,7 +14,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"approval", (o,n) => { (o as UserConsentRequest).Approval = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Approval>(); } },
+                {"approval", (o,n) => { (o as UserConsentRequest).Approval = n.GetObjectValue<Approval>(); } },
                 {"reason", (o,n) => { (o as UserConsentRequest).Reason = n.GetStringValue(); } },
             };
         }
@@ -25,7 +25,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Approval>("approval", Approval);
+            writer.WriteObjectValue<Approval>("approval", Approval);
             writer.WriteStringValue("reason", Reason);
         }
     }

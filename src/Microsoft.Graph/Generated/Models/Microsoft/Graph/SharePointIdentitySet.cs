@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SharePointIdentitySet : IdentitySet, IParsable {
         /// <summary>The group associated with this action. Optional.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Identity Group { get; set; }
+        public Identity Group { get; set; }
         /// <summary>The SharePoint group associated with this action. Optional.</summary>
         public SharePointIdentity SiteGroup { get; set; }
         /// <summary>The SharePoint user associated with this action. Optional.</summary>
@@ -16,7 +16,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"group", (o,n) => { (o as SharePointIdentitySet).Group = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(); } },
+                {"group", (o,n) => { (o as SharePointIdentitySet).Group = n.GetObjectValue<Identity>(); } },
                 {"siteGroup", (o,n) => { (o as SharePointIdentitySet).SiteGroup = n.GetObjectValue<SharePointIdentity>(); } },
                 {"siteUser", (o,n) => { (o as SharePointIdentitySet).SiteUser = n.GetObjectValue<SharePointIdentity>(); } },
             };
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>("group", Group);
+            writer.WriteObjectValue<Identity>("group", Group);
             writer.WriteObjectValue<SharePointIdentity>("siteGroup", SiteGroup);
             writer.WriteObjectValue<SharePointIdentity>("siteUser", SiteUser);
         }

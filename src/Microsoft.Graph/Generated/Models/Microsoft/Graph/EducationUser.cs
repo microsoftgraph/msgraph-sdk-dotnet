@@ -73,7 +73,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A two-letter country code (ISO standard 3166). Required for users who will be assigned licenses due to a legal requirement to check for availability of services in countries or regions. Examples include: 'US', 'JP', and 'GB'. Not nullable. Supports $filter.</summary>
         public string UsageLocation { get; set; }
         /// <summary>The directory user corresponding to this user.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.User User { get; set; }
+        public User User { get; set; }
         /// <summary>The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Supports $filter and $orderby.</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Supports $filter.</summary>
@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"taughtClasses", (o,n) => { (o as EducationUser).TaughtClasses = n.GetCollectionOfObjectValues<EducationClass>().ToList(); } },
                 {"teacher", (o,n) => { (o as EducationUser).Teacher = n.GetObjectValue<EducationTeacher>(); } },
                 {"usageLocation", (o,n) => { (o as EducationUser).UsageLocation = n.GetStringValue(); } },
-                {"user", (o,n) => { (o as EducationUser).User = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.User>(); } },
+                {"user", (o,n) => { (o as EducationUser).User = n.GetObjectValue<User>(); } },
                 {"userPrincipalName", (o,n) => { (o as EducationUser).UserPrincipalName = n.GetStringValue(); } },
                 {"userType", (o,n) => { (o as EducationUser).UserType = n.GetStringValue(); } },
             };
@@ -165,7 +165,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<EducationClass>("taughtClasses", TaughtClasses);
             writer.WriteObjectValue<EducationTeacher>("teacher", Teacher);
             writer.WriteStringValue("usageLocation", UsageLocation);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.User>("user", User);
+            writer.WriteObjectValue<User>("user", User);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteStringValue("userType", UserType);
         }

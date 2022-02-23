@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.ApplicationTemplates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.applicationTemplates.item collection</summary>
-        public ApplicationTemplateRequestBuilder this[string position] { get {
+        public ApplicationTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("applicationTemplate_id", position);
-            return new ApplicationTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new ApplicationTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ApplicationTemplatesRequestBuilder and sets the default values.

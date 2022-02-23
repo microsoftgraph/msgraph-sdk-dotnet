@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Address of the school.</summary>
         public PhysicalAddress Address { get; set; }
         /// <summary>The underlying administrativeUnit for this school.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit AdministrativeUnit { get; set; }
+        public AdministrativeUnit AdministrativeUnit { get; set; }
         /// <summary>Classes taught at the school. Nullable.</summary>
         public List<EducationClass> Classes { get; set; }
         /// <summary>Entity who created the school.</summary>
@@ -38,7 +38,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"address", (o,n) => { (o as EducationSchool).Address = n.GetObjectValue<PhysicalAddress>(); } },
-                {"administrativeUnit", (o,n) => { (o as EducationSchool).AdministrativeUnit = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit>(); } },
+                {"administrativeUnit", (o,n) => { (o as EducationSchool).AdministrativeUnit = n.GetObjectValue<AdministrativeUnit>(); } },
                 {"classes", (o,n) => { (o as EducationSchool).Classes = n.GetCollectionOfObjectValues<EducationClass>().ToList(); } },
                 {"createdBy", (o,n) => { (o as EducationSchool).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
                 {"externalId", (o,n) => { (o as EducationSchool).ExternalId = n.GetStringValue(); } },
@@ -61,7 +61,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<PhysicalAddress>("address", Address);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit>("administrativeUnit", AdministrativeUnit);
+            writer.WriteObjectValue<AdministrativeUnit>("administrativeUnit", AdministrativeUnit);
             writer.WriteCollectionOfObjectValues<EducationClass>("classes", Classes);
             writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
             writer.WriteStringValue("externalId", ExternalId);

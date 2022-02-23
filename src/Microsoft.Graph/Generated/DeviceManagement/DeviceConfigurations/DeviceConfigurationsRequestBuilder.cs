@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceConfigurations.item collection</summary>
-        public DeviceConfigurationRequestBuilder this[string position] { get {
+        public DeviceConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceConfiguration_id", position);
-            return new DeviceConfigurationRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceConfigurationsRequestBuilder and sets the default values.

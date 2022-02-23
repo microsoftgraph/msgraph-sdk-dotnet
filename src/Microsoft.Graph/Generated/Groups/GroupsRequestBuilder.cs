@@ -31,10 +31,10 @@ namespace MicrosoftGraphSdk.Groups {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item collection</summary>
-        public GroupRequestBuilder this[string position] { get {
+        public GroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("group_id", position);
-            return new GroupRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupsRequestBuilder and sets the default values.

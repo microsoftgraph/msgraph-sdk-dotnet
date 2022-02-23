@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.AuditLogs.Provisioning {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.auditLogs.provisioning.item collection</summary>
-        public ProvisioningObjectSummaryRequestBuilder this[string position] { get {
+        public ProvisioningObjectSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("provisioningObjectSummary_id", position);
-            return new ProvisioningObjectSummaryRequestBuilder(urlTplParams, RequestAdapter);
+            return new ProvisioningObjectSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ProvisioningRequestBuilder and sets the default values.

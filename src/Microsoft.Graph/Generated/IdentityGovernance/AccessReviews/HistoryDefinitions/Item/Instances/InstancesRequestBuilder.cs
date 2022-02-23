@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.HistoryDefinitions.
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.accessReviews.historyDefinitions.item.instances.item collection</summary>
-        public AccessReviewHistoryInstanceRequestBuilder this[string position] { get {
+        public AccessReviewHistoryInstanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewHistoryInstance_id", position);
-            return new AccessReviewHistoryInstanceRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewHistoryInstanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InstancesRequestBuilder and sets the default values.

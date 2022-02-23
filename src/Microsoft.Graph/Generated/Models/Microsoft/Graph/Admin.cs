@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A container for service communications resources. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement ServiceAnnouncement { get; set; }
+        public ServiceAnnouncement ServiceAnnouncement { get; set; }
         /// <summary>
         /// Instantiates a new Admin and sets the default values.
         /// </summary>
@@ -20,7 +20,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"serviceAnnouncement", (o,n) => { (o as Admin).ServiceAnnouncement = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement>(); } },
+                {"serviceAnnouncement", (o,n) => { (o as Admin).ServiceAnnouncement = n.GetObjectValue<ServiceAnnouncement>(); } },
             };
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement>("serviceAnnouncement", ServiceAnnouncement);
+            writer.WriteObjectValue<ServiceAnnouncement>("serviceAnnouncement", ServiceAnnouncement);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

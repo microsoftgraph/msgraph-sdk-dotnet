@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.AgreementAcceptances {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.termsOfUse.agreementAcceptances.item collection</summary>
-        public AgreementAcceptanceRequestBuilder this[string position] { get {
+        public AgreementAcceptanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementAcceptance_id", position);
-            return new AgreementAcceptanceRequestBuilder(urlTplParams, RequestAdapter);
+            return new AgreementAcceptanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AgreementAcceptancesRequestBuilder and sets the default values.

@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.Education.Schools {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.education.schools.item collection</summary>
-        public EducationSchoolRequestBuilder this[string position] { get {
+        public EducationSchoolItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSchool_id", position);
-            return new EducationSchoolRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationSchoolItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SchoolsRequestBuilder and sets the default values.

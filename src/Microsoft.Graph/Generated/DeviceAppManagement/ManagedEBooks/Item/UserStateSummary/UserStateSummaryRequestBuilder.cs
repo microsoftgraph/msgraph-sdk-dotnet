@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedEBooks.Item.UserStateSumm
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.managedEBooks.item.userStateSummary.item collection</summary>
-        public UserInstallStateSummaryRequestBuilder this[string position] { get {
+        public UserInstallStateSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userInstallStateSummary_id", position);
-            return new UserInstallStateSummaryRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserInstallStateSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserStateSummaryRequestBuilder and sets the default values.

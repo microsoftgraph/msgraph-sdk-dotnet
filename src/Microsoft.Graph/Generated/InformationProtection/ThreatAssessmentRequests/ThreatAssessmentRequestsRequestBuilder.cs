@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.InformationProtection.ThreatAssessmentRequests {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.informationProtection.threatAssessmentRequests.item collection</summary>
-        public ThreatAssessmentRequestRequestBuilder this[string position] { get {
+        public ThreatAssessmentRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("threatAssessmentRequest_id", position);
-            return new ThreatAssessmentRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new ThreatAssessmentRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ThreatAssessmentRequestsRequestBuilder and sets the default values.

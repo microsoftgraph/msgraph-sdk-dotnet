@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicySettingStateS
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceCompliancePolicySettingStateSummaries.item collection</summary>
-        public DeviceCompliancePolicySettingStateSummaryRequestBuilder this[string position] { get {
+        public DeviceCompliancePolicySettingStateSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceCompliancePolicySettingStateSummary_id", position);
-            return new DeviceCompliancePolicySettingStateSummaryRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceCompliancePolicySettingStateSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceCompliancePolicySettingStateSummariesRequestBuilder and sets the default values.

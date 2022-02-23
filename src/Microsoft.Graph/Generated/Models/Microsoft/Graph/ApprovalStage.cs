@@ -12,7 +12,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The justification associated with the approval stage decision.</summary>
         public string Justification { get; set; }
         /// <summary>The identifier of the reviewer. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Identity ReviewedBy { get; set; }
+        public Identity ReviewedBy { get; set; }
         /// <summary>The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ReviewedDateTime { get; set; }
         /// <summary>The result of this approval record. Possible values include: NotReviewed, Approved, Denied.</summary>
@@ -27,7 +27,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"assignedToMe", (o,n) => { (o as ApprovalStage).AssignedToMe = n.GetBoolValue(); } },
                 {"displayName", (o,n) => { (o as ApprovalStage).DisplayName = n.GetStringValue(); } },
                 {"justification", (o,n) => { (o as ApprovalStage).Justification = n.GetStringValue(); } },
-                {"reviewedBy", (o,n) => { (o as ApprovalStage).ReviewedBy = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(); } },
+                {"reviewedBy", (o,n) => { (o as ApprovalStage).ReviewedBy = n.GetObjectValue<Identity>(); } },
                 {"reviewedDateTime", (o,n) => { (o as ApprovalStage).ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"reviewResult", (o,n) => { (o as ApprovalStage).ReviewResult = n.GetStringValue(); } },
                 {"status", (o,n) => { (o as ApprovalStage).Status = n.GetStringValue(); } },
@@ -43,7 +43,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteBoolValue("assignedToMe", AssignedToMe);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>("reviewedBy", ReviewedBy);
+            writer.WriteObjectValue<Identity>("reviewedBy", ReviewedBy);
             writer.WriteDateTimeOffsetValue("reviewedDateTime", ReviewedDateTime);
             writer.WriteStringValue("reviewResult", ReviewResult);
             writer.WriteStringValue("status", Status);

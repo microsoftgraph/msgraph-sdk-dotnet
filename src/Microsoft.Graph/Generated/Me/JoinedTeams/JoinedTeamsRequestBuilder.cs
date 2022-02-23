@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Me.JoinedTeams {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.joinedTeams.item collection</summary>
-        public TeamRequestBuilder this[string position] { get {
+        public TeamItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("team_id", position);
-            return new TeamRequestBuilder(urlTplParams, RequestAdapter);
+            return new TeamItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new JoinedTeamsRequestBuilder and sets the default values.

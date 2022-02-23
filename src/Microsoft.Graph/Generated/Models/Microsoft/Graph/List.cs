@@ -12,9 +12,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The displayable title of the list.</summary>
         public string DisplayName { get; set; }
         /// <summary>Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Drive Drive { get; set; }
+        public Drive Drive { get; set; }
         /// <summary>All items contained in the list.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem> Items { get; set; }
+        public List<ListItem> Items { get; set; }
         /// <summary>Provides additional details about the list.</summary>
         public ListInfo List_prop { get; set; }
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
@@ -31,8 +31,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"columns", (o,n) => { (o as List).Columns = n.GetCollectionOfObjectValues<ColumnDefinition>().ToList(); } },
                 {"contentTypes", (o,n) => { (o as List).ContentTypes = n.GetCollectionOfObjectValues<ContentType>().ToList(); } },
                 {"displayName", (o,n) => { (o as List).DisplayName = n.GetStringValue(); } },
-                {"drive", (o,n) => { (o as List).Drive = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>(); } },
-                {"items", (o,n) => { (o as List).Items = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem>().ToList(); } },
+                {"drive", (o,n) => { (o as List).Drive = n.GetObjectValue<Drive>(); } },
+                {"items", (o,n) => { (o as List).Items = n.GetCollectionOfObjectValues<ListItem>().ToList(); } },
                 {"list", (o,n) => { (o as List).List_prop = n.GetObjectValue<ListInfo>(); } },
                 {"sharepointIds", (o,n) => { (o as List).SharepointIds = n.GetObjectValue<SharepointIds>(); } },
                 {"subscriptions", (o,n) => { (o as List).Subscriptions = n.GetCollectionOfObjectValues<Subscription>().ToList(); } },
@@ -49,8 +49,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<ColumnDefinition>("columns", Columns);
             writer.WriteCollectionOfObjectValues<ContentType>("contentTypes", ContentTypes);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>("drive", Drive);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem>("items", Items);
+            writer.WriteObjectValue<Drive>("drive", Drive);
+            writer.WriteCollectionOfObjectValues<ListItem>("items", Items);
             writer.WriteObjectValue<ListInfo>("list", List_prop);
             writer.WriteObjectValue<SharepointIds>("sharepointIds", SharepointIds);
             writer.WriteCollectionOfObjectValues<Subscription>("subscriptions", Subscriptions);

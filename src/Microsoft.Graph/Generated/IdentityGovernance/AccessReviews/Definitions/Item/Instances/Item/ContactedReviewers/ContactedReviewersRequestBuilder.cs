@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.In
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.accessReviews.definitions.item.instances.item.contactedReviewers.item collection</summary>
-        public AccessReviewReviewerRequestBuilder this[string position] { get {
+        public AccessReviewReviewerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewReviewer_id", position);
-            return new AccessReviewReviewerRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewReviewerItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContactedReviewersRequestBuilder and sets the default values.

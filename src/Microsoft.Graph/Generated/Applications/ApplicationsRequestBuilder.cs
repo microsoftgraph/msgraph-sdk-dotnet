@@ -31,10 +31,10 @@ namespace MicrosoftGraphSdk.Applications {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraphSdk.applications.item collection</summary>
-        public ApplicationRequestBuilder this[string position] { get {
+        public ApplicationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("application_id", position);
-            return new ApplicationRequestBuilder(urlTplParams, RequestAdapter);
+            return new ApplicationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ApplicationsRequestBuilder and sets the default values.

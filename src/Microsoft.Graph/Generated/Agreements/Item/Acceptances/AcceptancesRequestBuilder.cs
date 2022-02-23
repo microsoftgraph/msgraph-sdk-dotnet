@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Agreements.Item.Acceptances {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.agreements.item.acceptances.item collection</summary>
-        public AgreementAcceptanceRequestBuilder this[string position] { get {
+        public AgreementAcceptanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementAcceptance_id", position);
-            return new AgreementAcceptanceRequestBuilder(urlTplParams, RequestAdapter);
+            return new AgreementAcceptanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AcceptancesRequestBuilder and sets the default values.

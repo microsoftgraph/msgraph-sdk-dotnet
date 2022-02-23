@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.ConnectedOr
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.entitlementManagement.connectedOrganizations.item collection</summary>
-        public ConnectedOrganizationRequestBuilder this[string position] { get {
+        public ConnectedOrganizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connectedOrganization_id", position);
-            return new ConnectedOrganizationRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConnectedOrganizationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConnectedOrganizationsRequestBuilder and sets the default values.

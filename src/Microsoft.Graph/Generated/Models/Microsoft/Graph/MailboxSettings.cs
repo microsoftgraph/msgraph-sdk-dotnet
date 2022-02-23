@@ -21,6 +21,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string TimeFormat { get; set; }
         /// <summary>The default time zone for the user's mailbox.</summary>
         public string TimeZone { get; set; }
+        /// <summary>The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.</summary>
+        public UserPurpose? UserPurpose { get; set; }
         /// <summary>The days of the week and hours in a specific time zone that the user works.</summary>
         public WorkingHours WorkingHours { get; set; }
         /// <summary>
@@ -41,6 +43,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"language", (o,n) => { (o as MailboxSettings).Language = n.GetObjectValue<LocaleInfo>(); } },
                 {"timeFormat", (o,n) => { (o as MailboxSettings).TimeFormat = n.GetStringValue(); } },
                 {"timeZone", (o,n) => { (o as MailboxSettings).TimeZone = n.GetStringValue(); } },
+                {"userPurpose", (o,n) => { (o as MailboxSettings).UserPurpose = n.GetEnumValue<UserPurpose>(); } },
                 {"workingHours", (o,n) => { (o as MailboxSettings).WorkingHours = n.GetObjectValue<WorkingHours>(); } },
             };
         }
@@ -57,6 +60,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<LocaleInfo>("language", Language);
             writer.WriteStringValue("timeFormat", TimeFormat);
             writer.WriteStringValue("timeZone", TimeZone);
+            writer.WriteEnumValue<UserPurpose>("userPurpose", UserPurpose);
             writer.WriteObjectValue<WorkingHours>("workingHours", WorkingHours);
             writer.WriteAdditionalData(AdditionalData);
         }

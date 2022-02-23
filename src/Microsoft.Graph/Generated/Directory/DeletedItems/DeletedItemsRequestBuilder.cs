@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Directory.DeletedItems {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.directory.deletedItems.item collection</summary>
-        public DirectoryObjectRequestBuilder this[string position] { get {
+        public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);
-            return new DirectoryObjectRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeletedItemsRequestBuilder and sets the default values.

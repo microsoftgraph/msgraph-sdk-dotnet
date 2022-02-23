@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Me.OnlineMeetings.Item.AttendanceReports.Item.Attend
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.onlineMeetings.item.attendanceReports.item.attendanceRecords.item collection</summary>
-        public AttendanceRecordRequestBuilder this[string position] { get {
+        public AttendanceRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attendanceRecord_id", position);
-            return new AttendanceRecordRequestBuilder(urlTplParams, RequestAdapter);
+            return new AttendanceRecordItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AttendanceRecordsRequestBuilder and sets the default values.

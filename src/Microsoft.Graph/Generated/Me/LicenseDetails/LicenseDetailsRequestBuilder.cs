@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Me.LicenseDetails.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraphSdk.Me.LicenseDetails {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.licenseDetails.item collection</summary>
-        public LicenseDetailsRequestBuilder this[string position] { get {
+        public LicenseDetailsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("licenseDetails_id", position);
-            return new LicenseDetailsRequestBuilder(urlTplParams, RequestAdapter);
+            return new LicenseDetailsItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LicenseDetailsRequestBuilder and sets the default values.

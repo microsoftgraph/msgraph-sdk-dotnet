@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Users.Item.CalendarGroups {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.calendarGroups.item collection</summary>
-        public CalendarGroupRequestBuilder this[string position] { get {
+        public CalendarGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("calendarGroup_id", position);
-            return new CalendarGroupRequestBuilder(urlTplParams, RequestAdapter);
+            return new CalendarGroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CalendarGroupsRequestBuilder and sets the default values.

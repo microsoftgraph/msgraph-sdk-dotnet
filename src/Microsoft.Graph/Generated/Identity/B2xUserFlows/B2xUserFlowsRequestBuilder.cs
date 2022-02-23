@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identity.b2xUserFlows.item collection</summary>
-        public B2xIdentityUserFlowRequestBuilder this[string position] { get {
+        public B2xIdentityUserFlowItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("b2xIdentityUserFlow_id", position);
-            return new B2xIdentityUserFlowRequestBuilder(urlTplParams, RequestAdapter);
+            return new B2xIdentityUserFlowItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new B2xUserFlowsRequestBuilder and sets the default values.

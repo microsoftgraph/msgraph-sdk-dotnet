@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.Me.Activities {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.activities.item collection</summary>
-        public UserActivityRequestBuilder this[string position] { get {
+        public UserActivityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userActivity_id", position);
-            return new UserActivityRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserActivityItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ActivitiesRequestBuilder and sets the default values.

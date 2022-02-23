@@ -12,7 +12,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>List of ids of role scope member security groups.  These are IDs from Azure Active Directory.</summary>
         public List<string> ResourceScopes { get; set; }
         /// <summary>Role definition this assignment is part of.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition RoleDefinition { get; set; }
+        public RoleDefinition RoleDefinition { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -21,7 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as RoleAssignment).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as RoleAssignment).DisplayName = n.GetStringValue(); } },
                 {"resourceScopes", (o,n) => { (o as RoleAssignment).ResourceScopes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"roleDefinition", (o,n) => { (o as RoleAssignment).RoleDefinition = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition>(); } },
+                {"roleDefinition", (o,n) => { (o as RoleAssignment).RoleDefinition = n.GetObjectValue<RoleDefinition>(); } },
             };
         }
         /// <summary>
@@ -34,7 +34,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("resourceScopes", ResourceScopes);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition>("roleDefinition", RoleDefinition);
+            writer.WriteObjectValue<RoleDefinition>("roleDefinition", RoleDefinition);
         }
     }
 }

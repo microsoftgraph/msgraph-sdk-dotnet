@@ -22,10 +22,10 @@ namespace MicrosoftGraphSdk.Print.Printers {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.print.printers.item collection</summary>
-        public PrinterRequestBuilder this[string position] { get {
+        public PrinterItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printer_id", position);
-            return new PrinterRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrinterItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PrintersRequestBuilder and sets the default values.

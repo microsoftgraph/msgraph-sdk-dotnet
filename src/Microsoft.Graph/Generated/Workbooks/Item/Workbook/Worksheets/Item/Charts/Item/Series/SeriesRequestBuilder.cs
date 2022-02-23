@@ -20,10 +20,10 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.worksheets.item.charts.item.series.item collection</summary>
-        public WorkbookChartSeriesRequestBuilder this[string position] { get {
+        public WorkbookChartSeriesItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookChartSeries_id", position);
-            return new WorkbookChartSeriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookChartSeriesItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SeriesRequestBuilder and sets the default values.

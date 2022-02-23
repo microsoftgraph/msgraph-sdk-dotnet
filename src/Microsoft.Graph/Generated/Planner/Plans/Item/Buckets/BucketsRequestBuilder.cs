@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Planner.Plans.Item.Buckets {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.planner.plans.item.buckets.item collection</summary>
-        public PlannerBucketRequestBuilder this[string position] { get {
+        public PlannerBucketItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerBucket_id", position);
-            return new PlannerBucketRequestBuilder(urlTplParams, RequestAdapter);
+            return new PlannerBucketItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new BucketsRequestBuilder and sets the default values.

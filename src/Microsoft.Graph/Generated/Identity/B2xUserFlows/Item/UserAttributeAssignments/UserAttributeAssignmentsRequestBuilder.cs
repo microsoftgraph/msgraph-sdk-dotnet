@@ -23,10 +23,10 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments 
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identity.b2xUserFlows.item.userAttributeAssignments.item collection</summary>
-        public IdentityUserFlowAttributeAssignmentRequestBuilder this[string position] { get {
+        public IdentityUserFlowAttributeAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityUserFlowAttributeAssignment_id", position);
-            return new IdentityUserFlowAttributeAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new IdentityUserFlowAttributeAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserAttributeAssignmentsRequestBuilder and sets the default values.

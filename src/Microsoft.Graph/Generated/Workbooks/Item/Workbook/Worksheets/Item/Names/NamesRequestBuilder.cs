@@ -26,10 +26,10 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Names {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.worksheets.item.names.item collection</summary>
-        public WorkbookNamedItemRequestBuilder this[string position] { get {
+        public WorkbookNamedItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookNamedItem_id", position);
-            return new WorkbookNamedItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookNamedItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NamesRequestBuilder and sets the default values.

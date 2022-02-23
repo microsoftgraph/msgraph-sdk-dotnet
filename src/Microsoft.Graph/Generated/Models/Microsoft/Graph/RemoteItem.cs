@@ -12,7 +12,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Date and time of item creation. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Indicates that the remote item is a file. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.File File { get; set; }
+        public File File { get; set; }
         /// <summary>Information about the remote item from the local file system. Read-only.</summary>
         public FileSystemInfo FileSystemInfo { get; set; }
         /// <summary>Indicates that the remote item is a folder. Read-only.</summary>
@@ -20,7 +20,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Unique identifier for the remote item in its drive. Read-only.</summary>
         public string Id { get; set; }
         /// <summary>Image metadata, if the item is an image. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Image Image { get; set; }
+        public Image Image { get; set; }
         /// <summary>Identity of the user, device, and application which last modified the item. Read-only.</summary>
         public IdentitySet LastModifiedBy { get; set; }
         /// <summary>Date and time the item was last modified. Read-only.</summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Properties of the parent of the remote item. Read-only.</summary>
         public ItemReference ParentReference { get; set; }
         /// <summary>Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Shared Shared { get; set; }
+        public Shared Shared { get; set; }
         /// <summary>Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.</summary>
         public SharepointIds SharepointIds { get; set; }
         /// <summary>Size of the remote item. Read-only.</summary>
@@ -58,17 +58,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"createdBy", (o,n) => { (o as RemoteItem).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
                 {"createdDateTime", (o,n) => { (o as RemoteItem).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"file", (o,n) => { (o as RemoteItem).File = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.File>(); } },
+                {"file", (o,n) => { (o as RemoteItem).File = n.GetObjectValue<File>(); } },
                 {"fileSystemInfo", (o,n) => { (o as RemoteItem).FileSystemInfo = n.GetObjectValue<FileSystemInfo>(); } },
                 {"folder", (o,n) => { (o as RemoteItem).Folder = n.GetObjectValue<Folder>(); } },
                 {"id", (o,n) => { (o as RemoteItem).Id = n.GetStringValue(); } },
-                {"image", (o,n) => { (o as RemoteItem).Image = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Image>(); } },
+                {"image", (o,n) => { (o as RemoteItem).Image = n.GetObjectValue<Image>(); } },
                 {"lastModifiedBy", (o,n) => { (o as RemoteItem).LastModifiedBy = n.GetObjectValue<IdentitySet>(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as RemoteItem).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"name", (o,n) => { (o as RemoteItem).Name = n.GetStringValue(); } },
                 {"package", (o,n) => { (o as RemoteItem).Package = n.GetObjectValue<Package>(); } },
                 {"parentReference", (o,n) => { (o as RemoteItem).ParentReference = n.GetObjectValue<ItemReference>(); } },
-                {"shared", (o,n) => { (o as RemoteItem).Shared = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Shared>(); } },
+                {"shared", (o,n) => { (o as RemoteItem).Shared = n.GetObjectValue<Shared>(); } },
                 {"sharepointIds", (o,n) => { (o as RemoteItem).SharepointIds = n.GetObjectValue<SharepointIds>(); } },
                 {"size", (o,n) => { (o as RemoteItem).Size = n.GetLongValue(); } },
                 {"specialFolder", (o,n) => { (o as RemoteItem).SpecialFolder = n.GetObjectValue<SpecialFolder>(); } },
@@ -85,17 +85,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.File>("file", File);
+            writer.WriteObjectValue<File>("file", File);
             writer.WriteObjectValue<FileSystemInfo>("fileSystemInfo", FileSystemInfo);
             writer.WriteObjectValue<Folder>("folder", Folder);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Image>("image", Image);
+            writer.WriteObjectValue<Image>("image", Image);
             writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<Package>("package", Package);
             writer.WriteObjectValue<ItemReference>("parentReference", ParentReference);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Shared>("shared", Shared);
+            writer.WriteObjectValue<Shared>("shared", Shared);
             writer.WriteObjectValue<SharepointIds>("sharepointIds", SharepointIds);
             writer.WriteLongValue("size", Size);
             writer.WriteObjectValue<SpecialFolder>("specialFolder", SpecialFolder);

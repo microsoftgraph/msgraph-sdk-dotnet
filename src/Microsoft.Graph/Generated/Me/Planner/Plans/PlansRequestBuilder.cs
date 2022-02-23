@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Me.Planner.Plans {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.planner.plans.item collection</summary>
-        public PlannerPlanRequestBuilder this[string position] { get {
+        public PlannerPlanItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerPlan_id", position);
-            return new PlannerPlanRequestBuilder(urlTplParams, RequestAdapter);
+            return new PlannerPlanItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PlansRequestBuilder and sets the default values.

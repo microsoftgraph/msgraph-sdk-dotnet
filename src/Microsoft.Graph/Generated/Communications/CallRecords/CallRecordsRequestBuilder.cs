@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Communications.CallRecords {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.communications.callRecords.item collection</summary>
-        public CallRecordRequestBuilder this[string position] { get {
+        public CallRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("callRecord_id", position);
-            return new CallRecordRequestBuilder(urlTplParams, RequestAdapter);
+            return new CallRecordItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CallRecordsRequestBuilder and sets the default values.

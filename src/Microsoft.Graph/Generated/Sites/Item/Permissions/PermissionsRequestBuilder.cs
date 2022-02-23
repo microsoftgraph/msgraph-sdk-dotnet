@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Sites.Item.Permissions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.permissions.item collection</summary>
-        public PermissionRequestBuilder this[string position] { get {
+        public PermissionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("permission_id", position);
-            return new PermissionRequestBuilder(urlTplParams, RequestAdapter);
+            return new PermissionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PermissionsRequestBuilder and sets the default values.

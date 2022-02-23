@@ -8,11 +8,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional. The application associated with this action.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Identity Application { get; set; }
+        public Identity Application { get; set; }
         /// <summary>Optional. The device associated with this action.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Identity Device { get; set; }
+        public Identity Device { get; set; }
         /// <summary>Optional. The user associated with this action.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Identity User { get; set; }
+        public Identity User { get; set; }
         /// <summary>
         /// Instantiates a new identitySet and sets the default values.
         /// </summary>
@@ -24,9 +24,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"application", (o,n) => { (o as IdentitySet).Application = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(); } },
-                {"device", (o,n) => { (o as IdentitySet).Device = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(); } },
-                {"user", (o,n) => { (o as IdentitySet).User = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(); } },
+                {"application", (o,n) => { (o as IdentitySet).Application = n.GetObjectValue<Identity>(); } },
+                {"device", (o,n) => { (o as IdentitySet).Device = n.GetObjectValue<Identity>(); } },
+                {"user", (o,n) => { (o as IdentitySet).User = n.GetObjectValue<Identity>(); } },
             };
         }
         /// <summary>
@@ -35,9 +35,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>("application", Application);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>("device", Device);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>("user", User);
+            writer.WriteObjectValue<Identity>("application", Application);
+            writer.WriteObjectValue<Identity>("device", Device);
+            writer.WriteObjectValue<Identity>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

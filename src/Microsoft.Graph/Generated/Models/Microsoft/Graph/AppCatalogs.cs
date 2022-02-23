@@ -5,13 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AppCatalogs : Entity, IParsable {
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsApp> TeamsApps { get; set; }
+        public List<TeamsApp> TeamsApps { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"teamsApps", (o,n) => { (o as AppCatalogs).TeamsApps = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsApp>().ToList(); } },
+                {"teamsApps", (o,n) => { (o as AppCatalogs).TeamsApps = n.GetCollectionOfObjectValues<TeamsApp>().ToList(); } },
             };
         }
         /// <summary>
@@ -21,7 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsApp>("teamsApps", TeamsApps);
+            writer.WriteCollectionOfObjectValues<TeamsApp>("teamsApps", TeamsApps);
         }
     }
 }

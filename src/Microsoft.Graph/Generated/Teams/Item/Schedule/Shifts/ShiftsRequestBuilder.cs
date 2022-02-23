@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.Shifts {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.schedule.shifts.item collection</summary>
-        public ShiftRequestBuilder this[string position] { get {
+        public ShiftItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("shift_id", position);
-            return new ShiftRequestBuilder(urlTplParams, RequestAdapter);
+            return new ShiftItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ShiftsRequestBuilder and sets the default values.

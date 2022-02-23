@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.Users.Item.GetManagedAppPolicies {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraphSdk.Users.Item.GetManagedAppPolicies.GetManagedAppPolicies>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetManagedAppPolicies>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraphSdk.Users.Item.GetManagedAppPolicies.GetManagedAppPolicies>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetManagedAppPolicies>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

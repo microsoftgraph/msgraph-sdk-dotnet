@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.NotificationMessageTemplates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.notificationMessageTemplates.item collection</summary>
-        public NotificationMessageTemplateRequestBuilder this[string position] { get {
+        public NotificationMessageTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("notificationMessageTemplate_id", position);
-            return new NotificationMessageTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new NotificationMessageTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NotificationMessageTemplatesRequestBuilder and sets the default values.

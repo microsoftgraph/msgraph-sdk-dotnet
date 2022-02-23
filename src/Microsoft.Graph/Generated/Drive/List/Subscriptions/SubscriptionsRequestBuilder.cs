@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Drive.List.Subscriptions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.drive.list.subscriptions.item collection</summary>
-        public SubscriptionRequestBuilder this[string position] { get {
+        public SubscriptionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("subscription_id", position);
-            return new SubscriptionRequestBuilder(urlTplParams, RequestAdapter);
+            return new SubscriptionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SubscriptionsRequestBuilder and sets the default values.

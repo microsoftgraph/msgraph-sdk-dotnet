@@ -22,10 +22,10 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.lists.item.contentTypes.item collection</summary>
-        public ContentTypeRequestBuilder this[string position] { get {
+        public ContentTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contentType_id", position);
-            return new ContentTypeRequestBuilder(urlTplParams, RequestAdapter);
+            return new ContentTypeItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContentTypesRequestBuilder and sets the default values.

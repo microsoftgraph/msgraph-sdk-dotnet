@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook.MasterCategories {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.outlook.masterCategories.item collection</summary>
-        public OutlookCategoryRequestBuilder this[string position] { get {
+        public OutlookCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outlookCategory_id", position);
-            return new OutlookCategoryRequestBuilder(urlTplParams, RequestAdapter);
+            return new OutlookCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MasterCategoriesRequestBuilder and sets the default values.

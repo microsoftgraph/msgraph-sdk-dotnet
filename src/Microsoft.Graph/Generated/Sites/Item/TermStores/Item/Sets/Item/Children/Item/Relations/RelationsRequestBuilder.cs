@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Sites.Item.TermStores.Item.Sets.Item.Children.Item.R
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.termStores.item.sets.item.children.item.relations.item collection</summary>
-        public RelationRequestBuilder this[string position] { get {
+        public RelationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("relation_id", position);
-            return new RelationRequestBuilder(urlTplParams, RequestAdapter);
+            return new RelationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RelationsRequestBuilder and sets the default values.

@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileAppCategories {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.mobileAppCategories.item collection</summary>
-        public MobileAppCategoryRequestBuilder this[string position] { get {
+        public MobileAppCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileAppCategory_id", position);
-            return new MobileAppCategoryRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobileAppCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobileAppCategoriesRequestBuilder and sets the default values.

@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Sites.Item.TermStore.Groups.Item.Sets {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.termStore.groups.item.sets.item collection</summary>
-        public SetRequestBuilder this[string position] { get {
+        public SetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("set_id", position);
-            return new SetRequestBuilder(urlTplParams, RequestAdapter);
+            return new SetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SetsRequestBuilder and sets the default values.

@@ -6,24 +6,24 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Drive : BaseItem, IParsable {
         /// <summary>Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem> Bundles { get; set; }
+        public List<DriveItem> Bundles { get; set; }
         /// <summary>Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.</summary>
         public string DriveType { get; set; }
         /// <summary>The list of items the user is following. Only in OneDrive for Business.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem> Following { get; set; }
+        public List<DriveItem> Following { get; set; }
         /// <summary>All items contained in the drive. Read-only. Nullable.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem> Items { get; set; }
+        public List<DriveItem> Items { get; set; }
         /// <summary>For drives in SharePoint, the underlying document library list. Read-only. Nullable.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.List List { get; set; }
+        public List List { get; set; }
         /// <summary>Optional. The user account that owns the drive. Read-only.</summary>
         public IdentitySet Owner { get; set; }
         /// <summary>Optional. Information about the drive's storage space quota. Read-only.</summary>
         public Quota Quota { get; set; }
         /// <summary>The root folder of the drive. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem Root { get; set; }
+        public DriveItem Root { get; set; }
         public SharepointIds SharePointIds { get; set; }
         /// <summary>Collection of common folders available in OneDrive. Read-only. Nullable.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem> Special { get; set; }
+        public List<DriveItem> Special { get; set; }
         /// <summary>If present, indicates that this is a system-managed drive. Read-only.</summary>
         public SystemFacet System { get; set; }
         /// <summary>
@@ -31,16 +31,16 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"bundles", (o,n) => { (o as Drive).Bundles = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>().ToList(); } },
+                {"bundles", (o,n) => { (o as Drive).Bundles = n.GetCollectionOfObjectValues<DriveItem>().ToList(); } },
                 {"driveType", (o,n) => { (o as Drive).DriveType = n.GetStringValue(); } },
-                {"following", (o,n) => { (o as Drive).Following = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>().ToList(); } },
-                {"items", (o,n) => { (o as Drive).Items = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>().ToList(); } },
-                {"list", (o,n) => { (o as Drive).List = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.List>(); } },
+                {"following", (o,n) => { (o as Drive).Following = n.GetCollectionOfObjectValues<DriveItem>().ToList(); } },
+                {"items", (o,n) => { (o as Drive).Items = n.GetCollectionOfObjectValues<DriveItem>().ToList(); } },
+                {"list", (o,n) => { (o as Drive).List = n.GetObjectValue<List>(); } },
                 {"owner", (o,n) => { (o as Drive).Owner = n.GetObjectValue<IdentitySet>(); } },
                 {"quota", (o,n) => { (o as Drive).Quota = n.GetObjectValue<Quota>(); } },
-                {"root", (o,n) => { (o as Drive).Root = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(); } },
+                {"root", (o,n) => { (o as Drive).Root = n.GetObjectValue<DriveItem>(); } },
                 {"sharePointIds", (o,n) => { (o as Drive).SharePointIds = n.GetObjectValue<SharepointIds>(); } },
-                {"special", (o,n) => { (o as Drive).Special = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>().ToList(); } },
+                {"special", (o,n) => { (o as Drive).Special = n.GetCollectionOfObjectValues<DriveItem>().ToList(); } },
                 {"system", (o,n) => { (o as Drive).System = n.GetObjectValue<SystemFacet>(); } },
             };
         }
@@ -51,16 +51,16 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>("bundles", Bundles);
+            writer.WriteCollectionOfObjectValues<DriveItem>("bundles", Bundles);
             writer.WriteStringValue("driveType", DriveType);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>("following", Following);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>("items", Items);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.List>("list", List);
+            writer.WriteCollectionOfObjectValues<DriveItem>("following", Following);
+            writer.WriteCollectionOfObjectValues<DriveItem>("items", Items);
+            writer.WriteObjectValue<List>("list", List);
             writer.WriteObjectValue<IdentitySet>("owner", Owner);
             writer.WriteObjectValue<Quota>("quota", Quota);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>("root", Root);
+            writer.WriteObjectValue<DriveItem>("root", Root);
             writer.WriteObjectValue<SharepointIds>("sharePointIds", SharePointIds);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>("special", Special);
+            writer.WriteCollectionOfObjectValues<DriveItem>("special", Special);
             writer.WriteObjectValue<SystemFacet>("system", System);
         }
     }

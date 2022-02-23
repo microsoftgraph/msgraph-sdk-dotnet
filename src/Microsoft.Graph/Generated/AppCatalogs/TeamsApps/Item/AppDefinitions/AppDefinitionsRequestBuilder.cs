@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.AppCatalogs.TeamsApps.Item.AppDefinitions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.appCatalogs.teamsApps.item.appDefinitions.item collection</summary>
-        public TeamsAppDefinitionRequestBuilder this[string position] { get {
+        public TeamsAppDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsAppDefinition_id", position);
-            return new TeamsAppDefinitionRequestBuilder(urlTplParams, RequestAdapter);
+            return new TeamsAppDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppDefinitionsRequestBuilder and sets the default values.

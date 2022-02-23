@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Solutions.BookingBusinesses.Item.CustomQuestions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.solutions.bookingBusinesses.item.customQuestions.item collection</summary>
-        public BookingCustomQuestionRequestBuilder this[string position] { get {
+        public BookingCustomQuestionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingCustomQuestion_id", position);
-            return new BookingCustomQuestionRequestBuilder(urlTplParams, RequestAdapter);
+            return new BookingCustomQuestionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CustomQuestionsRequestBuilder and sets the default values.

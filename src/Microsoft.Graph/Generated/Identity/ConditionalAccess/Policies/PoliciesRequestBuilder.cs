@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Identity.ConditionalAccess.Policies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identity.conditionalAccess.policies.item collection</summary>
-        public ConditionalAccessPolicyRequestBuilder this[string position] { get {
+        public ConditionalAccessPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conditionalAccessPolicy_id", position);
-            return new ConditionalAccessPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConditionalAccessPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PoliciesRequestBuilder and sets the default values.

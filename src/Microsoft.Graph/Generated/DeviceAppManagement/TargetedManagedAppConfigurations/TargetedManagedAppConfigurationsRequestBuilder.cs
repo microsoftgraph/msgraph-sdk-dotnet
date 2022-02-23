@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.targetedManagedAppConfigurations.item collection</summary>
-        public TargetedManagedAppConfigurationRequestBuilder this[string position] { get {
+        public TargetedManagedAppConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("targetedManagedAppConfiguration_id", position);
-            return new TargetedManagedAppConfigurationRequestBuilder(urlTplParams, RequestAdapter);
+            return new TargetedManagedAppConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TargetedManagedAppConfigurationsRequestBuilder and sets the default values.

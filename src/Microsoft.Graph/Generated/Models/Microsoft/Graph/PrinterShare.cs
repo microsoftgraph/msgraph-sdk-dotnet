@@ -8,23 +8,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.</summary>
         public bool? AllowAllUsers { get; set; }
         /// <summary>The groups whose users have access to print using the printer.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Group> AllowedGroups { get; set; }
+        public List<Group> AllowedGroups { get; set; }
         /// <summary>The users who have access to print using the printer.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.User> AllowedUsers { get; set; }
+        public List<User> AllowedUsers { get; set; }
         /// <summary>The DateTimeOffset when the printer share was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The printer that this printer share is related to.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Printer Printer { get; set; }
+        public Printer Printer { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"allowAllUsers", (o,n) => { (o as PrinterShare).AllowAllUsers = n.GetBoolValue(); } },
-                {"allowedGroups", (o,n) => { (o as PrinterShare).AllowedGroups = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>().ToList(); } },
-                {"allowedUsers", (o,n) => { (o as PrinterShare).AllowedUsers = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.User>().ToList(); } },
+                {"allowedGroups", (o,n) => { (o as PrinterShare).AllowedGroups = n.GetCollectionOfObjectValues<Group>().ToList(); } },
+                {"allowedUsers", (o,n) => { (o as PrinterShare).AllowedUsers = n.GetCollectionOfObjectValues<User>().ToList(); } },
                 {"createdDateTime", (o,n) => { (o as PrinterShare).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"printer", (o,n) => { (o as PrinterShare).Printer = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Printer>(); } },
+                {"printer", (o,n) => { (o as PrinterShare).Printer = n.GetObjectValue<Printer>(); } },
             };
         }
         /// <summary>
@@ -35,10 +35,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowAllUsers", AllowAllUsers);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>("allowedGroups", AllowedGroups);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.User>("allowedUsers", AllowedUsers);
+            writer.WriteCollectionOfObjectValues<Group>("allowedGroups", AllowedGroups);
+            writer.WriteCollectionOfObjectValues<User>("allowedUsers", AllowedUsers);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Printer>("printer", Printer);
+            writer.WriteObjectValue<Printer>("printer", Printer);
         }
     }
 }

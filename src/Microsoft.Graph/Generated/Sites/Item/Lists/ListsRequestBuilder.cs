@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.lists.item collection</summary>
-        public ListRequestBuilder this[string position] { get {
+        public ListItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("list_id", position);
-            return new ListRequestBuilder(urlTplParams, RequestAdapter);
+            return new ListItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ListsRequestBuilder and sets the default values.

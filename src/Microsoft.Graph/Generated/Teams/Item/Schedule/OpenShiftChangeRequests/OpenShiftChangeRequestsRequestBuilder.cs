@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.OpenShiftChangeRequests {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.schedule.openShiftChangeRequests.item collection</summary>
-        public OpenShiftChangeRequestRequestBuilder this[string position] { get {
+        public OpenShiftChangeRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("openShiftChangeRequest_id", position);
-            return new OpenShiftChangeRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new OpenShiftChangeRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OpenShiftChangeRequestsRequestBuilder and sets the default values.

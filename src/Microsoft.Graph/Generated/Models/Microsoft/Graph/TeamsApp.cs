@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TeamsApp : Entity, IParsable {
         /// <summary>The details for each version of the app.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsAppDefinition> AppDefinitions { get; set; }
+        public List<TeamsAppDefinition> AppDefinitions { get; set; }
         /// <summary>The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.</summary>
         public string DisplayName { get; set; }
         /// <summary>The method of distribution for the app. Read-only.</summary>
@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appDefinitions", (o,n) => { (o as TeamsApp).AppDefinitions = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsAppDefinition>().ToList(); } },
+                {"appDefinitions", (o,n) => { (o as TeamsApp).AppDefinitions = n.GetCollectionOfObjectValues<TeamsAppDefinition>().ToList(); } },
                 {"displayName", (o,n) => { (o as TeamsApp).DisplayName = n.GetStringValue(); } },
                 {"distributionMethod", (o,n) => { (o as TeamsApp).DistributionMethod = n.GetEnumValue<TeamsAppDistributionMethod>(); } },
                 {"externalId", (o,n) => { (o as TeamsApp).ExternalId = n.GetStringValue(); } },
@@ -31,7 +31,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsAppDefinition>("appDefinitions", AppDefinitions);
+            writer.WriteCollectionOfObjectValues<TeamsAppDefinition>("appDefinitions", AppDefinitions);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<TeamsAppDistributionMethod>("distributionMethod", DistributionMethod);
             writer.WriteStringValue("externalId", ExternalId);

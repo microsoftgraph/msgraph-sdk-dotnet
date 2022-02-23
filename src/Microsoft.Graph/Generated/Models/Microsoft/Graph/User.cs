@@ -21,20 +21,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<AssignedLicense> AssignedLicenses { get; set; }
         /// <summary>The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).</summary>
         public List<AssignedPlan> AssignedPlans { get; set; }
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Authentication Authentication { get; set; }
+        public Authentication Authentication { get; set; }
         /// <summary>The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.</summary>
         public DateTimeOffset? Birthday { get; set; }
         /// <summary>The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> BusinessPhones { get; set; }
         /// <summary>The user's primary calendar. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar Calendar { get; set; }
+        public Calendar Calendar { get; set; }
         /// <summary>The user's calendar groups. Read-only. Nullable.</summary>
         public List<CalendarGroup> CalendarGroups { get; set; }
         /// <summary>The user's calendars. Read-only. Nullable.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar> Calendars { get; set; }
+        public List<Calendar> Calendars { get; set; }
         /// <summary>The calendar view for the calendar. Read-only. Nullable.</summary>
         public List<Event> CalendarView { get; set; }
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat> Chats { get; set; }
+        public List<Chat> Chats { get; set; }
         /// <summary>The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string City { get; set; }
         /// <summary>The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.</summary>
         public string DisplayName { get; set; }
         /// <summary>The user's OneDrive. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Drive Drive { get; set; }
+        public Drive Drive { get; set; }
         /// <summary>A collection of drives available for this user. Read-only.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive> Drives { get; set; }
+        public List<Drive> Drives { get; set; }
         /// <summary>The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).</summary>
         public DateTimeOffset? EmployeeHireDate { get; set; }
         /// <summary>The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
@@ -85,7 +85,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? ExternalUserStateChangeDateTime { get; set; }
         /// <summary>The fax number of the user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
         public string FaxNumber { get; set; }
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Site> FollowedSites { get; set; }
+        public List<Site> FollowedSites { get; set; }
         /// <summary>The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
         public string GivenName { get; set; }
         /// <summary>The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.</summary>
@@ -95,7 +95,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> ImAddresses { get; set; }
         /// <summary>Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.InferenceClassification InferenceClassification { get; set; }
+        public InferenceClassification InferenceClassification { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public OfficeGraphInsights Insights { get; set; }
         /// <summary>A list for the user to describe their interests. Returned only on $select.</summary>
@@ -105,7 +105,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
         public string JobTitle { get; set; }
         /// <summary>The Microsoft Teams teams that the user is a member of. Read-only. Nullable.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Team> JoinedTeams { get; set; }
+        public List<Team> JoinedTeams { get; set; }
         /// <summary>The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.</summary>
         public DateTimeOffset? LastPasswordChangeDateTime { get; set; }
         /// <summary>Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.</summary>
@@ -113,7 +113,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>State of license assignments for this user. Read-only. Returned only on $select.</summary>
         public List<LicenseAssignmentState> LicenseAssignmentStates { get; set; }
         /// <summary>A collection of this user's license details. Read-only.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails> LicenseDetails { get; set; }
+        public List<LicenseDetails> LicenseDetails { get; set; }
         /// <summary>The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).</summary>
         public string Mail { get; set; }
         /// <summary>Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.</summary>
@@ -140,7 +140,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string OfficeLocation { get; set; }
         /// <summary>Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote Onenote { get; set; }
+        public Onenote Onenote { get; set; }
         public List<OnlineMeeting> OnlineMeetings { get; set; }
         /// <summary>Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.</summary>
         public string OnPremisesDistinguishedName { get; set; }
@@ -190,7 +190,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string PreferredLanguage { get; set; }
         /// <summary>The preferred name for the user. Returned only on $select.</summary>
         public string PreferredName { get; set; }
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Presence Presence { get; set; }
+        public Presence Presence { get; set; }
         /// <summary>The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).</summary>
         public List<ProvisionedPlan> ProvisionedPlans { get; set; }
         /// <summary>For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).</summary>
@@ -220,7 +220,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A container for Microsoft Teams features available for the user. Read-only. Nullable.</summary>
         public UserTeamwork Teamwork { get; set; }
         /// <summary>Represents the To Do services available to a user.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Todo Todo { get; set; }
+        public Todo Todo { get; set; }
         public List<DirectoryObject> TransitiveMemberOf { get; set; }
         /// <summary>A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string UsageLocation { get; set; }
@@ -241,14 +241,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"appRoleAssignments", (o,n) => { (o as User).AppRoleAssignments = n.GetCollectionOfObjectValues<AppRoleAssignment>().ToList(); } },
                 {"assignedLicenses", (o,n) => { (o as User).AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>().ToList(); } },
                 {"assignedPlans", (o,n) => { (o as User).AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>().ToList(); } },
-                {"authentication", (o,n) => { (o as User).Authentication = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Authentication>(); } },
+                {"authentication", (o,n) => { (o as User).Authentication = n.GetObjectValue<Authentication>(); } },
                 {"birthday", (o,n) => { (o as User).Birthday = n.GetDateTimeOffsetValue(); } },
                 {"businessPhones", (o,n) => { (o as User).BusinessPhones = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"calendar", (o,n) => { (o as User).Calendar = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(); } },
+                {"calendar", (o,n) => { (o as User).Calendar = n.GetObjectValue<Calendar>(); } },
                 {"calendarGroups", (o,n) => { (o as User).CalendarGroups = n.GetCollectionOfObjectValues<CalendarGroup>().ToList(); } },
-                {"calendars", (o,n) => { (o as User).Calendars = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>().ToList(); } },
+                {"calendars", (o,n) => { (o as User).Calendars = n.GetCollectionOfObjectValues<Calendar>().ToList(); } },
                 {"calendarView", (o,n) => { (o as User).CalendarView = n.GetCollectionOfObjectValues<Event>().ToList(); } },
-                {"chats", (o,n) => { (o as User).Chats = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat>().ToList(); } },
+                {"chats", (o,n) => { (o as User).Chats = n.GetCollectionOfObjectValues<Chat>().ToList(); } },
                 {"city", (o,n) => { (o as User).City = n.GetStringValue(); } },
                 {"companyName", (o,n) => { (o as User).CompanyName = n.GetStringValue(); } },
                 {"consentProvidedForMinor", (o,n) => { (o as User).ConsentProvidedForMinor = n.GetStringValue(); } },
@@ -263,8 +263,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"deviceManagementTroubleshootingEvents", (o,n) => { (o as User).DeviceManagementTroubleshootingEvents = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingEvent>().ToList(); } },
                 {"directReports", (o,n) => { (o as User).DirectReports = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
                 {"displayName", (o,n) => { (o as User).DisplayName = n.GetStringValue(); } },
-                {"drive", (o,n) => { (o as User).Drive = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>(); } },
-                {"drives", (o,n) => { (o as User).Drives = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>().ToList(); } },
+                {"drive", (o,n) => { (o as User).Drive = n.GetObjectValue<Drive>(); } },
+                {"drives", (o,n) => { (o as User).Drives = n.GetCollectionOfObjectValues<Drive>().ToList(); } },
                 {"employeeHireDate", (o,n) => { (o as User).EmployeeHireDate = n.GetDateTimeOffsetValue(); } },
                 {"employeeId", (o,n) => { (o as User).EmployeeId = n.GetStringValue(); } },
                 {"employeeOrgData", (o,n) => { (o as User).EmployeeOrgData = n.GetObjectValue<EmployeeOrgData>(); } },
@@ -274,21 +274,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"externalUserState", (o,n) => { (o as User).ExternalUserState = n.GetStringValue(); } },
                 {"externalUserStateChangeDateTime", (o,n) => { (o as User).ExternalUserStateChangeDateTime = n.GetDateTimeOffsetValue(); } },
                 {"faxNumber", (o,n) => { (o as User).FaxNumber = n.GetStringValue(); } },
-                {"followedSites", (o,n) => { (o as User).FollowedSites = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>().ToList(); } },
+                {"followedSites", (o,n) => { (o as User).FollowedSites = n.GetCollectionOfObjectValues<Site>().ToList(); } },
                 {"givenName", (o,n) => { (o as User).GivenName = n.GetStringValue(); } },
                 {"hireDate", (o,n) => { (o as User).HireDate = n.GetDateTimeOffsetValue(); } },
                 {"identities", (o,n) => { (o as User).Identities = n.GetCollectionOfObjectValues<ObjectIdentity>().ToList(); } },
                 {"imAddresses", (o,n) => { (o as User).ImAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"inferenceClassification", (o,n) => { (o as User).InferenceClassification = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InferenceClassification>(); } },
+                {"inferenceClassification", (o,n) => { (o as User).InferenceClassification = n.GetObjectValue<InferenceClassification>(); } },
                 {"insights", (o,n) => { (o as User).Insights = n.GetObjectValue<OfficeGraphInsights>(); } },
                 {"interests", (o,n) => { (o as User).Interests = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"isResourceAccount", (o,n) => { (o as User).IsResourceAccount = n.GetBoolValue(); } },
                 {"jobTitle", (o,n) => { (o as User).JobTitle = n.GetStringValue(); } },
-                {"joinedTeams", (o,n) => { (o as User).JoinedTeams = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Team>().ToList(); } },
+                {"joinedTeams", (o,n) => { (o as User).JoinedTeams = n.GetCollectionOfObjectValues<Team>().ToList(); } },
                 {"lastPasswordChangeDateTime", (o,n) => { (o as User).LastPasswordChangeDateTime = n.GetDateTimeOffsetValue(); } },
                 {"legalAgeGroupClassification", (o,n) => { (o as User).LegalAgeGroupClassification = n.GetStringValue(); } },
                 {"licenseAssignmentStates", (o,n) => { (o as User).LicenseAssignmentStates = n.GetCollectionOfObjectValues<LicenseAssignmentState>().ToList(); } },
-                {"licenseDetails", (o,n) => { (o as User).LicenseDetails = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails>().ToList(); } },
+                {"licenseDetails", (o,n) => { (o as User).LicenseDetails = n.GetCollectionOfObjectValues<LicenseDetails>().ToList(); } },
                 {"mail", (o,n) => { (o as User).Mail = n.GetStringValue(); } },
                 {"mailboxSettings", (o,n) => { (o as User).MailboxSettings = n.GetObjectValue<MailboxSettings>(); } },
                 {"mailFolders", (o,n) => { (o as User).MailFolders = n.GetCollectionOfObjectValues<MailFolder>().ToList(); } },
@@ -302,7 +302,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"mySite", (o,n) => { (o as User).MySite = n.GetStringValue(); } },
                 {"oauth2PermissionGrants", (o,n) => { (o as User).Oauth2PermissionGrants = n.GetCollectionOfObjectValues<OAuth2PermissionGrant>().ToList(); } },
                 {"officeLocation", (o,n) => { (o as User).OfficeLocation = n.GetStringValue(); } },
-                {"onenote", (o,n) => { (o as User).Onenote = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote>(); } },
+                {"onenote", (o,n) => { (o as User).Onenote = n.GetObjectValue<Onenote>(); } },
                 {"onlineMeetings", (o,n) => { (o as User).OnlineMeetings = n.GetCollectionOfObjectValues<OnlineMeeting>().ToList(); } },
                 {"onPremisesDistinguishedName", (o,n) => { (o as User).OnPremisesDistinguishedName = n.GetStringValue(); } },
                 {"onPremisesDomainName", (o,n) => { (o as User).OnPremisesDomainName = n.GetStringValue(); } },
@@ -328,7 +328,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"postalCode", (o,n) => { (o as User).PostalCode = n.GetStringValue(); } },
                 {"preferredLanguage", (o,n) => { (o as User).PreferredLanguage = n.GetStringValue(); } },
                 {"preferredName", (o,n) => { (o as User).PreferredName = n.GetStringValue(); } },
-                {"presence", (o,n) => { (o as User).Presence = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>(); } },
+                {"presence", (o,n) => { (o as User).Presence = n.GetObjectValue<Presence>(); } },
                 {"provisionedPlans", (o,n) => { (o as User).ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>().ToList(); } },
                 {"proxyAddresses", (o,n) => { (o as User).ProxyAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"registeredDevices", (o,n) => { (o as User).RegisteredDevices = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
@@ -343,7 +343,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"streetAddress", (o,n) => { (o as User).StreetAddress = n.GetStringValue(); } },
                 {"surname", (o,n) => { (o as User).Surname = n.GetStringValue(); } },
                 {"teamwork", (o,n) => { (o as User).Teamwork = n.GetObjectValue<UserTeamwork>(); } },
-                {"todo", (o,n) => { (o as User).Todo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Todo>(); } },
+                {"todo", (o,n) => { (o as User).Todo = n.GetObjectValue<Todo>(); } },
                 {"transitiveMemberOf", (o,n) => { (o as User).TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
                 {"usageLocation", (o,n) => { (o as User).UsageLocation = n.GetStringValue(); } },
                 {"userPrincipalName", (o,n) => { (o as User).UserPrincipalName = n.GetStringValue(); } },
@@ -365,14 +365,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<AppRoleAssignment>("appRoleAssignments", AppRoleAssignments);
             writer.WriteCollectionOfObjectValues<AssignedLicense>("assignedLicenses", AssignedLicenses);
             writer.WriteCollectionOfObjectValues<AssignedPlan>("assignedPlans", AssignedPlans);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Authentication>("authentication", Authentication);
+            writer.WriteObjectValue<Authentication>("authentication", Authentication);
             writer.WriteDateTimeOffsetValue("birthday", Birthday);
             writer.WriteCollectionOfPrimitiveValues<string>("businessPhones", BusinessPhones);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>("calendar", Calendar);
+            writer.WriteObjectValue<Calendar>("calendar", Calendar);
             writer.WriteCollectionOfObjectValues<CalendarGroup>("calendarGroups", CalendarGroups);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>("calendars", Calendars);
+            writer.WriteCollectionOfObjectValues<Calendar>("calendars", Calendars);
             writer.WriteCollectionOfObjectValues<Event>("calendarView", CalendarView);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat>("chats", Chats);
+            writer.WriteCollectionOfObjectValues<Chat>("chats", Chats);
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteStringValue("consentProvidedForMinor", ConsentProvidedForMinor);
@@ -387,8 +387,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<DeviceManagementTroubleshootingEvent>("deviceManagementTroubleshootingEvents", DeviceManagementTroubleshootingEvents);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("directReports", DirectReports);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>("drive", Drive);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>("drives", Drives);
+            writer.WriteObjectValue<Drive>("drive", Drive);
+            writer.WriteCollectionOfObjectValues<Drive>("drives", Drives);
             writer.WriteDateTimeOffsetValue("employeeHireDate", EmployeeHireDate);
             writer.WriteStringValue("employeeId", EmployeeId);
             writer.WriteObjectValue<EmployeeOrgData>("employeeOrgData", EmployeeOrgData);
@@ -398,21 +398,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("externalUserState", ExternalUserState);
             writer.WriteDateTimeOffsetValue("externalUserStateChangeDateTime", ExternalUserStateChangeDateTime);
             writer.WriteStringValue("faxNumber", FaxNumber);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>("followedSites", FollowedSites);
+            writer.WriteCollectionOfObjectValues<Site>("followedSites", FollowedSites);
             writer.WriteStringValue("givenName", GivenName);
             writer.WriteDateTimeOffsetValue("hireDate", HireDate);
             writer.WriteCollectionOfObjectValues<ObjectIdentity>("identities", Identities);
             writer.WriteCollectionOfPrimitiveValues<string>("imAddresses", ImAddresses);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InferenceClassification>("inferenceClassification", InferenceClassification);
+            writer.WriteObjectValue<InferenceClassification>("inferenceClassification", InferenceClassification);
             writer.WriteObjectValue<OfficeGraphInsights>("insights", Insights);
             writer.WriteCollectionOfPrimitiveValues<string>("interests", Interests);
             writer.WriteBoolValue("isResourceAccount", IsResourceAccount);
             writer.WriteStringValue("jobTitle", JobTitle);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Team>("joinedTeams", JoinedTeams);
+            writer.WriteCollectionOfObjectValues<Team>("joinedTeams", JoinedTeams);
             writer.WriteDateTimeOffsetValue("lastPasswordChangeDateTime", LastPasswordChangeDateTime);
             writer.WriteStringValue("legalAgeGroupClassification", LegalAgeGroupClassification);
             writer.WriteCollectionOfObjectValues<LicenseAssignmentState>("licenseAssignmentStates", LicenseAssignmentStates);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails>("licenseDetails", LicenseDetails);
+            writer.WriteCollectionOfObjectValues<LicenseDetails>("licenseDetails", LicenseDetails);
             writer.WriteStringValue("mail", Mail);
             writer.WriteObjectValue<MailboxSettings>("mailboxSettings", MailboxSettings);
             writer.WriteCollectionOfObjectValues<MailFolder>("mailFolders", MailFolders);
@@ -426,7 +426,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("mySite", MySite);
             writer.WriteCollectionOfObjectValues<OAuth2PermissionGrant>("oauth2PermissionGrants", Oauth2PermissionGrants);
             writer.WriteStringValue("officeLocation", OfficeLocation);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote>("onenote", Onenote);
+            writer.WriteObjectValue<Onenote>("onenote", Onenote);
             writer.WriteCollectionOfObjectValues<OnlineMeeting>("onlineMeetings", OnlineMeetings);
             writer.WriteStringValue("onPremisesDistinguishedName", OnPremisesDistinguishedName);
             writer.WriteStringValue("onPremisesDomainName", OnPremisesDomainName);
@@ -452,7 +452,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteStringValue("preferredName", PreferredName);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>("presence", Presence);
+            writer.WriteObjectValue<Presence>("presence", Presence);
             writer.WriteCollectionOfObjectValues<ProvisionedPlan>("provisionedPlans", ProvisionedPlans);
             writer.WriteCollectionOfPrimitiveValues<string>("proxyAddresses", ProxyAddresses);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("registeredDevices", RegisteredDevices);
@@ -467,7 +467,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("streetAddress", StreetAddress);
             writer.WriteStringValue("surname", Surname);
             writer.WriteObjectValue<UserTeamwork>("teamwork", Teamwork);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Todo>("todo", Todo);
+            writer.WriteObjectValue<Todo>("todo", Todo);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
             writer.WriteStringValue("usageLocation", UsageLocation);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

@@ -68,10 +68,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.Assign {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.Assign.Assign>> PostAsync(AssignRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<Assign>> PostAsync(AssignRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.Assign.Assign>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Assign>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Agreements.Item.Files {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.agreements.item.files.item collection</summary>
-        public AgreementFileLocalizationRequestBuilder this[string position] { get {
+        public AgreementFileLocalizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementFileLocalization_id", position);
-            return new AgreementFileLocalizationRequestBuilder(urlTplParams, RequestAdapter);
+            return new AgreementFileLocalizationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new FilesRequestBuilder and sets the default values.

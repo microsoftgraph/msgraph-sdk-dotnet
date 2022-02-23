@@ -22,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Returns the number of visible rows. Read-only.</summary>
         public int? RowCount { get; set; }
         /// <summary>Represents a collection of range views associated with the range. Read-only. Read-only.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRangeView> Rows { get; set; }
+        public List<WorkbookRangeView> Rows { get; set; }
         /// <summary>Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.</summary>
         public Json Text { get; set; }
         /// <summary>Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.</summary>
@@ -42,7 +42,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"index", (o,n) => { (o as WorkbookRangeView).Index = n.GetIntValue(); } },
                 {"numberFormat", (o,n) => { (o as WorkbookRangeView).NumberFormat = n.GetObjectValue<Json>(); } },
                 {"rowCount", (o,n) => { (o as WorkbookRangeView).RowCount = n.GetIntValue(); } },
-                {"rows", (o,n) => { (o as WorkbookRangeView).Rows = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRangeView>().ToList(); } },
+                {"rows", (o,n) => { (o as WorkbookRangeView).Rows = n.GetCollectionOfObjectValues<WorkbookRangeView>().ToList(); } },
                 {"text", (o,n) => { (o as WorkbookRangeView).Text = n.GetObjectValue<Json>(); } },
                 {"values", (o,n) => { (o as WorkbookRangeView).Values = n.GetObjectValue<Json>(); } },
                 {"valueTypes", (o,n) => { (o as WorkbookRangeView).ValueTypes = n.GetObjectValue<Json>(); } },
@@ -63,7 +63,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteIntValue("index", Index);
             writer.WriteObjectValue<Json>("numberFormat", NumberFormat);
             writer.WriteIntValue("rowCount", RowCount);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRangeView>("rows", Rows);
+            writer.WriteCollectionOfObjectValues<WorkbookRangeView>("rows", Rows);
             writer.WriteObjectValue<Json>("text", Text);
             writer.WriteObjectValue<Json>("values", Values);
             writer.WriteObjectValue<Json>("valueTypes", ValueTypes);

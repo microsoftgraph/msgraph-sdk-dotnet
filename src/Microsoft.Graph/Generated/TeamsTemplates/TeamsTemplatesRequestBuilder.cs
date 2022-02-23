@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.TeamsTemplates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.teamsTemplates.item collection</summary>
-        public TeamsTemplateRequestBuilder this[string position] { get {
+        public TeamsTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsTemplate_id", position);
-            return new TeamsTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new TeamsTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TeamsTemplatesRequestBuilder and sets the default values.

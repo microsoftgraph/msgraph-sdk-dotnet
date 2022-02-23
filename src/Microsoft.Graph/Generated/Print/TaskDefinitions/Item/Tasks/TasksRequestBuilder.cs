@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Print.TaskDefinitions.Item.Tasks {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.print.taskDefinitions.item.tasks.item collection</summary>
-        public PrintTaskRequestBuilder this[string position] { get {
+        public PrintTaskItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printTask_id", position);
-            return new PrintTaskRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintTaskItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TasksRequestBuilder and sets the default values.

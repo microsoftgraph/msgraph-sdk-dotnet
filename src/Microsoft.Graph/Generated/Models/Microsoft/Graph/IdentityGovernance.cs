@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public AppConsentApprovalRoute AppConsent { get; set; }
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.EntitlementManagement EntitlementManagement { get; set; }
+        public EntitlementManagement EntitlementManagement { get; set; }
         public TermsOfUseContainer TermsOfUse { get; set; }
         /// <summary>
         /// Instantiates a new IdentityGovernance and sets the default values.
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"accessReviews", (o,n) => { (o as IdentityGovernance).AccessReviews = n.GetObjectValue<AccessReviewSet>(); } },
                 {"appConsent", (o,n) => { (o as IdentityGovernance).AppConsent = n.GetObjectValue<AppConsentApprovalRoute>(); } },
-                {"entitlementManagement", (o,n) => { (o as IdentityGovernance).EntitlementManagement = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.EntitlementManagement>(); } },
+                {"entitlementManagement", (o,n) => { (o as IdentityGovernance).EntitlementManagement = n.GetObjectValue<EntitlementManagement>(); } },
                 {"termsOfUse", (o,n) => { (o as IdentityGovernance).TermsOfUse = n.GetObjectValue<TermsOfUseContainer>(); } },
             };
         }
@@ -36,7 +36,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<AccessReviewSet>("accessReviews", AccessReviews);
             writer.WriteObjectValue<AppConsentApprovalRoute>("appConsent", AppConsent);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.EntitlementManagement>("entitlementManagement", EntitlementManagement);
+            writer.WriteObjectValue<EntitlementManagement>("entitlementManagement", EntitlementManagement);
             writer.WriteObjectValue<TermsOfUseContainer>("termsOfUse", TermsOfUse);
             writer.WriteAdditionalData(AdditionalData);
         }

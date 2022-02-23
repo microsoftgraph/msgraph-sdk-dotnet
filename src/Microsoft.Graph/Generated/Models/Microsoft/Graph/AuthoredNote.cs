@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AuthoredNote : Entity, IParsable {
         /// <summary>Identity information about the note's author.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Identity Author { get; set; }
+        public Identity Author { get; set; }
         /// <summary>The content of the note.</summary>
         public ItemBody Content { get; set; }
         /// <summary>The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -16,7 +16,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"author", (o,n) => { (o as AuthoredNote).Author = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(); } },
+                {"author", (o,n) => { (o as AuthoredNote).Author = n.GetObjectValue<Identity>(); } },
                 {"content", (o,n) => { (o as AuthoredNote).Content = n.GetObjectValue<ItemBody>(); } },
                 {"createdDateTime", (o,n) => { (o as AuthoredNote).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>("author", Author);
+            writer.WriteObjectValue<Identity>("author", Author);
             writer.WriteObjectValue<ItemBody>("content", Content);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
         }

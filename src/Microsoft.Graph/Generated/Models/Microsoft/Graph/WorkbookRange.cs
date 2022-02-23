@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Represents the column number of the first cell in the range. Zero-indexed. Read-only.</summary>
         public int? ColumnIndex { get; set; }
         /// <summary>Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRangeFormat Format { get; set; }
+        public WorkbookRangeFormat Format { get; set; }
         /// <summary>Represents the formula in A1-style notation.</summary>
         public Json Formulas { get; set; }
         /// <summary>Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.</summary>
@@ -36,7 +36,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Returns the row number of the first cell in the range. Zero-indexed. Read-only.</summary>
         public int? RowIndex { get; set; }
         /// <summary>The worksheet containing the current range. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRangeSort Sort { get; set; }
+        public WorkbookRangeSort Sort { get; set; }
         /// <summary>Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.</summary>
         public Json Text { get; set; }
         /// <summary>Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.</summary>
@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"columnCount", (o,n) => { (o as WorkbookRange).ColumnCount = n.GetIntValue(); } },
                 {"columnHidden", (o,n) => { (o as WorkbookRange).ColumnHidden = n.GetBoolValue(); } },
                 {"columnIndex", (o,n) => { (o as WorkbookRange).ColumnIndex = n.GetIntValue(); } },
-                {"format", (o,n) => { (o as WorkbookRange).Format = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRangeFormat>(); } },
+                {"format", (o,n) => { (o as WorkbookRange).Format = n.GetObjectValue<WorkbookRangeFormat>(); } },
                 {"formulas", (o,n) => { (o as WorkbookRange).Formulas = n.GetObjectValue<Json>(); } },
                 {"formulasLocal", (o,n) => { (o as WorkbookRange).FormulasLocal = n.GetObjectValue<Json>(); } },
                 {"formulasR1C1", (o,n) => { (o as WorkbookRange).FormulasR1C1 = n.GetObjectValue<Json>(); } },
@@ -65,7 +65,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"rowCount", (o,n) => { (o as WorkbookRange).RowCount = n.GetIntValue(); } },
                 {"rowHidden", (o,n) => { (o as WorkbookRange).RowHidden = n.GetBoolValue(); } },
                 {"rowIndex", (o,n) => { (o as WorkbookRange).RowIndex = n.GetIntValue(); } },
-                {"sort", (o,n) => { (o as WorkbookRange).Sort = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRangeSort>(); } },
+                {"sort", (o,n) => { (o as WorkbookRange).Sort = n.GetObjectValue<WorkbookRangeSort>(); } },
                 {"text", (o,n) => { (o as WorkbookRange).Text = n.GetObjectValue<Json>(); } },
                 {"values", (o,n) => { (o as WorkbookRange).Values = n.GetObjectValue<Json>(); } },
                 {"valueTypes", (o,n) => { (o as WorkbookRange).ValueTypes = n.GetObjectValue<Json>(); } },
@@ -85,7 +85,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteIntValue("columnCount", ColumnCount);
             writer.WriteBoolValue("columnHidden", ColumnHidden);
             writer.WriteIntValue("columnIndex", ColumnIndex);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRangeFormat>("format", Format);
+            writer.WriteObjectValue<WorkbookRangeFormat>("format", Format);
             writer.WriteObjectValue<Json>("formulas", Formulas);
             writer.WriteObjectValue<Json>("formulasLocal", FormulasLocal);
             writer.WriteObjectValue<Json>("formulasR1C1", FormulasR1C1);
@@ -94,7 +94,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteIntValue("rowCount", RowCount);
             writer.WriteBoolValue("rowHidden", RowHidden);
             writer.WriteIntValue("rowIndex", RowIndex);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRangeSort>("sort", Sort);
+            writer.WriteObjectValue<WorkbookRangeSort>("sort", Sort);
             writer.WriteObjectValue<Json>("text", Text);
             writer.WriteObjectValue<Json>("values", Values);
             writer.WriteObjectValue<Json>("valueTypes", ValueTypes);

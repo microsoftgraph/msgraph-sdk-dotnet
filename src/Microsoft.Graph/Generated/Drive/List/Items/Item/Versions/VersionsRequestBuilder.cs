@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Drive.List.Items.Item.Versions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.drive.list.items.item.versions.item collection</summary>
-        public ListItemVersionRequestBuilder this[string position] { get {
+        public ListItemVersionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("listItemVersion_id", position);
-            return new ListItemVersionRequestBuilder(urlTplParams, RequestAdapter);
+            return new ListItemVersionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new VersionsRequestBuilder and sets the default values.

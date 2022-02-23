@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.Education.Users {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.education.users.item collection</summary>
-        public EducationUserRequestBuilder this[string position] { get {
+        public EducationUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationUser_id", position);
-            return new EducationUserRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationUserItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UsersRequestBuilder and sets the default values.

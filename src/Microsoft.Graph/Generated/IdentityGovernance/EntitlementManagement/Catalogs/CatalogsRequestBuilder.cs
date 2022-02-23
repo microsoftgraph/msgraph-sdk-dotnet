@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.Catalogs {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.entitlementManagement.catalogs.item collection</summary>
-        public AccessPackageCatalogRequestBuilder this[string position] { get {
+        public AccessPackageCatalogItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessPackageCatalog_id", position);
-            return new AccessPackageCatalogRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessPackageCatalogItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CatalogsRequestBuilder and sets the default values.

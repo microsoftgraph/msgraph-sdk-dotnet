@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote.Notebooks.Item.SectionGroups.Item
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.onenote.notebooks.item.sectionGroups.item.sections.item.pages.item collection</summary>
-        public OnenotePageRequestBuilder this[string position] { get {
+        public OnenotePageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onenotePage_id", position);
-            return new OnenotePageRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnenotePageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PagesRequestBuilder and sets the default values.

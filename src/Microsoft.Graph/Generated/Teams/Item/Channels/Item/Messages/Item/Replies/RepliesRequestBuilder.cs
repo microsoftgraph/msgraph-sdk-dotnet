@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.Replies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.channels.item.messages.item.replies.item collection</summary>
-        public ChatMessageRequestBuilder this[string position] { get {
+        public ChatMessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chatMessage_id1", position);
-            return new ChatMessageRequestBuilder(urlTplParams, RequestAdapter);
+            return new ChatMessageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RepliesRequestBuilder and sets the default values.

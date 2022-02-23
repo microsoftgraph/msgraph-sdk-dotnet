@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SubjectRightsRequest : Entity, IParsable {
         /// <summary>Identity that the request is assigned to.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Identity AssignedTo { get; set; }
+        public Identity AssignedTo { get; set; }
         /// <summary>The date and time when the request was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ClosedDateTime { get; set; }
         /// <summary>Identity information for the entity that created the request.</summary>
@@ -40,7 +40,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The status of the request.. Possible values are: active, closed, unknownFutureValue.</summary>
         public SubjectRightsRequestStatus? Status { get; set; }
         /// <summary>Information about the Microsoft Teams team that was created for the request.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Team Team { get; set; }
+        public Team Team { get; set; }
         /// <summary>The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.</summary>
         public SubjectRightsRequestType? Type { get; set; }
         /// <summary>
@@ -48,7 +48,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignedTo", (o,n) => { (o as SubjectRightsRequest).AssignedTo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(); } },
+                {"assignedTo", (o,n) => { (o as SubjectRightsRequest).AssignedTo = n.GetObjectValue<Identity>(); } },
                 {"closedDateTime", (o,n) => { (o as SubjectRightsRequest).ClosedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"createdBy", (o,n) => { (o as SubjectRightsRequest).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
                 {"createdDateTime", (o,n) => { (o as SubjectRightsRequest).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -65,7 +65,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"regulations", (o,n) => { (o as SubjectRightsRequest).Regulations = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"stages", (o,n) => { (o as SubjectRightsRequest).Stages = n.GetCollectionOfObjectValues<SubjectRightsRequestStageDetail>().ToList(); } },
                 {"status", (o,n) => { (o as SubjectRightsRequest).Status = n.GetEnumValue<SubjectRightsRequestStatus>(); } },
-                {"team", (o,n) => { (o as SubjectRightsRequest).Team = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Team>(); } },
+                {"team", (o,n) => { (o as SubjectRightsRequest).Team = n.GetObjectValue<Team>(); } },
                 {"type", (o,n) => { (o as SubjectRightsRequest).Type = n.GetEnumValue<SubjectRightsRequestType>(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>("assignedTo", AssignedTo);
+            writer.WriteObjectValue<Identity>("assignedTo", AssignedTo);
             writer.WriteDateTimeOffsetValue("closedDateTime", ClosedDateTime);
             writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
@@ -93,7 +93,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfPrimitiveValues<string>("regulations", Regulations);
             writer.WriteCollectionOfObjectValues<SubjectRightsRequestStageDetail>("stages", Stages);
             writer.WriteEnumValue<SubjectRightsRequestStatus>("status", Status);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Team>("team", Team);
+            writer.WriteObjectValue<Team>("team", Team);
             writer.WriteEnumValue<SubjectRightsRequestType>("type", Type);
         }
     }

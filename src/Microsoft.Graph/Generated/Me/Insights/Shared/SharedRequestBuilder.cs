@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Me.Insights.Shared {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.insights.shared.item collection</summary>
-        public SharedInsightRequestBuilder this[string position] { get {
+        public SharedInsightItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sharedInsight_id", position);
-            return new SharedInsightRequestBuilder(urlTplParams, RequestAdapter);
+            return new SharedInsightItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SharedRequestBuilder and sets the default values.

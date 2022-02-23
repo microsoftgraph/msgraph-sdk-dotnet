@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Me.People {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.people.item collection</summary>
-        public PersonRequestBuilder this[string position] { get {
+        public PersonItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("person_id", position);
-            return new PersonRequestBuilder(urlTplParams, RequestAdapter);
+            return new PersonItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PeopleRequestBuilder and sets the default values.

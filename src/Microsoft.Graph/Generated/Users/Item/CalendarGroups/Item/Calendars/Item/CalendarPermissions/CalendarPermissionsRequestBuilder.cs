@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Calend
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.calendarGroups.item.calendars.item.calendarPermissions.item collection</summary>
-        public CalendarPermissionRequestBuilder this[string position] { get {
+        public CalendarPermissionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("calendarPermission_id", position);
-            return new CalendarPermissionRequestBuilder(urlTplParams, RequestAdapter);
+            return new CalendarPermissionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CalendarPermissionsRequestBuilder and sets the default values.

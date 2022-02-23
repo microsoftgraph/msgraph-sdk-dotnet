@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.GroupLifecyclePolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.groupLifecyclePolicies.item collection</summary>
-        public GroupLifecyclePolicyRequestBuilder this[string position] { get {
+        public GroupLifecyclePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupLifecyclePolicy_id", position);
-            return new GroupLifecyclePolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupLifecyclePolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupLifecyclePoliciesRequestBuilder and sets the default values.

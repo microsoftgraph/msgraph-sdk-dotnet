@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.InformationProtection.Bitlocker.RecoveryKeys {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.informationProtection.bitlocker.recoveryKeys.item collection</summary>
-        public BitlockerRecoveryKeyRequestBuilder this[string position] { get {
+        public BitlockerRecoveryKeyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bitlockerRecoveryKey_id", position);
-            return new BitlockerRecoveryKeyRequestBuilder(urlTplParams, RequestAdapter);
+            return new BitlockerRecoveryKeyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RecoveryKeysRequestBuilder and sets the default values.

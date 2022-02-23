@@ -30,10 +30,10 @@ namespace MicrosoftGraphSdk.Devices {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraphSdk.devices.item collection</summary>
-        public DeviceRequestBuilder this[string position] { get {
+        public DeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("device_id", position);
-            return new DeviceRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DevicesRequestBuilder and sets the default values.

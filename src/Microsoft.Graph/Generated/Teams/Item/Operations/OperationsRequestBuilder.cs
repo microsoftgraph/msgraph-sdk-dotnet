@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Teams.Item.Operations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.operations.item collection</summary>
-        public TeamsAsyncOperationRequestBuilder this[string position] { get {
+        public TeamsAsyncOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsAsyncOperation_id", position);
-            return new TeamsAsyncOperationRequestBuilder(urlTplParams, RequestAdapter);
+            return new TeamsAsyncOperationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OperationsRequestBuilder and sets the default values.

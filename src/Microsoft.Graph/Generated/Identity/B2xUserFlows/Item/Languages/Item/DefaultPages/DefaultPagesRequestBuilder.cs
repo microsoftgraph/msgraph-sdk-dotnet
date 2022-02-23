@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.Languages.Item.DefaultPag
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identity.b2xUserFlows.item.languages.item.defaultPages.item collection</summary>
-        public UserFlowLanguagePageRequestBuilder this[string position] { get {
+        public UserFlowLanguagePageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userFlowLanguagePage_id", position);
-            return new UserFlowLanguagePageRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserFlowLanguagePageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DefaultPagesRequestBuilder and sets the default values.

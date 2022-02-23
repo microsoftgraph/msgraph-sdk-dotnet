@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Reports.DailyPrintUsageByUser {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.reports.dailyPrintUsageByUser.item collection</summary>
-        public PrintUsageByUserRequestBuilder this[string position] { get {
+        public PrintUsageByUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printUsageByUser_id", position);
-            return new PrintUsageByUserRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintUsageByUserItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DailyPrintUsageByUserRequestBuilder and sets the default values.

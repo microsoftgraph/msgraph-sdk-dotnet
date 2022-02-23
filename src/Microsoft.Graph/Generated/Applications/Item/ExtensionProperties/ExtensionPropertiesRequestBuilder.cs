@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Applications.Item.ExtensionProperties {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.applications.item.extensionProperties.item collection</summary>
-        public ExtensionPropertyRequestBuilder this[string position] { get {
+        public ExtensionPropertyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("extensionProperty_id", position);
-            return new ExtensionPropertyRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExtensionPropertyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExtensionPropertiesRequestBuilder and sets the default values.

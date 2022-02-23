@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Endpoints {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.servicePrincipals.item.endpoints.item collection</summary>
-        public EndpointRequestBuilder this[string position] { get {
+        public EndpointItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("endpoint_id", position);
-            return new EndpointRequestBuilder(urlTplParams, RequestAdapter);
+            return new EndpointItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EndpointsRequestBuilder and sets the default values.

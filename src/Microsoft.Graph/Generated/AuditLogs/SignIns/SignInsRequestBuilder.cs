@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.AuditLogs.SignIns {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.auditLogs.signIns.item collection</summary>
-        public SignInRequestBuilder this[string position] { get {
+        public SignInItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("signIn_id", position);
-            return new SignInRequestBuilder(urlTplParams, RequestAdapter);
+            return new SignInItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SignInsRequestBuilder and sets the default values.

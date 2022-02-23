@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.GroupSettings {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.groupSettings.item collection</summary>
-        public GroupSettingRequestBuilder this[string position] { get {
+        public GroupSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupSetting_id", position);
-            return new GroupSettingRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupSettingItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupSettingsRequestBuilder and sets the default values.

@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.AudioRoutingGroups {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.communications.calls.item.audioRoutingGroups.item collection</summary>
-        public AudioRoutingGroupRequestBuilder this[string position] { get {
+        public AudioRoutingGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("audioRoutingGroup_id", position);
-            return new AudioRoutingGroupRequestBuilder(urlTplParams, RequestAdapter);
+            return new AudioRoutingGroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AudioRoutingGroupsRequestBuilder and sets the default values.

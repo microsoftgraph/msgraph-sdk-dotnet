@@ -11,7 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The DateTimeOffset when the job was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Read-only.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.PrintDocument> Documents { get; set; }
+        public List<PrintDocument> Documents { get; set; }
         /// <summary>If true, document can be fetched by printer.</summary>
         public bool? IsFetchable { get; set; }
         /// <summary>Contains the source job URL, if the job has been redirected from another printer.</summary>
@@ -29,7 +29,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"configuration", (o,n) => { (o as PrintJob).Configuration = n.GetObjectValue<PrintJobConfiguration>(); } },
                 {"createdBy", (o,n) => { (o as PrintJob).CreatedBy = n.GetObjectValue<UserIdentity>(); } },
                 {"createdDateTime", (o,n) => { (o as PrintJob).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"documents", (o,n) => { (o as PrintJob).Documents = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.PrintDocument>().ToList(); } },
+                {"documents", (o,n) => { (o as PrintJob).Documents = n.GetCollectionOfObjectValues<PrintDocument>().ToList(); } },
                 {"isFetchable", (o,n) => { (o as PrintJob).IsFetchable = n.GetBoolValue(); } },
                 {"redirectedFrom", (o,n) => { (o as PrintJob).RedirectedFrom = n.GetStringValue(); } },
                 {"redirectedTo", (o,n) => { (o as PrintJob).RedirectedTo = n.GetStringValue(); } },
@@ -47,7 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<PrintJobConfiguration>("configuration", Configuration);
             writer.WriteObjectValue<UserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.PrintDocument>("documents", Documents);
+            writer.WriteCollectionOfObjectValues<PrintDocument>("documents", Documents);
             writer.WriteBoolValue("isFetchable", IsFetchable);
             writer.WriteStringValue("redirectedFrom", RedirectedFrom);
             writer.WriteStringValue("redirectedTo", RedirectedTo);

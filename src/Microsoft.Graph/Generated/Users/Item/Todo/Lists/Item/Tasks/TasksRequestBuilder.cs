@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.Users.Item.Todo.Lists.Item.Tasks {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.todo.lists.item.tasks.item collection</summary>
-        public TodoTaskRequestBuilder this[string position] { get {
+        public TodoTaskItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("todoTask_id", position);
-            return new TodoTaskRequestBuilder(urlTplParams, RequestAdapter);
+            return new TodoTaskItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TasksRequestBuilder and sets the default values.

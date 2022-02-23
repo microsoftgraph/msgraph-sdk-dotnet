@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
         /// <summary>Read-only. Nullable.</summary>
         public List<ConnectionOperation> Operations { get; set; }
         /// <summary>Read-only. Nullable.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors.Schema Schema { get; set; }
+        public Schema Schema { get; set; }
         /// <summary>Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.</summary>
         public ConnectionState? State { get; set; }
         /// <summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
                 {"items", (o,n) => { (o as ExternalConnection).Items = n.GetCollectionOfObjectValues<ExternalItem>().ToList(); } },
                 {"name", (o,n) => { (o as ExternalConnection).Name = n.GetStringValue(); } },
                 {"operations", (o,n) => { (o as ExternalConnection).Operations = n.GetCollectionOfObjectValues<ConnectionOperation>().ToList(); } },
-                {"schema", (o,n) => { (o as ExternalConnection).Schema = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors.Schema>(); } },
+                {"schema", (o,n) => { (o as ExternalConnection).Schema = n.GetObjectValue<Schema>(); } },
                 {"state", (o,n) => { (o as ExternalConnection).State = n.GetEnumValue<ConnectionState>(); } },
             };
         }
@@ -49,7 +49,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
             writer.WriteCollectionOfObjectValues<ExternalItem>("items", Items);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<ConnectionOperation>("operations", Operations);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors.Schema>("schema", Schema);
+            writer.WriteObjectValue<Schema>("schema", Schema);
             writer.WriteEnumValue<ConnectionState>("state", State);
         }
     }

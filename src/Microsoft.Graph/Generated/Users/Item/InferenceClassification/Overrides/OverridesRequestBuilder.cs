@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Users.Item.InferenceClassification.Overrides {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.inferenceClassification.overrides.item collection</summary>
-        public InferenceClassificationOverrideRequestBuilder this[string position] { get {
+        public InferenceClassificationOverrideItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("inferenceClassificationOverride_id", position);
-            return new InferenceClassificationOverrideRequestBuilder(urlTplParams, RequestAdapter);
+            return new InferenceClassificationOverrideItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OverridesRequestBuilder and sets the default values.

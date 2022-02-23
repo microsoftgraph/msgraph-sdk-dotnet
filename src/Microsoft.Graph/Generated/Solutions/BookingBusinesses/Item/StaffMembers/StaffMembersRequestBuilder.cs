@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Solutions.BookingBusinesses.Item.StaffMembers {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.solutions.bookingBusinesses.item.staffMembers.item collection</summary>
-        public BookingStaffMemberBaseRequestBuilder this[string position] { get {
+        public BookingStaffMemberBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingStaffMemberBase_id", position);
-            return new BookingStaffMemberBaseRequestBuilder(urlTplParams, RequestAdapter);
+            return new BookingStaffMemberBaseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new StaffMembersRequestBuilder and sets the default values.

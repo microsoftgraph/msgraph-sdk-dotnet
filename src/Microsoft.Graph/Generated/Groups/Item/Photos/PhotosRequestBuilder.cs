@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Groups.Item.Photos {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.photos.item collection</summary>
-        public ProfilePhotoRequestBuilder this[string position] { get {
+        public ProfilePhotoItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("profilePhoto_id", position);
-            return new ProfilePhotoRequestBuilder(urlTplParams, RequestAdapter);
+            return new ProfilePhotoItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PhotosRequestBuilder and sets the default values.

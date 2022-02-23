@@ -30,10 +30,10 @@ namespace MicrosoftGraphSdk.DirectoryRoleTemplates {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraphSdk.directoryRoleTemplates.item collection</summary>
-        public DirectoryRoleTemplateRequestBuilder this[string position] { get {
+        public DirectoryRoleTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryRoleTemplate_id", position);
-            return new DirectoryRoleTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryRoleTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectoryRoleTemplatesRequestBuilder and sets the default values.

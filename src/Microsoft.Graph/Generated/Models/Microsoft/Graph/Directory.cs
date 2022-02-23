@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Directory : Entity, IParsable {
         /// <summary>Conceptual container for user and group directory objects.</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit> AdministrativeUnits { get; set; }
+        public List<AdministrativeUnit> AdministrativeUnits { get; set; }
         /// <summary>Recently deleted items. Read-only. Nullable.</summary>
         public List<DirectoryObject> DeletedItems { get; set; }
         /// <summary>
@@ -14,7 +14,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"administrativeUnits", (o,n) => { (o as Directory).AdministrativeUnits = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit>().ToList(); } },
+                {"administrativeUnits", (o,n) => { (o as Directory).AdministrativeUnits = n.GetCollectionOfObjectValues<AdministrativeUnit>().ToList(); } },
                 {"deletedItems", (o,n) => { (o as Directory).DeletedItems = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
             };
         }
@@ -25,7 +25,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit>("administrativeUnits", AdministrativeUnits);
+            writer.WriteCollectionOfObjectValues<AdministrativeUnit>("administrativeUnits", AdministrativeUnits);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("deletedItems", DeletedItems);
         }
     }

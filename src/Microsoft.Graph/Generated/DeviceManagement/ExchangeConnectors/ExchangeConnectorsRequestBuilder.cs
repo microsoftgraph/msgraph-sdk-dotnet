@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.ExchangeConnectors {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.exchangeConnectors.item collection</summary>
-        public DeviceManagementExchangeConnectorRequestBuilder this[string position] { get {
+        public DeviceManagementExchangeConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementExchangeConnector_id", position);
-            return new DeviceManagementExchangeConnectorRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementExchangeConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExchangeConnectorsRequestBuilder and sets the default values.

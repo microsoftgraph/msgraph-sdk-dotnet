@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Sites.Item.TermStore.Sets.Item.Terms.Item.Children {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.termStore.sets.item.terms.item.children.item collection</summary>
-        public TermRequestBuilder this[string position] { get {
+        public TermItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("term_id1", position);
-            return new TermRequestBuilder(urlTplParams, RequestAdapter);
+            return new TermItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChildrenRequestBuilder and sets the default values.

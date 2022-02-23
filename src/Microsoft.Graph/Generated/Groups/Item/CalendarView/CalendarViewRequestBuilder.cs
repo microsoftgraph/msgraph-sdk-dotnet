@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.Groups.Item.CalendarView {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.calendarView.item collection</summary>
-        public EventRequestBuilder this[string position] { get {
+        public EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event_id", position);
-            return new EventRequestBuilder(urlTplParams, RequestAdapter);
+            return new EventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CalendarViewRequestBuilder and sets the default values.

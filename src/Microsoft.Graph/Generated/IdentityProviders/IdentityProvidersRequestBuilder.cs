@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.IdentityProviders {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityProviders.item collection</summary>
-        public IdentityProviderRequestBuilder this[string position] { get {
+        public IdentityProviderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityProvider_id", position);
-            return new IdentityProviderRequestBuilder(urlTplParams, RequestAdapter);
+            return new IdentityProviderItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Builds and executes requests for operations under \identityProviders\microsoft.graph.availableProviderTypes()

@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.</summary>
         public bool? ContributionToContentDiscoveryDisabled { get; set; }
         /// <summary>The shift preferences for the user.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.ShiftPreferences ShiftPreferences { get; set; }
+        public ShiftPreferences ShiftPreferences { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"contributionToContentDiscoveryAsOrganizationDisabled", (o,n) => { (o as UserSettings).ContributionToContentDiscoveryAsOrganizationDisabled = n.GetBoolValue(); } },
                 {"contributionToContentDiscoveryDisabled", (o,n) => { (o as UserSettings).ContributionToContentDiscoveryDisabled = n.GetBoolValue(); } },
-                {"shiftPreferences", (o,n) => { (o as UserSettings).ShiftPreferences = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ShiftPreferences>(); } },
+                {"shiftPreferences", (o,n) => { (o as UserSettings).ShiftPreferences = n.GetObjectValue<ShiftPreferences>(); } },
             };
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteBoolValue("contributionToContentDiscoveryAsOrganizationDisabled", ContributionToContentDiscoveryAsOrganizationDisabled);
             writer.WriteBoolValue("contributionToContentDiscoveryDisabled", ContributionToContentDiscoveryDisabled);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ShiftPreferences>("shiftPreferences", ShiftPreferences);
+            writer.WriteObjectValue<ShiftPreferences>("shiftPreferences", ShiftPreferences);
         }
     }
 }

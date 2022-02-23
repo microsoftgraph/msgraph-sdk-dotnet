@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.Directory.AdministrativeUnits {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.directory.administrativeUnits.item collection</summary>
-        public AdministrativeUnitRequestBuilder this[string position] { get {
+        public AdministrativeUnitItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("administrativeUnit_id", position);
-            return new AdministrativeUnitRequestBuilder(urlTplParams, RequestAdapter);
+            return new AdministrativeUnitItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.

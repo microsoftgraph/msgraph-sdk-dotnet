@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.termsAndConditions.item collection</summary>
-        public TermsAndConditionsRequestBuilder this[string position] { get {
+        public TermsAndConditionsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("termsAndConditions_id", position);
-            return new TermsAndConditionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new TermsAndConditionsItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TermsAndConditionsRequestBuilder and sets the default values.

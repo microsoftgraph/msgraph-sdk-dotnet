@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<CallRecord> CallRecords { get; set; }
         public List<Call> Calls { get; set; }
         public List<OnlineMeeting> OnlineMeetings { get; set; }
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence> Presences { get; set; }
+        public List<Presence> Presences { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"callRecords", (o,n) => { (o as CloudCommunications).CallRecords = n.GetCollectionOfObjectValues<CallRecord>().ToList(); } },
                 {"calls", (o,n) => { (o as CloudCommunications).Calls = n.GetCollectionOfObjectValues<Call>().ToList(); } },
                 {"onlineMeetings", (o,n) => { (o as CloudCommunications).OnlineMeetings = n.GetCollectionOfObjectValues<OnlineMeeting>().ToList(); } },
-                {"presences", (o,n) => { (o as CloudCommunications).Presences = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>().ToList(); } },
+                {"presences", (o,n) => { (o as CloudCommunications).Presences = n.GetCollectionOfObjectValues<Presence>().ToList(); } },
             };
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<CallRecord>("callRecords", CallRecords);
             writer.WriteCollectionOfObjectValues<Call>("calls", Calls);
             writer.WriteCollectionOfObjectValues<OnlineMeeting>("onlineMeetings", OnlineMeetings);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>("presences", Presences);
+            writer.WriteCollectionOfObjectValues<Presence>("presences", Presences);
         }
     }
 }

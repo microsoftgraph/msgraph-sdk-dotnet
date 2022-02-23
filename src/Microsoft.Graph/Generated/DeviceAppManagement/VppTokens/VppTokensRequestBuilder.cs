@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.vppTokens.item collection</summary>
-        public VppTokenRequestBuilder this[string position] { get {
+        public VppTokenItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("vppToken_id", position);
-            return new VppTokenRequestBuilder(urlTplParams, RequestAdapter);
+            return new VppTokenItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new VppTokensRequestBuilder and sets the default values.

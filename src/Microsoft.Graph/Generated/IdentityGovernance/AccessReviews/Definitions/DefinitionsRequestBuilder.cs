@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.accessReviews.definitions.item collection</summary>
-        public AccessReviewScheduleDefinitionRequestBuilder this[string position] { get {
+        public AccessReviewScheduleDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewScheduleDefinition_id", position);
-            return new AccessReviewScheduleDefinitionRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewScheduleDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DefinitionsRequestBuilder and sets the default values.

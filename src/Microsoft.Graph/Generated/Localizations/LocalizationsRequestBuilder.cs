@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Localizations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.localizations.item collection</summary>
-        public OrganizationalBrandingLocalizationRequestBuilder this[string position] { get {
+        public OrganizationalBrandingLocalizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("organizationalBrandingLocalization_id", position);
-            return new OrganizationalBrandingLocalizationRequestBuilder(urlTplParams, RequestAdapter);
+            return new OrganizationalBrandingLocalizationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LocalizationsRequestBuilder and sets the default values.

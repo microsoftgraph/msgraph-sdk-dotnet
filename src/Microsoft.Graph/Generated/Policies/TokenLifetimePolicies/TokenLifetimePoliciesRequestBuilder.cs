@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Policies.TokenLifetimePolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.policies.tokenLifetimePolicies.item collection</summary>
-        public TokenLifetimePolicyRequestBuilder this[string position] { get {
+        public TokenLifetimePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tokenLifetimePolicy_id", position);
-            return new TokenLifetimePolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new TokenLifetimePolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TokenLifetimePoliciesRequestBuilder and sets the default values.

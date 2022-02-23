@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.DetectedApps {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.detectedApps.item collection</summary>
-        public DetectedAppRequestBuilder this[string position] { get {
+        public DetectedAppItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("detectedApp_id", position);
-            return new DetectedAppRequestBuilder(urlTplParams, RequestAdapter);
+            return new DetectedAppItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DetectedAppsRequestBuilder and sets the default values.

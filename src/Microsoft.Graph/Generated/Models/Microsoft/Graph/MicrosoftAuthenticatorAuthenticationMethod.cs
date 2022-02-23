@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Device Device { get; set; }
+        public Device Device { get; set; }
         /// <summary>Tags containing app metadata.</summary>
         public string DeviceTag { get; set; }
         /// <summary>The name of the device on which this app is registered.</summary>
@@ -21,7 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"createdDateTime", (o,n) => { (o as MicrosoftAuthenticatorAuthenticationMethod).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"device", (o,n) => { (o as MicrosoftAuthenticatorAuthenticationMethod).Device = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Device>(); } },
+                {"device", (o,n) => { (o as MicrosoftAuthenticatorAuthenticationMethod).Device = n.GetObjectValue<Device>(); } },
                 {"deviceTag", (o,n) => { (o as MicrosoftAuthenticatorAuthenticationMethod).DeviceTag = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as MicrosoftAuthenticatorAuthenticationMethod).DisplayName = n.GetStringValue(); } },
                 {"phoneAppVersion", (o,n) => { (o as MicrosoftAuthenticatorAuthenticationMethod).PhoneAppVersion = n.GetStringValue(); } },
@@ -35,7 +35,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Device>("device", Device);
+            writer.WriteObjectValue<Device>("device", Device);
             writer.WriteStringValue("deviceTag", DeviceTag);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("phoneAppVersion", PhoneAppVersion);

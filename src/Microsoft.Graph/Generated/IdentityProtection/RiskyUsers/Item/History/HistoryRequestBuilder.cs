@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyUsers.Item.History {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityProtection.riskyUsers.item.history.item collection</summary>
-        public RiskyUserHistoryItemRequestBuilder this[string position] { get {
+        public RiskyUserHistoryItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyUserHistoryItem_id", position);
-            return new RiskyUserHistoryItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new RiskyUserHistoryItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new HistoryRequestBuilder and sets the default values.

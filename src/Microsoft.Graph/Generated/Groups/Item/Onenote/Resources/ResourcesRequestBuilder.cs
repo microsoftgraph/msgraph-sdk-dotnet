@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Groups.Item.Onenote.Resources {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.onenote.resources.item collection</summary>
-        public OnenoteResourceRequestBuilder this[string position] { get {
+        public OnenoteResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onenoteResource_id", position);
-            return new OnenoteResourceRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnenoteResourceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResourcesRequestBuilder and sets the default values.

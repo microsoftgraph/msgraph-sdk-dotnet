@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Agreements.Item.Files.Item.Versions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.agreements.item.files.item.versions.item collection</summary>
-        public AgreementFileVersionRequestBuilder this[string position] { get {
+        public AgreementFileVersionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementFileVersion_id", position);
-            return new AgreementFileVersionRequestBuilder(urlTplParams, RequestAdapter);
+            return new AgreementFileVersionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new VersionsRequestBuilder and sets the default values.

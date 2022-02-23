@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignments
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.entitlementManagement.roleAssignments.item collection</summary>
-        public UnifiedRoleAssignmentRequestBuilder this[string position] { get {
+        public UnifiedRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleAssignment_id", position);
-            return new UnifiedRoleAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleAssignmentsRequestBuilder and sets the default values.

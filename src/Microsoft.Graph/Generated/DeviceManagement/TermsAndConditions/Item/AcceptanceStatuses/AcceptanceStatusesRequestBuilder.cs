@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.AcceptanceS
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.termsAndConditions.item.acceptanceStatuses.item collection</summary>
-        public TermsAndConditionsAcceptanceStatusRequestBuilder this[string position] { get {
+        public TermsAndConditionsAcceptanceStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("termsAndConditionsAcceptanceStatus_id", position);
-            return new TermsAndConditionsAcceptanceStatusRequestBuilder(urlTplParams, RequestAdapter);
+            return new TermsAndConditionsAcceptanceStatusItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AcceptanceStatusesRequestBuilder and sets the default values.

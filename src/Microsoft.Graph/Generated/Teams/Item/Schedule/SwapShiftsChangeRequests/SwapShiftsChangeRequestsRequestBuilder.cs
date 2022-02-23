@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.SwapShiftsChangeRequests {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.schedule.swapShiftsChangeRequests.item collection</summary>
-        public SwapShiftsChangeRequestRequestBuilder this[string position] { get {
+        public SwapShiftsChangeRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("swapShiftsChangeRequest_id", position);
-            return new SwapShiftsChangeRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new SwapShiftsChangeRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SwapShiftsChangeRequestsRequestBuilder and sets the default values.

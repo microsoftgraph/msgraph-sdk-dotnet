@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.authentication.microsoftAuthenticatorMethods.item collection</summary>
-        public MicrosoftAuthenticatorAuthenticationMethodRequestBuilder this[string position] { get {
+        public MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("microsoftAuthenticatorAuthenticationMethod_id", position);
-            return new MicrosoftAuthenticatorAuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
+            return new MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.

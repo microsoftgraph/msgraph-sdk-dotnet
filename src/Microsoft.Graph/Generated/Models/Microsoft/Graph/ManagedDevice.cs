@@ -22,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>List of ComplexType deviceActionResult objects. This property is read-only.</summary>
         public List<DeviceActionResult> DeviceActionResults { get; set; }
         /// <summary>Device category</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCategory DeviceCategory { get; set; }
+        public DeviceCategory DeviceCategory { get; set; }
         /// <summary>Device category display name. This property is read-only.</summary>
         public string DeviceCategoryDisplayName { get; set; }
         /// <summary>Device compliance policy states for this device.</summary>
@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"complianceState", (o,n) => { (o as ManagedDevice).ComplianceState = n.GetEnumValue<ComplianceState>(); } },
                 {"configurationManagerClientEnabledFeatures", (o,n) => { (o as ManagedDevice).ConfigurationManagerClientEnabledFeatures = n.GetObjectValue<ConfigurationManagerClientEnabledFeatures>(); } },
                 {"deviceActionResults", (o,n) => { (o as ManagedDevice).DeviceActionResults = n.GetCollectionOfObjectValues<DeviceActionResult>().ToList(); } },
-                {"deviceCategory", (o,n) => { (o as ManagedDevice).DeviceCategory = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCategory>(); } },
+                {"deviceCategory", (o,n) => { (o as ManagedDevice).DeviceCategory = n.GetObjectValue<DeviceCategory>(); } },
                 {"deviceCategoryDisplayName", (o,n) => { (o as ManagedDevice).DeviceCategoryDisplayName = n.GetStringValue(); } },
                 {"deviceCompliancePolicyStates", (o,n) => { (o as ManagedDevice).DeviceCompliancePolicyStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicyState>().ToList(); } },
                 {"deviceConfigurationStates", (o,n) => { (o as ManagedDevice).DeviceConfigurationStates = n.GetCollectionOfObjectValues<DeviceConfigurationState>().ToList(); } },
@@ -189,7 +189,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteEnumValue<ComplianceState>("complianceState", ComplianceState);
             writer.WriteObjectValue<ConfigurationManagerClientEnabledFeatures>("configurationManagerClientEnabledFeatures", ConfigurationManagerClientEnabledFeatures);
             writer.WriteCollectionOfObjectValues<DeviceActionResult>("deviceActionResults", DeviceActionResults);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCategory>("deviceCategory", DeviceCategory);
+            writer.WriteObjectValue<DeviceCategory>("deviceCategory", DeviceCategory);
             writer.WriteStringValue("deviceCategoryDisplayName", DeviceCategoryDisplayName);
             writer.WriteCollectionOfObjectValues<DeviceCompliancePolicyState>("deviceCompliancePolicyStates", DeviceCompliancePolicyStates);
             writer.WriteCollectionOfObjectValues<DeviceConfigurationState>("deviceConfigurationStates", DeviceConfigurationStates);

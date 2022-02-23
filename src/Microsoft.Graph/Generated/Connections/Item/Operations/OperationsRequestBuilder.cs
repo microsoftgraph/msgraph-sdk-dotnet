@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Connections.Item.Operations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.connections.item.operations.item collection</summary>
-        public ConnectionOperationRequestBuilder this[string position] { get {
+        public ConnectionOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connectionOperation_id", position);
-            return new ConnectionOperationRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConnectionOperationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OperationsRequestBuilder and sets the default values.

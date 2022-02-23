@@ -30,10 +30,10 @@ namespace MicrosoftGraphSdk.Contracts {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraphSdk.contracts.item collection</summary>
-        public ContractRequestBuilder this[string position] { get {
+        public ContractItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contract_id", position);
-            return new ContractRequestBuilder(urlTplParams, RequestAdapter);
+            return new ContractItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContractsRequestBuilder and sets the default values.

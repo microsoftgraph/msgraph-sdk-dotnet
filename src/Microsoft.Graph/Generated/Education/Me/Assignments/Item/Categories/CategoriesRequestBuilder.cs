@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Education.Me.Assignments.Item.Categories {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.education.me.assignments.item.categories.item collection</summary>
-        public EducationCategoryRequestBuilder this[string position] { get {
+        public EducationCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationCategory_id", position);
-            return new EducationCategoryRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CategoriesRequestBuilder and sets the default values.

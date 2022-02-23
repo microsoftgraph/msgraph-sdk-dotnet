@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.targetedManagedAppConfigurations.item.assignments.item collection</summary>
-        public TargetedManagedAppPolicyAssignmentRequestBuilder this[string position] { get {
+        public TargetedManagedAppPolicyAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("targetedManagedAppPolicyAssignment_id", position);
-            return new TargetedManagedAppPolicyAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new TargetedManagedAppPolicyAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

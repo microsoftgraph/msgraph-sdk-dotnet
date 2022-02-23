@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Drive.List.ContentTypes.Item.ColumnLinks {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.drive.list.contentTypes.item.columnLinks.item collection</summary>
-        public ColumnLinkRequestBuilder this[string position] { get {
+        public ColumnLinkItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("columnLink_id", position);
-            return new ColumnLinkRequestBuilder(urlTplParams, RequestAdapter);
+            return new ColumnLinkItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ColumnLinksRequestBuilder and sets the default values.

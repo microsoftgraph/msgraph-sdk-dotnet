@@ -16,7 +16,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The preview of the message associated with the event. It is in text format.</summary>
         public string BodyPreview { get; set; }
         /// <summary>The calendar that contains the event. Navigation property. Read-only.</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar Calendar { get; set; }
+        public Calendar Calendar { get; set; }
         /// <summary>The date, time, and time zone that the event ends. By default, the end time is in UTC.</summary>
         public DateTimeTimeZone End { get; set; }
         /// <summary>The collection of open extensions defined for the event. Nullable.</summary>
@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"attendees", (o,n) => { (o as Event).Attendees = n.GetCollectionOfObjectValues<Attendee>().ToList(); } },
                 {"body", (o,n) => { (o as Event).Body = n.GetObjectValue<ItemBody>(); } },
                 {"bodyPreview", (o,n) => { (o as Event).BodyPreview = n.GetStringValue(); } },
-                {"calendar", (o,n) => { (o as Event).Calendar = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(); } },
+                {"calendar", (o,n) => { (o as Event).Calendar = n.GetObjectValue<Calendar>(); } },
                 {"end", (o,n) => { (o as Event).End = n.GetObjectValue<DateTimeTimeZone>(); } },
                 {"extensions", (o,n) => { (o as Event).Extensions = n.GetCollectionOfObjectValues<Extension>().ToList(); } },
                 {"hasAttachments", (o,n) => { (o as Event).HasAttachments = n.GetBoolValue(); } },
@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<Attendee>("attendees", Attendees);
             writer.WriteObjectValue<ItemBody>("body", Body);
             writer.WriteStringValue("bodyPreview", BodyPreview);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>("calendar", Calendar);
+            writer.WriteObjectValue<Calendar>("calendar", Calendar);
             writer.WriteObjectValue<DateTimeTimeZone>("end", End);
             writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
             writer.WriteBoolValue("hasAttachments", HasAttachments);

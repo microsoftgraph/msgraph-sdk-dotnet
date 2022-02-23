@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Connections.Item.Items {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.connections.item.items.item collection</summary>
-        public ExternalItemRequestBuilder this[string position] { get {
+        public ExternalItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("externalItem_id", position);
-            return new ExternalItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExternalItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ItemsRequestBuilder and sets the default values.

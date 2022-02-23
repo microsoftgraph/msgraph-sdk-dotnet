@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Users.Item.ManagedDevices {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.managedDevices.item collection</summary>
-        public ManagedDeviceRequestBuilder this[string position] { get {
+        public ManagedDeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDevice_id", position);
-            return new ManagedDeviceRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedDevicesRequestBuilder and sets the default values.

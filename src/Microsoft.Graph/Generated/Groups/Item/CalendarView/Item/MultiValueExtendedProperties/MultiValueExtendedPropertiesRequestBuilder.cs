@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Groups.Item.CalendarView.Item.MultiValueExtendedProp
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.calendarView.item.multiValueExtendedProperties.item collection</summary>
-        public MultiValueLegacyExtendedPropertyRequestBuilder this[string position] { get {
+        public MultiValueLegacyExtendedPropertyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("multiValueLegacyExtendedProperty_id", position);
-            return new MultiValueLegacyExtendedPropertyRequestBuilder(urlTplParams, RequestAdapter);
+            return new MultiValueLegacyExtendedPropertyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MultiValueExtendedPropertiesRequestBuilder and sets the default values.

@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AppConsent.AppConsentRequests.Ite
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.appConsent.appConsentRequests.item.userConsentRequests.item.approval.stages.item collection</summary>
-        public ApprovalStageRequestBuilder this[string position] { get {
+        public ApprovalStageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approvalStage_id", position);
-            return new ApprovalStageRequestBuilder(urlTplParams, RequestAdapter);
+            return new ApprovalStageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new StagesRequestBuilder and sets the default values.

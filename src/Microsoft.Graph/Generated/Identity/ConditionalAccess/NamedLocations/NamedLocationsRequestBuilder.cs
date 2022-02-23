@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Identity.ConditionalAccess.NamedLocations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.identity.conditionalAccess.namedLocations.item collection</summary>
-        public NamedLocationRequestBuilder this[string position] { get {
+        public NamedLocationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("namedLocation_id", position);
-            return new NamedLocationRequestBuilder(urlTplParams, RequestAdapter);
+            return new NamedLocationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NamedLocationsRequestBuilder and sets the default values.

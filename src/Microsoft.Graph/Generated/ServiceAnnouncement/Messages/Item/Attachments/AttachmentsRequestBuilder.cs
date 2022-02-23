@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.Attachments 
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.admin.serviceAnnouncement.messages.item.attachments.item collection</summary>
-        public ServiceAnnouncementAttachmentRequestBuilder this[string position] { get {
+        public ServiceAnnouncementAttachmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceAnnouncementAttachment_id", position);
-            return new ServiceAnnouncementAttachmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServiceAnnouncementAttachmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AttachmentsRequestBuilder and sets the default values.

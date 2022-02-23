@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.communications.callRecords.item.sessions.item collection</summary>
-        public SessionRequestBuilder this[string position] { get {
+        public SessionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("session_id", position);
-            return new SessionRequestBuilder(urlTplParams, RequestAdapter);
+            return new SessionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SessionsRequestBuilder and sets the default values.

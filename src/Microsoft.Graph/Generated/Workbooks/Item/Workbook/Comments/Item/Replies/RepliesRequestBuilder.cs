@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Comments.Item.Replies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.comments.item.replies.item collection</summary>
-        public WorkbookCommentReplyRequestBuilder this[string position] { get {
+        public WorkbookCommentReplyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookCommentReply_id", position);
-            return new WorkbookCommentReplyRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookCommentReplyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RepliesRequestBuilder and sets the default values.

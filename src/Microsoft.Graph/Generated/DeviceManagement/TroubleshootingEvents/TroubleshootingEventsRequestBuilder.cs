@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.TroubleshootingEvents {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.troubleshootingEvents.item collection</summary>
-        public DeviceManagementTroubleshootingEventRequestBuilder this[string position] { get {
+        public DeviceManagementTroubleshootingEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTroubleshootingEvent_id", position);
-            return new DeviceManagementTroubleshootingEventRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementTroubleshootingEventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TroubleshootingEventsRequestBuilder and sets the default values.

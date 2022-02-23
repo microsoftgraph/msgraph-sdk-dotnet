@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.Ass
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.mobileAppConfigurations.item.assignments.item collection</summary>
-        public ManagedDeviceMobileAppConfigurationAssignmentRequestBuilder this[string position] { get {
+        public ManagedDeviceMobileAppConfigurationAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceMobileAppConfigurationAssignment_id", position);
-            return new ManagedDeviceMobileAppConfigurationAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceMobileAppConfigurationAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

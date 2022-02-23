@@ -22,10 +22,10 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.worksheets.item collection</summary>
-        public WorkbookWorksheetRequestBuilder this[string position] { get {
+        public WorkbookWorksheetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookWorksheet_id", position);
-            return new WorkbookWorksheetRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookWorksheetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WorksheetsRequestBuilder and sets the default values.

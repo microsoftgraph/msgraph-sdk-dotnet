@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.me.contactFolders.item.childFolders.item collection</summary>
-        public ContactFolderRequestBuilder this[string position] { get {
+        public ContactFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contactFolder_id1", position);
-            return new ContactFolderRequestBuilder(urlTplParams, RequestAdapter);
+            return new ContactFolderItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChildFoldersRequestBuilder and sets the default values.

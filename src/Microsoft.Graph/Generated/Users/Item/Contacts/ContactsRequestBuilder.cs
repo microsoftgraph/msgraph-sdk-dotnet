@@ -19,10 +19,10 @@ namespace MicrosoftGraphSdk.Users.Item.Contacts {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.contacts.item collection</summary>
-        public ContactRequestBuilder this[string position] { get {
+        public ContactItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contact_id", position);
-            return new ContactRequestBuilder(urlTplParams, RequestAdapter);
+            return new ContactItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContactsRequestBuilder and sets the default values.

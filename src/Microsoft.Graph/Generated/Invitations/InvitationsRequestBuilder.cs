@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Invitations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.invitations.item collection</summary>
-        public InvitationRequestBuilder this[string position] { get {
+        public InvitationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("invitation_id", position);
-            return new InvitationRequestBuilder(urlTplParams, RequestAdapter);
+            return new InvitationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InvitationsRequestBuilder and sets the default values.

@@ -31,10 +31,10 @@ namespace MicrosoftGraphSdk.Contacts {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraphSdk.contacts.item collection</summary>
-        public OrgContactRequestBuilder this[string position] { get {
+        public OrgContactItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("orgContact_id", position);
-            return new OrgContactRequestBuilder(urlTplParams, RequestAdapter);
+            return new OrgContactItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContactsRequestBuilder and sets the default values.

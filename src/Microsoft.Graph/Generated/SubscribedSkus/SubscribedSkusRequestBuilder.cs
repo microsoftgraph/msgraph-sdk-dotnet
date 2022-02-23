@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.SubscribedSkus {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.subscribedSkus.item collection</summary>
-        public SubscribedSkuRequestBuilder this[string position] { get {
+        public SubscribedSkuItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("subscribedSku_id", position);
-            return new SubscribedSkuRequestBuilder(urlTplParams, RequestAdapter);
+            return new SubscribedSkuItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SubscribedSkusRequestBuilder and sets the default values.

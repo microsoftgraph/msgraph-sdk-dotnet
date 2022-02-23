@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MdmWindowsInformationProtectionP
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.mdmWindowsInformationProtectionPolicies.item collection</summary>
-        public MdmWindowsInformationProtectionPolicyRequestBuilder this[string position] { get {
+        public MdmWindowsInformationProtectionPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mdmWindowsInformationProtectionPolicy_id", position);
-            return new MdmWindowsInformationProtectionPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new MdmWindowsInformationProtectionPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MdmWindowsInformationProtectionPoliciesRequestBuilder and sets the default values.

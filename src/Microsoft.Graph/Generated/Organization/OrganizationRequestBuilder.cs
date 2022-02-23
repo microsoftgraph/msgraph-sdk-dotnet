@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using MicrosoftGraphSdk.Organization.GetAvailableExtensionProperties;
 using MicrosoftGraphSdk.Organization.GetByIds;
+using MicrosoftGraphSdk.Organization.Item;
 using MicrosoftGraphSdk.Organization.ValidateProperties;
 using System;
 using System.Collections.Generic;
@@ -29,10 +30,10 @@ namespace MicrosoftGraphSdk.Organization {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraphSdk.organization.item collection</summary>
-        public OrganizationRequestBuilder this[string position] { get {
+        public OrganizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("organization_id", position);
-            return new OrganizationRequestBuilder(urlTplParams, RequestAdapter);
+            return new OrganizationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OrganizationRequestBuilder and sets the default values.

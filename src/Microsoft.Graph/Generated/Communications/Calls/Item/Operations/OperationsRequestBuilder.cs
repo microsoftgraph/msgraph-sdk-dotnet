@@ -18,10 +18,10 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Operations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraphSdk.communications.calls.item.operations.item collection</summary>
-        public CommsOperationRequestBuilder this[string position] { get {
+        public CommsOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("commsOperation_id", position);
-            return new CommsOperationRequestBuilder(urlTplParams, RequestAdapter);
+            return new CommsOperationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OperationsRequestBuilder and sets the default values.
