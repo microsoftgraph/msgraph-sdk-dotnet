@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -58,11 +58,16 @@ namespace Microsoft.Graph
         /// Drive
         /// </summary>
         Drive = 8,
+
+        /// <summary>
+        /// Person
+        /// </summary>
+        Person = 9,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 9,
+        UnknownFutureValue = 10,
 	
     }
 }
