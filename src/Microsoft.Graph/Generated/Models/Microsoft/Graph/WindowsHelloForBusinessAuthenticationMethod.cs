@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WindowsHelloForBusinessAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The date and time that this Windows Hello for Business key was registered.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
-        /// <summary>The registered device on which this Windows Hello for Business key resides.</summary>
+        /// <summary>The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.</summary>
         public Device Device { get; set; }
         /// <summary>The name of the device on which Windows Hello for Business is registered</summary>
         public string DisplayName { get; set; }

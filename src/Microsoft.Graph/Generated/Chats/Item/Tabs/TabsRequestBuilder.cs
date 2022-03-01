@@ -51,7 +51,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Tabs {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get tabs from chats
+        /// A collection of all the tabs in the chat. Nullable.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Tabs {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to tabs for chats
+        /// A collection of all the tabs in the chat. Nullable.
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -90,7 +90,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Tabs {
             return requestInfo;
         }
         /// <summary>
-        /// Get tabs from chats
+        /// A collection of all the tabs in the chat. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +102,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Tabs {
             return await RequestAdapter.SendAsync<TabsResponse>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to tabs for chats
+        /// A collection of all the tabs in the chat. Nullable.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -114,7 +114,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Tabs {
             var requestInfo = CreatePostRequestInformation(body, h, o);
             return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, responseHandler, default, cancellationToken);
         }
-        /// <summary>Get tabs from chats</summary>
+        /// <summary>A collection of all the tabs in the chat. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

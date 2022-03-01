@@ -48,7 +48,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Tabs.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete navigation property tabs for chats
+        /// A collection of all the tabs in the chat. Nullable.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -63,7 +63,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Tabs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get tabs from chats
+        /// A collection of all the tabs in the chat. Nullable.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -84,7 +84,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Tabs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property tabs in chats
+        /// A collection of all the tabs in the chat. Nullable.
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +102,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Tabs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete navigation property tabs for chats
+        /// A collection of all the tabs in the chat. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -113,7 +113,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Tabs.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Get tabs from chats
+        /// A collection of all the tabs in the chat. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -125,7 +125,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Tabs.Item {
             return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property tabs in chats
+        /// A collection of all the tabs in the chat. Nullable.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -137,7 +137,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Tabs.Item {
             var requestInfo = CreatePatchRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
         }
-        /// <summary>Get tabs from chats</summary>
+        /// <summary>A collection of all the tabs in the chat. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

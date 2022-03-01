@@ -19,6 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ChatMessage> Messages { get; set; }
         /// <summary>Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.</summary>
         public TeamworkOnlineMeetingInfo OnlineMeetingInfo { get; set; }
+        /// <summary>A collection of all the tabs in the chat. Nullable.</summary>
         public List<TeamsTab> Tabs { get; set; }
         /// <summary>The identifier of the tenant in which the chat was created. Read-only.</summary>
         public string TenantId { get; set; }
