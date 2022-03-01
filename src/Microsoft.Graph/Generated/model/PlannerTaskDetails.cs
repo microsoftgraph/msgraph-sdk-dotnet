@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// Description of the task
+        /// Description of the task.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }

@@ -114,6 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tabs.
+        /// A collection of all the tabs in the chat. Nullable.
         /// </summary>
         [JsonPropertyName("tabs")]
         public IChatTabsCollectionPage Tabs { get; set; }
