@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recurrence.
-        /// For recurring access. Not used at present.
+        /// For recurring access reviews.  Not used in access requests.
         /// </summary>
         [JsonPropertyName("recurrence")]
         public PatternedRecurrence Recurrence { get; set; }
