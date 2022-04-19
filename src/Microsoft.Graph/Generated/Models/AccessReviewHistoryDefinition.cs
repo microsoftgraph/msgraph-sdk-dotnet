@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models {
         public DateTimeOffset? ReviewHistoryPeriodEndDateTime { get; set; }
         /// <summary>A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.</summary>
         public DateTimeOffset? ReviewHistoryPeriodStartDateTime { get; set; }
-        /// <summary>The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined.</summary>
+        /// <summary>The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined. Not supported yet.</summary>
         public AccessReviewHistoryScheduleSettings ScheduleSettings { get; set; }
         /// <summary>Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.</summary>
         public List<AccessReviewScope> Scopes { get; set; }

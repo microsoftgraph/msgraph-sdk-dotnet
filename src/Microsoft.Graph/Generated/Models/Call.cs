@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
         public string CallbackUri { get; set; }
         /// <summary>A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.</summary>
         public string CallChainId { get; set; }
-        /// <summary>The callOptions property</summary>
+        /// <summary>Contains the optional features for the call.</summary>
         public Microsoft.Graph.Models.CallOptions CallOptions { get; set; }
         /// <summary>The routing information on how the call was retargeted. Read-only.</summary>
         public List<CallRoute> CallRoutes { get; set; }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the access should expire.</summary>
         public ExpirationPattern Expiration { get; set; }
-        /// <summary>For recurring access. Not used at present.</summary>
+        /// <summary>For recurring access reviews.  Not used in access requests.</summary>
         public PatternedRecurrence Recurrence { get; set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? StartDateTime { get; set; }

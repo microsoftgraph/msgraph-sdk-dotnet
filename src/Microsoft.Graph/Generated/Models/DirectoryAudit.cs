@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models {
         public AuditActivityInitiator InitiatedBy { get; set; }
         /// <summary>Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.</summary>
         public string LoggedByService { get; set; }
-        /// <summary>The operationType property</summary>
+        /// <summary>Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.</summary>
         public string OperationType { get; set; }
         /// <summary>Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.</summary>
         public OperationResult? Result { get; set; }

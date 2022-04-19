@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Groups.Item.Team {
             return requestInfo;
         }
         /// <summary>
-        /// Get team from groups
+        /// The team associated with this group.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Groups.Item.Team {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get team from groups
+        /// The team associated with this group.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Groups.Item.Team {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get team from groups</summary>
+        /// <summary>The team associated with this group.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the drive singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public enum DeviceEnrollmentType {
         Unknown,
         UserEnrollment,
