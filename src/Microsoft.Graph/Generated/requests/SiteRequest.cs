@@ -36,56 +36,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified Site using POST.
-        /// </summary>
-        /// <param name="siteToCreate">The Site to create.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Site.</returns>
-        public async System.Threading.Tasks.Task<Site> CreateAsync(Site siteToCreate, CancellationToken cancellationToken = default)
-        {
-            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
-            this.Method = HttpMethods.POST;
-            var newEntity = await this.SendAsync<Site>(siteToCreate, cancellationToken).ConfigureAwait(false);
-            this.InitializeCollectionProperties(newEntity);
-            return newEntity;
-        }
-
-        /// <summary>
-        /// Creates the specified Site using POST and returns a <see cref="GraphResponse{Site}"/> object.
-        /// </summary>
-        /// <param name="siteToCreate">The Site to create.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Site>> CreateResponseAsync(Site siteToCreate, CancellationToken cancellationToken = default)
-        {
-            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
-            this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<Site>(siteToCreate, cancellationToken);
-        }
-
-        /// <summary>
-        /// Deletes the specified Site.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
-        {
-            this.Method = HttpMethods.DELETE;
-            await this.SendAsync<Site>(null, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Deletes the specified Site and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
-        {
-            this.Method = HttpMethods.DELETE;
-            return this.SendAsyncWithGraphResponse(null, cancellationToken);
-        }
-
-        /// <summary>
         /// Gets the specified Site.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -33,28 +33,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Deletes the specified Site reference.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
-        {
-            this.Method = HttpMethods.DELETE;
-            await this.SendAsync<Site>(null, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Deletes the specified Site reference and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
-        {
-            this.Method = HttpMethods.DELETE;
-            return this.SendAsyncWithGraphResponse(null, cancellationToken);
-        }
-
-        /// <summary>
         /// Puts the specified Site reference.
         /// </summary>
         /// <param name="id">The Site reference to update.</param>

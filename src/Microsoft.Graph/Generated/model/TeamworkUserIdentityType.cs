@@ -59,5 +59,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 7,
 	
+        /// <summary>
+        /// Email User
+        /// </summary>
+        EmailUser = 8,
+	
     }
 }

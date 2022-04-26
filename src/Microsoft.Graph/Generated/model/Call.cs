@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets call options.
+        /// Contains the optional features for the call.
         /// </summary>
         [JsonPropertyName("callOptions")]
         public CallOptions CallOptions { get; set; }

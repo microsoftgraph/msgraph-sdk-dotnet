@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets schedule settings.
-        /// The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined.
+        /// The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined. Not supported yet.
         /// </summary>
         [JsonPropertyName("scheduleSettings")]
         public AccessReviewHistoryScheduleSettings ScheduleSettings { get; set; }

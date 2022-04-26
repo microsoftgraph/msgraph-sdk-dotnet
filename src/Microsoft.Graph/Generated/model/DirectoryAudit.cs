@@ -72,6 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operation type.
+        /// Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
         /// </summary>
         [JsonPropertyName("operationType")]
         public string OperationType { get; set; }

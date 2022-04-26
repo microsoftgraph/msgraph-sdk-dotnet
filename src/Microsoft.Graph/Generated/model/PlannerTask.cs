@@ -141,6 +141,13 @@ namespace Microsoft.Graph
         public PlannerPreviewType? PreviewType { get; set; }
     
         /// <summary>
+        /// Gets or sets priority.
+        /// Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+        /// </summary>
+        [JsonPropertyName("priority")]
+        public Int32? Priority { get; set; }
+    
+        /// <summary>
         /// Gets or sets reference count.
         /// Number of external references that exist on the task.
         /// </summary>

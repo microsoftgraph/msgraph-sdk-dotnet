@@ -15,32 +15,32 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type EntitlementManagementSchedule.
+    /// The type PlannerPlanContainer.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<EntitlementManagementSchedule>))]
-    public partial class EntitlementManagementSchedule
+    [JsonConverter(typeof(DerivedTypeConverter<PlannerPlanContainer>))]
+    public partial class PlannerPlanContainer
     {
 
         /// <summary>
-        /// Gets or sets expiration.
-        /// When the access should expire.
+        /// Gets or sets containerId.
+        /// The identifier of the resource that contains the plan.
         /// </summary>
-        [JsonPropertyName("expiration")]
-        public ExpirationPattern Expiration { get; set; }
+        [JsonPropertyName("containerId")]
+        public string ContainerId { get; set; }
     
         /// <summary>
-        /// Gets or sets recurrence.
-        /// For recurring access reviews.  Not used in access requests.
+        /// Gets or sets type.
+        /// The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
         /// </summary>
-        [JsonPropertyName("recurrence")]
-        public PatternedRecurrence Recurrence { get; set; }
+        [JsonPropertyName("type")]
+        public PlannerContainerType? Type { get; set; }
     
         /// <summary>
-        /// Gets or sets startDateTime.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        /// Gets or sets url.
+        /// The full canonical URL of the container.
         /// </summary>
-        [JsonPropertyName("startDateTime")]
-        public DateTimeOffset? StartDateTime { get; set; }
+        [JsonPropertyName("url")]
+        public string Url { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

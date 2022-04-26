@@ -29,11 +29,123 @@ namespace Microsoft.Graph
         public string Category1 { get; set; }
     
         /// <summary>
+        /// Gets or sets category10.
+        /// The label associated with Category 10
+        /// </summary>
+        [JsonPropertyName("category10")]
+        public string Category10 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category11.
+        /// The label associated with Category 11
+        /// </summary>
+        [JsonPropertyName("category11")]
+        public string Category11 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category12.
+        /// The label associated with Category 12
+        /// </summary>
+        [JsonPropertyName("category12")]
+        public string Category12 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category13.
+        /// The label associated with Category 13
+        /// </summary>
+        [JsonPropertyName("category13")]
+        public string Category13 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category14.
+        /// The label associated with Category 14
+        /// </summary>
+        [JsonPropertyName("category14")]
+        public string Category14 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category15.
+        /// The label associated with Category 15
+        /// </summary>
+        [JsonPropertyName("category15")]
+        public string Category15 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category16.
+        /// The label associated with Category 16
+        /// </summary>
+        [JsonPropertyName("category16")]
+        public string Category16 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category17.
+        /// The label associated with Category 17
+        /// </summary>
+        [JsonPropertyName("category17")]
+        public string Category17 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category18.
+        /// The label associated with Category 18
+        /// </summary>
+        [JsonPropertyName("category18")]
+        public string Category18 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category19.
+        /// The label associated with Category 19
+        /// </summary>
+        [JsonPropertyName("category19")]
+        public string Category19 { get; set; }
+    
+        /// <summary>
         /// Gets or sets category2.
         /// The label associated with Category 2
         /// </summary>
         [JsonPropertyName("category2")]
         public string Category2 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category20.
+        /// The label associated with Category 20
+        /// </summary>
+        [JsonPropertyName("category20")]
+        public string Category20 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category21.
+        /// The label associated with Category 21
+        /// </summary>
+        [JsonPropertyName("category21")]
+        public string Category21 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category22.
+        /// The label associated with Category 22
+        /// </summary>
+        [JsonPropertyName("category22")]
+        public string Category22 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category23.
+        /// The label associated with Category 23
+        /// </summary>
+        [JsonPropertyName("category23")]
+        public string Category23 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category24.
+        /// The label associated with Category 24
+        /// </summary>
+        [JsonPropertyName("category24")]
+        public string Category24 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category25.
+        /// The label associated with Category 25
+        /// </summary>
+        [JsonPropertyName("category25")]
+        public string Category25 { get; set; }
     
         /// <summary>
         /// Gets or sets category3.
@@ -62,6 +174,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("category6")]
         public string Category6 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category7.
+        /// The label associated with Category 7
+        /// </summary>
+        [JsonPropertyName("category7")]
+        public string Category7 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category8.
+        /// The label associated with Category 8
+        /// </summary>
+        [JsonPropertyName("category8")]
+        public string Category8 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category9.
+        /// The label associated with Category 9
+        /// </summary>
+        [JsonPropertyName("category9")]
+        public string Category9 { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -18,19 +18,6 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ISiteReferenceRequest : IBaseRequest
     {
-        /// <summary>
-        /// Deletes the specified Site reference.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Deletes the specified Site reference and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Puts the specified Site reference.
