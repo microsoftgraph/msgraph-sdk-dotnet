@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Organization.Item.Branding {
             return requestInfo;
         }
         /// <summary>
-        /// Get branding from organization
+        /// Resource to manage the default branding for the organization. Nullable.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<BrandingRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Organization.Item.Branding {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get branding from organization
+        /// Resource to manage the default branding for the organization. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Organization.Item.Branding {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get branding from organization</summary>
+        /// <summary>Resource to manage the default branding for the organization. Nullable.</summary>
         public class BrandingRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

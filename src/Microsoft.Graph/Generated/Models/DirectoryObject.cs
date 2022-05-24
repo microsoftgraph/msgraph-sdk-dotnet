@@ -4,22 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the directory singleton.</summary>
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class DirectoryObject : Entity, IParsable {
-        /// <summary>Conceptual container for user and group directory objects.</summary>
-        public List<AdministrativeUnit> AdministrativeUnits {
-            get { return BackingStore?.Get<List<AdministrativeUnit>>(nameof(AdministrativeUnits)); }
-            set { BackingStore?.Set(nameof(AdministrativeUnits), value); }
-        }
-        /// <summary>Recently deleted items. Read-only. Nullable.</summary>
-        public List<DirectoryObject> DeletedItems {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(DeletedItems)); }
-            set { BackingStore?.Set(nameof(DeletedItems), value); }
-        }
-        /// <summary>Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.</summary>
-        public List<IdentityProviderBase> FederationConfigurations {
-            get { return BackingStore?.Get<List<IdentityProviderBase>>(nameof(FederationConfigurations)); }
-            set { BackingStore?.Set(nameof(FederationConfigurations), value); }
+        /// <summary>Date and time when this object was deleted. Always null when the object hasn&apos;t been deleted.</summary>
+        public DateTimeOffset? DeletedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeletedDateTime)); }
+            set { BackingStore?.Set(nameof(DeletedDateTime), value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -27,16 +17,19 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public static new DirectoryObject CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DirectoryObject();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.directoryObject" => new DirectoryObject(),
+                _ => new DirectoryObject(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"administrativeUnits", n => { AdministrativeUnits = n.GetCollectionOfObjectValues<AdministrativeUnit>(AdministrativeUnit.CreateFromDiscriminatorValue).ToList(); } },
-                {"deletedItems", n => { DeletedItems = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
-                {"federationConfigurations", n => { FederationConfigurations = n.GetCollectionOfObjectValues<IdentityProviderBase>(IdentityProviderBase.CreateFromDiscriminatorValue).ToList(); } },
+                {"deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -46,9 +39,7 @@ namespace Microsoft.Graph.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AdministrativeUnit>("administrativeUnits", AdministrativeUnits);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("deletedItems", DeletedItems);
-            writer.WriteCollectionOfObjectValues<IdentityProviderBase>("federationConfigurations", FederationConfigurations);
+            writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);
         }
     }
 }

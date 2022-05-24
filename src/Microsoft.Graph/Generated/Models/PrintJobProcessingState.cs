@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the print singleton.</summary>
+    /// <summary>Provides operations to call the getGroupArchivedPrintJobs method.</summary>
     public enum PrintJobProcessingState {
         Unknown,
         Pending,

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<List<AssignedPlan>>(nameof(AssignedPlans)); }
             set { BackingStore?.Set(nameof(AssignedPlans), value); }
         }
-        /// <summary>The branding property</summary>
+        /// <summary>Resource to manage the default branding for the organization. Nullable.</summary>
         public OrganizationalBranding Branding {
             get { return BackingStore?.Get<OrganizationalBranding>(nameof(Branding)); }
             set { BackingStore?.Set(nameof(Branding), value); }
