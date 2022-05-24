@@ -380,7 +380,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets show in address list.
-        /// true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).
+        /// Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
         /// </summary>
         [JsonPropertyName("showInAddressList")]
         public bool? ShowInAddressList { get; set; }
