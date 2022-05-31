@@ -182,6 +182,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets branding.
+        /// Resource to manage the default branding for the organization. Nullable.
         /// </summary>
         [JsonPropertyName("branding")]
         public OrganizationalBranding Branding { get; set; }

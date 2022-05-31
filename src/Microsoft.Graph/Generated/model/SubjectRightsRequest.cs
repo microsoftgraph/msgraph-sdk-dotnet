@@ -128,7 +128,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of the request.. Possible values are: active, closed, unknownFutureValue.
+        /// The status of the request. Possible values are: active, closed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public SubjectRightsRequestStatus? Status { get; set; }
@@ -142,7 +142,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notes.
-        /// List of notes associcated with the request.
+        /// List of notes associated with the request.
         /// </summary>
         [JsonPropertyName("notes")]
         public ISubjectRightsRequestNotesCollectionPage Notes { get; set; }

@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package assignment approvals.
-        /// Approval stages for assignment requests.
+        /// Approval stages for decisions associated with access package assignment requests.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentApprovals")]
         public IEntitlementManagementAccessPackageAssignmentApprovalsCollectionPage AccessPackageAssignmentApprovals { get; set; }
@@ -50,7 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignment policies.
-        /// Access package assignment policies.
+        /// Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
         /// </summary>
         [JsonPropertyName("assignmentPolicies")]
         public IEntitlementManagementAssignmentPoliciesCollectionPage AssignmentPolicies { get; set; }
@@ -64,7 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignment requests.
-        /// Represents access package assignment requests created by or on behalf of a user.
+        /// Access package assignment requests created by or on behalf of a subject.
         /// </summary>
         [JsonPropertyName("assignmentRequests")]
         public IEntitlementManagementAssignmentRequestsCollectionPage AssignmentRequests { get; set; }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignments.
-        /// Represents the grant of an access package to a subject (user or group).
+        /// The assignment of an access package to a subject for a period of time.
         /// </summary>
         [JsonPropertyName("assignments")]
         public IEntitlementManagementAssignmentsCollectionPage Assignments { get; set; }
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets catalogs.
-        /// Represents a collection of access packages.
+        /// A container for access packages.
         /// </summary>
         [JsonPropertyName("catalogs")]
         public IEntitlementManagementCatalogsCollectionPage Catalogs { get; set; }
