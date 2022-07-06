@@ -4,27 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>The resource that represents an instance of Enrollment Failure Reports.</summary>
     public class ReportRoot : Entity, IParsable {
         /// <summary>The dailyPrintUsageByPrinter property</summary>
         public List<PrintUsageByPrinter> DailyPrintUsageByPrinter {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>>(nameof(DailyPrintUsageByPrinter)); }
-            set { BackingStore?.Set(nameof(DailyPrintUsageByPrinter), value); }
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>>("dailyPrintUsageByPrinter"); }
+            set { BackingStore?.Set("dailyPrintUsageByPrinter", value); }
         }
         /// <summary>The dailyPrintUsageByUser property</summary>
         public List<PrintUsageByUser> DailyPrintUsageByUser {
-            get { return BackingStore?.Get<List<PrintUsageByUser>>(nameof(DailyPrintUsageByUser)); }
-            set { BackingStore?.Set(nameof(DailyPrintUsageByUser), value); }
+            get { return BackingStore?.Get<List<PrintUsageByUser>>("dailyPrintUsageByUser"); }
+            set { BackingStore?.Set("dailyPrintUsageByUser", value); }
         }
         /// <summary>The monthlyPrintUsageByPrinter property</summary>
         public List<PrintUsageByPrinter> MonthlyPrintUsageByPrinter {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>>(nameof(MonthlyPrintUsageByPrinter)); }
-            set { BackingStore?.Set(nameof(MonthlyPrintUsageByPrinter), value); }
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>>("monthlyPrintUsageByPrinter"); }
+            set { BackingStore?.Set("monthlyPrintUsageByPrinter", value); }
         }
         /// <summary>The monthlyPrintUsageByUser property</summary>
         public List<PrintUsageByUser> MonthlyPrintUsageByUser {
-            get { return BackingStore?.Get<List<PrintUsageByUser>>(nameof(MonthlyPrintUsageByUser)); }
-            set { BackingStore?.Set(nameof(MonthlyPrintUsageByUser), value); }
+            get { return BackingStore?.Get<List<PrintUsageByUser>>("monthlyPrintUsageByUser"); }
+            set { BackingStore?.Set("monthlyPrintUsageByUser", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

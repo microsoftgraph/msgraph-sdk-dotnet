@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the planner singleton.</summary>
     public class Planner : Entity, IParsable {
         /// <summary>Read-only. Nullable. Returns a collection of the specified buckets</summary>
         public List<PlannerBucket> Buckets {
-            get { return BackingStore?.Get<List<PlannerBucket>>(nameof(Buckets)); }
-            set { BackingStore?.Set(nameof(Buckets), value); }
+            get { return BackingStore?.Get<List<PlannerBucket>>("buckets"); }
+            set { BackingStore?.Set("buckets", value); }
         }
         /// <summary>Read-only. Nullable. Returns a collection of the specified plans</summary>
         public List<PlannerPlan> Plans {
-            get { return BackingStore?.Get<List<PlannerPlan>>(nameof(Plans)); }
-            set { BackingStore?.Set(nameof(Plans), value); }
+            get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
+            set { BackingStore?.Set("plans", value); }
         }
         /// <summary>Read-only. Nullable. Returns a collection of the specified tasks</summary>
         public List<PlannerTask> Tasks {
-            get { return BackingStore?.Get<List<PlannerTask>>(nameof(Tasks)); }
-            set { BackingStore?.Set(nameof(Tasks), value); }
+            get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

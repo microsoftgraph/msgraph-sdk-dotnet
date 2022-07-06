@@ -8,8 +8,8 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
     public class Identity : Entity, IParsable {
         /// <summary>The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.</summary>
         public IdentityType? Type {
-            get { return BackingStore?.Get<IdentityType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<IdentityType?>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

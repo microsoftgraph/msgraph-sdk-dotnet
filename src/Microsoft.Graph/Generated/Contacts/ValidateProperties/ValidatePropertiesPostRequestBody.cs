@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Contacts.ValidateProperties {
     public class ValidatePropertiesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The entityType property</summary>
         public string EntityType {
-            get { return BackingStore?.Get<string>(nameof(EntityType)); }
-            set { BackingStore?.Set(nameof(EntityType), value); }
+            get { return BackingStore?.Get<string>("entityType"); }
+            set { BackingStore?.Set("entityType", value); }
         }
         /// <summary>The mailNickname property</summary>
         public string MailNickname {
-            get { return BackingStore?.Get<string>(nameof(MailNickname)); }
-            set { BackingStore?.Set(nameof(MailNickname), value); }
+            get { return BackingStore?.Get<string>("mailNickname"); }
+            set { BackingStore?.Set("mailNickname", value); }
         }
         /// <summary>The onBehalfOfUserId property</summary>
         public string OnBehalfOfUserId {
-            get { return BackingStore?.Get<string>(nameof(OnBehalfOfUserId)); }
-            set { BackingStore?.Set(nameof(OnBehalfOfUserId), value); }
+            get { return BackingStore?.Get<string>("onBehalfOfUserId"); }
+            set { BackingStore?.Set("onBehalfOfUserId", value); }
         }
         /// <summary>
         /// Instantiates a new validatePropertiesPostRequestBody and sets the default values.

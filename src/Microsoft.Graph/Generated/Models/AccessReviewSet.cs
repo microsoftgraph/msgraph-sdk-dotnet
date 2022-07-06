@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessReviewSet : Entity, IParsable {
         /// <summary>Represents the template and scheduling for an access review.</summary>
         public List<AccessReviewScheduleDefinition> Definitions {
-            get { return BackingStore?.Get<List<AccessReviewScheduleDefinition>>(nameof(Definitions)); }
-            set { BackingStore?.Set(nameof(Definitions), value); }
+            get { return BackingStore?.Get<List<AccessReviewScheduleDefinition>>("definitions"); }
+            set { BackingStore?.Set("definitions", value); }
         }
         /// <summary>Represents a collection of access review history data and the scopes used to collect that data.</summary>
         public List<AccessReviewHistoryDefinition> HistoryDefinitions {
-            get { return BackingStore?.Get<List<AccessReviewHistoryDefinition>>(nameof(HistoryDefinitions)); }
-            set { BackingStore?.Set(nameof(HistoryDefinitions), value); }
+            get { return BackingStore?.Get<List<AccessReviewHistoryDefinition>>("historyDefinitions"); }
+            set { BackingStore?.Set("historyDefinitions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

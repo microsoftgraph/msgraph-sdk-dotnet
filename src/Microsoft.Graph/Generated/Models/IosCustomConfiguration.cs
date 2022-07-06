@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Models {
     public class IosCustomConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Payload. (UTF8 encoded byte array)</summary>
         public byte[] Payload {
-            get { return BackingStore?.Get<byte[]>(nameof(Payload)); }
-            set { BackingStore?.Set(nameof(Payload), value); }
+            get { return BackingStore?.Get<byte[]>("payload"); }
+            set { BackingStore?.Set("payload", value); }
         }
         /// <summary>Payload file name (.mobileconfig</summary>
         public string PayloadFileName {
-            get { return BackingStore?.Get<string>(nameof(PayloadFileName)); }
-            set { BackingStore?.Set(nameof(PayloadFileName), value); }
+            get { return BackingStore?.Get<string>("payloadFileName"); }
+            set { BackingStore?.Set("payloadFileName", value); }
         }
         /// <summary>Name that is displayed to the user.</summary>
         public string PayloadName {
-            get { return BackingStore?.Get<string>(nameof(PayloadName)); }
-            set { BackingStore?.Set(nameof(PayloadName), value); }
+            get { return BackingStore?.Get<string>("payloadName"); }
+            set { BackingStore?.Set("payloadName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

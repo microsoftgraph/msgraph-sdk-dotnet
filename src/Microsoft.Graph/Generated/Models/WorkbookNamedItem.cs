@@ -4,42 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class WorkbookNamedItem : Entity, IParsable {
         /// <summary>Represents the comment associated with this name.</summary>
         public string Comment {
-            get { return BackingStore?.Get<string>(nameof(Comment)); }
-            set { BackingStore?.Set(nameof(Comment), value); }
+            get { return BackingStore?.Get<string>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
         /// <summary>The name of the object. Read-only.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.</summary>
         public string Scope {
-            get { return BackingStore?.Get<string>(nameof(Scope)); }
-            set { BackingStore?.Set(nameof(Scope), value); }
+            get { return BackingStore?.Get<string>("scope"); }
+            set { BackingStore?.Set("scope", value); }
         }
         /// <summary>Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.</summary>
         public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.</summary>
         public Json Value {
-            get { return BackingStore?.Get<Json>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<Json>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>Specifies whether the object is visible or not.</summary>
         public bool? Visible {
-            get { return BackingStore?.Get<bool?>(nameof(Visible)); }
-            set { BackingStore?.Set(nameof(Visible), value); }
+            get { return BackingStore?.Get<bool?>("visible"); }
+            set { BackingStore?.Set("visible", value); }
         }
         /// <summary>Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.</summary>
         public WorkbookWorksheet Worksheet {
-            get { return BackingStore?.Get<WorkbookWorksheet>(nameof(Worksheet)); }
-            set { BackingStore?.Set(nameof(Worksheet), value); }
+            get { return BackingStore?.Get<WorkbookWorksheet>("worksheet"); }
+            set { BackingStore?.Set("worksheet", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

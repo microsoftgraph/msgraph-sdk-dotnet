@@ -8,85 +8,85 @@ namespace Microsoft.Graph.Models {
     public class CopyNotebookModel : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The createdBy property</summary>
         public string CreatedBy {
-            get { return BackingStore?.Get<string>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<string>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The createdByIdentity property</summary>
         public IdentitySet CreatedByIdentity {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedByIdentity)); }
-            set { BackingStore?.Set(nameof(CreatedByIdentity), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdByIdentity"); }
+            set { BackingStore?.Set("createdByIdentity", value); }
         }
         /// <summary>The createdTime property</summary>
         public DateTimeOffset? CreatedTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedTime)); }
-            set { BackingStore?.Set(nameof(CreatedTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdTime"); }
+            set { BackingStore?.Set("createdTime", value); }
         }
         /// <summary>The id property</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>The isDefault property</summary>
         public bool? IsDefault {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
-            set { BackingStore?.Set(nameof(IsDefault), value); }
+            get { return BackingStore?.Get<bool?>("isDefault"); }
+            set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>The isShared property</summary>
         public bool? IsShared {
-            get { return BackingStore?.Get<bool?>(nameof(IsShared)); }
-            set { BackingStore?.Set(nameof(IsShared), value); }
+            get { return BackingStore?.Get<bool?>("isShared"); }
+            set { BackingStore?.Set("isShared", value); }
         }
         /// <summary>The lastModifiedBy property</summary>
         public string LastModifiedBy {
-            get { return BackingStore?.Get<string>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<string>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>The lastModifiedByIdentity property</summary>
         public IdentitySet LastModifiedByIdentity {
-            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedByIdentity)); }
-            set { BackingStore?.Set(nameof(LastModifiedByIdentity), value); }
+            get { return BackingStore?.Get<IdentitySet>("lastModifiedByIdentity"); }
+            set { BackingStore?.Set("lastModifiedByIdentity", value); }
         }
         /// <summary>The lastModifiedTime property</summary>
         public DateTimeOffset? LastModifiedTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedTime"); }
+            set { BackingStore?.Set("lastModifiedTime", value); }
         }
         /// <summary>The links property</summary>
         public NotebookLinks Links {
-            get { return BackingStore?.Get<NotebookLinks>(nameof(Links)); }
-            set { BackingStore?.Set(nameof(Links), value); }
+            get { return BackingStore?.Get<NotebookLinks>("links"); }
+            set { BackingStore?.Set("links", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The sectionGroupsUrl property</summary>
         public string SectionGroupsUrl {
-            get { return BackingStore?.Get<string>(nameof(SectionGroupsUrl)); }
-            set { BackingStore?.Set(nameof(SectionGroupsUrl), value); }
+            get { return BackingStore?.Get<string>("sectionGroupsUrl"); }
+            set { BackingStore?.Set("sectionGroupsUrl", value); }
         }
         /// <summary>The sectionsUrl property</summary>
         public string SectionsUrl {
-            get { return BackingStore?.Get<string>(nameof(SectionsUrl)); }
-            set { BackingStore?.Set(nameof(SectionsUrl), value); }
+            get { return BackingStore?.Get<string>("sectionsUrl"); }
+            set { BackingStore?.Set("sectionsUrl", value); }
         }
         /// <summary>The self property</summary>
         public string Self {
-            get { return BackingStore?.Get<string>(nameof(Self)); }
-            set { BackingStore?.Set(nameof(Self), value); }
+            get { return BackingStore?.Get<string>("self"); }
+            set { BackingStore?.Set("self", value); }
         }
         /// <summary>The userRole property</summary>
         public OnenoteUserRole? UserRole {
-            get { return BackingStore?.Get<OnenoteUserRole?>(nameof(UserRole)); }
-            set { BackingStore?.Set(nameof(UserRole), value); }
+            get { return BackingStore?.Get<OnenoteUserRole?>("userRole"); }
+            set { BackingStore?.Set("userRole", value); }
         }
         /// <summary>
         /// Instantiates a new CopyNotebookModel and sets the default values.

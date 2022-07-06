@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Models {
     public class Notebook : OnenoteEntityHierarchyModel, IParsable {
         /// <summary>Indicates whether this is the user&apos;s default notebook. Read-only.</summary>
         public bool? IsDefault {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
-            set { BackingStore?.Set(nameof(IsDefault), value); }
+            get { return BackingStore?.Get<bool?>("isDefault"); }
+            set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.</summary>
         public bool? IsShared {
-            get { return BackingStore?.Get<bool?>(nameof(IsShared)); }
-            set { BackingStore?.Set(nameof(IsShared), value); }
+            get { return BackingStore?.Get<bool?>("isShared"); }
+            set { BackingStore?.Set("isShared", value); }
         }
         /// <summary>Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote native client if it&apos;s installed. The oneNoteWebURL link opens the notebook in OneNote on the web.</summary>
         public NotebookLinks Links {
-            get { return BackingStore?.Get<NotebookLinks>(nameof(Links)); }
-            set { BackingStore?.Set(nameof(Links), value); }
+            get { return BackingStore?.Get<NotebookLinks>("links"); }
+            set { BackingStore?.Set("links", value); }
         }
         /// <summary>The section groups in the notebook. Read-only. Nullable.</summary>
         public List<SectionGroup> SectionGroups {
-            get { return BackingStore?.Get<List<SectionGroup>>(nameof(SectionGroups)); }
-            set { BackingStore?.Set(nameof(SectionGroups), value); }
+            get { return BackingStore?.Get<List<SectionGroup>>("sectionGroups"); }
+            set { BackingStore?.Set("sectionGroups", value); }
         }
         /// <summary>The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.</summary>
         public string SectionGroupsUrl {
-            get { return BackingStore?.Get<string>(nameof(SectionGroupsUrl)); }
-            set { BackingStore?.Set(nameof(SectionGroupsUrl), value); }
+            get { return BackingStore?.Get<string>("sectionGroupsUrl"); }
+            set { BackingStore?.Set("sectionGroupsUrl", value); }
         }
         /// <summary>The sections in the notebook. Read-only. Nullable.</summary>
         public List<OnenoteSection> Sections {
-            get { return BackingStore?.Get<List<OnenoteSection>>(nameof(Sections)); }
-            set { BackingStore?.Set(nameof(Sections), value); }
+            get { return BackingStore?.Get<List<OnenoteSection>>("sections"); }
+            set { BackingStore?.Set("sections", value); }
         }
         /// <summary>The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.</summary>
         public string SectionsUrl {
-            get { return BackingStore?.Get<string>(nameof(SectionsUrl)); }
-            set { BackingStore?.Set(nameof(SectionsUrl), value); }
+            get { return BackingStore?.Get<string>("sectionsUrl"); }
+            set { BackingStore?.Set("sectionsUrl", value); }
         }
         /// <summary>Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.</summary>
         public OnenoteUserRole? UserRole {
-            get { return BackingStore?.Get<OnenoteUserRole?>(nameof(UserRole)); }
-            set { BackingStore?.Set(nameof(UserRole), value); }
+            get { return BackingStore?.Get<OnenoteUserRole?>("userRole"); }
+            set { BackingStore?.Set("userRole", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

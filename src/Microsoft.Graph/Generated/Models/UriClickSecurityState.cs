@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class UriClickSecurityState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The clickAction property</summary>
         public string ClickAction {
-            get { return BackingStore?.Get<string>(nameof(ClickAction)); }
-            set { BackingStore?.Set(nameof(ClickAction), value); }
+            get { return BackingStore?.Get<string>("clickAction"); }
+            set { BackingStore?.Set("clickAction", value); }
         }
         /// <summary>The clickDateTime property</summary>
         public DateTimeOffset? ClickDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ClickDateTime)); }
-            set { BackingStore?.Set(nameof(ClickDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("clickDateTime"); }
+            set { BackingStore?.Set("clickDateTime", value); }
         }
         /// <summary>The id property</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>The sourceId property</summary>
         public string SourceId {
-            get { return BackingStore?.Get<string>(nameof(SourceId)); }
-            set { BackingStore?.Set(nameof(SourceId), value); }
+            get { return BackingStore?.Get<string>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
         }
         /// <summary>The uriDomain property</summary>
         public string UriDomain {
-            get { return BackingStore?.Get<string>(nameof(UriDomain)); }
-            set { BackingStore?.Set(nameof(UriDomain), value); }
+            get { return BackingStore?.Get<string>("uriDomain"); }
+            set { BackingStore?.Set("uriDomain", value); }
         }
         /// <summary>The verdict property</summary>
         public string Verdict {
-            get { return BackingStore?.Get<string>(nameof(Verdict)); }
-            set { BackingStore?.Set(nameof(Verdict), value); }
+            get { return BackingStore?.Get<string>("verdict"); }
+            set { BackingStore?.Set("verdict", value); }
         }
         /// <summary>
         /// Instantiates a new uriClickSecurityState and sets the default values.

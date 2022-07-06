@@ -8,8 +8,8 @@ namespace Microsoft.Graph.Models {
     public class MobileAppContent : Entity, IParsable {
         /// <summary>The list of files for this app content version.</summary>
         public List<MobileAppContentFile> Files {
-            get { return BackingStore?.Get<List<MobileAppContentFile>>(nameof(Files)); }
-            set { BackingStore?.Set(nameof(Files), value); }
+            get { return BackingStore?.Get<List<MobileAppContentFile>>("files"); }
+            set { BackingStore?.Set("files", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

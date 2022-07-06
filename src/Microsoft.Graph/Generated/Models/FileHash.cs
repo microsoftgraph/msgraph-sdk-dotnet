@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class FileHash : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.</summary>
         public FileHashType? HashType {
-            get { return BackingStore?.Get<FileHashType?>(nameof(HashType)); }
-            set { BackingStore?.Set(nameof(HashType), value); }
+            get { return BackingStore?.Get<FileHashType?>("hashType"); }
+            set { BackingStore?.Set("hashType", value); }
         }
         /// <summary>Value of the file hash.</summary>
         public string HashValue {
-            get { return BackingStore?.Get<string>(nameof(HashValue)); }
-            set { BackingStore?.Set(nameof(HashValue), value); }
+            get { return BackingStore?.Get<string>("hashValue"); }
+            set { BackingStore?.Set("hashValue", value); }
         }
         /// <summary>
         /// Instantiates a new fileHash and sets the default values.

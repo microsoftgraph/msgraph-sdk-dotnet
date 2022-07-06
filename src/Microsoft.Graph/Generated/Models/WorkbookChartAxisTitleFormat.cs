@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class WorkbookChartAxisTitleFormat : Entity, IParsable {
         /// <summary>Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. Read-only.</summary>
         public WorkbookChartFont Font {
-            get { return BackingStore?.Get<WorkbookChartFont>(nameof(Font)); }
-            set { BackingStore?.Set(nameof(Font), value); }
+            get { return BackingStore?.Get<WorkbookChartFont>("font"); }
+            set { BackingStore?.Set("font", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

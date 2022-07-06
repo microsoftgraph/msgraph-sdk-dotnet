@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Models {
     public class ResultTemplateOption : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.</summary>
         public bool? EnableResultTemplate {
-            get { return BackingStore?.Get<bool?>(nameof(EnableResultTemplate)); }
-            set { BackingStore?.Set(nameof(EnableResultTemplate), value); }
+            get { return BackingStore?.Get<bool?>("enableResultTemplate"); }
+            set { BackingStore?.Set("enableResultTemplate", value); }
         }
         /// <summary>
         /// Instantiates a new resultTemplateOption and sets the default values.

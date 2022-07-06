@@ -8,90 +8,90 @@ namespace Microsoft.Graph.Models {
     public class Audio : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The title of the album for this audio file.</summary>
         public string Album {
-            get { return BackingStore?.Get<string>(nameof(Album)); }
-            set { BackingStore?.Set(nameof(Album), value); }
+            get { return BackingStore?.Get<string>("album"); }
+            set { BackingStore?.Set("album", value); }
         }
         /// <summary>The artist named on the album for the audio file.</summary>
         public string AlbumArtist {
-            get { return BackingStore?.Get<string>(nameof(AlbumArtist)); }
-            set { BackingStore?.Set(nameof(AlbumArtist), value); }
+            get { return BackingStore?.Get<string>("albumArtist"); }
+            set { BackingStore?.Set("albumArtist", value); }
         }
         /// <summary>The performing artist for the audio file.</summary>
         public string Artist {
-            get { return BackingStore?.Get<string>(nameof(Artist)); }
-            set { BackingStore?.Set(nameof(Artist), value); }
+            get { return BackingStore?.Get<string>("artist"); }
+            set { BackingStore?.Set("artist", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Bitrate expressed in kbps.</summary>
         public long? Bitrate {
-            get { return BackingStore?.Get<long?>(nameof(Bitrate)); }
-            set { BackingStore?.Set(nameof(Bitrate), value); }
+            get { return BackingStore?.Get<long?>("bitrate"); }
+            set { BackingStore?.Set("bitrate", value); }
         }
         /// <summary>The name of the composer of the audio file.</summary>
         public string Composers {
-            get { return BackingStore?.Get<string>(nameof(Composers)); }
-            set { BackingStore?.Set(nameof(Composers), value); }
+            get { return BackingStore?.Get<string>("composers"); }
+            set { BackingStore?.Set("composers", value); }
         }
         /// <summary>Copyright information for the audio file.</summary>
         public string Copyright {
-            get { return BackingStore?.Get<string>(nameof(Copyright)); }
-            set { BackingStore?.Set(nameof(Copyright), value); }
+            get { return BackingStore?.Get<string>("copyright"); }
+            set { BackingStore?.Set("copyright", value); }
         }
         /// <summary>The number of the disc this audio file came from.</summary>
         public int? Disc {
-            get { return BackingStore?.Get<int?>(nameof(Disc)); }
-            set { BackingStore?.Set(nameof(Disc), value); }
+            get { return BackingStore?.Get<int?>("disc"); }
+            set { BackingStore?.Set("disc", value); }
         }
         /// <summary>The total number of discs in this album.</summary>
         public int? DiscCount {
-            get { return BackingStore?.Get<int?>(nameof(DiscCount)); }
-            set { BackingStore?.Set(nameof(DiscCount), value); }
+            get { return BackingStore?.Get<int?>("discCount"); }
+            set { BackingStore?.Set("discCount", value); }
         }
         /// <summary>Duration of the audio file, expressed in milliseconds</summary>
         public long? Duration {
-            get { return BackingStore?.Get<long?>(nameof(Duration)); }
-            set { BackingStore?.Set(nameof(Duration), value); }
+            get { return BackingStore?.Get<long?>("duration"); }
+            set { BackingStore?.Set("duration", value); }
         }
         /// <summary>The genre of this audio file.</summary>
         public string Genre {
-            get { return BackingStore?.Get<string>(nameof(Genre)); }
-            set { BackingStore?.Set(nameof(Genre), value); }
+            get { return BackingStore?.Get<string>("genre"); }
+            set { BackingStore?.Set("genre", value); }
         }
         /// <summary>Indicates if the file is protected with digital rights management.</summary>
         public bool? HasDrm {
-            get { return BackingStore?.Get<bool?>(nameof(HasDrm)); }
-            set { BackingStore?.Set(nameof(HasDrm), value); }
+            get { return BackingStore?.Get<bool?>("hasDrm"); }
+            set { BackingStore?.Set("hasDrm", value); }
         }
         /// <summary>Indicates if the file is encoded with a variable bitrate.</summary>
         public bool? IsVariableBitrate {
-            get { return BackingStore?.Get<bool?>(nameof(IsVariableBitrate)); }
-            set { BackingStore?.Set(nameof(IsVariableBitrate), value); }
+            get { return BackingStore?.Get<bool?>("isVariableBitrate"); }
+            set { BackingStore?.Set("isVariableBitrate", value); }
         }
         /// <summary>The title of the audio file.</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
         }
         /// <summary>The number of the track on the original disc for this audio file.</summary>
         public int? Track {
-            get { return BackingStore?.Get<int?>(nameof(Track)); }
-            set { BackingStore?.Set(nameof(Track), value); }
+            get { return BackingStore?.Get<int?>("track"); }
+            set { BackingStore?.Set("track", value); }
         }
         /// <summary>The total number of tracks on the original disc for this audio file.</summary>
         public int? TrackCount {
-            get { return BackingStore?.Get<int?>(nameof(TrackCount)); }
-            set { BackingStore?.Set(nameof(TrackCount), value); }
+            get { return BackingStore?.Get<int?>("trackCount"); }
+            set { BackingStore?.Set("trackCount", value); }
         }
         /// <summary>The year the audio file was recorded.</summary>
         public int? Year {
-            get { return BackingStore?.Get<int?>(nameof(Year)); }
-            set { BackingStore?.Set(nameof(Year), value); }
+            get { return BackingStore?.Get<int?>("year"); }
+            set { BackingStore?.Set("year", value); }
         }
         /// <summary>
         /// Instantiates a new audio and sets the default values.

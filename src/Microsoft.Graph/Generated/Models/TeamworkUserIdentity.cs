@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class TeamworkUserIdentity : Identity, IParsable {
         /// <summary>Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and emailUser.</summary>
         public TeamworkUserIdentityType? UserIdentityType {
-            get { return BackingStore?.Get<TeamworkUserIdentityType?>(nameof(UserIdentityType)); }
-            set { BackingStore?.Set(nameof(UserIdentityType), value); }
+            get { return BackingStore?.Get<TeamworkUserIdentityType?>("userIdentityType"); }
+            set { BackingStore?.Set("userIdentityType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class IosMobileAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable {
         /// <summary>mdm app configuration Base64 binary.</summary>
         public byte[] EncodedSettingXml {
-            get { return BackingStore?.Get<byte[]>(nameof(EncodedSettingXml)); }
-            set { BackingStore?.Set(nameof(EncodedSettingXml), value); }
+            get { return BackingStore?.Get<byte[]>("encodedSettingXml"); }
+            set { BackingStore?.Set("encodedSettingXml", value); }
         }
         /// <summary>app configuration setting items.</summary>
         public List<AppConfigurationSettingItem> Settings {
-            get { return BackingStore?.Get<List<AppConfigurationSettingItem>>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<List<AppConfigurationSettingItem>>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

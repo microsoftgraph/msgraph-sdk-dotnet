@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class ManagedIOSStoreApp : ManagedApp, IParsable {
         /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
         public IosDeviceType ApplicableDeviceType {
-            get { return BackingStore?.Get<IosDeviceType>(nameof(ApplicableDeviceType)); }
-            set { BackingStore?.Set(nameof(ApplicableDeviceType), value); }
+            get { return BackingStore?.Get<IosDeviceType>("applicableDeviceType"); }
+            set { BackingStore?.Set("applicableDeviceType", value); }
         }
         /// <summary>The Apple AppStoreUrl.</summary>
         public string AppStoreUrl {
-            get { return BackingStore?.Get<string>(nameof(AppStoreUrl)); }
-            set { BackingStore?.Set(nameof(AppStoreUrl), value); }
+            get { return BackingStore?.Get<string>("appStoreUrl"); }
+            set { BackingStore?.Set("appStoreUrl", value); }
         }
         /// <summary>The app&apos;s Bundle ID.</summary>
         public string BundleId {
-            get { return BackingStore?.Get<string>(nameof(BundleId)); }
-            set { BackingStore?.Set(nameof(BundleId), value); }
+            get { return BackingStore?.Get<string>("bundleId"); }
+            set { BackingStore?.Set("bundleId", value); }
         }
         /// <summary>Contains properties of the minimum operating system required for an iOS mobile app.</summary>
         public IosMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<IosMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<IosMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

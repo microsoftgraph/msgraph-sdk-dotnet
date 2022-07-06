@@ -8,125 +8,125 @@ namespace Microsoft.Graph.Models.CallRecords {
     public class PstnCallLogRow : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.</summary>
         public PstnCallDurationSource? CallDurationSource {
-            get { return BackingStore?.Get<PstnCallDurationSource?>(nameof(CallDurationSource)); }
-            set { BackingStore?.Set(nameof(CallDurationSource), value); }
+            get { return BackingStore?.Get<PstnCallDurationSource?>("callDurationSource"); }
+            set { BackingStore?.Set("callDurationSource", value); }
         }
         /// <summary>Number dialed in E.164 format.</summary>
         public string CalleeNumber {
-            get { return BackingStore?.Get<string>(nameof(CalleeNumber)); }
-            set { BackingStore?.Set(nameof(CalleeNumber), value); }
+            get { return BackingStore?.Get<string>("calleeNumber"); }
+            set { BackingStore?.Set("calleeNumber", value); }
         }
         /// <summary>Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.</summary>
         public string CallerNumber {
-            get { return BackingStore?.Get<string>(nameof(CallerNumber)); }
-            set { BackingStore?.Set(nameof(CallerNumber), value); }
+            get { return BackingStore?.Get<string>("callerNumber"); }
+            set { BackingStore?.Set("callerNumber", value); }
         }
         /// <summary>Call identifier. Not guaranteed to be unique.</summary>
         public string CallId {
-            get { return BackingStore?.Get<string>(nameof(CallId)); }
-            set { BackingStore?.Set(nameof(CallId), value); }
+            get { return BackingStore?.Get<string>("callId"); }
+            set { BackingStore?.Set("callId", value); }
         }
         /// <summary>Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.</summary>
         public string CallType {
-            get { return BackingStore?.Get<string>(nameof(CallType)); }
-            set { BackingStore?.Set(nameof(CallType), value); }
+            get { return BackingStore?.Get<string>("callType"); }
+            set { BackingStore?.Set("callType", value); }
         }
         /// <summary>Amount of money or cost of the call that is charged to your account.</summary>
         public decimal? Charge {
-            get { return BackingStore?.Get<decimal?>(nameof(Charge)); }
-            set { BackingStore?.Set(nameof(Charge), value); }
+            get { return BackingStore?.Get<decimal?>("charge"); }
+            set { BackingStore?.Set("charge", value); }
         }
         /// <summary>ID of the audio conference.</summary>
         public string ConferenceId {
-            get { return BackingStore?.Get<string>(nameof(ConferenceId)); }
-            set { BackingStore?.Set(nameof(ConferenceId), value); }
+            get { return BackingStore?.Get<string>("conferenceId"); }
+            set { BackingStore?.Set("conferenceId", value); }
         }
         /// <summary>Connection fee price.</summary>
         public decimal? ConnectionCharge {
-            get { return BackingStore?.Get<decimal?>(nameof(ConnectionCharge)); }
-            set { BackingStore?.Set(nameof(ConnectionCharge), value); }
+            get { return BackingStore?.Get<decimal?>("connectionCharge"); }
+            set { BackingStore?.Set("connectionCharge", value); }
         }
         /// <summary>Type of currency used to calculate the cost of the call (ISO 4217).</summary>
         public string Currency {
-            get { return BackingStore?.Get<string>(nameof(Currency)); }
-            set { BackingStore?.Set(nameof(Currency), value); }
+            get { return BackingStore?.Get<string>("currency"); }
+            set { BackingStore?.Set("currency", value); }
         }
         /// <summary>Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user&apos;s location.</summary>
         public string DestinationContext {
-            get { return BackingStore?.Get<string>(nameof(DestinationContext)); }
-            set { BackingStore?.Set(nameof(DestinationContext), value); }
+            get { return BackingStore?.Get<string>("destinationContext"); }
+            set { BackingStore?.Set("destinationContext", value); }
         }
         /// <summary>Country or region dialed.</summary>
         public string DestinationName {
-            get { return BackingStore?.Get<string>(nameof(DestinationName)); }
-            set { BackingStore?.Set(nameof(DestinationName), value); }
+            get { return BackingStore?.Get<string>("destinationName"); }
+            set { BackingStore?.Set("destinationName", value); }
         }
         /// <summary>How long the call was connected, in seconds.</summary>
         public int? Duration {
-            get { return BackingStore?.Get<int?>(nameof(Duration)); }
-            set { BackingStore?.Set(nameof(Duration), value); }
+            get { return BackingStore?.Get<int?>("duration"); }
+            set { BackingStore?.Set("duration", value); }
         }
         /// <summary>Call end time.</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Unique call identifier. GUID.</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>User&apos;s phone number type, such as a service of toll-free number.</summary>
         public string InventoryType {
-            get { return BackingStore?.Get<string>(nameof(InventoryType)); }
-            set { BackingStore?.Set(nameof(InventoryType), value); }
+            get { return BackingStore?.Get<string>("inventoryType"); }
+            set { BackingStore?.Set("inventoryType", value); }
         }
         /// <summary>The license used for the call.</summary>
         public string LicenseCapability {
-            get { return BackingStore?.Get<string>(nameof(LicenseCapability)); }
-            set { BackingStore?.Set(nameof(LicenseCapability), value); }
+            get { return BackingStore?.Get<string>("licenseCapability"); }
+            set { BackingStore?.Set("licenseCapability", value); }
         }
         /// <summary>The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.</summary>
         public string Operator {
-            get { return BackingStore?.Get<string>(nameof(Operator)); }
-            set { BackingStore?.Set(nameof(Operator), value); }
+            get { return BackingStore?.Get<string>("operator"); }
+            set { BackingStore?.Set("operator", value); }
         }
         /// <summary>Call start time.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>Country code of the tenant, ISO 3166-1 alpha-2.</summary>
         public string TenantCountryCode {
-            get { return BackingStore?.Get<string>(nameof(TenantCountryCode)); }
-            set { BackingStore?.Set(nameof(TenantCountryCode), value); }
+            get { return BackingStore?.Get<string>("tenantCountryCode"); }
+            set { BackingStore?.Set("tenantCountryCode", value); }
         }
         /// <summary>Country code of the user, ISO 3166-1 alpha-2.</summary>
         public string UsageCountryCode {
-            get { return BackingStore?.Get<string>(nameof(UsageCountryCode)); }
-            set { BackingStore?.Set(nameof(UsageCountryCode), value); }
+            get { return BackingStore?.Get<string>("usageCountryCode"); }
+            set { BackingStore?.Set("usageCountryCode", value); }
         }
         /// <summary>Display name of the user.</summary>
         public string UserDisplayName {
-            get { return BackingStore?.Get<string>(nameof(UserDisplayName)); }
-            set { BackingStore?.Set(nameof(UserDisplayName), value); }
+            get { return BackingStore?.Get<string>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
         }
         /// <summary>Calling user&apos;s ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user&apos;s SIP Address, and can be same as user&apos;s e-mail address.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Instantiates a new pstnCallLogRow and sets the default values.

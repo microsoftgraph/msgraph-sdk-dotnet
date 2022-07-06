@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Models {
     public class WindowsMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Windows version 10.0 or later.</summary>
         public bool? V10_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_0)); }
-            set { BackingStore?.Set(nameof(V10_0), value); }
+            get { return BackingStore?.Get<bool?>("v10_0"); }
+            set { BackingStore?.Set("v10_0", value); }
         }
         /// <summary>Windows version 8.0 or later.</summary>
         public bool? V8_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V8_0)); }
-            set { BackingStore?.Set(nameof(V8_0), value); }
+            get { return BackingStore?.Get<bool?>("v8_0"); }
+            set { BackingStore?.Set("v8_0", value); }
         }
         /// <summary>Windows version 8.1 or later.</summary>
         public bool? V8_1 {
-            get { return BackingStore?.Get<bool?>(nameof(V8_1)); }
-            set { BackingStore?.Set(nameof(V8_1), value); }
+            get { return BackingStore?.Get<bool?>("v8_1"); }
+            set { BackingStore?.Set("v8_1", value); }
         }
         /// <summary>
         /// Instantiates a new windowsMinimumOperatingSystem and sets the default values.

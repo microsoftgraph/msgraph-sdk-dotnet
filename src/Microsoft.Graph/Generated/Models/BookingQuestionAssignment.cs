@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class BookingQuestionAssignment : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether it is mandatory to answer the custom question.</summary>
         public bool? IsRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsRequired)); }
-            set { BackingStore?.Set(nameof(IsRequired), value); }
+            get { return BackingStore?.Get<bool?>("isRequired"); }
+            set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>If it is mandatory to answer the custom question.</summary>
         public string QuestionId {
-            get { return BackingStore?.Get<string>(nameof(QuestionId)); }
-            set { BackingStore?.Set(nameof(QuestionId), value); }
+            get { return BackingStore?.Get<string>("questionId"); }
+            set { BackingStore?.Set("questionId", value); }
         }
         /// <summary>
         /// Instantiates a new bookingQuestionAssignment and sets the default values.

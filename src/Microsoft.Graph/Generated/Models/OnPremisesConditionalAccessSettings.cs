@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Models {
     public class OnPremisesConditionalAccessSettings : Entity, IParsable {
         /// <summary>Indicates if on premises conditional access is enabled for this organization</summary>
         public bool? Enabled {
-            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
-            set { BackingStore?.Set(nameof(Enabled), value); }
+            get { return BackingStore?.Get<bool?>("enabled"); }
+            set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.</summary>
         public List<string> ExcludedGroups {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludedGroups)); }
-            set { BackingStore?.Set(nameof(ExcludedGroups), value); }
+            get { return BackingStore?.Get<List<string>>("excludedGroups"); }
+            set { BackingStore?.Set("excludedGroups", value); }
         }
         /// <summary>User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.</summary>
         public List<string> IncludedGroups {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludedGroups)); }
-            set { BackingStore?.Set(nameof(IncludedGroups), value); }
+            get { return BackingStore?.Get<List<string>>("includedGroups"); }
+            set { BackingStore?.Set("includedGroups", value); }
         }
         /// <summary>Override the default access rule when allowing a device to ensure access is granted.</summary>
         public bool? OverrideDefaultRule {
-            get { return BackingStore?.Get<bool?>(nameof(OverrideDefaultRule)); }
-            set { BackingStore?.Set(nameof(OverrideDefaultRule), value); }
+            get { return BackingStore?.Get<bool?>("overrideDefaultRule"); }
+            set { BackingStore?.Set("overrideDefaultRule", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

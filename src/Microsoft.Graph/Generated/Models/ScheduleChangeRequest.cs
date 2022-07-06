@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -7,43 +8,48 @@ namespace Microsoft.Graph.Models {
     public class ScheduleChangeRequest : ChangeTrackedEntity, IParsable {
         /// <summary>The assignedTo property</summary>
         public ScheduleChangeRequestActor? AssignedTo {
-            get { return BackingStore?.Get<ScheduleChangeRequestActor?>(nameof(AssignedTo)); }
-            set { BackingStore?.Set(nameof(AssignedTo), value); }
+            get { return BackingStore?.Get<ScheduleChangeRequestActor?>("assignedTo"); }
+            set { BackingStore?.Set("assignedTo", value); }
         }
         /// <summary>The managerActionDateTime property</summary>
         public DateTimeOffset? ManagerActionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ManagerActionDateTime)); }
-            set { BackingStore?.Set(nameof(ManagerActionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("managerActionDateTime"); }
+            set { BackingStore?.Set("managerActionDateTime", value); }
         }
         /// <summary>The managerActionMessage property</summary>
         public string ManagerActionMessage {
-            get { return BackingStore?.Get<string>(nameof(ManagerActionMessage)); }
-            set { BackingStore?.Set(nameof(ManagerActionMessage), value); }
+            get { return BackingStore?.Get<string>("managerActionMessage"); }
+            set { BackingStore?.Set("managerActionMessage", value); }
         }
         /// <summary>The managerUserId property</summary>
         public string ManagerUserId {
-            get { return BackingStore?.Get<string>(nameof(ManagerUserId)); }
-            set { BackingStore?.Set(nameof(ManagerUserId), value); }
+            get { return BackingStore?.Get<string>("managerUserId"); }
+            set { BackingStore?.Set("managerUserId", value); }
         }
         /// <summary>The senderDateTime property</summary>
         public DateTimeOffset? SenderDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(SenderDateTime)); }
-            set { BackingStore?.Set(nameof(SenderDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("senderDateTime"); }
+            set { BackingStore?.Set("senderDateTime", value); }
         }
         /// <summary>The senderMessage property</summary>
         public string SenderMessage {
-            get { return BackingStore?.Get<string>(nameof(SenderMessage)); }
-            set { BackingStore?.Set(nameof(SenderMessage), value); }
+            get { return BackingStore?.Get<string>("senderMessage"); }
+            set { BackingStore?.Set("senderMessage", value); }
         }
         /// <summary>The senderUserId property</summary>
         public string SenderUserId {
-            get { return BackingStore?.Get<string>(nameof(SenderUserId)); }
-            set { BackingStore?.Set(nameof(SenderUserId), value); }
+            get { return BackingStore?.Get<string>("senderUserId"); }
+            set { BackingStore?.Set("senderUserId", value); }
         }
         /// <summary>The state property</summary>
         public ScheduleChangeState? State {
-            get { return BackingStore?.Get<ScheduleChangeState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ScheduleChangeState?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +79,7 @@ namespace Microsoft.Graph.Models {
                 {"senderMessage", n => { SenderMessage = n.GetStringValue(); } },
                 {"senderUserId", n => { SenderUserId = n.GetStringValue(); } },
                 {"state", n => { State = n.GetEnumValue<ScheduleChangeState>(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -90,6 +97,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("senderMessage", SenderMessage);
             writer.WriteStringValue("senderUserId", SenderUserId);
             writer.WriteEnumValue<ScheduleChangeState>("state", State);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

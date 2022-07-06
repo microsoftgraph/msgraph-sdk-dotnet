@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Models {
     public class WorkingHours : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The days of the week on which the user works.</summary>
         public List<string> DaysOfWeek {
-            get { return BackingStore?.Get<List<string>>(nameof(DaysOfWeek)); }
-            set { BackingStore?.Set(nameof(DaysOfWeek), value); }
+            get { return BackingStore?.Get<List<string>>("daysOfWeek"); }
+            set { BackingStore?.Set("daysOfWeek", value); }
         }
         /// <summary>The time of the day that the user stops working.</summary>
         public Time? EndTime {
-            get { return BackingStore?.Get<Time?>(nameof(EndTime)); }
-            set { BackingStore?.Set(nameof(EndTime), value); }
+            get { return BackingStore?.Get<Time?>("endTime"); }
+            set { BackingStore?.Set("endTime", value); }
         }
         /// <summary>The time of the day that the user starts working.</summary>
         public Time? StartTime {
-            get { return BackingStore?.Get<Time?>(nameof(StartTime)); }
-            set { BackingStore?.Set(nameof(StartTime), value); }
+            get { return BackingStore?.Get<Time?>("startTime"); }
+            set { BackingStore?.Set("startTime", value); }
         }
         /// <summary>The time zone to which the working hours apply.</summary>
         public TimeZoneBase TimeZone {
-            get { return BackingStore?.Get<TimeZoneBase>(nameof(TimeZone)); }
-            set { BackingStore?.Set(nameof(TimeZone), value); }
+            get { return BackingStore?.Get<TimeZoneBase>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
         }
         /// <summary>
         /// Instantiates a new workingHours and sets the default values.

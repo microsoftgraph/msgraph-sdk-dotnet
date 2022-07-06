@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class SubjectRightsRequestHistory : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identity of the user who changed the  subject rights request.</summary>
         public IdentitySet ChangedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(ChangedBy)); }
-            set { BackingStore?.Set(nameof(ChangedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("changedBy"); }
+            set { BackingStore?.Set("changedBy", value); }
         }
         /// <summary>Data and time when the entity was changed.</summary>
         public DateTimeOffset? EventDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EventDateTime)); }
-            set { BackingStore?.Set(nameof(EventDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
+            set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.</summary>
         public SubjectRightsRequestStage? Stage {
-            get { return BackingStore?.Get<SubjectRightsRequestStage?>(nameof(Stage)); }
-            set { BackingStore?.Set(nameof(Stage), value); }
+            get { return BackingStore?.Get<SubjectRightsRequestStage?>("stage"); }
+            set { BackingStore?.Set("stage", value); }
         }
         /// <summary>The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.</summary>
         public SubjectRightsRequestStageStatus? StageStatus {
-            get { return BackingStore?.Get<SubjectRightsRequestStageStatus?>(nameof(StageStatus)); }
-            set { BackingStore?.Set(nameof(StageStatus), value); }
+            get { return BackingStore?.Get<SubjectRightsRequestStageStatus?>("stageStatus"); }
+            set { BackingStore?.Set("stageStatus", value); }
         }
         /// <summary>Type of history.</summary>
         public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Instantiates a new subjectRightsRequestHistory and sets the default values.

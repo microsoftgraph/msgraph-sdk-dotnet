@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Models {
     public class ManagedAppDiagnosticStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Instruction on how to mitigate a failed validation</summary>
         public string MitigationInstruction {
-            get { return BackingStore?.Get<string>(nameof(MitigationInstruction)); }
-            set { BackingStore?.Set(nameof(MitigationInstruction), value); }
+            get { return BackingStore?.Get<string>("mitigationInstruction"); }
+            set { BackingStore?.Set("mitigationInstruction", value); }
         }
         /// <summary>The state of the operation</summary>
         public string State {
-            get { return BackingStore?.Get<string>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<string>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>The validation friendly name</summary>
         public string ValidationName {
-            get { return BackingStore?.Get<string>(nameof(ValidationName)); }
-            set { BackingStore?.Set(nameof(ValidationName), value); }
+            get { return BackingStore?.Get<string>("validationName"); }
+            set { BackingStore?.Set("validationName", value); }
         }
         /// <summary>
         /// Instantiates a new managedAppDiagnosticStatus and sets the default values.

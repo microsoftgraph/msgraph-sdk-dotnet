@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class SearchAggregation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Defines the actual buckets of the computed aggregation.</summary>
         public List<SearchBucket> Buckets {
-            get { return BackingStore?.Get<List<SearchBucket>>(nameof(Buckets)); }
-            set { BackingStore?.Set(nameof(Buckets), value); }
+            get { return BackingStore?.Get<List<SearchBucket>>("buckets"); }
+            set { BackingStore?.Set("buckets", value); }
         }
         /// <summary>Defines on which field the aggregation was computed on.</summary>
         public string Field {
-            get { return BackingStore?.Get<string>(nameof(Field)); }
-            set { BackingStore?.Set(nameof(Field), value); }
+            get { return BackingStore?.Get<string>("field"); }
+            set { BackingStore?.Set("field", value); }
         }
         /// <summary>
         /// Instantiates a new searchAggregation and sets the default values.

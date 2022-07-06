@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Models {
     public class Print : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of available print connectors.</summary>
         public List<PrintConnector> Connectors {
-            get { return BackingStore?.Get<List<PrintConnector>>(nameof(Connectors)); }
-            set { BackingStore?.Set(nameof(Connectors), value); }
+            get { return BackingStore?.Get<List<PrintConnector>>("connectors"); }
+            set { BackingStore?.Set("connectors", value); }
         }
         /// <summary>The list of print long running operations.</summary>
         public List<PrintOperation> Operations {
-            get { return BackingStore?.Get<List<PrintOperation>>(nameof(Operations)); }
-            set { BackingStore?.Set(nameof(Operations), value); }
+            get { return BackingStore?.Get<List<PrintOperation>>("operations"); }
+            set { BackingStore?.Set("operations", value); }
         }
         /// <summary>The list of printers registered in the tenant.</summary>
         public List<Printer> Printers {
-            get { return BackingStore?.Get<List<Printer>>(nameof(Printers)); }
-            set { BackingStore?.Set(nameof(Printers), value); }
+            get { return BackingStore?.Get<List<Printer>>("printers"); }
+            set { BackingStore?.Set("printers", value); }
         }
         /// <summary>The list of available Universal Print service endpoints.</summary>
         public List<PrintService> Services {
-            get { return BackingStore?.Get<List<PrintService>>(nameof(Services)); }
-            set { BackingStore?.Set(nameof(Services), value); }
+            get { return BackingStore?.Get<List<PrintService>>("services"); }
+            set { BackingStore?.Set("services", value); }
         }
         /// <summary>Tenant-wide settings for the Universal Print service.</summary>
         public PrintSettings Settings {
-            get { return BackingStore?.Get<PrintSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<PrintSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>The list of printer shares registered in the tenant.</summary>
         public List<PrinterShare> Shares {
-            get { return BackingStore?.Get<List<PrinterShare>>(nameof(Shares)); }
-            set { BackingStore?.Set(nameof(Shares), value); }
+            get { return BackingStore?.Get<List<PrinterShare>>("shares"); }
+            set { BackingStore?.Set("shares", value); }
         }
         /// <summary>List of abstract definition for a task that can be triggered when various events occur within Universal Print.</summary>
         public List<PrintTaskDefinition> TaskDefinitions {
-            get { return BackingStore?.Get<List<PrintTaskDefinition>>(nameof(TaskDefinitions)); }
-            set { BackingStore?.Set(nameof(TaskDefinitions), value); }
+            get { return BackingStore?.Get<List<PrintTaskDefinition>>("taskDefinitions"); }
+            set { BackingStore?.Set("taskDefinitions", value); }
         }
         /// <summary>
         /// Instantiates a new Print and sets the default values.

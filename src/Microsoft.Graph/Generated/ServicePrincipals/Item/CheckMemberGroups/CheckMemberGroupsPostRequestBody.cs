@@ -9,15 +9,15 @@ namespace Microsoft.Graph.ServicePrincipals.Item.CheckMemberGroups {
     public class CheckMemberGroupsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The groupIds property</summary>
         public List<string> GroupIds {
-            get { return BackingStore?.Get<List<string>>(nameof(GroupIds)); }
-            set { BackingStore?.Set(nameof(GroupIds), value); }
+            get { return BackingStore?.Get<List<string>>("groupIds"); }
+            set { BackingStore?.Set("groupIds", value); }
         }
         /// <summary>
         /// Instantiates a new checkMemberGroupsPostRequestBody and sets the default values.

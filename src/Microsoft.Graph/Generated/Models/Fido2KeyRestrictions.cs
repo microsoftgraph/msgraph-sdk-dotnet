@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class Fido2KeyRestrictions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>A collection of Authenticator Attestation GUIDs. AADGUIDs define key types and manufacturers.</summary>
         public List<string> AaGuids {
-            get { return BackingStore?.Get<List<string>>(nameof(AaGuids)); }
-            set { BackingStore?.Set(nameof(AaGuids), value); }
+            get { return BackingStore?.Get<List<string>>("aaGuids"); }
+            set { BackingStore?.Set("aaGuids", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Enforcement type. Possible values are: allow, block.</summary>
         public Fido2RestrictionEnforcementType? EnforcementType {
-            get { return BackingStore?.Get<Fido2RestrictionEnforcementType?>(nameof(EnforcementType)); }
-            set { BackingStore?.Set(nameof(EnforcementType), value); }
+            get { return BackingStore?.Get<Fido2RestrictionEnforcementType?>("enforcementType"); }
+            set { BackingStore?.Set("enforcementType", value); }
         }
         /// <summary>Determines if the configured key enforcement is enabled.</summary>
         public bool? IsEnforced {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnforced)); }
-            set { BackingStore?.Set(nameof(IsEnforced), value); }
+            get { return BackingStore?.Get<bool?>("isEnforced"); }
+            set { BackingStore?.Set("isEnforced", value); }
         }
         /// <summary>
         /// Instantiates a new fido2KeyRestrictions and sets the default values.

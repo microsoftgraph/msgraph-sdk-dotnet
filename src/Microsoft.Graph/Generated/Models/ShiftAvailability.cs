@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class ShiftAvailability : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies the pattern for recurrence</summary>
         public PatternedRecurrence Recurrence {
-            get { return BackingStore?.Get<PatternedRecurrence>(nameof(Recurrence)); }
-            set { BackingStore?.Set(nameof(Recurrence), value); }
+            get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
+            set { BackingStore?.Set("recurrence", value); }
         }
         /// <summary>The time slot(s) preferred by the user.</summary>
         public List<TimeRange> TimeSlots {
-            get { return BackingStore?.Get<List<TimeRange>>(nameof(TimeSlots)); }
-            set { BackingStore?.Set(nameof(TimeSlots), value); }
+            get { return BackingStore?.Get<List<TimeRange>>("timeSlots"); }
+            set { BackingStore?.Set("timeSlots", value); }
         }
         /// <summary>Specifies the time zone for the indicated time.</summary>
         public string TimeZone {
-            get { return BackingStore?.Get<string>(nameof(TimeZone)); }
-            set { BackingStore?.Set(nameof(TimeZone), value); }
+            get { return BackingStore?.Get<string>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
         }
         /// <summary>
         /// Instantiates a new shiftAvailability and sets the default values.

@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class AddIn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The id property</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>The properties property</summary>
         public List<KeyValue> Properties {
-            get { return BackingStore?.Get<List<KeyValue>>(nameof(Properties)); }
-            set { BackingStore?.Set(nameof(Properties), value); }
+            get { return BackingStore?.Get<List<KeyValue>>("properties"); }
+            set { BackingStore?.Set("properties", value); }
         }
         /// <summary>The type property</summary>
         public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Instantiates a new addIn and sets the default values.

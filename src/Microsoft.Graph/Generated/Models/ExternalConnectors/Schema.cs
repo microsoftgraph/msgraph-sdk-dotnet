@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
     public class Schema : Entity, IParsable {
         /// <summary>Must be set to microsoft.graph.externalItem. Required.</summary>
         public string BaseType {
-            get { return BackingStore?.Get<string>(nameof(BaseType)); }
-            set { BackingStore?.Set(nameof(BaseType), value); }
+            get { return BackingStore?.Get<string>("baseType"); }
+            set { BackingStore?.Set("baseType", value); }
         }
         /// <summary>The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.</summary>
         public List<Property> Properties {
-            get { return BackingStore?.Get<List<Property>>(nameof(Properties)); }
-            set { BackingStore?.Set(nameof(Properties), value); }
+            get { return BackingStore?.Get<List<Property>>("properties"); }
+            set { BackingStore?.Set("properties", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

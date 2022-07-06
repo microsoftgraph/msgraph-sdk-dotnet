@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
     public class ConnectionOperation : Entity, IParsable {
         /// <summary>If status is failed, provides more information about the error that caused the failure.</summary>
         public Microsoft.Graph.Models.PublicError Error {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.PublicError>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PublicError>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.</summary>
         public ConnectionOperationStatus? Status {
-            get { return BackingStore?.Get<ConnectionOperationStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ConnectionOperationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

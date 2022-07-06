@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class ManagedAppPolicyDeploymentSummaryPerApp : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of users the policy is applied.</summary>
         public int? ConfigurationAppliedUserCount {
-            get { return BackingStore?.Get<int?>(nameof(ConfigurationAppliedUserCount)); }
-            set { BackingStore?.Set(nameof(ConfigurationAppliedUserCount), value); }
+            get { return BackingStore?.Get<int?>("configurationAppliedUserCount"); }
+            set { BackingStore?.Set("configurationAppliedUserCount", value); }
         }
         /// <summary>Deployment of an app.</summary>
         public Microsoft.Graph.Models.MobileAppIdentifier MobileAppIdentifier {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MobileAppIdentifier>(nameof(MobileAppIdentifier)); }
-            set { BackingStore?.Set(nameof(MobileAppIdentifier), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MobileAppIdentifier>("mobileAppIdentifier"); }
+            set { BackingStore?.Set("mobileAppIdentifier", value); }
         }
         /// <summary>
         /// Instantiates a new managedAppPolicyDeploymentSummaryPerApp and sets the default values.

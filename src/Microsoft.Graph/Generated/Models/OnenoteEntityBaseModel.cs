@@ -1,15 +1,21 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class OnenoteEntityBaseModel : Entity, IParsable {
         /// <summary>The endpoint where you can get details about the page. Read-only.</summary>
         public string Self {
-            get { return BackingStore?.Get<string>(nameof(Self)); }
-            set { BackingStore?.Set(nameof(Self), value); }
+            get { return BackingStore?.Get<string>("self"); }
+            set { BackingStore?.Set("self", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -31,6 +37,7 @@ namespace Microsoft.Graph.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"self", n => { Self = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -41,6 +48,7 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("self", Self);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

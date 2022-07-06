@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class ItemAttachment : Attachment, IParsable {
         /// <summary>The attached contact, message or event. Navigation property.</summary>
         public OutlookItem Item {
-            get { return BackingStore?.Get<OutlookItem>(nameof(Item)); }
-            set { BackingStore?.Set(nameof(Item), value); }
+            get { return BackingStore?.Get<OutlookItem>("item"); }
+            set { BackingStore?.Set("item", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

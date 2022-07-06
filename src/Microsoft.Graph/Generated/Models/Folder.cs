@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class Folder : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of children contained immediately within this container.</summary>
         public int? ChildCount {
-            get { return BackingStore?.Get<int?>(nameof(ChildCount)); }
-            set { BackingStore?.Set(nameof(ChildCount), value); }
+            get { return BackingStore?.Get<int?>("childCount"); }
+            set { BackingStore?.Set("childCount", value); }
         }
         /// <summary>A collection of properties defining the recommended view for the folder.</summary>
         public FolderView View {
-            get { return BackingStore?.Get<FolderView>(nameof(View)); }
-            set { BackingStore?.Set(nameof(View), value); }
+            get { return BackingStore?.Get<FolderView>("view"); }
+            set { BackingStore?.Set("view", value); }
         }
         /// <summary>
         /// Instantiates a new folder and sets the default values.

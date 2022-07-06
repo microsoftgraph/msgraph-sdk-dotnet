@@ -8,50 +8,50 @@ namespace Microsoft.Graph.Models {
     public class KeyCredential : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Custom key identifier</summary>
         public byte[] CustomKeyIdentifier {
-            get { return BackingStore?.Get<byte[]>(nameof(CustomKeyIdentifier)); }
-            set { BackingStore?.Set(nameof(CustomKeyIdentifier), value); }
+            get { return BackingStore?.Get<byte[]>("customKeyIdentifier"); }
+            set { BackingStore?.Set("customKeyIdentifier", value); }
         }
         /// <summary>Friendly name for the key. Optional.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.</summary>
         public byte[] Key {
-            get { return BackingStore?.Get<byte[]>(nameof(Key)); }
-            set { BackingStore?.Set(nameof(Key), value); }
+            get { return BackingStore?.Get<byte[]>("key"); }
+            set { BackingStore?.Set("key", value); }
         }
         /// <summary>The unique identifier for the key.</summary>
         public string KeyId {
-            get { return BackingStore?.Get<string>(nameof(KeyId)); }
-            set { BackingStore?.Set(nameof(KeyId), value); }
+            get { return BackingStore?.Get<string>("keyId"); }
+            set { BackingStore?.Set("keyId", value); }
         }
         /// <summary>The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The type of key credential; for example, Symmetric, AsymmetricX509Cert.</summary>
         public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>A string that describes the purpose for which the key can be used; for example, Verify.</summary>
         public string Usage {
-            get { return BackingStore?.Get<string>(nameof(Usage)); }
-            set { BackingStore?.Set(nameof(Usage), value); }
+            get { return BackingStore?.Get<string>("usage"); }
+            set { BackingStore?.Set("usage", value); }
         }
         /// <summary>
         /// Instantiates a new keyCredential and sets the default values.

@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Models {
     public class TemporaryAccessPassAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The date and time when the Temporary Access Pass was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The state of the authentication method that indicates whether it&apos;s currently usable by the user.</summary>
         public bool? IsUsable {
-            get { return BackingStore?.Get<bool?>(nameof(IsUsable)); }
-            set { BackingStore?.Set(nameof(IsUsable), value); }
+            get { return BackingStore?.Get<bool?>("isUsable"); }
+            set { BackingStore?.Set("isUsable", value); }
         }
         /// <summary>Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.</summary>
         public bool? IsUsableOnce {
-            get { return BackingStore?.Get<bool?>(nameof(IsUsableOnce)); }
-            set { BackingStore?.Set(nameof(IsUsableOnce), value); }
+            get { return BackingStore?.Get<bool?>("isUsableOnce"); }
+            set { BackingStore?.Set("isUsableOnce", value); }
         }
         /// <summary>The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).</summary>
         public int? LifetimeInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(LifetimeInMinutes)); }
-            set { BackingStore?.Set(nameof(LifetimeInMinutes), value); }
+            get { return BackingStore?.Get<int?>("lifetimeInMinutes"); }
+            set { BackingStore?.Set("lifetimeInMinutes", value); }
         }
         /// <summary>Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.</summary>
         public string MethodUsabilityReason {
-            get { return BackingStore?.Get<string>(nameof(MethodUsabilityReason)); }
-            set { BackingStore?.Set(nameof(MethodUsabilityReason), value); }
+            get { return BackingStore?.Get<string>("methodUsabilityReason"); }
+            set { BackingStore?.Set("methodUsabilityReason", value); }
         }
         /// <summary>The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.</summary>
         public string TemporaryAccessPass {
-            get { return BackingStore?.Get<string>(nameof(TemporaryAccessPass)); }
-            set { BackingStore?.Set(nameof(TemporaryAccessPass), value); }
+            get { return BackingStore?.Get<string>("temporaryAccessPass"); }
+            set { BackingStore?.Set("temporaryAccessPass", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

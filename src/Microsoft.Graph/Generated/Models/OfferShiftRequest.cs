@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -7,23 +8,28 @@ namespace Microsoft.Graph.Models {
     public class OfferShiftRequest : ScheduleChangeRequest, IParsable {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? RecipientActionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RecipientActionDateTime)); }
-            set { BackingStore?.Set(nameof(RecipientActionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("recipientActionDateTime"); }
+            set { BackingStore?.Set("recipientActionDateTime", value); }
         }
         /// <summary>Custom message sent by recipient of the offer shift request.</summary>
         public string RecipientActionMessage {
-            get { return BackingStore?.Get<string>(nameof(RecipientActionMessage)); }
-            set { BackingStore?.Set(nameof(RecipientActionMessage), value); }
+            get { return BackingStore?.Get<string>("recipientActionMessage"); }
+            set { BackingStore?.Set("recipientActionMessage", value); }
         }
         /// <summary>User id of the recipient of the offer shift request.</summary>
         public string RecipientUserId {
-            get { return BackingStore?.Get<string>(nameof(RecipientUserId)); }
-            set { BackingStore?.Set(nameof(RecipientUserId), value); }
+            get { return BackingStore?.Get<string>("recipientUserId"); }
+            set { BackingStore?.Set("recipientUserId", value); }
         }
         /// <summary>User id of the sender of the offer shift request.</summary>
         public string SenderShiftId {
-            get { return BackingStore?.Get<string>(nameof(SenderShiftId)); }
-            set { BackingStore?.Set(nameof(SenderShiftId), value); }
+            get { return BackingStore?.Get<string>("senderShiftId"); }
+            set { BackingStore?.Set("senderShiftId", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,6 +53,7 @@ namespace Microsoft.Graph.Models {
                 {"recipientActionMessage", n => { RecipientActionMessage = n.GetStringValue(); } },
                 {"recipientUserId", n => { RecipientUserId = n.GetStringValue(); } },
                 {"senderShiftId", n => { SenderShiftId = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("recipientActionMessage", RecipientActionMessage);
             writer.WriteStringValue("recipientUserId", RecipientUserId);
             writer.WriteStringValue("senderShiftId", SenderShiftId);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

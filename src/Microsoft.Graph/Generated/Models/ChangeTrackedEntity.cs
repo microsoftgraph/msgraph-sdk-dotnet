@@ -1,25 +1,31 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class ChangeTrackedEntity : Entity, IParsable {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Identity of the person who last modified the entity.</summary>
         public IdentitySet LastModifiedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Models {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

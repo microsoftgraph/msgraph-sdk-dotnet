@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,18 @@ namespace Microsoft.Graph.Models {
     public class ManagedEBookAssignment : Entity, IParsable {
         /// <summary>The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.</summary>
         public Microsoft.Graph.Models.InstallIntent? InstallIntent {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.InstallIntent?>(nameof(InstallIntent)); }
-            set { BackingStore?.Set(nameof(InstallIntent), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.InstallIntent?>("installIntent"); }
+            set { BackingStore?.Set("installIntent", value); }
         }
         /// <summary>The assignment target for eBook.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,6 +42,7 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"installIntent", n => { InstallIntent = n.GetEnumValue<InstallIntent>(); } },
                 {"target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -47,6 +54,7 @@ namespace Microsoft.Graph.Models {
             base.Serialize(writer);
             writer.WriteEnumValue<InstallIntent>("installIntent", InstallIntent);
             writer.WriteObjectValue<DeviceAndAppManagementAssignmentTarget>("target", Target);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

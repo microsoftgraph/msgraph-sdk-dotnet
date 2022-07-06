@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models.ODataErrors {
     public class InnerError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Client request Id as sent by the client application.</summary>
         public string ClientRequestId {
-            get { return BackingStore?.Get<string>(nameof(ClientRequestId)); }
-            set { BackingStore?.Set(nameof(ClientRequestId), value); }
+            get { return BackingStore?.Get<string>("client-request-id"); }
+            set { BackingStore?.Set("client-request-id", value); }
         }
         /// <summary>Date when the error occured.</summary>
         public DateTimeOffset? Date {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(Date)); }
-            set { BackingStore?.Set(nameof(Date), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("date"); }
+            set { BackingStore?.Set("date", value); }
         }
         /// <summary>Request Id as tracked internally by the service</summary>
         public string RequestId {
-            get { return BackingStore?.Get<string>(nameof(RequestId)); }
-            set { BackingStore?.Set(nameof(RequestId), value); }
+            get { return BackingStore?.Get<string>("request-id"); }
+            set { BackingStore?.Set("request-id", value); }
         }
         /// <summary>
         /// Instantiates a new InnerError and sets the default values.

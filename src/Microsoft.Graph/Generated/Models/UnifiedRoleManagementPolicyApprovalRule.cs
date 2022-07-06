@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class UnifiedRoleManagementPolicyApprovalRule : UnifiedRoleManagementPolicyRule, IParsable {
         /// <summary>The settings for approval of the role assignment.</summary>
         public ApprovalSettings Setting {
-            get { return BackingStore?.Get<ApprovalSettings>(nameof(Setting)); }
-            set { BackingStore?.Set(nameof(Setting), value); }
+            get { return BackingStore?.Get<ApprovalSettings>("setting"); }
+            set { BackingStore?.Set("setting", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

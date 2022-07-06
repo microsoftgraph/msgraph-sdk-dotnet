@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Models {
     public class SettingStateDeviceSummary : Entity, IParsable {
         /// <summary>Device Compliant count for the setting</summary>
         public int? CompliantDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(CompliantDeviceCount)); }
-            set { BackingStore?.Set(nameof(CompliantDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("compliantDeviceCount"); }
+            set { BackingStore?.Set("compliantDeviceCount", value); }
         }
         /// <summary>Device conflict error count for the setting</summary>
         public int? ConflictDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ConflictDeviceCount)); }
-            set { BackingStore?.Set(nameof(ConflictDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("conflictDeviceCount"); }
+            set { BackingStore?.Set("conflictDeviceCount", value); }
         }
         /// <summary>Device error count for the setting</summary>
         public int? ErrorDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ErrorDeviceCount)); }
-            set { BackingStore?.Set(nameof(ErrorDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("errorDeviceCount"); }
+            set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>Name of the InstancePath for the setting</summary>
         public string InstancePath {
-            get { return BackingStore?.Get<string>(nameof(InstancePath)); }
-            set { BackingStore?.Set(nameof(InstancePath), value); }
+            get { return BackingStore?.Get<string>("instancePath"); }
+            set { BackingStore?.Set("instancePath", value); }
         }
         /// <summary>Device NonCompliant count for the setting</summary>
         public int? NonCompliantDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NonCompliantDeviceCount)); }
-            set { BackingStore?.Set(nameof(NonCompliantDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("nonCompliantDeviceCount"); }
+            set { BackingStore?.Set("nonCompliantDeviceCount", value); }
         }
         /// <summary>Device Not Applicable count for the setting</summary>
         public int? NotApplicableDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NotApplicableDeviceCount)); }
-            set { BackingStore?.Set(nameof(NotApplicableDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("notApplicableDeviceCount"); }
+            set { BackingStore?.Set("notApplicableDeviceCount", value); }
         }
         /// <summary>Device Compliant count for the setting</summary>
         public int? RemediatedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(RemediatedDeviceCount)); }
-            set { BackingStore?.Set(nameof(RemediatedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("remediatedDeviceCount"); }
+            set { BackingStore?.Set("remediatedDeviceCount", value); }
         }
         /// <summary>Name of the setting</summary>
         public string SettingName {
-            get { return BackingStore?.Get<string>(nameof(SettingName)); }
-            set { BackingStore?.Set(nameof(SettingName), value); }
+            get { return BackingStore?.Get<string>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
         }
         /// <summary>Device Unkown count for the setting</summary>
         public int? UnknownDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(UnknownDeviceCount)); }
-            set { BackingStore?.Set(nameof(UnknownDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("unknownDeviceCount"); }
+            set { BackingStore?.Set("unknownDeviceCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class AutomaticRepliesMailTips : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The automatic reply message.</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>The language that the automatic reply message is in.</summary>
         public LocaleInfo MessageLanguage {
-            get { return BackingStore?.Get<LocaleInfo>(nameof(MessageLanguage)); }
-            set { BackingStore?.Set(nameof(MessageLanguage), value); }
+            get { return BackingStore?.Get<LocaleInfo>("messageLanguage"); }
+            set { BackingStore?.Set("messageLanguage", value); }
         }
         /// <summary>The date and time that automatic replies are set to end.</summary>
         public DateTimeTimeZone ScheduledEndTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(ScheduledEndTime)); }
-            set { BackingStore?.Set(nameof(ScheduledEndTime), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("scheduledEndTime"); }
+            set { BackingStore?.Set("scheduledEndTime", value); }
         }
         /// <summary>The date and time that automatic replies are set to begin.</summary>
         public DateTimeTimeZone ScheduledStartTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(ScheduledStartTime)); }
-            set { BackingStore?.Set(nameof(ScheduledStartTime), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("scheduledStartTime"); }
+            set { BackingStore?.Set("scheduledStartTime", value); }
         }
         /// <summary>
         /// Instantiates a new automaticRepliesMailTips and sets the default values.

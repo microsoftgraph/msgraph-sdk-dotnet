@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class VerifiedPublisher : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The timestamp when the verified publisher was first added or most recently updated.</summary>
         public DateTimeOffset? AddedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AddedDateTime)); }
-            set { BackingStore?.Set(nameof(AddedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("addedDateTime"); }
+            set { BackingStore?.Set("addedDateTime", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The verified publisher name from the app publisher&apos;s Microsoft Partner Network (MPN) account.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The ID of the verified publisher from the app publisher&apos;s Partner Center account.</summary>
         public string VerifiedPublisherId {
-            get { return BackingStore?.Get<string>(nameof(VerifiedPublisherId)); }
-            set { BackingStore?.Set(nameof(VerifiedPublisherId), value); }
+            get { return BackingStore?.Get<string>("verifiedPublisherId"); }
+            set { BackingStore?.Set("verifiedPublisherId", value); }
         }
         /// <summary>
         /// Instantiates a new verifiedPublisher and sets the default values.

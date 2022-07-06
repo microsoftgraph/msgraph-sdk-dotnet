@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class ScoredEmailAddress : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The email address.</summary>
         public string Address {
-            get { return BackingStore?.Get<string>(nameof(Address)); }
-            set { BackingStore?.Set(nameof(Address), value); }
+            get { return BackingStore?.Get<string>("address"); }
+            set { BackingStore?.Set("address", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The itemId property</summary>
         public string ItemId {
-            get { return BackingStore?.Get<string>(nameof(ItemId)); }
-            set { BackingStore?.Set(nameof(ItemId), value); }
+            get { return BackingStore?.Get<string>("itemId"); }
+            set { BackingStore?.Set("itemId", value); }
         }
         /// <summary>The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.</summary>
         public double? RelevanceScore {
-            get { return BackingStore?.Get<double?>(nameof(RelevanceScore)); }
-            set { BackingStore?.Set(nameof(RelevanceScore), value); }
+            get { return BackingStore?.Get<double?>("relevanceScore"); }
+            set { BackingStore?.Set("relevanceScore", value); }
         }
         /// <summary>The selectionLikelihood property</summary>
         public SelectionLikelihoodInfo? SelectionLikelihood {
-            get { return BackingStore?.Get<SelectionLikelihoodInfo?>(nameof(SelectionLikelihood)); }
-            set { BackingStore?.Set(nameof(SelectionLikelihood), value); }
+            get { return BackingStore?.Get<SelectionLikelihoodInfo?>("selectionLikelihood"); }
+            set { BackingStore?.Set("selectionLikelihood", value); }
         }
         /// <summary>
         /// Instantiates a new scoredEmailAddress and sets the default values.

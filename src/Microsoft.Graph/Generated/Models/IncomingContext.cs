@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class IncomingContext : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The id of the participant that is under observation. Read-only.</summary>
         public string ObservedParticipantId {
-            get { return BackingStore?.Get<string>(nameof(ObservedParticipantId)); }
-            set { BackingStore?.Set(nameof(ObservedParticipantId), value); }
+            get { return BackingStore?.Get<string>("observedParticipantId"); }
+            set { BackingStore?.Set("observedParticipantId", value); }
         }
         /// <summary>The identity that the call is happening on behalf of.</summary>
         public IdentitySet OnBehalfOf {
-            get { return BackingStore?.Get<IdentitySet>(nameof(OnBehalfOf)); }
-            set { BackingStore?.Set(nameof(OnBehalfOf), value); }
+            get { return BackingStore?.Get<IdentitySet>("onBehalfOf"); }
+            set { BackingStore?.Set("onBehalfOf", value); }
         }
         /// <summary>The id of the participant that triggered the incoming call. Read-only.</summary>
         public string SourceParticipantId {
-            get { return BackingStore?.Get<string>(nameof(SourceParticipantId)); }
-            set { BackingStore?.Set(nameof(SourceParticipantId), value); }
+            get { return BackingStore?.Get<string>("sourceParticipantId"); }
+            set { BackingStore?.Set("sourceParticipantId", value); }
         }
         /// <summary>The identity that transferred the call.</summary>
         public IdentitySet Transferor {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Transferor)); }
-            set { BackingStore?.Set(nameof(Transferor), value); }
+            get { return BackingStore?.Get<IdentitySet>("transferor"); }
+            set { BackingStore?.Set("transferor", value); }
         }
         /// <summary>
         /// Instantiates a new incomingContext and sets the default values.

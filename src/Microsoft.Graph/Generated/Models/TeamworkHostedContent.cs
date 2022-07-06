@@ -1,20 +1,26 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class TeamworkHostedContent : Entity, IParsable {
         /// <summary>Write only. Bytes for the hosted content (such as images).</summary>
         public byte[] ContentBytes {
-            get { return BackingStore?.Get<byte[]>(nameof(ContentBytes)); }
-            set { BackingStore?.Set(nameof(ContentBytes), value); }
+            get { return BackingStore?.Get<byte[]>("contentBytes"); }
+            set { BackingStore?.Set("contentBytes", value); }
         }
         /// <summary>Write only. Content type, such as image/png, image/jpg.</summary>
         public string ContentType {
-            get { return BackingStore?.Get<string>(nameof(ContentType)); }
-            set { BackingStore?.Set(nameof(ContentType), value); }
+            get { return BackingStore?.Get<string>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,6 +42,7 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"contentBytes", n => { ContentBytes = n.GetByteArrayValue(); } },
                 {"contentType", n => { ContentType = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -47,6 +54,7 @@ namespace Microsoft.Graph.Models {
             base.Serialize(writer);
             writer.WriteByteArrayValue("contentBytes", ContentBytes);
             writer.WriteStringValue("contentType", ContentType);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

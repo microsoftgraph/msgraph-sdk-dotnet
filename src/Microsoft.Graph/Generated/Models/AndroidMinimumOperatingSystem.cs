@@ -9,60 +9,60 @@ namespace Microsoft.Graph.Models {
     public class AndroidMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Version 10.0 or later.</summary>
         public bool? V10_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_0)); }
-            set { BackingStore?.Set(nameof(V10_0), value); }
+            get { return BackingStore?.Get<bool?>("v10_0"); }
+            set { BackingStore?.Set("v10_0", value); }
         }
         /// <summary>Version 11.0 or later.</summary>
         public bool? V11_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V11_0)); }
-            set { BackingStore?.Set(nameof(V11_0), value); }
+            get { return BackingStore?.Get<bool?>("v11_0"); }
+            set { BackingStore?.Set("v11_0", value); }
         }
         /// <summary>Version 4.0 or later.</summary>
         public bool? V4_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V4_0)); }
-            set { BackingStore?.Set(nameof(V4_0), value); }
+            get { return BackingStore?.Get<bool?>("v4_0"); }
+            set { BackingStore?.Set("v4_0", value); }
         }
         /// <summary>Version 4.0.3 or later.</summary>
         public bool? V4_0_3 {
-            get { return BackingStore?.Get<bool?>(nameof(V4_0_3)); }
-            set { BackingStore?.Set(nameof(V4_0_3), value); }
+            get { return BackingStore?.Get<bool?>("v4_0_3"); }
+            set { BackingStore?.Set("v4_0_3", value); }
         }
         /// <summary>Version 4.1 or later.</summary>
         public bool? V4_1 {
-            get { return BackingStore?.Get<bool?>(nameof(V4_1)); }
-            set { BackingStore?.Set(nameof(V4_1), value); }
+            get { return BackingStore?.Get<bool?>("v4_1"); }
+            set { BackingStore?.Set("v4_1", value); }
         }
         /// <summary>Version 4.2 or later.</summary>
         public bool? V4_2 {
-            get { return BackingStore?.Get<bool?>(nameof(V4_2)); }
-            set { BackingStore?.Set(nameof(V4_2), value); }
+            get { return BackingStore?.Get<bool?>("v4_2"); }
+            set { BackingStore?.Set("v4_2", value); }
         }
         /// <summary>Version 4.3 or later.</summary>
         public bool? V4_3 {
-            get { return BackingStore?.Get<bool?>(nameof(V4_3)); }
-            set { BackingStore?.Set(nameof(V4_3), value); }
+            get { return BackingStore?.Get<bool?>("v4_3"); }
+            set { BackingStore?.Set("v4_3", value); }
         }
         /// <summary>Version 4.4 or later.</summary>
         public bool? V4_4 {
-            get { return BackingStore?.Get<bool?>(nameof(V4_4)); }
-            set { BackingStore?.Set(nameof(V4_4), value); }
+            get { return BackingStore?.Get<bool?>("v4_4"); }
+            set { BackingStore?.Set("v4_4", value); }
         }
         /// <summary>Version 5.0 or later.</summary>
         public bool? V5_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V5_0)); }
-            set { BackingStore?.Set(nameof(V5_0), value); }
+            get { return BackingStore?.Get<bool?>("v5_0"); }
+            set { BackingStore?.Set("v5_0", value); }
         }
         /// <summary>Version 5.1 or later.</summary>
         public bool? V5_1 {
-            get { return BackingStore?.Get<bool?>(nameof(V5_1)); }
-            set { BackingStore?.Set(nameof(V5_1), value); }
+            get { return BackingStore?.Get<bool?>("v5_1"); }
+            set { BackingStore?.Set("v5_1", value); }
         }
         /// <summary>
         /// Instantiates a new androidMinimumOperatingSystem and sets the default values.

@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class FolderView : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The method by which the folder should be sorted.</summary>
         public string SortBy {
-            get { return BackingStore?.Get<string>(nameof(SortBy)); }
-            set { BackingStore?.Set(nameof(SortBy), value); }
+            get { return BackingStore?.Get<string>("sortBy"); }
+            set { BackingStore?.Set("sortBy", value); }
         }
         /// <summary>If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending.</summary>
         public string SortOrder {
-            get { return BackingStore?.Get<string>(nameof(SortOrder)); }
-            set { BackingStore?.Set(nameof(SortOrder), value); }
+            get { return BackingStore?.Get<string>("sortOrder"); }
+            set { BackingStore?.Set("sortOrder", value); }
         }
         /// <summary>The type of view that should be used to represent the folder.</summary>
         public string ViewType {
-            get { return BackingStore?.Get<string>(nameof(ViewType)); }
-            set { BackingStore?.Set(nameof(ViewType), value); }
+            get { return BackingStore?.Get<string>("viewType"); }
+            set { BackingStore?.Set("viewType", value); }
         }
         /// <summary>
         /// Instantiates a new folderView and sets the default values.

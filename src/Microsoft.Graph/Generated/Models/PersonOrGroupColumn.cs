@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class PersonOrGroupColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Indicates whether multiple values can be selected from the source.</summary>
         public bool? AllowMultipleSelection {
-            get { return BackingStore?.Get<bool?>(nameof(AllowMultipleSelection)); }
-            set { BackingStore?.Set(nameof(AllowMultipleSelection), value); }
+            get { return BackingStore?.Get<bool?>("allowMultipleSelection"); }
+            set { BackingStore?.Set("allowMultipleSelection", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.</summary>
         public string ChooseFromType {
-            get { return BackingStore?.Get<string>(nameof(ChooseFromType)); }
-            set { BackingStore?.Set(nameof(ChooseFromType), value); }
+            get { return BackingStore?.Get<string>("chooseFromType"); }
+            set { BackingStore?.Set("chooseFromType", value); }
         }
         /// <summary>How to display the information about the person or group chosen. See below.</summary>
         public string DisplayAs {
-            get { return BackingStore?.Get<string>(nameof(DisplayAs)); }
-            set { BackingStore?.Set(nameof(DisplayAs), value); }
+            get { return BackingStore?.Get<string>("displayAs"); }
+            set { BackingStore?.Set("displayAs", value); }
         }
         /// <summary>
         /// Instantiates a new personOrGroupColumn and sets the default values.

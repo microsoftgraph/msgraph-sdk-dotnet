@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class ServiceUpdateMessageViewpoint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the user archived the message.</summary>
         public bool? IsArchived {
-            get { return BackingStore?.Get<bool?>(nameof(IsArchived)); }
-            set { BackingStore?.Set(nameof(IsArchived), value); }
+            get { return BackingStore?.Get<bool?>("isArchived"); }
+            set { BackingStore?.Set("isArchived", value); }
         }
         /// <summary>Indicates whether the user marked the message as favorite.</summary>
         public bool? IsFavorited {
-            get { return BackingStore?.Get<bool?>(nameof(IsFavorited)); }
-            set { BackingStore?.Set(nameof(IsFavorited), value); }
+            get { return BackingStore?.Get<bool?>("isFavorited"); }
+            set { BackingStore?.Set("isFavorited", value); }
         }
         /// <summary>Indicates whether the user read the message.</summary>
         public bool? IsRead {
-            get { return BackingStore?.Get<bool?>(nameof(IsRead)); }
-            set { BackingStore?.Set(nameof(IsRead), value); }
+            get { return BackingStore?.Get<bool?>("isRead"); }
+            set { BackingStore?.Set("isRead", value); }
         }
         /// <summary>
         /// Instantiates a new serviceUpdateMessageViewpoint and sets the default values.

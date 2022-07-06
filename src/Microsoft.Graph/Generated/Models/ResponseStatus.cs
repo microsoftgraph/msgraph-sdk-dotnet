@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class ResponseStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The response type. Possible values are: none, organizer, tentativelyAccepted, accepted, declined, notResponded.To differentiate between none and notResponded:  none – from organizer&apos;s perspective. This value is used when the status of an attendee/participant is reported to the organizer of a meeting.  notResponded – from attendde&apos;s perspective. Indicates the attendee has not responded to the meeting request.  Clients can treat notResponded == none.  As an example, if attendee Alex hasn&apos;t responded to a meeting request, getting Alex&apos; response status for that event in Alex&apos; calendar returns notResponded. Getting Alex&apos; response from the calendar of any other attendee or the organizer&apos;s returns none. Getting the organizer&apos;s response for the event in anybody&apos;s calendar also returns none.</summary>
         public ResponseType? Response {
-            get { return BackingStore?.Get<ResponseType?>(nameof(Response)); }
-            set { BackingStore?.Set(nameof(Response), value); }
+            get { return BackingStore?.Get<ResponseType?>("response"); }
+            set { BackingStore?.Set("response", value); }
         }
         /// <summary>The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? Time {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(Time)); }
-            set { BackingStore?.Set(nameof(Time), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("time"); }
+            set { BackingStore?.Set("time", value); }
         }
         /// <summary>
         /// Instantiates a new responseStatus and sets the default values.

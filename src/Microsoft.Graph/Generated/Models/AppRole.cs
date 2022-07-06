@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Models {
     public class AppRole : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Specifies whether this app role can be assigned to users and groups (by setting to [&apos;User&apos;]), to other application&apos;s (by setting to [&apos;Application&apos;], or both (by setting to [&apos;User&apos;, &apos;Application&apos;]). App roles supporting assignment to other applications&apos; service principals are also known as application permissions. The &apos;Application&apos; value is only supported for app roles defined on application entities.</summary>
         public List<string> AllowedMemberTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedMemberTypes)); }
-            set { BackingStore?.Set(nameof(AllowedMemberTypes), value); }
+            get { return BackingStore?.Get<List<string>>("allowedMemberTypes"); }
+            set { BackingStore?.Set("allowedMemberTypes", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display name for the permission that appears in the app role assignment and consent experiences.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.</summary>
         public string Origin {
-            get { return BackingStore?.Get<string>(nameof(Origin)); }
-            set { BackingStore?.Set(nameof(Origin), value); }
+            get { return BackingStore?.Get<string>("origin"); }
+            set { BackingStore?.Set("origin", value); }
         }
         /// <summary>Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % &amp; &apos; ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new appRole and sets the default values.

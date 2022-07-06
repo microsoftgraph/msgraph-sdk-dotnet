@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class SigningCertificateUpdateStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.</summary>
         public string CertificateUpdateResult {
-            get { return BackingStore?.Get<string>(nameof(CertificateUpdateResult)); }
-            set { BackingStore?.Set(nameof(CertificateUpdateResult), value); }
+            get { return BackingStore?.Get<string>("certificateUpdateResult"); }
+            set { BackingStore?.Set("certificateUpdateResult", value); }
         }
         /// <summary>Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.</summary>
         public DateTimeOffset? LastRunDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRunDateTime)); }
-            set { BackingStore?.Set(nameof(LastRunDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRunDateTime"); }
+            set { BackingStore?.Set("lastRunDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new signingCertificateUpdateStatus and sets the default values.

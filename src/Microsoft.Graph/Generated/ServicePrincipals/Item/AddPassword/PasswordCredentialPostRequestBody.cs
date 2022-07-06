@@ -10,15 +10,15 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AddPassword {
     public class PasswordCredentialPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The passwordCredential property</summary>
         public Microsoft.Graph.Models.PasswordCredential PasswordCredential {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.PasswordCredential>(nameof(PasswordCredential)); }
-            set { BackingStore?.Set(nameof(PasswordCredential), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PasswordCredential>("passwordCredential"); }
+            set { BackingStore?.Set("passwordCredential", value); }
         }
         /// <summary>
         /// Instantiates a new PasswordCredentialPostRequestBody and sets the default values.

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class EducationPointsOutcome : EducationOutcome, IParsable {
         /// <summary>The numeric grade the teacher has given the student for this assignment.</summary>
         public EducationAssignmentPointsGrade Points {
-            get { return BackingStore?.Get<EducationAssignmentPointsGrade>(nameof(Points)); }
-            set { BackingStore?.Set(nameof(Points), value); }
+            get { return BackingStore?.Get<EducationAssignmentPointsGrade>("points"); }
+            set { BackingStore?.Set("points", value); }
         }
         /// <summary>A copy of the points property that is made when the grade is released to the student.</summary>
         public EducationAssignmentPointsGrade PublishedPoints {
-            get { return BackingStore?.Get<EducationAssignmentPointsGrade>(nameof(PublishedPoints)); }
-            set { BackingStore?.Set(nameof(PublishedPoints), value); }
+            get { return BackingStore?.Get<EducationAssignmentPointsGrade>("publishedPoints"); }
+            set { BackingStore?.Set("publishedPoints", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

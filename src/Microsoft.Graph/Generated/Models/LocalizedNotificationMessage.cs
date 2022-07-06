@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Models {
     public class LocalizedNotificationMessage : Entity, IParsable {
         /// <summary>Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.</summary>
         public bool? IsDefault {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
-            set { BackingStore?.Set(nameof(IsDefault), value); }
+            get { return BackingStore?.Get<bool?>("isDefault"); }
+            set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>DateTime the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The Locale for which this message is destined.</summary>
         public string Locale {
-            get { return BackingStore?.Get<string>(nameof(Locale)); }
-            set { BackingStore?.Set(nameof(Locale), value); }
+            get { return BackingStore?.Get<string>("locale"); }
+            set { BackingStore?.Set("locale", value); }
         }
         /// <summary>The Message Template content.</summary>
         public string MessageTemplate {
-            get { return BackingStore?.Get<string>(nameof(MessageTemplate)); }
-            set { BackingStore?.Set(nameof(MessageTemplate), value); }
+            get { return BackingStore?.Get<string>("messageTemplate"); }
+            set { BackingStore?.Set("messageTemplate", value); }
         }
         /// <summary>The Message Template Subject.</summary>
         public string Subject {
-            get { return BackingStore?.Get<string>(nameof(Subject)); }
-            set { BackingStore?.Set(nameof(Subject), value); }
+            get { return BackingStore?.Get<string>("subject"); }
+            set { BackingStore?.Set("subject", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

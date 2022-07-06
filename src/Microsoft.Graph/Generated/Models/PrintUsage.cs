@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -5,27 +6,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the reportRoot singleton.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class PrintUsage : Entity, IParsable {
         /// <summary>The completedBlackAndWhiteJobCount property</summary>
         public long? CompletedBlackAndWhiteJobCount {
-            get { return BackingStore?.Get<long?>(nameof(CompletedBlackAndWhiteJobCount)); }
-            set { BackingStore?.Set(nameof(CompletedBlackAndWhiteJobCount), value); }
+            get { return BackingStore?.Get<long?>("completedBlackAndWhiteJobCount"); }
+            set { BackingStore?.Set("completedBlackAndWhiteJobCount", value); }
         }
         /// <summary>The completedColorJobCount property</summary>
         public long? CompletedColorJobCount {
-            get { return BackingStore?.Get<long?>(nameof(CompletedColorJobCount)); }
-            set { BackingStore?.Set(nameof(CompletedColorJobCount), value); }
+            get { return BackingStore?.Get<long?>("completedColorJobCount"); }
+            set { BackingStore?.Set("completedColorJobCount", value); }
         }
         /// <summary>The incompleteJobCount property</summary>
         public long? IncompleteJobCount {
-            get { return BackingStore?.Get<long?>(nameof(IncompleteJobCount)); }
-            set { BackingStore?.Set(nameof(IncompleteJobCount), value); }
+            get { return BackingStore?.Get<long?>("incompleteJobCount"); }
+            set { BackingStore?.Set("incompleteJobCount", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>The usageDate property</summary>
         public Date? UsageDate {
-            get { return BackingStore?.Get<Date?>(nameof(UsageDate)); }
-            set { BackingStore?.Set(nameof(UsageDate), value); }
+            get { return BackingStore?.Get<Date?>("usageDate"); }
+            set { BackingStore?.Set("usageDate", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Models {
                 {"completedBlackAndWhiteJobCount", n => { CompletedBlackAndWhiteJobCount = n.GetLongValue(); } },
                 {"completedColorJobCount", n => { CompletedColorJobCount = n.GetLongValue(); } },
                 {"incompleteJobCount", n => { IncompleteJobCount = n.GetLongValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
                 {"usageDate", n => { UsageDate = n.GetDateValue(); } },
             };
         }
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteLongValue("completedBlackAndWhiteJobCount", CompletedBlackAndWhiteJobCount);
             writer.WriteLongValue("completedColorJobCount", CompletedColorJobCount);
             writer.WriteLongValue("incompleteJobCount", IncompleteJobCount);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteDateValue("usageDate", UsageDate);
         }
     }

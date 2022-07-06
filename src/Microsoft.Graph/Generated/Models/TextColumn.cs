@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class TextColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Whether to allow multiple lines of text.</summary>
         public bool? AllowMultipleLines {
-            get { return BackingStore?.Get<bool?>(nameof(AllowMultipleLines)); }
-            set { BackingStore?.Set(nameof(AllowMultipleLines), value); }
+            get { return BackingStore?.Get<bool?>("allowMultipleLines"); }
+            set { BackingStore?.Set("allowMultipleLines", value); }
         }
         /// <summary>Whether updates to this column should replace existing text, or append to it.</summary>
         public bool? AppendChangesToExistingText {
-            get { return BackingStore?.Get<bool?>(nameof(AppendChangesToExistingText)); }
-            set { BackingStore?.Set(nameof(AppendChangesToExistingText), value); }
+            get { return BackingStore?.Get<bool?>("appendChangesToExistingText"); }
+            set { BackingStore?.Set("appendChangesToExistingText", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The size of the text box.</summary>
         public int? LinesForEditing {
-            get { return BackingStore?.Get<int?>(nameof(LinesForEditing)); }
-            set { BackingStore?.Set(nameof(LinesForEditing), value); }
+            get { return BackingStore?.Get<int?>("linesForEditing"); }
+            set { BackingStore?.Set("linesForEditing", value); }
         }
         /// <summary>The maximum number of characters for the value.</summary>
         public int? MaxLength {
-            get { return BackingStore?.Get<int?>(nameof(MaxLength)); }
-            set { BackingStore?.Set(nameof(MaxLength), value); }
+            get { return BackingStore?.Get<int?>("maxLength"); }
+            set { BackingStore?.Set("maxLength", value); }
         }
         /// <summary>The type of text being stored. Must be one of plain or richText</summary>
         public string TextType {
-            get { return BackingStore?.Get<string>(nameof(TextType)); }
-            set { BackingStore?.Set(nameof(TextType), value); }
+            get { return BackingStore?.Get<string>("textType"); }
+            set { BackingStore?.Set("textType", value); }
         }
         /// <summary>
         /// Instantiates a new textColumn and sets the default values.

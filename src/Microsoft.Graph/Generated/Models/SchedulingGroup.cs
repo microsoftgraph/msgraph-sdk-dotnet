@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Models {
     public class SchedulingGroup : ChangeTrackedEntity, IParsable {
         /// <summary>The display name for the schedulingGroup. Required.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.</summary>
         public bool? IsActive {
-            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
-            set { BackingStore?.Set(nameof(IsActive), value); }
+            get { return BackingStore?.Get<bool?>("isActive"); }
+            set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>The list of user IDs that are a member of the schedulingGroup. Required.</summary>
         public List<string> UserIds {
-            get { return BackingStore?.Get<List<string>>(nameof(UserIds)); }
-            set { BackingStore?.Set(nameof(UserIds), value); }
+            get { return BackingStore?.Get<List<string>>("userIds"); }
+            set { BackingStore?.Set("userIds", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

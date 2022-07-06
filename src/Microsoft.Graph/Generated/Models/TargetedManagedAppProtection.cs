@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -7,13 +8,18 @@ namespace Microsoft.Graph.Models {
     public class TargetedManagedAppProtection : ManagedAppProtection, IParsable {
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
         public List<TargetedManagedAppPolicyAssignment> Assignments {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Indicates if the policy is deployed to any inclusion groups or not.</summary>
         public bool? IsAssigned {
-            get { return BackingStore?.Get<bool?>(nameof(IsAssigned)); }
-            set { BackingStore?.Set(nameof(IsAssigned), value); }
+            get { return BackingStore?.Get<bool?>("isAssigned"); }
+            set { BackingStore?.Set("isAssigned", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,6 +42,7 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -47,6 +54,7 @@ namespace Microsoft.Graph.Models {
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>("assignments", Assignments);
             writer.WriteBoolValue("isAssigned", IsAssigned);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

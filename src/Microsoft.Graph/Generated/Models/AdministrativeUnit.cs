@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Models {
     public class AdministrativeUnit : DirectoryObject, IParsable {
         /// <summary>An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The collection of open extensions defined for this administrative unit. Nullable.</summary>
         public List<Extension> Extensions {
-            get { return BackingStore?.Get<List<Extension>>(nameof(Extensions)); }
-            set { BackingStore?.Set(nameof(Extensions), value); }
+            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
         }
         /// <summary>Users and groups that are members of this administrative unit. Supports $expand.</summary>
         public List<DirectoryObject> Members {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>Scoped-role members of this administrative unit.</summary>
         public List<ScopedRoleMembership> ScopedRoleMembers {
-            get { return BackingStore?.Get<List<ScopedRoleMembership>>(nameof(ScopedRoleMembers)); }
-            set { BackingStore?.Set(nameof(ScopedRoleMembers), value); }
+            get { return BackingStore?.Get<List<ScopedRoleMembership>>("scopedRoleMembers"); }
+            set { BackingStore?.Set("scopedRoleMembers", value); }
         }
-        /// <summary>Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.</summary>
+        /// <summary>Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.</summary>
         public string Visibility {
-            get { return BackingStore?.Get<string>(nameof(Visibility)); }
-            set { BackingStore?.Set(nameof(Visibility), value); }
+            get { return BackingStore?.Get<string>("visibility"); }
+            set { BackingStore?.Set("visibility", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

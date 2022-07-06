@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class RubricQualitySelectedColumnModel : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>ID of the selected level for this quality.</summary>
         public string ColumnId {
-            get { return BackingStore?.Get<string>(nameof(ColumnId)); }
-            set { BackingStore?.Set(nameof(ColumnId), value); }
+            get { return BackingStore?.Get<string>("columnId"); }
+            set { BackingStore?.Set("columnId", value); }
         }
         /// <summary>ID of the associated quality.</summary>
         public string QualityId {
-            get { return BackingStore?.Get<string>(nameof(QualityId)); }
-            set { BackingStore?.Set(nameof(QualityId), value); }
+            get { return BackingStore?.Get<string>("qualityId"); }
+            set { BackingStore?.Set("qualityId", value); }
         }
         /// <summary>
         /// Instantiates a new rubricQualitySelectedColumnModel and sets the default values.

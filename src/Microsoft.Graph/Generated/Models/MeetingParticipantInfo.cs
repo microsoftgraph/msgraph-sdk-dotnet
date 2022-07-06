@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class MeetingParticipantInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identity information of the participant.</summary>
         public IdentitySet Identity {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Identity)); }
-            set { BackingStore?.Set(nameof(Identity), value); }
+            get { return BackingStore?.Get<IdentitySet>("identity"); }
+            set { BackingStore?.Set("identity", value); }
         }
         /// <summary>Specifies the participant&apos;s role in the meeting.</summary>
         public OnlineMeetingRole? Role {
-            get { return BackingStore?.Get<OnlineMeetingRole?>(nameof(Role)); }
-            set { BackingStore?.Set(nameof(Role), value); }
+            get { return BackingStore?.Get<OnlineMeetingRole?>("role"); }
+            set { BackingStore?.Set("role", value); }
         }
         /// <summary>User principal name of the participant.</summary>
         public string Upn {
-            get { return BackingStore?.Get<string>(nameof(Upn)); }
-            set { BackingStore?.Set(nameof(Upn), value); }
+            get { return BackingStore?.Get<string>("upn"); }
+            set { BackingStore?.Set("upn", value); }
         }
         /// <summary>
         /// Instantiates a new meetingParticipantInfo and sets the default values.

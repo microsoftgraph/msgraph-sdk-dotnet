@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the informationProtection singleton.</summary>
     public class InformationProtection : Entity, IParsable {
         /// <summary>The bitlocker property</summary>
         public Microsoft.Graph.Models.Bitlocker Bitlocker {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Bitlocker>(nameof(Bitlocker)); }
-            set { BackingStore?.Set(nameof(Bitlocker), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Bitlocker>("bitlocker"); }
+            set { BackingStore?.Set("bitlocker", value); }
         }
         /// <summary>The threatAssessmentRequests property</summary>
         public List<ThreatAssessmentRequest> ThreatAssessmentRequests {
-            get { return BackingStore?.Get<List<ThreatAssessmentRequest>>(nameof(ThreatAssessmentRequests)); }
-            set { BackingStore?.Set(nameof(ThreatAssessmentRequests), value); }
+            get { return BackingStore?.Get<List<ThreatAssessmentRequest>>("threatAssessmentRequests"); }
+            set { BackingStore?.Set("threatAssessmentRequests", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

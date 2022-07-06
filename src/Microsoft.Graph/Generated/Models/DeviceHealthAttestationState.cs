@@ -8,170 +8,170 @@ namespace Microsoft.Graph.Models {
     public class DeviceHealthAttestationState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>TWhen an Attestation Identity Key (AIK) is present on a device, it indicates that the device has an endorsement key (EK) certificate.</summary>
         public string AttestationIdentityKey {
-            get { return BackingStore?.Get<string>(nameof(AttestationIdentityKey)); }
-            set { BackingStore?.Set(nameof(AttestationIdentityKey), value); }
+            get { return BackingStore?.Get<string>("attestationIdentityKey"); }
+            set { BackingStore?.Set("attestationIdentityKey", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>On or Off of BitLocker Drive Encryption</summary>
         public string BitLockerStatus {
-            get { return BackingStore?.Get<string>(nameof(BitLockerStatus)); }
-            set { BackingStore?.Set(nameof(BitLockerStatus), value); }
+            get { return BackingStore?.Get<string>("bitLockerStatus"); }
+            set { BackingStore?.Set("bitLockerStatus", value); }
         }
         /// <summary>The security version number of the Boot Application</summary>
         public string BootAppSecurityVersion {
-            get { return BackingStore?.Get<string>(nameof(BootAppSecurityVersion)); }
-            set { BackingStore?.Set(nameof(BootAppSecurityVersion), value); }
+            get { return BackingStore?.Get<string>("bootAppSecurityVersion"); }
+            set { BackingStore?.Set("bootAppSecurityVersion", value); }
         }
         /// <summary>When bootDebugging is enabled, the device is used in development and testing</summary>
         public string BootDebugging {
-            get { return BackingStore?.Get<string>(nameof(BootDebugging)); }
-            set { BackingStore?.Set(nameof(BootDebugging), value); }
+            get { return BackingStore?.Get<string>("bootDebugging"); }
+            set { BackingStore?.Set("bootDebugging", value); }
         }
         /// <summary>The security version number of the Boot Application</summary>
         public string BootManagerSecurityVersion {
-            get { return BackingStore?.Get<string>(nameof(BootManagerSecurityVersion)); }
-            set { BackingStore?.Set(nameof(BootManagerSecurityVersion), value); }
+            get { return BackingStore?.Get<string>("bootManagerSecurityVersion"); }
+            set { BackingStore?.Set("bootManagerSecurityVersion", value); }
         }
         /// <summary>The version of the Boot Manager</summary>
         public string BootManagerVersion {
-            get { return BackingStore?.Get<string>(nameof(BootManagerVersion)); }
-            set { BackingStore?.Set(nameof(BootManagerVersion), value); }
+            get { return BackingStore?.Get<string>("bootManagerVersion"); }
+            set { BackingStore?.Set("bootManagerVersion", value); }
         }
         /// <summary>The Boot Revision List that was loaded during initial boot on the attested device</summary>
         public string BootRevisionListInfo {
-            get { return BackingStore?.Get<string>(nameof(BootRevisionListInfo)); }
-            set { BackingStore?.Set(nameof(BootRevisionListInfo), value); }
+            get { return BackingStore?.Get<string>("bootRevisionListInfo"); }
+            set { BackingStore?.Set("bootRevisionListInfo", value); }
         }
         /// <summary>When code integrity is enabled, code execution is restricted to integrity verified code</summary>
         public string CodeIntegrity {
-            get { return BackingStore?.Get<string>(nameof(CodeIntegrity)); }
-            set { BackingStore?.Set(nameof(CodeIntegrity), value); }
+            get { return BackingStore?.Get<string>("codeIntegrity"); }
+            set { BackingStore?.Set("codeIntegrity", value); }
         }
         /// <summary>The version of the Boot Manager</summary>
         public string CodeIntegrityCheckVersion {
-            get { return BackingStore?.Get<string>(nameof(CodeIntegrityCheckVersion)); }
-            set { BackingStore?.Set(nameof(CodeIntegrityCheckVersion), value); }
+            get { return BackingStore?.Get<string>("codeIntegrityCheckVersion"); }
+            set { BackingStore?.Set("codeIntegrityCheckVersion", value); }
         }
         /// <summary>The Code Integrity policy that is controlling the security of the boot environment</summary>
         public string CodeIntegrityPolicy {
-            get { return BackingStore?.Get<string>(nameof(CodeIntegrityPolicy)); }
-            set { BackingStore?.Set(nameof(CodeIntegrityPolicy), value); }
+            get { return BackingStore?.Get<string>("codeIntegrityPolicy"); }
+            set { BackingStore?.Set("codeIntegrityPolicy", value); }
         }
         /// <summary>The DHA report version. (Namespace version)</summary>
         public string ContentNamespaceUrl {
-            get { return BackingStore?.Get<string>(nameof(ContentNamespaceUrl)); }
-            set { BackingStore?.Set(nameof(ContentNamespaceUrl), value); }
+            get { return BackingStore?.Get<string>("contentNamespaceUrl"); }
+            set { BackingStore?.Set("contentNamespaceUrl", value); }
         }
         /// <summary>The HealthAttestation state schema version</summary>
         public string ContentVersion {
-            get { return BackingStore?.Get<string>(nameof(ContentVersion)); }
-            set { BackingStore?.Set(nameof(ContentVersion), value); }
+            get { return BackingStore?.Get<string>("contentVersion"); }
+            set { BackingStore?.Set("contentVersion", value); }
         }
         /// <summary>DEP Policy defines a set of hardware and software technologies that perform additional checks on memory</summary>
         public string DataExcutionPolicy {
-            get { return BackingStore?.Get<string>(nameof(DataExcutionPolicy)); }
-            set { BackingStore?.Set(nameof(DataExcutionPolicy), value); }
+            get { return BackingStore?.Get<string>("dataExcutionPolicy"); }
+            set { BackingStore?.Set("dataExcutionPolicy", value); }
         }
         /// <summary>The DHA report version. (Namespace version)</summary>
         public string DeviceHealthAttestationStatus {
-            get { return BackingStore?.Get<string>(nameof(DeviceHealthAttestationStatus)); }
-            set { BackingStore?.Set(nameof(DeviceHealthAttestationStatus), value); }
+            get { return BackingStore?.Get<string>("deviceHealthAttestationStatus"); }
+            set { BackingStore?.Set("deviceHealthAttestationStatus", value); }
         }
         /// <summary>ELAM provides protection for the computers in your network when they start up</summary>
         public string EarlyLaunchAntiMalwareDriverProtection {
-            get { return BackingStore?.Get<string>(nameof(EarlyLaunchAntiMalwareDriverProtection)); }
-            set { BackingStore?.Set(nameof(EarlyLaunchAntiMalwareDriverProtection), value); }
+            get { return BackingStore?.Get<string>("earlyLaunchAntiMalwareDriverProtection"); }
+            set { BackingStore?.Set("earlyLaunchAntiMalwareDriverProtection", value); }
         }
         /// <summary>This attribute indicates if DHA is supported for the device</summary>
         public string HealthAttestationSupportedStatus {
-            get { return BackingStore?.Get<string>(nameof(HealthAttestationSupportedStatus)); }
-            set { BackingStore?.Set(nameof(HealthAttestationSupportedStatus), value); }
+            get { return BackingStore?.Get<string>("healthAttestationSupportedStatus"); }
+            set { BackingStore?.Set("healthAttestationSupportedStatus", value); }
         }
         /// <summary>This attribute appears if DHA-Service detects an integrity issue</summary>
         public string HealthStatusMismatchInfo {
-            get { return BackingStore?.Get<string>(nameof(HealthStatusMismatchInfo)); }
-            set { BackingStore?.Set(nameof(HealthStatusMismatchInfo), value); }
+            get { return BackingStore?.Get<string>("healthStatusMismatchInfo"); }
+            set { BackingStore?.Set("healthStatusMismatchInfo", value); }
         }
         /// <summary>The DateTime when device was evaluated or issued to MDM</summary>
         public DateTimeOffset? IssuedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(IssuedDateTime)); }
-            set { BackingStore?.Set(nameof(IssuedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("issuedDateTime"); }
+            set { BackingStore?.Set("issuedDateTime", value); }
         }
         /// <summary>The Timestamp of the last update.</summary>
         public string LastUpdateDateTime {
-            get { return BackingStore?.Get<string>(nameof(LastUpdateDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdateDateTime), value); }
+            get { return BackingStore?.Get<string>("lastUpdateDateTime"); }
+            set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
         /// <summary>When operatingSystemKernelDebugging is enabled, the device is used in development and testing</summary>
         public string OperatingSystemKernelDebugging {
-            get { return BackingStore?.Get<string>(nameof(OperatingSystemKernelDebugging)); }
-            set { BackingStore?.Set(nameof(OperatingSystemKernelDebugging), value); }
+            get { return BackingStore?.Get<string>("operatingSystemKernelDebugging"); }
+            set { BackingStore?.Set("operatingSystemKernelDebugging", value); }
         }
         /// <summary>The Operating System Revision List that was loaded during initial boot on the attested device</summary>
         public string OperatingSystemRevListInfo {
-            get { return BackingStore?.Get<string>(nameof(OperatingSystemRevListInfo)); }
-            set { BackingStore?.Set(nameof(OperatingSystemRevListInfo), value); }
+            get { return BackingStore?.Get<string>("operatingSystemRevListInfo"); }
+            set { BackingStore?.Set("operatingSystemRevListInfo", value); }
         }
         /// <summary>The measurement that is captured in PCR[0]</summary>
         public string Pcr0 {
-            get { return BackingStore?.Get<string>(nameof(Pcr0)); }
-            set { BackingStore?.Set(nameof(Pcr0), value); }
+            get { return BackingStore?.Get<string>("pcr0"); }
+            set { BackingStore?.Set("pcr0", value); }
         }
         /// <summary>Informational attribute that identifies the HASH algorithm that was used by TPM</summary>
         public string PcrHashAlgorithm {
-            get { return BackingStore?.Get<string>(nameof(PcrHashAlgorithm)); }
-            set { BackingStore?.Set(nameof(PcrHashAlgorithm), value); }
+            get { return BackingStore?.Get<string>("pcrHashAlgorithm"); }
+            set { BackingStore?.Set("pcrHashAlgorithm", value); }
         }
         /// <summary>The number of times a PC device has hibernated or resumed</summary>
         public long? ResetCount {
-            get { return BackingStore?.Get<long?>(nameof(ResetCount)); }
-            set { BackingStore?.Set(nameof(ResetCount), value); }
+            get { return BackingStore?.Get<long?>("resetCount"); }
+            set { BackingStore?.Set("resetCount", value); }
         }
         /// <summary>The number of times a PC device has rebooted</summary>
         public long? RestartCount {
-            get { return BackingStore?.Get<long?>(nameof(RestartCount)); }
-            set { BackingStore?.Set(nameof(RestartCount), value); }
+            get { return BackingStore?.Get<long?>("restartCount"); }
+            set { BackingStore?.Set("restartCount", value); }
         }
         /// <summary>Safe mode is a troubleshooting option for Windows that starts your computer in a limited state</summary>
         public string SafeMode {
-            get { return BackingStore?.Get<string>(nameof(SafeMode)); }
-            set { BackingStore?.Set(nameof(SafeMode), value); }
+            get { return BackingStore?.Get<string>("safeMode"); }
+            set { BackingStore?.Set("safeMode", value); }
         }
         /// <summary>When Secure Boot is enabled, the core components must have the correct cryptographic signatures</summary>
         public string SecureBoot {
-            get { return BackingStore?.Get<string>(nameof(SecureBoot)); }
-            set { BackingStore?.Set(nameof(SecureBoot), value); }
+            get { return BackingStore?.Get<string>("secureBoot"); }
+            set { BackingStore?.Set("secureBoot", value); }
         }
         /// <summary>Fingerprint of the Custom Secure Boot Configuration Policy</summary>
         public string SecureBootConfigurationPolicyFingerPrint {
-            get { return BackingStore?.Get<string>(nameof(SecureBootConfigurationPolicyFingerPrint)); }
-            set { BackingStore?.Set(nameof(SecureBootConfigurationPolicyFingerPrint), value); }
+            get { return BackingStore?.Get<string>("secureBootConfigurationPolicyFingerPrint"); }
+            set { BackingStore?.Set("secureBootConfigurationPolicyFingerPrint", value); }
         }
         /// <summary>When test signing is allowed, the device does not enforce signature validation during boot</summary>
         public string TestSigning {
-            get { return BackingStore?.Get<string>(nameof(TestSigning)); }
-            set { BackingStore?.Set(nameof(TestSigning), value); }
+            get { return BackingStore?.Get<string>("testSigning"); }
+            set { BackingStore?.Set("testSigning", value); }
         }
         /// <summary>The security version number of the Boot Application</summary>
         public string TpmVersion {
-            get { return BackingStore?.Get<string>(nameof(TpmVersion)); }
-            set { BackingStore?.Set(nameof(TpmVersion), value); }
+            get { return BackingStore?.Get<string>("tpmVersion"); }
+            set { BackingStore?.Set("tpmVersion", value); }
         }
         /// <summary>VSM is a container that protects high value assets from a compromised kernel</summary>
         public string VirtualSecureMode {
-            get { return BackingStore?.Get<string>(nameof(VirtualSecureMode)); }
-            set { BackingStore?.Set(nameof(VirtualSecureMode), value); }
+            get { return BackingStore?.Get<string>("virtualSecureMode"); }
+            set { BackingStore?.Set("virtualSecureMode", value); }
         }
         /// <summary>Operating system running with limited services that is used to prepare a computer for Windows</summary>
         public string WindowsPE {
-            get { return BackingStore?.Get<string>(nameof(WindowsPE)); }
-            set { BackingStore?.Set(nameof(WindowsPE), value); }
+            get { return BackingStore?.Get<string>("windowsPE"); }
+            set { BackingStore?.Set("windowsPE", value); }
         }
         /// <summary>
         /// Instantiates a new deviceHealthAttestationState and sets the default values.

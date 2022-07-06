@@ -8,8 +8,8 @@ namespace Microsoft.Graph.Models {
     public class DeviceManagementReports : Entity, IParsable {
         /// <summary>Entity representing a job to export a report</summary>
         public List<DeviceManagementExportJob> ExportJobs {
-            get { return BackingStore?.Get<List<DeviceManagementExportJob>>(nameof(ExportJobs)); }
-            set { BackingStore?.Set(nameof(ExportJobs), value); }
+            get { return BackingStore?.Get<List<DeviceManagementExportJob>>("exportJobs"); }
+            set { BackingStore?.Set("exportJobs", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

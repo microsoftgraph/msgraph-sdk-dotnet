@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Models {
     public class ItemActionStat : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The number of times the action took place. Read-only.</summary>
         public int? ActionCount {
-            get { return BackingStore?.Get<int?>(nameof(ActionCount)); }
-            set { BackingStore?.Set(nameof(ActionCount), value); }
+            get { return BackingStore?.Get<int?>("actionCount"); }
+            set { BackingStore?.Set("actionCount", value); }
         }
         /// <summary>The number of distinct actors that performed the action. Read-only.</summary>
         public int? ActorCount {
-            get { return BackingStore?.Get<int?>(nameof(ActorCount)); }
-            set { BackingStore?.Set(nameof(ActorCount), value); }
+            get { return BackingStore?.Get<int?>("actorCount"); }
+            set { BackingStore?.Set("actorCount", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

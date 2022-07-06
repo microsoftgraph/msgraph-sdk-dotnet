@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Models {
     public class WindowsInformationProtectionDataRecoveryCertificate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Data recovery Certificate</summary>
         public byte[] Certificate {
-            get { return BackingStore?.Get<byte[]>(nameof(Certificate)); }
-            set { BackingStore?.Set(nameof(Certificate), value); }
+            get { return BackingStore?.Get<byte[]>("certificate"); }
+            set { BackingStore?.Set("certificate", value); }
         }
         /// <summary>Data recovery Certificate description</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Data recovery Certificate expiration datetime</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Data recovery Certificate subject name</summary>
         public string SubjectName {
-            get { return BackingStore?.Get<string>(nameof(SubjectName)); }
-            set { BackingStore?.Set(nameof(SubjectName), value); }
+            get { return BackingStore?.Get<string>("subjectName"); }
+            set { BackingStore?.Set("subjectName", value); }
         }
         /// <summary>
         /// Instantiates a new windowsInformationProtectionDataRecoveryCertificate and sets the default values.

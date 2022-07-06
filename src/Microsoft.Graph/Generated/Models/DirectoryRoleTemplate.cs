@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class DirectoryRoleTemplate : DirectoryObject, IParsable {
         /// <summary>The description to set for the directory role. Read-only.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name to set for the directory role. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

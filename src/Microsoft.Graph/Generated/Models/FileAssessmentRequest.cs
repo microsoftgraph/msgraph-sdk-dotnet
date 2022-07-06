@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class FileAssessmentRequest : ThreatAssessmentRequest, IParsable {
         /// <summary>Base64 encoded file content. The file content cannot fetch back because it isn&apos;t stored.</summary>
         public string ContentData {
-            get { return BackingStore?.Get<string>(nameof(ContentData)); }
-            set { BackingStore?.Set(nameof(ContentData), value); }
+            get { return BackingStore?.Get<string>("contentData"); }
+            set { BackingStore?.Set("contentData", value); }
         }
         /// <summary>The file name.</summary>
         public string FileName {
-            get { return BackingStore?.Get<string>(nameof(FileName)); }
-            set { BackingStore?.Set(nameof(FileName), value); }
+            get { return BackingStore?.Get<string>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

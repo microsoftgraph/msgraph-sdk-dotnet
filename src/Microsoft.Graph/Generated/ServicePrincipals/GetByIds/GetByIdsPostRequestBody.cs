@@ -9,20 +9,20 @@ namespace Microsoft.Graph.ServicePrincipals.GetByIds {
     public class GetByIdsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ids property</summary>
         public List<string> Ids {
-            get { return BackingStore?.Get<List<string>>(nameof(Ids)); }
-            set { BackingStore?.Set(nameof(Ids), value); }
+            get { return BackingStore?.Get<List<string>>("ids"); }
+            set { BackingStore?.Set("ids", value); }
         }
         /// <summary>The types property</summary>
         public List<string> Types {
-            get { return BackingStore?.Get<List<string>>(nameof(Types)); }
-            set { BackingStore?.Set(nameof(Types), value); }
+            get { return BackingStore?.Get<List<string>>("types"); }
+            set { BackingStore?.Set("types", value); }
         }
         /// <summary>
         /// Instantiates a new getByIdsPostRequestBody and sets the default values.

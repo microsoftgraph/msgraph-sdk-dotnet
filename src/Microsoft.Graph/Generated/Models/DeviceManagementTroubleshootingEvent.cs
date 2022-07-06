@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,18 @@ namespace Microsoft.Graph.Models {
     public class DeviceManagementTroubleshootingEvent : Entity, IParsable {
         /// <summary>Id used for tracing the failure in the service.</summary>
         public string CorrelationId {
-            get { return BackingStore?.Get<string>(nameof(CorrelationId)); }
-            set { BackingStore?.Set(nameof(CorrelationId), value); }
+            get { return BackingStore?.Get<string>("correlationId"); }
+            set { BackingStore?.Set("correlationId", value); }
         }
         /// <summary>Time when the event occurred .</summary>
         public DateTimeOffset? EventDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EventDateTime)); }
-            set { BackingStore?.Set(nameof(EventDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
+            set { BackingStore?.Set("eventDateTime", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,6 +42,7 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -47,6 +54,7 @@ namespace Microsoft.Graph.Models {
             base.Serialize(writer);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

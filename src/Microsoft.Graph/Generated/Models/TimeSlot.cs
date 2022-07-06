@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class TimeSlot : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The end property</summary>
         public DateTimeTimeZone End {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(End)); }
-            set { BackingStore?.Set(nameof(End), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
+            set { BackingStore?.Set("end", value); }
         }
         /// <summary>The start property</summary>
         public DateTimeTimeZone Start {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(Start)); }
-            set { BackingStore?.Set(nameof(Start), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("start"); }
+            set { BackingStore?.Set("start", value); }
         }
         /// <summary>
         /// Instantiates a new timeSlot and sets the default values.

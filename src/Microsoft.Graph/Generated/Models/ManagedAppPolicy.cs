@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -8,28 +9,33 @@ namespace Microsoft.Graph.Models {
     public class ManagedAppPolicy : Entity, IParsable {
         /// <summary>The date and time the policy was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The policy&apos;s description.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Policy display name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Last time the policy was modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>Version of the entity.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
                 {"version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -69,6 +76,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteStringValue("version", Version);
         }
     }

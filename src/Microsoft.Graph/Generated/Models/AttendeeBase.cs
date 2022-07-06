@@ -1,15 +1,15 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class AttendeeBase : Recipient, IParsable {
         /// <summary>The type of attendee. Possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.</summary>
         public AttendeeType? Type {
-            get { return BackingStore?.Get<AttendeeType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<AttendeeType?>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -17,7 +17,12 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public static new AttendeeBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttendeeBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.attendee" => new Attendee(),
+                _ => new AttendeeBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

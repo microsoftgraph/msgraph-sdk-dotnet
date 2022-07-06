@@ -5,27 +5,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationAssignmentDefaults : Entity, IParsable {
         /// <summary>Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.</summary>
         public EducationAddedStudentAction? AddedStudentAction {
-            get { return BackingStore?.Get<EducationAddedStudentAction?>(nameof(AddedStudentAction)); }
-            set { BackingStore?.Set(nameof(AddedStudentAction), value); }
+            get { return BackingStore?.Get<EducationAddedStudentAction?>("addedStudentAction"); }
+            set { BackingStore?.Set("addedStudentAction", value); }
         }
         /// <summary>Optional field to control adding assignments to students&apos; and teachers&apos; calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.</summary>
         public EducationAddToCalendarOptions? AddToCalendarAction {
-            get { return BackingStore?.Get<EducationAddToCalendarOptions?>(nameof(AddToCalendarAction)); }
-            set { BackingStore?.Set(nameof(AddToCalendarAction), value); }
+            get { return BackingStore?.Get<EducationAddToCalendarOptions?>("addToCalendarAction"); }
+            set { BackingStore?.Set("addToCalendarAction", value); }
         }
         /// <summary>Class-level default value for due time field. Default value is 23:59:00.</summary>
         public Time? DueTime {
-            get { return BackingStore?.Get<Time?>(nameof(DueTime)); }
-            set { BackingStore?.Set(nameof(DueTime), value); }
+            get { return BackingStore?.Get<Time?>("dueTime"); }
+            set { BackingStore?.Set("dueTime", value); }
         }
         /// <summary>Default Teams channel to which notifications will be sent. Default value is null.</summary>
         public string NotificationChannelUrl {
-            get { return BackingStore?.Get<string>(nameof(NotificationChannelUrl)); }
-            set { BackingStore?.Set(nameof(NotificationChannelUrl), value); }
+            get { return BackingStore?.Get<string>("notificationChannelUrl"); }
+            set { BackingStore?.Set("notificationChannelUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

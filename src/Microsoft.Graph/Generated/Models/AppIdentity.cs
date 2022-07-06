@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class AppIdentity : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Refers to the unique identifier representing Application Id in the Azure Active Directory.</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Refers to the Application Name displayed in the Azure Portal.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.</summary>
         public string ServicePrincipalId {
-            get { return BackingStore?.Get<string>(nameof(ServicePrincipalId)); }
-            set { BackingStore?.Set(nameof(ServicePrincipalId), value); }
+            get { return BackingStore?.Get<string>("servicePrincipalId"); }
+            set { BackingStore?.Set("servicePrincipalId", value); }
         }
         /// <summary>Refers to the Service Principal Name is the Application name in the tenant.</summary>
         public string ServicePrincipalName {
-            get { return BackingStore?.Get<string>(nameof(ServicePrincipalName)); }
-            set { BackingStore?.Set(nameof(ServicePrincipalName), value); }
+            get { return BackingStore?.Get<string>("servicePrincipalName"); }
+            set { BackingStore?.Set("servicePrincipalName", value); }
         }
         /// <summary>
         /// Instantiates a new appIdentity and sets the default values.

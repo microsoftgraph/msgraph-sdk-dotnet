@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class LocaleInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A name representing the user&apos;s locale in natural language, for example, &apos;English (United States)&apos;.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>A locale representation for the user, which includes the user&apos;s preferred language and country/region. For example, &apos;en-us&apos;. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.</summary>
         public string Locale {
-            get { return BackingStore?.Get<string>(nameof(Locale)); }
-            set { BackingStore?.Set(nameof(Locale), value); }
+            get { return BackingStore?.Get<string>("locale"); }
+            set { BackingStore?.Set("locale", value); }
         }
         /// <summary>
         /// Instantiates a new localeInfo and sets the default values.

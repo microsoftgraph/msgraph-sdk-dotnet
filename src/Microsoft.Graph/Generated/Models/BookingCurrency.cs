@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the solutionsRoot singleton.</summary>
     public class BookingCurrency : Entity, IParsable {
         /// <summary>The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.</summary>
         public string Symbol {
-            get { return BackingStore?.Get<string>(nameof(Symbol)); }
-            set { BackingStore?.Set(nameof(Symbol), value); }
+            get { return BackingStore?.Get<string>("symbol"); }
+            set { BackingStore?.Set("symbol", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

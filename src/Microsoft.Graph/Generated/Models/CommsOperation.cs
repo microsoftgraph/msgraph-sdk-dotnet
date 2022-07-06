@@ -1,25 +1,31 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class CommsOperation : Entity, IParsable {
         /// <summary>Unique Client Context string. Max limit is 256 chars.</summary>
         public string ClientContext {
-            get { return BackingStore?.Get<string>(nameof(ClientContext)); }
-            set { BackingStore?.Set(nameof(ClientContext), value); }
+            get { return BackingStore?.Get<string>("clientContext"); }
+            set { BackingStore?.Set("clientContext", value); }
         }
         /// <summary>The result information. Read-only.</summary>
         public Microsoft.Graph.Models.ResultInfo ResultInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ResultInfo>(nameof(ResultInfo)); }
-            set { BackingStore?.Set(nameof(ResultInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ResultInfo>("resultInfo"); }
+            set { BackingStore?.Set("resultInfo", value); }
         }
         /// <summary>Possible values are: notStarted, running, completed, failed. Read-only.</summary>
         public OperationStatus? Status {
-            get { return BackingStore?.Get<OperationStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<OperationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Models {
                 {"clientContext", n => { ClientContext = n.GetStringValue(); } },
                 {"resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Models.ResultInfo>(Microsoft.Graph.Models.ResultInfo.CreateFromDiscriminatorValue); } },
                 {"status", n => { Status = n.GetEnumValue<OperationStatus>(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -63,6 +70,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("clientContext", ClientContext);
             writer.WriteObjectValue<Microsoft.Graph.Models.ResultInfo>("resultInfo", ResultInfo);
             writer.WriteEnumValue<OperationStatus>("status", Status);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

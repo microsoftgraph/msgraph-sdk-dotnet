@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class FeatureRolloutPolicyCollectionResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The nextLink property</summary>
         public string NextLink {
-            get { return BackingStore?.Get<string>(nameof(NextLink)); }
-            set { BackingStore?.Set(nameof(NextLink), value); }
+            get { return BackingStore?.Get<string>("@odata.nextLink"); }
+            set { BackingStore?.Set("@odata.nextLink", value); }
         }
         /// <summary>The value property</summary>
         public List<FeatureRolloutPolicy> Value {
-            get { return BackingStore?.Get<List<FeatureRolloutPolicy>>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<List<FeatureRolloutPolicy>>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new FeatureRolloutPolicyCollectionResponse and sets the default values.

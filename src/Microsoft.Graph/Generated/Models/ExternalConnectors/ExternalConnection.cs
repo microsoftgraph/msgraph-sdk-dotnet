@@ -8,43 +8,43 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
     public class ExternalConnection : Entity, IParsable {
         /// <summary>Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.</summary>
         public Microsoft.Graph.Models.ExternalConnectors.Configuration Configuration {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Configuration>(nameof(Configuration)); }
-            set { BackingStore?.Set(nameof(Configuration), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Configuration>("configuration"); }
+            set { BackingStore?.Set("configuration", value); }
         }
         /// <summary>Description of the connection displayed in the Microsoft 365 admin center. Optional.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The groups property</summary>
         public List<ExternalGroup> Groups {
-            get { return BackingStore?.Get<List<ExternalGroup>>(nameof(Groups)); }
-            set { BackingStore?.Set(nameof(Groups), value); }
+            get { return BackingStore?.Get<List<ExternalGroup>>("groups"); }
+            set { BackingStore?.Set("groups", value); }
         }
         /// <summary>The items property</summary>
         public List<ExternalItem> Items {
-            get { return BackingStore?.Get<List<ExternalItem>>(nameof(Items)); }
-            set { BackingStore?.Set(nameof(Items), value); }
+            get { return BackingStore?.Get<List<ExternalItem>>("items"); }
+            set { BackingStore?.Set("items", value); }
         }
         /// <summary>The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The operations property</summary>
         public List<ConnectionOperation> Operations {
-            get { return BackingStore?.Get<List<ConnectionOperation>>(nameof(Operations)); }
-            set { BackingStore?.Set(nameof(Operations), value); }
+            get { return BackingStore?.Get<List<ConnectionOperation>>("operations"); }
+            set { BackingStore?.Set("operations", value); }
         }
         /// <summary>The schema property</summary>
         public Microsoft.Graph.Models.ExternalConnectors.Schema Schema {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Schema>(nameof(Schema)); }
-            set { BackingStore?.Set(nameof(Schema), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Schema>("schema"); }
+            set { BackingStore?.Set("schema", value); }
         }
         /// <summary>Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.</summary>
         public ConnectionState? State {
-            get { return BackingStore?.Get<ConnectionState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ConnectionState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

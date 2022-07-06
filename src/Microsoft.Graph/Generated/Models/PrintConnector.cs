@@ -4,37 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the print singleton.</summary>
     public class PrintConnector : Entity, IParsable {
         /// <summary>The connector&apos;s version.</summary>
         public string AppVersion {
-            get { return BackingStore?.Get<string>(nameof(AppVersion)); }
-            set { BackingStore?.Set(nameof(AppVersion), value); }
+            get { return BackingStore?.Get<string>("appVersion"); }
+            set { BackingStore?.Set("appVersion", value); }
         }
         /// <summary>The name of the connector.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The connector machine&apos;s hostname.</summary>
         public string FullyQualifiedDomainName {
-            get { return BackingStore?.Get<string>(nameof(FullyQualifiedDomainName)); }
-            set { BackingStore?.Set(nameof(FullyQualifiedDomainName), value); }
+            get { return BackingStore?.Get<string>("fullyQualifiedDomainName"); }
+            set { BackingStore?.Set("fullyQualifiedDomainName", value); }
         }
         /// <summary>The physical and/or organizational location of the connector.</summary>
         public PrinterLocation Location {
-            get { return BackingStore?.Get<PrinterLocation>(nameof(Location)); }
-            set { BackingStore?.Set(nameof(Location), value); }
+            get { return BackingStore?.Get<PrinterLocation>("location"); }
+            set { BackingStore?.Set("location", value); }
         }
         /// <summary>The connector machine&apos;s operating system version.</summary>
         public string OperatingSystem {
-            get { return BackingStore?.Get<string>(nameof(OperatingSystem)); }
-            set { BackingStore?.Set(nameof(OperatingSystem), value); }
+            get { return BackingStore?.Get<string>("operatingSystem"); }
+            set { BackingStore?.Set("operatingSystem", value); }
         }
         /// <summary>The DateTimeOffset when the connector was registered.</summary>
         public DateTimeOffset? RegisteredDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RegisteredDateTime)); }
-            set { BackingStore?.Set(nameof(RegisteredDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("registeredDateTime"); }
+            set { BackingStore?.Set("registeredDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class OpenShiftChangeRequest : ScheduleChangeRequest, IParsable {
         /// <summary>ID for the open shift.</summary>
         public string OpenShiftId {
-            get { return BackingStore?.Get<string>(nameof(OpenShiftId)); }
-            set { BackingStore?.Set(nameof(OpenShiftId), value); }
+            get { return BackingStore?.Get<string>("openShiftId"); }
+            set { BackingStore?.Set("openShiftId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

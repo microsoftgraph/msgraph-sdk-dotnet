@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class BroadcastMeetingSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Defines who can join the Teams live event. Possible values are listed in the following table.</summary>
         public BroadcastMeetingAudience? AllowedAudience {
-            get { return BackingStore?.Get<BroadcastMeetingAudience?>(nameof(AllowedAudience)); }
-            set { BackingStore?.Set(nameof(AllowedAudience), value); }
+            get { return BackingStore?.Get<BroadcastMeetingAudience?>("allowedAudience"); }
+            set { BackingStore?.Set("allowedAudience", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether attendee report is enabled for this Teams live event. Default value is false.</summary>
         public bool? IsAttendeeReportEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsAttendeeReportEnabled)); }
-            set { BackingStore?.Set(nameof(IsAttendeeReportEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isAttendeeReportEnabled"); }
+            set { BackingStore?.Set("isAttendeeReportEnabled", value); }
         }
         /// <summary>Indicates whether Q&amp;A is enabled for this Teams live event. Default value is false.</summary>
         public bool? IsQuestionAndAnswerEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsQuestionAndAnswerEnabled)); }
-            set { BackingStore?.Set(nameof(IsQuestionAndAnswerEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isQuestionAndAnswerEnabled"); }
+            set { BackingStore?.Set("isQuestionAndAnswerEnabled", value); }
         }
         /// <summary>Indicates whether recording is enabled for this Teams live event. Default value is false.</summary>
         public bool? IsRecordingEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsRecordingEnabled)); }
-            set { BackingStore?.Set(nameof(IsRecordingEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isRecordingEnabled"); }
+            set { BackingStore?.Set("isRecordingEnabled", value); }
         }
         /// <summary>Indicates whether video on demand is enabled for this Teams live event. Default value is false.</summary>
         public bool? IsVideoOnDemandEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsVideoOnDemandEnabled)); }
-            set { BackingStore?.Set(nameof(IsVideoOnDemandEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isVideoOnDemandEnabled"); }
+            set { BackingStore?.Set("isVideoOnDemandEnabled", value); }
         }
         /// <summary>
         /// Instantiates a new broadcastMeetingSettings and sets the default values.

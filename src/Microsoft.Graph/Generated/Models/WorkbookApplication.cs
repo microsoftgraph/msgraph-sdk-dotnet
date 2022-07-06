@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class WorkbookApplication : Entity, IParsable {
         /// <summary>Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.</summary>
         public string CalculationMode {
-            get { return BackingStore?.Get<string>(nameof(CalculationMode)); }
-            set { BackingStore?.Set(nameof(CalculationMode), value); }
+            get { return BackingStore?.Get<string>("calculationMode"); }
+            set { BackingStore?.Set("calculationMode", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

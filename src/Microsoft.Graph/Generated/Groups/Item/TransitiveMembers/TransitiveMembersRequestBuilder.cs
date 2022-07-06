@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get transitiveMembers from groups
+        /// The direct and transitive members of a group. Nullable.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TransitiveMembersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers {
             return requestInfo;
         }
         /// <summary>
-        /// Get transitiveMembers from groups
+        /// The direct and transitive members of a group. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers {
             };
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get transitiveMembers from groups</summary>
+        /// <summary>The direct and transitive members of a group. Nullable.</summary>
         public class TransitiveMembersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

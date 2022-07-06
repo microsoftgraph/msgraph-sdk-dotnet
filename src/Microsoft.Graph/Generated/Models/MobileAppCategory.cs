@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Models {
     public class MobileAppCategory : Entity, IParsable {
         /// <summary>The name of the app category.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The date and time the mobileAppCategory was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

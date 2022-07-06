@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models.CallRecords {
-    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public enum CallType {
         Unknown,
         GroupCall,

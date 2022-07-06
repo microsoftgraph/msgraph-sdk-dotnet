@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class ScheduleItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date, time, and time zone that the corresponding event ends.</summary>
         public DateTimeTimeZone End {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(End)); }
-            set { BackingStore?.Set(nameof(End), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
+            set { BackingStore?.Set("end", value); }
         }
         /// <summary>The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.</summary>
         public bool? IsPrivate {
-            get { return BackingStore?.Get<bool?>(nameof(IsPrivate)); }
-            set { BackingStore?.Set(nameof(IsPrivate), value); }
+            get { return BackingStore?.Get<bool?>("isPrivate"); }
+            set { BackingStore?.Set("isPrivate", value); }
         }
         /// <summary>The location where the corresponding event is held or attended from. Optional.</summary>
         public string Location {
-            get { return BackingStore?.Get<string>(nameof(Location)); }
-            set { BackingStore?.Set(nameof(Location), value); }
+            get { return BackingStore?.Get<string>("location"); }
+            set { BackingStore?.Set("location", value); }
         }
         /// <summary>The date, time, and time zone that the corresponding event starts.</summary>
         public DateTimeTimeZone Start {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(Start)); }
-            set { BackingStore?.Set(nameof(Start), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("start"); }
+            set { BackingStore?.Set("start", value); }
         }
         /// <summary>The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
         public FreeBusyStatus? Status {
-            get { return BackingStore?.Get<FreeBusyStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<FreeBusyStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The corresponding event&apos;s subject line. Optional.</summary>
         public string Subject {
-            get { return BackingStore?.Get<string>(nameof(Subject)); }
-            set { BackingStore?.Set(nameof(Subject), value); }
+            get { return BackingStore?.Get<string>("subject"); }
+            set { BackingStore?.Set("subject", value); }
         }
         /// <summary>
         /// Instantiates a new scheduleItem and sets the default values.

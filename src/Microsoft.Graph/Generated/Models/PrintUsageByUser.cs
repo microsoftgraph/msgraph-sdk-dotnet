@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class PrintUsageByUser : PrintUsage, IParsable {
         /// <summary>The UPN of the user represented by these statistics.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

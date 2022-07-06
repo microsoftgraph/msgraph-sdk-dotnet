@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Models {
     public class MailAssessmentRequest : ThreatAssessmentRequest, IParsable {
         /// <summary>The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.</summary>
         public MailDestinationRoutingReason? DestinationRoutingReason {
-            get { return BackingStore?.Get<MailDestinationRoutingReason?>(nameof(DestinationRoutingReason)); }
-            set { BackingStore?.Set(nameof(DestinationRoutingReason), value); }
+            get { return BackingStore?.Get<MailDestinationRoutingReason?>("destinationRoutingReason"); }
+            set { BackingStore?.Set("destinationRoutingReason", value); }
         }
         /// <summary>The resource URI of the mail message for assessment.</summary>
         public string MessageUri {
-            get { return BackingStore?.Get<string>(nameof(MessageUri)); }
-            set { BackingStore?.Set(nameof(MessageUri), value); }
+            get { return BackingStore?.Get<string>("messageUri"); }
+            set { BackingStore?.Set("messageUri", value); }
         }
         /// <summary>The mail recipient whose policies are used to assess the mail.</summary>
         public string RecipientEmail {
-            get { return BackingStore?.Get<string>(nameof(RecipientEmail)); }
-            set { BackingStore?.Set(nameof(RecipientEmail), value); }
+            get { return BackingStore?.Get<string>("recipientEmail"); }
+            set { BackingStore?.Set("recipientEmail", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -1,30 +1,35 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of place entities.</summary>
     public class Place : Entity, IParsable {
         /// <summary>The street address of the place.</summary>
         public PhysicalAddress Address {
-            get { return BackingStore?.Get<PhysicalAddress>(nameof(Address)); }
-            set { BackingStore?.Set(nameof(Address), value); }
+            get { return BackingStore?.Get<PhysicalAddress>("address"); }
+            set { BackingStore?.Set("address", value); }
         }
         /// <summary>The name associated with the place.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Specifies the place location in latitude, longitude and (optionally) altitude coordinates.</summary>
         public OutlookGeoCoordinates GeoCoordinates {
-            get { return BackingStore?.Get<OutlookGeoCoordinates>(nameof(GeoCoordinates)); }
-            set { BackingStore?.Set(nameof(GeoCoordinates), value); }
+            get { return BackingStore?.Get<OutlookGeoCoordinates>("geoCoordinates"); }
+            set { BackingStore?.Set("geoCoordinates", value); }
         }
         /// <summary>The phone number of the place.</summary>
         public string Phone {
-            get { return BackingStore?.Get<string>(nameof(Phone)); }
-            set { BackingStore?.Set(nameof(Phone), value); }
+            get { return BackingStore?.Get<string>("phone"); }
+            set { BackingStore?.Set("phone", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<OutlookGeoCoordinates>(OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
                 {"phone", n => { Phone = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<OutlookGeoCoordinates>("geoCoordinates", GeoCoordinates);
             writer.WriteStringValue("phone", Phone);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

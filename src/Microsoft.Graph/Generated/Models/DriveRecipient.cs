@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class DriveRecipient : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).</summary>
         public string Alias {
-            get { return BackingStore?.Get<string>(nameof(Alias)); }
-            set { BackingStore?.Set(nameof(Alias), value); }
+            get { return BackingStore?.Get<string>("alias"); }
+            set { BackingStore?.Set("alias", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The email address for the recipient, if the recipient has an associated email address.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>The unique identifier for the recipient in the directory.</summary>
         public string ObjectId {
-            get { return BackingStore?.Get<string>(nameof(ObjectId)); }
-            set { BackingStore?.Set(nameof(ObjectId), value); }
+            get { return BackingStore?.Get<string>("objectId"); }
+            set { BackingStore?.Set("objectId", value); }
         }
         /// <summary>
         /// Instantiates a new driveRecipient and sets the default values.

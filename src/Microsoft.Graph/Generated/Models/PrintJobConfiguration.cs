@@ -8,105 +8,105 @@ namespace Microsoft.Graph.Models {
     public class PrintJobConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether the printer should collate pages wehen printing multiple copies of a multi-page document.</summary>
         public bool? Collate {
-            get { return BackingStore?.Get<bool?>(nameof(Collate)); }
-            set { BackingStore?.Set(nameof(Collate), value); }
+            get { return BackingStore?.Get<bool?>("collate"); }
+            set { BackingStore?.Set("collate", value); }
         }
         /// <summary>The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.</summary>
         public PrintColorMode? ColorMode {
-            get { return BackingStore?.Get<PrintColorMode?>(nameof(ColorMode)); }
-            set { BackingStore?.Set(nameof(ColorMode), value); }
+            get { return BackingStore?.Get<PrintColorMode?>("colorMode"); }
+            set { BackingStore?.Set("colorMode", value); }
         }
         /// <summary>The number of copies that should be printed. Read-only.</summary>
         public int? Copies {
-            get { return BackingStore?.Get<int?>(nameof(Copies)); }
-            set { BackingStore?.Set(nameof(Copies), value); }
+            get { return BackingStore?.Get<int?>("copies"); }
+            set { BackingStore?.Set("copies", value); }
         }
         /// <summary>The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.</summary>
         public int? Dpi {
-            get { return BackingStore?.Get<int?>(nameof(Dpi)); }
-            set { BackingStore?.Set(nameof(Dpi), value); }
+            get { return BackingStore?.Get<int?>("dpi"); }
+            set { BackingStore?.Set("dpi", value); }
         }
         /// <summary>The duplex mode the printer should use when printing the job. Valid values are described in the table below. Read-only.</summary>
         public PrintDuplexMode? DuplexMode {
-            get { return BackingStore?.Get<PrintDuplexMode?>(nameof(DuplexMode)); }
-            set { BackingStore?.Set(nameof(DuplexMode), value); }
+            get { return BackingStore?.Get<PrintDuplexMode?>("duplexMode"); }
+            set { BackingStore?.Set("duplexMode", value); }
         }
         /// <summary>The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.</summary>
         public PrinterFeedOrientation? FeedOrientation {
-            get { return BackingStore?.Get<PrinterFeedOrientation?>(nameof(FeedOrientation)); }
-            set { BackingStore?.Set(nameof(FeedOrientation), value); }
+            get { return BackingStore?.Get<PrinterFeedOrientation?>("feedOrientation"); }
+            set { BackingStore?.Set("feedOrientation", value); }
         }
         /// <summary>Finishing processes to use when printing.</summary>
         public List<string> Finishings {
-            get { return BackingStore?.Get<List<string>>(nameof(Finishings)); }
-            set { BackingStore?.Set(nameof(Finishings), value); }
+            get { return BackingStore?.Get<List<string>>("finishings"); }
+            set { BackingStore?.Set("finishings", value); }
         }
         /// <summary>The fitPdfToPage property</summary>
         public bool? FitPdfToPage {
-            get { return BackingStore?.Get<bool?>(nameof(FitPdfToPage)); }
-            set { BackingStore?.Set(nameof(FitPdfToPage), value); }
+            get { return BackingStore?.Get<bool?>("fitPdfToPage"); }
+            set { BackingStore?.Set("fitPdfToPage", value); }
         }
         /// <summary>The input bin (tray) to use when printing. See the printer&apos;s capabilities for a list of supported input bins.</summary>
         public string InputBin {
-            get { return BackingStore?.Get<string>(nameof(InputBin)); }
-            set { BackingStore?.Set(nameof(InputBin), value); }
+            get { return BackingStore?.Get<string>("inputBin"); }
+            set { BackingStore?.Set("inputBin", value); }
         }
         /// <summary>The margin settings to use when printing.</summary>
         public PrintMargin Margin {
-            get { return BackingStore?.Get<PrintMargin>(nameof(Margin)); }
-            set { BackingStore?.Set(nameof(Margin), value); }
+            get { return BackingStore?.Get<PrintMargin>("margin"); }
+            set { BackingStore?.Set("margin", value); }
         }
         /// <summary>The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.</summary>
         public string MediaSize {
-            get { return BackingStore?.Get<string>(nameof(MediaSize)); }
-            set { BackingStore?.Set(nameof(MediaSize), value); }
+            get { return BackingStore?.Get<string>("mediaSize"); }
+            set { BackingStore?.Set("mediaSize", value); }
         }
         /// <summary>The default media (such as paper) type to print the document on.</summary>
         public string MediaType {
-            get { return BackingStore?.Get<string>(nameof(MediaType)); }
-            set { BackingStore?.Set(nameof(MediaType), value); }
+            get { return BackingStore?.Get<string>("mediaType"); }
+            set { BackingStore?.Set("mediaType", value); }
         }
         /// <summary>The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.</summary>
         public PrintMultipageLayout? MultipageLayout {
-            get { return BackingStore?.Get<PrintMultipageLayout?>(nameof(MultipageLayout)); }
-            set { BackingStore?.Set(nameof(MultipageLayout), value); }
+            get { return BackingStore?.Get<PrintMultipageLayout?>("multipageLayout"); }
+            set { BackingStore?.Set("multipageLayout", value); }
         }
         /// <summary>The orientation setting the printer should use when printing the job. Valid values are described in the following table.</summary>
         public PrintOrientation? Orientation {
-            get { return BackingStore?.Get<PrintOrientation?>(nameof(Orientation)); }
-            set { BackingStore?.Set(nameof(Orientation), value); }
+            get { return BackingStore?.Get<PrintOrientation?>("orientation"); }
+            set { BackingStore?.Set("orientation", value); }
         }
         /// <summary>The output bin to place completed prints into. See the printer&apos;s capabilities for a list of supported output bins.</summary>
         public string OutputBin {
-            get { return BackingStore?.Get<string>(nameof(OutputBin)); }
-            set { BackingStore?.Set(nameof(OutputBin), value); }
+            get { return BackingStore?.Get<string>("outputBin"); }
+            set { BackingStore?.Set("outputBin", value); }
         }
         /// <summary>The page ranges to print. Read-only.</summary>
         public List<IntegerRange> PageRanges {
-            get { return BackingStore?.Get<List<IntegerRange>>(nameof(PageRanges)); }
-            set { BackingStore?.Set(nameof(PageRanges), value); }
+            get { return BackingStore?.Get<List<IntegerRange>>("pageRanges"); }
+            set { BackingStore?.Set("pageRanges", value); }
         }
         /// <summary>The number of document pages to print on each sheet.</summary>
         public int? PagesPerSheet {
-            get { return BackingStore?.Get<int?>(nameof(PagesPerSheet)); }
-            set { BackingStore?.Set(nameof(PagesPerSheet), value); }
+            get { return BackingStore?.Get<int?>("pagesPerSheet"); }
+            set { BackingStore?.Set("pagesPerSheet", value); }
         }
         /// <summary>The print quality to use when printing the job. Valid values are described in the table below. Read-only.</summary>
         public PrintQuality? Quality {
-            get { return BackingStore?.Get<PrintQuality?>(nameof(Quality)); }
-            set { BackingStore?.Set(nameof(Quality), value); }
+            get { return BackingStore?.Get<PrintQuality?>("quality"); }
+            set { BackingStore?.Set("quality", value); }
         }
         /// <summary>Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.</summary>
         public PrintScaling? Scaling {
-            get { return BackingStore?.Get<PrintScaling?>(nameof(Scaling)); }
-            set { BackingStore?.Set(nameof(Scaling), value); }
+            get { return BackingStore?.Get<PrintScaling?>("scaling"); }
+            set { BackingStore?.Set("scaling", value); }
         }
         /// <summary>
         /// Instantiates a new printJobConfiguration and sets the default values.

@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.CopyToDefaultConten
     public class CopyToDefaultContentLocationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The destinationFileName property</summary>
         public string DestinationFileName {
-            get { return BackingStore?.Get<string>(nameof(DestinationFileName)); }
-            set { BackingStore?.Set(nameof(DestinationFileName), value); }
+            get { return BackingStore?.Get<string>("destinationFileName"); }
+            set { BackingStore?.Set("destinationFileName", value); }
         }
         /// <summary>The sourceFile property</summary>
         public ItemReference SourceFile {
-            get { return BackingStore?.Get<ItemReference>(nameof(SourceFile)); }
-            set { BackingStore?.Set(nameof(SourceFile), value); }
+            get { return BackingStore?.Get<ItemReference>("sourceFile"); }
+            set { BackingStore?.Set("sourceFile", value); }
         }
         /// <summary>
         /// Instantiates a new copyToDefaultContentLocationPostRequestBody and sets the default values.

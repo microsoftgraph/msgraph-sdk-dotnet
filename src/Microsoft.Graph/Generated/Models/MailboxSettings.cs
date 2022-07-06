@@ -8,55 +8,55 @@ namespace Microsoft.Graph.Models {
     public class MailboxSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Folder ID of an archive folder for the user. Read only.</summary>
         public string ArchiveFolder {
-            get { return BackingStore?.Get<string>(nameof(ArchiveFolder)); }
-            set { BackingStore?.Set(nameof(ArchiveFolder), value); }
+            get { return BackingStore?.Get<string>("archiveFolder"); }
+            set { BackingStore?.Set("archiveFolder", value); }
         }
         /// <summary>Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.</summary>
         public Microsoft.Graph.Models.AutomaticRepliesSetting AutomaticRepliesSetting {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.AutomaticRepliesSetting>(nameof(AutomaticRepliesSetting)); }
-            set { BackingStore?.Set(nameof(AutomaticRepliesSetting), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AutomaticRepliesSetting>("automaticRepliesSetting"); }
+            set { BackingStore?.Set("automaticRepliesSetting", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date format for the user&apos;s mailbox.</summary>
         public string DateFormat {
-            get { return BackingStore?.Get<string>(nameof(DateFormat)); }
-            set { BackingStore?.Set(nameof(DateFormat), value); }
+            get { return BackingStore?.Get<string>("dateFormat"); }
+            set { BackingStore?.Set("dateFormat", value); }
         }
         /// <summary>If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly. The default is sendToDelegateOnly.</summary>
         public Microsoft.Graph.Models.DelegateMeetingMessageDeliveryOptions? DelegateMeetingMessageDeliveryOptions {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.DelegateMeetingMessageDeliveryOptions?>(nameof(DelegateMeetingMessageDeliveryOptions)); }
-            set { BackingStore?.Set(nameof(DelegateMeetingMessageDeliveryOptions), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DelegateMeetingMessageDeliveryOptions?>("delegateMeetingMessageDeliveryOptions"); }
+            set { BackingStore?.Set("delegateMeetingMessageDeliveryOptions", value); }
         }
         /// <summary>The locale information for the user, including the preferred language and country/region.</summary>
         public LocaleInfo Language {
-            get { return BackingStore?.Get<LocaleInfo>(nameof(Language)); }
-            set { BackingStore?.Set(nameof(Language), value); }
+            get { return BackingStore?.Get<LocaleInfo>("language"); }
+            set { BackingStore?.Set("language", value); }
         }
         /// <summary>The time format for the user&apos;s mailbox.</summary>
         public string TimeFormat {
-            get { return BackingStore?.Get<string>(nameof(TimeFormat)); }
-            set { BackingStore?.Set(nameof(TimeFormat), value); }
+            get { return BackingStore?.Get<string>("timeFormat"); }
+            set { BackingStore?.Set("timeFormat", value); }
         }
         /// <summary>The default time zone for the user&apos;s mailbox.</summary>
         public string TimeZone {
-            get { return BackingStore?.Get<string>(nameof(TimeZone)); }
-            set { BackingStore?.Set(nameof(TimeZone), value); }
+            get { return BackingStore?.Get<string>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
         }
         /// <summary>The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.</summary>
         public Microsoft.Graph.Models.UserPurpose? UserPurpose {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.UserPurpose?>(nameof(UserPurpose)); }
-            set { BackingStore?.Set(nameof(UserPurpose), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserPurpose?>("userPurpose"); }
+            set { BackingStore?.Set("userPurpose", value); }
         }
         /// <summary>The days of the week and hours in a specific time zone that the user works.</summary>
         public Microsoft.Graph.Models.WorkingHours WorkingHours {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkingHours>(nameof(WorkingHours)); }
-            set { BackingStore?.Set(nameof(WorkingHours), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkingHours>("workingHours"); }
+            set { BackingStore?.Set("workingHours", value); }
         }
         /// <summary>
         /// Instantiates a new mailboxSettings and sets the default values.

@@ -10,40 +10,40 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.CreateOrGet {
     public class CreateOrGetPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The chatInfo property</summary>
         public Microsoft.Graph.Models.ChatInfo ChatInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatInfo>(nameof(ChatInfo)); }
-            set { BackingStore?.Set(nameof(ChatInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatInfo>("chatInfo"); }
+            set { BackingStore?.Set("chatInfo", value); }
         }
         /// <summary>The endDateTime property</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The externalId property</summary>
         public string ExternalId {
-            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
-            set { BackingStore?.Set(nameof(ExternalId), value); }
+            get { return BackingStore?.Get<string>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
         }
         /// <summary>The participants property</summary>
         public MeetingParticipants Participants {
-            get { return BackingStore?.Get<MeetingParticipants>(nameof(Participants)); }
-            set { BackingStore?.Set(nameof(Participants), value); }
+            get { return BackingStore?.Get<MeetingParticipants>("participants"); }
+            set { BackingStore?.Set("participants", value); }
         }
         /// <summary>The startDateTime property</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The subject property</summary>
         public string Subject {
-            get { return BackingStore?.Get<string>(nameof(Subject)); }
-            set { BackingStore?.Set(nameof(Subject), value); }
+            get { return BackingStore?.Get<string>("subject"); }
+            set { BackingStore?.Set("subject", value); }
         }
         /// <summary>
         /// Instantiates a new createOrGetPostRequestBody and sets the default values.

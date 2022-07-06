@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class DefaultColumnValue : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The formula used to compute the default value for this column.</summary>
         public string Formula {
-            get { return BackingStore?.Get<string>(nameof(Formula)); }
-            set { BackingStore?.Set(nameof(Formula), value); }
+            get { return BackingStore?.Get<string>("formula"); }
+            set { BackingStore?.Set("formula", value); }
         }
         /// <summary>The direct value to use as the default value for this column.</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new defaultColumnValue and sets the default values.

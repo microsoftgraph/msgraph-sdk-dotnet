@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class TeamworkActivityTopic : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Type of source. Possible values are: entityUrl, text. For supported Microsoft Graph URLs, use entityUrl. For custom text, use text.</summary>
         public TeamworkActivityTopicSource? Source {
-            get { return BackingStore?.Get<TeamworkActivityTopicSource?>(nameof(Source)); }
-            set { BackingStore?.Set(nameof(Source), value); }
+            get { return BackingStore?.Get<TeamworkActivityTopicSource?>("source"); }
+            set { BackingStore?.Set("source", value); }
         }
         /// <summary>The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the vaule is text, this must be a plain text value.</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>The link the user clicks when they select the notification. Optional when source is entityUrl; required when source is text.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkActivityTopic and sets the default values.

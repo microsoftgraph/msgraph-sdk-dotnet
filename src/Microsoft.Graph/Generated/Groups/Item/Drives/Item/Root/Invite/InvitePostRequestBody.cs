@@ -10,50 +10,50 @@ namespace Microsoft.Graph.Groups.Item.Drives.Item.Root.Invite {
     public class InvitePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expirationDateTime property</summary>
         public string ExpirationDateTime {
-            get { return BackingStore?.Get<string>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<string>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The message property</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>The password property</summary>
         public string Password {
-            get { return BackingStore?.Get<string>(nameof(Password)); }
-            set { BackingStore?.Set(nameof(Password), value); }
+            get { return BackingStore?.Get<string>("password"); }
+            set { BackingStore?.Set("password", value); }
         }
         /// <summary>The recipients property</summary>
         public List<DriveRecipient> Recipients {
-            get { return BackingStore?.Get<List<DriveRecipient>>(nameof(Recipients)); }
-            set { BackingStore?.Set(nameof(Recipients), value); }
+            get { return BackingStore?.Get<List<DriveRecipient>>("recipients"); }
+            set { BackingStore?.Set("recipients", value); }
         }
         /// <summary>The requireSignIn property</summary>
         public bool? RequireSignIn {
-            get { return BackingStore?.Get<bool?>(nameof(RequireSignIn)); }
-            set { BackingStore?.Set(nameof(RequireSignIn), value); }
+            get { return BackingStore?.Get<bool?>("requireSignIn"); }
+            set { BackingStore?.Set("requireSignIn", value); }
         }
         /// <summary>The retainInheritedPermissions property</summary>
         public bool? RetainInheritedPermissions {
-            get { return BackingStore?.Get<bool?>(nameof(RetainInheritedPermissions)); }
-            set { BackingStore?.Set(nameof(RetainInheritedPermissions), value); }
+            get { return BackingStore?.Get<bool?>("retainInheritedPermissions"); }
+            set { BackingStore?.Set("retainInheritedPermissions", value); }
         }
         /// <summary>The roles property</summary>
         public List<string> Roles {
-            get { return BackingStore?.Get<List<string>>(nameof(Roles)); }
-            set { BackingStore?.Set(nameof(Roles), value); }
+            get { return BackingStore?.Get<List<string>>("roles"); }
+            set { BackingStore?.Set("roles", value); }
         }
         /// <summary>The sendInvitation property</summary>
         public bool? SendInvitation {
-            get { return BackingStore?.Get<bool?>(nameof(SendInvitation)); }
-            set { BackingStore?.Set(nameof(SendInvitation), value); }
+            get { return BackingStore?.Get<bool?>("sendInvitation"); }
+            set { BackingStore?.Set("sendInvitation", value); }
         }
         /// <summary>
         /// Instantiates a new invitePostRequestBody and sets the default values.

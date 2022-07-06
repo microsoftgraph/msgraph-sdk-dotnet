@@ -1,15 +1,21 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class UnifiedRoleManagementPolicyRule : Entity, IParsable {
         /// <summary>Not implemented. Defines details of scope that&apos;s targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).</summary>
         public UnifiedRoleManagementPolicyRuleTarget Target {
-            get { return BackingStore?.Get<UnifiedRoleManagementPolicyRuleTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<UnifiedRoleManagementPolicyRuleTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -34,6 +40,7 @@ namespace Microsoft.Graph.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"target", n => { Target = n.GetObjectValue<UnifiedRoleManagementPolicyRuleTarget>(UnifiedRoleManagementPolicyRuleTarget.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -44,6 +51,7 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<UnifiedRoleManagementPolicyRuleTarget>("target", Target);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

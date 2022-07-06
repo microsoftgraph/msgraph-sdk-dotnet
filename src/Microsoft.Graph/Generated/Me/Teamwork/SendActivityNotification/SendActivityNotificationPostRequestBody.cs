@@ -10,35 +10,35 @@ namespace Microsoft.Graph.Me.Teamwork.SendActivityNotification {
     public class SendActivityNotificationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activityType property</summary>
         public string ActivityType {
-            get { return BackingStore?.Get<string>(nameof(ActivityType)); }
-            set { BackingStore?.Set(nameof(ActivityType), value); }
+            get { return BackingStore?.Get<string>("activityType"); }
+            set { BackingStore?.Set("activityType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The chainId property</summary>
         public long? ChainId {
-            get { return BackingStore?.Get<long?>(nameof(ChainId)); }
-            set { BackingStore?.Set(nameof(ChainId), value); }
+            get { return BackingStore?.Get<long?>("chainId"); }
+            set { BackingStore?.Set("chainId", value); }
         }
         /// <summary>The previewText property</summary>
         public ItemBody PreviewText {
-            get { return BackingStore?.Get<ItemBody>(nameof(PreviewText)); }
-            set { BackingStore?.Set(nameof(PreviewText), value); }
+            get { return BackingStore?.Get<ItemBody>("previewText"); }
+            set { BackingStore?.Set("previewText", value); }
         }
         /// <summary>The templateParameters property</summary>
         public List<Microsoft.Graph.Models.KeyValuePair> TemplateParameters {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>>(nameof(TemplateParameters)); }
-            set { BackingStore?.Set(nameof(TemplateParameters), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>>("templateParameters"); }
+            set { BackingStore?.Set("templateParameters", value); }
         }
         /// <summary>The topic property</summary>
         public TeamworkActivityTopic Topic {
-            get { return BackingStore?.Get<TeamworkActivityTopic>(nameof(Topic)); }
-            set { BackingStore?.Set(nameof(Topic), value); }
+            get { return BackingStore?.Get<TeamworkActivityTopic>("topic"); }
+            set { BackingStore?.Set("topic", value); }
         }
         /// <summary>
         /// Instantiates a new sendActivityNotificationPostRequestBody and sets the default values.

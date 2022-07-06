@@ -10,13 +10,13 @@ namespace Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations.I
     public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignments property</summary>
         public List<TargetedManagedAppPolicyAssignment> Assignments {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

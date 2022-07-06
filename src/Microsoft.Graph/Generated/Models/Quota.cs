@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class Quota : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Total space consumed by files in the recycle bin, in bytes. Read-only.</summary>
         public long? Deleted {
-            get { return BackingStore?.Get<long?>(nameof(Deleted)); }
-            set { BackingStore?.Set(nameof(Deleted), value); }
+            get { return BackingStore?.Get<long?>("deleted"); }
+            set { BackingStore?.Set("deleted", value); }
         }
         /// <summary>Total space remaining before reaching the quota limit, in bytes. Read-only.</summary>
         public long? Remaining {
-            get { return BackingStore?.Get<long?>(nameof(Remaining)); }
-            set { BackingStore?.Set(nameof(Remaining), value); }
+            get { return BackingStore?.Get<long?>("remaining"); }
+            set { BackingStore?.Set("remaining", value); }
         }
         /// <summary>Enumeration value that indicates the state of the storage space. Read-only.</summary>
         public string State {
-            get { return BackingStore?.Get<string>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<string>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>Information about the drive&apos;s storage quota plans. Only in Personal OneDrive.</summary>
         public Microsoft.Graph.Models.StoragePlanInformation StoragePlanInformation {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.StoragePlanInformation>(nameof(StoragePlanInformation)); }
-            set { BackingStore?.Set(nameof(StoragePlanInformation), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.StoragePlanInformation>("storagePlanInformation"); }
+            set { BackingStore?.Set("storagePlanInformation", value); }
         }
         /// <summary>Total allowed storage space, in bytes. Read-only.</summary>
         public long? Total {
-            get { return BackingStore?.Get<long?>(nameof(Total)); }
-            set { BackingStore?.Set(nameof(Total), value); }
+            get { return BackingStore?.Get<long?>("total"); }
+            set { BackingStore?.Set("total", value); }
         }
         /// <summary>Total space used, in bytes. Read-only.</summary>
         public long? Used {
-            get { return BackingStore?.Get<long?>(nameof(Used)); }
-            set { BackingStore?.Set(nameof(Used), value); }
+            get { return BackingStore?.Get<long?>("used"); }
+            set { BackingStore?.Set("used", value); }
         }
         /// <summary>
         /// Instantiates a new quota and sets the default values.

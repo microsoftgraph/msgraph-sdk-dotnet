@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class WindowsInformationProtectionResourceCollection : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Collection of resources</summary>
         public List<string> Resources {
-            get { return BackingStore?.Get<List<string>>(nameof(Resources)); }
-            set { BackingStore?.Set(nameof(Resources), value); }
+            get { return BackingStore?.Get<List<string>>("resources"); }
+            set { BackingStore?.Set("resources", value); }
         }
         /// <summary>
         /// Instantiates a new windowsInformationProtectionResourceCollection and sets the default values.

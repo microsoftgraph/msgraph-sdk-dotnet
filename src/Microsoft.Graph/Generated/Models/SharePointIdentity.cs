@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class SharePointIdentity : Identity, IParsable {
         /// <summary>The sign in name of the SharePoint identity.</summary>
         public string LoginName {
-            get { return BackingStore?.Get<string>(nameof(LoginName)); }
-            set { BackingStore?.Set(nameof(LoginName), value); }
+            get { return BackingStore?.Get<string>("loginName"); }
+            set { BackingStore?.Set("loginName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

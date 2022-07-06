@@ -10,15 +10,15 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.A
     public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The enrollmentConfigurationAssignments property</summary>
         public List<EnrollmentConfigurationAssignment> EnrollmentConfigurationAssignments {
-            get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>>(nameof(EnrollmentConfigurationAssignments)); }
-            set { BackingStore?.Set(nameof(EnrollmentConfigurationAssignments), value); }
+            get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>>("enrollmentConfigurationAssignments"); }
+            set { BackingStore?.Set("enrollmentConfigurationAssignments", value); }
         }
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.

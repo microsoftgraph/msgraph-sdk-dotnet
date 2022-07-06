@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -7,8 +8,13 @@ namespace Microsoft.Graph.Models {
     public class ManagedAppConfiguration : ManagedAppPolicy, IParsable {
         /// <summary>A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service</summary>
         public List<KeyValuePair> CustomSettings {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(CustomSettings)); }
-            set { BackingStore?.Set(nameof(CustomSettings), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("customSettings"); }
+            set { BackingStore?.Set("customSettings", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -29,6 +35,7 @@ namespace Microsoft.Graph.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -39,6 +46,7 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<KeyValuePair>("customSettings", CustomSettings);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

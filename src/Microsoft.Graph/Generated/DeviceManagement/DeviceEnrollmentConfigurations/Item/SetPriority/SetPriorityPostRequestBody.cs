@@ -9,15 +9,15 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.S
     public class SetPriorityPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The priority property</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>
         /// Instantiates a new setPriorityPostRequestBody and sets the default values.

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class DeviceEnrollmentLimitConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>The maximum number of devices that a user can enroll</summary>
         public int? Limit {
-            get { return BackingStore?.Get<int?>(nameof(Limit)); }
-            set { BackingStore?.Set(nameof(Limit), value); }
+            get { return BackingStore?.Get<int?>("limit"); }
+            set { BackingStore?.Set("limit", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class ConditionalAccessClientApplications : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Service principal IDs excluded from the policy scope.</summary>
         public List<string> ExcludeServicePrincipals {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludeServicePrincipals)); }
-            set { BackingStore?.Set(nameof(ExcludeServicePrincipals), value); }
+            get { return BackingStore?.Get<List<string>>("excludeServicePrincipals"); }
+            set { BackingStore?.Set("excludeServicePrincipals", value); }
         }
         /// <summary>Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.</summary>
         public List<string> IncludeServicePrincipals {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludeServicePrincipals)); }
-            set { BackingStore?.Set(nameof(IncludeServicePrincipals), value); }
+            get { return BackingStore?.Get<List<string>>("includeServicePrincipals"); }
+            set { BackingStore?.Set("includeServicePrincipals", value); }
         }
         /// <summary>
         /// Instantiates a new conditionalAccessClientApplications and sets the default values.

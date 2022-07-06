@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class IosDeviceType : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether the app should run on iPads.</summary>
         public bool? IPad {
-            get { return BackingStore?.Get<bool?>(nameof(IPad)); }
-            set { BackingStore?.Set(nameof(IPad), value); }
+            get { return BackingStore?.Get<bool?>("iPad"); }
+            set { BackingStore?.Set("iPad", value); }
         }
         /// <summary>Whether the app should run on iPhones and iPods.</summary>
         public bool? IPhoneAndIPod {
-            get { return BackingStore?.Get<bool?>(nameof(IPhoneAndIPod)); }
-            set { BackingStore?.Set(nameof(IPhoneAndIPod), value); }
+            get { return BackingStore?.Get<bool?>("iPhoneAndIPod"); }
+            set { BackingStore?.Set("iPhoneAndIPod", value); }
         }
         /// <summary>
         /// Instantiates a new iosDeviceType and sets the default values.

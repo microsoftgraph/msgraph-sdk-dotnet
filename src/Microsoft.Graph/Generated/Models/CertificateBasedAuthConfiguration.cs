@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of certificateBasedAuthConfiguration entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class CertificateBasedAuthConfiguration : Entity, IParsable {
         /// <summary>Collection of certificate authorities which creates a trusted certificate chain.</summary>
         public List<CertificateAuthority> CertificateAuthorities {
-            get { return BackingStore?.Get<List<CertificateAuthority>>(nameof(CertificateAuthorities)); }
-            set { BackingStore?.Set(nameof(CertificateAuthorities), value); }
+            get { return BackingStore?.Get<List<CertificateAuthority>>("certificateAuthorities"); }
+            set { BackingStore?.Set("certificateAuthorities", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

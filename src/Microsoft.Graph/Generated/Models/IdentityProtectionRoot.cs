@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class IdentityProtectionRoot : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Risk detection in Azure AD Identity Protection and the associated information about the detection.</summary>
         public List<RiskDetection> RiskDetections {
-            get { return BackingStore?.Get<List<RiskDetection>>(nameof(RiskDetections)); }
-            set { BackingStore?.Set(nameof(RiskDetections), value); }
+            get { return BackingStore?.Get<List<RiskDetection>>("riskDetections"); }
+            set { BackingStore?.Set("riskDetections", value); }
         }
         /// <summary>Users that are flagged as at-risk by Azure AD Identity Protection.</summary>
         public List<RiskyUser> RiskyUsers {
-            get { return BackingStore?.Get<List<RiskyUser>>(nameof(RiskyUsers)); }
-            set { BackingStore?.Set(nameof(RiskyUsers), value); }
+            get { return BackingStore?.Get<List<RiskyUser>>("riskyUsers"); }
+            set { BackingStore?.Set("riskyUsers", value); }
         }
         /// <summary>
         /// Instantiates a new IdentityProtectionRoot and sets the default values.

@@ -10,15 +10,15 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.Assign {
     public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The mobileAppAssignments property</summary>
         public List<MobileAppAssignment> MobileAppAssignments {
-            get { return BackingStore?.Get<List<MobileAppAssignment>>(nameof(MobileAppAssignments)); }
-            set { BackingStore?.Set(nameof(MobileAppAssignments), value); }
+            get { return BackingStore?.Get<List<MobileAppAssignment>>("mobileAppAssignments"); }
+            set { BackingStore?.Set("mobileAppAssignments", value); }
         }
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.

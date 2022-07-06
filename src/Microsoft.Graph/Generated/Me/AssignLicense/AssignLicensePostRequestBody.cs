@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Me.AssignLicense {
     public class AssignLicensePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The addLicenses property</summary>
         public List<AssignedLicense> AddLicenses {
-            get { return BackingStore?.Get<List<AssignedLicense>>(nameof(AddLicenses)); }
-            set { BackingStore?.Set(nameof(AddLicenses), value); }
+            get { return BackingStore?.Get<List<AssignedLicense>>("addLicenses"); }
+            set { BackingStore?.Set("addLicenses", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The removeLicenses property</summary>
         public List<string> RemoveLicenses {
-            get { return BackingStore?.Get<List<string>>(nameof(RemoveLicenses)); }
-            set { BackingStore?.Set(nameof(RemoveLicenses), value); }
+            get { return BackingStore?.Get<List<string>>("removeLicenses"); }
+            set { BackingStore?.Set("removeLicenses", value); }
         }
         /// <summary>
         /// Instantiates a new assignLicensePostRequestBody and sets the default values.

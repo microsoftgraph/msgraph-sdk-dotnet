@@ -4,6 +4,7 @@ using Microsoft.Graph.Applications.Item.CheckMemberGroups;
 using Microsoft.Graph.Applications.Item.CheckMemberObjects;
 using Microsoft.Graph.Applications.Item.CreatedOnBehalfOf;
 using Microsoft.Graph.Applications.Item.ExtensionProperties;
+using Microsoft.Graph.Applications.Item.FederatedIdentityCredentials;
 using Microsoft.Graph.Applications.Item.GetMemberGroups;
 using Microsoft.Graph.Applications.Item.GetMemberObjects;
 using Microsoft.Graph.Applications.Item.HomeRealmDiscoveryPolicies;
@@ -52,6 +53,10 @@ namespace Microsoft.Graph.Applications.Item {
         /// <summary>The extensionProperties property</summary>
         public ExtensionPropertiesRequestBuilder ExtensionProperties { get =>
             new ExtensionPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The federatedIdentityCredentials property</summary>
+        public FederatedIdentityCredentialsRequestBuilder FederatedIdentityCredentials { get =>
+            new FederatedIdentityCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getMemberGroups property</summary>
         public GetMemberGroupsRequestBuilder GetMemberGroups { get =>

@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Models {
     public class TeamMemberSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>If set to true, members can add and remove apps.</summary>
         public bool? AllowAddRemoveApps {
-            get { return BackingStore?.Get<bool?>(nameof(AllowAddRemoveApps)); }
-            set { BackingStore?.Set(nameof(AllowAddRemoveApps), value); }
+            get { return BackingStore?.Get<bool?>("allowAddRemoveApps"); }
+            set { BackingStore?.Set("allowAddRemoveApps", value); }
         }
         /// <summary>If set to true, members can add and update private channels.</summary>
         public bool? AllowCreatePrivateChannels {
-            get { return BackingStore?.Get<bool?>(nameof(AllowCreatePrivateChannels)); }
-            set { BackingStore?.Set(nameof(AllowCreatePrivateChannels), value); }
+            get { return BackingStore?.Get<bool?>("allowCreatePrivateChannels"); }
+            set { BackingStore?.Set("allowCreatePrivateChannels", value); }
         }
         /// <summary>If set to true, members can add and update any channels.</summary>
         public bool? AllowCreateUpdateChannels {
-            get { return BackingStore?.Get<bool?>(nameof(AllowCreateUpdateChannels)); }
-            set { BackingStore?.Set(nameof(AllowCreateUpdateChannels), value); }
+            get { return BackingStore?.Get<bool?>("allowCreateUpdateChannels"); }
+            set { BackingStore?.Set("allowCreateUpdateChannels", value); }
         }
         /// <summary>If set to true, members can add, update, and remove connectors.</summary>
         public bool? AllowCreateUpdateRemoveConnectors {
-            get { return BackingStore?.Get<bool?>(nameof(AllowCreateUpdateRemoveConnectors)); }
-            set { BackingStore?.Set(nameof(AllowCreateUpdateRemoveConnectors), value); }
+            get { return BackingStore?.Get<bool?>("allowCreateUpdateRemoveConnectors"); }
+            set { BackingStore?.Set("allowCreateUpdateRemoveConnectors", value); }
         }
         /// <summary>If set to true, members can add, update, and remove tabs.</summary>
         public bool? AllowCreateUpdateRemoveTabs {
-            get { return BackingStore?.Get<bool?>(nameof(AllowCreateUpdateRemoveTabs)); }
-            set { BackingStore?.Set(nameof(AllowCreateUpdateRemoveTabs), value); }
+            get { return BackingStore?.Get<bool?>("allowCreateUpdateRemoveTabs"); }
+            set { BackingStore?.Set("allowCreateUpdateRemoveTabs", value); }
         }
         /// <summary>If set to true, members can delete channels.</summary>
         public bool? AllowDeleteChannels {
-            get { return BackingStore?.Get<bool?>(nameof(AllowDeleteChannels)); }
-            set { BackingStore?.Set(nameof(AllowDeleteChannels), value); }
+            get { return BackingStore?.Get<bool?>("allowDeleteChannels"); }
+            set { BackingStore?.Set("allowDeleteChannels", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class AverageComparativeScore : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Average score within specified basis.</summary>
         public double? AverageScore {
-            get { return BackingStore?.Get<double?>(nameof(AverageScore)); }
-            set { BackingStore?.Set(nameof(AverageScore), value); }
+            get { return BackingStore?.Get<double?>("averageScore"); }
+            set { BackingStore?.Set("averageScore", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.</summary>
         public string Basis {
-            get { return BackingStore?.Get<string>(nameof(Basis)); }
-            set { BackingStore?.Set(nameof(Basis), value); }
+            get { return BackingStore?.Get<string>("basis"); }
+            set { BackingStore?.Set("basis", value); }
         }
         /// <summary>
         /// Instantiates a new averageComparativeScore and sets the default values.

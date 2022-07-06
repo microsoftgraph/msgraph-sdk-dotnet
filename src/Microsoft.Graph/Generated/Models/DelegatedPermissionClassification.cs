@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to call the instantiate method.</summary>
+    /// <summary>Casts the previous resource to servicePrincipal.</summary>
     public class DelegatedPermissionClassification : Entity, IParsable {
         /// <summary>The classification value being given. Possible value: low. Does not support $filter.</summary>
         public PermissionClassificationType? Classification {
-            get { return BackingStore?.Get<PermissionClassificationType?>(nameof(Classification)); }
-            set { BackingStore?.Set(nameof(Classification), value); }
+            get { return BackingStore?.Get<PermissionClassificationType?>("classification"); }
+            set { BackingStore?.Set("classification", value); }
         }
         /// <summary>The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.</summary>
         public string PermissionId {
-            get { return BackingStore?.Get<string>(nameof(PermissionId)); }
-            set { BackingStore?.Set(nameof(PermissionId), value); }
+            get { return BackingStore?.Get<string>("permissionId"); }
+            set { BackingStore?.Set("permissionId", value); }
         }
         /// <summary>The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.</summary>
         public string PermissionName {
-            get { return BackingStore?.Get<string>(nameof(PermissionName)); }
-            set { BackingStore?.Set(nameof(PermissionName), value); }
+            get { return BackingStore?.Get<string>("permissionName"); }
+            set { BackingStore?.Set("permissionName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

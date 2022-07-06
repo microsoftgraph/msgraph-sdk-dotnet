@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages.Item.Move {
     public class MovePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The DestinationId property</summary>
         public string DestinationId {
-            get { return BackingStore?.Get<string>(nameof(DestinationId)); }
-            set { BackingStore?.Set(nameof(DestinationId), value); }
+            get { return BackingStore?.Get<string>("destinationId"); }
+            set { BackingStore?.Set("destinationId", value); }
         }
         /// <summary>
         /// Instantiates a new movePostRequestBody and sets the default values.

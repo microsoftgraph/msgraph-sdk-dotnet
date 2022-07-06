@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class Initiator : Identity, IParsable {
         /// <summary>Type of initiator. Possible values are: user, application, system, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.InitiatorType? InitiatorType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.InitiatorType?>(nameof(InitiatorType)); }
-            set { BackingStore?.Set(nameof(InitiatorType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.InitiatorType?>("initiatorType"); }
+            set { BackingStore?.Set("initiatorType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

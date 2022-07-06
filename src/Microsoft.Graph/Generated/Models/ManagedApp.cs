@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -7,13 +8,18 @@ namespace Microsoft.Graph.Models {
     public class ManagedApp : MobileApp, IParsable {
         /// <summary>The Application&apos;s availability. Possible values are: global, lineOfBusiness.</summary>
         public ManagedAppAvailability? AppAvailability {
-            get { return BackingStore?.Get<ManagedAppAvailability?>(nameof(AppAvailability)); }
-            set { BackingStore?.Set(nameof(AppAvailability), value); }
+            get { return BackingStore?.Get<ManagedAppAvailability?>("appAvailability"); }
+            set { BackingStore?.Set("appAvailability", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>The Application&apos;s version.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,6 +42,7 @@ namespace Microsoft.Graph.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appAvailability", n => { AppAvailability = n.GetEnumValue<ManagedAppAvailability>(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
                 {"version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -47,6 +54,7 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<ManagedAppAvailability>("appAvailability", AppAvailability);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteStringValue("version", Version);
         }
     }

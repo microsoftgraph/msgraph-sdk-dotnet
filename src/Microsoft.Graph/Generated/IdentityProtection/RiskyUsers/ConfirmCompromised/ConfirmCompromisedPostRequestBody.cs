@@ -9,15 +9,15 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised {
     public class ConfirmCompromisedPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The userIds property</summary>
         public List<string> UserIds {
-            get { return BackingStore?.Get<List<string>>(nameof(UserIds)); }
-            set { BackingStore?.Set(nameof(UserIds), value); }
+            get { return BackingStore?.Get<List<string>>("userIds"); }
+            set { BackingStore?.Set("userIds", value); }
         }
         /// <summary>
         /// Instantiates a new confirmCompromisedPostRequestBody and sets the default values.

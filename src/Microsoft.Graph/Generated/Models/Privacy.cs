@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Models {
     public class Privacy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The subjectRightsRequests property</summary>
         public List<SubjectRightsRequest> SubjectRightsRequests {
-            get { return BackingStore?.Get<List<SubjectRightsRequest>>(nameof(SubjectRightsRequests)); }
-            set { BackingStore?.Set(nameof(SubjectRightsRequests), value); }
+            get { return BackingStore?.Get<List<SubjectRightsRequest>>("subjectRightsRequests"); }
+            set { BackingStore?.Set("subjectRightsRequests", value); }
         }
         /// <summary>
         /// Instantiates a new Privacy and sets the default values.

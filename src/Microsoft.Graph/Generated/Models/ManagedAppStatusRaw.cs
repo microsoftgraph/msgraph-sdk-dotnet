@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class ManagedAppStatusRaw : ManagedAppStatus, IParsable {
         /// <summary>Status report content.</summary>
         public Json Content {
-            get { return BackingStore?.Get<Json>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<Json>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

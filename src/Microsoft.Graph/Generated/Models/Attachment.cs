@@ -1,35 +1,41 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class Attachment : Entity, IParsable {
         /// <summary>The MIME type.</summary>
         public string ContentType {
-            get { return BackingStore?.Get<string>(nameof(ContentType)); }
-            set { BackingStore?.Set(nameof(ContentType), value); }
+            get { return BackingStore?.Get<string>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>true if the attachment is an inline attachment; otherwise, false.</summary>
         public bool? IsInline {
-            get { return BackingStore?.Get<bool?>(nameof(IsInline)); }
-            set { BackingStore?.Set(nameof(IsInline), value); }
+            get { return BackingStore?.Get<bool?>("isInline"); }
+            set { BackingStore?.Set("isInline", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The display name of the attachment. This does not need to be the actual file name.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The length of the attachment in bytes.</summary>
         public int? Size {
-            get { return BackingStore?.Get<int?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<int?>("size"); }
+            set { BackingStore?.Set("size", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Models {
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"size", n => { Size = n.GetIntValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,6 +77,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("size", Size);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

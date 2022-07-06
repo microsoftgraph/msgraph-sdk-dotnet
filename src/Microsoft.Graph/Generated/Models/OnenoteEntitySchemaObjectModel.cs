@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -7,8 +8,13 @@ namespace Microsoft.Graph.Models {
     public class OnenoteEntitySchemaObjectModel : OnenoteEntityBaseModel, IParsable {
         /// <summary>The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -30,6 +36,7 @@ namespace Microsoft.Graph.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -40,6 +47,7 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

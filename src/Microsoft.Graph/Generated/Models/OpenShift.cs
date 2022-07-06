@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Models {
     public class OpenShift : ChangeTrackedEntity, IParsable {
         /// <summary>An unpublished open shift.</summary>
         public OpenShiftItem DraftOpenShift {
-            get { return BackingStore?.Get<OpenShiftItem>(nameof(DraftOpenShift)); }
-            set { BackingStore?.Set(nameof(DraftOpenShift), value); }
+            get { return BackingStore?.Get<OpenShiftItem>("draftOpenShift"); }
+            set { BackingStore?.Set("draftOpenShift", value); }
         }
         /// <summary>ID for the scheduling group that the open shift belongs to.</summary>
         public string SchedulingGroupId {
-            get { return BackingStore?.Get<string>(nameof(SchedulingGroupId)); }
-            set { BackingStore?.Set(nameof(SchedulingGroupId), value); }
+            get { return BackingStore?.Get<string>("schedulingGroupId"); }
+            set { BackingStore?.Set("schedulingGroupId", value); }
         }
         /// <summary>A published open shift.</summary>
         public OpenShiftItem SharedOpenShift {
-            get { return BackingStore?.Get<OpenShiftItem>(nameof(SharedOpenShift)); }
-            set { BackingStore?.Set(nameof(SharedOpenShift), value); }
+            get { return BackingStore?.Get<OpenShiftItem>("sharedOpenShift"); }
+            set { BackingStore?.Set("sharedOpenShift", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

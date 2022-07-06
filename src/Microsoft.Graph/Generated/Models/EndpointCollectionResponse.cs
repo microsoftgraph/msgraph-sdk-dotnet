@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class EndpointCollectionResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The nextLink property</summary>
         public string NextLink {
-            get { return BackingStore?.Get<string>(nameof(NextLink)); }
-            set { BackingStore?.Set(nameof(NextLink), value); }
+            get { return BackingStore?.Get<string>("@odata.nextLink"); }
+            set { BackingStore?.Set("@odata.nextLink", value); }
         }
         /// <summary>The value property</summary>
         public List<Endpoint> Value {
-            get { return BackingStore?.Get<List<Endpoint>>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<List<Endpoint>>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new EndpointCollectionResponse and sets the default values.

@@ -8,135 +8,135 @@ namespace Microsoft.Graph.Models {
     public class PlannerCategoryDescriptions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The label associated with Category 1</summary>
         public string Category1 {
-            get { return BackingStore?.Get<string>(nameof(Category1)); }
-            set { BackingStore?.Set(nameof(Category1), value); }
+            get { return BackingStore?.Get<string>("category1"); }
+            set { BackingStore?.Set("category1", value); }
         }
         /// <summary>The label associated with Category 10</summary>
         public string Category10 {
-            get { return BackingStore?.Get<string>(nameof(Category10)); }
-            set { BackingStore?.Set(nameof(Category10), value); }
+            get { return BackingStore?.Get<string>("category10"); }
+            set { BackingStore?.Set("category10", value); }
         }
         /// <summary>The label associated with Category 11</summary>
         public string Category11 {
-            get { return BackingStore?.Get<string>(nameof(Category11)); }
-            set { BackingStore?.Set(nameof(Category11), value); }
+            get { return BackingStore?.Get<string>("category11"); }
+            set { BackingStore?.Set("category11", value); }
         }
         /// <summary>The label associated with Category 12</summary>
         public string Category12 {
-            get { return BackingStore?.Get<string>(nameof(Category12)); }
-            set { BackingStore?.Set(nameof(Category12), value); }
+            get { return BackingStore?.Get<string>("category12"); }
+            set { BackingStore?.Set("category12", value); }
         }
         /// <summary>The label associated with Category 13</summary>
         public string Category13 {
-            get { return BackingStore?.Get<string>(nameof(Category13)); }
-            set { BackingStore?.Set(nameof(Category13), value); }
+            get { return BackingStore?.Get<string>("category13"); }
+            set { BackingStore?.Set("category13", value); }
         }
         /// <summary>The label associated with Category 14</summary>
         public string Category14 {
-            get { return BackingStore?.Get<string>(nameof(Category14)); }
-            set { BackingStore?.Set(nameof(Category14), value); }
+            get { return BackingStore?.Get<string>("category14"); }
+            set { BackingStore?.Set("category14", value); }
         }
         /// <summary>The label associated with Category 15</summary>
         public string Category15 {
-            get { return BackingStore?.Get<string>(nameof(Category15)); }
-            set { BackingStore?.Set(nameof(Category15), value); }
+            get { return BackingStore?.Get<string>("category15"); }
+            set { BackingStore?.Set("category15", value); }
         }
         /// <summary>The label associated with Category 16</summary>
         public string Category16 {
-            get { return BackingStore?.Get<string>(nameof(Category16)); }
-            set { BackingStore?.Set(nameof(Category16), value); }
+            get { return BackingStore?.Get<string>("category16"); }
+            set { BackingStore?.Set("category16", value); }
         }
         /// <summary>The label associated with Category 17</summary>
         public string Category17 {
-            get { return BackingStore?.Get<string>(nameof(Category17)); }
-            set { BackingStore?.Set(nameof(Category17), value); }
+            get { return BackingStore?.Get<string>("category17"); }
+            set { BackingStore?.Set("category17", value); }
         }
         /// <summary>The label associated with Category 18</summary>
         public string Category18 {
-            get { return BackingStore?.Get<string>(nameof(Category18)); }
-            set { BackingStore?.Set(nameof(Category18), value); }
+            get { return BackingStore?.Get<string>("category18"); }
+            set { BackingStore?.Set("category18", value); }
         }
         /// <summary>The label associated with Category 19</summary>
         public string Category19 {
-            get { return BackingStore?.Get<string>(nameof(Category19)); }
-            set { BackingStore?.Set(nameof(Category19), value); }
+            get { return BackingStore?.Get<string>("category19"); }
+            set { BackingStore?.Set("category19", value); }
         }
         /// <summary>The label associated with Category 2</summary>
         public string Category2 {
-            get { return BackingStore?.Get<string>(nameof(Category2)); }
-            set { BackingStore?.Set(nameof(Category2), value); }
+            get { return BackingStore?.Get<string>("category2"); }
+            set { BackingStore?.Set("category2", value); }
         }
         /// <summary>The label associated with Category 20</summary>
         public string Category20 {
-            get { return BackingStore?.Get<string>(nameof(Category20)); }
-            set { BackingStore?.Set(nameof(Category20), value); }
+            get { return BackingStore?.Get<string>("category20"); }
+            set { BackingStore?.Set("category20", value); }
         }
         /// <summary>The label associated with Category 21</summary>
         public string Category21 {
-            get { return BackingStore?.Get<string>(nameof(Category21)); }
-            set { BackingStore?.Set(nameof(Category21), value); }
+            get { return BackingStore?.Get<string>("category21"); }
+            set { BackingStore?.Set("category21", value); }
         }
         /// <summary>The label associated with Category 22</summary>
         public string Category22 {
-            get { return BackingStore?.Get<string>(nameof(Category22)); }
-            set { BackingStore?.Set(nameof(Category22), value); }
+            get { return BackingStore?.Get<string>("category22"); }
+            set { BackingStore?.Set("category22", value); }
         }
         /// <summary>The label associated with Category 23</summary>
         public string Category23 {
-            get { return BackingStore?.Get<string>(nameof(Category23)); }
-            set { BackingStore?.Set(nameof(Category23), value); }
+            get { return BackingStore?.Get<string>("category23"); }
+            set { BackingStore?.Set("category23", value); }
         }
         /// <summary>The label associated with Category 24</summary>
         public string Category24 {
-            get { return BackingStore?.Get<string>(nameof(Category24)); }
-            set { BackingStore?.Set(nameof(Category24), value); }
+            get { return BackingStore?.Get<string>("category24"); }
+            set { BackingStore?.Set("category24", value); }
         }
         /// <summary>The label associated with Category 25</summary>
         public string Category25 {
-            get { return BackingStore?.Get<string>(nameof(Category25)); }
-            set { BackingStore?.Set(nameof(Category25), value); }
+            get { return BackingStore?.Get<string>("category25"); }
+            set { BackingStore?.Set("category25", value); }
         }
         /// <summary>The label associated with Category 3</summary>
         public string Category3 {
-            get { return BackingStore?.Get<string>(nameof(Category3)); }
-            set { BackingStore?.Set(nameof(Category3), value); }
+            get { return BackingStore?.Get<string>("category3"); }
+            set { BackingStore?.Set("category3", value); }
         }
         /// <summary>The label associated with Category 4</summary>
         public string Category4 {
-            get { return BackingStore?.Get<string>(nameof(Category4)); }
-            set { BackingStore?.Set(nameof(Category4), value); }
+            get { return BackingStore?.Get<string>("category4"); }
+            set { BackingStore?.Set("category4", value); }
         }
         /// <summary>The label associated with Category 5</summary>
         public string Category5 {
-            get { return BackingStore?.Get<string>(nameof(Category5)); }
-            set { BackingStore?.Set(nameof(Category5), value); }
+            get { return BackingStore?.Get<string>("category5"); }
+            set { BackingStore?.Set("category5", value); }
         }
         /// <summary>The label associated with Category 6</summary>
         public string Category6 {
-            get { return BackingStore?.Get<string>(nameof(Category6)); }
-            set { BackingStore?.Set(nameof(Category6), value); }
+            get { return BackingStore?.Get<string>("category6"); }
+            set { BackingStore?.Set("category6", value); }
         }
         /// <summary>The label associated with Category 7</summary>
         public string Category7 {
-            get { return BackingStore?.Get<string>(nameof(Category7)); }
-            set { BackingStore?.Set(nameof(Category7), value); }
+            get { return BackingStore?.Get<string>("category7"); }
+            set { BackingStore?.Set("category7", value); }
         }
         /// <summary>The label associated with Category 8</summary>
         public string Category8 {
-            get { return BackingStore?.Get<string>(nameof(Category8)); }
-            set { BackingStore?.Set(nameof(Category8), value); }
+            get { return BackingStore?.Get<string>("category8"); }
+            set { BackingStore?.Set("category8", value); }
         }
         /// <summary>The label associated with Category 9</summary>
         public string Category9 {
-            get { return BackingStore?.Get<string>(nameof(Category9)); }
-            set { BackingStore?.Set(nameof(Category9), value); }
+            get { return BackingStore?.Get<string>("category9"); }
+            set { BackingStore?.Set("category9", value); }
         }
         /// <summary>
         /// Instantiates a new plannerCategoryDescriptions and sets the default values.

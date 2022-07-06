@@ -1,30 +1,36 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class EducationOrganization : Entity, IParsable {
         /// <summary>Organization description.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Organization display name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Where this user was created from. Possible values are: sis, lms, or manual.</summary>
         public EducationExternalSource? ExternalSource {
-            get { return BackingStore?.Get<EducationExternalSource?>(nameof(ExternalSource)); }
-            set { BackingStore?.Set(nameof(ExternalSource), value); }
+            get { return BackingStore?.Get<EducationExternalSource?>("externalSource"); }
+            set { BackingStore?.Set("externalSource", value); }
         }
         /// <summary>The name of the external source this resources was generated from.</summary>
         public string ExternalSourceDetail {
-            get { return BackingStore?.Get<string>(nameof(ExternalSourceDetail)); }
-            set { BackingStore?.Set(nameof(ExternalSourceDetail), value); }
+            get { return BackingStore?.Get<string>("externalSourceDetail"); }
+            set { BackingStore?.Set("externalSourceDetail", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +54,7 @@ namespace Microsoft.Graph.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"externalSource", n => { ExternalSource = n.GetEnumValue<EducationExternalSource>(); } },
                 {"externalSourceDetail", n => { ExternalSourceDetail = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<EducationExternalSource>("externalSource", ExternalSource);
             writer.WriteStringValue("externalSourceDetail", ExternalSourceDetail);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

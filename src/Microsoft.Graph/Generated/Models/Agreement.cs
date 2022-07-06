@@ -8,43 +8,43 @@ namespace Microsoft.Graph.Models {
     public class Agreement : Entity, IParsable {
         /// <summary>Read-only. Information about acceptances of this agreement.</summary>
         public List<AgreementAcceptance> Acceptances {
-            get { return BackingStore?.Get<List<AgreementAcceptance>>(nameof(Acceptances)); }
-            set { BackingStore?.Set(nameof(Acceptances), value); }
+            get { return BackingStore?.Get<List<AgreementAcceptance>>("acceptances"); }
+            set { BackingStore?.Set("acceptances", value); }
         }
         /// <summary>Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Default PDF linked to this agreement.</summary>
         public AgreementFile FileObject {
-            get { return BackingStore?.Get<AgreementFile>(nameof(FileObject)); }
-            set { BackingStore?.Set(nameof(FileObject), value); }
+            get { return BackingStore?.Get<AgreementFile>("file"); }
+            set { BackingStore?.Set("file", value); }
         }
         /// <summary>PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.</summary>
         public List<AgreementFileLocalization> Files {
-            get { return BackingStore?.Get<List<AgreementFileLocalization>>(nameof(Files)); }
-            set { BackingStore?.Set(nameof(Files), value); }
+            get { return BackingStore?.Get<List<AgreementFileLocalization>>("files"); }
+            set { BackingStore?.Set("files", value); }
         }
         /// <summary>This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven&apos;t already done so. Supports $filter (eq).</summary>
         public bool? IsPerDeviceAcceptanceRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsPerDeviceAcceptanceRequired)); }
-            set { BackingStore?.Set(nameof(IsPerDeviceAcceptanceRequired), value); }
+            get { return BackingStore?.Get<bool?>("isPerDeviceAcceptanceRequired"); }
+            set { BackingStore?.Set("isPerDeviceAcceptanceRequired", value); }
         }
         /// <summary>Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).</summary>
         public bool? IsViewingBeforeAcceptanceRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsViewingBeforeAcceptanceRequired)); }
-            set { BackingStore?.Set(nameof(IsViewingBeforeAcceptanceRequired), value); }
+            get { return BackingStore?.Get<bool?>("isViewingBeforeAcceptanceRequired"); }
+            set { BackingStore?.Set("isViewingBeforeAcceptanceRequired", value); }
         }
         /// <summary>Expiration schedule and frequency of agreement for all users.  Supports $filter (eq).</summary>
         public Microsoft.Graph.Models.TermsExpiration TermsExpiration {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.TermsExpiration>(nameof(TermsExpiration)); }
-            set { BackingStore?.Set(nameof(TermsExpiration), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermsExpiration>("termsExpiration"); }
+            set { BackingStore?.Set("termsExpiration", value); }
         }
         /// <summary>The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.</summary>
         public TimeSpan? UserReacceptRequiredFrequency {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(UserReacceptRequiredFrequency)); }
-            set { BackingStore?.Set(nameof(UserReacceptRequiredFrequency), value); }
+            get { return BackingStore?.Get<TimeSpan?>("userReacceptRequiredFrequency"); }
+            set { BackingStore?.Set("userReacceptRequiredFrequency", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

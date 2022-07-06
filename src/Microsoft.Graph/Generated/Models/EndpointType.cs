@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public enum EndpointType {
         Default,
         Voicemail,

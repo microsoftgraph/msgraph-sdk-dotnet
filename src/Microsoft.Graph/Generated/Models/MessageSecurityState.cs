@@ -8,55 +8,55 @@ namespace Microsoft.Graph.Models {
     public class MessageSecurityState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The connectingIP property</summary>
         public string ConnectingIP {
-            get { return BackingStore?.Get<string>(nameof(ConnectingIP)); }
-            set { BackingStore?.Set(nameof(ConnectingIP), value); }
+            get { return BackingStore?.Get<string>("connectingIP"); }
+            set { BackingStore?.Set("connectingIP", value); }
         }
         /// <summary>The deliveryAction property</summary>
         public string DeliveryAction {
-            get { return BackingStore?.Get<string>(nameof(DeliveryAction)); }
-            set { BackingStore?.Set(nameof(DeliveryAction), value); }
+            get { return BackingStore?.Get<string>("deliveryAction"); }
+            set { BackingStore?.Set("deliveryAction", value); }
         }
         /// <summary>The deliveryLocation property</summary>
         public string DeliveryLocation {
-            get { return BackingStore?.Get<string>(nameof(DeliveryLocation)); }
-            set { BackingStore?.Set(nameof(DeliveryLocation), value); }
+            get { return BackingStore?.Get<string>("deliveryLocation"); }
+            set { BackingStore?.Set("deliveryLocation", value); }
         }
         /// <summary>The directionality property</summary>
         public string Directionality {
-            get { return BackingStore?.Get<string>(nameof(Directionality)); }
-            set { BackingStore?.Set(nameof(Directionality), value); }
+            get { return BackingStore?.Get<string>("directionality"); }
+            set { BackingStore?.Set("directionality", value); }
         }
         /// <summary>The internetMessageId property</summary>
         public string InternetMessageId {
-            get { return BackingStore?.Get<string>(nameof(InternetMessageId)); }
-            set { BackingStore?.Set(nameof(InternetMessageId), value); }
+            get { return BackingStore?.Get<string>("internetMessageId"); }
+            set { BackingStore?.Set("internetMessageId", value); }
         }
         /// <summary>The messageFingerprint property</summary>
         public string MessageFingerprint {
-            get { return BackingStore?.Get<string>(nameof(MessageFingerprint)); }
-            set { BackingStore?.Set(nameof(MessageFingerprint), value); }
+            get { return BackingStore?.Get<string>("messageFingerprint"); }
+            set { BackingStore?.Set("messageFingerprint", value); }
         }
         /// <summary>The messageReceivedDateTime property</summary>
         public DateTimeOffset? MessageReceivedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(MessageReceivedDateTime)); }
-            set { BackingStore?.Set(nameof(MessageReceivedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("messageReceivedDateTime"); }
+            set { BackingStore?.Set("messageReceivedDateTime", value); }
         }
         /// <summary>The messageSubject property</summary>
         public string MessageSubject {
-            get { return BackingStore?.Get<string>(nameof(MessageSubject)); }
-            set { BackingStore?.Set(nameof(MessageSubject), value); }
+            get { return BackingStore?.Get<string>("messageSubject"); }
+            set { BackingStore?.Set("messageSubject", value); }
         }
         /// <summary>The networkMessageId property</summary>
         public string NetworkMessageId {
-            get { return BackingStore?.Get<string>(nameof(NetworkMessageId)); }
-            set { BackingStore?.Set(nameof(NetworkMessageId), value); }
+            get { return BackingStore?.Get<string>("networkMessageId"); }
+            set { BackingStore?.Set("networkMessageId", value); }
         }
         /// <summary>
         /// Instantiates a new messageSecurityState and sets the default values.

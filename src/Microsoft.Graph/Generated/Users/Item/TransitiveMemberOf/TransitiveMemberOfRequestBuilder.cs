@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Users.Item.TransitiveMemberOf {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get transitiveMemberOf from users
+        /// The groups, including nested groups, and directory roles that a user is a member of. Nullable.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TransitiveMemberOfRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Users.Item.TransitiveMemberOf {
             return requestInfo;
         }
         /// <summary>
-        /// Get transitiveMemberOf from users
+        /// The groups, including nested groups, and directory roles that a user is a member of. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Users.Item.TransitiveMemberOf {
             };
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get transitiveMemberOf from users</summary>
+        /// <summary>The groups, including nested groups, and directory roles that a user is a member of. Nullable.</summary>
         public class TransitiveMemberOfRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

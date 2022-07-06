@@ -1,35 +1,41 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of domainDnsRecord entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class DomainDnsRecord : Entity, IParsable {
         /// <summary>If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.</summary>
         public bool? IsOptional {
-            get { return BackingStore?.Get<bool?>(nameof(IsOptional)); }
-            set { BackingStore?.Set(nameof(IsOptional), value); }
+            get { return BackingStore?.Get<bool?>("isOptional"); }
+            set { BackingStore?.Set("isOptional", value); }
         }
         /// <summary>Value used when configuring the name of the DNS record at the DNS host.</summary>
         public string Label {
-            get { return BackingStore?.Get<string>(nameof(Label)); }
-            set { BackingStore?.Set(nameof(Label), value); }
+            get { return BackingStore?.Get<string>("label"); }
+            set { BackingStore?.Set("label", value); }
         }
         /// <summary>Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.</summary>
         public string RecordType {
-            get { return BackingStore?.Get<string>(nameof(RecordType)); }
-            set { BackingStore?.Set(nameof(RecordType), value); }
+            get { return BackingStore?.Get<string>("recordType"); }
+            set { BackingStore?.Set("recordType", value); }
         }
         /// <summary>Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.</summary>
         public string SupportedService {
-            get { return BackingStore?.Get<string>(nameof(SupportedService)); }
-            set { BackingStore?.Set(nameof(SupportedService), value); }
+            get { return BackingStore?.Get<string>("supportedService"); }
+            set { BackingStore?.Set("supportedService", value); }
         }
         /// <summary>Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.</summary>
         public int? Ttl {
-            get { return BackingStore?.Get<int?>(nameof(Ttl)); }
-            set { BackingStore?.Set(nameof(Ttl), value); }
+            get { return BackingStore?.Get<int?>("ttl"); }
+            set { BackingStore?.Set("ttl", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +64,7 @@ namespace Microsoft.Graph.Models {
                 {"recordType", n => { RecordType = n.GetStringValue(); } },
                 {"supportedService", n => { SupportedService = n.GetStringValue(); } },
                 {"ttl", n => { Ttl = n.GetIntValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -72,6 +79,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("recordType", RecordType);
             writer.WriteStringValue("supportedService", SupportedService);
             writer.WriteIntValue("ttl", Ttl);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

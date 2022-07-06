@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class CertificateAuthority : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Required. The base64 encoded string representing the public certificate.</summary>
         public byte[] Certificate {
-            get { return BackingStore?.Get<byte[]>(nameof(Certificate)); }
-            set { BackingStore?.Set(nameof(Certificate), value); }
+            get { return BackingStore?.Get<byte[]>("certificate"); }
+            set { BackingStore?.Set("certificate", value); }
         }
         /// <summary>The URL of the certificate revocation list.</summary>
         public string CertificateRevocationListUrl {
-            get { return BackingStore?.Get<string>(nameof(CertificateRevocationListUrl)); }
-            set { BackingStore?.Set(nameof(CertificateRevocationListUrl), value); }
+            get { return BackingStore?.Get<string>("certificateRevocationListUrl"); }
+            set { BackingStore?.Set("certificateRevocationListUrl", value); }
         }
         /// <summary>The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.</summary>
         public string DeltaCertificateRevocationListUrl {
-            get { return BackingStore?.Get<string>(nameof(DeltaCertificateRevocationListUrl)); }
-            set { BackingStore?.Set(nameof(DeltaCertificateRevocationListUrl), value); }
+            get { return BackingStore?.Get<string>("deltaCertificateRevocationListUrl"); }
+            set { BackingStore?.Set("deltaCertificateRevocationListUrl", value); }
         }
         /// <summary>Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.</summary>
         public bool? IsRootAuthority {
-            get { return BackingStore?.Get<bool?>(nameof(IsRootAuthority)); }
-            set { BackingStore?.Set(nameof(IsRootAuthority), value); }
+            get { return BackingStore?.Get<bool?>("isRootAuthority"); }
+            set { BackingStore?.Set("isRootAuthority", value); }
         }
         /// <summary>The issuer of the certificate, calculated from the certificate value. Read-only.</summary>
         public string Issuer {
-            get { return BackingStore?.Get<string>(nameof(Issuer)); }
-            set { BackingStore?.Set(nameof(Issuer), value); }
+            get { return BackingStore?.Get<string>("issuer"); }
+            set { BackingStore?.Set("issuer", value); }
         }
         /// <summary>The subject key identifier of the certificate, calculated from the certificate value. Read-only.</summary>
         public string IssuerSki {
-            get { return BackingStore?.Get<string>(nameof(IssuerSki)); }
-            set { BackingStore?.Set(nameof(IssuerSki), value); }
+            get { return BackingStore?.Get<string>("issuerSki"); }
+            set { BackingStore?.Set("issuerSki", value); }
         }
         /// <summary>
         /// Instantiates a new certificateAuthority and sets the default values.

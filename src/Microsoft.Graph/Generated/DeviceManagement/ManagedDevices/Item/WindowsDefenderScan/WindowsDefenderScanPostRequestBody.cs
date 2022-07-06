@@ -9,15 +9,15 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsDefenderSc
     public class WindowsDefenderScanPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The quickScan property</summary>
         public bool? QuickScan {
-            get { return BackingStore?.Get<bool?>(nameof(QuickScan)); }
-            set { BackingStore?.Set(nameof(QuickScan), value); }
+            get { return BackingStore?.Get<bool?>("quickScan"); }
+            set { BackingStore?.Set("quickScan", value); }
         }
         /// <summary>
         /// Instantiates a new windowsDefenderScanPostRequestBody and sets the default values.

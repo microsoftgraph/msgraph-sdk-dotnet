@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class UnifiedRoleManagementPolicyAuthenticationContextRule : UnifiedRoleManagementPolicyRule, IParsable {
         /// <summary>The value of the authentication context claim.</summary>
         public string ClaimValue {
-            get { return BackingStore?.Get<string>(nameof(ClaimValue)); }
-            set { BackingStore?.Set(nameof(ClaimValue), value); }
+            get { return BackingStore?.Get<string>("claimValue"); }
+            set { BackingStore?.Set("claimValue", value); }
         }
         /// <summary>Whether this rule is enabled.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

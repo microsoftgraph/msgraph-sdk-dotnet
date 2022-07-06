@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class ConditionalAccessGrantControls : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.</summary>
         public List<string> BuiltInControls {
-            get { return BackingStore?.Get<List<string>>(nameof(BuiltInControls)); }
-            set { BackingStore?.Set(nameof(BuiltInControls), value); }
+            get { return BackingStore?.Get<List<string>>("builtInControls"); }
+            set { BackingStore?.Set("builtInControls", value); }
         }
         /// <summary>List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).</summary>
         public List<string> CustomAuthenticationFactors {
-            get { return BackingStore?.Get<List<string>>(nameof(CustomAuthenticationFactors)); }
-            set { BackingStore?.Set(nameof(CustomAuthenticationFactors), value); }
+            get { return BackingStore?.Get<List<string>>("customAuthenticationFactors"); }
+            set { BackingStore?.Set("customAuthenticationFactors", value); }
         }
         /// <summary>Defines the relationship of the grant controls. Possible values: AND, OR.</summary>
         public string Operator {
-            get { return BackingStore?.Get<string>(nameof(Operator)); }
-            set { BackingStore?.Set(nameof(Operator), value); }
+            get { return BackingStore?.Get<string>("operator"); }
+            set { BackingStore?.Set("operator", value); }
         }
         /// <summary>List of terms of use IDs required by the policy.</summary>
         public List<string> TermsOfUse {
-            get { return BackingStore?.Get<List<string>>(nameof(TermsOfUse)); }
-            set { BackingStore?.Set(nameof(TermsOfUse), value); }
+            get { return BackingStore?.Get<List<string>>("termsOfUse"); }
+            set { BackingStore?.Set("termsOfUse", value); }
         }
         /// <summary>
         /// Instantiates a new conditionalAccessGrantControls and sets the default values.

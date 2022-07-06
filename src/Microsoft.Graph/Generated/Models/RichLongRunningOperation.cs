@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class RichLongRunningOperation : LongRunningOperation, IParsable {
         /// <summary>Error due to which the operation failed.</summary>
         public PublicError Error {
-            get { return BackingStore?.Get<PublicError>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<PublicError>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>A value between 0 and 100 that indicates the progress of the operation.</summary>
         public int? PercentageComplete {
-            get { return BackingStore?.Get<int?>(nameof(PercentageComplete)); }
-            set { BackingStore?.Set(nameof(PercentageComplete), value); }
+            get { return BackingStore?.Get<int?>("percentageComplete"); }
+            set { BackingStore?.Set("percentageComplete", value); }
         }
         /// <summary>A unique identifier for the result.</summary>
         public string ResourceId {
-            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
-            set { BackingStore?.Set(nameof(ResourceId), value); }
+            get { return BackingStore?.Get<string>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
         }
         /// <summary>Type of the operation.</summary>
         public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

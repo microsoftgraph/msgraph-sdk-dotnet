@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Models {
     public class HyperlinkOrPictureColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether the display format used for URL columns is an image or a hyperlink.</summary>
         public bool? IsPicture {
-            get { return BackingStore?.Get<bool?>(nameof(IsPicture)); }
-            set { BackingStore?.Set(nameof(IsPicture), value); }
+            get { return BackingStore?.Get<bool?>("isPicture"); }
+            set { BackingStore?.Set("isPicture", value); }
         }
         /// <summary>
         /// Instantiates a new hyperlinkOrPictureColumn and sets the default values.

@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Models {
     public class DeviceComplianceScheduledActionForRule : Entity, IParsable {
         /// <summary>Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.</summary>
         public string RuleName {
-            get { return BackingStore?.Get<string>(nameof(RuleName)); }
-            set { BackingStore?.Set(nameof(RuleName), value); }
+            get { return BackingStore?.Get<string>("ruleName"); }
+            set { BackingStore?.Set("ruleName", value); }
         }
         /// <summary>The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.</summary>
         public List<DeviceComplianceActionItem> ScheduledActionConfigurations {
-            get { return BackingStore?.Get<List<DeviceComplianceActionItem>>(nameof(ScheduledActionConfigurations)); }
-            set { BackingStore?.Set(nameof(ScheduledActionConfigurations), value); }
+            get { return BackingStore?.Get<List<DeviceComplianceActionItem>>("scheduledActionConfigurations"); }
+            set { BackingStore?.Set("scheduledActionConfigurations", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Models {
     public class CallMediaState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The audio media state. Possible values are: active, inactive, unknownFutureValue.</summary>
         public MediaState? Audio {
-            get { return BackingStore?.Get<MediaState?>(nameof(Audio)); }
-            set { BackingStore?.Set(nameof(Audio), value); }
+            get { return BackingStore?.Get<MediaState?>("audio"); }
+            set { BackingStore?.Set("audio", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

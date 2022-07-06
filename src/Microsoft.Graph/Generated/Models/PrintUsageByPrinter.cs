@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class PrintUsageByPrinter : PrintUsage, IParsable {
         /// <summary>The printerId property</summary>
         public string PrinterId {
-            get { return BackingStore?.Get<string>(nameof(PrinterId)); }
-            set { BackingStore?.Set(nameof(PrinterId), value); }
+            get { return BackingStore?.Get<string>("printerId"); }
+            set { BackingStore?.Set("printerId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

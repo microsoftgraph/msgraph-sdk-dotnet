@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class SortProperty : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True if the sort order is descending. Default is false, with the sort order as ascending. Optional.</summary>
         public bool? IsDescending {
-            get { return BackingStore?.Get<bool?>(nameof(IsDescending)); }
-            set { BackingStore?.Set(nameof(IsDescending), value); }
+            get { return BackingStore?.Get<bool?>("isDescending"); }
+            set { BackingStore?.Set("isDescending", value); }
         }
         /// <summary>The name of the property to sort on. Required.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>
         /// Instantiates a new sortProperty and sets the default values.

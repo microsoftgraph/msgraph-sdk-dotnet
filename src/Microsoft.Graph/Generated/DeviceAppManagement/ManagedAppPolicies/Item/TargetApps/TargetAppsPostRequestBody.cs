@@ -10,13 +10,13 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item.TargetApps
     public class TargetAppsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The apps property</summary>
         public List<ManagedMobileApp> Apps {
-            get { return BackingStore?.Get<List<ManagedMobileApp>>(nameof(Apps)); }
-            set { BackingStore?.Set(nameof(Apps), value); }
+            get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
+            set { BackingStore?.Set("apps", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -7,18 +8,23 @@ namespace Microsoft.Graph.Models {
     public class StsPolicy : PolicyBase, IParsable {
         /// <summary>The appliesTo property</summary>
         public List<DirectoryObject> AppliesTo {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(AppliesTo)); }
-            set { BackingStore?.Set(nameof(AppliesTo), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
         }
         /// <summary>A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.</summary>
         public List<string> Definition {
-            get { return BackingStore?.Get<List<string>>(nameof(Definition)); }
-            set { BackingStore?.Set(nameof(Definition), value); }
+            get { return BackingStore?.Get<List<string>>("definition"); }
+            set { BackingStore?.Set("definition", value); }
         }
         /// <summary>If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.</summary>
         public bool? IsOrganizationDefault {
-            get { return BackingStore?.Get<bool?>(nameof(IsOrganizationDefault)); }
-            set { BackingStore?.Set(nameof(IsOrganizationDefault), value); }
+            get { return BackingStore?.Get<bool?>("isOrganizationDefault"); }
+            set { BackingStore?.Set("isOrganizationDefault", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +51,7 @@ namespace Microsoft.Graph.Models {
                 {"appliesTo", n => { AppliesTo = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"definition", n => { Definition = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"isOrganizationDefault", n => { IsOrganizationDefault = n.GetBoolValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,6 +64,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfObjectValues<DirectoryObject>("appliesTo", AppliesTo);
             writer.WriteCollectionOfPrimitiveValues<string>("definition", Definition);
             writer.WriteBoolValue("isOrganizationDefault", IsOrganizationDefault);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Models {
     public class AndroidStoreApp : MobileApp, IParsable {
         /// <summary>The Android app store URL.</summary>
         public string AppStoreUrl {
-            get { return BackingStore?.Get<string>(nameof(AppStoreUrl)); }
-            set { BackingStore?.Set(nameof(AppStoreUrl), value); }
+            get { return BackingStore?.Get<string>("appStoreUrl"); }
+            set { BackingStore?.Set("appStoreUrl", value); }
         }
         /// <summary>The value for the minimum applicable operating system.</summary>
         public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<AndroidMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>The package identifier.</summary>
         public string PackageId {
-            get { return BackingStore?.Get<string>(nameof(PackageId)); }
-            set { BackingStore?.Set(nameof(PackageId), value); }
+            get { return BackingStore?.Get<string>("packageId"); }
+            set { BackingStore?.Set("packageId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

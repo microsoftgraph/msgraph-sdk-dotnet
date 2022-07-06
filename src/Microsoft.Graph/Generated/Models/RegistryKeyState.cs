@@ -8,60 +8,60 @@ namespace Microsoft.Graph.Models {
     public class RegistryKeyState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A Windows registry hive : HKEY_CURRENT_CONFIG HKEY_CURRENT_USER HKEY_LOCAL_MACHINE/SAM HKEY_LOCAL_MACHINE/Security HKEY_LOCAL_MACHINE/Software HKEY_LOCAL_MACHINE/System HKEY_USERS/.Default. Possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.</summary>
         public RegistryHive? Hive {
-            get { return BackingStore?.Get<RegistryHive?>(nameof(Hive)); }
-            set { BackingStore?.Set(nameof(Hive), value); }
+            get { return BackingStore?.Get<RegistryHive?>("hive"); }
+            set { BackingStore?.Set("hive", value); }
         }
         /// <summary>Current (i.e. changed) registry key (excludes HIVE).</summary>
         public string Key {
-            get { return BackingStore?.Get<string>(nameof(Key)); }
-            set { BackingStore?.Set(nameof(Key), value); }
+            get { return BackingStore?.Get<string>("key"); }
+            set { BackingStore?.Set("key", value); }
         }
         /// <summary>Previous (i.e. before changed) registry key (excludes HIVE).</summary>
         public string OldKey {
-            get { return BackingStore?.Get<string>(nameof(OldKey)); }
-            set { BackingStore?.Set(nameof(OldKey), value); }
+            get { return BackingStore?.Get<string>("oldKey"); }
+            set { BackingStore?.Set("oldKey", value); }
         }
         /// <summary>Previous (i.e. before changed) registry key value data (contents).</summary>
         public string OldValueData {
-            get { return BackingStore?.Get<string>(nameof(OldValueData)); }
-            set { BackingStore?.Set(nameof(OldValueData), value); }
+            get { return BackingStore?.Get<string>("oldValueData"); }
+            set { BackingStore?.Set("oldValueData", value); }
         }
         /// <summary>Previous (i.e. before changed) registry key value name.</summary>
         public string OldValueName {
-            get { return BackingStore?.Get<string>(nameof(OldValueName)); }
-            set { BackingStore?.Set(nameof(OldValueName), value); }
+            get { return BackingStore?.Get<string>("oldValueName"); }
+            set { BackingStore?.Set("oldValueName", value); }
         }
         /// <summary>Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.</summary>
         public RegistryOperation? Operation {
-            get { return BackingStore?.Get<RegistryOperation?>(nameof(Operation)); }
-            set { BackingStore?.Set(nameof(Operation), value); }
+            get { return BackingStore?.Get<RegistryOperation?>("operation"); }
+            set { BackingStore?.Set("operation", value); }
         }
         /// <summary>Process ID (PID) of the process that modified the registry key (process details will appear in the alert &apos;processes&apos; collection).</summary>
         public int? ProcessId {
-            get { return BackingStore?.Get<int?>(nameof(ProcessId)); }
-            set { BackingStore?.Set(nameof(ProcessId), value); }
+            get { return BackingStore?.Get<int?>("processId"); }
+            set { BackingStore?.Set("processId", value); }
         }
         /// <summary>Current (i.e. changed) registry key value data (contents).</summary>
         public string ValueData {
-            get { return BackingStore?.Get<string>(nameof(ValueData)); }
-            set { BackingStore?.Set(nameof(ValueData), value); }
+            get { return BackingStore?.Get<string>("valueData"); }
+            set { BackingStore?.Set("valueData", value); }
         }
         /// <summary>Current (i.e. changed) registry key value name</summary>
         public string ValueName {
-            get { return BackingStore?.Get<string>(nameof(ValueName)); }
-            set { BackingStore?.Set(nameof(ValueName), value); }
+            get { return BackingStore?.Get<string>("valueName"); }
+            set { BackingStore?.Set("valueName", value); }
         }
         /// <summary>Registry key value type REG_BINARY REG_DWORD REG_DWORD_LITTLE_ENDIAN REG_DWORD_BIG_ENDIANREG_EXPAND_SZ REG_LINK REG_MULTI_SZ REG_NONE REG_QWORD REG_QWORD_LITTLE_ENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.</summary>
         public RegistryValueType? ValueType {
-            get { return BackingStore?.Get<RegistryValueType?>(nameof(ValueType)); }
-            set { BackingStore?.Set(nameof(ValueType), value); }
+            get { return BackingStore?.Get<RegistryValueType?>("valueType"); }
+            set { BackingStore?.Set("valueType", value); }
         }
         /// <summary>
         /// Instantiates a new registryKeyState and sets the default values.

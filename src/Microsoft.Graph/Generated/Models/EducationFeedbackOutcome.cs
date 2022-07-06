@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class EducationFeedbackOutcome : EducationOutcome, IParsable {
         /// <summary>Teacher&apos;s written feedback to the student.</summary>
         public EducationFeedback Feedback {
-            get { return BackingStore?.Get<EducationFeedback>(nameof(Feedback)); }
-            set { BackingStore?.Set(nameof(Feedback), value); }
+            get { return BackingStore?.Get<EducationFeedback>("feedback"); }
+            set { BackingStore?.Set("feedback", value); }
         }
         /// <summary>A copy of the feedback property that is made when the grade is released to the student.</summary>
         public EducationFeedback PublishedFeedback {
-            get { return BackingStore?.Get<EducationFeedback>(nameof(PublishedFeedback)); }
-            set { BackingStore?.Set(nameof(PublishedFeedback), value); }
+            get { return BackingStore?.Get<EducationFeedback>("publishedFeedback"); }
+            set { BackingStore?.Set("publishedFeedback", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

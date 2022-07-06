@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -8,28 +9,33 @@ namespace Microsoft.Graph.Models {
     public class ServiceAnnouncementBase : Entity, IParsable {
         /// <summary>Additional details about service event. This property doesn&apos;t support filters.</summary>
         public List<KeyValuePair> Details {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(Details)); }
-            set { BackingStore?.Set(nameof(Details), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("details"); }
+            set { BackingStore?.Set("details", value); }
         }
         /// <summary>The end time of the service event.</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The last modified time of the service event.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The start time of the service event.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The title of the service event.</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Models {
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +76,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("title", Title);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

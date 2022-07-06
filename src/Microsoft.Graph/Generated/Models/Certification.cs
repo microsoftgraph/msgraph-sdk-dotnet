@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class Certification : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>URL that shows certification details for the application.</summary>
         public string CertificationDetailsUrl {
-            get { return BackingStore?.Get<string>(nameof(CertificationDetailsUrl)); }
-            set { BackingStore?.Set(nameof(CertificationDetailsUrl), value); }
+            get { return BackingStore?.Get<string>("certificationDetailsUrl"); }
+            set { BackingStore?.Set("certificationDetailsUrl", value); }
         }
         /// <summary>The timestamp when the current certification for the application will expire.</summary>
         public DateTimeOffset? CertificationExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CertificationExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(CertificationExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("certificationExpirationDateTime"); }
+            set { BackingStore?.Set("certificationExpirationDateTime", value); }
         }
         /// <summary>Indicates whether the application is certified by Microsoft.</summary>
         public bool? IsCertifiedByMicrosoft {
-            get { return BackingStore?.Get<bool?>(nameof(IsCertifiedByMicrosoft)); }
-            set { BackingStore?.Set(nameof(IsCertifiedByMicrosoft), value); }
+            get { return BackingStore?.Get<bool?>("isCertifiedByMicrosoft"); }
+            set { BackingStore?.Set("isCertifiedByMicrosoft", value); }
         }
         /// <summary>Indicates whether the application has been self-attested by the application developer or the publisher.</summary>
         public bool? IsPublisherAttested {
-            get { return BackingStore?.Get<bool?>(nameof(IsPublisherAttested)); }
-            set { BackingStore?.Set(nameof(IsPublisherAttested), value); }
+            get { return BackingStore?.Get<bool?>("isPublisherAttested"); }
+            set { BackingStore?.Set("isPublisherAttested", value); }
         }
         /// <summary>The timestamp when the certification for the application was most recently added or updated.</summary>
         public DateTimeOffset? LastCertificationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCertificationDateTime)); }
-            set { BackingStore?.Set(nameof(LastCertificationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastCertificationDateTime"); }
+            set { BackingStore?.Set("lastCertificationDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new certification and sets the default values.

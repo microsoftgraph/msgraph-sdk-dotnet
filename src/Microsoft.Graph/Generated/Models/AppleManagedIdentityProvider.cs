@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class AppleManagedIdentityProvider : IdentityProviderBase, IParsable {
         /// <summary>The certificate data which is a long string of text from the certificate, can be null.</summary>
         public string CertificateData {
-            get { return BackingStore?.Get<string>(nameof(CertificateData)); }
-            set { BackingStore?.Set(nameof(CertificateData), value); }
+            get { return BackingStore?.Get<string>("certificateData"); }
+            set { BackingStore?.Set("certificateData", value); }
         }
         /// <summary>The Apple developer identifier. Required.</summary>
         public string DeveloperId {
-            get { return BackingStore?.Get<string>(nameof(DeveloperId)); }
-            set { BackingStore?.Set(nameof(DeveloperId), value); }
+            get { return BackingStore?.Get<string>("developerId"); }
+            set { BackingStore?.Set("developerId", value); }
         }
         /// <summary>The Apple key identifier. Required.</summary>
         public string KeyId {
-            get { return BackingStore?.Get<string>(nameof(KeyId)); }
-            set { BackingStore?.Set(nameof(KeyId), value); }
+            get { return BackingStore?.Get<string>("keyId"); }
+            set { BackingStore?.Set("keyId", value); }
         }
         /// <summary>The Apple service identifier. Required.</summary>
         public string ServiceId {
-            get { return BackingStore?.Get<string>(nameof(ServiceId)); }
-            set { BackingStore?.Set(nameof(ServiceId), value); }
+            get { return BackingStore?.Get<string>("serviceId"); }
+            set { BackingStore?.Set("serviceId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

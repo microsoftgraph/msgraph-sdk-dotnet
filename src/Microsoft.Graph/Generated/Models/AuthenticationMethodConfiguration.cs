@@ -1,15 +1,20 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of authenticationMethodConfiguration entities.</summary>
     public class AuthenticationMethodConfiguration : Entity, IParsable {
         /// <summary>The state of the policy. Possible values are: enabled, disabled.</summary>
         public AuthenticationMethodState? State {
-            get { return BackingStore?.Get<AuthenticationMethodState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<AuthenticationMethodState?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -33,6 +38,7 @@ namespace Microsoft.Graph.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"state", n => { State = n.GetEnumValue<AuthenticationMethodState>(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -43,6 +49,7 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<AuthenticationMethodState>("state", State);
+            writer.WriteStringValue("@odata.type", Type);
         }
     }
 }

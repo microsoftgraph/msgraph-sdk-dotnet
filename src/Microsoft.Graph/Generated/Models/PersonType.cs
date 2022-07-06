@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class PersonType : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The type of data source, such as Person.</summary>
         public string Class {
-            get { return BackingStore?.Get<string>(nameof(Class)); }
-            set { BackingStore?.Set(nameof(Class), value); }
+            get { return BackingStore?.Get<string>("class"); }
+            set { BackingStore?.Set("class", value); }
         }
         /// <summary>The secondary type of data source, such as OrganizationUser.</summary>
         public string Subclass {
-            get { return BackingStore?.Get<string>(nameof(Subclass)); }
-            set { BackingStore?.Set(nameof(Subclass), value); }
+            get { return BackingStore?.Get<string>("subclass"); }
+            set { BackingStore?.Set("subclass", value); }
         }
         /// <summary>
         /// Instantiates a new personType and sets the default values.

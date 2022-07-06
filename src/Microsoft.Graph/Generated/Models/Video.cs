@@ -8,60 +8,60 @@ namespace Microsoft.Graph.Models {
     public class Video : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Number of audio bits per sample.</summary>
         public int? AudioBitsPerSample {
-            get { return BackingStore?.Get<int?>(nameof(AudioBitsPerSample)); }
-            set { BackingStore?.Set(nameof(AudioBitsPerSample), value); }
+            get { return BackingStore?.Get<int?>("audioBitsPerSample"); }
+            set { BackingStore?.Set("audioBitsPerSample", value); }
         }
         /// <summary>Number of audio channels.</summary>
         public int? AudioChannels {
-            get { return BackingStore?.Get<int?>(nameof(AudioChannels)); }
-            set { BackingStore?.Set(nameof(AudioChannels), value); }
+            get { return BackingStore?.Get<int?>("audioChannels"); }
+            set { BackingStore?.Set("audioChannels", value); }
         }
         /// <summary>Name of the audio format (AAC, MP3, etc.).</summary>
         public string AudioFormat {
-            get { return BackingStore?.Get<string>(nameof(AudioFormat)); }
-            set { BackingStore?.Set(nameof(AudioFormat), value); }
+            get { return BackingStore?.Get<string>("audioFormat"); }
+            set { BackingStore?.Set("audioFormat", value); }
         }
         /// <summary>Number of audio samples per second.</summary>
         public int? AudioSamplesPerSecond {
-            get { return BackingStore?.Get<int?>(nameof(AudioSamplesPerSecond)); }
-            set { BackingStore?.Set(nameof(AudioSamplesPerSecond), value); }
+            get { return BackingStore?.Get<int?>("audioSamplesPerSecond"); }
+            set { BackingStore?.Set("audioSamplesPerSecond", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Bit rate of the video in bits per second.</summary>
         public int? Bitrate {
-            get { return BackingStore?.Get<int?>(nameof(Bitrate)); }
-            set { BackingStore?.Set(nameof(Bitrate), value); }
+            get { return BackingStore?.Get<int?>("bitrate"); }
+            set { BackingStore?.Set("bitrate", value); }
         }
         /// <summary>Duration of the file in milliseconds.</summary>
         public long? Duration {
-            get { return BackingStore?.Get<long?>(nameof(Duration)); }
-            set { BackingStore?.Set(nameof(Duration), value); }
+            get { return BackingStore?.Get<long?>("duration"); }
+            set { BackingStore?.Set("duration", value); }
         }
         /// <summary>&apos;Four character code&apos; name of the video format.</summary>
         public string FourCC {
-            get { return BackingStore?.Get<string>(nameof(FourCC)); }
-            set { BackingStore?.Set(nameof(FourCC), value); }
+            get { return BackingStore?.Get<string>("fourCC"); }
+            set { BackingStore?.Set("fourCC", value); }
         }
         /// <summary>Frame rate of the video.</summary>
         public double? FrameRate {
-            get { return BackingStore?.Get<double?>(nameof(FrameRate)); }
-            set { BackingStore?.Set(nameof(FrameRate), value); }
+            get { return BackingStore?.Get<double?>("frameRate"); }
+            set { BackingStore?.Set("frameRate", value); }
         }
         /// <summary>Height of the video, in pixels.</summary>
         public int? Height {
-            get { return BackingStore?.Get<int?>(nameof(Height)); }
-            set { BackingStore?.Set(nameof(Height), value); }
+            get { return BackingStore?.Get<int?>("height"); }
+            set { BackingStore?.Set("height", value); }
         }
         /// <summary>Width of the video, in pixels.</summary>
         public int? Width {
-            get { return BackingStore?.Get<int?>(nameof(Width)); }
-            set { BackingStore?.Set(nameof(Width), value); }
+            get { return BackingStore?.Get<int?>("width"); }
+            set { BackingStore?.Set("width", value); }
         }
         /// <summary>
         /// Instantiates a new video and sets the default values.

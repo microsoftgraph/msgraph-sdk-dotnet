@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class TeamworkOnlineMeetingInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier of the calendar event associated with the meeting.</summary>
         public string CalendarEventId {
-            get { return BackingStore?.Get<string>(nameof(CalendarEventId)); }
-            set { BackingStore?.Set(nameof(CalendarEventId), value); }
+            get { return BackingStore?.Get<string>("calendarEventId"); }
+            set { BackingStore?.Set("calendarEventId", value); }
         }
         /// <summary>The URL which can be clicked on to join or uniquely identify the meeting.</summary>
         public string JoinWebUrl {
-            get { return BackingStore?.Get<string>(nameof(JoinWebUrl)); }
-            set { BackingStore?.Set(nameof(JoinWebUrl), value); }
+            get { return BackingStore?.Get<string>("joinWebUrl"); }
+            set { BackingStore?.Set("joinWebUrl", value); }
         }
         /// <summary>The organizer of the meeting.</summary>
         public TeamworkUserIdentity Organizer {
-            get { return BackingStore?.Get<TeamworkUserIdentity>(nameof(Organizer)); }
-            set { BackingStore?.Set(nameof(Organizer), value); }
+            get { return BackingStore?.Get<TeamworkUserIdentity>("organizer"); }
+            set { BackingStore?.Set("organizer", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkOnlineMeetingInfo and sets the default values.

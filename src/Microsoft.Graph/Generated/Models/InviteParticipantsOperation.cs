@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class InviteParticipantsOperation : CommsOperation, IParsable {
         /// <summary>The participants to invite.</summary>
         public List<InvitationParticipantInfo> Participants {
-            get { return BackingStore?.Get<List<InvitationParticipantInfo>>(nameof(Participants)); }
-            set { BackingStore?.Set(nameof(Participants), value); }
+            get { return BackingStore?.Get<List<InvitationParticipantInfo>>("participants"); }
+            set { BackingStore?.Set("participants", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

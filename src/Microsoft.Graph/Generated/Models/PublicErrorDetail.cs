@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class PublicErrorDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The error code.</summary>
         public string Code {
-            get { return BackingStore?.Get<string>(nameof(Code)); }
-            set { BackingStore?.Set(nameof(Code), value); }
+            get { return BackingStore?.Get<string>("code"); }
+            set { BackingStore?.Set("code", value); }
         }
         /// <summary>The error message.</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>The target of the error.</summary>
         public string Target {
-            get { return BackingStore?.Get<string>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<string>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Instantiates a new publicErrorDetail and sets the default values.

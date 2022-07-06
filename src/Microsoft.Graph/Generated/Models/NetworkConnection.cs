@@ -8,110 +8,110 @@ namespace Microsoft.Graph.Models {
     public class NetworkConnection : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Name of the application managing the network connection (for example, Facebook, SMTP, etc.).</summary>
         public string ApplicationName {
-            get { return BackingStore?.Get<string>(nameof(ApplicationName)); }
-            set { BackingStore?.Set(nameof(ApplicationName), value); }
+            get { return BackingStore?.Get<string>("applicationName"); }
+            set { BackingStore?.Set("applicationName", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Destination IP address (of the network connection).</summary>
         public string DestinationAddress {
-            get { return BackingStore?.Get<string>(nameof(DestinationAddress)); }
-            set { BackingStore?.Set(nameof(DestinationAddress), value); }
+            get { return BackingStore?.Get<string>("destinationAddress"); }
+            set { BackingStore?.Set("destinationAddress", value); }
         }
         /// <summary>Destination domain portion of the destination URL. (for example &apos;www.contoso.com&apos;).</summary>
         public string DestinationDomain {
-            get { return BackingStore?.Get<string>(nameof(DestinationDomain)); }
-            set { BackingStore?.Set(nameof(DestinationDomain), value); }
+            get { return BackingStore?.Get<string>("destinationDomain"); }
+            set { BackingStore?.Set("destinationDomain", value); }
         }
         /// <summary>Location (by IP address mapping) associated with the destination of a network connection.</summary>
         public string DestinationLocation {
-            get { return BackingStore?.Get<string>(nameof(DestinationLocation)); }
-            set { BackingStore?.Set(nameof(DestinationLocation), value); }
+            get { return BackingStore?.Get<string>("destinationLocation"); }
+            set { BackingStore?.Set("destinationLocation", value); }
         }
         /// <summary>Destination port (of the network connection).</summary>
         public string DestinationPort {
-            get { return BackingStore?.Get<string>(nameof(DestinationPort)); }
-            set { BackingStore?.Set(nameof(DestinationPort), value); }
+            get { return BackingStore?.Get<string>("destinationPort"); }
+            set { BackingStore?.Set("destinationPort", value); }
         }
         /// <summary>Network connection URL/URI string - excluding parameters. (for example &apos;www.contoso.com/products/default.html&apos;)</summary>
         public string DestinationUrl {
-            get { return BackingStore?.Get<string>(nameof(DestinationUrl)); }
-            set { BackingStore?.Set(nameof(DestinationUrl), value); }
+            get { return BackingStore?.Get<string>("destinationUrl"); }
+            set { BackingStore?.Set("destinationUrl", value); }
         }
         /// <summary>Network connection direction. Possible values are: unknown, inbound, outbound.</summary>
         public ConnectionDirection? Direction {
-            get { return BackingStore?.Get<ConnectionDirection?>(nameof(Direction)); }
-            set { BackingStore?.Set(nameof(Direction), value); }
+            get { return BackingStore?.Get<ConnectionDirection?>("direction"); }
+            set { BackingStore?.Set("direction", value); }
         }
         /// <summary>Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? DomainRegisteredDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DomainRegisteredDateTime)); }
-            set { BackingStore?.Set(nameof(DomainRegisteredDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("domainRegisteredDateTime"); }
+            set { BackingStore?.Set("domainRegisteredDateTime", value); }
         }
         /// <summary>The local DNS name resolution as it appears in the host&apos;s local DNS cache (for example, in case the &apos;hosts&apos; file was tampered with).</summary>
         public string LocalDnsName {
-            get { return BackingStore?.Get<string>(nameof(LocalDnsName)); }
-            set { BackingStore?.Set(nameof(LocalDnsName), value); }
+            get { return BackingStore?.Get<string>("localDnsName"); }
+            set { BackingStore?.Set("localDnsName", value); }
         }
         /// <summary>Network Address Translation destination IP address.</summary>
         public string NatDestinationAddress {
-            get { return BackingStore?.Get<string>(nameof(NatDestinationAddress)); }
-            set { BackingStore?.Set(nameof(NatDestinationAddress), value); }
+            get { return BackingStore?.Get<string>("natDestinationAddress"); }
+            set { BackingStore?.Set("natDestinationAddress", value); }
         }
         /// <summary>Network Address Translation destination port.</summary>
         public string NatDestinationPort {
-            get { return BackingStore?.Get<string>(nameof(NatDestinationPort)); }
-            set { BackingStore?.Set(nameof(NatDestinationPort), value); }
+            get { return BackingStore?.Get<string>("natDestinationPort"); }
+            set { BackingStore?.Set("natDestinationPort", value); }
         }
         /// <summary>Network Address Translation source IP address.</summary>
         public string NatSourceAddress {
-            get { return BackingStore?.Get<string>(nameof(NatSourceAddress)); }
-            set { BackingStore?.Set(nameof(NatSourceAddress), value); }
+            get { return BackingStore?.Get<string>("natSourceAddress"); }
+            set { BackingStore?.Set("natSourceAddress", value); }
         }
         /// <summary>Network Address Translation source port.</summary>
         public string NatSourcePort {
-            get { return BackingStore?.Get<string>(nameof(NatSourcePort)); }
-            set { BackingStore?.Set(nameof(NatSourcePort), value); }
+            get { return BackingStore?.Get<string>("natSourcePort"); }
+            set { BackingStore?.Set("natSourcePort", value); }
         }
         /// <summary>Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.</summary>
         public SecurityNetworkProtocol? Protocol {
-            get { return BackingStore?.Get<SecurityNetworkProtocol?>(nameof(Protocol)); }
-            set { BackingStore?.Set(nameof(Protocol), value); }
+            get { return BackingStore?.Get<SecurityNetworkProtocol?>("protocol"); }
+            set { BackingStore?.Set("protocol", value); }
         }
         /// <summary>Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.</summary>
         public string RiskScore {
-            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
-            set { BackingStore?.Set(nameof(RiskScore), value); }
+            get { return BackingStore?.Get<string>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
         }
         /// <summary>Source (i.e. origin) IP address (of the network connection).</summary>
         public string SourceAddress {
-            get { return BackingStore?.Get<string>(nameof(SourceAddress)); }
-            set { BackingStore?.Set(nameof(SourceAddress), value); }
+            get { return BackingStore?.Get<string>("sourceAddress"); }
+            set { BackingStore?.Set("sourceAddress", value); }
         }
         /// <summary>Location (by IP address mapping) associated with the source of a network connection.</summary>
         public string SourceLocation {
-            get { return BackingStore?.Get<string>(nameof(SourceLocation)); }
-            set { BackingStore?.Set(nameof(SourceLocation), value); }
+            get { return BackingStore?.Get<string>("sourceLocation"); }
+            set { BackingStore?.Set("sourceLocation", value); }
         }
         /// <summary>Source (i.e. origin) IP port (of the network connection).</summary>
         public string SourcePort {
-            get { return BackingStore?.Get<string>(nameof(SourcePort)); }
-            set { BackingStore?.Set(nameof(SourcePort), value); }
+            get { return BackingStore?.Get<string>("sourcePort"); }
+            set { BackingStore?.Set("sourcePort", value); }
         }
         /// <summary>Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.</summary>
         public ConnectionStatus? Status {
-            get { return BackingStore?.Get<ConnectionStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ConnectionStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>Parameters (suffix) of the destination URL.</summary>
         public string UrlParameters {
-            get { return BackingStore?.Get<string>(nameof(UrlParameters)); }
-            set { BackingStore?.Set(nameof(UrlParameters), value); }
+            get { return BackingStore?.Get<string>("urlParameters"); }
+            set { BackingStore?.Set("urlParameters", value); }
         }
         /// <summary>
         /// Instantiates a new networkConnection and sets the default values.

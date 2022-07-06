@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class ResourceAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Allowed Actions</summary>
         public List<string> AllowedResourceActions {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedResourceActions)); }
-            set { BackingStore?.Set(nameof(AllowedResourceActions), value); }
+            get { return BackingStore?.Get<List<string>>("allowedResourceActions"); }
+            set { BackingStore?.Set("allowedResourceActions", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Not Allowed Actions.</summary>
         public List<string> NotAllowedResourceActions {
-            get { return BackingStore?.Get<List<string>>(nameof(NotAllowedResourceActions)); }
-            set { BackingStore?.Set(nameof(NotAllowedResourceActions), value); }
+            get { return BackingStore?.Get<List<string>>("notAllowedResourceActions"); }
+            set { BackingStore?.Set("notAllowedResourceActions", value); }
         }
         /// <summary>
         /// Instantiates a new resourceAction and sets the default values.

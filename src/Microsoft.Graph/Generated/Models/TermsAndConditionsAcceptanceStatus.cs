@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Models {
     public class TermsAndConditionsAcceptanceStatus : Entity, IParsable {
         /// <summary>DateTime when the terms were last accepted by the user.</summary>
         public DateTimeOffset? AcceptedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AcceptedDateTime)); }
-            set { BackingStore?.Set(nameof(AcceptedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("acceptedDateTime"); }
+            set { BackingStore?.Set("acceptedDateTime", value); }
         }
         /// <summary>Most recent version number of the T&amp;C accepted by the user.</summary>
         public int? AcceptedVersion {
-            get { return BackingStore?.Get<int?>(nameof(AcceptedVersion)); }
-            set { BackingStore?.Set(nameof(AcceptedVersion), value); }
+            get { return BackingStore?.Get<int?>("acceptedVersion"); }
+            set { BackingStore?.Set("acceptedVersion", value); }
         }
         /// <summary>Navigation link to the terms and conditions that are assigned.</summary>
         public Microsoft.Graph.Models.TermsAndConditions TermsAndConditions {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.TermsAndConditions>(nameof(TermsAndConditions)); }
-            set { BackingStore?.Set(nameof(TermsAndConditions), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermsAndConditions>("termsAndConditions"); }
+            set { BackingStore?.Set("termsAndConditions", value); }
         }
         /// <summary>Display name of the user whose acceptance the entity represents.</summary>
         public string UserDisplayName {
-            get { return BackingStore?.Get<string>(nameof(UserDisplayName)); }
-            set { BackingStore?.Set(nameof(UserDisplayName), value); }
+            get { return BackingStore?.Get<string>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
         }
         /// <summary>The userPrincipalName of the User that accepted the term.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item.One
     public class OnenotePatchContentPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The commands property</summary>
         public List<OnenotePatchContentCommand> Commands {
-            get { return BackingStore?.Get<List<OnenotePatchContentCommand>>(nameof(Commands)); }
-            set { BackingStore?.Set(nameof(Commands), value); }
+            get { return BackingStore?.Get<List<OnenotePatchContentCommand>>("commands"); }
+            set { BackingStore?.Set("commands", value); }
         }
         /// <summary>
         /// Instantiates a new onenotePatchContentPostRequestBody and sets the default values.

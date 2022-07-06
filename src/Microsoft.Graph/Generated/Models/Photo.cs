@@ -8,55 +8,55 @@ namespace Microsoft.Graph.Models {
     public class Photo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Camera manufacturer. Read-only.</summary>
         public string CameraMake {
-            get { return BackingStore?.Get<string>(nameof(CameraMake)); }
-            set { BackingStore?.Set(nameof(CameraMake), value); }
+            get { return BackingStore?.Get<string>("cameraMake"); }
+            set { BackingStore?.Set("cameraMake", value); }
         }
         /// <summary>Camera model. Read-only.</summary>
         public string CameraModel {
-            get { return BackingStore?.Get<string>(nameof(CameraModel)); }
-            set { BackingStore?.Set(nameof(CameraModel), value); }
+            get { return BackingStore?.Get<string>("cameraModel"); }
+            set { BackingStore?.Set("cameraModel", value); }
         }
         /// <summary>The denominator for the exposure time fraction from the camera. Read-only.</summary>
         public double? ExposureDenominator {
-            get { return BackingStore?.Get<double?>(nameof(ExposureDenominator)); }
-            set { BackingStore?.Set(nameof(ExposureDenominator), value); }
+            get { return BackingStore?.Get<double?>("exposureDenominator"); }
+            set { BackingStore?.Set("exposureDenominator", value); }
         }
         /// <summary>The numerator for the exposure time fraction from the camera. Read-only.</summary>
         public double? ExposureNumerator {
-            get { return BackingStore?.Get<double?>(nameof(ExposureNumerator)); }
-            set { BackingStore?.Set(nameof(ExposureNumerator), value); }
+            get { return BackingStore?.Get<double?>("exposureNumerator"); }
+            set { BackingStore?.Set("exposureNumerator", value); }
         }
         /// <summary>The F-stop value from the camera. Read-only.</summary>
         public double? FNumber {
-            get { return BackingStore?.Get<double?>(nameof(FNumber)); }
-            set { BackingStore?.Set(nameof(FNumber), value); }
+            get { return BackingStore?.Get<double?>("fNumber"); }
+            set { BackingStore?.Set("fNumber", value); }
         }
         /// <summary>The focal length from the camera. Read-only.</summary>
         public double? FocalLength {
-            get { return BackingStore?.Get<double?>(nameof(FocalLength)); }
-            set { BackingStore?.Set(nameof(FocalLength), value); }
+            get { return BackingStore?.Get<double?>("focalLength"); }
+            set { BackingStore?.Set("focalLength", value); }
         }
         /// <summary>The ISO value from the camera. Read-only.</summary>
         public int? Iso {
-            get { return BackingStore?.Get<int?>(nameof(Iso)); }
-            set { BackingStore?.Set(nameof(Iso), value); }
+            get { return BackingStore?.Get<int?>("iso"); }
+            set { BackingStore?.Set("iso", value); }
         }
         /// <summary>The orientation value from the camera. Writable on OneDrive Personal.</summary>
         public int? Orientation {
-            get { return BackingStore?.Get<int?>(nameof(Orientation)); }
-            set { BackingStore?.Set(nameof(Orientation), value); }
+            get { return BackingStore?.Get<int?>("orientation"); }
+            set { BackingStore?.Set("orientation", value); }
         }
         /// <summary>The date and time the photo was taken in UTC time. Read-only.</summary>
         public DateTimeOffset? TakenDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(TakenDateTime)); }
-            set { BackingStore?.Set(nameof(TakenDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("takenDateTime"); }
+            set { BackingStore?.Set("takenDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new photo and sets the default values.

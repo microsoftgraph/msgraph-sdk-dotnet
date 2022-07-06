@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
     public class ExternalGroup : Entity, IParsable {
         /// <summary>The description of the external group. Optional.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The friendly name of the external group. Optional.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.</summary>
         public List<Identity> Members {
-            get { return BackingStore?.Get<List<Identity>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<Identity>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

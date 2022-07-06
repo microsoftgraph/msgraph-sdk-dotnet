@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class PhysicalOfficeAddress : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The city.</summary>
         public string City {
-            get { return BackingStore?.Get<string>(nameof(City)); }
-            set { BackingStore?.Set(nameof(City), value); }
+            get { return BackingStore?.Get<string>("city"); }
+            set { BackingStore?.Set("city", value); }
         }
         /// <summary>The country or region. It&apos;s a free-format string value, for example, &apos;United States&apos;.</summary>
         public string CountryOrRegion {
-            get { return BackingStore?.Get<string>(nameof(CountryOrRegion)); }
-            set { BackingStore?.Set(nameof(CountryOrRegion), value); }
+            get { return BackingStore?.Get<string>("countryOrRegion"); }
+            set { BackingStore?.Set("countryOrRegion", value); }
         }
         /// <summary>Office location such as building and office number for an organizational contact.</summary>
         public string OfficeLocation {
-            get { return BackingStore?.Get<string>(nameof(OfficeLocation)); }
-            set { BackingStore?.Set(nameof(OfficeLocation), value); }
+            get { return BackingStore?.Get<string>("officeLocation"); }
+            set { BackingStore?.Set("officeLocation", value); }
         }
         /// <summary>The postal code.</summary>
         public string PostalCode {
-            get { return BackingStore?.Get<string>(nameof(PostalCode)); }
-            set { BackingStore?.Set(nameof(PostalCode), value); }
+            get { return BackingStore?.Get<string>("postalCode"); }
+            set { BackingStore?.Set("postalCode", value); }
         }
         /// <summary>The state.</summary>
         public string State {
-            get { return BackingStore?.Get<string>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<string>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>The street.</summary>
         public string Street {
-            get { return BackingStore?.Get<string>(nameof(Street)); }
-            set { BackingStore?.Set(nameof(Street), value); }
+            get { return BackingStore?.Get<string>("street"); }
+            set { BackingStore?.Set("street", value); }
         }
         /// <summary>
         /// Instantiates a new physicalOfficeAddress and sets the default values.

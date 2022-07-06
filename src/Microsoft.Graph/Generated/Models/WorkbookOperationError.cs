@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class WorkbookOperationError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The error code.</summary>
         public string Code {
-            get { return BackingStore?.Get<string>(nameof(Code)); }
-            set { BackingStore?.Set(nameof(Code), value); }
+            get { return BackingStore?.Get<string>("code"); }
+            set { BackingStore?.Set("code", value); }
         }
         /// <summary>The innerError property</summary>
         public WorkbookOperationError InnerError {
-            get { return BackingStore?.Get<WorkbookOperationError>(nameof(InnerError)); }
-            set { BackingStore?.Set(nameof(InnerError), value); }
+            get { return BackingStore?.Get<WorkbookOperationError>("innerError"); }
+            set { BackingStore?.Set("innerError", value); }
         }
         /// <summary>The error message.</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>
         /// Instantiates a new workbookOperationError and sets the default values.

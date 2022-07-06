@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class DirectoryObjectPartnerReference : DirectoryObject, IParsable {
         /// <summary>Description of the object returned. Read-only.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Name of directory object being returned, like group or application. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The tenant identifier for the partner tenant. Read-only.</summary>
         public string ExternalPartnerTenantId {
-            get { return BackingStore?.Get<string>(nameof(ExternalPartnerTenantId)); }
-            set { BackingStore?.Set(nameof(ExternalPartnerTenantId), value); }
+            get { return BackingStore?.Get<string>("externalPartnerTenantId"); }
+            set { BackingStore?.Set("externalPartnerTenantId", value); }
         }
         /// <summary>The type of the referenced object in the partner tenant. Read-only.</summary>
         public string ObjectType {
-            get { return BackingStore?.Get<string>(nameof(ObjectType)); }
-            set { BackingStore?.Set(nameof(ObjectType), value); }
+            get { return BackingStore?.Get<string>("objectType"); }
+            set { BackingStore?.Set("objectType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class ServiceHealthIssuePost : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The published time of the post.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The content of the service issue post.</summary>
         public ItemBody Description {
-            get { return BackingStore?.Get<ItemBody>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<ItemBody>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.PostType? PostType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.PostType?>(nameof(PostType)); }
-            set { BackingStore?.Set(nameof(PostType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PostType?>("postType"); }
+            set { BackingStore?.Set("postType", value); }
         }
         /// <summary>
         /// Instantiates a new serviceHealthIssuePost and sets the default values.

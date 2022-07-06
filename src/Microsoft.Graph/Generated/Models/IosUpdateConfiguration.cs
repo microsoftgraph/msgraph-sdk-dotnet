@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Models {
     public class IosUpdateConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Active Hours End (active hours mean the time window when updates install should not happen)</summary>
         public Time? ActiveHoursEnd {
-            get { return BackingStore?.Get<Time?>(nameof(ActiveHoursEnd)); }
-            set { BackingStore?.Set(nameof(ActiveHoursEnd), value); }
+            get { return BackingStore?.Get<Time?>("activeHoursEnd"); }
+            set { BackingStore?.Set("activeHoursEnd", value); }
         }
         /// <summary>Active Hours Start (active hours mean the time window when updates install should not happen)</summary>
         public Time? ActiveHoursStart {
-            get { return BackingStore?.Get<Time?>(nameof(ActiveHoursStart)); }
-            set { BackingStore?.Set(nameof(ActiveHoursStart), value); }
+            get { return BackingStore?.Get<Time?>("activeHoursStart"); }
+            set { BackingStore?.Set("activeHoursStart", value); }
         }
         /// <summary>Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.</summary>
         public List<string> ScheduledInstallDays {
-            get { return BackingStore?.Get<List<string>>(nameof(ScheduledInstallDays)); }
-            set { BackingStore?.Set(nameof(ScheduledInstallDays), value); }
+            get { return BackingStore?.Get<List<string>>("scheduledInstallDays"); }
+            set { BackingStore?.Set("scheduledInstallDays", value); }
         }
         /// <summary>UTC Time Offset indicated in minutes</summary>
         public int? UtcTimeOffsetInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(UtcTimeOffsetInMinutes)); }
-            set { BackingStore?.Set(nameof(UtcTimeOffsetInMinutes), value); }
+            get { return BackingStore?.Get<int?>("utcTimeOffsetInMinutes"); }
+            set { BackingStore?.Set("utcTimeOffsetInMinutes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class SecurityResource : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the resource that is related to current alert. Required.</summary>
         public string Resource {
-            get { return BackingStore?.Get<string>(nameof(Resource)); }
-            set { BackingStore?.Set(nameof(Resource), value); }
+            get { return BackingStore?.Get<string>("resource"); }
+            set { BackingStore?.Set("resource", value); }
         }
         /// <summary>Represents type of security resources related to an alert. Possible values are: attacked, related.</summary>
         public SecurityResourceType? ResourceType {
-            get { return BackingStore?.Get<SecurityResourceType?>(nameof(ResourceType)); }
-            set { BackingStore?.Set(nameof(ResourceType), value); }
+            get { return BackingStore?.Get<SecurityResourceType?>("resourceType"); }
+            set { BackingStore?.Set("resourceType", value); }
         }
         /// <summary>
         /// Instantiates a new securityResource and sets the default values.

@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Models {
     public class Windows10SecureAssessmentConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to allow the app from printing during the test.</summary>
         public bool? AllowPrinting {
-            get { return BackingStore?.Get<bool?>(nameof(AllowPrinting)); }
-            set { BackingStore?.Set(nameof(AllowPrinting), value); }
+            get { return BackingStore?.Get<bool?>("allowPrinting"); }
+            set { BackingStore?.Set("allowPrinting", value); }
         }
         /// <summary>Indicates whether or not to allow screen capture capability during a test.</summary>
         public bool? AllowScreenCapture {
-            get { return BackingStore?.Get<bool?>(nameof(AllowScreenCapture)); }
-            set { BackingStore?.Set(nameof(AllowScreenCapture), value); }
+            get { return BackingStore?.Get<bool?>("allowScreenCapture"); }
+            set { BackingStore?.Set("allowScreenCapture", value); }
         }
         /// <summary>Indicates whether or not to allow text suggestions during the test.</summary>
         public bool? AllowTextSuggestion {
-            get { return BackingStore?.Get<bool?>(nameof(AllowTextSuggestion)); }
-            set { BackingStore?.Set(nameof(AllowTextSuggestion), value); }
+            get { return BackingStore?.Get<bool?>("allowTextSuggestion"); }
+            set { BackingStore?.Set("allowTextSuggestion", value); }
         }
         /// <summary>The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).</summary>
         public string ConfigurationAccount {
-            get { return BackingStore?.Get<string>(nameof(ConfigurationAccount)); }
-            set { BackingStore?.Set(nameof(ConfigurationAccount), value); }
+            get { return BackingStore?.Get<string>("configurationAccount"); }
+            set { BackingStore?.Set("configurationAccount", value); }
         }
         /// <summary>Url link to an assessment that&apos;s automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).</summary>
         public string LaunchUri {
-            get { return BackingStore?.Get<string>(nameof(LaunchUri)); }
-            set { BackingStore?.Set(nameof(LaunchUri), value); }
+            get { return BackingStore?.Get<string>("launchUri"); }
+            set { BackingStore?.Set("launchUri", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Models {
     public class WorkforceIntegration : ChangeTrackedEntity, IParsable {
         /// <summary>API version for the call back URL. Start with 1.</summary>
         public int? ApiVersion {
-            get { return BackingStore?.Get<int?>(nameof(ApiVersion)); }
-            set { BackingStore?.Set(nameof(ApiVersion), value); }
+            get { return BackingStore?.Get<int?>("apiVersion"); }
+            set { BackingStore?.Set("apiVersion", value); }
         }
         /// <summary>Name of the workforce integration.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The workforce integration encryption resource.</summary>
         public WorkforceIntegrationEncryption Encryption {
-            get { return BackingStore?.Get<WorkforceIntegrationEncryption>(nameof(Encryption)); }
-            set { BackingStore?.Set(nameof(Encryption), value); }
+            get { return BackingStore?.Get<WorkforceIntegrationEncryption>("encryption"); }
+            set { BackingStore?.Set("encryption", value); }
         }
         /// <summary>Indicates whether this workforce integration is currently active and available.</summary>
         public bool? IsActive {
-            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
-            set { BackingStore?.Set(nameof(IsActive), value); }
+            get { return BackingStore?.Get<bool?>("isActive"); }
+            set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.</summary>
         public WorkforceIntegrationSupportedEntities? SupportedEntities {
-            get { return BackingStore?.Get<WorkforceIntegrationSupportedEntities?>(nameof(SupportedEntities)); }
-            set { BackingStore?.Set(nameof(SupportedEntities), value); }
+            get { return BackingStore?.Get<WorkforceIntegrationSupportedEntities?>("supportedEntities"); }
+            set { BackingStore?.Set("supportedEntities", value); }
         }
         /// <summary>Workforce Integration URL for callbacks from the Shifts service.</summary>
         public string Url {
-            get { return BackingStore?.Get<string>(nameof(Url)); }
-            set { BackingStore?.Set(nameof(Url), value); }
+            get { return BackingStore?.Get<string>("url"); }
+            set { BackingStore?.Set("url", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,32 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class IdentityContainer : Entity, IParsable {
         /// <summary>Represents entry point for API connectors.</summary>
         public List<IdentityApiConnector> ApiConnectors {
-            get { return BackingStore?.Get<List<IdentityApiConnector>>(nameof(ApiConnectors)); }
-            set { BackingStore?.Set(nameof(ApiConnectors), value); }
+            get { return BackingStore?.Get<List<IdentityApiConnector>>("apiConnectors"); }
+            set { BackingStore?.Set("apiConnectors", value); }
         }
         /// <summary>Represents entry point for B2X and self-service sign-up identity userflows.</summary>
         public List<B2xIdentityUserFlow> B2xUserFlows {
-            get { return BackingStore?.Get<List<B2xIdentityUserFlow>>(nameof(B2xUserFlows)); }
-            set { BackingStore?.Set(nameof(B2xUserFlows), value); }
+            get { return BackingStore?.Get<List<B2xIdentityUserFlow>>("b2xUserFlows"); }
+            set { BackingStore?.Set("b2xUserFlows", value); }
         }
         /// <summary>the entry point for the Conditional Access (CA) object model.</summary>
         public ConditionalAccessRoot ConditionalAccess {
-            get { return BackingStore?.Get<ConditionalAccessRoot>(nameof(ConditionalAccess)); }
-            set { BackingStore?.Set(nameof(ConditionalAccess), value); }
+            get { return BackingStore?.Get<ConditionalAccessRoot>("conditionalAccess"); }
+            set { BackingStore?.Set("conditionalAccess", value); }
         }
         /// <summary>Represents entry point for identity provider base.</summary>
         public List<IdentityProviderBase> IdentityProviders {
-            get { return BackingStore?.Get<List<IdentityProviderBase>>(nameof(IdentityProviders)); }
-            set { BackingStore?.Set(nameof(IdentityProviders), value); }
+            get { return BackingStore?.Get<List<IdentityProviderBase>>("identityProviders"); }
+            set { BackingStore?.Set("identityProviders", value); }
         }
         /// <summary>Represents entry point for identity userflow attributes.</summary>
         public List<IdentityUserFlowAttribute> UserFlowAttributes {
-            get { return BackingStore?.Get<List<IdentityUserFlowAttribute>>(nameof(UserFlowAttributes)); }
-            set { BackingStore?.Set(nameof(UserFlowAttributes), value); }
+            get { return BackingStore?.Get<List<IdentityUserFlowAttribute>>("userFlowAttributes"); }
+            set { BackingStore?.Set("userFlowAttributes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

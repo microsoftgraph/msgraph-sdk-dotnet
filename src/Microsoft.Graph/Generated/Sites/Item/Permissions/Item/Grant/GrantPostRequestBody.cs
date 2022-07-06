@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Sites.Item.Permissions.Item.Grant {
     public class GrantPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The recipients property</summary>
         public List<DriveRecipient> Recipients {
-            get { return BackingStore?.Get<List<DriveRecipient>>(nameof(Recipients)); }
-            set { BackingStore?.Set(nameof(Recipients), value); }
+            get { return BackingStore?.Get<List<DriveRecipient>>("recipients"); }
+            set { BackingStore?.Set("recipients", value); }
         }
         /// <summary>The roles property</summary>
         public List<string> Roles {
-            get { return BackingStore?.Get<List<string>>(nameof(Roles)); }
-            set { BackingStore?.Set(nameof(Roles), value); }
+            get { return BackingStore?.Get<List<string>>("roles"); }
+            set { BackingStore?.Set("roles", value); }
         }
         /// <summary>
         /// Instantiates a new grantPostRequestBody and sets the default values.

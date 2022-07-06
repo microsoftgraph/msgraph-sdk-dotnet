@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class PermissionGrantPolicy : PolicyBase, IParsable {
         /// <summary>Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.</summary>
         public List<PermissionGrantConditionSet> Excludes {
-            get { return BackingStore?.Get<List<PermissionGrantConditionSet>>(nameof(Excludes)); }
-            set { BackingStore?.Set(nameof(Excludes), value); }
+            get { return BackingStore?.Get<List<PermissionGrantConditionSet>>("excludes"); }
+            set { BackingStore?.Set("excludes", value); }
         }
         /// <summary>Condition sets which are included in this permission grant policy. Automatically expanded on GET.</summary>
         public List<PermissionGrantConditionSet> Includes {
-            get { return BackingStore?.Get<List<PermissionGrantConditionSet>>(nameof(Includes)); }
-            set { BackingStore?.Set(nameof(Includes), value); }
+            get { return BackingStore?.Get<List<PermissionGrantConditionSet>>("includes"); }
+            set { BackingStore?.Set("includes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

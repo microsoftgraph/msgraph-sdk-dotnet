@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class ConditionalAccessSessionControls : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.</summary>
         public ApplicationEnforcedRestrictionsSessionControl ApplicationEnforcedRestrictions {
-            get { return BackingStore?.Get<ApplicationEnforcedRestrictionsSessionControl>(nameof(ApplicationEnforcedRestrictions)); }
-            set { BackingStore?.Set(nameof(ApplicationEnforcedRestrictions), value); }
+            get { return BackingStore?.Get<ApplicationEnforcedRestrictionsSessionControl>("applicationEnforcedRestrictions"); }
+            set { BackingStore?.Set("applicationEnforcedRestrictions", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Session control to apply cloud app security.</summary>
         public CloudAppSecuritySessionControl CloudAppSecurity {
-            get { return BackingStore?.Get<CloudAppSecuritySessionControl>(nameof(CloudAppSecurity)); }
-            set { BackingStore?.Set(nameof(CloudAppSecurity), value); }
+            get { return BackingStore?.Get<CloudAppSecuritySessionControl>("cloudAppSecurity"); }
+            set { BackingStore?.Set("cloudAppSecurity", value); }
         }
         /// <summary>Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.</summary>
         public bool? DisableResilienceDefaults {
-            get { return BackingStore?.Get<bool?>(nameof(DisableResilienceDefaults)); }
-            set { BackingStore?.Set(nameof(DisableResilienceDefaults), value); }
+            get { return BackingStore?.Get<bool?>("disableResilienceDefaults"); }
+            set { BackingStore?.Set("disableResilienceDefaults", value); }
         }
         /// <summary>Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.</summary>
         public PersistentBrowserSessionControl PersistentBrowser {
-            get { return BackingStore?.Get<PersistentBrowserSessionControl>(nameof(PersistentBrowser)); }
-            set { BackingStore?.Set(nameof(PersistentBrowser), value); }
+            get { return BackingStore?.Get<PersistentBrowserSessionControl>("persistentBrowser"); }
+            set { BackingStore?.Set("persistentBrowser", value); }
         }
         /// <summary>Session control to enforce signin frequency.</summary>
         public SignInFrequencySessionControl SignInFrequency {
-            get { return BackingStore?.Get<SignInFrequencySessionControl>(nameof(SignInFrequency)); }
-            set { BackingStore?.Set(nameof(SignInFrequency), value); }
+            get { return BackingStore?.Get<SignInFrequencySessionControl>("signInFrequency"); }
+            set { BackingStore?.Set("signInFrequency", value); }
         }
         /// <summary>
         /// Instantiates a new conditionalAccessSessionControls and sets the default values.

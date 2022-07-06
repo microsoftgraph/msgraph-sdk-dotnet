@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class DefaultUserRolePermissions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Indicates whether the default user role can create applications.</summary>
         public bool? AllowedToCreateApps {
-            get { return BackingStore?.Get<bool?>(nameof(AllowedToCreateApps)); }
-            set { BackingStore?.Set(nameof(AllowedToCreateApps), value); }
+            get { return BackingStore?.Get<bool?>("allowedToCreateApps"); }
+            set { BackingStore?.Set("allowedToCreateApps", value); }
         }
         /// <summary>Indicates whether the default user role can create security groups.</summary>
         public bool? AllowedToCreateSecurityGroups {
-            get { return BackingStore?.Get<bool?>(nameof(AllowedToCreateSecurityGroups)); }
-            set { BackingStore?.Set(nameof(AllowedToCreateSecurityGroups), value); }
+            get { return BackingStore?.Get<bool?>("allowedToCreateSecurityGroups"); }
+            set { BackingStore?.Set("allowedToCreateSecurityGroups", value); }
         }
         /// <summary>Indicates whether the default user role can read other users.</summary>
         public bool? AllowedToReadOtherUsers {
-            get { return BackingStore?.Get<bool?>(nameof(AllowedToReadOtherUsers)); }
-            set { BackingStore?.Set(nameof(AllowedToReadOtherUsers), value); }
+            get { return BackingStore?.Get<bool?>("allowedToReadOtherUsers"); }
+            set { BackingStore?.Set("allowedToReadOtherUsers", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.</summary>
         public List<string> PermissionGrantPoliciesAssigned {
-            get { return BackingStore?.Get<List<string>>(nameof(PermissionGrantPoliciesAssigned)); }
-            set { BackingStore?.Set(nameof(PermissionGrantPoliciesAssigned), value); }
+            get { return BackingStore?.Get<List<string>>("permissionGrantPoliciesAssigned"); }
+            set { BackingStore?.Set("permissionGrantPoliciesAssigned", value); }
         }
         /// <summary>
         /// Instantiates a new defaultUserRolePermissions and sets the default values.

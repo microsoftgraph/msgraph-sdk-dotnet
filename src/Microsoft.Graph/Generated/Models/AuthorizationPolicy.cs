@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Models {
     public class AuthorizationPolicy : PolicyBase, IParsable {
         /// <summary>Indicates whether users can sign up for email based subscriptions.</summary>
         public bool? AllowedToSignUpEmailBasedSubscriptions {
-            get { return BackingStore?.Get<bool?>(nameof(AllowedToSignUpEmailBasedSubscriptions)); }
-            set { BackingStore?.Set(nameof(AllowedToSignUpEmailBasedSubscriptions), value); }
+            get { return BackingStore?.Get<bool?>("allowedToSignUpEmailBasedSubscriptions"); }
+            set { BackingStore?.Set("allowedToSignUpEmailBasedSubscriptions", value); }
         }
         /// <summary>Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.</summary>
         public bool? AllowedToUseSSPR {
-            get { return BackingStore?.Get<bool?>(nameof(AllowedToUseSSPR)); }
-            set { BackingStore?.Set(nameof(AllowedToUseSSPR), value); }
+            get { return BackingStore?.Get<bool?>("allowedToUseSSPR"); }
+            set { BackingStore?.Set("allowedToUseSSPR", value); }
         }
         /// <summary>Indicates whether a user can join the tenant by email validation.</summary>
         public bool? AllowEmailVerifiedUsersToJoinOrganization {
-            get { return BackingStore?.Get<bool?>(nameof(AllowEmailVerifiedUsersToJoinOrganization)); }
-            set { BackingStore?.Set(nameof(AllowEmailVerifiedUsersToJoinOrganization), value); }
+            get { return BackingStore?.Get<bool?>("allowEmailVerifiedUsersToJoinOrganization"); }
+            set { BackingStore?.Set("allowEmailVerifiedUsersToJoinOrganization", value); }
         }
         /// <summary>Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.</summary>
         public Microsoft.Graph.Models.AllowInvitesFrom? AllowInvitesFrom {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.AllowInvitesFrom?>(nameof(AllowInvitesFrom)); }
-            set { BackingStore?.Set(nameof(AllowInvitesFrom), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AllowInvitesFrom?>("allowInvitesFrom"); }
+            set { BackingStore?.Set("allowInvitesFrom", value); }
         }
         /// <summary>To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.</summary>
         public bool? BlockMsolPowerShell {
-            get { return BackingStore?.Get<bool?>(nameof(BlockMsolPowerShell)); }
-            set { BackingStore?.Set(nameof(BlockMsolPowerShell), value); }
+            get { return BackingStore?.Get<bool?>("blockMsolPowerShell"); }
+            set { BackingStore?.Set("blockMsolPowerShell", value); }
         }
         /// <summary>The defaultUserRolePermissions property</summary>
         public Microsoft.Graph.Models.DefaultUserRolePermissions DefaultUserRolePermissions {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.DefaultUserRolePermissions>(nameof(DefaultUserRolePermissions)); }
-            set { BackingStore?.Set(nameof(DefaultUserRolePermissions), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DefaultUserRolePermissions>("defaultUserRolePermissions"); }
+            set { BackingStore?.Set("defaultUserRolePermissions", value); }
         }
         /// <summary>Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).</summary>
         public string GuestUserRoleId {
-            get { return BackingStore?.Get<string>(nameof(GuestUserRoleId)); }
-            set { BackingStore?.Set(nameof(GuestUserRoleId), value); }
+            get { return BackingStore?.Get<string>("guestUserRoleId"); }
+            set { BackingStore?.Set("guestUserRoleId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationAssignmentSettings : Entity, IParsable {
         /// <summary>Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.</summary>
         public bool? SubmissionAnimationDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(SubmissionAnimationDisabled)); }
-            set { BackingStore?.Set(nameof(SubmissionAnimationDisabled), value); }
+            get { return BackingStore?.Get<bool?>("submissionAnimationDisabled"); }
+            set { BackingStore?.Set("submissionAnimationDisabled", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

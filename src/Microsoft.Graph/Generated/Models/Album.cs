@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Models {
     public class Album : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique identifier of the [driveItem][] that is the cover of the album.</summary>
         public string CoverImageItemId {
-            get { return BackingStore?.Get<string>(nameof(CoverImageItemId)); }
-            set { BackingStore?.Set(nameof(CoverImageItemId), value); }
+            get { return BackingStore?.Get<string>("coverImageItemId"); }
+            set { BackingStore?.Set("coverImageItemId", value); }
         }
         /// <summary>
         /// Instantiates a new album and sets the default values.

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the organizationalBranding singleton.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class OrganizationalBrandingLocalization : OrganizationalBrandingProperties, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

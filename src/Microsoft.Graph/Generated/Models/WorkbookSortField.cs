@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class WorkbookSortField : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Represents whether the sorting is done in an ascending fashion.</summary>
         public bool? Ascending {
-            get { return BackingStore?.Get<bool?>(nameof(Ascending)); }
-            set { BackingStore?.Set(nameof(Ascending), value); }
+            get { return BackingStore?.Get<bool?>("ascending"); }
+            set { BackingStore?.Set("ascending", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the color that is the target of the condition if the sorting is on font or cell color.</summary>
         public string Color {
-            get { return BackingStore?.Get<string>(nameof(Color)); }
-            set { BackingStore?.Set(nameof(Color), value); }
+            get { return BackingStore?.Get<string>("color"); }
+            set { BackingStore?.Set("color", value); }
         }
         /// <summary>Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.</summary>
         public string DataOption {
-            get { return BackingStore?.Get<string>(nameof(DataOption)); }
-            set { BackingStore?.Set(nameof(DataOption), value); }
+            get { return BackingStore?.Get<string>("dataOption"); }
+            set { BackingStore?.Set("dataOption", value); }
         }
         /// <summary>Represents the icon that is the target of the condition if the sorting is on the cell&apos;s icon.</summary>
         public WorkbookIcon Icon {
-            get { return BackingStore?.Get<WorkbookIcon>(nameof(Icon)); }
-            set { BackingStore?.Set(nameof(Icon), value); }
+            get { return BackingStore?.Get<WorkbookIcon>("icon"); }
+            set { BackingStore?.Set("icon", value); }
         }
         /// <summary>Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).</summary>
         public int? Key {
-            get { return BackingStore?.Get<int?>(nameof(Key)); }
-            set { BackingStore?.Set(nameof(Key), value); }
+            get { return BackingStore?.Get<int?>("key"); }
+            set { BackingStore?.Set("key", value); }
         }
         /// <summary>Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.</summary>
         public string SortOn {
-            get { return BackingStore?.Get<string>(nameof(SortOn)); }
-            set { BackingStore?.Set(nameof(SortOn), value); }
+            get { return BackingStore?.Get<string>("sortOn"); }
+            set { BackingStore?.Set("sortOn", value); }
         }
         /// <summary>
         /// Instantiates a new workbookSortField and sets the default values.
