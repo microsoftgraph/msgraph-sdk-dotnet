@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets address.
-        /// Address to the proxy server. Specify an address in the format &amp;lt;server&amp;gt;[':'&amp;lt;port&amp;gt;]
+        /// Address to the proxy server. Specify an address in the format [':']
         /// </summary>
         [JsonPropertyName("address")]
         public string Address { get; set; }

@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the group. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+        /// The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -240,7 +240,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets visibility.
-        /// Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+        /// Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
         /// </summary>
         [JsonPropertyName("visibility")]
         public string Visibility { get; set; }
@@ -289,7 +289,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is archived.
-        /// When a group is associated with a team, this property determines whether the team is in read-only mode.
+        /// When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
         /// </summary>
         [JsonPropertyName("isArchived")]
         public bool? IsArchived { get; set; }
@@ -331,7 +331,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets members.
-        /// Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&amp;$select=id,displayName&amp;$expand=members($select=id,userPrincipalName,displayName).
+        /// Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&amp;$select=id,displayName&amp;$expand=members($select=id,userPrincipalName,displayName).
         /// </summary>
         [JsonPropertyName("members")]
         public IGroupMembersCollectionWithReferencesPage Members { get; set; }
@@ -401,6 +401,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transitive member of.
+        /// The groups that a group is a member of, either directly and through nested membership. Nullable.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf")]
         public IGroupTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
@@ -414,6 +415,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transitive members.
+        /// The direct and transitive members of a group. Nullable.
         /// </summary>
         [JsonPropertyName("transitiveMembers")]
         public IGroupTransitiveMembersCollectionWithReferencesPage TransitiveMembers { get; set; }

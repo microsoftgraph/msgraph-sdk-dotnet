@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets excludeApplications.
-        /// The list of application IDs explicitly excluded from the policy.
+        /// Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
         /// </summary>
         [JsonPropertyName("excludeApplications")]
         public IEnumerable<string> ExcludeApplications { get; set; }
     
         /// <summary>
         /// Gets or sets includeApplications.
-        /// The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
+        /// Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
         /// </summary>
         [JsonPropertyName("includeApplications")]
         public IEnumerable<string> IncludeApplications { get; set; }

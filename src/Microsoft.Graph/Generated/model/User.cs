@@ -666,6 +666,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transitive member of.
+        /// The groups, including nested groups, and directory roles that a user is a member of. Nullable.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf")]
         public IUserTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
