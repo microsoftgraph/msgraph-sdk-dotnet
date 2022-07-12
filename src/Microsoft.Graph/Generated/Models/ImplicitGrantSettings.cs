@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class ImplicitGrantSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.</summary>
         public bool? EnableAccessTokenIssuance {
-            get { return BackingStore?.Get<bool?>(nameof(EnableAccessTokenIssuance)); }
-            set { BackingStore?.Set(nameof(EnableAccessTokenIssuance), value); }
+            get { return BackingStore?.Get<bool?>("enableAccessTokenIssuance"); }
+            set { BackingStore?.Set("enableAccessTokenIssuance", value); }
         }
         /// <summary>Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.</summary>
         public bool? EnableIdTokenIssuance {
-            get { return BackingStore?.Get<bool?>(nameof(EnableIdTokenIssuance)); }
-            set { BackingStore?.Set(nameof(EnableIdTokenIssuance), value); }
+            get { return BackingStore?.Get<bool?>("enableIdTokenIssuance"); }
+            set { BackingStore?.Set("enableIdTokenIssuance", value); }
         }
         /// <summary>
         /// Instantiates a new implicitGrantSettings and sets the default values.

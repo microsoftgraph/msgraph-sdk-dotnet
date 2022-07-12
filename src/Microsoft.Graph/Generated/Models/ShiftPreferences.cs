@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class ShiftPreferences : ChangeTrackedEntity, IParsable {
         /// <summary>Availability of the user to be scheduled for work and its recurrence pattern.</summary>
         public List<ShiftAvailability> Availability {
-            get { return BackingStore?.Get<List<ShiftAvailability>>(nameof(Availability)); }
-            set { BackingStore?.Set(nameof(Availability), value); }
+            get { return BackingStore?.Get<List<ShiftAvailability>>("availability"); }
+            set { BackingStore?.Set("availability", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

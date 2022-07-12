@@ -4,17 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class SignInFrequencySessionControl : ConditionalAccessSessionControl, IParsable {
-        /// <summary>Possible values are: days, hours, or null if frequencyInterval is everyTime .</summary>
-        public SigninFrequencyType? Type {
-            get { return BackingStore?.Get<SigninFrequencyType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
-        }
         /// <summary>The number of days or hours.</summary>
         public int? Value {
-            get { return BackingStore?.Get<int?>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<int?>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +23,6 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"type", n => { Type = n.GetEnumValue<SigninFrequencyType>(); } },
                 {"value", n => { Value = n.GetIntValue(); } },
             };
         }
@@ -40,7 +33,6 @@ namespace Microsoft.Graph.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<SigninFrequencyType>("type", Type);
             writer.WriteIntValue("value", Value);
         }
     }

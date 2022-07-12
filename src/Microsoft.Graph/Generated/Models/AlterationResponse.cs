@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class AlterationResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Defines the original user query string.</summary>
         public string OriginalQueryString {
-            get { return BackingStore?.Get<string>(nameof(OriginalQueryString)); }
-            set { BackingStore?.Set(nameof(OriginalQueryString), value); }
+            get { return BackingStore?.Get<string>("originalQueryString"); }
+            set { BackingStore?.Set("originalQueryString", value); }
         }
         /// <summary>Defines the details of alteration information for the spelling correction.</summary>
         public SearchAlteration QueryAlteration {
-            get { return BackingStore?.Get<SearchAlteration>(nameof(QueryAlteration)); }
-            set { BackingStore?.Set(nameof(QueryAlteration), value); }
+            get { return BackingStore?.Get<SearchAlteration>("queryAlteration"); }
+            set { BackingStore?.Set("queryAlteration", value); }
         }
         /// <summary>Defines the type of the spelling correction. Possible values are suggestion, modification.</summary>
         public SearchAlterationType? QueryAlterationType {
-            get { return BackingStore?.Get<SearchAlterationType?>(nameof(QueryAlterationType)); }
-            set { BackingStore?.Set(nameof(QueryAlterationType), value); }
+            get { return BackingStore?.Get<SearchAlterationType?>("queryAlterationType"); }
+            set { BackingStore?.Set("queryAlterationType", value); }
         }
         /// <summary>
         /// Instantiates a new alterationResponse and sets the default values.

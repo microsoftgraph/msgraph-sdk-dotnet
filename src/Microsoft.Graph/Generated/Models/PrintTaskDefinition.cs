@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the print singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class PrintTaskDefinition : Entity, IParsable {
         /// <summary>The createdBy property</summary>
         public AppIdentity CreatedBy {
-            get { return BackingStore?.Get<AppIdentity>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<AppIdentity>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The name of the printTaskDefinition.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.</summary>
         public List<PrintTask> Tasks {
-            get { return BackingStore?.Get<List<PrintTask>>(nameof(Tasks)); }
-            set { BackingStore?.Set(nameof(Tasks), value); }
+            get { return BackingStore?.Get<List<PrintTask>>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

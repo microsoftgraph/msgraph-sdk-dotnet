@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class ItemAnalytics : Entity, IParsable {
         /// <summary>The allTime property</summary>
         public ItemActivityStat AllTime {
-            get { return BackingStore?.Get<ItemActivityStat>(nameof(AllTime)); }
-            set { BackingStore?.Set(nameof(AllTime), value); }
+            get { return BackingStore?.Get<ItemActivityStat>("allTime"); }
+            set { BackingStore?.Set("allTime", value); }
         }
         /// <summary>The itemActivityStats property</summary>
         public List<ItemActivityStat> ItemActivityStats {
-            get { return BackingStore?.Get<List<ItemActivityStat>>(nameof(ItemActivityStats)); }
-            set { BackingStore?.Set(nameof(ItemActivityStats), value); }
+            get { return BackingStore?.Get<List<ItemActivityStat>>("itemActivityStats"); }
+            set { BackingStore?.Set("itemActivityStats", value); }
         }
         /// <summary>The lastSevenDays property</summary>
         public ItemActivityStat LastSevenDays {
-            get { return BackingStore?.Get<ItemActivityStat>(nameof(LastSevenDays)); }
-            set { BackingStore?.Set(nameof(LastSevenDays), value); }
+            get { return BackingStore?.Get<ItemActivityStat>("lastSevenDays"); }
+            set { BackingStore?.Set("lastSevenDays", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

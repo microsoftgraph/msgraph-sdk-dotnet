@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class IosHomeScreenPage : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the page</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>A list of apps, folders, and web clips to appear on a page. This collection can contain a maximum of 500 elements.</summary>
         public List<IosHomeScreenItem> Icons {
-            get { return BackingStore?.Get<List<IosHomeScreenItem>>(nameof(Icons)); }
-            set { BackingStore?.Set(nameof(Icons), value); }
+            get { return BackingStore?.Get<List<IosHomeScreenItem>>("icons"); }
+            set { BackingStore?.Set("icons", value); }
         }
         /// <summary>
         /// Instantiates a new iosHomeScreenPage and sets the default values.

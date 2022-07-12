@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class SharePointIdentitySet : IdentitySet, IParsable {
         /// <summary>The group associated with this action. Optional.</summary>
         public Identity Group {
-            get { return BackingStore?.Get<Identity>(nameof(Group)); }
-            set { BackingStore?.Set(nameof(Group), value); }
+            get { return BackingStore?.Get<Identity>("group"); }
+            set { BackingStore?.Set("group", value); }
         }
         /// <summary>The SharePoint group associated with this action. Optional.</summary>
         public SharePointIdentity SiteGroup {
-            get { return BackingStore?.Get<SharePointIdentity>(nameof(SiteGroup)); }
-            set { BackingStore?.Set(nameof(SiteGroup), value); }
+            get { return BackingStore?.Get<SharePointIdentity>("siteGroup"); }
+            set { BackingStore?.Set("siteGroup", value); }
         }
         /// <summary>The SharePoint user associated with this action. Optional.</summary>
         public SharePointIdentity SiteUser {
-            get { return BackingStore?.Get<SharePointIdentity>(nameof(SiteUser)); }
-            set { BackingStore?.Set(nameof(SiteUser), value); }
+            get { return BackingStore?.Get<SharePointIdentity>("siteUser"); }
+            set { BackingStore?.Set("siteUser", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

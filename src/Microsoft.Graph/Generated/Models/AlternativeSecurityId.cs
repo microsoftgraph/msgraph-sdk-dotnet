@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class AlternativeSecurityId : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>For internal use only</summary>
         public string IdentityProvider {
-            get { return BackingStore?.Get<string>(nameof(IdentityProvider)); }
-            set { BackingStore?.Set(nameof(IdentityProvider), value); }
+            get { return BackingStore?.Get<string>("identityProvider"); }
+            set { BackingStore?.Set("identityProvider", value); }
         }
         /// <summary>For internal use only</summary>
         public byte[] Key {
-            get { return BackingStore?.Get<byte[]>(nameof(Key)); }
-            set { BackingStore?.Set(nameof(Key), value); }
+            get { return BackingStore?.Get<byte[]>("key"); }
+            set { BackingStore?.Set("key", value); }
         }
         /// <summary>For internal use only</summary>
         public int? Type {
-            get { return BackingStore?.Get<int?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<int?>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Instantiates a new alternativeSecurityId and sets the default values.

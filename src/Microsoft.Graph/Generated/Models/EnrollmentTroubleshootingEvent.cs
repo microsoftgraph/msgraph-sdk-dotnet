@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Models {
     public class EnrollmentTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable {
         /// <summary>Azure AD device identifier.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
-        /// <summary>Type of the enrollment. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.</summary>
+        /// <summary>Possible ways of adding a mobile device to management.</summary>
         public DeviceEnrollmentType? EnrollmentType {
-            get { return BackingStore?.Get<DeviceEnrollmentType?>(nameof(EnrollmentType)); }
-            set { BackingStore?.Set(nameof(EnrollmentType), value); }
+            get { return BackingStore?.Get<DeviceEnrollmentType?>("enrollmentType"); }
+            set { BackingStore?.Set("enrollmentType", value); }
         }
-        /// <summary>Highlevel failure category. Possible values are: unknown, authentication, authorization, accountValidation, userValidation, deviceNotSupported, inMaintenance, badRequest, featureNotSupported, enrollmentRestrictionsEnforced, clientDisconnected, userAbandonment.</summary>
+        /// <summary>Top level failure categories for enrollment.</summary>
         public DeviceEnrollmentFailureReason? FailureCategory {
-            get { return BackingStore?.Get<DeviceEnrollmentFailureReason?>(nameof(FailureCategory)); }
-            set { BackingStore?.Set(nameof(FailureCategory), value); }
+            get { return BackingStore?.Get<DeviceEnrollmentFailureReason?>("failureCategory"); }
+            set { BackingStore?.Set("failureCategory", value); }
         }
         /// <summary>Detailed failure reason.</summary>
         public string FailureReason {
-            get { return BackingStore?.Get<string>(nameof(FailureReason)); }
-            set { BackingStore?.Set(nameof(FailureReason), value); }
+            get { return BackingStore?.Get<string>("failureReason"); }
+            set { BackingStore?.Set("failureReason", value); }
         }
         /// <summary>Device identifier created or collected by Intune.</summary>
         public string ManagedDeviceIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceIdentifier)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceIdentifier), value); }
+            get { return BackingStore?.Get<string>("managedDeviceIdentifier"); }
+            set { BackingStore?.Set("managedDeviceIdentifier", value); }
         }
         /// <summary>Operating System.</summary>
         public string OperatingSystem {
-            get { return BackingStore?.Get<string>(nameof(OperatingSystem)); }
-            set { BackingStore?.Set(nameof(OperatingSystem), value); }
+            get { return BackingStore?.Get<string>("operatingSystem"); }
+            set { BackingStore?.Set("operatingSystem", value); }
         }
         /// <summary>OS Version.</summary>
         public string OsVersion {
-            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<string>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>Identifier for the user that tried to enroll the device.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

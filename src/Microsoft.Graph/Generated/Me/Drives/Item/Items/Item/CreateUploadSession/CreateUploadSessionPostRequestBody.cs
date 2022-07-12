@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Me.Drives.Item.Items.Item.CreateUploadSession {
     public class CreateUploadSessionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The item property</summary>
         public DriveItemUploadableProperties Item {
-            get { return BackingStore?.Get<DriveItemUploadableProperties>(nameof(Item)); }
-            set { BackingStore?.Set(nameof(Item), value); }
+            get { return BackingStore?.Get<DriveItemUploadableProperties>("item"); }
+            set { BackingStore?.Set("item", value); }
         }
         /// <summary>
         /// Instantiates a new createUploadSessionPostRequestBody and sets the default values.

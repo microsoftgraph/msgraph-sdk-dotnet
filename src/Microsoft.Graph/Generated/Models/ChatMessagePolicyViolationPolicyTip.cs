@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class ChatMessagePolicyViolationPolicyTip : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn&apos;t say in chats)</summary>
         public string ComplianceUrl {
-            get { return BackingStore?.Get<string>(nameof(ComplianceUrl)); }
-            set { BackingStore?.Set(nameof(ComplianceUrl), value); }
+            get { return BackingStore?.Get<string>("complianceUrl"); }
+            set { BackingStore?.Set("complianceUrl", value); }
         }
         /// <summary>Explanatory text shown to the sender of the message.</summary>
         public string GeneralText {
-            get { return BackingStore?.Get<string>(nameof(GeneralText)); }
-            set { BackingStore?.Set(nameof(GeneralText), value); }
+            get { return BackingStore?.Get<string>("generalText"); }
+            set { BackingStore?.Set("generalText", value); }
         }
         /// <summary>The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include &apos;Credit Card Number&apos; and &apos;Social Security Number&apos;.</summary>
         public List<string> MatchedConditionDescriptions {
-            get { return BackingStore?.Get<List<string>>(nameof(MatchedConditionDescriptions)); }
-            set { BackingStore?.Set(nameof(MatchedConditionDescriptions), value); }
+            get { return BackingStore?.Get<List<string>>("matchedConditionDescriptions"); }
+            set { BackingStore?.Set("matchedConditionDescriptions", value); }
         }
         /// <summary>
         /// Instantiates a new chatMessagePolicyViolationPolicyTip and sets the default values.

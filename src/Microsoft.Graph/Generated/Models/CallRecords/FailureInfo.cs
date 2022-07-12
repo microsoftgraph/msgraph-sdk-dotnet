@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models.CallRecords {
     public class FailureInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Classification of why a call or portion of a call failed.</summary>
         public string Reason {
-            get { return BackingStore?.Get<string>(nameof(Reason)); }
-            set { BackingStore?.Set(nameof(Reason), value); }
+            get { return BackingStore?.Get<string>("reason"); }
+            set { BackingStore?.Set("reason", value); }
         }
-        /// <summary>The stage when the failure occurred. Possible values are: unknown, callSetup, midcall, unknownFutureValue.</summary>
+        /// <summary>The stage property</summary>
         public FailureStage? Stage {
-            get { return BackingStore?.Get<FailureStage?>(nameof(Stage)); }
-            set { BackingStore?.Set(nameof(Stage), value); }
+            get { return BackingStore?.Get<FailureStage?>("stage"); }
+            set { BackingStore?.Set("stage", value); }
         }
         /// <summary>
         /// Instantiates a new failureInfo and sets the default values.

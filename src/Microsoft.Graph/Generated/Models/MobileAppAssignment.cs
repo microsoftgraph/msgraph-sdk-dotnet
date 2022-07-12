@@ -6,20 +6,20 @@ using System.Linq;
 namespace Microsoft.Graph.Models {
     /// <summary>A class containing the properties used for Group Assignment of a Mobile App.</summary>
     public class MobileAppAssignment : Entity, IParsable {
-        /// <summary>The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.</summary>
+        /// <summary>Possible values for the install intent chosen by the admin.</summary>
         public InstallIntent? Intent {
-            get { return BackingStore?.Get<InstallIntent?>(nameof(Intent)); }
-            set { BackingStore?.Set(nameof(Intent), value); }
+            get { return BackingStore?.Get<InstallIntent?>("intent"); }
+            set { BackingStore?.Set("intent", value); }
         }
         /// <summary>The settings for target assignment defined by the admin.</summary>
         public MobileAppAssignmentSettings Settings {
-            get { return BackingStore?.Get<MobileAppAssignmentSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<MobileAppAssignmentSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>The target group assignment defined by the admin.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

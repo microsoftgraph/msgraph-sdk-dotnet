@@ -9,55 +9,55 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetPolicyNonComplianceMetadat
     public class GetPolicyNonComplianceMetadataPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The filter property</summary>
         public string Filter {
-            get { return BackingStore?.Get<string>(nameof(Filter)); }
-            set { BackingStore?.Set(nameof(Filter), value); }
+            get { return BackingStore?.Get<string>("filter"); }
+            set { BackingStore?.Set("filter", value); }
         }
         /// <summary>The groupBy property</summary>
         public List<string> GroupBy {
-            get { return BackingStore?.Get<List<string>>(nameof(GroupBy)); }
-            set { BackingStore?.Set(nameof(GroupBy), value); }
+            get { return BackingStore?.Get<List<string>>("groupBy"); }
+            set { BackingStore?.Set("groupBy", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The orderBy property</summary>
         public List<string> OrderBy {
-            get { return BackingStore?.Get<List<string>>(nameof(OrderBy)); }
-            set { BackingStore?.Set(nameof(OrderBy), value); }
+            get { return BackingStore?.Get<List<string>>("orderBy"); }
+            set { BackingStore?.Set("orderBy", value); }
         }
         /// <summary>The search property</summary>
         public string Search {
-            get { return BackingStore?.Get<string>(nameof(Search)); }
-            set { BackingStore?.Set(nameof(Search), value); }
+            get { return BackingStore?.Get<string>("search"); }
+            set { BackingStore?.Set("search", value); }
         }
         /// <summary>The select property</summary>
         public List<string> Select {
-            get { return BackingStore?.Get<List<string>>(nameof(Select)); }
-            set { BackingStore?.Set(nameof(Select), value); }
+            get { return BackingStore?.Get<List<string>>("select"); }
+            set { BackingStore?.Set("select", value); }
         }
         /// <summary>The sessionId property</summary>
         public string SessionId {
-            get { return BackingStore?.Get<string>(nameof(SessionId)); }
-            set { BackingStore?.Set(nameof(SessionId), value); }
+            get { return BackingStore?.Get<string>("sessionId"); }
+            set { BackingStore?.Set("sessionId", value); }
         }
         /// <summary>The skip property</summary>
         public int? Skip {
-            get { return BackingStore?.Get<int?>(nameof(Skip)); }
-            set { BackingStore?.Set(nameof(Skip), value); }
+            get { return BackingStore?.Get<int?>("skip"); }
+            set { BackingStore?.Set("skip", value); }
         }
         /// <summary>The top property</summary>
         public int? Top {
-            get { return BackingStore?.Get<int?>(nameof(Top)); }
-            set { BackingStore?.Set(nameof(Top), value); }
+            get { return BackingStore?.Get<int?>("top"); }
+            set { BackingStore?.Set("top", value); }
         }
         /// <summary>
         /// Instantiates a new getPolicyNonComplianceMetadataPostRequestBody and sets the default values.

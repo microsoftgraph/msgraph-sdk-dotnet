@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models.CallRecords {
     public class TraceRouteHop : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The network path count of this hop that was used to compute the RTT.</summary>
+        /// <summary>The network path count of this hop that was used to compute the round-trip time.</summary>
         public int? HopCount {
-            get { return BackingStore?.Get<int?>(nameof(HopCount)); }
-            set { BackingStore?.Set(nameof(HopCount), value); }
+            get { return BackingStore?.Get<int?>("hopCount"); }
+            set { BackingStore?.Set("hopCount", value); }
         }
         /// <summary>IP address used for this hop in the network trace.</summary>
         public string IpAddress {
-            get { return BackingStore?.Get<string>(nameof(IpAddress)); }
-            set { BackingStore?.Set(nameof(IpAddress), value); }
+            get { return BackingStore?.Get<string>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
         }
         /// <summary>The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.</summary>
         public TimeSpan? RoundTripTime {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(RoundTripTime)); }
-            set { BackingStore?.Set(nameof(RoundTripTime), value); }
+            get { return BackingStore?.Get<TimeSpan?>("roundTripTime"); }
+            set { BackingStore?.Set("roundTripTime", value); }
         }
         /// <summary>
         /// Instantiates a new traceRouteHop and sets the default values.

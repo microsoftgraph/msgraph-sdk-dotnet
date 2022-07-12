@@ -8,63 +8,63 @@ namespace Microsoft.Graph.Models {
     public class SharedPCConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.</summary>
         public SharedPCAccountManagerPolicy AccountManagerPolicy {
-            get { return BackingStore?.Get<SharedPCAccountManagerPolicy>(nameof(AccountManagerPolicy)); }
-            set { BackingStore?.Set(nameof(AccountManagerPolicy), value); }
+            get { return BackingStore?.Get<SharedPCAccountManagerPolicy>("accountManagerPolicy"); }
+            set { BackingStore?.Set("accountManagerPolicy", value); }
         }
-        /// <summary>Indicates which type of accounts are allowed to use on a shared PC. Possible values are: notConfigured, guest, domain.</summary>
+        /// <summary>Type of accounts that are allowed to share the PC.</summary>
         public SharedPCAllowedAccountType? AllowedAccounts {
-            get { return BackingStore?.Get<SharedPCAllowedAccountType?>(nameof(AllowedAccounts)); }
-            set { BackingStore?.Set(nameof(AllowedAccounts), value); }
+            get { return BackingStore?.Get<SharedPCAllowedAccountType?>("allowedAccounts"); }
+            set { BackingStore?.Set("allowedAccounts", value); }
         }
         /// <summary>Specifies whether local storage is allowed on a shared PC.</summary>
         public bool? AllowLocalStorage {
-            get { return BackingStore?.Get<bool?>(nameof(AllowLocalStorage)); }
-            set { BackingStore?.Set(nameof(AllowLocalStorage), value); }
+            get { return BackingStore?.Get<bool?>("allowLocalStorage"); }
+            set { BackingStore?.Set("allowLocalStorage", value); }
         }
         /// <summary>Disables the account manager for shared PC mode.</summary>
         public bool? DisableAccountManager {
-            get { return BackingStore?.Get<bool?>(nameof(DisableAccountManager)); }
-            set { BackingStore?.Set(nameof(DisableAccountManager), value); }
+            get { return BackingStore?.Get<bool?>("disableAccountManager"); }
+            set { BackingStore?.Set("disableAccountManager", value); }
         }
         /// <summary>Specifies whether the default shared PC education environment policies should be disabled. For Windows 10 RS2 and later, this policy will be applied without setting Enabled to true.</summary>
         public bool? DisableEduPolicies {
-            get { return BackingStore?.Get<bool?>(nameof(DisableEduPolicies)); }
-            set { BackingStore?.Set(nameof(DisableEduPolicies), value); }
+            get { return BackingStore?.Get<bool?>("disableEduPolicies"); }
+            set { BackingStore?.Set("disableEduPolicies", value); }
         }
         /// <summary>Specifies whether the default shared PC power policies should be disabled.</summary>
         public bool? DisablePowerPolicies {
-            get { return BackingStore?.Get<bool?>(nameof(DisablePowerPolicies)); }
-            set { BackingStore?.Set(nameof(DisablePowerPolicies), value); }
+            get { return BackingStore?.Get<bool?>("disablePowerPolicies"); }
+            set { BackingStore?.Set("disablePowerPolicies", value); }
         }
         /// <summary>Disables the requirement to sign in whenever the device wakes up from sleep mode.</summary>
         public bool? DisableSignInOnResume {
-            get { return BackingStore?.Get<bool?>(nameof(DisableSignInOnResume)); }
-            set { BackingStore?.Set(nameof(DisableSignInOnResume), value); }
+            get { return BackingStore?.Get<bool?>("disableSignInOnResume"); }
+            set { BackingStore?.Set("disableSignInOnResume", value); }
         }
         /// <summary>Enables shared PC mode and applies the shared pc policies.</summary>
         public bool? Enabled {
-            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
-            set { BackingStore?.Set(nameof(Enabled), value); }
+            get { return BackingStore?.Get<bool?>("enabled"); }
+            set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>Specifies the time in seconds that a device must sit idle before the PC goes to sleep. Setting this value to 0 prevents the sleep timeout from occurring.</summary>
         public int? IdleTimeBeforeSleepInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(IdleTimeBeforeSleepInSeconds)); }
-            set { BackingStore?.Set(nameof(IdleTimeBeforeSleepInSeconds), value); }
+            get { return BackingStore?.Get<int?>("idleTimeBeforeSleepInSeconds"); }
+            set { BackingStore?.Set("idleTimeBeforeSleepInSeconds", value); }
         }
         /// <summary>Specifies the display text for the account shown on the sign-in screen which launches the app specified by SetKioskAppUserModelId. Only applies when KioskAppUserModelId is set.</summary>
         public string KioskAppDisplayName {
-            get { return BackingStore?.Get<string>(nameof(KioskAppDisplayName)); }
-            set { BackingStore?.Set(nameof(KioskAppDisplayName), value); }
+            get { return BackingStore?.Get<string>("kioskAppDisplayName"); }
+            set { BackingStore?.Set("kioskAppDisplayName", value); }
         }
         /// <summary>Specifies the application user model ID of the app to use with assigned access.</summary>
         public string KioskAppUserModelId {
-            get { return BackingStore?.Get<string>(nameof(KioskAppUserModelId)); }
-            set { BackingStore?.Set(nameof(KioskAppUserModelId), value); }
+            get { return BackingStore?.Get<string>("kioskAppUserModelId"); }
+            set { BackingStore?.Set("kioskAppUserModelId", value); }
         }
         /// <summary>Specifies the daily start time of maintenance hour.</summary>
         public Time? MaintenanceStartTime {
-            get { return BackingStore?.Get<Time?>(nameof(MaintenanceStartTime)); }
-            set { BackingStore?.Set(nameof(MaintenanceStartTime), value); }
+            get { return BackingStore?.Get<Time?>("maintenanceStartTime"); }
+            set { BackingStore?.Set("maintenanceStartTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

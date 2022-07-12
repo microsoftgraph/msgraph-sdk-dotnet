@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class IntegerRange : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The inclusive upper bound of the integer range.</summary>
         public long? End {
-            get { return BackingStore?.Get<long?>(nameof(End)); }
-            set { BackingStore?.Set(nameof(End), value); }
+            get { return BackingStore?.Get<long?>("end"); }
+            set { BackingStore?.Set("end", value); }
         }
         /// <summary>The inclusive lower bound of the integer range.</summary>
         public long? Start {
-            get { return BackingStore?.Get<long?>(nameof(Start)); }
-            set { BackingStore?.Set(nameof(Start), value); }
+            get { return BackingStore?.Get<long?>("start"); }
+            set { BackingStore?.Set("start", value); }
         }
         /// <summary>
         /// Instantiates a new integerRange and sets the default values.

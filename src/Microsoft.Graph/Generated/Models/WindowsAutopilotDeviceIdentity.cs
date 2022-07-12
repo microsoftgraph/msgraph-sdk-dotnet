@@ -8,83 +8,83 @@ namespace Microsoft.Graph.Models {
     public class WindowsAutopilotDeviceIdentity : Entity, IParsable {
         /// <summary>Addressable user name.</summary>
         public string AddressableUserName {
-            get { return BackingStore?.Get<string>(nameof(AddressableUserName)); }
-            set { BackingStore?.Set(nameof(AddressableUserName), value); }
+            get { return BackingStore?.Get<string>("addressableUserName"); }
+            set { BackingStore?.Set("addressableUserName", value); }
         }
         /// <summary>AAD Device ID - to be deprecated</summary>
         public string AzureActiveDirectoryDeviceId {
-            get { return BackingStore?.Get<string>(nameof(AzureActiveDirectoryDeviceId)); }
-            set { BackingStore?.Set(nameof(AzureActiveDirectoryDeviceId), value); }
+            get { return BackingStore?.Get<string>("azureActiveDirectoryDeviceId"); }
+            set { BackingStore?.Set("azureActiveDirectoryDeviceId", value); }
         }
         /// <summary>Display Name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.</summary>
+        /// <summary>The enrollmentState property</summary>
         public Microsoft.Graph.Models.EnrollmentState? EnrollmentState {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.EnrollmentState?>(nameof(EnrollmentState)); }
-            set { BackingStore?.Set(nameof(EnrollmentState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EnrollmentState?>("enrollmentState"); }
+            set { BackingStore?.Set("enrollmentState", value); }
         }
         /// <summary>Group Tag of the Windows autopilot device.</summary>
         public string GroupTag {
-            get { return BackingStore?.Get<string>(nameof(GroupTag)); }
-            set { BackingStore?.Set(nameof(GroupTag), value); }
+            get { return BackingStore?.Get<string>("groupTag"); }
+            set { BackingStore?.Set("groupTag", value); }
         }
         /// <summary>Intune Last Contacted Date Time of the Windows autopilot device.</summary>
         public DateTimeOffset? LastContactedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastContactedDateTime)); }
-            set { BackingStore?.Set(nameof(LastContactedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastContactedDateTime"); }
+            set { BackingStore?.Set("lastContactedDateTime", value); }
         }
         /// <summary>Managed Device ID</summary>
         public string ManagedDeviceId {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+            get { return BackingStore?.Get<string>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
         }
         /// <summary>Oem manufacturer of the Windows autopilot device.</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>Model name of the Windows autopilot device.</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>Product Key of the Windows autopilot device.</summary>
         public string ProductKey {
-            get { return BackingStore?.Get<string>(nameof(ProductKey)); }
-            set { BackingStore?.Set(nameof(ProductKey), value); }
+            get { return BackingStore?.Get<string>("productKey"); }
+            set { BackingStore?.Set("productKey", value); }
         }
         /// <summary>Purchase Order Identifier of the Windows autopilot device.</summary>
         public string PurchaseOrderIdentifier {
-            get { return BackingStore?.Get<string>(nameof(PurchaseOrderIdentifier)); }
-            set { BackingStore?.Set(nameof(PurchaseOrderIdentifier), value); }
+            get { return BackingStore?.Get<string>("purchaseOrderIdentifier"); }
+            set { BackingStore?.Set("purchaseOrderIdentifier", value); }
         }
         /// <summary>Resource Name.</summary>
         public string ResourceName {
-            get { return BackingStore?.Get<string>(nameof(ResourceName)); }
-            set { BackingStore?.Set(nameof(ResourceName), value); }
+            get { return BackingStore?.Get<string>("resourceName"); }
+            set { BackingStore?.Set("resourceName", value); }
         }
         /// <summary>Serial number of the Windows autopilot device.</summary>
         public string SerialNumber {
-            get { return BackingStore?.Get<string>(nameof(SerialNumber)); }
-            set { BackingStore?.Set(nameof(SerialNumber), value); }
+            get { return BackingStore?.Get<string>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
         }
         /// <summary>SKU Number</summary>
         public string SkuNumber {
-            get { return BackingStore?.Get<string>(nameof(SkuNumber)); }
-            set { BackingStore?.Set(nameof(SkuNumber), value); }
+            get { return BackingStore?.Get<string>("skuNumber"); }
+            set { BackingStore?.Set("skuNumber", value); }
         }
         /// <summary>System Family</summary>
         public string SystemFamily {
-            get { return BackingStore?.Get<string>(nameof(SystemFamily)); }
-            set { BackingStore?.Set(nameof(SystemFamily), value); }
+            get { return BackingStore?.Get<string>("systemFamily"); }
+            set { BackingStore?.Set("systemFamily", value); }
         }
         /// <summary>User Principal Name.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

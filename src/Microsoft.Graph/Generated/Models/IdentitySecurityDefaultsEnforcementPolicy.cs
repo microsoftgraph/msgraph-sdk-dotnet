@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class IdentitySecurityDefaultsEnforcementPolicy : PolicyBase, IParsable {
         /// <summary>If set to true, Azure Active Directory security defaults is enabled for the tenant.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

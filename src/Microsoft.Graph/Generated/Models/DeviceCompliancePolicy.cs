@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -8,63 +9,69 @@ namespace Microsoft.Graph.Models {
     public class DeviceCompliancePolicy : Entity, IParsable {
         /// <summary>The collection of assignments for this compliance policy.</summary>
         public List<DeviceCompliancePolicyAssignment> Assignments {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicyAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<DeviceCompliancePolicyAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>DateTime the object was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Admin provided description of the Device Configuration.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Compliance Setting State Device Summary</summary>
         public List<SettingStateDeviceSummary> DeviceSettingStateSummaries {
-            get { return BackingStore?.Get<List<SettingStateDeviceSummary>>(nameof(DeviceSettingStateSummaries)); }
-            set { BackingStore?.Set(nameof(DeviceSettingStateSummaries), value); }
+            get { return BackingStore?.Get<List<SettingStateDeviceSummary>>("deviceSettingStateSummaries"); }
+            set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
         /// <summary>List of DeviceComplianceDeviceStatus.</summary>
         public List<DeviceComplianceDeviceStatus> DeviceStatuses {
-            get { return BackingStore?.Get<List<DeviceComplianceDeviceStatus>>(nameof(DeviceStatuses)); }
-            set { BackingStore?.Set(nameof(DeviceStatuses), value); }
+            get { return BackingStore?.Get<List<DeviceComplianceDeviceStatus>>("deviceStatuses"); }
+            set { BackingStore?.Set("deviceStatuses", value); }
         }
         /// <summary>Device compliance devices status overview</summary>
         public DeviceComplianceDeviceOverview DeviceStatusOverview {
-            get { return BackingStore?.Get<DeviceComplianceDeviceOverview>(nameof(DeviceStatusOverview)); }
-            set { BackingStore?.Set(nameof(DeviceStatusOverview), value); }
+            get { return BackingStore?.Get<DeviceComplianceDeviceOverview>("deviceStatusOverview"); }
+            set { BackingStore?.Set("deviceStatusOverview", value); }
         }
         /// <summary>Admin provided name of the device configuration.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>DateTime the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The list of scheduled action for this rule</summary>
         public List<DeviceComplianceScheduledActionForRule> ScheduledActionsForRule {
-            get { return BackingStore?.Get<List<DeviceComplianceScheduledActionForRule>>(nameof(ScheduledActionsForRule)); }
-            set { BackingStore?.Set(nameof(ScheduledActionsForRule), value); }
+            get { return BackingStore?.Get<List<DeviceComplianceScheduledActionForRule>>("scheduledActionsForRule"); }
+            set { BackingStore?.Set("scheduledActionsForRule", value); }
         }
         /// <summary>List of DeviceComplianceUserStatus.</summary>
         public List<DeviceComplianceUserStatus> UserStatuses {
-            get { return BackingStore?.Get<List<DeviceComplianceUserStatus>>(nameof(UserStatuses)); }
-            set { BackingStore?.Set(nameof(UserStatuses), value); }
+            get { return BackingStore?.Get<List<DeviceComplianceUserStatus>>("userStatuses"); }
+            set { BackingStore?.Set("userStatuses", value); }
         }
         /// <summary>Device compliance users status overview</summary>
         public DeviceComplianceUserOverview UserStatusOverview {
-            get { return BackingStore?.Get<DeviceComplianceUserOverview>(nameof(UserStatusOverview)); }
-            set { BackingStore?.Set(nameof(UserStatusOverview), value); }
+            get { return BackingStore?.Get<DeviceComplianceUserOverview>("userStatusOverview"); }
+            set { BackingStore?.Set("userStatusOverview", value); }
         }
         /// <summary>Version of the device configuration.</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceCompliancePolicy and sets the default values.
+        /// </summary>
+        public DeviceCompliancePolicy() : base() {
+            Type = "#microsoft.graph.deviceCompliancePolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

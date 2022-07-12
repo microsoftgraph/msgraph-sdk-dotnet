@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class InferenceClassification : Entity, IParsable {
         /// <summary>A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.</summary>
         public List<InferenceClassificationOverride> Overrides {
-            get { return BackingStore?.Get<List<InferenceClassificationOverride>>(nameof(Overrides)); }
-            set { BackingStore?.Set(nameof(Overrides), value); }
+            get { return BackingStore?.Get<List<InferenceClassificationOverride>>("overrides"); }
+            set { BackingStore?.Set("overrides", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

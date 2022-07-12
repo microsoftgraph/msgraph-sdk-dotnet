@@ -4,127 +4,126 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class Device : DirectoryObject, IParsable {
         /// <summary>true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.</summary>
         public bool? AccountEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(AccountEnabled)); }
-            set { BackingStore?.Set(nameof(AccountEnabled), value); }
+            get { return BackingStore?.Get<bool?>("accountEnabled"); }
+            set { BackingStore?.Set("accountEnabled", value); }
         }
         /// <summary>For internal use only. Not nullable. Supports $filter (eq, not, ge, le).</summary>
         public List<AlternativeSecurityId> AlternativeSecurityIds {
-            get { return BackingStore?.Get<List<AlternativeSecurityId>>(nameof(AlternativeSecurityIds)); }
-            set { BackingStore?.Set(nameof(AlternativeSecurityIds), value); }
+            get { return BackingStore?.Get<List<AlternativeSecurityId>>("alternativeSecurityIds"); }
+            set { BackingStore?.Set("alternativeSecurityIds", value); }
         }
         /// <summary>The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.</summary>
         public DateTimeOffset? ApproximateLastSignInDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ApproximateLastSignInDateTime)); }
-            set { BackingStore?.Set(nameof(ApproximateLastSignInDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("approximateLastSignInDateTime"); }
+            set { BackingStore?.Set("approximateLastSignInDateTime", value); }
         }
         /// <summary>The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ComplianceExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ComplianceExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ComplianceExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("complianceExpirationDateTime"); }
+            set { BackingStore?.Set("complianceExpirationDateTime", value); }
         }
         /// <summary>Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>For internal use only. Set to null.</summary>
         public string DeviceMetadata {
-            get { return BackingStore?.Get<string>(nameof(DeviceMetadata)); }
-            set { BackingStore?.Set(nameof(DeviceMetadata), value); }
+            get { return BackingStore?.Get<string>("deviceMetadata"); }
+            set { BackingStore?.Set("deviceMetadata", value); }
         }
         /// <summary>For internal use only.</summary>
         public int? DeviceVersion {
-            get { return BackingStore?.Get<int?>(nameof(DeviceVersion)); }
-            set { BackingStore?.Set(nameof(DeviceVersion), value); }
+            get { return BackingStore?.Get<int?>("deviceVersion"); }
+            set { BackingStore?.Set("deviceVersion", value); }
         }
         /// <summary>The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The collection of open extensions defined for the device. Read-only. Nullable.</summary>
         public List<Extension> Extensions {
-            get { return BackingStore?.Get<List<Extension>>(nameof(Extensions)); }
-            set { BackingStore?.Set(nameof(Extensions), value); }
+            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
         }
         /// <summary>true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).</summary>
         public bool? IsCompliant {
-            get { return BackingStore?.Get<bool?>(nameof(IsCompliant)); }
-            set { BackingStore?.Set(nameof(IsCompliant), value); }
+            get { return BackingStore?.Get<bool?>("isCompliant"); }
+            set { BackingStore?.Set("isCompliant", value); }
         }
         /// <summary>true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).</summary>
         public bool? IsManaged {
-            get { return BackingStore?.Get<bool?>(nameof(IsManaged)); }
-            set { BackingStore?.Set(nameof(IsManaged), value); }
+            get { return BackingStore?.Get<bool?>("isManaged"); }
+            set { BackingStore?.Set("isManaged", value); }
         }
         /// <summary>Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).</summary>
         public string MdmAppId {
-            get { return BackingStore?.Get<string>(nameof(MdmAppId)); }
-            set { BackingStore?.Set(nameof(MdmAppId), value); }
+            get { return BackingStore?.Get<string>("mdmAppId"); }
+            set { BackingStore?.Set("mdmAppId", value); }
         }
         /// <summary>Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.</summary>
         public List<DirectoryObject> MemberOf {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(MemberOf)); }
-            set { BackingStore?.Set(nameof(MemberOf), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("memberOf"); }
+            set { BackingStore?.Set("memberOf", value); }
         }
         /// <summary>The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).</summary>
         public DateTimeOffset? OnPremisesLastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OnPremisesLastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(OnPremisesLastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastSyncDateTime"); }
+            set { BackingStore?.Set("onPremisesLastSyncDateTime", value); }
         }
         /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
         public bool? OnPremisesSyncEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(OnPremisesSyncEnabled)); }
-            set { BackingStore?.Set(nameof(OnPremisesSyncEnabled), value); }
+            get { return BackingStore?.Get<bool?>("onPremisesSyncEnabled"); }
+            set { BackingStore?.Set("onPremisesSyncEnabled", value); }
         }
         /// <summary>The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).</summary>
         public string OperatingSystem {
-            get { return BackingStore?.Get<string>(nameof(OperatingSystem)); }
-            set { BackingStore?.Set(nameof(OperatingSystem), value); }
+            get { return BackingStore?.Get<string>("operatingSystem"); }
+            set { BackingStore?.Set("operatingSystem", value); }
         }
         /// <summary>Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).</summary>
         public string OperatingSystemVersion {
-            get { return BackingStore?.Get<string>(nameof(OperatingSystemVersion)); }
-            set { BackingStore?.Set(nameof(OperatingSystemVersion), value); }
+            get { return BackingStore?.Get<string>("operatingSystemVersion"); }
+            set { BackingStore?.Set("operatingSystemVersion", value); }
         }
         /// <summary>For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).</summary>
         public List<string> PhysicalIds {
-            get { return BackingStore?.Get<List<string>>(nameof(PhysicalIds)); }
-            set { BackingStore?.Set(nameof(PhysicalIds), value); }
+            get { return BackingStore?.Get<List<string>>("physicalIds"); }
+            set { BackingStore?.Set("physicalIds", value); }
         }
         /// <summary>The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.</summary>
         public string ProfileType {
-            get { return BackingStore?.Get<string>(nameof(ProfileType)); }
-            set { BackingStore?.Set(nameof(ProfileType), value); }
+            get { return BackingStore?.Get<string>("profileType"); }
+            set { BackingStore?.Set("profileType", value); }
         }
         /// <summary>The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.</summary>
         public List<DirectoryObject> RegisteredOwners {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(RegisteredOwners)); }
-            set { BackingStore?.Set(nameof(RegisteredOwners), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("registeredOwners"); }
+            set { BackingStore?.Set("registeredOwners", value); }
         }
         /// <summary>Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.</summary>
         public List<DirectoryObject> RegisteredUsers {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(RegisteredUsers)); }
-            set { BackingStore?.Set(nameof(RegisteredUsers), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("registeredUsers"); }
+            set { BackingStore?.Set("registeredUsers", value); }
         }
         /// <summary>List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).</summary>
         public List<string> SystemLabels {
-            get { return BackingStore?.Get<List<string>>(nameof(SystemLabels)); }
-            set { BackingStore?.Set(nameof(SystemLabels), value); }
+            get { return BackingStore?.Get<List<string>>("systemLabels"); }
+            set { BackingStore?.Set("systemLabels", value); }
         }
         /// <summary>Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.</summary>
         public List<DirectoryObject> TransitiveMemberOf {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(TransitiveMemberOf)); }
-            set { BackingStore?.Set(nameof(TransitiveMemberOf), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("transitiveMemberOf"); }
+            set { BackingStore?.Set("transitiveMemberOf", value); }
         }
         /// <summary>Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory</summary>
         public string TrustType {
-            get { return BackingStore?.Get<string>(nameof(TrustType)); }
-            set { BackingStore?.Set(nameof(TrustType), value); }
+            get { return BackingStore?.Get<string>("trustType"); }
+            set { BackingStore?.Set("trustType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

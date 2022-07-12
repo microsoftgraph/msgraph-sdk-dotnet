@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -8,15 +9,20 @@ namespace Microsoft.Graph.Models {
     public class ConditionalAccessSessionControl : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether the session control is enabled.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new conditionalAccessSessionControl and sets the default values.
@@ -24,6 +30,7 @@ namespace Microsoft.Graph.Models {
         public ConditionalAccessSessionControl() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.conditionalAccessSessionControl";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +38,15 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public static ConditionalAccessSessionControl CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessSessionControl();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.applicationEnforcedRestrictionsSessionControl" => new ApplicationEnforcedRestrictionsSessionControl(),
+                "#microsoft.graph.cloudAppSecuritySessionControl" => new CloudAppSecuritySessionControl(),
+                "#microsoft.graph.persistentBrowserSessionControl" => new PersistentBrowserSessionControl(),
+                "#microsoft.graph.signInFrequencySessionControl" => new SignInFrequencySessionControl(),
+                _ => new ConditionalAccessSessionControl(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,6 +54,7 @@ namespace Microsoft.Graph.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +64,7 @@ namespace Microsoft.Graph.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isEnabled", IsEnabled);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

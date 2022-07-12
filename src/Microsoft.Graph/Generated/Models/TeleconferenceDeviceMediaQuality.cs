@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -8,115 +9,120 @@ namespace Microsoft.Graph.Models {
     public class TeleconferenceDeviceMediaQuality : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The average inbound stream network jitter.</summary>
         public TimeSpan? AverageInboundJitter {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(AverageInboundJitter)); }
-            set { BackingStore?.Set(nameof(AverageInboundJitter), value); }
+            get { return BackingStore?.Get<TimeSpan?>("averageInboundJitter"); }
+            set { BackingStore?.Set("averageInboundJitter", value); }
         }
         /// <summary>The average inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.</summary>
         public double? AverageInboundPacketLossRateInPercentage {
-            get { return BackingStore?.Get<double?>(nameof(AverageInboundPacketLossRateInPercentage)); }
-            set { BackingStore?.Set(nameof(AverageInboundPacketLossRateInPercentage), value); }
+            get { return BackingStore?.Get<double?>("averageInboundPacketLossRateInPercentage"); }
+            set { BackingStore?.Set("averageInboundPacketLossRateInPercentage", value); }
         }
         /// <summary>The average inbound stream network round trip delay.</summary>
         public TimeSpan? AverageInboundRoundTripDelay {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(AverageInboundRoundTripDelay)); }
-            set { BackingStore?.Set(nameof(AverageInboundRoundTripDelay), value); }
+            get { return BackingStore?.Get<TimeSpan?>("averageInboundRoundTripDelay"); }
+            set { BackingStore?.Set("averageInboundRoundTripDelay", value); }
         }
         /// <summary>The average outbound stream network jitter.</summary>
         public TimeSpan? AverageOutboundJitter {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(AverageOutboundJitter)); }
-            set { BackingStore?.Set(nameof(AverageOutboundJitter), value); }
+            get { return BackingStore?.Get<TimeSpan?>("averageOutboundJitter"); }
+            set { BackingStore?.Set("averageOutboundJitter", value); }
         }
         /// <summary>The average outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.</summary>
         public double? AverageOutboundPacketLossRateInPercentage {
-            get { return BackingStore?.Get<double?>(nameof(AverageOutboundPacketLossRateInPercentage)); }
-            set { BackingStore?.Set(nameof(AverageOutboundPacketLossRateInPercentage), value); }
+            get { return BackingStore?.Get<double?>("averageOutboundPacketLossRateInPercentage"); }
+            set { BackingStore?.Set("averageOutboundPacketLossRateInPercentage", value); }
         }
         /// <summary>The average outbound stream network round trip delay.</summary>
         public TimeSpan? AverageOutboundRoundTripDelay {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(AverageOutboundRoundTripDelay)); }
-            set { BackingStore?.Set(nameof(AverageOutboundRoundTripDelay), value); }
+            get { return BackingStore?.Get<TimeSpan?>("averageOutboundRoundTripDelay"); }
+            set { BackingStore?.Set("averageOutboundRoundTripDelay", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The channel index of media. Indexing begins with 1.  If a media session contains 3 video modalities, channel indexes will be 1, 2, and 3.</summary>
         public int? ChannelIndex {
-            get { return BackingStore?.Get<int?>(nameof(ChannelIndex)); }
-            set { BackingStore?.Set(nameof(ChannelIndex), value); }
+            get { return BackingStore?.Get<int?>("channelIndex"); }
+            set { BackingStore?.Set("channelIndex", value); }
         }
         /// <summary>The total number of the inbound packets.</summary>
         public long? InboundPackets {
-            get { return BackingStore?.Get<long?>(nameof(InboundPackets)); }
-            set { BackingStore?.Set(nameof(InboundPackets), value); }
+            get { return BackingStore?.Get<long?>("inboundPackets"); }
+            set { BackingStore?.Set("inboundPackets", value); }
         }
         /// <summary>the local IP address for the media session.</summary>
         public string LocalIPAddress {
-            get { return BackingStore?.Get<string>(nameof(LocalIPAddress)); }
-            set { BackingStore?.Set(nameof(LocalIPAddress), value); }
+            get { return BackingStore?.Get<string>("localIPAddress"); }
+            set { BackingStore?.Set("localIPAddress", value); }
         }
         /// <summary>The local media port.</summary>
         public int? LocalPort {
-            get { return BackingStore?.Get<int?>(nameof(LocalPort)); }
-            set { BackingStore?.Set(nameof(LocalPort), value); }
+            get { return BackingStore?.Get<int?>("localPort"); }
+            set { BackingStore?.Set("localPort", value); }
         }
         /// <summary>The maximum inbound stream network jitter.</summary>
         public TimeSpan? MaximumInboundJitter {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(MaximumInboundJitter)); }
-            set { BackingStore?.Set(nameof(MaximumInboundJitter), value); }
+            get { return BackingStore?.Get<TimeSpan?>("maximumInboundJitter"); }
+            set { BackingStore?.Set("maximumInboundJitter", value); }
         }
         /// <summary>The maximum inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.</summary>
         public double? MaximumInboundPacketLossRateInPercentage {
-            get { return BackingStore?.Get<double?>(nameof(MaximumInboundPacketLossRateInPercentage)); }
-            set { BackingStore?.Set(nameof(MaximumInboundPacketLossRateInPercentage), value); }
+            get { return BackingStore?.Get<double?>("maximumInboundPacketLossRateInPercentage"); }
+            set { BackingStore?.Set("maximumInboundPacketLossRateInPercentage", value); }
         }
         /// <summary>The maximum inbound stream network round trip delay.</summary>
         public TimeSpan? MaximumInboundRoundTripDelay {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(MaximumInboundRoundTripDelay)); }
-            set { BackingStore?.Set(nameof(MaximumInboundRoundTripDelay), value); }
+            get { return BackingStore?.Get<TimeSpan?>("maximumInboundRoundTripDelay"); }
+            set { BackingStore?.Set("maximumInboundRoundTripDelay", value); }
         }
         /// <summary>The maximum outbound stream network jitter.</summary>
         public TimeSpan? MaximumOutboundJitter {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(MaximumOutboundJitter)); }
-            set { BackingStore?.Set(nameof(MaximumOutboundJitter), value); }
+            get { return BackingStore?.Get<TimeSpan?>("maximumOutboundJitter"); }
+            set { BackingStore?.Set("maximumOutboundJitter", value); }
         }
         /// <summary>The maximum outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.</summary>
         public double? MaximumOutboundPacketLossRateInPercentage {
-            get { return BackingStore?.Get<double?>(nameof(MaximumOutboundPacketLossRateInPercentage)); }
-            set { BackingStore?.Set(nameof(MaximumOutboundPacketLossRateInPercentage), value); }
+            get { return BackingStore?.Get<double?>("maximumOutboundPacketLossRateInPercentage"); }
+            set { BackingStore?.Set("maximumOutboundPacketLossRateInPercentage", value); }
         }
         /// <summary>The maximum outbound stream network round trip delay.</summary>
         public TimeSpan? MaximumOutboundRoundTripDelay {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(MaximumOutboundRoundTripDelay)); }
-            set { BackingStore?.Set(nameof(MaximumOutboundRoundTripDelay), value); }
+            get { return BackingStore?.Get<TimeSpan?>("maximumOutboundRoundTripDelay"); }
+            set { BackingStore?.Set("maximumOutboundRoundTripDelay", value); }
         }
         /// <summary>The total modality duration. If the media enabled and disabled multiple times, MediaDuration will the summation of all of the durations.</summary>
         public TimeSpan? MediaDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(MediaDuration)); }
-            set { BackingStore?.Set(nameof(MediaDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("mediaDuration"); }
+            set { BackingStore?.Set("mediaDuration", value); }
         }
         /// <summary>The network link speed in bytes</summary>
         public long? NetworkLinkSpeedInBytes {
-            get { return BackingStore?.Get<long?>(nameof(NetworkLinkSpeedInBytes)); }
-            set { BackingStore?.Set(nameof(NetworkLinkSpeedInBytes), value); }
+            get { return BackingStore?.Get<long?>("networkLinkSpeedInBytes"); }
+            set { BackingStore?.Set("networkLinkSpeedInBytes", value); }
         }
         /// <summary>The total number of the outbound packets.</summary>
         public long? OutboundPackets {
-            get { return BackingStore?.Get<long?>(nameof(OutboundPackets)); }
-            set { BackingStore?.Set(nameof(OutboundPackets), value); }
+            get { return BackingStore?.Get<long?>("outboundPackets"); }
+            set { BackingStore?.Set("outboundPackets", value); }
         }
         /// <summary>The remote IP address for the media session.</summary>
         public string RemoteIPAddress {
-            get { return BackingStore?.Get<string>(nameof(RemoteIPAddress)); }
-            set { BackingStore?.Set(nameof(RemoteIPAddress), value); }
+            get { return BackingStore?.Get<string>("remoteIPAddress"); }
+            set { BackingStore?.Set("remoteIPAddress", value); }
         }
         /// <summary>The remote media port.</summary>
         public int? RemotePort {
-            get { return BackingStore?.Get<int?>(nameof(RemotePort)); }
-            set { BackingStore?.Set(nameof(RemotePort), value); }
+            get { return BackingStore?.Get<int?>("remotePort"); }
+            set { BackingStore?.Set("remotePort", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new teleconferenceDeviceMediaQuality and sets the default values.
@@ -124,6 +130,7 @@ namespace Microsoft.Graph.Models {
         public TeleconferenceDeviceMediaQuality() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.teleconferenceDeviceMediaQuality";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -131,7 +138,13 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public static TeleconferenceDeviceMediaQuality CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeleconferenceDeviceMediaQuality();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.teleconferenceDeviceAudioQuality" => new TeleconferenceDeviceAudioQuality(),
+                "#microsoft.graph.teleconferenceDeviceVideoQuality" => new TeleconferenceDeviceVideoQuality(),
+                _ => new TeleconferenceDeviceMediaQuality(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -159,6 +172,7 @@ namespace Microsoft.Graph.Models {
                 {"outboundPackets", n => { OutboundPackets = n.GetLongValue(); } },
                 {"remoteIPAddress", n => { RemoteIPAddress = n.GetStringValue(); } },
                 {"remotePort", n => { RemotePort = n.GetIntValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -188,6 +202,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteLongValue("outboundPackets", OutboundPackets);
             writer.WriteStringValue("remoteIPAddress", RemoteIPAddress);
             writer.WriteIntValue("remotePort", RemotePort);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

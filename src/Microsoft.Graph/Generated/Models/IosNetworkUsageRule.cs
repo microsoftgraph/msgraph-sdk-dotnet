@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Models {
     public class IosNetworkUsageRule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If set to true, corresponding managed apps will not be allowed to use cellular data at any time.</summary>
         public bool? CellularDataBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(CellularDataBlocked)); }
-            set { BackingStore?.Set(nameof(CellularDataBlocked), value); }
+            get { return BackingStore?.Get<bool?>("cellularDataBlocked"); }
+            set { BackingStore?.Set("cellularDataBlocked", value); }
         }
         /// <summary>If set to true, corresponding managed apps will not be allowed to use cellular data when roaming.</summary>
         public bool? CellularDataBlockWhenRoaming {
-            get { return BackingStore?.Get<bool?>(nameof(CellularDataBlockWhenRoaming)); }
-            set { BackingStore?.Set(nameof(CellularDataBlockWhenRoaming), value); }
+            get { return BackingStore?.Get<bool?>("cellularDataBlockWhenRoaming"); }
+            set { BackingStore?.Set("cellularDataBlockWhenRoaming", value); }
         }
         /// <summary>Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> ManagedApps {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(ManagedApps)); }
-            set { BackingStore?.Set(nameof(ManagedApps), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("managedApps"); }
+            set { BackingStore?.Set("managedApps", value); }
         }
         /// <summary>
         /// Instantiates a new iosNetworkUsageRule and sets the default values.

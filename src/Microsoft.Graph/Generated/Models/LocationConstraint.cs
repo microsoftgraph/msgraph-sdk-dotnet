@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class LocationConstraint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.</summary>
         public bool? IsRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsRequired)); }
-            set { BackingStore?.Set(nameof(IsRequired), value); }
+            get { return BackingStore?.Get<bool?>("isRequired"); }
+            set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>Constraint information for one or more locations that the client requests for the meeting.</summary>
         public List<LocationConstraintItem> Locations {
-            get { return BackingStore?.Get<List<LocationConstraintItem>>(nameof(Locations)); }
-            set { BackingStore?.Set(nameof(Locations), value); }
+            get { return BackingStore?.Get<List<LocationConstraintItem>>("locations"); }
+            set { BackingStore?.Set("locations", value); }
         }
         /// <summary>The client requests the service to suggest one or more meeting locations.</summary>
         public bool? SuggestLocation {
-            get { return BackingStore?.Get<bool?>(nameof(SuggestLocation)); }
-            set { BackingStore?.Set(nameof(SuggestLocation), value); }
+            get { return BackingStore?.Get<bool?>("suggestLocation"); }
+            set { BackingStore?.Set("suggestLocation", value); }
         }
         /// <summary>
         /// Instantiates a new locationConstraint and sets the default values.

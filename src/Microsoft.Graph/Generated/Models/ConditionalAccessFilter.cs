@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class ConditionalAccessFilter : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Mode to use for the filter. Possible values are include or exclude.</summary>
+        /// <summary>The mode property</summary>
         public FilterMode? Mode {
-            get { return BackingStore?.Get<FilterMode?>(nameof(Mode)); }
-            set { BackingStore?.Set(nameof(Mode), value); }
+            get { return BackingStore?.Get<FilterMode?>("mode"); }
+            set { BackingStore?.Set("mode", value); }
         }
         /// <summary>Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions</summary>
         public string Rule {
-            get { return BackingStore?.Get<string>(nameof(Rule)); }
-            set { BackingStore?.Set(nameof(Rule), value); }
+            get { return BackingStore?.Get<string>("rule"); }
+            set { BackingStore?.Set("rule", value); }
         }
         /// <summary>
         /// Instantiates a new conditionalAccessFilter and sets the default values.

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationAssignmentPointsGrade : EducationAssignmentGrade, IParsable {
         /// <summary>Number of points a teacher is giving this submission object.</summary>
         public float? Points {
-            get { return BackingStore?.Get<float?>(nameof(Points)); }
-            set { BackingStore?.Set(nameof(Points), value); }
+            get { return BackingStore?.Get<float?>("points"); }
+            set { BackingStore?.Set("points", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

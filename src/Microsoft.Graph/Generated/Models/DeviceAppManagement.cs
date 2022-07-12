@@ -8,93 +8,93 @@ namespace Microsoft.Graph.Models {
     public class DeviceAppManagement : Entity, IParsable {
         /// <summary>Android managed app policies.</summary>
         public List<AndroidManagedAppProtection> AndroidManagedAppProtections {
-            get { return BackingStore?.Get<List<AndroidManagedAppProtection>>(nameof(AndroidManagedAppProtections)); }
-            set { BackingStore?.Set(nameof(AndroidManagedAppProtections), value); }
+            get { return BackingStore?.Get<List<AndroidManagedAppProtection>>("androidManagedAppProtections"); }
+            set { BackingStore?.Set("androidManagedAppProtections", value); }
         }
         /// <summary>Default managed app policies.</summary>
         public List<DefaultManagedAppProtection> DefaultManagedAppProtections {
-            get { return BackingStore?.Get<List<DefaultManagedAppProtection>>(nameof(DefaultManagedAppProtections)); }
-            set { BackingStore?.Set(nameof(DefaultManagedAppProtections), value); }
+            get { return BackingStore?.Get<List<DefaultManagedAppProtection>>("defaultManagedAppProtections"); }
+            set { BackingStore?.Set("defaultManagedAppProtections", value); }
         }
         /// <summary>iOS managed app policies.</summary>
         public List<IosManagedAppProtection> IosManagedAppProtections {
-            get { return BackingStore?.Get<List<IosManagedAppProtection>>(nameof(IosManagedAppProtections)); }
-            set { BackingStore?.Set(nameof(IosManagedAppProtections), value); }
+            get { return BackingStore?.Get<List<IosManagedAppProtection>>("iosManagedAppProtections"); }
+            set { BackingStore?.Set("iosManagedAppProtections", value); }
         }
         /// <summary>Whether the account is enabled for syncing applications from the Microsoft Store for Business.</summary>
         public bool? IsEnabledForMicrosoftStoreForBusiness {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabledForMicrosoftStoreForBusiness)); }
-            set { BackingStore?.Set(nameof(IsEnabledForMicrosoftStoreForBusiness), value); }
+            get { return BackingStore?.Get<bool?>("isEnabledForMicrosoftStoreForBusiness"); }
+            set { BackingStore?.Set("isEnabledForMicrosoftStoreForBusiness", value); }
         }
         /// <summary>Managed app policies.</summary>
         public List<ManagedAppPolicy> ManagedAppPolicies {
-            get { return BackingStore?.Get<List<ManagedAppPolicy>>(nameof(ManagedAppPolicies)); }
-            set { BackingStore?.Set(nameof(ManagedAppPolicies), value); }
+            get { return BackingStore?.Get<List<ManagedAppPolicy>>("managedAppPolicies"); }
+            set { BackingStore?.Set("managedAppPolicies", value); }
         }
         /// <summary>The managed app registrations.</summary>
         public List<ManagedAppRegistration> ManagedAppRegistrations {
-            get { return BackingStore?.Get<List<ManagedAppRegistration>>(nameof(ManagedAppRegistrations)); }
-            set { BackingStore?.Set(nameof(ManagedAppRegistrations), value); }
+            get { return BackingStore?.Get<List<ManagedAppRegistration>>("managedAppRegistrations"); }
+            set { BackingStore?.Set("managedAppRegistrations", value); }
         }
         /// <summary>The managed app statuses.</summary>
         public List<ManagedAppStatus> ManagedAppStatuses {
-            get { return BackingStore?.Get<List<ManagedAppStatus>>(nameof(ManagedAppStatuses)); }
-            set { BackingStore?.Set(nameof(ManagedAppStatuses), value); }
+            get { return BackingStore?.Get<List<ManagedAppStatus>>("managedAppStatuses"); }
+            set { BackingStore?.Set("managedAppStatuses", value); }
         }
         /// <summary>The Managed eBook.</summary>
         public List<ManagedEBook> ManagedEBooks {
-            get { return BackingStore?.Get<List<ManagedEBook>>(nameof(ManagedEBooks)); }
-            set { BackingStore?.Set(nameof(ManagedEBooks), value); }
+            get { return BackingStore?.Get<List<ManagedEBook>>("managedEBooks"); }
+            set { BackingStore?.Set("managedEBooks", value); }
         }
         /// <summary>Windows information protection for apps running on devices which are MDM enrolled.</summary>
         public List<MdmWindowsInformationProtectionPolicy> MdmWindowsInformationProtectionPolicies {
-            get { return BackingStore?.Get<List<MdmWindowsInformationProtectionPolicy>>(nameof(MdmWindowsInformationProtectionPolicies)); }
-            set { BackingStore?.Set(nameof(MdmWindowsInformationProtectionPolicies), value); }
+            get { return BackingStore?.Get<List<MdmWindowsInformationProtectionPolicy>>("mdmWindowsInformationProtectionPolicies"); }
+            set { BackingStore?.Set("mdmWindowsInformationProtectionPolicies", value); }
         }
-        /// <summary>The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is &lt;languagecode2&gt;-&lt;country/regioncode2&gt;, where &lt;languagecode2&gt; is a lowercase two-letter code derived from ISO 639-1 and &lt;country/regioncode2&gt; is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.</summary>
+        /// <summary>The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -&lt;country/regioncode2&gt;, where  is a lowercase two-letter code derived from ISO 639-1 and &lt;country/regioncode2&gt; is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.</summary>
         public string MicrosoftStoreForBusinessLanguage {
-            get { return BackingStore?.Get<string>(nameof(MicrosoftStoreForBusinessLanguage)); }
-            set { BackingStore?.Set(nameof(MicrosoftStoreForBusinessLanguage), value); }
+            get { return BackingStore?.Get<string>("microsoftStoreForBusinessLanguage"); }
+            set { BackingStore?.Set("microsoftStoreForBusinessLanguage", value); }
         }
         /// <summary>The last time an application sync from the Microsoft Store for Business was completed.</summary>
         public DateTimeOffset? MicrosoftStoreForBusinessLastCompletedApplicationSyncTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(MicrosoftStoreForBusinessLastCompletedApplicationSyncTime)); }
-            set { BackingStore?.Set(nameof(MicrosoftStoreForBusinessLastCompletedApplicationSyncTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("microsoftStoreForBusinessLastCompletedApplicationSyncTime"); }
+            set { BackingStore?.Set("microsoftStoreForBusinessLastCompletedApplicationSyncTime", value); }
         }
         /// <summary>The last time the apps from the Microsoft Store for Business were synced successfully for the account.</summary>
         public DateTimeOffset? MicrosoftStoreForBusinessLastSuccessfulSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(MicrosoftStoreForBusinessLastSuccessfulSyncDateTime)); }
-            set { BackingStore?.Set(nameof(MicrosoftStoreForBusinessLastSuccessfulSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("microsoftStoreForBusinessLastSuccessfulSyncDateTime"); }
+            set { BackingStore?.Set("microsoftStoreForBusinessLastSuccessfulSyncDateTime", value); }
         }
         /// <summary>The mobile app categories.</summary>
         public List<MobileAppCategory> MobileAppCategories {
-            get { return BackingStore?.Get<List<MobileAppCategory>>(nameof(MobileAppCategories)); }
-            set { BackingStore?.Set(nameof(MobileAppCategories), value); }
+            get { return BackingStore?.Get<List<MobileAppCategory>>("mobileAppCategories"); }
+            set { BackingStore?.Set("mobileAppCategories", value); }
         }
         /// <summary>The Managed Device Mobile Application Configurations.</summary>
         public List<ManagedDeviceMobileAppConfiguration> MobileAppConfigurations {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfiguration>>(nameof(MobileAppConfigurations)); }
-            set { BackingStore?.Set(nameof(MobileAppConfigurations), value); }
+            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfiguration>>("mobileAppConfigurations"); }
+            set { BackingStore?.Set("mobileAppConfigurations", value); }
         }
         /// <summary>The mobile apps.</summary>
         public List<MobileApp> MobileApps {
-            get { return BackingStore?.Get<List<MobileApp>>(nameof(MobileApps)); }
-            set { BackingStore?.Set(nameof(MobileApps), value); }
+            get { return BackingStore?.Get<List<MobileApp>>("mobileApps"); }
+            set { BackingStore?.Set("mobileApps", value); }
         }
         /// <summary>Targeted managed app configurations.</summary>
         public List<TargetedManagedAppConfiguration> TargetedManagedAppConfigurations {
-            get { return BackingStore?.Get<List<TargetedManagedAppConfiguration>>(nameof(TargetedManagedAppConfigurations)); }
-            set { BackingStore?.Set(nameof(TargetedManagedAppConfigurations), value); }
+            get { return BackingStore?.Get<List<TargetedManagedAppConfiguration>>("targetedManagedAppConfigurations"); }
+            set { BackingStore?.Set("targetedManagedAppConfigurations", value); }
         }
         /// <summary>List of Vpp tokens for this organization.</summary>
         public List<VppToken> VppTokens {
-            get { return BackingStore?.Get<List<VppToken>>(nameof(VppTokens)); }
-            set { BackingStore?.Set(nameof(VppTokens), value); }
+            get { return BackingStore?.Get<List<VppToken>>("vppTokens"); }
+            set { BackingStore?.Set("vppTokens", value); }
         }
         /// <summary>Windows information protection for apps running on devices which are not MDM enrolled.</summary>
         public List<WindowsInformationProtectionPolicy> WindowsInformationProtectionPolicies {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionPolicy>>(nameof(WindowsInformationProtectionPolicies)); }
-            set { BackingStore?.Set(nameof(WindowsInformationProtectionPolicies), value); }
+            get { return BackingStore?.Get<List<WindowsInformationProtectionPolicy>>("windowsInformationProtectionPolicies"); }
+            set { BackingStore?.Set("windowsInformationProtectionPolicies", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

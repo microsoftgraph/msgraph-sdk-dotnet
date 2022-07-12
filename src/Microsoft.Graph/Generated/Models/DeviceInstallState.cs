@@ -8,43 +8,43 @@ namespace Microsoft.Graph.Models {
     public class DeviceInstallState : Entity, IParsable {
         /// <summary>Device Id.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>Device name.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>The error code for install failures.</summary>
         public string ErrorCode {
-            get { return BackingStore?.Get<string>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<string>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
-        /// <summary>The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.</summary>
+        /// <summary>Possible values for install state.</summary>
         public Microsoft.Graph.Models.InstallState? InstallState {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.InstallState?>(nameof(InstallState)); }
-            set { BackingStore?.Set(nameof(InstallState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.InstallState?>("installState"); }
+            set { BackingStore?.Set("installState", value); }
         }
         /// <summary>Last sync date and time.</summary>
         public DateTimeOffset? LastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
+            set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>OS Description.</summary>
         public string OsDescription {
-            get { return BackingStore?.Get<string>(nameof(OsDescription)); }
-            set { BackingStore?.Set(nameof(OsDescription), value); }
+            get { return BackingStore?.Get<string>("osDescription"); }
+            set { BackingStore?.Set("osDescription", value); }
         }
         /// <summary>OS Version.</summary>
         public string OsVersion {
-            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<string>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>Device User Name.</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

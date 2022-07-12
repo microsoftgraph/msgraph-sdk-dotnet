@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Models {
     public class TimeOffReason : ChangeTrackedEntity, IParsable {
         /// <summary>The name of the timeOffReason. Required.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Supported icon types: none; car; calendar; running; plane; firstAid; doctor; notWorking; clock; juryDuty; globe; cup; phone; weather; umbrella; piggyBank; dog; cake; trafficCone; pin; sunny. Required.</summary>
         public TimeOffReasonIconType? IconType {
-            get { return BackingStore?.Get<TimeOffReasonIconType?>(nameof(IconType)); }
-            set { BackingStore?.Set(nameof(IconType), value); }
+            get { return BackingStore?.Get<TimeOffReasonIconType?>("iconType"); }
+            set { BackingStore?.Set("iconType", value); }
         }
         /// <summary>Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.</summary>
         public bool? IsActive {
-            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
-            set { BackingStore?.Set(nameof(IsActive), value); }
+            get { return BackingStore?.Get<bool?>("isActive"); }
+            set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

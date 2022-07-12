@@ -1,25 +1,31 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class ShiftItem : ScheduleEntity, IParsable {
         /// <summary>An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.</summary>
         public List<ShiftActivity> Activities {
-            get { return BackingStore?.Get<List<ShiftActivity>>(nameof(Activities)); }
-            set { BackingStore?.Set(nameof(Activities), value); }
+            get { return BackingStore?.Get<List<ShiftActivity>>("activities"); }
+            set { BackingStore?.Set("activities", value); }
         }
         /// <summary>The shift label of the shiftItem.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The shift notes for the shiftItem.</summary>
         public string Notes {
-            get { return BackingStore?.Get<string>(nameof(Notes)); }
-            set { BackingStore?.Set(nameof(Notes), value); }
+            get { return BackingStore?.Get<string>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ShiftItem and sets the default values.
+        /// </summary>
+        public ShiftItem() : base() {
+            Type = "#microsoft.graph.shiftItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +33,12 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public static new ShiftItem CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ShiftItem();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.openShiftItem" => new OpenShiftItem(),
+                _ => new ShiftItem(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

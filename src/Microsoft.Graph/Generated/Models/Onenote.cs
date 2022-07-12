@@ -4,37 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class Onenote : Entity, IParsable {
         /// <summary>The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.</summary>
         public List<Notebook> Notebooks {
-            get { return BackingStore?.Get<List<Notebook>>(nameof(Notebooks)); }
-            set { BackingStore?.Set(nameof(Notebooks), value); }
+            get { return BackingStore?.Get<List<Notebook>>("notebooks"); }
+            set { BackingStore?.Set("notebooks", value); }
         }
         /// <summary>The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.</summary>
         public List<OnenoteOperation> Operations {
-            get { return BackingStore?.Get<List<OnenoteOperation>>(nameof(Operations)); }
-            set { BackingStore?.Set(nameof(Operations), value); }
+            get { return BackingStore?.Get<List<OnenoteOperation>>("operations"); }
+            set { BackingStore?.Set("operations", value); }
         }
         /// <summary>The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.</summary>
         public List<OnenotePage> Pages {
-            get { return BackingStore?.Get<List<OnenotePage>>(nameof(Pages)); }
-            set { BackingStore?.Set(nameof(Pages), value); }
+            get { return BackingStore?.Get<List<OnenotePage>>("pages"); }
+            set { BackingStore?.Set("pages", value); }
         }
         /// <summary>The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.</summary>
         public List<OnenoteResource> Resources {
-            get { return BackingStore?.Get<List<OnenoteResource>>(nameof(Resources)); }
-            set { BackingStore?.Set(nameof(Resources), value); }
+            get { return BackingStore?.Get<List<OnenoteResource>>("resources"); }
+            set { BackingStore?.Set("resources", value); }
         }
         /// <summary>The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.</summary>
         public List<SectionGroup> SectionGroups {
-            get { return BackingStore?.Get<List<SectionGroup>>(nameof(SectionGroups)); }
-            set { BackingStore?.Set(nameof(SectionGroups), value); }
+            get { return BackingStore?.Get<List<SectionGroup>>("sectionGroups"); }
+            set { BackingStore?.Set("sectionGroups", value); }
         }
         /// <summary>The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.</summary>
         public List<OnenoteSection> Sections {
-            get { return BackingStore?.Get<List<OnenoteSection>>(nameof(Sections)); }
-            set { BackingStore?.Set(nameof(Sections), value); }
+            get { return BackingStore?.Get<List<OnenoteSection>>("sections"); }
+            set { BackingStore?.Set("sections", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

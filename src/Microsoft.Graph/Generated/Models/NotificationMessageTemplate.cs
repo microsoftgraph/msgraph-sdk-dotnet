@@ -6,30 +6,30 @@ using System.Linq;
 namespace Microsoft.Graph.Models {
     /// <summary>Notification messages are messages that are sent to end users who are determined to be not-compliant with the compliance policies defined by the administrator. Administrators choose notifications and configure them in the Intune Admin Console using the compliance policy creation page under the “Actions for non-compliance” section. Use the notificationMessageTemplate object to create your own custom notifications for administrators to choose while configuring actions for non-compliance.</summary>
     public class NotificationMessageTemplate : Entity, IParsable {
-        /// <summary>The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.</summary>
+        /// <summary>Branding Options for the Message Template. Branding is defined in the Intune Admin Console.</summary>
         public NotificationTemplateBrandingOptions? BrandingOptions {
-            get { return BackingStore?.Get<NotificationTemplateBrandingOptions?>(nameof(BrandingOptions)); }
-            set { BackingStore?.Set(nameof(BrandingOptions), value); }
+            get { return BackingStore?.Get<NotificationTemplateBrandingOptions?>("brandingOptions"); }
+            set { BackingStore?.Set("brandingOptions", value); }
         }
         /// <summary>The default locale to fallback onto when the requested locale is not available.</summary>
         public string DefaultLocale {
-            get { return BackingStore?.Get<string>(nameof(DefaultLocale)); }
-            set { BackingStore?.Set(nameof(DefaultLocale), value); }
+            get { return BackingStore?.Get<string>("defaultLocale"); }
+            set { BackingStore?.Set("defaultLocale", value); }
         }
         /// <summary>Display name for the Notification Message Template.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>DateTime the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The list of localized messages for this Notification Message Template.</summary>
         public List<LocalizedNotificationMessage> LocalizedNotificationMessages {
-            get { return BackingStore?.Get<List<LocalizedNotificationMessage>>(nameof(LocalizedNotificationMessages)); }
-            set { BackingStore?.Set(nameof(LocalizedNotificationMessages), value); }
+            get { return BackingStore?.Get<List<LocalizedNotificationMessage>>("localizedNotificationMessages"); }
+            set { BackingStore?.Set("localizedNotificationMessages", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

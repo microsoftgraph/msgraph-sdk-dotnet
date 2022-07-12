@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class SharedWithChannelTeamInfo : TeamInfo, IParsable {
         /// <summary>A collection of team members who have access to the shared channel.</summary>
         public List<ConversationMember> AllowedMembers {
-            get { return BackingStore?.Get<List<ConversationMember>>(nameof(AllowedMembers)); }
-            set { BackingStore?.Set(nameof(AllowedMembers), value); }
+            get { return BackingStore?.Get<List<ConversationMember>>("allowedMembers"); }
+            set { BackingStore?.Set("allowedMembers", value); }
         }
         /// <summary>Indicates whether the team is the host of the channel.</summary>
         public bool? IsHostTeam {
-            get { return BackingStore?.Get<bool?>(nameof(IsHostTeam)); }
-            set { BackingStore?.Set(nameof(IsHostTeam), value); }
+            get { return BackingStore?.Get<bool?>("isHostTeam"); }
+            set { BackingStore?.Set("isHostTeam", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

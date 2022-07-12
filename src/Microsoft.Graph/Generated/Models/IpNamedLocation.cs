@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class IpNamedLocation : NamedLocation, IParsable {
         /// <summary>List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.</summary>
         public List<IpRange> IpRanges {
-            get { return BackingStore?.Get<List<IpRange>>(nameof(IpRanges)); }
-            set { BackingStore?.Set(nameof(IpRanges), value); }
+            get { return BackingStore?.Get<List<IpRange>>("ipRanges"); }
+            set { BackingStore?.Set("ipRanges", value); }
         }
         /// <summary>true if this location is explicitly trusted. Optional. Default value is false.</summary>
         public bool? IsTrusted {
-            get { return BackingStore?.Get<bool?>(nameof(IsTrusted)); }
-            set { BackingStore?.Set(nameof(IsTrusted), value); }
+            get { return BackingStore?.Get<bool?>("isTrusted"); }
+            set { BackingStore?.Set("isTrusted", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

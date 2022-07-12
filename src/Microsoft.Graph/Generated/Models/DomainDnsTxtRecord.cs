@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class DomainDnsTxtRecord : DomainDnsRecord, IParsable {
         /// <summary>Value used when configuring the text property at the DNS host.</summary>
         public string Text {
-            get { return BackingStore?.Get<string>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<string>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

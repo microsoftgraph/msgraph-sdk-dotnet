@@ -9,30 +9,30 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
     public class BatchRecordDecisionsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The decision property</summary>
         public string Decision {
-            get { return BackingStore?.Get<string>(nameof(Decision)); }
-            set { BackingStore?.Set(nameof(Decision), value); }
+            get { return BackingStore?.Get<string>("decision"); }
+            set { BackingStore?.Set("decision", value); }
         }
         /// <summary>The justification property</summary>
         public string Justification {
-            get { return BackingStore?.Get<string>(nameof(Justification)); }
-            set { BackingStore?.Set(nameof(Justification), value); }
+            get { return BackingStore?.Get<string>("justification"); }
+            set { BackingStore?.Set("justification", value); }
         }
         /// <summary>The principalId property</summary>
         public string PrincipalId {
-            get { return BackingStore?.Get<string>(nameof(PrincipalId)); }
-            set { BackingStore?.Set(nameof(PrincipalId), value); }
+            get { return BackingStore?.Get<string>("principalId"); }
+            set { BackingStore?.Set("principalId", value); }
         }
         /// <summary>The resourceId property</summary>
         public string ResourceId {
-            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
-            set { BackingStore?.Set(nameof(ResourceId), value); }
+            get { return BackingStore?.Get<string>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
         }
         /// <summary>
         /// Instantiates a new batchRecordDecisionsPostRequestBody and sets the default values.

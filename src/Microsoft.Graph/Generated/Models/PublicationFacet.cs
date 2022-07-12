@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class PublicationFacet : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The state of publication for this document. Either published or checkout. Read-only.</summary>
         public string Level {
-            get { return BackingStore?.Get<string>(nameof(Level)); }
-            set { BackingStore?.Set(nameof(Level), value); }
+            get { return BackingStore?.Get<string>("level"); }
+            set { BackingStore?.Set("level", value); }
         }
         /// <summary>The unique identifier for the version that is visible to the current caller. Read-only.</summary>
         public string VersionId {
-            get { return BackingStore?.Get<string>(nameof(VersionId)); }
-            set { BackingStore?.Set(nameof(VersionId), value); }
+            get { return BackingStore?.Get<string>("versionId"); }
+            set { BackingStore?.Set("versionId", value); }
         }
         /// <summary>
         /// Instantiates a new publicationFacet and sets the default values.

@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class PasswordProfile : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.</summary>
         public bool? ForceChangePasswordNextSignIn {
-            get { return BackingStore?.Get<bool?>(nameof(ForceChangePasswordNextSignIn)); }
-            set { BackingStore?.Set(nameof(ForceChangePasswordNextSignIn), value); }
+            get { return BackingStore?.Get<bool?>("forceChangePasswordNextSignIn"); }
+            set { BackingStore?.Set("forceChangePasswordNextSignIn", value); }
         }
         /// <summary>If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.</summary>
         public bool? ForceChangePasswordNextSignInWithMfa {
-            get { return BackingStore?.Get<bool?>(nameof(ForceChangePasswordNextSignInWithMfa)); }
-            set { BackingStore?.Set(nameof(ForceChangePasswordNextSignInWithMfa), value); }
+            get { return BackingStore?.Get<bool?>("forceChangePasswordNextSignInWithMfa"); }
+            set { BackingStore?.Set("forceChangePasswordNextSignInWithMfa", value); }
         }
         /// <summary>The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.</summary>
         public string Password {
-            get { return BackingStore?.Get<string>(nameof(Password)); }
-            set { BackingStore?.Set(nameof(Password), value); }
+            get { return BackingStore?.Get<string>("password"); }
+            set { BackingStore?.Set("password", value); }
         }
         /// <summary>
         /// Instantiates a new passwordProfile and sets the default values.

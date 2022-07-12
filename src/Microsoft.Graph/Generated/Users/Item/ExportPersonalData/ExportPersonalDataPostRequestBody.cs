@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Users.Item.ExportPersonalData {
     public class ExportPersonalDataPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The storageLocation property</summary>
         public string StorageLocation {
-            get { return BackingStore?.Get<string>(nameof(StorageLocation)); }
-            set { BackingStore?.Set(nameof(StorageLocation), value); }
+            get { return BackingStore?.Get<string>("storageLocation"); }
+            set { BackingStore?.Set("storageLocation", value); }
         }
         /// <summary>
         /// Instantiates a new exportPersonalDataPostRequestBody and sets the default values.

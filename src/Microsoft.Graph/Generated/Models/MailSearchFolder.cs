@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class MailSearchFolder : MailFolder, IParsable {
         /// <summary>The OData query to filter the messages.</summary>
         public string FilterQuery {
-            get { return BackingStore?.Get<string>(nameof(FilterQuery)); }
-            set { BackingStore?.Set(nameof(FilterQuery), value); }
+            get { return BackingStore?.Get<string>("filterQuery"); }
+            set { BackingStore?.Set("filterQuery", value); }
         }
         /// <summary>Indicates how the mailbox folder hierarchy should be traversed in the search. true means that a deep search should be done to include child folders in the hierarchy of each folder explicitly specified in sourceFolderIds. false means a shallow search of only each of the folders explicitly specified in sourceFolderIds.</summary>
         public bool? IncludeNestedFolders {
-            get { return BackingStore?.Get<bool?>(nameof(IncludeNestedFolders)); }
-            set { BackingStore?.Set(nameof(IncludeNestedFolders), value); }
+            get { return BackingStore?.Get<bool?>("includeNestedFolders"); }
+            set { BackingStore?.Set("includeNestedFolders", value); }
         }
         /// <summary>Indicates whether a search folder is editable using REST APIs.</summary>
         public bool? IsSupported {
-            get { return BackingStore?.Get<bool?>(nameof(IsSupported)); }
-            set { BackingStore?.Set(nameof(IsSupported), value); }
+            get { return BackingStore?.Get<bool?>("isSupported"); }
+            set { BackingStore?.Set("isSupported", value); }
         }
         /// <summary>The mailbox folders that should be mined.</summary>
         public List<string> SourceFolderIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SourceFolderIds)); }
-            set { BackingStore?.Set(nameof(SourceFolderIds), value); }
+            get { return BackingStore?.Get<List<string>>("sourceFolderIds"); }
+            set { BackingStore?.Set("sourceFolderIds", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

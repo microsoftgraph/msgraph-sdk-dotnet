@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class SubjectRightsRequestStageDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Describes the error, if any, for the current stage.</summary>
         public PublicError Error {
-            get { return BackingStore?.Get<PublicError>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<PublicError>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.</summary>
         public SubjectRightsRequestStage? Stage {
-            get { return BackingStore?.Get<SubjectRightsRequestStage?>(nameof(Stage)); }
-            set { BackingStore?.Set(nameof(Stage), value); }
+            get { return BackingStore?.Get<SubjectRightsRequestStage?>("stage"); }
+            set { BackingStore?.Set("stage", value); }
         }
         /// <summary>Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.</summary>
         public SubjectRightsRequestStageStatus? Status {
-            get { return BackingStore?.Get<SubjectRightsRequestStageStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<SubjectRightsRequestStageStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Instantiates a new subjectRightsRequestStageDetail and sets the default values.

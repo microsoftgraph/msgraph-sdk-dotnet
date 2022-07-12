@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class Windows10EnterpriseModernAppManagementConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to uninstall a fixed list of built-in Windows apps.</summary>
         public bool? UninstallBuiltInApps {
-            get { return BackingStore?.Get<bool?>(nameof(UninstallBuiltInApps)); }
-            set { BackingStore?.Set(nameof(UninstallBuiltInApps), value); }
+            get { return BackingStore?.Get<bool?>("uninstallBuiltInApps"); }
+            set { BackingStore?.Set("uninstallBuiltInApps", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

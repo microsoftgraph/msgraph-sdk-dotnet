@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class WorkbookWorksheetProtection : Entity, IParsable {
         /// <summary>Sheet protection options. Read-only.</summary>
         public WorkbookWorksheetProtectionOptions Options {
-            get { return BackingStore?.Get<WorkbookWorksheetProtectionOptions>(nameof(Options)); }
-            set { BackingStore?.Set(nameof(Options), value); }
+            get { return BackingStore?.Get<WorkbookWorksheetProtectionOptions>("options"); }
+            set { BackingStore?.Set("options", value); }
         }
         /// <summary>Indicates if the worksheet is protected.  Read-only.</summary>
         public bool? Protected {
-            get { return BackingStore?.Get<bool?>(nameof(Protected)); }
-            set { BackingStore?.Set(nameof(Protected), value); }
+            get { return BackingStore?.Get<bool?>("protected"); }
+            set { BackingStore?.Set("protected", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class WorkbookChartPoint : Entity, IParsable {
         /// <summary>Encapsulates the format properties chart point. Read-only.</summary>
         public WorkbookChartPointFormat Format {
-            get { return BackingStore?.Get<WorkbookChartPointFormat>(nameof(Format)); }
-            set { BackingStore?.Set(nameof(Format), value); }
+            get { return BackingStore?.Get<WorkbookChartPointFormat>("format"); }
+            set { BackingStore?.Set("format", value); }
         }
         /// <summary>Returns the value of a chart point. Read-only.</summary>
         public Json Value {
-            get { return BackingStore?.Get<Json>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<Json>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

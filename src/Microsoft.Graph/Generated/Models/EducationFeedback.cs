@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class EducationFeedback : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>User who created the feedback.</summary>
         public IdentitySet FeedbackBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(FeedbackBy)); }
-            set { BackingStore?.Set(nameof(FeedbackBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("feedbackBy"); }
+            set { BackingStore?.Set("feedbackBy", value); }
         }
         /// <summary>Moment in time when the feedback was given. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? FeedbackDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(FeedbackDateTime)); }
-            set { BackingStore?.Set(nameof(FeedbackDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("feedbackDateTime"); }
+            set { BackingStore?.Set("feedbackDateTime", value); }
         }
         /// <summary>Feedback.</summary>
         public EducationItemBody Text {
-            get { return BackingStore?.Get<EducationItemBody>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<EducationItemBody>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>
         /// Instantiates a new educationFeedback and sets the default values.

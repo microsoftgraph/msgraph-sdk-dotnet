@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class LicenseDetails : Entity, IParsable {
         /// <summary>Information about the service plans assigned with the license. Read-only, Not nullable</summary>
         public List<ServicePlanInfo> ServicePlans {
-            get { return BackingStore?.Get<List<ServicePlanInfo>>(nameof(ServicePlans)); }
-            set { BackingStore?.Set(nameof(ServicePlans), value); }
+            get { return BackingStore?.Get<List<ServicePlanInfo>>("servicePlans"); }
+            set { BackingStore?.Set("servicePlans", value); }
         }
         /// <summary>Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only</summary>
         public string SkuId {
-            get { return BackingStore?.Get<string>(nameof(SkuId)); }
-            set { BackingStore?.Set(nameof(SkuId), value); }
+            get { return BackingStore?.Get<string>("skuId"); }
+            set { BackingStore?.Set("skuId", value); }
         }
         /// <summary>Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: &apos;AAD_Premium&apos;. Read-only</summary>
         public string SkuPartNumber {
-            get { return BackingStore?.Get<string>(nameof(SkuPartNumber)); }
-            set { BackingStore?.Set(nameof(SkuPartNumber), value); }
+            get { return BackingStore?.Get<string>("skuPartNumber"); }
+            set { BackingStore?.Set("skuPartNumber", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

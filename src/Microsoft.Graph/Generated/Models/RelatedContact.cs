@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class RelatedContact : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Indicates whether the user has been consented to access student data.</summary>
         public bool? AccessConsent {
-            get { return BackingStore?.Get<bool?>(nameof(AccessConsent)); }
-            set { BackingStore?.Set(nameof(AccessConsent), value); }
+            get { return BackingStore?.Get<bool?>("accessConsent"); }
+            set { BackingStore?.Set("accessConsent", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the contact. Required.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Email address of the contact.</summary>
         public string EmailAddress {
-            get { return BackingStore?.Get<string>(nameof(EmailAddress)); }
-            set { BackingStore?.Set(nameof(EmailAddress), value); }
+            get { return BackingStore?.Get<string>("emailAddress"); }
+            set { BackingStore?.Set("emailAddress", value); }
         }
         /// <summary>Mobile phone number of the contact.</summary>
         public string MobilePhone {
-            get { return BackingStore?.Get<string>(nameof(MobilePhone)); }
-            set { BackingStore?.Set(nameof(MobilePhone), value); }
+            get { return BackingStore?.Get<string>("mobilePhone"); }
+            set { BackingStore?.Set("mobilePhone", value); }
         }
-        /// <summary>Relationship to the user. Possible values are: parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.</summary>
+        /// <summary>The relationship property</summary>
         public ContactRelationship? Relationship {
-            get { return BackingStore?.Get<ContactRelationship?>(nameof(Relationship)); }
-            set { BackingStore?.Set(nameof(Relationship), value); }
+            get { return BackingStore?.Get<ContactRelationship?>("relationship"); }
+            set { BackingStore?.Set("relationship", value); }
         }
         /// <summary>
         /// Instantiates a new relatedContact and sets the default values.

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class PrinterCreateOperation : PrintOperation, IParsable {
         /// <summary>The signed certificate created during the registration process. Read-only.</summary>
         public string Certificate {
-            get { return BackingStore?.Get<string>(nameof(Certificate)); }
-            set { BackingStore?.Set(nameof(Certificate), value); }
+            get { return BackingStore?.Get<string>("certificate"); }
+            set { BackingStore?.Set("certificate", value); }
         }
         /// <summary>The created printer entity. Read-only.</summary>
         public Microsoft.Graph.Models.Printer Printer {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Printer>(nameof(Printer)); }
-            set { BackingStore?.Set(nameof(Printer), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Printer>("printer"); }
+            set { BackingStore?.Set("printer", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

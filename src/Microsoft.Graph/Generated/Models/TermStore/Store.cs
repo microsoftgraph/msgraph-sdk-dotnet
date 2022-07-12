@@ -4,27 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models.TermStore {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class Store : Entity, IParsable {
         /// <summary>Default language of the term store.</summary>
         public string DefaultLanguageTag {
-            get { return BackingStore?.Get<string>(nameof(DefaultLanguageTag)); }
-            set { BackingStore?.Set(nameof(DefaultLanguageTag), value); }
+            get { return BackingStore?.Get<string>("defaultLanguageTag"); }
+            set { BackingStore?.Set("defaultLanguageTag", value); }
         }
         /// <summary>Collection of all groups available in the term store.</summary>
         public List<Group> Groups {
-            get { return BackingStore?.Get<List<Group>>(nameof(Groups)); }
-            set { BackingStore?.Set(nameof(Groups), value); }
+            get { return BackingStore?.Get<List<Group>>("groups"); }
+            set { BackingStore?.Set("groups", value); }
         }
         /// <summary>List of languages for the term store.</summary>
         public List<string> LanguageTags {
-            get { return BackingStore?.Get<List<string>>(nameof(LanguageTags)); }
-            set { BackingStore?.Set(nameof(LanguageTags), value); }
+            get { return BackingStore?.Get<List<string>>("languageTags"); }
+            set { BackingStore?.Set("languageTags", value); }
         }
         /// <summary>Collection of all sets available in the term store.</summary>
         public List<Set> Sets {
-            get { return BackingStore?.Get<List<Set>>(nameof(Sets)); }
-            set { BackingStore?.Set(nameof(Sets), value); }
+            get { return BackingStore?.Get<List<Set>>("sets"); }
+            set { BackingStore?.Set("sets", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

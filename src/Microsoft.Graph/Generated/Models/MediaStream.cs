@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class MediaStream : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The direction. The possible values are inactive, sendOnly, receiveOnly, sendReceive.</summary>
+        /// <summary>The direction property</summary>
         public MediaDirection? Direction {
-            get { return BackingStore?.Get<MediaDirection?>(nameof(Direction)); }
-            set { BackingStore?.Set(nameof(Direction), value); }
+            get { return BackingStore?.Get<MediaDirection?>("direction"); }
+            set { BackingStore?.Set("direction", value); }
         }
         /// <summary>The media stream label.</summary>
         public string Label {
-            get { return BackingStore?.Get<string>(nameof(Label)); }
-            set { BackingStore?.Set(nameof(Label), value); }
+            get { return BackingStore?.Get<string>("label"); }
+            set { BackingStore?.Set("label", value); }
         }
-        /// <summary>The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.</summary>
+        /// <summary>The mediaType property</summary>
         public Modality? MediaType {
-            get { return BackingStore?.Get<Modality?>(nameof(MediaType)); }
-            set { BackingStore?.Set(nameof(MediaType), value); }
+            get { return BackingStore?.Get<Modality?>("mediaType"); }
+            set { BackingStore?.Set("mediaType", value); }
         }
         /// <summary>Indicates whether the media is muted by the server.</summary>
         public bool? ServerMuted {
-            get { return BackingStore?.Get<bool?>(nameof(ServerMuted)); }
-            set { BackingStore?.Set(nameof(ServerMuted), value); }
+            get { return BackingStore?.Get<bool?>("serverMuted"); }
+            set { BackingStore?.Set("serverMuted", value); }
         }
         /// <summary>The source ID.</summary>
         public string SourceId {
-            get { return BackingStore?.Get<string>(nameof(SourceId)); }
-            set { BackingStore?.Set(nameof(SourceId), value); }
+            get { return BackingStore?.Get<string>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
         }
         /// <summary>
         /// Instantiates a new mediaStream and sets the default values.

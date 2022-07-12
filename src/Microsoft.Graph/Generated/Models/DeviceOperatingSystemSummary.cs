@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Models {
     public class DeviceOperatingSystemSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Number of android device count.</summary>
         public int? AndroidCount {
-            get { return BackingStore?.Get<int?>(nameof(AndroidCount)); }
-            set { BackingStore?.Set(nameof(AndroidCount), value); }
+            get { return BackingStore?.Get<int?>("androidCount"); }
+            set { BackingStore?.Set("androidCount", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of iOS device count.</summary>
         public int? IosCount {
-            get { return BackingStore?.Get<int?>(nameof(IosCount)); }
-            set { BackingStore?.Set(nameof(IosCount), value); }
+            get { return BackingStore?.Get<int?>("iosCount"); }
+            set { BackingStore?.Set("iosCount", value); }
         }
         /// <summary>Number of Mac OS X device count.</summary>
         public int? MacOSCount {
-            get { return BackingStore?.Get<int?>(nameof(MacOSCount)); }
-            set { BackingStore?.Set(nameof(MacOSCount), value); }
+            get { return BackingStore?.Get<int?>("macOSCount"); }
+            set { BackingStore?.Set("macOSCount", value); }
         }
         /// <summary>Number of unknown device count.</summary>
         public int? UnknownCount {
-            get { return BackingStore?.Get<int?>(nameof(UnknownCount)); }
-            set { BackingStore?.Set(nameof(UnknownCount), value); }
+            get { return BackingStore?.Get<int?>("unknownCount"); }
+            set { BackingStore?.Set("unknownCount", value); }
         }
         /// <summary>Number of Windows device count.</summary>
         public int? WindowsCount {
-            get { return BackingStore?.Get<int?>(nameof(WindowsCount)); }
-            set { BackingStore?.Set(nameof(WindowsCount), value); }
+            get { return BackingStore?.Get<int?>("windowsCount"); }
+            set { BackingStore?.Set("windowsCount", value); }
         }
         /// <summary>Number of Windows mobile device count.</summary>
         public int? WindowsMobileCount {
-            get { return BackingStore?.Get<int?>(nameof(WindowsMobileCount)); }
-            set { BackingStore?.Set(nameof(WindowsMobileCount), value); }
+            get { return BackingStore?.Get<int?>("windowsMobileCount"); }
+            set { BackingStore?.Set("windowsMobileCount", value); }
         }
         /// <summary>
         /// Instantiates a new deviceOperatingSystemSummary and sets the default values.

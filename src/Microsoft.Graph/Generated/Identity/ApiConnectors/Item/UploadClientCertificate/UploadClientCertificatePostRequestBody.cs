@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item.UploadClientCertificate {
     public class UploadClientCertificatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The password property</summary>
         public string Password {
-            get { return BackingStore?.Get<string>(nameof(Password)); }
-            set { BackingStore?.Set(nameof(Password), value); }
+            get { return BackingStore?.Get<string>("password"); }
+            set { BackingStore?.Set("password", value); }
         }
         /// <summary>The pkcs12Value property</summary>
         public string Pkcs12Value {
-            get { return BackingStore?.Get<string>(nameof(Pkcs12Value)); }
-            set { BackingStore?.Set(nameof(Pkcs12Value), value); }
+            get { return BackingStore?.Get<string>("pkcs12Value"); }
+            set { BackingStore?.Set("pkcs12Value", value); }
         }
         /// <summary>
         /// Instantiates a new uploadClientCertificatePostRequestBody and sets the default values.

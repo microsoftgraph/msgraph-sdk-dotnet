@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the print singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class PrintDocument : Entity, IParsable {
         /// <summary>The document&apos;s content (MIME) type. Read-only.</summary>
         public string ContentType {
-            get { return BackingStore?.Get<string>(nameof(ContentType)); }
-            set { BackingStore?.Set(nameof(ContentType), value); }
+            get { return BackingStore?.Get<string>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>The document&apos;s name. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The document&apos;s size in bytes. Read-only.</summary>
         public long? Size {
-            get { return BackingStore?.Get<long?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<long?>("size"); }
+            set { BackingStore?.Set("size", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -1,65 +1,71 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class BaseItem : Entity, IParsable {
         /// <summary>Identity of the user, device, or application which created the item. Read-only.</summary>
         public IdentitySet CreatedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>Identity of the user who created the item. Read-only.</summary>
         public User CreatedByUser {
-            get { return BackingStore?.Get<User>(nameof(CreatedByUser)); }
-            set { BackingStore?.Set(nameof(CreatedByUser), value); }
+            get { return BackingStore?.Get<User>("createdByUser"); }
+            set { BackingStore?.Set("createdByUser", value); }
         }
         /// <summary>Date and time of item creation. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Provides a user-visible description of the item. Optional.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>ETag for the item. Read-only.</summary>
         public string ETag {
-            get { return BackingStore?.Get<string>(nameof(ETag)); }
-            set { BackingStore?.Set(nameof(ETag), value); }
+            get { return BackingStore?.Get<string>("eTag"); }
+            set { BackingStore?.Set("eTag", value); }
         }
         /// <summary>Identity of the user, device, and application which last modified the item. Read-only.</summary>
         public IdentitySet LastModifiedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>Identity of the user who last modified the item. Read-only.</summary>
         public User LastModifiedByUser {
-            get { return BackingStore?.Get<User>(nameof(LastModifiedByUser)); }
-            set { BackingStore?.Set(nameof(LastModifiedByUser), value); }
+            get { return BackingStore?.Get<User>("lastModifiedByUser"); }
+            set { BackingStore?.Set("lastModifiedByUser", value); }
         }
         /// <summary>Date and time the item was last modified. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The name of the item. Read-write.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Parent information, if the item has a parent. Read-write.</summary>
         public ItemReference ParentReference {
-            get { return BackingStore?.Get<ItemReference>(nameof(ParentReference)); }
-            set { BackingStore?.Set(nameof(ParentReference), value); }
+            get { return BackingStore?.Get<ItemReference>("parentReference"); }
+            set { BackingStore?.Set("parentReference", value); }
         }
         /// <summary>URL that displays the resource in the browser. Read-only.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+        /// <summary>
+        /// Instantiates a new baseItem and sets the default values.
+        /// </summary>
+        public BaseItem() : base() {
+            Type = "#microsoft.graph.baseItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

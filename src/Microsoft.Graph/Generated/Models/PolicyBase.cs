@@ -1,20 +1,27 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to call the instantiate method.</summary>
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class PolicyBase : DirectoryObject, IParsable {
         /// <summary>Description for this policy. Required.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display name for this policy. Required.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new policyBase and sets the default values.
+        /// </summary>
+        public PolicyBase() : base() {
+            Type = "#microsoft.graph.policyBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -26,6 +33,7 @@ namespace Microsoft.Graph.Models {
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.authorizationPolicy" => new AuthorizationPolicy(),
+                "#microsoft.graph.crossTenantAccessPolicy" => new CrossTenantAccessPolicy(),
                 "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new IdentitySecurityDefaultsEnforcementPolicy(),
                 "#microsoft.graph.permissionGrantPolicy" => new PermissionGrantPolicy(),
                 "#microsoft.graph.stsPolicy" => new StsPolicy(),

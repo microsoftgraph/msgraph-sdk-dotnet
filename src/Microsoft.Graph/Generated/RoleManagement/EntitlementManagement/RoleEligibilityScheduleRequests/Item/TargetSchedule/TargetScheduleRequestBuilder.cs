@@ -45,7 +45,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Property indicating the schedule for an eligible role assignment.
+        /// The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TargetScheduleRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
             return requestInfo;
         }
         /// <summary>
-        /// Property indicating the schedule for an eligible role assignment.
+        /// The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
             };
             return await RequestAdapter.SendAsync<UnifiedRoleEligibilitySchedule>(requestInfo, UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Property indicating the schedule for an eligible role assignment.</summary>
+        /// <summary>The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.</summary>
         public class TargetScheduleRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

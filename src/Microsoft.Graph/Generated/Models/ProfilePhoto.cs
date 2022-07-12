@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class ProfilePhoto : Entity, IParsable {
         /// <summary>The height of the photo. Read-only.</summary>
         public int? Height {
-            get { return BackingStore?.Get<int?>(nameof(Height)); }
-            set { BackingStore?.Set(nameof(Height), value); }
+            get { return BackingStore?.Get<int?>("height"); }
+            set { BackingStore?.Set("height", value); }
         }
         /// <summary>The width of the photo. Read-only.</summary>
         public int? Width {
-            get { return BackingStore?.Get<int?>(nameof(Width)); }
-            set { BackingStore?.Set(nameof(Width), value); }
+            get { return BackingStore?.Get<int?>("width"); }
+            set { BackingStore?.Set("width", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

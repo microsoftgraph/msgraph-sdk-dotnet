@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class PrintJobStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A human-readable description of the print job&apos;s current processing state. Read-only.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Additional details for print job state. Valid values are described in the following table. Read-only.</summary>
         public List<string> Details {
-            get { return BackingStore?.Get<List<string>>(nameof(Details)); }
-            set { BackingStore?.Set(nameof(Details), value); }
+            get { return BackingStore?.Get<List<string>>("details"); }
+            set { BackingStore?.Set("details", value); }
         }
         /// <summary>True if the job was acknowledged by a printer; false otherwise. Read-only.</summary>
         public bool? IsAcquiredByPrinter {
-            get { return BackingStore?.Get<bool?>(nameof(IsAcquiredByPrinter)); }
-            set { BackingStore?.Set(nameof(IsAcquiredByPrinter), value); }
+            get { return BackingStore?.Get<bool?>("isAcquiredByPrinter"); }
+            set { BackingStore?.Set("isAcquiredByPrinter", value); }
         }
-        /// <summary>The print job&apos;s current processing state. Valid values are described in the following table. Read-only.</summary>
+        /// <summary>The state property</summary>
         public PrintJobProcessingState? State {
-            get { return BackingStore?.Get<PrintJobProcessingState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<PrintJobProcessingState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Instantiates a new printJobStatus and sets the default values.

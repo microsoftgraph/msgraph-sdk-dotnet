@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class AgreementFile : AgreementFileProperties, IParsable {
         /// <summary>The localized version of the terms of use agreement files attached to the agreement.</summary>
         public List<AgreementFileLocalization> Localizations {
-            get { return BackingStore?.Get<List<AgreementFileLocalization>>(nameof(Localizations)); }
-            set { BackingStore?.Set(nameof(Localizations), value); }
+            get { return BackingStore?.Get<List<AgreementFileLocalization>>("localizations"); }
+            set { BackingStore?.Set("localizations", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

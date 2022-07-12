@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Models {
     public class TemporaryAccessPassAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable {
         /// <summary>Default length in characters of a Temporary Access Pass object. Must be between 8 and 48 characters.</summary>
         public int? DefaultLength {
-            get { return BackingStore?.Get<int?>(nameof(DefaultLength)); }
-            set { BackingStore?.Set(nameof(DefaultLength), value); }
+            get { return BackingStore?.Get<int?>("defaultLength"); }
+            set { BackingStore?.Set("defaultLength", value); }
         }
         /// <summary>Default lifetime in minutes for a Temporary Access Pass. Value can be any integer between the minimumLifetimeInMinutes and maximumLifetimeInMinutes.</summary>
         public int? DefaultLifetimeInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(DefaultLifetimeInMinutes)); }
-            set { BackingStore?.Set(nameof(DefaultLifetimeInMinutes), value); }
+            get { return BackingStore?.Get<int?>("defaultLifetimeInMinutes"); }
+            set { BackingStore?.Set("defaultLifetimeInMinutes", value); }
         }
         /// <summary>A collection of users or groups who are enabled to use the authentication method.</summary>
         public List<AuthenticationMethodTarget> IncludeTargets {
-            get { return BackingStore?.Get<List<AuthenticationMethodTarget>>(nameof(IncludeTargets)); }
-            set { BackingStore?.Set(nameof(IncludeTargets), value); }
+            get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
+            set { BackingStore?.Set("includeTargets", value); }
         }
         /// <summary>If true, all the passes in the tenant will be restricted to one-time use. If false, passes in the tenant can be created to be either one-time use or reusable.</summary>
         public bool? IsUsableOnce {
-            get { return BackingStore?.Get<bool?>(nameof(IsUsableOnce)); }
-            set { BackingStore?.Set(nameof(IsUsableOnce), value); }
+            get { return BackingStore?.Get<bool?>("isUsableOnce"); }
+            set { BackingStore?.Set("isUsableOnce", value); }
         }
         /// <summary>Maximum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).</summary>
         public int? MaximumLifetimeInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(MaximumLifetimeInMinutes)); }
-            set { BackingStore?.Set(nameof(MaximumLifetimeInMinutes), value); }
+            get { return BackingStore?.Get<int?>("maximumLifetimeInMinutes"); }
+            set { BackingStore?.Set("maximumLifetimeInMinutes", value); }
         }
         /// <summary>Minimum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).</summary>
         public int? MinimumLifetimeInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(MinimumLifetimeInMinutes)); }
-            set { BackingStore?.Set(nameof(MinimumLifetimeInMinutes), value); }
+            get { return BackingStore?.Get<int?>("minimumLifetimeInMinutes"); }
+            set { BackingStore?.Set("minimumLifetimeInMinutes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

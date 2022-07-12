@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Models {
     public class UploadSession : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>When uploading files to document libraries, this is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, &apos;{start}-{end}&apos; (e.g. &apos;0-26&apos; to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value &apos;{start}&apos;, the location in the file where the next upload should begin.</summary>
         public List<string> NextExpectedRanges {
-            get { return BackingStore?.Get<List<string>>(nameof(NextExpectedRanges)); }
-            set { BackingStore?.Set(nameof(NextExpectedRanges), value); }
+            get { return BackingStore?.Get<List<string>>("nextExpectedRanges"); }
+            set { BackingStore?.Set("nextExpectedRanges", value); }
         }
         /// <summary>The URL endpoint that accepts PUT requests for byte ranges of the file.</summary>
         public string UploadUrl {
-            get { return BackingStore?.Get<string>(nameof(UploadUrl)); }
-            set { BackingStore?.Set(nameof(UploadUrl), value); }
+            get { return BackingStore?.Get<string>("uploadUrl"); }
+            set { BackingStore?.Set("uploadUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new UploadSession and sets the default values.
+        /// Instantiates a new uploadSession and sets the default values.
         /// </summary>
         public UploadSession() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

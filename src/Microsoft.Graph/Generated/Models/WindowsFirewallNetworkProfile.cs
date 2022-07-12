@@ -9,70 +9,70 @@ namespace Microsoft.Graph.Models {
     public class WindowsFirewallNetworkProfile : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Configures the firewall to merge authorized application rules from group policy with those from local store instead of ignoring the local store rules. When AuthorizedApplicationRulesFromGroupPolicyNotMerged and AuthorizedApplicationRulesFromGroupPolicyMerged are both true, AuthorizedApplicationRulesFromGroupPolicyMerged takes priority.</summary>
         public bool? AuthorizedApplicationRulesFromGroupPolicyMerged {
-            get { return BackingStore?.Get<bool?>(nameof(AuthorizedApplicationRulesFromGroupPolicyMerged)); }
-            set { BackingStore?.Set(nameof(AuthorizedApplicationRulesFromGroupPolicyMerged), value); }
+            get { return BackingStore?.Get<bool?>("authorizedApplicationRulesFromGroupPolicyMerged"); }
+            set { BackingStore?.Set("authorizedApplicationRulesFromGroupPolicyMerged", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Configures the firewall to merge connection security rules from group policy with those from local store instead of ignoring the local store rules. When ConnectionSecurityRulesFromGroupPolicyNotMerged and ConnectionSecurityRulesFromGroupPolicyMerged are both true, ConnectionSecurityRulesFromGroupPolicyMerged takes priority.</summary>
         public bool? ConnectionSecurityRulesFromGroupPolicyMerged {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectionSecurityRulesFromGroupPolicyMerged)); }
-            set { BackingStore?.Set(nameof(ConnectionSecurityRulesFromGroupPolicyMerged), value); }
+            get { return BackingStore?.Get<bool?>("connectionSecurityRulesFromGroupPolicyMerged"); }
+            set { BackingStore?.Set("connectionSecurityRulesFromGroupPolicyMerged", value); }
         }
-        /// <summary>Configures the host device to allow or block the firewall and advanced security enforcement for the network profile. Possible values are: notConfigured, blocked, allowed.</summary>
+        /// <summary>State Management Setting.</summary>
         public StateManagementSetting? FirewallEnabled {
-            get { return BackingStore?.Get<StateManagementSetting?>(nameof(FirewallEnabled)); }
-            set { BackingStore?.Set(nameof(FirewallEnabled), value); }
+            get { return BackingStore?.Get<StateManagementSetting?>("firewallEnabled"); }
+            set { BackingStore?.Set("firewallEnabled", value); }
         }
         /// <summary>Configures the firewall to merge global port rules from group policy with those from local store instead of ignoring the local store rules. When GlobalPortRulesFromGroupPolicyNotMerged and GlobalPortRulesFromGroupPolicyMerged are both true, GlobalPortRulesFromGroupPolicyMerged takes priority.</summary>
         public bool? GlobalPortRulesFromGroupPolicyMerged {
-            get { return BackingStore?.Get<bool?>(nameof(GlobalPortRulesFromGroupPolicyMerged)); }
-            set { BackingStore?.Set(nameof(GlobalPortRulesFromGroupPolicyMerged), value); }
+            get { return BackingStore?.Get<bool?>("globalPortRulesFromGroupPolicyMerged"); }
+            set { BackingStore?.Set("globalPortRulesFromGroupPolicyMerged", value); }
         }
         /// <summary>Configures the firewall to block all incoming connections by default. When InboundConnectionsRequired and InboundConnectionsBlocked are both true, InboundConnectionsBlocked takes priority.</summary>
         public bool? InboundConnectionsBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(InboundConnectionsBlocked)); }
-            set { BackingStore?.Set(nameof(InboundConnectionsBlocked), value); }
+            get { return BackingStore?.Get<bool?>("inboundConnectionsBlocked"); }
+            set { BackingStore?.Set("inboundConnectionsBlocked", value); }
         }
         /// <summary>Prevents the firewall from displaying notifications when an application is blocked from listening on a port. When InboundNotificationsRequired and InboundNotificationsBlocked are both true, InboundNotificationsBlocked takes priority.</summary>
         public bool? InboundNotificationsBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(InboundNotificationsBlocked)); }
-            set { BackingStore?.Set(nameof(InboundNotificationsBlocked), value); }
+            get { return BackingStore?.Get<bool?>("inboundNotificationsBlocked"); }
+            set { BackingStore?.Set("inboundNotificationsBlocked", value); }
         }
         /// <summary>Configures the firewall to block all incoming traffic regardless of other policy settings. When IncomingTrafficRequired and IncomingTrafficBlocked are both true, IncomingTrafficBlocked takes priority.</summary>
         public bool? IncomingTrafficBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(IncomingTrafficBlocked)); }
-            set { BackingStore?.Set(nameof(IncomingTrafficBlocked), value); }
+            get { return BackingStore?.Get<bool?>("incomingTrafficBlocked"); }
+            set { BackingStore?.Set("incomingTrafficBlocked", value); }
         }
         /// <summary>Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.</summary>
         public bool? OutboundConnectionsBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(OutboundConnectionsBlocked)); }
-            set { BackingStore?.Set(nameof(OutboundConnectionsBlocked), value); }
+            get { return BackingStore?.Get<bool?>("outboundConnectionsBlocked"); }
+            set { BackingStore?.Set("outboundConnectionsBlocked", value); }
         }
         /// <summary>Configures the firewall to merge Firewall Rule policies from group policy with those from local store instead of ignoring the local store rules. When PolicyRulesFromGroupPolicyNotMerged and PolicyRulesFromGroupPolicyMerged are both true, PolicyRulesFromGroupPolicyMerged takes priority.</summary>
         public bool? PolicyRulesFromGroupPolicyMerged {
-            get { return BackingStore?.Get<bool?>(nameof(PolicyRulesFromGroupPolicyMerged)); }
-            set { BackingStore?.Set(nameof(PolicyRulesFromGroupPolicyMerged), value); }
+            get { return BackingStore?.Get<bool?>("policyRulesFromGroupPolicyMerged"); }
+            set { BackingStore?.Set("policyRulesFromGroupPolicyMerged", value); }
         }
         /// <summary>Configures the firewall to allow the host computer to respond to unsolicited network traffic of that traffic is secured by IPSec even when stealthModeBlocked is set to true. When SecuredPacketExemptionBlocked and SecuredPacketExemptionAllowed are both true, SecuredPacketExemptionAllowed takes priority.</summary>
         public bool? SecuredPacketExemptionAllowed {
-            get { return BackingStore?.Get<bool?>(nameof(SecuredPacketExemptionAllowed)); }
-            set { BackingStore?.Set(nameof(SecuredPacketExemptionAllowed), value); }
+            get { return BackingStore?.Get<bool?>("securedPacketExemptionAllowed"); }
+            set { BackingStore?.Set("securedPacketExemptionAllowed", value); }
         }
         /// <summary>Prevent the server from operating in stealth mode. When StealthModeRequired and StealthModeBlocked are both true, StealthModeBlocked takes priority.</summary>
         public bool? StealthModeBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(StealthModeBlocked)); }
-            set { BackingStore?.Set(nameof(StealthModeBlocked), value); }
+            get { return BackingStore?.Get<bool?>("stealthModeBlocked"); }
+            set { BackingStore?.Set("stealthModeBlocked", value); }
         }
         /// <summary>Configures the firewall to block unicast responses to multicast broadcast traffic. When UnicastResponsesToMulticastBroadcastsRequired and UnicastResponsesToMulticastBroadcastsBlocked are both true, UnicastResponsesToMulticastBroadcastsBlocked takes priority.</summary>
         public bool? UnicastResponsesToMulticastBroadcastsBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(UnicastResponsesToMulticastBroadcastsBlocked)); }
-            set { BackingStore?.Set(nameof(UnicastResponsesToMulticastBroadcastsBlocked), value); }
+            get { return BackingStore?.Get<bool?>("unicastResponsesToMulticastBroadcastsBlocked"); }
+            set { BackingStore?.Set("unicastResponsesToMulticastBroadcastsBlocked", value); }
         }
         /// <summary>
         /// Instantiates a new windowsFirewallNetworkProfile and sets the default values.

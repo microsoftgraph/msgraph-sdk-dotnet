@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class DeviceAndAppManagementRoleAssignment : RoleAssignment, IParsable {
         /// <summary>The list of ids of role member security groups. These are IDs from Azure Active Directory.</summary>
         public List<string> Members {
-            get { return BackingStore?.Get<List<string>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<string>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

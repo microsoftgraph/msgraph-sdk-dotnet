@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class RubricQualityFeedbackModel : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specific feedback for one quality of this rubric.</summary>
         public EducationItemBody Feedback {
-            get { return BackingStore?.Get<EducationItemBody>(nameof(Feedback)); }
-            set { BackingStore?.Set(nameof(Feedback), value); }
+            get { return BackingStore?.Get<EducationItemBody>("feedback"); }
+            set { BackingStore?.Set("feedback", value); }
         }
         /// <summary>The ID of the rubricQuality that this feedback is related to.</summary>
         public string QualityId {
-            get { return BackingStore?.Get<string>(nameof(QualityId)); }
-            set { BackingStore?.Set(nameof(QualityId), value); }
+            get { return BackingStore?.Get<string>("qualityId"); }
+            set { BackingStore?.Set("qualityId", value); }
         }
         /// <summary>
         /// Instantiates a new rubricQualityFeedbackModel and sets the default values.

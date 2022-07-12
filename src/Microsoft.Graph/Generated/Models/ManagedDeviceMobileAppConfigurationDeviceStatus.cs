@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Models {
     public class ManagedDeviceMobileAppConfigurationDeviceStatus : Entity, IParsable {
         /// <summary>The DateTime when device compliance grace period expires</summary>
         public DateTimeOffset? ComplianceGracePeriodExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ComplianceGracePeriodExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ComplianceGracePeriodExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("complianceGracePeriodExpirationDateTime"); }
+            set { BackingStore?.Set("complianceGracePeriodExpirationDateTime", value); }
         }
         /// <summary>Device name of the DevicePolicyStatus.</summary>
         public string DeviceDisplayName {
-            get { return BackingStore?.Get<string>(nameof(DeviceDisplayName)); }
-            set { BackingStore?.Set(nameof(DeviceDisplayName), value); }
+            get { return BackingStore?.Get<string>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
         }
         /// <summary>The device model that is being reported</summary>
         public string DeviceModel {
-            get { return BackingStore?.Get<string>(nameof(DeviceModel)); }
-            set { BackingStore?.Set(nameof(DeviceModel), value); }
+            get { return BackingStore?.Get<string>("deviceModel"); }
+            set { BackingStore?.Set("deviceModel", value); }
         }
         /// <summary>Last modified date time of the policy report.</summary>
         public DateTimeOffset? LastReportedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastReportedDateTime)); }
-            set { BackingStore?.Set(nameof(LastReportedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
+            set { BackingStore?.Set("lastReportedDateTime", value); }
         }
-        /// <summary>Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.</summary>
+        /// <summary>The status property</summary>
         public ComplianceStatus? Status {
-            get { return BackingStore?.Get<ComplianceStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ComplianceStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The User Name that is being reported</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>UserPrincipalName.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

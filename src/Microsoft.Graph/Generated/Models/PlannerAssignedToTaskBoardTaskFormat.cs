@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class PlannerAssignedToTaskBoardTaskFormat : Entity, IParsable {
         /// <summary>Dictionary of hints used to order tasks on the AssignedTo view of the Task Board. The key of each entry is one of the users the task is assigned to and the value is the order hint. The format of each value is defined as outlined here.</summary>
         public PlannerOrderHintsByAssignee OrderHintsByAssignee {
-            get { return BackingStore?.Get<PlannerOrderHintsByAssignee>(nameof(OrderHintsByAssignee)); }
-            set { BackingStore?.Set(nameof(OrderHintsByAssignee), value); }
+            get { return BackingStore?.Get<PlannerOrderHintsByAssignee>("orderHintsByAssignee"); }
+            set { BackingStore?.Set("orderHintsByAssignee", value); }
         }
         /// <summary>Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.</summary>
         public string UnassignedOrderHint {
-            get { return BackingStore?.Get<string>(nameof(UnassignedOrderHint)); }
-            set { BackingStore?.Set(nameof(UnassignedOrderHint), value); }
+            get { return BackingStore?.Get<string>("unassignedOrderHint"); }
+            set { BackingStore?.Set("unassignedOrderHint", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

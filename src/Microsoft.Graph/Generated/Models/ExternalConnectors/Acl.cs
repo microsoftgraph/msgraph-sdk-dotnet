@@ -6,27 +6,27 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models.ExternalConnectors {
     public class Acl : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The access granted to the identity. Possible values are: grant, deny.</summary>
+        /// <summary>The accessType property</summary>
         public Microsoft.Graph.Models.ExternalConnectors.AccessType? AccessType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.AccessType?>(nameof(AccessType)); }
-            set { BackingStore?.Set(nameof(AccessType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.AccessType?>("accessType"); }
+            set { BackingStore?.Set("accessType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests if the identitySource is azureActiveDirectory and just group if the identitySource is external.</summary>
+        /// <summary>The type property</summary>
         public AclType? Type {
-            get { return BackingStore?.Get<AclType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<AclType?>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new acl and sets the default values.

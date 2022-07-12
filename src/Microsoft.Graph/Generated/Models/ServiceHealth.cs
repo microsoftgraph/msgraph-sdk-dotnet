@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Models {
     public class ServiceHealth : Entity, IParsable {
         /// <summary>A collection of issues that happened on the service, with detailed information for each issue.</summary>
         public List<ServiceHealthIssue> Issues {
-            get { return BackingStore?.Get<List<ServiceHealthIssue>>(nameof(Issues)); }
-            set { BackingStore?.Set(nameof(Issues), value); }
+            get { return BackingStore?.Get<List<ServiceHealthIssue>>("issues"); }
+            set { BackingStore?.Set("issues", value); }
         }
         /// <summary>The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.</summary>
         public string Service {
-            get { return BackingStore?.Get<string>(nameof(Service)); }
-            set { BackingStore?.Set(nameof(Service), value); }
+            get { return BackingStore?.Get<string>("service"); }
+            set { BackingStore?.Set("service", value); }
         }
-        /// <summary>Show the overall service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.</summary>
+        /// <summary>The status property</summary>
         public ServiceHealthStatus? Status {
-            get { return BackingStore?.Get<ServiceHealthStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ServiceHealthStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

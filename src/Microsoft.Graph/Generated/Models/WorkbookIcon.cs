@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class WorkbookIcon : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the index of the icon in the given set.</summary>
         public int? Index {
-            get { return BackingStore?.Get<int?>(nameof(Index)); }
-            set { BackingStore?.Set(nameof(Index), value); }
+            get { return BackingStore?.Get<int?>("index"); }
+            set { BackingStore?.Set("index", value); }
         }
         /// <summary>Represents the set that the icon is part of. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.</summary>
         public string Set {
-            get { return BackingStore?.Get<string>(nameof(Set)); }
-            set { BackingStore?.Set(nameof(Set), value); }
+            get { return BackingStore?.Get<string>("set"); }
+            set { BackingStore?.Set("set", value); }
         }
         /// <summary>
         /// Instantiates a new workbookIcon and sets the default values.

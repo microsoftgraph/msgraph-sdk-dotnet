@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Models {
     public class CountryNamedLocation : NamedLocation, IParsable {
         /// <summary>List of countries and/or regions in two-letter format specified by ISO 3166-2.</summary>
         public List<string> CountriesAndRegions {
-            get { return BackingStore?.Get<List<string>>(nameof(CountriesAndRegions)); }
-            set { BackingStore?.Set(nameof(CountriesAndRegions), value); }
+            get { return BackingStore?.Get<List<string>>("countriesAndRegions"); }
+            set { BackingStore?.Set("countriesAndRegions", value); }
         }
         /// <summary>Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress (default) and authenticatorAppGps.</summary>
         public CountryLookupMethodType? CountryLookupMethod {
-            get { return BackingStore?.Get<CountryLookupMethodType?>(nameof(CountryLookupMethod)); }
-            set { BackingStore?.Set(nameof(CountryLookupMethod), value); }
+            get { return BackingStore?.Get<CountryLookupMethodType?>("countryLookupMethod"); }
+            set { BackingStore?.Set("countryLookupMethod", value); }
         }
         /// <summary>true if IP addresses that don&apos;t map to a country or region should be included in the named location. Optional. Default value is false.</summary>
         public bool? IncludeUnknownCountriesAndRegions {
-            get { return BackingStore?.Get<bool?>(nameof(IncludeUnknownCountriesAndRegions)); }
-            set { BackingStore?.Set(nameof(IncludeUnknownCountriesAndRegions), value); }
+            get { return BackingStore?.Get<bool?>("includeUnknownCountriesAndRegions"); }
+            set { BackingStore?.Set("includeUnknownCountriesAndRegions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

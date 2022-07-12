@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Models {
     public class RubricCriterion : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description of this criterion.</summary>
         public EducationItemBody Description {
-            get { return BackingStore?.Get<EducationItemBody>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<EducationItemBody>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>
         /// Instantiates a new rubricCriterion and sets the default values.

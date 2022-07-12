@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ResourceSpecificPermissionGrant : DirectoryObject, IParsable {
         /// <summary>ID of the service principal of the Azure AD app that has been granted access. Read-only.</summary>
         public string ClientAppId {
-            get { return BackingStore?.Get<string>(nameof(ClientAppId)); }
-            set { BackingStore?.Set(nameof(ClientAppId), value); }
+            get { return BackingStore?.Get<string>("clientAppId"); }
+            set { BackingStore?.Set("clientAppId", value); }
         }
         /// <summary>ID of the Azure AD app that has been granted access. Read-only.</summary>
         public string ClientId {
-            get { return BackingStore?.Get<string>(nameof(ClientId)); }
-            set { BackingStore?.Set(nameof(ClientId), value); }
+            get { return BackingStore?.Get<string>("clientId"); }
+            set { BackingStore?.Set("clientId", value); }
         }
         /// <summary>The name of the resource-specific permission. Read-only.</summary>
         public string Permission {
-            get { return BackingStore?.Get<string>(nameof(Permission)); }
-            set { BackingStore?.Set(nameof(Permission), value); }
+            get { return BackingStore?.Get<string>("permission"); }
+            set { BackingStore?.Set("permission", value); }
         }
         /// <summary>The type of permission. Possible values are: Application, Delegated. Read-only.</summary>
         public string PermissionType {
-            get { return BackingStore?.Get<string>(nameof(PermissionType)); }
-            set { BackingStore?.Set(nameof(PermissionType), value); }
+            get { return BackingStore?.Get<string>("permissionType"); }
+            set { BackingStore?.Set("permissionType", value); }
         }
         /// <summary>ID of the Azure AD app that is hosting the resource. Read-only.</summary>
         public string ResourceAppId {
-            get { return BackingStore?.Get<string>(nameof(ResourceAppId)); }
-            set { BackingStore?.Set(nameof(ResourceAppId), value); }
+            get { return BackingStore?.Get<string>("resourceAppId"); }
+            set { BackingStore?.Set("resourceAppId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

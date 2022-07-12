@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMemberOf.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get transitiveMemberOf from groups
+        /// The groups that a group is a member of, either directly and through nested membership. Nullable.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DirectoryObjectItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMemberOf.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get transitiveMemberOf from groups
+        /// The groups that a group is a member of, either directly and through nested membership. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMemberOf.Item {
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get transitiveMemberOf from groups</summary>
+        /// <summary>The groups that a group is a member of, either directly and through nested membership. Nullable.</summary>
         public class DirectoryObjectItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

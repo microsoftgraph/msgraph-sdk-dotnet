@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class ConditionalAccessRoot : Entity, IParsable {
         /// <summary>Read-only. Nullable. Returns a collection of the specified named locations.</summary>
         public List<NamedLocation> NamedLocations {
-            get { return BackingStore?.Get<List<NamedLocation>>(nameof(NamedLocations)); }
-            set { BackingStore?.Set(nameof(NamedLocations), value); }
+            get { return BackingStore?.Get<List<NamedLocation>>("namedLocations"); }
+            set { BackingStore?.Set("namedLocations", value); }
         }
         /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access policies.</summary>
         public List<ConditionalAccessPolicy> Policies {
-            get { return BackingStore?.Get<List<ConditionalAccessPolicy>>(nameof(Policies)); }
-            set { BackingStore?.Set(nameof(Policies), value); }
+            get { return BackingStore?.Get<List<ConditionalAccessPolicy>>("policies"); }
+            set { BackingStore?.Set("policies", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

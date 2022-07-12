@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AppConsentApprovalRoute : Entity, IParsable {
         /// <summary>A collection of userConsentRequest objects for a specific application.</summary>
         public List<AppConsentRequest> AppConsentRequests {
-            get { return BackingStore?.Get<List<AppConsentRequest>>(nameof(AppConsentRequests)); }
-            set { BackingStore?.Set(nameof(AppConsentRequests), value); }
+            get { return BackingStore?.Get<List<AppConsentRequest>>("appConsentRequests"); }
+            set { BackingStore?.Set("appConsentRequests", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

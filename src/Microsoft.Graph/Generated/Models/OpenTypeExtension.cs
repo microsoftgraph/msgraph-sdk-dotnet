@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class OpenTypeExtension : Extension, IParsable {
         /// <summary>A unique text identifier for an open type data extension. Required.</summary>
         public string ExtensionName {
-            get { return BackingStore?.Get<string>(nameof(ExtensionName)); }
-            set { BackingStore?.Set(nameof(ExtensionName), value); }
+            get { return BackingStore?.Get<string>("extensionName"); }
+            set { BackingStore?.Set("extensionName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

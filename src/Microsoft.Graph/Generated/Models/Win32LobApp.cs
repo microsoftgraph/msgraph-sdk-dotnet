@@ -5,70 +5,70 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class Win32LobApp : MobileLobApp, IParsable {
-        /// <summary>The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.</summary>
+        /// <summary>Contains properties for Windows architecture.</summary>
         public WindowsArchitecture? ApplicableArchitectures {
-            get { return BackingStore?.Get<WindowsArchitecture?>(nameof(ApplicableArchitectures)); }
-            set { BackingStore?.Set(nameof(ApplicableArchitectures), value); }
+            get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
+            set { BackingStore?.Set("applicableArchitectures", value); }
         }
         /// <summary>The command line to install this app</summary>
         public string InstallCommandLine {
-            get { return BackingStore?.Get<string>(nameof(InstallCommandLine)); }
-            set { BackingStore?.Set(nameof(InstallCommandLine), value); }
+            get { return BackingStore?.Get<string>("installCommandLine"); }
+            set { BackingStore?.Set("installCommandLine", value); }
         }
         /// <summary>The install experience for this app.</summary>
         public Win32LobAppInstallExperience InstallExperience {
-            get { return BackingStore?.Get<Win32LobAppInstallExperience>(nameof(InstallExperience)); }
-            set { BackingStore?.Set(nameof(InstallExperience), value); }
+            get { return BackingStore?.Get<Win32LobAppInstallExperience>("installExperience"); }
+            set { BackingStore?.Set("installExperience", value); }
         }
         /// <summary>The value for the minimum CPU speed which is required to install this app.</summary>
         public int? MinimumCpuSpeedInMHz {
-            get { return BackingStore?.Get<int?>(nameof(MinimumCpuSpeedInMHz)); }
-            set { BackingStore?.Set(nameof(MinimumCpuSpeedInMHz), value); }
+            get { return BackingStore?.Get<int?>("minimumCpuSpeedInMHz"); }
+            set { BackingStore?.Set("minimumCpuSpeedInMHz", value); }
         }
         /// <summary>The value for the minimum free disk space which is required to install this app.</summary>
         public int? MinimumFreeDiskSpaceInMB {
-            get { return BackingStore?.Get<int?>(nameof(MinimumFreeDiskSpaceInMB)); }
-            set { BackingStore?.Set(nameof(MinimumFreeDiskSpaceInMB), value); }
+            get { return BackingStore?.Get<int?>("minimumFreeDiskSpaceInMB"); }
+            set { BackingStore?.Set("minimumFreeDiskSpaceInMB", value); }
         }
         /// <summary>The value for the minimum physical memory which is required to install this app.</summary>
         public int? MinimumMemoryInMB {
-            get { return BackingStore?.Get<int?>(nameof(MinimumMemoryInMB)); }
-            set { BackingStore?.Set(nameof(MinimumMemoryInMB), value); }
+            get { return BackingStore?.Get<int?>("minimumMemoryInMB"); }
+            set { BackingStore?.Set("minimumMemoryInMB", value); }
         }
         /// <summary>The value for the minimum number of processors which is required to install this app.</summary>
         public int? MinimumNumberOfProcessors {
-            get { return BackingStore?.Get<int?>(nameof(MinimumNumberOfProcessors)); }
-            set { BackingStore?.Set(nameof(MinimumNumberOfProcessors), value); }
+            get { return BackingStore?.Get<int?>("minimumNumberOfProcessors"); }
+            set { BackingStore?.Set("minimumNumberOfProcessors", value); }
         }
         /// <summary>The value for the minimum supported windows release.</summary>
         public string MinimumSupportedWindowsRelease {
-            get { return BackingStore?.Get<string>(nameof(MinimumSupportedWindowsRelease)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedWindowsRelease), value); }
+            get { return BackingStore?.Get<string>("minimumSupportedWindowsRelease"); }
+            set { BackingStore?.Set("minimumSupportedWindowsRelease", value); }
         }
         /// <summary>The MSI details if this Win32 app is an MSI app.</summary>
         public Win32LobAppMsiInformation MsiInformation {
-            get { return BackingStore?.Get<Win32LobAppMsiInformation>(nameof(MsiInformation)); }
-            set { BackingStore?.Set(nameof(MsiInformation), value); }
+            get { return BackingStore?.Get<Win32LobAppMsiInformation>("msiInformation"); }
+            set { BackingStore?.Set("msiInformation", value); }
         }
         /// <summary>The return codes for post installation behavior.</summary>
         public List<Win32LobAppReturnCode> ReturnCodes {
-            get { return BackingStore?.Get<List<Win32LobAppReturnCode>>(nameof(ReturnCodes)); }
-            set { BackingStore?.Set(nameof(ReturnCodes), value); }
+            get { return BackingStore?.Get<List<Win32LobAppReturnCode>>("returnCodes"); }
+            set { BackingStore?.Set("returnCodes", value); }
         }
         /// <summary>The detection and requirement rules for this app.</summary>
         public List<Win32LobAppRule> Rules {
-            get { return BackingStore?.Get<List<Win32LobAppRule>>(nameof(Rules)); }
-            set { BackingStore?.Set(nameof(Rules), value); }
+            get { return BackingStore?.Get<List<Win32LobAppRule>>("rules"); }
+            set { BackingStore?.Set("rules", value); }
         }
         /// <summary>The relative path of the setup file in the encrypted Win32LobApp package.</summary>
         public string SetupFilePath {
-            get { return BackingStore?.Get<string>(nameof(SetupFilePath)); }
-            set { BackingStore?.Set(nameof(SetupFilePath), value); }
+            get { return BackingStore?.Get<string>("setupFilePath"); }
+            set { BackingStore?.Set("setupFilePath", value); }
         }
         /// <summary>The command line to uninstall this app</summary>
         public string UninstallCommandLine {
-            get { return BackingStore?.Get<string>(nameof(UninstallCommandLine)); }
-            set { BackingStore?.Set(nameof(UninstallCommandLine), value); }
+            get { return BackingStore?.Get<string>("uninstallCommandLine"); }
+            set { BackingStore?.Set("uninstallCommandLine", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

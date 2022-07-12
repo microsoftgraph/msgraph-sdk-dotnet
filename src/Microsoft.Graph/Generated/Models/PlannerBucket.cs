@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class PlannerBucket : Entity, IParsable {
         /// <summary>Name of the bucket.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Hint used to order items of this type in a list view. The format is defined as outlined here.</summary>
         public string OrderHint {
-            get { return BackingStore?.Get<string>(nameof(OrderHint)); }
-            set { BackingStore?.Set(nameof(OrderHint), value); }
+            get { return BackingStore?.Get<string>("orderHint"); }
+            set { BackingStore?.Set("orderHint", value); }
         }
         /// <summary>Plan ID to which the bucket belongs.</summary>
         public string PlanId {
-            get { return BackingStore?.Get<string>(nameof(PlanId)); }
-            set { BackingStore?.Set(nameof(PlanId), value); }
+            get { return BackingStore?.Get<string>("planId"); }
+            set { BackingStore?.Set("planId", value); }
         }
         /// <summary>Read-only. Nullable. The collection of tasks in the bucket.</summary>
         public List<PlannerTask> Tasks {
-            get { return BackingStore?.Get<List<PlannerTask>>(nameof(Tasks)); }
-            set { BackingStore?.Set(nameof(Tasks), value); }
+            get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Models {
     public class DirectoryRole : DirectoryObject, IParsable {
         /// <summary>The description for the directory role. Read-only. Supports $filter (eq), $search, $select.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.</summary>
         public List<DirectoryObject> Members {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.</summary>
         public string RoleTemplateId {
-            get { return BackingStore?.Get<string>(nameof(RoleTemplateId)); }
-            set { BackingStore?.Set(nameof(RoleTemplateId), value); }
+            get { return BackingStore?.Get<string>("roleTemplateId"); }
+            set { BackingStore?.Set("roleTemplateId", value); }
         }
         /// <summary>Members of this directory role that are scoped to administrative units. Read-only. Nullable.</summary>
         public List<ScopedRoleMembership> ScopedMembers {
-            get { return BackingStore?.Get<List<ScopedRoleMembership>>(nameof(ScopedMembers)); }
-            set { BackingStore?.Set(nameof(ScopedMembers), value); }
+            get { return BackingStore?.Get<List<ScopedRoleMembership>>("scopedMembers"); }
+            set { BackingStore?.Set("scopedMembers", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

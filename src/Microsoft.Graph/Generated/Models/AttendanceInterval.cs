@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class AttendanceInterval : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.</summary>
         public int? DurationInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(DurationInSeconds)); }
-            set { BackingStore?.Set(nameof(DurationInSeconds), value); }
+            get { return BackingStore?.Get<int?>("durationInSeconds"); }
+            set { BackingStore?.Set("durationInSeconds", value); }
         }
         /// <summary>The time the attendee joined in UTC.</summary>
         public DateTimeOffset? JoinDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(JoinDateTime)); }
-            set { BackingStore?.Set(nameof(JoinDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("joinDateTime"); }
+            set { BackingStore?.Set("joinDateTime", value); }
         }
         /// <summary>The time the attendee left in UTC.</summary>
         public DateTimeOffset? LeaveDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LeaveDateTime)); }
-            set { BackingStore?.Set(nameof(LeaveDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("leaveDateTime"); }
+            set { BackingStore?.Set("leaveDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new attendanceInterval and sets the default values.

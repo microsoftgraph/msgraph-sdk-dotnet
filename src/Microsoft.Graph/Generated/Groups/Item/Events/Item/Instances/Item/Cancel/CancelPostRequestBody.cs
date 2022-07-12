@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Groups.Item.Events.Item.Instances.Item.Cancel {
     public class CancelPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Comment property</summary>
         public string Comment {
-            get { return BackingStore?.Get<string>(nameof(Comment)); }
-            set { BackingStore?.Set(nameof(Comment), value); }
+            get { return BackingStore?.Get<string>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
         /// <summary>
         /// Instantiates a new cancelPostRequestBody and sets the default values.

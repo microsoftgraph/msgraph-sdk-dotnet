@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class DomainDnsUnavailableRecord : DomainDnsRecord, IParsable {
         /// <summary>Provides the reason why the DomainDnsUnavailableRecord entity is returned.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

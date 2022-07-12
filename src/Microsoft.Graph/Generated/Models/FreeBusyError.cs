@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class FreeBusyError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Describes the error.</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>The response code from querying for the availability of the user, distribution list, or resource.</summary>
         public string ResponseCode {
-            get { return BackingStore?.Get<string>(nameof(ResponseCode)); }
-            set { BackingStore?.Set(nameof(ResponseCode), value); }
+            get { return BackingStore?.Get<string>("responseCode"); }
+            set { BackingStore?.Set("responseCode", value); }
         }
         /// <summary>
         /// Instantiates a new freeBusyError and sets the default values.

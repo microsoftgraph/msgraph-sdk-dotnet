@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the informationProtection singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ThreatAssessmentResult : Entity, IParsable {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The result message for each threat assessment.</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>The threat assessment result type. Possible values are: checkPolicy (only for mail assessment), rescan.</summary>
         public ThreatAssessmentResultType? ResultType {
-            get { return BackingStore?.Get<ThreatAssessmentResultType?>(nameof(ResultType)); }
-            set { BackingStore?.Set(nameof(ResultType), value); }
+            get { return BackingStore?.Get<ThreatAssessmentResultType?>("resultType"); }
+            set { BackingStore?.Set("resultType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -11,6 +11,7 @@ using Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies;
 using Microsoft.Graph.ServicePrincipals.Item.CreatedObjects;
 using Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassifications;
 using Microsoft.Graph.ServicePrincipals.Item.Endpoints;
+using Microsoft.Graph.ServicePrincipals.Item.FederatedIdentityCredentials;
 using Microsoft.Graph.ServicePrincipals.Item.GetMemberGroups;
 using Microsoft.Graph.ServicePrincipals.Item.GetMemberObjects;
 using Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies;
@@ -78,6 +79,10 @@ namespace Microsoft.Graph.ServicePrincipals.Item {
         /// <summary>The endpoints property</summary>
         public EndpointsRequestBuilder Endpoints { get =>
             new EndpointsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The federatedIdentityCredentials property</summary>
+        public FederatedIdentityCredentialsRequestBuilder FederatedIdentityCredentials { get =>
+            new FederatedIdentityCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getMemberGroups property</summary>
         public GetMemberGroupsRequestBuilder GetMemberGroups { get =>

@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class ChatInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier for a message in a Microsoft Teams channel.</summary>
         public string MessageId {
-            get { return BackingStore?.Get<string>(nameof(MessageId)); }
-            set { BackingStore?.Set(nameof(MessageId), value); }
+            get { return BackingStore?.Get<string>("messageId"); }
+            set { BackingStore?.Set("messageId", value); }
         }
         /// <summary>The ID of the reply message.</summary>
         public string ReplyChainMessageId {
-            get { return BackingStore?.Get<string>(nameof(ReplyChainMessageId)); }
-            set { BackingStore?.Set(nameof(ReplyChainMessageId), value); }
+            get { return BackingStore?.Get<string>("replyChainMessageId"); }
+            set { BackingStore?.Set("replyChainMessageId", value); }
         }
         /// <summary>The unique identifier for a thread in Microsoft Teams.</summary>
         public string ThreadId {
-            get { return BackingStore?.Get<string>(nameof(ThreadId)); }
-            set { BackingStore?.Set(nameof(ThreadId), value); }
+            get { return BackingStore?.Get<string>("threadId"); }
+            set { BackingStore?.Set("threadId", value); }
         }
         /// <summary>
         /// Instantiates a new chatInfo and sets the default values.

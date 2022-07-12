@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class ContentTypeOrder : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether this is the default Content Type</summary>
         public bool? Default {
-            get { return BackingStore?.Get<bool?>(nameof(Default)); }
-            set { BackingStore?.Set(nameof(Default), value); }
+            get { return BackingStore?.Get<bool?>("default"); }
+            set { BackingStore?.Set("default", value); }
         }
         /// <summary>Specifies the position in which the Content Type appears in the selection UI.</summary>
         public int? Position {
-            get { return BackingStore?.Get<int?>(nameof(Position)); }
-            set { BackingStore?.Set(nameof(Position), value); }
+            get { return BackingStore?.Get<int?>("position"); }
+            set { BackingStore?.Set("position", value); }
         }
         /// <summary>
         /// Instantiates a new contentTypeOrder and sets the default values.

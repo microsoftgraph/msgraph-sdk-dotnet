@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class CloudAppSecuritySessionControl : ConditionalAccessSessionControl, IParsable {
         /// <summary>Possible values are: mcasConfigured, monitorOnly, blockDownloads. To learn more about these values, Deploy Conditional Access App Control for featured apps.</summary>
         public CloudAppSecuritySessionControlType? CloudAppSecurityType {
-            get { return BackingStore?.Get<CloudAppSecuritySessionControlType?>(nameof(CloudAppSecurityType)); }
-            set { BackingStore?.Set(nameof(CloudAppSecurityType), value); }
+            get { return BackingStore?.Get<CloudAppSecuritySessionControlType?>("cloudAppSecurityType"); }
+            set { BackingStore?.Set("cloudAppSecurityType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

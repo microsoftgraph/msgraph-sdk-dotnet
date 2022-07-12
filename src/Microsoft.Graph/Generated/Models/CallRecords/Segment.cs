@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Models.CallRecords {
     public class Segment : Entity, IParsable {
         /// <summary>Endpoint that answered this segment.</summary>
         public Endpoint Callee {
-            get { return BackingStore?.Get<Endpoint>(nameof(Callee)); }
-            set { BackingStore?.Set(nameof(Callee), value); }
+            get { return BackingStore?.Get<Endpoint>("callee"); }
+            set { BackingStore?.Set("callee", value); }
         }
         /// <summary>Endpoint that initiated this segment.</summary>
         public Endpoint Caller {
-            get { return BackingStore?.Get<Endpoint>(nameof(Caller)); }
-            set { BackingStore?.Set(nameof(Caller), value); }
+            get { return BackingStore?.Get<Endpoint>("caller"); }
+            set { BackingStore?.Set("caller", value); }
         }
         /// <summary>UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Failure information associated with the segment if it failed.</summary>
         public Microsoft.Graph.Models.CallRecords.FailureInfo FailureInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.FailureInfo>(nameof(FailureInfo)); }
-            set { BackingStore?.Set(nameof(FailureInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.FailureInfo>("failureInfo"); }
+            set { BackingStore?.Set("failureInfo", value); }
         }
         /// <summary>Media associated with this segment.</summary>
         public List<Microsoft.Graph.Models.CallRecords.Media> Media {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.Media>>(nameof(Media)); }
-            set { BackingStore?.Set(nameof(Media), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.Media>>("media"); }
+            set { BackingStore?.Set("media", value); }
         }
         /// <summary>UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

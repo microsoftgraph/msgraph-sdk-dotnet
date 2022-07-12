@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,19 @@ namespace Microsoft.Graph.Models {
     public class ManagedAppStatus : Entity, IParsable {
         /// <summary>Friendly name of the status report.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Version of the entity.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new managedAppStatus and sets the default values.
+        /// </summary>
+        public ManagedAppStatus() : base() {
+            Type = "#microsoft.graph.managedAppStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

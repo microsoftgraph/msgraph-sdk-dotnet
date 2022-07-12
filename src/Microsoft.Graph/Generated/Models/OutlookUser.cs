@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class OutlookUser : Entity, IParsable {
         /// <summary>A list of categories defined for the user.</summary>
         public List<OutlookCategory> MasterCategories {
-            get { return BackingStore?.Get<List<OutlookCategory>>(nameof(MasterCategories)); }
-            set { BackingStore?.Set(nameof(MasterCategories), value); }
+            get { return BackingStore?.Get<List<OutlookCategory>>("masterCategories"); }
+            set { BackingStore?.Set("masterCategories", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class UrlAssessmentRequest : ThreatAssessmentRequest, IParsable {
         /// <summary>The URL string.</summary>
         public string Url {
-            get { return BackingStore?.Get<string>(nameof(Url)); }
-            set { BackingStore?.Set(nameof(Url), value); }
+            get { return BackingStore?.Get<string>("url"); }
+            set { BackingStore?.Set("url", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

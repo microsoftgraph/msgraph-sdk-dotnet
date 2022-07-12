@@ -10,45 +10,45 @@ namespace Microsoft.Graph.Print.Printers.Create {
     public class CreatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The certificateSigningRequest property</summary>
         public PrintCertificateSigningRequest CertificateSigningRequest {
-            get { return BackingStore?.Get<PrintCertificateSigningRequest>(nameof(CertificateSigningRequest)); }
-            set { BackingStore?.Set(nameof(CertificateSigningRequest), value); }
+            get { return BackingStore?.Get<PrintCertificateSigningRequest>("certificateSigningRequest"); }
+            set { BackingStore?.Set("certificateSigningRequest", value); }
         }
         /// <summary>The connectorId property</summary>
         public string ConnectorId {
-            get { return BackingStore?.Get<string>(nameof(ConnectorId)); }
-            set { BackingStore?.Set(nameof(ConnectorId), value); }
+            get { return BackingStore?.Get<string>("connectorId"); }
+            set { BackingStore?.Set("connectorId", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The hasPhysicalDevice property</summary>
         public bool? HasPhysicalDevice {
-            get { return BackingStore?.Get<bool?>(nameof(HasPhysicalDevice)); }
-            set { BackingStore?.Set(nameof(HasPhysicalDevice), value); }
+            get { return BackingStore?.Get<bool?>("hasPhysicalDevice"); }
+            set { BackingStore?.Set("hasPhysicalDevice", value); }
         }
         /// <summary>The manufacturer property</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>The model property</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>The physicalDeviceId property</summary>
         public string PhysicalDeviceId {
-            get { return BackingStore?.Get<string>(nameof(PhysicalDeviceId)); }
-            set { BackingStore?.Set(nameof(PhysicalDeviceId), value); }
+            get { return BackingStore?.Get<string>("physicalDeviceId"); }
+            set { BackingStore?.Set("physicalDeviceId", value); }
         }
         /// <summary>
         /// Instantiates a new createPostRequestBody and sets the default values.

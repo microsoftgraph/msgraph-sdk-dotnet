@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Communications.Calls.Item.Reject {
     public class RejectPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The callbackUri property</summary>
         public string CallbackUri {
-            get { return BackingStore?.Get<string>(nameof(CallbackUri)); }
-            set { BackingStore?.Set(nameof(CallbackUri), value); }
+            get { return BackingStore?.Get<string>("callbackUri"); }
+            set { BackingStore?.Set("callbackUri", value); }
         }
         /// <summary>The reason property</summary>
         public RejectReason? Reason {
-            get { return BackingStore?.Get<RejectReason?>(nameof(Reason)); }
-            set { BackingStore?.Set(nameof(Reason), value); }
+            get { return BackingStore?.Get<RejectReason?>("reason"); }
+            set { BackingStore?.Set("reason", value); }
         }
         /// <summary>
         /// Instantiates a new rejectPostRequestBody and sets the default values.

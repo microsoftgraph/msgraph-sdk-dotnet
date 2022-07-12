@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class IdentityGovernance : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The accessReviews property</summary>
         public AccessReviewSet AccessReviews {
-            get { return BackingStore?.Get<AccessReviewSet>(nameof(AccessReviews)); }
-            set { BackingStore?.Set(nameof(AccessReviews), value); }
+            get { return BackingStore?.Get<AccessReviewSet>("accessReviews"); }
+            set { BackingStore?.Set("accessReviews", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The appConsent property</summary>
         public AppConsentApprovalRoute AppConsent {
-            get { return BackingStore?.Get<AppConsentApprovalRoute>(nameof(AppConsent)); }
-            set { BackingStore?.Set(nameof(AppConsent), value); }
+            get { return BackingStore?.Get<AppConsentApprovalRoute>("appConsent"); }
+            set { BackingStore?.Set("appConsent", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The entitlementManagement property</summary>
         public Microsoft.Graph.Models.EntitlementManagement EntitlementManagement {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.EntitlementManagement>(nameof(EntitlementManagement)); }
-            set { BackingStore?.Set(nameof(EntitlementManagement), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EntitlementManagement>("entitlementManagement"); }
+            set { BackingStore?.Set("entitlementManagement", value); }
         }
         /// <summary>The termsOfUse property</summary>
         public TermsOfUseContainer TermsOfUse {
-            get { return BackingStore?.Get<TermsOfUseContainer>(nameof(TermsOfUse)); }
-            set { BackingStore?.Set(nameof(TermsOfUse), value); }
+            get { return BackingStore?.Get<TermsOfUseContainer>("termsOfUse"); }
+            set { BackingStore?.Set("termsOfUse", value); }
         }
         /// <summary>
         /// Instantiates a new IdentityGovernance and sets the default values.

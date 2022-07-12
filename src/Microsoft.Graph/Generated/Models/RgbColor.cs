@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Models {
     public class RgbColor : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Blue value</summary>
         public byte? B {
-            get { return BackingStore?.Get<byte?>(nameof(B)); }
-            set { BackingStore?.Set(nameof(B), value); }
+            get { return BackingStore?.Get<byte?>("b"); }
+            set { BackingStore?.Set("b", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Green value</summary>
         public byte? G {
-            get { return BackingStore?.Get<byte?>(nameof(G)); }
-            set { BackingStore?.Set(nameof(G), value); }
+            get { return BackingStore?.Get<byte?>("g"); }
+            set { BackingStore?.Set("g", value); }
         }
         /// <summary>Red value</summary>
         public byte? R {
-            get { return BackingStore?.Get<byte?>(nameof(R)); }
-            set { BackingStore?.Set(nameof(R), value); }
+            get { return BackingStore?.Get<byte?>("r"); }
+            set { BackingStore?.Set("r", value); }
         }
         /// <summary>
         /// Instantiates a new rgbColor and sets the default values.

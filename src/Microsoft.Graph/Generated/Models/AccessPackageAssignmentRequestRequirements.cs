@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Models {
     public class AccessPackageAssignmentRequestRequirements : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Indicates whether the requestor is allowed to set a custom schedule.</summary>
         public bool? AllowCustomAssignmentSchedule {
-            get { return BackingStore?.Get<bool?>(nameof(AllowCustomAssignmentSchedule)); }
-            set { BackingStore?.Set(nameof(AllowCustomAssignmentSchedule), value); }
+            get { return BackingStore?.Get<bool?>("allowCustomAssignmentSchedule"); }
+            set { BackingStore?.Set("allowCustomAssignmentSchedule", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether a request to add must be approved by an approver.</summary>
         public bool? IsApprovalRequiredForAdd {
-            get { return BackingStore?.Get<bool?>(nameof(IsApprovalRequiredForAdd)); }
-            set { BackingStore?.Set(nameof(IsApprovalRequiredForAdd), value); }
+            get { return BackingStore?.Get<bool?>("isApprovalRequiredForAdd"); }
+            set { BackingStore?.Set("isApprovalRequiredForAdd", value); }
         }
         /// <summary>Indicates whether a request to update must be approved by an approver.</summary>
         public bool? IsApprovalRequiredForUpdate {
-            get { return BackingStore?.Get<bool?>(nameof(IsApprovalRequiredForUpdate)); }
-            set { BackingStore?.Set(nameof(IsApprovalRequiredForUpdate), value); }
+            get { return BackingStore?.Get<bool?>("isApprovalRequiredForUpdate"); }
+            set { BackingStore?.Set("isApprovalRequiredForUpdate", value); }
         }
         /// <summary>The description of the policy that the user is trying to request access using.</summary>
         public string PolicyDescription {
-            get { return BackingStore?.Get<string>(nameof(PolicyDescription)); }
-            set { BackingStore?.Set(nameof(PolicyDescription), value); }
+            get { return BackingStore?.Get<string>("policyDescription"); }
+            set { BackingStore?.Set("policyDescription", value); }
         }
         /// <summary>The display name of the policy that the user is trying to request access using.</summary>
         public string PolicyDisplayName {
-            get { return BackingStore?.Get<string>(nameof(PolicyDisplayName)); }
-            set { BackingStore?.Set(nameof(PolicyDisplayName), value); }
+            get { return BackingStore?.Get<string>("policyDisplayName"); }
+            set { BackingStore?.Set("policyDisplayName", value); }
         }
         /// <summary>The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.</summary>
         public string PolicyId {
-            get { return BackingStore?.Get<string>(nameof(PolicyId)); }
-            set { BackingStore?.Set(nameof(PolicyId), value); }
+            get { return BackingStore?.Get<string>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
         }
         /// <summary>Schedule restrictions enforced, if any.</summary>
         public EntitlementManagementSchedule Schedule {
-            get { return BackingStore?.Get<EntitlementManagementSchedule>(nameof(Schedule)); }
-            set { BackingStore?.Set(nameof(Schedule), value); }
+            get { return BackingStore?.Get<EntitlementManagementSchedule>("schedule"); }
+            set { BackingStore?.Set("schedule", value); }
         }
         /// <summary>
         /// Instantiates a new accessPackageAssignmentRequestRequirements and sets the default values.

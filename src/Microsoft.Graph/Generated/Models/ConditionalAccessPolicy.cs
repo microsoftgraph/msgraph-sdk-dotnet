@@ -4,47 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ConditionalAccessPolicy : Entity, IParsable {
         /// <summary>The conditions property</summary>
         public ConditionalAccessConditionSet Conditions {
-            get { return BackingStore?.Get<ConditionalAccessConditionSet>(nameof(Conditions)); }
-            set { BackingStore?.Set(nameof(Conditions), value); }
+            get { return BackingStore?.Get<ConditionalAccessConditionSet>("conditions"); }
+            set { BackingStore?.Set("conditions", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Not used.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Specifies a display name for the conditionalAccessPolicy object.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Specifies the grant controls that must be fulfilled to pass the policy.</summary>
         public ConditionalAccessGrantControls GrantControls {
-            get { return BackingStore?.Get<ConditionalAccessGrantControls>(nameof(GrantControls)); }
-            set { BackingStore?.Set(nameof(GrantControls), value); }
+            get { return BackingStore?.Get<ConditionalAccessGrantControls>("grantControls"); }
+            set { BackingStore?.Set("grantControls", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.</summary>
         public DateTimeOffset? ModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
+            set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>Specifies the session controls that are enforced after sign-in.</summary>
         public ConditionalAccessSessionControls SessionControls {
-            get { return BackingStore?.Get<ConditionalAccessSessionControls>(nameof(SessionControls)); }
-            set { BackingStore?.Set(nameof(SessionControls), value); }
+            get { return BackingStore?.Get<ConditionalAccessSessionControls>("sessionControls"); }
+            set { BackingStore?.Set("sessionControls", value); }
         }
-        /// <summary>Specifies the state of the conditionalAccessPolicy object. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required.</summary>
+        /// <summary>The state property</summary>
         public ConditionalAccessPolicyState? State {
-            get { return BackingStore?.Get<ConditionalAccessPolicyState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ConditionalAccessPolicyState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class RecordOperation : CommsOperation, IParsable {
         /// <summary>The access token required to retrieve the recording.</summary>
         public string RecordingAccessToken {
-            get { return BackingStore?.Get<string>(nameof(RecordingAccessToken)); }
-            set { BackingStore?.Set(nameof(RecordingAccessToken), value); }
+            get { return BackingStore?.Get<string>("recordingAccessToken"); }
+            set { BackingStore?.Set("recordingAccessToken", value); }
         }
         /// <summary>The location where the recording is located.</summary>
         public string RecordingLocation {
-            get { return BackingStore?.Get<string>(nameof(RecordingLocation)); }
-            set { BackingStore?.Set(nameof(RecordingLocation), value); }
+            get { return BackingStore?.Get<string>("recordingLocation"); }
+            set { BackingStore?.Set("recordingLocation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

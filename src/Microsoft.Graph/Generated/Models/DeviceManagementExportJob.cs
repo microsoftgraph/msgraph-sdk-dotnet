@@ -8,53 +8,53 @@ namespace Microsoft.Graph.Models {
     public class DeviceManagementExportJob : Entity, IParsable {
         /// <summary>Time that the exported report expires</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Filters applied on the report</summary>
         public string Filter {
-            get { return BackingStore?.Get<string>(nameof(Filter)); }
-            set { BackingStore?.Set(nameof(Filter), value); }
+            get { return BackingStore?.Get<string>("filter"); }
+            set { BackingStore?.Set("filter", value); }
         }
-        /// <summary>Format of the exported report. Possible values are: csv, pdf.</summary>
+        /// <summary>Possible values for the file format of a report</summary>
         public DeviceManagementReportFileFormat? Format {
-            get { return BackingStore?.Get<DeviceManagementReportFileFormat?>(nameof(Format)); }
-            set { BackingStore?.Set(nameof(Format), value); }
+            get { return BackingStore?.Get<DeviceManagementReportFileFormat?>("format"); }
+            set { BackingStore?.Set("format", value); }
         }
-        /// <summary>Configures how the requested export job is localized. Possible values are: localizedValuesAsAdditionalColumn, replaceLocalizableValues.</summary>
+        /// <summary>Configures how the requested export job is localized</summary>
         public DeviceManagementExportJobLocalizationType? LocalizationType {
-            get { return BackingStore?.Get<DeviceManagementExportJobLocalizationType?>(nameof(LocalizationType)); }
-            set { BackingStore?.Set(nameof(LocalizationType), value); }
+            get { return BackingStore?.Get<DeviceManagementExportJobLocalizationType?>("localizationType"); }
+            set { BackingStore?.Set("localizationType", value); }
         }
         /// <summary>Name of the report</summary>
         public string ReportName {
-            get { return BackingStore?.Get<string>(nameof(ReportName)); }
-            set { BackingStore?.Set(nameof(ReportName), value); }
+            get { return BackingStore?.Get<string>("reportName"); }
+            set { BackingStore?.Set("reportName", value); }
         }
         /// <summary>Time that the exported report was requested</summary>
         public DateTimeOffset? RequestDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RequestDateTime)); }
-            set { BackingStore?.Set(nameof(RequestDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }
+            set { BackingStore?.Set("requestDateTime", value); }
         }
         /// <summary>Columns selected from the report</summary>
         public List<string> Select {
-            get { return BackingStore?.Get<List<string>>(nameof(Select)); }
-            set { BackingStore?.Set(nameof(Select), value); }
+            get { return BackingStore?.Get<List<string>>("select"); }
+            set { BackingStore?.Set("select", value); }
         }
         /// <summary>A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.</summary>
         public string SnapshotId {
-            get { return BackingStore?.Get<string>(nameof(SnapshotId)); }
-            set { BackingStore?.Set(nameof(SnapshotId), value); }
+            get { return BackingStore?.Get<string>("snapshotId"); }
+            set { BackingStore?.Set("snapshotId", value); }
         }
-        /// <summary>Status of the export job. Possible values are: unknown, notStarted, inProgress, completed, failed.</summary>
+        /// <summary>Possible statuses associated with a generated report</summary>
         public DeviceManagementReportStatus? Status {
-            get { return BackingStore?.Get<DeviceManagementReportStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<DeviceManagementReportStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>Temporary location of the exported report</summary>
         public string Url {
-            get { return BackingStore?.Get<string>(nameof(Url)); }
-            set { BackingStore?.Set(nameof(Url), value); }
+            get { return BackingStore?.Get<string>("url"); }
+            set { BackingStore?.Set("url", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

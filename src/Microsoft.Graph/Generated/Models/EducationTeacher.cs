@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class EducationTeacher : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Id of the Teacher in external source system.</summary>
         public string ExternalId {
-            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
-            set { BackingStore?.Set(nameof(ExternalId), value); }
+            get { return BackingStore?.Get<string>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
         }
         /// <summary>Teacher number.</summary>
         public string TeacherNumber {
-            get { return BackingStore?.Get<string>(nameof(TeacherNumber)); }
-            set { BackingStore?.Set(nameof(TeacherNumber), value); }
+            get { return BackingStore?.Get<string>("teacherNumber"); }
+            set { BackingStore?.Set("teacherNumber", value); }
         }
         /// <summary>
         /// Instantiates a new educationTeacher and sets the default values.

@@ -7,168 +7,168 @@ namespace Microsoft.Graph.Models {
     public class Windows81GeneralConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.</summary>
         public bool? AccountsBlockAddingNonMicrosoftAccountEmail {
-            get { return BackingStore?.Get<bool?>(nameof(AccountsBlockAddingNonMicrosoftAccountEmail)); }
-            set { BackingStore?.Set(nameof(AccountsBlockAddingNonMicrosoftAccountEmail), value); }
+            get { return BackingStore?.Get<bool?>("accountsBlockAddingNonMicrosoftAccountEmail"); }
+            set { BackingStore?.Set("accountsBlockAddingNonMicrosoftAccountEmail", value); }
         }
         /// <summary>Value indicating whether this policy only applies to Windows 8.1. This property is read-only.</summary>
         public bool? ApplyOnlyToWindows81 {
-            get { return BackingStore?.Get<bool?>(nameof(ApplyOnlyToWindows81)); }
-            set { BackingStore?.Set(nameof(ApplyOnlyToWindows81), value); }
+            get { return BackingStore?.Get<bool?>("applyOnlyToWindows81"); }
+            set { BackingStore?.Set("applyOnlyToWindows81", value); }
         }
         /// <summary>Indicates whether or not to block auto fill.</summary>
         public bool? BrowserBlockAutofill {
-            get { return BackingStore?.Get<bool?>(nameof(BrowserBlockAutofill)); }
-            set { BackingStore?.Set(nameof(BrowserBlockAutofill), value); }
+            get { return BackingStore?.Get<bool?>("browserBlockAutofill"); }
+            set { BackingStore?.Set("browserBlockAutofill", value); }
         }
         /// <summary>Indicates whether or not to block automatic detection of Intranet sites.</summary>
         public bool? BrowserBlockAutomaticDetectionOfIntranetSites {
-            get { return BackingStore?.Get<bool?>(nameof(BrowserBlockAutomaticDetectionOfIntranetSites)); }
-            set { BackingStore?.Set(nameof(BrowserBlockAutomaticDetectionOfIntranetSites), value); }
+            get { return BackingStore?.Get<bool?>("browserBlockAutomaticDetectionOfIntranetSites"); }
+            set { BackingStore?.Set("browserBlockAutomaticDetectionOfIntranetSites", value); }
         }
         /// <summary>Indicates whether or not to block enterprise mode access.</summary>
         public bool? BrowserBlockEnterpriseModeAccess {
-            get { return BackingStore?.Get<bool?>(nameof(BrowserBlockEnterpriseModeAccess)); }
-            set { BackingStore?.Set(nameof(BrowserBlockEnterpriseModeAccess), value); }
+            get { return BackingStore?.Get<bool?>("browserBlockEnterpriseModeAccess"); }
+            set { BackingStore?.Set("browserBlockEnterpriseModeAccess", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using JavaScript.</summary>
         public bool? BrowserBlockJavaScript {
-            get { return BackingStore?.Get<bool?>(nameof(BrowserBlockJavaScript)); }
-            set { BackingStore?.Set(nameof(BrowserBlockJavaScript), value); }
+            get { return BackingStore?.Get<bool?>("browserBlockJavaScript"); }
+            set { BackingStore?.Set("browserBlockJavaScript", value); }
         }
         /// <summary>Indicates whether or not to block plug-ins.</summary>
         public bool? BrowserBlockPlugins {
-            get { return BackingStore?.Get<bool?>(nameof(BrowserBlockPlugins)); }
-            set { BackingStore?.Set(nameof(BrowserBlockPlugins), value); }
+            get { return BackingStore?.Get<bool?>("browserBlockPlugins"); }
+            set { BackingStore?.Set("browserBlockPlugins", value); }
         }
         /// <summary>Indicates whether or not to block popups.</summary>
         public bool? BrowserBlockPopups {
-            get { return BackingStore?.Get<bool?>(nameof(BrowserBlockPopups)); }
-            set { BackingStore?.Set(nameof(BrowserBlockPopups), value); }
+            get { return BackingStore?.Get<bool?>("browserBlockPopups"); }
+            set { BackingStore?.Set("browserBlockPopups", value); }
         }
         /// <summary>Indicates whether or not to Block the user from sending the do not track header.</summary>
         public bool? BrowserBlockSendingDoNotTrackHeader {
-            get { return BackingStore?.Get<bool?>(nameof(BrowserBlockSendingDoNotTrackHeader)); }
-            set { BackingStore?.Set(nameof(BrowserBlockSendingDoNotTrackHeader), value); }
+            get { return BackingStore?.Get<bool?>("browserBlockSendingDoNotTrackHeader"); }
+            set { BackingStore?.Set("browserBlockSendingDoNotTrackHeader", value); }
         }
         /// <summary>Indicates whether or not to block a single word entry on Intranet sites.</summary>
         public bool? BrowserBlockSingleWordEntryOnIntranetSites {
-            get { return BackingStore?.Get<bool?>(nameof(BrowserBlockSingleWordEntryOnIntranetSites)); }
-            set { BackingStore?.Set(nameof(BrowserBlockSingleWordEntryOnIntranetSites), value); }
+            get { return BackingStore?.Get<bool?>("browserBlockSingleWordEntryOnIntranetSites"); }
+            set { BackingStore?.Set("browserBlockSingleWordEntryOnIntranetSites", value); }
         }
         /// <summary>The enterprise mode site list location. Could be a local file, local network or http location.</summary>
         public string BrowserEnterpriseModeSiteListLocation {
-            get { return BackingStore?.Get<string>(nameof(BrowserEnterpriseModeSiteListLocation)); }
-            set { BackingStore?.Set(nameof(BrowserEnterpriseModeSiteListLocation), value); }
+            get { return BackingStore?.Get<string>("browserEnterpriseModeSiteListLocation"); }
+            set { BackingStore?.Set("browserEnterpriseModeSiteListLocation", value); }
         }
-        /// <summary>The internet security level. Possible values are: userDefined, medium, mediumHigh, high.</summary>
+        /// <summary>Possible values for internet site security level.</summary>
         public InternetSiteSecurityLevel? BrowserInternetSecurityLevel {
-            get { return BackingStore?.Get<InternetSiteSecurityLevel?>(nameof(BrowserInternetSecurityLevel)); }
-            set { BackingStore?.Set(nameof(BrowserInternetSecurityLevel), value); }
+            get { return BackingStore?.Get<InternetSiteSecurityLevel?>("browserInternetSecurityLevel"); }
+            set { BackingStore?.Set("browserInternetSecurityLevel", value); }
         }
-        /// <summary>The Intranet security level. Possible values are: userDefined, low, mediumLow, medium, mediumHigh, high.</summary>
+        /// <summary>Possible values for site security level.</summary>
         public SiteSecurityLevel? BrowserIntranetSecurityLevel {
-            get { return BackingStore?.Get<SiteSecurityLevel?>(nameof(BrowserIntranetSecurityLevel)); }
-            set { BackingStore?.Set(nameof(BrowserIntranetSecurityLevel), value); }
+            get { return BackingStore?.Get<SiteSecurityLevel?>("browserIntranetSecurityLevel"); }
+            set { BackingStore?.Set("browserIntranetSecurityLevel", value); }
         }
         /// <summary>The logging report location.</summary>
         public string BrowserLoggingReportLocation {
-            get { return BackingStore?.Get<string>(nameof(BrowserLoggingReportLocation)); }
-            set { BackingStore?.Set(nameof(BrowserLoggingReportLocation), value); }
+            get { return BackingStore?.Get<string>("browserLoggingReportLocation"); }
+            set { BackingStore?.Set("browserLoggingReportLocation", value); }
         }
         /// <summary>Indicates whether or not to require a firewall.</summary>
         public bool? BrowserRequireFirewall {
-            get { return BackingStore?.Get<bool?>(nameof(BrowserRequireFirewall)); }
-            set { BackingStore?.Set(nameof(BrowserRequireFirewall), value); }
+            get { return BackingStore?.Get<bool?>("browserRequireFirewall"); }
+            set { BackingStore?.Set("browserRequireFirewall", value); }
         }
         /// <summary>Indicates whether or not to require fraud warning.</summary>
         public bool? BrowserRequireFraudWarning {
-            get { return BackingStore?.Get<bool?>(nameof(BrowserRequireFraudWarning)); }
-            set { BackingStore?.Set(nameof(BrowserRequireFraudWarning), value); }
+            get { return BackingStore?.Get<bool?>("browserRequireFraudWarning"); }
+            set { BackingStore?.Set("browserRequireFraudWarning", value); }
         }
         /// <summary>Indicates whether or not to require high security for restricted sites.</summary>
         public bool? BrowserRequireHighSecurityForRestrictedSites {
-            get { return BackingStore?.Get<bool?>(nameof(BrowserRequireHighSecurityForRestrictedSites)); }
-            set { BackingStore?.Set(nameof(BrowserRequireHighSecurityForRestrictedSites), value); }
+            get { return BackingStore?.Get<bool?>("browserRequireHighSecurityForRestrictedSites"); }
+            set { BackingStore?.Set("browserRequireHighSecurityForRestrictedSites", value); }
         }
         /// <summary>Indicates whether or not to require the user to use the smart screen filter.</summary>
         public bool? BrowserRequireSmartScreen {
-            get { return BackingStore?.Get<bool?>(nameof(BrowserRequireSmartScreen)); }
-            set { BackingStore?.Set(nameof(BrowserRequireSmartScreen), value); }
+            get { return BackingStore?.Get<bool?>("browserRequireSmartScreen"); }
+            set { BackingStore?.Set("browserRequireSmartScreen", value); }
         }
-        /// <summary>The trusted sites security level. Possible values are: userDefined, low, mediumLow, medium, mediumHigh, high.</summary>
+        /// <summary>Possible values for site security level.</summary>
         public SiteSecurityLevel? BrowserTrustedSitesSecurityLevel {
-            get { return BackingStore?.Get<SiteSecurityLevel?>(nameof(BrowserTrustedSitesSecurityLevel)); }
-            set { BackingStore?.Set(nameof(BrowserTrustedSitesSecurityLevel), value); }
+            get { return BackingStore?.Get<SiteSecurityLevel?>("browserTrustedSitesSecurityLevel"); }
+            set { BackingStore?.Set("browserTrustedSitesSecurityLevel", value); }
         }
         /// <summary>Indicates whether or not to block data roaming.</summary>
         public bool? CellularBlockDataRoaming {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockDataRoaming)); }
-            set { BackingStore?.Set(nameof(CellularBlockDataRoaming), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockDataRoaming"); }
+            set { BackingStore?.Set("cellularBlockDataRoaming", value); }
         }
         /// <summary>Indicates whether or not to block diagnostic data submission.</summary>
         public bool? DiagnosticsBlockDataSubmission {
-            get { return BackingStore?.Get<bool?>(nameof(DiagnosticsBlockDataSubmission)); }
-            set { BackingStore?.Set(nameof(DiagnosticsBlockDataSubmission), value); }
+            get { return BackingStore?.Get<bool?>("diagnosticsBlockDataSubmission"); }
+            set { BackingStore?.Set("diagnosticsBlockDataSubmission", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using a pictures password and pin.</summary>
         public bool? PasswordBlockPicturePasswordAndPin {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordBlockPicturePasswordAndPin)); }
-            set { BackingStore?.Set(nameof(PasswordBlockPicturePasswordAndPin), value); }
+            get { return BackingStore?.Get<bool?>("passwordBlockPicturePasswordAndPin"); }
+            set { BackingStore?.Set("passwordBlockPicturePasswordAndPin", value); }
         }
         /// <summary>Password expiration in days.</summary>
         public int? PasswordExpirationDays {
-            get { return BackingStore?.Get<int?>(nameof(PasswordExpirationDays)); }
-            set { BackingStore?.Set(nameof(PasswordExpirationDays), value); }
+            get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
+            set { BackingStore?.Set("passwordExpirationDays", value); }
         }
         /// <summary>The number of character sets required in the password.</summary>
         public int? PasswordMinimumCharacterSetCount {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumCharacterSetCount)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumCharacterSetCount), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumCharacterSetCount"); }
+            set { BackingStore?.Set("passwordMinimumCharacterSetCount", value); }
         }
         /// <summary>The minimum password length.</summary>
         public int? PasswordMinimumLength {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumLength)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumLength), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
+            set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>The minutes of inactivity before the screen times out.</summary>
         public int? PasswordMinutesOfInactivityBeforeScreenTimeout {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinutesOfInactivityBeforeScreenTimeout)); }
-            set { BackingStore?.Set(nameof(PasswordMinutesOfInactivityBeforeScreenTimeout), value); }
+            get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeScreenTimeout"); }
+            set { BackingStore?.Set("passwordMinutesOfInactivityBeforeScreenTimeout", value); }
         }
         /// <summary>The number of previous passwords to prevent re-use of. Valid values 0 to 24</summary>
         public int? PasswordPreviousPasswordBlockCount {
-            get { return BackingStore?.Get<int?>(nameof(PasswordPreviousPasswordBlockCount)); }
-            set { BackingStore?.Set(nameof(PasswordPreviousPasswordBlockCount), value); }
+            get { return BackingStore?.Get<int?>("passwordPreviousPasswordBlockCount"); }
+            set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
-        /// <summary>The required password type. Possible values are: deviceDefault, alphanumeric, numeric.</summary>
+        /// <summary>Possible values of required passwords.</summary>
         public RequiredPasswordType? PasswordRequiredType {
-            get { return BackingStore?.Get<RequiredPasswordType?>(nameof(PasswordRequiredType)); }
-            set { BackingStore?.Set(nameof(PasswordRequiredType), value); }
+            get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
+            set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>The number of sign in failures before factory reset.</summary>
         public int? PasswordSignInFailureCountBeforeFactoryReset {
-            get { return BackingStore?.Get<int?>(nameof(PasswordSignInFailureCountBeforeFactoryReset)); }
-            set { BackingStore?.Set(nameof(PasswordSignInFailureCountBeforeFactoryReset), value); }
+            get { return BackingStore?.Get<int?>("passwordSignInFailureCountBeforeFactoryReset"); }
+            set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>Indicates whether or not to require encryption on a mobile device.</summary>
         public bool? StorageRequireDeviceEncryption {
-            get { return BackingStore?.Get<bool?>(nameof(StorageRequireDeviceEncryption)); }
-            set { BackingStore?.Set(nameof(StorageRequireDeviceEncryption), value); }
+            get { return BackingStore?.Get<bool?>("storageRequireDeviceEncryption"); }
+            set { BackingStore?.Set("storageRequireDeviceEncryption", value); }
         }
         /// <summary>Indicates whether or not to require automatic updates.</summary>
         public bool? UpdatesRequireAutomaticUpdates {
-            get { return BackingStore?.Get<bool?>(nameof(UpdatesRequireAutomaticUpdates)); }
-            set { BackingStore?.Set(nameof(UpdatesRequireAutomaticUpdates), value); }
+            get { return BackingStore?.Get<bool?>("updatesRequireAutomaticUpdates"); }
+            set { BackingStore?.Set("updatesRequireAutomaticUpdates", value); }
         }
-        /// <summary>The user account control settings. Possible values are: userDefined, alwaysNotify, notifyOnAppChanges, notifyOnAppChangesWithoutDimming, neverNotify.</summary>
+        /// <summary>Possible values for Windows user account control settings.</summary>
         public WindowsUserAccountControlSettings? UserAccountControlSettings {
-            get { return BackingStore?.Get<WindowsUserAccountControlSettings?>(nameof(UserAccountControlSettings)); }
-            set { BackingStore?.Set(nameof(UserAccountControlSettings), value); }
+            get { return BackingStore?.Get<WindowsUserAccountControlSettings?>("userAccountControlSettings"); }
+            set { BackingStore?.Set("userAccountControlSettings", value); }
         }
         /// <summary>The work folders url.</summary>
         public string WorkFoldersUrl {
-            get { return BackingStore?.Get<string>(nameof(WorkFoldersUrl)); }
-            set { BackingStore?.Set(nameof(WorkFoldersUrl), value); }
+            get { return BackingStore?.Get<string>("workFoldersUrl"); }
+            set { BackingStore?.Set("workFoldersUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

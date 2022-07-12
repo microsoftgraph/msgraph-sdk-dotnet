@@ -8,60 +8,60 @@ namespace Microsoft.Graph.Models {
     public class TeleconferenceDeviceQuality : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.</summary>
         public string CallChainId {
-            get { return BackingStore?.Get<string>(nameof(CallChainId)); }
-            set { BackingStore?.Set(nameof(CallChainId), value); }
+            get { return BackingStore?.Get<string>("callChainId"); }
+            set { BackingStore?.Set("callChainId", value); }
         }
         /// <summary>A geo-region where the service is deployed, such as ProdNoam.</summary>
         public string CloudServiceDeploymentEnvironment {
-            get { return BackingStore?.Get<string>(nameof(CloudServiceDeploymentEnvironment)); }
-            set { BackingStore?.Set(nameof(CloudServiceDeploymentEnvironment), value); }
+            get { return BackingStore?.Get<string>("cloudServiceDeploymentEnvironment"); }
+            set { BackingStore?.Set("cloudServiceDeploymentEnvironment", value); }
         }
         /// <summary>A unique deployment identifier assigned by Azure.</summary>
         public string CloudServiceDeploymentId {
-            get { return BackingStore?.Get<string>(nameof(CloudServiceDeploymentId)); }
-            set { BackingStore?.Set(nameof(CloudServiceDeploymentId), value); }
+            get { return BackingStore?.Get<string>("cloudServiceDeploymentId"); }
+            set { BackingStore?.Set("cloudServiceDeploymentId", value); }
         }
         /// <summary>The Azure deployed cloud service instance name, such as FrontEnd_IN_3.</summary>
         public string CloudServiceInstanceName {
-            get { return BackingStore?.Get<string>(nameof(CloudServiceInstanceName)); }
-            set { BackingStore?.Set(nameof(CloudServiceInstanceName), value); }
+            get { return BackingStore?.Get<string>("cloudServiceInstanceName"); }
+            set { BackingStore?.Set("cloudServiceInstanceName", value); }
         }
         /// <summary>The Azure deployed cloud service name, such as contoso.cloudapp.net.</summary>
         public string CloudServiceName {
-            get { return BackingStore?.Get<string>(nameof(CloudServiceName)); }
-            set { BackingStore?.Set(nameof(CloudServiceName), value); }
+            get { return BackingStore?.Get<string>("cloudServiceName"); }
+            set { BackingStore?.Set("cloudServiceName", value); }
         }
         /// <summary>Any additional description, such as VTC Bldg 30/21.</summary>
         public string DeviceDescription {
-            get { return BackingStore?.Get<string>(nameof(DeviceDescription)); }
-            set { BackingStore?.Set(nameof(DeviceDescription), value); }
+            get { return BackingStore?.Get<string>("deviceDescription"); }
+            set { BackingStore?.Set("deviceDescription", value); }
         }
         /// <summary>The user media agent name, such as Cisco SX80.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.</summary>
         public string MediaLegId {
-            get { return BackingStore?.Get<string>(nameof(MediaLegId)); }
-            set { BackingStore?.Set(nameof(MediaLegId), value); }
+            get { return BackingStore?.Get<string>("mediaLegId"); }
+            set { BackingStore?.Set("mediaLegId", value); }
         }
         /// <summary>The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.</summary>
         public List<TeleconferenceDeviceMediaQuality> MediaQualityList {
-            get { return BackingStore?.Get<List<TeleconferenceDeviceMediaQuality>>(nameof(MediaQualityList)); }
-            set { BackingStore?.Set(nameof(MediaQualityList), value); }
+            get { return BackingStore?.Get<List<TeleconferenceDeviceMediaQuality>>("mediaQualityList"); }
+            set { BackingStore?.Set("mediaQualityList", value); }
         }
         /// <summary>A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.</summary>
         public string ParticipantId {
-            get { return BackingStore?.Get<string>(nameof(ParticipantId)); }
-            set { BackingStore?.Set(nameof(ParticipantId), value); }
+            get { return BackingStore?.Get<string>("participantId"); }
+            set { BackingStore?.Set("participantId", value); }
         }
         /// <summary>
         /// Instantiates a new teleconferenceDeviceQuality and sets the default values.

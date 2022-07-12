@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the searchEntity singleton.</summary>
     public class SearchEntity : Entity, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

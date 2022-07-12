@@ -8,85 +8,85 @@ namespace Microsoft.Graph.Models {
     public class OnPremisesExtensionAttributes : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>First customizable extension attribute.</summary>
         public string ExtensionAttribute1 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute1)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute1), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute1"); }
+            set { BackingStore?.Set("extensionAttribute1", value); }
         }
         /// <summary>Tenth customizable extension attribute.</summary>
         public string ExtensionAttribute10 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute10)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute10), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute10"); }
+            set { BackingStore?.Set("extensionAttribute10", value); }
         }
         /// <summary>Eleventh customizable extension attribute.</summary>
         public string ExtensionAttribute11 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute11)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute11), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute11"); }
+            set { BackingStore?.Set("extensionAttribute11", value); }
         }
         /// <summary>Twelfth customizable extension attribute.</summary>
         public string ExtensionAttribute12 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute12)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute12), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute12"); }
+            set { BackingStore?.Set("extensionAttribute12", value); }
         }
         /// <summary>Thirteenth customizable extension attribute.</summary>
         public string ExtensionAttribute13 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute13)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute13), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute13"); }
+            set { BackingStore?.Set("extensionAttribute13", value); }
         }
         /// <summary>Fourteenth customizable extension attribute.</summary>
         public string ExtensionAttribute14 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute14)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute14), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute14"); }
+            set { BackingStore?.Set("extensionAttribute14", value); }
         }
         /// <summary>Fifteenth customizable extension attribute.</summary>
         public string ExtensionAttribute15 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute15)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute15), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute15"); }
+            set { BackingStore?.Set("extensionAttribute15", value); }
         }
         /// <summary>Second customizable extension attribute.</summary>
         public string ExtensionAttribute2 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute2)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute2), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute2"); }
+            set { BackingStore?.Set("extensionAttribute2", value); }
         }
         /// <summary>Third customizable extension attribute.</summary>
         public string ExtensionAttribute3 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute3)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute3), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute3"); }
+            set { BackingStore?.Set("extensionAttribute3", value); }
         }
         /// <summary>Fourth customizable extension attribute.</summary>
         public string ExtensionAttribute4 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute4)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute4), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute4"); }
+            set { BackingStore?.Set("extensionAttribute4", value); }
         }
         /// <summary>Fifth customizable extension attribute.</summary>
         public string ExtensionAttribute5 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute5)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute5), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute5"); }
+            set { BackingStore?.Set("extensionAttribute5", value); }
         }
         /// <summary>Sixth customizable extension attribute.</summary>
         public string ExtensionAttribute6 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute6)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute6), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute6"); }
+            set { BackingStore?.Set("extensionAttribute6", value); }
         }
         /// <summary>Seventh customizable extension attribute.</summary>
         public string ExtensionAttribute7 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute7)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute7), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute7"); }
+            set { BackingStore?.Set("extensionAttribute7", value); }
         }
         /// <summary>Eighth customizable extension attribute.</summary>
         public string ExtensionAttribute8 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute8)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute8), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute8"); }
+            set { BackingStore?.Set("extensionAttribute8", value); }
         }
         /// <summary>Ninth customizable extension attribute.</summary>
         public string ExtensionAttribute9 {
-            get { return BackingStore?.Get<string>(nameof(ExtensionAttribute9)); }
-            set { BackingStore?.Set(nameof(ExtensionAttribute9), value); }
+            get { return BackingStore?.Get<string>("extensionAttribute9"); }
+            set { BackingStore?.Set("extensionAttribute9", value); }
         }
         /// <summary>
         /// Instantiates a new onPremisesExtensionAttributes and sets the default values.

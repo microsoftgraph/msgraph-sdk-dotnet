@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Members.Add {
     public class AddPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The values property</summary>
         public List<ConversationMember> Values {
-            get { return BackingStore?.Get<List<ConversationMember>>(nameof(Values)); }
-            set { BackingStore?.Set(nameof(Values), value); }
+            get { return BackingStore?.Get<List<ConversationMember>>("values"); }
+            set { BackingStore?.Set("values", value); }
         }
         /// <summary>
         /// Instantiates a new addPostRequestBody and sets the default values.

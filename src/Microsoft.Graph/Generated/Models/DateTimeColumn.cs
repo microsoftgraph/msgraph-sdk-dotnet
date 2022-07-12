@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class DateTimeColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>How the value should be presented in the UX. Must be one of default, friendly, or standard. See below for more details. If unspecified, treated as default.</summary>
         public string DisplayAs {
-            get { return BackingStore?.Get<string>(nameof(DisplayAs)); }
-            set { BackingStore?.Set(nameof(DisplayAs), value); }
+            get { return BackingStore?.Get<string>("displayAs"); }
+            set { BackingStore?.Set("displayAs", value); }
         }
         /// <summary>Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime</summary>
         public string Format {
-            get { return BackingStore?.Get<string>(nameof(Format)); }
-            set { BackingStore?.Set(nameof(Format), value); }
+            get { return BackingStore?.Get<string>("format"); }
+            set { BackingStore?.Set("format", value); }
         }
         /// <summary>
         /// Instantiates a new dateTimeColumn and sets the default values.

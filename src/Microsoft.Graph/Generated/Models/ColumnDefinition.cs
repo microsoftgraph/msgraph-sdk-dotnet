@@ -4,167 +4,162 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ColumnDefinition : Entity, IParsable {
         /// <summary>This column stores boolean values.</summary>
         public BooleanColumn Boolean {
-            get { return BackingStore?.Get<BooleanColumn>(nameof(Boolean)); }
-            set { BackingStore?.Set(nameof(Boolean), value); }
+            get { return BackingStore?.Get<BooleanColumn>("boolean"); }
+            set { BackingStore?.Set("boolean", value); }
         }
         /// <summary>This column&apos;s data is calculated based on other columns.</summary>
         public CalculatedColumn Calculated {
-            get { return BackingStore?.Get<CalculatedColumn>(nameof(Calculated)); }
-            set { BackingStore?.Set(nameof(Calculated), value); }
+            get { return BackingStore?.Get<CalculatedColumn>("calculated"); }
+            set { BackingStore?.Set("calculated", value); }
         }
         /// <summary>This column stores data from a list of choices.</summary>
         public ChoiceColumn Choice {
-            get { return BackingStore?.Get<ChoiceColumn>(nameof(Choice)); }
-            set { BackingStore?.Set(nameof(Choice), value); }
+            get { return BackingStore?.Get<ChoiceColumn>("choice"); }
+            set { BackingStore?.Set("choice", value); }
         }
         /// <summary>For site columns, the name of the group this column belongs to. Helps organize related columns.</summary>
         public string ColumnGroup {
-            get { return BackingStore?.Get<string>(nameof(ColumnGroup)); }
-            set { BackingStore?.Set(nameof(ColumnGroup), value); }
+            get { return BackingStore?.Get<string>("columnGroup"); }
+            set { BackingStore?.Set("columnGroup", value); }
         }
         /// <summary>This column stores content approval status.</summary>
         public ContentApprovalStatusColumn ContentApprovalStatus {
-            get { return BackingStore?.Get<ContentApprovalStatusColumn>(nameof(ContentApprovalStatus)); }
-            set { BackingStore?.Set(nameof(ContentApprovalStatus), value); }
+            get { return BackingStore?.Get<ContentApprovalStatusColumn>("contentApprovalStatus"); }
+            set { BackingStore?.Set("contentApprovalStatus", value); }
         }
         /// <summary>This column stores currency values.</summary>
         public CurrencyColumn Currency {
-            get { return BackingStore?.Get<CurrencyColumn>(nameof(Currency)); }
-            set { BackingStore?.Set(nameof(Currency), value); }
+            get { return BackingStore?.Get<CurrencyColumn>("currency"); }
+            set { BackingStore?.Set("currency", value); }
         }
         /// <summary>This column stores DateTime values.</summary>
         public DateTimeColumn DateTime {
-            get { return BackingStore?.Get<DateTimeColumn>(nameof(DateTime)); }
-            set { BackingStore?.Set(nameof(DateTime), value); }
+            get { return BackingStore?.Get<DateTimeColumn>("dateTime"); }
+            set { BackingStore?.Set("dateTime", value); }
         }
         /// <summary>The default value for this column.</summary>
         public DefaultColumnValue DefaultValue {
-            get { return BackingStore?.Get<DefaultColumnValue>(nameof(DefaultValue)); }
-            set { BackingStore?.Set(nameof(DefaultValue), value); }
+            get { return BackingStore?.Get<DefaultColumnValue>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
         }
         /// <summary>The user-facing description of the column.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The user-facing name of the column.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>If true, no two list items may have the same value for this column.</summary>
         public bool? EnforceUniqueValues {
-            get { return BackingStore?.Get<bool?>(nameof(EnforceUniqueValues)); }
-            set { BackingStore?.Set(nameof(EnforceUniqueValues), value); }
+            get { return BackingStore?.Get<bool?>("enforceUniqueValues"); }
+            set { BackingStore?.Set("enforceUniqueValues", value); }
         }
         /// <summary>This column stores a geolocation.</summary>
         public GeolocationColumn Geolocation {
-            get { return BackingStore?.Get<GeolocationColumn>(nameof(Geolocation)); }
-            set { BackingStore?.Set(nameof(Geolocation), value); }
+            get { return BackingStore?.Get<GeolocationColumn>("geolocation"); }
+            set { BackingStore?.Set("geolocation", value); }
         }
         /// <summary>Specifies whether the column is displayed in the user interface.</summary>
         public bool? Hidden {
-            get { return BackingStore?.Get<bool?>(nameof(Hidden)); }
-            set { BackingStore?.Set(nameof(Hidden), value); }
+            get { return BackingStore?.Get<bool?>("hidden"); }
+            set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>This column stores hyperlink or picture values.</summary>
         public HyperlinkOrPictureColumn HyperlinkOrPicture {
-            get { return BackingStore?.Get<HyperlinkOrPictureColumn>(nameof(HyperlinkOrPicture)); }
-            set { BackingStore?.Set(nameof(HyperlinkOrPicture), value); }
+            get { return BackingStore?.Get<HyperlinkOrPictureColumn>("hyperlinkOrPicture"); }
+            set { BackingStore?.Set("hyperlinkOrPicture", value); }
         }
         /// <summary>Specifies whether the column values can used for sorting and searching.</summary>
         public bool? Indexed {
-            get { return BackingStore?.Get<bool?>(nameof(Indexed)); }
-            set { BackingStore?.Set(nameof(Indexed), value); }
+            get { return BackingStore?.Get<bool?>("indexed"); }
+            set { BackingStore?.Set("indexed", value); }
         }
         /// <summary>Indicates whether this column can be deleted.</summary>
         public bool? IsDeletable {
-            get { return BackingStore?.Get<bool?>(nameof(IsDeletable)); }
-            set { BackingStore?.Set(nameof(IsDeletable), value); }
+            get { return BackingStore?.Get<bool?>("isDeletable"); }
+            set { BackingStore?.Set("isDeletable", value); }
         }
         /// <summary>Indicates whether values in the column can be reordered. Read-only.</summary>
         public bool? IsReorderable {
-            get { return BackingStore?.Get<bool?>(nameof(IsReorderable)); }
-            set { BackingStore?.Set(nameof(IsReorderable), value); }
+            get { return BackingStore?.Get<bool?>("isReorderable"); }
+            set { BackingStore?.Set("isReorderable", value); }
         }
         /// <summary>Specifies whether the column can be changed.</summary>
         public bool? IsSealed {
-            get { return BackingStore?.Get<bool?>(nameof(IsSealed)); }
-            set { BackingStore?.Set(nameof(IsSealed), value); }
+            get { return BackingStore?.Get<bool?>("isSealed"); }
+            set { BackingStore?.Set("isSealed", value); }
         }
         /// <summary>This column&apos;s data is looked up from another source in the site.</summary>
         public LookupColumn Lookup {
-            get { return BackingStore?.Get<LookupColumn>(nameof(Lookup)); }
-            set { BackingStore?.Set(nameof(Lookup), value); }
+            get { return BackingStore?.Get<LookupColumn>("lookup"); }
+            set { BackingStore?.Set("lookup", value); }
         }
         /// <summary>The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>This column stores number values.</summary>
         public NumberColumn Number {
-            get { return BackingStore?.Get<NumberColumn>(nameof(Number)); }
-            set { BackingStore?.Set(nameof(Number), value); }
+            get { return BackingStore?.Get<NumberColumn>("number"); }
+            set { BackingStore?.Set("number", value); }
         }
         /// <summary>This column stores Person or Group values.</summary>
         public PersonOrGroupColumn PersonOrGroup {
-            get { return BackingStore?.Get<PersonOrGroupColumn>(nameof(PersonOrGroup)); }
-            set { BackingStore?.Set(nameof(PersonOrGroup), value); }
+            get { return BackingStore?.Get<PersonOrGroupColumn>("personOrGroup"); }
+            set { BackingStore?.Set("personOrGroup", value); }
         }
         /// <summary>If true, changes to this column will be propagated to lists that implement the column.</summary>
         public bool? PropagateChanges {
-            get { return BackingStore?.Get<bool?>(nameof(PropagateChanges)); }
-            set { BackingStore?.Set(nameof(PropagateChanges), value); }
+            get { return BackingStore?.Get<bool?>("propagateChanges"); }
+            set { BackingStore?.Set("propagateChanges", value); }
         }
         /// <summary>Specifies whether the column values can be modified.</summary>
         public bool? ReadOnly {
-            get { return BackingStore?.Get<bool?>(nameof(ReadOnly)); }
-            set { BackingStore?.Set(nameof(ReadOnly), value); }
+            get { return BackingStore?.Get<bool?>("readOnly"); }
+            set { BackingStore?.Set("readOnly", value); }
         }
         /// <summary>Specifies whether the column value isn&apos;t optional.</summary>
         public bool? Required {
-            get { return BackingStore?.Get<bool?>(nameof(Required)); }
-            set { BackingStore?.Set(nameof(Required), value); }
+            get { return BackingStore?.Get<bool?>("required"); }
+            set { BackingStore?.Set("required", value); }
         }
         /// <summary>The source column for content type column.</summary>
         public ColumnDefinition SourceColumn {
-            get { return BackingStore?.Get<ColumnDefinition>(nameof(SourceColumn)); }
-            set { BackingStore?.Set(nameof(SourceColumn), value); }
+            get { return BackingStore?.Get<ColumnDefinition>("sourceColumn"); }
+            set { BackingStore?.Set("sourceColumn", value); }
         }
         /// <summary>ContentType from which this column is inherited from. Used only to fetch contentTypes columns.</summary>
         public ContentTypeInfo SourceContentType {
-            get { return BackingStore?.Get<ContentTypeInfo>(nameof(SourceContentType)); }
-            set { BackingStore?.Set(nameof(SourceContentType), value); }
+            get { return BackingStore?.Get<ContentTypeInfo>("sourceContentType"); }
+            set { BackingStore?.Set("sourceContentType", value); }
         }
         /// <summary>This column stores taxonomy terms.</summary>
         public TermColumn Term {
-            get { return BackingStore?.Get<TermColumn>(nameof(Term)); }
-            set { BackingStore?.Set(nameof(Term), value); }
+            get { return BackingStore?.Get<TermColumn>("term"); }
+            set { BackingStore?.Set("term", value); }
         }
         /// <summary>This column stores text values.</summary>
         public TextColumn Text {
-            get { return BackingStore?.Get<TextColumn>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<TextColumn>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>This column stores thumbnail values.</summary>
         public ThumbnailColumn Thumbnail {
-            get { return BackingStore?.Get<ThumbnailColumn>(nameof(Thumbnail)); }
-            set { BackingStore?.Set(nameof(Thumbnail), value); }
-        }
-        /// <summary>For site columns, the type of column. Read-only.</summary>
-        public ColumnTypes? Type {
-            get { return BackingStore?.Get<ColumnTypes?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<ThumbnailColumn>("thumbnail"); }
+            set { BackingStore?.Set("thumbnail", value); }
         }
         /// <summary>This column stores validation formula and message for the column.</summary>
         public ColumnValidation Validation {
-            get { return BackingStore?.Get<ColumnValidation>(nameof(Validation)); }
-            set { BackingStore?.Set(nameof(Validation), value); }
+            get { return BackingStore?.Get<ColumnValidation>("validation"); }
+            set { BackingStore?.Set("validation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -209,7 +204,6 @@ namespace Microsoft.Graph.Models {
                 {"term", n => { Term = n.GetObjectValue<TermColumn>(TermColumn.CreateFromDiscriminatorValue); } },
                 {"text", n => { Text = n.GetObjectValue<TextColumn>(TextColumn.CreateFromDiscriminatorValue); } },
                 {"thumbnail", n => { Thumbnail = n.GetObjectValue<ThumbnailColumn>(ThumbnailColumn.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetEnumValue<ColumnTypes>(); } },
                 {"validation", n => { Validation = n.GetObjectValue<ColumnValidation>(ColumnValidation.CreateFromDiscriminatorValue); } },
             };
         }
@@ -250,7 +244,6 @@ namespace Microsoft.Graph.Models {
             writer.WriteObjectValue<TermColumn>("term", Term);
             writer.WriteObjectValue<TextColumn>("text", Text);
             writer.WriteObjectValue<ThumbnailColumn>("thumbnail", Thumbnail);
-            writer.WriteEnumValue<ColumnTypes>("type", Type);
             writer.WriteObjectValue<ColumnValidation>("validation", Validation);
         }
     }

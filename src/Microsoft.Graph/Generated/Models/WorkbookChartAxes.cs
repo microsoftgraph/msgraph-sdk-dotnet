@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class WorkbookChartAxes : Entity, IParsable {
         /// <summary>Represents the category axis in a chart. Read-only.</summary>
         public WorkbookChartAxis CategoryAxis {
-            get { return BackingStore?.Get<WorkbookChartAxis>(nameof(CategoryAxis)); }
-            set { BackingStore?.Set(nameof(CategoryAxis), value); }
+            get { return BackingStore?.Get<WorkbookChartAxis>("categoryAxis"); }
+            set { BackingStore?.Set("categoryAxis", value); }
         }
         /// <summary>Represents the series axis of a 3-dimensional chart. Read-only.</summary>
         public WorkbookChartAxis SeriesAxis {
-            get { return BackingStore?.Get<WorkbookChartAxis>(nameof(SeriesAxis)); }
-            set { BackingStore?.Set(nameof(SeriesAxis), value); }
+            get { return BackingStore?.Get<WorkbookChartAxis>("seriesAxis"); }
+            set { BackingStore?.Set("seriesAxis", value); }
         }
         /// <summary>Represents the value axis in an axis. Read-only.</summary>
         public WorkbookChartAxis ValueAxis {
-            get { return BackingStore?.Get<WorkbookChartAxis>(nameof(ValueAxis)); }
-            set { BackingStore?.Set(nameof(ValueAxis), value); }
+            get { return BackingStore?.Get<WorkbookChartAxis>("valueAxis"); }
+            set { BackingStore?.Set("valueAxis", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

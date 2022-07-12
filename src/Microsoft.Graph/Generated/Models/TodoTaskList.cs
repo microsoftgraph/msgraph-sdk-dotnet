@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class TodoTaskList : Entity, IParsable {
         /// <summary>The name of the task list.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The collection of open extensions defined for the task list. Nullable.</summary>
         public List<Extension> Extensions {
-            get { return BackingStore?.Get<List<Extension>>(nameof(Extensions)); }
-            set { BackingStore?.Set(nameof(Extensions), value); }
+            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
         }
         /// <summary>True if the user is owner of the given task list.</summary>
         public bool? IsOwner {
-            get { return BackingStore?.Get<bool?>(nameof(IsOwner)); }
-            set { BackingStore?.Set(nameof(IsOwner), value); }
+            get { return BackingStore?.Get<bool?>("isOwner"); }
+            set { BackingStore?.Set("isOwner", value); }
         }
         /// <summary>True if the task list is shared with other users</summary>
         public bool? IsShared {
-            get { return BackingStore?.Get<bool?>(nameof(IsShared)); }
-            set { BackingStore?.Set(nameof(IsShared), value); }
+            get { return BackingStore?.Get<bool?>("isShared"); }
+            set { BackingStore?.Set("isShared", value); }
         }
         /// <summary>The tasks in this task list. Read-only. Nullable.</summary>
         public List<TodoTask> Tasks {
-            get { return BackingStore?.Get<List<TodoTask>>(nameof(Tasks)); }
-            set { BackingStore?.Set(nameof(Tasks), value); }
+            get { return BackingStore?.Get<List<TodoTask>>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
         }
-        /// <summary>Property indicating the list name if the given list is a well-known list. Possible values are: none, defaultList, flaggedEmails, unknownFutureValue.</summary>
+        /// <summary>The wellknownListName property</summary>
         public Microsoft.Graph.Models.WellknownListName? WellknownListName {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.WellknownListName?>(nameof(WellknownListName)); }
-            set { BackingStore?.Set(nameof(WellknownListName), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WellknownListName?>("wellknownListName"); }
+            set { BackingStore?.Set("wellknownListName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

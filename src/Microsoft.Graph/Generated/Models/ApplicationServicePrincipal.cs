@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Models {
     public class ApplicationServicePrincipal : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The application property</summary>
         public Microsoft.Graph.Models.Application Application {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Application>(nameof(Application)); }
-            set { BackingStore?.Set(nameof(Application), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Application>("application"); }
+            set { BackingStore?.Set("application", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The servicePrincipal property</summary>
         public Microsoft.Graph.Models.ServicePrincipal ServicePrincipal {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ServicePrincipal>(nameof(ServicePrincipal)); }
-            set { BackingStore?.Set(nameof(ServicePrincipal), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ServicePrincipal>("servicePrincipal"); }
+            set { BackingStore?.Set("servicePrincipal", value); }
         }
         /// <summary>
-        /// Instantiates a new ApplicationServicePrincipal and sets the default values.
+        /// Instantiates a new applicationServicePrincipal and sets the default values.
         /// </summary>
         public ApplicationServicePrincipal() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

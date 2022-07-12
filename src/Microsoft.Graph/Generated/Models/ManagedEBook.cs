@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -8,68 +9,74 @@ namespace Microsoft.Graph.Models {
     public class ManagedEBook : Entity, IParsable {
         /// <summary>The list of assignments for this eBook.</summary>
         public List<ManagedEBookAssignment> Assignments {
-            get { return BackingStore?.Get<List<ManagedEBookAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<ManagedEBookAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>The date and time when the eBook file was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The list of installation states for this eBook.</summary>
         public List<DeviceInstallState> DeviceStates {
-            get { return BackingStore?.Get<List<DeviceInstallState>>(nameof(DeviceStates)); }
-            set { BackingStore?.Set(nameof(DeviceStates), value); }
+            get { return BackingStore?.Get<List<DeviceInstallState>>("deviceStates"); }
+            set { BackingStore?.Set("deviceStates", value); }
         }
         /// <summary>Name of the eBook.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The more information Url.</summary>
         public string InformationUrl {
-            get { return BackingStore?.Get<string>(nameof(InformationUrl)); }
-            set { BackingStore?.Set(nameof(InformationUrl), value); }
+            get { return BackingStore?.Get<string>("informationUrl"); }
+            set { BackingStore?.Set("informationUrl", value); }
         }
         /// <summary>Mobile App Install Summary.</summary>
         public EBookInstallSummary InstallSummary {
-            get { return BackingStore?.Get<EBookInstallSummary>(nameof(InstallSummary)); }
-            set { BackingStore?.Set(nameof(InstallSummary), value); }
+            get { return BackingStore?.Get<EBookInstallSummary>("installSummary"); }
+            set { BackingStore?.Set("installSummary", value); }
         }
         /// <summary>Book cover.</summary>
         public MimeContent LargeCover {
-            get { return BackingStore?.Get<MimeContent>(nameof(LargeCover)); }
-            set { BackingStore?.Set(nameof(LargeCover), value); }
+            get { return BackingStore?.Get<MimeContent>("largeCover"); }
+            set { BackingStore?.Set("largeCover", value); }
         }
         /// <summary>The date and time when the eBook was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The privacy statement Url.</summary>
         public string PrivacyInformationUrl {
-            get { return BackingStore?.Get<string>(nameof(PrivacyInformationUrl)); }
-            set { BackingStore?.Set(nameof(PrivacyInformationUrl), value); }
+            get { return BackingStore?.Get<string>("privacyInformationUrl"); }
+            set { BackingStore?.Set("privacyInformationUrl", value); }
         }
         /// <summary>The date and time when the eBook was published.</summary>
         public DateTimeOffset? PublishedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(PublishedDateTime)); }
-            set { BackingStore?.Set(nameof(PublishedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("publishedDateTime"); }
+            set { BackingStore?.Set("publishedDateTime", value); }
         }
         /// <summary>Publisher.</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
         /// <summary>The list of installation states for this eBook.</summary>
         public List<UserInstallStateSummary> UserStateSummary {
-            get { return BackingStore?.Get<List<UserInstallStateSummary>>(nameof(UserStateSummary)); }
-            set { BackingStore?.Set(nameof(UserStateSummary), value); }
+            get { return BackingStore?.Get<List<UserInstallStateSummary>>("userStateSummary"); }
+            set { BackingStore?.Set("userStateSummary", value); }
+        }
+        /// <summary>
+        /// Instantiates a new managedEBook and sets the default values.
+        /// </summary>
+        public ManagedEBook() : base() {
+            Type = "#microsoft.graph.managedEBook";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

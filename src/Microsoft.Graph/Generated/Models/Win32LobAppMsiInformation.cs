@@ -9,45 +9,45 @@ namespace Microsoft.Graph.Models {
     public class Win32LobAppMsiInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The MSI package type. Possible values are: perMachine, perUser, dualPurpose.</summary>
+        /// <summary>Indicates the package type of an MSI Win32LobApp.</summary>
         public Win32LobAppMsiPackageType? PackageType {
-            get { return BackingStore?.Get<Win32LobAppMsiPackageType?>(nameof(PackageType)); }
-            set { BackingStore?.Set(nameof(PackageType), value); }
+            get { return BackingStore?.Get<Win32LobAppMsiPackageType?>("packageType"); }
+            set { BackingStore?.Set("packageType", value); }
         }
         /// <summary>The MSI product code.</summary>
         public string ProductCode {
-            get { return BackingStore?.Get<string>(nameof(ProductCode)); }
-            set { BackingStore?.Set(nameof(ProductCode), value); }
+            get { return BackingStore?.Get<string>("productCode"); }
+            set { BackingStore?.Set("productCode", value); }
         }
         /// <summary>The MSI product name.</summary>
         public string ProductName {
-            get { return BackingStore?.Get<string>(nameof(ProductName)); }
-            set { BackingStore?.Set(nameof(ProductName), value); }
+            get { return BackingStore?.Get<string>("productName"); }
+            set { BackingStore?.Set("productName", value); }
         }
         /// <summary>The MSI product version.</summary>
         public string ProductVersion {
-            get { return BackingStore?.Get<string>(nameof(ProductVersion)); }
-            set { BackingStore?.Set(nameof(ProductVersion), value); }
+            get { return BackingStore?.Get<string>("productVersion"); }
+            set { BackingStore?.Set("productVersion", value); }
         }
         /// <summary>The MSI publisher.</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
         /// <summary>Whether the MSI app requires the machine to reboot to complete installation.</summary>
         public bool? RequiresReboot {
-            get { return BackingStore?.Get<bool?>(nameof(RequiresReboot)); }
-            set { BackingStore?.Set(nameof(RequiresReboot), value); }
+            get { return BackingStore?.Get<bool?>("requiresReboot"); }
+            set { BackingStore?.Set("requiresReboot", value); }
         }
         /// <summary>The MSI upgrade code.</summary>
         public string UpgradeCode {
-            get { return BackingStore?.Get<string>(nameof(UpgradeCode)); }
-            set { BackingStore?.Set(nameof(UpgradeCode), value); }
+            get { return BackingStore?.Get<string>("upgradeCode"); }
+            set { BackingStore?.Set("upgradeCode", value); }
         }
         /// <summary>
         /// Instantiates a new win32LobAppMsiInformation and sets the default values.

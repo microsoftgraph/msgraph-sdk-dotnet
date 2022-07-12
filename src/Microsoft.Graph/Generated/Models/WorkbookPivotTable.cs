@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class WorkbookPivotTable : Entity, IParsable {
         /// <summary>Name of the PivotTable.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The worksheet containing the current PivotTable. Read-only.</summary>
         public WorkbookWorksheet Worksheet {
-            get { return BackingStore?.Get<WorkbookWorksheet>(nameof(Worksheet)); }
-            set { BackingStore?.Set(nameof(Worksheet), value); }
+            get { return BackingStore?.Get<WorkbookWorksheet>("worksheet"); }
+            set { BackingStore?.Set("worksheet", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

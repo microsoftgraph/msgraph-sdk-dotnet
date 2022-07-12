@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the print singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class PrintTask : Entity, IParsable {
         /// <summary>The definition property</summary>
         public PrintTaskDefinition Definition {
-            get { return BackingStore?.Get<PrintTaskDefinition>(nameof(Definition)); }
-            set { BackingStore?.Set(nameof(Definition), value); }
+            get { return BackingStore?.Get<PrintTaskDefinition>("definition"); }
+            set { BackingStore?.Set("definition", value); }
         }
         /// <summary>The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.</summary>
         public string ParentUrl {
-            get { return BackingStore?.Get<string>(nameof(ParentUrl)); }
-            set { BackingStore?.Set(nameof(ParentUrl), value); }
+            get { return BackingStore?.Get<string>("parentUrl"); }
+            set { BackingStore?.Set("parentUrl", value); }
         }
         /// <summary>The status property</summary>
         public PrintTaskStatus Status {
-            get { return BackingStore?.Get<PrintTaskStatus>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<PrintTaskStatus>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The trigger property</summary>
         public PrintTaskTrigger Trigger {
-            get { return BackingStore?.Get<PrintTaskTrigger>(nameof(Trigger)); }
-            set { BackingStore?.Set(nameof(Trigger), value); }
+            get { return BackingStore?.Get<PrintTaskTrigger>("trigger"); }
+            set { BackingStore?.Set("trigger", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

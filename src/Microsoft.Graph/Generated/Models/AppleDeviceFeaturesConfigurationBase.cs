@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -5,6 +6,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration, IParsable {
+        /// <summary>
+        /// Instantiates a new AppleDeviceFeaturesConfigurationBase and sets the default values.
+        /// </summary>
+        public AppleDeviceFeaturesConfigurationBase() : base() {
+            Type = "#microsoft.graph.appleDeviceFeaturesConfigurationBase";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

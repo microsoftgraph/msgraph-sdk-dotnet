@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class RubricQuality : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The collection of criteria for this rubric quality.</summary>
         public List<RubricCriterion> Criteria {
-            get { return BackingStore?.Get<List<RubricCriterion>>(nameof(Criteria)); }
-            set { BackingStore?.Set(nameof(Criteria), value); }
+            get { return BackingStore?.Get<List<RubricCriterion>>("criteria"); }
+            set { BackingStore?.Set("criteria", value); }
         }
         /// <summary>The description of this rubric quality.</summary>
         public EducationItemBody Description {
-            get { return BackingStore?.Get<EducationItemBody>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<EducationItemBody>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The name of this rubric quality.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The ID of this resource.</summary>
         public string QualityId {
-            get { return BackingStore?.Get<string>(nameof(QualityId)); }
-            set { BackingStore?.Set(nameof(QualityId), value); }
+            get { return BackingStore?.Get<string>("qualityId"); }
+            set { BackingStore?.Set("qualityId", value); }
         }
         /// <summary>If present, a numerical weight for this quality.  Weights must add up to 100.</summary>
         public float? Weight {
-            get { return BackingStore?.Get<float?>(nameof(Weight)); }
-            set { BackingStore?.Set(nameof(Weight), value); }
+            get { return BackingStore?.Get<float?>("weight"); }
+            set { BackingStore?.Set("weight", value); }
         }
         /// <summary>
         /// Instantiates a new rubricQuality and sets the default values.

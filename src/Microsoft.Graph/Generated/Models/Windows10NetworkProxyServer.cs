@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Models {
     public class Windows10NetworkProxyServer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Address to the proxy server. Specify an address in the format &lt;server&gt;[&apos;:&apos;&lt;port&gt;]</summary>
+        /// <summary>Address to the proxy server. Specify an address in the format [&apos;:&apos;]</summary>
         public string Address {
-            get { return BackingStore?.Get<string>(nameof(Address)); }
-            set { BackingStore?.Set(nameof(Address), value); }
+            get { return BackingStore?.Get<string>("address"); }
+            set { BackingStore?.Set("address", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Addresses that should not use the proxy server. The system will not use the proxy server for addresses beginning with what is specified in this node.</summary>
         public List<string> Exceptions {
-            get { return BackingStore?.Get<List<string>>(nameof(Exceptions)); }
-            set { BackingStore?.Set(nameof(Exceptions), value); }
+            get { return BackingStore?.Get<List<string>>("exceptions"); }
+            set { BackingStore?.Set("exceptions", value); }
         }
         /// <summary>Specifies whether the proxy server should be used for local (intranet) addresses.</summary>
         public bool? UseForLocalAddresses {
-            get { return BackingStore?.Get<bool?>(nameof(UseForLocalAddresses)); }
-            set { BackingStore?.Set(nameof(UseForLocalAddresses), value); }
+            get { return BackingStore?.Get<bool?>("useForLocalAddresses"); }
+            set { BackingStore?.Set("useForLocalAddresses", value); }
         }
         /// <summary>
         /// Instantiates a new windows10NetworkProxyServer and sets the default values.

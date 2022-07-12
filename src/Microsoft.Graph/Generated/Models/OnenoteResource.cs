@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class OnenoteResource : OnenoteEntityBaseModel, IParsable {
         /// <summary>The content stream</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The URL for downloading the content</summary>
         public string ContentUrl {
-            get { return BackingStore?.Get<string>(nameof(ContentUrl)); }
-            set { BackingStore?.Set(nameof(ContentUrl), value); }
+            get { return BackingStore?.Get<string>("contentUrl"); }
+            set { BackingStore?.Set("contentUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

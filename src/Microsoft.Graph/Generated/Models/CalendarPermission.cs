@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class CalendarPermission : Entity, IParsable {
         /// <summary>List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.</summary>
         public List<string> AllowedRoles {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedRoles)); }
-            set { BackingStore?.Set(nameof(AllowedRoles), value); }
+            get { return BackingStore?.Get<List<string>>("allowedRoles"); }
+            set { BackingStore?.Set("allowedRoles", value); }
         }
         /// <summary>Represents a sharee or delegate who has access to the calendar. For the &apos;My Organization&apos; sharee, the address property is null. Read-only.</summary>
         public Microsoft.Graph.Models.EmailAddress EmailAddress {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailAddress>(nameof(EmailAddress)); }
-            set { BackingStore?.Set(nameof(EmailAddress), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailAddress>("emailAddress"); }
+            set { BackingStore?.Set("emailAddress", value); }
         }
         /// <summary>True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.</summary>
         public bool? IsInsideOrganization {
-            get { return BackingStore?.Get<bool?>(nameof(IsInsideOrganization)); }
-            set { BackingStore?.Set(nameof(IsInsideOrganization), value); }
+            get { return BackingStore?.Get<bool?>("isInsideOrganization"); }
+            set { BackingStore?.Set("isInsideOrganization", value); }
         }
         /// <summary>True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The &apos;My organization&apos; user determines the permissions other people within your organization have to the given calendar. You cannot remove &apos;My organization&apos; as a sharee to a calendar.</summary>
         public bool? IsRemovable {
-            get { return BackingStore?.Get<bool?>(nameof(IsRemovable)); }
-            set { BackingStore?.Set(nameof(IsRemovable), value); }
+            get { return BackingStore?.Get<bool?>("isRemovable"); }
+            set { BackingStore?.Set("isRemovable", value); }
         }
         /// <summary>Current permission level of the calendar sharee or delegate.</summary>
         public CalendarRoleType? Role {
-            get { return BackingStore?.Get<CalendarRoleType?>(nameof(Role)); }
-            set { BackingStore?.Set(nameof(Role), value); }
+            get { return BackingStore?.Get<CalendarRoleType?>("role"); }
+            set { BackingStore?.Set("role", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

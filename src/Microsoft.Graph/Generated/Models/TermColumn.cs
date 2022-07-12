@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Models {
     public class TermColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Specifies whether the column will allow more than one value</summary>
         public bool? AllowMultipleValues {
-            get { return BackingStore?.Get<bool?>(nameof(AllowMultipleValues)); }
-            set { BackingStore?.Set(nameof(AllowMultipleValues), value); }
+            get { return BackingStore?.Get<bool?>("allowMultipleValues"); }
+            set { BackingStore?.Set("allowMultipleValues", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The parentTerm property</summary>
         public Term ParentTerm {
-            get { return BackingStore?.Get<Term>(nameof(ParentTerm)); }
-            set { BackingStore?.Set(nameof(ParentTerm), value); }
+            get { return BackingStore?.Get<Term>("parentTerm"); }
+            set { BackingStore?.Set("parentTerm", value); }
         }
         /// <summary>Specifies whether to display the entire term path or only the term label.</summary>
         public bool? ShowFullyQualifiedName {
-            get { return BackingStore?.Get<bool?>(nameof(ShowFullyQualifiedName)); }
-            set { BackingStore?.Set(nameof(ShowFullyQualifiedName), value); }
+            get { return BackingStore?.Get<bool?>("showFullyQualifiedName"); }
+            set { BackingStore?.Set("showFullyQualifiedName", value); }
         }
         /// <summary>The termSet property</summary>
         public Microsoft.Graph.Models.TermStore.Set TermSet {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Set>(nameof(TermSet)); }
-            set { BackingStore?.Set(nameof(TermSet), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Set>("termSet"); }
+            set { BackingStore?.Set("termSet", value); }
         }
         /// <summary>
         /// Instantiates a new termColumn and sets the default values.

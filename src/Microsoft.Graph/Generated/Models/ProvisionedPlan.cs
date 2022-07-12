@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class ProvisionedPlan : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>For example, &apos;Enabled&apos;.</summary>
         public string CapabilityStatus {
-            get { return BackingStore?.Get<string>(nameof(CapabilityStatus)); }
-            set { BackingStore?.Set(nameof(CapabilityStatus), value); }
+            get { return BackingStore?.Get<string>("capabilityStatus"); }
+            set { BackingStore?.Set("capabilityStatus", value); }
         }
         /// <summary>For example, &apos;Success&apos;.</summary>
         public string ProvisioningStatus {
-            get { return BackingStore?.Get<string>(nameof(ProvisioningStatus)); }
-            set { BackingStore?.Set(nameof(ProvisioningStatus), value); }
+            get { return BackingStore?.Get<string>("provisioningStatus"); }
+            set { BackingStore?.Set("provisioningStatus", value); }
         }
         /// <summary>The name of the service; for example, &apos;AccessControlS2S&apos;</summary>
         public string Service {
-            get { return BackingStore?.Get<string>(nameof(Service)); }
-            set { BackingStore?.Set(nameof(Service), value); }
+            get { return BackingStore?.Get<string>("service"); }
+            set { BackingStore?.Set("service", value); }
         }
         /// <summary>
         /// Instantiates a new provisionedPlan and sets the default values.

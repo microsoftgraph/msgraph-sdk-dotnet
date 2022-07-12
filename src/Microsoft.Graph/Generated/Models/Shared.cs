@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class Shared : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identity of the owner of the shared item. Read-only.</summary>
         public IdentitySet Owner {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Owner)); }
-            set { BackingStore?.Set(nameof(Owner), value); }
+            get { return BackingStore?.Get<IdentitySet>("owner"); }
+            set { BackingStore?.Set("owner", value); }
         }
         /// <summary>Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.</summary>
         public string Scope {
-            get { return BackingStore?.Get<string>(nameof(Scope)); }
-            set { BackingStore?.Set(nameof(Scope), value); }
+            get { return BackingStore?.Get<string>("scope"); }
+            set { BackingStore?.Set("scope", value); }
         }
         /// <summary>The identity of the user who shared the item. Read-only.</summary>
         public IdentitySet SharedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(SharedBy)); }
-            set { BackingStore?.Set(nameof(SharedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("sharedBy"); }
+            set { BackingStore?.Set("sharedBy", value); }
         }
         /// <summary>The UTC date and time when the item was shared. Read-only.</summary>
         public DateTimeOffset? SharedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(SharedDateTime)); }
-            set { BackingStore?.Set(nameof(SharedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("sharedDateTime"); }
+            set { BackingStore?.Set("sharedDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new shared and sets the default values.

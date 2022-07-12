@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class SwapShiftsChangeRequest : OfferShiftRequest, IParsable {
         /// <summary>Shift ID for the recipient user with whom the request is to swap.</summary>
         public string RecipientShiftId {
-            get { return BackingStore?.Get<string>(nameof(RecipientShiftId)); }
-            set { BackingStore?.Set(nameof(RecipientShiftId), value); }
+            get { return BackingStore?.Get<string>("recipientShiftId"); }
+            set { BackingStore?.Set("recipientShiftId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

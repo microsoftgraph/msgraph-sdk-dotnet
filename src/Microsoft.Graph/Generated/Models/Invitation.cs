@@ -4,52 +4,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of invitation entities.</summary>
     public class Invitation : Entity, IParsable {
         /// <summary>The user created as part of the invitation creation. Read-Only</summary>
         public User InvitedUser {
-            get { return BackingStore?.Get<User>(nameof(InvitedUser)); }
-            set { BackingStore?.Set(nameof(InvitedUser), value); }
+            get { return BackingStore?.Get<User>("invitedUser"); }
+            set { BackingStore?.Set("invitedUser", value); }
         }
         /// <summary>The display name of the user being invited.</summary>
         public string InvitedUserDisplayName {
-            get { return BackingStore?.Get<string>(nameof(InvitedUserDisplayName)); }
-            set { BackingStore?.Set(nameof(InvitedUserDisplayName), value); }
+            get { return BackingStore?.Get<string>("invitedUserDisplayName"); }
+            set { BackingStore?.Set("invitedUserDisplayName", value); }
         }
         /// <summary>The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&amp;)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`</summary>
         public string InvitedUserEmailAddress {
-            get { return BackingStore?.Get<string>(nameof(InvitedUserEmailAddress)); }
-            set { BackingStore?.Set(nameof(InvitedUserEmailAddress), value); }
+            get { return BackingStore?.Get<string>("invitedUserEmailAddress"); }
+            set { BackingStore?.Set("invitedUserEmailAddress", value); }
         }
         /// <summary>Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.</summary>
         public Microsoft.Graph.Models.InvitedUserMessageInfo InvitedUserMessageInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.InvitedUserMessageInfo>(nameof(InvitedUserMessageInfo)); }
-            set { BackingStore?.Set(nameof(InvitedUserMessageInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.InvitedUserMessageInfo>("invitedUserMessageInfo"); }
+            set { BackingStore?.Set("invitedUserMessageInfo", value); }
         }
         /// <summary>The userType of the user being invited. By default, this is Guest. You can invite as Member if you&apos;re are company administrator. The default is false.</summary>
         public string InvitedUserType {
-            get { return BackingStore?.Get<string>(nameof(InvitedUserType)); }
-            set { BackingStore?.Set(nameof(InvitedUserType), value); }
+            get { return BackingStore?.Get<string>("invitedUserType"); }
+            set { BackingStore?.Set("invitedUserType", value); }
         }
         /// <summary>The URL the user can use to redeem their invitation. Read-only.</summary>
         public string InviteRedeemUrl {
-            get { return BackingStore?.Get<string>(nameof(InviteRedeemUrl)); }
-            set { BackingStore?.Set(nameof(InviteRedeemUrl), value); }
+            get { return BackingStore?.Get<string>("inviteRedeemUrl"); }
+            set { BackingStore?.Set("inviteRedeemUrl", value); }
         }
         /// <summary>The URL user should be redirected to once the invitation is redeemed. Required.</summary>
         public string InviteRedirectUrl {
-            get { return BackingStore?.Get<string>(nameof(InviteRedirectUrl)); }
-            set { BackingStore?.Set(nameof(InviteRedirectUrl), value); }
+            get { return BackingStore?.Get<string>("inviteRedirectUrl"); }
+            set { BackingStore?.Set("inviteRedirectUrl", value); }
         }
         /// <summary>Indicates whether an email should be sent to the user being invited. The default is false.</summary>
         public bool? SendInvitationMessage {
-            get { return BackingStore?.Get<bool?>(nameof(SendInvitationMessage)); }
-            set { BackingStore?.Set(nameof(SendInvitationMessage), value); }
+            get { return BackingStore?.Get<bool?>("sendInvitationMessage"); }
+            set { BackingStore?.Set("sendInvitationMessage", value); }
         }
         /// <summary>The status of the invitation. Possible values: PendingAcceptance, Completed, InProgress, and Error</summary>
         public string Status {
-            get { return BackingStore?.Get<string>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<string>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

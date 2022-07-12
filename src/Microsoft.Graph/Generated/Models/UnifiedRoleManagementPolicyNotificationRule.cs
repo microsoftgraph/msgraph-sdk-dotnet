@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Models {
     public class UnifiedRoleManagementPolicyNotificationRule : UnifiedRoleManagementPolicyRule, IParsable {
         /// <summary>Indicates whether a default recipient will receive the notification email.</summary>
         public bool? IsDefaultRecipientsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefaultRecipientsEnabled)); }
-            set { BackingStore?.Set(nameof(IsDefaultRecipientsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isDefaultRecipientsEnabled"); }
+            set { BackingStore?.Set("isDefaultRecipientsEnabled", value); }
         }
         /// <summary>The level of notification. The possible values are None, Critical, All.</summary>
         public string NotificationLevel {
-            get { return BackingStore?.Get<string>(nameof(NotificationLevel)); }
-            set { BackingStore?.Set(nameof(NotificationLevel), value); }
+            get { return BackingStore?.Get<string>("notificationLevel"); }
+            set { BackingStore?.Set("notificationLevel", value); }
         }
         /// <summary>The list of recipients of the email notifications.</summary>
         public List<string> NotificationRecipients {
-            get { return BackingStore?.Get<List<string>>(nameof(NotificationRecipients)); }
-            set { BackingStore?.Set(nameof(NotificationRecipients), value); }
+            get { return BackingStore?.Get<List<string>>("notificationRecipients"); }
+            set { BackingStore?.Set("notificationRecipients", value); }
         }
         /// <summary>The type of notification. Only Email is supported.</summary>
         public string NotificationType {
-            get { return BackingStore?.Get<string>(nameof(NotificationType)); }
-            set { BackingStore?.Set(nameof(NotificationType), value); }
+            get { return BackingStore?.Get<string>("notificationType"); }
+            set { BackingStore?.Set("notificationType", value); }
         }
         /// <summary>The type of recipient of the notification. The possible values are Requestor, Approver, Admin.</summary>
         public string RecipientType {
-            get { return BackingStore?.Get<string>(nameof(RecipientType)); }
-            set { BackingStore?.Set(nameof(RecipientType), value); }
+            get { return BackingStore?.Get<string>("recipientType"); }
+            set { BackingStore?.Set("recipientType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

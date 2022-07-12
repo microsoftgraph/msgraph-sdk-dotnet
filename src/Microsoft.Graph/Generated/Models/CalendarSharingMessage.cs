@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class CalendarSharingMessage : Message, IParsable {
         /// <summary>The canAccept property</summary>
         public bool? CanAccept {
-            get { return BackingStore?.Get<bool?>(nameof(CanAccept)); }
-            set { BackingStore?.Set(nameof(CanAccept), value); }
+            get { return BackingStore?.Get<bool?>("canAccept"); }
+            set { BackingStore?.Set("canAccept", value); }
         }
         /// <summary>The sharingMessageAction property</summary>
         public CalendarSharingMessageAction SharingMessageAction {
-            get { return BackingStore?.Get<CalendarSharingMessageAction>(nameof(SharingMessageAction)); }
-            set { BackingStore?.Set(nameof(SharingMessageAction), value); }
+            get { return BackingStore?.Get<CalendarSharingMessageAction>("sharingMessageAction"); }
+            set { BackingStore?.Set("sharingMessageAction", value); }
         }
         /// <summary>The sharingMessageActions property</summary>
         public List<CalendarSharingMessageAction> SharingMessageActions {
-            get { return BackingStore?.Get<List<CalendarSharingMessageAction>>(nameof(SharingMessageActions)); }
-            set { BackingStore?.Set(nameof(SharingMessageActions), value); }
+            get { return BackingStore?.Get<List<CalendarSharingMessageAction>>("sharingMessageActions"); }
+            set { BackingStore?.Set("sharingMessageActions", value); }
         }
         /// <summary>The suggestedCalendarName property</summary>
         public string SuggestedCalendarName {
-            get { return BackingStore?.Get<string>(nameof(SuggestedCalendarName)); }
-            set { BackingStore?.Set(nameof(SuggestedCalendarName), value); }
+            get { return BackingStore?.Get<string>("suggestedCalendarName"); }
+            set { BackingStore?.Set("suggestedCalendarName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

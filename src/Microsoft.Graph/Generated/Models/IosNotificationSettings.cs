@@ -9,55 +9,55 @@ namespace Microsoft.Graph.Models {
     public class IosNotificationSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Indicates the type of alert for notifications for this app. Possible values are: deviceDefault, banner, modal, none.</summary>
+        /// <summary>Notification Settings Alert Type.</summary>
         public IosNotificationAlertType? AlertType {
-            get { return BackingStore?.Get<IosNotificationAlertType?>(nameof(AlertType)); }
-            set { BackingStore?.Set(nameof(AlertType), value); }
+            get { return BackingStore?.Get<IosNotificationAlertType?>("alertType"); }
+            set { BackingStore?.Set("alertType", value); }
         }
         /// <summary>Application name to be associated with the bundleID.</summary>
         public string AppName {
-            get { return BackingStore?.Get<string>(nameof(AppName)); }
-            set { BackingStore?.Set(nameof(AppName), value); }
+            get { return BackingStore?.Get<string>("appName"); }
+            set { BackingStore?.Set("appName", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether badges are allowed for this app.</summary>
         public bool? BadgesEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(BadgesEnabled)); }
-            set { BackingStore?.Set(nameof(BadgesEnabled), value); }
+            get { return BackingStore?.Get<bool?>("badgesEnabled"); }
+            set { BackingStore?.Set("badgesEnabled", value); }
         }
         /// <summary>Bundle id of app to which to apply these notification settings.</summary>
         public string BundleID {
-            get { return BackingStore?.Get<string>(nameof(BundleID)); }
-            set { BackingStore?.Set(nameof(BundleID), value); }
+            get { return BackingStore?.Get<string>("bundleID"); }
+            set { BackingStore?.Set("bundleID", value); }
         }
         /// <summary>Indicates whether notifications are allowed for this app.</summary>
         public bool? Enabled {
-            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
-            set { BackingStore?.Set(nameof(Enabled), value); }
+            get { return BackingStore?.Get<bool?>("enabled"); }
+            set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>Publisher to be associated with the bundleID.</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
         /// <summary>Indicates whether notifications can be shown in notification center.</summary>
         public bool? ShowInNotificationCenter {
-            get { return BackingStore?.Get<bool?>(nameof(ShowInNotificationCenter)); }
-            set { BackingStore?.Set(nameof(ShowInNotificationCenter), value); }
+            get { return BackingStore?.Get<bool?>("showInNotificationCenter"); }
+            set { BackingStore?.Set("showInNotificationCenter", value); }
         }
         /// <summary>Indicates whether notifications can be shown on the lock screen.</summary>
         public bool? ShowOnLockScreen {
-            get { return BackingStore?.Get<bool?>(nameof(ShowOnLockScreen)); }
-            set { BackingStore?.Set(nameof(ShowOnLockScreen), value); }
+            get { return BackingStore?.Get<bool?>("showOnLockScreen"); }
+            set { BackingStore?.Set("showOnLockScreen", value); }
         }
         /// <summary>Indicates whether sounds are allowed for this app.</summary>
         public bool? SoundsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SoundsEnabled)); }
-            set { BackingStore?.Set(nameof(SoundsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("soundsEnabled"); }
+            set { BackingStore?.Set("soundsEnabled", value); }
         }
         /// <summary>
         /// Instantiates a new iosNotificationSettings and sets the default values.

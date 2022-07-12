@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class AadUserConversationMember : ConversationMember, IParsable {
         /// <summary>The email address of the user.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>TenantId which the Azure AD user belongs to.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>The user property</summary>
         public Microsoft.Graph.Models.User User {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.User>(nameof(User)); }
-            set { BackingStore?.Set(nameof(User), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.User>("user"); }
+            set { BackingStore?.Set("user", value); }
         }
         /// <summary>The GUID of the user.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

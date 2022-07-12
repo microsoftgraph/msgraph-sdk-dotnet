@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the solutionsRoot singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum BookingPriceType {
         /// <summary>The price of the service is not defined.</summary>
         Undefined,

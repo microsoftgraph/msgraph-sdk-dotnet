@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ScopedRoleMembership : Entity, IParsable {
         /// <summary>Unique identifier for the administrative unit that the directory role is scoped to</summary>
         public string AdministrativeUnitId {
-            get { return BackingStore?.Get<string>(nameof(AdministrativeUnitId)); }
-            set { BackingStore?.Set(nameof(AdministrativeUnitId), value); }
+            get { return BackingStore?.Get<string>("administrativeUnitId"); }
+            set { BackingStore?.Set("administrativeUnitId", value); }
         }
         /// <summary>Unique identifier for the directory role that the member is in.</summary>
         public string RoleId {
-            get { return BackingStore?.Get<string>(nameof(RoleId)); }
-            set { BackingStore?.Set(nameof(RoleId), value); }
+            get { return BackingStore?.Get<string>("roleId"); }
+            set { BackingStore?.Set("roleId", value); }
         }
         /// <summary>The roleMemberInfo property</summary>
         public Identity RoleMemberInfo {
-            get { return BackingStore?.Get<Identity>(nameof(RoleMemberInfo)); }
-            set { BackingStore?.Set(nameof(RoleMemberInfo), value); }
+            get { return BackingStore?.Get<Identity>("roleMemberInfo"); }
+            set { BackingStore?.Set("roleMemberInfo", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class UpdateWindowsDeviceAccountActionParameter : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Not yet documented</summary>
         public bool? CalendarSyncEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(CalendarSyncEnabled)); }
-            set { BackingStore?.Set(nameof(CalendarSyncEnabled), value); }
+            get { return BackingStore?.Get<bool?>("calendarSyncEnabled"); }
+            set { BackingStore?.Set("calendarSyncEnabled", value); }
         }
         /// <summary>Not yet documented</summary>
         public WindowsDeviceAccount DeviceAccount {
-            get { return BackingStore?.Get<WindowsDeviceAccount>(nameof(DeviceAccount)); }
-            set { BackingStore?.Set(nameof(DeviceAccount), value); }
+            get { return BackingStore?.Get<WindowsDeviceAccount>("deviceAccount"); }
+            set { BackingStore?.Set("deviceAccount", value); }
         }
         /// <summary>Not yet documented</summary>
         public string DeviceAccountEmail {
-            get { return BackingStore?.Get<string>(nameof(DeviceAccountEmail)); }
-            set { BackingStore?.Set(nameof(DeviceAccountEmail), value); }
+            get { return BackingStore?.Get<string>("deviceAccountEmail"); }
+            set { BackingStore?.Set("deviceAccountEmail", value); }
         }
         /// <summary>Not yet documented</summary>
         public string ExchangeServer {
-            get { return BackingStore?.Get<string>(nameof(ExchangeServer)); }
-            set { BackingStore?.Set(nameof(ExchangeServer), value); }
+            get { return BackingStore?.Get<string>("exchangeServer"); }
+            set { BackingStore?.Set("exchangeServer", value); }
         }
         /// <summary>Not yet documented</summary>
         public bool? PasswordRotationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordRotationEnabled)); }
-            set { BackingStore?.Set(nameof(PasswordRotationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("passwordRotationEnabled"); }
+            set { BackingStore?.Set("passwordRotationEnabled", value); }
         }
         /// <summary>Not yet documented</summary>
         public string SessionInitiationProtocalAddress {
-            get { return BackingStore?.Get<string>(nameof(SessionInitiationProtocalAddress)); }
-            set { BackingStore?.Set(nameof(SessionInitiationProtocalAddress), value); }
+            get { return BackingStore?.Get<string>("sessionInitiationProtocalAddress"); }
+            set { BackingStore?.Set("sessionInitiationProtocalAddress", value); }
         }
         /// <summary>
         /// Instantiates a new updateWindowsDeviceAccountActionParameter and sets the default values.

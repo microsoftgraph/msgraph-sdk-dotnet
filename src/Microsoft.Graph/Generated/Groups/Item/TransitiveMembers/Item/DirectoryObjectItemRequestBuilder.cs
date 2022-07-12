@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get transitiveMembers from groups
+        /// The direct and transitive members of a group. Nullable.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DirectoryObjectItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get transitiveMembers from groups
+        /// The direct and transitive members of a group. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers.Item {
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get transitiveMembers from groups</summary>
+        /// <summary>The direct and transitive members of a group. Nullable.</summary>
         public class DirectoryObjectItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

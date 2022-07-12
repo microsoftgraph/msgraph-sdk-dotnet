@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class AccessPackageAssignmentApprovalSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If false, then approval is not required for new requests in this policy.</summary>
         public bool? IsApprovalRequiredForAdd {
-            get { return BackingStore?.Get<bool?>(nameof(IsApprovalRequiredForAdd)); }
-            set { BackingStore?.Set(nameof(IsApprovalRequiredForAdd), value); }
+            get { return BackingStore?.Get<bool?>("isApprovalRequiredForAdd"); }
+            set { BackingStore?.Set("isApprovalRequiredForAdd", value); }
         }
         /// <summary>If false, then approval is not required for updates to requests in this policy.</summary>
         public bool? IsApprovalRequiredForUpdate {
-            get { return BackingStore?.Get<bool?>(nameof(IsApprovalRequiredForUpdate)); }
-            set { BackingStore?.Set(nameof(IsApprovalRequiredForUpdate), value); }
+            get { return BackingStore?.Get<bool?>("isApprovalRequiredForUpdate"); }
+            set { BackingStore?.Set("isApprovalRequiredForUpdate", value); }
         }
         /// <summary>If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.</summary>
         public List<AccessPackageApprovalStage> Stages {
-            get { return BackingStore?.Get<List<AccessPackageApprovalStage>>(nameof(Stages)); }
-            set { BackingStore?.Set(nameof(Stages), value); }
+            get { return BackingStore?.Get<List<AccessPackageApprovalStage>>("stages"); }
+            set { BackingStore?.Set("stages", value); }
         }
         /// <summary>
         /// Instantiates a new accessPackageAssignmentApprovalSettings and sets the default values.

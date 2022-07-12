@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class WorkbookOperation : Entity, IParsable {
         /// <summary>The error returned by the operation.</summary>
         public WorkbookOperationError Error {
-            get { return BackingStore?.Get<WorkbookOperationError>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<WorkbookOperationError>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>The resource URI for the result.</summary>
         public string ResourceLocation {
-            get { return BackingStore?.Get<string>(nameof(ResourceLocation)); }
-            set { BackingStore?.Set(nameof(ResourceLocation), value); }
+            get { return BackingStore?.Get<string>("resourceLocation"); }
+            set { BackingStore?.Set("resourceLocation", value); }
         }
-        /// <summary>The current status of the operation. Possible values are: notStarted, running, succeeded, failed.</summary>
+        /// <summary>The status property</summary>
         public WorkbookOperationStatus? Status {
-            get { return BackingStore?.Get<WorkbookOperationStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<WorkbookOperationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class WindowsDefenderAdvancedThreatProtectionConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Windows Defender AdvancedThreatProtection &apos;Allow Sample Sharing&apos; Rule</summary>
         public bool? AllowSampleSharing {
-            get { return BackingStore?.Get<bool?>(nameof(AllowSampleSharing)); }
-            set { BackingStore?.Set(nameof(AllowSampleSharing), value); }
+            get { return BackingStore?.Get<bool?>("allowSampleSharing"); }
+            set { BackingStore?.Set("allowSampleSharing", value); }
         }
         /// <summary>Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.</summary>
         public bool? EnableExpeditedTelemetryReporting {
-            get { return BackingStore?.Get<bool?>(nameof(EnableExpeditedTelemetryReporting)); }
-            set { BackingStore?.Set(nameof(EnableExpeditedTelemetryReporting), value); }
+            get { return BackingStore?.Get<bool?>("enableExpeditedTelemetryReporting"); }
+            set { BackingStore?.Set("enableExpeditedTelemetryReporting", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

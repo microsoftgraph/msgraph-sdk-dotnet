@@ -6,25 +6,25 @@ using System.Linq;
 namespace Microsoft.Graph.Models {
     /// <summary>Scheduled Action Configuration</summary>
     public class DeviceComplianceActionItem : Entity, IParsable {
-        /// <summary>What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.</summary>
+        /// <summary>Scheduled Action Type Enum</summary>
         public DeviceComplianceActionType? ActionType {
-            get { return BackingStore?.Get<DeviceComplianceActionType?>(nameof(ActionType)); }
-            set { BackingStore?.Set(nameof(ActionType), value); }
+            get { return BackingStore?.Get<DeviceComplianceActionType?>("actionType"); }
+            set { BackingStore?.Set("actionType", value); }
         }
         /// <summary>Number of hours to wait till the action will be enforced. Valid values 0 to 8760</summary>
         public int? GracePeriodHours {
-            get { return BackingStore?.Get<int?>(nameof(GracePeriodHours)); }
-            set { BackingStore?.Set(nameof(GracePeriodHours), value); }
+            get { return BackingStore?.Get<int?>("gracePeriodHours"); }
+            set { BackingStore?.Set("gracePeriodHours", value); }
         }
         /// <summary>A list of group IDs to speicify who to CC this notification message to.</summary>
         public List<string> NotificationMessageCCList {
-            get { return BackingStore?.Get<List<string>>(nameof(NotificationMessageCCList)); }
-            set { BackingStore?.Set(nameof(NotificationMessageCCList), value); }
+            get { return BackingStore?.Get<List<string>>("notificationMessageCCList"); }
+            set { BackingStore?.Set("notificationMessageCCList", value); }
         }
         /// <summary>What notification Message template to use</summary>
         public string NotificationTemplateId {
-            get { return BackingStore?.Get<string>(nameof(NotificationTemplateId)); }
-            set { BackingStore?.Set(nameof(NotificationTemplateId), value); }
+            get { return BackingStore?.Get<string>("notificationTemplateId"); }
+            set { BackingStore?.Set("notificationTemplateId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

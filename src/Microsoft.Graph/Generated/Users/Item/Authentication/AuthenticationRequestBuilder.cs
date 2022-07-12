@@ -3,6 +3,8 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Users.Item.Authentication.Fido2Methods;
 using Microsoft.Graph.Users.Item.Authentication.Methods;
 using Microsoft.Graph.Users.Item.Authentication.MicrosoftAuthenticatorMethods;
+using Microsoft.Graph.Users.Item.Authentication.Operations;
+using Microsoft.Graph.Users.Item.Authentication.PasswordMethods;
 using Microsoft.Graph.Users.Item.Authentication.TemporaryAccessPassMethods;
 using Microsoft.Graph.Users.Item.Authentication.WindowsHelloForBusinessMethods;
 using Microsoft.Kiota.Abstractions;
@@ -27,6 +29,14 @@ namespace Microsoft.Graph.Users.Item.Authentication {
         /// <summary>The microsoftAuthenticatorMethods property</summary>
         public MicrosoftAuthenticatorMethodsRequestBuilder MicrosoftAuthenticatorMethods { get =>
             new MicrosoftAuthenticatorMethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The operations property</summary>
+        public OperationsRequestBuilder Operations { get =>
+            new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The passwordMethods property</summary>
+        public PasswordMethodsRequestBuilder PasswordMethods { get =>
+            new PasswordMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

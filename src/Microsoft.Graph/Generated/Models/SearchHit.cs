@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class SearchHit : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the content source which the externalItem is part of .</summary>
         public string ContentSource {
-            get { return BackingStore?.Get<string>(nameof(ContentSource)); }
-            set { BackingStore?.Set(nameof(ContentSource), value); }
+            get { return BackingStore?.Get<string>("contentSource"); }
+            set { BackingStore?.Set("contentSource", value); }
         }
         /// <summary>The internal identifier for the item.</summary>
         public string HitId {
-            get { return BackingStore?.Get<string>(nameof(HitId)); }
-            set { BackingStore?.Set(nameof(HitId), value); }
+            get { return BackingStore?.Get<string>("hitId"); }
+            set { BackingStore?.Set("hitId", value); }
         }
         /// <summary>The rank or the order of the result.</summary>
         public int? Rank {
-            get { return BackingStore?.Get<int?>(nameof(Rank)); }
-            set { BackingStore?.Set(nameof(Rank), value); }
+            get { return BackingStore?.Get<int?>("rank"); }
+            set { BackingStore?.Set("rank", value); }
         }
         /// <summary>The resource property</summary>
         public Entity Resource {
-            get { return BackingStore?.Get<Entity>(nameof(Resource)); }
-            set { BackingStore?.Set(nameof(Resource), value); }
+            get { return BackingStore?.Get<Entity>("resource"); }
+            set { BackingStore?.Set("resource", value); }
         }
         /// <summary>ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.</summary>
         public string ResultTemplateId {
-            get { return BackingStore?.Get<string>(nameof(ResultTemplateId)); }
-            set { BackingStore?.Set(nameof(ResultTemplateId), value); }
+            get { return BackingStore?.Get<string>("resultTemplateId"); }
+            set { BackingStore?.Set("resultTemplateId", value); }
         }
         /// <summary>A summary of the result, if a summary is available.</summary>
         public string Summary {
-            get { return BackingStore?.Get<string>(nameof(Summary)); }
-            set { BackingStore?.Set(nameof(Summary), value); }
+            get { return BackingStore?.Get<string>("summary"); }
+            set { BackingStore?.Set("summary", value); }
         }
         /// <summary>
         /// Instantiates a new searchHit and sets the default values.

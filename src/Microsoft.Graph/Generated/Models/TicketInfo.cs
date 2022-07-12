@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class TicketInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ticket number.</summary>
         public string TicketNumber {
-            get { return BackingStore?.Get<string>(nameof(TicketNumber)); }
-            set { BackingStore?.Set(nameof(TicketNumber), value); }
+            get { return BackingStore?.Get<string>("ticketNumber"); }
+            set { BackingStore?.Set("ticketNumber", value); }
         }
         /// <summary>The description of the ticket system.</summary>
         public string TicketSystem {
-            get { return BackingStore?.Get<string>(nameof(TicketSystem)); }
-            set { BackingStore?.Set(nameof(TicketSystem), value); }
+            get { return BackingStore?.Get<string>("ticketSystem"); }
+            set { BackingStore?.Set("ticketSystem", value); }
         }
         /// <summary>
         /// Instantiates a new ticketInfo and sets the default values.

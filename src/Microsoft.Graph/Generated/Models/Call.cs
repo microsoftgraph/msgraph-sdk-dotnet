@@ -8,118 +8,118 @@ namespace Microsoft.Graph.Models {
     public class Call : Entity, IParsable {
         /// <summary>The audioRoutingGroups property</summary>
         public List<AudioRoutingGroup> AudioRoutingGroups {
-            get { return BackingStore?.Get<List<AudioRoutingGroup>>(nameof(AudioRoutingGroups)); }
-            set { BackingStore?.Set(nameof(AudioRoutingGroups), value); }
+            get { return BackingStore?.Get<List<AudioRoutingGroup>>("audioRoutingGroups"); }
+            set { BackingStore?.Set("audioRoutingGroups", value); }
         }
         /// <summary>The callback URL on which callbacks will be delivered. Must be https.</summary>
         public string CallbackUri {
-            get { return BackingStore?.Get<string>(nameof(CallbackUri)); }
-            set { BackingStore?.Set(nameof(CallbackUri), value); }
+            get { return BackingStore?.Get<string>("callbackUri"); }
+            set { BackingStore?.Set("callbackUri", value); }
         }
         /// <summary>A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.</summary>
         public string CallChainId {
-            get { return BackingStore?.Get<string>(nameof(CallChainId)); }
-            set { BackingStore?.Set(nameof(CallChainId), value); }
+            get { return BackingStore?.Get<string>("callChainId"); }
+            set { BackingStore?.Set("callChainId", value); }
         }
         /// <summary>Contains the optional features for the call.</summary>
         public Microsoft.Graph.Models.CallOptions CallOptions {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.CallOptions>(nameof(CallOptions)); }
-            set { BackingStore?.Set(nameof(CallOptions), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallOptions>("callOptions"); }
+            set { BackingStore?.Set("callOptions", value); }
         }
         /// <summary>The routing information on how the call was retargeted. Read-only.</summary>
         public List<CallRoute> CallRoutes {
-            get { return BackingStore?.Get<List<CallRoute>>(nameof(CallRoutes)); }
-            set { BackingStore?.Set(nameof(CallRoutes), value); }
+            get { return BackingStore?.Get<List<CallRoute>>("callRoutes"); }
+            set { BackingStore?.Set("callRoutes", value); }
         }
         /// <summary>The chat information. Required information for meeting scenarios.</summary>
         public Microsoft.Graph.Models.ChatInfo ChatInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatInfo>(nameof(ChatInfo)); }
-            set { BackingStore?.Set(nameof(ChatInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatInfo>("chatInfo"); }
+            set { BackingStore?.Set("chatInfo", value); }
         }
         /// <summary>The direction of the call. The possible value are incoming or outgoing. Read-only.</summary>
         public CallDirection? Direction {
-            get { return BackingStore?.Get<CallDirection?>(nameof(Direction)); }
-            set { BackingStore?.Set(nameof(Direction), value); }
+            get { return BackingStore?.Get<CallDirection?>("direction"); }
+            set { BackingStore?.Set("direction", value); }
         }
         /// <summary>The context associated with an incoming call. Read-only. Server generated.</summary>
         public Microsoft.Graph.Models.IncomingContext IncomingContext {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.IncomingContext>(nameof(IncomingContext)); }
-            set { BackingStore?.Set(nameof(IncomingContext), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IncomingContext>("incomingContext"); }
+            set { BackingStore?.Set("incomingContext", value); }
         }
         /// <summary>The media configuration. Required information for creating peer to peer calls or joining meetings.</summary>
         public Microsoft.Graph.Models.MediaConfig MediaConfig {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaConfig>(nameof(MediaConfig)); }
-            set { BackingStore?.Set(nameof(MediaConfig), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaConfig>("mediaConfig"); }
+            set { BackingStore?.Set("mediaConfig", value); }
         }
         /// <summary>Read-only. The call media state.</summary>
         public CallMediaState MediaState {
-            get { return BackingStore?.Get<CallMediaState>(nameof(MediaState)); }
-            set { BackingStore?.Set(nameof(MediaState), value); }
+            get { return BackingStore?.Get<CallMediaState>("mediaState"); }
+            set { BackingStore?.Set("mediaState", value); }
         }
         /// <summary>The meeting information. Required information for meeting scenarios.</summary>
         public Microsoft.Graph.Models.MeetingInfo MeetingInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingInfo>(nameof(MeetingInfo)); }
-            set { BackingStore?.Set(nameof(MeetingInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingInfo>("meetingInfo"); }
+            set { BackingStore?.Set("meetingInfo", value); }
         }
         /// <summary>The myParticipantId property</summary>
         public string MyParticipantId {
-            get { return BackingStore?.Get<string>(nameof(MyParticipantId)); }
-            set { BackingStore?.Set(nameof(MyParticipantId), value); }
+            get { return BackingStore?.Get<string>("myParticipantId"); }
+            set { BackingStore?.Set("myParticipantId", value); }
         }
         /// <summary>The operations property</summary>
         public List<CommsOperation> Operations {
-            get { return BackingStore?.Get<List<CommsOperation>>(nameof(Operations)); }
-            set { BackingStore?.Set(nameof(Operations), value); }
+            get { return BackingStore?.Get<List<CommsOperation>>("operations"); }
+            set { BackingStore?.Set("operations", value); }
         }
         /// <summary>The participants property</summary>
         public List<Participant> Participants {
-            get { return BackingStore?.Get<List<Participant>>(nameof(Participants)); }
-            set { BackingStore?.Set(nameof(Participants), value); }
+            get { return BackingStore?.Get<List<Participant>>("participants"); }
+            set { BackingStore?.Set("participants", value); }
         }
         /// <summary>The requestedModalities property</summary>
         public List<string> RequestedModalities {
-            get { return BackingStore?.Get<List<string>>(nameof(RequestedModalities)); }
-            set { BackingStore?.Set(nameof(RequestedModalities), value); }
+            get { return BackingStore?.Get<List<string>>("requestedModalities"); }
+            set { BackingStore?.Set("requestedModalities", value); }
         }
         /// <summary>The resultInfo property</summary>
         public Microsoft.Graph.Models.ResultInfo ResultInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ResultInfo>(nameof(ResultInfo)); }
-            set { BackingStore?.Set(nameof(ResultInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ResultInfo>("resultInfo"); }
+            set { BackingStore?.Set("resultInfo", value); }
         }
         /// <summary>The source property</summary>
         public ParticipantInfo Source {
-            get { return BackingStore?.Get<ParticipantInfo>(nameof(Source)); }
-            set { BackingStore?.Set(nameof(Source), value); }
+            get { return BackingStore?.Get<ParticipantInfo>("source"); }
+            set { BackingStore?.Set("source", value); }
         }
         /// <summary>The state property</summary>
         public CallState? State {
-            get { return BackingStore?.Get<CallState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<CallState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>The subject property</summary>
         public string Subject {
-            get { return BackingStore?.Get<string>(nameof(Subject)); }
-            set { BackingStore?.Set(nameof(Subject), value); }
+            get { return BackingStore?.Get<string>("subject"); }
+            set { BackingStore?.Set("subject", value); }
         }
         /// <summary>The targets property</summary>
         public List<InvitationParticipantInfo> Targets {
-            get { return BackingStore?.Get<List<InvitationParticipantInfo>>(nameof(Targets)); }
-            set { BackingStore?.Set(nameof(Targets), value); }
+            get { return BackingStore?.Get<List<InvitationParticipantInfo>>("targets"); }
+            set { BackingStore?.Set("targets", value); }
         }
         /// <summary>The tenantId property</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>The toneInfo property</summary>
         public Microsoft.Graph.Models.ToneInfo ToneInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ToneInfo>(nameof(ToneInfo)); }
-            set { BackingStore?.Set(nameof(ToneInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ToneInfo>("toneInfo"); }
+            set { BackingStore?.Set("toneInfo", value); }
         }
         /// <summary>The transcription information for the call. Read-only.</summary>
         public CallTranscriptionInfo Transcription {
-            get { return BackingStore?.Get<CallTranscriptionInfo>(nameof(Transcription)); }
-            set { BackingStore?.Set(nameof(Transcription), value); }
+            get { return BackingStore?.Get<CallTranscriptionInfo>("transcription"); }
+            set { BackingStore?.Set("transcription", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

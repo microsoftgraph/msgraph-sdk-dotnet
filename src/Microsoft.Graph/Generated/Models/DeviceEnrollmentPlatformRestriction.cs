@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Models {
     public class DeviceEnrollmentPlatformRestriction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Max OS version supported</summary>
         public string OsMaximumVersion {
-            get { return BackingStore?.Get<string>(nameof(OsMaximumVersion)); }
-            set { BackingStore?.Set(nameof(OsMaximumVersion), value); }
+            get { return BackingStore?.Get<string>("osMaximumVersion"); }
+            set { BackingStore?.Set("osMaximumVersion", value); }
         }
         /// <summary>Min OS version supported</summary>
         public string OsMinimumVersion {
-            get { return BackingStore?.Get<string>(nameof(OsMinimumVersion)); }
-            set { BackingStore?.Set(nameof(OsMinimumVersion), value); }
+            get { return BackingStore?.Get<string>("osMinimumVersion"); }
+            set { BackingStore?.Set("osMinimumVersion", value); }
         }
         /// <summary>Block personally owned devices from enrolling</summary>
         public bool? PersonalDeviceEnrollmentBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(PersonalDeviceEnrollmentBlocked)); }
-            set { BackingStore?.Set(nameof(PersonalDeviceEnrollmentBlocked), value); }
+            get { return BackingStore?.Get<bool?>("personalDeviceEnrollmentBlocked"); }
+            set { BackingStore?.Set("personalDeviceEnrollmentBlocked", value); }
         }
         /// <summary>Block the platform from enrolling</summary>
         public bool? PlatformBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(PlatformBlocked)); }
-            set { BackingStore?.Set(nameof(PlatformBlocked), value); }
+            get { return BackingStore?.Get<bool?>("platformBlocked"); }
+            set { BackingStore?.Set("platformBlocked", value); }
         }
         /// <summary>
         /// Instantiates a new deviceEnrollmentPlatformRestriction and sets the default values.

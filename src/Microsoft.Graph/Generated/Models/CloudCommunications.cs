@@ -9,23 +9,23 @@ namespace Microsoft.Graph.Models {
     public class CloudCommunications : Entity, IParsable {
         /// <summary>The callRecords property</summary>
         public List<CallRecord> CallRecords {
-            get { return BackingStore?.Get<List<CallRecord>>(nameof(CallRecords)); }
-            set { BackingStore?.Set(nameof(CallRecords), value); }
+            get { return BackingStore?.Get<List<CallRecord>>("callRecords"); }
+            set { BackingStore?.Set("callRecords", value); }
         }
         /// <summary>The calls property</summary>
         public List<Call> Calls {
-            get { return BackingStore?.Get<List<Call>>(nameof(Calls)); }
-            set { BackingStore?.Set(nameof(Calls), value); }
+            get { return BackingStore?.Get<List<Call>>("calls"); }
+            set { BackingStore?.Set("calls", value); }
         }
         /// <summary>The onlineMeetings property</summary>
         public List<OnlineMeeting> OnlineMeetings {
-            get { return BackingStore?.Get<List<OnlineMeeting>>(nameof(OnlineMeetings)); }
-            set { BackingStore?.Set(nameof(OnlineMeetings), value); }
+            get { return BackingStore?.Get<List<OnlineMeeting>>("onlineMeetings"); }
+            set { BackingStore?.Set("onlineMeetings", value); }
         }
         /// <summary>The presences property</summary>
         public List<Presence> Presences {
-            get { return BackingStore?.Get<List<Presence>>(nameof(Presences)); }
-            set { BackingStore?.Set(nameof(Presences), value); }
+            get { return BackingStore?.Get<List<Presence>>("presences"); }
+            set { BackingStore?.Set("presences", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

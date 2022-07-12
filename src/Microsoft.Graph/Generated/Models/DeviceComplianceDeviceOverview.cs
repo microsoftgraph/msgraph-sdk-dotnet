@@ -4,42 +4,41 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceComplianceDeviceOverview : Entity, IParsable {
         /// <summary>Version of the policy for that overview</summary>
         public int? ConfigurationVersion {
-            get { return BackingStore?.Get<int?>(nameof(ConfigurationVersion)); }
-            set { BackingStore?.Set(nameof(ConfigurationVersion), value); }
+            get { return BackingStore?.Get<int?>("configurationVersion"); }
+            set { BackingStore?.Set("configurationVersion", value); }
         }
         /// <summary>Number of error devices</summary>
         public int? ErrorCount {
-            get { return BackingStore?.Get<int?>(nameof(ErrorCount)); }
-            set { BackingStore?.Set(nameof(ErrorCount), value); }
+            get { return BackingStore?.Get<int?>("errorCount"); }
+            set { BackingStore?.Set("errorCount", value); }
         }
         /// <summary>Number of failed devices</summary>
         public int? FailedCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedCount)); }
-            set { BackingStore?.Set(nameof(FailedCount), value); }
+            get { return BackingStore?.Get<int?>("failedCount"); }
+            set { BackingStore?.Set("failedCount", value); }
         }
         /// <summary>Last update time</summary>
         public DateTimeOffset? LastUpdateDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdateDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdateDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
+            set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
         /// <summary>Number of not applicable devices</summary>
         public int? NotApplicableCount {
-            get { return BackingStore?.Get<int?>(nameof(NotApplicableCount)); }
-            set { BackingStore?.Set(nameof(NotApplicableCount), value); }
+            get { return BackingStore?.Get<int?>("notApplicableCount"); }
+            set { BackingStore?.Set("notApplicableCount", value); }
         }
         /// <summary>Number of pending devices</summary>
         public int? PendingCount {
-            get { return BackingStore?.Get<int?>(nameof(PendingCount)); }
-            set { BackingStore?.Set(nameof(PendingCount), value); }
+            get { return BackingStore?.Get<int?>("pendingCount"); }
+            set { BackingStore?.Set("pendingCount", value); }
         }
         /// <summary>Number of succeeded devices</summary>
         public int? SuccessCount {
-            get { return BackingStore?.Get<int?>(nameof(SuccessCount)); }
-            set { BackingStore?.Set(nameof(SuccessCount), value); }
+            get { return BackingStore?.Get<int?>("successCount"); }
+            set { BackingStore?.Set("successCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

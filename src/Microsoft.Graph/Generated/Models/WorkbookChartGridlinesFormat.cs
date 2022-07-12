@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class WorkbookChartGridlinesFormat : Entity, IParsable {
         /// <summary>Represents chart line formatting. Read-only.</summary>
         public WorkbookChartLineFormat Line {
-            get { return BackingStore?.Get<WorkbookChartLineFormat>(nameof(Line)); }
-            set { BackingStore?.Set(nameof(Line), value); }
+            get { return BackingStore?.Get<WorkbookChartLineFormat>("line"); }
+            set { BackingStore?.Set("line", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Models {
     public class ResourceOperation : Entity, IParsable {
         /// <summary>Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.</summary>
         public string ActionName {
-            get { return BackingStore?.Get<string>(nameof(ActionName)); }
-            set { BackingStore?.Set(nameof(ActionName), value); }
+            get { return BackingStore?.Get<string>("actionName"); }
+            set { BackingStore?.Set("actionName", value); }
         }
         /// <summary>Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Name of the Resource this operation is performed on.</summary>
         public string ResourceName {
-            get { return BackingStore?.Get<string>(nameof(ResourceName)); }
-            set { BackingStore?.Set(nameof(ResourceName), value); }
+            get { return BackingStore?.Get<string>("resourceName"); }
+            set { BackingStore?.Set("resourceName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

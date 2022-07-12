@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Models {
     public class AudioRoutingGroup : Entity, IParsable {
         /// <summary>List of receiving participant ids.</summary>
         public List<string> Receivers {
-            get { return BackingStore?.Get<List<string>>(nameof(Receivers)); }
-            set { BackingStore?.Set(nameof(Receivers), value); }
+            get { return BackingStore?.Get<List<string>>("receivers"); }
+            set { BackingStore?.Set("receivers", value); }
         }
-        /// <summary>Routing group mode.  Possible values are: oneToOne, multicast.</summary>
+        /// <summary>The routingMode property</summary>
         public Microsoft.Graph.Models.RoutingMode? RoutingMode {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.RoutingMode?>(nameof(RoutingMode)); }
-            set { BackingStore?.Set(nameof(RoutingMode), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RoutingMode?>("routingMode"); }
+            set { BackingStore?.Set("routingMode", value); }
         }
         /// <summary>List of source participant ids.</summary>
         public List<string> Sources {
-            get { return BackingStore?.Get<List<string>>(nameof(Sources)); }
-            set { BackingStore?.Set(nameof(Sources), value); }
+            get { return BackingStore?.Get<List<string>>("sources"); }
+            set { BackingStore?.Set("sources", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

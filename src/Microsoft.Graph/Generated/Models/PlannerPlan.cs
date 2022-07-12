@@ -4,47 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class PlannerPlan : Entity, IParsable {
         /// <summary>Collection of buckets in the plan. Read-only. Nullable.</summary>
         public List<PlannerBucket> Buckets {
-            get { return BackingStore?.Get<List<PlannerBucket>>(nameof(Buckets)); }
-            set { BackingStore?.Set(nameof(Buckets), value); }
+            get { return BackingStore?.Get<List<PlannerBucket>>("buckets"); }
+            set { BackingStore?.Set("buckets", value); }
         }
         /// <summary>Identifies the container of the plan. After it is set, this property can’t be updated. Required.</summary>
         public PlannerPlanContainer Container {
-            get { return BackingStore?.Get<PlannerPlanContainer>(nameof(Container)); }
-            set { BackingStore?.Set(nameof(Container), value); }
+            get { return BackingStore?.Get<PlannerPlanContainer>("container"); }
+            set { BackingStore?.Set("container", value); }
         }
         /// <summary>Read-only. The user who created the plan.</summary>
         public IdentitySet CreatedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Additional details about the plan. Read-only. Nullable.</summary>
         public PlannerPlanDetails Details {
-            get { return BackingStore?.Get<PlannerPlanDetails>(nameof(Details)); }
-            set { BackingStore?.Set(nameof(Details), value); }
+            get { return BackingStore?.Get<PlannerPlanDetails>("details"); }
+            set { BackingStore?.Set("details", value); }
         }
         /// <summary>The owner property</summary>
         public string Owner {
-            get { return BackingStore?.Get<string>(nameof(Owner)); }
-            set { BackingStore?.Set(nameof(Owner), value); }
+            get { return BackingStore?.Get<string>("owner"); }
+            set { BackingStore?.Set("owner", value); }
         }
         /// <summary>Collection of tasks in the plan. Read-only. Nullable.</summary>
         public List<PlannerTask> Tasks {
-            get { return BackingStore?.Get<List<PlannerTask>>(nameof(Tasks)); }
-            set { BackingStore?.Set(nameof(Tasks), value); }
+            get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
         }
         /// <summary>Required. Title of the plan.</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

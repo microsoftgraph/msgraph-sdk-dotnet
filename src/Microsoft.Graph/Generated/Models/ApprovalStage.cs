@@ -4,42 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ApprovalStage : Entity, IParsable {
         /// <summary>Indicates whether the stage is assigned to the calling user to review. Read-only.</summary>
         public bool? AssignedToMe {
-            get { return BackingStore?.Get<bool?>(nameof(AssignedToMe)); }
-            set { BackingStore?.Set(nameof(AssignedToMe), value); }
+            get { return BackingStore?.Get<bool?>("assignedToMe"); }
+            set { BackingStore?.Set("assignedToMe", value); }
         }
         /// <summary>The label provided by the policy creator to identify an approval stage. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The justification associated with the approval stage decision.</summary>
         public string Justification {
-            get { return BackingStore?.Get<string>(nameof(Justification)); }
-            set { BackingStore?.Set(nameof(Justification), value); }
+            get { return BackingStore?.Get<string>("justification"); }
+            set { BackingStore?.Set("justification", value); }
         }
         /// <summary>The identifier of the reviewer. Read-only.</summary>
         public Identity ReviewedBy {
-            get { return BackingStore?.Get<Identity>(nameof(ReviewedBy)); }
-            set { BackingStore?.Set(nameof(ReviewedBy), value); }
+            get { return BackingStore?.Get<Identity>("reviewedBy"); }
+            set { BackingStore?.Set("reviewedBy", value); }
         }
         /// <summary>The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ReviewedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReviewedDateTime)); }
-            set { BackingStore?.Set(nameof(ReviewedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("reviewedDateTime"); }
+            set { BackingStore?.Set("reviewedDateTime", value); }
         }
         /// <summary>The result of this approval record. Possible values include: NotReviewed, Approved, Denied.</summary>
         public string ReviewResult {
-            get { return BackingStore?.Get<string>(nameof(ReviewResult)); }
-            set { BackingStore?.Set(nameof(ReviewResult), value); }
+            get { return BackingStore?.Get<string>("reviewResult"); }
+            set { BackingStore?.Set("reviewResult", value); }
         }
         /// <summary>The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.</summary>
         public string Status {
-            get { return BackingStore?.Get<string>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<string>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class MediaContentRatingGermany : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Movies rating selected for Germany. Possible values are: allAllowed, allBlocked, general, agesAbove6, agesAbove12, agesAbove16, adults.</summary>
+        /// <summary>Movies rating labels in Germany</summary>
         public RatingGermanyMoviesType? MovieRating {
-            get { return BackingStore?.Get<RatingGermanyMoviesType?>(nameof(MovieRating)); }
-            set { BackingStore?.Set(nameof(MovieRating), value); }
+            get { return BackingStore?.Get<RatingGermanyMoviesType?>("movieRating"); }
+            set { BackingStore?.Set("movieRating", value); }
         }
-        /// <summary>TV rating selected for Germany. Possible values are: allAllowed, allBlocked, general, agesAbove6, agesAbove12, agesAbove16, adults.</summary>
+        /// <summary>TV content rating labels in Germany</summary>
         public RatingGermanyTelevisionType? TvRating {
-            get { return BackingStore?.Get<RatingGermanyTelevisionType?>(nameof(TvRating)); }
-            set { BackingStore?.Set(nameof(TvRating), value); }
+            get { return BackingStore?.Get<RatingGermanyTelevisionType?>("tvRating"); }
+            set { BackingStore?.Set("tvRating", value); }
         }
         /// <summary>
         /// Instantiates a new mediaContentRatingGermany and sets the default values.

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class SearchAlterationOptions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.</summary>
         public bool? EnableModification {
-            get { return BackingStore?.Get<bool?>(nameof(EnableModification)); }
-            set { BackingStore?.Set(nameof(EnableModification), value); }
+            get { return BackingStore?.Get<bool?>("enableModification"); }
+            set { BackingStore?.Set("enableModification", value); }
         }
         /// <summary>Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.</summary>
         public bool? EnableSuggestion {
-            get { return BackingStore?.Get<bool?>(nameof(EnableSuggestion)); }
-            set { BackingStore?.Set(nameof(EnableSuggestion), value); }
+            get { return BackingStore?.Get<bool?>("enableSuggestion"); }
+            set { BackingStore?.Set("enableSuggestion", value); }
         }
         /// <summary>
         /// Instantiates a new searchAlterationOptions and sets the default values.

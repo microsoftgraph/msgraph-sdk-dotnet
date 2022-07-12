@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class VisualInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Optional. JSON object used to represent an icon which represents the application used to generate the activity</summary>
         public ImageInfo Attribution {
-            get { return BackingStore?.Get<ImageInfo>(nameof(Attribution)); }
-            set { BackingStore?.Set(nameof(Attribution), value); }
+            get { return BackingStore?.Get<ImageInfo>("attribution"); }
+            set { BackingStore?.Set("attribution", value); }
         }
         /// <summary>Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color</summary>
         public string BackgroundColor {
-            get { return BackingStore?.Get<string>(nameof(BackgroundColor)); }
-            set { BackingStore?.Set(nameof(BackgroundColor), value); }
+            get { return BackingStore?.Get<string>("backgroundColor"); }
+            set { BackingStore?.Set("backgroundColor", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI</summary>
         public Json Content {
-            get { return BackingStore?.Get<Json>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<Json>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>Optional. Longer text description of the user&apos;s unique activity (example: document name, first sentence, and/or metadata)</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Required. Short text description of the user&apos;s unique activity (for example, document name in cases where an activity refers to document creation)</summary>
         public string DisplayText {
-            get { return BackingStore?.Get<string>(nameof(DisplayText)); }
-            set { BackingStore?.Set(nameof(DisplayText), value); }
+            get { return BackingStore?.Get<string>("displayText"); }
+            set { BackingStore?.Set("displayText", value); }
         }
         /// <summary>
         /// Instantiates a new visualInfo and sets the default values.

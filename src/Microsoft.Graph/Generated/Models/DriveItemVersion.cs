@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class DriveItemVersion : BaseItemVersion, IParsable {
         /// <summary>The content property</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>Indicates the size of the content stream for this version of the item.</summary>
         public long? Size {
-            get { return BackingStore?.Get<long?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<long?>("size"); }
+            set { BackingStore?.Set("size", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

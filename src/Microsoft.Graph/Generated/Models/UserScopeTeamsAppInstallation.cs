@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class UserScopeTeamsAppInstallation : TeamsAppInstallation, IParsable {
         /// <summary>The chat between the user and Teams app.</summary>
         public Microsoft.Graph.Models.Chat Chat {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Chat>(nameof(Chat)); }
-            set { BackingStore?.Set(nameof(Chat), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Chat>("chat"); }
+            set { BackingStore?.Set("chat", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

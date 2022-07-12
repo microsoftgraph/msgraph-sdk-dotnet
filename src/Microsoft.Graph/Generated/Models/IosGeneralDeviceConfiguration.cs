@@ -7,658 +7,658 @@ namespace Microsoft.Graph.Models {
     public class IosGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to allow account modification when the device is in supervised mode.</summary>
         public bool? AccountBlockModification {
-            get { return BackingStore?.Get<bool?>(nameof(AccountBlockModification)); }
-            set { BackingStore?.Set(nameof(AccountBlockModification), value); }
+            get { return BackingStore?.Get<bool?>("accountBlockModification"); }
+            set { BackingStore?.Set("accountBlockModification", value); }
         }
         /// <summary>Indicates whether or not to allow activation lock when the device is in the supervised mode.</summary>
         public bool? ActivationLockAllowWhenSupervised {
-            get { return BackingStore?.Get<bool?>(nameof(ActivationLockAllowWhenSupervised)); }
-            set { BackingStore?.Set(nameof(ActivationLockAllowWhenSupervised), value); }
+            get { return BackingStore?.Get<bool?>("activationLockAllowWhenSupervised"); }
+            set { BackingStore?.Set("activationLockAllowWhenSupervised", value); }
         }
         /// <summary>Indicates whether or not to allow AirDrop when the device is in supervised mode.</summary>
         public bool? AirDropBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(AirDropBlocked)); }
-            set { BackingStore?.Set(nameof(AirDropBlocked), value); }
+            get { return BackingStore?.Get<bool?>("airDropBlocked"); }
+            set { BackingStore?.Set("airDropBlocked", value); }
         }
         /// <summary>Indicates whether or not to cause AirDrop to be considered an unmanaged drop target (iOS 9.0 and later).</summary>
         public bool? AirDropForceUnmanagedDropTarget {
-            get { return BackingStore?.Get<bool?>(nameof(AirDropForceUnmanagedDropTarget)); }
-            set { BackingStore?.Set(nameof(AirDropForceUnmanagedDropTarget), value); }
+            get { return BackingStore?.Get<bool?>("airDropForceUnmanagedDropTarget"); }
+            set { BackingStore?.Set("airDropForceUnmanagedDropTarget", value); }
         }
         /// <summary>Indicates whether or not to enforce all devices receiving AirPlay requests from this device to use a pairing password.</summary>
         public bool? AirPlayForcePairingPasswordForOutgoingRequests {
-            get { return BackingStore?.Get<bool?>(nameof(AirPlayForcePairingPasswordForOutgoingRequests)); }
-            set { BackingStore?.Set(nameof(AirPlayForcePairingPasswordForOutgoingRequests), value); }
+            get { return BackingStore?.Get<bool?>("airPlayForcePairingPasswordForOutgoingRequests"); }
+            set { BackingStore?.Set("airPlayForcePairingPasswordForOutgoingRequests", value); }
         }
         /// <summary>Indicates whether or not to block the user from using News when the device is in supervised mode (iOS 9.0 and later).</summary>
         public bool? AppleNewsBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(AppleNewsBlocked)); }
-            set { BackingStore?.Set(nameof(AppleNewsBlocked), value); }
+            get { return BackingStore?.Get<bool?>("appleNewsBlocked"); }
+            set { BackingStore?.Set("appleNewsBlocked", value); }
         }
         /// <summary>Indicates whether or not to allow Apple Watch pairing when the device is in supervised mode (iOS 9.0 and later).</summary>
         public bool? AppleWatchBlockPairing {
-            get { return BackingStore?.Get<bool?>(nameof(AppleWatchBlockPairing)); }
-            set { BackingStore?.Set(nameof(AppleWatchBlockPairing), value); }
+            get { return BackingStore?.Get<bool?>("appleWatchBlockPairing"); }
+            set { BackingStore?.Set("appleWatchBlockPairing", value); }
         }
         /// <summary>Indicates whether or not to force a paired Apple Watch to use Wrist Detection (iOS 8.2 and later).</summary>
         public bool? AppleWatchForceWristDetection {
-            get { return BackingStore?.Get<bool?>(nameof(AppleWatchForceWristDetection)); }
-            set { BackingStore?.Set(nameof(AppleWatchForceWristDetection), value); }
+            get { return BackingStore?.Get<bool?>("appleWatchForceWristDetection"); }
+            set { BackingStore?.Set("appleWatchForceWristDetection", value); }
         }
         /// <summary>Gets or sets the list of iOS apps allowed to autonomously enter Single App Mode. Supervised only. iOS 7.0 and later. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> AppsSingleAppModeList {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(AppsSingleAppModeList)); }
-            set { BackingStore?.Set(nameof(AppsSingleAppModeList), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("appsSingleAppModeList"); }
+            set { BackingStore?.Set("appsSingleAppModeList", value); }
         }
         /// <summary>Indicates whether or not to block the automatic downloading of apps purchased on other devices when the device is in supervised mode (iOS 9.0 and later).</summary>
         public bool? AppStoreBlockAutomaticDownloads {
-            get { return BackingStore?.Get<bool?>(nameof(AppStoreBlockAutomaticDownloads)); }
-            set { BackingStore?.Set(nameof(AppStoreBlockAutomaticDownloads), value); }
+            get { return BackingStore?.Get<bool?>("appStoreBlockAutomaticDownloads"); }
+            set { BackingStore?.Set("appStoreBlockAutomaticDownloads", value); }
         }
         /// <summary>Indicates whether or not to block the user from using the App Store. Requires a supervised device for iOS 13 and later.</summary>
         public bool? AppStoreBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(AppStoreBlocked)); }
-            set { BackingStore?.Set(nameof(AppStoreBlocked), value); }
+            get { return BackingStore?.Get<bool?>("appStoreBlocked"); }
+            set { BackingStore?.Set("appStoreBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the user from making in app purchases.</summary>
         public bool? AppStoreBlockInAppPurchases {
-            get { return BackingStore?.Get<bool?>(nameof(AppStoreBlockInAppPurchases)); }
-            set { BackingStore?.Set(nameof(AppStoreBlockInAppPurchases), value); }
+            get { return BackingStore?.Get<bool?>("appStoreBlockInAppPurchases"); }
+            set { BackingStore?.Set("appStoreBlockInAppPurchases", value); }
         }
         /// <summary>Indicates whether or not to block the App Store app, not restricting installation through Host apps. Applies to supervised mode only (iOS 9.0 and later).</summary>
         public bool? AppStoreBlockUIAppInstallation {
-            get { return BackingStore?.Get<bool?>(nameof(AppStoreBlockUIAppInstallation)); }
-            set { BackingStore?.Set(nameof(AppStoreBlockUIAppInstallation), value); }
+            get { return BackingStore?.Get<bool?>("appStoreBlockUIAppInstallation"); }
+            set { BackingStore?.Set("appStoreBlockUIAppInstallation", value); }
         }
         /// <summary>Indicates whether or not to require a password when using the app store.</summary>
         public bool? AppStoreRequirePassword {
-            get { return BackingStore?.Get<bool?>(nameof(AppStoreRequirePassword)); }
-            set { BackingStore?.Set(nameof(AppStoreRequirePassword), value); }
+            get { return BackingStore?.Get<bool?>("appStoreRequirePassword"); }
+            set { BackingStore?.Set("appStoreRequirePassword", value); }
         }
         /// <summary>List of apps in the visibility list (either visible/launchable apps list or hidden/unlaunchable apps list, controlled by AppsVisibilityListType) (iOS 9.3 and later). This collection can contain a maximum of 10000 elements.</summary>
         public List<AppListItem> AppsVisibilityList {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(AppsVisibilityList)); }
-            set { BackingStore?.Set(nameof(AppsVisibilityList), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("appsVisibilityList"); }
+            set { BackingStore?.Set("appsVisibilityList", value); }
         }
-        /// <summary>Type of list that is in the AppsVisibilityList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.</summary>
+        /// <summary>Possible values of the compliance app list.</summary>
         public AppListType? AppsVisibilityListType {
-            get { return BackingStore?.Get<AppListType?>(nameof(AppsVisibilityListType)); }
-            set { BackingStore?.Set(nameof(AppsVisibilityListType), value); }
+            get { return BackingStore?.Get<AppListType?>("appsVisibilityListType"); }
+            set { BackingStore?.Set("appsVisibilityListType", value); }
         }
         /// <summary>Indicates whether or not to allow modification of Bluetooth settings when the device is in supervised mode (iOS 10.0 and later).</summary>
         public bool? BluetoothBlockModification {
-            get { return BackingStore?.Get<bool?>(nameof(BluetoothBlockModification)); }
-            set { BackingStore?.Set(nameof(BluetoothBlockModification), value); }
+            get { return BackingStore?.Get<bool?>("bluetoothBlockModification"); }
+            set { BackingStore?.Set("bluetoothBlockModification", value); }
         }
         /// <summary>Indicates whether or not to block the user from accessing the camera of the device. Requires a supervised device for iOS 13 and later.</summary>
         public bool? CameraBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(CameraBlocked)); }
-            set { BackingStore?.Set(nameof(CameraBlocked), value); }
+            get { return BackingStore?.Get<bool?>("cameraBlocked"); }
+            set { BackingStore?.Set("cameraBlocked", value); }
         }
         /// <summary>Indicates whether or not to block data roaming.</summary>
         public bool? CellularBlockDataRoaming {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockDataRoaming)); }
-            set { BackingStore?.Set(nameof(CellularBlockDataRoaming), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockDataRoaming"); }
+            set { BackingStore?.Set("cellularBlockDataRoaming", value); }
         }
         /// <summary>Indicates whether or not to block global background fetch while roaming.</summary>
         public bool? CellularBlockGlobalBackgroundFetchWhileRoaming {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockGlobalBackgroundFetchWhileRoaming)); }
-            set { BackingStore?.Set(nameof(CellularBlockGlobalBackgroundFetchWhileRoaming), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockGlobalBackgroundFetchWhileRoaming"); }
+            set { BackingStore?.Set("cellularBlockGlobalBackgroundFetchWhileRoaming", value); }
         }
         /// <summary>Indicates whether or not to allow changes to cellular app data usage settings when the device is in supervised mode.</summary>
         public bool? CellularBlockPerAppDataModification {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockPerAppDataModification)); }
-            set { BackingStore?.Set(nameof(CellularBlockPerAppDataModification), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockPerAppDataModification"); }
+            set { BackingStore?.Set("cellularBlockPerAppDataModification", value); }
         }
         /// <summary>Indicates whether or not to block Personal Hotspot.</summary>
         public bool? CellularBlockPersonalHotspot {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockPersonalHotspot)); }
-            set { BackingStore?.Set(nameof(CellularBlockPersonalHotspot), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockPersonalHotspot"); }
+            set { BackingStore?.Set("cellularBlockPersonalHotspot", value); }
         }
         /// <summary>Indicates whether or not to block voice roaming.</summary>
         public bool? CellularBlockVoiceRoaming {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockVoiceRoaming)); }
-            set { BackingStore?.Set(nameof(CellularBlockVoiceRoaming), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockVoiceRoaming"); }
+            set { BackingStore?.Set("cellularBlockVoiceRoaming", value); }
         }
         /// <summary>Indicates whether or not to block untrusted TLS certificates.</summary>
         public bool? CertificatesBlockUntrustedTlsCertificates {
-            get { return BackingStore?.Get<bool?>(nameof(CertificatesBlockUntrustedTlsCertificates)); }
-            set { BackingStore?.Set(nameof(CertificatesBlockUntrustedTlsCertificates), value); }
+            get { return BackingStore?.Get<bool?>("certificatesBlockUntrustedTlsCertificates"); }
+            set { BackingStore?.Set("certificatesBlockUntrustedTlsCertificates", value); }
         }
         /// <summary>Indicates whether or not to allow remote screen observation by Classroom app when the device is in supervised mode (iOS 9.3 and later).</summary>
         public bool? ClassroomAppBlockRemoteScreenObservation {
-            get { return BackingStore?.Get<bool?>(nameof(ClassroomAppBlockRemoteScreenObservation)); }
-            set { BackingStore?.Set(nameof(ClassroomAppBlockRemoteScreenObservation), value); }
+            get { return BackingStore?.Get<bool?>("classroomAppBlockRemoteScreenObservation"); }
+            set { BackingStore?.Set("classroomAppBlockRemoteScreenObservation", value); }
         }
         /// <summary>Indicates whether or not to automatically give permission to the teacher of a managed course on the Classroom app to view a student&apos;s screen without prompting when the device is in supervised mode.</summary>
         public bool? ClassroomAppForceUnpromptedScreenObservation {
-            get { return BackingStore?.Get<bool?>(nameof(ClassroomAppForceUnpromptedScreenObservation)); }
-            set { BackingStore?.Set(nameof(ClassroomAppForceUnpromptedScreenObservation), value); }
+            get { return BackingStore?.Get<bool?>("classroomAppForceUnpromptedScreenObservation"); }
+            set { BackingStore?.Set("classroomAppForceUnpromptedScreenObservation", value); }
         }
-        /// <summary>List that is in the AppComplianceList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.</summary>
+        /// <summary>Possible values of the compliance app list.</summary>
         public AppListType? CompliantAppListType {
-            get { return BackingStore?.Get<AppListType?>(nameof(CompliantAppListType)); }
-            set { BackingStore?.Set(nameof(CompliantAppListType), value); }
+            get { return BackingStore?.Get<AppListType?>("compliantAppListType"); }
+            set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
         public List<AppListItem> CompliantAppsList {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(CompliantAppsList)); }
-            set { BackingStore?.Set(nameof(CompliantAppsList), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
+            set { BackingStore?.Set("compliantAppsList", value); }
         }
         /// <summary>Indicates whether or not to block the user from installing configuration profiles and certificates interactively when the device is in supervised mode.</summary>
         public bool? ConfigurationProfileBlockChanges {
-            get { return BackingStore?.Get<bool?>(nameof(ConfigurationProfileBlockChanges)); }
-            set { BackingStore?.Set(nameof(ConfigurationProfileBlockChanges), value); }
+            get { return BackingStore?.Get<bool?>("configurationProfileBlockChanges"); }
+            set { BackingStore?.Set("configurationProfileBlockChanges", value); }
         }
         /// <summary>Indicates whether or not to block definition lookup when the device is in supervised mode (iOS 8.1.3 and later ).</summary>
         public bool? DefinitionLookupBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(DefinitionLookupBlocked)); }
-            set { BackingStore?.Set(nameof(DefinitionLookupBlocked), value); }
+            get { return BackingStore?.Get<bool?>("definitionLookupBlocked"); }
+            set { BackingStore?.Set("definitionLookupBlocked", value); }
         }
         /// <summary>Indicates whether or not to allow the user to enables restrictions in the device settings when the device is in supervised mode.</summary>
         public bool? DeviceBlockEnableRestrictions {
-            get { return BackingStore?.Get<bool?>(nameof(DeviceBlockEnableRestrictions)); }
-            set { BackingStore?.Set(nameof(DeviceBlockEnableRestrictions), value); }
+            get { return BackingStore?.Get<bool?>("deviceBlockEnableRestrictions"); }
+            set { BackingStore?.Set("deviceBlockEnableRestrictions", value); }
         }
         /// <summary>Indicates whether or not to allow the use of the &apos;Erase all content and settings&apos; option on the device when the device is in supervised mode.</summary>
         public bool? DeviceBlockEraseContentAndSettings {
-            get { return BackingStore?.Get<bool?>(nameof(DeviceBlockEraseContentAndSettings)); }
-            set { BackingStore?.Set(nameof(DeviceBlockEraseContentAndSettings), value); }
+            get { return BackingStore?.Get<bool?>("deviceBlockEraseContentAndSettings"); }
+            set { BackingStore?.Set("deviceBlockEraseContentAndSettings", value); }
         }
         /// <summary>Indicates whether or not to allow device name modification when the device is in supervised mode (iOS 9.0 and later).</summary>
         public bool? DeviceBlockNameModification {
-            get { return BackingStore?.Get<bool?>(nameof(DeviceBlockNameModification)); }
-            set { BackingStore?.Set(nameof(DeviceBlockNameModification), value); }
+            get { return BackingStore?.Get<bool?>("deviceBlockNameModification"); }
+            set { BackingStore?.Set("deviceBlockNameModification", value); }
         }
         /// <summary>Indicates whether or not to block diagnostic data submission.</summary>
         public bool? DiagnosticDataBlockSubmission {
-            get { return BackingStore?.Get<bool?>(nameof(DiagnosticDataBlockSubmission)); }
-            set { BackingStore?.Set(nameof(DiagnosticDataBlockSubmission), value); }
+            get { return BackingStore?.Get<bool?>("diagnosticDataBlockSubmission"); }
+            set { BackingStore?.Set("diagnosticDataBlockSubmission", value); }
         }
         /// <summary>Indicates whether or not to allow diagnostics submission settings modification when the device is in supervised mode (iOS 9.3.2 and later).</summary>
         public bool? DiagnosticDataBlockSubmissionModification {
-            get { return BackingStore?.Get<bool?>(nameof(DiagnosticDataBlockSubmissionModification)); }
-            set { BackingStore?.Set(nameof(DiagnosticDataBlockSubmissionModification), value); }
+            get { return BackingStore?.Get<bool?>("diagnosticDataBlockSubmissionModification"); }
+            set { BackingStore?.Set("diagnosticDataBlockSubmissionModification", value); }
         }
         /// <summary>Indicates whether or not to block the user from viewing managed documents in unmanaged apps.</summary>
         public bool? DocumentsBlockManagedDocumentsInUnmanagedApps {
-            get { return BackingStore?.Get<bool?>(nameof(DocumentsBlockManagedDocumentsInUnmanagedApps)); }
-            set { BackingStore?.Set(nameof(DocumentsBlockManagedDocumentsInUnmanagedApps), value); }
+            get { return BackingStore?.Get<bool?>("documentsBlockManagedDocumentsInUnmanagedApps"); }
+            set { BackingStore?.Set("documentsBlockManagedDocumentsInUnmanagedApps", value); }
         }
         /// <summary>Indicates whether or not to block the user from viewing unmanaged documents in managed apps.</summary>
         public bool? DocumentsBlockUnmanagedDocumentsInManagedApps {
-            get { return BackingStore?.Get<bool?>(nameof(DocumentsBlockUnmanagedDocumentsInManagedApps)); }
-            set { BackingStore?.Set(nameof(DocumentsBlockUnmanagedDocumentsInManagedApps), value); }
+            get { return BackingStore?.Get<bool?>("documentsBlockUnmanagedDocumentsInManagedApps"); }
+            set { BackingStore?.Set("documentsBlockUnmanagedDocumentsInManagedApps", value); }
         }
         /// <summary>An email address lacking a suffix that matches any of these strings will be considered out-of-domain.</summary>
         public List<string> EmailInDomainSuffixes {
-            get { return BackingStore?.Get<List<string>>(nameof(EmailInDomainSuffixes)); }
-            set { BackingStore?.Set(nameof(EmailInDomainSuffixes), value); }
+            get { return BackingStore?.Get<List<string>>("emailInDomainSuffixes"); }
+            set { BackingStore?.Set("emailInDomainSuffixes", value); }
         }
         /// <summary>Indicates whether or not to block the user from trusting an enterprise app.</summary>
         public bool? EnterpriseAppBlockTrust {
-            get { return BackingStore?.Get<bool?>(nameof(EnterpriseAppBlockTrust)); }
-            set { BackingStore?.Set(nameof(EnterpriseAppBlockTrust), value); }
+            get { return BackingStore?.Get<bool?>("enterpriseAppBlockTrust"); }
+            set { BackingStore?.Set("enterpriseAppBlockTrust", value); }
         }
         /// <summary>[Deprecated] Configuring this setting and setting the value to &apos;true&apos; has no effect on the device.</summary>
         public bool? EnterpriseAppBlockTrustModification {
-            get { return BackingStore?.Get<bool?>(nameof(EnterpriseAppBlockTrustModification)); }
-            set { BackingStore?.Set(nameof(EnterpriseAppBlockTrustModification), value); }
+            get { return BackingStore?.Get<bool?>("enterpriseAppBlockTrustModification"); }
+            set { BackingStore?.Set("enterpriseAppBlockTrustModification", value); }
         }
         /// <summary>Indicates whether or not to block the user from using FaceTime. Requires a supervised device for iOS 13 and later.</summary>
         public bool? FaceTimeBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(FaceTimeBlocked)); }
-            set { BackingStore?.Set(nameof(FaceTimeBlocked), value); }
+            get { return BackingStore?.Get<bool?>("faceTimeBlocked"); }
+            set { BackingStore?.Set("faceTimeBlocked", value); }
         }
         /// <summary>Indicates whether or not to block changes to Find My Friends when the device is in supervised mode.</summary>
         public bool? FindMyFriendsBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(FindMyFriendsBlocked)); }
-            set { BackingStore?.Set(nameof(FindMyFriendsBlocked), value); }
+            get { return BackingStore?.Get<bool?>("findMyFriendsBlocked"); }
+            set { BackingStore?.Set("findMyFriendsBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the user from using Game Center when the device is in supervised mode.</summary>
         public bool? GameCenterBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(GameCenterBlocked)); }
-            set { BackingStore?.Set(nameof(GameCenterBlocked), value); }
+            get { return BackingStore?.Get<bool?>("gameCenterBlocked"); }
+            set { BackingStore?.Set("gameCenterBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the user from having friends in Game Center. Requires a supervised device for iOS 13 and later.</summary>
         public bool? GamingBlockGameCenterFriends {
-            get { return BackingStore?.Get<bool?>(nameof(GamingBlockGameCenterFriends)); }
-            set { BackingStore?.Set(nameof(GamingBlockGameCenterFriends), value); }
+            get { return BackingStore?.Get<bool?>("gamingBlockGameCenterFriends"); }
+            set { BackingStore?.Set("gamingBlockGameCenterFriends", value); }
         }
         /// <summary>Indicates whether or not to block the user from using multiplayer gaming. Requires a supervised device for iOS 13 and later.</summary>
         public bool? GamingBlockMultiplayer {
-            get { return BackingStore?.Get<bool?>(nameof(GamingBlockMultiplayer)); }
-            set { BackingStore?.Set(nameof(GamingBlockMultiplayer), value); }
+            get { return BackingStore?.Get<bool?>("gamingBlockMultiplayer"); }
+            set { BackingStore?.Set("gamingBlockMultiplayer", value); }
         }
         /// <summary>indicates whether or not to allow host pairing to control the devices an iOS device can pair with when the iOS device is in supervised mode.</summary>
         public bool? HostPairingBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(HostPairingBlocked)); }
-            set { BackingStore?.Set(nameof(HostPairingBlocked), value); }
+            get { return BackingStore?.Get<bool?>("hostPairingBlocked"); }
+            set { BackingStore?.Set("hostPairingBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the user from using the iBooks Store when the device is in supervised mode.</summary>
         public bool? IBooksStoreBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(IBooksStoreBlocked)); }
-            set { BackingStore?.Set(nameof(IBooksStoreBlocked), value); }
+            get { return BackingStore?.Get<bool?>("iBooksStoreBlocked"); }
+            set { BackingStore?.Set("iBooksStoreBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the user from downloading media from the iBookstore that has been tagged as erotica.</summary>
         public bool? IBooksStoreBlockErotica {
-            get { return BackingStore?.Get<bool?>(nameof(IBooksStoreBlockErotica)); }
-            set { BackingStore?.Set(nameof(IBooksStoreBlockErotica), value); }
+            get { return BackingStore?.Get<bool?>("iBooksStoreBlockErotica"); }
+            set { BackingStore?.Set("iBooksStoreBlockErotica", value); }
         }
         /// <summary>Indicates whether or not to block the user from continuing work they started on iOS device to another iOS or macOS device.</summary>
         public bool? ICloudBlockActivityContinuation {
-            get { return BackingStore?.Get<bool?>(nameof(ICloudBlockActivityContinuation)); }
-            set { BackingStore?.Set(nameof(ICloudBlockActivityContinuation), value); }
+            get { return BackingStore?.Get<bool?>("iCloudBlockActivityContinuation"); }
+            set { BackingStore?.Set("iCloudBlockActivityContinuation", value); }
         }
         /// <summary>Indicates whether or not to block iCloud backup. Requires a supervised device for iOS 13 and later.</summary>
         public bool? ICloudBlockBackup {
-            get { return BackingStore?.Get<bool?>(nameof(ICloudBlockBackup)); }
-            set { BackingStore?.Set(nameof(ICloudBlockBackup), value); }
+            get { return BackingStore?.Get<bool?>("iCloudBlockBackup"); }
+            set { BackingStore?.Set("iCloudBlockBackup", value); }
         }
         /// <summary>Indicates whether or not to block iCloud document sync. Requires a supervised device for iOS 13 and later.</summary>
         public bool? ICloudBlockDocumentSync {
-            get { return BackingStore?.Get<bool?>(nameof(ICloudBlockDocumentSync)); }
-            set { BackingStore?.Set(nameof(ICloudBlockDocumentSync), value); }
+            get { return BackingStore?.Get<bool?>("iCloudBlockDocumentSync"); }
+            set { BackingStore?.Set("iCloudBlockDocumentSync", value); }
         }
         /// <summary>Indicates whether or not to block Managed Apps Cloud Sync.</summary>
         public bool? ICloudBlockManagedAppsSync {
-            get { return BackingStore?.Get<bool?>(nameof(ICloudBlockManagedAppsSync)); }
-            set { BackingStore?.Set(nameof(ICloudBlockManagedAppsSync), value); }
+            get { return BackingStore?.Get<bool?>("iCloudBlockManagedAppsSync"); }
+            set { BackingStore?.Set("iCloudBlockManagedAppsSync", value); }
         }
         /// <summary>Indicates whether or not to block iCloud Photo Library.</summary>
         public bool? ICloudBlockPhotoLibrary {
-            get { return BackingStore?.Get<bool?>(nameof(ICloudBlockPhotoLibrary)); }
-            set { BackingStore?.Set(nameof(ICloudBlockPhotoLibrary), value); }
+            get { return BackingStore?.Get<bool?>("iCloudBlockPhotoLibrary"); }
+            set { BackingStore?.Set("iCloudBlockPhotoLibrary", value); }
         }
         /// <summary>Indicates whether or not to block iCloud Photo Stream Sync.</summary>
         public bool? ICloudBlockPhotoStreamSync {
-            get { return BackingStore?.Get<bool?>(nameof(ICloudBlockPhotoStreamSync)); }
-            set { BackingStore?.Set(nameof(ICloudBlockPhotoStreamSync), value); }
+            get { return BackingStore?.Get<bool?>("iCloudBlockPhotoStreamSync"); }
+            set { BackingStore?.Set("iCloudBlockPhotoStreamSync", value); }
         }
         /// <summary>Indicates whether or not to block Shared Photo Stream.</summary>
         public bool? ICloudBlockSharedPhotoStream {
-            get { return BackingStore?.Get<bool?>(nameof(ICloudBlockSharedPhotoStream)); }
-            set { BackingStore?.Set(nameof(ICloudBlockSharedPhotoStream), value); }
+            get { return BackingStore?.Get<bool?>("iCloudBlockSharedPhotoStream"); }
+            set { BackingStore?.Set("iCloudBlockSharedPhotoStream", value); }
         }
         /// <summary>Indicates whether or not to require backups to iCloud be encrypted.</summary>
         public bool? ICloudRequireEncryptedBackup {
-            get { return BackingStore?.Get<bool?>(nameof(ICloudRequireEncryptedBackup)); }
-            set { BackingStore?.Set(nameof(ICloudRequireEncryptedBackup), value); }
+            get { return BackingStore?.Get<bool?>("iCloudRequireEncryptedBackup"); }
+            set { BackingStore?.Set("iCloudRequireEncryptedBackup", value); }
         }
         /// <summary>Indicates whether or not to block the user from accessing explicit content in iTunes and the App Store. Requires a supervised device for iOS 13 and later.</summary>
         public bool? ITunesBlockExplicitContent {
-            get { return BackingStore?.Get<bool?>(nameof(ITunesBlockExplicitContent)); }
-            set { BackingStore?.Set(nameof(ITunesBlockExplicitContent), value); }
+            get { return BackingStore?.Get<bool?>("iTunesBlockExplicitContent"); }
+            set { BackingStore?.Set("iTunesBlockExplicitContent", value); }
         }
         /// <summary>Indicates whether or not to block Music service and revert Music app to classic mode when the device is in supervised mode (iOS 9.3 and later and macOS 10.12 and later).</summary>
         public bool? ITunesBlockMusicService {
-            get { return BackingStore?.Get<bool?>(nameof(ITunesBlockMusicService)); }
-            set { BackingStore?.Set(nameof(ITunesBlockMusicService), value); }
+            get { return BackingStore?.Get<bool?>("iTunesBlockMusicService"); }
+            set { BackingStore?.Set("iTunesBlockMusicService", value); }
         }
         /// <summary>Indicates whether or not to block the user from using iTunes Radio when the device is in supervised mode (iOS 9.3 and later).</summary>
         public bool? ITunesBlockRadio {
-            get { return BackingStore?.Get<bool?>(nameof(ITunesBlockRadio)); }
-            set { BackingStore?.Set(nameof(ITunesBlockRadio), value); }
+            get { return BackingStore?.Get<bool?>("iTunesBlockRadio"); }
+            set { BackingStore?.Set("iTunesBlockRadio", value); }
         }
         /// <summary>Indicates whether or not to block keyboard auto-correction when the device is in supervised mode (iOS 8.1.3 and later).</summary>
         public bool? KeyboardBlockAutoCorrect {
-            get { return BackingStore?.Get<bool?>(nameof(KeyboardBlockAutoCorrect)); }
-            set { BackingStore?.Set(nameof(KeyboardBlockAutoCorrect), value); }
+            get { return BackingStore?.Get<bool?>("keyboardBlockAutoCorrect"); }
+            set { BackingStore?.Set("keyboardBlockAutoCorrect", value); }
         }
         /// <summary>Indicates whether or not to block the user from using dictation input when the device is in supervised mode.</summary>
         public bool? KeyboardBlockDictation {
-            get { return BackingStore?.Get<bool?>(nameof(KeyboardBlockDictation)); }
-            set { BackingStore?.Set(nameof(KeyboardBlockDictation), value); }
+            get { return BackingStore?.Get<bool?>("keyboardBlockDictation"); }
+            set { BackingStore?.Set("keyboardBlockDictation", value); }
         }
         /// <summary>Indicates whether or not to block predictive keyboards when device is in supervised mode (iOS 8.1.3 and later).</summary>
         public bool? KeyboardBlockPredictive {
-            get { return BackingStore?.Get<bool?>(nameof(KeyboardBlockPredictive)); }
-            set { BackingStore?.Set(nameof(KeyboardBlockPredictive), value); }
+            get { return BackingStore?.Get<bool?>("keyboardBlockPredictive"); }
+            set { BackingStore?.Set("keyboardBlockPredictive", value); }
         }
         /// <summary>Indicates whether or not to block keyboard shortcuts when the device is in supervised mode (iOS 9.0 and later).</summary>
         public bool? KeyboardBlockShortcuts {
-            get { return BackingStore?.Get<bool?>(nameof(KeyboardBlockShortcuts)); }
-            set { BackingStore?.Set(nameof(KeyboardBlockShortcuts), value); }
+            get { return BackingStore?.Get<bool?>("keyboardBlockShortcuts"); }
+            set { BackingStore?.Set("keyboardBlockShortcuts", value); }
         }
         /// <summary>Indicates whether or not to block keyboard spell-checking when the device is in supervised mode (iOS 8.1.3 and later).</summary>
         public bool? KeyboardBlockSpellCheck {
-            get { return BackingStore?.Get<bool?>(nameof(KeyboardBlockSpellCheck)); }
-            set { BackingStore?.Set(nameof(KeyboardBlockSpellCheck), value); }
+            get { return BackingStore?.Get<bool?>("keyboardBlockSpellCheck"); }
+            set { BackingStore?.Set("keyboardBlockSpellCheck", value); }
         }
         /// <summary>Indicates whether or not to allow assistive speak while in kiosk mode.</summary>
         public bool? KioskModeAllowAssistiveSpeak {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAllowAssistiveSpeak)); }
-            set { BackingStore?.Set(nameof(KioskModeAllowAssistiveSpeak), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAllowAssistiveSpeak"); }
+            set { BackingStore?.Set("kioskModeAllowAssistiveSpeak", value); }
         }
         /// <summary>Indicates whether or not to allow access to the Assistive Touch Settings while in kiosk mode.</summary>
         public bool? KioskModeAllowAssistiveTouchSettings {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAllowAssistiveTouchSettings)); }
-            set { BackingStore?.Set(nameof(KioskModeAllowAssistiveTouchSettings), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAllowAssistiveTouchSettings"); }
+            set { BackingStore?.Set("kioskModeAllowAssistiveTouchSettings", value); }
         }
         /// <summary>Indicates whether or not to allow device auto lock while in kiosk mode. This property&apos;s functionality is redundant with the OS default and is deprecated. Use KioskModeBlockAutoLock instead.</summary>
         public bool? KioskModeAllowAutoLock {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAllowAutoLock)); }
-            set { BackingStore?.Set(nameof(KioskModeAllowAutoLock), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAllowAutoLock"); }
+            set { BackingStore?.Set("kioskModeAllowAutoLock", value); }
         }
         /// <summary>Indicates whether or not to allow access to the Color Inversion Settings while in kiosk mode.</summary>
         public bool? KioskModeAllowColorInversionSettings {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAllowColorInversionSettings)); }
-            set { BackingStore?.Set(nameof(KioskModeAllowColorInversionSettings), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAllowColorInversionSettings"); }
+            set { BackingStore?.Set("kioskModeAllowColorInversionSettings", value); }
         }
         /// <summary>Indicates whether or not to allow use of the ringer switch while in kiosk mode. This property&apos;s functionality is redundant with the OS default and is deprecated. Use KioskModeBlockRingerSwitch instead.</summary>
         public bool? KioskModeAllowRingerSwitch {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAllowRingerSwitch)); }
-            set { BackingStore?.Set(nameof(KioskModeAllowRingerSwitch), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAllowRingerSwitch"); }
+            set { BackingStore?.Set("kioskModeAllowRingerSwitch", value); }
         }
         /// <summary>Indicates whether or not to allow screen rotation while in kiosk mode. This property&apos;s functionality is redundant with the OS default and is deprecated. Use KioskModeBlockScreenRotation instead.</summary>
         public bool? KioskModeAllowScreenRotation {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAllowScreenRotation)); }
-            set { BackingStore?.Set(nameof(KioskModeAllowScreenRotation), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAllowScreenRotation"); }
+            set { BackingStore?.Set("kioskModeAllowScreenRotation", value); }
         }
         /// <summary>Indicates whether or not to allow use of the sleep button while in kiosk mode. This property&apos;s functionality is redundant with the OS default and is deprecated. Use KioskModeBlockSleepButton instead.</summary>
         public bool? KioskModeAllowSleepButton {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAllowSleepButton)); }
-            set { BackingStore?.Set(nameof(KioskModeAllowSleepButton), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAllowSleepButton"); }
+            set { BackingStore?.Set("kioskModeAllowSleepButton", value); }
         }
         /// <summary>Indicates whether or not to allow use of the touchscreen while in kiosk mode. This property&apos;s functionality is redundant with the OS default and is deprecated. Use KioskModeBlockTouchscreen instead.</summary>
         public bool? KioskModeAllowTouchscreen {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAllowTouchscreen)); }
-            set { BackingStore?.Set(nameof(KioskModeAllowTouchscreen), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAllowTouchscreen"); }
+            set { BackingStore?.Set("kioskModeAllowTouchscreen", value); }
         }
         /// <summary>Indicates whether or not to allow access to the voice over settings while in kiosk mode.</summary>
         public bool? KioskModeAllowVoiceOverSettings {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAllowVoiceOverSettings)); }
-            set { BackingStore?.Set(nameof(KioskModeAllowVoiceOverSettings), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAllowVoiceOverSettings"); }
+            set { BackingStore?.Set("kioskModeAllowVoiceOverSettings", value); }
         }
         /// <summary>Indicates whether or not to allow use of the volume buttons while in kiosk mode. This property&apos;s functionality is redundant with the OS default and is deprecated. Use KioskModeBlockVolumeButtons instead.</summary>
         public bool? KioskModeAllowVolumeButtons {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAllowVolumeButtons)); }
-            set { BackingStore?.Set(nameof(KioskModeAllowVolumeButtons), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAllowVolumeButtons"); }
+            set { BackingStore?.Set("kioskModeAllowVolumeButtons", value); }
         }
         /// <summary>Indicates whether or not to allow access to the zoom settings while in kiosk mode.</summary>
         public bool? KioskModeAllowZoomSettings {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAllowZoomSettings)); }
-            set { BackingStore?.Set(nameof(KioskModeAllowZoomSettings), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAllowZoomSettings"); }
+            set { BackingStore?.Set("kioskModeAllowZoomSettings", value); }
         }
         /// <summary>URL in the app store to the app to use for kiosk mode. Use if KioskModeManagedAppId is not known.</summary>
         public string KioskModeAppStoreUrl {
-            get { return BackingStore?.Get<string>(nameof(KioskModeAppStoreUrl)); }
-            set { BackingStore?.Set(nameof(KioskModeAppStoreUrl), value); }
+            get { return BackingStore?.Get<string>("kioskModeAppStoreUrl"); }
+            set { BackingStore?.Set("kioskModeAppStoreUrl", value); }
         }
         /// <summary>ID for built-in apps to use for kiosk mode. Used when KioskModeManagedAppId and KioskModeAppStoreUrl are not set.</summary>
         public string KioskModeBuiltInAppId {
-            get { return BackingStore?.Get<string>(nameof(KioskModeBuiltInAppId)); }
-            set { BackingStore?.Set(nameof(KioskModeBuiltInAppId), value); }
+            get { return BackingStore?.Get<string>("kioskModeBuiltInAppId"); }
+            set { BackingStore?.Set("kioskModeBuiltInAppId", value); }
         }
         /// <summary>Managed app id of the app to use for kiosk mode. If KioskModeManagedAppId is specified then KioskModeAppStoreUrl will be ignored.</summary>
         public string KioskModeManagedAppId {
-            get { return BackingStore?.Get<string>(nameof(KioskModeManagedAppId)); }
-            set { BackingStore?.Set(nameof(KioskModeManagedAppId), value); }
+            get { return BackingStore?.Get<string>("kioskModeManagedAppId"); }
+            set { BackingStore?.Set("kioskModeManagedAppId", value); }
         }
         /// <summary>Indicates whether or not to require assistive touch while in kiosk mode.</summary>
         public bool? KioskModeRequireAssistiveTouch {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeRequireAssistiveTouch)); }
-            set { BackingStore?.Set(nameof(KioskModeRequireAssistiveTouch), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeRequireAssistiveTouch"); }
+            set { BackingStore?.Set("kioskModeRequireAssistiveTouch", value); }
         }
         /// <summary>Indicates whether or not to require color inversion while in kiosk mode.</summary>
         public bool? KioskModeRequireColorInversion {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeRequireColorInversion)); }
-            set { BackingStore?.Set(nameof(KioskModeRequireColorInversion), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeRequireColorInversion"); }
+            set { BackingStore?.Set("kioskModeRequireColorInversion", value); }
         }
         /// <summary>Indicates whether or not to require mono audio while in kiosk mode.</summary>
         public bool? KioskModeRequireMonoAudio {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeRequireMonoAudio)); }
-            set { BackingStore?.Set(nameof(KioskModeRequireMonoAudio), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeRequireMonoAudio"); }
+            set { BackingStore?.Set("kioskModeRequireMonoAudio", value); }
         }
         /// <summary>Indicates whether or not to require voice over while in kiosk mode.</summary>
         public bool? KioskModeRequireVoiceOver {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeRequireVoiceOver)); }
-            set { BackingStore?.Set(nameof(KioskModeRequireVoiceOver), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeRequireVoiceOver"); }
+            set { BackingStore?.Set("kioskModeRequireVoiceOver", value); }
         }
         /// <summary>Indicates whether or not to require zoom while in kiosk mode.</summary>
         public bool? KioskModeRequireZoom {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeRequireZoom)); }
-            set { BackingStore?.Set(nameof(KioskModeRequireZoom), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeRequireZoom"); }
+            set { BackingStore?.Set("kioskModeRequireZoom", value); }
         }
         /// <summary>Indicates whether or not to block the user from using control center on the lock screen.</summary>
         public bool? LockScreenBlockControlCenter {
-            get { return BackingStore?.Get<bool?>(nameof(LockScreenBlockControlCenter)); }
-            set { BackingStore?.Set(nameof(LockScreenBlockControlCenter), value); }
+            get { return BackingStore?.Get<bool?>("lockScreenBlockControlCenter"); }
+            set { BackingStore?.Set("lockScreenBlockControlCenter", value); }
         }
         /// <summary>Indicates whether or not to block the user from using the notification view on the lock screen.</summary>
         public bool? LockScreenBlockNotificationView {
-            get { return BackingStore?.Get<bool?>(nameof(LockScreenBlockNotificationView)); }
-            set { BackingStore?.Set(nameof(LockScreenBlockNotificationView), value); }
+            get { return BackingStore?.Get<bool?>("lockScreenBlockNotificationView"); }
+            set { BackingStore?.Set("lockScreenBlockNotificationView", value); }
         }
         /// <summary>Indicates whether or not to block the user from using passbook when the device is locked.</summary>
         public bool? LockScreenBlockPassbook {
-            get { return BackingStore?.Get<bool?>(nameof(LockScreenBlockPassbook)); }
-            set { BackingStore?.Set(nameof(LockScreenBlockPassbook), value); }
+            get { return BackingStore?.Get<bool?>("lockScreenBlockPassbook"); }
+            set { BackingStore?.Set("lockScreenBlockPassbook", value); }
         }
         /// <summary>Indicates whether or not to block the user from using the Today View on the lock screen.</summary>
         public bool? LockScreenBlockTodayView {
-            get { return BackingStore?.Get<bool?>(nameof(LockScreenBlockTodayView)); }
-            set { BackingStore?.Set(nameof(LockScreenBlockTodayView), value); }
+            get { return BackingStore?.Get<bool?>("lockScreenBlockTodayView"); }
+            set { BackingStore?.Set("lockScreenBlockTodayView", value); }
         }
-        /// <summary>Media content rating settings for Apps. Possible values are: allAllowed, allBlocked, agesAbove4, agesAbove9, agesAbove12, agesAbove17.</summary>
+        /// <summary>Apps rating as in media content</summary>
         public RatingAppsType? MediaContentRatingApps {
-            get { return BackingStore?.Get<RatingAppsType?>(nameof(MediaContentRatingApps)); }
-            set { BackingStore?.Set(nameof(MediaContentRatingApps), value); }
+            get { return BackingStore?.Get<RatingAppsType?>("mediaContentRatingApps"); }
+            set { BackingStore?.Set("mediaContentRatingApps", value); }
         }
         /// <summary>Media content rating settings for Australia</summary>
         public Microsoft.Graph.Models.MediaContentRatingAustralia MediaContentRatingAustralia {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingAustralia>(nameof(MediaContentRatingAustralia)); }
-            set { BackingStore?.Set(nameof(MediaContentRatingAustralia), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingAustralia>("mediaContentRatingAustralia"); }
+            set { BackingStore?.Set("mediaContentRatingAustralia", value); }
         }
         /// <summary>Media content rating settings for Canada</summary>
         public Microsoft.Graph.Models.MediaContentRatingCanada MediaContentRatingCanada {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingCanada>(nameof(MediaContentRatingCanada)); }
-            set { BackingStore?.Set(nameof(MediaContentRatingCanada), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingCanada>("mediaContentRatingCanada"); }
+            set { BackingStore?.Set("mediaContentRatingCanada", value); }
         }
         /// <summary>Media content rating settings for France</summary>
         public Microsoft.Graph.Models.MediaContentRatingFrance MediaContentRatingFrance {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingFrance>(nameof(MediaContentRatingFrance)); }
-            set { BackingStore?.Set(nameof(MediaContentRatingFrance), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingFrance>("mediaContentRatingFrance"); }
+            set { BackingStore?.Set("mediaContentRatingFrance", value); }
         }
         /// <summary>Media content rating settings for Germany</summary>
         public Microsoft.Graph.Models.MediaContentRatingGermany MediaContentRatingGermany {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingGermany>(nameof(MediaContentRatingGermany)); }
-            set { BackingStore?.Set(nameof(MediaContentRatingGermany), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingGermany>("mediaContentRatingGermany"); }
+            set { BackingStore?.Set("mediaContentRatingGermany", value); }
         }
         /// <summary>Media content rating settings for Ireland</summary>
         public Microsoft.Graph.Models.MediaContentRatingIreland MediaContentRatingIreland {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingIreland>(nameof(MediaContentRatingIreland)); }
-            set { BackingStore?.Set(nameof(MediaContentRatingIreland), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingIreland>("mediaContentRatingIreland"); }
+            set { BackingStore?.Set("mediaContentRatingIreland", value); }
         }
         /// <summary>Media content rating settings for Japan</summary>
         public Microsoft.Graph.Models.MediaContentRatingJapan MediaContentRatingJapan {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingJapan>(nameof(MediaContentRatingJapan)); }
-            set { BackingStore?.Set(nameof(MediaContentRatingJapan), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingJapan>("mediaContentRatingJapan"); }
+            set { BackingStore?.Set("mediaContentRatingJapan", value); }
         }
         /// <summary>Media content rating settings for New Zealand</summary>
         public Microsoft.Graph.Models.MediaContentRatingNewZealand MediaContentRatingNewZealand {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingNewZealand>(nameof(MediaContentRatingNewZealand)); }
-            set { BackingStore?.Set(nameof(MediaContentRatingNewZealand), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingNewZealand>("mediaContentRatingNewZealand"); }
+            set { BackingStore?.Set("mediaContentRatingNewZealand", value); }
         }
         /// <summary>Media content rating settings for United Kingdom</summary>
         public Microsoft.Graph.Models.MediaContentRatingUnitedKingdom MediaContentRatingUnitedKingdom {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingUnitedKingdom>(nameof(MediaContentRatingUnitedKingdom)); }
-            set { BackingStore?.Set(nameof(MediaContentRatingUnitedKingdom), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingUnitedKingdom>("mediaContentRatingUnitedKingdom"); }
+            set { BackingStore?.Set("mediaContentRatingUnitedKingdom", value); }
         }
         /// <summary>Media content rating settings for United States</summary>
         public Microsoft.Graph.Models.MediaContentRatingUnitedStates MediaContentRatingUnitedStates {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingUnitedStates>(nameof(MediaContentRatingUnitedStates)); }
-            set { BackingStore?.Set(nameof(MediaContentRatingUnitedStates), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaContentRatingUnitedStates>("mediaContentRatingUnitedStates"); }
+            set { BackingStore?.Set("mediaContentRatingUnitedStates", value); }
         }
         /// <summary>Indicates whether or not to block the user from using the Messages app on the supervised device.</summary>
         public bool? MessagesBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(MessagesBlocked)); }
-            set { BackingStore?.Set(nameof(MessagesBlocked), value); }
+            get { return BackingStore?.Get<bool?>("messagesBlocked"); }
+            set { BackingStore?.Set("messagesBlocked", value); }
         }
         /// <summary>List of managed apps and the network rules that applies to them. This collection can contain a maximum of 1000 elements.</summary>
         public List<IosNetworkUsageRule> NetworkUsageRules {
-            get { return BackingStore?.Get<List<IosNetworkUsageRule>>(nameof(NetworkUsageRules)); }
-            set { BackingStore?.Set(nameof(NetworkUsageRules), value); }
+            get { return BackingStore?.Get<List<IosNetworkUsageRule>>("networkUsageRules"); }
+            set { BackingStore?.Set("networkUsageRules", value); }
         }
         /// <summary>Indicates whether or not to allow notifications settings modification (iOS 9.3 and later).</summary>
         public bool? NotificationsBlockSettingsModification {
-            get { return BackingStore?.Get<bool?>(nameof(NotificationsBlockSettingsModification)); }
-            set { BackingStore?.Set(nameof(NotificationsBlockSettingsModification), value); }
+            get { return BackingStore?.Get<bool?>("notificationsBlockSettingsModification"); }
+            set { BackingStore?.Set("notificationsBlockSettingsModification", value); }
         }
         /// <summary>Block modification of registered Touch ID fingerprints when in supervised mode.</summary>
         public bool? PasscodeBlockFingerprintModification {
-            get { return BackingStore?.Get<bool?>(nameof(PasscodeBlockFingerprintModification)); }
-            set { BackingStore?.Set(nameof(PasscodeBlockFingerprintModification), value); }
+            get { return BackingStore?.Get<bool?>("passcodeBlockFingerprintModification"); }
+            set { BackingStore?.Set("passcodeBlockFingerprintModification", value); }
         }
         /// <summary>Indicates whether or not to block fingerprint unlock.</summary>
         public bool? PasscodeBlockFingerprintUnlock {
-            get { return BackingStore?.Get<bool?>(nameof(PasscodeBlockFingerprintUnlock)); }
-            set { BackingStore?.Set(nameof(PasscodeBlockFingerprintUnlock), value); }
+            get { return BackingStore?.Get<bool?>("passcodeBlockFingerprintUnlock"); }
+            set { BackingStore?.Set("passcodeBlockFingerprintUnlock", value); }
         }
         /// <summary>Indicates whether or not to allow passcode modification on the supervised device (iOS 9.0 and later).</summary>
         public bool? PasscodeBlockModification {
-            get { return BackingStore?.Get<bool?>(nameof(PasscodeBlockModification)); }
-            set { BackingStore?.Set(nameof(PasscodeBlockModification), value); }
+            get { return BackingStore?.Get<bool?>("passcodeBlockModification"); }
+            set { BackingStore?.Set("passcodeBlockModification", value); }
         }
         /// <summary>Indicates whether or not to block simple passcodes.</summary>
         public bool? PasscodeBlockSimple {
-            get { return BackingStore?.Get<bool?>(nameof(PasscodeBlockSimple)); }
-            set { BackingStore?.Set(nameof(PasscodeBlockSimple), value); }
+            get { return BackingStore?.Get<bool?>("passcodeBlockSimple"); }
+            set { BackingStore?.Set("passcodeBlockSimple", value); }
         }
         /// <summary>Number of days before the passcode expires. Valid values 1 to 65535</summary>
         public int? PasscodeExpirationDays {
-            get { return BackingStore?.Get<int?>(nameof(PasscodeExpirationDays)); }
-            set { BackingStore?.Set(nameof(PasscodeExpirationDays), value); }
+            get { return BackingStore?.Get<int?>("passcodeExpirationDays"); }
+            set { BackingStore?.Set("passcodeExpirationDays", value); }
         }
         /// <summary>Number of character sets a passcode must contain. Valid values 0 to 4</summary>
         public int? PasscodeMinimumCharacterSetCount {
-            get { return BackingStore?.Get<int?>(nameof(PasscodeMinimumCharacterSetCount)); }
-            set { BackingStore?.Set(nameof(PasscodeMinimumCharacterSetCount), value); }
+            get { return BackingStore?.Get<int?>("passcodeMinimumCharacterSetCount"); }
+            set { BackingStore?.Set("passcodeMinimumCharacterSetCount", value); }
         }
         /// <summary>Minimum length of passcode. Valid values 4 to 14</summary>
         public int? PasscodeMinimumLength {
-            get { return BackingStore?.Get<int?>(nameof(PasscodeMinimumLength)); }
-            set { BackingStore?.Set(nameof(PasscodeMinimumLength), value); }
+            get { return BackingStore?.Get<int?>("passcodeMinimumLength"); }
+            set { BackingStore?.Set("passcodeMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before a passcode is required.</summary>
         public int? PasscodeMinutesOfInactivityBeforeLock {
-            get { return BackingStore?.Get<int?>(nameof(PasscodeMinutesOfInactivityBeforeLock)); }
-            set { BackingStore?.Set(nameof(PasscodeMinutesOfInactivityBeforeLock), value); }
+            get { return BackingStore?.Get<int?>("passcodeMinutesOfInactivityBeforeLock"); }
+            set { BackingStore?.Set("passcodeMinutesOfInactivityBeforeLock", value); }
         }
         /// <summary>Minutes of inactivity before the screen times out.</summary>
         public int? PasscodeMinutesOfInactivityBeforeScreenTimeout {
-            get { return BackingStore?.Get<int?>(nameof(PasscodeMinutesOfInactivityBeforeScreenTimeout)); }
-            set { BackingStore?.Set(nameof(PasscodeMinutesOfInactivityBeforeScreenTimeout), value); }
+            get { return BackingStore?.Get<int?>("passcodeMinutesOfInactivityBeforeScreenTimeout"); }
+            set { BackingStore?.Set("passcodeMinutesOfInactivityBeforeScreenTimeout", value); }
         }
         /// <summary>Number of previous passcodes to block. Valid values 1 to 24</summary>
         public int? PasscodePreviousPasscodeBlockCount {
-            get { return BackingStore?.Get<int?>(nameof(PasscodePreviousPasscodeBlockCount)); }
-            set { BackingStore?.Set(nameof(PasscodePreviousPasscodeBlockCount), value); }
+            get { return BackingStore?.Get<int?>("passcodePreviousPasscodeBlockCount"); }
+            set { BackingStore?.Set("passcodePreviousPasscodeBlockCount", value); }
         }
         /// <summary>Indicates whether or not to require a passcode.</summary>
         public bool? PasscodeRequired {
-            get { return BackingStore?.Get<bool?>(nameof(PasscodeRequired)); }
-            set { BackingStore?.Set(nameof(PasscodeRequired), value); }
+            get { return BackingStore?.Get<bool?>("passcodeRequired"); }
+            set { BackingStore?.Set("passcodeRequired", value); }
         }
-        /// <summary>Type of passcode that is required. Possible values are: deviceDefault, alphanumeric, numeric.</summary>
+        /// <summary>Possible values of required passwords.</summary>
         public RequiredPasswordType? PasscodeRequiredType {
-            get { return BackingStore?.Get<RequiredPasswordType?>(nameof(PasscodeRequiredType)); }
-            set { BackingStore?.Set(nameof(PasscodeRequiredType), value); }
+            get { return BackingStore?.Get<RequiredPasswordType?>("passcodeRequiredType"); }
+            set { BackingStore?.Set("passcodeRequiredType", value); }
         }
         /// <summary>Number of sign in failures allowed before wiping the device. Valid values 2 to 11</summary>
         public int? PasscodeSignInFailureCountBeforeWipe {
-            get { return BackingStore?.Get<int?>(nameof(PasscodeSignInFailureCountBeforeWipe)); }
-            set { BackingStore?.Set(nameof(PasscodeSignInFailureCountBeforeWipe), value); }
+            get { return BackingStore?.Get<int?>("passcodeSignInFailureCountBeforeWipe"); }
+            set { BackingStore?.Set("passcodeSignInFailureCountBeforeWipe", value); }
         }
         /// <summary>Indicates whether or not to block the user from using podcasts on the supervised device (iOS 8.0 and later).</summary>
         public bool? PodcastsBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(PodcastsBlocked)); }
-            set { BackingStore?.Set(nameof(PodcastsBlocked), value); }
+            get { return BackingStore?.Get<bool?>("podcastsBlocked"); }
+            set { BackingStore?.Set("podcastsBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the user from using Auto fill in Safari. Requires a supervised device for iOS 13 and later.</summary>
         public bool? SafariBlockAutofill {
-            get { return BackingStore?.Get<bool?>(nameof(SafariBlockAutofill)); }
-            set { BackingStore?.Set(nameof(SafariBlockAutofill), value); }
+            get { return BackingStore?.Get<bool?>("safariBlockAutofill"); }
+            set { BackingStore?.Set("safariBlockAutofill", value); }
         }
         /// <summary>Indicates whether or not to block the user from using Safari. Requires a supervised device for iOS 13 and later.</summary>
         public bool? SafariBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(SafariBlocked)); }
-            set { BackingStore?.Set(nameof(SafariBlocked), value); }
+            get { return BackingStore?.Get<bool?>("safariBlocked"); }
+            set { BackingStore?.Set("safariBlocked", value); }
         }
         /// <summary>Indicates whether or not to block JavaScript in Safari.</summary>
         public bool? SafariBlockJavaScript {
-            get { return BackingStore?.Get<bool?>(nameof(SafariBlockJavaScript)); }
-            set { BackingStore?.Set(nameof(SafariBlockJavaScript), value); }
+            get { return BackingStore?.Get<bool?>("safariBlockJavaScript"); }
+            set { BackingStore?.Set("safariBlockJavaScript", value); }
         }
         /// <summary>Indicates whether or not to block popups in Safari.</summary>
         public bool? SafariBlockPopups {
-            get { return BackingStore?.Get<bool?>(nameof(SafariBlockPopups)); }
-            set { BackingStore?.Set(nameof(SafariBlockPopups), value); }
+            get { return BackingStore?.Get<bool?>("safariBlockPopups"); }
+            set { BackingStore?.Set("safariBlockPopups", value); }
         }
-        /// <summary>Cookie settings for Safari. Possible values are: browserDefault, blockAlways, allowCurrentWebSite, allowFromWebsitesVisited, allowAlways.</summary>
+        /// <summary>Web Browser Cookie Settings.</summary>
         public WebBrowserCookieSettings? SafariCookieSettings {
-            get { return BackingStore?.Get<WebBrowserCookieSettings?>(nameof(SafariCookieSettings)); }
-            set { BackingStore?.Set(nameof(SafariCookieSettings), value); }
+            get { return BackingStore?.Get<WebBrowserCookieSettings?>("safariCookieSettings"); }
+            set { BackingStore?.Set("safariCookieSettings", value); }
         }
         /// <summary>URLs matching the patterns listed here will be considered managed.</summary>
         public List<string> SafariManagedDomains {
-            get { return BackingStore?.Get<List<string>>(nameof(SafariManagedDomains)); }
-            set { BackingStore?.Set(nameof(SafariManagedDomains), value); }
+            get { return BackingStore?.Get<List<string>>("safariManagedDomains"); }
+            set { BackingStore?.Set("safariManagedDomains", value); }
         }
         /// <summary>Users can save passwords in Safari only from URLs matching the patterns listed here. Applies to devices in supervised mode (iOS 9.3 and later).</summary>
         public List<string> SafariPasswordAutoFillDomains {
-            get { return BackingStore?.Get<List<string>>(nameof(SafariPasswordAutoFillDomains)); }
-            set { BackingStore?.Set(nameof(SafariPasswordAutoFillDomains), value); }
+            get { return BackingStore?.Get<List<string>>("safariPasswordAutoFillDomains"); }
+            set { BackingStore?.Set("safariPasswordAutoFillDomains", value); }
         }
         /// <summary>Indicates whether or not to require fraud warning in Safari.</summary>
         public bool? SafariRequireFraudWarning {
-            get { return BackingStore?.Get<bool?>(nameof(SafariRequireFraudWarning)); }
-            set { BackingStore?.Set(nameof(SafariRequireFraudWarning), value); }
+            get { return BackingStore?.Get<bool?>("safariRequireFraudWarning"); }
+            set { BackingStore?.Set("safariRequireFraudWarning", value); }
         }
         /// <summary>Indicates whether or not to block the user from taking Screenshots.</summary>
         public bool? ScreenCaptureBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(ScreenCaptureBlocked)); }
-            set { BackingStore?.Set(nameof(ScreenCaptureBlocked), value); }
+            get { return BackingStore?.Get<bool?>("screenCaptureBlocked"); }
+            set { BackingStore?.Set("screenCaptureBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the user from using Siri.</summary>
         public bool? SiriBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(SiriBlocked)); }
-            set { BackingStore?.Set(nameof(SiriBlocked), value); }
+            get { return BackingStore?.Get<bool?>("siriBlocked"); }
+            set { BackingStore?.Set("siriBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the user from using Siri when locked.</summary>
         public bool? SiriBlockedWhenLocked {
-            get { return BackingStore?.Get<bool?>(nameof(SiriBlockedWhenLocked)); }
-            set { BackingStore?.Set(nameof(SiriBlockedWhenLocked), value); }
+            get { return BackingStore?.Get<bool?>("siriBlockedWhenLocked"); }
+            set { BackingStore?.Set("siriBlockedWhenLocked", value); }
         }
         /// <summary>Indicates whether or not to block Siri from querying user-generated content when used on a supervised device.</summary>
         public bool? SiriBlockUserGeneratedContent {
-            get { return BackingStore?.Get<bool?>(nameof(SiriBlockUserGeneratedContent)); }
-            set { BackingStore?.Set(nameof(SiriBlockUserGeneratedContent), value); }
+            get { return BackingStore?.Get<bool?>("siriBlockUserGeneratedContent"); }
+            set { BackingStore?.Set("siriBlockUserGeneratedContent", value); }
         }
         /// <summary>Indicates whether or not to prevent Siri from dictating, or speaking profane language on supervised device.</summary>
         public bool? SiriRequireProfanityFilter {
-            get { return BackingStore?.Get<bool?>(nameof(SiriRequireProfanityFilter)); }
-            set { BackingStore?.Set(nameof(SiriRequireProfanityFilter), value); }
+            get { return BackingStore?.Get<bool?>("siriRequireProfanityFilter"); }
+            set { BackingStore?.Set("siriRequireProfanityFilter", value); }
         }
         /// <summary>Indicates whether or not to block Spotlight search from returning internet results on supervised device.</summary>
         public bool? SpotlightBlockInternetResults {
-            get { return BackingStore?.Get<bool?>(nameof(SpotlightBlockInternetResults)); }
-            set { BackingStore?.Set(nameof(SpotlightBlockInternetResults), value); }
+            get { return BackingStore?.Get<bool?>("spotlightBlockInternetResults"); }
+            set { BackingStore?.Set("spotlightBlockInternetResults", value); }
         }
         /// <summary>Indicates whether or not to block voice dialing.</summary>
         public bool? VoiceDialingBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(VoiceDialingBlocked)); }
-            set { BackingStore?.Set(nameof(VoiceDialingBlocked), value); }
+            get { return BackingStore?.Get<bool?>("voiceDialingBlocked"); }
+            set { BackingStore?.Set("voiceDialingBlocked", value); }
         }
         /// <summary>Indicates whether or not to allow wallpaper modification on supervised device (iOS 9.0 and later) .</summary>
         public bool? WallpaperBlockModification {
-            get { return BackingStore?.Get<bool?>(nameof(WallpaperBlockModification)); }
-            set { BackingStore?.Set(nameof(WallpaperBlockModification), value); }
+            get { return BackingStore?.Get<bool?>("wallpaperBlockModification"); }
+            set { BackingStore?.Set("wallpaperBlockModification", value); }
         }
         /// <summary>Indicates whether or not to force the device to use only Wi-Fi networks from configuration profiles when the device is in supervised mode. Available for devices running iOS and iPadOS versions 14.4 and earlier. Devices running 14.5+ should use the setting, &apos;WiFiConnectToAllowedNetworksOnlyForced.</summary>
         public bool? WiFiConnectOnlyToConfiguredNetworks {
-            get { return BackingStore?.Get<bool?>(nameof(WiFiConnectOnlyToConfiguredNetworks)); }
-            set { BackingStore?.Set(nameof(WiFiConnectOnlyToConfiguredNetworks), value); }
+            get { return BackingStore?.Get<bool?>("wiFiConnectOnlyToConfiguredNetworks"); }
+            set { BackingStore?.Set("wiFiConnectOnlyToConfiguredNetworks", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

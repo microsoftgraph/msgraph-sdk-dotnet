@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class EventMessageResponse : EventMessage, IParsable {
         /// <summary>The proposedNewTime property</summary>
         public TimeSlot ProposedNewTime {
-            get { return BackingStore?.Get<TimeSlot>(nameof(ProposedNewTime)); }
-            set { BackingStore?.Set(nameof(ProposedNewTime), value); }
+            get { return BackingStore?.Get<TimeSlot>("proposedNewTime"); }
+            set { BackingStore?.Set("proposedNewTime", value); }
         }
         /// <summary>The responseType property</summary>
         public Microsoft.Graph.Models.ResponseType? ResponseType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ResponseType?>(nameof(ResponseType)); }
-            set { BackingStore?.Set(nameof(ResponseType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ResponseType?>("responseType"); }
+            set { BackingStore?.Set("responseType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

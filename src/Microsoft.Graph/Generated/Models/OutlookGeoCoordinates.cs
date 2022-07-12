@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class OutlookGeoCoordinates : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.</summary>
         public double? Accuracy {
-            get { return BackingStore?.Get<double?>(nameof(Accuracy)); }
-            set { BackingStore?.Set(nameof(Accuracy), value); }
+            get { return BackingStore?.Get<double?>("accuracy"); }
+            set { BackingStore?.Set("accuracy", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The altitude of the location.</summary>
         public double? Altitude {
-            get { return BackingStore?.Get<double?>(nameof(Altitude)); }
-            set { BackingStore?.Set(nameof(Altitude), value); }
+            get { return BackingStore?.Get<double?>("altitude"); }
+            set { BackingStore?.Set("altitude", value); }
         }
         /// <summary>The accuracy of the altitude.</summary>
         public double? AltitudeAccuracy {
-            get { return BackingStore?.Get<double?>(nameof(AltitudeAccuracy)); }
-            set { BackingStore?.Set(nameof(AltitudeAccuracy), value); }
+            get { return BackingStore?.Get<double?>("altitudeAccuracy"); }
+            set { BackingStore?.Set("altitudeAccuracy", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The latitude of the location.</summary>
         public double? Latitude {
-            get { return BackingStore?.Get<double?>(nameof(Latitude)); }
-            set { BackingStore?.Set(nameof(Latitude), value); }
+            get { return BackingStore?.Get<double?>("latitude"); }
+            set { BackingStore?.Set("latitude", value); }
         }
         /// <summary>The longitude of the location.</summary>
         public double? Longitude {
-            get { return BackingStore?.Get<double?>(nameof(Longitude)); }
-            set { BackingStore?.Set(nameof(Longitude), value); }
+            get { return BackingStore?.Get<double?>("longitude"); }
+            set { BackingStore?.Set("longitude", value); }
         }
         /// <summary>
         /// Instantiates a new outlookGeoCoordinates and sets the default values.

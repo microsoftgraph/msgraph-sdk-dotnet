@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class ListInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If true, indicates that content types are enabled for this list.</summary>
         public bool? ContentTypesEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(ContentTypesEnabled)); }
-            set { BackingStore?.Set(nameof(ContentTypesEnabled), value); }
+            get { return BackingStore?.Get<bool?>("contentTypesEnabled"); }
+            set { BackingStore?.Set("contentTypesEnabled", value); }
         }
         /// <summary>If true, indicates that the list is not normally visible in the SharePoint user experience.</summary>
         public bool? Hidden {
-            get { return BackingStore?.Get<bool?>(nameof(Hidden)); }
-            set { BackingStore?.Set(nameof(Hidden), value); }
+            get { return BackingStore?.Get<bool?>("hidden"); }
+            set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.</summary>
         public string Template {
-            get { return BackingStore?.Get<string>(nameof(Template)); }
-            set { BackingStore?.Set(nameof(Template), value); }
+            get { return BackingStore?.Get<string>("template"); }
+            set { BackingStore?.Set("template", value); }
         }
         /// <summary>
         /// Instantiates a new listInfo and sets the default values.

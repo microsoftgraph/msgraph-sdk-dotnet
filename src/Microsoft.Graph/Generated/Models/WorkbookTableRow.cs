@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class WorkbookTableRow : Entity, IParsable {
         /// <summary>Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.</summary>
         public int? Index {
-            get { return BackingStore?.Get<int?>(nameof(Index)); }
-            set { BackingStore?.Set(nameof(Index), value); }
+            get { return BackingStore?.Get<int?>("index"); }
+            set { BackingStore?.Set("index", value); }
         }
         /// <summary>Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.</summary>
         public Json Values {
-            get { return BackingStore?.Get<Json>(nameof(Values)); }
-            set { BackingStore?.Set(nameof(Values), value); }
+            get { return BackingStore?.Get<Json>("values"); }
+            set { BackingStore?.Set("values", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

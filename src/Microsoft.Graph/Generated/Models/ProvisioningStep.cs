@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class ProvisioningStep : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Summary of what occurred during the step.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Details of what occurred during the step.</summary>
         public DetailsInfo Details {
-            get { return BackingStore?.Get<DetailsInfo>(nameof(Details)); }
-            set { BackingStore?.Set(nameof(Details), value); }
+            get { return BackingStore?.Get<DetailsInfo>("details"); }
+            set { BackingStore?.Set("details", value); }
         }
         /// <summary>Name of the step.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.ProvisioningStepType? ProvisioningStepType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisioningStepType?>(nameof(ProvisioningStepType)); }
-            set { BackingStore?.Set(nameof(ProvisioningStepType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisioningStepType?>("provisioningStepType"); }
+            set { BackingStore?.Set("provisioningStepType", value); }
         }
         /// <summary>Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.</summary>
         public ProvisioningResult? Status {
-            get { return BackingStore?.Get<ProvisioningResult?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ProvisioningResult?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Instantiates a new provisioningStep and sets the default values.

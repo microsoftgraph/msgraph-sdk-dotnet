@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class UserTeamwork : Entity, IParsable {
         /// <summary>The list of associatedTeamInfo objects that a user is associated with.</summary>
         public List<AssociatedTeamInfo> AssociatedTeams {
-            get { return BackingStore?.Get<List<AssociatedTeamInfo>>(nameof(AssociatedTeams)); }
-            set { BackingStore?.Set(nameof(AssociatedTeams), value); }
+            get { return BackingStore?.Get<List<AssociatedTeamInfo>>("associatedTeams"); }
+            set { BackingStore?.Set("associatedTeams", value); }
         }
         /// <summary>The apps installed in the personal scope of this user.</summary>
         public List<UserScopeTeamsAppInstallation> InstalledApps {
-            get { return BackingStore?.Get<List<UserScopeTeamsAppInstallation>>(nameof(InstalledApps)); }
-            set { BackingStore?.Set(nameof(InstalledApps), value); }
+            get { return BackingStore?.Get<List<UserScopeTeamsAppInstallation>>("installedApps"); }
+            set { BackingStore?.Set("installedApps", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

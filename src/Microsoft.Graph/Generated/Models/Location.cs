@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -8,50 +9,55 @@ namespace Microsoft.Graph.Models {
     public class Location : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The street address of the location.</summary>
         public PhysicalAddress Address {
-            get { return BackingStore?.Get<PhysicalAddress>(nameof(Address)); }
-            set { BackingStore?.Set(nameof(Address), value); }
+            get { return BackingStore?.Get<PhysicalAddress>("address"); }
+            set { BackingStore?.Set("address", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The geographic coordinates and elevation of the location.</summary>
         public OutlookGeoCoordinates Coordinates {
-            get { return BackingStore?.Get<OutlookGeoCoordinates>(nameof(Coordinates)); }
-            set { BackingStore?.Set(nameof(Coordinates), value); }
+            get { return BackingStore?.Get<OutlookGeoCoordinates>("coordinates"); }
+            set { BackingStore?.Set("coordinates", value); }
         }
         /// <summary>The name associated with the location.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Optional email address of the location.</summary>
         public string LocationEmailAddress {
-            get { return BackingStore?.Get<string>(nameof(LocationEmailAddress)); }
-            set { BackingStore?.Set(nameof(LocationEmailAddress), value); }
+            get { return BackingStore?.Get<string>("locationEmailAddress"); }
+            set { BackingStore?.Set("locationEmailAddress", value); }
         }
         /// <summary>The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.</summary>
         public Microsoft.Graph.Models.LocationType? LocationType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.LocationType?>(nameof(LocationType)); }
-            set { BackingStore?.Set(nameof(LocationType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.LocationType?>("locationType"); }
+            set { BackingStore?.Set("locationType", value); }
         }
         /// <summary>Optional URI representing the location.</summary>
         public string LocationUri {
-            get { return BackingStore?.Get<string>(nameof(LocationUri)); }
-            set { BackingStore?.Set(nameof(LocationUri), value); }
+            get { return BackingStore?.Get<string>("locationUri"); }
+            set { BackingStore?.Set("locationUri", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>For internal use only.</summary>
         public string UniqueId {
-            get { return BackingStore?.Get<string>(nameof(UniqueId)); }
-            set { BackingStore?.Set(nameof(UniqueId), value); }
+            get { return BackingStore?.Get<string>("uniqueId"); }
+            set { BackingStore?.Set("uniqueId", value); }
         }
         /// <summary>For internal use only.</summary>
         public LocationUniqueIdType? UniqueIdType {
-            get { return BackingStore?.Get<LocationUniqueIdType?>(nameof(UniqueIdType)); }
-            set { BackingStore?.Set(nameof(UniqueIdType), value); }
+            get { return BackingStore?.Get<LocationUniqueIdType?>("uniqueIdType"); }
+            set { BackingStore?.Set("uniqueIdType", value); }
         }
         /// <summary>
         /// Instantiates a new location and sets the default values.
@@ -59,6 +65,7 @@ namespace Microsoft.Graph.Models {
         public Location() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.location";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,7 +73,12 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public static Location CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Location();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.locationConstraintItem" => new LocationConstraintItem(),
+                _ => new Location(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +91,7 @@ namespace Microsoft.Graph.Models {
                 {"locationEmailAddress", n => { LocationEmailAddress = n.GetStringValue(); } },
                 {"locationType", n => { LocationType = n.GetEnumValue<LocationType>(); } },
                 {"locationUri", n => { LocationUri = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
                 {"uniqueId", n => { UniqueId = n.GetStringValue(); } },
                 {"uniqueIdType", n => { UniqueIdType = n.GetEnumValue<LocationUniqueIdType>(); } },
             };
@@ -95,6 +108,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("locationEmailAddress", LocationEmailAddress);
             writer.WriteEnumValue<LocationType>("locationType", LocationType);
             writer.WriteStringValue("locationUri", LocationUri);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteStringValue("uniqueId", UniqueId);
             writer.WriteEnumValue<LocationUniqueIdType>("uniqueIdType", UniqueIdType);
             writer.WriteAdditionalData(AdditionalData);

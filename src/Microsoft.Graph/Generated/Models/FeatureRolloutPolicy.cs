@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class FeatureRolloutPolicy : Entity, IParsable {
         /// <summary>Nullable. Specifies a list of directoryObjects that feature is enabled for.</summary>
         public List<DirectoryObject> AppliesTo {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(AppliesTo)); }
-            set { BackingStore?.Set(nameof(AppliesTo), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
         }
         /// <summary>A description for this feature rollout policy.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name for this  feature rollout policy.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>Possible values are: passthroughAuthentication, seamlessSso, passwordHashSync, emailAsAlternateId, unknownFutureValue.</summary>
+        /// <summary>The feature property</summary>
         public StagedFeatureName? Feature {
-            get { return BackingStore?.Get<StagedFeatureName?>(nameof(Feature)); }
-            set { BackingStore?.Set(nameof(Feature), value); }
+            get { return BackingStore?.Get<StagedFeatureName?>("feature"); }
+            set { BackingStore?.Set("feature", value); }
         }
         /// <summary>Indicates whether this feature rollout policy should be applied to the entire organization.</summary>
         public bool? IsAppliedToOrganization {
-            get { return BackingStore?.Get<bool?>(nameof(IsAppliedToOrganization)); }
-            set { BackingStore?.Set(nameof(IsAppliedToOrganization), value); }
+            get { return BackingStore?.Get<bool?>("isAppliedToOrganization"); }
+            set { BackingStore?.Set("isAppliedToOrganization", value); }
         }
         /// <summary>Indicates whether the feature rollout is enabled.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

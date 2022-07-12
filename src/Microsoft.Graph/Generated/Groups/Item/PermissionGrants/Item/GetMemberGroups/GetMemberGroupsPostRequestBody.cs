@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Groups.Item.PermissionGrants.Item.GetMemberGroups {
     public class GetMemberGroupsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The securityEnabledOnly property</summary>
         public bool? SecurityEnabledOnly {
-            get { return BackingStore?.Get<bool?>(nameof(SecurityEnabledOnly)); }
-            set { BackingStore?.Set(nameof(SecurityEnabledOnly), value); }
+            get { return BackingStore?.Get<bool?>("securityEnabledOnly"); }
+            set { BackingStore?.Set("securityEnabledOnly", value); }
         }
         /// <summary>
         /// Instantiates a new getMemberGroupsPostRequestBody and sets the default values.

@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Me.SendMail {
     public class SendMailPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Message property</summary>
         public Microsoft.Graph.Models.Message Message {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Message>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Message>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>The SaveToSentItems property</summary>
         public bool? SaveToSentItems {
-            get { return BackingStore?.Get<bool?>(nameof(SaveToSentItems)); }
-            set { BackingStore?.Set(nameof(SaveToSentItems), value); }
+            get { return BackingStore?.Get<bool?>("saveToSentItems"); }
+            set { BackingStore?.Set("saveToSentItems", value); }
         }
         /// <summary>
         /// Instantiates a new sendMailPostRequestBody and sets the default values.

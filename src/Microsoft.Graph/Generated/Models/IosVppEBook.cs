@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Models {
     public class IosVppEBook : ManagedEBook, IParsable {
         /// <summary>The Apple ID associated with Vpp token.</summary>
         public string AppleId {
-            get { return BackingStore?.Get<string>(nameof(AppleId)); }
-            set { BackingStore?.Set(nameof(AppleId), value); }
+            get { return BackingStore?.Get<string>("appleId"); }
+            set { BackingStore?.Set("appleId", value); }
         }
         /// <summary>Genres.</summary>
         public List<string> Genres {
-            get { return BackingStore?.Get<List<string>>(nameof(Genres)); }
-            set { BackingStore?.Set(nameof(Genres), value); }
+            get { return BackingStore?.Get<List<string>>("genres"); }
+            set { BackingStore?.Set("genres", value); }
         }
         /// <summary>Language.</summary>
         public string Language {
-            get { return BackingStore?.Get<string>(nameof(Language)); }
-            set { BackingStore?.Set(nameof(Language), value); }
+            get { return BackingStore?.Get<string>("language"); }
+            set { BackingStore?.Set("language", value); }
         }
         /// <summary>Seller.</summary>
         public string Seller {
-            get { return BackingStore?.Get<string>(nameof(Seller)); }
-            set { BackingStore?.Set(nameof(Seller), value); }
+            get { return BackingStore?.Get<string>("seller"); }
+            set { BackingStore?.Set("seller", value); }
         }
         /// <summary>Total license count.</summary>
         public int? TotalLicenseCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalLicenseCount)); }
-            set { BackingStore?.Set(nameof(TotalLicenseCount), value); }
+            get { return BackingStore?.Get<int?>("totalLicenseCount"); }
+            set { BackingStore?.Set("totalLicenseCount", value); }
         }
         /// <summary>Used license count.</summary>
         public int? UsedLicenseCount {
-            get { return BackingStore?.Get<int?>(nameof(UsedLicenseCount)); }
-            set { BackingStore?.Set(nameof(UsedLicenseCount), value); }
+            get { return BackingStore?.Get<int?>("usedLicenseCount"); }
+            set { BackingStore?.Set("usedLicenseCount", value); }
         }
         /// <summary>The Vpp token&apos;s organization name.</summary>
         public string VppOrganizationName {
-            get { return BackingStore?.Get<string>(nameof(VppOrganizationName)); }
-            set { BackingStore?.Set(nameof(VppOrganizationName), value); }
+            get { return BackingStore?.Get<string>("vppOrganizationName"); }
+            set { BackingStore?.Set("vppOrganizationName", value); }
         }
         /// <summary>The Vpp token ID.</summary>
         public string VppTokenId {
-            get { return BackingStore?.Get<string>(nameof(VppTokenId)); }
-            set { BackingStore?.Set(nameof(VppTokenId), value); }
+            get { return BackingStore?.Get<string>("vppTokenId"); }
+            set { BackingStore?.Set("vppTokenId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

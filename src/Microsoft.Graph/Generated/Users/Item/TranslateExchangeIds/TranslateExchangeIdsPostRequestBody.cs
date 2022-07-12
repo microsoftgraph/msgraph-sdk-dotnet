@@ -10,25 +10,25 @@ namespace Microsoft.Graph.Users.Item.TranslateExchangeIds {
     public class TranslateExchangeIdsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The InputIds property</summary>
         public List<string> InputIds {
-            get { return BackingStore?.Get<List<string>>(nameof(InputIds)); }
-            set { BackingStore?.Set(nameof(InputIds), value); }
+            get { return BackingStore?.Get<List<string>>("inputIds"); }
+            set { BackingStore?.Set("inputIds", value); }
         }
         /// <summary>The SourceIdType property</summary>
         public ExchangeIdFormat? SourceIdType {
-            get { return BackingStore?.Get<ExchangeIdFormat?>(nameof(SourceIdType)); }
-            set { BackingStore?.Set(nameof(SourceIdType), value); }
+            get { return BackingStore?.Get<ExchangeIdFormat?>("sourceIdType"); }
+            set { BackingStore?.Set("sourceIdType", value); }
         }
         /// <summary>The TargetIdType property</summary>
         public ExchangeIdFormat? TargetIdType {
-            get { return BackingStore?.Get<ExchangeIdFormat?>(nameof(TargetIdType)); }
-            set { BackingStore?.Set(nameof(TargetIdType), value); }
+            get { return BackingStore?.Get<ExchangeIdFormat?>("targetIdType"); }
+            set { BackingStore?.Set("targetIdType", value); }
         }
         /// <summary>
         /// Instantiates a new translateExchangeIdsPostRequestBody and sets the default values.

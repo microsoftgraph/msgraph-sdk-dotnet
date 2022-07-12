@@ -8,43 +8,43 @@ namespace Microsoft.Graph.Models {
     public class DeviceManagementPartner : Entity, IParsable {
         /// <summary>Partner display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Whether device management partner is configured or not</summary>
         public bool? IsConfigured {
-            get { return BackingStore?.Get<bool?>(nameof(IsConfigured)); }
-            set { BackingStore?.Set(nameof(IsConfigured), value); }
+            get { return BackingStore?.Get<bool?>("isConfigured"); }
+            set { BackingStore?.Set("isConfigured", value); }
         }
         /// <summary>Timestamp of last heartbeat after admin enabled option Connect to Device management Partner</summary>
         public DateTimeOffset? LastHeartbeatDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastHeartbeatDateTime)); }
-            set { BackingStore?.Set(nameof(LastHeartbeatDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastHeartbeatDateTime"); }
+            set { BackingStore?.Set("lastHeartbeatDateTime", value); }
         }
-        /// <summary>Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.</summary>
+        /// <summary>Partner App Type.</summary>
         public DeviceManagementPartnerAppType? PartnerAppType {
-            get { return BackingStore?.Get<DeviceManagementPartnerAppType?>(nameof(PartnerAppType)); }
-            set { BackingStore?.Set(nameof(PartnerAppType), value); }
+            get { return BackingStore?.Get<DeviceManagementPartnerAppType?>("partnerAppType"); }
+            set { BackingStore?.Set("partnerAppType", value); }
         }
-        /// <summary>Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.</summary>
+        /// <summary>Partner state of this tenant.</summary>
         public DeviceManagementPartnerTenantState? PartnerState {
-            get { return BackingStore?.Get<DeviceManagementPartnerTenantState?>(nameof(PartnerState)); }
-            set { BackingStore?.Set(nameof(PartnerState), value); }
+            get { return BackingStore?.Get<DeviceManagementPartnerTenantState?>("partnerState"); }
+            set { BackingStore?.Set("partnerState", value); }
         }
         /// <summary>Partner Single tenant App id</summary>
         public string SingleTenantAppId {
-            get { return BackingStore?.Get<string>(nameof(SingleTenantAppId)); }
-            set { BackingStore?.Set(nameof(SingleTenantAppId), value); }
+            get { return BackingStore?.Get<string>("singleTenantAppId"); }
+            set { BackingStore?.Set("singleTenantAppId", value); }
         }
         /// <summary>DateTime in UTC when PartnerDevices will be marked as NonCompliant</summary>
         public DateTimeOffset? WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime)); }
-            set { BackingStore?.Set(nameof(WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime"); }
+            set { BackingStore?.Set("whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime", value); }
         }
         /// <summary>DateTime in UTC when PartnerDevices will be removed</summary>
         public DateTimeOffset? WhenPartnerDevicesWillBeRemovedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(WhenPartnerDevicesWillBeRemovedDateTime)); }
-            set { BackingStore?.Set(nameof(WhenPartnerDevicesWillBeRemovedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("whenPartnerDevicesWillBeRemovedDateTime"); }
+            set { BackingStore?.Set("whenPartnerDevicesWillBeRemovedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Models {
     public class TimeOff : ChangeTrackedEntity, IParsable {
         /// <summary>The draft version of this timeOff that is viewable by managers. Required.</summary>
         public TimeOffItem DraftTimeOff {
-            get { return BackingStore?.Get<TimeOffItem>(nameof(DraftTimeOff)); }
-            set { BackingStore?.Set(nameof(DraftTimeOff), value); }
+            get { return BackingStore?.Get<TimeOffItem>("draftTimeOff"); }
+            set { BackingStore?.Set("draftTimeOff", value); }
         }
         /// <summary>The shared version of this timeOff that is viewable by both employees and managers. Required.</summary>
         public TimeOffItem SharedTimeOff {
-            get { return BackingStore?.Get<TimeOffItem>(nameof(SharedTimeOff)); }
-            set { BackingStore?.Set(nameof(SharedTimeOff), value); }
+            get { return BackingStore?.Get<TimeOffItem>("sharedTimeOff"); }
+            set { BackingStore?.Set("sharedTimeOff", value); }
         }
         /// <summary>ID of the user assigned to the timeOff. Required.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

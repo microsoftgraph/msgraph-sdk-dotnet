@@ -4,47 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class ConnectedOrganization : Entity, IParsable {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the connected organization.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name of the connected organization. Supports $filter (eq).</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The externalSponsors property</summary>
         public List<DirectoryObject> ExternalSponsors {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(ExternalSponsors)); }
-            set { BackingStore?.Set(nameof(ExternalSponsors), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("externalSponsors"); }
+            set { BackingStore?.Set("externalSponsors", value); }
         }
         /// <summary>The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq &apos;bcfdfff4-cbc3-43f2-9000-ba7b7515054f&apos;).</summary>
         public List<IdentitySource> IdentitySources {
-            get { return BackingStore?.Get<List<IdentitySource>>(nameof(IdentitySources)); }
-            set { BackingStore?.Set(nameof(IdentitySources), value); }
+            get { return BackingStore?.Get<List<IdentitySource>>("identitySources"); }
+            set { BackingStore?.Set("identitySources", value); }
         }
         /// <summary>The internalSponsors property</summary>
         public List<DirectoryObject> InternalSponsors {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(InternalSponsors)); }
-            set { BackingStore?.Set(nameof(InternalSponsors), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("internalSponsors"); }
+            set { BackingStore?.Set("internalSponsors", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
+            set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.</summary>
         public ConnectedOrganizationState? State {
-            get { return BackingStore?.Get<ConnectedOrganizationState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ConnectedOrganizationState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

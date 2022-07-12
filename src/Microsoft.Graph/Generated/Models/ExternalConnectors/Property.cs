@@ -8,50 +8,50 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
     public class Property : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, &apos;, &apos;, &lt;, &gt;, `, ^. Optional.</summary>
         public List<string> Aliases {
-            get { return BackingStore?.Get<List<string>>(nameof(Aliases)); }
-            set { BackingStore?.Set(nameof(Aliases), value); }
+            get { return BackingStore?.Get<List<string>>("aliases"); }
+            set { BackingStore?.Set("aliases", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.</summary>
         public bool? IsQueryable {
-            get { return BackingStore?.Get<bool?>(nameof(IsQueryable)); }
-            set { BackingStore?.Set(nameof(IsQueryable), value); }
+            get { return BackingStore?.Get<bool?>("isQueryable"); }
+            set { BackingStore?.Set("isQueryable", value); }
         }
         /// <summary>Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.</summary>
         public bool? IsRefinable {
-            get { return BackingStore?.Get<bool?>(nameof(IsRefinable)); }
-            set { BackingStore?.Set(nameof(IsRefinable), value); }
+            get { return BackingStore?.Get<bool?>("isRefinable"); }
+            set { BackingStore?.Set("isRefinable", value); }
         }
         /// <summary>Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.</summary>
         public bool? IsRetrievable {
-            get { return BackingStore?.Get<bool?>(nameof(IsRetrievable)); }
-            set { BackingStore?.Set(nameof(IsRetrievable), value); }
+            get { return BackingStore?.Get<bool?>("isRetrievable"); }
+            set { BackingStore?.Set("isRetrievable", value); }
         }
         /// <summary>Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.</summary>
         public bool? IsSearchable {
-            get { return BackingStore?.Get<bool?>(nameof(IsSearchable)); }
-            set { BackingStore?.Set(nameof(IsSearchable), value); }
+            get { return BackingStore?.Get<bool?>("isSearchable"); }
+            set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.</summary>
         public List<string> Labels {
-            get { return BackingStore?.Get<List<string>>(nameof(Labels)); }
-            set { BackingStore?.Set(nameof(Labels), value); }
+            get { return BackingStore?.Get<List<string>>("labels"); }
+            set { BackingStore?.Set("labels", value); }
         }
         /// <summary>The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, &apos;, &apos;, &lt;, &gt;, `, ^.  Required.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
-        /// <summary>The data type of the property. Possible values are: string, int64, double, dateTime, boolean, stringCollection, int64Collection, doubleCollection, dateTimeCollection, unknownFutureValue. Required.</summary>
+        /// <summary>The type property</summary>
         public PropertyType? Type {
-            get { return BackingStore?.Get<PropertyType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<PropertyType?>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Instantiates a new property and sets the default values.

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Models {
     public class ProvisionChannelEmailResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the provisioned email address.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>
-        /// Instantiates a new ProvisionChannelEmailResult and sets the default values.
+        /// Instantiates a new provisionChannelEmailResult and sets the default values.
         /// </summary>
         public ProvisionChannelEmailResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

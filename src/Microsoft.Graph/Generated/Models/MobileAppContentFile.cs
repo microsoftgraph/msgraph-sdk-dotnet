@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Models {
     public class MobileAppContentFile : Entity, IParsable {
         /// <summary>The Azure Storage URI.</summary>
         public string AzureStorageUri {
-            get { return BackingStore?.Get<string>(nameof(AzureStorageUri)); }
-            set { BackingStore?.Set(nameof(AzureStorageUri), value); }
+            get { return BackingStore?.Get<string>("azureStorageUri"); }
+            set { BackingStore?.Set("azureStorageUri", value); }
         }
         /// <summary>The time the Azure storage Uri expires.</summary>
         public DateTimeOffset? AzureStorageUriExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AzureStorageUriExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(AzureStorageUriExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("azureStorageUriExpirationDateTime"); }
+            set { BackingStore?.Set("azureStorageUriExpirationDateTime", value); }
         }
         /// <summary>The time the file was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>A value indicating whether the file is committed.</summary>
         public bool? IsCommitted {
-            get { return BackingStore?.Get<bool?>(nameof(IsCommitted)); }
-            set { BackingStore?.Set(nameof(IsCommitted), value); }
+            get { return BackingStore?.Get<bool?>("isCommitted"); }
+            set { BackingStore?.Set("isCommitted", value); }
         }
         /// <summary>The manifest information.</summary>
         public byte[] Manifest {
-            get { return BackingStore?.Get<byte[]>(nameof(Manifest)); }
-            set { BackingStore?.Set(nameof(Manifest), value); }
+            get { return BackingStore?.Get<byte[]>("manifest"); }
+            set { BackingStore?.Set("manifest", value); }
         }
         /// <summary>the file name.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The size of the file prior to encryption.</summary>
         public long? Size {
-            get { return BackingStore?.Get<long?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<long?>("size"); }
+            set { BackingStore?.Set("size", value); }
         }
         /// <summary>The size of the file after encryption.</summary>
         public long? SizeEncrypted {
-            get { return BackingStore?.Get<long?>(nameof(SizeEncrypted)); }
-            set { BackingStore?.Set(nameof(SizeEncrypted), value); }
+            get { return BackingStore?.Get<long?>("sizeEncrypted"); }
+            set { BackingStore?.Set("sizeEncrypted", value); }
         }
-        /// <summary>The state of the current upload request. Possible values are: success, transientError, error, unknown, azureStorageUriRequestSuccess, azureStorageUriRequestPending, azureStorageUriRequestFailed, azureStorageUriRequestTimedOut, azureStorageUriRenewalSuccess, azureStorageUriRenewalPending, azureStorageUriRenewalFailed, azureStorageUriRenewalTimedOut, commitFileSuccess, commitFilePending, commitFileFailed, commitFileTimedOut.</summary>
+        /// <summary>Contains properties for upload request states.</summary>
         public MobileAppContentFileUploadState? UploadState {
-            get { return BackingStore?.Get<MobileAppContentFileUploadState?>(nameof(UploadState)); }
-            set { BackingStore?.Set(nameof(UploadState), value); }
+            get { return BackingStore?.Get<MobileAppContentFileUploadState?>("uploadState"); }
+            set { BackingStore?.Set("uploadState", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,43 +8,43 @@ namespace Microsoft.Graph.Models {
     public class MobileThreatDefenseConnector : Entity, IParsable {
         /// <summary>For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant</summary>
         public bool? AndroidDeviceBlockedOnMissingPartnerData {
-            get { return BackingStore?.Get<bool?>(nameof(AndroidDeviceBlockedOnMissingPartnerData)); }
-            set { BackingStore?.Set(nameof(AndroidDeviceBlockedOnMissingPartnerData), value); }
+            get { return BackingStore?.Get<bool?>("androidDeviceBlockedOnMissingPartnerData"); }
+            set { BackingStore?.Set("androidDeviceBlockedOnMissingPartnerData", value); }
         }
         /// <summary>For Android, set whether data from the data sync partner should be used during compliance evaluations</summary>
         public bool? AndroidEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(AndroidEnabled)); }
-            set { BackingStore?.Set(nameof(AndroidEnabled), value); }
+            get { return BackingStore?.Get<bool?>("androidEnabled"); }
+            set { BackingStore?.Set("androidEnabled", value); }
         }
         /// <summary>For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant</summary>
         public bool? IosDeviceBlockedOnMissingPartnerData {
-            get { return BackingStore?.Get<bool?>(nameof(IosDeviceBlockedOnMissingPartnerData)); }
-            set { BackingStore?.Set(nameof(IosDeviceBlockedOnMissingPartnerData), value); }
+            get { return BackingStore?.Get<bool?>("iosDeviceBlockedOnMissingPartnerData"); }
+            set { BackingStore?.Set("iosDeviceBlockedOnMissingPartnerData", value); }
         }
         /// <summary>For IOS, get or set whether data from the data sync partner should be used during compliance evaluations</summary>
         public bool? IosEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IosEnabled)); }
-            set { BackingStore?.Set(nameof(IosEnabled), value); }
+            get { return BackingStore?.Get<bool?>("iosEnabled"); }
+            set { BackingStore?.Set("iosEnabled", value); }
         }
         /// <summary>DateTime of last Heartbeat recieved from the Data Sync Partner</summary>
         public DateTimeOffset? LastHeartbeatDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastHeartbeatDateTime)); }
-            set { BackingStore?.Set(nameof(LastHeartbeatDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastHeartbeatDateTime"); }
+            set { BackingStore?.Set("lastHeartbeatDateTime", value); }
         }
-        /// <summary>Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.</summary>
+        /// <summary>Partner state of this tenant.</summary>
         public MobileThreatPartnerTenantState? PartnerState {
-            get { return BackingStore?.Get<MobileThreatPartnerTenantState?>(nameof(PartnerState)); }
-            set { BackingStore?.Set(nameof(PartnerState), value); }
+            get { return BackingStore?.Get<MobileThreatPartnerTenantState?>("partnerState"); }
+            set { BackingStore?.Set("partnerState", value); }
         }
         /// <summary>Get or Set days the per tenant tolerance to unresponsiveness for this partner integration</summary>
         public int? PartnerUnresponsivenessThresholdInDays {
-            get { return BackingStore?.Get<int?>(nameof(PartnerUnresponsivenessThresholdInDays)); }
-            set { BackingStore?.Set(nameof(PartnerUnresponsivenessThresholdInDays), value); }
+            get { return BackingStore?.Get<int?>("partnerUnresponsivenessThresholdInDays"); }
+            set { BackingStore?.Set("partnerUnresponsivenessThresholdInDays", value); }
         }
         /// <summary>Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner</summary>
         public bool? PartnerUnsupportedOsVersionBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(PartnerUnsupportedOsVersionBlocked)); }
-            set { BackingStore?.Set(nameof(PartnerUnsupportedOsVersionBlocked), value); }
+            get { return BackingStore?.Get<bool?>("partnerUnsupportedOsVersionBlocked"); }
+            set { BackingStore?.Set("partnerUnsupportedOsVersionBlocked", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

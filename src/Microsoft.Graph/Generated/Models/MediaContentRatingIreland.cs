@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class MediaContentRatingIreland : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Movies rating selected for Ireland. Possible values are: allAllowed, allBlocked, general, parentalGuidance, agesAbove12, agesAbove15, agesAbove16, adults.</summary>
+        /// <summary>Movies rating labels in Ireland</summary>
         public RatingIrelandMoviesType? MovieRating {
-            get { return BackingStore?.Get<RatingIrelandMoviesType?>(nameof(MovieRating)); }
-            set { BackingStore?.Set(nameof(MovieRating), value); }
+            get { return BackingStore?.Get<RatingIrelandMoviesType?>("movieRating"); }
+            set { BackingStore?.Set("movieRating", value); }
         }
-        /// <summary>TV rating selected for Ireland. Possible values are: allAllowed, allBlocked, general, children, youngAdults, parentalSupervision, mature.</summary>
+        /// <summary>TV content rating labels in Ireland</summary>
         public RatingIrelandTelevisionType? TvRating {
-            get { return BackingStore?.Get<RatingIrelandTelevisionType?>(nameof(TvRating)); }
-            set { BackingStore?.Set(nameof(TvRating), value); }
+            get { return BackingStore?.Get<RatingIrelandTelevisionType?>("tvRating"); }
+            set { BackingStore?.Set("tvRating", value); }
         }
         /// <summary>
         /// Instantiates a new mediaContentRatingIreland and sets the default values.

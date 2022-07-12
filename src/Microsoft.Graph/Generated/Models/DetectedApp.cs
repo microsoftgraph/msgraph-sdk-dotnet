@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Models {
     public class DetectedApp : Entity, IParsable {
         /// <summary>The number of devices that have installed this application</summary>
         public int? DeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(DeviceCount)); }
-            set { BackingStore?.Set(nameof(DeviceCount), value); }
+            get { return BackingStore?.Get<int?>("deviceCount"); }
+            set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>Name of the discovered application. Read-only</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The devices that have the discovered application installed</summary>
         public List<ManagedDevice> ManagedDevices {
-            get { return BackingStore?.Get<List<ManagedDevice>>(nameof(ManagedDevices)); }
-            set { BackingStore?.Set(nameof(ManagedDevices), value); }
+            get { return BackingStore?.Get<List<ManagedDevice>>("managedDevices"); }
+            set { BackingStore?.Set("managedDevices", value); }
         }
         /// <summary>Discovered application size in bytes. Read-only</summary>
         public long? SizeInByte {
-            get { return BackingStore?.Get<long?>(nameof(SizeInByte)); }
-            set { BackingStore?.Set(nameof(SizeInByte), value); }
+            get { return BackingStore?.Get<long?>("sizeInByte"); }
+            set { BackingStore?.Set("sizeInByte", value); }
         }
         /// <summary>Version of the discovered application. Read-only</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

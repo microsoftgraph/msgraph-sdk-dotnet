@@ -1,35 +1,42 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class LongRunningOperation : Entity, IParsable {
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
-            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
+            set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The resourceLocation property</summary>
         public string ResourceLocation {
-            get { return BackingStore?.Get<string>(nameof(ResourceLocation)); }
-            set { BackingStore?.Set(nameof(ResourceLocation), value); }
+            get { return BackingStore?.Get<string>("resourceLocation"); }
+            set { BackingStore?.Set("resourceLocation", value); }
         }
         /// <summary>The status property</summary>
         public LongRunningOperationStatus? Status {
-            get { return BackingStore?.Get<LongRunningOperationStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The statusDetail property</summary>
         public string StatusDetail {
-            get { return BackingStore?.Get<string>(nameof(StatusDetail)); }
-            set { BackingStore?.Set(nameof(StatusDetail), value); }
+            get { return BackingStore?.Get<string>("statusDetail"); }
+            set { BackingStore?.Set("statusDetail", value); }
+        }
+        /// <summary>
+        /// Instantiates a new longRunningOperation and sets the default values.
+        /// </summary>
+        public LongRunningOperation() : base() {
+            Type = "#microsoft.graph.longRunningOperation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

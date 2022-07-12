@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class DataSubject : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Email of the data subject.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>First name of the data subject.</summary>
         public string FirstName {
-            get { return BackingStore?.Get<string>(nameof(FirstName)); }
-            set { BackingStore?.Set(nameof(FirstName), value); }
+            get { return BackingStore?.Get<string>("firstName"); }
+            set { BackingStore?.Set("firstName", value); }
         }
         /// <summary>Last Name of the data subject.</summary>
         public string LastName {
-            get { return BackingStore?.Get<string>(nameof(LastName)); }
-            set { BackingStore?.Set(nameof(LastName), value); }
+            get { return BackingStore?.Get<string>("lastName"); }
+            set { BackingStore?.Set("lastName", value); }
         }
         /// <summary>The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.</summary>
         public string Residency {
-            get { return BackingStore?.Get<string>(nameof(Residency)); }
-            set { BackingStore?.Set(nameof(Residency), value); }
+            get { return BackingStore?.Get<string>("residency"); }
+            set { BackingStore?.Set("residency", value); }
         }
         /// <summary>
         /// Instantiates a new dataSubject and sets the default values.

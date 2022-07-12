@@ -4,52 +4,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class WorkbookChartDataLabels : Entity, IParsable {
         /// <summary>Represents the format of chart data labels, which includes fill and font formatting. Read-only.</summary>
         public WorkbookChartDataLabelFormat Format {
-            get { return BackingStore?.Get<WorkbookChartDataLabelFormat>(nameof(Format)); }
-            set { BackingStore?.Set(nameof(Format), value); }
+            get { return BackingStore?.Get<WorkbookChartDataLabelFormat>("format"); }
+            set { BackingStore?.Set("format", value); }
         }
         /// <summary>DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.</summary>
         public string Position {
-            get { return BackingStore?.Get<string>(nameof(Position)); }
-            set { BackingStore?.Set(nameof(Position), value); }
+            get { return BackingStore?.Get<string>("position"); }
+            set { BackingStore?.Set("position", value); }
         }
         /// <summary>String representing the separator used for the data labels on a chart.</summary>
         public string Separator {
-            get { return BackingStore?.Get<string>(nameof(Separator)); }
-            set { BackingStore?.Set(nameof(Separator), value); }
+            get { return BackingStore?.Get<string>("separator"); }
+            set { BackingStore?.Set("separator", value); }
         }
         /// <summary>Boolean value representing if the data label bubble size is visible or not.</summary>
         public bool? ShowBubbleSize {
-            get { return BackingStore?.Get<bool?>(nameof(ShowBubbleSize)); }
-            set { BackingStore?.Set(nameof(ShowBubbleSize), value); }
+            get { return BackingStore?.Get<bool?>("showBubbleSize"); }
+            set { BackingStore?.Set("showBubbleSize", value); }
         }
         /// <summary>Boolean value representing if the data label category name is visible or not.</summary>
         public bool? ShowCategoryName {
-            get { return BackingStore?.Get<bool?>(nameof(ShowCategoryName)); }
-            set { BackingStore?.Set(nameof(ShowCategoryName), value); }
+            get { return BackingStore?.Get<bool?>("showCategoryName"); }
+            set { BackingStore?.Set("showCategoryName", value); }
         }
         /// <summary>Boolean value representing if the data label legend key is visible or not.</summary>
         public bool? ShowLegendKey {
-            get { return BackingStore?.Get<bool?>(nameof(ShowLegendKey)); }
-            set { BackingStore?.Set(nameof(ShowLegendKey), value); }
+            get { return BackingStore?.Get<bool?>("showLegendKey"); }
+            set { BackingStore?.Set("showLegendKey", value); }
         }
         /// <summary>Boolean value representing if the data label percentage is visible or not.</summary>
         public bool? ShowPercentage {
-            get { return BackingStore?.Get<bool?>(nameof(ShowPercentage)); }
-            set { BackingStore?.Set(nameof(ShowPercentage), value); }
+            get { return BackingStore?.Get<bool?>("showPercentage"); }
+            set { BackingStore?.Set("showPercentage", value); }
         }
         /// <summary>Boolean value representing if the data label series name is visible or not.</summary>
         public bool? ShowSeriesName {
-            get { return BackingStore?.Get<bool?>(nameof(ShowSeriesName)); }
-            set { BackingStore?.Set(nameof(ShowSeriesName), value); }
+            get { return BackingStore?.Get<bool?>("showSeriesName"); }
+            set { BackingStore?.Set("showSeriesName", value); }
         }
         /// <summary>Boolean value representing if the data label value is visible or not.</summary>
         public bool? ShowValue {
-            get { return BackingStore?.Get<bool?>(nameof(ShowValue)); }
-            set { BackingStore?.Set(nameof(ShowValue), value); }
+            get { return BackingStore?.Get<bool?>("showValue"); }
+            set { BackingStore?.Set("showValue", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

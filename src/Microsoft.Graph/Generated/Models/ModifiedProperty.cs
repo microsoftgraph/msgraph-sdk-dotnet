@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class ModifiedProperty : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of property that was modified.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>New property value.</summary>
         public string NewValue {
-            get { return BackingStore?.Get<string>(nameof(NewValue)); }
-            set { BackingStore?.Set(nameof(NewValue), value); }
+            get { return BackingStore?.Get<string>("newValue"); }
+            set { BackingStore?.Set("newValue", value); }
         }
         /// <summary>Old property value.</summary>
         public string OldValue {
-            get { return BackingStore?.Get<string>(nameof(OldValue)); }
-            set { BackingStore?.Set(nameof(OldValue), value); }
+            get { return BackingStore?.Get<string>("oldValue"); }
+            set { BackingStore?.Set("oldValue", value); }
         }
         /// <summary>
         /// Instantiates a new modifiedProperty and sets the default values.

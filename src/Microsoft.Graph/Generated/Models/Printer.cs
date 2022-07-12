@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Models {
     public class Printer : PrinterBase, IParsable {
         /// <summary>The connectors that are associated with the printer.</summary>
         public List<PrintConnector> Connectors {
-            get { return BackingStore?.Get<List<PrintConnector>>(nameof(Connectors)); }
-            set { BackingStore?.Set(nameof(Connectors), value); }
+            get { return BackingStore?.Get<List<PrintConnector>>("connectors"); }
+            set { BackingStore?.Set("connectors", value); }
         }
         /// <summary>True if the printer has a physical device for printing. Read-only.</summary>
         public bool? HasPhysicalDevice {
-            get { return BackingStore?.Get<bool?>(nameof(HasPhysicalDevice)); }
-            set { BackingStore?.Set(nameof(HasPhysicalDevice), value); }
+            get { return BackingStore?.Get<bool?>("hasPhysicalDevice"); }
+            set { BackingStore?.Set("hasPhysicalDevice", value); }
         }
         /// <summary>True if the printer is shared; false otherwise. Read-only.</summary>
         public bool? IsShared {
-            get { return BackingStore?.Get<bool?>(nameof(IsShared)); }
-            set { BackingStore?.Set(nameof(IsShared), value); }
+            get { return BackingStore?.Get<bool?>("isShared"); }
+            set { BackingStore?.Set("isShared", value); }
         }
         /// <summary>The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.</summary>
         public DateTimeOffset? LastSeenDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSeenDateTime)); }
-            set { BackingStore?.Set(nameof(LastSeenDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
+            set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The DateTimeOffset when the printer was registered. Read-only.</summary>
         public DateTimeOffset? RegisteredDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RegisteredDateTime)); }
-            set { BackingStore?.Set(nameof(RegisteredDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("registeredDateTime"); }
+            set { BackingStore?.Set("registeredDateTime", value); }
         }
         /// <summary>The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.</summary>
         public List<PrinterShare> Shares {
-            get { return BackingStore?.Get<List<PrinterShare>>(nameof(Shares)); }
-            set { BackingStore?.Set(nameof(Shares), value); }
+            get { return BackingStore?.Get<List<PrinterShare>>("shares"); }
+            set { BackingStore?.Set("shares", value); }
         }
         /// <summary>A list of task triggers that are associated with the printer.</summary>
         public List<PrintTaskTrigger> TaskTriggers {
-            get { return BackingStore?.Get<List<PrintTaskTrigger>>(nameof(TaskTriggers)); }
-            set { BackingStore?.Set(nameof(TaskTriggers), value); }
+            get { return BackingStore?.Get<List<PrintTaskTrigger>>("taskTriggers"); }
+            set { BackingStore?.Set("taskTriggers", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

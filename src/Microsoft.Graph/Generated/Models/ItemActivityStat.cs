@@ -4,57 +4,56 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class ItemActivityStat : Entity, IParsable {
         /// <summary>Statistics about the access actions in this interval. Read-only.</summary>
         public ItemActionStat Access {
-            get { return BackingStore?.Get<ItemActionStat>(nameof(Access)); }
-            set { BackingStore?.Set(nameof(Access), value); }
+            get { return BackingStore?.Get<ItemActionStat>("access"); }
+            set { BackingStore?.Set("access", value); }
         }
         /// <summary>Exposes the itemActivities represented in this itemActivityStat resource.</summary>
         public List<ItemActivity> Activities {
-            get { return BackingStore?.Get<List<ItemActivity>>(nameof(Activities)); }
-            set { BackingStore?.Set(nameof(Activities), value); }
+            get { return BackingStore?.Get<List<ItemActivity>>("activities"); }
+            set { BackingStore?.Set("activities", value); }
         }
         /// <summary>Statistics about the create actions in this interval. Read-only.</summary>
         public ItemActionStat Create {
-            get { return BackingStore?.Get<ItemActionStat>(nameof(Create)); }
-            set { BackingStore?.Set(nameof(Create), value); }
+            get { return BackingStore?.Get<ItemActionStat>("create"); }
+            set { BackingStore?.Set("create", value); }
         }
         /// <summary>Statistics about the delete actions in this interval. Read-only.</summary>
         public ItemActionStat Delete {
-            get { return BackingStore?.Get<ItemActionStat>(nameof(Delete)); }
-            set { BackingStore?.Set(nameof(Delete), value); }
+            get { return BackingStore?.Get<ItemActionStat>("delete"); }
+            set { BackingStore?.Set("delete", value); }
         }
         /// <summary>Statistics about the edit actions in this interval. Read-only.</summary>
         public ItemActionStat Edit {
-            get { return BackingStore?.Get<ItemActionStat>(nameof(Edit)); }
-            set { BackingStore?.Set(nameof(Edit), value); }
+            get { return BackingStore?.Get<ItemActionStat>("edit"); }
+            set { BackingStore?.Set("edit", value); }
         }
         /// <summary>When the interval ends. Read-only.</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Indicates that the statistics in this interval are based on incomplete data. Read-only.</summary>
         public Microsoft.Graph.Models.IncompleteData IncompleteData {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.IncompleteData>(nameof(IncompleteData)); }
-            set { BackingStore?.Set(nameof(IncompleteData), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IncompleteData>("incompleteData"); }
+            set { BackingStore?.Set("incompleteData", value); }
         }
         /// <summary>Indicates whether the item is &apos;trending.&apos; Read-only.</summary>
         public bool? IsTrending {
-            get { return BackingStore?.Get<bool?>(nameof(IsTrending)); }
-            set { BackingStore?.Set(nameof(IsTrending), value); }
+            get { return BackingStore?.Get<bool?>("isTrending"); }
+            set { BackingStore?.Set("isTrending", value); }
         }
         /// <summary>Statistics about the move actions in this interval. Read-only.</summary>
         public ItemActionStat Move {
-            get { return BackingStore?.Get<ItemActionStat>(nameof(Move)); }
-            set { BackingStore?.Set(nameof(Move), value); }
+            get { return BackingStore?.Get<ItemActionStat>("move"); }
+            set { BackingStore?.Set("move", value); }
         }
         /// <summary>When the interval starts. Read-only.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

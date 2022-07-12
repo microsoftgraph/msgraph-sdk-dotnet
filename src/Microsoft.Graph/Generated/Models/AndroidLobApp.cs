@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class AndroidLobApp : MobileLobApp, IParsable {
         /// <summary>The value for the minimum applicable operating system.</summary>
         public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<AndroidMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>The package identifier.</summary>
         public string PackageId {
-            get { return BackingStore?.Get<string>(nameof(PackageId)); }
-            set { BackingStore?.Set(nameof(PackageId), value); }
+            get { return BackingStore?.Get<string>("packageId"); }
+            set { BackingStore?.Set("packageId", value); }
         }
         /// <summary>The version code of Android Line of Business (LoB) app.</summary>
         public string VersionCode {
-            get { return BackingStore?.Get<string>(nameof(VersionCode)); }
-            set { BackingStore?.Set(nameof(VersionCode), value); }
+            get { return BackingStore?.Get<string>("versionCode"); }
+            set { BackingStore?.Set("versionCode", value); }
         }
         /// <summary>The version name of Android Line of Business (LoB) app.</summary>
         public string VersionName {
-            get { return BackingStore?.Get<string>(nameof(VersionName)); }
-            set { BackingStore?.Set(nameof(VersionName), value); }
+            get { return BackingStore?.Get<string>("versionName"); }
+            set { BackingStore?.Set("versionName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

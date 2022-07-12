@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -7,23 +8,29 @@ namespace Microsoft.Graph.Models {
     public class ManagedMobileLobApp : ManagedApp, IParsable {
         /// <summary>The internal committed content version.</summary>
         public string CommittedContentVersion {
-            get { return BackingStore?.Get<string>(nameof(CommittedContentVersion)); }
-            set { BackingStore?.Set(nameof(CommittedContentVersion), value); }
+            get { return BackingStore?.Get<string>("committedContentVersion"); }
+            set { BackingStore?.Set("committedContentVersion", value); }
         }
         /// <summary>The list of content versions for this app.</summary>
         public List<MobileAppContent> ContentVersions {
-            get { return BackingStore?.Get<List<MobileAppContent>>(nameof(ContentVersions)); }
-            set { BackingStore?.Set(nameof(ContentVersions), value); }
+            get { return BackingStore?.Get<List<MobileAppContent>>("contentVersions"); }
+            set { BackingStore?.Set("contentVersions", value); }
         }
         /// <summary>The name of the main Lob application file.</summary>
         public string FileName {
-            get { return BackingStore?.Get<string>(nameof(FileName)); }
-            set { BackingStore?.Set(nameof(FileName), value); }
+            get { return BackingStore?.Get<string>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
         }
         /// <summary>The total size, including all uploaded files.</summary>
         public long? Size {
-            get { return BackingStore?.Get<long?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<long?>("size"); }
+            set { BackingStore?.Set("size", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ManagedMobileLobApp and sets the default values.
+        /// </summary>
+        public ManagedMobileLobApp() : base() {
+            Type = "#microsoft.graph.managedMobileLobApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

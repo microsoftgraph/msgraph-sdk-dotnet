@@ -4,27 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class AuditLogRoot : Entity, IParsable {
         /// <summary>The directoryAudits property</summary>
         public List<DirectoryAudit> DirectoryAudits {
-            get { return BackingStore?.Get<List<DirectoryAudit>>(nameof(DirectoryAudits)); }
-            set { BackingStore?.Set(nameof(DirectoryAudits), value); }
+            get { return BackingStore?.Get<List<DirectoryAudit>>("directoryAudits"); }
+            set { BackingStore?.Set("directoryAudits", value); }
         }
         /// <summary>The provisioning property</summary>
         public List<ProvisioningObjectSummary> Provisioning {
-            get { return BackingStore?.Get<List<ProvisioningObjectSummary>>(nameof(Provisioning)); }
-            set { BackingStore?.Set(nameof(Provisioning), value); }
+            get { return BackingStore?.Get<List<ProvisioningObjectSummary>>("provisioning"); }
+            set { BackingStore?.Set("provisioning", value); }
         }
         /// <summary>The restrictedSignIns property</summary>
         public List<RestrictedSignIn> RestrictedSignIns {
-            get { return BackingStore?.Get<List<RestrictedSignIn>>(nameof(RestrictedSignIns)); }
-            set { BackingStore?.Set(nameof(RestrictedSignIns), value); }
+            get { return BackingStore?.Get<List<RestrictedSignIn>>("restrictedSignIns"); }
+            set { BackingStore?.Set("restrictedSignIns", value); }
         }
         /// <summary>The signIns property</summary>
         public List<SignIn> SignIns {
-            get { return BackingStore?.Get<List<SignIn>>(nameof(SignIns)); }
-            set { BackingStore?.Set(nameof(SignIns), value); }
+            get { return BackingStore?.Get<List<SignIn>>("signIns"); }
+            set { BackingStore?.Set("signIns", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

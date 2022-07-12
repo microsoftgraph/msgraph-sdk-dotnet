@@ -10,15 +10,15 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync {
     public class SyncPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The syncType property</summary>
+        /// <summary>The type of Exchange Connector sync requested.</summary>
         public DeviceManagementExchangeConnectorSyncType? SyncType {
-            get { return BackingStore?.Get<DeviceManagementExchangeConnectorSyncType?>(nameof(SyncType)); }
-            set { BackingStore?.Set(nameof(SyncType), value); }
+            get { return BackingStore?.Get<DeviceManagementExchangeConnectorSyncType?>("syncType"); }
+            set { BackingStore?.Set("syncType", value); }
         }
         /// <summary>
         /// Instantiates a new syncPostRequestBody and sets the default values.

@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class RiskyUserHistoryItem : RiskyUser, IParsable {
         /// <summary>The activity related to user risk level change.</summary>
         public RiskUserActivity Activity {
-            get { return BackingStore?.Get<RiskUserActivity>(nameof(Activity)); }
-            set { BackingStore?.Set(nameof(Activity), value); }
+            get { return BackingStore?.Get<RiskUserActivity>("activity"); }
+            set { BackingStore?.Set("activity", value); }
         }
         /// <summary>The id of actor that does the operation.</summary>
         public string InitiatedBy {
-            get { return BackingStore?.Get<string>(nameof(InitiatedBy)); }
-            set { BackingStore?.Set(nameof(InitiatedBy), value); }
+            get { return BackingStore?.Get<string>("initiatedBy"); }
+            set { BackingStore?.Set("initiatedBy", value); }
         }
         /// <summary>The id of the user.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class WindowsInformationProtectionIPRangeCollection : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Collection of ip ranges</summary>
         public List<IpRange> Ranges {
-            get { return BackingStore?.Get<List<IpRange>>(nameof(Ranges)); }
-            set { BackingStore?.Set(nameof(Ranges), value); }
+            get { return BackingStore?.Get<List<IpRange>>("ranges"); }
+            set { BackingStore?.Set("ranges", value); }
         }
         /// <summary>
         /// Instantiates a new windowsInformationProtectionIPRangeCollection and sets the default values.

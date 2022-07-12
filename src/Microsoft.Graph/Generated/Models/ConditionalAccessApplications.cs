@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class ConditionalAccessApplications : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The list of application IDs explicitly excluded from the policy.</summary>
+        /// <summary>Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365</summary>
         public List<string> ExcludeApplications {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludeApplications)); }
-            set { BackingStore?.Set(nameof(ExcludeApplications), value); }
+            get { return BackingStore?.Get<List<string>>("excludeApplications"); }
+            set { BackingStore?.Set("excludeApplications", value); }
         }
-        /// <summary>The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.</summary>
+        /// <summary>Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365</summary>
         public List<string> IncludeApplications {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludeApplications)); }
-            set { BackingStore?.Set(nameof(IncludeApplications), value); }
+            get { return BackingStore?.Get<List<string>>("includeApplications"); }
+            set { BackingStore?.Set("includeApplications", value); }
         }
         /// <summary>Authentication context class references include. Supported values are c1 through c25.</summary>
         public List<string> IncludeAuthenticationContextClassReferences {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludeAuthenticationContextClassReferences)); }
-            set { BackingStore?.Set(nameof(IncludeAuthenticationContextClassReferences), value); }
+            get { return BackingStore?.Get<List<string>>("includeAuthenticationContextClassReferences"); }
+            set { BackingStore?.Set("includeAuthenticationContextClassReferences", value); }
         }
         /// <summary>User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice</summary>
         public List<string> IncludeUserActions {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludeUserActions)); }
-            set { BackingStore?.Set(nameof(IncludeUserActions), value); }
+            get { return BackingStore?.Get<List<string>>("includeUserActions"); }
+            set { BackingStore?.Set("includeUserActions", value); }
         }
         /// <summary>
         /// Instantiates a new conditionalAccessApplications and sets the default values.

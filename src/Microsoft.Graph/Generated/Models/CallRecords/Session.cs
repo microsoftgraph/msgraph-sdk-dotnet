@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Models.CallRecords {
     public class Session : Entity, IParsable {
         /// <summary>Endpoint that answered the session.</summary>
         public Endpoint Callee {
-            get { return BackingStore?.Get<Endpoint>(nameof(Callee)); }
-            set { BackingStore?.Set(nameof(Callee), value); }
+            get { return BackingStore?.Get<Endpoint>("callee"); }
+            set { BackingStore?.Set("callee", value); }
         }
         /// <summary>Endpoint that initiated the session.</summary>
         public Endpoint Caller {
-            get { return BackingStore?.Get<Endpoint>(nameof(Caller)); }
-            set { BackingStore?.Set(nameof(Caller), value); }
+            get { return BackingStore?.Get<Endpoint>("caller"); }
+            set { BackingStore?.Set("caller", value); }
         }
         /// <summary>UTC time when the last user left the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Failure information associated with the session if the session failed.</summary>
         public Microsoft.Graph.Models.CallRecords.FailureInfo FailureInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.FailureInfo>(nameof(FailureInfo)); }
-            set { BackingStore?.Set(nameof(FailureInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.FailureInfo>("failureInfo"); }
+            set { BackingStore?.Set("failureInfo", value); }
         }
         /// <summary>List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.</summary>
         public List<string> Modalities {
-            get { return BackingStore?.Get<List<string>>(nameof(Modalities)); }
-            set { BackingStore?.Set(nameof(Modalities), value); }
+            get { return BackingStore?.Get<List<string>>("modalities"); }
+            set { BackingStore?.Set("modalities", value); }
         }
         /// <summary>The list of segments involved in the session. Read-only. Nullable.</summary>
         public List<Segment> Segments {
-            get { return BackingStore?.Get<List<Segment>>(nameof(Segments)); }
-            set { BackingStore?.Set(nameof(Segments), value); }
+            get { return BackingStore?.Get<List<Segment>>("segments"); }
+            set { BackingStore?.Set("segments", value); }
         }
         /// <summary>UTC fime when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

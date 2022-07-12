@@ -5,40 +5,40 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class IosManagedAppProtection : TargetedManagedAppProtection, IParsable {
-        /// <summary>Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.</summary>
+        /// <summary>Represents the level to which app data is encrypted for managed apps</summary>
         public ManagedAppDataEncryptionType? AppDataEncryptionType {
-            get { return BackingStore?.Get<ManagedAppDataEncryptionType?>(nameof(AppDataEncryptionType)); }
-            set { BackingStore?.Set(nameof(AppDataEncryptionType), value); }
+            get { return BackingStore?.Get<ManagedAppDataEncryptionType?>("appDataEncryptionType"); }
+            set { BackingStore?.Set("appDataEncryptionType", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
         public List<ManagedMobileApp> Apps {
-            get { return BackingStore?.Get<List<ManagedMobileApp>>(nameof(Apps)); }
-            set { BackingStore?.Set(nameof(Apps), value); }
+            get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
+            set { BackingStore?.Set("apps", value); }
         }
         /// <summary>A custom browser protocol to open weblink on iOS.</summary>
         public string CustomBrowserProtocol {
-            get { return BackingStore?.Get<string>(nameof(CustomBrowserProtocol)); }
-            set { BackingStore?.Set(nameof(CustomBrowserProtocol), value); }
+            get { return BackingStore?.Get<string>("customBrowserProtocol"); }
+            set { BackingStore?.Set("customBrowserProtocol", value); }
         }
         /// <summary>Count of apps to which the current policy is deployed.</summary>
         public int? DeployedAppCount {
-            get { return BackingStore?.Get<int?>(nameof(DeployedAppCount)); }
-            set { BackingStore?.Set(nameof(DeployedAppCount), value); }
+            get { return BackingStore?.Get<int?>("deployedAppCount"); }
+            set { BackingStore?.Set("deployedAppCount", value); }
         }
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
         public ManagedAppPolicyDeploymentSummary DeploymentSummary {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>(nameof(DeploymentSummary)); }
-            set { BackingStore?.Set(nameof(DeploymentSummary), value); }
+            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
+            set { BackingStore?.Set("deploymentSummary", value); }
         }
         /// <summary>Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.</summary>
         public bool? FaceIdBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(FaceIdBlocked)); }
-            set { BackingStore?.Set(nameof(FaceIdBlocked), value); }
+            get { return BackingStore?.Get<bool?>("faceIdBlocked"); }
+            set { BackingStore?.Set("faceIdBlocked", value); }
         }
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
         public string MinimumRequiredSdkVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumRequiredSdkVersion)); }
-            set { BackingStore?.Set(nameof(MinimumRequiredSdkVersion), value); }
+            get { return BackingStore?.Get<string>("minimumRequiredSdkVersion"); }
+            set { BackingStore?.Set("minimumRequiredSdkVersion", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

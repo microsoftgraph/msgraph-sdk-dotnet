@@ -9,80 +9,80 @@ namespace Microsoft.Graph.Models {
     public class IntuneBrand : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Email address of the person/organization responsible for IT support.</summary>
         public string ContactITEmailAddress {
-            get { return BackingStore?.Get<string>(nameof(ContactITEmailAddress)); }
-            set { BackingStore?.Set(nameof(ContactITEmailAddress), value); }
+            get { return BackingStore?.Get<string>("contactITEmailAddress"); }
+            set { BackingStore?.Set("contactITEmailAddress", value); }
         }
         /// <summary>Name of the person/organization responsible for IT support.</summary>
         public string ContactITName {
-            get { return BackingStore?.Get<string>(nameof(ContactITName)); }
-            set { BackingStore?.Set(nameof(ContactITName), value); }
+            get { return BackingStore?.Get<string>("contactITName"); }
+            set { BackingStore?.Set("contactITName", value); }
         }
         /// <summary>Text comments regarding the person/organization responsible for IT support.</summary>
         public string ContactITNotes {
-            get { return BackingStore?.Get<string>(nameof(ContactITNotes)); }
-            set { BackingStore?.Set(nameof(ContactITNotes), value); }
+            get { return BackingStore?.Get<string>("contactITNotes"); }
+            set { BackingStore?.Set("contactITNotes", value); }
         }
         /// <summary>Phone number of the person/organization responsible for IT support.</summary>
         public string ContactITPhoneNumber {
-            get { return BackingStore?.Get<string>(nameof(ContactITPhoneNumber)); }
-            set { BackingStore?.Set(nameof(ContactITPhoneNumber), value); }
+            get { return BackingStore?.Get<string>("contactITPhoneNumber"); }
+            set { BackingStore?.Set("contactITPhoneNumber", value); }
         }
         /// <summary>Logo image displayed in Company Portal apps which have a dark background behind the logo.</summary>
         public MimeContent DarkBackgroundLogo {
-            get { return BackingStore?.Get<MimeContent>(nameof(DarkBackgroundLogo)); }
-            set { BackingStore?.Set(nameof(DarkBackgroundLogo), value); }
+            get { return BackingStore?.Get<MimeContent>("darkBackgroundLogo"); }
+            set { BackingStore?.Set("darkBackgroundLogo", value); }
         }
         /// <summary>Company/organization name that is displayed to end users.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Logo image displayed in Company Portal apps which have a light background behind the logo.</summary>
         public MimeContent LightBackgroundLogo {
-            get { return BackingStore?.Get<MimeContent>(nameof(LightBackgroundLogo)); }
-            set { BackingStore?.Set(nameof(LightBackgroundLogo), value); }
+            get { return BackingStore?.Get<MimeContent>("lightBackgroundLogo"); }
+            set { BackingStore?.Set("lightBackgroundLogo", value); }
         }
         /// <summary>Display name of the company/organization’s IT helpdesk site.</summary>
         public string OnlineSupportSiteName {
-            get { return BackingStore?.Get<string>(nameof(OnlineSupportSiteName)); }
-            set { BackingStore?.Set(nameof(OnlineSupportSiteName), value); }
+            get { return BackingStore?.Get<string>("onlineSupportSiteName"); }
+            set { BackingStore?.Set("onlineSupportSiteName", value); }
         }
         /// <summary>URL to the company/organization’s IT helpdesk site.</summary>
         public string OnlineSupportSiteUrl {
-            get { return BackingStore?.Get<string>(nameof(OnlineSupportSiteUrl)); }
-            set { BackingStore?.Set(nameof(OnlineSupportSiteUrl), value); }
+            get { return BackingStore?.Get<string>("onlineSupportSiteUrl"); }
+            set { BackingStore?.Set("onlineSupportSiteUrl", value); }
         }
         /// <summary>URL to the company/organization’s privacy policy.</summary>
         public string PrivacyUrl {
-            get { return BackingStore?.Get<string>(nameof(PrivacyUrl)); }
-            set { BackingStore?.Set(nameof(PrivacyUrl), value); }
+            get { return BackingStore?.Get<string>("privacyUrl"); }
+            set { BackingStore?.Set("privacyUrl", value); }
         }
         /// <summary>Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.</summary>
         public bool? ShowDisplayNameNextToLogo {
-            get { return BackingStore?.Get<bool?>(nameof(ShowDisplayNameNextToLogo)); }
-            set { BackingStore?.Set(nameof(ShowDisplayNameNextToLogo), value); }
+            get { return BackingStore?.Get<bool?>("showDisplayNameNextToLogo"); }
+            set { BackingStore?.Set("showDisplayNameNextToLogo", value); }
         }
         /// <summary>Boolean that represents whether the administrator-supplied logo images are shown or not shown.</summary>
         public bool? ShowLogo {
-            get { return BackingStore?.Get<bool?>(nameof(ShowLogo)); }
-            set { BackingStore?.Set(nameof(ShowLogo), value); }
+            get { return BackingStore?.Get<bool?>("showLogo"); }
+            set { BackingStore?.Set("showLogo", value); }
         }
         /// <summary>Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.</summary>
         public bool? ShowNameNextToLogo {
-            get { return BackingStore?.Get<bool?>(nameof(ShowNameNextToLogo)); }
-            set { BackingStore?.Set(nameof(ShowNameNextToLogo), value); }
+            get { return BackingStore?.Get<bool?>("showNameNextToLogo"); }
+            set { BackingStore?.Set("showNameNextToLogo", value); }
         }
         /// <summary>Primary theme color used in the Company Portal applications and web portal.</summary>
         public RgbColor ThemeColor {
-            get { return BackingStore?.Get<RgbColor>(nameof(ThemeColor)); }
-            set { BackingStore?.Set(nameof(ThemeColor), value); }
+            get { return BackingStore?.Get<RgbColor>("themeColor"); }
+            set { BackingStore?.Set("themeColor", value); }
         }
         /// <summary>
         /// Instantiates a new intuneBrand and sets the default values.

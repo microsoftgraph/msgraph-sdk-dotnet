@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models.CallRecords {
     public class Media : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Device information associated with the callee endpoint of this media.</summary>
         public DeviceInfo CalleeDevice {
-            get { return BackingStore?.Get<DeviceInfo>(nameof(CalleeDevice)); }
-            set { BackingStore?.Set(nameof(CalleeDevice), value); }
+            get { return BackingStore?.Get<DeviceInfo>("calleeDevice"); }
+            set { BackingStore?.Set("calleeDevice", value); }
         }
         /// <summary>Network information associated with the callee endpoint of this media.</summary>
         public NetworkInfo CalleeNetwork {
-            get { return BackingStore?.Get<NetworkInfo>(nameof(CalleeNetwork)); }
-            set { BackingStore?.Set(nameof(CalleeNetwork), value); }
+            get { return BackingStore?.Get<NetworkInfo>("calleeNetwork"); }
+            set { BackingStore?.Set("calleeNetwork", value); }
         }
         /// <summary>Device information associated with the caller endpoint of this media.</summary>
         public DeviceInfo CallerDevice {
-            get { return BackingStore?.Get<DeviceInfo>(nameof(CallerDevice)); }
-            set { BackingStore?.Set(nameof(CallerDevice), value); }
+            get { return BackingStore?.Get<DeviceInfo>("callerDevice"); }
+            set { BackingStore?.Set("callerDevice", value); }
         }
         /// <summary>Network information associated with the caller endpoint of this media.</summary>
         public NetworkInfo CallerNetwork {
-            get { return BackingStore?.Get<NetworkInfo>(nameof(CallerNetwork)); }
-            set { BackingStore?.Set(nameof(CallerNetwork), value); }
+            get { return BackingStore?.Get<NetworkInfo>("callerNetwork"); }
+            set { BackingStore?.Set("callerNetwork", value); }
         }
         /// <summary>How the media was identified during media negotiation stage.</summary>
         public string Label {
-            get { return BackingStore?.Get<string>(nameof(Label)); }
-            set { BackingStore?.Set(nameof(Label), value); }
+            get { return BackingStore?.Get<string>("label"); }
+            set { BackingStore?.Set("label", value); }
         }
         /// <summary>Network streams associated with this media.</summary>
         public List<MediaStream> Streams {
-            get { return BackingStore?.Get<List<MediaStream>>(nameof(Streams)); }
-            set { BackingStore?.Set(nameof(Streams), value); }
+            get { return BackingStore?.Get<List<MediaStream>>("streams"); }
+            set { BackingStore?.Set("streams", value); }
         }
         /// <summary>
         /// Instantiates a new media and sets the default values.

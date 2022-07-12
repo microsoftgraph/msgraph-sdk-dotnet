@@ -8,53 +8,53 @@ namespace Microsoft.Graph.Models {
     public class TermsAndConditions : Entity, IParsable {
         /// <summary>Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&amp;C policy. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
         public string AcceptanceStatement {
-            get { return BackingStore?.Get<string>(nameof(AcceptanceStatement)); }
-            set { BackingStore?.Set(nameof(AcceptanceStatement), value); }
+            get { return BackingStore?.Get<string>("acceptanceStatement"); }
+            set { BackingStore?.Set("acceptanceStatement", value); }
         }
         /// <summary>The list of acceptance statuses for this T&amp;C policy.</summary>
         public List<TermsAndConditionsAcceptanceStatus> AcceptanceStatuses {
-            get { return BackingStore?.Get<List<TermsAndConditionsAcceptanceStatus>>(nameof(AcceptanceStatuses)); }
-            set { BackingStore?.Set(nameof(AcceptanceStatuses), value); }
+            get { return BackingStore?.Get<List<TermsAndConditionsAcceptanceStatus>>("acceptanceStatuses"); }
+            set { BackingStore?.Set("acceptanceStatuses", value); }
         }
         /// <summary>The list of assignments for this T&amp;C policy.</summary>
         public List<TermsAndConditionsAssignment> Assignments {
-            get { return BackingStore?.Get<List<TermsAndConditionsAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<TermsAndConditionsAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
         public string BodyText {
-            get { return BackingStore?.Get<string>(nameof(BodyText)); }
-            set { BackingStore?.Set(nameof(BodyText), value); }
+            get { return BackingStore?.Get<string>("bodyText"); }
+            set { BackingStore?.Set("bodyText", value); }
         }
         /// <summary>DateTime the object was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Administrator-supplied description of the T&amp;C policy.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Administrator-supplied name for the T&amp;C policy.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>DateTime the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
         }
         /// <summary>Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&amp;C policy.</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

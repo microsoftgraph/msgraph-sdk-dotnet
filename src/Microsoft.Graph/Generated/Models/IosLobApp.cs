@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Models {
     public class IosLobApp : MobileLobApp, IParsable {
         /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
         public IosDeviceType ApplicableDeviceType {
-            get { return BackingStore?.Get<IosDeviceType>(nameof(ApplicableDeviceType)); }
-            set { BackingStore?.Set(nameof(ApplicableDeviceType), value); }
+            get { return BackingStore?.Get<IosDeviceType>("applicableDeviceType"); }
+            set { BackingStore?.Set("applicableDeviceType", value); }
         }
         /// <summary>The build number of iOS Line of Business (LoB) app.</summary>
         public string BuildNumber {
-            get { return BackingStore?.Get<string>(nameof(BuildNumber)); }
-            set { BackingStore?.Set(nameof(BuildNumber), value); }
+            get { return BackingStore?.Get<string>("buildNumber"); }
+            set { BackingStore?.Set("buildNumber", value); }
         }
         /// <summary>The Identity Name.</summary>
         public string BundleId {
-            get { return BackingStore?.Get<string>(nameof(BundleId)); }
-            set { BackingStore?.Set(nameof(BundleId), value); }
+            get { return BackingStore?.Get<string>("bundleId"); }
+            set { BackingStore?.Set("bundleId", value); }
         }
         /// <summary>The expiration time.</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The value for the minimum applicable operating system.</summary>
         public IosMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<IosMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<IosMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>The version number of iOS Line of Business (LoB) app.</summary>
         public string VersionNumber {
-            get { return BackingStore?.Get<string>(nameof(VersionNumber)); }
-            set { BackingStore?.Set(nameof(VersionNumber), value); }
+            get { return BackingStore?.Get<string>("versionNumber"); }
+            set { BackingStore?.Set("versionNumber", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

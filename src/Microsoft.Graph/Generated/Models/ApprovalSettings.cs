@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class ApprovalSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.</summary>
         public string ApprovalMode {
-            get { return BackingStore?.Get<string>(nameof(ApprovalMode)); }
-            set { BackingStore?.Set(nameof(ApprovalMode), value); }
+            get { return BackingStore?.Get<string>("approvalMode"); }
+            set { BackingStore?.Set("approvalMode", value); }
         }
         /// <summary>If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.</summary>
         public List<UnifiedApprovalStage> ApprovalStages {
-            get { return BackingStore?.Get<List<UnifiedApprovalStage>>(nameof(ApprovalStages)); }
-            set { BackingStore?.Set(nameof(ApprovalStages), value); }
+            get { return BackingStore?.Get<List<UnifiedApprovalStage>>("approvalStages"); }
+            set { BackingStore?.Set("approvalStages", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether approval is required for requests in this policy.</summary>
         public bool? IsApprovalRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsApprovalRequired)); }
-            set { BackingStore?.Set(nameof(IsApprovalRequired), value); }
+            get { return BackingStore?.Get<bool?>("isApprovalRequired"); }
+            set { BackingStore?.Set("isApprovalRequired", value); }
         }
         /// <summary>Indicates whether approval is required for a user to extend their assignment.</summary>
         public bool? IsApprovalRequiredForExtension {
-            get { return BackingStore?.Get<bool?>(nameof(IsApprovalRequiredForExtension)); }
-            set { BackingStore?.Set(nameof(IsApprovalRequiredForExtension), value); }
+            get { return BackingStore?.Get<bool?>("isApprovalRequiredForExtension"); }
+            set { BackingStore?.Set("isApprovalRequiredForExtension", value); }
         }
         /// <summary>Indicates whether the requestor is required to supply a justification in their request.</summary>
         public bool? IsRequestorJustificationRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsRequestorJustificationRequired)); }
-            set { BackingStore?.Set(nameof(IsRequestorJustificationRequired), value); }
+            get { return BackingStore?.Get<bool?>("isRequestorJustificationRequired"); }
+            set { BackingStore?.Set("isRequestorJustificationRequired", value); }
         }
         /// <summary>
         /// Instantiates a new approvalSettings and sets the default values.

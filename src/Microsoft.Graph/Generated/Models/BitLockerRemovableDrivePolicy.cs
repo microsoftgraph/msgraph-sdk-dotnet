@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Models {
     public class BitLockerRemovableDrivePolicy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>This policy setting determines whether BitLocker protection is required for removable data drives to be writable on a computer.</summary>
         public bool? BlockCrossOrganizationWriteAccess {
-            get { return BackingStore?.Get<bool?>(nameof(BlockCrossOrganizationWriteAccess)); }
-            set { BackingStore?.Set(nameof(BlockCrossOrganizationWriteAccess), value); }
+            get { return BackingStore?.Get<bool?>("blockCrossOrganizationWriteAccess"); }
+            set { BackingStore?.Set("blockCrossOrganizationWriteAccess", value); }
         }
         /// <summary>Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.</summary>
         public BitLockerEncryptionMethod? EncryptionMethod {
-            get { return BackingStore?.Get<BitLockerEncryptionMethod?>(nameof(EncryptionMethod)); }
-            set { BackingStore?.Set(nameof(EncryptionMethod), value); }
+            get { return BackingStore?.Get<BitLockerEncryptionMethod?>("encryptionMethod"); }
+            set { BackingStore?.Set("encryptionMethod", value); }
         }
         /// <summary>Indicates whether to block write access to devices configured in another organization.  If requireEncryptionForWriteAccess is false, this value does not affect.</summary>
         public bool? RequireEncryptionForWriteAccess {
-            get { return BackingStore?.Get<bool?>(nameof(RequireEncryptionForWriteAccess)); }
-            set { BackingStore?.Set(nameof(RequireEncryptionForWriteAccess), value); }
+            get { return BackingStore?.Get<bool?>("requireEncryptionForWriteAccess"); }
+            set { BackingStore?.Set("requireEncryptionForWriteAccess", value); }
         }
         /// <summary>
         /// Instantiates a new bitLockerRemovableDrivePolicy and sets the default values.

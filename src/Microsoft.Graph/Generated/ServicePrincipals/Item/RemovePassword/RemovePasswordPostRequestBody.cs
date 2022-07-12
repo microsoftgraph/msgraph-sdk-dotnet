@@ -9,15 +9,15 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemovePassword {
     public class RemovePasswordPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The keyId property</summary>
         public string KeyId {
-            get { return BackingStore?.Get<string>(nameof(KeyId)); }
-            set { BackingStore?.Set(nameof(KeyId), value); }
+            get { return BackingStore?.Get<string>("keyId"); }
+            set { BackingStore?.Set("keyId", value); }
         }
         /// <summary>
         /// Instantiates a new removePasswordPostRequestBody and sets the default values.

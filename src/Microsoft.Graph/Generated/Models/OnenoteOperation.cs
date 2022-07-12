@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class OnenoteOperation : Operation, IParsable {
         /// <summary>The error returned by the operation.</summary>
         public OnenoteOperationError Error {
-            get { return BackingStore?.Get<OnenoteOperationError>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<OnenoteOperationError>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>The operation percent complete if the operation is still in running status.</summary>
         public string PercentComplete {
-            get { return BackingStore?.Get<string>(nameof(PercentComplete)); }
-            set { BackingStore?.Set(nameof(PercentComplete), value); }
+            get { return BackingStore?.Get<string>("percentComplete"); }
+            set { BackingStore?.Set("percentComplete", value); }
         }
         /// <summary>The resource id.</summary>
         public string ResourceId {
-            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
-            set { BackingStore?.Set(nameof(ResourceId), value); }
+            get { return BackingStore?.Get<string>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
         }
         /// <summary>The resource URI for the object. For example, the resource URI for a copied page or section.</summary>
         public string ResourceLocation {
-            get { return BackingStore?.Get<string>(nameof(ResourceLocation)); }
-            set { BackingStore?.Set(nameof(ResourceLocation), value); }
+            get { return BackingStore?.Get<string>("resourceLocation"); }
+            set { BackingStore?.Set("resourceLocation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

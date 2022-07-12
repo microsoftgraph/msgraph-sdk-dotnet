@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class LobbyBypassSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether or not to always let dial-in callers bypass the lobby. Optional.</summary>
         public bool? IsDialInBypassEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsDialInBypassEnabled)); }
-            set { BackingStore?.Set(nameof(IsDialInBypassEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isDialInBypassEnabled"); }
+            set { BackingStore?.Set("isDialInBypassEnabled", value); }
         }
         /// <summary>Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.</summary>
         public LobbyBypassScope? Scope {
-            get { return BackingStore?.Get<LobbyBypassScope?>(nameof(Scope)); }
-            set { BackingStore?.Set(nameof(Scope), value); }
+            get { return BackingStore?.Get<LobbyBypassScope?>("scope"); }
+            set { BackingStore?.Set("scope", value); }
         }
         /// <summary>
         /// Instantiates a new lobbyBypassSettings and sets the default values.

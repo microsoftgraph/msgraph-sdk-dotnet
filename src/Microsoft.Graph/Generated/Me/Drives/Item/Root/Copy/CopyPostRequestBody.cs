@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Me.Drives.Item.Root.Copy {
     public class CopyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The parentReference property</summary>
         public ItemReference ParentReference {
-            get { return BackingStore?.Get<ItemReference>(nameof(ParentReference)); }
-            set { BackingStore?.Set(nameof(ParentReference), value); }
+            get { return BackingStore?.Get<ItemReference>("parentReference"); }
+            set { BackingStore?.Set("parentReference", value); }
         }
         /// <summary>
         /// Instantiates a new copyPostRequestBody and sets the default values.

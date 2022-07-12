@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -5,15 +6,21 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class ManagedApp : MobileApp, IParsable {
-        /// <summary>The Application&apos;s availability. Possible values are: global, lineOfBusiness.</summary>
+        /// <summary>A managed (MAM) application&apos;s availability.</summary>
         public ManagedAppAvailability? AppAvailability {
-            get { return BackingStore?.Get<ManagedAppAvailability?>(nameof(AppAvailability)); }
-            set { BackingStore?.Set(nameof(AppAvailability), value); }
+            get { return BackingStore?.Get<ManagedAppAvailability?>("appAvailability"); }
+            set { BackingStore?.Set("appAvailability", value); }
         }
         /// <summary>The Application&apos;s version.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ManagedApp and sets the default values.
+        /// </summary>
+        public ManagedApp() : base() {
+            Type = "#microsoft.graph.managedApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

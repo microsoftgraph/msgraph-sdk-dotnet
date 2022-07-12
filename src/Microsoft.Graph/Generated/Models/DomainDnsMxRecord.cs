@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class DomainDnsMxRecord : DomainDnsRecord, IParsable {
         /// <summary>Value used when configuring the answer/destination/value of the MX record at the DNS host.</summary>
         public string MailExchange {
-            get { return BackingStore?.Get<string>(nameof(MailExchange)); }
-            set { BackingStore?.Set(nameof(MailExchange), value); }
+            get { return BackingStore?.Get<string>("mailExchange"); }
+            set { BackingStore?.Set("mailExchange", value); }
         }
         /// <summary>Value used when configuring the Preference/Priority property of the MX record at the DNS host.</summary>
         public int? Preference {
-            get { return BackingStore?.Get<int?>(nameof(Preference)); }
-            set { BackingStore?.Set(nameof(Preference), value); }
+            get { return BackingStore?.Get<int?>("preference"); }
+            set { BackingStore?.Set("preference", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

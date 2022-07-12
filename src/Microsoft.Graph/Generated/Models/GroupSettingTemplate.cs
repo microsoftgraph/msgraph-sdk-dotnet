@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Models {
     public class GroupSettingTemplate : DirectoryObject, IParsable {
         /// <summary>Description of the template.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display name of the template. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.</summary>
         public List<SettingTemplateValue> Values {
-            get { return BackingStore?.Get<List<SettingTemplateValue>>(nameof(Values)); }
-            set { BackingStore?.Set(nameof(Values), value); }
+            get { return BackingStore?.Get<List<SettingTemplateValue>>("values"); }
+            set { BackingStore?.Set("values", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

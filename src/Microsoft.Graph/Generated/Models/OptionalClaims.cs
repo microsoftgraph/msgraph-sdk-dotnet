@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class OptionalClaims : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The optional claims returned in the JWT access token.</summary>
         public List<OptionalClaim> AccessToken {
-            get { return BackingStore?.Get<List<OptionalClaim>>(nameof(AccessToken)); }
-            set { BackingStore?.Set(nameof(AccessToken), value); }
+            get { return BackingStore?.Get<List<OptionalClaim>>("accessToken"); }
+            set { BackingStore?.Set("accessToken", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The optional claims returned in the JWT ID token.</summary>
         public List<OptionalClaim> IdToken {
-            get { return BackingStore?.Get<List<OptionalClaim>>(nameof(IdToken)); }
-            set { BackingStore?.Set(nameof(IdToken), value); }
+            get { return BackingStore?.Get<List<OptionalClaim>>("idToken"); }
+            set { BackingStore?.Set("idToken", value); }
         }
         /// <summary>The optional claims returned in the SAML token.</summary>
         public List<OptionalClaim> Saml2Token {
-            get { return BackingStore?.Get<List<OptionalClaim>>(nameof(Saml2Token)); }
-            set { BackingStore?.Set(nameof(Saml2Token), value); }
+            get { return BackingStore?.Get<List<OptionalClaim>>("saml2Token"); }
+            set { BackingStore?.Set("saml2Token", value); }
         }
         /// <summary>
         /// Instantiates a new optionalClaims and sets the default values.

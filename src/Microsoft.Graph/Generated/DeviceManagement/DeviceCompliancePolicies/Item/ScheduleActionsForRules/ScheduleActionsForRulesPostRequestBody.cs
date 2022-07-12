@@ -10,15 +10,15 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Schedul
     public class ScheduleActionsForRulesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceComplianceScheduledActionForRules property</summary>
         public List<DeviceComplianceScheduledActionForRule> DeviceComplianceScheduledActionForRules {
-            get { return BackingStore?.Get<List<DeviceComplianceScheduledActionForRule>>(nameof(DeviceComplianceScheduledActionForRules)); }
-            set { BackingStore?.Set(nameof(DeviceComplianceScheduledActionForRules), value); }
+            get { return BackingStore?.Get<List<DeviceComplianceScheduledActionForRule>>("deviceComplianceScheduledActionForRules"); }
+            set { BackingStore?.Set("deviceComplianceScheduledActionForRules", value); }
         }
         /// <summary>
         /// Instantiates a new scheduleActionsForRulesPostRequestBody and sets the default values.

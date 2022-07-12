@@ -7,243 +7,243 @@ namespace Microsoft.Graph.Models {
     public class AndroidGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to block clipboard sharing to copy and paste between applications.</summary>
         public bool? AppsBlockClipboardSharing {
-            get { return BackingStore?.Get<bool?>(nameof(AppsBlockClipboardSharing)); }
-            set { BackingStore?.Set(nameof(AppsBlockClipboardSharing), value); }
+            get { return BackingStore?.Get<bool?>("appsBlockClipboardSharing"); }
+            set { BackingStore?.Set("appsBlockClipboardSharing", value); }
         }
         /// <summary>Indicates whether or not to block copy and paste within applications.</summary>
         public bool? AppsBlockCopyPaste {
-            get { return BackingStore?.Get<bool?>(nameof(AppsBlockCopyPaste)); }
-            set { BackingStore?.Set(nameof(AppsBlockCopyPaste), value); }
+            get { return BackingStore?.Get<bool?>("appsBlockCopyPaste"); }
+            set { BackingStore?.Set("appsBlockCopyPaste", value); }
         }
         /// <summary>Indicates whether or not to block the YouTube app.</summary>
         public bool? AppsBlockYouTube {
-            get { return BackingStore?.Get<bool?>(nameof(AppsBlockYouTube)); }
-            set { BackingStore?.Set(nameof(AppsBlockYouTube), value); }
+            get { return BackingStore?.Get<bool?>("appsBlockYouTube"); }
+            set { BackingStore?.Set("appsBlockYouTube", value); }
         }
         /// <summary>List of apps to be hidden on the KNOX device. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> AppsHideList {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(AppsHideList)); }
-            set { BackingStore?.Set(nameof(AppsHideList), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("appsHideList"); }
+            set { BackingStore?.Set("appsHideList", value); }
         }
         /// <summary>List of apps which can be installed on the KNOX device. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> AppsInstallAllowList {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(AppsInstallAllowList)); }
-            set { BackingStore?.Set(nameof(AppsInstallAllowList), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("appsInstallAllowList"); }
+            set { BackingStore?.Set("appsInstallAllowList", value); }
         }
         /// <summary>List of apps which are blocked from being launched on the KNOX device. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> AppsLaunchBlockList {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(AppsLaunchBlockList)); }
-            set { BackingStore?.Set(nameof(AppsLaunchBlockList), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("appsLaunchBlockList"); }
+            set { BackingStore?.Set("appsLaunchBlockList", value); }
         }
         /// <summary>Indicates whether or not to block Bluetooth.</summary>
         public bool? BluetoothBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(BluetoothBlocked)); }
-            set { BackingStore?.Set(nameof(BluetoothBlocked), value); }
+            get { return BackingStore?.Get<bool?>("bluetoothBlocked"); }
+            set { BackingStore?.Set("bluetoothBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the use of the camera.</summary>
         public bool? CameraBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(CameraBlocked)); }
-            set { BackingStore?.Set(nameof(CameraBlocked), value); }
+            get { return BackingStore?.Get<bool?>("cameraBlocked"); }
+            set { BackingStore?.Set("cameraBlocked", value); }
         }
         /// <summary>Indicates whether or not to block data roaming.</summary>
         public bool? CellularBlockDataRoaming {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockDataRoaming)); }
-            set { BackingStore?.Set(nameof(CellularBlockDataRoaming), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockDataRoaming"); }
+            set { BackingStore?.Set("cellularBlockDataRoaming", value); }
         }
         /// <summary>Indicates whether or not to block SMS/MMS messaging.</summary>
         public bool? CellularBlockMessaging {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockMessaging)); }
-            set { BackingStore?.Set(nameof(CellularBlockMessaging), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockMessaging"); }
+            set { BackingStore?.Set("cellularBlockMessaging", value); }
         }
         /// <summary>Indicates whether or not to block voice roaming.</summary>
         public bool? CellularBlockVoiceRoaming {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockVoiceRoaming)); }
-            set { BackingStore?.Set(nameof(CellularBlockVoiceRoaming), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockVoiceRoaming"); }
+            set { BackingStore?.Set("cellularBlockVoiceRoaming", value); }
         }
         /// <summary>Indicates whether or not to block syncing Wi-Fi tethering.</summary>
         public bool? CellularBlockWiFiTethering {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockWiFiTethering)); }
-            set { BackingStore?.Set(nameof(CellularBlockWiFiTethering), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockWiFiTethering"); }
+            set { BackingStore?.Set("cellularBlockWiFiTethering", value); }
         }
-        /// <summary>Type of list that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.</summary>
+        /// <summary>Possible values of the compliance app list.</summary>
         public AppListType? CompliantAppListType {
-            get { return BackingStore?.Get<AppListType?>(nameof(CompliantAppListType)); }
-            set { BackingStore?.Set(nameof(CompliantAppListType), value); }
+            get { return BackingStore?.Get<AppListType?>("compliantAppListType"); }
+            set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
         public List<AppListItem> CompliantAppsList {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(CompliantAppsList)); }
-            set { BackingStore?.Set(nameof(CompliantAppsList), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
+            set { BackingStore?.Set("compliantAppsList", value); }
         }
         /// <summary>Indicates whether or not to allow device sharing mode.</summary>
         public bool? DeviceSharingAllowed {
-            get { return BackingStore?.Get<bool?>(nameof(DeviceSharingAllowed)); }
-            set { BackingStore?.Set(nameof(DeviceSharingAllowed), value); }
+            get { return BackingStore?.Get<bool?>("deviceSharingAllowed"); }
+            set { BackingStore?.Set("deviceSharingAllowed", value); }
         }
         /// <summary>Indicates whether or not to block diagnostic data submission.</summary>
         public bool? DiagnosticDataBlockSubmission {
-            get { return BackingStore?.Get<bool?>(nameof(DiagnosticDataBlockSubmission)); }
-            set { BackingStore?.Set(nameof(DiagnosticDataBlockSubmission), value); }
+            get { return BackingStore?.Get<bool?>("diagnosticDataBlockSubmission"); }
+            set { BackingStore?.Set("diagnosticDataBlockSubmission", value); }
         }
         /// <summary>Indicates whether or not to block user performing a factory reset.</summary>
         public bool? FactoryResetBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(FactoryResetBlocked)); }
-            set { BackingStore?.Set(nameof(FactoryResetBlocked), value); }
+            get { return BackingStore?.Get<bool?>("factoryResetBlocked"); }
+            set { BackingStore?.Set("factoryResetBlocked", value); }
         }
         /// <summary>Indicates whether or not to block Google account auto sync.</summary>
         public bool? GoogleAccountBlockAutoSync {
-            get { return BackingStore?.Get<bool?>(nameof(GoogleAccountBlockAutoSync)); }
-            set { BackingStore?.Set(nameof(GoogleAccountBlockAutoSync), value); }
+            get { return BackingStore?.Get<bool?>("googleAccountBlockAutoSync"); }
+            set { BackingStore?.Set("googleAccountBlockAutoSync", value); }
         }
         /// <summary>Indicates whether or not to block the Google Play store.</summary>
         public bool? GooglePlayStoreBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(GooglePlayStoreBlocked)); }
-            set { BackingStore?.Set(nameof(GooglePlayStoreBlocked), value); }
+            get { return BackingStore?.Get<bool?>("googlePlayStoreBlocked"); }
+            set { BackingStore?.Set("googlePlayStoreBlocked", value); }
         }
         /// <summary>A list of apps that will be allowed to run when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> KioskModeApps {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(KioskModeApps)); }
-            set { BackingStore?.Set(nameof(KioskModeApps), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("kioskModeApps"); }
+            set { BackingStore?.Set("kioskModeApps", value); }
         }
         /// <summary>Indicates whether or not to block the screen sleep button while in Kiosk Mode.</summary>
         public bool? KioskModeBlockSleepButton {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeBlockSleepButton)); }
-            set { BackingStore?.Set(nameof(KioskModeBlockSleepButton), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeBlockSleepButton"); }
+            set { BackingStore?.Set("kioskModeBlockSleepButton", value); }
         }
         /// <summary>Indicates whether or not to block the volume buttons while in Kiosk Mode.</summary>
         public bool? KioskModeBlockVolumeButtons {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeBlockVolumeButtons)); }
-            set { BackingStore?.Set(nameof(KioskModeBlockVolumeButtons), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeBlockVolumeButtons"); }
+            set { BackingStore?.Set("kioskModeBlockVolumeButtons", value); }
         }
         /// <summary>Indicates whether or not to block location services.</summary>
         public bool? LocationServicesBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(LocationServicesBlocked)); }
-            set { BackingStore?.Set(nameof(LocationServicesBlocked), value); }
+            get { return BackingStore?.Get<bool?>("locationServicesBlocked"); }
+            set { BackingStore?.Set("locationServicesBlocked", value); }
         }
         /// <summary>Indicates whether or not to block Near-Field Communication.</summary>
         public bool? NfcBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(NfcBlocked)); }
-            set { BackingStore?.Set(nameof(NfcBlocked), value); }
+            get { return BackingStore?.Get<bool?>("nfcBlocked"); }
+            set { BackingStore?.Set("nfcBlocked", value); }
         }
         /// <summary>Indicates whether or not to block fingerprint unlock.</summary>
         public bool? PasswordBlockFingerprintUnlock {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordBlockFingerprintUnlock)); }
-            set { BackingStore?.Set(nameof(PasswordBlockFingerprintUnlock), value); }
+            get { return BackingStore?.Get<bool?>("passwordBlockFingerprintUnlock"); }
+            set { BackingStore?.Set("passwordBlockFingerprintUnlock", value); }
         }
         /// <summary>Indicates whether or not to block Smart Lock and other trust agents.</summary>
         public bool? PasswordBlockTrustAgents {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordBlockTrustAgents)); }
-            set { BackingStore?.Set(nameof(PasswordBlockTrustAgents), value); }
+            get { return BackingStore?.Get<bool?>("passwordBlockTrustAgents"); }
+            set { BackingStore?.Set("passwordBlockTrustAgents", value); }
         }
         /// <summary>Number of days before the password expires. Valid values 1 to 365</summary>
         public int? PasswordExpirationDays {
-            get { return BackingStore?.Get<int?>(nameof(PasswordExpirationDays)); }
-            set { BackingStore?.Set(nameof(PasswordExpirationDays), value); }
+            get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
+            set { BackingStore?.Set("passwordExpirationDays", value); }
         }
         /// <summary>Minimum length of passwords. Valid values 4 to 16</summary>
         public int? PasswordMinimumLength {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumLength)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumLength), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
+            set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before the screen times out.</summary>
         public int? PasswordMinutesOfInactivityBeforeScreenTimeout {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinutesOfInactivityBeforeScreenTimeout)); }
-            set { BackingStore?.Set(nameof(PasswordMinutesOfInactivityBeforeScreenTimeout), value); }
+            get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeScreenTimeout"); }
+            set { BackingStore?.Set("passwordMinutesOfInactivityBeforeScreenTimeout", value); }
         }
         /// <summary>Number of previous passwords to block. Valid values 0 to 24</summary>
         public int? PasswordPreviousPasswordBlockCount {
-            get { return BackingStore?.Get<int?>(nameof(PasswordPreviousPasswordBlockCount)); }
-            set { BackingStore?.Set(nameof(PasswordPreviousPasswordBlockCount), value); }
+            get { return BackingStore?.Get<int?>("passwordPreviousPasswordBlockCount"); }
+            set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Indicates whether or not to require a password.</summary>
         public bool? PasswordRequired {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordRequired)); }
-            set { BackingStore?.Set(nameof(PasswordRequired), value); }
+            get { return BackingStore?.Get<bool?>("passwordRequired"); }
+            set { BackingStore?.Set("passwordRequired", value); }
         }
-        /// <summary>Type of password that is required. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.</summary>
+        /// <summary>Android required password type.</summary>
         public AndroidRequiredPasswordType? PasswordRequiredType {
-            get { return BackingStore?.Get<AndroidRequiredPasswordType?>(nameof(PasswordRequiredType)); }
-            set { BackingStore?.Set(nameof(PasswordRequiredType), value); }
+            get { return BackingStore?.Get<AndroidRequiredPasswordType?>("passwordRequiredType"); }
+            set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Number of sign in failures allowed before factory reset. Valid values 1 to 16</summary>
         public int? PasswordSignInFailureCountBeforeFactoryReset {
-            get { return BackingStore?.Get<int?>(nameof(PasswordSignInFailureCountBeforeFactoryReset)); }
-            set { BackingStore?.Set(nameof(PasswordSignInFailureCountBeforeFactoryReset), value); }
+            get { return BackingStore?.Get<int?>("passwordSignInFailureCountBeforeFactoryReset"); }
+            set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>Indicates whether or not to block powering off the device.</summary>
         public bool? PowerOffBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(PowerOffBlocked)); }
-            set { BackingStore?.Set(nameof(PowerOffBlocked), value); }
+            get { return BackingStore?.Get<bool?>("powerOffBlocked"); }
+            set { BackingStore?.Set("powerOffBlocked", value); }
         }
         /// <summary>Indicates whether or not to block screenshots.</summary>
         public bool? ScreenCaptureBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(ScreenCaptureBlocked)); }
-            set { BackingStore?.Set(nameof(ScreenCaptureBlocked), value); }
+            get { return BackingStore?.Get<bool?>("screenCaptureBlocked"); }
+            set { BackingStore?.Set("screenCaptureBlocked", value); }
         }
         /// <summary>Require the Android Verify apps feature is turned on.</summary>
         public bool? SecurityRequireVerifyApps {
-            get { return BackingStore?.Get<bool?>(nameof(SecurityRequireVerifyApps)); }
-            set { BackingStore?.Set(nameof(SecurityRequireVerifyApps), value); }
+            get { return BackingStore?.Get<bool?>("securityRequireVerifyApps"); }
+            set { BackingStore?.Set("securityRequireVerifyApps", value); }
         }
         /// <summary>Indicates whether or not to block Google Backup.</summary>
         public bool? StorageBlockGoogleBackup {
-            get { return BackingStore?.Get<bool?>(nameof(StorageBlockGoogleBackup)); }
-            set { BackingStore?.Set(nameof(StorageBlockGoogleBackup), value); }
+            get { return BackingStore?.Get<bool?>("storageBlockGoogleBackup"); }
+            set { BackingStore?.Set("storageBlockGoogleBackup", value); }
         }
         /// <summary>Indicates whether or not to block removable storage usage.</summary>
         public bool? StorageBlockRemovableStorage {
-            get { return BackingStore?.Get<bool?>(nameof(StorageBlockRemovableStorage)); }
-            set { BackingStore?.Set(nameof(StorageBlockRemovableStorage), value); }
+            get { return BackingStore?.Get<bool?>("storageBlockRemovableStorage"); }
+            set { BackingStore?.Set("storageBlockRemovableStorage", value); }
         }
         /// <summary>Indicates whether or not to require device encryption.</summary>
         public bool? StorageRequireDeviceEncryption {
-            get { return BackingStore?.Get<bool?>(nameof(StorageRequireDeviceEncryption)); }
-            set { BackingStore?.Set(nameof(StorageRequireDeviceEncryption), value); }
+            get { return BackingStore?.Get<bool?>("storageRequireDeviceEncryption"); }
+            set { BackingStore?.Set("storageRequireDeviceEncryption", value); }
         }
         /// <summary>Indicates whether or not to require removable storage encryption.</summary>
         public bool? StorageRequireRemovableStorageEncryption {
-            get { return BackingStore?.Get<bool?>(nameof(StorageRequireRemovableStorageEncryption)); }
-            set { BackingStore?.Set(nameof(StorageRequireRemovableStorageEncryption), value); }
+            get { return BackingStore?.Get<bool?>("storageRequireRemovableStorageEncryption"); }
+            set { BackingStore?.Set("storageRequireRemovableStorageEncryption", value); }
         }
         /// <summary>Indicates whether or not to block the use of the Voice Assistant.</summary>
         public bool? VoiceAssistantBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(VoiceAssistantBlocked)); }
-            set { BackingStore?.Set(nameof(VoiceAssistantBlocked), value); }
+            get { return BackingStore?.Get<bool?>("voiceAssistantBlocked"); }
+            set { BackingStore?.Set("voiceAssistantBlocked", value); }
         }
         /// <summary>Indicates whether or not to block voice dialing.</summary>
         public bool? VoiceDialingBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(VoiceDialingBlocked)); }
-            set { BackingStore?.Set(nameof(VoiceDialingBlocked), value); }
+            get { return BackingStore?.Get<bool?>("voiceDialingBlocked"); }
+            set { BackingStore?.Set("voiceDialingBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the web browser&apos;s auto fill feature.</summary>
         public bool? WebBrowserBlockAutofill {
-            get { return BackingStore?.Get<bool?>(nameof(WebBrowserBlockAutofill)); }
-            set { BackingStore?.Set(nameof(WebBrowserBlockAutofill), value); }
+            get { return BackingStore?.Get<bool?>("webBrowserBlockAutofill"); }
+            set { BackingStore?.Set("webBrowserBlockAutofill", value); }
         }
         /// <summary>Indicates whether or not to block the web browser.</summary>
         public bool? WebBrowserBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(WebBrowserBlocked)); }
-            set { BackingStore?.Set(nameof(WebBrowserBlocked), value); }
+            get { return BackingStore?.Get<bool?>("webBrowserBlocked"); }
+            set { BackingStore?.Set("webBrowserBlocked", value); }
         }
         /// <summary>Indicates whether or not to block JavaScript within the web browser.</summary>
         public bool? WebBrowserBlockJavaScript {
-            get { return BackingStore?.Get<bool?>(nameof(WebBrowserBlockJavaScript)); }
-            set { BackingStore?.Set(nameof(WebBrowserBlockJavaScript), value); }
+            get { return BackingStore?.Get<bool?>("webBrowserBlockJavaScript"); }
+            set { BackingStore?.Set("webBrowserBlockJavaScript", value); }
         }
         /// <summary>Indicates whether or not to block popups within the web browser.</summary>
         public bool? WebBrowserBlockPopups {
-            get { return BackingStore?.Get<bool?>(nameof(WebBrowserBlockPopups)); }
-            set { BackingStore?.Set(nameof(WebBrowserBlockPopups), value); }
+            get { return BackingStore?.Get<bool?>("webBrowserBlockPopups"); }
+            set { BackingStore?.Set("webBrowserBlockPopups", value); }
         }
-        /// <summary>Cookie settings within the web browser. Possible values are: browserDefault, blockAlways, allowCurrentWebSite, allowFromWebsitesVisited, allowAlways.</summary>
+        /// <summary>Web Browser Cookie Settings.</summary>
         public Microsoft.Graph.Models.WebBrowserCookieSettings? WebBrowserCookieSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.WebBrowserCookieSettings?>(nameof(WebBrowserCookieSettings)); }
-            set { BackingStore?.Set(nameof(WebBrowserCookieSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WebBrowserCookieSettings?>("webBrowserCookieSettings"); }
+            set { BackingStore?.Set("webBrowserCookieSettings", value); }
         }
         /// <summary>Indicates whether or not to block syncing Wi-Fi.</summary>
         public bool? WiFiBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(WiFiBlocked)); }
-            set { BackingStore?.Set(nameof(WiFiBlocked), value); }
+            get { return BackingStore?.Get<bool?>("wiFiBlocked"); }
+            set { BackingStore?.Set("wiFiBlocked", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Models {
     public class PublicClientApplication : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.</summary>
         public List<string> RedirectUris {
-            get { return BackingStore?.Get<List<string>>(nameof(RedirectUris)); }
-            set { BackingStore?.Set(nameof(RedirectUris), value); }
+            get { return BackingStore?.Get<List<string>>("redirectUris"); }
+            set { BackingStore?.Set("redirectUris", value); }
         }
         /// <summary>
         /// Instantiates a new publicClientApplication and sets the default values.

@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class IosStoreApp : MobileApp, IParsable {
         /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
         public IosDeviceType ApplicableDeviceType {
-            get { return BackingStore?.Get<IosDeviceType>(nameof(ApplicableDeviceType)); }
-            set { BackingStore?.Set(nameof(ApplicableDeviceType), value); }
+            get { return BackingStore?.Get<IosDeviceType>("applicableDeviceType"); }
+            set { BackingStore?.Set("applicableDeviceType", value); }
         }
         /// <summary>The Apple App Store URL</summary>
         public string AppStoreUrl {
-            get { return BackingStore?.Get<string>(nameof(AppStoreUrl)); }
-            set { BackingStore?.Set(nameof(AppStoreUrl), value); }
+            get { return BackingStore?.Get<string>("appStoreUrl"); }
+            set { BackingStore?.Set("appStoreUrl", value); }
         }
         /// <summary>The Identity Name.</summary>
         public string BundleId {
-            get { return BackingStore?.Get<string>(nameof(BundleId)); }
-            set { BackingStore?.Set(nameof(BundleId), value); }
+            get { return BackingStore?.Get<string>("bundleId"); }
+            set { BackingStore?.Set("bundleId", value); }
         }
         /// <summary>The value for the minimum applicable operating system.</summary>
         public IosMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<IosMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<IosMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

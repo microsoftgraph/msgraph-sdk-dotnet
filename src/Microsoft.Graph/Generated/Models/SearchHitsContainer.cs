@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class SearchHitsContainer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.</summary>
         public List<SearchAggregation> Aggregations {
-            get { return BackingStore?.Get<List<SearchAggregation>>(nameof(Aggregations)); }
-            set { BackingStore?.Set(nameof(Aggregations), value); }
+            get { return BackingStore?.Get<List<SearchAggregation>>("aggregations"); }
+            set { BackingStore?.Set("aggregations", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of the search results.</summary>
         public List<SearchHit> Hits {
-            get { return BackingStore?.Get<List<SearchHit>>(nameof(Hits)); }
-            set { BackingStore?.Set(nameof(Hits), value); }
+            get { return BackingStore?.Get<List<SearchHit>>("hits"); }
+            set { BackingStore?.Set("hits", value); }
         }
         /// <summary>Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.</summary>
         public bool? MoreResultsAvailable {
-            get { return BackingStore?.Get<bool?>(nameof(MoreResultsAvailable)); }
-            set { BackingStore?.Set(nameof(MoreResultsAvailable), value); }
+            get { return BackingStore?.Get<bool?>("moreResultsAvailable"); }
+            set { BackingStore?.Set("moreResultsAvailable", value); }
         }
         /// <summary>The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.</summary>
         public int? Total {
-            get { return BackingStore?.Get<int?>(nameof(Total)); }
-            set { BackingStore?.Set(nameof(Total), value); }
+            get { return BackingStore?.Get<int?>("total"); }
+            set { BackingStore?.Set("total", value); }
         }
         /// <summary>
         /// Instantiates a new searchHitsContainer and sets the default values.

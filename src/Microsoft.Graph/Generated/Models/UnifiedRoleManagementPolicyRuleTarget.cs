@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class UnifiedRoleManagementPolicyRuleTarget : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The type of caller that&apos;s the target of the policy rule. Allowed values are: None, Admin, EndUser.</summary>
         public string Caller {
-            get { return BackingStore?.Get<string>(nameof(Caller)); }
-            set { BackingStore?.Set(nameof(Caller), value); }
+            get { return BackingStore?.Get<string>("caller"); }
+            set { BackingStore?.Set("caller", value); }
         }
         /// <summary>The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.</summary>
         public List<string> EnforcedSettings {
-            get { return BackingStore?.Get<List<string>>(nameof(EnforcedSettings)); }
-            set { BackingStore?.Set(nameof(EnforcedSettings), value); }
+            get { return BackingStore?.Get<List<string>>("enforcedSettings"); }
+            set { BackingStore?.Set("enforcedSettings", value); }
         }
         /// <summary>The list of role settings that can be inherited by child scopes. Use All for all settings.</summary>
         public List<string> InheritableSettings {
-            get { return BackingStore?.Get<List<string>>(nameof(InheritableSettings)); }
-            set { BackingStore?.Set(nameof(InheritableSettings), value); }
+            get { return BackingStore?.Get<List<string>>("inheritableSettings"); }
+            set { BackingStore?.Set("inheritableSettings", value); }
         }
         /// <summary>The role assignment type that&apos;s the target of policy rule. Allowed values are: Eligibility, Assignment.</summary>
         public string Level {
-            get { return BackingStore?.Get<string>(nameof(Level)); }
-            set { BackingStore?.Set(nameof(Level), value); }
+            get { return BackingStore?.Get<string>("level"); }
+            set { BackingStore?.Set("level", value); }
         }
         /// <summary>The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.</summary>
         public List<string> Operations {
-            get { return BackingStore?.Get<List<string>>(nameof(Operations)); }
-            set { BackingStore?.Set(nameof(Operations), value); }
+            get { return BackingStore?.Get<List<string>>("operations"); }
+            set { BackingStore?.Set("operations", value); }
         }
         /// <summary>The targetObjects property</summary>
         public List<DirectoryObject> TargetObjects {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(TargetObjects)); }
-            set { BackingStore?.Set(nameof(TargetObjects), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("targetObjects"); }
+            set { BackingStore?.Set("targetObjects", value); }
         }
         /// <summary>
         /// Instantiates a new unifiedRoleManagementPolicyRuleTarget and sets the default values.

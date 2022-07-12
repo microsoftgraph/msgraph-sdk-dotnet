@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class FileSystemInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The UTC date and time the file was created on a client.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The UTC date and time the file was last accessed. Available for the recent file list only.</summary>
         public DateTimeOffset? LastAccessedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastAccessedDateTime)); }
-            set { BackingStore?.Set(nameof(LastAccessedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastAccessedDateTime"); }
+            set { BackingStore?.Set("lastAccessedDateTime", value); }
         }
         /// <summary>The UTC date and time the file was last modified on a client.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new fileSystemInfo and sets the default values.

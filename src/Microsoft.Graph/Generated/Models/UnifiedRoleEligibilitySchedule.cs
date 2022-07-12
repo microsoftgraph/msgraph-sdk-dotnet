@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class UnifiedRoleEligibilitySchedule : UnifiedRoleScheduleBase, IParsable {
-        /// <summary>Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.</summary>
+        /// <summary>Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).</summary>
         public string MemberType {
-            get { return BackingStore?.Get<string>(nameof(MemberType)); }
-            set { BackingStore?.Set(nameof(MemberType), value); }
+            get { return BackingStore?.Get<string>("memberType"); }
+            set { BackingStore?.Set("memberType", value); }
         }
         /// <summary>The schedule object of the eligible role assignment request.</summary>
         public RequestSchedule ScheduleInfo {
-            get { return BackingStore?.Get<RequestSchedule>(nameof(ScheduleInfo)); }
-            set { BackingStore?.Set(nameof(ScheduleInfo), value); }
+            get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }
+            set { BackingStore?.Set("scheduleInfo", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

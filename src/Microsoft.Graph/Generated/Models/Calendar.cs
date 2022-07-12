@@ -4,97 +4,96 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class Calendar : Entity, IParsable {
         /// <summary>Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.</summary>
         public List<string> AllowedOnlineMeetingProviders {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedOnlineMeetingProviders)); }
-            set { BackingStore?.Set(nameof(AllowedOnlineMeetingProviders), value); }
+            get { return BackingStore?.Get<List<string>>("allowedOnlineMeetingProviders"); }
+            set { BackingStore?.Set("allowedOnlineMeetingProviders", value); }
         }
         /// <summary>The permissions of the users with whom the calendar is shared.</summary>
         public List<CalendarPermission> CalendarPermissions {
-            get { return BackingStore?.Get<List<CalendarPermission>>(nameof(CalendarPermissions)); }
-            set { BackingStore?.Set(nameof(CalendarPermissions), value); }
+            get { return BackingStore?.Get<List<CalendarPermission>>("calendarPermissions"); }
+            set { BackingStore?.Set("calendarPermissions", value); }
         }
         /// <summary>The calendar view for the calendar. Navigation property. Read-only.</summary>
         public List<Event> CalendarView {
-            get { return BackingStore?.Get<List<Event>>(nameof(CalendarView)); }
-            set { BackingStore?.Set(nameof(CalendarView), value); }
+            get { return BackingStore?.Get<List<Event>>("calendarView"); }
+            set { BackingStore?.Set("calendarView", value); }
         }
         /// <summary>true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.</summary>
         public bool? CanEdit {
-            get { return BackingStore?.Get<bool?>(nameof(CanEdit)); }
-            set { BackingStore?.Set(nameof(CanEdit), value); }
+            get { return BackingStore?.Get<bool?>("canEdit"); }
+            set { BackingStore?.Set("canEdit", value); }
         }
         /// <summary>true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.</summary>
         public bool? CanShare {
-            get { return BackingStore?.Get<bool?>(nameof(CanShare)); }
-            set { BackingStore?.Set(nameof(CanShare), value); }
+            get { return BackingStore?.Get<bool?>("canShare"); }
+            set { BackingStore?.Set("canShare", value); }
         }
         /// <summary>true if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.</summary>
         public bool? CanViewPrivateItems {
-            get { return BackingStore?.Get<bool?>(nameof(CanViewPrivateItems)); }
-            set { BackingStore?.Set(nameof(CanViewPrivateItems), value); }
+            get { return BackingStore?.Get<bool?>("canViewPrivateItems"); }
+            set { BackingStore?.Set("canViewPrivateItems", value); }
         }
         /// <summary>Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.</summary>
         public string ChangeKey {
-            get { return BackingStore?.Get<string>(nameof(ChangeKey)); }
-            set { BackingStore?.Set(nameof(ChangeKey), value); }
+            get { return BackingStore?.Get<string>("changeKey"); }
+            set { BackingStore?.Set("changeKey", value); }
         }
         /// <summary>Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: auto, lightBlue, lightGreen, lightOrange, lightGray, lightYellow, lightTeal, lightPink, lightBrown, lightRed, maxColor.</summary>
         public CalendarColor? Color {
-            get { return BackingStore?.Get<CalendarColor?>(nameof(Color)); }
-            set { BackingStore?.Set(nameof(Color), value); }
+            get { return BackingStore?.Get<CalendarColor?>("color"); }
+            set { BackingStore?.Set("color", value); }
         }
         /// <summary>The default online meeting provider for meetings sent from this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.</summary>
         public OnlineMeetingProviderType? DefaultOnlineMeetingProvider {
-            get { return BackingStore?.Get<OnlineMeetingProviderType?>(nameof(DefaultOnlineMeetingProvider)); }
-            set { BackingStore?.Set(nameof(DefaultOnlineMeetingProvider), value); }
+            get { return BackingStore?.Get<OnlineMeetingProviderType?>("defaultOnlineMeetingProvider"); }
+            set { BackingStore?.Set("defaultOnlineMeetingProvider", value); }
         }
         /// <summary>The events in the calendar. Navigation property. Read-only.</summary>
         public List<Event> Events {
-            get { return BackingStore?.Get<List<Event>>(nameof(Events)); }
-            set { BackingStore?.Set(nameof(Events), value); }
+            get { return BackingStore?.Get<List<Event>>("events"); }
+            set { BackingStore?.Set("events", value); }
         }
         /// <summary>The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.</summary>
         public string HexColor {
-            get { return BackingStore?.Get<string>(nameof(HexColor)); }
-            set { BackingStore?.Set(nameof(HexColor), value); }
+            get { return BackingStore?.Get<string>("hexColor"); }
+            set { BackingStore?.Set("hexColor", value); }
         }
         /// <summary>true if this is the default calendar where new events are created by default, false otherwise.</summary>
         public bool? IsDefaultCalendar {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefaultCalendar)); }
-            set { BackingStore?.Set(nameof(IsDefaultCalendar), value); }
+            get { return BackingStore?.Get<bool?>("isDefaultCalendar"); }
+            set { BackingStore?.Set("isDefaultCalendar", value); }
         }
         /// <summary>Indicates whether this user calendar can be deleted from the user mailbox.</summary>
         public bool? IsRemovable {
-            get { return BackingStore?.Get<bool?>(nameof(IsRemovable)); }
-            set { BackingStore?.Set(nameof(IsRemovable), value); }
+            get { return BackingStore?.Get<bool?>("isRemovable"); }
+            set { BackingStore?.Set("isRemovable", value); }
         }
         /// <summary>Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users&apos; primary calendars support tracking of meeting responses.</summary>
         public bool? IsTallyingResponses {
-            get { return BackingStore?.Get<bool?>(nameof(IsTallyingResponses)); }
-            set { BackingStore?.Set(nameof(IsTallyingResponses), value); }
+            get { return BackingStore?.Get<bool?>("isTallyingResponses"); }
+            set { BackingStore?.Set("isTallyingResponses", value); }
         }
         /// <summary>The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>(nameof(MultiValueExtendedProperties)); }
-            set { BackingStore?.Set(nameof(MultiValueExtendedProperties), value); }
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
         /// <summary>The calendar name.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user. Read-only.</summary>
         public EmailAddress Owner {
-            get { return BackingStore?.Get<EmailAddress>(nameof(Owner)); }
-            set { BackingStore?.Set(nameof(Owner), value); }
+            get { return BackingStore?.Get<EmailAddress>("owner"); }
+            set { BackingStore?.Set("owner", value); }
         }
         /// <summary>The collection of single-value extended properties defined for the calendar. Read-only. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>(nameof(SingleValueExtendedProperties)); }
-            set { BackingStore?.Set(nameof(SingleValueExtendedProperties), value); }
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

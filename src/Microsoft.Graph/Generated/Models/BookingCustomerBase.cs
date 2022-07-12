@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,12 @@ using System.Linq;
 namespace Microsoft.Graph.Models {
     /// <summary>Booking entities that provide a display name.</summary>
     public class BookingCustomerBase : Entity, IParsable {
+        /// <summary>
+        /// Instantiates a new bookingCustomerBase and sets the default values.
+        /// </summary>
+        public BookingCustomerBase() : base() {
+            Type = "#microsoft.graph.bookingCustomerBase";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

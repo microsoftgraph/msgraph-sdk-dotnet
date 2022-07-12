@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class ToneInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>An incremental identifier used for ordering DTMF events.</summary>
         public long? SequenceId {
-            get { return BackingStore?.Get<long?>(nameof(SequenceId)); }
-            set { BackingStore?.Set(nameof(SequenceId), value); }
+            get { return BackingStore?.Get<long?>("sequenceId"); }
+            set { BackingStore?.Set("sequenceId", value); }
         }
-        /// <summary>Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.</summary>
+        /// <summary>The tone property</summary>
         public Microsoft.Graph.Models.Tone? Tone {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Tone?>(nameof(Tone)); }
-            set { BackingStore?.Set(nameof(Tone), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Tone?>("tone"); }
+            set { BackingStore?.Set("tone", value); }
         }
         /// <summary>
         /// Instantiates a new toneInfo and sets the default values.

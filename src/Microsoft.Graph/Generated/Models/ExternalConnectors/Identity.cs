@@ -6,11 +6,6 @@ using System.Linq;
 namespace Microsoft.Graph.Models.ExternalConnectors {
     /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class Identity : Entity, IParsable {
-        /// <summary>The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.</summary>
-        public IdentityType? Type {
-            get { return BackingStore?.Get<IdentityType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -24,7 +19,6 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"type", n => { Type = n.GetEnumValue<IdentityType>(); } },
             };
         }
         /// <summary>
@@ -34,7 +28,6 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<IdentityType>("type", Type);
         }
     }
 }

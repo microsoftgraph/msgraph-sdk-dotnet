@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Models.ODataErrors {
     public class ODataError : ApiException, IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The error property</summary>
         public MainError Error {
-            get { return BackingStore?.Get<MainError>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<MainError>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>
         /// Instantiates a new ODataError and sets the default values.

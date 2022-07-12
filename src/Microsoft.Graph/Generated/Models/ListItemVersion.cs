@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class ListItemVersion : BaseItemVersion, IParsable {
         /// <summary>A collection of the fields and values for this version of the list item.</summary>
         public FieldValueSet Fields {
-            get { return BackingStore?.Get<FieldValueSet>(nameof(Fields)); }
-            set { BackingStore?.Set(nameof(Fields), value); }
+            get { return BackingStore?.Get<FieldValueSet>("fields"); }
+            set { BackingStore?.Set("fields", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

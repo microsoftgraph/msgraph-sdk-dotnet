@@ -1,6 +1,8 @@
 using Microsoft.Graph.Me.Authentication.Fido2Methods;
 using Microsoft.Graph.Me.Authentication.Methods;
 using Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods;
+using Microsoft.Graph.Me.Authentication.Operations;
+using Microsoft.Graph.Me.Authentication.PasswordMethods;
 using Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods;
 using Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods;
 using Microsoft.Graph.Models;
@@ -27,6 +29,14 @@ namespace Microsoft.Graph.Me.Authentication {
         /// <summary>The microsoftAuthenticatorMethods property</summary>
         public MicrosoftAuthenticatorMethodsRequestBuilder MicrosoftAuthenticatorMethods { get =>
             new MicrosoftAuthenticatorMethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The operations property</summary>
+        public OperationsRequestBuilder Operations { get =>
+            new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The passwordMethods property</summary>
+        public PasswordMethodsRequestBuilder PasswordMethods { get =>
+            new PasswordMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

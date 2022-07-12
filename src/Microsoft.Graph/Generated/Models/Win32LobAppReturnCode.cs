@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class Win32LobAppReturnCode : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Return code.</summary>
         public int? ReturnCode {
-            get { return BackingStore?.Get<int?>(nameof(ReturnCode)); }
-            set { BackingStore?.Set(nameof(ReturnCode), value); }
+            get { return BackingStore?.Get<int?>("returnCode"); }
+            set { BackingStore?.Set("returnCode", value); }
         }
-        /// <summary>The type of return code. Possible values are: failed, success, softReboot, hardReboot, retry.</summary>
+        /// <summary>Indicates the type of return code.</summary>
         public Win32LobAppReturnCodeType? Type {
-            get { return BackingStore?.Get<Win32LobAppReturnCodeType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<Win32LobAppReturnCodeType?>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Instantiates a new win32LobAppReturnCode and sets the default values.

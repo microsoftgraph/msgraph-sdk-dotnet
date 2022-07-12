@@ -1,20 +1,26 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class IdentityUserFlow : Entity, IParsable {
         /// <summary>The userFlowType property</summary>
         public Microsoft.Graph.Models.UserFlowType? UserFlowType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.UserFlowType?>(nameof(UserFlowType)); }
-            set { BackingStore?.Set(nameof(UserFlowType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserFlowType?>("userFlowType"); }
+            set { BackingStore?.Set("userFlowType", value); }
         }
         /// <summary>The userFlowTypeVersion property</summary>
         public float? UserFlowTypeVersion {
-            get { return BackingStore?.Get<float?>(nameof(UserFlowTypeVersion)); }
-            set { BackingStore?.Set(nameof(UserFlowTypeVersion), value); }
+            get { return BackingStore?.Get<float?>("userFlowTypeVersion"); }
+            set { BackingStore?.Set("userFlowTypeVersion", value); }
+        }
+        /// <summary>
+        /// Instantiates a new IdentityUserFlow and sets the default values.
+        /// </summary>
+        public IdentityUserFlow() : base() {
+            Type = "#microsoft.graph.identityUserFlow";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

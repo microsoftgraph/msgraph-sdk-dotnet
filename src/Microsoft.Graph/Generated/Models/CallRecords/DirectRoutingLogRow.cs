@@ -8,115 +8,115 @@ namespace Microsoft.Graph.Models.CallRecords {
     public class DirectRoutingLogRow : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of the user or bot who received the call. E.164 format, but may include additional data.</summary>
         public string CalleeNumber {
-            get { return BackingStore?.Get<string>(nameof(CalleeNumber)); }
-            set { BackingStore?.Set(nameof(CalleeNumber), value); }
+            get { return BackingStore?.Get<string>("calleeNumber"); }
+            set { BackingStore?.Set("calleeNumber", value); }
         }
         /// <summary>In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.</summary>
         public int? CallEndSubReason {
-            get { return BackingStore?.Get<int?>(nameof(CallEndSubReason)); }
-            set { BackingStore?.Set(nameof(CallEndSubReason), value); }
+            get { return BackingStore?.Get<int?>("callEndSubReason"); }
+            set { BackingStore?.Set("callEndSubReason", value); }
         }
         /// <summary>Number of the user or bot who made the call. E.164 format, but may include additional data.</summary>
         public string CallerNumber {
-            get { return BackingStore?.Get<string>(nameof(CallerNumber)); }
-            set { BackingStore?.Set(nameof(CallerNumber), value); }
+            get { return BackingStore?.Get<string>("callerNumber"); }
+            set { BackingStore?.Set("callerNumber", value); }
         }
         /// <summary>Call type and direction.</summary>
         public string CallType {
-            get { return BackingStore?.Get<string>(nameof(CallType)); }
-            set { BackingStore?.Set(nameof(CallType), value); }
+            get { return BackingStore?.Get<string>("callType"); }
+            set { BackingStore?.Set("callType", value); }
         }
         /// <summary>Identifier for the call that you can use when calling Microsoft Support. GUID.</summary>
         public string CorrelationId {
-            get { return BackingStore?.Get<string>(nameof(CorrelationId)); }
-            set { BackingStore?.Set(nameof(CorrelationId), value); }
+            get { return BackingStore?.Get<string>("correlationId"); }
+            set { BackingStore?.Set("correlationId", value); }
         }
         /// <summary>Duration of the call in seconds.</summary>
         public int? Duration {
-            get { return BackingStore?.Get<int?>(nameof(Duration)); }
-            set { BackingStore?.Set(nameof(Duration), value); }
+            get { return BackingStore?.Get<int?>("duration"); }
+            set { BackingStore?.Set("duration", value); }
         }
         /// <summary>Only exists for successful (fully established) calls. Time when call ended.</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Only exists for failed (not fully established) calls.</summary>
         public DateTimeOffset? FailureDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(FailureDateTime)); }
-            set { BackingStore?.Set(nameof(FailureDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("failureDateTime"); }
+            set { BackingStore?.Set("failureDateTime", value); }
         }
         /// <summary>The code with which the call ended, RFC 3261.</summary>
         public int? FinalSipCode {
-            get { return BackingStore?.Get<int?>(nameof(FinalSipCode)); }
-            set { BackingStore?.Set(nameof(FinalSipCode), value); }
+            get { return BackingStore?.Get<int?>("finalSipCode"); }
+            set { BackingStore?.Set("finalSipCode", value); }
         }
         /// <summary>Description of the SIP code and Microsoft subcode.</summary>
         public string FinalSipCodePhrase {
-            get { return BackingStore?.Get<string>(nameof(FinalSipCodePhrase)); }
-            set { BackingStore?.Set(nameof(FinalSipCodePhrase), value); }
+            get { return BackingStore?.Get<string>("finalSipCodePhrase"); }
+            set { BackingStore?.Set("finalSipCodePhrase", value); }
         }
         /// <summary>Unique call identifier. GUID.</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>When the initial invite was sent.</summary>
         public DateTimeOffset? InviteDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(InviteDateTime)); }
-            set { BackingStore?.Set(nameof(InviteDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("inviteDateTime"); }
+            set { BackingStore?.Set("inviteDateTime", value); }
         }
         /// <summary>Indicates if the trunk was enabled for media bypass or not.</summary>
         public bool? MediaBypassEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(MediaBypassEnabled)); }
-            set { BackingStore?.Set(nameof(MediaBypassEnabled), value); }
+            get { return BackingStore?.Get<bool?>("mediaBypassEnabled"); }
+            set { BackingStore?.Set("mediaBypassEnabled", value); }
         }
         /// <summary>The datacenter used for media path in non-bypass call.</summary>
         public string MediaPathLocation {
-            get { return BackingStore?.Get<string>(nameof(MediaPathLocation)); }
-            set { BackingStore?.Set(nameof(MediaPathLocation), value); }
+            get { return BackingStore?.Get<string>("mediaPathLocation"); }
+            set { BackingStore?.Set("mediaPathLocation", value); }
         }
         /// <summary>The datacenter used for signaling for both bypass and non-bypass calls.</summary>
         public string SignalingLocation {
-            get { return BackingStore?.Get<string>(nameof(SignalingLocation)); }
-            set { BackingStore?.Set(nameof(SignalingLocation), value); }
+            get { return BackingStore?.Get<string>("signalingLocation"); }
+            set { BackingStore?.Set("signalingLocation", value); }
         }
         /// <summary>Call start time.For failed and unanswered calls, this can be equal to invite or failure time.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>Success or attempt.</summary>
         public bool? SuccessfulCall {
-            get { return BackingStore?.Get<bool?>(nameof(SuccessfulCall)); }
-            set { BackingStore?.Set(nameof(SuccessfulCall), value); }
+            get { return BackingStore?.Get<bool?>("successfulCall"); }
+            set { BackingStore?.Set("successfulCall", value); }
         }
         /// <summary>Fully qualified domain name of the session border controller.</summary>
         public string TrunkFullyQualifiedDomainName {
-            get { return BackingStore?.Get<string>(nameof(TrunkFullyQualifiedDomainName)); }
-            set { BackingStore?.Set(nameof(TrunkFullyQualifiedDomainName), value); }
+            get { return BackingStore?.Get<string>("trunkFullyQualifiedDomainName"); }
+            set { BackingStore?.Set("trunkFullyQualifiedDomainName", value); }
         }
         /// <summary>Display name of the user.</summary>
         public string UserDisplayName {
-            get { return BackingStore?.Get<string>(nameof(UserDisplayName)); }
-            set { BackingStore?.Set(nameof(UserDisplayName), value); }
+            get { return BackingStore?.Get<string>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
         }
         /// <summary>Calling user&apos;s ID in Graph. This and other user info will be null/empty for bot call types. GUID.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user&apos;s SIP Address, and can be same as user&apos;s e-mail address.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Instantiates a new directRoutingLogRow and sets the default values.

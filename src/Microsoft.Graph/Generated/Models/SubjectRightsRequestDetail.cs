@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Models {
     public class SubjectRightsRequestDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Count of items that are excluded from the request.</summary>
         public long? ExcludedItemCount {
-            get { return BackingStore?.Get<long?>(nameof(ExcludedItemCount)); }
-            set { BackingStore?.Set(nameof(ExcludedItemCount), value); }
+            get { return BackingStore?.Get<long?>("excludedItemCount"); }
+            set { BackingStore?.Set("excludedItemCount", value); }
         }
         /// <summary>Count of items per insight.</summary>
         public List<KeyValuePair> InsightCounts {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(InsightCounts)); }
-            set { BackingStore?.Set(nameof(InsightCounts), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("insightCounts"); }
+            set { BackingStore?.Set("insightCounts", value); }
         }
         /// <summary>Count of items found.</summary>
         public long? ItemCount {
-            get { return BackingStore?.Get<long?>(nameof(ItemCount)); }
-            set { BackingStore?.Set(nameof(ItemCount), value); }
+            get { return BackingStore?.Get<long?>("itemCount"); }
+            set { BackingStore?.Set("itemCount", value); }
         }
         /// <summary>Count of item that need review.</summary>
         public long? ItemNeedReview {
-            get { return BackingStore?.Get<long?>(nameof(ItemNeedReview)); }
-            set { BackingStore?.Set(nameof(ItemNeedReview), value); }
+            get { return BackingStore?.Get<long?>("itemNeedReview"); }
+            set { BackingStore?.Set("itemNeedReview", value); }
         }
         /// <summary>Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.</summary>
         public List<KeyValuePair> ProductItemCounts {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(ProductItemCounts)); }
-            set { BackingStore?.Set(nameof(ProductItemCounts), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("productItemCounts"); }
+            set { BackingStore?.Set("productItemCounts", value); }
         }
         /// <summary>Count of items signed off by the administrator.</summary>
         public long? SignedOffItemCount {
-            get { return BackingStore?.Get<long?>(nameof(SignedOffItemCount)); }
-            set { BackingStore?.Set(nameof(SignedOffItemCount), value); }
+            get { return BackingStore?.Get<long?>("signedOffItemCount"); }
+            set { BackingStore?.Set("signedOffItemCount", value); }
         }
         /// <summary>Total item size in bytes.</summary>
         public long? TotalItemSize {
-            get { return BackingStore?.Get<long?>(nameof(TotalItemSize)); }
-            set { BackingStore?.Set(nameof(TotalItemSize), value); }
+            get { return BackingStore?.Get<long?>("totalItemSize"); }
+            set { BackingStore?.Set("totalItemSize", value); }
         }
         /// <summary>
         /// Instantiates a new subjectRightsRequestDetail and sets the default values.

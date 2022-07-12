@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class Image : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional. Height of the image, in pixels. Read-only.</summary>
         public int? Height {
-            get { return BackingStore?.Get<int?>(nameof(Height)); }
-            set { BackingStore?.Set(nameof(Height), value); }
+            get { return BackingStore?.Get<int?>("height"); }
+            set { BackingStore?.Set("height", value); }
         }
         /// <summary>Optional. Width of the image, in pixels. Read-only.</summary>
         public int? Width {
-            get { return BackingStore?.Get<int?>(nameof(Width)); }
-            set { BackingStore?.Set(nameof(Width), value); }
+            get { return BackingStore?.Get<int?>("width"); }
+            set { BackingStore?.Set("width", value); }
         }
         /// <summary>
         /// Instantiates a new image and sets the default values.

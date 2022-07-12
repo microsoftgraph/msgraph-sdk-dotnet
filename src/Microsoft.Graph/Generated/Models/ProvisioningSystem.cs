@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class ProvisioningSystem : Identity, IParsable {
         /// <summary>Details of the system.</summary>
         public DetailsInfo Details {
-            get { return BackingStore?.Get<DetailsInfo>(nameof(Details)); }
-            set { BackingStore?.Set(nameof(Details), value); }
+            get { return BackingStore?.Get<DetailsInfo>("details"); }
+            set { BackingStore?.Set("details", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

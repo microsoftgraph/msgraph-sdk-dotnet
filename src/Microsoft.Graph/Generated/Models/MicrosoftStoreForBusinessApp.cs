@@ -5,30 +5,30 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class MicrosoftStoreForBusinessApp : MobileApp, IParsable {
-        /// <summary>The app license type. Possible values are: offline, online.</summary>
+        /// <summary>The licenseType property</summary>
         public MicrosoftStoreForBusinessLicenseType? LicenseType {
-            get { return BackingStore?.Get<MicrosoftStoreForBusinessLicenseType?>(nameof(LicenseType)); }
-            set { BackingStore?.Set(nameof(LicenseType), value); }
+            get { return BackingStore?.Get<MicrosoftStoreForBusinessLicenseType?>("licenseType"); }
+            set { BackingStore?.Set("licenseType", value); }
         }
         /// <summary>The app package identifier</summary>
         public string PackageIdentityName {
-            get { return BackingStore?.Get<string>(nameof(PackageIdentityName)); }
-            set { BackingStore?.Set(nameof(PackageIdentityName), value); }
+            get { return BackingStore?.Get<string>("packageIdentityName"); }
+            set { BackingStore?.Set("packageIdentityName", value); }
         }
         /// <summary>The app product key</summary>
         public string ProductKey {
-            get { return BackingStore?.Get<string>(nameof(ProductKey)); }
-            set { BackingStore?.Set(nameof(ProductKey), value); }
+            get { return BackingStore?.Get<string>("productKey"); }
+            set { BackingStore?.Set("productKey", value); }
         }
         /// <summary>The total number of Microsoft Store for Business licenses.</summary>
         public int? TotalLicenseCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalLicenseCount)); }
-            set { BackingStore?.Set(nameof(TotalLicenseCount), value); }
+            get { return BackingStore?.Get<int?>("totalLicenseCount"); }
+            set { BackingStore?.Set("totalLicenseCount", value); }
         }
         /// <summary>The number of Microsoft Store for Business licenses in use.</summary>
         public int? UsedLicenseCount {
-            get { return BackingStore?.Get<int?>(nameof(UsedLicenseCount)); }
-            set { BackingStore?.Set(nameof(UsedLicenseCount), value); }
+            get { return BackingStore?.Get<int?>("usedLicenseCount"); }
+            set { BackingStore?.Set("usedLicenseCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

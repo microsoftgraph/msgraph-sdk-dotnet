@@ -7,58 +7,58 @@ namespace Microsoft.Graph.Models {
     public class ServiceUpdateMessage : ServiceAnnouncementBase, IParsable {
         /// <summary>The expected deadline of the action for the message.</summary>
         public DateTimeOffset? ActionRequiredByDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ActionRequiredByDateTime)); }
-            set { BackingStore?.Set(nameof(ActionRequiredByDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("actionRequiredByDateTime"); }
+            set { BackingStore?.Set("actionRequiredByDateTime", value); }
         }
         /// <summary>A collection of serviceAnnouncementAttachments.</summary>
         public List<ServiceAnnouncementAttachment> Attachments {
-            get { return BackingStore?.Get<List<ServiceAnnouncementAttachment>>(nameof(Attachments)); }
-            set { BackingStore?.Set(nameof(Attachments), value); }
+            get { return BackingStore?.Get<List<ServiceAnnouncementAttachment>>("attachments"); }
+            set { BackingStore?.Set("attachments", value); }
         }
         /// <summary>The zip file of all attachments for a message.</summary>
         public byte[] AttachmentsArchive {
-            get { return BackingStore?.Get<byte[]>(nameof(AttachmentsArchive)); }
-            set { BackingStore?.Set(nameof(AttachmentsArchive), value); }
+            get { return BackingStore?.Get<byte[]>("attachmentsArchive"); }
+            set { BackingStore?.Set("attachmentsArchive", value); }
         }
         /// <summary>The body property</summary>
         public ItemBody Body {
-            get { return BackingStore?.Get<ItemBody>(nameof(Body)); }
-            set { BackingStore?.Set(nameof(Body), value); }
+            get { return BackingStore?.Get<ItemBody>("body"); }
+            set { BackingStore?.Set("body", value); }
         }
-        /// <summary>The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.</summary>
+        /// <summary>The category property</summary>
         public ServiceUpdateCategory? Category {
-            get { return BackingStore?.Get<ServiceUpdateCategory?>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<ServiceUpdateCategory?>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>Indicates whether the message has any attachment.</summary>
         public bool? HasAttachments {
-            get { return BackingStore?.Get<bool?>(nameof(HasAttachments)); }
-            set { BackingStore?.Set(nameof(HasAttachments), value); }
+            get { return BackingStore?.Get<bool?>("hasAttachments"); }
+            set { BackingStore?.Set("hasAttachments", value); }
         }
         /// <summary>Indicates whether the message describes a major update for the service.</summary>
         public bool? IsMajorChange {
-            get { return BackingStore?.Get<bool?>(nameof(IsMajorChange)); }
-            set { BackingStore?.Set(nameof(IsMajorChange), value); }
+            get { return BackingStore?.Get<bool?>("isMajorChange"); }
+            set { BackingStore?.Set("isMajorChange", value); }
         }
         /// <summary>The affected services by the service message.</summary>
         public List<string> Services {
-            get { return BackingStore?.Get<List<string>>(nameof(Services)); }
-            set { BackingStore?.Set(nameof(Services), value); }
+            get { return BackingStore?.Get<List<string>>("services"); }
+            set { BackingStore?.Set("services", value); }
         }
-        /// <summary>The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.</summary>
+        /// <summary>The severity property</summary>
         public ServiceUpdateSeverity? Severity {
-            get { return BackingStore?.Get<ServiceUpdateSeverity?>(nameof(Severity)); }
-            set { BackingStore?.Set(nameof(Severity), value); }
+            get { return BackingStore?.Get<ServiceUpdateSeverity?>("severity"); }
+            set { BackingStore?.Set("severity", value); }
         }
         /// <summary>A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.</summary>
         public List<string> Tags {
-            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
-            set { BackingStore?.Set(nameof(Tags), value); }
+            get { return BackingStore?.Get<List<string>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
         }
         /// <summary>Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.</summary>
         public ServiceUpdateMessageViewpoint ViewPoint {
-            get { return BackingStore?.Get<ServiceUpdateMessageViewpoint>(nameof(ViewPoint)); }
-            set { BackingStore?.Set(nameof(ViewPoint), value); }
+            get { return BackingStore?.Get<ServiceUpdateMessageViewpoint>("viewPoint"); }
+            set { BackingStore?.Set("viewPoint", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Models {
     public class SearchAlteration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)</summary>
         public string AlteredHighlightedQueryString {
-            get { return BackingStore?.Get<string>(nameof(AlteredHighlightedQueryString)); }
-            set { BackingStore?.Set(nameof(AlteredHighlightedQueryString), value); }
+            get { return BackingStore?.Get<string>("alteredHighlightedQueryString"); }
+            set { BackingStore?.Set("alteredHighlightedQueryString", value); }
         }
         /// <summary>Defines the altered query string with spelling correction.</summary>
         public string AlteredQueryString {
-            get { return BackingStore?.Get<string>(nameof(AlteredQueryString)); }
-            set { BackingStore?.Set(nameof(AlteredQueryString), value); }
+            get { return BackingStore?.Get<string>("alteredQueryString"); }
+            set { BackingStore?.Set("alteredQueryString", value); }
         }
         /// <summary>Represents changed segments with respect to original query.</summary>
         public List<AlteredQueryToken> AlteredQueryTokens {
-            get { return BackingStore?.Get<List<AlteredQueryToken>>(nameof(AlteredQueryTokens)); }
-            set { BackingStore?.Set(nameof(AlteredQueryTokens), value); }
+            get { return BackingStore?.Get<List<AlteredQueryToken>>("alteredQueryTokens"); }
+            set { BackingStore?.Set("alteredQueryTokens", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

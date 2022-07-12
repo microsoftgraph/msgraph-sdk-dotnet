@@ -5,65 +5,65 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class MacOSGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
-        /// <summary>List that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.</summary>
+        /// <summary>Possible values of the compliance app list.</summary>
         public AppListType? CompliantAppListType {
-            get { return BackingStore?.Get<AppListType?>(nameof(CompliantAppListType)); }
-            set { BackingStore?.Set(nameof(CompliantAppListType), value); }
+            get { return BackingStore?.Get<AppListType?>("compliantAppListType"); }
+            set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
         public List<AppListItem> CompliantAppsList {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(CompliantAppsList)); }
-            set { BackingStore?.Set(nameof(CompliantAppsList), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
+            set { BackingStore?.Set("compliantAppsList", value); }
         }
         /// <summary>An email address lacking a suffix that matches any of these strings will be considered out-of-domain.</summary>
         public List<string> EmailInDomainSuffixes {
-            get { return BackingStore?.Get<List<string>>(nameof(EmailInDomainSuffixes)); }
-            set { BackingStore?.Set(nameof(EmailInDomainSuffixes), value); }
+            get { return BackingStore?.Get<List<string>>("emailInDomainSuffixes"); }
+            set { BackingStore?.Set("emailInDomainSuffixes", value); }
         }
         /// <summary>Block simple passwords.</summary>
         public bool? PasswordBlockSimple {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordBlockSimple)); }
-            set { BackingStore?.Set(nameof(PasswordBlockSimple), value); }
+            get { return BackingStore?.Get<bool?>("passwordBlockSimple"); }
+            set { BackingStore?.Set("passwordBlockSimple", value); }
         }
         /// <summary>Number of days before the password expires.</summary>
         public int? PasswordExpirationDays {
-            get { return BackingStore?.Get<int?>(nameof(PasswordExpirationDays)); }
-            set { BackingStore?.Set(nameof(PasswordExpirationDays), value); }
+            get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
+            set { BackingStore?.Set("passwordExpirationDays", value); }
         }
         /// <summary>Number of character sets a password must contain. Valid values 0 to 4</summary>
         public int? PasswordMinimumCharacterSetCount {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumCharacterSetCount)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumCharacterSetCount), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumCharacterSetCount"); }
+            set { BackingStore?.Set("passwordMinimumCharacterSetCount", value); }
         }
         /// <summary>Minimum length of passwords.</summary>
         public int? PasswordMinimumLength {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumLength)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumLength), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
+            set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity required before a password is required.</summary>
         public int? PasswordMinutesOfInactivityBeforeLock {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinutesOfInactivityBeforeLock)); }
-            set { BackingStore?.Set(nameof(PasswordMinutesOfInactivityBeforeLock), value); }
+            get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeLock"); }
+            set { BackingStore?.Set("passwordMinutesOfInactivityBeforeLock", value); }
         }
         /// <summary>Minutes of inactivity required before the screen times out.</summary>
         public int? PasswordMinutesOfInactivityBeforeScreenTimeout {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinutesOfInactivityBeforeScreenTimeout)); }
-            set { BackingStore?.Set(nameof(PasswordMinutesOfInactivityBeforeScreenTimeout), value); }
+            get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeScreenTimeout"); }
+            set { BackingStore?.Set("passwordMinutesOfInactivityBeforeScreenTimeout", value); }
         }
         /// <summary>Number of previous passwords to block.</summary>
         public int? PasswordPreviousPasswordBlockCount {
-            get { return BackingStore?.Get<int?>(nameof(PasswordPreviousPasswordBlockCount)); }
-            set { BackingStore?.Set(nameof(PasswordPreviousPasswordBlockCount), value); }
+            get { return BackingStore?.Get<int?>("passwordPreviousPasswordBlockCount"); }
+            set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Whether or not to require a password.</summary>
         public bool? PasswordRequired {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordRequired)); }
-            set { BackingStore?.Set(nameof(PasswordRequired), value); }
+            get { return BackingStore?.Get<bool?>("passwordRequired"); }
+            set { BackingStore?.Set("passwordRequired", value); }
         }
-        /// <summary>Type of password that is required. Possible values are: deviceDefault, alphanumeric, numeric.</summary>
+        /// <summary>Possible values of required passwords.</summary>
         public RequiredPasswordType? PasswordRequiredType {
-            get { return BackingStore?.Get<RequiredPasswordType?>(nameof(PasswordRequiredType)); }
-            set { BackingStore?.Set(nameof(PasswordRequiredType), value); }
+            get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
+            set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

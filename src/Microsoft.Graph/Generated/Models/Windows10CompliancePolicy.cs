@@ -7,98 +7,98 @@ namespace Microsoft.Graph.Models {
     public class Windows10CompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled</summary>
         public bool? BitLockerEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(BitLockerEnabled)); }
-            set { BackingStore?.Set(nameof(BitLockerEnabled), value); }
+            get { return BackingStore?.Get<bool?>("bitLockerEnabled"); }
+            set { BackingStore?.Set("bitLockerEnabled", value); }
         }
         /// <summary>Require devices to be reported as healthy by Windows Device Health Attestation.</summary>
         public bool? CodeIntegrityEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(CodeIntegrityEnabled)); }
-            set { BackingStore?.Set(nameof(CodeIntegrityEnabled), value); }
+            get { return BackingStore?.Get<bool?>("codeIntegrityEnabled"); }
+            set { BackingStore?.Set("codeIntegrityEnabled", value); }
         }
         /// <summary>Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.</summary>
         public bool? EarlyLaunchAntiMalwareDriverEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(EarlyLaunchAntiMalwareDriverEnabled)); }
-            set { BackingStore?.Set(nameof(EarlyLaunchAntiMalwareDriverEnabled), value); }
+            get { return BackingStore?.Get<bool?>("earlyLaunchAntiMalwareDriverEnabled"); }
+            set { BackingStore?.Set("earlyLaunchAntiMalwareDriverEnabled", value); }
         }
         /// <summary>Maximum Windows Phone version.</summary>
         public string MobileOsMaximumVersion {
-            get { return BackingStore?.Get<string>(nameof(MobileOsMaximumVersion)); }
-            set { BackingStore?.Set(nameof(MobileOsMaximumVersion), value); }
+            get { return BackingStore?.Get<string>("mobileOsMaximumVersion"); }
+            set { BackingStore?.Set("mobileOsMaximumVersion", value); }
         }
         /// <summary>Minimum Windows Phone version.</summary>
         public string MobileOsMinimumVersion {
-            get { return BackingStore?.Get<string>(nameof(MobileOsMinimumVersion)); }
-            set { BackingStore?.Set(nameof(MobileOsMinimumVersion), value); }
+            get { return BackingStore?.Get<string>("mobileOsMinimumVersion"); }
+            set { BackingStore?.Set("mobileOsMinimumVersion", value); }
         }
         /// <summary>Maximum Windows 10 version.</summary>
         public string OsMaximumVersion {
-            get { return BackingStore?.Get<string>(nameof(OsMaximumVersion)); }
-            set { BackingStore?.Set(nameof(OsMaximumVersion), value); }
+            get { return BackingStore?.Get<string>("osMaximumVersion"); }
+            set { BackingStore?.Set("osMaximumVersion", value); }
         }
         /// <summary>Minimum Windows 10 version.</summary>
         public string OsMinimumVersion {
-            get { return BackingStore?.Get<string>(nameof(OsMinimumVersion)); }
-            set { BackingStore?.Set(nameof(OsMinimumVersion), value); }
+            get { return BackingStore?.Get<string>("osMinimumVersion"); }
+            set { BackingStore?.Set("osMinimumVersion", value); }
         }
         /// <summary>Indicates whether or not to block simple password.</summary>
         public bool? PasswordBlockSimple {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordBlockSimple)); }
-            set { BackingStore?.Set(nameof(PasswordBlockSimple), value); }
+            get { return BackingStore?.Get<bool?>("passwordBlockSimple"); }
+            set { BackingStore?.Set("passwordBlockSimple", value); }
         }
         /// <summary>The password expiration in days.</summary>
         public int? PasswordExpirationDays {
-            get { return BackingStore?.Get<int?>(nameof(PasswordExpirationDays)); }
-            set { BackingStore?.Set(nameof(PasswordExpirationDays), value); }
+            get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
+            set { BackingStore?.Set("passwordExpirationDays", value); }
         }
         /// <summary>The number of character sets required in the password.</summary>
         public int? PasswordMinimumCharacterSetCount {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumCharacterSetCount)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumCharacterSetCount), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumCharacterSetCount"); }
+            set { BackingStore?.Set("passwordMinimumCharacterSetCount", value); }
         }
         /// <summary>The minimum password length.</summary>
         public int? PasswordMinimumLength {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumLength)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumLength), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
+            set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before a password is required.</summary>
         public int? PasswordMinutesOfInactivityBeforeLock {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinutesOfInactivityBeforeLock)); }
-            set { BackingStore?.Set(nameof(PasswordMinutesOfInactivityBeforeLock), value); }
+            get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeLock"); }
+            set { BackingStore?.Set("passwordMinutesOfInactivityBeforeLock", value); }
         }
         /// <summary>The number of previous passwords to prevent re-use of.</summary>
         public int? PasswordPreviousPasswordBlockCount {
-            get { return BackingStore?.Get<int?>(nameof(PasswordPreviousPasswordBlockCount)); }
-            set { BackingStore?.Set(nameof(PasswordPreviousPasswordBlockCount), value); }
+            get { return BackingStore?.Get<int?>("passwordPreviousPasswordBlockCount"); }
+            set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Require a password to unlock Windows device.</summary>
         public bool? PasswordRequired {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordRequired)); }
-            set { BackingStore?.Set(nameof(PasswordRequired), value); }
+            get { return BackingStore?.Get<bool?>("passwordRequired"); }
+            set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Require a password to unlock an idle device.</summary>
         public bool? PasswordRequiredToUnlockFromIdle {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordRequiredToUnlockFromIdle)); }
-            set { BackingStore?.Set(nameof(PasswordRequiredToUnlockFromIdle), value); }
+            get { return BackingStore?.Get<bool?>("passwordRequiredToUnlockFromIdle"); }
+            set { BackingStore?.Set("passwordRequiredToUnlockFromIdle", value); }
         }
-        /// <summary>The required password type. Possible values are: deviceDefault, alphanumeric, numeric.</summary>
+        /// <summary>Possible values of required passwords.</summary>
         public RequiredPasswordType? PasswordRequiredType {
-            get { return BackingStore?.Get<RequiredPasswordType?>(nameof(PasswordRequiredType)); }
-            set { BackingStore?.Set(nameof(PasswordRequiredType), value); }
+            get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
+            set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Require devices to be reported as healthy by Windows Device Health Attestation.</summary>
         public bool? RequireHealthyDeviceReport {
-            get { return BackingStore?.Get<bool?>(nameof(RequireHealthyDeviceReport)); }
-            set { BackingStore?.Set(nameof(RequireHealthyDeviceReport), value); }
+            get { return BackingStore?.Get<bool?>("requireHealthyDeviceReport"); }
+            set { BackingStore?.Set("requireHealthyDeviceReport", value); }
         }
         /// <summary>Require devices to be reported as healthy by Windows Device Health Attestation - secure boot is enabled.</summary>
         public bool? SecureBootEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SecureBootEnabled)); }
-            set { BackingStore?.Set(nameof(SecureBootEnabled), value); }
+            get { return BackingStore?.Get<bool?>("secureBootEnabled"); }
+            set { BackingStore?.Set("secureBootEnabled", value); }
         }
         /// <summary>Require encryption on windows devices.</summary>
         public bool? StorageRequireEncryption {
-            get { return BackingStore?.Get<bool?>(nameof(StorageRequireEncryption)); }
-            set { BackingStore?.Set(nameof(StorageRequireEncryption), value); }
+            get { return BackingStore?.Get<bool?>("storageRequireEncryption"); }
+            set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

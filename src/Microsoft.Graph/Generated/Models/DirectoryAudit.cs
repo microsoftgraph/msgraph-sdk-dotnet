@@ -4,62 +4,62 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class DirectoryAudit : Entity, IParsable {
         /// <summary>Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ActivityDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ActivityDateTime)); }
-            set { BackingStore?.Set(nameof(ActivityDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
+            set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>Indicates the activity name or the operation name (E.g. &apos;Create User&apos;, &apos;Add member to group&apos;). For a list of activities logged, refer to Azure Ad activity list.</summary>
         public string ActivityDisplayName {
-            get { return BackingStore?.Get<string>(nameof(ActivityDisplayName)); }
-            set { BackingStore?.Set(nameof(ActivityDisplayName), value); }
+            get { return BackingStore?.Get<string>("activityDisplayName"); }
+            set { BackingStore?.Set("activityDisplayName", value); }
         }
         /// <summary>Indicates additional details on the activity.</summary>
         public List<KeyValue> AdditionalDetails {
-            get { return BackingStore?.Get<List<KeyValue>>(nameof(AdditionalDetails)); }
-            set { BackingStore?.Set(nameof(AdditionalDetails), value); }
+            get { return BackingStore?.Get<List<KeyValue>>("additionalDetails"); }
+            set { BackingStore?.Set("additionalDetails", value); }
         }
         /// <summary>Indicates which resource category that&apos;s targeted by the activity. (For example: User Management, Group Management etc..)</summary>
         public string Category {
-            get { return BackingStore?.Get<string>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<string>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.</summary>
         public string CorrelationId {
-            get { return BackingStore?.Get<string>(nameof(CorrelationId)); }
-            set { BackingStore?.Set(nameof(CorrelationId), value); }
+            get { return BackingStore?.Get<string>("correlationId"); }
+            set { BackingStore?.Set("correlationId", value); }
         }
         /// <summary>The initiatedBy property</summary>
         public AuditActivityInitiator InitiatedBy {
-            get { return BackingStore?.Get<AuditActivityInitiator>(nameof(InitiatedBy)); }
-            set { BackingStore?.Set(nameof(InitiatedBy), value); }
+            get { return BackingStore?.Get<AuditActivityInitiator>("initiatedBy"); }
+            set { BackingStore?.Set("initiatedBy", value); }
         }
         /// <summary>Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.</summary>
         public string LoggedByService {
-            get { return BackingStore?.Get<string>(nameof(LoggedByService)); }
-            set { BackingStore?.Set(nameof(LoggedByService), value); }
+            get { return BackingStore?.Get<string>("loggedByService"); }
+            set { BackingStore?.Set("loggedByService", value); }
         }
         /// <summary>Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.</summary>
         public string OperationType {
-            get { return BackingStore?.Get<string>(nameof(OperationType)); }
-            set { BackingStore?.Set(nameof(OperationType), value); }
+            get { return BackingStore?.Get<string>("operationType"); }
+            set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.</summary>
         public OperationResult? Result {
-            get { return BackingStore?.Get<OperationResult?>(nameof(Result)); }
-            set { BackingStore?.Set(nameof(Result), value); }
+            get { return BackingStore?.Get<OperationResult?>("result"); }
+            set { BackingStore?.Set("result", value); }
         }
         /// <summary>Indicates the reason for failure if the result is failure or timeout.</summary>
         public string ResultReason {
-            get { return BackingStore?.Get<string>(nameof(ResultReason)); }
-            set { BackingStore?.Set(nameof(ResultReason), value); }
+            get { return BackingStore?.Get<string>("resultReason"); }
+            set { BackingStore?.Set("resultReason", value); }
         }
         /// <summary>Information about the resource that changed due to the activity.</summary>
         public List<TargetResource> TargetResources {
-            get { return BackingStore?.Get<List<TargetResource>>(nameof(TargetResources)); }
-            set { BackingStore?.Set(nameof(TargetResources), value); }
+            get { return BackingStore?.Get<List<TargetResource>>("targetResources"); }
+            set { BackingStore?.Set("targetResources", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
