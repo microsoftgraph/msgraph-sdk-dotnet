@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class EducationItemBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The content property</summary>
         public string Content {
-            get { return BackingStore?.Get<string>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<string>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The contentType property</summary>
         public BodyType? ContentType {
-            get { return BackingStore?.Get<BodyType?>(nameof(ContentType)); }
-            set { BackingStore?.Set(nameof(ContentType), value); }
+            get { return BackingStore?.Get<BodyType?>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>
         /// Instantiates a new educationItemBody and sets the default values.

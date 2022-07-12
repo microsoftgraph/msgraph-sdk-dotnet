@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class EditionUpgradeConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Edition Upgrade License File Content.</summary>
         public string License {
-            get { return BackingStore?.Get<string>(nameof(License)); }
-            set { BackingStore?.Set(nameof(License), value); }
+            get { return BackingStore?.Get<string>("license"); }
+            set { BackingStore?.Set("license", value); }
         }
-        /// <summary>Edition Upgrade License Type. Possible values are: productKey, licenseFile, notConfigured.</summary>
+        /// <summary>Edition Upgrade License type</summary>
         public EditionUpgradeLicenseType? LicenseType {
-            get { return BackingStore?.Get<EditionUpgradeLicenseType?>(nameof(LicenseType)); }
-            set { BackingStore?.Set(nameof(LicenseType), value); }
+            get { return BackingStore?.Get<EditionUpgradeLicenseType?>("licenseType"); }
+            set { BackingStore?.Set("licenseType", value); }
         }
         /// <summary>Edition Upgrade Product Key.</summary>
         public string ProductKey {
-            get { return BackingStore?.Get<string>(nameof(ProductKey)); }
-            set { BackingStore?.Set(nameof(ProductKey), value); }
+            get { return BackingStore?.Get<string>("productKey"); }
+            set { BackingStore?.Set("productKey", value); }
         }
-        /// <summary>Edition Upgrade Target Edition. Possible values are: windows10Enterprise, windows10EnterpriseN, windows10Education, windows10EducationN, windows10MobileEnterprise, windows10HolographicEnterprise, windows10Professional, windows10ProfessionalN, windows10ProfessionalEducation, windows10ProfessionalEducationN, windows10ProfessionalWorkstation, windows10ProfessionalWorkstationN, notConfigured, windows10Home, windows10HomeChina, windows10HomeN, windows10HomeSingleLanguage, windows10Mobile, windows10IoTCore, windows10IoTCoreCommercial.</summary>
+        /// <summary>Windows 10 Edition type.</summary>
         public Windows10EditionType? TargetEdition {
-            get { return BackingStore?.Get<Windows10EditionType?>(nameof(TargetEdition)); }
-            set { BackingStore?.Set(nameof(TargetEdition), value); }
+            get { return BackingStore?.Get<Windows10EditionType?>("targetEdition"); }
+            set { BackingStore?.Set("targetEdition", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

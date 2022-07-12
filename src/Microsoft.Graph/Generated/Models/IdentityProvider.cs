@@ -4,27 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class IdentityProvider : Entity, IParsable {
         /// <summary>The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.</summary>
         public string ClientId {
-            get { return BackingStore?.Get<string>(nameof(ClientId)); }
-            set { BackingStore?.Set(nameof(ClientId), value); }
+            get { return BackingStore?.Get<string>("clientId"); }
+            set { BackingStore?.Set("clientId", value); }
         }
         /// <summary>The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return ****. This is a required field. Required. Not nullable.</summary>
         public string ClientSecret {
-            get { return BackingStore?.Get<string>(nameof(ClientSecret)); }
-            set { BackingStore?.Set(nameof(ClientSecret), value); }
+            get { return BackingStore?.Get<string>("clientSecret"); }
+            set { BackingStore?.Set("clientSecret", value); }
         }
         /// <summary>The display name of the identity provider. Not nullable.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
-        }
-        /// <summary>The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +37,6 @@ namespace Microsoft.Graph.Models {
                 {"clientId", n => { ClientId = n.GetStringValue(); } },
                 {"clientSecret", n => { ClientSecret = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,7 +49,6 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("clientSecret", ClientSecret);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("type", Type);
         }
     }
 }

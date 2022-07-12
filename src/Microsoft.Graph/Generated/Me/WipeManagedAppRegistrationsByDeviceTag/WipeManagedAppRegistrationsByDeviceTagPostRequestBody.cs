@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Me.WipeManagedAppRegistrationsByDeviceTag {
     public class WipeManagedAppRegistrationsByDeviceTagPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceTag property</summary>
         public string DeviceTag {
-            get { return BackingStore?.Get<string>(nameof(DeviceTag)); }
-            set { BackingStore?.Set(nameof(DeviceTag), value); }
+            get { return BackingStore?.Get<string>("deviceTag"); }
+            set { BackingStore?.Set("deviceTag", value); }
         }
         /// <summary>
         /// Instantiates a new wipeManagedAppRegistrationsByDeviceTagPostRequestBody and sets the default values.

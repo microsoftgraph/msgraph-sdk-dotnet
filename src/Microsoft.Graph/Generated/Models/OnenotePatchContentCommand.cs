@@ -6,32 +6,32 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class OnenotePatchContentCommand : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The action to perform on the target element. Possible values are: replace, append, delete, insert, or prepend.</summary>
+        /// <summary>The action property</summary>
         public OnenotePatchActionType? Action {
-            get { return BackingStore?.Get<OnenotePatchActionType?>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<OnenotePatchActionType?>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a &apos;Commands&apos; part.</summary>
         public string Content {
-            get { return BackingStore?.Get<string>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<string>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The location to add the supplied content, relative to the target element. Possible values are: after (default) or before.</summary>
         public OnenotePatchInsertPosition? Position {
-            get { return BackingStore?.Get<OnenotePatchInsertPosition?>(nameof(Position)); }
-            set { BackingStore?.Set(nameof(Position), value); }
+            get { return BackingStore?.Get<OnenotePatchInsertPosition?>("position"); }
+            set { BackingStore?.Set("position", value); }
         }
         /// <summary>The element to update. Must be the #&lt;data-id&gt; or the generated {id} of the element, or the body or title keyword.</summary>
         public string Target {
-            get { return BackingStore?.Get<string>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<string>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Instantiates a new onenotePatchContentCommand and sets the default values.

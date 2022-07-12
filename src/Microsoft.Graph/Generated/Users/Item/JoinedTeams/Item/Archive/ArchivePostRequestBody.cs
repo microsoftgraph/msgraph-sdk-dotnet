@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Archive {
     public class ArchivePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The shouldSetSpoSiteReadOnlyForMembers property</summary>
         public bool? ShouldSetSpoSiteReadOnlyForMembers {
-            get { return BackingStore?.Get<bool?>(nameof(ShouldSetSpoSiteReadOnlyForMembers)); }
-            set { BackingStore?.Set(nameof(ShouldSetSpoSiteReadOnlyForMembers), value); }
+            get { return BackingStore?.Get<bool?>("shouldSetSpoSiteReadOnlyForMembers"); }
+            set { BackingStore?.Set("shouldSetSpoSiteReadOnlyForMembers", value); }
         }
         /// <summary>
         /// Instantiates a new archivePostRequestBody and sets the default values.

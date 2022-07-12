@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class DomainDnsCnameRecord : DomainDnsRecord, IParsable {
         /// <summary>The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.</summary>
         public string CanonicalName {
-            get { return BackingStore?.Get<string>(nameof(CanonicalName)); }
-            set { BackingStore?.Set(nameof(CanonicalName), value); }
+            get { return BackingStore?.Get<string>("canonicalName"); }
+            set { BackingStore?.Set("canonicalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

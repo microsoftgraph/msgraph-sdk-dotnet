@@ -4,12 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class DirectoryObject : Entity, IParsable {
-        /// <summary>Date and time when this object was deleted. Always null when the object hasn&apos;t been deleted.</summary>
-        public DateTimeOffset? DeletedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeletedDateTime)); }
-            set { BackingStore?.Set(nameof(DeletedDateTime), value); }
+        /// <summary>Conceptual container for user and group directory objects.</summary>
+        public List<AdministrativeUnit> AdministrativeUnits {
+            get { return BackingStore?.Get<List<AdministrativeUnit>>("administrativeUnits"); }
+            set { BackingStore?.Set("administrativeUnits", value); }
+        }
+        /// <summary>Recently deleted items. Read-only. Nullable.</summary>
+        public List<DirectoryObject> DeletedItems {
+            get { return BackingStore?.Get<List<DirectoryObject>>("deletedItems"); }
+            set { BackingStore?.Set("deletedItems", value); }
+        }
+        /// <summary>Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.</summary>
+        public List<IdentityProviderBase> FederationConfigurations {
+            get { return BackingStore?.Get<List<IdentityProviderBase>>("federationConfigurations"); }
+            set { BackingStore?.Set("federationConfigurations", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -17,36 +26,16 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public static new DirectoryObject CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.administrativeUnit" => new AdministrativeUnit(),
-                "#microsoft.graph.application" => new Application(),
-                "#microsoft.graph.appRoleAssignment" => new AppRoleAssignment(),
-                "#microsoft.graph.contract" => new Contract(),
-                "#microsoft.graph.device" => new Device(),
-                "#microsoft.graph.directoryObjectPartnerReference" => new DirectoryObjectPartnerReference(),
-                "#microsoft.graph.directoryRole" => new DirectoryRole(),
-                "#microsoft.graph.directoryRoleTemplate" => new DirectoryRoleTemplate(),
-                "#microsoft.graph.endpoint" => new Endpoint(),
-                "#microsoft.graph.extensionProperty" => new ExtensionProperty(),
-                "#microsoft.graph.group" => new Group(),
-                "#microsoft.graph.groupSettingTemplate" => new GroupSettingTemplate(),
-                "#microsoft.graph.organization" => new Organization(),
-                "#microsoft.graph.orgContact" => new OrgContact(),
-                "#microsoft.graph.policyBase" => new PolicyBase(),
-                "#microsoft.graph.resourceSpecificPermissionGrant" => new ResourceSpecificPermissionGrant(),
-                "#microsoft.graph.servicePrincipal" => new ServicePrincipal(),
-                "#microsoft.graph.user" => new User(),
-                _ => new DirectoryObject(),
-            };
+            return new DirectoryObject();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"administrativeUnits", n => { AdministrativeUnits = n.GetCollectionOfObjectValues<AdministrativeUnit>(AdministrativeUnit.CreateFromDiscriminatorValue).ToList(); } },
+                {"deletedItems", n => { DeletedItems = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"federationConfigurations", n => { FederationConfigurations = n.GetCollectionOfObjectValues<IdentityProviderBase>(IdentityProviderBase.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +45,9 @@ namespace Microsoft.Graph.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);
+            writer.WriteCollectionOfObjectValues<AdministrativeUnit>("administrativeUnits", AdministrativeUnits);
+            writer.WriteCollectionOfObjectValues<DirectoryObject>("deletedItems", DeletedItems);
+            writer.WriteCollectionOfObjectValues<IdentityProviderBase>("federationConfigurations", FederationConfigurations);
         }
     }
 }

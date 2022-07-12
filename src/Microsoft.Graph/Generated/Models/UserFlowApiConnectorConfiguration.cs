@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class UserFlowApiConnectorConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The postAttributeCollection property</summary>
         public IdentityApiConnector PostAttributeCollection {
-            get { return BackingStore?.Get<IdentityApiConnector>(nameof(PostAttributeCollection)); }
-            set { BackingStore?.Set(nameof(PostAttributeCollection), value); }
+            get { return BackingStore?.Get<IdentityApiConnector>("postAttributeCollection"); }
+            set { BackingStore?.Set("postAttributeCollection", value); }
         }
         /// <summary>The postFederationSignup property</summary>
         public IdentityApiConnector PostFederationSignup {
-            get { return BackingStore?.Get<IdentityApiConnector>(nameof(PostFederationSignup)); }
-            set { BackingStore?.Set(nameof(PostFederationSignup), value); }
+            get { return BackingStore?.Get<IdentityApiConnector>("postFederationSignup"); }
+            set { BackingStore?.Set("postFederationSignup", value); }
         }
         /// <summary>
         /// Instantiates a new userFlowApiConnectorConfiguration and sets the default values.

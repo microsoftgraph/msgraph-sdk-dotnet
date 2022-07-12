@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Models {
     public class AttendeeAvailability : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The email address and type of attendee - whether it&apos;s a person or a resource, and whether required or optional if it&apos;s a person.</summary>
         public AttendeeBase Attendee {
-            get { return BackingStore?.Get<AttendeeBase>(nameof(Attendee)); }
-            set { BackingStore?.Set(nameof(Attendee), value); }
+            get { return BackingStore?.Get<AttendeeBase>("attendee"); }
+            set { BackingStore?.Set("attendee", value); }
         }
         /// <summary>The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
         public FreeBusyStatus? Availability {
-            get { return BackingStore?.Get<FreeBusyStatus?>(nameof(Availability)); }
-            set { BackingStore?.Set(nameof(Availability), value); }
+            get { return BackingStore?.Get<FreeBusyStatus?>("availability"); }
+            set { BackingStore?.Set("availability", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class MediaContentRatingNewZealand : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Movies rating selected for New Zealand. Possible values are: allAllowed, allBlocked, general, parentalGuidance, mature, agesAbove13, agesAbove15, agesAbove16, agesAbove18, restricted, agesAbove16Restricted.</summary>
+        /// <summary>Movies rating labels in New Zealand</summary>
         public RatingNewZealandMoviesType? MovieRating {
-            get { return BackingStore?.Get<RatingNewZealandMoviesType?>(nameof(MovieRating)); }
-            set { BackingStore?.Set(nameof(MovieRating), value); }
+            get { return BackingStore?.Get<RatingNewZealandMoviesType?>("movieRating"); }
+            set { BackingStore?.Set("movieRating", value); }
         }
-        /// <summary>TV rating selected for New Zealand. Possible values are: allAllowed, allBlocked, general, parentalGuidance, adults.</summary>
+        /// <summary>TV content rating labels in New Zealand</summary>
         public RatingNewZealandTelevisionType? TvRating {
-            get { return BackingStore?.Get<RatingNewZealandTelevisionType?>(nameof(TvRating)); }
-            set { BackingStore?.Set(nameof(TvRating), value); }
+            get { return BackingStore?.Get<RatingNewZealandTelevisionType?>("tvRating"); }
+            set { BackingStore?.Set("tvRating", value); }
         }
         /// <summary>
         /// Instantiates a new mediaContentRatingNewZealand and sets the default values.

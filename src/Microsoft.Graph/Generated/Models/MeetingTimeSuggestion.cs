@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Models {
     public class MeetingTimeSuggestion : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>An array that shows the availability status of each attendee for this meeting suggestion.</summary>
         public List<Microsoft.Graph.Models.AttendeeAvailability> AttendeeAvailability {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttendeeAvailability>>(nameof(AttendeeAvailability)); }
-            set { BackingStore?.Set(nameof(AttendeeAvailability), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttendeeAvailability>>("attendeeAvailability"); }
+            set { BackingStore?.Set("attendeeAvailability", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A percentage that represents the likelhood of all the attendees attending.</summary>
         public double? Confidence {
-            get { return BackingStore?.Get<double?>(nameof(Confidence)); }
-            set { BackingStore?.Set(nameof(Confidence), value); }
+            get { return BackingStore?.Get<double?>("confidence"); }
+            set { BackingStore?.Set("confidence", value); }
         }
         /// <summary>An array that specifies the name and geographic location of each meeting location for this meeting suggestion.</summary>
         public List<Location> Locations {
-            get { return BackingStore?.Get<List<Location>>(nameof(Locations)); }
-            set { BackingStore?.Set(nameof(Locations), value); }
+            get { return BackingStore?.Get<List<Location>>("locations"); }
+            set { BackingStore?.Set("locations", value); }
         }
         /// <summary>A time period suggested for the meeting.</summary>
         public TimeSlot MeetingTimeSlot {
-            get { return BackingStore?.Get<TimeSlot>(nameof(MeetingTimeSlot)); }
-            set { BackingStore?.Set(nameof(MeetingTimeSlot), value); }
+            get { return BackingStore?.Get<TimeSlot>("meetingTimeSlot"); }
+            set { BackingStore?.Set("meetingTimeSlot", value); }
         }
         /// <summary>Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.</summary>
         public int? Order {
-            get { return BackingStore?.Get<int?>(nameof(Order)); }
-            set { BackingStore?.Set(nameof(Order), value); }
+            get { return BackingStore?.Get<int?>("order"); }
+            set { BackingStore?.Set("order", value); }
         }
         /// <summary>Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
         public FreeBusyStatus? OrganizerAvailability {
-            get { return BackingStore?.Get<FreeBusyStatus?>(nameof(OrganizerAvailability)); }
-            set { BackingStore?.Set(nameof(OrganizerAvailability), value); }
+            get { return BackingStore?.Get<FreeBusyStatus?>("organizerAvailability"); }
+            set { BackingStore?.Set("organizerAvailability", value); }
         }
         /// <summary>Reason for suggesting the meeting time.</summary>
         public string SuggestionReason {
-            get { return BackingStore?.Get<string>(nameof(SuggestionReason)); }
-            set { BackingStore?.Set(nameof(SuggestionReason), value); }
+            get { return BackingStore?.Get<string>("suggestionReason"); }
+            set { BackingStore?.Set("suggestionReason", value); }
         }
         /// <summary>
         /// Instantiates a new meetingTimeSuggestion and sets the default values.

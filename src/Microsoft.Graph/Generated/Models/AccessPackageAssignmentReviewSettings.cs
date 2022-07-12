@@ -8,50 +8,50 @@ namespace Microsoft.Graph.Models {
     public class AccessPackageAssignmentReviewSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The default decision to apply if the access is not reviewed. The possible values are: keepAccess, removeAccess, acceptAccessRecommendation, unknownFutureValue.</summary>
         public AccessReviewExpirationBehavior? ExpirationBehavior {
-            get { return BackingStore?.Get<AccessReviewExpirationBehavior?>(nameof(ExpirationBehavior)); }
-            set { BackingStore?.Set(nameof(ExpirationBehavior), value); }
+            get { return BackingStore?.Get<AccessReviewExpirationBehavior?>("expirationBehavior"); }
+            set { BackingStore?.Set("expirationBehavior", value); }
         }
         /// <summary>This collection specifies the users who will be the fallback reviewers when the primary reviewers don&apos;t respond.</summary>
         public List<SubjectSet> FallbackReviewers {
-            get { return BackingStore?.Get<List<SubjectSet>>(nameof(FallbackReviewers)); }
-            set { BackingStore?.Set(nameof(FallbackReviewers), value); }
+            get { return BackingStore?.Get<List<SubjectSet>>("fallbackReviewers"); }
+            set { BackingStore?.Set("fallbackReviewers", value); }
         }
         /// <summary>If true, access reviews are required for assignments through this policy.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Specifies whether to display recommendations to the reviewer. The default value is true.</summary>
         public bool? IsRecommendationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsRecommendationEnabled)); }
-            set { BackingStore?.Set(nameof(IsRecommendationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isRecommendationEnabled"); }
+            set { BackingStore?.Set("isRecommendationEnabled", value); }
         }
         /// <summary>Specifies whether the reviewer must provide justification for the approval. The default value is true.</summary>
         public bool? IsReviewerJustificationRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsReviewerJustificationRequired)); }
-            set { BackingStore?.Set(nameof(IsReviewerJustificationRequired), value); }
+            get { return BackingStore?.Get<bool?>("isReviewerJustificationRequired"); }
+            set { BackingStore?.Set("isReviewerJustificationRequired", value); }
         }
         /// <summary>Specifies whether the principals can review their own assignments.</summary>
         public bool? IsSelfReview {
-            get { return BackingStore?.Get<bool?>(nameof(IsSelfReview)); }
-            set { BackingStore?.Set(nameof(IsSelfReview), value); }
+            get { return BackingStore?.Get<bool?>("isSelfReview"); }
+            set { BackingStore?.Set("isSelfReview", value); }
         }
         /// <summary>This collection specifies the users or group of users who will review the access package assignments.</summary>
         public List<SubjectSet> PrimaryReviewers {
-            get { return BackingStore?.Get<List<SubjectSet>>(nameof(PrimaryReviewers)); }
-            set { BackingStore?.Set(nameof(PrimaryReviewers), value); }
+            get { return BackingStore?.Get<List<SubjectSet>>("primaryReviewers"); }
+            set { BackingStore?.Set("primaryReviewers", value); }
         }
         /// <summary>When the first review should start and how often it should recur.</summary>
         public EntitlementManagementSchedule Schedule {
-            get { return BackingStore?.Get<EntitlementManagementSchedule>(nameof(Schedule)); }
-            set { BackingStore?.Set(nameof(Schedule), value); }
+            get { return BackingStore?.Get<EntitlementManagementSchedule>("schedule"); }
+            set { BackingStore?.Set("schedule", value); }
         }
         /// <summary>
         /// Instantiates a new accessPackageAssignmentReviewSettings and sets the default values.

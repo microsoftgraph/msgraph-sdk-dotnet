@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class MediaContentRatingUnitedKingdom : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Movies rating selected for United Kingdom. Possible values are: allAllowed, allBlocked, general, universalChildren, parentalGuidance, agesAbove12Video, agesAbove12Cinema, agesAbove15, adults.</summary>
+        /// <summary>Movies rating labels in United Kingdom</summary>
         public RatingUnitedKingdomMoviesType? MovieRating {
-            get { return BackingStore?.Get<RatingUnitedKingdomMoviesType?>(nameof(MovieRating)); }
-            set { BackingStore?.Set(nameof(MovieRating), value); }
+            get { return BackingStore?.Get<RatingUnitedKingdomMoviesType?>("movieRating"); }
+            set { BackingStore?.Set("movieRating", value); }
         }
-        /// <summary>TV rating selected for United Kingdom. Possible values are: allAllowed, allBlocked, caution.</summary>
+        /// <summary>TV content rating labels in United Kingdom</summary>
         public RatingUnitedKingdomTelevisionType? TvRating {
-            get { return BackingStore?.Get<RatingUnitedKingdomTelevisionType?>(nameof(TvRating)); }
-            set { BackingStore?.Set(nameof(TvRating), value); }
+            get { return BackingStore?.Get<RatingUnitedKingdomTelevisionType?>("tvRating"); }
+            set { BackingStore?.Set("tvRating", value); }
         }
         /// <summary>
         /// Instantiates a new mediaContentRatingUnitedKingdom and sets the default values.

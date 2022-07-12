@@ -9,35 +9,35 @@ namespace Microsoft.Graph.Users.Item.Onenote.SectionGroups.Item.Sections.Item.Co
     public class CopyToSectionGroupPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The groupId property</summary>
         public string GroupId {
-            get { return BackingStore?.Get<string>(nameof(GroupId)); }
-            set { BackingStore?.Set(nameof(GroupId), value); }
+            get { return BackingStore?.Get<string>("groupId"); }
+            set { BackingStore?.Set("groupId", value); }
         }
         /// <summary>The id property</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>The renameAs property</summary>
         public string RenameAs {
-            get { return BackingStore?.Get<string>(nameof(RenameAs)); }
-            set { BackingStore?.Set(nameof(RenameAs), value); }
+            get { return BackingStore?.Get<string>("renameAs"); }
+            set { BackingStore?.Set("renameAs", value); }
         }
         /// <summary>The siteCollectionId property</summary>
         public string SiteCollectionId {
-            get { return BackingStore?.Get<string>(nameof(SiteCollectionId)); }
-            set { BackingStore?.Set(nameof(SiteCollectionId), value); }
+            get { return BackingStore?.Get<string>("siteCollectionId"); }
+            set { BackingStore?.Set("siteCollectionId", value); }
         }
         /// <summary>The siteId property</summary>
         public string SiteId {
-            get { return BackingStore?.Get<string>(nameof(SiteId)); }
-            set { BackingStore?.Set(nameof(SiteId), value); }
+            get { return BackingStore?.Get<string>("siteId"); }
+            set { BackingStore?.Set("siteId", value); }
         }
         /// <summary>
         /// Instantiates a new copyToSectionGroupPostRequestBody and sets the default values.

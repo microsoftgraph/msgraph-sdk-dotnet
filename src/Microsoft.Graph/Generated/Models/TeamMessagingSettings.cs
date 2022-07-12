@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Models {
     public class TeamMessagingSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>If set to true, @channel mentions are allowed.</summary>
         public bool? AllowChannelMentions {
-            get { return BackingStore?.Get<bool?>(nameof(AllowChannelMentions)); }
-            set { BackingStore?.Set(nameof(AllowChannelMentions), value); }
+            get { return BackingStore?.Get<bool?>("allowChannelMentions"); }
+            set { BackingStore?.Set("allowChannelMentions", value); }
         }
         /// <summary>If set to true, owners can delete any message.</summary>
         public bool? AllowOwnerDeleteMessages {
-            get { return BackingStore?.Get<bool?>(nameof(AllowOwnerDeleteMessages)); }
-            set { BackingStore?.Set(nameof(AllowOwnerDeleteMessages), value); }
+            get { return BackingStore?.Get<bool?>("allowOwnerDeleteMessages"); }
+            set { BackingStore?.Set("allowOwnerDeleteMessages", value); }
         }
         /// <summary>If set to true, @team mentions are allowed.</summary>
         public bool? AllowTeamMentions {
-            get { return BackingStore?.Get<bool?>(nameof(AllowTeamMentions)); }
-            set { BackingStore?.Set(nameof(AllowTeamMentions), value); }
+            get { return BackingStore?.Get<bool?>("allowTeamMentions"); }
+            set { BackingStore?.Set("allowTeamMentions", value); }
         }
         /// <summary>If set to true, users can delete their messages.</summary>
         public bool? AllowUserDeleteMessages {
-            get { return BackingStore?.Get<bool?>(nameof(AllowUserDeleteMessages)); }
-            set { BackingStore?.Set(nameof(AllowUserDeleteMessages), value); }
+            get { return BackingStore?.Get<bool?>("allowUserDeleteMessages"); }
+            set { BackingStore?.Set("allowUserDeleteMessages", value); }
         }
         /// <summary>If set to true, users can edit their messages.</summary>
         public bool? AllowUserEditMessages {
-            get { return BackingStore?.Get<bool?>(nameof(AllowUserEditMessages)); }
-            set { BackingStore?.Set(nameof(AllowUserEditMessages), value); }
+            get { return BackingStore?.Get<bool?>("allowUserEditMessages"); }
+            set { BackingStore?.Set("allowUserEditMessages", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

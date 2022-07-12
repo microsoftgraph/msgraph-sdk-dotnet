@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class SiteCollection : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The geographic region code for where this site collection resides. Read-only.</summary>
         public string DataLocationCode {
-            get { return BackingStore?.Get<string>(nameof(DataLocationCode)); }
-            set { BackingStore?.Set(nameof(DataLocationCode), value); }
+            get { return BackingStore?.Get<string>("dataLocationCode"); }
+            set { BackingStore?.Set("dataLocationCode", value); }
         }
         /// <summary>The hostname for the site collection. Read-only.</summary>
         public string Hostname {
-            get { return BackingStore?.Get<string>(nameof(Hostname)); }
-            set { BackingStore?.Set(nameof(Hostname), value); }
+            get { return BackingStore?.Get<string>("hostname"); }
+            set { BackingStore?.Set("hostname", value); }
         }
         /// <summary>If present, indicates that this is a root site collection in SharePoint. Read-only.</summary>
         public Microsoft.Graph.Models.Root Root {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Root>(nameof(Root)); }
-            set { BackingStore?.Set(nameof(Root), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Root>("root"); }
+            set { BackingStore?.Set("root", value); }
         }
         /// <summary>
         /// Instantiates a new siteCollection and sets the default values.

@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Models {
     public class AccessReviewStageSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicate which decisions will go to the next stage. Can be a sub-set of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.</summary>
         public List<string> DecisionsThatWillMoveToNextStage {
-            get { return BackingStore?.Get<List<string>>(nameof(DecisionsThatWillMoveToNextStage)); }
-            set { BackingStore?.Set(nameof(DecisionsThatWillMoveToNextStage), value); }
+            get { return BackingStore?.Get<List<string>>("decisionsThatWillMoveToNextStage"); }
+            set { BackingStore?.Set("decisionsThatWillMoveToNextStage", value); }
         }
         /// <summary>Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, do not specify dependsOn. Required if stageId is not 1.</summary>
         public List<string> DependsOn {
-            get { return BackingStore?.Get<List<string>>(nameof(DependsOn)); }
-            set { BackingStore?.Set(nameof(DependsOn), value); }
+            get { return BackingStore?.Get<List<string>>("dependsOn"); }
+            set { BackingStore?.Set("dependsOn", value); }
         }
         /// <summary>The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Cannot exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays cannot exceed 7.</summary>
         public int? DurationInDays {
-            get { return BackingStore?.Get<int?>(nameof(DurationInDays)); }
-            set { BackingStore?.Set(nameof(DurationInDays), value); }
+            get { return BackingStore?.Get<int?>("durationInDays"); }
+            set { BackingStore?.Set("durationInDays", value); }
         }
         /// <summary>If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.</summary>
         public List<AccessReviewReviewerScope> FallbackReviewers {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>(nameof(FallbackReviewers)); }
-            set { BackingStore?.Set(nameof(FallbackReviewers), value); }
+            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("fallbackReviewers"); }
+            set { BackingStore?.Set("fallbackReviewers", value); }
         }
         /// <summary>Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.</summary>
         public bool? RecommendationsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(RecommendationsEnabled)); }
-            set { BackingStore?.Set(nameof(RecommendationsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("recommendationsEnabled"); }
+            set { BackingStore?.Set("recommendationsEnabled", value); }
         }
         /// <summary>Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.</summary>
         public List<AccessReviewReviewerScope> Reviewers {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>(nameof(Reviewers)); }
-            set { BackingStore?.Set(nameof(Reviewers), value); }
+            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("reviewers"); }
+            set { BackingStore?.Set("reviewers", value); }
         }
         /// <summary>Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.</summary>
         public string StageId {
-            get { return BackingStore?.Get<string>(nameof(StageId)); }
-            set { BackingStore?.Set(nameof(StageId), value); }
+            get { return BackingStore?.Get<string>("stageId"); }
+            set { BackingStore?.Set("stageId", value); }
         }
         /// <summary>
         /// Instantiates a new accessReviewStageSettings and sets the default values.

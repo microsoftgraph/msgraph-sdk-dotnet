@@ -1,3 +1,4 @@
+using Microsoft.Graph.Me.Authentication.Methods.Item.ResetPassword;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,6 +16,10 @@ namespace Microsoft.Graph.Me.Authentication.Methods.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The resetPassword property</summary>
+        public ResetPasswordRequestBuilder ResetPassword { get =>
+            new ResetPasswordRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

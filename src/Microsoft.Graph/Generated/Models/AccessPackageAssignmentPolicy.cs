@@ -4,67 +4,67 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class AccessPackageAssignmentPolicy : Entity, IParsable {
         /// <summary>The access package with this policy. Read-only. Nullable. Supports $expand.</summary>
         public Microsoft.Graph.Models.AccessPackage AccessPackage {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackage>(nameof(AccessPackage)); }
-            set { BackingStore?.Set(nameof(AccessPackage), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackage>("accessPackage"); }
+            set { BackingStore?.Set("accessPackage", value); }
         }
         /// <summary>Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.AllowedTargetScope? AllowedTargetScope {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.AllowedTargetScope?>(nameof(AllowedTargetScope)); }
-            set { BackingStore?.Set(nameof(AllowedTargetScope), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AllowedTargetScope?>("allowedTargetScope"); }
+            set { BackingStore?.Set("allowedTargetScope", value); }
         }
         /// <summary>Catalog of the access package containing this policy. Read-only.</summary>
         public AccessPackageCatalog Catalog {
-            get { return BackingStore?.Get<AccessPackageCatalog>(nameof(Catalog)); }
-            set { BackingStore?.Set(nameof(Catalog), value); }
+            get { return BackingStore?.Get<AccessPackageCatalog>("catalog"); }
+            set { BackingStore?.Set("catalog", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the policy.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name of the policy. Supports $filter (eq).</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The expiration date for assignments created in this policy.</summary>
         public ExpirationPattern Expiration {
-            get { return BackingStore?.Get<ExpirationPattern>(nameof(Expiration)); }
-            set { BackingStore?.Set(nameof(Expiration), value); }
+            get { return BackingStore?.Get<ExpirationPattern>("expiration"); }
+            set { BackingStore?.Set("expiration", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
+            set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>Who must approve requests for access package in this policy.</summary>
         public AccessPackageAssignmentApprovalSettings RequestApprovalSettings {
-            get { return BackingStore?.Get<AccessPackageAssignmentApprovalSettings>(nameof(RequestApprovalSettings)); }
-            set { BackingStore?.Set(nameof(RequestApprovalSettings), value); }
+            get { return BackingStore?.Get<AccessPackageAssignmentApprovalSettings>("requestApprovalSettings"); }
+            set { BackingStore?.Set("requestApprovalSettings", value); }
         }
         /// <summary>Who can request this access package from this policy.</summary>
         public AccessPackageAssignmentRequestorSettings RequestorSettings {
-            get { return BackingStore?.Get<AccessPackageAssignmentRequestorSettings>(nameof(RequestorSettings)); }
-            set { BackingStore?.Set(nameof(RequestorSettings), value); }
+            get { return BackingStore?.Get<AccessPackageAssignmentRequestorSettings>("requestorSettings"); }
+            set { BackingStore?.Set("requestorSettings", value); }
         }
         /// <summary>Settings for access reviews of assignments through this policy.</summary>
         public AccessPackageAssignmentReviewSettings ReviewSettings {
-            get { return BackingStore?.Get<AccessPackageAssignmentReviewSettings>(nameof(ReviewSettings)); }
-            set { BackingStore?.Set(nameof(ReviewSettings), value); }
+            get { return BackingStore?.Get<AccessPackageAssignmentReviewSettings>("reviewSettings"); }
+            set { BackingStore?.Set("reviewSettings", value); }
         }
         /// <summary>The principals that can be assigned access from an access package through this policy.</summary>
         public List<SubjectSet> SpecificAllowedTargets {
-            get { return BackingStore?.Get<List<SubjectSet>>(nameof(SpecificAllowedTargets)); }
-            set { BackingStore?.Set(nameof(SpecificAllowedTargets), value); }
+            get { return BackingStore?.Get<List<SubjectSet>>("specificAllowedTargets"); }
+            set { BackingStore?.Set("specificAllowedTargets", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

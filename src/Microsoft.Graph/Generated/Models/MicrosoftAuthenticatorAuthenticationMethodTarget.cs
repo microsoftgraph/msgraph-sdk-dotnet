@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class MicrosoftAuthenticatorAuthenticationMethodTarget : AuthenticationMethodTarget, IParsable {
-        /// <summary>Determines which types of notifications can be used for sign-in. The possible values are: deviceBasedPush (passwordless only), push, and any.</summary>
+        /// <summary>The authenticationMode property</summary>
         public MicrosoftAuthenticatorAuthenticationMode? AuthenticationMode {
-            get { return BackingStore?.Get<MicrosoftAuthenticatorAuthenticationMode?>(nameof(AuthenticationMode)); }
-            set { BackingStore?.Set(nameof(AuthenticationMode), value); }
+            get { return BackingStore?.Get<MicrosoftAuthenticatorAuthenticationMode?>("authenticationMode"); }
+            set { BackingStore?.Set("authenticationMode", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,102 +4,102 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the security singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class SecureScoreControlProfile : Entity, IParsable {
         /// <summary>Control action type (Config, Review, Behavior).</summary>
         public string ActionType {
-            get { return BackingStore?.Get<string>(nameof(ActionType)); }
-            set { BackingStore?.Set(nameof(ActionType), value); }
+            get { return BackingStore?.Get<string>("actionType"); }
+            set { BackingStore?.Set("actionType", value); }
         }
         /// <summary>URL to where the control can be actioned.</summary>
         public string ActionUrl {
-            get { return BackingStore?.Get<string>(nameof(ActionUrl)); }
-            set { BackingStore?.Set(nameof(ActionUrl), value); }
+            get { return BackingStore?.Get<string>("actionUrl"); }
+            set { BackingStore?.Set("actionUrl", value); }
         }
         /// <summary>GUID string for tenant ID.</summary>
         public string AzureTenantId {
-            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
-            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+            get { return BackingStore?.Get<string>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
         }
         /// <summary>The collection of compliance information associated with secure score control</summary>
         public List<Microsoft.Graph.Models.ComplianceInformation> ComplianceInformation {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ComplianceInformation>>(nameof(ComplianceInformation)); }
-            set { BackingStore?.Set(nameof(ComplianceInformation), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ComplianceInformation>>("complianceInformation"); }
+            set { BackingStore?.Set("complianceInformation", value); }
         }
         /// <summary>Control action category (Account, Data, Device, Apps, Infrastructure).</summary>
         public string ControlCategory {
-            get { return BackingStore?.Get<string>(nameof(ControlCategory)); }
-            set { BackingStore?.Set(nameof(ControlCategory), value); }
+            get { return BackingStore?.Get<string>("controlCategory"); }
+            set { BackingStore?.Set("controlCategory", value); }
         }
         /// <summary>Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).</summary>
         public List<SecureScoreControlStateUpdate> ControlStateUpdates {
-            get { return BackingStore?.Get<List<SecureScoreControlStateUpdate>>(nameof(ControlStateUpdates)); }
-            set { BackingStore?.Set(nameof(ControlStateUpdates), value); }
+            get { return BackingStore?.Get<List<SecureScoreControlStateUpdate>>("controlStateUpdates"); }
+            set { BackingStore?.Set("controlStateUpdates", value); }
         }
         /// <summary>Flag to indicate if a control is depreciated.</summary>
         public bool? Deprecated {
-            get { return BackingStore?.Get<bool?>(nameof(Deprecated)); }
-            set { BackingStore?.Set(nameof(Deprecated), value); }
+            get { return BackingStore?.Get<bool?>("deprecated"); }
+            set { BackingStore?.Set("deprecated", value); }
         }
         /// <summary>Resource cost of implemmentating control (low, moderate, high).</summary>
         public string ImplementationCost {
-            get { return BackingStore?.Get<string>(nameof(ImplementationCost)); }
-            set { BackingStore?.Set(nameof(ImplementationCost), value); }
+            get { return BackingStore?.Get<string>("implementationCost"); }
+            set { BackingStore?.Set("implementationCost", value); }
         }
         /// <summary>Time at which the control profile entity was last modified. The Timestamp type represents date and time</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Current obtained max score on specified date.</summary>
         public double? MaxScore {
-            get { return BackingStore?.Get<double?>(nameof(MaxScore)); }
-            set { BackingStore?.Set(nameof(MaxScore), value); }
+            get { return BackingStore?.Get<double?>("maxScore"); }
+            set { BackingStore?.Set("maxScore", value); }
         }
         /// <summary>Microsoft&apos;s stack ranking of control.</summary>
         public int? Rank {
-            get { return BackingStore?.Get<int?>(nameof(Rank)); }
-            set { BackingStore?.Set(nameof(Rank), value); }
+            get { return BackingStore?.Get<int?>("rank"); }
+            set { BackingStore?.Set("rank", value); }
         }
         /// <summary>Description of what the control will help remediate.</summary>
         public string Remediation {
-            get { return BackingStore?.Get<string>(nameof(Remediation)); }
-            set { BackingStore?.Set(nameof(Remediation), value); }
+            get { return BackingStore?.Get<string>("remediation"); }
+            set { BackingStore?.Set("remediation", value); }
         }
         /// <summary>Description of the impact on users of the remediation.</summary>
         public string RemediationImpact {
-            get { return BackingStore?.Get<string>(nameof(RemediationImpact)); }
-            set { BackingStore?.Set(nameof(RemediationImpact), value); }
+            get { return BackingStore?.Get<string>("remediationImpact"); }
+            set { BackingStore?.Set("remediationImpact", value); }
         }
         /// <summary>Service that owns the control (Exchange, Sharepoint, Azure AD).</summary>
         public string Service {
-            get { return BackingStore?.Get<string>(nameof(Service)); }
-            set { BackingStore?.Set(nameof(Service), value); }
+            get { return BackingStore?.Get<string>("service"); }
+            set { BackingStore?.Set("service", value); }
         }
         /// <summary>List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).</summary>
         public List<string> Threats {
-            get { return BackingStore?.Get<List<string>>(nameof(Threats)); }
-            set { BackingStore?.Set(nameof(Threats), value); }
+            get { return BackingStore?.Get<List<string>>("threats"); }
+            set { BackingStore?.Set("threats", value); }
         }
         /// <summary>Control tier (Core, Defense in Depth, Advanced.)</summary>
         public string Tier {
-            get { return BackingStore?.Get<string>(nameof(Tier)); }
-            set { BackingStore?.Set(nameof(Tier), value); }
+            get { return BackingStore?.Get<string>("tier"); }
+            set { BackingStore?.Set("tier", value); }
         }
         /// <summary>Title of the control.</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
         }
         /// <summary>User impact of implementing control (low, moderate, high).</summary>
         public string UserImpact {
-            get { return BackingStore?.Get<string>(nameof(UserImpact)); }
-            set { BackingStore?.Set(nameof(UserImpact), value); }
+            get { return BackingStore?.Get<string>("userImpact"); }
+            set { BackingStore?.Set("userImpact", value); }
         }
         /// <summary>The vendorInformation property</summary>
         public SecurityVendorInformation VendorInformation {
-            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
-            set { BackingStore?.Set(nameof(VendorInformation), value); }
+            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

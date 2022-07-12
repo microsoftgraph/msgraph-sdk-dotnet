@@ -4,42 +4,41 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessPackageSubject : Entity, IParsable {
         /// <summary>The connected organization of the subject. Read-only. Nullable.</summary>
         public Microsoft.Graph.Models.ConnectedOrganization ConnectedOrganization {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ConnectedOrganization>(nameof(ConnectedOrganization)); }
-            set { BackingStore?.Set(nameof(ConnectedOrganization), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConnectedOrganization>("connectedOrganization"); }
+            set { BackingStore?.Set("connectedOrganization", value); }
         }
         /// <summary>The display name of the subject.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The email address of the subject.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>The object identifier of the subject. null if the subject is not yet a user in the tenant.</summary>
         public string ObjectId {
-            get { return BackingStore?.Get<string>(nameof(ObjectId)); }
-            set { BackingStore?.Set(nameof(ObjectId), value); }
+            get { return BackingStore?.Get<string>("objectId"); }
+            set { BackingStore?.Set("objectId", value); }
         }
         /// <summary>A string representation of the principal&apos;s security identifier, if known, or null if the subject does not have a security identifier.</summary>
         public string OnPremisesSecurityIdentifier {
-            get { return BackingStore?.Get<string>(nameof(OnPremisesSecurityIdentifier)); }
-            set { BackingStore?.Set(nameof(OnPremisesSecurityIdentifier), value); }
+            get { return BackingStore?.Get<string>("onPremisesSecurityIdentifier"); }
+            set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
         /// <summary>The principal name, if known, of the subject.</summary>
         public string PrincipalName {
-            get { return BackingStore?.Get<string>(nameof(PrincipalName)); }
-            set { BackingStore?.Set(nameof(PrincipalName), value); }
+            get { return BackingStore?.Get<string>("principalName"); }
+            set { BackingStore?.Set("principalName", value); }
         }
         /// <summary>The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.</summary>
         public AccessPackageSubjectType? SubjectType {
-            get { return BackingStore?.Get<AccessPackageSubjectType?>(nameof(SubjectType)); }
-            set { BackingStore?.Set(nameof(SubjectType), value); }
+            get { return BackingStore?.Get<AccessPackageSubjectType?>("subjectType"); }
+            set { BackingStore?.Set("subjectType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

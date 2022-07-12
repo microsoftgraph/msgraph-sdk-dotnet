@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class EmployeeOrgData : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cost center associated with the user. Returned only on $select. Supports $filter.</summary>
         public string CostCenter {
-            get { return BackingStore?.Get<string>(nameof(CostCenter)); }
-            set { BackingStore?.Set(nameof(CostCenter), value); }
+            get { return BackingStore?.Get<string>("costCenter"); }
+            set { BackingStore?.Set("costCenter", value); }
         }
         /// <summary>The name of the division in which the user works. Returned only on $select. Supports $filter.</summary>
         public string Division {
-            get { return BackingStore?.Get<string>(nameof(Division)); }
-            set { BackingStore?.Set(nameof(Division), value); }
+            get { return BackingStore?.Get<string>("division"); }
+            set { BackingStore?.Set("division", value); }
         }
         /// <summary>
         /// Instantiates a new employeeOrgData and sets the default values.

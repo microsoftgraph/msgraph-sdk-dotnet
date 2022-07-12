@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Models {
     public class Participant : Entity, IParsable {
         /// <summary>The info property</summary>
         public ParticipantInfo Info {
-            get { return BackingStore?.Get<ParticipantInfo>(nameof(Info)); }
-            set { BackingStore?.Set(nameof(Info), value); }
+            get { return BackingStore?.Get<ParticipantInfo>("info"); }
+            set { BackingStore?.Set("info", value); }
         }
         /// <summary>true if the participant is in lobby.</summary>
         public bool? IsInLobby {
-            get { return BackingStore?.Get<bool?>(nameof(IsInLobby)); }
-            set { BackingStore?.Set(nameof(IsInLobby), value); }
+            get { return BackingStore?.Get<bool?>("isInLobby"); }
+            set { BackingStore?.Set("isInLobby", value); }
         }
         /// <summary>true if the participant is muted (client or server muted).</summary>
         public bool? IsMuted {
-            get { return BackingStore?.Get<bool?>(nameof(IsMuted)); }
-            set { BackingStore?.Set(nameof(IsMuted), value); }
+            get { return BackingStore?.Get<bool?>("isMuted"); }
+            set { BackingStore?.Set("isMuted", value); }
         }
         /// <summary>The list of media streams.</summary>
         public List<MediaStream> MediaStreams {
-            get { return BackingStore?.Get<List<MediaStream>>(nameof(MediaStreams)); }
-            set { BackingStore?.Set(nameof(MediaStreams), value); }
+            get { return BackingStore?.Get<List<MediaStream>>("mediaStreams"); }
+            set { BackingStore?.Set("mediaStreams", value); }
         }
         /// <summary>A blob of data provided by the participant in the roster.</summary>
         public string Metadata {
-            get { return BackingStore?.Get<string>(nameof(Metadata)); }
-            set { BackingStore?.Set(nameof(Metadata), value); }
+            get { return BackingStore?.Get<string>("metadata"); }
+            set { BackingStore?.Set("metadata", value); }
         }
         /// <summary>Information on whether the participant has recording capability.</summary>
         public Microsoft.Graph.Models.RecordingInfo RecordingInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.RecordingInfo>(nameof(RecordingInfo)); }
-            set { BackingStore?.Set(nameof(RecordingInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RecordingInfo>("recordingInfo"); }
+            set { BackingStore?.Set("recordingInfo", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

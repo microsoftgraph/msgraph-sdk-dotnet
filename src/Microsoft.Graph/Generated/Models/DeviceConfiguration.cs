@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -8,58 +9,64 @@ namespace Microsoft.Graph.Models {
     public class DeviceConfiguration : Entity, IParsable {
         /// <summary>The list of assignments for the device configuration profile.</summary>
         public List<DeviceConfigurationAssignment> Assignments {
-            get { return BackingStore?.Get<List<DeviceConfigurationAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<DeviceConfigurationAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>DateTime the object was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Admin provided description of the Device Configuration.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Device Configuration Setting State Device Summary</summary>
         public List<SettingStateDeviceSummary> DeviceSettingStateSummaries {
-            get { return BackingStore?.Get<List<SettingStateDeviceSummary>>(nameof(DeviceSettingStateSummaries)); }
-            set { BackingStore?.Set(nameof(DeviceSettingStateSummaries), value); }
+            get { return BackingStore?.Get<List<SettingStateDeviceSummary>>("deviceSettingStateSummaries"); }
+            set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
         /// <summary>Device configuration installation status by device.</summary>
         public List<DeviceConfigurationDeviceStatus> DeviceStatuses {
-            get { return BackingStore?.Get<List<DeviceConfigurationDeviceStatus>>(nameof(DeviceStatuses)); }
-            set { BackingStore?.Set(nameof(DeviceStatuses), value); }
+            get { return BackingStore?.Get<List<DeviceConfigurationDeviceStatus>>("deviceStatuses"); }
+            set { BackingStore?.Set("deviceStatuses", value); }
         }
         /// <summary>Device Configuration devices status overview</summary>
         public DeviceConfigurationDeviceOverview DeviceStatusOverview {
-            get { return BackingStore?.Get<DeviceConfigurationDeviceOverview>(nameof(DeviceStatusOverview)); }
-            set { BackingStore?.Set(nameof(DeviceStatusOverview), value); }
+            get { return BackingStore?.Get<DeviceConfigurationDeviceOverview>("deviceStatusOverview"); }
+            set { BackingStore?.Set("deviceStatusOverview", value); }
         }
         /// <summary>Admin provided name of the device configuration.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>DateTime the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Device configuration installation status by user.</summary>
         public List<DeviceConfigurationUserStatus> UserStatuses {
-            get { return BackingStore?.Get<List<DeviceConfigurationUserStatus>>(nameof(UserStatuses)); }
-            set { BackingStore?.Set(nameof(UserStatuses), value); }
+            get { return BackingStore?.Get<List<DeviceConfigurationUserStatus>>("userStatuses"); }
+            set { BackingStore?.Set("userStatuses", value); }
         }
         /// <summary>Device Configuration users status overview</summary>
         public DeviceConfigurationUserOverview UserStatusOverview {
-            get { return BackingStore?.Get<DeviceConfigurationUserOverview>(nameof(UserStatusOverview)); }
-            set { BackingStore?.Set(nameof(UserStatusOverview), value); }
+            get { return BackingStore?.Get<DeviceConfigurationUserOverview>("userStatusOverview"); }
+            set { BackingStore?.Set("userStatusOverview", value); }
         }
         /// <summary>Version of the device configuration.</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceConfiguration and sets the default values.
+        /// </summary>
+        public DeviceConfiguration() : base() {
+            Type = "#microsoft.graph.deviceConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Models {
     public class ManagedMobileApp : Entity, IParsable {
         /// <summary>The identifier for an app with it&apos;s operating system type.</summary>
         public Microsoft.Graph.Models.MobileAppIdentifier MobileAppIdentifier {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MobileAppIdentifier>(nameof(MobileAppIdentifier)); }
-            set { BackingStore?.Set(nameof(MobileAppIdentifier), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MobileAppIdentifier>("mobileAppIdentifier"); }
+            set { BackingStore?.Set("mobileAppIdentifier", value); }
         }
         /// <summary>Version of the entity.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

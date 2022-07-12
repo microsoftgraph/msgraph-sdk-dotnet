@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Models {
     public class SharedDriveItem : BaseItem, IParsable {
         /// <summary>Used to access the underlying driveItem</summary>
         public Microsoft.Graph.Models.DriveItem DriveItem {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItem>(nameof(DriveItem)); }
-            set { BackingStore?.Set(nameof(DriveItem), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItem>("driveItem"); }
+            set { BackingStore?.Set("driveItem", value); }
         }
         /// <summary>All driveItems contained in the sharing root. This collection cannot be enumerated.</summary>
         public List<Microsoft.Graph.Models.DriveItem> Items {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DriveItem>>(nameof(Items)); }
-            set { BackingStore?.Set(nameof(Items), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DriveItem>>("items"); }
+            set { BackingStore?.Set("items", value); }
         }
         /// <summary>Used to access the underlying list</summary>
         public Microsoft.Graph.Models.List List {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.List>(nameof(List)); }
-            set { BackingStore?.Set(nameof(List), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.List>("list"); }
+            set { BackingStore?.Set("list", value); }
         }
         /// <summary>Used to access the underlying listItem</summary>
         public Microsoft.Graph.Models.ListItem ListItem {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ListItem>(nameof(ListItem)); }
-            set { BackingStore?.Set(nameof(ListItem), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ListItem>("listItem"); }
+            set { BackingStore?.Set("listItem", value); }
         }
         /// <summary>Information about the owner of the shared item being referenced.</summary>
         public IdentitySet Owner {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Owner)); }
-            set { BackingStore?.Set(nameof(Owner), value); }
+            get { return BackingStore?.Get<IdentitySet>("owner"); }
+            set { BackingStore?.Set("owner", value); }
         }
         /// <summary>Used to access the permission representing the underlying sharing link</summary>
         public Microsoft.Graph.Models.Permission Permission {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Permission>(nameof(Permission)); }
-            set { BackingStore?.Set(nameof(Permission), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Permission>("permission"); }
+            set { BackingStore?.Set("permission", value); }
         }
         /// <summary>Used to access the underlying driveItem. Deprecated -- use driveItem instead.</summary>
         public Microsoft.Graph.Models.DriveItem Root {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItem>(nameof(Root)); }
-            set { BackingStore?.Set(nameof(Root), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItem>("root"); }
+            set { BackingStore?.Set("root", value); }
         }
         /// <summary>Used to access the underlying site</summary>
         public Microsoft.Graph.Models.Site Site {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Site>(nameof(Site)); }
-            set { BackingStore?.Set(nameof(Site), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Site>("site"); }
+            set { BackingStore?.Set("site", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

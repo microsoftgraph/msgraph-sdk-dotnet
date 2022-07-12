@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the teamwork singleton.</summary>
     public class Teamwork : Entity, IParsable {
         /// <summary>A workforce integration with shifts.</summary>
         public List<WorkforceIntegration> WorkforceIntegrations {
-            get { return BackingStore?.Get<List<WorkforceIntegration>>(nameof(WorkforceIntegrations)); }
-            set { BackingStore?.Set(nameof(WorkforceIntegrations), value); }
+            get { return BackingStore?.Get<List<WorkforceIntegration>>("workforceIntegrations"); }
+            set { BackingStore?.Set("workforceIntegrations", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

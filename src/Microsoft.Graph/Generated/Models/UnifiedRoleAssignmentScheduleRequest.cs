@@ -7,83 +7,83 @@ namespace Microsoft.Graph.Models {
     public class UnifiedRoleAssignmentScheduleRequest : Request, IParsable {
         /// <summary>Represents the type of the operation on the role assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign roles to principals.adminRemove: For administrators to remove principals from roles. adminUpdate: For administrators to change existing role assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.selfExtend: For principals to request to extend their expiring assignments.selfRenew: For principals to request to renew their expired assignments.</summary>
         public UnifiedRoleScheduleRequestActions? Action {
-            get { return BackingStore?.Get<UnifiedRoleScheduleRequestActions?>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<UnifiedRoleScheduleRequestActions?>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
         /// <summary>If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it&apos;s null. Supports $expand.</summary>
         public UnifiedRoleEligibilitySchedule ActivatedUsing {
-            get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule>(nameof(ActivatedUsing)); }
-            set { BackingStore?.Set(nameof(ActivatedUsing), value); }
+            get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule>("activatedUsing"); }
+            set { BackingStore?.Set("activatedUsing", value); }
         }
         /// <summary>Read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.</summary>
         public Microsoft.Graph.Models.AppScope AppScope {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.AppScope>(nameof(AppScope)); }
-            set { BackingStore?.Set(nameof(AppScope), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppScope>("appScope"); }
+            set { BackingStore?.Set("appScope", value); }
         }
         /// <summary>Identifier of the app-specific scope when the assignment is scoped to an app. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, ne, and on null values).</summary>
         public string AppScopeId {
-            get { return BackingStore?.Get<string>(nameof(AppScopeId)); }
-            set { BackingStore?.Set(nameof(AppScopeId), value); }
+            get { return BackingStore?.Get<string>("appScopeId"); }
+            set { BackingStore?.Set("appScopeId", value); }
         }
         /// <summary>The directory object that is the scope of the assignment. Read-only. Supports $expand.</summary>
         public DirectoryObject DirectoryScope {
-            get { return BackingStore?.Get<DirectoryObject>(nameof(DirectoryScope)); }
-            set { BackingStore?.Set(nameof(DirectoryScope), value); }
+            get { return BackingStore?.Get<DirectoryObject>("directoryScope"); }
+            set { BackingStore?.Set("directoryScope", value); }
         }
         /// <summary>Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, ne, and on null values).</summary>
         public string DirectoryScopeId {
-            get { return BackingStore?.Get<string>(nameof(DirectoryScopeId)); }
-            set { BackingStore?.Set(nameof(DirectoryScopeId), value); }
+            get { return BackingStore?.Get<string>("directoryScopeId"); }
+            set { BackingStore?.Set("directoryScopeId", value); }
         }
         /// <summary>Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.</summary>
         public bool? IsValidationOnly {
-            get { return BackingStore?.Get<bool?>(nameof(IsValidationOnly)); }
-            set { BackingStore?.Set(nameof(IsValidationOnly), value); }
+            get { return BackingStore?.Get<bool?>("isValidationOnly"); }
+            set { BackingStore?.Set("isValidationOnly", value); }
         }
         /// <summary>A message provided by users and administrators when create they create the unifiedRoleAssignmentScheduleRequest object.</summary>
         public string Justification {
-            get { return BackingStore?.Get<string>(nameof(Justification)); }
-            set { BackingStore?.Set(nameof(Justification), value); }
+            get { return BackingStore?.Get<string>("justification"); }
+            set { BackingStore?.Set("justification", value); }
         }
         /// <summary>The principal that&apos;s getting a role assignment through the request. Supports $expand.</summary>
         public DirectoryObject Principal {
-            get { return BackingStore?.Get<DirectoryObject>(nameof(Principal)); }
-            set { BackingStore?.Set(nameof(Principal), value); }
+            get { return BackingStore?.Get<DirectoryObject>("principal"); }
+            set { BackingStore?.Set("principal", value); }
         }
         /// <summary>Identifier of the principal that has been granted the assignment. Supports $filter (eq, ne).</summary>
         public string PrincipalId {
-            get { return BackingStore?.Get<string>(nameof(PrincipalId)); }
-            set { BackingStore?.Set(nameof(PrincipalId), value); }
+            get { return BackingStore?.Get<string>("principalId"); }
+            set { BackingStore?.Set("principalId", value); }
         }
         /// <summary>Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.</summary>
         public UnifiedRoleDefinition RoleDefinition {
-            get { return BackingStore?.Get<UnifiedRoleDefinition>(nameof(RoleDefinition)); }
-            set { BackingStore?.Set(nameof(RoleDefinition), value); }
+            get { return BackingStore?.Get<UnifiedRoleDefinition>("roleDefinition"); }
+            set { BackingStore?.Set("roleDefinition", value); }
         }
         /// <summary>Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports $filter (eq, ne).</summary>
         public string RoleDefinitionId {
-            get { return BackingStore?.Get<string>(nameof(RoleDefinitionId)); }
-            set { BackingStore?.Set(nameof(RoleDefinitionId), value); }
+            get { return BackingStore?.Get<string>("roleDefinitionId"); }
+            set { BackingStore?.Set("roleDefinitionId", value); }
         }
         /// <summary>The period of the role assignment. Recurring schedules are currently unsupported.</summary>
         public RequestSchedule ScheduleInfo {
-            get { return BackingStore?.Get<RequestSchedule>(nameof(ScheduleInfo)); }
-            set { BackingStore?.Set(nameof(ScheduleInfo), value); }
+            get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }
+            set { BackingStore?.Set("scheduleInfo", value); }
         }
         /// <summary>The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.</summary>
         public UnifiedRoleAssignmentSchedule TargetSchedule {
-            get { return BackingStore?.Get<UnifiedRoleAssignmentSchedule>(nameof(TargetSchedule)); }
-            set { BackingStore?.Set(nameof(TargetSchedule), value); }
+            get { return BackingStore?.Get<UnifiedRoleAssignmentSchedule>("targetSchedule"); }
+            set { BackingStore?.Set("targetSchedule", value); }
         }
         /// <summary>Identifier of the schedule object that&apos;s linked to the assignment request. Supports $filter (eq, ne).</summary>
         public string TargetScheduleId {
-            get { return BackingStore?.Get<string>(nameof(TargetScheduleId)); }
-            set { BackingStore?.Set(nameof(TargetScheduleId), value); }
+            get { return BackingStore?.Get<string>("targetScheduleId"); }
+            set { BackingStore?.Set("targetScheduleId", value); }
         }
         /// <summary>Ticket details linked to the role assignment request including details of the ticket number and ticket system.</summary>
         public Microsoft.Graph.Models.TicketInfo TicketInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.TicketInfo>(nameof(TicketInfo)); }
-            set { BackingStore?.Set(nameof(TicketInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TicketInfo>("ticketInfo"); }
+            set { BackingStore?.Set("ticketInfo", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,52 +4,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceCompliancePolicyDeviceStateSummary : Entity, IParsable {
         /// <summary>Number of compliant devices</summary>
         public int? CompliantDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(CompliantDeviceCount)); }
-            set { BackingStore?.Set(nameof(CompliantDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("compliantDeviceCount"); }
+            set { BackingStore?.Set("compliantDeviceCount", value); }
         }
         /// <summary>Number of devices that have compliance managed by System Center Configuration Manager</summary>
         public int? ConfigManagerCount {
-            get { return BackingStore?.Get<int?>(nameof(ConfigManagerCount)); }
-            set { BackingStore?.Set(nameof(ConfigManagerCount), value); }
+            get { return BackingStore?.Get<int?>("configManagerCount"); }
+            set { BackingStore?.Set("configManagerCount", value); }
         }
         /// <summary>Number of conflict devices</summary>
         public int? ConflictDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ConflictDeviceCount)); }
-            set { BackingStore?.Set(nameof(ConflictDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("conflictDeviceCount"); }
+            set { BackingStore?.Set("conflictDeviceCount", value); }
         }
         /// <summary>Number of error devices</summary>
         public int? ErrorDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ErrorDeviceCount)); }
-            set { BackingStore?.Set(nameof(ErrorDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("errorDeviceCount"); }
+            set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>Number of devices that are in grace period</summary>
         public int? InGracePeriodCount {
-            get { return BackingStore?.Get<int?>(nameof(InGracePeriodCount)); }
-            set { BackingStore?.Set(nameof(InGracePeriodCount), value); }
+            get { return BackingStore?.Get<int?>("inGracePeriodCount"); }
+            set { BackingStore?.Set("inGracePeriodCount", value); }
         }
         /// <summary>Number of NonCompliant devices</summary>
         public int? NonCompliantDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NonCompliantDeviceCount)); }
-            set { BackingStore?.Set(nameof(NonCompliantDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("nonCompliantDeviceCount"); }
+            set { BackingStore?.Set("nonCompliantDeviceCount", value); }
         }
         /// <summary>Number of not applicable devices</summary>
         public int? NotApplicableDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NotApplicableDeviceCount)); }
-            set { BackingStore?.Set(nameof(NotApplicableDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("notApplicableDeviceCount"); }
+            set { BackingStore?.Set("notApplicableDeviceCount", value); }
         }
         /// <summary>Number of remediated devices</summary>
         public int? RemediatedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(RemediatedDeviceCount)); }
-            set { BackingStore?.Set(nameof(RemediatedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("remediatedDeviceCount"); }
+            set { BackingStore?.Set("remediatedDeviceCount", value); }
         }
         /// <summary>Number of unknown devices</summary>
         public int? UnknownDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(UnknownDeviceCount)); }
-            set { BackingStore?.Set(nameof(UnknownDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("unknownDeviceCount"); }
+            set { BackingStore?.Set("unknownDeviceCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

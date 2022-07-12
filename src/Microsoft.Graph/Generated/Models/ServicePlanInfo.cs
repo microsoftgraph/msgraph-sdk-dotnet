@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class ServicePlanInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.</summary>
         public string AppliesTo {
-            get { return BackingStore?.Get<string>(nameof(AppliesTo)); }
-            set { BackingStore?.Set(nameof(AppliesTo), value); }
+            get { return BackingStore?.Get<string>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.</summary>
         public string ProvisioningStatus {
-            get { return BackingStore?.Get<string>(nameof(ProvisioningStatus)); }
-            set { BackingStore?.Set(nameof(ProvisioningStatus), value); }
+            get { return BackingStore?.Get<string>("provisioningStatus"); }
+            set { BackingStore?.Set("provisioningStatus", value); }
         }
         /// <summary>The unique identifier of the service plan.</summary>
         public string ServicePlanId {
-            get { return BackingStore?.Get<string>(nameof(ServicePlanId)); }
-            set { BackingStore?.Set(nameof(ServicePlanId), value); }
+            get { return BackingStore?.Get<string>("servicePlanId"); }
+            set { BackingStore?.Set("servicePlanId", value); }
         }
         /// <summary>The name of the service plan.</summary>
         public string ServicePlanName {
-            get { return BackingStore?.Get<string>(nameof(ServicePlanName)); }
-            set { BackingStore?.Set(nameof(ServicePlanName), value); }
+            get { return BackingStore?.Get<string>("servicePlanName"); }
+            set { BackingStore?.Set("servicePlanName", value); }
         }
         /// <summary>
         /// Instantiates a new servicePlanInfo and sets the default values.

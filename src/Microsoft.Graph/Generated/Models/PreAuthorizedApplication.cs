@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class PreAuthorizedApplication : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The unique identifier for the client application.</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier for the oauth2PermissionScopes the application requires.</summary>
         public List<string> DelegatedPermissionIds {
-            get { return BackingStore?.Get<List<string>>(nameof(DelegatedPermissionIds)); }
-            set { BackingStore?.Set(nameof(DelegatedPermissionIds), value); }
+            get { return BackingStore?.Get<List<string>>("delegatedPermissionIds"); }
+            set { BackingStore?.Set("delegatedPermissionIds", value); }
         }
         /// <summary>
         /// Instantiates a new preAuthorizedApplication and sets the default values.

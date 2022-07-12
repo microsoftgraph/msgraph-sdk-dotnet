@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Me.Presence.SetPresence {
     public class SetPresencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activity property</summary>
         public string Activity {
-            get { return BackingStore?.Get<string>(nameof(Activity)); }
-            set { BackingStore?.Set(nameof(Activity), value); }
+            get { return BackingStore?.Get<string>("activity"); }
+            set { BackingStore?.Set("activity", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The availability property</summary>
         public string Availability {
-            get { return BackingStore?.Get<string>(nameof(Availability)); }
-            set { BackingStore?.Set(nameof(Availability), value); }
+            get { return BackingStore?.Get<string>("availability"); }
+            set { BackingStore?.Set("availability", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expirationDuration property</summary>
         public TimeSpan? ExpirationDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(ExpirationDuration)); }
-            set { BackingStore?.Set(nameof(ExpirationDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("expirationDuration"); }
+            set { BackingStore?.Set("expirationDuration", value); }
         }
         /// <summary>The sessionId property</summary>
         public string SessionId {
-            get { return BackingStore?.Get<string>(nameof(SessionId)); }
-            set { BackingStore?.Set(nameof(SessionId), value); }
+            get { return BackingStore?.Get<string>("sessionId"); }
+            set { BackingStore?.Set("sessionId", value); }
         }
         /// <summary>
         /// Instantiates a new setPresencePostRequestBody and sets the default values.

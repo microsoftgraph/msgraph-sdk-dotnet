@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Models {
     public class WindowsInformationProtectionAppLearningSummary : Entity, IParsable {
         /// <summary>Application Name</summary>
         public string ApplicationName {
-            get { return BackingStore?.Get<string>(nameof(ApplicationName)); }
-            set { BackingStore?.Set(nameof(ApplicationName), value); }
+            get { return BackingStore?.Get<string>("applicationName"); }
+            set { BackingStore?.Set("applicationName", value); }
         }
-        /// <summary>Application Type. Possible values are: universal, desktop.</summary>
+        /// <summary>Possible types of Application</summary>
         public Microsoft.Graph.Models.ApplicationType? ApplicationType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ApplicationType?>(nameof(ApplicationType)); }
-            set { BackingStore?.Set(nameof(ApplicationType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ApplicationType?>("applicationType"); }
+            set { BackingStore?.Set("applicationType", value); }
         }
         /// <summary>Device Count</summary>
         public int? DeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(DeviceCount)); }
-            set { BackingStore?.Set(nameof(DeviceCount), value); }
+            get { return BackingStore?.Get<int?>("deviceCount"); }
+            set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,30 +9,30 @@ namespace Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item
     public class UpdateDevicePropertiesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The addressableUserName property</summary>
         public string AddressableUserName {
-            get { return BackingStore?.Get<string>(nameof(AddressableUserName)); }
-            set { BackingStore?.Set(nameof(AddressableUserName), value); }
+            get { return BackingStore?.Get<string>("addressableUserName"); }
+            set { BackingStore?.Set("addressableUserName", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The groupTag property</summary>
         public string GroupTag {
-            get { return BackingStore?.Get<string>(nameof(GroupTag)); }
-            set { BackingStore?.Set(nameof(GroupTag), value); }
+            get { return BackingStore?.Get<string>("groupTag"); }
+            set { BackingStore?.Set("groupTag", value); }
         }
         /// <summary>The userPrincipalName property</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Instantiates a new updateDevicePropertiesPostRequestBody and sets the default values.

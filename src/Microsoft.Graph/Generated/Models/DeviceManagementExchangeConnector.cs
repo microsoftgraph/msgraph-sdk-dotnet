@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Models {
     public class DeviceManagementExchangeConnector : Entity, IParsable {
         /// <summary>The name of the server hosting the Exchange Connector.</summary>
         public string ConnectorServerName {
-            get { return BackingStore?.Get<string>(nameof(ConnectorServerName)); }
-            set { BackingStore?.Set(nameof(ConnectorServerName), value); }
+            get { return BackingStore?.Get<string>("connectorServerName"); }
+            set { BackingStore?.Set("connectorServerName", value); }
         }
         /// <summary>An alias assigned to the Exchange server</summary>
         public string ExchangeAlias {
-            get { return BackingStore?.Get<string>(nameof(ExchangeAlias)); }
-            set { BackingStore?.Set(nameof(ExchangeAlias), value); }
+            get { return BackingStore?.Get<string>("exchangeAlias"); }
+            set { BackingStore?.Set("exchangeAlias", value); }
         }
-        /// <summary>The type of Exchange Connector Configured. Possible values are: onPremises, hosted, serviceToService, dedicated.</summary>
+        /// <summary>The type of Exchange Connector.</summary>
         public DeviceManagementExchangeConnectorType? ExchangeConnectorType {
-            get { return BackingStore?.Get<DeviceManagementExchangeConnectorType?>(nameof(ExchangeConnectorType)); }
-            set { BackingStore?.Set(nameof(ExchangeConnectorType), value); }
+            get { return BackingStore?.Get<DeviceManagementExchangeConnectorType?>("exchangeConnectorType"); }
+            set { BackingStore?.Set("exchangeConnectorType", value); }
         }
         /// <summary>Exchange Organization to the Exchange server</summary>
         public string ExchangeOrganization {
-            get { return BackingStore?.Get<string>(nameof(ExchangeOrganization)); }
-            set { BackingStore?.Set(nameof(ExchangeOrganization), value); }
+            get { return BackingStore?.Get<string>("exchangeOrganization"); }
+            set { BackingStore?.Set("exchangeOrganization", value); }
         }
         /// <summary>Last sync time for the Exchange Connector</summary>
         public DateTimeOffset? LastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
+            set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>Email address used to configure the Service To Service Exchange Connector.</summary>
         public string PrimarySmtpAddress {
-            get { return BackingStore?.Get<string>(nameof(PrimarySmtpAddress)); }
-            set { BackingStore?.Set(nameof(PrimarySmtpAddress), value); }
+            get { return BackingStore?.Get<string>("primarySmtpAddress"); }
+            set { BackingStore?.Set("primarySmtpAddress", value); }
         }
         /// <summary>The name of the Exchange server.</summary>
         public string ServerName {
-            get { return BackingStore?.Get<string>(nameof(ServerName)); }
-            set { BackingStore?.Set(nameof(ServerName), value); }
+            get { return BackingStore?.Get<string>("serverName"); }
+            set { BackingStore?.Set("serverName", value); }
         }
-        /// <summary>Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected.</summary>
+        /// <summary>The current status of the Exchange Connector.</summary>
         public DeviceManagementExchangeConnectorStatus? Status {
-            get { return BackingStore?.Get<DeviceManagementExchangeConnectorStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<DeviceManagementExchangeConnectorStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The version of the ExchangeConnectorAgent</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

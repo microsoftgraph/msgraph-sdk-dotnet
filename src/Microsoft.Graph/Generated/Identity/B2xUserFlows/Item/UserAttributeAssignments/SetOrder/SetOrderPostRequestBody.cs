@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Se
     public class SetOrderPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The newAssignmentOrder property</summary>
         public AssignmentOrder NewAssignmentOrder {
-            get { return BackingStore?.Get<AssignmentOrder>(nameof(NewAssignmentOrder)); }
-            set { BackingStore?.Set(nameof(NewAssignmentOrder), value); }
+            get { return BackingStore?.Get<AssignmentOrder>("newAssignmentOrder"); }
+            set { BackingStore?.Set("newAssignmentOrder", value); }
         }
         /// <summary>
         /// Instantiates a new setOrderPostRequestBody and sets the default values.

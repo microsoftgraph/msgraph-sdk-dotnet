@@ -1,40 +1,47 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class Request : Entity, IParsable {
         /// <summary>The identifier of the approval of the request.</summary>
         public string ApprovalId {
-            get { return BackingStore?.Get<string>(nameof(ApprovalId)); }
-            set { BackingStore?.Set(nameof(ApprovalId), value); }
+            get { return BackingStore?.Get<string>("approvalId"); }
+            set { BackingStore?.Set("approvalId", value); }
         }
         /// <summary>The request completion date time.</summary>
         public DateTimeOffset? CompletedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompletedDateTime)); }
-            set { BackingStore?.Set(nameof(CompletedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
+            set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>The principal that created the request.</summary>
         public IdentitySet CreatedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The request creation date time.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Free text field to define any custom data for the request. Not used.</summary>
         public string CustomData {
-            get { return BackingStore?.Get<string>(nameof(CustomData)); }
-            set { BackingStore?.Set(nameof(CustomData), value); }
+            get { return BackingStore?.Get<string>("customData"); }
+            set { BackingStore?.Set("customData", value); }
         }
         /// <summary>The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.</summary>
         public string Status {
-            get { return BackingStore?.Get<string>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<string>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new request and sets the default values.
+        /// </summary>
+        public Request() : base() {
+            Type = "#microsoft.graph.request";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

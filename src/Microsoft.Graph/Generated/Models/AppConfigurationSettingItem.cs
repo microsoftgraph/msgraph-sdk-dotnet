@@ -9,23 +9,23 @@ namespace Microsoft.Graph.Models {
     public class AppConfigurationSettingItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>app configuration key.</summary>
         public string AppConfigKey {
-            get { return BackingStore?.Get<string>(nameof(AppConfigKey)); }
-            set { BackingStore?.Set(nameof(AppConfigKey), value); }
+            get { return BackingStore?.Get<string>("appConfigKey"); }
+            set { BackingStore?.Set("appConfigKey", value); }
         }
-        /// <summary>app configuration key type. Possible values are: stringType, integerType, realType, booleanType, tokenType.</summary>
+        /// <summary>App configuration key types.</summary>
         public MdmAppConfigKeyType? AppConfigKeyType {
-            get { return BackingStore?.Get<MdmAppConfigKeyType?>(nameof(AppConfigKeyType)); }
-            set { BackingStore?.Set(nameof(AppConfigKeyType), value); }
+            get { return BackingStore?.Get<MdmAppConfigKeyType?>("appConfigKeyType"); }
+            set { BackingStore?.Set("appConfigKeyType", value); }
         }
         /// <summary>app configuration key value.</summary>
         public string AppConfigKeyValue {
-            get { return BackingStore?.Get<string>(nameof(AppConfigKeyValue)); }
-            set { BackingStore?.Set(nameof(AppConfigKeyValue), value); }
+            get { return BackingStore?.Get<string>("appConfigKeyValue"); }
+            set { BackingStore?.Set("appConfigKeyValue", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class WorkbookComment : Entity, IParsable {
         /// <summary>The content of the comment.</summary>
         public string Content {
-            get { return BackingStore?.Get<string>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<string>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>Indicates the type for the comment.</summary>
         public string ContentType {
-            get { return BackingStore?.Get<string>(nameof(ContentType)); }
-            set { BackingStore?.Set(nameof(ContentType), value); }
+            get { return BackingStore?.Get<string>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>The replies property</summary>
         public List<WorkbookCommentReply> Replies {
-            get { return BackingStore?.Get<List<WorkbookCommentReply>>(nameof(Replies)); }
-            set { BackingStore?.Set(nameof(Replies), value); }
+            get { return BackingStore?.Get<List<WorkbookCommentReply>>("replies"); }
+            set { BackingStore?.Set("replies", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

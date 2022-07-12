@@ -7,53 +7,53 @@ namespace Microsoft.Graph.Models {
     public class IosVppApp : MobileApp, IParsable {
         /// <summary>The applicable iOS Device Type.</summary>
         public IosDeviceType ApplicableDeviceType {
-            get { return BackingStore?.Get<IosDeviceType>(nameof(ApplicableDeviceType)); }
-            set { BackingStore?.Set(nameof(ApplicableDeviceType), value); }
+            get { return BackingStore?.Get<IosDeviceType>("applicableDeviceType"); }
+            set { BackingStore?.Set("applicableDeviceType", value); }
         }
         /// <summary>The store URL.</summary>
         public string AppStoreUrl {
-            get { return BackingStore?.Get<string>(nameof(AppStoreUrl)); }
-            set { BackingStore?.Set(nameof(AppStoreUrl), value); }
+            get { return BackingStore?.Get<string>("appStoreUrl"); }
+            set { BackingStore?.Set("appStoreUrl", value); }
         }
         /// <summary>The Identity Name.</summary>
         public string BundleId {
-            get { return BackingStore?.Get<string>(nameof(BundleId)); }
-            set { BackingStore?.Set(nameof(BundleId), value); }
+            get { return BackingStore?.Get<string>("bundleId"); }
+            set { BackingStore?.Set("bundleId", value); }
         }
         /// <summary>The supported License Type.</summary>
         public VppLicensingType LicensingType {
-            get { return BackingStore?.Get<VppLicensingType>(nameof(LicensingType)); }
-            set { BackingStore?.Set(nameof(LicensingType), value); }
+            get { return BackingStore?.Get<VppLicensingType>("licensingType"); }
+            set { BackingStore?.Set("licensingType", value); }
         }
         /// <summary>The VPP application release date and time.</summary>
         public DateTimeOffset? ReleaseDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReleaseDateTime)); }
-            set { BackingStore?.Set(nameof(ReleaseDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
+            set { BackingStore?.Set("releaseDateTime", value); }
         }
         /// <summary>The total number of VPP licenses.</summary>
         public int? TotalLicenseCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalLicenseCount)); }
-            set { BackingStore?.Set(nameof(TotalLicenseCount), value); }
+            get { return BackingStore?.Get<int?>("totalLicenseCount"); }
+            set { BackingStore?.Set("totalLicenseCount", value); }
         }
         /// <summary>The number of VPP licenses in use.</summary>
         public int? UsedLicenseCount {
-            get { return BackingStore?.Get<int?>(nameof(UsedLicenseCount)); }
-            set { BackingStore?.Set(nameof(UsedLicenseCount), value); }
+            get { return BackingStore?.Get<int?>("usedLicenseCount"); }
+            set { BackingStore?.Set("usedLicenseCount", value); }
         }
-        /// <summary>The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.</summary>
+        /// <summary>Possible types of an Apple Volume Purchase Program token.</summary>
         public Microsoft.Graph.Models.VppTokenAccountType? VppTokenAccountType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.VppTokenAccountType?>(nameof(VppTokenAccountType)); }
-            set { BackingStore?.Set(nameof(VppTokenAccountType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.VppTokenAccountType?>("vppTokenAccountType"); }
+            set { BackingStore?.Set("vppTokenAccountType", value); }
         }
         /// <summary>The Apple Id associated with the given Apple Volume Purchase Program Token.</summary>
         public string VppTokenAppleId {
-            get { return BackingStore?.Get<string>(nameof(VppTokenAppleId)); }
-            set { BackingStore?.Set(nameof(VppTokenAppleId), value); }
+            get { return BackingStore?.Get<string>("vppTokenAppleId"); }
+            set { BackingStore?.Set("vppTokenAppleId", value); }
         }
         /// <summary>The organization associated with the Apple Volume Purchase Program Token</summary>
         public string VppTokenOrganizationName {
-            get { return BackingStore?.Get<string>(nameof(VppTokenOrganizationName)); }
-            set { BackingStore?.Set(nameof(VppTokenOrganizationName), value); }
+            get { return BackingStore?.Get<string>("vppTokenOrganizationName"); }
+            set { BackingStore?.Set("vppTokenOrganizationName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

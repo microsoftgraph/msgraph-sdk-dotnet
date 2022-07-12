@@ -10,50 +10,50 @@ namespace Microsoft.Graph.Users.Item.FindMeetingTimes {
     public class FindMeetingTimesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The attendees property</summary>
         public List<AttendeeBase> Attendees {
-            get { return BackingStore?.Get<List<AttendeeBase>>(nameof(Attendees)); }
-            set { BackingStore?.Set(nameof(Attendees), value); }
+            get { return BackingStore?.Get<List<AttendeeBase>>("attendees"); }
+            set { BackingStore?.Set("attendees", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The isOrganizerOptional property</summary>
         public bool? IsOrganizerOptional {
-            get { return BackingStore?.Get<bool?>(nameof(IsOrganizerOptional)); }
-            set { BackingStore?.Set(nameof(IsOrganizerOptional), value); }
+            get { return BackingStore?.Get<bool?>("isOrganizerOptional"); }
+            set { BackingStore?.Set("isOrganizerOptional", value); }
         }
         /// <summary>The locationConstraint property</summary>
         public Microsoft.Graph.Models.LocationConstraint LocationConstraint {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.LocationConstraint>(nameof(LocationConstraint)); }
-            set { BackingStore?.Set(nameof(LocationConstraint), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.LocationConstraint>("locationConstraint"); }
+            set { BackingStore?.Set("locationConstraint", value); }
         }
         /// <summary>The maxCandidates property</summary>
         public int? MaxCandidates {
-            get { return BackingStore?.Get<int?>(nameof(MaxCandidates)); }
-            set { BackingStore?.Set(nameof(MaxCandidates), value); }
+            get { return BackingStore?.Get<int?>("maxCandidates"); }
+            set { BackingStore?.Set("maxCandidates", value); }
         }
         /// <summary>The meetingDuration property</summary>
         public TimeSpan? MeetingDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(MeetingDuration)); }
-            set { BackingStore?.Set(nameof(MeetingDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("meetingDuration"); }
+            set { BackingStore?.Set("meetingDuration", value); }
         }
         /// <summary>The minimumAttendeePercentage property</summary>
         public double? MinimumAttendeePercentage {
-            get { return BackingStore?.Get<double?>(nameof(MinimumAttendeePercentage)); }
-            set { BackingStore?.Set(nameof(MinimumAttendeePercentage), value); }
+            get { return BackingStore?.Get<double?>("minimumAttendeePercentage"); }
+            set { BackingStore?.Set("minimumAttendeePercentage", value); }
         }
         /// <summary>The returnSuggestionReasons property</summary>
         public bool? ReturnSuggestionReasons {
-            get { return BackingStore?.Get<bool?>(nameof(ReturnSuggestionReasons)); }
-            set { BackingStore?.Set(nameof(ReturnSuggestionReasons), value); }
+            get { return BackingStore?.Get<bool?>("returnSuggestionReasons"); }
+            set { BackingStore?.Set("returnSuggestionReasons", value); }
         }
         /// <summary>The timeConstraint property</summary>
         public Microsoft.Graph.Models.TimeConstraint TimeConstraint {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeConstraint>(nameof(TimeConstraint)); }
-            set { BackingStore?.Set(nameof(TimeConstraint), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeConstraint>("timeConstraint"); }
+            set { BackingStore?.Set("timeConstraint", value); }
         }
         /// <summary>
         /// Instantiates a new findMeetingTimesPostRequestBody and sets the default values.

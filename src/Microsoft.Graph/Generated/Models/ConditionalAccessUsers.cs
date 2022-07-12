@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class ConditionalAccessUsers : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Group IDs excluded from scope of policy.</summary>
         public List<string> ExcludeGroups {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludeGroups)); }
-            set { BackingStore?.Set(nameof(ExcludeGroups), value); }
+            get { return BackingStore?.Get<List<string>>("excludeGroups"); }
+            set { BackingStore?.Set("excludeGroups", value); }
         }
         /// <summary>Role IDs excluded from scope of policy.</summary>
         public List<string> ExcludeRoles {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludeRoles)); }
-            set { BackingStore?.Set(nameof(ExcludeRoles), value); }
+            get { return BackingStore?.Get<List<string>>("excludeRoles"); }
+            set { BackingStore?.Set("excludeRoles", value); }
         }
         /// <summary>User IDs excluded from scope of policy and/or GuestsOrExternalUsers.</summary>
         public List<string> ExcludeUsers {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludeUsers)); }
-            set { BackingStore?.Set(nameof(ExcludeUsers), value); }
+            get { return BackingStore?.Get<List<string>>("excludeUsers"); }
+            set { BackingStore?.Set("excludeUsers", value); }
         }
         /// <summary>Group IDs in scope of policy unless explicitly excluded, or All.</summary>
         public List<string> IncludeGroups {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludeGroups)); }
-            set { BackingStore?.Set(nameof(IncludeGroups), value); }
+            get { return BackingStore?.Get<List<string>>("includeGroups"); }
+            set { BackingStore?.Set("includeGroups", value); }
         }
         /// <summary>Role IDs in scope of policy unless explicitly excluded, or All.</summary>
         public List<string> IncludeRoles {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludeRoles)); }
-            set { BackingStore?.Set(nameof(IncludeRoles), value); }
+            get { return BackingStore?.Get<List<string>>("includeRoles"); }
+            set { BackingStore?.Set("includeRoles", value); }
         }
         /// <summary>User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.</summary>
         public List<string> IncludeUsers {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludeUsers)); }
-            set { BackingStore?.Set(nameof(IncludeUsers), value); }
+            get { return BackingStore?.Get<List<string>>("includeUsers"); }
+            set { BackingStore?.Set("includeUsers", value); }
         }
         /// <summary>
         /// Instantiates a new conditionalAccessUsers and sets the default values.

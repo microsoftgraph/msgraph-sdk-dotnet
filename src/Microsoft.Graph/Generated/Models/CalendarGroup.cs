@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class CalendarGroup : Entity, IParsable {
         /// <summary>The calendars in the calendar group. Navigation property. Read-only. Nullable.</summary>
         public List<Calendar> Calendars {
-            get { return BackingStore?.Get<List<Calendar>>(nameof(Calendars)); }
-            set { BackingStore?.Set(nameof(Calendars), value); }
+            get { return BackingStore?.Get<List<Calendar>>("calendars"); }
+            set { BackingStore?.Set("calendars", value); }
         }
         /// <summary>Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.</summary>
         public string ChangeKey {
-            get { return BackingStore?.Get<string>(nameof(ChangeKey)); }
-            set { BackingStore?.Set(nameof(ChangeKey), value); }
+            get { return BackingStore?.Get<string>("changeKey"); }
+            set { BackingStore?.Set("changeKey", value); }
         }
         /// <summary>The class identifier. Read-only.</summary>
         public string ClassId {
-            get { return BackingStore?.Get<string>(nameof(ClassId)); }
-            set { BackingStore?.Set(nameof(ClassId), value); }
+            get { return BackingStore?.Get<string>("classId"); }
+            set { BackingStore?.Set("classId", value); }
         }
         /// <summary>The group name.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

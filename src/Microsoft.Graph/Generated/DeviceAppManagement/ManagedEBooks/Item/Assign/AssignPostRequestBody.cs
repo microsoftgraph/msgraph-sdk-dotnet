@@ -10,15 +10,15 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assign {
     public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The managedEBookAssignments property</summary>
         public List<ManagedEBookAssignment> ManagedEBookAssignments {
-            get { return BackingStore?.Get<List<ManagedEBookAssignment>>(nameof(ManagedEBookAssignments)); }
-            set { BackingStore?.Set(nameof(ManagedEBookAssignments), value); }
+            get { return BackingStore?.Get<List<ManagedEBookAssignment>>("managedEBookAssignments"); }
+            set { BackingStore?.Set("managedEBookAssignments", value); }
         }
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.

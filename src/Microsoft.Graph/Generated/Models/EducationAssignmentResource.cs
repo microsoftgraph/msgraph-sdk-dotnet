@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class EducationAssignmentResource : Entity, IParsable {
         /// <summary>Indicates whether this resource should be copied to each student submission for modification and submission. Required</summary>
         public bool? DistributeForStudentWork {
-            get { return BackingStore?.Get<bool?>(nameof(DistributeForStudentWork)); }
-            set { BackingStore?.Set(nameof(DistributeForStudentWork), value); }
+            get { return BackingStore?.Get<bool?>("distributeForStudentWork"); }
+            set { BackingStore?.Set("distributeForStudentWork", value); }
         }
         /// <summary>Resource object that has been associated with this assignment.</summary>
         public EducationResource Resource {
-            get { return BackingStore?.Get<EducationResource>(nameof(Resource)); }
-            set { BackingStore?.Set(nameof(Resource), value); }
+            get { return BackingStore?.Get<EducationResource>("resource"); }
+            set { BackingStore?.Set("resource", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

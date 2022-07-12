@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Models {
     public class TeamsAppDefinition : Entity, IParsable {
         /// <summary>The details of the bot specified in the Teams app manifest.</summary>
         public TeamworkBot Bot {
-            get { return BackingStore?.Get<TeamworkBot>(nameof(Bot)); }
-            set { BackingStore?.Set(nameof(Bot), value); }
+            get { return BackingStore?.Get<TeamworkBot>("bot"); }
+            set { BackingStore?.Set("bot", value); }
         }
         /// <summary>The createdBy property</summary>
         public IdentitySet CreatedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>Verbose description of the application.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The name of the app provided by the app developer.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.</summary>
         public TeamsAppPublishingState? PublishingState {
-            get { return BackingStore?.Get<TeamsAppPublishingState?>(nameof(PublishingState)); }
-            set { BackingStore?.Set(nameof(PublishingState), value); }
+            get { return BackingStore?.Get<TeamsAppPublishingState?>("publishingState"); }
+            set { BackingStore?.Set("publishingState", value); }
         }
         /// <summary>Short description of the application.</summary>
         public string ShortDescription {
-            get { return BackingStore?.Get<string>(nameof(ShortDescription)); }
-            set { BackingStore?.Set(nameof(ShortDescription), value); }
+            get { return BackingStore?.Get<string>("shortDescription"); }
+            set { BackingStore?.Set("shortDescription", value); }
         }
         /// <summary>The ID from the Teams app manifest.</summary>
         public string TeamsAppId {
-            get { return BackingStore?.Get<string>(nameof(TeamsAppId)); }
-            set { BackingStore?.Set(nameof(TeamsAppId), value); }
+            get { return BackingStore?.Get<string>("teamsAppId"); }
+            set { BackingStore?.Set("teamsAppId", value); }
         }
         /// <summary>The version number of the application.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

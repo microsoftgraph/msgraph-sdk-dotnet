@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class ChannelIdentity : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identity of the channel in which the message was posted.</summary>
         public string ChannelId {
-            get { return BackingStore?.Get<string>(nameof(ChannelId)); }
-            set { BackingStore?.Set(nameof(ChannelId), value); }
+            get { return BackingStore?.Get<string>("channelId"); }
+            set { BackingStore?.Set("channelId", value); }
         }
         /// <summary>The identity of the team in which the message was posted.</summary>
         public string TeamId {
-            get { return BackingStore?.Get<string>(nameof(TeamId)); }
-            set { BackingStore?.Set(nameof(TeamId), value); }
+            get { return BackingStore?.Get<string>("teamId"); }
+            set { BackingStore?.Set("teamId", value); }
         }
         /// <summary>
         /// Instantiates a new channelIdentity and sets the default values.

@@ -4,27 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class WorkbookChartTitle : Entity, IParsable {
         /// <summary>Represents the formatting of a chart title, which includes fill and font formatting. Read-only.</summary>
         public WorkbookChartTitleFormat Format {
-            get { return BackingStore?.Get<WorkbookChartTitleFormat>(nameof(Format)); }
-            set { BackingStore?.Set(nameof(Format), value); }
+            get { return BackingStore?.Get<WorkbookChartTitleFormat>("format"); }
+            set { BackingStore?.Set("format", value); }
         }
         /// <summary>Boolean value representing if the chart title will overlay the chart or not.</summary>
         public bool? Overlay {
-            get { return BackingStore?.Get<bool?>(nameof(Overlay)); }
-            set { BackingStore?.Set(nameof(Overlay), value); }
+            get { return BackingStore?.Get<bool?>("overlay"); }
+            set { BackingStore?.Set("overlay", value); }
         }
         /// <summary>Represents the title text of a chart.</summary>
         public string Text {
-            get { return BackingStore?.Get<string>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<string>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>A boolean value the represents the visibility of a chart title object.</summary>
         public bool? Visible {
-            get { return BackingStore?.Get<bool?>(nameof(Visible)); }
-            set { BackingStore?.Set(nameof(Visible), value); }
+            get { return BackingStore?.Get<bool?>("visible"); }
+            set { BackingStore?.Set("visible", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

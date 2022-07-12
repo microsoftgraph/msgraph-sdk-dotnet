@@ -4,37 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Contains properties for the installation summary of a book for a device.</summary>
     public class EBookInstallSummary : Entity, IParsable {
         /// <summary>Number of Devices that have failed to install this book.</summary>
         public int? FailedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedDeviceCount)); }
-            set { BackingStore?.Set(nameof(FailedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("failedDeviceCount"); }
+            set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>Number of Users that have 1 or more device that failed to install this book.</summary>
         public int? FailedUserCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedUserCount)); }
-            set { BackingStore?.Set(nameof(FailedUserCount), value); }
+            get { return BackingStore?.Get<int?>("failedUserCount"); }
+            set { BackingStore?.Set("failedUserCount", value); }
         }
         /// <summary>Number of Devices that have successfully installed this book.</summary>
         public int? InstalledDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(InstalledDeviceCount)); }
-            set { BackingStore?.Set(nameof(InstalledDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("installedDeviceCount"); }
+            set { BackingStore?.Set("installedDeviceCount", value); }
         }
         /// <summary>Number of Users whose devices have all succeeded to install this book.</summary>
         public int? InstalledUserCount {
-            get { return BackingStore?.Get<int?>(nameof(InstalledUserCount)); }
-            set { BackingStore?.Set(nameof(InstalledUserCount), value); }
+            get { return BackingStore?.Get<int?>("installedUserCount"); }
+            set { BackingStore?.Set("installedUserCount", value); }
         }
         /// <summary>Number of Devices that does not have this book installed.</summary>
         public int? NotInstalledDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NotInstalledDeviceCount)); }
-            set { BackingStore?.Set(nameof(NotInstalledDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("notInstalledDeviceCount"); }
+            set { BackingStore?.Set("notInstalledDeviceCount", value); }
         }
         /// <summary>Number of Users that did not install this book.</summary>
         public int? NotInstalledUserCount {
-            get { return BackingStore?.Get<int?>(nameof(NotInstalledUserCount)); }
-            set { BackingStore?.Set(nameof(NotInstalledUserCount), value); }
+            get { return BackingStore?.Get<int?>("notInstalledUserCount"); }
+            set { BackingStore?.Set("notInstalledUserCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Models {
     public class TeamsApp : Entity, IParsable {
         /// <summary>The details for each version of the app.</summary>
         public List<TeamsAppDefinition> AppDefinitions {
-            get { return BackingStore?.Get<List<TeamsAppDefinition>>(nameof(AppDefinitions)); }
-            set { BackingStore?.Set(nameof(AppDefinitions), value); }
+            get { return BackingStore?.Get<List<TeamsAppDefinition>>("appDefinitions"); }
+            set { BackingStore?.Set("appDefinitions", value); }
         }
         /// <summary>The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The method of distribution for the app. Read-only.</summary>
         public TeamsAppDistributionMethod? DistributionMethod {
-            get { return BackingStore?.Get<TeamsAppDistributionMethod?>(nameof(DistributionMethod)); }
-            set { BackingStore?.Set(nameof(DistributionMethod), value); }
+            get { return BackingStore?.Get<TeamsAppDistributionMethod?>("distributionMethod"); }
+            set { BackingStore?.Set("distributionMethod", value); }
         }
         /// <summary>The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.</summary>
         public string ExternalId {
-            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
-            set { BackingStore?.Set(nameof(ExternalId), value); }
+            get { return BackingStore?.Get<string>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

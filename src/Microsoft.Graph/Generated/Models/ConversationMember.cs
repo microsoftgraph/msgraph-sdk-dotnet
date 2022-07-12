@@ -1,25 +1,32 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ConversationMember : Entity, IParsable {
         /// <summary>The display name of the user.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.</summary>
         public List<string> Roles {
-            get { return BackingStore?.Get<List<string>>(nameof(Roles)); }
-            set { BackingStore?.Set(nameof(Roles), value); }
+            get { return BackingStore?.Get<List<string>>("roles"); }
+            set { BackingStore?.Set("roles", value); }
         }
         /// <summary>The timestamp denoting how far back a conversation&apos;s history is shared with the conversation member. This property is settable only for members of a chat.</summary>
         public DateTimeOffset? VisibleHistoryStartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(VisibleHistoryStartDateTime)); }
-            set { BackingStore?.Set(nameof(VisibleHistoryStartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("visibleHistoryStartDateTime"); }
+            set { BackingStore?.Set("visibleHistoryStartDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new conversationMember and sets the default values.
+        /// </summary>
+        public ConversationMember() : base() {
+            Type = "#microsoft.graph.conversationMember";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

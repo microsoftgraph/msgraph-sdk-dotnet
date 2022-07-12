@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class UnifiedRoleManagementPolicyExpirationRule : UnifiedRoleManagementPolicyRule, IParsable {
         /// <summary>Indicates whether expiration is required or if it&apos;s a permanently active assignment or eligibility.</summary>
         public bool? IsExpirationRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsExpirationRequired)); }
-            set { BackingStore?.Set(nameof(IsExpirationRequired), value); }
+            get { return BackingStore?.Get<bool?>("isExpirationRequired"); }
+            set { BackingStore?.Set("isExpirationRequired", value); }
         }
         /// <summary>The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.</summary>
         public TimeSpan? MaximumDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(MaximumDuration)); }
-            set { BackingStore?.Set(nameof(MaximumDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("maximumDuration"); }
+            set { BackingStore?.Set("maximumDuration", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

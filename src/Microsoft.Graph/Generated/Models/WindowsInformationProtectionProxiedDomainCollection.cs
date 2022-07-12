@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class WindowsInformationProtectionProxiedDomainCollection : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Collection of proxied domains</summary>
         public List<ProxiedDomain> ProxiedDomains {
-            get { return BackingStore?.Get<List<ProxiedDomain>>(nameof(ProxiedDomains)); }
-            set { BackingStore?.Set(nameof(ProxiedDomains), value); }
+            get { return BackingStore?.Get<List<ProxiedDomain>>("proxiedDomains"); }
+            set { BackingStore?.Set("proxiedDomains", value); }
         }
         /// <summary>
         /// Instantiates a new windowsInformationProtectionProxiedDomainCollection and sets the default values.

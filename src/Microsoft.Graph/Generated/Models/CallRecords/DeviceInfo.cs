@@ -8,115 +8,115 @@ namespace Microsoft.Graph.Models.CallRecords {
     public class DeviceInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the capture device driver used by the media endpoint.</summary>
         public string CaptureDeviceDriver {
-            get { return BackingStore?.Get<string>(nameof(CaptureDeviceDriver)); }
-            set { BackingStore?.Set(nameof(CaptureDeviceDriver), value); }
+            get { return BackingStore?.Get<string>("captureDeviceDriver"); }
+            set { BackingStore?.Set("captureDeviceDriver", value); }
         }
         /// <summary>Name of the capture device used by the media endpoint.</summary>
         public string CaptureDeviceName {
-            get { return BackingStore?.Get<string>(nameof(CaptureDeviceName)); }
-            set { BackingStore?.Set(nameof(CaptureDeviceName), value); }
+            get { return BackingStore?.Get<string>("captureDeviceName"); }
+            set { BackingStore?.Set("captureDeviceName", value); }
         }
         /// <summary>Fraction of the call that the media endpoint detected the capture device was not working properly.</summary>
         public float? CaptureNotFunctioningEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(CaptureNotFunctioningEventRatio)); }
-            set { BackingStore?.Set(nameof(CaptureNotFunctioningEventRatio), value); }
+            get { return BackingStore?.Get<float?>("captureNotFunctioningEventRatio"); }
+            set { BackingStore?.Set("captureNotFunctioningEventRatio", value); }
         }
         /// <summary>Fraction of the call that the media endpoint detected the CPU resources available were insufficient and caused poor quality of the audio sent and received.</summary>
         public float? CpuInsufficentEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(CpuInsufficentEventRatio)); }
-            set { BackingStore?.Set(nameof(CpuInsufficentEventRatio), value); }
+            get { return BackingStore?.Get<float?>("cpuInsufficentEventRatio"); }
+            set { BackingStore?.Set("cpuInsufficentEventRatio", value); }
         }
         /// <summary>Fraction of the call that the media endpoint detected clipping in the captured audio that caused poor quality of the audio being sent.</summary>
         public float? DeviceClippingEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(DeviceClippingEventRatio)); }
-            set { BackingStore?.Set(nameof(DeviceClippingEventRatio), value); }
+            get { return BackingStore?.Get<float?>("deviceClippingEventRatio"); }
+            set { BackingStore?.Set("deviceClippingEventRatio", value); }
         }
         /// <summary>Fraction of the call that the media endpoint detected glitches or gaps in the audio played or captured that caused poor quality of the audio being sent or received.</summary>
         public float? DeviceGlitchEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(DeviceGlitchEventRatio)); }
-            set { BackingStore?.Set(nameof(DeviceGlitchEventRatio), value); }
+            get { return BackingStore?.Get<float?>("deviceGlitchEventRatio"); }
+            set { BackingStore?.Set("deviceGlitchEventRatio", value); }
         }
         /// <summary>Number of times during the call that the media endpoint detected howling or screeching audio.</summary>
         public int? HowlingEventCount {
-            get { return BackingStore?.Get<int?>(nameof(HowlingEventCount)); }
-            set { BackingStore?.Set(nameof(HowlingEventCount), value); }
+            get { return BackingStore?.Get<int?>("howlingEventCount"); }
+            set { BackingStore?.Set("howlingEventCount", value); }
         }
         /// <summary>The root mean square (RMS) of the incoming signal of up to the first 30 seconds of the call.</summary>
         public float? InitialSignalLevelRootMeanSquare {
-            get { return BackingStore?.Get<float?>(nameof(InitialSignalLevelRootMeanSquare)); }
-            set { BackingStore?.Set(nameof(InitialSignalLevelRootMeanSquare), value); }
+            get { return BackingStore?.Get<float?>("initialSignalLevelRootMeanSquare"); }
+            set { BackingStore?.Set("initialSignalLevelRootMeanSquare", value); }
         }
         /// <summary>Fraction of the call that the media endpoint detected low speech level that caused poor quality of the audio being sent.</summary>
         public float? LowSpeechLevelEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(LowSpeechLevelEventRatio)); }
-            set { BackingStore?.Set(nameof(LowSpeechLevelEventRatio), value); }
+            get { return BackingStore?.Get<float?>("lowSpeechLevelEventRatio"); }
+            set { BackingStore?.Set("lowSpeechLevelEventRatio", value); }
         }
         /// <summary>Fraction of the call that the media endpoint detected low speech to noise level that caused poor quality of the audio being sent.</summary>
         public float? LowSpeechToNoiseEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(LowSpeechToNoiseEventRatio)); }
-            set { BackingStore?.Set(nameof(LowSpeechToNoiseEventRatio), value); }
+            get { return BackingStore?.Get<float?>("lowSpeechToNoiseEventRatio"); }
+            set { BackingStore?.Set("lowSpeechToNoiseEventRatio", value); }
         }
         /// <summary>Glitches per 5 minute interval for the media endpoint&apos;s microphone.</summary>
         public float? MicGlitchRate {
-            get { return BackingStore?.Get<float?>(nameof(MicGlitchRate)); }
-            set { BackingStore?.Set(nameof(MicGlitchRate), value); }
+            get { return BackingStore?.Get<float?>("micGlitchRate"); }
+            set { BackingStore?.Set("micGlitchRate", value); }
         }
         /// <summary>Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.</summary>
         public int? ReceivedNoiseLevel {
-            get { return BackingStore?.Get<int?>(nameof(ReceivedNoiseLevel)); }
-            set { BackingStore?.Set(nameof(ReceivedNoiseLevel), value); }
+            get { return BackingStore?.Get<int?>("receivedNoiseLevel"); }
+            set { BackingStore?.Set("receivedNoiseLevel", value); }
         }
         /// <summary>Average energy level of received audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.</summary>
         public int? ReceivedSignalLevel {
-            get { return BackingStore?.Get<int?>(nameof(ReceivedSignalLevel)); }
-            set { BackingStore?.Set(nameof(ReceivedSignalLevel), value); }
+            get { return BackingStore?.Get<int?>("receivedSignalLevel"); }
+            set { BackingStore?.Set("receivedSignalLevel", value); }
         }
         /// <summary>Name of the render device driver used by the media endpoint.</summary>
         public string RenderDeviceDriver {
-            get { return BackingStore?.Get<string>(nameof(RenderDeviceDriver)); }
-            set { BackingStore?.Set(nameof(RenderDeviceDriver), value); }
+            get { return BackingStore?.Get<string>("renderDeviceDriver"); }
+            set { BackingStore?.Set("renderDeviceDriver", value); }
         }
         /// <summary>Name of the render device used by the media endpoint.</summary>
         public string RenderDeviceName {
-            get { return BackingStore?.Get<string>(nameof(RenderDeviceName)); }
-            set { BackingStore?.Set(nameof(RenderDeviceName), value); }
+            get { return BackingStore?.Get<string>("renderDeviceName"); }
+            set { BackingStore?.Set("renderDeviceName", value); }
         }
         /// <summary>Fraction of the call that media endpoint detected device render is muted.</summary>
         public float? RenderMuteEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(RenderMuteEventRatio)); }
-            set { BackingStore?.Set(nameof(RenderMuteEventRatio), value); }
+            get { return BackingStore?.Get<float?>("renderMuteEventRatio"); }
+            set { BackingStore?.Set("renderMuteEventRatio", value); }
         }
         /// <summary>Fraction of the call that the media endpoint detected the render device was not working properly.</summary>
         public float? RenderNotFunctioningEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(RenderNotFunctioningEventRatio)); }
-            set { BackingStore?.Set(nameof(RenderNotFunctioningEventRatio), value); }
+            get { return BackingStore?.Get<float?>("renderNotFunctioningEventRatio"); }
+            set { BackingStore?.Set("renderNotFunctioningEventRatio", value); }
         }
         /// <summary>Fraction of the call that media endpoint detected device render volume is set to 0.</summary>
         public float? RenderZeroVolumeEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(RenderZeroVolumeEventRatio)); }
-            set { BackingStore?.Set(nameof(RenderZeroVolumeEventRatio), value); }
+            get { return BackingStore?.Get<float?>("renderZeroVolumeEventRatio"); }
+            set { BackingStore?.Set("renderZeroVolumeEventRatio", value); }
         }
         /// <summary>Average energy level of sent audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.</summary>
         public int? SentNoiseLevel {
-            get { return BackingStore?.Get<int?>(nameof(SentNoiseLevel)); }
-            set { BackingStore?.Set(nameof(SentNoiseLevel), value); }
+            get { return BackingStore?.Get<int?>("sentNoiseLevel"); }
+            set { BackingStore?.Set("sentNoiseLevel", value); }
         }
         /// <summary>Average energy level of sent audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.</summary>
         public int? SentSignalLevel {
-            get { return BackingStore?.Get<int?>(nameof(SentSignalLevel)); }
-            set { BackingStore?.Set(nameof(SentSignalLevel), value); }
+            get { return BackingStore?.Get<int?>("sentSignalLevel"); }
+            set { BackingStore?.Set("sentSignalLevel", value); }
         }
         /// <summary>Glitches per 5 minute internal for the media endpoint&apos;s loudspeaker.</summary>
         public float? SpeakerGlitchRate {
-            get { return BackingStore?.Get<float?>(nameof(SpeakerGlitchRate)); }
-            set { BackingStore?.Set(nameof(SpeakerGlitchRate), value); }
+            get { return BackingStore?.Get<float?>("speakerGlitchRate"); }
+            set { BackingStore?.Set("speakerGlitchRate", value); }
         }
         /// <summary>
         /// Instantiates a new deviceInfo and sets the default values.

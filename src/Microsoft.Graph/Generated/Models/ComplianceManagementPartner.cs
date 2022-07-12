@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Models {
     public class ComplianceManagementPartner : Entity, IParsable {
         /// <summary>User groups which enroll Android devices through partner.</summary>
         public List<ComplianceManagementPartnerAssignment> AndroidEnrollmentAssignments {
-            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>(nameof(AndroidEnrollmentAssignments)); }
-            set { BackingStore?.Set(nameof(AndroidEnrollmentAssignments), value); }
+            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>("androidEnrollmentAssignments"); }
+            set { BackingStore?.Set("androidEnrollmentAssignments", value); }
         }
         /// <summary>Partner onboarded for Android devices.</summary>
         public bool? AndroidOnboarded {
-            get { return BackingStore?.Get<bool?>(nameof(AndroidOnboarded)); }
-            set { BackingStore?.Set(nameof(AndroidOnboarded), value); }
+            get { return BackingStore?.Get<bool?>("androidOnboarded"); }
+            set { BackingStore?.Set("androidOnboarded", value); }
         }
         /// <summary>Partner display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>User groups which enroll ios devices through partner.</summary>
         public List<ComplianceManagementPartnerAssignment> IosEnrollmentAssignments {
-            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>(nameof(IosEnrollmentAssignments)); }
-            set { BackingStore?.Set(nameof(IosEnrollmentAssignments), value); }
+            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>("iosEnrollmentAssignments"); }
+            set { BackingStore?.Set("iosEnrollmentAssignments", value); }
         }
         /// <summary>Partner onboarded for ios devices.</summary>
         public bool? IosOnboarded {
-            get { return BackingStore?.Get<bool?>(nameof(IosOnboarded)); }
-            set { BackingStore?.Set(nameof(IosOnboarded), value); }
+            get { return BackingStore?.Get<bool?>("iosOnboarded"); }
+            set { BackingStore?.Set("iosOnboarded", value); }
         }
         /// <summary>Timestamp of last heartbeat after admin onboarded to the compliance management partner</summary>
         public DateTimeOffset? LastHeartbeatDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastHeartbeatDateTime)); }
-            set { BackingStore?.Set(nameof(LastHeartbeatDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastHeartbeatDateTime"); }
+            set { BackingStore?.Set("lastHeartbeatDateTime", value); }
         }
         /// <summary>User groups which enroll Mac devices through partner.</summary>
         public List<ComplianceManagementPartnerAssignment> MacOsEnrollmentAssignments {
-            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>(nameof(MacOsEnrollmentAssignments)); }
-            set { BackingStore?.Set(nameof(MacOsEnrollmentAssignments), value); }
+            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>("macOsEnrollmentAssignments"); }
+            set { BackingStore?.Set("macOsEnrollmentAssignments", value); }
         }
         /// <summary>Partner onboarded for Mac devices.</summary>
         public bool? MacOsOnboarded {
-            get { return BackingStore?.Get<bool?>(nameof(MacOsOnboarded)); }
-            set { BackingStore?.Set(nameof(MacOsOnboarded), value); }
+            get { return BackingStore?.Get<bool?>("macOsOnboarded"); }
+            set { BackingStore?.Set("macOsOnboarded", value); }
         }
-        /// <summary>Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.</summary>
+        /// <summary>Partner state of this tenant.</summary>
         public DeviceManagementPartnerTenantState? PartnerState {
-            get { return BackingStore?.Get<DeviceManagementPartnerTenantState?>(nameof(PartnerState)); }
-            set { BackingStore?.Set(nameof(PartnerState), value); }
+            get { return BackingStore?.Get<DeviceManagementPartnerTenantState?>("partnerState"); }
+            set { BackingStore?.Set("partnerState", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

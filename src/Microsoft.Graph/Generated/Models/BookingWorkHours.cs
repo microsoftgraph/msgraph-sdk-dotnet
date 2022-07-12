@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class BookingWorkHours : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The day of the week represented by this instance. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.</summary>
+        /// <summary>The day property</summary>
         public DayOfWeek? Day {
-            get { return BackingStore?.Get<DayOfWeek?>(nameof(Day)); }
-            set { BackingStore?.Set(nameof(Day), value); }
+            get { return BackingStore?.Get<DayOfWeek?>("day"); }
+            set { BackingStore?.Set("day", value); }
         }
         /// <summary>A list of start/end times during a day.</summary>
         public List<BookingWorkTimeSlot> TimeSlots {
-            get { return BackingStore?.Get<List<BookingWorkTimeSlot>>(nameof(TimeSlots)); }
-            set { BackingStore?.Set(nameof(TimeSlots), value); }
+            get { return BackingStore?.Get<List<BookingWorkTimeSlot>>("timeSlots"); }
+            set { BackingStore?.Set("timeSlots", value); }
         }
         /// <summary>
         /// Instantiates a new bookingWorkHours and sets the default values.

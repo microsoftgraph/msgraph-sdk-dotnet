@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class BookingCustomer : BookingCustomerBase, IParsable {
         /// <summary>Addresses associated with the customer, including home, business and other addresses.</summary>
         public List<PhysicalAddress> Addresses {
-            get { return BackingStore?.Get<List<PhysicalAddress>>(nameof(Addresses)); }
-            set { BackingStore?.Set(nameof(Addresses), value); }
+            get { return BackingStore?.Get<List<PhysicalAddress>>("addresses"); }
+            set { BackingStore?.Set("addresses", value); }
         }
         /// <summary>The name of the customer.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The SMTP address of the customer.</summary>
         public string EmailAddress {
-            get { return BackingStore?.Get<string>(nameof(EmailAddress)); }
-            set { BackingStore?.Set(nameof(EmailAddress), value); }
+            get { return BackingStore?.Get<string>("emailAddress"); }
+            set { BackingStore?.Set("emailAddress", value); }
         }
         /// <summary>Phone numbers associated with the customer, including home, business and mobile numbers.</summary>
         public List<Phone> Phones {
-            get { return BackingStore?.Get<List<Phone>>(nameof(Phones)); }
-            set { BackingStore?.Set(nameof(Phones), value); }
+            get { return BackingStore?.Get<List<Phone>>("phones"); }
+            set { BackingStore?.Set("phones", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

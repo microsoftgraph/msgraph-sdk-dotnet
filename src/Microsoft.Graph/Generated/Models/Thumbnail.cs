@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class Thumbnail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The content stream for the thumbnail.</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The height of the thumbnail, in pixels.</summary>
         public int? Height {
-            get { return BackingStore?.Get<int?>(nameof(Height)); }
-            set { BackingStore?.Set(nameof(Height), value); }
+            get { return BackingStore?.Get<int?>("height"); }
+            set { BackingStore?.Set("height", value); }
         }
         /// <summary>The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.</summary>
         public string SourceItemId {
-            get { return BackingStore?.Get<string>(nameof(SourceItemId)); }
-            set { BackingStore?.Set(nameof(SourceItemId), value); }
+            get { return BackingStore?.Get<string>("sourceItemId"); }
+            set { BackingStore?.Set("sourceItemId", value); }
         }
         /// <summary>The URL used to fetch the thumbnail content.</summary>
         public string Url {
-            get { return BackingStore?.Get<string>(nameof(Url)); }
-            set { BackingStore?.Set(nameof(Url), value); }
+            get { return BackingStore?.Get<string>("url"); }
+            set { BackingStore?.Set("url", value); }
         }
         /// <summary>The width of the thumbnail, in pixels.</summary>
         public int? Width {
-            get { return BackingStore?.Get<int?>(nameof(Width)); }
-            set { BackingStore?.Set(nameof(Width), value); }
+            get { return BackingStore?.Get<int?>("width"); }
+            set { BackingStore?.Set("width", value); }
         }
         /// <summary>
         /// Instantiates a new thumbnail and sets the default values.

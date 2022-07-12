@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class Fido2AuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable {
         /// <summary>A collection of users or groups who are enabled to use the authentication method.</summary>
         public List<AuthenticationMethodTarget> IncludeTargets {
-            get { return BackingStore?.Get<List<AuthenticationMethodTarget>>(nameof(IncludeTargets)); }
-            set { BackingStore?.Set(nameof(IncludeTargets), value); }
+            get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
+            set { BackingStore?.Set("includeTargets", value); }
         }
         /// <summary>Determines whether attestation must be enforced for FIDO2 security key registration.</summary>
         public bool? IsAttestationEnforced {
-            get { return BackingStore?.Get<bool?>(nameof(IsAttestationEnforced)); }
-            set { BackingStore?.Set(nameof(IsAttestationEnforced), value); }
+            get { return BackingStore?.Get<bool?>("isAttestationEnforced"); }
+            set { BackingStore?.Set("isAttestationEnforced", value); }
         }
         /// <summary>Determines if users can register new FIDO2 security keys.</summary>
         public bool? IsSelfServiceRegistrationAllowed {
-            get { return BackingStore?.Get<bool?>(nameof(IsSelfServiceRegistrationAllowed)); }
-            set { BackingStore?.Set(nameof(IsSelfServiceRegistrationAllowed), value); }
+            get { return BackingStore?.Get<bool?>("isSelfServiceRegistrationAllowed"); }
+            set { BackingStore?.Set("isSelfServiceRegistrationAllowed", value); }
         }
         /// <summary>Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.</summary>
         public Fido2KeyRestrictions KeyRestrictions {
-            get { return BackingStore?.Get<Fido2KeyRestrictions>(nameof(KeyRestrictions)); }
-            set { BackingStore?.Set(nameof(KeyRestrictions), value); }
+            get { return BackingStore?.Get<Fido2KeyRestrictions>("keyRestrictions"); }
+            set { BackingStore?.Set("keyRestrictions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

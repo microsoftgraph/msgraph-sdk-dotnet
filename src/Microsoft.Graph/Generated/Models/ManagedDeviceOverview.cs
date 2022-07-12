@@ -4,32 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Summary data for managed devices</summary>
     public class ManagedDeviceOverview : Entity, IParsable {
         /// <summary>Distribution of Exchange Access State in Intune</summary>
         public Microsoft.Graph.Models.DeviceExchangeAccessStateSummary DeviceExchangeAccessStateSummary {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceExchangeAccessStateSummary>(nameof(DeviceExchangeAccessStateSummary)); }
-            set { BackingStore?.Set(nameof(DeviceExchangeAccessStateSummary), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceExchangeAccessStateSummary>("deviceExchangeAccessStateSummary"); }
+            set { BackingStore?.Set("deviceExchangeAccessStateSummary", value); }
         }
         /// <summary>Device operating system summary.</summary>
         public Microsoft.Graph.Models.DeviceOperatingSystemSummary DeviceOperatingSystemSummary {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceOperatingSystemSummary>(nameof(DeviceOperatingSystemSummary)); }
-            set { BackingStore?.Set(nameof(DeviceOperatingSystemSummary), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceOperatingSystemSummary>("deviceOperatingSystemSummary"); }
+            set { BackingStore?.Set("deviceOperatingSystemSummary", value); }
         }
         /// <summary>The number of devices enrolled in both MDM and EAS</summary>
         public int? DualEnrolledDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(DualEnrolledDeviceCount)); }
-            set { BackingStore?.Set(nameof(DualEnrolledDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("dualEnrolledDeviceCount"); }
+            set { BackingStore?.Set("dualEnrolledDeviceCount", value); }
         }
         /// <summary>Total enrolled device count. Does not include PC devices managed via Intune PC Agent</summary>
         public int? EnrolledDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(EnrolledDeviceCount)); }
-            set { BackingStore?.Set(nameof(EnrolledDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("enrolledDeviceCount"); }
+            set { BackingStore?.Set("enrolledDeviceCount", value); }
         }
         /// <summary>The number of devices enrolled in MDM</summary>
         public int? MdmEnrolledCount {
-            get { return BackingStore?.Get<int?>(nameof(MdmEnrolledCount)); }
-            set { BackingStore?.Set(nameof(MdmEnrolledCount), value); }
+            get { return BackingStore?.Get<int?>("mdmEnrolledCount"); }
+            set { BackingStore?.Set("mdmEnrolledCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

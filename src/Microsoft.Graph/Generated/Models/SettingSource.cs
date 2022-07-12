@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class SettingSource : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Not yet documented</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Not yet documented</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
-        /// <summary>Not yet documented. Possible values are: deviceConfiguration, deviceIntent.</summary>
+        /// <summary>The sourceType property</summary>
         public SettingSourceType? SourceType {
-            get { return BackingStore?.Get<SettingSourceType?>(nameof(SourceType)); }
-            set { BackingStore?.Set(nameof(SourceType), value); }
+            get { return BackingStore?.Get<SettingSourceType?>("sourceType"); }
+            set { BackingStore?.Set("sourceType", value); }
         }
         /// <summary>
         /// Instantiates a new settingSource and sets the default values.

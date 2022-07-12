@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class BucketAggregationDefinition : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.</summary>
         public bool? IsDescending {
-            get { return BackingStore?.Get<bool?>(nameof(IsDescending)); }
-            set { BackingStore?.Set(nameof(IsDescending), value); }
+            get { return BackingStore?.Get<bool?>("isDescending"); }
+            set { BackingStore?.Set("isDescending", value); }
         }
         /// <summary>The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.</summary>
         public int? MinimumCount {
-            get { return BackingStore?.Get<int?>(nameof(MinimumCount)); }
-            set { BackingStore?.Set(nameof(MinimumCount), value); }
+            get { return BackingStore?.Get<int?>("minimumCount"); }
+            set { BackingStore?.Set("minimumCount", value); }
         }
         /// <summary>A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.</summary>
         public string PrefixFilter {
-            get { return BackingStore?.Get<string>(nameof(PrefixFilter)); }
-            set { BackingStore?.Set(nameof(PrefixFilter), value); }
+            get { return BackingStore?.Get<string>("prefixFilter"); }
+            set { BackingStore?.Set("prefixFilter", value); }
         }
         /// <summary>Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.</summary>
         public List<BucketAggregationRange> Ranges {
-            get { return BackingStore?.Get<List<BucketAggregationRange>>(nameof(Ranges)); }
-            set { BackingStore?.Set(nameof(Ranges), value); }
+            get { return BackingStore?.Get<List<BucketAggregationRange>>("ranges"); }
+            set { BackingStore?.Set("ranges", value); }
         }
-        /// <summary>The possible values are count to sort by the number of matches in the aggregation, keyAsStringto sort alphabeticaly based on the key in the aggregation, keyAsNumber for numerical sorting based on the key in the aggregation. Required.</summary>
+        /// <summary>The sortBy property</summary>
         public BucketAggregationSortProperty? SortBy {
-            get { return BackingStore?.Get<BucketAggregationSortProperty?>(nameof(SortBy)); }
-            set { BackingStore?.Set(nameof(SortBy), value); }
+            get { return BackingStore?.Get<BucketAggregationSortProperty?>("sortBy"); }
+            set { BackingStore?.Set("sortBy", value); }
         }
         /// <summary>
         /// Instantiates a new bucketAggregationDefinition and sets the default values.

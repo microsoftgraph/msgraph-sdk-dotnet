@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class WindowsMobileMSI : MobileLobApp, IParsable {
         /// <summary>The command line.</summary>
         public string CommandLine {
-            get { return BackingStore?.Get<string>(nameof(CommandLine)); }
-            set { BackingStore?.Set(nameof(CommandLine), value); }
+            get { return BackingStore?.Get<string>("commandLine"); }
+            set { BackingStore?.Set("commandLine", value); }
         }
         /// <summary>A boolean to control whether the app&apos;s version will be used to detect the app after it is installed on a device. Set this to true for Windows Mobile MSI Line of Business (LoB) apps that use a self update feature.</summary>
         public bool? IgnoreVersionDetection {
-            get { return BackingStore?.Get<bool?>(nameof(IgnoreVersionDetection)); }
-            set { BackingStore?.Set(nameof(IgnoreVersionDetection), value); }
+            get { return BackingStore?.Get<bool?>("ignoreVersionDetection"); }
+            set { BackingStore?.Set("ignoreVersionDetection", value); }
         }
         /// <summary>The product code.</summary>
         public string ProductCode {
-            get { return BackingStore?.Get<string>(nameof(ProductCode)); }
-            set { BackingStore?.Set(nameof(ProductCode), value); }
+            get { return BackingStore?.Get<string>("productCode"); }
+            set { BackingStore?.Set("productCode", value); }
         }
         /// <summary>The product version of Windows Mobile MSI Line of Business (LoB) app.</summary>
         public string ProductVersion {
-            get { return BackingStore?.Get<string>(nameof(ProductVersion)); }
-            set { BackingStore?.Set(nameof(ProductVersion), value); }
+            get { return BackingStore?.Get<string>("productVersion"); }
+            set { BackingStore?.Set("productVersion", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

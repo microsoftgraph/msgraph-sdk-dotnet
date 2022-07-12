@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Models {
     public class SearchResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A callback URL that can be used to record telemetry information. The application should issue a GET on this URL if the user interacts with this item to improve the quality of results.</summary>
         public string OnClickTelemetryUrl {
-            get { return BackingStore?.Get<string>(nameof(OnClickTelemetryUrl)); }
-            set { BackingStore?.Set(nameof(OnClickTelemetryUrl), value); }
+            get { return BackingStore?.Get<string>("onClickTelemetryUrl"); }
+            set { BackingStore?.Set("onClickTelemetryUrl", value); }
         }
         /// <summary>
         /// Instantiates a new searchResult and sets the default values.

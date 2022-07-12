@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class WebApp : MobileApp, IParsable {
         /// <summary>The web app URL. This property cannot be PATCHed.</summary>
         public string AppUrl {
-            get { return BackingStore?.Get<string>(nameof(AppUrl)); }
-            set { BackingStore?.Set(nameof(AppUrl), value); }
+            get { return BackingStore?.Get<string>("appUrl"); }
+            set { BackingStore?.Set("appUrl", value); }
         }
         /// <summary>Whether or not to use managed browser. This property is only applicable for Android and IOS.</summary>
         public bool? UseManagedBrowser {
-            get { return BackingStore?.Get<bool?>(nameof(UseManagedBrowser)); }
-            set { BackingStore?.Set(nameof(UseManagedBrowser), value); }
+            get { return BackingStore?.Get<bool?>("useManagedBrowser"); }
+            set { BackingStore?.Set("useManagedBrowser", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class ProvisioningStatusInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The errorInformation property</summary>
         public ProvisioningErrorInfo ErrorInformation {
-            get { return BackingStore?.Get<ProvisioningErrorInfo>(nameof(ErrorInformation)); }
-            set { BackingStore?.Set(nameof(ErrorInformation), value); }
+            get { return BackingStore?.Get<ProvisioningErrorInfo>("errorInformation"); }
+            set { BackingStore?.Set("errorInformation", value); }
         }
         /// <summary>Possible values are: success, warning, failure, skipped, unknownFutureValue.</summary>
         public ProvisioningResult? Status {
-            get { return BackingStore?.Get<ProvisioningResult?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ProvisioningResult?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Instantiates a new provisioningStatusInfo and sets the default values.

@@ -1,85 +1,91 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>An abstract class containing the base properties for Intune mobile apps.</summary>
     public class MobileApp : Entity, IParsable {
         /// <summary>The list of group assignments for this mobile app.</summary>
         public List<MobileAppAssignment> Assignments {
-            get { return BackingStore?.Get<List<MobileAppAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<MobileAppAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>The list of categories for this app.</summary>
         public List<MobileAppCategory> Categories {
-            get { return BackingStore?.Get<List<MobileAppCategory>>(nameof(Categories)); }
-            set { BackingStore?.Set(nameof(Categories), value); }
+            get { return BackingStore?.Get<List<MobileAppCategory>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
         }
         /// <summary>The date and time the app was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the app.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The developer of the app.</summary>
         public string Developer {
-            get { return BackingStore?.Get<string>(nameof(Developer)); }
-            set { BackingStore?.Set(nameof(Developer), value); }
+            get { return BackingStore?.Get<string>("developer"); }
+            set { BackingStore?.Set("developer", value); }
         }
         /// <summary>The admin provided or imported title of the app.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The more information Url.</summary>
         public string InformationUrl {
-            get { return BackingStore?.Get<string>(nameof(InformationUrl)); }
-            set { BackingStore?.Set(nameof(InformationUrl), value); }
+            get { return BackingStore?.Get<string>("informationUrl"); }
+            set { BackingStore?.Set("informationUrl", value); }
         }
         /// <summary>The value indicating whether the app is marked as featured by the admin.</summary>
         public bool? IsFeatured {
-            get { return BackingStore?.Get<bool?>(nameof(IsFeatured)); }
-            set { BackingStore?.Set(nameof(IsFeatured), value); }
+            get { return BackingStore?.Get<bool?>("isFeatured"); }
+            set { BackingStore?.Set("isFeatured", value); }
         }
         /// <summary>The large icon, to be displayed in the app details and used for upload of the icon.</summary>
         public MimeContent LargeIcon {
-            get { return BackingStore?.Get<MimeContent>(nameof(LargeIcon)); }
-            set { BackingStore?.Set(nameof(LargeIcon), value); }
+            get { return BackingStore?.Get<MimeContent>("largeIcon"); }
+            set { BackingStore?.Set("largeIcon", value); }
         }
         /// <summary>The date and time the app was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Notes for the app.</summary>
         public string Notes {
-            get { return BackingStore?.Get<string>(nameof(Notes)); }
-            set { BackingStore?.Set(nameof(Notes), value); }
+            get { return BackingStore?.Get<string>("notes"); }
+            set { BackingStore?.Set("notes", value); }
         }
         /// <summary>The owner of the app.</summary>
         public string Owner {
-            get { return BackingStore?.Get<string>(nameof(Owner)); }
-            set { BackingStore?.Set(nameof(Owner), value); }
+            get { return BackingStore?.Get<string>("owner"); }
+            set { BackingStore?.Set("owner", value); }
         }
         /// <summary>The privacy statement Url.</summary>
         public string PrivacyInformationUrl {
-            get { return BackingStore?.Get<string>(nameof(PrivacyInformationUrl)); }
-            set { BackingStore?.Set(nameof(PrivacyInformationUrl), value); }
+            get { return BackingStore?.Get<string>("privacyInformationUrl"); }
+            set { BackingStore?.Set("privacyInformationUrl", value); }
         }
         /// <summary>The publisher of the app.</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
-        /// <summary>The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.</summary>
+        /// <summary>Indicates the publishing state of an app.</summary>
         public MobileAppPublishingState? PublishingState {
-            get { return BackingStore?.Get<MobileAppPublishingState?>(nameof(PublishingState)); }
-            set { BackingStore?.Set(nameof(PublishingState), value); }
+            get { return BackingStore?.Get<MobileAppPublishingState?>("publishingState"); }
+            set { BackingStore?.Set("publishingState", value); }
+        }
+        /// <summary>
+        /// Instantiates a new MobileApp and sets the default values.
+        /// </summary>
+        public MobileApp() : base() {
+            Type = "#microsoft.graph.mobileApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

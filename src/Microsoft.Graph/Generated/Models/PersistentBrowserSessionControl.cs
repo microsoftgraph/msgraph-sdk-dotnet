@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class PersistentBrowserSessionControl : ConditionalAccessSessionControl, IParsable {
         /// <summary>Possible values are: always, never.</summary>
         public PersistentBrowserSessionMode? Mode {
-            get { return BackingStore?.Get<PersistentBrowserSessionMode?>(nameof(Mode)); }
-            set { BackingStore?.Set(nameof(Mode), value); }
+            get { return BackingStore?.Get<PersistentBrowserSessionMode?>("mode"); }
+            set { BackingStore?.Set("mode", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

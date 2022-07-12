@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Models {
     public class DomainDnsSrvRecord : DomainDnsRecord, IParsable {
         /// <summary>Value to use when configuring the Target property of the SRV record at the DNS host.</summary>
         public string NameTarget {
-            get { return BackingStore?.Get<string>(nameof(NameTarget)); }
-            set { BackingStore?.Set(nameof(NameTarget), value); }
+            get { return BackingStore?.Get<string>("nameTarget"); }
+            set { BackingStore?.Set("nameTarget", value); }
         }
         /// <summary>Value to use when configuring the port property of the SRV record at the DNS host.</summary>
         public int? Port {
-            get { return BackingStore?.Get<int?>(nameof(Port)); }
-            set { BackingStore?.Set(nameof(Port), value); }
+            get { return BackingStore?.Get<int?>("port"); }
+            set { BackingStore?.Set("port", value); }
         }
         /// <summary>Value to use when configuring the priority property of the SRV record at the DNS host.</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Value to use when configuring the protocol property of the SRV record at the DNS host.</summary>
         public string Protocol {
-            get { return BackingStore?.Get<string>(nameof(Protocol)); }
-            set { BackingStore?.Set(nameof(Protocol), value); }
+            get { return BackingStore?.Get<string>("protocol"); }
+            set { BackingStore?.Set("protocol", value); }
         }
         /// <summary>Value to use when configuring the service property of the SRV record at the DNS host.</summary>
         public string Service {
-            get { return BackingStore?.Get<string>(nameof(Service)); }
-            set { BackingStore?.Set(nameof(Service), value); }
+            get { return BackingStore?.Get<string>("service"); }
+            set { BackingStore?.Set("service", value); }
         }
         /// <summary>Value to use when configuring the weight property of the SRV record at the DNS host.</summary>
         public int? Weight {
-            get { return BackingStore?.Get<int?>(nameof(Weight)); }
-            set { BackingStore?.Set(nameof(Weight), value); }
+            get { return BackingStore?.Get<int?>("weight"); }
+            set { BackingStore?.Set("weight", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

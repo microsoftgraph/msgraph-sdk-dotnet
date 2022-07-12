@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum AppLockerApplicationControlType {
         /// <summary>Device default value, no Application Control type selected.</summary>
         NotConfigured,

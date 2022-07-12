@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class LicenseUnitsDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of units that are enabled for the active subscription of the service SKU.</summary>
         public int? Enabled {
-            get { return BackingStore?.Get<int?>(nameof(Enabled)); }
-            set { BackingStore?.Set(nameof(Enabled), value); }
+            get { return BackingStore?.Get<int?>("enabled"); }
+            set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.</summary>
         public int? Suspended {
-            get { return BackingStore?.Get<int?>(nameof(Suspended)); }
-            set { BackingStore?.Set(nameof(Suspended), value); }
+            get { return BackingStore?.Get<int?>("suspended"); }
+            set { BackingStore?.Set("suspended", value); }
         }
         /// <summary>The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).</summary>
         public int? Warning {
-            get { return BackingStore?.Get<int?>(nameof(Warning)); }
-            set { BackingStore?.Set(nameof(Warning), value); }
+            get { return BackingStore?.Get<int?>("warning"); }
+            set { BackingStore?.Set("warning", value); }
         }
         /// <summary>
         /// Instantiates a new licenseUnitsDetail and sets the default values.

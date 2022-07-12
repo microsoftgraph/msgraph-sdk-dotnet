@@ -8,98 +8,98 @@ namespace Microsoft.Graph.Models {
     public class BookingService : Entity, IParsable {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>
         public string AdditionalInformation {
-            get { return BackingStore?.Get<string>(nameof(AdditionalInformation)); }
-            set { BackingStore?.Set(nameof(AdditionalInformation), value); }
+            get { return BackingStore?.Get<string>("additionalInformation"); }
+            set { BackingStore?.Set("additionalInformation", value); }
         }
         /// <summary>Contains the set of custom questions associated with a particular service.</summary>
         public List<BookingQuestionAssignment> CustomQuestions {
-            get { return BackingStore?.Get<List<BookingQuestionAssignment>>(nameof(CustomQuestions)); }
-            set { BackingStore?.Set(nameof(CustomQuestions), value); }
+            get { return BackingStore?.Get<List<BookingQuestionAssignment>>("customQuestions"); }
+            set { BackingStore?.Set("customQuestions", value); }
         }
         /// <summary>The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.</summary>
         public TimeSpan? DefaultDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(DefaultDuration)); }
-            set { BackingStore?.Set(nameof(DefaultDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("defaultDuration"); }
+            set { BackingStore?.Set("defaultDuration", value); }
         }
         /// <summary>The default physical location for the service.</summary>
         public Location DefaultLocation {
-            get { return BackingStore?.Get<Location>(nameof(DefaultLocation)); }
-            set { BackingStore?.Set(nameof(DefaultLocation), value); }
+            get { return BackingStore?.Get<Location>("defaultLocation"); }
+            set { BackingStore?.Set("defaultLocation", value); }
         }
         /// <summary>The default monetary price for the service.</summary>
         public double? DefaultPrice {
-            get { return BackingStore?.Get<double?>(nameof(DefaultPrice)); }
-            set { BackingStore?.Set(nameof(DefaultPrice), value); }
+            get { return BackingStore?.Get<double?>("defaultPrice"); }
+            set { BackingStore?.Set("defaultPrice", value); }
         }
-        /// <summary>The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.</summary>
+        /// <summary>Represents the type of pricing of a booking service.</summary>
         public BookingPriceType? DefaultPriceType {
-            get { return BackingStore?.Get<BookingPriceType?>(nameof(DefaultPriceType)); }
-            set { BackingStore?.Set(nameof(DefaultPriceType), value); }
+            get { return BackingStore?.Get<BookingPriceType?>("defaultPriceType"); }
+            set { BackingStore?.Set("defaultPriceType", value); }
         }
         /// <summary>The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.</summary>
         public List<BookingReminder> DefaultReminders {
-            get { return BackingStore?.Get<List<BookingReminder>>(nameof(DefaultReminders)); }
-            set { BackingStore?.Set(nameof(DefaultReminders), value); }
+            get { return BackingStore?.Get<List<BookingReminder>>("defaultReminders"); }
+            set { BackingStore?.Set("defaultReminders", value); }
         }
         /// <summary>A text description for the service.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>A service name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>True means this service is not available to customers for booking.</summary>
         public bool? IsHiddenFromCustomers {
-            get { return BackingStore?.Get<bool?>(nameof(IsHiddenFromCustomers)); }
-            set { BackingStore?.Set(nameof(IsHiddenFromCustomers), value); }
+            get { return BackingStore?.Get<bool?>("isHiddenFromCustomers"); }
+            set { BackingStore?.Set("isHiddenFromCustomers", value); }
         }
         /// <summary>True indicates that the appointments for the service will be held online. Default value is false.</summary>
         public bool? IsLocationOnline {
-            get { return BackingStore?.Get<bool?>(nameof(IsLocationOnline)); }
-            set { BackingStore?.Set(nameof(IsLocationOnline), value); }
+            get { return BackingStore?.Get<bool?>("isLocationOnline"); }
+            set { BackingStore?.Set("isLocationOnline", value); }
         }
         /// <summary>The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.</summary>
         public int? MaximumAttendeesCount {
-            get { return BackingStore?.Get<int?>(nameof(MaximumAttendeesCount)); }
-            set { BackingStore?.Set(nameof(MaximumAttendeesCount), value); }
+            get { return BackingStore?.Get<int?>("maximumAttendeesCount"); }
+            set { BackingStore?.Set("maximumAttendeesCount", value); }
         }
         /// <summary>Additional information about this service.</summary>
         public string Notes {
-            get { return BackingStore?.Get<string>(nameof(Notes)); }
-            set { BackingStore?.Set(nameof(Notes), value); }
+            get { return BackingStore?.Get<string>("notes"); }
+            set { BackingStore?.Set("notes", value); }
         }
         /// <summary>The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.</summary>
         public TimeSpan? PostBuffer {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(PostBuffer)); }
-            set { BackingStore?.Set(nameof(PostBuffer), value); }
+            get { return BackingStore?.Get<TimeSpan?>("postBuffer"); }
+            set { BackingStore?.Set("postBuffer", value); }
         }
         /// <summary>The time to buffer before an appointment for this service can start.</summary>
         public TimeSpan? PreBuffer {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(PreBuffer)); }
-            set { BackingStore?.Set(nameof(PreBuffer), value); }
+            get { return BackingStore?.Get<TimeSpan?>("preBuffer"); }
+            set { BackingStore?.Set("preBuffer", value); }
         }
         /// <summary>The set of policies that determine how appointments for this type of service should be created and managed.</summary>
         public BookingSchedulingPolicy SchedulingPolicy {
-            get { return BackingStore?.Get<BookingSchedulingPolicy>(nameof(SchedulingPolicy)); }
-            set { BackingStore?.Set(nameof(SchedulingPolicy), value); }
+            get { return BackingStore?.Get<BookingSchedulingPolicy>("schedulingPolicy"); }
+            set { BackingStore?.Set("schedulingPolicy", value); }
         }
         /// <summary>True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.</summary>
         public bool? SmsNotificationsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SmsNotificationsEnabled)); }
-            set { BackingStore?.Set(nameof(SmsNotificationsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("smsNotificationsEnabled"); }
+            set { BackingStore?.Set("smsNotificationsEnabled", value); }
         }
         /// <summary>Represents those staff members who provide this service.</summary>
         public List<string> StaffMemberIds {
-            get { return BackingStore?.Get<List<string>>(nameof(StaffMemberIds)); }
-            set { BackingStore?.Set(nameof(StaffMemberIds), value); }
+            get { return BackingStore?.Get<List<string>>("staffMemberIds"); }
+            set { BackingStore?.Set("staffMemberIds", value); }
         }
         /// <summary>The URL a customer uses to access the service.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

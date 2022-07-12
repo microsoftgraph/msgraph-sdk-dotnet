@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class WorkbookChartAxisFormat : Entity, IParsable {
         /// <summary>Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.</summary>
         public WorkbookChartFont Font {
-            get { return BackingStore?.Get<WorkbookChartFont>(nameof(Font)); }
-            set { BackingStore?.Set(nameof(Font), value); }
+            get { return BackingStore?.Get<WorkbookChartFont>("font"); }
+            set { BackingStore?.Set("font", value); }
         }
         /// <summary>Represents chart line formatting. Read-only.</summary>
         public WorkbookChartLineFormat Line {
-            get { return BackingStore?.Get<WorkbookChartLineFormat>(nameof(Line)); }
-            set { BackingStore?.Set(nameof(Line), value); }
+            get { return BackingStore?.Get<WorkbookChartLineFormat>("line"); }
+            set { BackingStore?.Set("line", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

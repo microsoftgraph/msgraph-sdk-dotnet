@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class PlannerGroup : Entity, IParsable {
         /// <summary>Read-only. Nullable. Returns the plannerPlans owned by the group.</summary>
         public List<PlannerPlan> Plans {
-            get { return BackingStore?.Get<List<PlannerPlan>>(nameof(Plans)); }
-            set { BackingStore?.Set(nameof(Plans), value); }
+            get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
+            set { BackingStore?.Set("plans", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

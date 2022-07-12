@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Communications.Calls.Item.Transfer {
     public class TransferPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The transferee property</summary>
         public ParticipantInfo Transferee {
-            get { return BackingStore?.Get<ParticipantInfo>(nameof(Transferee)); }
-            set { BackingStore?.Set(nameof(Transferee), value); }
+            get { return BackingStore?.Get<ParticipantInfo>("transferee"); }
+            set { BackingStore?.Set("transferee", value); }
         }
         /// <summary>The transferTarget property</summary>
         public InvitationParticipantInfo TransferTarget {
-            get { return BackingStore?.Get<InvitationParticipantInfo>(nameof(TransferTarget)); }
-            set { BackingStore?.Set(nameof(TransferTarget), value); }
+            get { return BackingStore?.Get<InvitationParticipantInfo>("transferTarget"); }
+            set { BackingStore?.Set("transferTarget", value); }
         }
         /// <summary>
         /// Instantiates a new transferPostRequestBody and sets the default values.

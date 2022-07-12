@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models.ODataErrors {
     public class MainError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The code property</summary>
         public string Code {
-            get { return BackingStore?.Get<string>(nameof(Code)); }
-            set { BackingStore?.Set(nameof(Code), value); }
+            get { return BackingStore?.Get<string>("code"); }
+            set { BackingStore?.Set("code", value); }
         }
         /// <summary>The details property</summary>
         public List<ErrorDetails> Details {
-            get { return BackingStore?.Get<List<ErrorDetails>>(nameof(Details)); }
-            set { BackingStore?.Set(nameof(Details), value); }
+            get { return BackingStore?.Get<List<ErrorDetails>>("details"); }
+            set { BackingStore?.Set("details", value); }
         }
         /// <summary>The innererror property</summary>
         public Microsoft.Graph.Models.ODataErrors.InnerError Innererror {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ODataErrors.InnerError>(nameof(Innererror)); }
-            set { BackingStore?.Set(nameof(Innererror), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ODataErrors.InnerError>("innererror"); }
+            set { BackingStore?.Set("innererror", value); }
         }
         /// <summary>The message property</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>The target property</summary>
         public string Target {
-            get { return BackingStore?.Get<string>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<string>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Instantiates a new MainError and sets the default values.

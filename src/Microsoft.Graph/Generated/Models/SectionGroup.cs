@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class SectionGroup : OnenoteEntityHierarchyModel, IParsable {
         /// <summary>The notebook that contains the section group. Read-only.</summary>
         public Notebook ParentNotebook {
-            get { return BackingStore?.Get<Notebook>(nameof(ParentNotebook)); }
-            set { BackingStore?.Set(nameof(ParentNotebook), value); }
+            get { return BackingStore?.Get<Notebook>("parentNotebook"); }
+            set { BackingStore?.Set("parentNotebook", value); }
         }
         /// <summary>The section group that contains the section group. Read-only.</summary>
         public SectionGroup ParentSectionGroup {
-            get { return BackingStore?.Get<SectionGroup>(nameof(ParentSectionGroup)); }
-            set { BackingStore?.Set(nameof(ParentSectionGroup), value); }
+            get { return BackingStore?.Get<SectionGroup>("parentSectionGroup"); }
+            set { BackingStore?.Set("parentSectionGroup", value); }
         }
         /// <summary>The section groups in the section. Read-only. Nullable.</summary>
         public List<SectionGroup> SectionGroups {
-            get { return BackingStore?.Get<List<SectionGroup>>(nameof(SectionGroups)); }
-            set { BackingStore?.Set(nameof(SectionGroups), value); }
+            get { return BackingStore?.Get<List<SectionGroup>>("sectionGroups"); }
+            set { BackingStore?.Set("sectionGroups", value); }
         }
         /// <summary>The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.</summary>
         public string SectionGroupsUrl {
-            get { return BackingStore?.Get<string>(nameof(SectionGroupsUrl)); }
-            set { BackingStore?.Set(nameof(SectionGroupsUrl), value); }
+            get { return BackingStore?.Get<string>("sectionGroupsUrl"); }
+            set { BackingStore?.Set("sectionGroupsUrl", value); }
         }
         /// <summary>The sections in the section group. Read-only. Nullable.</summary>
         public List<OnenoteSection> Sections {
-            get { return BackingStore?.Get<List<OnenoteSection>>(nameof(Sections)); }
-            set { BackingStore?.Set(nameof(Sections), value); }
+            get { return BackingStore?.Get<List<OnenoteSection>>("sections"); }
+            set { BackingStore?.Set("sections", value); }
         }
         /// <summary>The URL for the sections navigation property, which returns all the sections in the section group. Read-only.</summary>
         public string SectionsUrl {
-            get { return BackingStore?.Get<string>(nameof(SectionsUrl)); }
-            set { BackingStore?.Set(nameof(SectionsUrl), value); }
+            get { return BackingStore?.Get<string>("sectionsUrl"); }
+            set { BackingStore?.Set("sectionsUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

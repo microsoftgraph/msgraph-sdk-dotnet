@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class UnifiedRoleManagementPolicyEnablementRule : UnifiedRoleManagementPolicyRule, IParsable {
         /// <summary>The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.</summary>
         public List<string> EnabledRules {
-            get { return BackingStore?.Get<List<string>>(nameof(EnabledRules)); }
-            set { BackingStore?.Set(nameof(EnabledRules), value); }
+            get { return BackingStore?.Get<List<string>>("enabledRules"); }
+            set { BackingStore?.Set("enabledRules", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

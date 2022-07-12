@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class OnlineMeetingInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ID of the conference.</summary>
         public string ConferenceId {
-            get { return BackingStore?.Get<string>(nameof(ConferenceId)); }
-            set { BackingStore?.Set(nameof(ConferenceId), value); }
+            get { return BackingStore?.Get<string>("conferenceId"); }
+            set { BackingStore?.Set("conferenceId", value); }
         }
         /// <summary>The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.</summary>
         public string JoinUrl {
-            get { return BackingStore?.Get<string>(nameof(JoinUrl)); }
-            set { BackingStore?.Set(nameof(JoinUrl), value); }
+            get { return BackingStore?.Get<string>("joinUrl"); }
+            set { BackingStore?.Set("joinUrl", value); }
         }
         /// <summary>All of the phone numbers associated with this conference.</summary>
         public List<Phone> Phones {
-            get { return BackingStore?.Get<List<Phone>>(nameof(Phones)); }
-            set { BackingStore?.Set(nameof(Phones), value); }
+            get { return BackingStore?.Get<List<Phone>>("phones"); }
+            set { BackingStore?.Set("phones", value); }
         }
         /// <summary>The pre-formatted quickdial for this call.</summary>
         public string QuickDial {
-            get { return BackingStore?.Get<string>(nameof(QuickDial)); }
-            set { BackingStore?.Set(nameof(QuickDial), value); }
+            get { return BackingStore?.Get<string>("quickDial"); }
+            set { BackingStore?.Set("quickDial", value); }
         }
         /// <summary>The toll free numbers that can be used to join the conference.</summary>
         public List<string> TollFreeNumbers {
-            get { return BackingStore?.Get<List<string>>(nameof(TollFreeNumbers)); }
-            set { BackingStore?.Set(nameof(TollFreeNumbers), value); }
+            get { return BackingStore?.Get<List<string>>("tollFreeNumbers"); }
+            set { BackingStore?.Set("tollFreeNumbers", value); }
         }
         /// <summary>The toll number that can be used to join the conference.</summary>
         public string TollNumber {
-            get { return BackingStore?.Get<string>(nameof(TollNumber)); }
-            set { BackingStore?.Set(nameof(TollNumber), value); }
+            get { return BackingStore?.Get<string>("tollNumber"); }
+            set { BackingStore?.Set("tollNumber", value); }
         }
         /// <summary>
         /// Instantiates a new onlineMeetingInfo and sets the default values.

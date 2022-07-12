@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class SharingInvitation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The email address provided for the recipient of the sharing invitation. Read-only.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>Provides information about who sent the invitation that created this permission, if that information is available. Read-only.</summary>
         public IdentitySet InvitedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(InvitedBy)); }
-            set { BackingStore?.Set(nameof(InvitedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("invitedBy"); }
+            set { BackingStore?.Set("invitedBy", value); }
         }
         /// <summary>The redeemedBy property</summary>
         public string RedeemedBy {
-            get { return BackingStore?.Get<string>(nameof(RedeemedBy)); }
-            set { BackingStore?.Set(nameof(RedeemedBy), value); }
+            get { return BackingStore?.Get<string>("redeemedBy"); }
+            set { BackingStore?.Set("redeemedBy", value); }
         }
         /// <summary>If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.</summary>
         public bool? SignInRequired {
-            get { return BackingStore?.Get<bool?>(nameof(SignInRequired)); }
-            set { BackingStore?.Set(nameof(SignInRequired), value); }
+            get { return BackingStore?.Get<bool?>("signInRequired"); }
+            set { BackingStore?.Set("signInRequired", value); }
         }
         /// <summary>
         /// Instantiates a new sharingInvitation and sets the default values.

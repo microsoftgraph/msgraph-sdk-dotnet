@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class SizeRange : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.</summary>
         public int? MaximumSize {
-            get { return BackingStore?.Get<int?>(nameof(MaximumSize)); }
-            set { BackingStore?.Set(nameof(MaximumSize), value); }
+            get { return BackingStore?.Get<int?>("maximumSize"); }
+            set { BackingStore?.Set("maximumSize", value); }
         }
         /// <summary>The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.</summary>
         public int? MinimumSize {
-            get { return BackingStore?.Get<int?>(nameof(MinimumSize)); }
-            set { BackingStore?.Set(nameof(MinimumSize), value); }
+            get { return BackingStore?.Get<int?>("minimumSize"); }
+            set { BackingStore?.Set("minimumSize", value); }
         }
         /// <summary>
         /// Instantiates a new sizeRange and sets the default values.

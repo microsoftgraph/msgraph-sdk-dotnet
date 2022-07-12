@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class CalendarSharingMessageAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The action property</summary>
         public CalendarSharingAction? Action {
-            get { return BackingStore?.Get<CalendarSharingAction?>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<CalendarSharingAction?>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
         /// <summary>The actionType property</summary>
         public CalendarSharingActionType? ActionType {
-            get { return BackingStore?.Get<CalendarSharingActionType?>(nameof(ActionType)); }
-            set { BackingStore?.Set(nameof(ActionType), value); }
+            get { return BackingStore?.Get<CalendarSharingActionType?>("actionType"); }
+            set { BackingStore?.Set("actionType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The importance property</summary>
         public CalendarSharingActionImportance? Importance {
-            get { return BackingStore?.Get<CalendarSharingActionImportance?>(nameof(Importance)); }
-            set { BackingStore?.Set(nameof(Importance), value); }
+            get { return BackingStore?.Get<CalendarSharingActionImportance?>("importance"); }
+            set { BackingStore?.Set("importance", value); }
         }
         /// <summary>
         /// Instantiates a new calendarSharingMessageAction and sets the default values.

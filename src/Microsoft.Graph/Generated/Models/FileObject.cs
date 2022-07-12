@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class FileObject : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Hashes of the file&apos;s binary content, if available. Read-only.</summary>
         public Microsoft.Graph.Models.Hashes Hashes {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Hashes>(nameof(Hashes)); }
-            set { BackingStore?.Set(nameof(Hashes), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Hashes>("hashes"); }
+            set { BackingStore?.Set("hashes", value); }
         }
         /// <summary>The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.</summary>
         public string MimeType {
-            get { return BackingStore?.Get<string>(nameof(MimeType)); }
-            set { BackingStore?.Set(nameof(MimeType), value); }
+            get { return BackingStore?.Get<string>("mimeType"); }
+            set { BackingStore?.Set("mimeType", value); }
         }
         /// <summary>The processingMetadata property</summary>
         public bool? ProcessingMetadata {
-            get { return BackingStore?.Get<bool?>(nameof(ProcessingMetadata)); }
-            set { BackingStore?.Set(nameof(ProcessingMetadata), value); }
+            get { return BackingStore?.Get<bool?>("processingMetadata"); }
+            set { BackingStore?.Set("processingMetadata", value); }
         }
         /// <summary>
         /// Instantiates a new fileObject and sets the default values.

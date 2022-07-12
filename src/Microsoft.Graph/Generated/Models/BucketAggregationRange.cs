@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class BucketAggregationRange : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Defines the lower bound from which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.</summary>
         public string From {
-            get { return BackingStore?.Get<string>(nameof(From)); }
-            set { BackingStore?.Set(nameof(From), value); }
+            get { return BackingStore?.Get<string>("from"); }
+            set { BackingStore?.Set("from", value); }
         }
         /// <summary>Defines the upper bound up to which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.</summary>
         public string To {
-            get { return BackingStore?.Get<string>(nameof(To)); }
-            set { BackingStore?.Set(nameof(To), value); }
+            get { return BackingStore?.Get<string>("to"); }
+            set { BackingStore?.Set("to", value); }
         }
         /// <summary>
         /// Instantiates a new bucketAggregationRange and sets the default values.

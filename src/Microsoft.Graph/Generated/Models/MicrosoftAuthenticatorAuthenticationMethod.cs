@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Models {
     public class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.</summary>
         public Microsoft.Graph.Models.Device Device {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Device>(nameof(Device)); }
-            set { BackingStore?.Set(nameof(Device), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Device>("device"); }
+            set { BackingStore?.Set("device", value); }
         }
         /// <summary>Tags containing app metadata.</summary>
         public string DeviceTag {
-            get { return BackingStore?.Get<string>(nameof(DeviceTag)); }
-            set { BackingStore?.Set(nameof(DeviceTag), value); }
+            get { return BackingStore?.Get<string>("deviceTag"); }
+            set { BackingStore?.Set("deviceTag", value); }
         }
         /// <summary>The name of the device on which this app is registered.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Numerical version of this instance of the Authenticator app.</summary>
         public string PhoneAppVersion {
-            get { return BackingStore?.Get<string>(nameof(PhoneAppVersion)); }
-            set { BackingStore?.Set(nameof(PhoneAppVersion), value); }
+            get { return BackingStore?.Get<string>("phoneAppVersion"); }
+            set { BackingStore?.Set("phoneAppVersion", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

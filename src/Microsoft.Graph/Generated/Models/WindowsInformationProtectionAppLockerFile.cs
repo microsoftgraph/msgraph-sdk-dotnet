@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Models {
     public class WindowsInformationProtectionAppLockerFile : Entity, IParsable {
         /// <summary>The friendly name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>SHA256 hash of the file</summary>
         public string FileHash {
-            get { return BackingStore?.Get<string>(nameof(FileHash)); }
-            set { BackingStore?.Set(nameof(FileHash), value); }
+            get { return BackingStore?.Get<string>("fileHash"); }
+            set { BackingStore?.Set("fileHash", value); }
         }
         /// <summary>File as a byte array</summary>
         public byte[] FileObject {
-            get { return BackingStore?.Get<byte[]>(nameof(FileObject)); }
-            set { BackingStore?.Set(nameof(FileObject), value); }
+            get { return BackingStore?.Get<byte[]>("file"); }
+            set { BackingStore?.Set("file", value); }
         }
         /// <summary>Version of the entity.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

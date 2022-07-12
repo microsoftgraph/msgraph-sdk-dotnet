@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Models {
     public class AssignmentOrder : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.</summary>
         public List<string> Order {
-            get { return BackingStore?.Get<List<string>>(nameof(Order)); }
-            set { BackingStore?.Set(nameof(Order), value); }
+            get { return BackingStore?.Get<List<string>>("order"); }
+            set { BackingStore?.Set("order", value); }
         }
         /// <summary>
-        /// Instantiates a new AssignmentOrder and sets the default values.
+        /// Instantiates a new assignmentOrder and sets the default values.
         /// </summary>
         public AssignmentOrder() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

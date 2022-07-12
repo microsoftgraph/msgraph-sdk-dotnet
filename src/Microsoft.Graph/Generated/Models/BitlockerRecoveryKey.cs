@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the informationProtection singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class BitlockerRecoveryKey : Entity, IParsable {
         /// <summary>The date and time when the key was originally backed up to Azure Active Directory.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>ID of the device the BitLocker key is originally backed up from.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The BitLocker recovery key.</summary>
         public string Key {
-            get { return BackingStore?.Get<string>(nameof(Key)); }
-            set { BackingStore?.Set(nameof(Key), value); }
+            get { return BackingStore?.Get<string>("key"); }
+            set { BackingStore?.Set("key", value); }
         }
         /// <summary>Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.VolumeType? VolumeType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.VolumeType?>(nameof(VolumeType)); }
-            set { BackingStore?.Set(nameof(VolumeType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.VolumeType?>("volumeType"); }
+            set { BackingStore?.Set("volumeType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

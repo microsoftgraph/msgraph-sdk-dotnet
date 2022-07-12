@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class UnifiedRolePermission : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Set of tasks that can be performed on a resource.</summary>
         public List<string> AllowedResourceActions {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedResourceActions)); }
-            set { BackingStore?.Set(nameof(AllowedResourceActions), value); }
+            get { return BackingStore?.Get<List<string>>("allowedResourceActions"); }
+            set { BackingStore?.Set("allowedResourceActions", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional constraints that must be met for the permission to be effective.</summary>
         public string Condition {
-            get { return BackingStore?.Get<string>(nameof(Condition)); }
-            set { BackingStore?.Set(nameof(Condition), value); }
+            get { return BackingStore?.Get<string>("condition"); }
+            set { BackingStore?.Set("condition", value); }
         }
         /// <summary>Set of tasks that may not be performed on a resource. Not yet supported.</summary>
         public List<string> ExcludedResourceActions {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludedResourceActions)); }
-            set { BackingStore?.Set(nameof(ExcludedResourceActions), value); }
+            get { return BackingStore?.Get<List<string>>("excludedResourceActions"); }
+            set { BackingStore?.Set("excludedResourceActions", value); }
         }
         /// <summary>
         /// Instantiates a new unifiedRolePermission and sets the default values.

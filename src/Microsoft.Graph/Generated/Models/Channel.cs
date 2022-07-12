@@ -4,72 +4,72 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class Channel : Entity, IParsable {
         /// <summary>Read only. Timestamp at which the channel was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Optional textual description for the channel.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Channel name as it will appear to the user in Microsoft Teams.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The email address for sending messages to the channel. Read-only.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>Metadata for the location where the channel&apos;s files are stored.</summary>
         public DriveItem FilesFolder {
-            get { return BackingStore?.Get<DriveItem>(nameof(FilesFolder)); }
-            set { BackingStore?.Set(nameof(FilesFolder), value); }
+            get { return BackingStore?.Get<DriveItem>("filesFolder"); }
+            set { BackingStore?.Set("filesFolder", value); }
         }
         /// <summary>Indicates whether the channel should automatically be marked &apos;favorite&apos; for all members of the team. Can only be set programmatically with Create team. Default: false.</summary>
         public bool? IsFavoriteByDefault {
-            get { return BackingStore?.Get<bool?>(nameof(IsFavoriteByDefault)); }
-            set { BackingStore?.Set(nameof(IsFavoriteByDefault), value); }
+            get { return BackingStore?.Get<bool?>("isFavoriteByDefault"); }
+            set { BackingStore?.Set("isFavoriteByDefault", value); }
         }
         /// <summary>A collection of membership records associated with the channel.</summary>
         public List<ConversationMember> Members {
-            get { return BackingStore?.Get<List<ConversationMember>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<ConversationMember>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>The type of the channel. Can be set during creation and can&apos;t be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.</summary>
         public ChannelMembershipType? MembershipType {
-            get { return BackingStore?.Get<ChannelMembershipType?>(nameof(MembershipType)); }
-            set { BackingStore?.Set(nameof(MembershipType), value); }
+            get { return BackingStore?.Get<ChannelMembershipType?>("membershipType"); }
+            set { BackingStore?.Set("membershipType", value); }
         }
         /// <summary>A collection of all the messages in the channel. A navigation property. Nullable.</summary>
         public List<ChatMessage> Messages {
-            get { return BackingStore?.Get<List<ChatMessage>>(nameof(Messages)); }
-            set { BackingStore?.Set(nameof(Messages), value); }
+            get { return BackingStore?.Get<List<ChatMessage>>("messages"); }
+            set { BackingStore?.Set("messages", value); }
         }
         /// <summary>A collection of teams with which a channel is shared.</summary>
         public List<SharedWithChannelTeamInfo> SharedWithTeams {
-            get { return BackingStore?.Get<List<SharedWithChannelTeamInfo>>(nameof(SharedWithTeams)); }
-            set { BackingStore?.Set(nameof(SharedWithTeams), value); }
+            get { return BackingStore?.Get<List<SharedWithChannelTeamInfo>>("sharedWithTeams"); }
+            set { BackingStore?.Set("sharedWithTeams", value); }
         }
         /// <summary>A collection of all the tabs in the channel. A navigation property.</summary>
         public List<TeamsTab> Tabs {
-            get { return BackingStore?.Get<List<TeamsTab>>(nameof(Tabs)); }
-            set { BackingStore?.Set(nameof(Tabs), value); }
+            get { return BackingStore?.Get<List<TeamsTab>>("tabs"); }
+            set { BackingStore?.Set("tabs", value); }
         }
         /// <summary>The ID of the Azure Active Directory tenant.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,52 +4,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class UnifiedRoleDefinition : Entity, IParsable {
         /// <summary>The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.</summary>
         public List<UnifiedRoleDefinition> InheritsPermissionsFrom {
-            get { return BackingStore?.Get<List<UnifiedRoleDefinition>>(nameof(InheritsPermissionsFrom)); }
-            set { BackingStore?.Set(nameof(InheritsPermissionsFrom), value); }
+            get { return BackingStore?.Get<List<UnifiedRoleDefinition>>("inheritsPermissionsFrom"); }
+            set { BackingStore?.Set("inheritsPermissionsFrom", value); }
         }
         /// <summary>Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).</summary>
         public bool? IsBuiltIn {
-            get { return BackingStore?.Get<bool?>(nameof(IsBuiltIn)); }
-            set { BackingStore?.Set(nameof(IsBuiltIn), value); }
+            get { return BackingStore?.Get<bool?>("isBuiltIn"); }
+            set { BackingStore?.Set("isBuiltIn", value); }
         }
         /// <summary>Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment</summary>
         public List<string> ResourceScopes {
-            get { return BackingStore?.Get<List<string>>(nameof(ResourceScopes)); }
-            set { BackingStore?.Set(nameof(ResourceScopes), value); }
+            get { return BackingStore?.Get<List<string>>("resourceScopes"); }
+            set { BackingStore?.Set("resourceScopes", value); }
         }
         /// <summary>List of permissions included in the role. Read-only when isBuiltIn is true. Required.</summary>
         public List<UnifiedRolePermission> RolePermissions {
-            get { return BackingStore?.Get<List<UnifiedRolePermission>>(nameof(RolePermissions)); }
-            set { BackingStore?.Set(nameof(RolePermissions), value); }
+            get { return BackingStore?.Get<List<UnifiedRolePermission>>("rolePermissions"); }
+            set { BackingStore?.Set("rolePermissions", value); }
         }
         /// <summary>Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.</summary>
         public string TemplateId {
-            get { return BackingStore?.Get<string>(nameof(TemplateId)); }
-            set { BackingStore?.Set(nameof(TemplateId), value); }
+            get { return BackingStore?.Get<string>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
         }
         /// <summary>Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

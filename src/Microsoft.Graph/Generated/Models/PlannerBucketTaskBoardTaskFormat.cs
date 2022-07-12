@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class PlannerBucketTaskBoardTaskFormat : Entity, IParsable {
         /// <summary>Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.</summary>
         public string OrderHint {
-            get { return BackingStore?.Get<string>(nameof(OrderHint)); }
-            set { BackingStore?.Set(nameof(OrderHint), value); }
+            get { return BackingStore?.Get<string>("orderHint"); }
+            set { BackingStore?.Set("orderHint", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

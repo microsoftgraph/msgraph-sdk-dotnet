@@ -1,65 +1,72 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class MailFolder : Entity, IParsable {
         /// <summary>The number of immediate child mailFolders in the current mailFolder.</summary>
         public int? ChildFolderCount {
-            get { return BackingStore?.Get<int?>(nameof(ChildFolderCount)); }
-            set { BackingStore?.Set(nameof(ChildFolderCount), value); }
+            get { return BackingStore?.Get<int?>("childFolderCount"); }
+            set { BackingStore?.Set("childFolderCount", value); }
         }
         /// <summary>The collection of child folders in the mailFolder.</summary>
         public List<MailFolder> ChildFolders {
-            get { return BackingStore?.Get<List<MailFolder>>(nameof(ChildFolders)); }
-            set { BackingStore?.Set(nameof(ChildFolders), value); }
+            get { return BackingStore?.Get<List<MailFolder>>("childFolders"); }
+            set { BackingStore?.Set("childFolders", value); }
         }
         /// <summary>The mailFolder&apos;s display name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.</summary>
         public bool? IsHidden {
-            get { return BackingStore?.Get<bool?>(nameof(IsHidden)); }
-            set { BackingStore?.Set(nameof(IsHidden), value); }
+            get { return BackingStore?.Get<bool?>("isHidden"); }
+            set { BackingStore?.Set("isHidden", value); }
         }
         /// <summary>The collection of rules that apply to the user&apos;s Inbox folder.</summary>
         public List<MessageRule> MessageRules {
-            get { return BackingStore?.Get<List<MessageRule>>(nameof(MessageRules)); }
-            set { BackingStore?.Set(nameof(MessageRules), value); }
+            get { return BackingStore?.Get<List<MessageRule>>("messageRules"); }
+            set { BackingStore?.Set("messageRules", value); }
         }
         /// <summary>The collection of messages in the mailFolder.</summary>
         public List<Message> Messages {
-            get { return BackingStore?.Get<List<Message>>(nameof(Messages)); }
-            set { BackingStore?.Set(nameof(Messages), value); }
+            get { return BackingStore?.Get<List<Message>>("messages"); }
+            set { BackingStore?.Set("messages", value); }
         }
         /// <summary>The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>(nameof(MultiValueExtendedProperties)); }
-            set { BackingStore?.Set(nameof(MultiValueExtendedProperties), value); }
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
         /// <summary>The unique identifier for the mailFolder&apos;s parent mailFolder.</summary>
         public string ParentFolderId {
-            get { return BackingStore?.Get<string>(nameof(ParentFolderId)); }
-            set { BackingStore?.Set(nameof(ParentFolderId), value); }
+            get { return BackingStore?.Get<string>("parentFolderId"); }
+            set { BackingStore?.Set("parentFolderId", value); }
         }
         /// <summary>The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>(nameof(SingleValueExtendedProperties)); }
-            set { BackingStore?.Set(nameof(SingleValueExtendedProperties), value); }
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
         /// <summary>The number of items in the mailFolder.</summary>
         public int? TotalItemCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalItemCount)); }
-            set { BackingStore?.Set(nameof(TotalItemCount), value); }
+            get { return BackingStore?.Get<int?>("totalItemCount"); }
+            set { BackingStore?.Set("totalItemCount", value); }
         }
         /// <summary>The number of items in the mailFolder marked as unread.</summary>
         public int? UnreadItemCount {
-            get { return BackingStore?.Get<int?>(nameof(UnreadItemCount)); }
-            set { BackingStore?.Set(nameof(UnreadItemCount), value); }
+            get { return BackingStore?.Get<int?>("unreadItemCount"); }
+            set { BackingStore?.Set("unreadItemCount", value); }
+        }
+        /// <summary>
+        /// Instantiates a new mailFolder and sets the default values.
+        /// </summary>
+        public MailFolder() : base() {
+            Type = "#microsoft.graph.mailFolder";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

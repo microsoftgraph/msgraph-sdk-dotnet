@@ -4,62 +4,62 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class OnenotePage : OnenoteEntitySchemaObjectModel, IParsable {
         /// <summary>The page&apos;s HTML content.</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The URL for the page&apos;s HTML content.  Read-only.</summary>
         public string ContentUrl {
-            get { return BackingStore?.Get<string>(nameof(ContentUrl)); }
-            set { BackingStore?.Set(nameof(ContentUrl), value); }
+            get { return BackingStore?.Get<string>("contentUrl"); }
+            set { BackingStore?.Set("contentUrl", value); }
         }
         /// <summary>The unique identifier of the application that created the page. Read-only.</summary>
         public string CreatedByAppId {
-            get { return BackingStore?.Get<string>(nameof(CreatedByAppId)); }
-            set { BackingStore?.Set(nameof(CreatedByAppId), value); }
+            get { return BackingStore?.Get<string>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
         }
         /// <summary>The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The indentation level of the page. Read-only.</summary>
         public int? Level {
-            get { return BackingStore?.Get<int?>(nameof(Level)); }
-            set { BackingStore?.Set(nameof(Level), value); }
+            get { return BackingStore?.Get<int?>("level"); }
+            set { BackingStore?.Set("level", value); }
         }
         /// <summary>Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it &apos;s installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.</summary>
         public PageLinks Links {
-            get { return BackingStore?.Get<PageLinks>(nameof(Links)); }
-            set { BackingStore?.Set(nameof(Links), value); }
+            get { return BackingStore?.Get<PageLinks>("links"); }
+            set { BackingStore?.Set("links", value); }
         }
         /// <summary>The order of the page within its parent section. Read-only.</summary>
         public int? Order {
-            get { return BackingStore?.Get<int?>(nameof(Order)); }
-            set { BackingStore?.Set(nameof(Order), value); }
+            get { return BackingStore?.Get<int?>("order"); }
+            set { BackingStore?.Set("order", value); }
         }
         /// <summary>The notebook that contains the page.  Read-only.</summary>
         public Notebook ParentNotebook {
-            get { return BackingStore?.Get<Notebook>(nameof(ParentNotebook)); }
-            set { BackingStore?.Set(nameof(ParentNotebook), value); }
+            get { return BackingStore?.Get<Notebook>("parentNotebook"); }
+            set { BackingStore?.Set("parentNotebook", value); }
         }
         /// <summary>The section that contains the page. Read-only.</summary>
         public OnenoteSection ParentSection {
-            get { return BackingStore?.Get<OnenoteSection>(nameof(ParentSection)); }
-            set { BackingStore?.Set(nameof(ParentSection), value); }
+            get { return BackingStore?.Get<OnenoteSection>("parentSection"); }
+            set { BackingStore?.Set("parentSection", value); }
         }
         /// <summary>The title of the page.</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
         }
         /// <summary>The userTags property</summary>
         public List<string> UserTags {
-            get { return BackingStore?.Get<List<string>>(nameof(UserTags)); }
-            set { BackingStore?.Set(nameof(UserTags), value); }
+            get { return BackingStore?.Get<List<string>>("userTags"); }
+            set { BackingStore?.Set("userTags", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Models {
     public class Fido2AuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.</summary>
         public string AaGuid {
-            get { return BackingStore?.Get<string>(nameof(AaGuid)); }
-            set { BackingStore?.Set(nameof(AaGuid), value); }
+            get { return BackingStore?.Get<string>("aaGuid"); }
+            set { BackingStore?.Set("aaGuid", value); }
         }
         /// <summary>The attestation certificate(s) attached to this security key.</summary>
         public List<string> AttestationCertificates {
-            get { return BackingStore?.Get<List<string>>(nameof(AttestationCertificates)); }
-            set { BackingStore?.Set(nameof(AttestationCertificates), value); }
+            get { return BackingStore?.Get<List<string>>("attestationCertificates"); }
+            set { BackingStore?.Set("attestationCertificates", value); }
         }
         /// <summary>The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.AttestationLevel? AttestationLevel {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.AttestationLevel?>(nameof(AttestationLevel)); }
-            set { BackingStore?.Set(nameof(AttestationLevel), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AttestationLevel?>("attestationLevel"); }
+            set { BackingStore?.Set("attestationLevel", value); }
         }
         /// <summary>The timestamp when this key was registered to the user.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The display name of the key as given by the user.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The manufacturer-assigned model of the FIDO2 security key.</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

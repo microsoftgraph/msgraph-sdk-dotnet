@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class WorkbookFilter : Entity, IParsable {
         /// <summary>The currently applied filter on the given column. Read-only.</summary>
         public WorkbookFilterCriteria Criteria {
-            get { return BackingStore?.Get<WorkbookFilterCriteria>(nameof(Criteria)); }
-            set { BackingStore?.Set(nameof(Criteria), value); }
+            get { return BackingStore?.Get<WorkbookFilterCriteria>("criteria"); }
+            set { BackingStore?.Set("criteria", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

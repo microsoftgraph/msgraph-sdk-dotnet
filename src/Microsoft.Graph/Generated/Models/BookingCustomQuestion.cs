@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Models {
     public class BookingCustomQuestion : Entity, IParsable {
         /// <summary>The expected answer type. The possible values are: text, radioButton, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.AnswerInputType? AnswerInputType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.AnswerInputType?>(nameof(AnswerInputType)); }
-            set { BackingStore?.Set(nameof(AnswerInputType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AnswerInputType?>("answerInputType"); }
+            set { BackingStore?.Set("answerInputType", value); }
         }
         /// <summary>List of possible answer values.</summary>
         public List<string> AnswerOptions {
-            get { return BackingStore?.Get<List<string>>(nameof(AnswerOptions)); }
-            set { BackingStore?.Set(nameof(AnswerOptions), value); }
+            get { return BackingStore?.Get<List<string>>("answerOptions"); }
+            set { BackingStore?.Set("answerOptions", value); }
         }
         /// <summary>Display name of this entity.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

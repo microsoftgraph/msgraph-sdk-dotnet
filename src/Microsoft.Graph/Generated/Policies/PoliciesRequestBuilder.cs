@@ -7,6 +7,7 @@ using Microsoft.Graph.Policies.AuthenticationMethodsPolicy;
 using Microsoft.Graph.Policies.AuthorizationPolicy;
 using Microsoft.Graph.Policies.ClaimsMappingPolicies;
 using Microsoft.Graph.Policies.ConditionalAccessPolicies;
+using Microsoft.Graph.Policies.CrossTenantAccessPolicy;
 using Microsoft.Graph.Policies.FeatureRolloutPolicies;
 using Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies;
 using Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy;
@@ -53,6 +54,10 @@ namespace Microsoft.Graph.Policies {
         /// <summary>The conditionalAccessPolicies property</summary>
         public ConditionalAccessPoliciesRequestBuilder ConditionalAccessPolicies { get =>
             new ConditionalAccessPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The crossTenantAccessPolicy property</summary>
+        public CrossTenantAccessPolicyRequestBuilder CrossTenantAccessPolicy { get =>
+            new CrossTenantAccessPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The featureRolloutPolicies property</summary>
         public FeatureRolloutPoliciesRequestBuilder FeatureRolloutPolicies { get =>

@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Models {
     public class EducationStudent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Birth date of the student.</summary>
         public Date? BirthDate {
-            get { return BackingStore?.Get<Date?>(nameof(BirthDate)); }
-            set { BackingStore?.Set(nameof(BirthDate), value); }
+            get { return BackingStore?.Get<Date?>("birthDate"); }
+            set { BackingStore?.Set("birthDate", value); }
         }
         /// <summary>ID of the student in the source system.</summary>
         public string ExternalId {
-            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
-            set { BackingStore?.Set(nameof(ExternalId), value); }
+            get { return BackingStore?.Get<string>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
         }
         /// <summary>Possible values are: female, male, other.</summary>
         public EducationGender? Gender {
-            get { return BackingStore?.Get<EducationGender?>(nameof(Gender)); }
-            set { BackingStore?.Set(nameof(Gender), value); }
+            get { return BackingStore?.Get<EducationGender?>("gender"); }
+            set { BackingStore?.Set("gender", value); }
         }
         /// <summary>Current grade level of the student.</summary>
         public string Grade {
-            get { return BackingStore?.Get<string>(nameof(Grade)); }
-            set { BackingStore?.Set(nameof(Grade), value); }
+            get { return BackingStore?.Get<string>("grade"); }
+            set { BackingStore?.Set("grade", value); }
         }
         /// <summary>Year the student is graduating from the school.</summary>
         public string GraduationYear {
-            get { return BackingStore?.Get<string>(nameof(GraduationYear)); }
-            set { BackingStore?.Set(nameof(GraduationYear), value); }
+            get { return BackingStore?.Get<string>("graduationYear"); }
+            set { BackingStore?.Set("graduationYear", value); }
         }
         /// <summary>Student Number.</summary>
         public string StudentNumber {
-            get { return BackingStore?.Get<string>(nameof(StudentNumber)); }
-            set { BackingStore?.Set(nameof(StudentNumber), value); }
+            get { return BackingStore?.Get<string>("studentNumber"); }
+            set { BackingStore?.Set("studentNumber", value); }
         }
         /// <summary>
         /// Instantiates a new educationStudent and sets the default values.

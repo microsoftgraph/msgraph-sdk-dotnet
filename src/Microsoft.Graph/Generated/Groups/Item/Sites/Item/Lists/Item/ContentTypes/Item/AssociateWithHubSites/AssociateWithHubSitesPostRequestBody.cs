@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.As
     public class AssociateWithHubSitesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The hubSiteUrls property</summary>
         public List<string> HubSiteUrls {
-            get { return BackingStore?.Get<List<string>>(nameof(HubSiteUrls)); }
-            set { BackingStore?.Set(nameof(HubSiteUrls), value); }
+            get { return BackingStore?.Get<List<string>>("hubSiteUrls"); }
+            set { BackingStore?.Set("hubSiteUrls", value); }
         }
         /// <summary>The propagateToExistingLists property</summary>
         public bool? PropagateToExistingLists {
-            get { return BackingStore?.Get<bool?>(nameof(PropagateToExistingLists)); }
-            set { BackingStore?.Set(nameof(PropagateToExistingLists), value); }
+            get { return BackingStore?.Get<bool?>("propagateToExistingLists"); }
+            set { BackingStore?.Set("propagateToExistingLists", value); }
         }
         /// <summary>
         /// Instantiates a new associateWithHubSitesPostRequestBody and sets the default values.

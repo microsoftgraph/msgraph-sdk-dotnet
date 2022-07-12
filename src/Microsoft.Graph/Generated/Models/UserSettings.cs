@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class UserSettings : Entity, IParsable {
         /// <summary>Reflects the Office Delve organization level setting. When set to true, the organization doesn&apos;t have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.</summary>
         public bool? ContributionToContentDiscoveryAsOrganizationDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(ContributionToContentDiscoveryAsOrganizationDisabled)); }
-            set { BackingStore?.Set(nameof(ContributionToContentDiscoveryAsOrganizationDisabled), value); }
+            get { return BackingStore?.Get<bool?>("contributionToContentDiscoveryAsOrganizationDisabled"); }
+            set { BackingStore?.Set("contributionToContentDiscoveryAsOrganizationDisabled", value); }
         }
         /// <summary>When set to true, documents in the user&apos;s Office Delve are disabled. Users can control this setting in Office Delve.</summary>
         public bool? ContributionToContentDiscoveryDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(ContributionToContentDiscoveryDisabled)); }
-            set { BackingStore?.Set(nameof(ContributionToContentDiscoveryDisabled), value); }
+            get { return BackingStore?.Get<bool?>("contributionToContentDiscoveryDisabled"); }
+            set { BackingStore?.Set("contributionToContentDiscoveryDisabled", value); }
         }
         /// <summary>The shift preferences for the user.</summary>
         public Microsoft.Graph.Models.ShiftPreferences ShiftPreferences {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ShiftPreferences>(nameof(ShiftPreferences)); }
-            set { BackingStore?.Set(nameof(ShiftPreferences), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ShiftPreferences>("shiftPreferences"); }
+            set { BackingStore?.Set("shiftPreferences", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

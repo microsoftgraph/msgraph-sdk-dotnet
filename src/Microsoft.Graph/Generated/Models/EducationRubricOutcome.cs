@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class EducationRubricOutcome : EducationOutcome, IParsable {
         /// <summary>A copy of the rubricQualityFeedback property that is made when the grade is released to the student.</summary>
         public List<RubricQualityFeedbackModel> PublishedRubricQualityFeedback {
-            get { return BackingStore?.Get<List<RubricQualityFeedbackModel>>(nameof(PublishedRubricQualityFeedback)); }
-            set { BackingStore?.Set(nameof(PublishedRubricQualityFeedback), value); }
+            get { return BackingStore?.Get<List<RubricQualityFeedbackModel>>("publishedRubricQualityFeedback"); }
+            set { BackingStore?.Set("publishedRubricQualityFeedback", value); }
         }
         /// <summary>A copy of the rubricQualitySelectedLevels property that is made when the grade is released to the student.</summary>
         public List<RubricQualitySelectedColumnModel> PublishedRubricQualitySelectedLevels {
-            get { return BackingStore?.Get<List<RubricQualitySelectedColumnModel>>(nameof(PublishedRubricQualitySelectedLevels)); }
-            set { BackingStore?.Set(nameof(PublishedRubricQualitySelectedLevels), value); }
+            get { return BackingStore?.Get<List<RubricQualitySelectedColumnModel>>("publishedRubricQualitySelectedLevels"); }
+            set { BackingStore?.Set("publishedRubricQualitySelectedLevels", value); }
         }
         /// <summary>A collection of specific feedback for each quality of this rubric.</summary>
         public List<RubricQualityFeedbackModel> RubricQualityFeedback {
-            get { return BackingStore?.Get<List<RubricQualityFeedbackModel>>(nameof(RubricQualityFeedback)); }
-            set { BackingStore?.Set(nameof(RubricQualityFeedback), value); }
+            get { return BackingStore?.Get<List<RubricQualityFeedbackModel>>("rubricQualityFeedback"); }
+            set { BackingStore?.Set("rubricQualityFeedback", value); }
         }
         /// <summary>The level that the teacher has selected for each quality while grading this assignment.</summary>
         public List<RubricQualitySelectedColumnModel> RubricQualitySelectedLevels {
-            get { return BackingStore?.Get<List<RubricQualitySelectedColumnModel>>(nameof(RubricQualitySelectedLevels)); }
-            set { BackingStore?.Set(nameof(RubricQualitySelectedLevels), value); }
+            get { return BackingStore?.Get<List<RubricQualitySelectedColumnModel>>("rubricQualitySelectedLevels"); }
+            set { BackingStore?.Set("rubricQualitySelectedLevels", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

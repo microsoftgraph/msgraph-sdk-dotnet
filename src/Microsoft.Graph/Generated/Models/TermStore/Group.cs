@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models.TermStore {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class Group : Entity, IParsable {
         /// <summary>Date and time of the group creation. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description that gives details on the term usage.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Name of the group.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>ID of the parent site of this group.</summary>
         public string ParentSiteId {
-            get { return BackingStore?.Get<string>(nameof(ParentSiteId)); }
-            set { BackingStore?.Set(nameof(ParentSiteId), value); }
+            get { return BackingStore?.Get<string>("parentSiteId"); }
+            set { BackingStore?.Set("parentSiteId", value); }
         }
         /// <summary>Returns the type of the group. Possible values are global, system, and siteCollection.</summary>
         public TermGroupScope? Scope {
-            get { return BackingStore?.Get<TermGroupScope?>(nameof(Scope)); }
-            set { BackingStore?.Set(nameof(Scope), value); }
+            get { return BackingStore?.Get<TermGroupScope?>("scope"); }
+            set { BackingStore?.Set("scope", value); }
         }
         /// <summary>All sets under the group in a term [store].</summary>
         public List<Set> Sets {
-            get { return BackingStore?.Get<List<Set>>(nameof(Sets)); }
-            set { BackingStore?.Set(nameof(Sets), value); }
+            get { return BackingStore?.Get<List<Set>>("sets"); }
+            set { BackingStore?.Set("sets", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

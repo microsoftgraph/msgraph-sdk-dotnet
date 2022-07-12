@@ -8,50 +8,50 @@ namespace Microsoft.Graph.Models {
     public class WorkbookFilterCriteria : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The color property</summary>
         public string Color {
-            get { return BackingStore?.Get<string>(nameof(Color)); }
-            set { BackingStore?.Set(nameof(Color), value); }
+            get { return BackingStore?.Get<string>("color"); }
+            set { BackingStore?.Set("color", value); }
         }
         /// <summary>The criterion1 property</summary>
         public string Criterion1 {
-            get { return BackingStore?.Get<string>(nameof(Criterion1)); }
-            set { BackingStore?.Set(nameof(Criterion1), value); }
+            get { return BackingStore?.Get<string>("criterion1"); }
+            set { BackingStore?.Set("criterion1", value); }
         }
         /// <summary>The criterion2 property</summary>
         public string Criterion2 {
-            get { return BackingStore?.Get<string>(nameof(Criterion2)); }
-            set { BackingStore?.Set(nameof(Criterion2), value); }
+            get { return BackingStore?.Get<string>("criterion2"); }
+            set { BackingStore?.Set("criterion2", value); }
         }
         /// <summary>The dynamicCriteria property</summary>
         public string DynamicCriteria {
-            get { return BackingStore?.Get<string>(nameof(DynamicCriteria)); }
-            set { BackingStore?.Set(nameof(DynamicCriteria), value); }
+            get { return BackingStore?.Get<string>("dynamicCriteria"); }
+            set { BackingStore?.Set("dynamicCriteria", value); }
         }
         /// <summary>The filterOn property</summary>
         public string FilterOn {
-            get { return BackingStore?.Get<string>(nameof(FilterOn)); }
-            set { BackingStore?.Set(nameof(FilterOn), value); }
+            get { return BackingStore?.Get<string>("filterOn"); }
+            set { BackingStore?.Set("filterOn", value); }
         }
         /// <summary>The icon property</summary>
         public WorkbookIcon Icon {
-            get { return BackingStore?.Get<WorkbookIcon>(nameof(Icon)); }
-            set { BackingStore?.Set(nameof(Icon), value); }
+            get { return BackingStore?.Get<WorkbookIcon>("icon"); }
+            set { BackingStore?.Set("icon", value); }
         }
         /// <summary>The operator property</summary>
         public string Operator {
-            get { return BackingStore?.Get<string>(nameof(Operator)); }
-            set { BackingStore?.Set(nameof(Operator), value); }
+            get { return BackingStore?.Get<string>("operator"); }
+            set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The values property</summary>
         public Json Values {
-            get { return BackingStore?.Get<Json>(nameof(Values)); }
-            set { BackingStore?.Set(nameof(Values), value); }
+            get { return BackingStore?.Get<Json>("values"); }
+            set { BackingStore?.Set("values", value); }
         }
         /// <summary>
         /// Instantiates a new workbookFilterCriteria and sets the default values.

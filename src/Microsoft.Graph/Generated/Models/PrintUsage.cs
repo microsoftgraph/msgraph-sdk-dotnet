@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -5,27 +6,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the reportRoot singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class PrintUsage : Entity, IParsable {
         /// <summary>The completedBlackAndWhiteJobCount property</summary>
         public long? CompletedBlackAndWhiteJobCount {
-            get { return BackingStore?.Get<long?>(nameof(CompletedBlackAndWhiteJobCount)); }
-            set { BackingStore?.Set(nameof(CompletedBlackAndWhiteJobCount), value); }
+            get { return BackingStore?.Get<long?>("completedBlackAndWhiteJobCount"); }
+            set { BackingStore?.Set("completedBlackAndWhiteJobCount", value); }
         }
         /// <summary>The completedColorJobCount property</summary>
         public long? CompletedColorJobCount {
-            get { return BackingStore?.Get<long?>(nameof(CompletedColorJobCount)); }
-            set { BackingStore?.Set(nameof(CompletedColorJobCount), value); }
+            get { return BackingStore?.Get<long?>("completedColorJobCount"); }
+            set { BackingStore?.Set("completedColorJobCount", value); }
         }
         /// <summary>The incompleteJobCount property</summary>
         public long? IncompleteJobCount {
-            get { return BackingStore?.Get<long?>(nameof(IncompleteJobCount)); }
-            set { BackingStore?.Set(nameof(IncompleteJobCount), value); }
+            get { return BackingStore?.Get<long?>("incompleteJobCount"); }
+            set { BackingStore?.Set("incompleteJobCount", value); }
         }
         /// <summary>The usageDate property</summary>
         public Date? UsageDate {
-            get { return BackingStore?.Get<Date?>(nameof(UsageDate)); }
-            set { BackingStore?.Set(nameof(UsageDate), value); }
+            get { return BackingStore?.Get<Date?>("usageDate"); }
+            set { BackingStore?.Set("usageDate", value); }
+        }
+        /// <summary>
+        /// Instantiates a new printUsage and sets the default values.
+        /// </summary>
+        public PrintUsage() : base() {
+            Type = "#microsoft.graph.printUsage";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

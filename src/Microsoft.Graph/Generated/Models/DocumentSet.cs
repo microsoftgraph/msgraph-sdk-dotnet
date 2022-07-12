@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Models {
     public class DocumentSet : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Content types allowed in document set.</summary>
         public List<ContentTypeInfo> AllowedContentTypes {
-            get { return BackingStore?.Get<List<ContentTypeInfo>>(nameof(AllowedContentTypes)); }
-            set { BackingStore?.Set(nameof(AllowedContentTypes), value); }
+            get { return BackingStore?.Get<List<ContentTypeInfo>>("allowedContentTypes"); }
+            set { BackingStore?.Set("allowedContentTypes", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Default contents of document set.</summary>
         public List<DocumentSetContent> DefaultContents {
-            get { return BackingStore?.Get<List<DocumentSetContent>>(nameof(DefaultContents)); }
-            set { BackingStore?.Set(nameof(DefaultContents), value); }
+            get { return BackingStore?.Get<List<DocumentSetContent>>("defaultContents"); }
+            set { BackingStore?.Set("defaultContents", value); }
         }
         /// <summary>Indicates whether to add the name of the document set to each file name.</summary>
         public bool? PropagateWelcomePageChanges {
-            get { return BackingStore?.Get<bool?>(nameof(PropagateWelcomePageChanges)); }
-            set { BackingStore?.Set(nameof(PropagateWelcomePageChanges), value); }
+            get { return BackingStore?.Get<bool?>("propagateWelcomePageChanges"); }
+            set { BackingStore?.Set("propagateWelcomePageChanges", value); }
         }
         /// <summary>The sharedColumns property</summary>
         public List<ColumnDefinition> SharedColumns {
-            get { return BackingStore?.Get<List<ColumnDefinition>>(nameof(SharedColumns)); }
-            set { BackingStore?.Set(nameof(SharedColumns), value); }
+            get { return BackingStore?.Get<List<ColumnDefinition>>("sharedColumns"); }
+            set { BackingStore?.Set("sharedColumns", value); }
         }
         /// <summary>Add the name of the Document Set to each file name.</summary>
         public bool? ShouldPrefixNameToFile {
-            get { return BackingStore?.Get<bool?>(nameof(ShouldPrefixNameToFile)); }
-            set { BackingStore?.Set(nameof(ShouldPrefixNameToFile), value); }
+            get { return BackingStore?.Get<bool?>("shouldPrefixNameToFile"); }
+            set { BackingStore?.Set("shouldPrefixNameToFile", value); }
         }
         /// <summary>The welcomePageColumns property</summary>
         public List<ColumnDefinition> WelcomePageColumns {
-            get { return BackingStore?.Get<List<ColumnDefinition>>(nameof(WelcomePageColumns)); }
-            set { BackingStore?.Set(nameof(WelcomePageColumns), value); }
+            get { return BackingStore?.Get<List<ColumnDefinition>>("welcomePageColumns"); }
+            set { BackingStore?.Set("welcomePageColumns", value); }
         }
         /// <summary>Welcome page absolute URL.</summary>
         public string WelcomePageUrl {
-            get { return BackingStore?.Get<string>(nameof(WelcomePageUrl)); }
-            set { BackingStore?.Set(nameof(WelcomePageUrl), value); }
+            get { return BackingStore?.Get<string>("welcomePageUrl"); }
+            set { BackingStore?.Set("welcomePageUrl", value); }
         }
         /// <summary>
         /// Instantiates a new documentSet and sets the default values.

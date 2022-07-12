@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class WorkbookChartTitleFormat : Entity, IParsable {
         /// <summary>Represents the fill format of an object, which includes background formatting information. Read-only.</summary>
         public WorkbookChartFill Fill {
-            get { return BackingStore?.Get<WorkbookChartFill>(nameof(Fill)); }
-            set { BackingStore?.Set(nameof(Fill), value); }
+            get { return BackingStore?.Get<WorkbookChartFill>("fill"); }
+            set { BackingStore?.Set("fill", value); }
         }
         /// <summary>Represents the font attributes (font name, font size, color, etc.) for the current object. Read-only.</summary>
         public WorkbookChartFont Font {
-            get { return BackingStore?.Get<WorkbookChartFont>(nameof(Font)); }
-            set { BackingStore?.Set(nameof(Font), value); }
+            get { return BackingStore?.Get<WorkbookChartFont>("font"); }
+            set { BackingStore?.Set("font", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

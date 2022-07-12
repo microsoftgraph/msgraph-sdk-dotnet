@@ -4,167 +4,167 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class DriveItem : BaseItem, IParsable {
         /// <summary>Analytics about the view activities that took place on this item.</summary>
         public ItemAnalytics Analytics {
-            get { return BackingStore?.Get<ItemAnalytics>(nameof(Analytics)); }
-            set { BackingStore?.Set(nameof(Analytics), value); }
+            get { return BackingStore?.Get<ItemAnalytics>("analytics"); }
+            set { BackingStore?.Set("analytics", value); }
         }
         /// <summary>Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.</summary>
         public Microsoft.Graph.Models.Audio Audio {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Audio>(nameof(Audio)); }
-            set { BackingStore?.Set(nameof(Audio), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Audio>("audio"); }
+            set { BackingStore?.Set("audio", value); }
         }
         /// <summary>Bundle metadata, if the item is a bundle. Read-only.</summary>
         public Microsoft.Graph.Models.Bundle Bundle {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Bundle>(nameof(Bundle)); }
-            set { BackingStore?.Set(nameof(Bundle), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Bundle>("bundle"); }
+            set { BackingStore?.Set("bundle", value); }
         }
         /// <summary>Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.</summary>
         public List<DriveItem> Children {
-            get { return BackingStore?.Get<List<DriveItem>>(nameof(Children)); }
-            set { BackingStore?.Set(nameof(Children), value); }
+            get { return BackingStore?.Get<List<DriveItem>>("children"); }
+            set { BackingStore?.Set("children", value); }
         }
         /// <summary>The content stream, if the item represents a file.</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.</summary>
         public string CTag {
-            get { return BackingStore?.Get<string>(nameof(CTag)); }
-            set { BackingStore?.Set(nameof(CTag), value); }
+            get { return BackingStore?.Get<string>("cTag"); }
+            set { BackingStore?.Set("cTag", value); }
         }
         /// <summary>Information about the deleted state of the item. Read-only.</summary>
         public Microsoft.Graph.Models.Deleted Deleted {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Deleted>(nameof(Deleted)); }
-            set { BackingStore?.Set(nameof(Deleted), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Deleted>("deleted"); }
+            set { BackingStore?.Set("deleted", value); }
         }
         /// <summary>File metadata, if the item is a file. Read-only.</summary>
         public Microsoft.Graph.Models.FileObject FileObject {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.FileObject>(nameof(FileObject)); }
-            set { BackingStore?.Set(nameof(FileObject), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FileObject>("file"); }
+            set { BackingStore?.Set("file", value); }
         }
         /// <summary>File system information on client. Read-write.</summary>
         public Microsoft.Graph.Models.FileSystemInfo FileSystemInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.FileSystemInfo>(nameof(FileSystemInfo)); }
-            set { BackingStore?.Set(nameof(FileSystemInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FileSystemInfo>("fileSystemInfo"); }
+            set { BackingStore?.Set("fileSystemInfo", value); }
         }
         /// <summary>Folder metadata, if the item is a folder. Read-only.</summary>
         public Microsoft.Graph.Models.Folder Folder {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Folder>(nameof(Folder)); }
-            set { BackingStore?.Set(nameof(Folder), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Folder>("folder"); }
+            set { BackingStore?.Set("folder", value); }
         }
         /// <summary>Image metadata, if the item is an image. Read-only.</summary>
         public Microsoft.Graph.Models.Image Image {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Image>(nameof(Image)); }
-            set { BackingStore?.Set(nameof(Image), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Image>("image"); }
+            set { BackingStore?.Set("image", value); }
         }
         /// <summary>For drives in SharePoint, the associated document library list item. Read-only. Nullable.</summary>
         public Microsoft.Graph.Models.ListItem ListItem {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ListItem>(nameof(ListItem)); }
-            set { BackingStore?.Set(nameof(ListItem), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ListItem>("listItem"); }
+            set { BackingStore?.Set("listItem", value); }
         }
         /// <summary>Location metadata, if the item has location data. Read-only.</summary>
         public GeoCoordinates Location {
-            get { return BackingStore?.Get<GeoCoordinates>(nameof(Location)); }
-            set { BackingStore?.Set(nameof(Location), value); }
+            get { return BackingStore?.Get<GeoCoordinates>("location"); }
+            set { BackingStore?.Set("location", value); }
         }
         /// <summary>Malware metadata, if the item was detected to contain malware. Read-only.</summary>
         public Microsoft.Graph.Models.Malware Malware {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Malware>(nameof(Malware)); }
-            set { BackingStore?.Set(nameof(Malware), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Malware>("malware"); }
+            set { BackingStore?.Set("malware", value); }
         }
         /// <summary>If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.</summary>
         public Microsoft.Graph.Models.Package Package {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Package>(nameof(Package)); }
-            set { BackingStore?.Set(nameof(Package), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Package>("package"); }
+            set { BackingStore?.Set("package", value); }
         }
         /// <summary>If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.</summary>
         public Microsoft.Graph.Models.PendingOperations PendingOperations {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.PendingOperations>(nameof(PendingOperations)); }
-            set { BackingStore?.Set(nameof(PendingOperations), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PendingOperations>("pendingOperations"); }
+            set { BackingStore?.Set("pendingOperations", value); }
         }
         /// <summary>The set of permissions for the item. Read-only. Nullable.</summary>
         public List<Permission> Permissions {
-            get { return BackingStore?.Get<List<Permission>>(nameof(Permissions)); }
-            set { BackingStore?.Set(nameof(Permissions), value); }
+            get { return BackingStore?.Get<List<Permission>>("permissions"); }
+            set { BackingStore?.Set("permissions", value); }
         }
         /// <summary>Photo metadata, if the item is a photo. Read-only.</summary>
         public Microsoft.Graph.Models.Photo Photo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Photo>(nameof(Photo)); }
-            set { BackingStore?.Set(nameof(Photo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Photo>("photo"); }
+            set { BackingStore?.Set("photo", value); }
         }
         /// <summary>Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.</summary>
         public PublicationFacet Publication {
-            get { return BackingStore?.Get<PublicationFacet>(nameof(Publication)); }
-            set { BackingStore?.Set(nameof(Publication), value); }
+            get { return BackingStore?.Get<PublicationFacet>("publication"); }
+            set { BackingStore?.Set("publication", value); }
         }
         /// <summary>Remote item data, if the item is shared from a drive other than the one being accessed. Read-only.</summary>
         public Microsoft.Graph.Models.RemoteItem RemoteItem {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.RemoteItem>(nameof(RemoteItem)); }
-            set { BackingStore?.Set(nameof(RemoteItem), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RemoteItem>("remoteItem"); }
+            set { BackingStore?.Set("remoteItem", value); }
         }
         /// <summary>If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.</summary>
         public Microsoft.Graph.Models.Root Root {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Root>(nameof(Root)); }
-            set { BackingStore?.Set(nameof(Root), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Root>("root"); }
+            set { BackingStore?.Set("root", value); }
         }
         /// <summary>Search metadata, if the item is from a search result. Read-only.</summary>
         public Microsoft.Graph.Models.SearchResult SearchResult {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.SearchResult>(nameof(SearchResult)); }
-            set { BackingStore?.Set(nameof(SearchResult), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SearchResult>("searchResult"); }
+            set { BackingStore?.Set("searchResult", value); }
         }
         /// <summary>Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.</summary>
         public Microsoft.Graph.Models.Shared Shared {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Shared>(nameof(Shared)); }
-            set { BackingStore?.Set(nameof(Shared), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Shared>("shared"); }
+            set { BackingStore?.Set("shared", value); }
         }
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
         public Microsoft.Graph.Models.SharepointIds SharepointIds {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.SharepointIds>(nameof(SharepointIds)); }
-            set { BackingStore?.Set(nameof(SharepointIds), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharepointIds>("sharepointIds"); }
+            set { BackingStore?.Set("sharepointIds", value); }
         }
         /// <summary>Size of the item in bytes. Read-only.</summary>
         public long? Size {
-            get { return BackingStore?.Get<long?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<long?>("size"); }
+            set { BackingStore?.Set("size", value); }
         }
         /// <summary>If the current item is also available as a special folder, this facet is returned. Read-only.</summary>
         public Microsoft.Graph.Models.SpecialFolder SpecialFolder {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.SpecialFolder>(nameof(SpecialFolder)); }
-            set { BackingStore?.Set(nameof(SpecialFolder), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SpecialFolder>("specialFolder"); }
+            set { BackingStore?.Set("specialFolder", value); }
         }
         /// <summary>The set of subscriptions on the item. Only supported on the root of a drive.</summary>
         public List<Subscription> Subscriptions {
-            get { return BackingStore?.Get<List<Subscription>>(nameof(Subscriptions)); }
-            set { BackingStore?.Set(nameof(Subscriptions), value); }
+            get { return BackingStore?.Get<List<Subscription>>("subscriptions"); }
+            set { BackingStore?.Set("subscriptions", value); }
         }
         /// <summary>Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.</summary>
         public List<ThumbnailSet> Thumbnails {
-            get { return BackingStore?.Get<List<ThumbnailSet>>(nameof(Thumbnails)); }
-            set { BackingStore?.Set(nameof(Thumbnails), value); }
+            get { return BackingStore?.Get<List<ThumbnailSet>>("thumbnails"); }
+            set { BackingStore?.Set("thumbnails", value); }
         }
         /// <summary>The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.</summary>
         public List<DriveItemVersion> Versions {
-            get { return BackingStore?.Get<List<DriveItemVersion>>(nameof(Versions)); }
-            set { BackingStore?.Set(nameof(Versions), value); }
+            get { return BackingStore?.Get<List<DriveItemVersion>>("versions"); }
+            set { BackingStore?.Set("versions", value); }
         }
         /// <summary>Video metadata, if the item is a video. Read-only.</summary>
         public Microsoft.Graph.Models.Video Video {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Video>(nameof(Video)); }
-            set { BackingStore?.Set(nameof(Video), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Video>("video"); }
+            set { BackingStore?.Set("video", value); }
         }
         /// <summary>WebDAV compatible URL for the item.</summary>
         public string WebDavUrl {
-            get { return BackingStore?.Get<string>(nameof(WebDavUrl)); }
-            set { BackingStore?.Set(nameof(WebDavUrl), value); }
+            get { return BackingStore?.Get<string>("webDavUrl"); }
+            set { BackingStore?.Set("webDavUrl", value); }
         }
         /// <summary>For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet&apos;s contents. Nullable.</summary>
         public Microsoft.Graph.Models.Workbook Workbook {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Workbook>(nameof(Workbook)); }
-            set { BackingStore?.Set(nameof(Workbook), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Workbook>("workbook"); }
+            set { BackingStore?.Set("workbook", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

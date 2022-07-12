@@ -1,50 +1,57 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the informationProtection singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ThreatAssessmentRequest : Entity, IParsable {
-        /// <summary>The threat category. Possible values are: spam, phishing, malware.</summary>
+        /// <summary>The category property</summary>
         public ThreatCategory? Category {
-            get { return BackingStore?.Get<ThreatCategory?>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<ThreatCategory?>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>The content type of threat assessment. Possible values are: mail, url, file.</summary>
         public ThreatAssessmentContentType? ContentType {
-            get { return BackingStore?.Get<ThreatAssessmentContentType?>(nameof(ContentType)); }
-            set { BackingStore?.Set(nameof(ContentType), value); }
+            get { return BackingStore?.Get<ThreatAssessmentContentType?>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>The threat assessment request creator.</summary>
         public IdentitySet CreatedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The expected assessment from submitter. Possible values are: block, unblock.</summary>
+        /// <summary>The expectedAssessment property</summary>
         public ThreatExpectedAssessment? ExpectedAssessment {
-            get { return BackingStore?.Get<ThreatExpectedAssessment?>(nameof(ExpectedAssessment)); }
-            set { BackingStore?.Set(nameof(ExpectedAssessment), value); }
+            get { return BackingStore?.Get<ThreatExpectedAssessment?>("expectedAssessment"); }
+            set { BackingStore?.Set("expectedAssessment", value); }
         }
         /// <summary>The source of the threat assessment request. Possible values are: user, administrator.</summary>
         public ThreatAssessmentRequestSource? RequestSource {
-            get { return BackingStore?.Get<ThreatAssessmentRequestSource?>(nameof(RequestSource)); }
-            set { BackingStore?.Set(nameof(RequestSource), value); }
+            get { return BackingStore?.Get<ThreatAssessmentRequestSource?>("requestSource"); }
+            set { BackingStore?.Set("requestSource", value); }
         }
         /// <summary>A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.</summary>
         public List<ThreatAssessmentResult> Results {
-            get { return BackingStore?.Get<List<ThreatAssessmentResult>>(nameof(Results)); }
-            set { BackingStore?.Set(nameof(Results), value); }
+            get { return BackingStore?.Get<List<ThreatAssessmentResult>>("results"); }
+            set { BackingStore?.Set("results", value); }
         }
         /// <summary>The assessment process status. Possible values are: pending, completed.</summary>
         public ThreatAssessmentStatus? Status {
-            get { return BackingStore?.Get<ThreatAssessmentStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ThreatAssessmentStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new threatAssessmentRequest and sets the default values.
+        /// </summary>
+        public ThreatAssessmentRequest() : base() {
+            Type = "#microsoft.graph.threatAssessmentRequest";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

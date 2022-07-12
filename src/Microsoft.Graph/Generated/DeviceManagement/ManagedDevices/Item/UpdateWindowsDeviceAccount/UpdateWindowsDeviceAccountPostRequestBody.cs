@@ -10,15 +10,15 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.UpdateWindowsDevi
     public class UpdateWindowsDeviceAccountPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The updateWindowsDeviceAccountActionParameter property</summary>
         public Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter UpdateWindowsDeviceAccountActionParameter {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter>(nameof(UpdateWindowsDeviceAccountActionParameter)); }
-            set { BackingStore?.Set(nameof(UpdateWindowsDeviceAccountActionParameter), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter>("updateWindowsDeviceAccountActionParameter"); }
+            set { BackingStore?.Set("updateWindowsDeviceAccountActionParameter", value); }
         }
         /// <summary>
         /// Instantiates a new updateWindowsDeviceAccountPostRequestBody and sets the default values.

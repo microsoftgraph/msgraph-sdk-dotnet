@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Users.Item.Calendar.Events.Item.Forward {
     public class ForwardPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Comment property</summary>
         public string Comment {
-            get { return BackingStore?.Get<string>(nameof(Comment)); }
-            set { BackingStore?.Set(nameof(Comment), value); }
+            get { return BackingStore?.Get<string>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
         /// <summary>The ToRecipients property</summary>
         public List<Recipient> ToRecipients {
-            get { return BackingStore?.Get<List<Recipient>>(nameof(ToRecipients)); }
-            set { BackingStore?.Set(nameof(ToRecipients), value); }
+            get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }
+            set { BackingStore?.Set("toRecipients", value); }
         }
         /// <summary>
         /// Instantiates a new forwardPostRequestBody and sets the default values.

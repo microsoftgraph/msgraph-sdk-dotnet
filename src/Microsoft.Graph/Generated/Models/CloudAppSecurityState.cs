@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class CloudAppSecurityState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Destination IP Address of the connection to the cloud application/service.</summary>
         public string DestinationServiceIp {
-            get { return BackingStore?.Get<string>(nameof(DestinationServiceIp)); }
-            set { BackingStore?.Set(nameof(DestinationServiceIp), value); }
+            get { return BackingStore?.Get<string>("destinationServiceIp"); }
+            set { BackingStore?.Set("destinationServiceIp", value); }
         }
         /// <summary>Cloud application/service name (for example &apos;Salesforce&apos;, &apos;DropBox&apos;, etc.).</summary>
         public string DestinationServiceName {
-            get { return BackingStore?.Get<string>(nameof(DestinationServiceName)); }
-            set { BackingStore?.Set(nameof(DestinationServiceName), value); }
+            get { return BackingStore?.Get<string>("destinationServiceName"); }
+            set { BackingStore?.Set("destinationServiceName", value); }
         }
         /// <summary>Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.</summary>
         public string RiskScore {
-            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
-            set { BackingStore?.Set(nameof(RiskScore), value); }
+            get { return BackingStore?.Get<string>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
         }
         /// <summary>
         /// Instantiates a new cloudAppSecurityState and sets the default values.

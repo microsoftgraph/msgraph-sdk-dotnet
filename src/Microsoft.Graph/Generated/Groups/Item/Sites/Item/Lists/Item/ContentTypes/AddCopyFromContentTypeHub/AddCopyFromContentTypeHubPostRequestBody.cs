@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.AddCopy
     public class AddCopyFromContentTypeHubPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contentTypeId property</summary>
         public string ContentTypeId {
-            get { return BackingStore?.Get<string>(nameof(ContentTypeId)); }
-            set { BackingStore?.Set(nameof(ContentTypeId), value); }
+            get { return BackingStore?.Get<string>("contentTypeId"); }
+            set { BackingStore?.Set("contentTypeId", value); }
         }
         /// <summary>
         /// Instantiates a new addCopyFromContentTypeHubPostRequestBody and sets the default values.

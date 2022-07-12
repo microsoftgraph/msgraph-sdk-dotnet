@@ -8,58 +8,58 @@ namespace Microsoft.Graph.Models {
     public class DeviceComplianceSettingState : Entity, IParsable {
         /// <summary>The DateTime when device compliance grace period expires</summary>
         public DateTimeOffset? ComplianceGracePeriodExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ComplianceGracePeriodExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ComplianceGracePeriodExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("complianceGracePeriodExpirationDateTime"); }
+            set { BackingStore?.Set("complianceGracePeriodExpirationDateTime", value); }
         }
         /// <summary>The Device Id that is being reported</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The device model that is being reported</summary>
         public string DeviceModel {
-            get { return BackingStore?.Get<string>(nameof(DeviceModel)); }
-            set { BackingStore?.Set(nameof(DeviceModel), value); }
+            get { return BackingStore?.Get<string>("deviceModel"); }
+            set { BackingStore?.Set("deviceModel", value); }
         }
         /// <summary>The Device Name that is being reported</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>The setting class name and property name.</summary>
         public string Setting {
-            get { return BackingStore?.Get<string>(nameof(Setting)); }
-            set { BackingStore?.Set(nameof(Setting), value); }
+            get { return BackingStore?.Get<string>("setting"); }
+            set { BackingStore?.Set("setting", value); }
         }
         /// <summary>The Setting Name that is being reported</summary>
         public string SettingName {
-            get { return BackingStore?.Get<string>(nameof(SettingName)); }
-            set { BackingStore?.Set(nameof(SettingName), value); }
+            get { return BackingStore?.Get<string>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
         }
-        /// <summary>The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.</summary>
+        /// <summary>The state property</summary>
         public ComplianceStatus? State {
-            get { return BackingStore?.Get<ComplianceStatus?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ComplianceStatus?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>The User email address that is being reported</summary>
         public string UserEmail {
-            get { return BackingStore?.Get<string>(nameof(UserEmail)); }
-            set { BackingStore?.Set(nameof(UserEmail), value); }
+            get { return BackingStore?.Get<string>("userEmail"); }
+            set { BackingStore?.Set("userEmail", value); }
         }
         /// <summary>The user Id that is being reported</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>The User Name that is being reported</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>The User PrincipalName that is being reported</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,45 +5,45 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class WindowsUniversalAppX : MobileLobApp, IParsable {
-        /// <summary>The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.</summary>
+        /// <summary>Contains properties for Windows architecture.</summary>
         public WindowsArchitecture? ApplicableArchitectures {
-            get { return BackingStore?.Get<WindowsArchitecture?>(nameof(ApplicableArchitectures)); }
-            set { BackingStore?.Set(nameof(ApplicableArchitectures), value); }
+            get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
+            set { BackingStore?.Set("applicableArchitectures", value); }
         }
-        /// <summary>The Windows device type(s) for which this app can run on. Possible values are: none, desktop, mobile, holographic, team.</summary>
+        /// <summary>Contains properties for Windows device type.</summary>
         public WindowsDeviceType? ApplicableDeviceTypes {
-            get { return BackingStore?.Get<WindowsDeviceType?>(nameof(ApplicableDeviceTypes)); }
-            set { BackingStore?.Set(nameof(ApplicableDeviceTypes), value); }
+            get { return BackingStore?.Get<WindowsDeviceType?>("applicableDeviceTypes"); }
+            set { BackingStore?.Set("applicableDeviceTypes", value); }
         }
         /// <summary>The Identity Name.</summary>
         public string IdentityName {
-            get { return BackingStore?.Get<string>(nameof(IdentityName)); }
-            set { BackingStore?.Set(nameof(IdentityName), value); }
+            get { return BackingStore?.Get<string>("identityName"); }
+            set { BackingStore?.Set("identityName", value); }
         }
         /// <summary>The Identity Publisher Hash.</summary>
         public string IdentityPublisherHash {
-            get { return BackingStore?.Get<string>(nameof(IdentityPublisherHash)); }
-            set { BackingStore?.Set(nameof(IdentityPublisherHash), value); }
+            get { return BackingStore?.Get<string>("identityPublisherHash"); }
+            set { BackingStore?.Set("identityPublisherHash", value); }
         }
         /// <summary>The Identity Resource Identifier.</summary>
         public string IdentityResourceIdentifier {
-            get { return BackingStore?.Get<string>(nameof(IdentityResourceIdentifier)); }
-            set { BackingStore?.Set(nameof(IdentityResourceIdentifier), value); }
+            get { return BackingStore?.Get<string>("identityResourceIdentifier"); }
+            set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
         /// <summary>The identity version.</summary>
         public string IdentityVersion {
-            get { return BackingStore?.Get<string>(nameof(IdentityVersion)); }
-            set { BackingStore?.Set(nameof(IdentityVersion), value); }
+            get { return BackingStore?.Get<string>("identityVersion"); }
+            set { BackingStore?.Set("identityVersion", value); }
         }
         /// <summary>Whether or not the app is a bundle.</summary>
         public bool? IsBundle {
-            get { return BackingStore?.Get<bool?>(nameof(IsBundle)); }
-            set { BackingStore?.Set(nameof(IsBundle), value); }
+            get { return BackingStore?.Get<bool?>("isBundle"); }
+            set { BackingStore?.Set("isBundle", value); }
         }
         /// <summary>The minimum operating system required for a Windows mobile app.</summary>
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<WindowsMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ChecklistItem : Entity, IParsable {
         /// <summary>The date and time when the checklistItem was finished.</summary>
         public DateTimeOffset? CheckedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CheckedDateTime)); }
-            set { BackingStore?.Set(nameof(CheckedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("checkedDateTime"); }
+            set { BackingStore?.Set("checkedDateTime", value); }
         }
         /// <summary>The date and time when the checklistItem was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Field indicating the title of checklistItem.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>State indicating whether the item is checked off or not.</summary>
         public bool? IsChecked {
-            get { return BackingStore?.Get<bool?>(nameof(IsChecked)); }
-            set { BackingStore?.Set(nameof(IsChecked), value); }
+            get { return BackingStore?.Get<bool?>("isChecked"); }
+            set { BackingStore?.Set("isChecked", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Models {
     public class ConfigurationManagerClientEnabledFeatures : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether compliance policy is managed by Intune</summary>
         public bool? CompliancePolicy {
-            get { return BackingStore?.Get<bool?>(nameof(CompliancePolicy)); }
-            set { BackingStore?.Set(nameof(CompliancePolicy), value); }
+            get { return BackingStore?.Get<bool?>("compliancePolicy"); }
+            set { BackingStore?.Set("compliancePolicy", value); }
         }
         /// <summary>Whether device configuration is managed by Intune</summary>
         public bool? DeviceConfiguration {
-            get { return BackingStore?.Get<bool?>(nameof(DeviceConfiguration)); }
-            set { BackingStore?.Set(nameof(DeviceConfiguration), value); }
+            get { return BackingStore?.Get<bool?>("deviceConfiguration"); }
+            set { BackingStore?.Set("deviceConfiguration", value); }
         }
         /// <summary>Whether inventory is managed by Intune</summary>
         public bool? Inventory {
-            get { return BackingStore?.Get<bool?>(nameof(Inventory)); }
-            set { BackingStore?.Set(nameof(Inventory), value); }
+            get { return BackingStore?.Get<bool?>("inventory"); }
+            set { BackingStore?.Set("inventory", value); }
         }
         /// <summary>Whether modern application is managed by Intune</summary>
         public bool? ModernApps {
-            get { return BackingStore?.Get<bool?>(nameof(ModernApps)); }
-            set { BackingStore?.Set(nameof(ModernApps), value); }
+            get { return BackingStore?.Get<bool?>("modernApps"); }
+            set { BackingStore?.Set("modernApps", value); }
         }
         /// <summary>Whether resource access is managed by Intune</summary>
         public bool? ResourceAccess {
-            get { return BackingStore?.Get<bool?>(nameof(ResourceAccess)); }
-            set { BackingStore?.Set(nameof(ResourceAccess), value); }
+            get { return BackingStore?.Get<bool?>("resourceAccess"); }
+            set { BackingStore?.Set("resourceAccess", value); }
         }
         /// <summary>Whether Windows Update for Business is managed by Intune</summary>
         public bool? WindowsUpdateForBusiness {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsUpdateForBusiness)); }
-            set { BackingStore?.Set(nameof(WindowsUpdateForBusiness), value); }
+            get { return BackingStore?.Get<bool?>("windowsUpdateForBusiness"); }
+            set { BackingStore?.Set("windowsUpdateForBusiness", value); }
         }
         /// <summary>
         /// Instantiates a new configurationManagerClientEnabledFeatures and sets the default values.

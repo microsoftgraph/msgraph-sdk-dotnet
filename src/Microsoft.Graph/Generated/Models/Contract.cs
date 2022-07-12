@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class Contract : DirectoryObject, IParsable {
         /// <summary>Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.</summary>
         public string ContractType {
-            get { return BackingStore?.Get<string>(nameof(ContractType)); }
-            set { BackingStore?.Set(nameof(ContractType), value); }
+            get { return BackingStore?.Get<string>("contractType"); }
+            set { BackingStore?.Set("contractType", value); }
         }
         /// <summary>The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant&apos;s organization resource.</summary>
         public string CustomerId {
-            get { return BackingStore?.Get<string>(nameof(CustomerId)); }
-            set { BackingStore?.Set(nameof(CustomerId), value); }
+            get { return BackingStore?.Get<string>("customerId"); }
+            set { BackingStore?.Set("customerId", value); }
         }
         /// <summary>A copy of the customer tenant&apos;s default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant&apos;s default domain name changes.</summary>
         public string DefaultDomainName {
-            get { return BackingStore?.Get<string>(nameof(DefaultDomainName)); }
-            set { BackingStore?.Set(nameof(DefaultDomainName), value); }
+            get { return BackingStore?.Get<string>("defaultDomainName"); }
+            set { BackingStore?.Set("defaultDomainName", value); }
         }
         /// <summary>A copy of the customer tenant&apos;s display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant&apos;s display name changes.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

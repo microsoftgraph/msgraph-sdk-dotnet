@@ -8,8 +8,8 @@ namespace Microsoft.Graph.Models {
     public class AppCatalogs : Entity, IParsable {
         /// <summary>The teamsApps property</summary>
         public List<TeamsApp> TeamsApps {
-            get { return BackingStore?.Get<List<TeamsApp>>(nameof(TeamsApps)); }
-            set { BackingStore?.Set(nameof(TeamsApps), value); }
+            get { return BackingStore?.Get<List<TeamsApp>>("teamsApps"); }
+            set { BackingStore?.Set("teamsApps", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

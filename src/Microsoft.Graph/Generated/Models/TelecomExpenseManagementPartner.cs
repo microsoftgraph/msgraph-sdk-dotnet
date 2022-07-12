@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Models {
     public class TelecomExpenseManagementPartner : Entity, IParsable {
         /// <summary>Whether the partner&apos;s AAD app has been authorized to access Intune.</summary>
         public bool? AppAuthorized {
-            get { return BackingStore?.Get<bool?>(nameof(AppAuthorized)); }
-            set { BackingStore?.Set(nameof(AppAuthorized), value); }
+            get { return BackingStore?.Get<bool?>("appAuthorized"); }
+            set { BackingStore?.Set("appAuthorized", value); }
         }
         /// <summary>Display name of the TEM partner.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Whether Intune&apos;s connection to the TEM service is currently enabled or disabled.</summary>
         public bool? Enabled {
-            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
-            set { BackingStore?.Set(nameof(Enabled), value); }
+            get { return BackingStore?.Get<bool?>("enabled"); }
+            set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>Timestamp of the last request sent to Intune by the TEM partner.</summary>
         public DateTimeOffset? LastConnectionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastConnectionDateTime)); }
-            set { BackingStore?.Set(nameof(LastConnectionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastConnectionDateTime"); }
+            set { BackingStore?.Set("lastConnectionDateTime", value); }
         }
         /// <summary>URL of the TEM partner&apos;s administrative control panel, where an administrator can configure their TEM service.</summary>
         public string Url {
-            get { return BackingStore?.Get<string>(nameof(Url)); }
-            set { BackingStore?.Set(nameof(Url), value); }
+            get { return BackingStore?.Get<string>("url"); }
+            set { BackingStore?.Set("url", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

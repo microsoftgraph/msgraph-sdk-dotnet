@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class Shift : ChangeTrackedEntity, IParsable {
         /// <summary>The draft version of this shift that is viewable by managers. Required.</summary>
         public ShiftItem DraftShift {
-            get { return BackingStore?.Get<ShiftItem>(nameof(DraftShift)); }
-            set { BackingStore?.Set(nameof(DraftShift), value); }
+            get { return BackingStore?.Get<ShiftItem>("draftShift"); }
+            set { BackingStore?.Set("draftShift", value); }
         }
         /// <summary>ID of the scheduling group the shift is part of. Required.</summary>
         public string SchedulingGroupId {
-            get { return BackingStore?.Get<string>(nameof(SchedulingGroupId)); }
-            set { BackingStore?.Set(nameof(SchedulingGroupId), value); }
+            get { return BackingStore?.Get<string>("schedulingGroupId"); }
+            set { BackingStore?.Set("schedulingGroupId", value); }
         }
         /// <summary>The shared version of this shift that is viewable by both employees and managers. Required.</summary>
         public ShiftItem SharedShift {
-            get { return BackingStore?.Get<ShiftItem>(nameof(SharedShift)); }
-            set { BackingStore?.Set(nameof(SharedShift), value); }
+            get { return BackingStore?.Get<ShiftItem>("sharedShift"); }
+            set { BackingStore?.Set("sharedShift", value); }
         }
         /// <summary>ID of the user assigned to the shift. Required.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,43 +8,43 @@ namespace Microsoft.Graph.Models {
     public class ApplicationTemplate : Entity, IParsable {
         /// <summary>The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design &amp; hosting.</summary>
         public List<string> Categories {
-            get { return BackingStore?.Get<List<string>>(nameof(Categories)); }
-            set { BackingStore?.Set(nameof(Categories), value); }
+            get { return BackingStore?.Get<List<string>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
         }
         /// <summary>A description of the application.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The name of the application.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The home page URL of the application.</summary>
         public string HomePageUrl {
-            get { return BackingStore?.Get<string>(nameof(HomePageUrl)); }
-            set { BackingStore?.Set(nameof(HomePageUrl), value); }
+            get { return BackingStore?.Get<string>("homePageUrl"); }
+            set { BackingStore?.Set("homePageUrl", value); }
         }
         /// <summary>The URL to get the logo for this application.</summary>
         public string LogoUrl {
-            get { return BackingStore?.Get<string>(nameof(LogoUrl)); }
-            set { BackingStore?.Set(nameof(LogoUrl), value); }
+            get { return BackingStore?.Get<string>("logoUrl"); }
+            set { BackingStore?.Set("logoUrl", value); }
         }
         /// <summary>The name of the publisher for this application.</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
         /// <summary>The list of provisioning modes supported by this application. The only valid value is sync.</summary>
         public List<string> SupportedProvisioningTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedProvisioningTypes)); }
-            set { BackingStore?.Set(nameof(SupportedProvisioningTypes), value); }
+            get { return BackingStore?.Get<List<string>>("supportedProvisioningTypes"); }
+            set { BackingStore?.Set("supportedProvisioningTypes", value); }
         }
         /// <summary>The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.</summary>
         public List<string> SupportedSingleSignOnModes {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedSingleSignOnModes)); }
-            set { BackingStore?.Set(nameof(SupportedSingleSignOnModes), value); }
+            get { return BackingStore?.Get<List<string>>("supportedSingleSignOnModes"); }
+            set { BackingStore?.Set("supportedSingleSignOnModes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

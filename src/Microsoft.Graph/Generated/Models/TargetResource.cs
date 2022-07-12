@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class TargetResource : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates the visible name defined for the resource. Typically specified when the resource is created.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>When type is set to Group, this indicates the group type.  Possible values are: unifiedGroups, azureAD, and unknownFutureValue</summary>
         public Microsoft.Graph.Models.GroupType? GroupType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.GroupType?>(nameof(GroupType)); }
-            set { BackingStore?.Set(nameof(GroupType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.GroupType?>("groupType"); }
+            set { BackingStore?.Set("groupType", value); }
         }
         /// <summary>Indicates the unique ID of the resource.</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.</summary>
         public List<ModifiedProperty> ModifiedProperties {
-            get { return BackingStore?.Get<List<ModifiedProperty>>(nameof(ModifiedProperties)); }
-            set { BackingStore?.Set(nameof(ModifiedProperties), value); }
+            get { return BackingStore?.Get<List<ModifiedProperty>>("modifiedProperties"); }
+            set { BackingStore?.Set("modifiedProperties", value); }
         }
         /// <summary>Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.</summary>
         public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>When type is set to User, this includes the user name that initiated the action; null for other types.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Instantiates a new targetResource and sets the default values.

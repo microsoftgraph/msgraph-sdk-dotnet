@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,19 @@ namespace Microsoft.Graph.Models {
     public class DeviceManagementTroubleshootingEvent : Entity, IParsable {
         /// <summary>Id used for tracing the failure in the service.</summary>
         public string CorrelationId {
-            get { return BackingStore?.Get<string>(nameof(CorrelationId)); }
-            set { BackingStore?.Set(nameof(CorrelationId), value); }
+            get { return BackingStore?.Get<string>("correlationId"); }
+            set { BackingStore?.Set("correlationId", value); }
         }
         /// <summary>Time when the event occurred .</summary>
         public DateTimeOffset? EventDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EventDateTime)); }
-            set { BackingStore?.Set(nameof(EventDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
+            set { BackingStore?.Set("eventDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
+        /// </summary>
+        public DeviceManagementTroubleshootingEvent() : base() {
+            Type = "#microsoft.graph.deviceManagementTroubleshootingEvent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Models {
     public class DeviceDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates the browser information of the used for signing-in.</summary>
         public string Browser {
-            get { return BackingStore?.Get<string>(nameof(Browser)); }
-            set { BackingStore?.Set(nameof(Browser), value); }
+            get { return BackingStore?.Get<string>("browser"); }
+            set { BackingStore?.Set("browser", value); }
         }
         /// <summary>Refers to the UniqueID of the device used for signing-in.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>Refers to the name of the device used for signing-in.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Indicates whether the device is compliant or not.</summary>
         public bool? IsCompliant {
-            get { return BackingStore?.Get<bool?>(nameof(IsCompliant)); }
-            set { BackingStore?.Set(nameof(IsCompliant), value); }
+            get { return BackingStore?.Get<bool?>("isCompliant"); }
+            set { BackingStore?.Set("isCompliant", value); }
         }
         /// <summary>Indicates if the device is managed or not.</summary>
         public bool? IsManaged {
-            get { return BackingStore?.Get<bool?>(nameof(IsManaged)); }
-            set { BackingStore?.Set(nameof(IsManaged), value); }
+            get { return BackingStore?.Get<bool?>("isManaged"); }
+            set { BackingStore?.Set("isManaged", value); }
         }
         /// <summary>Indicates the OS name and version used for signing-in.</summary>
         public string OperatingSystem {
-            get { return BackingStore?.Get<string>(nameof(OperatingSystem)); }
-            set { BackingStore?.Set(nameof(OperatingSystem), value); }
+            get { return BackingStore?.Get<string>("operatingSystem"); }
+            set { BackingStore?.Set("operatingSystem", value); }
         }
         /// <summary>Indicates information on whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.</summary>
         public string TrustType {
-            get { return BackingStore?.Get<string>(nameof(TrustType)); }
-            set { BackingStore?.Set(nameof(TrustType), value); }
+            get { return BackingStore?.Get<string>("trustType"); }
+            set { BackingStore?.Set("trustType", value); }
         }
         /// <summary>
         /// Instantiates a new deviceDetail and sets the default values.

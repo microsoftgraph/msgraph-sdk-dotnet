@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class EducationRoot : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The classes property</summary>
         public List<EducationClass> Classes {
-            get { return BackingStore?.Get<List<EducationClass>>(nameof(Classes)); }
-            set { BackingStore?.Set(nameof(Classes), value); }
+            get { return BackingStore?.Get<List<EducationClass>>("classes"); }
+            set { BackingStore?.Set("classes", value); }
         }
         /// <summary>The me property</summary>
         public EducationUser Me {
-            get { return BackingStore?.Get<EducationUser>(nameof(Me)); }
-            set { BackingStore?.Set(nameof(Me), value); }
+            get { return BackingStore?.Get<EducationUser>("me"); }
+            set { BackingStore?.Set("me", value); }
         }
         /// <summary>The schools property</summary>
         public List<EducationSchool> Schools {
-            get { return BackingStore?.Get<List<EducationSchool>>(nameof(Schools)); }
-            set { BackingStore?.Set(nameof(Schools), value); }
+            get { return BackingStore?.Get<List<EducationSchool>>("schools"); }
+            set { BackingStore?.Set("schools", value); }
         }
         /// <summary>The users property</summary>
         public List<EducationUser> Users {
-            get { return BackingStore?.Get<List<EducationUser>>(nameof(Users)); }
-            set { BackingStore?.Set(nameof(Users), value); }
+            get { return BackingStore?.Get<List<EducationUser>>("users"); }
+            set { BackingStore?.Set("users", value); }
         }
         /// <summary>
         /// Instantiates a new EducationRoot and sets the default values.

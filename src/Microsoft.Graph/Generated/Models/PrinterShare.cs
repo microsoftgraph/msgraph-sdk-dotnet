@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the print singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class PrinterShare : PrinterBase, IParsable {
         /// <summary>If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.</summary>
         public bool? AllowAllUsers {
-            get { return BackingStore?.Get<bool?>(nameof(AllowAllUsers)); }
-            set { BackingStore?.Set(nameof(AllowAllUsers), value); }
+            get { return BackingStore?.Get<bool?>("allowAllUsers"); }
+            set { BackingStore?.Set("allowAllUsers", value); }
         }
         /// <summary>The groups whose users have access to print using the printer.</summary>
         public List<Group> AllowedGroups {
-            get { return BackingStore?.Get<List<Group>>(nameof(AllowedGroups)); }
-            set { BackingStore?.Set(nameof(AllowedGroups), value); }
+            get { return BackingStore?.Get<List<Group>>("allowedGroups"); }
+            set { BackingStore?.Set("allowedGroups", value); }
         }
         /// <summary>The users who have access to print using the printer.</summary>
         public List<User> AllowedUsers {
-            get { return BackingStore?.Get<List<User>>(nameof(AllowedUsers)); }
-            set { BackingStore?.Set(nameof(AllowedUsers), value); }
+            get { return BackingStore?.Get<List<User>>("allowedUsers"); }
+            set { BackingStore?.Set("allowedUsers", value); }
         }
         /// <summary>The DateTimeOffset when the printer share was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The printer that this printer share is related to.</summary>
         public Microsoft.Graph.Models.Printer Printer {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Printer>(nameof(Printer)); }
-            set { BackingStore?.Set(nameof(Printer), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Printer>("printer"); }
+            set { BackingStore?.Set("printer", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

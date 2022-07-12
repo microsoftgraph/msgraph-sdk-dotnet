@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class TeamsTab : Entity, IParsable {
         /// <summary>Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</summary>
         public TeamsTabConfiguration Configuration {
-            get { return BackingStore?.Get<TeamsTabConfiguration>(nameof(Configuration)); }
-            set { BackingStore?.Set(nameof(Configuration), value); }
+            get { return BackingStore?.Get<TeamsTabConfiguration>("configuration"); }
+            set { BackingStore?.Set("configuration", value); }
         }
         /// <summary>Name of the tab.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The application that is linked to the tab.</summary>
         public Microsoft.Graph.Models.TeamsApp TeamsApp {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsApp>(nameof(TeamsApp)); }
-            set { BackingStore?.Set(nameof(TeamsApp), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsApp>("teamsApp"); }
+            set { BackingStore?.Set("teamsApp", value); }
         }
         /// <summary>Deep link URL of the tab instance. Read only.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

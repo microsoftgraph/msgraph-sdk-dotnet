@@ -7,88 +7,88 @@ namespace Microsoft.Graph.Models {
     public class MacOSCompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Require that devices have enabled device threat protection.</summary>
         public bool? DeviceThreatProtectionEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(DeviceThreatProtectionEnabled)); }
-            set { BackingStore?.Set(nameof(DeviceThreatProtectionEnabled), value); }
+            get { return BackingStore?.Get<bool?>("deviceThreatProtectionEnabled"); }
+            set { BackingStore?.Set("deviceThreatProtectionEnabled", value); }
         }
-        /// <summary>Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.</summary>
+        /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
         public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel {
-            get { return BackingStore?.Get<DeviceThreatProtectionLevel?>(nameof(DeviceThreatProtectionRequiredSecurityLevel)); }
-            set { BackingStore?.Set(nameof(DeviceThreatProtectionRequiredSecurityLevel), value); }
+            get { return BackingStore?.Get<DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
+            set { BackingStore?.Set("deviceThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Corresponds to the &apos;Block all incoming connections&apos; option.</summary>
         public bool? FirewallBlockAllIncoming {
-            get { return BackingStore?.Get<bool?>(nameof(FirewallBlockAllIncoming)); }
-            set { BackingStore?.Set(nameof(FirewallBlockAllIncoming), value); }
+            get { return BackingStore?.Get<bool?>("firewallBlockAllIncoming"); }
+            set { BackingStore?.Set("firewallBlockAllIncoming", value); }
         }
         /// <summary>Whether the firewall should be enabled or not.</summary>
         public bool? FirewallEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(FirewallEnabled)); }
-            set { BackingStore?.Set(nameof(FirewallEnabled), value); }
+            get { return BackingStore?.Get<bool?>("firewallEnabled"); }
+            set { BackingStore?.Set("firewallEnabled", value); }
         }
         /// <summary>Corresponds to &apos;Enable stealth mode.&apos;</summary>
         public bool? FirewallEnableStealthMode {
-            get { return BackingStore?.Get<bool?>(nameof(FirewallEnableStealthMode)); }
-            set { BackingStore?.Set(nameof(FirewallEnableStealthMode), value); }
+            get { return BackingStore?.Get<bool?>("firewallEnableStealthMode"); }
+            set { BackingStore?.Set("firewallEnableStealthMode", value); }
         }
         /// <summary>Maximum MacOS version.</summary>
         public string OsMaximumVersion {
-            get { return BackingStore?.Get<string>(nameof(OsMaximumVersion)); }
-            set { BackingStore?.Set(nameof(OsMaximumVersion), value); }
+            get { return BackingStore?.Get<string>("osMaximumVersion"); }
+            set { BackingStore?.Set("osMaximumVersion", value); }
         }
         /// <summary>Minimum MacOS version.</summary>
         public string OsMinimumVersion {
-            get { return BackingStore?.Get<string>(nameof(OsMinimumVersion)); }
-            set { BackingStore?.Set(nameof(OsMinimumVersion), value); }
+            get { return BackingStore?.Get<string>("osMinimumVersion"); }
+            set { BackingStore?.Set("osMinimumVersion", value); }
         }
         /// <summary>Indicates whether or not to block simple passwords.</summary>
         public bool? PasswordBlockSimple {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordBlockSimple)); }
-            set { BackingStore?.Set(nameof(PasswordBlockSimple), value); }
+            get { return BackingStore?.Get<bool?>("passwordBlockSimple"); }
+            set { BackingStore?.Set("passwordBlockSimple", value); }
         }
         /// <summary>Number of days before the password expires. Valid values 1 to 65535</summary>
         public int? PasswordExpirationDays {
-            get { return BackingStore?.Get<int?>(nameof(PasswordExpirationDays)); }
-            set { BackingStore?.Set(nameof(PasswordExpirationDays), value); }
+            get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
+            set { BackingStore?.Set("passwordExpirationDays", value); }
         }
         /// <summary>The number of character sets required in the password.</summary>
         public int? PasswordMinimumCharacterSetCount {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumCharacterSetCount)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumCharacterSetCount), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumCharacterSetCount"); }
+            set { BackingStore?.Set("passwordMinimumCharacterSetCount", value); }
         }
         /// <summary>Minimum length of password. Valid values 4 to 14</summary>
         public int? PasswordMinimumLength {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumLength)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumLength), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
+            set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before a password is required.</summary>
         public int? PasswordMinutesOfInactivityBeforeLock {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinutesOfInactivityBeforeLock)); }
-            set { BackingStore?.Set(nameof(PasswordMinutesOfInactivityBeforeLock), value); }
+            get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeLock"); }
+            set { BackingStore?.Set("passwordMinutesOfInactivityBeforeLock", value); }
         }
         /// <summary>Number of previous passwords to block. Valid values 1 to 24</summary>
         public int? PasswordPreviousPasswordBlockCount {
-            get { return BackingStore?.Get<int?>(nameof(PasswordPreviousPasswordBlockCount)); }
-            set { BackingStore?.Set(nameof(PasswordPreviousPasswordBlockCount), value); }
+            get { return BackingStore?.Get<int?>("passwordPreviousPasswordBlockCount"); }
+            set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Whether or not to require a password.</summary>
         public bool? PasswordRequired {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordRequired)); }
-            set { BackingStore?.Set(nameof(PasswordRequired), value); }
+            get { return BackingStore?.Get<bool?>("passwordRequired"); }
+            set { BackingStore?.Set("passwordRequired", value); }
         }
-        /// <summary>The required password type. Possible values are: deviceDefault, alphanumeric, numeric.</summary>
+        /// <summary>Possible values of required passwords.</summary>
         public RequiredPasswordType? PasswordRequiredType {
-            get { return BackingStore?.Get<RequiredPasswordType?>(nameof(PasswordRequiredType)); }
-            set { BackingStore?.Set(nameof(PasswordRequiredType), value); }
+            get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
+            set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Require encryption on Mac OS devices.</summary>
         public bool? StorageRequireEncryption {
-            get { return BackingStore?.Get<bool?>(nameof(StorageRequireEncryption)); }
-            set { BackingStore?.Set(nameof(StorageRequireEncryption), value); }
+            get { return BackingStore?.Get<bool?>("storageRequireEncryption"); }
+            set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>Require that devices have enabled system integrity protection.</summary>
         public bool? SystemIntegrityProtectionEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SystemIntegrityProtectionEnabled)); }
-            set { BackingStore?.Set(nameof(SystemIntegrityProtectionEnabled), value); }
+            get { return BackingStore?.Get<bool?>("systemIntegrityProtectionEnabled"); }
+            set { BackingStore?.Set("systemIntegrityProtectionEnabled", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

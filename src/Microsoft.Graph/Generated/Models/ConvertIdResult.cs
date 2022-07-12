@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class ConvertIdResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.</summary>
         public GenericError ErrorDetails {
-            get { return BackingStore?.Get<GenericError>(nameof(ErrorDetails)); }
-            set { BackingStore?.Set(nameof(ErrorDetails), value); }
+            get { return BackingStore?.Get<GenericError>("errorDetails"); }
+            set { BackingStore?.Set("errorDetails", value); }
         }
         /// <summary>The identifier that was converted. This value is the original, un-converted identifier.</summary>
         public string SourceId {
-            get { return BackingStore?.Get<string>(nameof(SourceId)); }
-            set { BackingStore?.Set(nameof(SourceId), value); }
+            get { return BackingStore?.Get<string>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
         }
         /// <summary>The converted identifier. This value is not present if the conversion failed.</summary>
         public string TargetId {
-            get { return BackingStore?.Get<string>(nameof(TargetId)); }
-            set { BackingStore?.Set(nameof(TargetId), value); }
+            get { return BackingStore?.Get<string>("targetId"); }
+            set { BackingStore?.Set("targetId", value); }
         }
         /// <summary>
         /// Instantiates a new convertIdResult and sets the default values.

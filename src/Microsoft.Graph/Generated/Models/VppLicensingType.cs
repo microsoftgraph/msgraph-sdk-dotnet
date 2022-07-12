@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class VppLicensingType : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether the program supports the device licensing type.</summary>
         public bool? SupportsDeviceLicensing {
-            get { return BackingStore?.Get<bool?>(nameof(SupportsDeviceLicensing)); }
-            set { BackingStore?.Set(nameof(SupportsDeviceLicensing), value); }
+            get { return BackingStore?.Get<bool?>("supportsDeviceLicensing"); }
+            set { BackingStore?.Set("supportsDeviceLicensing", value); }
         }
         /// <summary>Whether the program supports the user licensing type.</summary>
         public bool? SupportsUserLicensing {
-            get { return BackingStore?.Get<bool?>(nameof(SupportsUserLicensing)); }
-            set { BackingStore?.Set(nameof(SupportsUserLicensing), value); }
+            get { return BackingStore?.Get<bool?>("supportsUserLicensing"); }
+            set { BackingStore?.Set("supportsUserLicensing", value); }
         }
         /// <summary>
         /// Instantiates a new vppLicensingType and sets the default values.

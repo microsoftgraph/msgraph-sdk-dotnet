@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class Win32LobAppInstallExperience : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Device restart behavior. Possible values are: basedOnReturnCode, allow, suppress, force.</summary>
+        /// <summary>Indicates the type of restart action.</summary>
         public Win32LobAppRestartBehavior? DeviceRestartBehavior {
-            get { return BackingStore?.Get<Win32LobAppRestartBehavior?>(nameof(DeviceRestartBehavior)); }
-            set { BackingStore?.Set(nameof(DeviceRestartBehavior), value); }
+            get { return BackingStore?.Get<Win32LobAppRestartBehavior?>("deviceRestartBehavior"); }
+            set { BackingStore?.Set("deviceRestartBehavior", value); }
         }
-        /// <summary>Indicates the type of execution context the app runs in. Possible values are: system, user.</summary>
+        /// <summary>Indicates the type of execution context the app runs in.</summary>
         public RunAsAccountType? RunAsAccount {
-            get { return BackingStore?.Get<RunAsAccountType?>(nameof(RunAsAccount)); }
-            set { BackingStore?.Set(nameof(RunAsAccount), value); }
+            get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
+            set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>
         /// Instantiates a new win32LobAppInstallExperience and sets the default values.

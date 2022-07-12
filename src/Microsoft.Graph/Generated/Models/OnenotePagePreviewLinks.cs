@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Models {
     public class OnenotePagePreviewLinks : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The previewImageUrl property</summary>
         public ExternalLink PreviewImageUrl {
-            get { return BackingStore?.Get<ExternalLink>(nameof(PreviewImageUrl)); }
-            set { BackingStore?.Set(nameof(PreviewImageUrl), value); }
+            get { return BackingStore?.Get<ExternalLink>("previewImageUrl"); }
+            set { BackingStore?.Set("previewImageUrl", value); }
         }
         /// <summary>
         /// Instantiates a new onenotePagePreviewLinks and sets the default values.

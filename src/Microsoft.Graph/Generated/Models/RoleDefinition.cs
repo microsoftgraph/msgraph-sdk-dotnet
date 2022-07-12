@@ -1,35 +1,41 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.</summary>
     public class RoleDefinition : Entity, IParsable {
         /// <summary>Description of the Role definition.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display Name of the Role definition.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.</summary>
         public bool? IsBuiltIn {
-            get { return BackingStore?.Get<bool?>(nameof(IsBuiltIn)); }
-            set { BackingStore?.Set(nameof(IsBuiltIn), value); }
+            get { return BackingStore?.Get<bool?>("isBuiltIn"); }
+            set { BackingStore?.Set("isBuiltIn", value); }
         }
         /// <summary>List of Role assignments for this role definition.</summary>
         public List<RoleAssignment> RoleAssignments {
-            get { return BackingStore?.Get<List<RoleAssignment>>(nameof(RoleAssignments)); }
-            set { BackingStore?.Set(nameof(RoleAssignments), value); }
+            get { return BackingStore?.Get<List<RoleAssignment>>("roleAssignments"); }
+            set { BackingStore?.Set("roleAssignments", value); }
         }
         /// <summary>List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.</summary>
         public List<RolePermission> RolePermissions {
-            get { return BackingStore?.Get<List<RolePermission>>(nameof(RolePermissions)); }
-            set { BackingStore?.Set(nameof(RolePermissions), value); }
+            get { return BackingStore?.Get<List<RolePermission>>("rolePermissions"); }
+            set { BackingStore?.Set("rolePermissions", value); }
+        }
+        /// <summary>
+        /// Instantiates a new roleDefinition and sets the default values.
+        /// </summary>
+        public RoleDefinition() : base() {
+            Type = "#microsoft.graph.roleDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

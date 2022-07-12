@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class IdentityApiConnector : Entity, IParsable {
         /// <summary>The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.</summary>
         public ApiAuthenticationConfigurationBase AuthenticationConfiguration {
-            get { return BackingStore?.Get<ApiAuthenticationConfigurationBase>(nameof(AuthenticationConfiguration)); }
-            set { BackingStore?.Set(nameof(AuthenticationConfiguration), value); }
+            get { return BackingStore?.Get<ApiAuthenticationConfigurationBase>("authenticationConfiguration"); }
+            set { BackingStore?.Set("authenticationConfiguration", value); }
         }
         /// <summary>The name of the API connector.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The URL of the API endpoint to call.</summary>
         public string TargetUrl {
-            get { return BackingStore?.Get<string>(nameof(TargetUrl)); }
-            set { BackingStore?.Set(nameof(TargetUrl), value); }
+            get { return BackingStore?.Get<string>("targetUrl"); }
+            set { BackingStore?.Set("targetUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

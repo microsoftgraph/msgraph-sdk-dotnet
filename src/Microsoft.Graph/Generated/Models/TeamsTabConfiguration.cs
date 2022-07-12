@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class TeamsTabConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Url used for rendering tab contents in Teams. Required.</summary>
         public string ContentUrl {
-            get { return BackingStore?.Get<string>(nameof(ContentUrl)); }
-            set { BackingStore?.Set(nameof(ContentUrl), value); }
+            get { return BackingStore?.Get<string>("contentUrl"); }
+            set { BackingStore?.Set("contentUrl", value); }
         }
         /// <summary>Identifier for the entity hosted by the tab provider.</summary>
         public string EntityId {
-            get { return BackingStore?.Get<string>(nameof(EntityId)); }
-            set { BackingStore?.Set(nameof(EntityId), value); }
+            get { return BackingStore?.Get<string>("entityId"); }
+            set { BackingStore?.Set("entityId", value); }
         }
         /// <summary>Url called by Teams client when a Tab is removed using the Teams Client.</summary>
         public string RemoveUrl {
-            get { return BackingStore?.Get<string>(nameof(RemoveUrl)); }
-            set { BackingStore?.Set(nameof(RemoveUrl), value); }
+            get { return BackingStore?.Get<string>("removeUrl"); }
+            set { BackingStore?.Set("removeUrl", value); }
         }
         /// <summary>Url for showing tab contents outside of Teams.</summary>
         public string WebsiteUrl {
-            get { return BackingStore?.Get<string>(nameof(WebsiteUrl)); }
-            set { BackingStore?.Set(nameof(WebsiteUrl), value); }
+            get { return BackingStore?.Get<string>("websiteUrl"); }
+            set { BackingStore?.Set("websiteUrl", value); }
         }
         /// <summary>
         /// Instantiates a new teamsTabConfiguration and sets the default values.

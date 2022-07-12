@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class MediaContentRatingFrance : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Movies rating selected for France. Possible values are: allAllowed, allBlocked, agesAbove10, agesAbove12, agesAbove16, agesAbove18.</summary>
+        /// <summary>Movies rating labels in France</summary>
         public RatingFranceMoviesType? MovieRating {
-            get { return BackingStore?.Get<RatingFranceMoviesType?>(nameof(MovieRating)); }
-            set { BackingStore?.Set(nameof(MovieRating), value); }
+            get { return BackingStore?.Get<RatingFranceMoviesType?>("movieRating"); }
+            set { BackingStore?.Set("movieRating", value); }
         }
-        /// <summary>TV rating selected for France. Possible values are: allAllowed, allBlocked, agesAbove10, agesAbove12, agesAbove16, agesAbove18.</summary>
+        /// <summary>TV content rating labels in France</summary>
         public RatingFranceTelevisionType? TvRating {
-            get { return BackingStore?.Get<RatingFranceTelevisionType?>(nameof(TvRating)); }
-            set { BackingStore?.Set(nameof(TvRating), value); }
+            get { return BackingStore?.Get<RatingFranceTelevisionType?>("tvRating"); }
+            set { BackingStore?.Set("tvRating", value); }
         }
         /// <summary>
         /// Instantiates a new mediaContentRatingFrance and sets the default values.

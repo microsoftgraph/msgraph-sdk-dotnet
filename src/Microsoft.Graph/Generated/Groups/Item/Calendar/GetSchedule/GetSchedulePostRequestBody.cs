@@ -10,30 +10,30 @@ namespace Microsoft.Graph.Groups.Item.Calendar.GetSchedule {
     public class GetSchedulePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The AvailabilityViewInterval property</summary>
         public int? AvailabilityViewInterval {
-            get { return BackingStore?.Get<int?>(nameof(AvailabilityViewInterval)); }
-            set { BackingStore?.Set(nameof(AvailabilityViewInterval), value); }
+            get { return BackingStore?.Get<int?>("availabilityViewInterval"); }
+            set { BackingStore?.Set("availabilityViewInterval", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The EndTime property</summary>
         public DateTimeTimeZone EndTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(EndTime)); }
-            set { BackingStore?.Set(nameof(EndTime), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("endTime"); }
+            set { BackingStore?.Set("endTime", value); }
         }
         /// <summary>The Schedules property</summary>
         public List<string> Schedules {
-            get { return BackingStore?.Get<List<string>>(nameof(Schedules)); }
-            set { BackingStore?.Set(nameof(Schedules), value); }
+            get { return BackingStore?.Get<List<string>>("schedules"); }
+            set { BackingStore?.Set("schedules", value); }
         }
         /// <summary>The StartTime property</summary>
         public DateTimeTimeZone StartTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(StartTime)); }
-            set { BackingStore?.Set(nameof(StartTime), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("startTime"); }
+            set { BackingStore?.Set("startTime", value); }
         }
         /// <summary>
         /// Instantiates a new getSchedulePostRequestBody and sets the default values.

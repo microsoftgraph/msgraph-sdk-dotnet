@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite {
     public class FavoritePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The messageIds property</summary>
         public List<string> MessageIds {
-            get { return BackingStore?.Get<List<string>>(nameof(MessageIds)); }
-            set { BackingStore?.Set(nameof(MessageIds), value); }
+            get { return BackingStore?.Get<List<string>>("messageIds"); }
+            set { BackingStore?.Set("messageIds", value); }
         }
         /// <summary>
         /// Instantiates a new favoritePostRequestBody and sets the default values.

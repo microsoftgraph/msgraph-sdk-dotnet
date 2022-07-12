@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Models {
     public class PrintSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service will automatically convert documents into a format compatible with the printer (xps to pdf) when needed.</summary>
         public bool? DocumentConversionEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(DocumentConversionEnabled)); }
-            set { BackingStore?.Set(nameof(DocumentConversionEnabled), value); }
+            get { return BackingStore?.Get<bool?>("documentConversionEnabled"); }
+            set { BackingStore?.Set("documentConversionEnabled", value); }
         }
         /// <summary>
         /// Instantiates a new printSettings and sets the default values.

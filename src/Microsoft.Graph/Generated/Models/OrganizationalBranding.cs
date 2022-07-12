@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class OrganizationalBranding : OrganizationalBrandingProperties, IParsable {
         /// <summary>Add different branding based on a locale.</summary>
         public List<OrganizationalBrandingLocalization> Localizations {
-            get { return BackingStore?.Get<List<OrganizationalBrandingLocalization>>(nameof(Localizations)); }
-            set { BackingStore?.Set(nameof(Localizations), value); }
+            get { return BackingStore?.Get<List<OrganizationalBrandingLocalization>>("localizations"); }
+            set { BackingStore?.Set("localizations", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

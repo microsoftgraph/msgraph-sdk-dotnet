@@ -10,35 +10,35 @@ namespace Microsoft.Graph.Communications.Calls.Item.Answer {
     public class AnswerPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The acceptedModalities property</summary>
         public List<string> AcceptedModalities {
-            get { return BackingStore?.Get<List<string>>(nameof(AcceptedModalities)); }
-            set { BackingStore?.Set(nameof(AcceptedModalities), value); }
+            get { return BackingStore?.Get<List<string>>("acceptedModalities"); }
+            set { BackingStore?.Set("acceptedModalities", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The callbackUri property</summary>
         public string CallbackUri {
-            get { return BackingStore?.Get<string>(nameof(CallbackUri)); }
-            set { BackingStore?.Set(nameof(CallbackUri), value); }
+            get { return BackingStore?.Get<string>("callbackUri"); }
+            set { BackingStore?.Set("callbackUri", value); }
         }
         /// <summary>The callOptions property</summary>
         public IncomingCallOptions CallOptions {
-            get { return BackingStore?.Get<IncomingCallOptions>(nameof(CallOptions)); }
-            set { BackingStore?.Set(nameof(CallOptions), value); }
+            get { return BackingStore?.Get<IncomingCallOptions>("callOptions"); }
+            set { BackingStore?.Set("callOptions", value); }
         }
         /// <summary>The mediaConfig property</summary>
         public Microsoft.Graph.Models.MediaConfig MediaConfig {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaConfig>(nameof(MediaConfig)); }
-            set { BackingStore?.Set(nameof(MediaConfig), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaConfig>("mediaConfig"); }
+            set { BackingStore?.Set("mediaConfig", value); }
         }
         /// <summary>The participantCapacity property</summary>
         public int? ParticipantCapacity {
-            get { return BackingStore?.Get<int?>(nameof(ParticipantCapacity)); }
-            set { BackingStore?.Set(nameof(ParticipantCapacity), value); }
+            get { return BackingStore?.Get<int?>("participantCapacity"); }
+            set { BackingStore?.Set("participantCapacity", value); }
         }
         /// <summary>
         /// Instantiates a new answerPostRequestBody and sets the default values.

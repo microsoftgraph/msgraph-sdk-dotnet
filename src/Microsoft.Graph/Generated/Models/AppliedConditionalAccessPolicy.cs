@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class AppliedConditionalAccessPolicy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the conditional access policy.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Refers to the grant controls enforced by the conditional access policy (example: &apos;Require multi-factor authentication&apos;).</summary>
         public List<string> EnforcedGrantControls {
-            get { return BackingStore?.Get<List<string>>(nameof(EnforcedGrantControls)); }
-            set { BackingStore?.Set(nameof(EnforcedGrantControls), value); }
+            get { return BackingStore?.Get<List<string>>("enforcedGrantControls"); }
+            set { BackingStore?.Set("enforcedGrantControls", value); }
         }
         /// <summary>Refers to the session controls enforced by the conditional access policy (example: &apos;Require app enforced controls&apos;).</summary>
         public List<string> EnforcedSessionControls {
-            get { return BackingStore?.Get<List<string>>(nameof(EnforcedSessionControls)); }
-            set { BackingStore?.Set(nameof(EnforcedSessionControls), value); }
+            get { return BackingStore?.Get<List<string>>("enforcedSessionControls"); }
+            set { BackingStore?.Set("enforcedSessionControls", value); }
         }
         /// <summary>Identifier of the conditional access policy.</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn&apos;t applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.</summary>
         public AppliedConditionalAccessPolicyResult? Result {
-            get { return BackingStore?.Get<AppliedConditionalAccessPolicyResult?>(nameof(Result)); }
-            set { BackingStore?.Set(nameof(Result), value); }
+            get { return BackingStore?.Get<AppliedConditionalAccessPolicyResult?>("result"); }
+            set { BackingStore?.Set("result", value); }
         }
         /// <summary>
         /// Instantiates a new appliedConditionalAccessPolicy and sets the default values.

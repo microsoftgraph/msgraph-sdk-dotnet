@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class CallRoute : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The final property</summary>
         public IdentitySet Final {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Final)); }
-            set { BackingStore?.Set(nameof(Final), value); }
+            get { return BackingStore?.Get<IdentitySet>("final"); }
+            set { BackingStore?.Set("final", value); }
         }
         /// <summary>The original property</summary>
         public IdentitySet Original {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Original)); }
-            set { BackingStore?.Set(nameof(Original), value); }
+            get { return BackingStore?.Get<IdentitySet>("original"); }
+            set { BackingStore?.Set("original", value); }
         }
-        /// <summary>Possible values are: forwarded, lookup, selfFork.</summary>
+        /// <summary>The routingType property</summary>
         public Microsoft.Graph.Models.RoutingType? RoutingType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.RoutingType?>(nameof(RoutingType)); }
-            set { BackingStore?.Set(nameof(RoutingType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RoutingType?>("routingType"); }
+            set { BackingStore?.Set("routingType", value); }
         }
         /// <summary>
         /// Instantiates a new callRoute and sets the default values.

@@ -4,42 +4,41 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class Workbook : Entity, IParsable {
         /// <summary>The application property</summary>
         public WorkbookApplication Application {
-            get { return BackingStore?.Get<WorkbookApplication>(nameof(Application)); }
-            set { BackingStore?.Set(nameof(Application), value); }
+            get { return BackingStore?.Get<WorkbookApplication>("application"); }
+            set { BackingStore?.Set("application", value); }
         }
         /// <summary>The comments property</summary>
         public List<WorkbookComment> Comments {
-            get { return BackingStore?.Get<List<WorkbookComment>>(nameof(Comments)); }
-            set { BackingStore?.Set(nameof(Comments), value); }
+            get { return BackingStore?.Get<List<WorkbookComment>>("comments"); }
+            set { BackingStore?.Set("comments", value); }
         }
         /// <summary>The functions property</summary>
         public WorkbookFunctions Functions {
-            get { return BackingStore?.Get<WorkbookFunctions>(nameof(Functions)); }
-            set { BackingStore?.Set(nameof(Functions), value); }
+            get { return BackingStore?.Get<WorkbookFunctions>("functions"); }
+            set { BackingStore?.Set("functions", value); }
         }
         /// <summary>Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.</summary>
         public List<WorkbookNamedItem> Names {
-            get { return BackingStore?.Get<List<WorkbookNamedItem>>(nameof(Names)); }
-            set { BackingStore?.Set(nameof(Names), value); }
+            get { return BackingStore?.Get<List<WorkbookNamedItem>>("names"); }
+            set { BackingStore?.Set("names", value); }
         }
         /// <summary>The status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.</summary>
         public List<WorkbookOperation> Operations {
-            get { return BackingStore?.Get<List<WorkbookOperation>>(nameof(Operations)); }
-            set { BackingStore?.Set(nameof(Operations), value); }
+            get { return BackingStore?.Get<List<WorkbookOperation>>("operations"); }
+            set { BackingStore?.Set("operations", value); }
         }
         /// <summary>Represents a collection of tables associated with the workbook. Read-only.</summary>
         public List<WorkbookTable> Tables {
-            get { return BackingStore?.Get<List<WorkbookTable>>(nameof(Tables)); }
-            set { BackingStore?.Set(nameof(Tables), value); }
+            get { return BackingStore?.Get<List<WorkbookTable>>("tables"); }
+            set { BackingStore?.Set("tables", value); }
         }
         /// <summary>Represents a collection of worksheets associated with the workbook. Read-only.</summary>
         public List<WorkbookWorksheet> Worksheets {
-            get { return BackingStore?.Get<List<WorkbookWorksheet>>(nameof(Worksheets)); }
-            set { BackingStore?.Set(nameof(Worksheets), value); }
+            get { return BackingStore?.Get<List<WorkbookWorksheet>>("worksheets"); }
+            set { BackingStore?.Set("worksheets", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

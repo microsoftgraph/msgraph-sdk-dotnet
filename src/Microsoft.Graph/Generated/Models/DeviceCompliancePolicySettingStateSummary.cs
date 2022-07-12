@@ -8,58 +8,58 @@ namespace Microsoft.Graph.Models {
     public class DeviceCompliancePolicySettingStateSummary : Entity, IParsable {
         /// <summary>Number of compliant devices</summary>
         public int? CompliantDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(CompliantDeviceCount)); }
-            set { BackingStore?.Set(nameof(CompliantDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("compliantDeviceCount"); }
+            set { BackingStore?.Set("compliantDeviceCount", value); }
         }
         /// <summary>Number of conflict devices</summary>
         public int? ConflictDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ConflictDeviceCount)); }
-            set { BackingStore?.Set(nameof(ConflictDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("conflictDeviceCount"); }
+            set { BackingStore?.Set("conflictDeviceCount", value); }
         }
         /// <summary>Not yet documented</summary>
         public List<DeviceComplianceSettingState> DeviceComplianceSettingStates {
-            get { return BackingStore?.Get<List<DeviceComplianceSettingState>>(nameof(DeviceComplianceSettingStates)); }
-            set { BackingStore?.Set(nameof(DeviceComplianceSettingStates), value); }
+            get { return BackingStore?.Get<List<DeviceComplianceSettingState>>("deviceComplianceSettingStates"); }
+            set { BackingStore?.Set("deviceComplianceSettingStates", value); }
         }
         /// <summary>Number of error devices</summary>
         public int? ErrorDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ErrorDeviceCount)); }
-            set { BackingStore?.Set(nameof(ErrorDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("errorDeviceCount"); }
+            set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>Number of NonCompliant devices</summary>
         public int? NonCompliantDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NonCompliantDeviceCount)); }
-            set { BackingStore?.Set(nameof(NonCompliantDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("nonCompliantDeviceCount"); }
+            set { BackingStore?.Set("nonCompliantDeviceCount", value); }
         }
         /// <summary>Number of not applicable devices</summary>
         public int? NotApplicableDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NotApplicableDeviceCount)); }
-            set { BackingStore?.Set(nameof(NotApplicableDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("notApplicableDeviceCount"); }
+            set { BackingStore?.Set("notApplicableDeviceCount", value); }
         }
-        /// <summary>Setting platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.</summary>
+        /// <summary>Supported platform types for policies.</summary>
         public PolicyPlatformType? PlatformType {
-            get { return BackingStore?.Get<PolicyPlatformType?>(nameof(PlatformType)); }
-            set { BackingStore?.Set(nameof(PlatformType), value); }
+            get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
+            set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>Number of remediated devices</summary>
         public int? RemediatedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(RemediatedDeviceCount)); }
-            set { BackingStore?.Set(nameof(RemediatedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("remediatedDeviceCount"); }
+            set { BackingStore?.Set("remediatedDeviceCount", value); }
         }
         /// <summary>The setting class name and property name.</summary>
         public string Setting {
-            get { return BackingStore?.Get<string>(nameof(Setting)); }
-            set { BackingStore?.Set(nameof(Setting), value); }
+            get { return BackingStore?.Get<string>("setting"); }
+            set { BackingStore?.Set("setting", value); }
         }
         /// <summary>Name of the setting.</summary>
         public string SettingName {
-            get { return BackingStore?.Get<string>(nameof(SettingName)); }
-            set { BackingStore?.Set(nameof(SettingName), value); }
+            get { return BackingStore?.Get<string>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
         }
         /// <summary>Number of unknown devices</summary>
         public int? UnknownDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(UnknownDeviceCount)); }
-            set { BackingStore?.Set(nameof(UnknownDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("unknownDeviceCount"); }
+            set { BackingStore?.Set("unknownDeviceCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

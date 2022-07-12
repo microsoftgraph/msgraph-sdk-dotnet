@@ -1,55 +1,61 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the print singleton.</summary>
     public class PrinterBase : Entity, IParsable {
         /// <summary>The capabilities of the printer/printerShare.</summary>
         public PrinterCapabilities Capabilities {
-            get { return BackingStore?.Get<PrinterCapabilities>(nameof(Capabilities)); }
-            set { BackingStore?.Set(nameof(Capabilities), value); }
+            get { return BackingStore?.Get<PrinterCapabilities>("capabilities"); }
+            set { BackingStore?.Set("capabilities", value); }
         }
         /// <summary>The default print settings of printer/printerShare.</summary>
         public PrinterDefaults Defaults {
-            get { return BackingStore?.Get<PrinterDefaults>(nameof(Defaults)); }
-            set { BackingStore?.Set(nameof(Defaults), value); }
+            get { return BackingStore?.Get<PrinterDefaults>("defaults"); }
+            set { BackingStore?.Set("defaults", value); }
         }
         /// <summary>The name of the printer/printerShare.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Whether the printer/printerShare is currently accepting new print jobs.</summary>
         public bool? IsAcceptingJobs {
-            get { return BackingStore?.Get<bool?>(nameof(IsAcceptingJobs)); }
-            set { BackingStore?.Set(nameof(IsAcceptingJobs), value); }
+            get { return BackingStore?.Get<bool?>("isAcceptingJobs"); }
+            set { BackingStore?.Set("isAcceptingJobs", value); }
         }
         /// <summary>The list of jobs that are queued for printing by the printer/printerShare.</summary>
         public List<PrintJob> Jobs {
-            get { return BackingStore?.Get<List<PrintJob>>(nameof(Jobs)); }
-            set { BackingStore?.Set(nameof(Jobs), value); }
+            get { return BackingStore?.Get<List<PrintJob>>("jobs"); }
+            set { BackingStore?.Set("jobs", value); }
         }
         /// <summary>The physical and/or organizational location of the printer/printerShare.</summary>
         public PrinterLocation Location {
-            get { return BackingStore?.Get<PrinterLocation>(nameof(Location)); }
-            set { BackingStore?.Set(nameof(Location), value); }
+            get { return BackingStore?.Get<PrinterLocation>("location"); }
+            set { BackingStore?.Set("location", value); }
         }
         /// <summary>The manufacturer of the printer/printerShare.</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>The model name of the printer/printerShare.</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>The status property</summary>
         public PrinterStatus Status {
-            get { return BackingStore?.Get<PrinterStatus>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<PrinterStatus>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new printerBase and sets the default values.
+        /// </summary>
+        public PrinterBase() : base() {
+            Type = "#microsoft.graph.printerBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

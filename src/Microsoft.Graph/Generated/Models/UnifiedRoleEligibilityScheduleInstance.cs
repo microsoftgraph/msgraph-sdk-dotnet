@@ -4,27 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRoleEligibilityScheduleInstance : UnifiedRoleScheduleInstanceBase, IParsable {
         /// <summary>Time that the roleEligibilityScheduleInstance will expire.</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Membership type of the assignment. It can either be Inherited, Direct, or Group.</summary>
         public string MemberType {
-            get { return BackingStore?.Get<string>(nameof(MemberType)); }
-            set { BackingStore?.Set(nameof(MemberType), value); }
+            get { return BackingStore?.Get<string>("memberType"); }
+            set { BackingStore?.Set("memberType", value); }
         }
         /// <summary>Identifier of the parent roleEligibilitySchedule for this instance.</summary>
         public string RoleEligibilityScheduleId {
-            get { return BackingStore?.Get<string>(nameof(RoleEligibilityScheduleId)); }
-            set { BackingStore?.Set(nameof(RoleEligibilityScheduleId), value); }
+            get { return BackingStore?.Get<string>("roleEligibilityScheduleId"); }
+            set { BackingStore?.Set("roleEligibilityScheduleId", value); }
         }
         /// <summary>Time that the roleEligibilityScheduleInstance will start.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -10,25 +10,25 @@ namespace Microsoft.Graph.Groups.Item.Calendar.CalendarView.Item.TentativelyAcce
     public class TentativelyAcceptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Comment property</summary>
         public string Comment {
-            get { return BackingStore?.Get<string>(nameof(Comment)); }
-            set { BackingStore?.Set(nameof(Comment), value); }
+            get { return BackingStore?.Get<string>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
         /// <summary>The ProposedNewTime property</summary>
         public TimeSlot ProposedNewTime {
-            get { return BackingStore?.Get<TimeSlot>(nameof(ProposedNewTime)); }
-            set { BackingStore?.Set(nameof(ProposedNewTime), value); }
+            get { return BackingStore?.Get<TimeSlot>("proposedNewTime"); }
+            set { BackingStore?.Set("proposedNewTime", value); }
         }
         /// <summary>The SendResponse property</summary>
         public bool? SendResponse {
-            get { return BackingStore?.Get<bool?>(nameof(SendResponse)); }
-            set { BackingStore?.Set(nameof(SendResponse), value); }
+            get { return BackingStore?.Get<bool?>("sendResponse"); }
+            set { BackingStore?.Set("sendResponse", value); }
         }
         /// <summary>
         /// Instantiates a new tentativelyAcceptPostRequestBody and sets the default values.

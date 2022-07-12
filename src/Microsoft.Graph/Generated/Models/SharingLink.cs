@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Models {
     public class SharingLink : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The app the link is associated with.</summary>
         public Identity Application {
-            get { return BackingStore?.Get<Identity>(nameof(Application)); }
-            set { BackingStore?.Set(nameof(Application), value); }
+            get { return BackingStore?.Get<Identity>("application"); }
+            set { BackingStore?.Set("application", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.</summary>
         public bool? PreventsDownload {
-            get { return BackingStore?.Get<bool?>(nameof(PreventsDownload)); }
-            set { BackingStore?.Set(nameof(PreventsDownload), value); }
+            get { return BackingStore?.Get<bool?>("preventsDownload"); }
+            set { BackingStore?.Set("preventsDownload", value); }
         }
         /// <summary>The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.</summary>
         public string Scope {
-            get { return BackingStore?.Get<string>(nameof(Scope)); }
-            set { BackingStore?.Set(nameof(Scope), value); }
+            get { return BackingStore?.Get<string>("scope"); }
+            set { BackingStore?.Set("scope", value); }
         }
         /// <summary>The type of the link created.</summary>
         public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>For embed links, this property contains the HTML code for an &lt;iframe&gt; element that will embed the item in a webpage.</summary>
         public string WebHtml {
-            get { return BackingStore?.Get<string>(nameof(WebHtml)); }
-            set { BackingStore?.Set(nameof(WebHtml), value); }
+            get { return BackingStore?.Get<string>("webHtml"); }
+            set { BackingStore?.Set("webHtml", value); }
         }
         /// <summary>A URL that opens the item in the browser on the OneDrive website.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Instantiates a new sharingLink and sets the default values.

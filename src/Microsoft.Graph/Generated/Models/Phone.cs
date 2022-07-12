@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class Phone : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The language property</summary>
         public string Language {
-            get { return BackingStore?.Get<string>(nameof(Language)); }
-            set { BackingStore?.Set(nameof(Language), value); }
+            get { return BackingStore?.Get<string>("language"); }
+            set { BackingStore?.Set("language", value); }
         }
         /// <summary>The phone number.</summary>
         public string Number {
-            get { return BackingStore?.Get<string>(nameof(Number)); }
-            set { BackingStore?.Set(nameof(Number), value); }
+            get { return BackingStore?.Get<string>("number"); }
+            set { BackingStore?.Set("number", value); }
         }
         /// <summary>The region property</summary>
         public string Region {
-            get { return BackingStore?.Get<string>(nameof(Region)); }
-            set { BackingStore?.Set(nameof(Region), value); }
+            get { return BackingStore?.Get<string>("region"); }
+            set { BackingStore?.Set("region", value); }
         }
         /// <summary>The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.</summary>
         public PhoneType? Type {
-            get { return BackingStore?.Get<PhoneType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<PhoneType?>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Instantiates a new phone and sets the default values.

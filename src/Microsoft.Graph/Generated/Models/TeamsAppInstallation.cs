@@ -1,20 +1,27 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class TeamsAppInstallation : Entity, IParsable {
         /// <summary>The app that is installed.</summary>
         public Microsoft.Graph.Models.TeamsApp TeamsApp {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsApp>(nameof(TeamsApp)); }
-            set { BackingStore?.Set(nameof(TeamsApp), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsApp>("teamsApp"); }
+            set { BackingStore?.Set("teamsApp", value); }
         }
         /// <summary>The details of this version of the app.</summary>
         public Microsoft.Graph.Models.TeamsAppDefinition TeamsAppDefinition {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsAppDefinition>(nameof(TeamsAppDefinition)); }
-            set { BackingStore?.Set(nameof(TeamsAppDefinition), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsAppDefinition>("teamsAppDefinition"); }
+            set { BackingStore?.Set("teamsAppDefinition", value); }
+        }
+        /// <summary>
+        /// Instantiates a new teamsAppInstallation and sets the default values.
+        /// </summary>
+        public TeamsAppInstallation() : base() {
+            Type = "#microsoft.graph.teamsAppInstallation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

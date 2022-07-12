@@ -10,25 +10,25 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AddKey {
     public class KeyCredentialPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The keyCredential property</summary>
         public Microsoft.Graph.Models.KeyCredential KeyCredential {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.KeyCredential>(nameof(KeyCredential)); }
-            set { BackingStore?.Set(nameof(KeyCredential), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.KeyCredential>("keyCredential"); }
+            set { BackingStore?.Set("keyCredential", value); }
         }
         /// <summary>The passwordCredential property</summary>
         public Microsoft.Graph.Models.PasswordCredential PasswordCredential {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.PasswordCredential>(nameof(PasswordCredential)); }
-            set { BackingStore?.Set(nameof(PasswordCredential), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PasswordCredential>("passwordCredential"); }
+            set { BackingStore?.Set("passwordCredential", value); }
         }
         /// <summary>The proof property</summary>
         public string Proof {
-            get { return BackingStore?.Get<string>(nameof(Proof)); }
-            set { BackingStore?.Set(nameof(Proof), value); }
+            get { return BackingStore?.Get<string>("proof"); }
+            set { BackingStore?.Set("proof", value); }
         }
         /// <summary>
         /// Instantiates a new KeyCredentialPostRequestBody and sets the default values.

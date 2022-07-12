@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class Windows10CustomConfiguration : DeviceConfiguration, IParsable {
         /// <summary>OMA settings. This collection can contain a maximum of 1000 elements.</summary>
         public List<OmaSetting> OmaSettings {
-            get { return BackingStore?.Get<List<OmaSetting>>(nameof(OmaSettings)); }
-            set { BackingStore?.Set(nameof(OmaSettings), value); }
+            get { return BackingStore?.Get<List<OmaSetting>>("omaSettings"); }
+            set { BackingStore?.Set("omaSettings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

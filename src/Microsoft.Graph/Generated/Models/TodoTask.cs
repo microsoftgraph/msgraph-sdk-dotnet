@@ -4,87 +4,87 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class TodoTask : Entity, IParsable {
         /// <summary>The task body that typically contains information about the task.</summary>
         public ItemBody Body {
-            get { return BackingStore?.Get<ItemBody>(nameof(Body)); }
-            set { BackingStore?.Set(nameof(Body), value); }
+            get { return BackingStore?.Get<ItemBody>("body"); }
+            set { BackingStore?.Set("body", value); }
         }
         /// <summary>The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? BodyLastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(BodyLastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(BodyLastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("bodyLastModifiedDateTime"); }
+            set { BackingStore?.Set("bodyLastModifiedDateTime", value); }
         }
         /// <summary>The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.</summary>
         public List<string> Categories {
-            get { return BackingStore?.Get<List<string>>(nameof(Categories)); }
-            set { BackingStore?.Set(nameof(Categories), value); }
+            get { return BackingStore?.Get<List<string>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
         }
         /// <summary>A collection of smaller subtasks linked to the more complex parent task.</summary>
         public List<ChecklistItem> ChecklistItems {
-            get { return BackingStore?.Get<List<ChecklistItem>>(nameof(ChecklistItems)); }
-            set { BackingStore?.Set(nameof(ChecklistItems), value); }
+            get { return BackingStore?.Get<List<ChecklistItem>>("checklistItems"); }
+            set { BackingStore?.Set("checklistItems", value); }
         }
         /// <summary>The date in the specified time zone that the task was finished.</summary>
         public DateTimeTimeZone CompletedDateTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(CompletedDateTime)); }
-            set { BackingStore?.Set(nameof(CompletedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("completedDateTime"); }
+            set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date in the specified time zone that the task is to be finished.</summary>
         public DateTimeTimeZone DueDateTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(DueDateTime)); }
-            set { BackingStore?.Set(nameof(DueDateTime), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("dueDateTime"); }
+            set { BackingStore?.Set("dueDateTime", value); }
         }
         /// <summary>The collection of open extensions defined for the task. Nullable.</summary>
         public List<Extension> Extensions {
-            get { return BackingStore?.Get<List<Extension>>(nameof(Extensions)); }
-            set { BackingStore?.Set(nameof(Extensions), value); }
+            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
         }
-        /// <summary>The importance of the task. Possible values are: low, normal, high.</summary>
+        /// <summary>The importance property</summary>
         public Microsoft.Graph.Models.Importance? Importance {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Importance?>(nameof(Importance)); }
-            set { BackingStore?.Set(nameof(Importance), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Importance?>("importance"); }
+            set { BackingStore?.Set("importance", value); }
         }
         /// <summary>Set to true if an alert is set to remind the user of the task.</summary>
         public bool? IsReminderOn {
-            get { return BackingStore?.Get<bool?>(nameof(IsReminderOn)); }
-            set { BackingStore?.Set(nameof(IsReminderOn), value); }
+            get { return BackingStore?.Get<bool?>("isReminderOn"); }
+            set { BackingStore?.Set("isReminderOn", value); }
         }
         /// <summary>The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>A collection of resources linked to the task.</summary>
         public List<LinkedResource> LinkedResources {
-            get { return BackingStore?.Get<List<LinkedResource>>(nameof(LinkedResources)); }
-            set { BackingStore?.Set(nameof(LinkedResources), value); }
+            get { return BackingStore?.Get<List<LinkedResource>>("linkedResources"); }
+            set { BackingStore?.Set("linkedResources", value); }
         }
         /// <summary>The recurrence pattern for the task.</summary>
         public PatternedRecurrence Recurrence {
-            get { return BackingStore?.Get<PatternedRecurrence>(nameof(Recurrence)); }
-            set { BackingStore?.Set(nameof(Recurrence), value); }
+            get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
+            set { BackingStore?.Set("recurrence", value); }
         }
         /// <summary>The date and time for a reminder alert of the task to occur.</summary>
         public DateTimeTimeZone ReminderDateTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(ReminderDateTime)); }
-            set { BackingStore?.Set(nameof(ReminderDateTime), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("reminderDateTime"); }
+            set { BackingStore?.Set("reminderDateTime", value); }
         }
-        /// <summary>Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.</summary>
+        /// <summary>The status property</summary>
         public TaskStatus? Status {
-            get { return BackingStore?.Get<TaskStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<TaskStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>A brief description of the task.</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

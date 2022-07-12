@@ -7,32 +7,32 @@ using System.Linq;
 namespace Microsoft.Graph.Models {
     /// <summary>SharedPC Account Manager Policy. Only applies when the account manager is enabled.</summary>
     public class SharedPCAccountManagerPolicy : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>Configures when accounts are deleted. Possible values are: immediate, diskSpaceThreshold, diskSpaceThresholdOrInactiveThreshold.</summary>
+        /// <summary>Possible values for when accounts are deleted on a shared PC.</summary>
         public SharedPCAccountDeletionPolicyType? AccountDeletionPolicy {
-            get { return BackingStore?.Get<SharedPCAccountDeletionPolicyType?>(nameof(AccountDeletionPolicy)); }
-            set { BackingStore?.Set(nameof(AccountDeletionPolicy), value); }
+            get { return BackingStore?.Get<SharedPCAccountDeletionPolicyType?>("accountDeletionPolicy"); }
+            set { BackingStore?.Set("accountDeletionPolicy", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Sets the percentage of available disk space a PC should have before it stops deleting cached shared PC accounts. Only applies when AccountDeletionPolicy is DiskSpaceThreshold or DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100</summary>
         public int? CacheAccountsAboveDiskFreePercentage {
-            get { return BackingStore?.Get<int?>(nameof(CacheAccountsAboveDiskFreePercentage)); }
-            set { BackingStore?.Set(nameof(CacheAccountsAboveDiskFreePercentage), value); }
+            get { return BackingStore?.Get<int?>("cacheAccountsAboveDiskFreePercentage"); }
+            set { BackingStore?.Set("cacheAccountsAboveDiskFreePercentage", value); }
         }
         /// <summary>Specifies when the accounts will start being deleted when they have not been logged on during the specified period, given as number of days. Only applies when AccountDeletionPolicy is DiskSpaceThreshold or DiskSpaceThresholdOrInactiveThreshold.</summary>
         public int? InactiveThresholdDays {
-            get { return BackingStore?.Get<int?>(nameof(InactiveThresholdDays)); }
-            set { BackingStore?.Set(nameof(InactiveThresholdDays), value); }
+            get { return BackingStore?.Get<int?>("inactiveThresholdDays"); }
+            set { BackingStore?.Set("inactiveThresholdDays", value); }
         }
         /// <summary>Sets the percentage of disk space remaining on a PC before cached accounts will be deleted to free disk space. Accounts that have been inactive the longest will be deleted first. Only applies when AccountDeletionPolicy is DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100</summary>
         public int? RemoveAccountsBelowDiskFreePercentage {
-            get { return BackingStore?.Get<int?>(nameof(RemoveAccountsBelowDiskFreePercentage)); }
-            set { BackingStore?.Set(nameof(RemoveAccountsBelowDiskFreePercentage), value); }
+            get { return BackingStore?.Get<int?>("removeAccountsBelowDiskFreePercentage"); }
+            set { BackingStore?.Set("removeAccountsBelowDiskFreePercentage", value); }
         }
         /// <summary>
         /// Instantiates a new sharedPCAccountManagerPolicy and sets the default values.

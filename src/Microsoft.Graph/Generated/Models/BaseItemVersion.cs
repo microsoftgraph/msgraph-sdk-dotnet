@@ -1,25 +1,32 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class BaseItemVersion : Entity, IParsable {
         /// <summary>Identity of the user which last modified the version. Read-only.</summary>
         public IdentitySet LastModifiedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>Date and time the version was last modified. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Indicates the publication status of this particular version. Read-only.</summary>
         public PublicationFacet Publication {
-            get { return BackingStore?.Get<PublicationFacet>(nameof(Publication)); }
-            set { BackingStore?.Set(nameof(Publication), value); }
+            get { return BackingStore?.Get<PublicationFacet>("publication"); }
+            set { BackingStore?.Set("publication", value); }
+        }
+        /// <summary>
+        /// Instantiates a new baseItemVersion and sets the default values.
+        /// </summary>
+        public BaseItemVersion() : base() {
+            Type = "#microsoft.graph.baseItemVersion";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

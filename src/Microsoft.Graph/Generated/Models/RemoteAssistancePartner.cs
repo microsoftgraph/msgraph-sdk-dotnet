@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Models {
     public class RemoteAssistancePartner : Entity, IParsable {
         /// <summary>Display name of the partner.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Timestamp of the last request sent to Intune by the TEM partner.</summary>
         public DateTimeOffset? LastConnectionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastConnectionDateTime)); }
-            set { BackingStore?.Set(nameof(LastConnectionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastConnectionDateTime"); }
+            set { BackingStore?.Set("lastConnectionDateTime", value); }
         }
-        /// <summary>A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.</summary>
+        /// <summary>The current TeamViewer connector status</summary>
         public RemoteAssistanceOnboardingStatus? OnboardingStatus {
-            get { return BackingStore?.Get<RemoteAssistanceOnboardingStatus?>(nameof(OnboardingStatus)); }
-            set { BackingStore?.Set(nameof(OnboardingStatus), value); }
+            get { return BackingStore?.Get<RemoteAssistanceOnboardingStatus?>("onboardingStatus"); }
+            set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>URL of the partner&apos;s onboarding portal, where an administrator can configure their Remote Assistance service.</summary>
         public string OnboardingUrl {
-            get { return BackingStore?.Get<string>(nameof(OnboardingUrl)); }
-            set { BackingStore?.Set(nameof(OnboardingUrl), value); }
+            get { return BackingStore?.Get<string>("onboardingUrl"); }
+            set { BackingStore?.Set("onboardingUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

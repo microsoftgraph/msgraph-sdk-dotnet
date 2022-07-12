@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Models {
     public class SharingDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The user who shared the document.</summary>
         public InsightIdentity SharedBy {
-            get { return BackingStore?.Get<InsightIdentity>(nameof(SharedBy)); }
-            set { BackingStore?.Set(nameof(SharedBy), value); }
+            get { return BackingStore?.Get<InsightIdentity>("sharedBy"); }
+            set { BackingStore?.Set("sharedBy", value); }
         }
         /// <summary>The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? SharedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(SharedDateTime)); }
-            set { BackingStore?.Set(nameof(SharedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("sharedDateTime"); }
+            set { BackingStore?.Set("sharedDateTime", value); }
         }
         /// <summary>The sharingReference property</summary>
         public ResourceReference SharingReference {
-            get { return BackingStore?.Get<ResourceReference>(nameof(SharingReference)); }
-            set { BackingStore?.Set(nameof(SharingReference), value); }
+            get { return BackingStore?.Get<ResourceReference>("sharingReference"); }
+            set { BackingStore?.Set("sharingReference", value); }
         }
         /// <summary>The subject with which the document was shared.</summary>
         public string SharingSubject {
-            get { return BackingStore?.Get<string>(nameof(SharingSubject)); }
-            set { BackingStore?.Set(nameof(SharingSubject), value); }
+            get { return BackingStore?.Get<string>("sharingSubject"); }
+            set { BackingStore?.Set("sharingSubject", value); }
         }
         /// <summary>Determines the way the document was shared, can be by a &apos;Link&apos;, &apos;Attachment&apos;, &apos;Group&apos;, &apos;Site&apos;.</summary>
         public string SharingType {
-            get { return BackingStore?.Get<string>(nameof(SharingType)); }
-            set { BackingStore?.Set(nameof(SharingType), value); }
+            get { return BackingStore?.Get<string>("sharingType"); }
+            set { BackingStore?.Set("sharingType", value); }
         }
         /// <summary>
         /// Instantiates a new sharingDetail and sets the default values.

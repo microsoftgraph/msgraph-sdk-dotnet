@@ -10,50 +10,50 @@ namespace Microsoft.Graph.Communications.Calls.Item.RecordResponse {
     public class RecordResponsePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The bargeInAllowed property</summary>
         public bool? BargeInAllowed {
-            get { return BackingStore?.Get<bool?>(nameof(BargeInAllowed)); }
-            set { BackingStore?.Set(nameof(BargeInAllowed), value); }
+            get { return BackingStore?.Get<bool?>("bargeInAllowed"); }
+            set { BackingStore?.Set("bargeInAllowed", value); }
         }
         /// <summary>The clientContext property</summary>
         public string ClientContext {
-            get { return BackingStore?.Get<string>(nameof(ClientContext)); }
-            set { BackingStore?.Set(nameof(ClientContext), value); }
+            get { return BackingStore?.Get<string>("clientContext"); }
+            set { BackingStore?.Set("clientContext", value); }
         }
         /// <summary>The initialSilenceTimeoutInSeconds property</summary>
         public int? InitialSilenceTimeoutInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(InitialSilenceTimeoutInSeconds)); }
-            set { BackingStore?.Set(nameof(InitialSilenceTimeoutInSeconds), value); }
+            get { return BackingStore?.Get<int?>("initialSilenceTimeoutInSeconds"); }
+            set { BackingStore?.Set("initialSilenceTimeoutInSeconds", value); }
         }
         /// <summary>The maxRecordDurationInSeconds property</summary>
         public int? MaxRecordDurationInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(MaxRecordDurationInSeconds)); }
-            set { BackingStore?.Set(nameof(MaxRecordDurationInSeconds), value); }
+            get { return BackingStore?.Get<int?>("maxRecordDurationInSeconds"); }
+            set { BackingStore?.Set("maxRecordDurationInSeconds", value); }
         }
         /// <summary>The maxSilenceTimeoutInSeconds property</summary>
         public int? MaxSilenceTimeoutInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(MaxSilenceTimeoutInSeconds)); }
-            set { BackingStore?.Set(nameof(MaxSilenceTimeoutInSeconds), value); }
+            get { return BackingStore?.Get<int?>("maxSilenceTimeoutInSeconds"); }
+            set { BackingStore?.Set("maxSilenceTimeoutInSeconds", value); }
         }
         /// <summary>The playBeep property</summary>
         public bool? PlayBeep {
-            get { return BackingStore?.Get<bool?>(nameof(PlayBeep)); }
-            set { BackingStore?.Set(nameof(PlayBeep), value); }
+            get { return BackingStore?.Get<bool?>("playBeep"); }
+            set { BackingStore?.Set("playBeep", value); }
         }
         /// <summary>The prompts property</summary>
         public List<Prompt> Prompts {
-            get { return BackingStore?.Get<List<Prompt>>(nameof(Prompts)); }
-            set { BackingStore?.Set(nameof(Prompts), value); }
+            get { return BackingStore?.Get<List<Prompt>>("prompts"); }
+            set { BackingStore?.Set("prompts", value); }
         }
         /// <summary>The stopTones property</summary>
         public List<string> StopTones {
-            get { return BackingStore?.Get<List<string>>(nameof(StopTones)); }
-            set { BackingStore?.Set(nameof(StopTones), value); }
+            get { return BackingStore?.Get<List<string>>("stopTones"); }
+            set { BackingStore?.Set("stopTones", value); }
         }
         /// <summary>
         /// Instantiates a new recordResponsePostRequestBody and sets the default values.

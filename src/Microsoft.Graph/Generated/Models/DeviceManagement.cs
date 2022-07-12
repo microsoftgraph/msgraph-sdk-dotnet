@@ -4,182 +4,181 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Singleton entity that acts as a container for all device management functionality.</summary>
     public class DeviceManagement : Entity, IParsable {
         /// <summary>Apple push notification certificate.</summary>
         public Microsoft.Graph.Models.ApplePushNotificationCertificate ApplePushNotificationCertificate {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ApplePushNotificationCertificate>(nameof(ApplePushNotificationCertificate)); }
-            set { BackingStore?.Set(nameof(ApplePushNotificationCertificate), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ApplePushNotificationCertificate>("applePushNotificationCertificate"); }
+            set { BackingStore?.Set("applePushNotificationCertificate", value); }
         }
         /// <summary>The list of Compliance Management Partners configured by the tenant.</summary>
         public List<ComplianceManagementPartner> ComplianceManagementPartners {
-            get { return BackingStore?.Get<List<ComplianceManagementPartner>>(nameof(ComplianceManagementPartners)); }
-            set { BackingStore?.Set(nameof(ComplianceManagementPartners), value); }
+            get { return BackingStore?.Get<List<ComplianceManagementPartner>>("complianceManagementPartners"); }
+            set { BackingStore?.Set("complianceManagementPartners", value); }
         }
         /// <summary>The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access</summary>
         public OnPremisesConditionalAccessSettings ConditionalAccessSettings {
-            get { return BackingStore?.Get<OnPremisesConditionalAccessSettings>(nameof(ConditionalAccessSettings)); }
-            set { BackingStore?.Set(nameof(ConditionalAccessSettings), value); }
+            get { return BackingStore?.Get<OnPremisesConditionalAccessSettings>("conditionalAccessSettings"); }
+            set { BackingStore?.Set("conditionalAccessSettings", value); }
         }
         /// <summary>The list of detected apps associated with a device.</summary>
         public List<DetectedApp> DetectedApps {
-            get { return BackingStore?.Get<List<DetectedApp>>(nameof(DetectedApps)); }
-            set { BackingStore?.Set(nameof(DetectedApps), value); }
+            get { return BackingStore?.Get<List<DetectedApp>>("detectedApps"); }
+            set { BackingStore?.Set("detectedApps", value); }
         }
         /// <summary>The list of device categories with the tenant.</summary>
         public List<DeviceCategory> DeviceCategories {
-            get { return BackingStore?.Get<List<DeviceCategory>>(nameof(DeviceCategories)); }
-            set { BackingStore?.Set(nameof(DeviceCategories), value); }
+            get { return BackingStore?.Get<List<DeviceCategory>>("deviceCategories"); }
+            set { BackingStore?.Set("deviceCategories", value); }
         }
         /// <summary>The device compliance policies.</summary>
         public List<DeviceCompliancePolicy> DeviceCompliancePolicies {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicy>>(nameof(DeviceCompliancePolicies)); }
-            set { BackingStore?.Set(nameof(DeviceCompliancePolicies), value); }
+            get { return BackingStore?.Get<List<DeviceCompliancePolicy>>("deviceCompliancePolicies"); }
+            set { BackingStore?.Set("deviceCompliancePolicies", value); }
         }
         /// <summary>The device compliance state summary for this account.</summary>
         public Microsoft.Graph.Models.DeviceCompliancePolicyDeviceStateSummary DeviceCompliancePolicyDeviceStateSummary {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceCompliancePolicyDeviceStateSummary>(nameof(DeviceCompliancePolicyDeviceStateSummary)); }
-            set { BackingStore?.Set(nameof(DeviceCompliancePolicyDeviceStateSummary), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceCompliancePolicyDeviceStateSummary>("deviceCompliancePolicyDeviceStateSummary"); }
+            set { BackingStore?.Set("deviceCompliancePolicyDeviceStateSummary", value); }
         }
         /// <summary>The summary states of compliance policy settings for this account.</summary>
         public List<DeviceCompliancePolicySettingStateSummary> DeviceCompliancePolicySettingStateSummaries {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingStateSummary>>(nameof(DeviceCompliancePolicySettingStateSummaries)); }
-            set { BackingStore?.Set(nameof(DeviceCompliancePolicySettingStateSummaries), value); }
+            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingStateSummary>>("deviceCompliancePolicySettingStateSummaries"); }
+            set { BackingStore?.Set("deviceCompliancePolicySettingStateSummaries", value); }
         }
         /// <summary>The device configuration device state summary for this account.</summary>
         public DeviceConfigurationDeviceStateSummary DeviceConfigurationDeviceStateSummaries {
-            get { return BackingStore?.Get<DeviceConfigurationDeviceStateSummary>(nameof(DeviceConfigurationDeviceStateSummaries)); }
-            set { BackingStore?.Set(nameof(DeviceConfigurationDeviceStateSummaries), value); }
+            get { return BackingStore?.Get<DeviceConfigurationDeviceStateSummary>("deviceConfigurationDeviceStateSummaries"); }
+            set { BackingStore?.Set("deviceConfigurationDeviceStateSummaries", value); }
         }
         /// <summary>The device configurations.</summary>
         public List<DeviceConfiguration> DeviceConfigurations {
-            get { return BackingStore?.Get<List<DeviceConfiguration>>(nameof(DeviceConfigurations)); }
-            set { BackingStore?.Set(nameof(DeviceConfigurations), value); }
+            get { return BackingStore?.Get<List<DeviceConfiguration>>("deviceConfigurations"); }
+            set { BackingStore?.Set("deviceConfigurations", value); }
         }
         /// <summary>The list of device enrollment configurations</summary>
         public List<DeviceEnrollmentConfiguration> DeviceEnrollmentConfigurations {
-            get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>>(nameof(DeviceEnrollmentConfigurations)); }
-            set { BackingStore?.Set(nameof(DeviceEnrollmentConfigurations), value); }
+            get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>>("deviceEnrollmentConfigurations"); }
+            set { BackingStore?.Set("deviceEnrollmentConfigurations", value); }
         }
         /// <summary>The list of Device Management Partners configured by the tenant.</summary>
         public List<DeviceManagementPartner> DeviceManagementPartners {
-            get { return BackingStore?.Get<List<DeviceManagementPartner>>(nameof(DeviceManagementPartners)); }
-            set { BackingStore?.Set(nameof(DeviceManagementPartners), value); }
+            get { return BackingStore?.Get<List<DeviceManagementPartner>>("deviceManagementPartners"); }
+            set { BackingStore?.Set("deviceManagementPartners", value); }
         }
         /// <summary>The list of Exchange Connectors configured by the tenant.</summary>
         public List<DeviceManagementExchangeConnector> ExchangeConnectors {
-            get { return BackingStore?.Get<List<DeviceManagementExchangeConnector>>(nameof(ExchangeConnectors)); }
-            set { BackingStore?.Set(nameof(ExchangeConnectors), value); }
+            get { return BackingStore?.Get<List<DeviceManagementExchangeConnector>>("exchangeConnectors"); }
+            set { BackingStore?.Set("exchangeConnectors", value); }
         }
         /// <summary>Collection of imported Windows autopilot devices.</summary>
         public List<ImportedWindowsAutopilotDeviceIdentity> ImportedWindowsAutopilotDeviceIdentities {
-            get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>>(nameof(ImportedWindowsAutopilotDeviceIdentities)); }
-            set { BackingStore?.Set(nameof(ImportedWindowsAutopilotDeviceIdentities), value); }
+            get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>>("importedWindowsAutopilotDeviceIdentities"); }
+            set { BackingStore?.Set("importedWindowsAutopilotDeviceIdentities", value); }
         }
         /// <summary>Intune Account ID for given tenant</summary>
         public string IntuneAccountId {
-            get { return BackingStore?.Get<string>(nameof(IntuneAccountId)); }
-            set { BackingStore?.Set(nameof(IntuneAccountId), value); }
+            get { return BackingStore?.Get<string>("intuneAccountId"); }
+            set { BackingStore?.Set("intuneAccountId", value); }
         }
         /// <summary>intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.</summary>
         public Microsoft.Graph.Models.IntuneBrand IntuneBrand {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.IntuneBrand>(nameof(IntuneBrand)); }
-            set { BackingStore?.Set(nameof(IntuneBrand), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IntuneBrand>("intuneBrand"); }
+            set { BackingStore?.Set("intuneBrand", value); }
         }
         /// <summary>The IOS software update installation statuses for this account.</summary>
         public List<IosUpdateDeviceStatus> IosUpdateStatuses {
-            get { return BackingStore?.Get<List<IosUpdateDeviceStatus>>(nameof(IosUpdateStatuses)); }
-            set { BackingStore?.Set(nameof(IosUpdateStatuses), value); }
+            get { return BackingStore?.Get<List<IosUpdateDeviceStatus>>("iosUpdateStatuses"); }
+            set { BackingStore?.Set("iosUpdateStatuses", value); }
         }
         /// <summary>Device overview</summary>
         public Microsoft.Graph.Models.ManagedDeviceOverview ManagedDeviceOverview {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedDeviceOverview>(nameof(ManagedDeviceOverview)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceOverview), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedDeviceOverview>("managedDeviceOverview"); }
+            set { BackingStore?.Set("managedDeviceOverview", value); }
         }
         /// <summary>The list of managed devices.</summary>
         public List<ManagedDevice> ManagedDevices {
-            get { return BackingStore?.Get<List<ManagedDevice>>(nameof(ManagedDevices)); }
-            set { BackingStore?.Set(nameof(ManagedDevices), value); }
+            get { return BackingStore?.Get<List<ManagedDevice>>("managedDevices"); }
+            set { BackingStore?.Set("managedDevices", value); }
         }
         /// <summary>The list of Mobile threat Defense connectors configured by the tenant.</summary>
         public List<MobileThreatDefenseConnector> MobileThreatDefenseConnectors {
-            get { return BackingStore?.Get<List<MobileThreatDefenseConnector>>(nameof(MobileThreatDefenseConnectors)); }
-            set { BackingStore?.Set(nameof(MobileThreatDefenseConnectors), value); }
+            get { return BackingStore?.Get<List<MobileThreatDefenseConnector>>("mobileThreatDefenseConnectors"); }
+            set { BackingStore?.Set("mobileThreatDefenseConnectors", value); }
         }
         /// <summary>The Notification Message Templates.</summary>
         public List<NotificationMessageTemplate> NotificationMessageTemplates {
-            get { return BackingStore?.Get<List<NotificationMessageTemplate>>(nameof(NotificationMessageTemplates)); }
-            set { BackingStore?.Set(nameof(NotificationMessageTemplates), value); }
+            get { return BackingStore?.Get<List<NotificationMessageTemplate>>("notificationMessageTemplates"); }
+            set { BackingStore?.Set("notificationMessageTemplates", value); }
         }
         /// <summary>The remote assist partners.</summary>
         public List<RemoteAssistancePartner> RemoteAssistancePartners {
-            get { return BackingStore?.Get<List<RemoteAssistancePartner>>(nameof(RemoteAssistancePartners)); }
-            set { BackingStore?.Set(nameof(RemoteAssistancePartners), value); }
+            get { return BackingStore?.Get<List<RemoteAssistancePartner>>("remoteAssistancePartners"); }
+            set { BackingStore?.Set("remoteAssistancePartners", value); }
         }
         /// <summary>Reports singleton</summary>
         public DeviceManagementReports Reports {
-            get { return BackingStore?.Get<DeviceManagementReports>(nameof(Reports)); }
-            set { BackingStore?.Set(nameof(Reports), value); }
+            get { return BackingStore?.Get<DeviceManagementReports>("reports"); }
+            set { BackingStore?.Set("reports", value); }
         }
         /// <summary>The Resource Operations.</summary>
         public List<ResourceOperation> ResourceOperations {
-            get { return BackingStore?.Get<List<ResourceOperation>>(nameof(ResourceOperations)); }
-            set { BackingStore?.Set(nameof(ResourceOperations), value); }
+            get { return BackingStore?.Get<List<ResourceOperation>>("resourceOperations"); }
+            set { BackingStore?.Set("resourceOperations", value); }
         }
         /// <summary>The Role Assignments.</summary>
         public List<DeviceAndAppManagementRoleAssignment> RoleAssignments {
-            get { return BackingStore?.Get<List<DeviceAndAppManagementRoleAssignment>>(nameof(RoleAssignments)); }
-            set { BackingStore?.Set(nameof(RoleAssignments), value); }
+            get { return BackingStore?.Get<List<DeviceAndAppManagementRoleAssignment>>("roleAssignments"); }
+            set { BackingStore?.Set("roleAssignments", value); }
         }
         /// <summary>The Role Definitions.</summary>
         public List<RoleDefinition> RoleDefinitions {
-            get { return BackingStore?.Get<List<RoleDefinition>>(nameof(RoleDefinitions)); }
-            set { BackingStore?.Set(nameof(RoleDefinitions), value); }
+            get { return BackingStore?.Get<List<RoleDefinition>>("roleDefinitions"); }
+            set { BackingStore?.Set("roleDefinitions", value); }
         }
         /// <summary>Account level settings.</summary>
         public DeviceManagementSettings Settings {
-            get { return BackingStore?.Get<DeviceManagementSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<DeviceManagementSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>The software update status summary.</summary>
         public Microsoft.Graph.Models.SoftwareUpdateStatusSummary SoftwareUpdateStatusSummary {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.SoftwareUpdateStatusSummary>(nameof(SoftwareUpdateStatusSummary)); }
-            set { BackingStore?.Set(nameof(SoftwareUpdateStatusSummary), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SoftwareUpdateStatusSummary>("softwareUpdateStatusSummary"); }
+            set { BackingStore?.Set("softwareUpdateStatusSummary", value); }
         }
-        /// <summary>Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.</summary>
+        /// <summary>Tenant mobile device management subscription state.</summary>
         public DeviceManagementSubscriptionState? SubscriptionState {
-            get { return BackingStore?.Get<DeviceManagementSubscriptionState?>(nameof(SubscriptionState)); }
-            set { BackingStore?.Set(nameof(SubscriptionState), value); }
+            get { return BackingStore?.Get<DeviceManagementSubscriptionState?>("subscriptionState"); }
+            set { BackingStore?.Set("subscriptionState", value); }
         }
         /// <summary>The telecom expense management partners.</summary>
         public List<TelecomExpenseManagementPartner> TelecomExpenseManagementPartners {
-            get { return BackingStore?.Get<List<TelecomExpenseManagementPartner>>(nameof(TelecomExpenseManagementPartners)); }
-            set { BackingStore?.Set(nameof(TelecomExpenseManagementPartners), value); }
+            get { return BackingStore?.Get<List<TelecomExpenseManagementPartner>>("telecomExpenseManagementPartners"); }
+            set { BackingStore?.Set("telecomExpenseManagementPartners", value); }
         }
         /// <summary>The terms and conditions associated with device management of the company.</summary>
         public List<Microsoft.Graph.Models.TermsAndConditions> TermsAndConditions {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermsAndConditions>>(nameof(TermsAndConditions)); }
-            set { BackingStore?.Set(nameof(TermsAndConditions), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermsAndConditions>>("termsAndConditions"); }
+            set { BackingStore?.Set("termsAndConditions", value); }
         }
         /// <summary>The list of troubleshooting events for the tenant.</summary>
         public List<DeviceManagementTroubleshootingEvent> TroubleshootingEvents {
-            get { return BackingStore?.Get<List<DeviceManagementTroubleshootingEvent>>(nameof(TroubleshootingEvents)); }
-            set { BackingStore?.Set(nameof(TroubleshootingEvents), value); }
+            get { return BackingStore?.Get<List<DeviceManagementTroubleshootingEvent>>("troubleshootingEvents"); }
+            set { BackingStore?.Set("troubleshootingEvents", value); }
         }
         /// <summary>The Windows autopilot device identities contained collection.</summary>
         public List<WindowsAutopilotDeviceIdentity> WindowsAutopilotDeviceIdentities {
-            get { return BackingStore?.Get<List<WindowsAutopilotDeviceIdentity>>(nameof(WindowsAutopilotDeviceIdentities)); }
-            set { BackingStore?.Set(nameof(WindowsAutopilotDeviceIdentities), value); }
+            get { return BackingStore?.Get<List<WindowsAutopilotDeviceIdentity>>("windowsAutopilotDeviceIdentities"); }
+            set { BackingStore?.Set("windowsAutopilotDeviceIdentities", value); }
         }
         /// <summary>The windows information protection app learning summaries.</summary>
         public List<WindowsInformationProtectionAppLearningSummary> WindowsInformationProtectionAppLearningSummaries {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionAppLearningSummary>>(nameof(WindowsInformationProtectionAppLearningSummaries)); }
-            set { BackingStore?.Set(nameof(WindowsInformationProtectionAppLearningSummaries), value); }
+            get { return BackingStore?.Get<List<WindowsInformationProtectionAppLearningSummary>>("windowsInformationProtectionAppLearningSummaries"); }
+            set { BackingStore?.Set("windowsInformationProtectionAppLearningSummaries", value); }
         }
         /// <summary>The windows information protection network learning summaries.</summary>
         public List<WindowsInformationProtectionNetworkLearningSummary> WindowsInformationProtectionNetworkLearningSummaries {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionNetworkLearningSummary>>(nameof(WindowsInformationProtectionNetworkLearningSummaries)); }
-            set { BackingStore?.Set(nameof(WindowsInformationProtectionNetworkLearningSummaries), value); }
+            get { return BackingStore?.Get<List<WindowsInformationProtectionNetworkLearningSummary>>("windowsInformationProtectionNetworkLearningSummaries"); }
+            set { BackingStore?.Set("windowsInformationProtectionNetworkLearningSummaries", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

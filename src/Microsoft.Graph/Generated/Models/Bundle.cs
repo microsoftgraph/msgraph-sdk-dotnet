@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class Bundle : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>If the bundle is an [album][], then the album property is included</summary>
         public Microsoft.Graph.Models.Album Album {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Album>(nameof(Album)); }
-            set { BackingStore?.Set(nameof(Album), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Album>("album"); }
+            set { BackingStore?.Set("album", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of children contained immediately within this container.</summary>
         public int? ChildCount {
-            get { return BackingStore?.Get<int?>(nameof(ChildCount)); }
-            set { BackingStore?.Set(nameof(ChildCount), value); }
+            get { return BackingStore?.Get<int?>("childCount"); }
+            set { BackingStore?.Set("childCount", value); }
         }
         /// <summary>
         /// Instantiates a new bundle and sets the default values.

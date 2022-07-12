@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class WorkbookChartPointFormat : Entity, IParsable {
         /// <summary>Represents the fill format of a chart, which includes background formating information. Read-only.</summary>
         public WorkbookChartFill Fill {
-            get { return BackingStore?.Get<WorkbookChartFill>(nameof(Fill)); }
-            set { BackingStore?.Set(nameof(Fill), value); }
+            get { return BackingStore?.Get<WorkbookChartFill>("fill"); }
+            set { BackingStore?.Set("fill", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

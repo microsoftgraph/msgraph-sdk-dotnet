@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Models {
     public class DeviceCompliancePolicyState : Entity, IParsable {
         /// <summary>The name of the policy for this policyBase</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>Platform type that the policy applies to</summary>
+        /// <summary>Supported platform types for policies.</summary>
         public PolicyPlatformType? PlatformType {
-            get { return BackingStore?.Get<PolicyPlatformType?>(nameof(PlatformType)); }
-            set { BackingStore?.Set(nameof(PlatformType), value); }
+            get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
+            set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>Count of how many setting a policy holds</summary>
         public int? SettingCount {
-            get { return BackingStore?.Get<int?>(nameof(SettingCount)); }
-            set { BackingStore?.Set(nameof(SettingCount), value); }
+            get { return BackingStore?.Get<int?>("settingCount"); }
+            set { BackingStore?.Set("settingCount", value); }
         }
         /// <summary>The settingStates property</summary>
         public List<DeviceCompliancePolicySettingState> SettingStates {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingState>>(nameof(SettingStates)); }
-            set { BackingStore?.Set(nameof(SettingStates), value); }
+            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingState>>("settingStates"); }
+            set { BackingStore?.Set("settingStates", value); }
         }
-        /// <summary>The compliance state of the policy</summary>
+        /// <summary>The state property</summary>
         public ComplianceStatus? State {
-            get { return BackingStore?.Get<ComplianceStatus?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ComplianceStatus?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>The version of the policy</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

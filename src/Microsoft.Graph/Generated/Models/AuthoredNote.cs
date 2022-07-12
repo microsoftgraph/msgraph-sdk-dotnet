@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the privacy singleton.</summary>
     public class AuthoredNote : Entity, IParsable {
         /// <summary>Identity information about the note&apos;s author.</summary>
         public Identity Author {
-            get { return BackingStore?.Get<Identity>(nameof(Author)); }
-            set { BackingStore?.Set(nameof(Author), value); }
+            get { return BackingStore?.Get<Identity>("author"); }
+            set { BackingStore?.Set("author", value); }
         }
         /// <summary>The content of the note.</summary>
         public ItemBody Content {
-            get { return BackingStore?.Get<ItemBody>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<ItemBody>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

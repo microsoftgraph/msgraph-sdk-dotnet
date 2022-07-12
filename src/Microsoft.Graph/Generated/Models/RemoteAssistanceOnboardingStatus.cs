@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum RemoteAssistanceOnboardingStatus {
         /// <summary>The status reported when there is no active TeamViewer connector configured or active</summary>
         NotOnboarded,

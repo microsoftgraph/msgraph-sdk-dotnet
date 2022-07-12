@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class UserFlowLanguageConfiguration : Entity, IParsable {
         /// <summary>Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.</summary>
         public List<UserFlowLanguagePage> DefaultPages {
-            get { return BackingStore?.Get<List<UserFlowLanguagePage>>(nameof(DefaultPages)); }
-            set { BackingStore?.Set(nameof(DefaultPages), value); }
+            get { return BackingStore?.Get<List<UserFlowLanguagePage>>("defaultPages"); }
+            set { BackingStore?.Set("defaultPages", value); }
         }
         /// <summary>The language name to display. This property is read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Indicates whether the language is enabled within the user flow.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).</summary>
         public List<UserFlowLanguagePage> OverridesPages {
-            get { return BackingStore?.Get<List<UserFlowLanguagePage>>(nameof(OverridesPages)); }
-            set { BackingStore?.Set(nameof(OverridesPages), value); }
+            get { return BackingStore?.Get<List<UserFlowLanguagePage>>("overridesPages"); }
+            set { BackingStore?.Set("overridesPages", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

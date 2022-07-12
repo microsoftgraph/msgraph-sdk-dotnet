@@ -5,70 +5,70 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class WindowsUpdateForBusinessConfiguration : DeviceConfiguration, IParsable {
-        /// <summary>Automatic update mode. Possible values are: userDefined, notifyDownload, autoInstallAtMaintenanceTime, autoInstallAndRebootAtMaintenanceTime, autoInstallAndRebootAtScheduledTime, autoInstallAndRebootWithoutEndUserControl, windowsDefault.</summary>
+        /// <summary>Possible values for automatic update mode.</summary>
         public Microsoft.Graph.Models.AutomaticUpdateMode? AutomaticUpdateMode {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.AutomaticUpdateMode?>(nameof(AutomaticUpdateMode)); }
-            set { BackingStore?.Set(nameof(AutomaticUpdateMode), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AutomaticUpdateMode?>("automaticUpdateMode"); }
+            set { BackingStore?.Set("automaticUpdateMode", value); }
         }
-        /// <summary>Determines which branch devices will receive their updates from. Possible values are: userDefined, all, businessReadyOnly, windowsInsiderBuildFast, windowsInsiderBuildSlow, windowsInsiderBuildRelease.</summary>
+        /// <summary>Which branch devices will receive their updates from</summary>
         public WindowsUpdateType? BusinessReadyUpdatesOnly {
-            get { return BackingStore?.Get<WindowsUpdateType?>(nameof(BusinessReadyUpdatesOnly)); }
-            set { BackingStore?.Set(nameof(BusinessReadyUpdatesOnly), value); }
+            get { return BackingStore?.Get<WindowsUpdateType?>("businessReadyUpdatesOnly"); }
+            set { BackingStore?.Set("businessReadyUpdatesOnly", value); }
         }
-        /// <summary>Delivery Optimization Mode. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.</summary>
+        /// <summary>Delivery optimization mode for peer distribution</summary>
         public WindowsDeliveryOptimizationMode? DeliveryOptimizationMode {
-            get { return BackingStore?.Get<WindowsDeliveryOptimizationMode?>(nameof(DeliveryOptimizationMode)); }
-            set { BackingStore?.Set(nameof(DeliveryOptimizationMode), value); }
+            get { return BackingStore?.Get<WindowsDeliveryOptimizationMode?>("deliveryOptimizationMode"); }
+            set { BackingStore?.Set("deliveryOptimizationMode", value); }
         }
         /// <summary>Exclude Windows update Drivers</summary>
         public bool? DriversExcluded {
-            get { return BackingStore?.Get<bool?>(nameof(DriversExcluded)); }
-            set { BackingStore?.Set(nameof(DriversExcluded), value); }
+            get { return BackingStore?.Get<bool?>("driversExcluded"); }
+            set { BackingStore?.Set("driversExcluded", value); }
         }
         /// <summary>Defer Feature Updates by these many days</summary>
         public int? FeatureUpdatesDeferralPeriodInDays {
-            get { return BackingStore?.Get<int?>(nameof(FeatureUpdatesDeferralPeriodInDays)); }
-            set { BackingStore?.Set(nameof(FeatureUpdatesDeferralPeriodInDays), value); }
+            get { return BackingStore?.Get<int?>("featureUpdatesDeferralPeriodInDays"); }
+            set { BackingStore?.Set("featureUpdatesDeferralPeriodInDays", value); }
         }
         /// <summary>Pause Feature Updates</summary>
         public bool? FeatureUpdatesPaused {
-            get { return BackingStore?.Get<bool?>(nameof(FeatureUpdatesPaused)); }
-            set { BackingStore?.Set(nameof(FeatureUpdatesPaused), value); }
+            get { return BackingStore?.Get<bool?>("featureUpdatesPaused"); }
+            set { BackingStore?.Set("featureUpdatesPaused", value); }
         }
         /// <summary>Feature Updates Pause Expiry datetime</summary>
         public DateTimeOffset? FeatureUpdatesPauseExpiryDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(FeatureUpdatesPauseExpiryDateTime)); }
-            set { BackingStore?.Set(nameof(FeatureUpdatesPauseExpiryDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("featureUpdatesPauseExpiryDateTime"); }
+            set { BackingStore?.Set("featureUpdatesPauseExpiryDateTime", value); }
         }
         /// <summary>Installation schedule</summary>
         public WindowsUpdateInstallScheduleType InstallationSchedule {
-            get { return BackingStore?.Get<WindowsUpdateInstallScheduleType>(nameof(InstallationSchedule)); }
-            set { BackingStore?.Set(nameof(InstallationSchedule), value); }
+            get { return BackingStore?.Get<WindowsUpdateInstallScheduleType>("installationSchedule"); }
+            set { BackingStore?.Set("installationSchedule", value); }
         }
         /// <summary>Allow Microsoft Update Service</summary>
         public bool? MicrosoftUpdateServiceAllowed {
-            get { return BackingStore?.Get<bool?>(nameof(MicrosoftUpdateServiceAllowed)); }
-            set { BackingStore?.Set(nameof(MicrosoftUpdateServiceAllowed), value); }
+            get { return BackingStore?.Get<bool?>("microsoftUpdateServiceAllowed"); }
+            set { BackingStore?.Set("microsoftUpdateServiceAllowed", value); }
         }
-        /// <summary>The pre-release features. Possible values are: userDefined, settingsOnly, settingsAndExperimentations, notAllowed.</summary>
+        /// <summary>Possible values for pre-release features.</summary>
         public Microsoft.Graph.Models.PrereleaseFeatures? PrereleaseFeatures {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.PrereleaseFeatures?>(nameof(PrereleaseFeatures)); }
-            set { BackingStore?.Set(nameof(PrereleaseFeatures), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrereleaseFeatures?>("prereleaseFeatures"); }
+            set { BackingStore?.Set("prereleaseFeatures", value); }
         }
         /// <summary>Defer Quality Updates by these many days</summary>
         public int? QualityUpdatesDeferralPeriodInDays {
-            get { return BackingStore?.Get<int?>(nameof(QualityUpdatesDeferralPeriodInDays)); }
-            set { BackingStore?.Set(nameof(QualityUpdatesDeferralPeriodInDays), value); }
+            get { return BackingStore?.Get<int?>("qualityUpdatesDeferralPeriodInDays"); }
+            set { BackingStore?.Set("qualityUpdatesDeferralPeriodInDays", value); }
         }
         /// <summary>Pause Quality Updates</summary>
         public bool? QualityUpdatesPaused {
-            get { return BackingStore?.Get<bool?>(nameof(QualityUpdatesPaused)); }
-            set { BackingStore?.Set(nameof(QualityUpdatesPaused), value); }
+            get { return BackingStore?.Get<bool?>("qualityUpdatesPaused"); }
+            set { BackingStore?.Set("qualityUpdatesPaused", value); }
         }
         /// <summary>Quality Updates Pause Expiry datetime</summary>
         public DateTimeOffset? QualityUpdatesPauseExpiryDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(QualityUpdatesPauseExpiryDateTime)); }
-            set { BackingStore?.Set(nameof(QualityUpdatesPauseExpiryDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("qualityUpdatesPauseExpiryDateTime"); }
+            set { BackingStore?.Set("qualityUpdatesPauseExpiryDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

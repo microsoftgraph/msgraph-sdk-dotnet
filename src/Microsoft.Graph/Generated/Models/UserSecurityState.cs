@@ -8,80 +8,80 @@ namespace Microsoft.Graph.Models {
     public class UserSecurityState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>AAD User object identifier (GUID) - represents the physical/multi-account user entity.</summary>
         public string AadUserId {
-            get { return BackingStore?.Get<string>(nameof(AadUserId)); }
-            set { BackingStore?.Set(nameof(AadUserId), value); }
+            get { return BackingStore?.Get<string>("aadUserId"); }
+            set { BackingStore?.Set("aadUserId", value); }
         }
         /// <summary>Account name of user account (without Active Directory domain or DNS domain) - (also called mailNickName).</summary>
         public string AccountName {
-            get { return BackingStore?.Get<string>(nameof(AccountName)); }
-            set { BackingStore?.Set(nameof(AccountName), value); }
+            get { return BackingStore?.Get<string>("accountName"); }
+            set { BackingStore?.Set("accountName", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>NetBIOS/Active Directory domain of user account (that is, domain/account format).</summary>
         public string DomainName {
-            get { return BackingStore?.Get<string>(nameof(DomainName)); }
-            set { BackingStore?.Set(nameof(DomainName), value); }
+            get { return BackingStore?.Get<string>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
         }
         /// <summary>For email-related alerts - user account&apos;s email &apos;role&apos;. Possible values are: unknown, sender, recipient.</summary>
         public Microsoft.Graph.Models.EmailRole? EmailRole {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailRole?>(nameof(EmailRole)); }
-            set { BackingStore?.Set(nameof(EmailRole), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailRole?>("emailRole"); }
+            set { BackingStore?.Set("emailRole", value); }
         }
         /// <summary>Indicates whether the user logged on through a VPN.</summary>
         public bool? IsVpn {
-            get { return BackingStore?.Get<bool?>(nameof(IsVpn)); }
-            set { BackingStore?.Set(nameof(IsVpn), value); }
+            get { return BackingStore?.Get<bool?>("isVpn"); }
+            set { BackingStore?.Set("isVpn", value); }
         }
         /// <summary>Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LogonDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LogonDateTime)); }
-            set { BackingStore?.Set(nameof(LogonDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("logonDateTime"); }
+            set { BackingStore?.Set("logonDateTime", value); }
         }
         /// <summary>User sign-in ID.</summary>
         public string LogonId {
-            get { return BackingStore?.Get<string>(nameof(LogonId)); }
-            set { BackingStore?.Set(nameof(LogonId), value); }
+            get { return BackingStore?.Get<string>("logonId"); }
+            set { BackingStore?.Set("logonId", value); }
         }
         /// <summary>IP Address the sign-in request originated from.</summary>
         public string LogonIp {
-            get { return BackingStore?.Get<string>(nameof(LogonIp)); }
-            set { BackingStore?.Set(nameof(LogonIp), value); }
+            get { return BackingStore?.Get<string>("logonIp"); }
+            set { BackingStore?.Set("logonIp", value); }
         }
         /// <summary>Location (by IP address mapping) associated with a user sign-in event by this user.</summary>
         public string LogonLocation {
-            get { return BackingStore?.Get<string>(nameof(LogonLocation)); }
-            set { BackingStore?.Set(nameof(LogonLocation), value); }
+            get { return BackingStore?.Get<string>("logonLocation"); }
+            set { BackingStore?.Set("logonLocation", value); }
         }
         /// <summary>Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
         public Microsoft.Graph.Models.LogonType? LogonType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.LogonType?>(nameof(LogonType)); }
-            set { BackingStore?.Set(nameof(LogonType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.LogonType?>("logonType"); }
+            set { BackingStore?.Set("logonType", value); }
         }
         /// <summary>Active Directory (on-premises) Security Identifier (SID) of the user.</summary>
         public string OnPremisesSecurityIdentifier {
-            get { return BackingStore?.Get<string>(nameof(OnPremisesSecurityIdentifier)); }
-            set { BackingStore?.Set(nameof(OnPremisesSecurityIdentifier), value); }
+            get { return BackingStore?.Get<string>("onPremisesSecurityIdentifier"); }
+            set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
         /// <summary>Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.</summary>
         public string RiskScore {
-            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
-            set { BackingStore?.Set(nameof(RiskScore), value); }
+            get { return BackingStore?.Get<string>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
         }
         /// <summary>User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.</summary>
         public UserAccountSecurityType? UserAccountType {
-            get { return BackingStore?.Get<UserAccountSecurityType?>(nameof(UserAccountType)); }
-            set { BackingStore?.Set(nameof(UserAccountType), value); }
+            get { return BackingStore?.Get<UserAccountSecurityType?>("userAccountType"); }
+            set { BackingStore?.Set("userAccountType", value); }
         }
         /// <summary>User sign-in name - internet format: (user account name)@(user account DNS domain name).</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Instantiates a new userSecurityState and sets the default values.

@@ -4,52 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ConversationThread : Entity, IParsable {
         /// <summary>The Cc: recipients for the thread. Returned only on $select.</summary>
         public List<Recipient> CcRecipients {
-            get { return BackingStore?.Get<List<Recipient>>(nameof(CcRecipients)); }
-            set { BackingStore?.Set(nameof(CcRecipients), value); }
+            get { return BackingStore?.Get<List<Recipient>>("ccRecipients"); }
+            set { BackingStore?.Set("ccRecipients", value); }
         }
         /// <summary>Indicates whether any of the posts within this thread has at least one attachment. Returned by default.</summary>
         public bool? HasAttachments {
-            get { return BackingStore?.Get<bool?>(nameof(HasAttachments)); }
-            set { BackingStore?.Set(nameof(HasAttachments), value); }
+            get { return BackingStore?.Get<bool?>("hasAttachments"); }
+            set { BackingStore?.Set("hasAttachments", value); }
         }
         /// <summary>Indicates if the thread is locked. Returned by default.</summary>
         public bool? IsLocked {
-            get { return BackingStore?.Get<bool?>(nameof(IsLocked)); }
-            set { BackingStore?.Set(nameof(IsLocked), value); }
+            get { return BackingStore?.Get<bool?>("isLocked"); }
+            set { BackingStore?.Set("isLocked", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.</summary>
         public DateTimeOffset? LastDeliveredDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastDeliveredDateTime)); }
-            set { BackingStore?.Set(nameof(LastDeliveredDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastDeliveredDateTime"); }
+            set { BackingStore?.Set("lastDeliveredDateTime", value); }
         }
         /// <summary>The posts property</summary>
         public List<Post> Posts {
-            get { return BackingStore?.Get<List<Post>>(nameof(Posts)); }
-            set { BackingStore?.Set(nameof(Posts), value); }
+            get { return BackingStore?.Get<List<Post>>("posts"); }
+            set { BackingStore?.Set("posts", value); }
         }
         /// <summary>A short summary from the body of the latest post in this conversation. Returned by default.</summary>
         public string Preview {
-            get { return BackingStore?.Get<string>(nameof(Preview)); }
-            set { BackingStore?.Set(nameof(Preview), value); }
+            get { return BackingStore?.Get<string>("preview"); }
+            set { BackingStore?.Set("preview", value); }
         }
         /// <summary>The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.</summary>
         public string Topic {
-            get { return BackingStore?.Get<string>(nameof(Topic)); }
-            set { BackingStore?.Set(nameof(Topic), value); }
+            get { return BackingStore?.Get<string>("topic"); }
+            set { BackingStore?.Set("topic", value); }
         }
         /// <summary>The To: recipients for the thread. Returned only on $select.</summary>
         public List<Recipient> ToRecipients {
-            get { return BackingStore?.Get<List<Recipient>>(nameof(ToRecipients)); }
-            set { BackingStore?.Set(nameof(ToRecipients), value); }
+            get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }
+            set { BackingStore?.Set("toRecipients", value); }
         }
         /// <summary>All the users that sent a message to this thread. Returned by default.</summary>
         public List<string> UniqueSenders {
-            get { return BackingStore?.Get<List<string>>(nameof(UniqueSenders)); }
-            set { BackingStore?.Set(nameof(UniqueSenders), value); }
+            get { return BackingStore?.Get<List<string>>("uniqueSenders"); }
+            set { BackingStore?.Set("uniqueSenders", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

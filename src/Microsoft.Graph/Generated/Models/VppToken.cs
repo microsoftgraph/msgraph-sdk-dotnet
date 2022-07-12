@@ -8,58 +8,58 @@ namespace Microsoft.Graph.Models {
     public class VppToken : Entity, IParsable {
         /// <summary>The apple Id associated with the given Apple Volume Purchase Program Token.</summary>
         public string AppleId {
-            get { return BackingStore?.Get<string>(nameof(AppleId)); }
-            set { BackingStore?.Set(nameof(AppleId), value); }
+            get { return BackingStore?.Get<string>("appleId"); }
+            set { BackingStore?.Set("appleId", value); }
         }
         /// <summary>Whether or not apps for the VPP token will be automatically updated.</summary>
         public bool? AutomaticallyUpdateApps {
-            get { return BackingStore?.Get<bool?>(nameof(AutomaticallyUpdateApps)); }
-            set { BackingStore?.Set(nameof(AutomaticallyUpdateApps), value); }
+            get { return BackingStore?.Get<bool?>("automaticallyUpdateApps"); }
+            set { BackingStore?.Set("automaticallyUpdateApps", value); }
         }
         /// <summary>Whether or not apps for the VPP token will be automatically updated.</summary>
         public string CountryOrRegion {
-            get { return BackingStore?.Get<string>(nameof(CountryOrRegion)); }
-            set { BackingStore?.Set(nameof(CountryOrRegion), value); }
+            get { return BackingStore?.Get<string>("countryOrRegion"); }
+            set { BackingStore?.Set("countryOrRegion", value); }
         }
         /// <summary>The expiration date time of the Apple Volume Purchase Program Token.</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Last modification date time associated with the Apple Volume Purchase Program Token.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.</summary>
         public DateTimeOffset? LastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
+            set { BackingStore?.Set("lastSyncDateTime", value); }
         }
-        /// <summary>Current sync status of the last application sync which was triggered using the Apple Volume Purchase Program Token. Possible values are: none, inProgress, completed, failed. Possible values are: none, inProgress, completed, failed.</summary>
+        /// <summary>Possible sync statuses associated with an Apple Volume Purchase Program token.</summary>
         public VppTokenSyncStatus? LastSyncStatus {
-            get { return BackingStore?.Get<VppTokenSyncStatus?>(nameof(LastSyncStatus)); }
-            set { BackingStore?.Set(nameof(LastSyncStatus), value); }
+            get { return BackingStore?.Get<VppTokenSyncStatus?>("lastSyncStatus"); }
+            set { BackingStore?.Set("lastSyncStatus", value); }
         }
         /// <summary>The organization associated with the Apple Volume Purchase Program Token</summary>
         public string OrganizationName {
-            get { return BackingStore?.Get<string>(nameof(OrganizationName)); }
-            set { BackingStore?.Set(nameof(OrganizationName), value); }
+            get { return BackingStore?.Get<string>("organizationName"); }
+            set { BackingStore?.Set("organizationName", value); }
         }
-        /// <summary>Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.</summary>
+        /// <summary>Possible states associated with an Apple Volume Purchase Program token.</summary>
         public VppTokenState? State {
-            get { return BackingStore?.Get<VppTokenState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<VppTokenState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.</summary>
         public string Token {
-            get { return BackingStore?.Get<string>(nameof(Token)); }
-            set { BackingStore?.Set(nameof(Token), value); }
+            get { return BackingStore?.Get<string>("token"); }
+            set { BackingStore?.Set("token", value); }
         }
-        /// <summary>The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.</summary>
+        /// <summary>Possible types of an Apple Volume Purchase Program token.</summary>
         public Microsoft.Graph.Models.VppTokenAccountType? VppTokenAccountType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.VppTokenAccountType?>(nameof(VppTokenAccountType)); }
-            set { BackingStore?.Set(nameof(VppTokenAccountType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.VppTokenAccountType?>("vppTokenAccountType"); }
+            set { BackingStore?.Set("vppTokenAccountType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

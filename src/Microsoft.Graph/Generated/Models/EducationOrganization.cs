@@ -1,30 +1,37 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class EducationOrganization : Entity, IParsable {
         /// <summary>Organization description.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Organization display name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Where this user was created from. Possible values are: sis, lms, or manual.</summary>
         public EducationExternalSource? ExternalSource {
-            get { return BackingStore?.Get<EducationExternalSource?>(nameof(ExternalSource)); }
-            set { BackingStore?.Set(nameof(ExternalSource), value); }
+            get { return BackingStore?.Get<EducationExternalSource?>("externalSource"); }
+            set { BackingStore?.Set("externalSource", value); }
         }
         /// <summary>The name of the external source this resources was generated from.</summary>
         public string ExternalSourceDetail {
-            get { return BackingStore?.Get<string>(nameof(ExternalSourceDetail)); }
-            set { BackingStore?.Set(nameof(ExternalSourceDetail), value); }
+            get { return BackingStore?.Get<string>("externalSourceDetail"); }
+            set { BackingStore?.Set("externalSourceDetail", value); }
+        }
+        /// <summary>
+        /// Instantiates a new educationOrganization and sets the default values.
+        /// </summary>
+        public EducationOrganization() : base() {
+            Type = "#microsoft.graph.educationOrganization";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

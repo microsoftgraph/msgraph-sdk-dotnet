@@ -9,70 +9,70 @@ namespace Microsoft.Graph.Models {
     public class DeviceCompliancePolicySettingState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Current value of setting on device</summary>
         public string CurrentValue {
-            get { return BackingStore?.Get<string>(nameof(CurrentValue)); }
-            set { BackingStore?.Set(nameof(CurrentValue), value); }
+            get { return BackingStore?.Get<string>("currentValue"); }
+            set { BackingStore?.Set("currentValue", value); }
         }
         /// <summary>Error code for the setting</summary>
         public long? ErrorCode {
-            get { return BackingStore?.Get<long?>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<long?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Error description</summary>
         public string ErrorDescription {
-            get { return BackingStore?.Get<string>(nameof(ErrorDescription)); }
-            set { BackingStore?.Set(nameof(ErrorDescription), value); }
+            get { return BackingStore?.Get<string>("errorDescription"); }
+            set { BackingStore?.Set("errorDescription", value); }
         }
         /// <summary>Name of setting instance that is being reported.</summary>
         public string InstanceDisplayName {
-            get { return BackingStore?.Get<string>(nameof(InstanceDisplayName)); }
-            set { BackingStore?.Set(nameof(InstanceDisplayName), value); }
+            get { return BackingStore?.Get<string>("instanceDisplayName"); }
+            set { BackingStore?.Set("instanceDisplayName", value); }
         }
         /// <summary>The setting that is being reported</summary>
         public string Setting {
-            get { return BackingStore?.Get<string>(nameof(Setting)); }
-            set { BackingStore?.Set(nameof(Setting), value); }
+            get { return BackingStore?.Get<string>("setting"); }
+            set { BackingStore?.Set("setting", value); }
         }
         /// <summary>Localized/user friendly setting name that is being reported</summary>
         public string SettingName {
-            get { return BackingStore?.Get<string>(nameof(SettingName)); }
-            set { BackingStore?.Set(nameof(SettingName), value); }
+            get { return BackingStore?.Get<string>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
         }
         /// <summary>Contributing policies</summary>
         public List<SettingSource> Sources {
-            get { return BackingStore?.Get<List<SettingSource>>(nameof(Sources)); }
-            set { BackingStore?.Set(nameof(Sources), value); }
+            get { return BackingStore?.Get<List<SettingSource>>("sources"); }
+            set { BackingStore?.Set("sources", value); }
         }
-        /// <summary>The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.</summary>
+        /// <summary>The state property</summary>
         public ComplianceStatus? State {
-            get { return BackingStore?.Get<ComplianceStatus?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ComplianceStatus?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>UserEmail</summary>
         public string UserEmail {
-            get { return BackingStore?.Get<string>(nameof(UserEmail)); }
-            set { BackingStore?.Set(nameof(UserEmail), value); }
+            get { return BackingStore?.Get<string>("userEmail"); }
+            set { BackingStore?.Set("userEmail", value); }
         }
         /// <summary>UserId</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>UserName</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>UserPrincipalName.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Instantiates a new deviceCompliancePolicySettingState and sets the default values.

@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Models {
     public class FileAttachment : Attachment, IParsable {
         /// <summary>The base64-encoded contents of the file.</summary>
         public byte[] ContentBytes {
-            get { return BackingStore?.Get<byte[]>(nameof(ContentBytes)); }
-            set { BackingStore?.Set(nameof(ContentBytes), value); }
+            get { return BackingStore?.Get<byte[]>("contentBytes"); }
+            set { BackingStore?.Set("contentBytes", value); }
         }
         /// <summary>The ID of the attachment in the Exchange store.</summary>
         public string ContentId {
-            get { return BackingStore?.Get<string>(nameof(ContentId)); }
-            set { BackingStore?.Set(nameof(ContentId), value); }
+            get { return BackingStore?.Get<string>("contentId"); }
+            set { BackingStore?.Set("contentId", value); }
         }
         /// <summary>Do not use this property as it is not supported.</summary>
         public string ContentLocation {
-            get { return BackingStore?.Get<string>(nameof(ContentLocation)); }
-            set { BackingStore?.Set(nameof(ContentLocation), value); }
+            get { return BackingStore?.Get<string>("contentLocation"); }
+            set { BackingStore?.Set("contentLocation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

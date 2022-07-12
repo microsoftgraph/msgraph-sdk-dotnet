@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class MeetingAttendanceReport : Entity, IParsable {
         /// <summary>List of attendance records of an attendance report. Read-only.</summary>
         public List<AttendanceRecord> AttendanceRecords {
-            get { return BackingStore?.Get<List<AttendanceRecord>>(nameof(AttendanceRecords)); }
-            set { BackingStore?.Set(nameof(AttendanceRecords), value); }
+            get { return BackingStore?.Get<List<AttendanceRecord>>("attendanceRecords"); }
+            set { BackingStore?.Set("attendanceRecords", value); }
         }
         /// <summary>UTC time when the meeting ended. Read-only.</summary>
         public DateTimeOffset? MeetingEndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(MeetingEndDateTime)); }
-            set { BackingStore?.Set(nameof(MeetingEndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("meetingEndDateTime"); }
+            set { BackingStore?.Set("meetingEndDateTime", value); }
         }
         /// <summary>UTC time when the meeting started. Read-only.</summary>
         public DateTimeOffset? MeetingStartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(MeetingStartDateTime)); }
-            set { BackingStore?.Set(nameof(MeetingStartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("meetingStartDateTime"); }
+            set { BackingStore?.Set("meetingStartDateTime", value); }
         }
         /// <summary>Total number of participants. Read-only.</summary>
         public int? TotalParticipantCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalParticipantCount)); }
-            set { BackingStore?.Set(nameof(TotalParticipantCount), value); }
+            get { return BackingStore?.Get<int?>("totalParticipantCount"); }
+            set { BackingStore?.Set("totalParticipantCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

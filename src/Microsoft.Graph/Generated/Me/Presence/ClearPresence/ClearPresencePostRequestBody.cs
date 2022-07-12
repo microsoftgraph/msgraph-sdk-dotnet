@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Me.Presence.ClearPresence {
     public class ClearPresencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The sessionId property</summary>
         public string SessionId {
-            get { return BackingStore?.Get<string>(nameof(SessionId)); }
-            set { BackingStore?.Set(nameof(SessionId), value); }
+            get { return BackingStore?.Get<string>("sessionId"); }
+            set { BackingStore?.Set("sessionId", value); }
         }
         /// <summary>
         /// Instantiates a new clearPresencePostRequestBody and sets the default values.

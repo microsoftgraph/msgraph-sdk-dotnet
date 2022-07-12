@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class RestrictedSignIn : SignIn, IParsable {
         /// <summary>The targetTenantId property</summary>
         public string TargetTenantId {
-            get { return BackingStore?.Get<string>(nameof(TargetTenantId)); }
-            set { BackingStore?.Set(nameof(TargetTenantId), value); }
+            get { return BackingStore?.Get<string>("targetTenantId"); }
+            set { BackingStore?.Set("targetTenantId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

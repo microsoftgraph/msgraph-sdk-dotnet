@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ContactFolder : Entity, IParsable {
         /// <summary>The collection of child folders in the folder. Navigation property. Read-only. Nullable.</summary>
         public List<ContactFolder> ChildFolders {
-            get { return BackingStore?.Get<List<ContactFolder>>(nameof(ChildFolders)); }
-            set { BackingStore?.Set(nameof(ChildFolders), value); }
+            get { return BackingStore?.Get<List<ContactFolder>>("childFolders"); }
+            set { BackingStore?.Set("childFolders", value); }
         }
         /// <summary>The contacts in the folder. Navigation property. Read-only. Nullable.</summary>
         public List<Contact> Contacts {
-            get { return BackingStore?.Get<List<Contact>>(nameof(Contacts)); }
-            set { BackingStore?.Set(nameof(Contacts), value); }
+            get { return BackingStore?.Get<List<Contact>>("contacts"); }
+            set { BackingStore?.Set("contacts", value); }
         }
         /// <summary>The folder&apos;s display name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>(nameof(MultiValueExtendedProperties)); }
-            set { BackingStore?.Set(nameof(MultiValueExtendedProperties), value); }
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
         /// <summary>The ID of the folder&apos;s parent folder.</summary>
         public string ParentFolderId {
-            get { return BackingStore?.Get<string>(nameof(ParentFolderId)); }
-            set { BackingStore?.Set(nameof(ParentFolderId), value); }
+            get { return BackingStore?.Get<string>("parentFolderId"); }
+            set { BackingStore?.Set("parentFolderId", value); }
         }
         /// <summary>The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>(nameof(SingleValueExtendedProperties)); }
-            set { BackingStore?.Set(nameof(SingleValueExtendedProperties), value); }
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

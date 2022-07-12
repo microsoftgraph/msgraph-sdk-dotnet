@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class AccessReviewNotificationRecipientItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Determines the recipient of the notification email.</summary>
         public AccessReviewNotificationRecipientScope NotificationRecipientScope {
-            get { return BackingStore?.Get<AccessReviewNotificationRecipientScope>(nameof(NotificationRecipientScope)); }
-            set { BackingStore?.Set(nameof(NotificationRecipientScope), value); }
+            get { return BackingStore?.Get<AccessReviewNotificationRecipientScope>("notificationRecipientScope"); }
+            set { BackingStore?.Set("notificationRecipientScope", value); }
         }
         /// <summary>Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.</summary>
         public string NotificationTemplateType {
-            get { return BackingStore?.Get<string>(nameof(NotificationTemplateType)); }
-            set { BackingStore?.Set(nameof(NotificationTemplateType), value); }
+            get { return BackingStore?.Get<string>("notificationTemplateType"); }
+            set { BackingStore?.Set("notificationTemplateType", value); }
         }
         /// <summary>
         /// Instantiates a new accessReviewNotificationRecipientItem and sets the default values.

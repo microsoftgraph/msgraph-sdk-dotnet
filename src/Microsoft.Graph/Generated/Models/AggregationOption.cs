@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class AggregationOption : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The bucketDefinition property</summary>
         public BucketAggregationDefinition BucketDefinition {
-            get { return BackingStore?.Get<BucketAggregationDefinition>(nameof(BucketDefinition)); }
-            set { BackingStore?.Set(nameof(BucketDefinition), value); }
+            get { return BackingStore?.Get<BucketAggregationDefinition>("bucketDefinition"); }
+            set { BackingStore?.Set("bucketDefinition", value); }
         }
         /// <summary>Computes aggregation on the field while the field exists in current entity type. Required.</summary>
         public string Field {
-            get { return BackingStore?.Get<string>(nameof(Field)); }
-            set { BackingStore?.Set(nameof(Field), value); }
+            get { return BackingStore?.Get<string>("field"); }
+            set { BackingStore?.Set("field", value); }
         }
         /// <summary>The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.</summary>
         public int? Size {
-            get { return BackingStore?.Get<int?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<int?>("size"); }
+            set { BackingStore?.Set("size", value); }
         }
         /// <summary>
         /// Instantiates a new aggregationOption and sets the default values.

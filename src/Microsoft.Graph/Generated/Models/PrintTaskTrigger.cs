@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the print singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class PrintTaskTrigger : Entity, IParsable {
         /// <summary>The definition property</summary>
         public PrintTaskDefinition Definition {
-            get { return BackingStore?.Get<PrintTaskDefinition>(nameof(Definition)); }
-            set { BackingStore?.Set(nameof(Definition), value); }
+            get { return BackingStore?.Get<PrintTaskDefinition>("definition"); }
+            set { BackingStore?.Set("definition", value); }
         }
-        /// <summary>The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.</summary>
+        /// <summary>The event property</summary>
         public PrintEvent? Event {
-            get { return BackingStore?.Get<PrintEvent?>(nameof(Event)); }
-            set { BackingStore?.Set(nameof(Event), value); }
+            get { return BackingStore?.Get<PrintEvent?>("event"); }
+            set { BackingStore?.Set("event", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

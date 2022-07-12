@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class DateTimeTimeZone : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A single point of time in a combined date and time representation ({date}T{time}). For example, &apos;2019-04-16T09:00:00&apos;.</summary>
         public string DateTime {
-            get { return BackingStore?.Get<string>(nameof(DateTime)); }
-            set { BackingStore?.Set(nameof(DateTime), value); }
+            get { return BackingStore?.Get<string>("dateTime"); }
+            set { BackingStore?.Set("dateTime", value); }
         }
         /// <summary>Represents a time zone, for example, &apos;Pacific Standard Time&apos;. See below for possible values.</summary>
         public string TimeZone {
-            get { return BackingStore?.Get<string>(nameof(TimeZone)); }
-            set { BackingStore?.Set(nameof(TimeZone), value); }
+            get { return BackingStore?.Get<string>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
         }
         /// <summary>
         /// Instantiates a new dateTimeTimeZone and sets the default values.

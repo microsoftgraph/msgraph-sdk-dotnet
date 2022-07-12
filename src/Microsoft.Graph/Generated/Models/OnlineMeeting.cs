@@ -4,122 +4,122 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class OnlineMeeting : Entity, IParsable {
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
         public bool? AllowAttendeeToEnableCamera {
-            get { return BackingStore?.Get<bool?>(nameof(AllowAttendeeToEnableCamera)); }
-            set { BackingStore?.Set(nameof(AllowAttendeeToEnableCamera), value); }
+            get { return BackingStore?.Get<bool?>("allowAttendeeToEnableCamera"); }
+            set { BackingStore?.Set("allowAttendeeToEnableCamera", value); }
         }
         /// <summary>Indicates whether attendees can turn on their microphone.</summary>
         public bool? AllowAttendeeToEnableMic {
-            get { return BackingStore?.Get<bool?>(nameof(AllowAttendeeToEnableMic)); }
-            set { BackingStore?.Set(nameof(AllowAttendeeToEnableMic), value); }
+            get { return BackingStore?.Get<bool?>("allowAttendeeToEnableMic"); }
+            set { BackingStore?.Set("allowAttendeeToEnableMic", value); }
         }
         /// <summary>Specifies who can be a presenter in a meeting.</summary>
         public OnlineMeetingPresenters? AllowedPresenters {
-            get { return BackingStore?.Get<OnlineMeetingPresenters?>(nameof(AllowedPresenters)); }
-            set { BackingStore?.Set(nameof(AllowedPresenters), value); }
+            get { return BackingStore?.Get<OnlineMeetingPresenters?>("allowedPresenters"); }
+            set { BackingStore?.Set("allowedPresenters", value); }
         }
         /// <summary>Specifies the mode of meeting chat.</summary>
         public MeetingChatMode? AllowMeetingChat {
-            get { return BackingStore?.Get<MeetingChatMode?>(nameof(AllowMeetingChat)); }
-            set { BackingStore?.Set(nameof(AllowMeetingChat), value); }
+            get { return BackingStore?.Get<MeetingChatMode?>("allowMeetingChat"); }
+            set { BackingStore?.Set("allowMeetingChat", value); }
         }
         /// <summary>Indicates if Teams reactions are enabled for the meeting.</summary>
         public bool? AllowTeamworkReactions {
-            get { return BackingStore?.Get<bool?>(nameof(AllowTeamworkReactions)); }
-            set { BackingStore?.Set(nameof(AllowTeamworkReactions), value); }
+            get { return BackingStore?.Get<bool?>("allowTeamworkReactions"); }
+            set { BackingStore?.Set("allowTeamworkReactions", value); }
         }
         /// <summary>The attendance reports of an online meeting. Read-only.</summary>
         public List<MeetingAttendanceReport> AttendanceReports {
-            get { return BackingStore?.Get<List<MeetingAttendanceReport>>(nameof(AttendanceReports)); }
-            set { BackingStore?.Set(nameof(AttendanceReports), value); }
+            get { return BackingStore?.Get<List<MeetingAttendanceReport>>("attendanceReports"); }
+            set { BackingStore?.Set("attendanceReports", value); }
         }
         /// <summary>The content stream of the attendee report of a Teams live event. Read-only.</summary>
         public byte[] AttendeeReport {
-            get { return BackingStore?.Get<byte[]>(nameof(AttendeeReport)); }
-            set { BackingStore?.Set(nameof(AttendeeReport), value); }
+            get { return BackingStore?.Get<byte[]>("attendeeReport"); }
+            set { BackingStore?.Set("attendeeReport", value); }
         }
         /// <summary>The phone access (dial-in) information for an online meeting. Read-only.</summary>
         public Microsoft.Graph.Models.AudioConferencing AudioConferencing {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.AudioConferencing>(nameof(AudioConferencing)); }
-            set { BackingStore?.Set(nameof(AudioConferencing), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AudioConferencing>("audioConferencing"); }
+            set { BackingStore?.Set("audioConferencing", value); }
         }
         /// <summary>Settings related to a live event.</summary>
         public BroadcastMeetingSettings BroadcastSettings {
-            get { return BackingStore?.Get<BroadcastMeetingSettings>(nameof(BroadcastSettings)); }
-            set { BackingStore?.Set(nameof(BroadcastSettings), value); }
+            get { return BackingStore?.Get<BroadcastMeetingSettings>("broadcastSettings"); }
+            set { BackingStore?.Set("broadcastSettings", value); }
         }
         /// <summary>The chat information associated with this online meeting.</summary>
         public Microsoft.Graph.Models.ChatInfo ChatInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatInfo>(nameof(ChatInfo)); }
-            set { BackingStore?.Set(nameof(ChatInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatInfo>("chatInfo"); }
+            set { BackingStore?.Set("chatInfo", value); }
         }
         /// <summary>The meeting creation time in UTC. Read-only.</summary>
         public DateTimeOffset? CreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
-            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
+            set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>The meeting end time in UTC.</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The external ID. A custom ID. Optional.</summary>
         public string ExternalId {
-            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
-            set { BackingStore?.Set(nameof(ExternalId), value); }
+            get { return BackingStore?.Get<string>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
         }
         /// <summary>Indicates whether this is a Teams live event.</summary>
         public bool? IsBroadcast {
-            get { return BackingStore?.Get<bool?>(nameof(IsBroadcast)); }
-            set { BackingStore?.Set(nameof(IsBroadcast), value); }
+            get { return BackingStore?.Get<bool?>("isBroadcast"); }
+            set { BackingStore?.Set("isBroadcast", value); }
         }
         /// <summary>Indicates whether to announce when callers join or leave.</summary>
         public bool? IsEntryExitAnnounced {
-            get { return BackingStore?.Get<bool?>(nameof(IsEntryExitAnnounced)); }
-            set { BackingStore?.Set(nameof(IsEntryExitAnnounced), value); }
+            get { return BackingStore?.Get<bool?>("isEntryExitAnnounced"); }
+            set { BackingStore?.Set("isEntryExitAnnounced", value); }
         }
         /// <summary>The join information in the language and locale variant specified in &apos;Accept-Language&apos; request HTTP header. Read-only.</summary>
         public ItemBody JoinInformation {
-            get { return BackingStore?.Get<ItemBody>(nameof(JoinInformation)); }
-            set { BackingStore?.Set(nameof(JoinInformation), value); }
+            get { return BackingStore?.Get<ItemBody>("joinInformation"); }
+            set { BackingStore?.Set("joinInformation", value); }
         }
         /// <summary>The join URL of the online meeting. Read-only.</summary>
         public string JoinWebUrl {
-            get { return BackingStore?.Get<string>(nameof(JoinWebUrl)); }
-            set { BackingStore?.Set(nameof(JoinWebUrl), value); }
+            get { return BackingStore?.Get<string>("joinWebUrl"); }
+            set { BackingStore?.Set("joinWebUrl", value); }
         }
         /// <summary>Specifies which participants can bypass the meeting lobby.</summary>
         public Microsoft.Graph.Models.LobbyBypassSettings LobbyBypassSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.LobbyBypassSettings>(nameof(LobbyBypassSettings)); }
-            set { BackingStore?.Set(nameof(LobbyBypassSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.LobbyBypassSettings>("lobbyBypassSettings"); }
+            set { BackingStore?.Set("lobbyBypassSettings", value); }
         }
         /// <summary>The participants associated with the online meeting. This includes the organizer and the attendees.</summary>
         public MeetingParticipants Participants {
-            get { return BackingStore?.Get<MeetingParticipants>(nameof(Participants)); }
-            set { BackingStore?.Set(nameof(Participants), value); }
+            get { return BackingStore?.Get<MeetingParticipants>("participants"); }
+            set { BackingStore?.Set("participants", value); }
         }
         /// <summary>Indicates whether to record the meeting automatically.</summary>
         public bool? RecordAutomatically {
-            get { return BackingStore?.Get<bool?>(nameof(RecordAutomatically)); }
-            set { BackingStore?.Set(nameof(RecordAutomatically), value); }
+            get { return BackingStore?.Get<bool?>("recordAutomatically"); }
+            set { BackingStore?.Set("recordAutomatically", value); }
         }
         /// <summary>The meeting start time in UTC.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The subject of the online meeting.</summary>
         public string Subject {
-            get { return BackingStore?.Get<string>(nameof(Subject)); }
-            set { BackingStore?.Set(nameof(Subject), value); }
+            get { return BackingStore?.Get<string>("subject"); }
+            set { BackingStore?.Set("subject", value); }
         }
         /// <summary>The video teleconferencing ID. Read-only.</summary>
         public string VideoTeleconferenceId {
-            get { return BackingStore?.Get<string>(nameof(VideoTeleconferenceId)); }
-            set { BackingStore?.Set(nameof(VideoTeleconferenceId), value); }
+            get { return BackingStore?.Get<string>("videoTeleconferenceId"); }
+            set { BackingStore?.Set("videoTeleconferenceId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Models {
     public class ChatMessageReaction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Supported values are like, angry, sad, laugh, heart, surprised.</summary>
         public string ReactionType {
-            get { return BackingStore?.Get<string>(nameof(ReactionType)); }
-            set { BackingStore?.Set(nameof(ReactionType), value); }
+            get { return BackingStore?.Get<string>("reactionType"); }
+            set { BackingStore?.Set("reactionType", value); }
         }
         /// <summary>The user property</summary>
         public ChatMessageReactionIdentitySet User {
-            get { return BackingStore?.Get<ChatMessageReactionIdentitySet>(nameof(User)); }
-            set { BackingStore?.Set(nameof(User), value); }
+            get { return BackingStore?.Get<ChatMessageReactionIdentitySet>("user"); }
+            set { BackingStore?.Set("user", value); }
         }
         /// <summary>
         /// Instantiates a new chatMessageReaction and sets the default values.

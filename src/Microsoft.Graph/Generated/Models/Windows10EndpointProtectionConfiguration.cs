@@ -7,183 +7,183 @@ namespace Microsoft.Graph.Models {
     public class Windows10EndpointProtectionConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)</summary>
         public bool? ApplicationGuardAllowPersistence {
-            get { return BackingStore?.Get<bool?>(nameof(ApplicationGuardAllowPersistence)); }
-            set { BackingStore?.Set(nameof(ApplicationGuardAllowPersistence), value); }
+            get { return BackingStore?.Get<bool?>("applicationGuardAllowPersistence"); }
+            set { BackingStore?.Set("applicationGuardAllowPersistence", value); }
         }
         /// <summary>Allow printing to Local Printers from Container</summary>
         public bool? ApplicationGuardAllowPrintToLocalPrinters {
-            get { return BackingStore?.Get<bool?>(nameof(ApplicationGuardAllowPrintToLocalPrinters)); }
-            set { BackingStore?.Set(nameof(ApplicationGuardAllowPrintToLocalPrinters), value); }
+            get { return BackingStore?.Get<bool?>("applicationGuardAllowPrintToLocalPrinters"); }
+            set { BackingStore?.Set("applicationGuardAllowPrintToLocalPrinters", value); }
         }
         /// <summary>Allow printing to Network Printers from Container</summary>
         public bool? ApplicationGuardAllowPrintToNetworkPrinters {
-            get { return BackingStore?.Get<bool?>(nameof(ApplicationGuardAllowPrintToNetworkPrinters)); }
-            set { BackingStore?.Set(nameof(ApplicationGuardAllowPrintToNetworkPrinters), value); }
+            get { return BackingStore?.Get<bool?>("applicationGuardAllowPrintToNetworkPrinters"); }
+            set { BackingStore?.Set("applicationGuardAllowPrintToNetworkPrinters", value); }
         }
         /// <summary>Allow printing to PDF from Container</summary>
         public bool? ApplicationGuardAllowPrintToPDF {
-            get { return BackingStore?.Get<bool?>(nameof(ApplicationGuardAllowPrintToPDF)); }
-            set { BackingStore?.Set(nameof(ApplicationGuardAllowPrintToPDF), value); }
+            get { return BackingStore?.Get<bool?>("applicationGuardAllowPrintToPDF"); }
+            set { BackingStore?.Set("applicationGuardAllowPrintToPDF", value); }
         }
         /// <summary>Allow printing to XPS from Container</summary>
         public bool? ApplicationGuardAllowPrintToXPS {
-            get { return BackingStore?.Get<bool?>(nameof(ApplicationGuardAllowPrintToXPS)); }
-            set { BackingStore?.Set(nameof(ApplicationGuardAllowPrintToXPS), value); }
+            get { return BackingStore?.Get<bool?>("applicationGuardAllowPrintToXPS"); }
+            set { BackingStore?.Set("applicationGuardAllowPrintToXPS", value); }
         }
-        /// <summary>Block clipboard to share data from Host to Container, or from Container to Host, or both ways, or neither ways. Possible values are: notConfigured, blockBoth, blockHostToContainer, blockContainerToHost, blockNone.</summary>
+        /// <summary>Possible values for applicationGuardBlockClipboardSharingType</summary>
         public ApplicationGuardBlockClipboardSharingType? ApplicationGuardBlockClipboardSharing {
-            get { return BackingStore?.Get<ApplicationGuardBlockClipboardSharingType?>(nameof(ApplicationGuardBlockClipboardSharing)); }
-            set { BackingStore?.Set(nameof(ApplicationGuardBlockClipboardSharing), value); }
+            get { return BackingStore?.Get<ApplicationGuardBlockClipboardSharingType?>("applicationGuardBlockClipboardSharing"); }
+            set { BackingStore?.Set("applicationGuardBlockClipboardSharing", value); }
         }
-        /// <summary>Block clipboard to transfer image file, text file or neither of them. Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.</summary>
+        /// <summary>Possible values for applicationGuardBlockFileTransfer</summary>
         public ApplicationGuardBlockFileTransferType? ApplicationGuardBlockFileTransfer {
-            get { return BackingStore?.Get<ApplicationGuardBlockFileTransferType?>(nameof(ApplicationGuardBlockFileTransfer)); }
-            set { BackingStore?.Set(nameof(ApplicationGuardBlockFileTransfer), value); }
+            get { return BackingStore?.Get<ApplicationGuardBlockFileTransferType?>("applicationGuardBlockFileTransfer"); }
+            set { BackingStore?.Set("applicationGuardBlockFileTransfer", value); }
         }
         /// <summary>Block enterprise sites to load non-enterprise content, such as third party plug-ins</summary>
         public bool? ApplicationGuardBlockNonEnterpriseContent {
-            get { return BackingStore?.Get<bool?>(nameof(ApplicationGuardBlockNonEnterpriseContent)); }
-            set { BackingStore?.Set(nameof(ApplicationGuardBlockNonEnterpriseContent), value); }
+            get { return BackingStore?.Get<bool?>("applicationGuardBlockNonEnterpriseContent"); }
+            set { BackingStore?.Set("applicationGuardBlockNonEnterpriseContent", value); }
         }
         /// <summary>Enable Windows Defender Application Guard</summary>
         public bool? ApplicationGuardEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(ApplicationGuardEnabled)); }
-            set { BackingStore?.Set(nameof(ApplicationGuardEnabled), value); }
+            get { return BackingStore?.Get<bool?>("applicationGuardEnabled"); }
+            set { BackingStore?.Set("applicationGuardEnabled", value); }
         }
         /// <summary>Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)</summary>
         public bool? ApplicationGuardForceAuditing {
-            get { return BackingStore?.Get<bool?>(nameof(ApplicationGuardForceAuditing)); }
-            set { BackingStore?.Set(nameof(ApplicationGuardForceAuditing), value); }
+            get { return BackingStore?.Get<bool?>("applicationGuardForceAuditing"); }
+            set { BackingStore?.Set("applicationGuardForceAuditing", value); }
         }
-        /// <summary>Enables the Admin to choose what types of app to allow on devices. Possible values are: notConfigured, enforceComponentsAndStoreApps, auditComponentsAndStoreApps, enforceComponentsStoreAppsAndSmartlocker, auditComponentsStoreAppsAndSmartlocker.</summary>
+        /// <summary>Possible values of AppLocker Application Control Types</summary>
         public AppLockerApplicationControlType? AppLockerApplicationControl {
-            get { return BackingStore?.Get<AppLockerApplicationControlType?>(nameof(AppLockerApplicationControl)); }
-            set { BackingStore?.Set(nameof(AppLockerApplicationControl), value); }
+            get { return BackingStore?.Get<AppLockerApplicationControlType?>("appLockerApplicationControl"); }
+            set { BackingStore?.Set("appLockerApplicationControl", value); }
         }
         /// <summary>Allows the Admin to disable the warning prompt for other disk encryption on the user machines.</summary>
         public bool? BitLockerDisableWarningForOtherDiskEncryption {
-            get { return BackingStore?.Get<bool?>(nameof(BitLockerDisableWarningForOtherDiskEncryption)); }
-            set { BackingStore?.Set(nameof(BitLockerDisableWarningForOtherDiskEncryption), value); }
+            get { return BackingStore?.Get<bool?>("bitLockerDisableWarningForOtherDiskEncryption"); }
+            set { BackingStore?.Set("bitLockerDisableWarningForOtherDiskEncryption", value); }
         }
         /// <summary>Allows the admin to require encryption to be turned on using BitLocker. This policy is valid only for a mobile SKU.</summary>
         public bool? BitLockerEnableStorageCardEncryptionOnMobile {
-            get { return BackingStore?.Get<bool?>(nameof(BitLockerEnableStorageCardEncryptionOnMobile)); }
-            set { BackingStore?.Set(nameof(BitLockerEnableStorageCardEncryptionOnMobile), value); }
+            get { return BackingStore?.Get<bool?>("bitLockerEnableStorageCardEncryptionOnMobile"); }
+            set { BackingStore?.Set("bitLockerEnableStorageCardEncryptionOnMobile", value); }
         }
         /// <summary>Allows the admin to require encryption to be turned on using BitLocker.</summary>
         public bool? BitLockerEncryptDevice {
-            get { return BackingStore?.Get<bool?>(nameof(BitLockerEncryptDevice)); }
-            set { BackingStore?.Set(nameof(BitLockerEncryptDevice), value); }
+            get { return BackingStore?.Get<bool?>("bitLockerEncryptDevice"); }
+            set { BackingStore?.Set("bitLockerEncryptDevice", value); }
         }
         /// <summary>BitLocker Removable Drive Policy.</summary>
         public Microsoft.Graph.Models.BitLockerRemovableDrivePolicy BitLockerRemovableDrivePolicy {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.BitLockerRemovableDrivePolicy>(nameof(BitLockerRemovableDrivePolicy)); }
-            set { BackingStore?.Set(nameof(BitLockerRemovableDrivePolicy), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BitLockerRemovableDrivePolicy>("bitLockerRemovableDrivePolicy"); }
+            set { BackingStore?.Set("bitLockerRemovableDrivePolicy", value); }
         }
         /// <summary>List of folder paths to be added to the list of protected folders</summary>
         public List<string> DefenderAdditionalGuardedFolders {
-            get { return BackingStore?.Get<List<string>>(nameof(DefenderAdditionalGuardedFolders)); }
-            set { BackingStore?.Set(nameof(DefenderAdditionalGuardedFolders), value); }
+            get { return BackingStore?.Get<List<string>>("defenderAdditionalGuardedFolders"); }
+            set { BackingStore?.Set("defenderAdditionalGuardedFolders", value); }
         }
         /// <summary>List of exe files and folders to be excluded from attack surface reduction rules</summary>
         public List<string> DefenderAttackSurfaceReductionExcludedPaths {
-            get { return BackingStore?.Get<List<string>>(nameof(DefenderAttackSurfaceReductionExcludedPaths)); }
-            set { BackingStore?.Set(nameof(DefenderAttackSurfaceReductionExcludedPaths), value); }
+            get { return BackingStore?.Get<List<string>>("defenderAttackSurfaceReductionExcludedPaths"); }
+            set { BackingStore?.Set("defenderAttackSurfaceReductionExcludedPaths", value); }
         }
         /// <summary>Xml content containing information regarding exploit protection details.</summary>
         public byte[] DefenderExploitProtectionXml {
-            get { return BackingStore?.Get<byte[]>(nameof(DefenderExploitProtectionXml)); }
-            set { BackingStore?.Set(nameof(DefenderExploitProtectionXml), value); }
+            get { return BackingStore?.Get<byte[]>("defenderExploitProtectionXml"); }
+            set { BackingStore?.Set("defenderExploitProtectionXml", value); }
         }
         /// <summary>Name of the file from which DefenderExploitProtectionXml was obtained.</summary>
         public string DefenderExploitProtectionXmlFileName {
-            get { return BackingStore?.Get<string>(nameof(DefenderExploitProtectionXmlFileName)); }
-            set { BackingStore?.Set(nameof(DefenderExploitProtectionXmlFileName), value); }
+            get { return BackingStore?.Get<string>("defenderExploitProtectionXmlFileName"); }
+            set { BackingStore?.Set("defenderExploitProtectionXmlFileName", value); }
         }
         /// <summary>List of paths to exe that are allowed to access protected folders</summary>
         public List<string> DefenderGuardedFoldersAllowedAppPaths {
-            get { return BackingStore?.Get<List<string>>(nameof(DefenderGuardedFoldersAllowedAppPaths)); }
-            set { BackingStore?.Set(nameof(DefenderGuardedFoldersAllowedAppPaths), value); }
+            get { return BackingStore?.Get<List<string>>("defenderGuardedFoldersAllowedAppPaths"); }
+            set { BackingStore?.Set("defenderGuardedFoldersAllowedAppPaths", value); }
         }
         /// <summary>Indicates whether or not to block user from overriding Exploit Protection settings.</summary>
         public bool? DefenderSecurityCenterBlockExploitProtectionOverride {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderSecurityCenterBlockExploitProtectionOverride)); }
-            set { BackingStore?.Set(nameof(DefenderSecurityCenterBlockExploitProtectionOverride), value); }
+            get { return BackingStore?.Get<bool?>("defenderSecurityCenterBlockExploitProtectionOverride"); }
+            set { BackingStore?.Set("defenderSecurityCenterBlockExploitProtectionOverride", value); }
         }
         /// <summary>Blocks stateful FTP connections to the device</summary>
         public bool? FirewallBlockStatefulFTP {
-            get { return BackingStore?.Get<bool?>(nameof(FirewallBlockStatefulFTP)); }
-            set { BackingStore?.Set(nameof(FirewallBlockStatefulFTP), value); }
+            get { return BackingStore?.Get<bool?>("firewallBlockStatefulFTP"); }
+            set { BackingStore?.Set("firewallBlockStatefulFTP", value); }
         }
-        /// <summary>Specify how the certificate revocation list is to be enforced. Possible values are: deviceDefault, none, attempt, require.</summary>
+        /// <summary>Possible values for firewallCertificateRevocationListCheckMethod</summary>
         public FirewallCertificateRevocationListCheckMethodType? FirewallCertificateRevocationListCheckMethod {
-            get { return BackingStore?.Get<FirewallCertificateRevocationListCheckMethodType?>(nameof(FirewallCertificateRevocationListCheckMethod)); }
-            set { BackingStore?.Set(nameof(FirewallCertificateRevocationListCheckMethod), value); }
+            get { return BackingStore?.Get<FirewallCertificateRevocationListCheckMethodType?>("firewallCertificateRevocationListCheckMethod"); }
+            set { BackingStore?.Set("firewallCertificateRevocationListCheckMethod", value); }
         }
         /// <summary>Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600</summary>
         public int? FirewallIdleTimeoutForSecurityAssociationInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(FirewallIdleTimeoutForSecurityAssociationInSeconds)); }
-            set { BackingStore?.Set(nameof(FirewallIdleTimeoutForSecurityAssociationInSeconds), value); }
+            get { return BackingStore?.Get<int?>("firewallIdleTimeoutForSecurityAssociationInSeconds"); }
+            set { BackingStore?.Set("firewallIdleTimeoutForSecurityAssociationInSeconds", value); }
         }
         /// <summary>Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic</summary>
         public bool? FirewallIPSecExemptionsAllowDHCP {
-            get { return BackingStore?.Get<bool?>(nameof(FirewallIPSecExemptionsAllowDHCP)); }
-            set { BackingStore?.Set(nameof(FirewallIPSecExemptionsAllowDHCP), value); }
+            get { return BackingStore?.Get<bool?>("firewallIPSecExemptionsAllowDHCP"); }
+            set { BackingStore?.Set("firewallIPSecExemptionsAllowDHCP", value); }
         }
         /// <summary>Configures IPSec exemptions to allow ICMP</summary>
         public bool? FirewallIPSecExemptionsAllowICMP {
-            get { return BackingStore?.Get<bool?>(nameof(FirewallIPSecExemptionsAllowICMP)); }
-            set { BackingStore?.Set(nameof(FirewallIPSecExemptionsAllowICMP), value); }
+            get { return BackingStore?.Get<bool?>("firewallIPSecExemptionsAllowICMP"); }
+            set { BackingStore?.Set("firewallIPSecExemptionsAllowICMP", value); }
         }
         /// <summary>Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes</summary>
         public bool? FirewallIPSecExemptionsAllowNeighborDiscovery {
-            get { return BackingStore?.Get<bool?>(nameof(FirewallIPSecExemptionsAllowNeighborDiscovery)); }
-            set { BackingStore?.Set(nameof(FirewallIPSecExemptionsAllowNeighborDiscovery), value); }
+            get { return BackingStore?.Get<bool?>("firewallIPSecExemptionsAllowNeighborDiscovery"); }
+            set { BackingStore?.Set("firewallIPSecExemptionsAllowNeighborDiscovery", value); }
         }
         /// <summary>Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes</summary>
         public bool? FirewallIPSecExemptionsAllowRouterDiscovery {
-            get { return BackingStore?.Get<bool?>(nameof(FirewallIPSecExemptionsAllowRouterDiscovery)); }
-            set { BackingStore?.Set(nameof(FirewallIPSecExemptionsAllowRouterDiscovery), value); }
+            get { return BackingStore?.Get<bool?>("firewallIPSecExemptionsAllowRouterDiscovery"); }
+            set { BackingStore?.Set("firewallIPSecExemptionsAllowRouterDiscovery", value); }
         }
         /// <summary>If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set</summary>
         public bool? FirewallMergeKeyingModuleSettings {
-            get { return BackingStore?.Get<bool?>(nameof(FirewallMergeKeyingModuleSettings)); }
-            set { BackingStore?.Set(nameof(FirewallMergeKeyingModuleSettings), value); }
+            get { return BackingStore?.Get<bool?>("firewallMergeKeyingModuleSettings"); }
+            set { BackingStore?.Set("firewallMergeKeyingModuleSettings", value); }
         }
-        /// <summary>Configures how packet queueing should be applied in the tunnel gateway scenario. Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.</summary>
+        /// <summary>Possible values for firewallPacketQueueingMethod</summary>
         public FirewallPacketQueueingMethodType? FirewallPacketQueueingMethod {
-            get { return BackingStore?.Get<FirewallPacketQueueingMethodType?>(nameof(FirewallPacketQueueingMethod)); }
-            set { BackingStore?.Set(nameof(FirewallPacketQueueingMethod), value); }
+            get { return BackingStore?.Get<FirewallPacketQueueingMethodType?>("firewallPacketQueueingMethod"); }
+            set { BackingStore?.Set("firewallPacketQueueingMethod", value); }
         }
-        /// <summary>Select the preshared key encoding to be used. Possible values are: deviceDefault, none, utF8.</summary>
+        /// <summary>Possible values for firewallPreSharedKeyEncodingMethod</summary>
         public FirewallPreSharedKeyEncodingMethodType? FirewallPreSharedKeyEncodingMethod {
-            get { return BackingStore?.Get<FirewallPreSharedKeyEncodingMethodType?>(nameof(FirewallPreSharedKeyEncodingMethod)); }
-            set { BackingStore?.Set(nameof(FirewallPreSharedKeyEncodingMethod), value); }
+            get { return BackingStore?.Get<FirewallPreSharedKeyEncodingMethodType?>("firewallPreSharedKeyEncodingMethod"); }
+            set { BackingStore?.Set("firewallPreSharedKeyEncodingMethod", value); }
         }
         /// <summary>Configures the firewall profile settings for domain networks</summary>
         public WindowsFirewallNetworkProfile FirewallProfileDomain {
-            get { return BackingStore?.Get<WindowsFirewallNetworkProfile>(nameof(FirewallProfileDomain)); }
-            set { BackingStore?.Set(nameof(FirewallProfileDomain), value); }
+            get { return BackingStore?.Get<WindowsFirewallNetworkProfile>("firewallProfileDomain"); }
+            set { BackingStore?.Set("firewallProfileDomain", value); }
         }
         /// <summary>Configures the firewall profile settings for private networks</summary>
         public WindowsFirewallNetworkProfile FirewallProfilePrivate {
-            get { return BackingStore?.Get<WindowsFirewallNetworkProfile>(nameof(FirewallProfilePrivate)); }
-            set { BackingStore?.Set(nameof(FirewallProfilePrivate), value); }
+            get { return BackingStore?.Get<WindowsFirewallNetworkProfile>("firewallProfilePrivate"); }
+            set { BackingStore?.Set("firewallProfilePrivate", value); }
         }
         /// <summary>Configures the firewall profile settings for public networks</summary>
         public WindowsFirewallNetworkProfile FirewallProfilePublic {
-            get { return BackingStore?.Get<WindowsFirewallNetworkProfile>(nameof(FirewallProfilePublic)); }
-            set { BackingStore?.Set(nameof(FirewallProfilePublic), value); }
+            get { return BackingStore?.Get<WindowsFirewallNetworkProfile>("firewallProfilePublic"); }
+            set { BackingStore?.Set("firewallProfilePublic", value); }
         }
         /// <summary>Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.</summary>
         public bool? SmartScreenBlockOverrideForFiles {
-            get { return BackingStore?.Get<bool?>(nameof(SmartScreenBlockOverrideForFiles)); }
-            set { BackingStore?.Set(nameof(SmartScreenBlockOverrideForFiles), value); }
+            get { return BackingStore?.Get<bool?>("smartScreenBlockOverrideForFiles"); }
+            set { BackingStore?.Set("smartScreenBlockOverrideForFiles", value); }
         }
         /// <summary>Allows IT Admins to configure SmartScreen for Windows.</summary>
         public bool? SmartScreenEnableInShell {
-            get { return BackingStore?.Get<bool?>(nameof(SmartScreenEnableInShell)); }
-            set { BackingStore?.Set(nameof(SmartScreenEnableInShell), value); }
+            get { return BackingStore?.Get<bool?>("smartScreenEnableInShell"); }
+            set { BackingStore?.Set("smartScreenEnableInShell", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

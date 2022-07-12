@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models.CallRecords;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -8,20 +9,25 @@ namespace Microsoft.Graph.Models.CallRecords {
     public class UserAgent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Identifies the version of application software used by this endpoint.</summary>
         public string ApplicationVersion {
-            get { return BackingStore?.Get<string>(nameof(ApplicationVersion)); }
-            set { BackingStore?.Set(nameof(ApplicationVersion), value); }
+            get { return BackingStore?.Get<string>("applicationVersion"); }
+            set { BackingStore?.Set("applicationVersion", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>User-agent header value reported by this endpoint.</summary>
         public string HeaderValue {
-            get { return BackingStore?.Get<string>(nameof(HeaderValue)); }
-            set { BackingStore?.Set(nameof(HeaderValue), value); }
+            get { return BackingStore?.Get<string>("headerValue"); }
+            set { BackingStore?.Set("headerValue", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new userAgent and sets the default values.
@@ -29,6 +35,7 @@ namespace Microsoft.Graph.Models.CallRecords {
         public UserAgent() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.callRecords.userAgent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +43,13 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// </summary>
         public static UserAgent CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserAgent();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.callRecords.clientUserAgent" => new ClientUserAgent(),
+                "#microsoft.graph.callRecords.serviceUserAgent" => new ServiceUserAgent(),
+                _ => new UserAgent(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,6 +58,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             return new Dictionary<string, Action<IParseNode>> {
                 {"applicationVersion", n => { ApplicationVersion = n.GetStringValue(); } },
                 {"headerValue", n => { HeaderValue = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +69,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("applicationVersion", ApplicationVersion);
             writer.WriteStringValue("headerValue", HeaderValue);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Models {
     public class RubricLevel : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description of this rubric level.</summary>
         public EducationItemBody Description {
-            get { return BackingStore?.Get<EducationItemBody>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<EducationItemBody>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The name of this rubric level.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.</summary>
         public EducationAssignmentGradeType Grading {
-            get { return BackingStore?.Get<EducationAssignmentGradeType>(nameof(Grading)); }
-            set { BackingStore?.Set(nameof(Grading), value); }
+            get { return BackingStore?.Get<EducationAssignmentGradeType>("grading"); }
+            set { BackingStore?.Set("grading", value); }
         }
         /// <summary>The ID of this resource.</summary>
         public string LevelId {
-            get { return BackingStore?.Get<string>(nameof(LevelId)); }
-            set { BackingStore?.Set(nameof(LevelId), value); }
+            get { return BackingStore?.Get<string>("levelId"); }
+            set { BackingStore?.Set("levelId", value); }
         }
         /// <summary>
         /// Instantiates a new rubricLevel and sets the default values.

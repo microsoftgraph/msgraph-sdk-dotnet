@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class RoomList : Place, IParsable {
         /// <summary>The email address of the room list.</summary>
         public string EmailAddress {
-            get { return BackingStore?.Get<string>(nameof(EmailAddress)); }
-            set { BackingStore?.Set(nameof(EmailAddress), value); }
+            get { return BackingStore?.Get<string>("emailAddress"); }
+            set { BackingStore?.Set("emailAddress", value); }
         }
         /// <summary>The rooms property</summary>
         public List<Room> Rooms {
-            get { return BackingStore?.Get<List<Room>>(nameof(Rooms)); }
-            set { BackingStore?.Set(nameof(Rooms), value); }
+            get { return BackingStore?.Get<List<Room>>("rooms"); }
+            set { BackingStore?.Set("rooms", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

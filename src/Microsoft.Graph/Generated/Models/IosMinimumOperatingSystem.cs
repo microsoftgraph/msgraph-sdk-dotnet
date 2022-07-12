@@ -9,45 +9,45 @@ namespace Microsoft.Graph.Models {
     public class IosMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Version 10.0 or later.</summary>
         public bool? V10_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_0)); }
-            set { BackingStore?.Set(nameof(V10_0), value); }
+            get { return BackingStore?.Get<bool?>("v10_0"); }
+            set { BackingStore?.Set("v10_0", value); }
         }
         /// <summary>Version 11.0 or later.</summary>
         public bool? V11_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V11_0)); }
-            set { BackingStore?.Set(nameof(V11_0), value); }
+            get { return BackingStore?.Get<bool?>("v11_0"); }
+            set { BackingStore?.Set("v11_0", value); }
         }
         /// <summary>Version 12.0 or later.</summary>
         public bool? V12_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V12_0)); }
-            set { BackingStore?.Set(nameof(V12_0), value); }
+            get { return BackingStore?.Get<bool?>("v12_0"); }
+            set { BackingStore?.Set("v12_0", value); }
         }
         /// <summary>Version 13.0 or later.</summary>
         public bool? V13_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V13_0)); }
-            set { BackingStore?.Set(nameof(V13_0), value); }
+            get { return BackingStore?.Get<bool?>("v13_0"); }
+            set { BackingStore?.Set("v13_0", value); }
         }
         /// <summary>Version 14.0 or later.</summary>
         public bool? V14_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V14_0)); }
-            set { BackingStore?.Set(nameof(V14_0), value); }
+            get { return BackingStore?.Get<bool?>("v14_0"); }
+            set { BackingStore?.Set("v14_0", value); }
         }
         /// <summary>Version 8.0 or later.</summary>
         public bool? V8_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V8_0)); }
-            set { BackingStore?.Set(nameof(V8_0), value); }
+            get { return BackingStore?.Get<bool?>("v8_0"); }
+            set { BackingStore?.Set("v8_0", value); }
         }
         /// <summary>Version 9.0 or later.</summary>
         public bool? V9_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V9_0)); }
-            set { BackingStore?.Set(nameof(V9_0), value); }
+            get { return BackingStore?.Get<bool?>("v9_0"); }
+            set { BackingStore?.Set("v9_0", value); }
         }
         /// <summary>
         /// Instantiates a new iosMinimumOperatingSystem and sets the default values.

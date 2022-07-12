@@ -4,52 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ActivityHistoryItem : Entity, IParsable {
         /// <summary>Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.</summary>
         public int? ActiveDurationSeconds {
-            get { return BackingStore?.Get<int?>(nameof(ActiveDurationSeconds)); }
-            set { BackingStore?.Set(nameof(ActiveDurationSeconds), value); }
+            get { return BackingStore?.Get<int?>("activeDurationSeconds"); }
+            set { BackingStore?.Set("activeDurationSeconds", value); }
         }
         /// <summary>The activity property</summary>
         public UserActivity Activity {
-            get { return BackingStore?.Get<UserActivity>(nameof(Activity)); }
-            set { BackingStore?.Set(nameof(Activity), value); }
+            get { return BackingStore?.Get<UserActivity>("activity"); }
+            set { BackingStore?.Set("activity", value); }
         }
         /// <summary>Set by the server. DateTime in UTC when the object was created on the server.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.</summary>
         public DateTimeOffset? LastActiveDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActiveDateTime)); }
-            set { BackingStore?.Set(nameof(LastActiveDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastActiveDateTime"); }
+            set { BackingStore?.Set("lastActiveDateTime", value); }
         }
         /// <summary>Set by the server. DateTime in UTC when the object was modified on the server.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.</summary>
         public DateTimeOffset? StartedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartedDateTime)); }
-            set { BackingStore?.Set(nameof(StartedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
+            set { BackingStore?.Set("startedDateTime", value); }
         }
         /// <summary>Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.</summary>
         public Microsoft.Graph.Models.Status? Status {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Status?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Status?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>Optional. The timezone in which the user&apos;s device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.</summary>
         public string UserTimezone {
-            get { return BackingStore?.Get<string>(nameof(UserTimezone)); }
-            set { BackingStore?.Set(nameof(UserTimezone), value); }
+            get { return BackingStore?.Get<string>("userTimezone"); }
+            set { BackingStore?.Set("userTimezone", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Models {
     public class PendingOperations : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A property that indicates that an operation that might update the binary content of a file is pending completion.</summary>
         public Microsoft.Graph.Models.PendingContentUpdate PendingContentUpdate {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.PendingContentUpdate>(nameof(PendingContentUpdate)); }
-            set { BackingStore?.Set(nameof(PendingContentUpdate), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PendingContentUpdate>("pendingContentUpdate"); }
+            set { BackingStore?.Set("pendingContentUpdate", value); }
         }
         /// <summary>
         /// Instantiates a new pendingOperations and sets the default values.

@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ServiceAnnouncement : Entity, IParsable {
         /// <summary>A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
         public List<ServiceHealth> HealthOverviews {
-            get { return BackingStore?.Get<List<ServiceHealth>>(nameof(HealthOverviews)); }
-            set { BackingStore?.Set(nameof(HealthOverviews), value); }
+            get { return BackingStore?.Get<List<ServiceHealth>>("healthOverviews"); }
+            set { BackingStore?.Set("healthOverviews", value); }
         }
         /// <summary>A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
         public List<ServiceHealthIssue> Issues {
-            get { return BackingStore?.Get<List<ServiceHealthIssue>>(nameof(Issues)); }
-            set { BackingStore?.Set(nameof(Issues), value); }
+            get { return BackingStore?.Get<List<ServiceHealthIssue>>("issues"); }
+            set { BackingStore?.Set("issues", value); }
         }
         /// <summary>A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
         public List<ServiceUpdateMessage> Messages {
-            get { return BackingStore?.Get<List<ServiceUpdateMessage>>(nameof(Messages)); }
-            set { BackingStore?.Set(nameof(Messages), value); }
+            get { return BackingStore?.Get<List<ServiceUpdateMessage>>("messages"); }
+            set { BackingStore?.Set("messages", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

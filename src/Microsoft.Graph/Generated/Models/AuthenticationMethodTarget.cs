@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,19 @@ namespace Microsoft.Graph.Models {
     public class AuthenticationMethodTarget : Entity, IParsable {
         /// <summary>Determines if the user is enforced to register the authentication method.</summary>
         public bool? IsRegistrationRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsRegistrationRequired)); }
-            set { BackingStore?.Set(nameof(IsRegistrationRequired), value); }
+            get { return BackingStore?.Get<bool?>("isRegistrationRequired"); }
+            set { BackingStore?.Set("isRegistrationRequired", value); }
         }
-        /// <summary>Possible values are: user, group, and unknownFutureValue.</summary>
+        /// <summary>The targetType property</summary>
         public AuthenticationMethodTargetType? TargetType {
-            get { return BackingStore?.Get<AuthenticationMethodTargetType?>(nameof(TargetType)); }
-            set { BackingStore?.Set(nameof(TargetType), value); }
+            get { return BackingStore?.Get<AuthenticationMethodTargetType?>("targetType"); }
+            set { BackingStore?.Set("targetType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new authenticationMethodTarget and sets the default values.
+        /// </summary>
+        public AuthenticationMethodTarget() : base() {
+            Type = "#microsoft.graph.authenticationMethodTarget";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

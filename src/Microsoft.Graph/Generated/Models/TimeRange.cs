@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class TimeRange : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>End time for the time range.</summary>
         public Time? EndTime {
-            get { return BackingStore?.Get<Time?>(nameof(EndTime)); }
-            set { BackingStore?.Set(nameof(EndTime), value); }
+            get { return BackingStore?.Get<Time?>("endTime"); }
+            set { BackingStore?.Set("endTime", value); }
         }
         /// <summary>Start time for the time range.</summary>
         public Time? StartTime {
-            get { return BackingStore?.Get<Time?>(nameof(StartTime)); }
-            set { BackingStore?.Set(nameof(StartTime), value); }
+            get { return BackingStore?.Get<Time?>("startTime"); }
+            set { BackingStore?.Set("startTime", value); }
         }
         /// <summary>
         /// Instantiates a new timeRange and sets the default values.

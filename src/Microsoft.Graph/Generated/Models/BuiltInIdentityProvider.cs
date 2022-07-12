@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class BuiltInIdentityProvider : IdentityProviderBase, IParsable {
         /// <summary>The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.</summary>
         public string IdentityProviderType {
-            get { return BackingStore?.Get<string>(nameof(IdentityProviderType)); }
-            set { BackingStore?.Set(nameof(IdentityProviderType), value); }
+            get { return BackingStore?.Get<string>("identityProviderType"); }
+            set { BackingStore?.Set("identityProviderType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

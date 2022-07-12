@@ -9,35 +9,35 @@ namespace Microsoft.Graph.Models {
     public class BookingSchedulingPolicy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>True if to allow customers to choose a specific person for the booking.</summary>
         public bool? AllowStaffSelection {
-            get { return BackingStore?.Get<bool?>(nameof(AllowStaffSelection)); }
-            set { BackingStore?.Set(nameof(AllowStaffSelection), value); }
+            get { return BackingStore?.Get<bool?>("allowStaffSelection"); }
+            set { BackingStore?.Set("allowStaffSelection", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.</summary>
         public TimeSpan? MaximumAdvance {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(MaximumAdvance)); }
-            set { BackingStore?.Set(nameof(MaximumAdvance), value); }
+            get { return BackingStore?.Get<TimeSpan?>("maximumAdvance"); }
+            set { BackingStore?.Set("maximumAdvance", value); }
         }
         /// <summary>The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.</summary>
         public TimeSpan? MinimumLeadTime {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(MinimumLeadTime)); }
-            set { BackingStore?.Set(nameof(MinimumLeadTime), value); }
+            get { return BackingStore?.Get<TimeSpan?>("minimumLeadTime"); }
+            set { BackingStore?.Set("minimumLeadTime", value); }
         }
         /// <summary>True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.</summary>
         public bool? SendConfirmationsToOwner {
-            get { return BackingStore?.Get<bool?>(nameof(SendConfirmationsToOwner)); }
-            set { BackingStore?.Set(nameof(SendConfirmationsToOwner), value); }
+            get { return BackingStore?.Get<bool?>("sendConfirmationsToOwner"); }
+            set { BackingStore?.Set("sendConfirmationsToOwner", value); }
         }
         /// <summary>Duration of each time slot, denoted in ISO 8601 format.</summary>
         public TimeSpan? TimeSlotInterval {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(TimeSlotInterval)); }
-            set { BackingStore?.Set(nameof(TimeSlotInterval), value); }
+            get { return BackingStore?.Get<TimeSpan?>("timeSlotInterval"); }
+            set { BackingStore?.Set("timeSlotInterval", value); }
         }
         /// <summary>
         /// Instantiates a new bookingSchedulingPolicy and sets the default values.

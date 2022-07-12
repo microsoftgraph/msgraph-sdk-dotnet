@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Models {
     public class StoragePlanInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates if there are higher storage quota plans available. Read-only.</summary>
         public bool? UpgradeAvailable {
-            get { return BackingStore?.Get<bool?>(nameof(UpgradeAvailable)); }
-            set { BackingStore?.Set(nameof(UpgradeAvailable), value); }
+            get { return BackingStore?.Get<bool?>("upgradeAvailable"); }
+            set { BackingStore?.Set("upgradeAvailable", value); }
         }
         /// <summary>
         /// Instantiates a new storagePlanInformation and sets the default values.

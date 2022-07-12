@@ -8,273 +8,273 @@ namespace Microsoft.Graph.Models {
     public class ManagedDevice : Entity, IParsable {
         /// <summary>Code that allows the Activation Lock on a device to be bypassed. This property is read-only.</summary>
         public string ActivationLockBypassCode {
-            get { return BackingStore?.Get<string>(nameof(ActivationLockBypassCode)); }
-            set { BackingStore?.Set(nameof(ActivationLockBypassCode), value); }
+            get { return BackingStore?.Get<string>("activationLockBypassCode"); }
+            set { BackingStore?.Set("activationLockBypassCode", value); }
         }
         /// <summary>Android security patch level. This property is read-only.</summary>
         public string AndroidSecurityPatchLevel {
-            get { return BackingStore?.Get<string>(nameof(AndroidSecurityPatchLevel)); }
-            set { BackingStore?.Set(nameof(AndroidSecurityPatchLevel), value); }
+            get { return BackingStore?.Get<string>("androidSecurityPatchLevel"); }
+            set { BackingStore?.Set("androidSecurityPatchLevel", value); }
         }
         /// <summary>The unique identifier for the Azure Active Directory device. Read only. This property is read-only.</summary>
         public string AzureADDeviceId {
-            get { return BackingStore?.Get<string>(nameof(AzureADDeviceId)); }
-            set { BackingStore?.Set(nameof(AzureADDeviceId), value); }
+            get { return BackingStore?.Get<string>("azureADDeviceId"); }
+            set { BackingStore?.Set("azureADDeviceId", value); }
         }
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
         public bool? AzureADRegistered {
-            get { return BackingStore?.Get<bool?>(nameof(AzureADRegistered)); }
-            set { BackingStore?.Set(nameof(AzureADRegistered), value); }
+            get { return BackingStore?.Get<bool?>("azureADRegistered"); }
+            set { BackingStore?.Set("azureADRegistered", value); }
         }
         /// <summary>The DateTime when device compliance grace period expires. This property is read-only.</summary>
         public DateTimeOffset? ComplianceGracePeriodExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ComplianceGracePeriodExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ComplianceGracePeriodExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("complianceGracePeriodExpirationDateTime"); }
+            set { BackingStore?.Set("complianceGracePeriodExpirationDateTime", value); }
         }
-        /// <summary>Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager.</summary>
+        /// <summary>Compliance state.</summary>
         public Microsoft.Graph.Models.ComplianceState? ComplianceState {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ComplianceState?>(nameof(ComplianceState)); }
-            set { BackingStore?.Set(nameof(ComplianceState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ComplianceState?>("complianceState"); }
+            set { BackingStore?.Set("complianceState", value); }
         }
         /// <summary>ConfigrMgr client enabled features. This property is read-only.</summary>
         public Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures ConfigurationManagerClientEnabledFeatures {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures>(nameof(ConfigurationManagerClientEnabledFeatures)); }
-            set { BackingStore?.Set(nameof(ConfigurationManagerClientEnabledFeatures), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures>("configurationManagerClientEnabledFeatures"); }
+            set { BackingStore?.Set("configurationManagerClientEnabledFeatures", value); }
         }
         /// <summary>List of ComplexType deviceActionResult objects. This property is read-only.</summary>
         public List<DeviceActionResult> DeviceActionResults {
-            get { return BackingStore?.Get<List<DeviceActionResult>>(nameof(DeviceActionResults)); }
-            set { BackingStore?.Set(nameof(DeviceActionResults), value); }
+            get { return BackingStore?.Get<List<DeviceActionResult>>("deviceActionResults"); }
+            set { BackingStore?.Set("deviceActionResults", value); }
         }
         /// <summary>Device category</summary>
         public Microsoft.Graph.Models.DeviceCategory DeviceCategory {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceCategory>(nameof(DeviceCategory)); }
-            set { BackingStore?.Set(nameof(DeviceCategory), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceCategory>("deviceCategory"); }
+            set { BackingStore?.Set("deviceCategory", value); }
         }
         /// <summary>Device category display name. This property is read-only.</summary>
         public string DeviceCategoryDisplayName {
-            get { return BackingStore?.Get<string>(nameof(DeviceCategoryDisplayName)); }
-            set { BackingStore?.Set(nameof(DeviceCategoryDisplayName), value); }
+            get { return BackingStore?.Get<string>("deviceCategoryDisplayName"); }
+            set { BackingStore?.Set("deviceCategoryDisplayName", value); }
         }
         /// <summary>Device compliance policy states for this device.</summary>
         public List<DeviceCompliancePolicyState> DeviceCompliancePolicyStates {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicyState>>(nameof(DeviceCompliancePolicyStates)); }
-            set { BackingStore?.Set(nameof(DeviceCompliancePolicyStates), value); }
+            get { return BackingStore?.Get<List<DeviceCompliancePolicyState>>("deviceCompliancePolicyStates"); }
+            set { BackingStore?.Set("deviceCompliancePolicyStates", value); }
         }
         /// <summary>Device configuration states for this device.</summary>
         public List<DeviceConfigurationState> DeviceConfigurationStates {
-            get { return BackingStore?.Get<List<DeviceConfigurationState>>(nameof(DeviceConfigurationStates)); }
-            set { BackingStore?.Set(nameof(DeviceConfigurationStates), value); }
+            get { return BackingStore?.Get<List<DeviceConfigurationState>>("deviceConfigurationStates"); }
+            set { BackingStore?.Set("deviceConfigurationStates", value); }
         }
-        /// <summary>Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.</summary>
+        /// <summary>Possible ways of adding a mobile device to management.</summary>
         public Microsoft.Graph.Models.DeviceEnrollmentType? DeviceEnrollmentType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceEnrollmentType?>(nameof(DeviceEnrollmentType)); }
-            set { BackingStore?.Set(nameof(DeviceEnrollmentType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceEnrollmentType?>("deviceEnrollmentType"); }
+            set { BackingStore?.Set("deviceEnrollmentType", value); }
         }
         /// <summary>The device health attestation state. This property is read-only.</summary>
         public Microsoft.Graph.Models.DeviceHealthAttestationState DeviceHealthAttestationState {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceHealthAttestationState>(nameof(DeviceHealthAttestationState)); }
-            set { BackingStore?.Set(nameof(DeviceHealthAttestationState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceHealthAttestationState>("deviceHealthAttestationState"); }
+            set { BackingStore?.Set("deviceHealthAttestationState", value); }
         }
         /// <summary>Name of the device. This property is read-only.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
-        /// <summary>Device registration state. This property is read-only. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.</summary>
+        /// <summary>Device registration status.</summary>
         public Microsoft.Graph.Models.DeviceRegistrationState? DeviceRegistrationState {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceRegistrationState?>(nameof(DeviceRegistrationState)); }
-            set { BackingStore?.Set(nameof(DeviceRegistrationState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceRegistrationState?>("deviceRegistrationState"); }
+            set { BackingStore?.Set("deviceRegistrationState", value); }
         }
         /// <summary>Whether the device is Exchange ActiveSync activated. This property is read-only.</summary>
         public bool? EasActivated {
-            get { return BackingStore?.Get<bool?>(nameof(EasActivated)); }
-            set { BackingStore?.Set(nameof(EasActivated), value); }
+            get { return BackingStore?.Get<bool?>("easActivated"); }
+            set { BackingStore?.Set("easActivated", value); }
         }
         /// <summary>Exchange ActivationSync activation time of the device. This property is read-only.</summary>
         public DateTimeOffset? EasActivationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EasActivationDateTime)); }
-            set { BackingStore?.Set(nameof(EasActivationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("easActivationDateTime"); }
+            set { BackingStore?.Set("easActivationDateTime", value); }
         }
         /// <summary>Exchange ActiveSync Id of the device. This property is read-only.</summary>
         public string EasDeviceId {
-            get { return BackingStore?.Get<string>(nameof(EasDeviceId)); }
-            set { BackingStore?.Set(nameof(EasDeviceId), value); }
+            get { return BackingStore?.Get<string>("easDeviceId"); }
+            set { BackingStore?.Set("easDeviceId", value); }
         }
         /// <summary>Email(s) for the user associated with the device. This property is read-only.</summary>
         public string EmailAddress {
-            get { return BackingStore?.Get<string>(nameof(EmailAddress)); }
-            set { BackingStore?.Set(nameof(EmailAddress), value); }
+            get { return BackingStore?.Get<string>("emailAddress"); }
+            set { BackingStore?.Set("emailAddress", value); }
         }
         /// <summary>Enrollment time of the device. This property is read-only.</summary>
         public DateTimeOffset? EnrolledDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EnrolledDateTime)); }
-            set { BackingStore?.Set(nameof(EnrolledDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("enrolledDateTime"); }
+            set { BackingStore?.Set("enrolledDateTime", value); }
         }
         /// <summary>Ethernet MAC. This property is read-only.</summary>
         public string EthernetMacAddress {
-            get { return BackingStore?.Get<string>(nameof(EthernetMacAddress)); }
-            set { BackingStore?.Set(nameof(EthernetMacAddress), value); }
+            get { return BackingStore?.Get<string>("ethernetMacAddress"); }
+            set { BackingStore?.Set("ethernetMacAddress", value); }
         }
-        /// <summary>The Access State of the device in Exchange. This property is read-only. Possible values are: none, unknown, allowed, blocked, quarantined.</summary>
+        /// <summary>Device Exchange Access State.</summary>
         public DeviceManagementExchangeAccessState? ExchangeAccessState {
-            get { return BackingStore?.Get<DeviceManagementExchangeAccessState?>(nameof(ExchangeAccessState)); }
-            set { BackingStore?.Set(nameof(ExchangeAccessState), value); }
+            get { return BackingStore?.Get<DeviceManagementExchangeAccessState?>("exchangeAccessState"); }
+            set { BackingStore?.Set("exchangeAccessState", value); }
         }
-        /// <summary>The reason for the device&apos;s access state in Exchange. This property is read-only. Possible values are: none, unknown, exchangeGlobalRule, exchangeIndividualRule, exchangeDeviceRule, exchangeUpgrade, exchangeMailboxPolicy, other, compliant, notCompliant, notEnrolled, unknownLocation, mfaRequired, azureADBlockDueToAccessPolicy, compromisedPassword, deviceNotKnownWithManagedApp.</summary>
+        /// <summary>Device Exchange Access State Reason.</summary>
         public DeviceManagementExchangeAccessStateReason? ExchangeAccessStateReason {
-            get { return BackingStore?.Get<DeviceManagementExchangeAccessStateReason?>(nameof(ExchangeAccessStateReason)); }
-            set { BackingStore?.Set(nameof(ExchangeAccessStateReason), value); }
+            get { return BackingStore?.Get<DeviceManagementExchangeAccessStateReason?>("exchangeAccessStateReason"); }
+            set { BackingStore?.Set("exchangeAccessStateReason", value); }
         }
         /// <summary>Last time the device contacted Exchange. This property is read-only.</summary>
         public DateTimeOffset? ExchangeLastSuccessfulSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExchangeLastSuccessfulSyncDateTime)); }
-            set { BackingStore?.Set(nameof(ExchangeLastSuccessfulSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("exchangeLastSuccessfulSyncDateTime"); }
+            set { BackingStore?.Set("exchangeLastSuccessfulSyncDateTime", value); }
         }
         /// <summary>Free Storage in Bytes. This property is read-only.</summary>
         public long? FreeStorageSpaceInBytes {
-            get { return BackingStore?.Get<long?>(nameof(FreeStorageSpaceInBytes)); }
-            set { BackingStore?.Set(nameof(FreeStorageSpaceInBytes), value); }
+            get { return BackingStore?.Get<long?>("freeStorageSpaceInBytes"); }
+            set { BackingStore?.Set("freeStorageSpaceInBytes", value); }
         }
         /// <summary>Integrated Circuit Card Identifier, it is A SIM card&apos;s unique identification number. This property is read-only.</summary>
         public string Iccid {
-            get { return BackingStore?.Get<string>(nameof(Iccid)); }
-            set { BackingStore?.Set(nameof(Iccid), value); }
+            get { return BackingStore?.Get<string>("iccid"); }
+            set { BackingStore?.Set("iccid", value); }
         }
         /// <summary>IMEI. This property is read-only.</summary>
         public string Imei {
-            get { return BackingStore?.Get<string>(nameof(Imei)); }
-            set { BackingStore?.Set(nameof(Imei), value); }
+            get { return BackingStore?.Get<string>("imei"); }
+            set { BackingStore?.Set("imei", value); }
         }
         /// <summary>Device encryption status. This property is read-only.</summary>
         public bool? IsEncrypted {
-            get { return BackingStore?.Get<bool?>(nameof(IsEncrypted)); }
-            set { BackingStore?.Set(nameof(IsEncrypted), value); }
+            get { return BackingStore?.Get<bool?>("isEncrypted"); }
+            set { BackingStore?.Set("isEncrypted", value); }
         }
         /// <summary>Device supervised status. This property is read-only.</summary>
         public bool? IsSupervised {
-            get { return BackingStore?.Get<bool?>(nameof(IsSupervised)); }
-            set { BackingStore?.Set(nameof(IsSupervised), value); }
+            get { return BackingStore?.Get<bool?>("isSupervised"); }
+            set { BackingStore?.Set("isSupervised", value); }
         }
         /// <summary>whether the device is jail broken or rooted. This property is read-only.</summary>
         public string JailBroken {
-            get { return BackingStore?.Get<string>(nameof(JailBroken)); }
-            set { BackingStore?.Set(nameof(JailBroken), value); }
+            get { return BackingStore?.Get<string>("jailBroken"); }
+            set { BackingStore?.Set("jailBroken", value); }
         }
         /// <summary>The date and time that the device last completed a successful sync with Intune. This property is read-only.</summary>
         public DateTimeOffset? LastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
+            set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>Automatically generated name to identify a device. Can be overwritten to a user friendly name.</summary>
         public string ManagedDeviceName {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceName)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceName), value); }
+            get { return BackingStore?.Get<string>("managedDeviceName"); }
+            set { BackingStore?.Set("managedDeviceName", value); }
         }
-        /// <summary>Ownership of the device. Can be &apos;company&apos; or &apos;personal&apos;. Possible values are: unknown, company, personal.</summary>
+        /// <summary>Owner type of device.</summary>
         public Microsoft.Graph.Models.ManagedDeviceOwnerType? ManagedDeviceOwnerType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedDeviceOwnerType?>(nameof(ManagedDeviceOwnerType)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceOwnerType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedDeviceOwnerType?>("managedDeviceOwnerType"); }
+            set { BackingStore?.Set("managedDeviceOwnerType", value); }
         }
-        /// <summary>Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.</summary>
+        /// <summary>The managementAgent property</summary>
         public ManagementAgentType? ManagementAgent {
-            get { return BackingStore?.Get<ManagementAgentType?>(nameof(ManagementAgent)); }
-            set { BackingStore?.Set(nameof(ManagementAgent), value); }
+            get { return BackingStore?.Get<ManagementAgentType?>("managementAgent"); }
+            set { BackingStore?.Set("managementAgent", value); }
         }
         /// <summary>Manufacturer of the device. This property is read-only.</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>MEID. This property is read-only.</summary>
         public string Meid {
-            get { return BackingStore?.Get<string>(nameof(Meid)); }
-            set { BackingStore?.Set(nameof(Meid), value); }
+            get { return BackingStore?.Get<string>("meid"); }
+            set { BackingStore?.Set("meid", value); }
         }
         /// <summary>Model of the device. This property is read-only.</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>Notes on the device created by IT Admin</summary>
         public string Notes {
-            get { return BackingStore?.Get<string>(nameof(Notes)); }
-            set { BackingStore?.Set(nameof(Notes), value); }
+            get { return BackingStore?.Get<string>("notes"); }
+            set { BackingStore?.Set("notes", value); }
         }
         /// <summary>Operating system of the device. Windows, iOS, etc. This property is read-only.</summary>
         public string OperatingSystem {
-            get { return BackingStore?.Get<string>(nameof(OperatingSystem)); }
-            set { BackingStore?.Set(nameof(OperatingSystem), value); }
+            get { return BackingStore?.Get<string>("operatingSystem"); }
+            set { BackingStore?.Set("operatingSystem", value); }
         }
         /// <summary>Operating system version of the device. This property is read-only.</summary>
         public string OsVersion {
-            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<string>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
-        /// <summary>Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. This property is read-only. Possible values are: unknown, activated, deactivated, secured, lowSeverity, mediumSeverity, highSeverity, unresponsive, compromised, misconfigured.</summary>
+        /// <summary>Available health states for the Device Health API</summary>
         public ManagedDevicePartnerReportedHealthState? PartnerReportedThreatState {
-            get { return BackingStore?.Get<ManagedDevicePartnerReportedHealthState?>(nameof(PartnerReportedThreatState)); }
-            set { BackingStore?.Set(nameof(PartnerReportedThreatState), value); }
+            get { return BackingStore?.Get<ManagedDevicePartnerReportedHealthState?>("partnerReportedThreatState"); }
+            set { BackingStore?.Set("partnerReportedThreatState", value); }
         }
         /// <summary>Phone number of the device. This property is read-only.</summary>
         public string PhoneNumber {
-            get { return BackingStore?.Get<string>(nameof(PhoneNumber)); }
-            set { BackingStore?.Set(nameof(PhoneNumber), value); }
+            get { return BackingStore?.Get<string>("phoneNumber"); }
+            set { BackingStore?.Set("phoneNumber", value); }
         }
         /// <summary>Total Memory in Bytes. This property is read-only.</summary>
         public long? PhysicalMemoryInBytes {
-            get { return BackingStore?.Get<long?>(nameof(PhysicalMemoryInBytes)); }
-            set { BackingStore?.Set(nameof(PhysicalMemoryInBytes), value); }
+            get { return BackingStore?.Get<long?>("physicalMemoryInBytes"); }
+            set { BackingStore?.Set("physicalMemoryInBytes", value); }
         }
         /// <summary>An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.</summary>
         public string RemoteAssistanceSessionErrorDetails {
-            get { return BackingStore?.Get<string>(nameof(RemoteAssistanceSessionErrorDetails)); }
-            set { BackingStore?.Set(nameof(RemoteAssistanceSessionErrorDetails), value); }
+            get { return BackingStore?.Get<string>("remoteAssistanceSessionErrorDetails"); }
+            set { BackingStore?.Set("remoteAssistanceSessionErrorDetails", value); }
         }
         /// <summary>Url that allows a Remote Assistance session to be established with the device. This property is read-only.</summary>
         public string RemoteAssistanceSessionUrl {
-            get { return BackingStore?.Get<string>(nameof(RemoteAssistanceSessionUrl)); }
-            set { BackingStore?.Set(nameof(RemoteAssistanceSessionUrl), value); }
+            get { return BackingStore?.Get<string>("remoteAssistanceSessionUrl"); }
+            set { BackingStore?.Set("remoteAssistanceSessionUrl", value); }
         }
         /// <summary>SerialNumber. This property is read-only.</summary>
         public string SerialNumber {
-            get { return BackingStore?.Get<string>(nameof(SerialNumber)); }
-            set { BackingStore?.Set(nameof(SerialNumber), value); }
+            get { return BackingStore?.Get<string>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
         }
         /// <summary>Subscriber Carrier. This property is read-only.</summary>
         public string SubscriberCarrier {
-            get { return BackingStore?.Get<string>(nameof(SubscriberCarrier)); }
-            set { BackingStore?.Set(nameof(SubscriberCarrier), value); }
+            get { return BackingStore?.Get<string>("subscriberCarrier"); }
+            set { BackingStore?.Set("subscriberCarrier", value); }
         }
         /// <summary>Total Storage in Bytes. This property is read-only.</summary>
         public long? TotalStorageSpaceInBytes {
-            get { return BackingStore?.Get<long?>(nameof(TotalStorageSpaceInBytes)); }
-            set { BackingStore?.Set(nameof(TotalStorageSpaceInBytes), value); }
+            get { return BackingStore?.Get<long?>("totalStorageSpaceInBytes"); }
+            set { BackingStore?.Set("totalStorageSpaceInBytes", value); }
         }
         /// <summary>Unique Device Identifier for iOS and macOS devices. This property is read-only.</summary>
         public string Udid {
-            get { return BackingStore?.Get<string>(nameof(Udid)); }
-            set { BackingStore?.Set(nameof(Udid), value); }
+            get { return BackingStore?.Get<string>("udid"); }
+            set { BackingStore?.Set("udid", value); }
         }
         /// <summary>User display name. This property is read-only.</summary>
         public string UserDisplayName {
-            get { return BackingStore?.Get<string>(nameof(UserDisplayName)); }
-            set { BackingStore?.Set(nameof(UserDisplayName), value); }
+            get { return BackingStore?.Get<string>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
         }
         /// <summary>Unique Identifier for the user associated with the device. This property is read-only.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>Device user principal name. This property is read-only.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>Wi-Fi MAC. This property is read-only.</summary>
         public string WiFiMacAddress {
-            get { return BackingStore?.Get<string>(nameof(WiFiMacAddress)); }
-            set { BackingStore?.Set(nameof(WiFiMacAddress), value); }
+            get { return BackingStore?.Get<string>("wiFiMacAddress"); }
+            set { BackingStore?.Set("wiFiMacAddress", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

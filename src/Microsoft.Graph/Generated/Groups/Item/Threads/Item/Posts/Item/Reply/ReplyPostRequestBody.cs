@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.Reply {
     public class ReplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Post property</summary>
         public Microsoft.Graph.Models.Post Post {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Post>(nameof(Post)); }
-            set { BackingStore?.Set(nameof(Post), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Post>("post"); }
+            set { BackingStore?.Set("post", value); }
         }
         /// <summary>
         /// Instantiates a new replyPostRequestBody and sets the default values.

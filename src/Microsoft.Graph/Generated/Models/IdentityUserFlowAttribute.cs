@@ -1,30 +1,36 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class IdentityUserFlowAttribute : Entity, IParsable {
-        /// <summary>The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.</summary>
+        /// <summary>The dataType property</summary>
         public IdentityUserFlowAttributeDataType? DataType {
-            get { return BackingStore?.Get<IdentityUserFlowAttributeDataType?>(nameof(DataType)); }
-            set { BackingStore?.Set(nameof(DataType), value); }
+            get { return BackingStore?.Get<IdentityUserFlowAttributeDataType?>("dataType"); }
+            set { BackingStore?.Set("dataType", value); }
         }
         /// <summary>The description of the user flow attribute that&apos;s shown to the user at the time of sign-up.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name of the user flow attribute.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property will be builtIn, custom, or required.</summary>
+        /// <summary>The userFlowAttributeType property</summary>
         public IdentityUserFlowAttributeType? UserFlowAttributeType {
-            get { return BackingStore?.Get<IdentityUserFlowAttributeType?>(nameof(UserFlowAttributeType)); }
-            set { BackingStore?.Set(nameof(UserFlowAttributeType), value); }
+            get { return BackingStore?.Get<IdentityUserFlowAttributeType?>("userFlowAttributeType"); }
+            set { BackingStore?.Set("userFlowAttributeType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new identityUserFlowAttribute and sets the default values.
+        /// </summary>
+        public IdentityUserFlowAttribute() : base() {
+            Type = "#microsoft.graph.identityUserFlowAttribute";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

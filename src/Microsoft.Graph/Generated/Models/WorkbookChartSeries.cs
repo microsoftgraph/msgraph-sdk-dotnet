@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class WorkbookChartSeries : Entity, IParsable {
         /// <summary>Represents the formatting of a chart series, which includes fill and line formatting. Read-only.</summary>
         public WorkbookChartSeriesFormat Format {
-            get { return BackingStore?.Get<WorkbookChartSeriesFormat>(nameof(Format)); }
-            set { BackingStore?.Set(nameof(Format), value); }
+            get { return BackingStore?.Get<WorkbookChartSeriesFormat>("format"); }
+            set { BackingStore?.Set("format", value); }
         }
         /// <summary>Represents the name of a series in a chart.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Represents a collection of all points in the series. Read-only.</summary>
         public List<WorkbookChartPoint> Points {
-            get { return BackingStore?.Get<List<WorkbookChartPoint>>(nameof(Points)); }
-            set { BackingStore?.Set(nameof(Points), value); }
+            get { return BackingStore?.Get<List<WorkbookChartPoint>>("points"); }
+            set { BackingStore?.Set("points", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

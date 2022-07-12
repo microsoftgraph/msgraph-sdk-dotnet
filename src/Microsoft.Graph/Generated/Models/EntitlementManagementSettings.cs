@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class EntitlementManagementSettings : Entity, IParsable {
         /// <summary>If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.</summary>
         public TimeSpan? DurationUntilExternalUserDeletedAfterBlocked {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(DurationUntilExternalUserDeletedAfterBlocked)); }
-            set { BackingStore?.Set(nameof(DurationUntilExternalUserDeletedAfterBlocked), value); }
+            get { return BackingStore?.Get<TimeSpan?>("durationUntilExternalUserDeletedAfterBlocked"); }
+            set { BackingStore?.Set("durationUntilExternalUserDeletedAfterBlocked", value); }
         }
         /// <summary>One of None, BlockSignIn, or BlockSignInAndDelete.</summary>
         public AccessPackageExternalUserLifecycleAction? ExternalUserLifecycleAction {
-            get { return BackingStore?.Get<AccessPackageExternalUserLifecycleAction?>(nameof(ExternalUserLifecycleAction)); }
-            set { BackingStore?.Set(nameof(ExternalUserLifecycleAction), value); }
+            get { return BackingStore?.Get<AccessPackageExternalUserLifecycleAction?>("externalUserLifecycleAction"); }
+            set { BackingStore?.Set("externalUserLifecycleAction", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

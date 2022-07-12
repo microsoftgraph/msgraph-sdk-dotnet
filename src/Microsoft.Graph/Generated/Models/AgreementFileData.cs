@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Models {
     public class AgreementFileData : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Data that represents the terms of use PDF document. Read-only. Note: You can use the .NET Convert.ToBase64String method to convert your file to binary data for uploading using the Create agreements API. A sample syntax using this method in PowerShell is [convert]::ToBase64String((Get-Content -path &apos;your_file_path&apos; -Encoding byte)).</summary>
         public byte[] Data {
-            get { return BackingStore?.Get<byte[]>(nameof(Data)); }
-            set { BackingStore?.Set(nameof(Data), value); }
+            get { return BackingStore?.Get<byte[]>("data"); }
+            set { BackingStore?.Set("data", value); }
         }
         /// <summary>
         /// Instantiates a new agreementFileData and sets the default values.

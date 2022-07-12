@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Models {
     public class EmailAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable {
         /// <summary>Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.</summary>
         public ExternalEmailOtpState? AllowExternalIdToUseEmailOtp {
-            get { return BackingStore?.Get<ExternalEmailOtpState?>(nameof(AllowExternalIdToUseEmailOtp)); }
-            set { BackingStore?.Set(nameof(AllowExternalIdToUseEmailOtp), value); }
+            get { return BackingStore?.Get<ExternalEmailOtpState?>("allowExternalIdToUseEmailOtp"); }
+            set { BackingStore?.Set("allowExternalIdToUseEmailOtp", value); }
         }
         /// <summary>A collection of users or groups who are enabled to use the authentication method.</summary>
         public List<AuthenticationMethodTarget> IncludeTargets {
-            get { return BackingStore?.Get<List<AuthenticationMethodTarget>>(nameof(IncludeTargets)); }
-            set { BackingStore?.Set(nameof(IncludeTargets), value); }
+            get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
+            set { BackingStore?.Set("includeTargets", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

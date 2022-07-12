@@ -4,37 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class AdminConsentRequestPolicy : Entity, IParsable {
         /// <summary>Specifies whether the admin consent request feature is enabled or disabled. Required.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Specifies whether reviewers will receive notifications. Required.</summary>
         public bool? NotifyReviewers {
-            get { return BackingStore?.Get<bool?>(nameof(NotifyReviewers)); }
-            set { BackingStore?.Set(nameof(NotifyReviewers), value); }
+            get { return BackingStore?.Get<bool?>("notifyReviewers"); }
+            set { BackingStore?.Set("notifyReviewers", value); }
         }
         /// <summary>Specifies whether reviewers will receive reminder emails. Required.</summary>
         public bool? RemindersEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(RemindersEnabled)); }
-            set { BackingStore?.Set(nameof(RemindersEnabled), value); }
+            get { return BackingStore?.Get<bool?>("remindersEnabled"); }
+            set { BackingStore?.Set("remindersEnabled", value); }
         }
         /// <summary>Specifies the duration the request is active before it automatically expires if no decision is applied.</summary>
         public int? RequestDurationInDays {
-            get { return BackingStore?.Get<int?>(nameof(RequestDurationInDays)); }
-            set { BackingStore?.Set(nameof(RequestDurationInDays), value); }
+            get { return BackingStore?.Get<int?>("requestDurationInDays"); }
+            set { BackingStore?.Set("requestDurationInDays", value); }
         }
         /// <summary>Required.</summary>
         public List<AccessReviewReviewerScope> Reviewers {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>(nameof(Reviewers)); }
-            set { BackingStore?.Set(nameof(Reviewers), value); }
+            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("reviewers"); }
+            set { BackingStore?.Set("reviewers", value); }
         }
         /// <summary>Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

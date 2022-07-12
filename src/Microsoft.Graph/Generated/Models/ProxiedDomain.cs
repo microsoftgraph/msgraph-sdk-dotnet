@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
     public class ProxiedDomain : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The IP address or FQDN</summary>
         public string IpAddressOrFQDN {
-            get { return BackingStore?.Get<string>(nameof(IpAddressOrFQDN)); }
-            set { BackingStore?.Set(nameof(IpAddressOrFQDN), value); }
+            get { return BackingStore?.Get<string>("ipAddressOrFQDN"); }
+            set { BackingStore?.Set("ipAddressOrFQDN", value); }
         }
         /// <summary>Proxy IP or FQDN</summary>
         public string Proxy {
-            get { return BackingStore?.Get<string>(nameof(Proxy)); }
-            set { BackingStore?.Set(nameof(Proxy), value); }
+            get { return BackingStore?.Get<string>("proxy"); }
+            set { BackingStore?.Set("proxy", value); }
         }
         /// <summary>
         /// Instantiates a new proxiedDomain and sets the default values.

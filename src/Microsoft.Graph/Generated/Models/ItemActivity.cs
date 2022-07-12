@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ItemActivity : Entity, IParsable {
         /// <summary>An item was accessed.</summary>
         public AccessAction Access {
-            get { return BackingStore?.Get<AccessAction>(nameof(Access)); }
-            set { BackingStore?.Set(nameof(Access), value); }
+            get { return BackingStore?.Get<AccessAction>("access"); }
+            set { BackingStore?.Set("access", value); }
         }
         /// <summary>Details about when the activity took place. Read-only.</summary>
         public DateTimeOffset? ActivityDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ActivityDateTime)); }
-            set { BackingStore?.Set(nameof(ActivityDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
+            set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>Identity of who performed the action. Read-only.</summary>
         public IdentitySet Actor {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Actor)); }
-            set { BackingStore?.Set(nameof(Actor), value); }
+            get { return BackingStore?.Get<IdentitySet>("actor"); }
+            set { BackingStore?.Set("actor", value); }
         }
         /// <summary>Exposes the driveItem that was the target of this activity.</summary>
         public Microsoft.Graph.Models.DriveItem DriveItem {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItem>(nameof(DriveItem)); }
-            set { BackingStore?.Set(nameof(DriveItem), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItem>("driveItem"); }
+            set { BackingStore?.Set("driveItem", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

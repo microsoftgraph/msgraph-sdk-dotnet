@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class Conversation : Entity, IParsable {
         /// <summary>Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.</summary>
         public bool? HasAttachments {
-            get { return BackingStore?.Get<bool?>(nameof(HasAttachments)); }
-            set { BackingStore?.Set(nameof(HasAttachments), value); }
+            get { return BackingStore?.Get<bool?>("hasAttachments"); }
+            set { BackingStore?.Set("hasAttachments", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).</summary>
         public DateTimeOffset? LastDeliveredDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastDeliveredDateTime)); }
-            set { BackingStore?.Set(nameof(LastDeliveredDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastDeliveredDateTime"); }
+            set { BackingStore?.Set("lastDeliveredDateTime", value); }
         }
         /// <summary>A short summary from the body of the latest post in this conversation.</summary>
         public string Preview {
-            get { return BackingStore?.Get<string>(nameof(Preview)); }
-            set { BackingStore?.Set(nameof(Preview), value); }
+            get { return BackingStore?.Get<string>("preview"); }
+            set { BackingStore?.Set("preview", value); }
         }
         /// <summary>A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.</summary>
         public List<ConversationThread> Threads {
-            get { return BackingStore?.Get<List<ConversationThread>>(nameof(Threads)); }
-            set { BackingStore?.Set(nameof(Threads), value); }
+            get { return BackingStore?.Get<List<ConversationThread>>("threads"); }
+            set { BackingStore?.Set("threads", value); }
         }
         /// <summary>The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.</summary>
         public string Topic {
-            get { return BackingStore?.Get<string>(nameof(Topic)); }
-            set { BackingStore?.Set(nameof(Topic), value); }
+            get { return BackingStore?.Get<string>("topic"); }
+            set { BackingStore?.Set("topic", value); }
         }
         /// <summary>All the users that sent a message to this Conversation.</summary>
         public List<string> UniqueSenders {
-            get { return BackingStore?.Get<List<string>>(nameof(UniqueSenders)); }
-            set { BackingStore?.Set(nameof(UniqueSenders), value); }
+            get { return BackingStore?.Get<List<string>>("uniqueSenders"); }
+            set { BackingStore?.Set("uniqueSenders", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

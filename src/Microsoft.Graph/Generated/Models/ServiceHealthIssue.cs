@@ -5,50 +5,50 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class ServiceHealthIssue : ServiceAnnouncementBase, IParsable {
-        /// <summary>The type of service health issue. Possible values are: advisory, incident, unknownFutureValue.</summary>
+        /// <summary>The classification property</summary>
         public ServiceHealthClassificationType? Classification {
-            get { return BackingStore?.Get<ServiceHealthClassificationType?>(nameof(Classification)); }
-            set { BackingStore?.Set(nameof(Classification), value); }
+            get { return BackingStore?.Get<ServiceHealthClassificationType?>("classification"); }
+            set { BackingStore?.Set("classification", value); }
         }
         /// <summary>The feature name of the service issue.</summary>
         public string Feature {
-            get { return BackingStore?.Get<string>(nameof(Feature)); }
-            set { BackingStore?.Set(nameof(Feature), value); }
+            get { return BackingStore?.Get<string>("feature"); }
+            set { BackingStore?.Set("feature", value); }
         }
         /// <summary>The feature group name of the service issue.</summary>
         public string FeatureGroup {
-            get { return BackingStore?.Get<string>(nameof(FeatureGroup)); }
-            set { BackingStore?.Set(nameof(FeatureGroup), value); }
+            get { return BackingStore?.Get<string>("featureGroup"); }
+            set { BackingStore?.Set("featureGroup", value); }
         }
         /// <summary>The description of the service issue impact.</summary>
         public string ImpactDescription {
-            get { return BackingStore?.Get<string>(nameof(ImpactDescription)); }
-            set { BackingStore?.Set(nameof(ImpactDescription), value); }
+            get { return BackingStore?.Get<string>("impactDescription"); }
+            set { BackingStore?.Set("impactDescription", value); }
         }
         /// <summary>Indicates whether the issue is resolved.</summary>
         public bool? IsResolved {
-            get { return BackingStore?.Get<bool?>(nameof(IsResolved)); }
-            set { BackingStore?.Set(nameof(IsResolved), value); }
+            get { return BackingStore?.Get<bool?>("isResolved"); }
+            set { BackingStore?.Set("isResolved", value); }
         }
-        /// <summary>Indicates the origin of the service issue. Possible values are: microsoft, thirdParty, customer, unknownFutureValue.</summary>
+        /// <summary>The origin property</summary>
         public ServiceHealthOrigin? Origin {
-            get { return BackingStore?.Get<ServiceHealthOrigin?>(nameof(Origin)); }
-            set { BackingStore?.Set(nameof(Origin), value); }
+            get { return BackingStore?.Get<ServiceHealthOrigin?>("origin"); }
+            set { BackingStore?.Set("origin", value); }
         }
         /// <summary>Collection of historical posts for the service issue.</summary>
         public List<ServiceHealthIssuePost> Posts {
-            get { return BackingStore?.Get<List<ServiceHealthIssuePost>>(nameof(Posts)); }
-            set { BackingStore?.Set(nameof(Posts), value); }
+            get { return BackingStore?.Get<List<ServiceHealthIssuePost>>("posts"); }
+            set { BackingStore?.Set("posts", value); }
         }
         /// <summary>Indicates the service affected by the issue.</summary>
         public string Service {
-            get { return BackingStore?.Get<string>(nameof(Service)); }
-            set { BackingStore?.Set(nameof(Service), value); }
+            get { return BackingStore?.Get<string>("service"); }
+            set { BackingStore?.Set("service", value); }
         }
-        /// <summary>The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.</summary>
+        /// <summary>The status property</summary>
         public ServiceHealthStatus? Status {
-            get { return BackingStore?.Get<ServiceHealthStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ServiceHealthStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

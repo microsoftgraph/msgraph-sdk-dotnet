@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the print singleton.</summary>
     public class PrintService : Entity, IParsable {
         /// <summary>Endpoints that can be used to access the service. Read-only. Nullable.</summary>
         public List<PrintServiceEndpoint> Endpoints {
-            get { return BackingStore?.Get<List<PrintServiceEndpoint>>(nameof(Endpoints)); }
-            set { BackingStore?.Set(nameof(Endpoints), value); }
+            get { return BackingStore?.Get<List<PrintServiceEndpoint>>("endpoints"); }
+            set { BackingStore?.Set("endpoints", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

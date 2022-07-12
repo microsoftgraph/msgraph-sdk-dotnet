@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class WorkbookChartGridlines : Entity, IParsable {
         /// <summary>Represents the formatting of chart gridlines. Read-only.</summary>
         public WorkbookChartGridlinesFormat Format {
-            get { return BackingStore?.Get<WorkbookChartGridlinesFormat>(nameof(Format)); }
-            set { BackingStore?.Set(nameof(Format), value); }
+            get { return BackingStore?.Get<WorkbookChartGridlinesFormat>("format"); }
+            set { BackingStore?.Set("format", value); }
         }
         /// <summary>Boolean value representing if the axis gridlines are visible or not.</summary>
         public bool? Visible {
-            get { return BackingStore?.Get<bool?>(nameof(Visible)); }
-            set { BackingStore?.Set(nameof(Visible), value); }
+            get { return BackingStore?.Get<bool?>("visible"); }
+            set { BackingStore?.Set("visible", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class AssignedLicense : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of the unique identifiers for plans that have been disabled.</summary>
         public List<string> DisabledPlans {
-            get { return BackingStore?.Get<List<string>>(nameof(DisabledPlans)); }
-            set { BackingStore?.Set(nameof(DisabledPlans), value); }
+            get { return BackingStore?.Get<List<string>>("disabledPlans"); }
+            set { BackingStore?.Set("disabledPlans", value); }
         }
         /// <summary>The unique identifier for the SKU.</summary>
         public string SkuId {
-            get { return BackingStore?.Get<string>(nameof(SkuId)); }
-            set { BackingStore?.Set(nameof(SkuId), value); }
+            get { return BackingStore?.Get<string>("skuId"); }
+            set { BackingStore?.Set("skuId", value); }
         }
         /// <summary>
         /// Instantiates a new assignedLicense and sets the default values.

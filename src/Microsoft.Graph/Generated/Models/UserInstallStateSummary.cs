@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Models {
     public class UserInstallStateSummary : Entity, IParsable {
         /// <summary>The install state of the eBook.</summary>
         public List<DeviceInstallState> DeviceStates {
-            get { return BackingStore?.Get<List<DeviceInstallState>>(nameof(DeviceStates)); }
-            set { BackingStore?.Set(nameof(DeviceStates), value); }
+            get { return BackingStore?.Get<List<DeviceInstallState>>("deviceStates"); }
+            set { BackingStore?.Set("deviceStates", value); }
         }
         /// <summary>Failed Device Count.</summary>
         public int? FailedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedDeviceCount)); }
-            set { BackingStore?.Set(nameof(FailedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("failedDeviceCount"); }
+            set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>Installed Device Count.</summary>
         public int? InstalledDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(InstalledDeviceCount)); }
-            set { BackingStore?.Set(nameof(InstalledDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("installedDeviceCount"); }
+            set { BackingStore?.Set("installedDeviceCount", value); }
         }
         /// <summary>Not installed device count.</summary>
         public int? NotInstalledDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NotInstalledDeviceCount)); }
-            set { BackingStore?.Set(nameof(NotInstalledDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("notInstalledDeviceCount"); }
+            set { BackingStore?.Set("notInstalledDeviceCount", value); }
         }
         /// <summary>User name.</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Models {
     public class UnifiedRoleAssignmentSchedule : UnifiedRoleScheduleBase, IParsable {
         /// <summary>If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.</summary>
         public UnifiedRoleEligibilitySchedule ActivatedUsing {
-            get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule>(nameof(ActivatedUsing)); }
-            set { BackingStore?.Set(nameof(ActivatedUsing), value); }
+            get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule>("activatedUsing"); }
+            set { BackingStore?.Set("activatedUsing", value); }
         }
         /// <summary>Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).</summary>
         public string AssignmentType {
-            get { return BackingStore?.Get<string>(nameof(AssignmentType)); }
-            set { BackingStore?.Set(nameof(AssignmentType), value); }
+            get { return BackingStore?.Get<string>("assignmentType"); }
+            set { BackingStore?.Set("assignmentType", value); }
         }
         /// <summary>How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).</summary>
         public string MemberType {
-            get { return BackingStore?.Get<string>(nameof(MemberType)); }
-            set { BackingStore?.Set(nameof(MemberType), value); }
+            get { return BackingStore?.Get<string>("memberType"); }
+            set { BackingStore?.Set("memberType", value); }
         }
         /// <summary>The period of the role assignment. It can represent a single occurrence or multiple recurrences.</summary>
         public RequestSchedule ScheduleInfo {
-            get { return BackingStore?.Get<RequestSchedule>(nameof(ScheduleInfo)); }
-            set { BackingStore?.Set(nameof(ScheduleInfo), value); }
+            get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }
+            set { BackingStore?.Set("scheduleInfo", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

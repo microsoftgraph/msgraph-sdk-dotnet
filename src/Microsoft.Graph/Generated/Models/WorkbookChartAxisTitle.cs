@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class WorkbookChartAxisTitle : Entity, IParsable {
         /// <summary>Represents the formatting of chart axis title. Read-only.</summary>
         public WorkbookChartAxisTitleFormat Format {
-            get { return BackingStore?.Get<WorkbookChartAxisTitleFormat>(nameof(Format)); }
-            set { BackingStore?.Set(nameof(Format), value); }
+            get { return BackingStore?.Get<WorkbookChartAxisTitleFormat>("format"); }
+            set { BackingStore?.Set("format", value); }
         }
         /// <summary>Represents the axis title.</summary>
         public string Text {
-            get { return BackingStore?.Get<string>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<string>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>A boolean that specifies the visibility of an axis title.</summary>
         public bool? Visible {
-            get { return BackingStore?.Get<bool?>(nameof(Visible)); }
-            set { BackingStore?.Set(nameof(Visible), value); }
+            get { return BackingStore?.Get<bool?>("visible"); }
+            set { BackingStore?.Set("visible", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

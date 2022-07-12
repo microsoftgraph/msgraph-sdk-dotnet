@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Models {
     public class Endpoint : DirectoryObject, IParsable {
         /// <summary>Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.</summary>
         public string Capability {
-            get { return BackingStore?.Get<string>(nameof(Capability)); }
-            set { BackingStore?.Set(nameof(Capability), value); }
+            get { return BackingStore?.Get<string>("capability"); }
+            set { BackingStore?.Set("capability", value); }
         }
         /// <summary>Application id of the publishing underlying service. Not nullable. Read-only.</summary>
         public string ProviderId {
-            get { return BackingStore?.Get<string>(nameof(ProviderId)); }
-            set { BackingStore?.Set(nameof(ProviderId), value); }
+            get { return BackingStore?.Get<string>("providerId"); }
+            set { BackingStore?.Set("providerId", value); }
         }
         /// <summary>Name of the publishing underlying service. Read-only.</summary>
         public string ProviderName {
-            get { return BackingStore?.Get<string>(nameof(ProviderName)); }
-            set { BackingStore?.Set(nameof(ProviderName), value); }
+            get { return BackingStore?.Get<string>("providerName"); }
+            set { BackingStore?.Set("providerName", value); }
         }
         /// <summary>For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.</summary>
         public string ProviderResourceId {
-            get { return BackingStore?.Get<string>(nameof(ProviderResourceId)); }
-            set { BackingStore?.Set(nameof(ProviderResourceId), value); }
+            get { return BackingStore?.Get<string>("providerResourceId"); }
+            set { BackingStore?.Set("providerResourceId", value); }
         }
         /// <summary>URL of the published resource. Not nullable. Read-only.</summary>
         public string Uri {
-            get { return BackingStore?.Get<string>(nameof(Uri)); }
-            set { BackingStore?.Set(nameof(Uri), value); }
+            get { return BackingStore?.Get<string>("uri"); }
+            set { BackingStore?.Set("uri", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

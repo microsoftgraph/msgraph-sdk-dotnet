@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class WorkbookTableSort : Entity, IParsable {
         /// <summary>Represents the current conditions used to last sort the table. Read-only.</summary>
         public List<WorkbookSortField> Fields {
-            get { return BackingStore?.Get<List<WorkbookSortField>>(nameof(Fields)); }
-            set { BackingStore?.Set(nameof(Fields), value); }
+            get { return BackingStore?.Get<List<WorkbookSortField>>("fields"); }
+            set { BackingStore?.Set("fields", value); }
         }
         /// <summary>Represents whether the casing impacted the last sort of the table. Read-only.</summary>
         public bool? MatchCase {
-            get { return BackingStore?.Get<bool?>(nameof(MatchCase)); }
-            set { BackingStore?.Set(nameof(MatchCase), value); }
+            get { return BackingStore?.Get<bool?>("matchCase"); }
+            set { BackingStore?.Set("matchCase", value); }
         }
         /// <summary>Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.</summary>
         public string Method {
-            get { return BackingStore?.Get<string>(nameof(Method)); }
-            set { BackingStore?.Set(nameof(Method), value); }
+            get { return BackingStore?.Get<string>("method"); }
+            set { BackingStore?.Set("method", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

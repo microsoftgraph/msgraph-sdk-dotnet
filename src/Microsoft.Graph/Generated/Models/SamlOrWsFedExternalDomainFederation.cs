@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Models {
     public class SamlOrWsFedExternalDomainFederation : SamlOrWsFedProvider, IParsable {
         /// <summary>Collection of domain names of the external organizations that the tenant is federating with. Supports $filter (eq).</summary>
         public List<ExternalDomainName> Domains {
-            get { return BackingStore?.Get<List<ExternalDomainName>>(nameof(Domains)); }
-            set { BackingStore?.Set(nameof(Domains), value); }
+            get { return BackingStore?.Get<List<ExternalDomainName>>("domains"); }
+            set { BackingStore?.Set("domains", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

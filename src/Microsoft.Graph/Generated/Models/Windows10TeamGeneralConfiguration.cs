@@ -8,103 +8,103 @@ namespace Microsoft.Graph.Models {
     public class Windows10TeamGeneralConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to Block Azure Operational Insights.</summary>
         public bool? AzureOperationalInsightsBlockTelemetry {
-            get { return BackingStore?.Get<bool?>(nameof(AzureOperationalInsightsBlockTelemetry)); }
-            set { BackingStore?.Set(nameof(AzureOperationalInsightsBlockTelemetry), value); }
+            get { return BackingStore?.Get<bool?>("azureOperationalInsightsBlockTelemetry"); }
+            set { BackingStore?.Set("azureOperationalInsightsBlockTelemetry", value); }
         }
         /// <summary>The Azure Operational Insights workspace id.</summary>
         public string AzureOperationalInsightsWorkspaceId {
-            get { return BackingStore?.Get<string>(nameof(AzureOperationalInsightsWorkspaceId)); }
-            set { BackingStore?.Set(nameof(AzureOperationalInsightsWorkspaceId), value); }
+            get { return BackingStore?.Get<string>("azureOperationalInsightsWorkspaceId"); }
+            set { BackingStore?.Set("azureOperationalInsightsWorkspaceId", value); }
         }
         /// <summary>The Azure Operational Insights Workspace key.</summary>
         public string AzureOperationalInsightsWorkspaceKey {
-            get { return BackingStore?.Get<string>(nameof(AzureOperationalInsightsWorkspaceKey)); }
-            set { BackingStore?.Set(nameof(AzureOperationalInsightsWorkspaceKey), value); }
+            get { return BackingStore?.Get<string>("azureOperationalInsightsWorkspaceKey"); }
+            set { BackingStore?.Set("azureOperationalInsightsWorkspaceKey", value); }
         }
         /// <summary>Specifies whether to automatically launch the Connect app whenever a projection is initiated.</summary>
         public bool? ConnectAppBlockAutoLaunch {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectAppBlockAutoLaunch)); }
-            set { BackingStore?.Set(nameof(ConnectAppBlockAutoLaunch), value); }
+            get { return BackingStore?.Get<bool?>("connectAppBlockAutoLaunch"); }
+            set { BackingStore?.Set("connectAppBlockAutoLaunch", value); }
         }
         /// <summary>Indicates whether or not to Block setting a maintenance window for device updates.</summary>
         public bool? MaintenanceWindowBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(MaintenanceWindowBlocked)); }
-            set { BackingStore?.Set(nameof(MaintenanceWindowBlocked), value); }
+            get { return BackingStore?.Get<bool?>("maintenanceWindowBlocked"); }
+            set { BackingStore?.Set("maintenanceWindowBlocked", value); }
         }
         /// <summary>Maintenance window duration for device updates. Valid values 0 to 5</summary>
         public int? MaintenanceWindowDurationInHours {
-            get { return BackingStore?.Get<int?>(nameof(MaintenanceWindowDurationInHours)); }
-            set { BackingStore?.Set(nameof(MaintenanceWindowDurationInHours), value); }
+            get { return BackingStore?.Get<int?>("maintenanceWindowDurationInHours"); }
+            set { BackingStore?.Set("maintenanceWindowDurationInHours", value); }
         }
         /// <summary>Maintenance window start time for device updates.</summary>
         public Time? MaintenanceWindowStartTime {
-            get { return BackingStore?.Get<Time?>(nameof(MaintenanceWindowStartTime)); }
-            set { BackingStore?.Set(nameof(MaintenanceWindowStartTime), value); }
+            get { return BackingStore?.Get<Time?>("maintenanceWindowStartTime"); }
+            set { BackingStore?.Set("maintenanceWindowStartTime", value); }
         }
         /// <summary>Indicates whether or not to Block wireless projection.</summary>
         public bool? MiracastBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(MiracastBlocked)); }
-            set { BackingStore?.Set(nameof(MiracastBlocked), value); }
+            get { return BackingStore?.Get<bool?>("miracastBlocked"); }
+            set { BackingStore?.Set("miracastBlocked", value); }
         }
-        /// <summary>The channel. Possible values are: userDefined, one, two, three, four, five, six, seven, eight, nine, ten, eleven, thirtySix, forty, fortyFour, fortyEight, oneHundredFortyNine, oneHundredFiftyThree, oneHundredFiftySeven, oneHundredSixtyOne, oneHundredSixtyFive.</summary>
+        /// <summary>Possible values for Miracast channel.</summary>
         public Microsoft.Graph.Models.MiracastChannel? MiracastChannel {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.MiracastChannel?>(nameof(MiracastChannel)); }
-            set { BackingStore?.Set(nameof(MiracastChannel), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MiracastChannel?>("miracastChannel"); }
+            set { BackingStore?.Set("miracastChannel", value); }
         }
         /// <summary>Indicates whether or not to require a pin for wireless projection.</summary>
         public bool? MiracastRequirePin {
-            get { return BackingStore?.Get<bool?>(nameof(MiracastRequirePin)); }
-            set { BackingStore?.Set(nameof(MiracastRequirePin), value); }
+            get { return BackingStore?.Get<bool?>("miracastRequirePin"); }
+            set { BackingStore?.Set("miracastRequirePin", value); }
         }
         /// <summary>Specifies whether to disable the &apos;My meetings and files&apos; feature in the Start menu, which shows the signed-in user&apos;s meetings and files from Office 365.</summary>
         public bool? SettingsBlockMyMeetingsAndFiles {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockMyMeetingsAndFiles)); }
-            set { BackingStore?.Set(nameof(SettingsBlockMyMeetingsAndFiles), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockMyMeetingsAndFiles"); }
+            set { BackingStore?.Set("settingsBlockMyMeetingsAndFiles", value); }
         }
         /// <summary>Specifies whether to allow the ability to resume a session when the session times out.</summary>
         public bool? SettingsBlockSessionResume {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockSessionResume)); }
-            set { BackingStore?.Set(nameof(SettingsBlockSessionResume), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockSessionResume"); }
+            set { BackingStore?.Set("settingsBlockSessionResume", value); }
         }
         /// <summary>Specifies whether to disable auto-populating of the sign-in dialog with invitees from scheduled meetings.</summary>
         public bool? SettingsBlockSigninSuggestions {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockSigninSuggestions)); }
-            set { BackingStore?.Set(nameof(SettingsBlockSigninSuggestions), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockSigninSuggestions"); }
+            set { BackingStore?.Set("settingsBlockSigninSuggestions", value); }
         }
         /// <summary>Specifies the default volume value for a new session. Permitted values are 0-100. The default is 45. Valid values 0 to 100</summary>
         public int? SettingsDefaultVolume {
-            get { return BackingStore?.Get<int?>(nameof(SettingsDefaultVolume)); }
-            set { BackingStore?.Set(nameof(SettingsDefaultVolume), value); }
+            get { return BackingStore?.Get<int?>("settingsDefaultVolume"); }
+            set { BackingStore?.Set("settingsDefaultVolume", value); }
         }
         /// <summary>Specifies the number of minutes until the Hub screen turns off.</summary>
         public int? SettingsScreenTimeoutInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(SettingsScreenTimeoutInMinutes)); }
-            set { BackingStore?.Set(nameof(SettingsScreenTimeoutInMinutes), value); }
+            get { return BackingStore?.Get<int?>("settingsScreenTimeoutInMinutes"); }
+            set { BackingStore?.Set("settingsScreenTimeoutInMinutes", value); }
         }
         /// <summary>Specifies the number of minutes until the session times out.</summary>
         public int? SettingsSessionTimeoutInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(SettingsSessionTimeoutInMinutes)); }
-            set { BackingStore?.Set(nameof(SettingsSessionTimeoutInMinutes), value); }
+            get { return BackingStore?.Get<int?>("settingsSessionTimeoutInMinutes"); }
+            set { BackingStore?.Set("settingsSessionTimeoutInMinutes", value); }
         }
         /// <summary>Specifies the number of minutes until the Hub enters sleep mode.</summary>
         public int? SettingsSleepTimeoutInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(SettingsSleepTimeoutInMinutes)); }
-            set { BackingStore?.Set(nameof(SettingsSleepTimeoutInMinutes), value); }
+            get { return BackingStore?.Get<int?>("settingsSleepTimeoutInMinutes"); }
+            set { BackingStore?.Set("settingsSleepTimeoutInMinutes", value); }
         }
         /// <summary>The welcome screen background image URL. The URL must use the HTTPS protocol and return a PNG image.</summary>
         public string WelcomeScreenBackgroundImageUrl {
-            get { return BackingStore?.Get<string>(nameof(WelcomeScreenBackgroundImageUrl)); }
-            set { BackingStore?.Set(nameof(WelcomeScreenBackgroundImageUrl), value); }
+            get { return BackingStore?.Get<string>("welcomeScreenBackgroundImageUrl"); }
+            set { BackingStore?.Set("welcomeScreenBackgroundImageUrl", value); }
         }
         /// <summary>Indicates whether or not to Block the welcome screen from waking up automatically when someone enters the room.</summary>
         public bool? WelcomeScreenBlockAutomaticWakeUp {
-            get { return BackingStore?.Get<bool?>(nameof(WelcomeScreenBlockAutomaticWakeUp)); }
-            set { BackingStore?.Set(nameof(WelcomeScreenBlockAutomaticWakeUp), value); }
+            get { return BackingStore?.Get<bool?>("welcomeScreenBlockAutomaticWakeUp"); }
+            set { BackingStore?.Set("welcomeScreenBlockAutomaticWakeUp", value); }
         }
-        /// <summary>The welcome screen meeting information shown. Possible values are: userDefined, showOrganizerAndTimeOnly, showOrganizerAndTimeAndSubject.</summary>
+        /// <summary>Possible values for welcome screen meeting information.</summary>
         public Microsoft.Graph.Models.WelcomeScreenMeetingInformation? WelcomeScreenMeetingInformation {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.WelcomeScreenMeetingInformation?>(nameof(WelcomeScreenMeetingInformation)); }
-            set { BackingStore?.Set(nameof(WelcomeScreenMeetingInformation), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WelcomeScreenMeetingInformation?>("welcomeScreenMeetingInformation"); }
+            set { BackingStore?.Set("welcomeScreenMeetingInformation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

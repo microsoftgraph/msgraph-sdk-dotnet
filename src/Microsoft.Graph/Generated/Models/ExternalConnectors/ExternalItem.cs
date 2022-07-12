@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
     public class ExternalItem : Entity, IParsable {
         /// <summary>An array of access control entries. Each entry specifies the access granted to a user or group. Required.</summary>
         public List<Microsoft.Graph.Models.ExternalConnectors.Acl> Acl {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.Acl>>(nameof(Acl)); }
-            set { BackingStore?.Set(nameof(Acl), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.Acl>>("acl"); }
+            set { BackingStore?.Set("acl", value); }
         }
         /// <summary>A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.</summary>
         public ExternalItemContent Content {
-            get { return BackingStore?.Get<ExternalItemContent>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<ExternalItemContent>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.</summary>
         public Microsoft.Graph.Models.ExternalConnectors.Properties Properties {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Properties>(nameof(Properties)); }
-            set { BackingStore?.Set(nameof(Properties), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Properties>("properties"); }
+            set { BackingStore?.Set("properties", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

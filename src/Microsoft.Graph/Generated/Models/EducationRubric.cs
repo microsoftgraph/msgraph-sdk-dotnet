@@ -4,52 +4,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationRubric : Entity, IParsable {
         /// <summary>The user who created this resource.</summary>
         public IdentitySet CreatedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of this rubric.</summary>
         public EducationItemBody Description {
-            get { return BackingStore?.Get<EducationItemBody>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<EducationItemBody>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The name of this rubric.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.</summary>
         public EducationAssignmentGradeType Grading {
-            get { return BackingStore?.Get<EducationAssignmentGradeType>(nameof(Grading)); }
-            set { BackingStore?.Set(nameof(Grading), value); }
+            get { return BackingStore?.Get<EducationAssignmentGradeType>("grading"); }
+            set { BackingStore?.Set("grading", value); }
         }
         /// <summary>The last user to modify the resource.</summary>
         public IdentitySet LastModifiedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The collection of levels making up this rubric.</summary>
         public List<RubricLevel> Levels {
-            get { return BackingStore?.Get<List<RubricLevel>>(nameof(Levels)); }
-            set { BackingStore?.Set(nameof(Levels), value); }
+            get { return BackingStore?.Get<List<RubricLevel>>("levels"); }
+            set { BackingStore?.Set("levels", value); }
         }
         /// <summary>The collection of qualities making up this rubric.</summary>
         public List<RubricQuality> Qualities {
-            get { return BackingStore?.Get<List<RubricQuality>>(nameof(Qualities)); }
-            set { BackingStore?.Set(nameof(Qualities), value); }
+            get { return BackingStore?.Get<List<RubricQuality>>("qualities"); }
+            set { BackingStore?.Set("qualities", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

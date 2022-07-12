@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Models {
     public class ItemPreviewInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The getUrl property</summary>
         public string GetUrl {
-            get { return BackingStore?.Get<string>(nameof(GetUrl)); }
-            set { BackingStore?.Set(nameof(GetUrl), value); }
+            get { return BackingStore?.Get<string>("getUrl"); }
+            set { BackingStore?.Set("getUrl", value); }
         }
         /// <summary>The postParameters property</summary>
         public string PostParameters {
-            get { return BackingStore?.Get<string>(nameof(PostParameters)); }
-            set { BackingStore?.Set(nameof(PostParameters), value); }
+            get { return BackingStore?.Get<string>("postParameters"); }
+            set { BackingStore?.Set("postParameters", value); }
         }
         /// <summary>The postUrl property</summary>
         public string PostUrl {
-            get { return BackingStore?.Get<string>(nameof(PostUrl)); }
-            set { BackingStore?.Set(nameof(PostUrl), value); }
+            get { return BackingStore?.Get<string>("postUrl"); }
+            set { BackingStore?.Set("postUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new ItemPreviewInfo and sets the default values.
+        /// Instantiates a new itemPreviewInfo and sets the default values.
         /// </summary>
         public ItemPreviewInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

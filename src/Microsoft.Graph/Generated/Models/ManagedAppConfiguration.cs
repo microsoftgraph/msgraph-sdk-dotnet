@@ -1,3 +1,4 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -7,8 +8,14 @@ namespace Microsoft.Graph.Models {
     public class ManagedAppConfiguration : ManagedAppPolicy, IParsable {
         /// <summary>A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service</summary>
         public List<KeyValuePair> CustomSettings {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(CustomSettings)); }
-            set { BackingStore?.Set(nameof(CustomSettings), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("customSettings"); }
+            set { BackingStore?.Set("customSettings", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ManagedAppConfiguration and sets the default values.
+        /// </summary>
+        public ManagedAppConfiguration() : base() {
+            Type = "#microsoft.graph.managedAppConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

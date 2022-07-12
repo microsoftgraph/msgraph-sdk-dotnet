@@ -1,15 +1,21 @@
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the directory singleton.</summary>
     public class IdentityProviderBase : Entity, IParsable {
         /// <summary>The display name of the identity provider.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new IdentityProviderBase and sets the default values.
+        /// </summary>
+        public IdentityProviderBase() : base() {
+            Type = "#microsoft.graph.identityProviderBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

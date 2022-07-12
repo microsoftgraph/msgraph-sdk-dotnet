@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Calendar
     public class AcceptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Comment property</summary>
         public string Comment {
-            get { return BackingStore?.Get<string>(nameof(Comment)); }
-            set { BackingStore?.Set(nameof(Comment), value); }
+            get { return BackingStore?.Get<string>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
         /// <summary>The SendResponse property</summary>
         public bool? SendResponse {
-            get { return BackingStore?.Get<bool?>(nameof(SendResponse)); }
-            set { BackingStore?.Set(nameof(SendResponse), value); }
+            get { return BackingStore?.Get<bool?>("sendResponse"); }
+            set { BackingStore?.Set("sendResponse", value); }
         }
         /// <summary>
         /// Instantiates a new acceptPostRequestBody and sets the default values.

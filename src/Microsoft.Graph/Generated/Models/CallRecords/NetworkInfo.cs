@@ -8,140 +8,140 @@ namespace Microsoft.Graph.Models.CallRecords {
     public class NetworkInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.</summary>
         public float? BandwidthLowEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(BandwidthLowEventRatio)); }
-            set { BackingStore?.Set(nameof(BandwidthLowEventRatio), value); }
+            get { return BackingStore?.Get<float?>("bandwidthLowEventRatio"); }
+            set { BackingStore?.Set("bandwidthLowEventRatio", value); }
         }
         /// <summary>The wireless LAN basic service set identifier of the media endpoint used to connect to the network.</summary>
         public string BasicServiceSetIdentifier {
-            get { return BackingStore?.Get<string>(nameof(BasicServiceSetIdentifier)); }
-            set { BackingStore?.Set(nameof(BasicServiceSetIdentifier), value); }
+            get { return BackingStore?.Get<string>("basicServiceSetIdentifier"); }
+            set { BackingStore?.Set("basicServiceSetIdentifier", value); }
         }
-        /// <summary>Type of network used by the media endpoint. Possible values are: unknown, wired, wifi, mobile, tunnel, unknownFutureValue.</summary>
+        /// <summary>The connectionType property</summary>
         public NetworkConnectionType? ConnectionType {
-            get { return BackingStore?.Get<NetworkConnectionType?>(nameof(ConnectionType)); }
-            set { BackingStore?.Set(nameof(ConnectionType), value); }
+            get { return BackingStore?.Get<NetworkConnectionType?>("connectionType"); }
+            set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.</summary>
         public float? DelayEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(DelayEventRatio)); }
-            set { BackingStore?.Set(nameof(DelayEventRatio), value); }
+            get { return BackingStore?.Get<float?>("delayEventRatio"); }
+            set { BackingStore?.Set("delayEventRatio", value); }
         }
         /// <summary>DNS suffix associated with the network adapter of the media endpoint.</summary>
         public string DnsSuffix {
-            get { return BackingStore?.Get<string>(nameof(DnsSuffix)); }
-            set { BackingStore?.Set(nameof(DnsSuffix), value); }
+            get { return BackingStore?.Get<string>("dnsSuffix"); }
+            set { BackingStore?.Set("dnsSuffix", value); }
         }
         /// <summary>IP address of the media endpoint.</summary>
         public string IpAddress {
-            get { return BackingStore?.Get<string>(nameof(IpAddress)); }
-            set { BackingStore?.Set(nameof(IpAddress), value); }
+            get { return BackingStore?.Get<string>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
         }
         /// <summary>Link speed in bits per second reported by the network adapter used by the media endpoint.</summary>
         public long? LinkSpeed {
-            get { return BackingStore?.Get<long?>(nameof(LinkSpeed)); }
-            set { BackingStore?.Set(nameof(LinkSpeed), value); }
+            get { return BackingStore?.Get<long?>("linkSpeed"); }
+            set { BackingStore?.Set("linkSpeed", value); }
         }
         /// <summary>The media access control (MAC) address of the media endpoint&apos;s network device.</summary>
         public string MacAddress {
-            get { return BackingStore?.Get<string>(nameof(MacAddress)); }
-            set { BackingStore?.Set(nameof(MacAddress), value); }
+            get { return BackingStore?.Get<string>("macAddress"); }
+            set { BackingStore?.Set("macAddress", value); }
         }
-        /// <summary>Network protocol used for the transmission of stream. Possible values are: unknown, udp, tcp, unknownFutureValue.</summary>
+        /// <summary>The networkTransportProtocol property</summary>
         public Microsoft.Graph.Models.CallRecords.NetworkTransportProtocol? NetworkTransportProtocol {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.NetworkTransportProtocol?>(nameof(NetworkTransportProtocol)); }
-            set { BackingStore?.Set(nameof(NetworkTransportProtocol), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.NetworkTransportProtocol?>("networkTransportProtocol"); }
+            set { BackingStore?.Set("networkTransportProtocol", value); }
         }
         /// <summary>Network port number used by media endpoint.</summary>
         public int? Port {
-            get { return BackingStore?.Get<int?>(nameof(Port)); }
-            set { BackingStore?.Set(nameof(Port), value); }
+            get { return BackingStore?.Get<int?>("port"); }
+            set { BackingStore?.Set("port", value); }
         }
         /// <summary>Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.</summary>
         public float? ReceivedQualityEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(ReceivedQualityEventRatio)); }
-            set { BackingStore?.Set(nameof(ReceivedQualityEventRatio), value); }
+            get { return BackingStore?.Get<float?>("receivedQualityEventRatio"); }
+            set { BackingStore?.Set("receivedQualityEventRatio", value); }
         }
         /// <summary>IP address of the media endpoint as seen by the media relay server. This is typically the public internet IP address associated to the endpoint.</summary>
         public string ReflexiveIPAddress {
-            get { return BackingStore?.Get<string>(nameof(ReflexiveIPAddress)); }
-            set { BackingStore?.Set(nameof(ReflexiveIPAddress), value); }
+            get { return BackingStore?.Get<string>("reflexiveIPAddress"); }
+            set { BackingStore?.Set("reflexiveIPAddress", value); }
         }
         /// <summary>IP address of the media relay server allocated by the media endpoint.</summary>
         public string RelayIPAddress {
-            get { return BackingStore?.Get<string>(nameof(RelayIPAddress)); }
-            set { BackingStore?.Set(nameof(RelayIPAddress), value); }
+            get { return BackingStore?.Get<string>("relayIPAddress"); }
+            set { BackingStore?.Set("relayIPAddress", value); }
         }
         /// <summary>Network port number allocated on the media relay server by the media endpoint.</summary>
         public int? RelayPort {
-            get { return BackingStore?.Get<int?>(nameof(RelayPort)); }
-            set { BackingStore?.Set(nameof(RelayPort), value); }
+            get { return BackingStore?.Get<int?>("relayPort"); }
+            set { BackingStore?.Set("relayPort", value); }
         }
         /// <summary>Fraction of the call that the media endpoint detected the network was causing poor quality of the audio sent.</summary>
         public float? SentQualityEventRatio {
-            get { return BackingStore?.Get<float?>(nameof(SentQualityEventRatio)); }
-            set { BackingStore?.Set(nameof(SentQualityEventRatio), value); }
+            get { return BackingStore?.Get<float?>("sentQualityEventRatio"); }
+            set { BackingStore?.Set("sentQualityEventRatio", value); }
         }
         /// <summary>Subnet used for media stream by the media endpoint.</summary>
         public string Subnet {
-            get { return BackingStore?.Get<string>(nameof(Subnet)); }
-            set { BackingStore?.Set(nameof(Subnet), value); }
+            get { return BackingStore?.Get<string>("subnet"); }
+            set { BackingStore?.Set("subnet", value); }
         }
-        /// <summary>List of network trace route hops collected for this media stream.</summary>
+        /// <summary>List of network trace route hops collected for this media stream.*</summary>
         public List<TraceRouteHop> TraceRouteHops {
-            get { return BackingStore?.Get<List<TraceRouteHop>>(nameof(TraceRouteHops)); }
-            set { BackingStore?.Set(nameof(TraceRouteHops), value); }
+            get { return BackingStore?.Get<List<TraceRouteHop>>("traceRouteHops"); }
+            set { BackingStore?.Set("traceRouteHops", value); }
         }
-        /// <summary>WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.</summary>
+        /// <summary>The wifiBand property</summary>
         public Microsoft.Graph.Models.CallRecords.WifiBand? WifiBand {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.WifiBand?>(nameof(WifiBand)); }
-            set { BackingStore?.Set(nameof(WifiBand), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.WifiBand?>("wifiBand"); }
+            set { BackingStore?.Set("wifiBand", value); }
         }
         /// <summary>Estimated remaining battery charge in percentage reported by the media endpoint.</summary>
         public int? WifiBatteryCharge {
-            get { return BackingStore?.Get<int?>(nameof(WifiBatteryCharge)); }
-            set { BackingStore?.Set(nameof(WifiBatteryCharge), value); }
+            get { return BackingStore?.Get<int?>("wifiBatteryCharge"); }
+            set { BackingStore?.Set("wifiBatteryCharge", value); }
         }
         /// <summary>WiFi channel used by the media endpoint.</summary>
         public int? WifiChannel {
-            get { return BackingStore?.Get<int?>(nameof(WifiChannel)); }
-            set { BackingStore?.Set(nameof(WifiChannel), value); }
+            get { return BackingStore?.Get<int?>("wifiChannel"); }
+            set { BackingStore?.Set("wifiChannel", value); }
         }
         /// <summary>Name of the Microsoft WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.</summary>
         public string WifiMicrosoftDriver {
-            get { return BackingStore?.Get<string>(nameof(WifiMicrosoftDriver)); }
-            set { BackingStore?.Set(nameof(WifiMicrosoftDriver), value); }
+            get { return BackingStore?.Get<string>("wifiMicrosoftDriver"); }
+            set { BackingStore?.Set("wifiMicrosoftDriver", value); }
         }
         /// <summary>Version of the Microsoft WiFi driver used by the media endpoint.</summary>
         public string WifiMicrosoftDriverVersion {
-            get { return BackingStore?.Get<string>(nameof(WifiMicrosoftDriverVersion)); }
-            set { BackingStore?.Set(nameof(WifiMicrosoftDriverVersion), value); }
+            get { return BackingStore?.Get<string>("wifiMicrosoftDriverVersion"); }
+            set { BackingStore?.Set("wifiMicrosoftDriverVersion", value); }
         }
-        /// <summary>Type of WiFi radio used by the media endpoint. Possible values are: unknown, wifi80211a, wifi80211b, wifi80211g, wifi80211n, wifi80211ac, wifi80211ax, unknownFutureValue.</summary>
+        /// <summary>The wifiRadioType property</summary>
         public Microsoft.Graph.Models.CallRecords.WifiRadioType? WifiRadioType {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.WifiRadioType?>(nameof(WifiRadioType)); }
-            set { BackingStore?.Set(nameof(WifiRadioType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.WifiRadioType?>("wifiRadioType"); }
+            set { BackingStore?.Set("wifiRadioType", value); }
         }
         /// <summary>WiFi signal strength in percentage reported by the media endpoint.</summary>
         public int? WifiSignalStrength {
-            get { return BackingStore?.Get<int?>(nameof(WifiSignalStrength)); }
-            set { BackingStore?.Set(nameof(WifiSignalStrength), value); }
+            get { return BackingStore?.Get<int?>("wifiSignalStrength"); }
+            set { BackingStore?.Set("wifiSignalStrength", value); }
         }
         /// <summary>Name of the WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.</summary>
         public string WifiVendorDriver {
-            get { return BackingStore?.Get<string>(nameof(WifiVendorDriver)); }
-            set { BackingStore?.Set(nameof(WifiVendorDriver), value); }
+            get { return BackingStore?.Get<string>("wifiVendorDriver"); }
+            set { BackingStore?.Set("wifiVendorDriver", value); }
         }
         /// <summary>Version of the WiFi driver used by the media endpoint.</summary>
         public string WifiVendorDriverVersion {
-            get { return BackingStore?.Get<string>(nameof(WifiVendorDriverVersion)); }
-            set { BackingStore?.Set(nameof(WifiVendorDriverVersion), value); }
+            get { return BackingStore?.Get<string>("wifiVendorDriverVersion"); }
+            set { BackingStore?.Set("wifiVendorDriverVersion", value); }
         }
         /// <summary>
         /// Instantiates a new networkInfo and sets the default values.

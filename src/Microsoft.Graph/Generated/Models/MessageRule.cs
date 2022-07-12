@@ -4,47 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class MessageRule : Entity, IParsable {
         /// <summary>Actions to be taken on a message when the corresponding conditions are fulfilled.</summary>
         public MessageRuleActions Actions {
-            get { return BackingStore?.Get<MessageRuleActions>(nameof(Actions)); }
-            set { BackingStore?.Set(nameof(Actions), value); }
+            get { return BackingStore?.Get<MessageRuleActions>("actions"); }
+            set { BackingStore?.Set("actions", value); }
         }
         /// <summary>Conditions that when fulfilled, will trigger the corresponding actions for that rule.</summary>
         public MessageRulePredicates Conditions {
-            get { return BackingStore?.Get<MessageRulePredicates>(nameof(Conditions)); }
-            set { BackingStore?.Set(nameof(Conditions), value); }
+            get { return BackingStore?.Get<MessageRulePredicates>("conditions"); }
+            set { BackingStore?.Set("conditions", value); }
         }
         /// <summary>The display name of the rule.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Exception conditions for the rule.</summary>
         public MessageRulePredicates Exceptions {
-            get { return BackingStore?.Get<MessageRulePredicates>(nameof(Exceptions)); }
-            set { BackingStore?.Set(nameof(Exceptions), value); }
+            get { return BackingStore?.Get<MessageRulePredicates>("exceptions"); }
+            set { BackingStore?.Set("exceptions", value); }
         }
         /// <summary>Indicates whether the rule is in an error condition. Read-only.</summary>
         public bool? HasError {
-            get { return BackingStore?.Get<bool?>(nameof(HasError)); }
-            set { BackingStore?.Set(nameof(HasError), value); }
+            get { return BackingStore?.Get<bool?>("hasError"); }
+            set { BackingStore?.Set("hasError", value); }
         }
         /// <summary>Indicates whether the rule is enabled to be applied to messages.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.</summary>
         public bool? IsReadOnly {
-            get { return BackingStore?.Get<bool?>(nameof(IsReadOnly)); }
-            set { BackingStore?.Set(nameof(IsReadOnly), value); }
+            get { return BackingStore?.Get<bool?>("isReadOnly"); }
+            set { BackingStore?.Set("isReadOnly", value); }
         }
         /// <summary>Indicates the order in which the rule is executed, among other rules.</summary>
         public int? Sequence {
-            get { return BackingStore?.Get<int?>(nameof(Sequence)); }
-            set { BackingStore?.Set(nameof(Sequence), value); }
+            get { return BackingStore?.Get<int?>("sequence"); }
+            set { BackingStore?.Set("sequence", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

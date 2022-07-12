@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Groups.Item.Drives.Item.Items.Item.Preview {
     public class PreviewPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The page property</summary>
         public string Page {
-            get { return BackingStore?.Get<string>(nameof(Page)); }
-            set { BackingStore?.Set(nameof(Page), value); }
+            get { return BackingStore?.Get<string>("page"); }
+            set { BackingStore?.Set("page", value); }
         }
         /// <summary>The zoom property</summary>
         public double? Zoom {
-            get { return BackingStore?.Get<double?>(nameof(Zoom)); }
-            set { BackingStore?.Set(nameof(Zoom), value); }
+            get { return BackingStore?.Get<double?>("zoom"); }
+            set { BackingStore?.Set("zoom", value); }
         }
         /// <summary>
         /// Instantiates a new previewPostRequestBody and sets the default values.

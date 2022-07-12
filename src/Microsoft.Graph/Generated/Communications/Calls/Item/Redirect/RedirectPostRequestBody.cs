@@ -10,25 +10,25 @@ namespace Microsoft.Graph.Communications.Calls.Item.Redirect {
     public class RedirectPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The callbackUri property</summary>
         public string CallbackUri {
-            get { return BackingStore?.Get<string>(nameof(CallbackUri)); }
-            set { BackingStore?.Set(nameof(CallbackUri), value); }
+            get { return BackingStore?.Get<string>("callbackUri"); }
+            set { BackingStore?.Set("callbackUri", value); }
         }
         /// <summary>The targets property</summary>
         public List<InvitationParticipantInfo> Targets {
-            get { return BackingStore?.Get<List<InvitationParticipantInfo>>(nameof(Targets)); }
-            set { BackingStore?.Set(nameof(Targets), value); }
+            get { return BackingStore?.Get<List<InvitationParticipantInfo>>("targets"); }
+            set { BackingStore?.Set("targets", value); }
         }
         /// <summary>The timeout property</summary>
         public int? Timeout {
-            get { return BackingStore?.Get<int?>(nameof(Timeout)); }
-            set { BackingStore?.Set(nameof(Timeout), value); }
+            get { return BackingStore?.Get<int?>("timeout"); }
+            set { BackingStore?.Set("timeout", value); }
         }
         /// <summary>
         /// Instantiates a new redirectPostRequestBody and sets the default values.

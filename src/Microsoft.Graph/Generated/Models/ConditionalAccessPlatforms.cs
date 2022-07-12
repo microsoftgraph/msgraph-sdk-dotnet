@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Models {
     public class ConditionalAccessPlatforms : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux.</summary>
         public List<string> ExcludePlatforms {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludePlatforms)); }
-            set { BackingStore?.Set(nameof(ExcludePlatforms), value); }
+            get { return BackingStore?.Get<List<string>>("excludePlatforms"); }
+            set { BackingStore?.Set("excludePlatforms", value); }
         }
         /// <summary>Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux``.</summary>
         public List<string> IncludePlatforms {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludePlatforms)); }
-            set { BackingStore?.Set(nameof(IncludePlatforms), value); }
+            get { return BackingStore?.Get<List<string>>("includePlatforms"); }
+            set { BackingStore?.Set("includePlatforms", value); }
         }
         /// <summary>
         /// Instantiates a new conditionalAccessPlatforms and sets the default values.

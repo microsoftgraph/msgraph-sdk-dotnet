@@ -10,40 +10,40 @@ namespace Microsoft.Graph.Teams.Item.Clone {
     public class ClonePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The classification property</summary>
         public string Classification {
-            get { return BackingStore?.Get<string>(nameof(Classification)); }
-            set { BackingStore?.Set(nameof(Classification), value); }
+            get { return BackingStore?.Get<string>("classification"); }
+            set { BackingStore?.Set("classification", value); }
         }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The mailNickname property</summary>
         public string MailNickname {
-            get { return BackingStore?.Get<string>(nameof(MailNickname)); }
-            set { BackingStore?.Set(nameof(MailNickname), value); }
+            get { return BackingStore?.Get<string>("mailNickname"); }
+            set { BackingStore?.Set("mailNickname", value); }
         }
         /// <summary>The partsToClone property</summary>
         public ClonableTeamParts? PartsToClone {
-            get { return BackingStore?.Get<ClonableTeamParts?>(nameof(PartsToClone)); }
-            set { BackingStore?.Set(nameof(PartsToClone), value); }
+            get { return BackingStore?.Get<ClonableTeamParts?>("partsToClone"); }
+            set { BackingStore?.Set("partsToClone", value); }
         }
         /// <summary>The visibility property</summary>
         public TeamVisibilityType? Visibility {
-            get { return BackingStore?.Get<TeamVisibilityType?>(nameof(Visibility)); }
-            set { BackingStore?.Set(nameof(Visibility), value); }
+            get { return BackingStore?.Get<TeamVisibilityType?>("visibility"); }
+            set { BackingStore?.Set("visibility", value); }
         }
         /// <summary>
         /// Instantiates a new clonePostRequestBody and sets the default values.

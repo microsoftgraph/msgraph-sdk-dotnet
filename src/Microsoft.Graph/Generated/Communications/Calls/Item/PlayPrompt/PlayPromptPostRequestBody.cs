@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Communications.Calls.Item.PlayPrompt {
     public class PlayPromptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The clientContext property</summary>
         public string ClientContext {
-            get { return BackingStore?.Get<string>(nameof(ClientContext)); }
-            set { BackingStore?.Set(nameof(ClientContext), value); }
+            get { return BackingStore?.Get<string>("clientContext"); }
+            set { BackingStore?.Set("clientContext", value); }
         }
         /// <summary>The prompts property</summary>
         public List<Prompt> Prompts {
-            get { return BackingStore?.Get<List<Prompt>>(nameof(Prompts)); }
-            set { BackingStore?.Set(nameof(Prompts), value); }
+            get { return BackingStore?.Get<List<Prompt>>("prompts"); }
+            set { BackingStore?.Set("prompts", value); }
         }
         /// <summary>
         /// Instantiates a new playPromptPostRequestBody and sets the default values.

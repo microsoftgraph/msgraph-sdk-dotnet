@@ -4,92 +4,91 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of domain entities.</summary>
     public class Domain : Entity, IParsable {
         /// <summary>Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant&apos;s on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.</summary>
         public string AuthenticationType {
-            get { return BackingStore?.Get<string>(nameof(AuthenticationType)); }
-            set { BackingStore?.Set(nameof(AuthenticationType), value); }
+            get { return BackingStore?.Get<string>("authenticationType"); }
+            set { BackingStore?.Set("authenticationType", value); }
         }
         /// <summary>This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.</summary>
         public string AvailabilityStatus {
-            get { return BackingStore?.Get<string>(nameof(AvailabilityStatus)); }
-            set { BackingStore?.Set(nameof(AvailabilityStatus), value); }
+            get { return BackingStore?.Get<string>("availabilityStatus"); }
+            set { BackingStore?.Set("availabilityStatus", value); }
         }
         /// <summary>The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.</summary>
         public List<DirectoryObject> DomainNameReferences {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(DomainNameReferences)); }
-            set { BackingStore?.Set(nameof(DomainNameReferences), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("domainNameReferences"); }
+            set { BackingStore?.Set("domainNameReferences", value); }
         }
         /// <summary>Domain settings configured by customer when federated with Azure AD. Supports $expand.</summary>
         public List<InternalDomainFederation> FederationConfiguration {
-            get { return BackingStore?.Get<List<InternalDomainFederation>>(nameof(FederationConfiguration)); }
-            set { BackingStore?.Set(nameof(FederationConfiguration), value); }
+            get { return BackingStore?.Get<List<InternalDomainFederation>>("federationConfiguration"); }
+            set { BackingStore?.Set("federationConfiguration", value); }
         }
         /// <summary>The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable</summary>
         public bool? IsAdminManaged {
-            get { return BackingStore?.Get<bool?>(nameof(IsAdminManaged)); }
-            set { BackingStore?.Set(nameof(IsAdminManaged), value); }
+            get { return BackingStore?.Get<bool?>("isAdminManaged"); }
+            set { BackingStore?.Set("isAdminManaged", value); }
         }
         /// <summary>true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable</summary>
         public bool? IsDefault {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
-            set { BackingStore?.Set(nameof(IsDefault), value); }
+            get { return BackingStore?.Get<bool?>("isDefault"); }
+            set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable</summary>
         public bool? IsInitial {
-            get { return BackingStore?.Get<bool?>(nameof(IsInitial)); }
-            set { BackingStore?.Set(nameof(IsInitial), value); }
+            get { return BackingStore?.Get<bool?>("isInitial"); }
+            set { BackingStore?.Set("isInitial", value); }
         }
         /// <summary>true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable</summary>
         public bool? IsRoot {
-            get { return BackingStore?.Get<bool?>(nameof(IsRoot)); }
-            set { BackingStore?.Set(nameof(IsRoot), value); }
+            get { return BackingStore?.Get<bool?>("isRoot"); }
+            set { BackingStore?.Set("isRoot", value); }
         }
         /// <summary>true if the domain has completed domain ownership verification. Not nullable</summary>
         public bool? IsVerified {
-            get { return BackingStore?.Get<bool?>(nameof(IsVerified)); }
-            set { BackingStore?.Set(nameof(IsVerified), value); }
+            get { return BackingStore?.Get<bool?>("isVerified"); }
+            set { BackingStore?.Set("isVerified", value); }
         }
         /// <summary>The manufacturer property</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>The model property</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.</summary>
         public int? PasswordNotificationWindowInDays {
-            get { return BackingStore?.Get<int?>(nameof(PasswordNotificationWindowInDays)); }
-            set { BackingStore?.Set(nameof(PasswordNotificationWindowInDays), value); }
+            get { return BackingStore?.Get<int?>("passwordNotificationWindowInDays"); }
+            set { BackingStore?.Set("passwordNotificationWindowInDays", value); }
         }
         /// <summary>Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.</summary>
         public int? PasswordValidityPeriodInDays {
-            get { return BackingStore?.Get<int?>(nameof(PasswordValidityPeriodInDays)); }
-            set { BackingStore?.Set(nameof(PasswordValidityPeriodInDays), value); }
+            get { return BackingStore?.Get<int?>("passwordValidityPeriodInDays"); }
+            set { BackingStore?.Set("passwordValidityPeriodInDays", value); }
         }
         /// <summary>DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.</summary>
         public List<DomainDnsRecord> ServiceConfigurationRecords {
-            get { return BackingStore?.Get<List<DomainDnsRecord>>(nameof(ServiceConfigurationRecords)); }
-            set { BackingStore?.Set(nameof(ServiceConfigurationRecords), value); }
+            get { return BackingStore?.Get<List<DomainDnsRecord>>("serviceConfigurationRecords"); }
+            set { BackingStore?.Set("serviceConfigurationRecords", value); }
         }
         /// <summary>Status of asynchronous operations scheduled for the domain.</summary>
         public DomainState State {
-            get { return BackingStore?.Get<DomainState>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<DomainState>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.</summary>
         public List<string> SupportedServices {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedServices)); }
-            set { BackingStore?.Set(nameof(SupportedServices), value); }
+            get { return BackingStore?.Get<List<string>>("supportedServices"); }
+            set { BackingStore?.Set("supportedServices", value); }
         }
         /// <summary>DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.</summary>
         public List<DomainDnsRecord> VerificationDnsRecords {
-            get { return BackingStore?.Get<List<DomainDnsRecord>>(nameof(VerificationDnsRecords)); }
-            set { BackingStore?.Set(nameof(VerificationDnsRecords), value); }
+            get { return BackingStore?.Get<List<DomainDnsRecord>>("verificationDnsRecords"); }
+            set { BackingStore?.Set("verificationDnsRecords", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
