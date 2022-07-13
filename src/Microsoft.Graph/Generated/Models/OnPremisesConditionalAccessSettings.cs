@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Singleton entity which represents the Exchange OnPremises Conditional Access Settings for a tenant.</summary>
     public class OnPremisesConditionalAccessSettings : Entity, IParsable {
         /// <summary>Indicates if on premises conditional access is enabled for this organization</summary>
         public bool? Enabled {

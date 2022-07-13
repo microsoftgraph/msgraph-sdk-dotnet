@@ -8,6 +8,7 @@ using Microsoft.Graph.Groups.Item.Team.IncomingChannels;
 using Microsoft.Graph.Groups.Item.Team.InstalledApps;
 using Microsoft.Graph.Groups.Item.Team.Members;
 using Microsoft.Graph.Groups.Item.Team.Operations;
+using Microsoft.Graph.Groups.Item.Team.Photo;
 using Microsoft.Graph.Groups.Item.Team.PrimaryChannel;
 using Microsoft.Graph.Groups.Item.Team.Schedule;
 using Microsoft.Graph.Groups.Item.Team.SendActivityNotification;
@@ -68,6 +69,10 @@ namespace Microsoft.Graph.Groups.Item.Team {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>The photo property</summary>
+        public PhotoRequestBuilder Photo { get =>
+            new PhotoRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The primaryChannel property</summary>
         public PrimaryChannelRequestBuilder PrimaryChannel { get =>
             new PrimaryChannelRequestBuilder(PathParameters, RequestAdapter);

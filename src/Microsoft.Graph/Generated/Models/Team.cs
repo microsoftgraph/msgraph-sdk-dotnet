@@ -91,6 +91,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<List<TeamsAsyncOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+        /// <summary>The team photo.</summary>
+        public ProfilePhoto Photo {
+            get { return BackingStore?.Get<ProfilePhoto>("photo"); }
+            set { BackingStore?.Set("photo", value); }
+        }
         /// <summary>The general channel for the team.</summary>
         public Channel PrimaryChannel {
             get { return BackingStore?.Get<Channel>("primaryChannel"); }
@@ -161,6 +166,7 @@ namespace Microsoft.Graph.Models {
                 {"memberSettings", n => { MemberSettings = n.GetObjectValue<TeamMemberSettings>(TeamMemberSettings.CreateFromDiscriminatorValue); } },
                 {"messagingSettings", n => { MessagingSettings = n.GetObjectValue<TeamMessagingSettings>(TeamMessagingSettings.CreateFromDiscriminatorValue); } },
                 {"operations", n => { Operations = n.GetCollectionOfObjectValues<TeamsAsyncOperation>(TeamsAsyncOperation.CreateFromDiscriminatorValue).ToList(); } },
+                {"photo", n => { Photo = n.GetObjectValue<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue); } },
                 {"primaryChannel", n => { PrimaryChannel = n.GetObjectValue<Channel>(Channel.CreateFromDiscriminatorValue); } },
                 {"schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Models.Schedule>(Microsoft.Graph.Models.Schedule.CreateFromDiscriminatorValue); } },
                 {"specialization", n => { Specialization = n.GetEnumValue<TeamSpecialization>(); } },
@@ -195,6 +201,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteObjectValue<TeamMemberSettings>("memberSettings", MemberSettings);
             writer.WriteObjectValue<TeamMessagingSettings>("messagingSettings", MessagingSettings);
             writer.WriteCollectionOfObjectValues<TeamsAsyncOperation>("operations", Operations);
+            writer.WriteObjectValue<ProfilePhoto>("photo", Photo);
             writer.WriteObjectValue<Channel>("primaryChannel", PrimaryChannel);
             writer.WriteObjectValue<Microsoft.Graph.Models.Schedule>("schedule", Schedule);
             writer.WriteEnumValue<TeamSpecialization>("specialization", Specialization);

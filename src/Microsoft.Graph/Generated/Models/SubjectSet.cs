@@ -36,6 +36,7 @@ namespace Microsoft.Graph.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.attributeRuleMembers" => new AttributeRuleMembers(),
                 "#microsoft.graph.connectedOrganizationMembers" => new ConnectedOrganizationMembers(),
                 "#microsoft.graph.externalSponsors" => new ExternalSponsors(),
                 "#microsoft.graph.groupMembers" => new GroupMembers(),

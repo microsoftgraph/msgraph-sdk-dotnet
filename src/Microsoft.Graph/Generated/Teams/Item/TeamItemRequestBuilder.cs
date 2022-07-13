@@ -10,6 +10,7 @@ using Microsoft.Graph.Teams.Item.IncomingChannels;
 using Microsoft.Graph.Teams.Item.InstalledApps;
 using Microsoft.Graph.Teams.Item.Members;
 using Microsoft.Graph.Teams.Item.Operations;
+using Microsoft.Graph.Teams.Item.Photo;
 using Microsoft.Graph.Teams.Item.PrimaryChannel;
 using Microsoft.Graph.Teams.Item.Schedule;
 using Microsoft.Graph.Teams.Item.SendActivityNotification;
@@ -68,6 +69,10 @@ namespace Microsoft.Graph.Teams.Item {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>The photo property</summary>
+        public PhotoRequestBuilder Photo { get =>
+            new PhotoRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The primaryChannel property</summary>
         public PrimaryChannelRequestBuilder PrimaryChannel { get =>
             new PrimaryChannelRequestBuilder(PathParameters, RequestAdapter);

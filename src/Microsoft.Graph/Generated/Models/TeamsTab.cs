@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
+    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class TeamsTab : Entity, IParsable {
         /// <summary>Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</summary>
         public TeamsTabConfiguration Configuration {

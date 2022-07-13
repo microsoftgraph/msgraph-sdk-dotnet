@@ -8,6 +8,7 @@ using Microsoft.Graph.Me.JoinedTeams.Item.IncomingChannels;
 using Microsoft.Graph.Me.JoinedTeams.Item.InstalledApps;
 using Microsoft.Graph.Me.JoinedTeams.Item.Members;
 using Microsoft.Graph.Me.JoinedTeams.Item.Operations;
+using Microsoft.Graph.Me.JoinedTeams.Item.Photo;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel;
 using Microsoft.Graph.Me.JoinedTeams.Item.Schedule;
 using Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification;
@@ -68,6 +69,10 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>The photo property</summary>
+        public PhotoRequestBuilder Photo { get =>
+            new PhotoRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The primaryChannel property</summary>
         public PrimaryChannelRequestBuilder PrimaryChannel { get =>
             new PrimaryChannelRequestBuilder(PathParameters, RequestAdapter);

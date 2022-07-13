@@ -16,6 +16,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AllowedTargetScope?>("allowedTargetScope"); }
             set { BackingStore?.Set("allowedTargetScope", value); }
         }
+        /// <summary>The automaticRequestSettings property</summary>
+        public AccessPackageAutomaticRequestSettings AutomaticRequestSettings {
+            get { return BackingStore?.Get<AccessPackageAutomaticRequestSettings>("automaticRequestSettings"); }
+            set { BackingStore?.Set("automaticRequestSettings", value); }
+        }
         /// <summary>Catalog of the access package containing this policy. Read-only.</summary>
         public AccessPackageCatalog Catalog {
             get { return BackingStore?.Get<AccessPackageCatalog>("catalog"); }
@@ -81,6 +86,7 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"accessPackage", n => { AccessPackage = n.GetObjectValue<Microsoft.Graph.Models.AccessPackage>(Microsoft.Graph.Models.AccessPackage.CreateFromDiscriminatorValue); } },
                 {"allowedTargetScope", n => { AllowedTargetScope = n.GetEnumValue<AllowedTargetScope>(); } },
+                {"automaticRequestSettings", n => { AutomaticRequestSettings = n.GetObjectValue<AccessPackageAutomaticRequestSettings>(AccessPackageAutomaticRequestSettings.CreateFromDiscriminatorValue); } },
                 {"catalog", n => { Catalog = n.GetObjectValue<AccessPackageCatalog>(AccessPackageCatalog.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
@@ -102,6 +108,7 @@ namespace Microsoft.Graph.Models {
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackage>("accessPackage", AccessPackage);
             writer.WriteEnumValue<AllowedTargetScope>("allowedTargetScope", AllowedTargetScope);
+            writer.WriteObjectValue<AccessPackageAutomaticRequestSettings>("automaticRequestSettings", AutomaticRequestSettings);
             writer.WriteObjectValue<AccessPackageCatalog>("catalog", Catalog);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
