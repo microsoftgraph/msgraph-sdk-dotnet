@@ -25,10 +25,11 @@
     <!-- VersionPrefix minor version should not be set when the change comes from the generator. It will be updated automatically. -->
     <!-- VersionPrefix minor version must be manually set when making manual changes to code. -->
     <!-- VersionPrefix major and patch versions must be manually set. -->
-    <VersionSuffix>preview.8</VersionSuffix>
+    <VersionSuffix>preview.9</VersionSuffix>
     <PackageReleaseNotes>
-- Latest metadata updates from 21st June 2022 snapshot
-- Fixed missing derived models not directly referenced in openApi paths
+- Latest metadata updates from 12th July 2022 snapshot
+- Fixed incorrect casing of some properties on serialization [#483]
+- Adds support for cancellation token support on large file uploads.
     </PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -53,7 +54,7 @@
     <EmbeddedResource Include="Properties\Graph.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Graph.Core" Version="3.0.0-preview.9" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="3.0.0-preview.10" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup>
