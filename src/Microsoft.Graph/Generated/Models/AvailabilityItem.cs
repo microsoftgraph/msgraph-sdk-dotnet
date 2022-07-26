@@ -1,4 +1,3 @@
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -14,10 +13,10 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The endTime property</summary>
-        public Time? EndTime {
-            get { return BackingStore?.Get<Time?>("endTime"); }
-            set { BackingStore?.Set("endTime", value); }
+        /// <summary>The endDateTime property</summary>
+        public DateTimeTimeZone EndDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
         public string OdataType {
@@ -29,10 +28,10 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<string>("serviceId"); }
             set { BackingStore?.Set("serviceId", value); }
         }
-        /// <summary>The startTime property</summary>
-        public Time? StartTime {
-            get { return BackingStore?.Get<Time?>("startTime"); }
-            set { BackingStore?.Set("startTime", value); }
+        /// <summary>The startDateTime property</summary>
+        public DateTimeTimeZone StartDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.</summary>
         public BookingsAvailabilityStatus? Status {
@@ -60,10 +59,10 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"endTime", n => { EndTime = n.GetTimeValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"serviceId", n => { ServiceId = n.GetStringValue(); } },
-                {"startTime", n => { StartTime = n.GetTimeValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"status", n => { Status = n.GetEnumValue<BookingsAvailabilityStatus>(); } },
             };
         }
@@ -73,10 +72,10 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteTimeValue("endTime", EndTime);
+            writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("serviceId", ServiceId);
-            writer.WriteTimeValue("startTime", StartTime);
+            writer.WriteObjectValue<DateTimeTimeZone>("startDateTime", StartDateTime);
             writer.WriteEnumValue<BookingsAvailabilityStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

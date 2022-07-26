@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum VppTokenState {
         /// <summary>Default state.</summary>
         Unknown,

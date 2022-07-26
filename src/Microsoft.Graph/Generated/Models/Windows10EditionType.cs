@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum Windows10EditionType {
         /// <summary>Windows 10 Enterprise</summary>
         Windows10Enterprise,

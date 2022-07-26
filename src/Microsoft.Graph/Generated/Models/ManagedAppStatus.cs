@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Represents app protection and configuration status for the organization.</summary>
     public class ManagedAppStatus : Entity, IParsable {
         /// <summary>Friendly name of the status report.</summary>
         public string DisplayName {
@@ -18,7 +17,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new managedAppStatus and sets the default values.
+        /// Instantiates a new ManagedAppStatus and sets the default values.
         /// </summary>
         public ManagedAppStatus() : base() {
             OdataType = "#microsoft.graph.managedAppStatus";

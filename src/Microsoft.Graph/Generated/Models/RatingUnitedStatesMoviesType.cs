@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum RatingUnitedStatesMoviesType {
         /// <summary>Default value, allow all movies content</summary>
         AllAllowed,

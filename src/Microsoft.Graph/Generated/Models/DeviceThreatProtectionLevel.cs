@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum DeviceThreatProtectionLevel {
         /// <summary>Default Value. Do not use.</summary>
         Unavailable,

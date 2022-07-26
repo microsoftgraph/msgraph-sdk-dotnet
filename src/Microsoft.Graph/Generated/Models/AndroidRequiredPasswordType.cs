@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum AndroidRequiredPasswordType {
         /// <summary>Device default value, no intent.</summary>
         DeviceDefault,

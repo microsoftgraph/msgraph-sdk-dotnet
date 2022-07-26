@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum Win32LobAppFileSystemOperationType {
         /// <summary>Not configured.</summary>
         NotConfigured,

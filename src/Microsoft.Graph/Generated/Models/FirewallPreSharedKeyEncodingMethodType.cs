@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum FirewallPreSharedKeyEncodingMethodType {
         /// <summary>No value configured by Intune, do not override the user-configured device default value</summary>
         DeviceDefault,
