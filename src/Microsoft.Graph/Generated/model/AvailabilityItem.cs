@@ -22,10 +22,11 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
-        /// Gets or sets endTime.
+        /// Gets or sets endDateTime.
+        /// The end time of the time slot.
         /// </summary>
-        [JsonPropertyName("endTime")]
-        public TimeOfDay EndTime { get; set; }
+        [JsonPropertyName("endDateTime")]
+        public DateTimeTimeZone EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets serviceId.
@@ -35,10 +36,11 @@ namespace Microsoft.Graph
         public string ServiceId { get; set; }
     
         /// <summary>
-        /// Gets or sets startTime.
+        /// Gets or sets startDateTime.
+        /// The start time of the time slot.
         /// </summary>
-        [JsonPropertyName("startTime")]
-        public TimeOfDay StartTime { get; set; }
+        [JsonPropertyName("startDateTime")]
+        public DateTimeTimeZone StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
