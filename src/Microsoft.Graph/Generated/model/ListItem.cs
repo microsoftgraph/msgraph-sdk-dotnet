@@ -50,6 +50,20 @@ namespace Microsoft.Graph
         public ItemAnalytics Analytics { get; set; }
     
         /// <summary>
+        /// Gets or sets document set versions.
+        /// Version information for a document set version created by a user.
+        /// </summary>
+        [JsonPropertyName("documentSetVersions")]
+        public IListItemDocumentSetVersionsCollectionPage DocumentSetVersions { get; set; }
+
+        /// <summary>
+        /// Gets or sets documentSetVersionsNextLink.
+        /// </summary>
+        [JsonPropertyName("documentSetVersions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string DocumentSetVersionsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets drive item.
         /// For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
         /// </summary>

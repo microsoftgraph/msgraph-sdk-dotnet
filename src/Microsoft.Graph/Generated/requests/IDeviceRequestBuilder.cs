@@ -61,5 +61,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceExtensionsCollectionRequestBuilder"/>.</returns>
         IDeviceExtensionsCollectionRequestBuilder Extensions { get; }
     
+        
+    
     }
 }

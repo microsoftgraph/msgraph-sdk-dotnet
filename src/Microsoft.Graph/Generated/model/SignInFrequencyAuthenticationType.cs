@@ -13,37 +13,26 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum NotificationTemplateBrandingOptions.
+    /// The enum SignInFrequencyAuthenticationType.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-	[System.Flags]
-    public enum NotificationTemplateBrandingOptions
+    public enum SignInFrequencyAuthenticationType
     {
     
         /// <summary>
-        /// None
+        /// Primary And Secondary Authentication
         /// </summary>
-        None = 0,
+        PrimaryAndSecondaryAuthentication = 0,
 	
         /// <summary>
-        /// Include Company Logo
+        /// Secondary Authentication
         /// </summary>
-        IncludeCompanyLogo = 1,
+        SecondaryAuthentication = 1,
 	
         /// <summary>
-        /// Include Company Name
+        /// Unknown Future Value
         /// </summary>
-        IncludeCompanyName = 2,
-	
-        /// <summary>
-        /// Include Contact Information
-        /// </summary>
-        IncludeContactInformation = 4,
-	
-        /// <summary>
-        /// Include Device Details
-        /// </summary>
-        IncludeDeviceDetails = 16,
+        UnknownFutureValue = 2,
 	
     }
 }

@@ -12,16 +12,16 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
 
     /// <summary>
-    /// The type GraphServiceDevicesCollectionRequestBuilder.
+    /// The type ListItemDocumentSetVersionsCollectionRequestBuilder.
     /// </summary>
-    public partial class GraphServiceDevicesCollectionRequestBuilder : BaseRequestBuilder, IGraphServiceDevicesCollectionRequestBuilder
+    public partial class ListItemDocumentSetVersionsCollectionRequestBuilder : BaseRequestBuilder, IListItemDocumentSetVersionsCollectionRequestBuilder
     {
         /// <summary>
-        /// Constructs a new GraphServiceDevicesCollectionRequestBuilder.
+        /// Constructs a new ListItemDocumentSetVersionsCollectionRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public GraphServiceDevicesCollectionRequestBuilder(
+        public ListItemDocumentSetVersionsCollectionRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -32,7 +32,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public IGraphServiceDevicesCollectionRequest Request()
+        public IListItemDocumentSetVersionsCollectionRequest Request()
         {
             return this.Request(null);
         }
@@ -42,33 +42,24 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public IGraphServiceDevicesCollectionRequest Request(IEnumerable<Option> options)
+        public IListItemDocumentSetVersionsCollectionRequest Request(IEnumerable<Option> options)
         {
-            return new GraphServiceDevicesCollectionRequest(this.RequestUrl, this.Client, options);
+            return new ListItemDocumentSetVersionsCollectionRequest(this.RequestUrl, this.Client, options);
         }
 
         /// <summary>
-        /// Gets an <see cref="IDeviceRequestBuilder"/> for the specified GraphServiceDevice.
+        /// Gets an <see cref="IDocumentSetVersionRequestBuilder"/> for the specified ListItemDocumentSetVersion.
         /// </summary>
-        /// <param name="id">The ID for the GraphServiceDevice.</param>
-        /// <returns>The <see cref="IDeviceRequestBuilder"/>.</returns>
-        public IDeviceRequestBuilder this[string id]
+        /// <param name="id">The ID for the ListItemDocumentSetVersion.</param>
+        /// <returns>The <see cref="IDocumentSetVersionRequestBuilder"/>.</returns>
+        public IDocumentSetVersionRequestBuilder this[string id]
         {
             get
             {
-                return new DeviceRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new DocumentSetVersionRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 
-        /// <summary>
-        /// Gets the request builder for DeviceDelta.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceDeltaRequestBuilder"/>.</returns>
-        public IDeviceDeltaRequestBuilder Delta()
-        {
-            return new DeviceDeltaRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
-                this.Client);
-        }
+        
     }
 }

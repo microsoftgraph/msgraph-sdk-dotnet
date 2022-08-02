@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target objects.
-        /// Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+        /// Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
         /// </summary>
         [JsonPropertyName("targetObjects")]
         public IEnumerable<string> TargetObjects { get; set; }

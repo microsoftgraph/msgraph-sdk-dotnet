@@ -13,37 +13,36 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum NotificationTemplateBrandingOptions.
+    /// The enum UserExperienceAnalyticsHealthState.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-	[System.Flags]
-    public enum NotificationTemplateBrandingOptions
+    public enum UserExperienceAnalyticsHealthState
     {
     
         /// <summary>
-        /// None
+        /// Unknown
         /// </summary>
-        None = 0,
+        Unknown = 0,
 	
         /// <summary>
-        /// Include Company Logo
+        /// Insufficient Data
         /// </summary>
-        IncludeCompanyLogo = 1,
+        InsufficientData = 1,
 	
         /// <summary>
-        /// Include Company Name
+        /// Needs Attention
         /// </summary>
-        IncludeCompanyName = 2,
+        NeedsAttention = 2,
 	
         /// <summary>
-        /// Include Contact Information
+        /// Meeting Goals
         /// </summary>
-        IncludeContactInformation = 4,
+        MeetingGoals = 3,
 	
         /// <summary>
-        /// Include Device Details
+        /// Unknown Future Value
         /// </summary>
-        IncludeDeviceDetails = 16,
+        UnknownFutureValue = 4,
 	
     }
 }

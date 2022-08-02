@@ -15,39 +15,32 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type AvailabilityItem.
+    /// The type DocumentSetVersionItem.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<AvailabilityItem>))]
-    public partial class AvailabilityItem
+    [JsonConverter(typeof(DerivedTypeConverter<DocumentSetVersionItem>))]
+    public partial class DocumentSetVersionItem
     {
 
         /// <summary>
-        /// Gets or sets endDateTime.
-        /// The end time of the time slot.
+        /// Gets or sets itemId.
+        /// The unique identifier for the item.
         /// </summary>
-        [JsonPropertyName("endDateTime")]
-        public DateTimeTimeZone EndDateTime { get; set; }
+        [JsonPropertyName("itemId")]
+        public string ItemId { get; set; }
     
         /// <summary>
-        /// Gets or sets serviceId.
-        /// Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
+        /// Gets or sets title.
+        /// The title of the item.
         /// </summary>
-        [JsonPropertyName("serviceId")]
-        public string ServiceId { get; set; }
+        [JsonPropertyName("title")]
+        public string Title { get; set; }
     
         /// <summary>
-        /// Gets or sets startDateTime.
-        /// The start time of the time slot.
+        /// Gets or sets versionId.
+        /// The version ID of the item.
         /// </summary>
-        [JsonPropertyName("startDateTime")]
-        public DateTimeTimeZone StartDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
-        /// </summary>
-        [JsonPropertyName("status")]
-        public BookingsAvailabilityStatus? Status { get; set; }
+        [JsonPropertyName("versionId")]
+        public string VersionId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

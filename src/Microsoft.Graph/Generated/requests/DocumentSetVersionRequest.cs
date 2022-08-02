@@ -17,17 +17,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type ListItemRequest.
+    /// The type DocumentSetVersionRequest.
     /// </summary>
-    public partial class ListItemRequest : BaseRequest, IListItemRequest
+    public partial class DocumentSetVersionRequest : BaseRequest, IDocumentSetVersionRequest
     {
         /// <summary>
-        /// Constructs a new ListItemRequest.
+        /// Constructs a new DocumentSetVersionRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public ListItemRequest(
+        public DocumentSetVersionRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -36,46 +36,46 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified ListItem using POST.
+        /// Creates the specified DocumentSetVersion using POST.
         /// </summary>
-        /// <param name="listItemToCreate">The ListItem to create.</param>
+        /// <param name="documentSetVersionToCreate">The DocumentSetVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ListItem.</returns>
-        public async System.Threading.Tasks.Task<ListItem> CreateAsync(ListItem listItemToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The created DocumentSetVersion.</returns>
+        public async System.Threading.Tasks.Task<DocumentSetVersion> CreateAsync(DocumentSetVersion documentSetVersionToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            var newEntity = await this.SendAsync<ListItem>(listItemToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<DocumentSetVersion>(documentSetVersionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Creates the specified ListItem using POST and returns a <see cref="GraphResponse{ListItem}"/> object.
+        /// Creates the specified DocumentSetVersion using POST and returns a <see cref="GraphResponse{DocumentSetVersion}"/> object.
         /// </summary>
-        /// <param name="listItemToCreate">The ListItem to create.</param>
+        /// <param name="documentSetVersionToCreate">The DocumentSetVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ListItem>> CreateResponseAsync(ListItem listItemToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{DocumentSetVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DocumentSetVersion>> CreateResponseAsync(DocumentSetVersion documentSetVersionToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<ListItem>(listItemToCreate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<DocumentSetVersion>(documentSetVersionToCreate, cancellationToken);
         }
 
         /// <summary>
-        /// Deletes the specified ListItem.
+        /// Deletes the specified DocumentSetVersion.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
-            await this.SendAsync<ListItem>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<DocumentSetVersion>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Deletes the specified ListItem and returns a <see cref="GraphResponse"/> object.
+        /// Deletes the specified DocumentSetVersion and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
@@ -86,85 +86,85 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the specified ListItem.
+        /// Gets the specified DocumentSetVersion.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The ListItem.</returns>
-        public async System.Threading.Tasks.Task<ListItem> GetAsync(CancellationToken cancellationToken = default)
+        /// <returns>The DocumentSetVersion.</returns>
+        public async System.Threading.Tasks.Task<DocumentSetVersion> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            var retrievedEntity = await this.SendAsync<ListItem>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<DocumentSetVersion>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified ListItem and returns a <see cref="GraphResponse{ListItem}"/> object.
+        /// Gets the specified DocumentSetVersion and returns a <see cref="GraphResponse{DocumentSetVersion}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ListItem>> GetResponseAsync(CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{DocumentSetVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DocumentSetVersion>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<ListItem>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<DocumentSetVersion>(null, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified ListItem using PATCH.
+        /// Updates the specified DocumentSetVersion using PATCH.
         /// </summary>
-        /// <param name="listItemToUpdate">The ListItem to update.</param>
+        /// <param name="documentSetVersionToUpdate">The DocumentSetVersion to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated ListItem.</returns>
-        public async System.Threading.Tasks.Task<ListItem> UpdateAsync(ListItem listItemToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The updated DocumentSetVersion.</returns>
+        public async System.Threading.Tasks.Task<DocumentSetVersion> UpdateAsync(DocumentSetVersion documentSetVersionToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            var updatedEntity = await this.SendAsync<ListItem>(listItemToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<DocumentSetVersion>(documentSetVersionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ListItem using PATCH and returns a <see cref="GraphResponse{ListItem}"/> object.
+        /// Updates the specified DocumentSetVersion using PATCH and returns a <see cref="GraphResponse{DocumentSetVersion}"/> object.
         /// </summary>
-        /// <param name="listItemToUpdate">The ListItem to update.</param>
+        /// <param name="documentSetVersionToUpdate">The DocumentSetVersion to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ListItem>> UpdateResponseAsync(ListItem listItemToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{DocumentSetVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DocumentSetVersion>> UpdateResponseAsync(DocumentSetVersion documentSetVersionToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            return this.SendAsyncWithGraphResponse<ListItem>(listItemToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<DocumentSetVersion>(documentSetVersionToUpdate, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified ListItem using PUT.
+        /// Updates the specified DocumentSetVersion using PUT.
         /// </summary>
-        /// <param name="listItemToUpdate">The ListItem object to update.</param>
+        /// <param name="documentSetVersionToUpdate">The DocumentSetVersion object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<ListItem> PutAsync(ListItem listItemToUpdate, CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<DocumentSetVersion> PutAsync(DocumentSetVersion documentSetVersionToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            var updatedEntity = await this.SendAsync<ListItem>(listItemToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<DocumentSetVersion>(documentSetVersionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ListItem using PUT and returns a <see cref="GraphResponse{ListItem}"/> object.
+        /// Updates the specified DocumentSetVersion using PUT and returns a <see cref="GraphResponse{DocumentSetVersion}"/> object.
         /// </summary>
-        /// <param name="listItemToUpdate">The ListItem object to update.</param>
+        /// <param name="documentSetVersionToUpdate">The DocumentSetVersion object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await of <see cref="GraphResponse{ListItem}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ListItem>> PutResponseAsync(ListItem listItemToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The task to await of <see cref="GraphResponse{DocumentSetVersion}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DocumentSetVersion>> PutResponseAsync(DocumentSetVersion documentSetVersionToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            return this.SendAsyncWithGraphResponse<ListItem>(listItemToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<DocumentSetVersion>(documentSetVersionToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IListItemRequest Expand(string value)
+        public IDocumentSetVersionRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IListItemRequest Expand(Expression<Func<ListItem, object>> expandExpression)
+        public IDocumentSetVersionRequest Expand(Expression<Func<DocumentSetVersion, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -207,7 +207,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IListItemRequest Select(string value)
+        public IDocumentSetVersionRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IListItemRequest Select(Expression<Func<ListItem, object>> selectExpression)
+        public IDocumentSetVersionRequest Select(Expression<Func<DocumentSetVersion, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -240,27 +240,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="listItemToInitialize">The <see cref="ListItem"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(ListItem listItemToInitialize)
+        /// <param name="documentSetVersionToInitialize">The <see cref="DocumentSetVersion"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(DocumentSetVersion documentSetVersionToInitialize)
         {
-
-            if (listItemToInitialize != null)
-            {
-                if (listItemToInitialize.DocumentSetVersions != null && listItemToInitialize.DocumentSetVersions.CurrentPage != null)
-                {
-                    listItemToInitialize.DocumentSetVersions.InitializeNextPageRequest(this.Client, listItemToInitialize.DocumentSetVersionsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    listItemToInitialize.DocumentSetVersions.AdditionalData = listItemToInitialize.AdditionalData;
-                }
-                if (listItemToInitialize.Versions != null && listItemToInitialize.Versions.CurrentPage != null)
-                {
-                    listItemToInitialize.Versions.InitializeNextPageRequest(this.Client, listItemToInitialize.VersionsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    listItemToInitialize.Versions.AdditionalData = listItemToInitialize.AdditionalData;
-                }
-
-            }
-
 
         }
     }

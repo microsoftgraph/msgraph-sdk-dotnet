@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DocumentSetVersions.
+        /// </summary>
+        /// <returns>The <see cref="IListItemDocumentSetVersionsCollectionRequestBuilder"/>.</returns>
+        public IListItemDocumentSetVersionsCollectionRequestBuilder DocumentSetVersions
+        {
+            get
+            {
+                return new ListItemDocumentSetVersionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("documentSetVersions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DriveItem.
         /// </summary>
         /// <returns>The <see cref="IDriveItemRequestBuilder"/>.</returns>

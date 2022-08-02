@@ -64,6 +64,13 @@ namespace Microsoft.Graph
         public ConditionalAccessPlatforms Platforms { get; set; }
     
         /// <summary>
+        /// Gets or sets servicePrincipalRiskLevels.
+        /// Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("servicePrincipalRiskLevels")]
+        public IEnumerable<RiskLevel> ServicePrincipalRiskLevels { get; set; }
+    
+        /// <summary>
         /// Gets or sets signInRiskLevels.
         /// Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
         /// </summary>

@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IItemAnalyticsWithReferenceRequestBuilder Analytics { get; }
 
         /// <summary>
+        /// Gets the request builder for DocumentSetVersions.
+        /// </summary>
+        /// <returns>The <see cref="IListItemDocumentSetVersionsCollectionRequestBuilder"/>.</returns>
+        IListItemDocumentSetVersionsCollectionRequestBuilder DocumentSetVersions { get; }
+
+        /// <summary>
         /// Gets the request builder for DriveItem.
         /// </summary>
         /// <returns>The <see cref="IDriveItemRequestBuilder"/>.</returns>

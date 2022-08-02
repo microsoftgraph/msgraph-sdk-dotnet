@@ -17,17 +17,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type ListItemRequest.
+    /// The type UserExperienceAnalyticsDevicePerformanceRequest.
     /// </summary>
-    public partial class ListItemRequest : BaseRequest, IListItemRequest
+    public partial class UserExperienceAnalyticsDevicePerformanceRequest : BaseRequest, IUserExperienceAnalyticsDevicePerformanceRequest
     {
         /// <summary>
-        /// Constructs a new ListItemRequest.
+        /// Constructs a new UserExperienceAnalyticsDevicePerformanceRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public ListItemRequest(
+        public UserExperienceAnalyticsDevicePerformanceRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -36,46 +36,46 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified ListItem using POST.
+        /// Creates the specified UserExperienceAnalyticsDevicePerformance using POST.
         /// </summary>
-        /// <param name="listItemToCreate">The ListItem to create.</param>
+        /// <param name="userExperienceAnalyticsDevicePerformanceToCreate">The UserExperienceAnalyticsDevicePerformance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ListItem.</returns>
-        public async System.Threading.Tasks.Task<ListItem> CreateAsync(ListItem listItemToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The created UserExperienceAnalyticsDevicePerformance.</returns>
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> CreateAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            var newEntity = await this.SendAsync<ListItem>(listItemToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<UserExperienceAnalyticsDevicePerformance>(userExperienceAnalyticsDevicePerformanceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Creates the specified ListItem using POST and returns a <see cref="GraphResponse{ListItem}"/> object.
+        /// Creates the specified UserExperienceAnalyticsDevicePerformance using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object.
         /// </summary>
-        /// <param name="listItemToCreate">The ListItem to create.</param>
+        /// <param name="userExperienceAnalyticsDevicePerformanceToCreate">The UserExperienceAnalyticsDevicePerformance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ListItem>> CreateResponseAsync(ListItem listItemToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> CreateResponseAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<ListItem>(listItemToCreate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsDevicePerformance>(userExperienceAnalyticsDevicePerformanceToCreate, cancellationToken);
         }
 
         /// <summary>
-        /// Deletes the specified ListItem.
+        /// Deletes the specified UserExperienceAnalyticsDevicePerformance.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
-            await this.SendAsync<ListItem>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<UserExperienceAnalyticsDevicePerformance>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Deletes the specified ListItem and returns a <see cref="GraphResponse"/> object.
+        /// Deletes the specified UserExperienceAnalyticsDevicePerformance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
@@ -86,85 +86,85 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the specified ListItem.
+        /// Gets the specified UserExperienceAnalyticsDevicePerformance.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The ListItem.</returns>
-        public async System.Threading.Tasks.Task<ListItem> GetAsync(CancellationToken cancellationToken = default)
+        /// <returns>The UserExperienceAnalyticsDevicePerformance.</returns>
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            var retrievedEntity = await this.SendAsync<ListItem>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<UserExperienceAnalyticsDevicePerformance>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified ListItem and returns a <see cref="GraphResponse{ListItem}"/> object.
+        /// Gets the specified UserExperienceAnalyticsDevicePerformance and returns a <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ListItem>> GetResponseAsync(CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<ListItem>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsDevicePerformance>(null, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified ListItem using PATCH.
+        /// Updates the specified UserExperienceAnalyticsDevicePerformance using PATCH.
         /// </summary>
-        /// <param name="listItemToUpdate">The ListItem to update.</param>
+        /// <param name="userExperienceAnalyticsDevicePerformanceToUpdate">The UserExperienceAnalyticsDevicePerformance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated ListItem.</returns>
-        public async System.Threading.Tasks.Task<ListItem> UpdateAsync(ListItem listItemToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The updated UserExperienceAnalyticsDevicePerformance.</returns>
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> UpdateAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            var updatedEntity = await this.SendAsync<ListItem>(listItemToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<UserExperienceAnalyticsDevicePerformance>(userExperienceAnalyticsDevicePerformanceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ListItem using PATCH and returns a <see cref="GraphResponse{ListItem}"/> object.
+        /// Updates the specified UserExperienceAnalyticsDevicePerformance using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object.
         /// </summary>
-        /// <param name="listItemToUpdate">The ListItem to update.</param>
+        /// <param name="userExperienceAnalyticsDevicePerformanceToUpdate">The UserExperienceAnalyticsDevicePerformance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ListItem>> UpdateResponseAsync(ListItem listItemToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> UpdateResponseAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            return this.SendAsyncWithGraphResponse<ListItem>(listItemToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsDevicePerformance>(userExperienceAnalyticsDevicePerformanceToUpdate, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified ListItem using PUT.
+        /// Updates the specified UserExperienceAnalyticsDevicePerformance using PUT.
         /// </summary>
-        /// <param name="listItemToUpdate">The ListItem object to update.</param>
+        /// <param name="userExperienceAnalyticsDevicePerformanceToUpdate">The UserExperienceAnalyticsDevicePerformance object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<ListItem> PutAsync(ListItem listItemToUpdate, CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> PutAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            var updatedEntity = await this.SendAsync<ListItem>(listItemToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<UserExperienceAnalyticsDevicePerformance>(userExperienceAnalyticsDevicePerformanceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ListItem using PUT and returns a <see cref="GraphResponse{ListItem}"/> object.
+        /// Updates the specified UserExperienceAnalyticsDevicePerformance using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object.
         /// </summary>
-        /// <param name="listItemToUpdate">The ListItem object to update.</param>
+        /// <param name="userExperienceAnalyticsDevicePerformanceToUpdate">The UserExperienceAnalyticsDevicePerformance object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await of <see cref="GraphResponse{ListItem}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ListItem>> PutResponseAsync(ListItem listItemToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The task to await of <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> PutResponseAsync(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            return this.SendAsyncWithGraphResponse<ListItem>(listItemToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsDevicePerformance>(userExperienceAnalyticsDevicePerformanceToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IListItemRequest Expand(string value)
+        public IUserExperienceAnalyticsDevicePerformanceRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IListItemRequest Expand(Expression<Func<ListItem, object>> expandExpression)
+        public IUserExperienceAnalyticsDevicePerformanceRequest Expand(Expression<Func<UserExperienceAnalyticsDevicePerformance, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -207,7 +207,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IListItemRequest Select(string value)
+        public IUserExperienceAnalyticsDevicePerformanceRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IListItemRequest Select(Expression<Func<ListItem, object>> selectExpression)
+        public IUserExperienceAnalyticsDevicePerformanceRequest Select(Expression<Func<UserExperienceAnalyticsDevicePerformance, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -240,27 +240,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="listItemToInitialize">The <see cref="ListItem"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(ListItem listItemToInitialize)
+        /// <param name="userExperienceAnalyticsDevicePerformanceToInitialize">The <see cref="UserExperienceAnalyticsDevicePerformance"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(UserExperienceAnalyticsDevicePerformance userExperienceAnalyticsDevicePerformanceToInitialize)
         {
-
-            if (listItemToInitialize != null)
-            {
-                if (listItemToInitialize.DocumentSetVersions != null && listItemToInitialize.DocumentSetVersions.CurrentPage != null)
-                {
-                    listItemToInitialize.DocumentSetVersions.InitializeNextPageRequest(this.Client, listItemToInitialize.DocumentSetVersionsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    listItemToInitialize.DocumentSetVersions.AdditionalData = listItemToInitialize.AdditionalData;
-                }
-                if (listItemToInitialize.Versions != null && listItemToInitialize.Versions.CurrentPage != null)
-                {
-                    listItemToInitialize.Versions.InitializeNextPageRequest(this.Client, listItemToInitialize.VersionsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    listItemToInitialize.Versions.AdditionalData = listItemToInitialize.AdditionalData;
-                }
-
-            }
-
 
         }
     }

@@ -13,37 +13,26 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum NotificationTemplateBrandingOptions.
+    /// The enum SignInFrequencyInterval.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-	[System.Flags]
-    public enum NotificationTemplateBrandingOptions
+    public enum SignInFrequencyInterval
     {
     
         /// <summary>
-        /// None
+        /// Time Based
         /// </summary>
-        None = 0,
+        TimeBased = 0,
 	
         /// <summary>
-        /// Include Company Logo
+        /// Every Time
         /// </summary>
-        IncludeCompanyLogo = 1,
+        EveryTime = 1,
 	
         /// <summary>
-        /// Include Company Name
+        /// Unknown Future Value
         /// </summary>
-        IncludeCompanyName = 2,
-	
-        /// <summary>
-        /// Include Contact Information
-        /// </summary>
-        IncludeContactInformation = 4,
-	
-        /// <summary>
-        /// Include Device Details
-        /// </summary>
-        IncludeDeviceDetails = 16,
+        UnknownFutureValue = 2,
 	
     }
 }

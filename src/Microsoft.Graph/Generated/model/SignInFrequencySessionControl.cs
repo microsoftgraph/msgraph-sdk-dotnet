@@ -29,6 +29,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets authenticationType.
+        /// The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("authenticationType")]
+        public SignInFrequencyAuthenticationType? AuthenticationType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets frequencyInterval.
+        /// The possible values are timeBased, everyTime, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("frequencyInterval")]
+        public SignInFrequencyInterval? FrequencyInterval { get; set; }
+    
+        /// <summary>
         /// Gets or sets type.
         /// Possible values are: days, hours, or null if frequencyInterval is everyTime .
         /// </summary>

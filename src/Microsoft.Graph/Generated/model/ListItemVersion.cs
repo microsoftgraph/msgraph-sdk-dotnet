@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type List Item Version.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ListItemVersion>))]
     public partial class ListItemVersion : BaseItemVersion
     {
     

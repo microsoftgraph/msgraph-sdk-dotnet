@@ -13,37 +13,31 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum NotificationTemplateBrandingOptions.
+    /// The enum DiskType.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-	[System.Flags]
-    public enum NotificationTemplateBrandingOptions
+    public enum DiskType
     {
     
         /// <summary>
-        /// None
+        /// Unknown
         /// </summary>
-        None = 0,
+        Unknown = 0,
 	
         /// <summary>
-        /// Include Company Logo
+        /// Hdd
         /// </summary>
-        IncludeCompanyLogo = 1,
+        Hdd = 1,
 	
         /// <summary>
-        /// Include Company Name
+        /// Ssd
         /// </summary>
-        IncludeCompanyName = 2,
+        Ssd = 2,
 	
         /// <summary>
-        /// Include Contact Information
+        /// Unknown Future Value
         /// </summary>
-        IncludeContactInformation = 4,
-	
-        /// <summary>
-        /// Include Device Details
-        /// </summary>
-        IncludeDeviceDetails = 16,
+        UnknownFutureValue = 3,
 	
     }
 }
