@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public enum Win32LobAppRestartBehavior {
         /// <summary>Intune will restart the device after running the app installation if the operation returns a reboot code.</summary>
         BasedOnReturnCode,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public enum FirewallPacketQueueingMethodType {
         /// <summary>No value configured by Intune, do not override the user-configured device default value</summary>
         DeviceDefault,
