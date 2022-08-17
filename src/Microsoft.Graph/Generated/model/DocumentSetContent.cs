@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fileName.
-        /// Name of the file in resource folder that should be added as a default content or a template in the document set
+        /// Name of the file in resource folder that should be added as a default content or a template in the document set.
         /// </summary>
         [JsonPropertyName("fileName")]
         public string FileName { get; set; }

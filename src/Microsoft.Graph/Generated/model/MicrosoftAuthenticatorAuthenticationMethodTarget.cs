@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets authentication mode.
-        /// Determines which types of notifications can be used for sign-in. The possible values are: deviceBasedPush (passwordless only), push, and any.
+        /// Determines which types of notifications can be used for sign-in. Possible values are: any, deviceBasedPush (passwordless only), push.
         /// </summary>
         [JsonPropertyName("authenticationMode")]
         public MicrosoftAuthenticatorAuthenticationMode? AuthenticationMode { get; set; }

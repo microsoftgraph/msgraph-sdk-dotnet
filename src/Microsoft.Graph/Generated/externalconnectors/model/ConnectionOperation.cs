@@ -30,7 +30,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets status.
-        /// Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
+        /// Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public ConnectionOperationStatus? Status { get; set; }

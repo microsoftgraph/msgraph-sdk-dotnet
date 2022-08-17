@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets associated hubs urls.
-        /// List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+        /// List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
         /// </summary>
         [JsonPropertyName("associatedHubsUrls")]
         public IEnumerable<string> AssociatedHubsUrls { get; set; }
@@ -106,14 +106,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets read only.
-        /// If true, the content type cannot be modified unless this value is first set to false.
+        /// If true, the content type can't be modified unless this value is first set to false.
         /// </summary>
         [JsonPropertyName("readOnly")]
         public bool? ReadOnly { get; set; }
     
         /// <summary>
         /// Gets or sets sealed.
-        /// If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+        /// If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
         /// </summary>
         [JsonPropertyName("sealed")]
         public bool? Sealed { get; set; }
@@ -141,7 +141,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets column links.
-        /// The collection of columns that are required by this content type
+        /// The collection of columns that are required by this content type.
         /// </summary>
         [JsonPropertyName("columnLinks")]
         public IContentTypeColumnLinksCollectionPage ColumnLinks { get; set; }

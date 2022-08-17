@@ -121,7 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets indexed.
-        /// Specifies whether the column values can used for sorting and searching.
+        /// Specifies whether the column values can be used for sorting and searching.
         /// </summary>
         [JsonPropertyName("indexed")]
         public bool? Indexed { get; set; }
@@ -177,7 +177,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets propagate changes.
-        /// If true, changes to this column will be propagated to lists that implement the column.
+        /// If 'true', changes to this column will be propagated to lists that implement the column.
         /// </summary>
         [JsonPropertyName("propagateChanges")]
         public bool? PropagateChanges { get; set; }
@@ -198,7 +198,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets source content type.
-        /// ContentType from which this column is inherited from. Used only to fetch contentTypes columns.
+        /// ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
         /// </summary>
         [JsonPropertyName("sourceContentType")]
         public ContentTypeInfo SourceContentType { get; set; }
@@ -240,7 +240,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets source column.
-        /// The source column for content type column.
+        /// The source column for the content type column.
         /// </summary>
         [JsonPropertyName("sourceColumn")]
         public ColumnDefinition SourceColumn { get; set; }

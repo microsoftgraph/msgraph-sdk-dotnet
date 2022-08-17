@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets stageId.
-        /// Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
+        /// Unique identifier of the accessReviewStageSettings object. The stageId will be used by the dependsOn property to indicate the order of the stages. Required.
         /// </summary>
         [JsonPropertyName("stageId")]
         public string StageId { get; set; }

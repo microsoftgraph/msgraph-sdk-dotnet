@@ -36,21 +36,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets customQuestionAnswers.
-        /// It consists of the list of custom questions and answers given by the customer as part of the appointment.
+        /// It consists of the list of custom questions and answers given by the customer as part of the appointment
         /// </summary>
         [JsonPropertyName("customQuestionAnswers")]
         public IEnumerable<BookingQuestionAnswer> CustomQuestionAnswers { get; set; }
     
         /// <summary>
         /// Gets or sets emailAddress.
-        /// The SMTP address of the bookingCustomer who is booking the appointment.
+        /// The SMTP address of the bookingCustomer who is booking the appointment
         /// </summary>
         [JsonPropertyName("emailAddress")]
         public string EmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets location.
-        /// Represents location information for the bookingCustomer who is booking the appointment.
+        /// Represents location information for the bookingCustomer who is booking the appointment.
         /// </summary>
         [JsonPropertyName("location")]
         public Location Location { get; set; }

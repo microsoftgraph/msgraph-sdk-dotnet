@@ -23,21 +23,18 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets guestsCount.
-        /// Count of guests in a team.
         /// </summary>
         [JsonPropertyName("guestsCount")]
         public Int32? GuestsCount { get; set; }
     
         /// <summary>
         /// Gets or sets membersCount.
-        /// Count of members in a team.
         /// </summary>
         [JsonPropertyName("membersCount")]
         public Int32? MembersCount { get; set; }
     
         /// <summary>
         /// Gets or sets ownersCount.
-        /// Count of owners in a team.
         /// </summary>
         [JsonPropertyName("ownersCount")]
         public Int32? OwnersCount { get; set; }

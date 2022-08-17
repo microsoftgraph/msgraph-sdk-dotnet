@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isRequired.
-        /// Indicates whether it is mandatory to answer the custom question.
+        /// The ID of the custom question.
         /// </summary>
         [JsonPropertyName("isRequired")]
         public bool? IsRequired { get; set; }
     
         /// <summary>
         /// Gets or sets questionId.
-        /// If it is mandatory to answer the custom question.
+        /// Indicates whether it is mandatory to answer the custom question.
         /// </summary>
         [JsonPropertyName("questionId")]
         public string QuestionId { get; set; }

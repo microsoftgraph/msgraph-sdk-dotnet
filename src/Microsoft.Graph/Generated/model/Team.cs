@@ -100,7 +100,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets summary.
-        /// Contains summary information about the team, including number of owners, members, and guests.
         /// </summary>
         [JsonPropertyName("summary")]
         public TeamSummary Summary { get; set; }
@@ -218,7 +217,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets photo.
-        /// The team photo.
+        /// The profile photo for the team.
         /// </summary>
         [JsonPropertyName("photo")]
         public ProfilePhoto Photo { get; set; }

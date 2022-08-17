@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets end date time.
-        /// DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.
+        /// The date and time in ISO 8601 format and UTC time when the review stage is scheduled to end. This property is the cumulative total of the durationInDays for all stages. Read-only.
         /// </summary>
         [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets start date time.
-        /// DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+        /// The date and time in ISO 8601 format and UTC time when the review stage is scheduled to start. Read-only.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }

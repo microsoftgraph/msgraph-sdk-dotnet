@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enrollment state.
-        /// Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
+        /// Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted.
         /// </summary>
         [JsonPropertyName("enrollmentState")]
         public EnrollmentState? EnrollmentState { get; set; }

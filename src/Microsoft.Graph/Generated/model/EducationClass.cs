@@ -30,14 +30,13 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets course.
-        /// Course information for the class.
         /// </summary>
         [JsonPropertyName("course")]
         public EducationCourse Course { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
-        /// Entity who created the class.
+        /// Entity who created the class
         /// </summary>
         [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
@@ -72,7 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external source.
-        /// The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
+        /// How this class was created. Possible values are: sis, manual.
         /// </summary>
         [JsonPropertyName("externalSource")]
         public EducationExternalSource? ExternalSource { get; set; }
@@ -100,7 +99,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets term.
-        /// Term for the class.
+        /// Term for this class.
         /// </summary>
         [JsonPropertyName("term")]
         public EducationTerm Term { get; set; }

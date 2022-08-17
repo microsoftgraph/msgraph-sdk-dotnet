@@ -58,14 +58,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets filled attendees count.
-        /// The current number of customers in the appointment.
+        /// The current number of customers in the appointment
         /// </summary>
         [JsonPropertyName("filledAttendeesCount")]
         public Int32? FilledAttendeesCount { get; set; }
     
         /// <summary>
         /// Gets or sets is location online.
-        /// True indicates that the appointment will be held online. Default value is false.
+        /// If true, indicates that the appointment will be held online. Default value is false.
         /// </summary>
         [JsonPropertyName("isLocationOnline")]
         public bool? IsLocationOnline { get; set; }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets opt out of customer email.
-        /// True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+        /// If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
         /// </summary>
         [JsonPropertyName("optOutOfCustomerEmail")]
         public bool? OptOutOfCustomerEmail { get; set; }
@@ -128,7 +128,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets self service appointment id.
-        /// An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
+        /// An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
         /// </summary>
         [JsonPropertyName("selfServiceAppointmentId")]
         public string SelfServiceAppointmentId { get; set; }
@@ -163,7 +163,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sms notifications enabled.
-        /// True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+        /// If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
         /// </summary>
         [JsonPropertyName("smsNotificationsEnabled")]
         public bool? SmsNotificationsEnabled { get; set; }

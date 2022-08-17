@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// Possible values are: other, home, work, blog, profile.
+        /// The possible values are: other, home, work, blog, profile.
         /// </summary>
         [JsonPropertyName("type")]
         public WebsiteType? Type { get; set; }

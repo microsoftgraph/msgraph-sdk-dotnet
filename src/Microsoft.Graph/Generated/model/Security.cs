@@ -28,7 +28,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alerts.
-        /// Notifications for suspicious or potential security issues in a customer’s tenant.
         /// </summary>
         [JsonPropertyName("alerts")]
         public ISecurityAlertsCollectionPage Alerts { get; set; }

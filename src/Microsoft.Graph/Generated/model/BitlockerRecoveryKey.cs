@@ -23,28 +23,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The date and time when the key was originally backed up to Azure Active Directory.
+        /// The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
-        /// ID of the device the BitLocker key is originally backed up from.
+        /// Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets key.
-        /// The BitLocker recovery key.
+        /// The BitLocker recovery key. Returned only on $select. Not nullable.
         /// </summary>
         [JsonPropertyName("key")]
         public string Key { get; set; }
     
         /// <summary>
         /// Gets or sets volume type.
-        /// Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
+        /// Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).
         /// </summary>
         [JsonPropertyName("volumeType")]
         public VolumeType? VolumeType { get; set; }

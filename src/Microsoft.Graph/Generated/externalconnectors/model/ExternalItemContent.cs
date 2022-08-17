@@ -23,7 +23,7 @@ namespace Microsoft.Graph.ExternalConnectors
 
         /// <summary>
         /// Gets or sets type.
-        /// The type of content in the value property. Possible values are text and html. These are the content types that the indexer supports, and not the file extension types allowed. Required.
+        /// The type of content in the value property. Possible values are: text, html, unknownFutureValue. These are the content types that the indexer supports, and not the file extension types allowed.
         /// </summary>
         [JsonPropertyName("type")]
         public ExternalItemContentType? Type { get; set; }

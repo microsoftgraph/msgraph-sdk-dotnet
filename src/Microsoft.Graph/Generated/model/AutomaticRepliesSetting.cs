@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets externalAudience.
-        /// The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. Possible values are: none, contactsOnly, all.
+        /// The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
         /// </summary>
         [JsonPropertyName("externalAudience")]
         public ExternalAudienceScope? ExternalAudience { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Configurations status for automatic replies. Possible values are: disabled, alwaysEnabled, scheduled.
+        /// Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
         /// </summary>
         [JsonPropertyName("status")]
         public AutomaticRepliesStatus? Status { get; set; }

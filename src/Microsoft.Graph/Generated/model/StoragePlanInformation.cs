@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets upgradeAvailable.
-        /// Indicates if there are higher storage quota plans available. Read-only.
+        /// Indicates whether there are higher storage quota plans available. Read-only.
         /// </summary>
         [JsonPropertyName("upgradeAvailable")]
         public bool? UpgradeAvailable { get; set; }

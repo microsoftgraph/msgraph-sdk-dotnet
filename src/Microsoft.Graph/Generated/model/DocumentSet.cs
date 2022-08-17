@@ -37,14 +37,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets propagateWelcomePageChanges.
-        /// Indicates whether to add the name of the document set to each file name.
+        /// Specifies whether to push welcome page changes to inherited content types.
         /// </summary>
         [JsonPropertyName("propagateWelcomePageChanges")]
         public bool? PropagateWelcomePageChanges { get; set; }
     
         /// <summary>
         /// Gets or sets shouldPrefixNameToFile.
-        /// Add the name of the Document Set to each file name.
+        /// Indicates whether to add the name of the document set to each file name.
         /// </summary>
         [JsonPropertyName("shouldPrefixNameToFile")]
         public bool? ShouldPrefixNameToFile { get; set; }

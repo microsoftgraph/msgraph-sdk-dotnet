@@ -31,28 +31,24 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content type.
-        /// The MIME type.
         /// </summary>
         [JsonPropertyName("contentType")]
         public string ContentType { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets name.
-        /// The display name of the attachment. This does not need to be the actual file name.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets size.
-        /// The length of the attachment in bytes.
         /// </summary>
         [JsonPropertyName("size")]
         public Int32? Size { get; set; }

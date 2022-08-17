@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access packages.
-        /// Represents access package objects.
+        /// Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
         /// </summary>
         [JsonPropertyName("accessPackages")]
         public IEntitlementManagementAccessPackagesCollectionPage AccessPackages { get; set; }
@@ -106,7 +106,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets connected organizations.
-        /// Represents references to a directory or domain of another organization whose users can request access.
+        /// References to a directory or domain of another organization whose users can request access.
         /// </summary>
         [JsonPropertyName("connectedOrganizations")]
         public IEntitlementManagementConnectedOrganizationsCollectionPage ConnectedOrganizations { get; set; }
@@ -120,7 +120,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets settings.
-        /// Represents the settings that control the behavior of Azure AD entitlement management.
+        /// The settings that control the behavior of Azure AD entitlement management.
         /// </summary>
         [JsonPropertyName("settings")]
         public EntitlementManagementSettings Settings { get; set; }

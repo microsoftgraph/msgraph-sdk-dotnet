@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets parent url.
-        /// The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.
+        /// The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
         /// </summary>
         [JsonPropertyName("parentUrl")]
         public string ParentUrl { get; set; }

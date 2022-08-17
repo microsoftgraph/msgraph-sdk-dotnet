@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets recipients.
-        /// A collection of ids of the recipients.
+        /// A collection of IDs of the recipients.
         /// </summary>
         [JsonPropertyName("recipients")]
         public IEnumerable<string> Recipients { get; set; }

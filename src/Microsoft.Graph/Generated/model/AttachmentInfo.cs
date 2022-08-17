@@ -23,28 +23,24 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets attachmentType.
-        /// The type of the attachment. The possible values are: file, item, reference. Required.
         /// </summary>
         [JsonPropertyName("attachmentType")]
         public AttachmentType? AttachmentType { get; set; }
     
         /// <summary>
         /// Gets or sets contentType.
-        /// The nature of the data in the attachment. Optional.
         /// </summary>
         [JsonPropertyName("contentType")]
         public string ContentType { get; set; }
     
         /// <summary>
         /// Gets or sets name.
-        /// The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets size.
-        /// The length of the attachment in bytes. Required.
         /// </summary>
         [JsonPropertyName("size")]
         public Int64? Size { get; set; }

@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app id.
-        /// The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).
+        /// The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+        /// Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
@@ -100,7 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets group membership claims.
-        /// Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
+        /// Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
         /// </summary>
         [JsonPropertyName("groupMembershipClaims")]
         public string GroupMembershipClaims { get; set; }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets info.
-        /// Basic profile information of the application, such as it's marketing, support, terms of service, and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more information, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+        /// Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
         /// </summary>
         [JsonPropertyName("info")]
         public InformationalUrl Info { get; set; }
@@ -128,7 +128,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is fallback public client.
-        /// Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
+        /// Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
         /// </summary>
         [JsonPropertyName("isFallbackPublicClient")]
         public bool? IsFallbackPublicClient { get; set; }
@@ -190,7 +190,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets publisher domain.
-        /// The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).
+        /// The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("publisherDomain")]
         public string PublisherDomain { get; set; }
@@ -232,7 +232,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tags.
-        /// Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).
+        /// Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }
@@ -335,7 +335,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets token lifetime policies.
-        /// The tokenLifetimePolicies assigned to this application. Supports $expand.
         /// </summary>
         [JsonPropertyName("tokenLifetimePolicies")]
         public IApplicationTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }

@@ -29,14 +29,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last delivered date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonPropertyName("lastDeliveredDateTime")]
         public DateTimeOffset? LastDeliveredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets preview.
-        /// A short summary from the body of the latest post in this conversation.
+        /// A short summary from the body of the latest post in this conversation. Supports $filter (eq, ne, le, ge).
         /// </summary>
         [JsonPropertyName("preview")]
         public string Preview { get; set; }

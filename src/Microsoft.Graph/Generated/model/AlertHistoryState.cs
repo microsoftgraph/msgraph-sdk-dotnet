@@ -23,49 +23,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appId.
-        /// The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets assignedTo.
-        /// UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).
         /// </summary>
         [JsonPropertyName("assignedTo")]
         public string AssignedTo { get; set; }
     
         /// <summary>
         /// Gets or sets comments.
-        /// Comment entered by signed-in user.
         /// </summary>
         [JsonPropertyName("comments")]
         public IEnumerable<string> Comments { get; set; }
     
         /// <summary>
         /// Gets or sets feedback.
-        /// Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.
         /// </summary>
         [JsonPropertyName("feedback")]
         public AlertFeedback? Feedback { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
         /// </summary>
         [JsonPropertyName("status")]
         public AlertStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets updatedDateTime.
-        /// Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonPropertyName("updatedDateTime")]
         public DateTimeOffset? UpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets user.
-        /// UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
         /// </summary>
         [JsonPropertyName("user")]
         public string User { get; set; }

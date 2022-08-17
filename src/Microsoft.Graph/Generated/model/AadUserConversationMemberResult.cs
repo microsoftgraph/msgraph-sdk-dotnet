@@ -29,7 +29,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets userId.
-        /// The user object ID of the Azure AD user that was being added as part of the bulk operation.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

@@ -29,28 +29,24 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appIconWebUrl.
-        /// URL that points to the app's icon.
         /// </summary>
         [JsonPropertyName("appIconWebUrl")]
         public string AppIconWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets appId.
-        /// Teams App ID of the application.
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets teamsEmbeddedContentUrl.
-        /// URL for the app resource that will be opened by Teams.
         /// </summary>
         [JsonPropertyName("teamsEmbeddedContentUrl")]
         public string TeamsEmbeddedContentUrl { get; set; }
     
         /// <summary>
         /// Gets or sets webUrl.
-        /// URL for the app resource that can be opened in the browser.
         /// </summary>
         [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }

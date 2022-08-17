@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets content.
-        /// Report content; details vary by report type.
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("content")]
         public Stream Content { get; set; }

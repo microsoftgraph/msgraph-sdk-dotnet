@@ -37,7 +37,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets includeAuthenticationContextClassReferences.
-        /// Authentication context class references include. Supported values are c1 through c25.
         /// </summary>
         [JsonPropertyName("includeAuthenticationContextClassReferences")]
         public IEnumerable<string> IncludeAuthenticationContextClassReferences { get; set; }

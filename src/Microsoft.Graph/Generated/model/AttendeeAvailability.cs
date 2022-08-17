@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets availability.
-        /// The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+        /// The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
         /// </summary>
         [JsonPropertyName("availability")]
         public FreeBusyStatus? Availability { get; set; }

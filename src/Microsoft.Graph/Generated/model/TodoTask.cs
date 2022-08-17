@@ -65,7 +65,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets has attachments.
-        /// Indicates whether the task has attachments.
         /// </summary>
         [JsonPropertyName("hasAttachments")]
         public bool? HasAttachments { get; set; }
@@ -107,7 +106,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets start date time.
-        /// The date and time in the specified time zone at which the task is scheduled to start.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeTimeZone StartDateTime { get; set; }
@@ -128,7 +126,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attachments.
-        /// A collection of file attachments for the task.
         /// </summary>
         [JsonPropertyName("attachments")]
         public ITodoTaskAttachmentsCollectionPage Attachments { get; set; }
@@ -155,7 +152,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets checklist items.
-        /// A collection of smaller subtasks linked to the more complex parent task.
+        /// A collection of checklistItems linked to a task.
         /// </summary>
         [JsonPropertyName("checklistItems")]
         public ITodoTaskChecklistItemsCollectionPage ChecklistItems { get; set; }

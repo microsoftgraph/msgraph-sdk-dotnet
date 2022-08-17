@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets mediaInfo.
-        /// The media information.
+        /// The media information
         /// </summary>
         [JsonPropertyName("mediaInfo")]
         public MediaInfo MediaInfo { get; set; }

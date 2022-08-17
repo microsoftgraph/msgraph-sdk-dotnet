@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets email methods.
-        /// Represents the email addresses registered to a user for authentication.
+        /// The email address registered to a user for authentication.
         /// </summary>
         [JsonPropertyName("emailMethods")]
         public IAuthenticationEmailMethodsCollectionPage EmailMethods { get; set; }
@@ -78,6 +78,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operations.
+        /// Represents the status of a long-running operation.
         /// </summary>
         [JsonPropertyName("operations")]
         public IAuthenticationOperationsCollectionPage Operations { get; set; }
@@ -91,7 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password methods.
-        /// Represents the details of the password authentication method registered to a user for authentication.
+        /// Represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
         /// </summary>
         [JsonPropertyName("passwordMethods")]
         public IAuthenticationPasswordMethodsCollectionPage PasswordMethods { get; set; }
@@ -105,7 +106,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets phone methods.
-        /// Represents the phone registered to a user for authentication.
+        /// The phone numbers registered to a user for authentication.
         /// </summary>
         [JsonPropertyName("phoneMethods")]
         public IAuthenticationPhoneMethodsCollectionPage PhoneMethods { get; set; }
@@ -119,6 +120,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets software oath methods.
+        /// The software OATH TOTP applications registered to a user for authentication.
         /// </summary>
         [JsonPropertyName("softwareOathMethods")]
         public IAuthenticationSoftwareOathMethodsCollectionPage SoftwareOathMethods { get; set; }

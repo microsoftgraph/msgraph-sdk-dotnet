@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets dataOption.
-        /// Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.
+        /// Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
         /// </summary>
         [JsonPropertyName("dataOption")]
         public string DataOption { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sortOn.
-        /// Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.
+        /// Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
         /// </summary>
         [JsonPropertyName("sortOn")]
         public string SortOn { get; set; }

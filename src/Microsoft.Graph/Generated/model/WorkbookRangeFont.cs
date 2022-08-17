@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets underline.
-        /// Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
+        /// Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
         /// </summary>
         [JsonPropertyName("underline")]
         public string Underline { get; set; }

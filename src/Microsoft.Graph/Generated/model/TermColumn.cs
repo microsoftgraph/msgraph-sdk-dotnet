@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowMultipleValues.
-        /// Specifies whether the column will allow more than one value
+        /// Specifies whether the column will allow more than one value.
         /// </summary>
         [JsonPropertyName("allowMultipleValues")]
         public bool? AllowMultipleValues { get; set; }

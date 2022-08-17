@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets oneNoteClientUrl.
-        /// Opens the notebook in the OneNote client, if it's installed.
+        /// Opens the notebook in the OneNote native client if it's installed.
         /// </summary>
         [JsonPropertyName("oneNoteClientUrl")]
         public ExternalLink OneNoteClientUrl { get; set; }

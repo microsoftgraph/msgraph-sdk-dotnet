@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target type.
-        /// Possible values are: user, group, and unknownFutureValue.
+        /// Possible values are: user, group.
         /// </summary>
         [JsonPropertyName("targetType")]
         public AuthenticationMethodTargetType? TargetType { get; set; }

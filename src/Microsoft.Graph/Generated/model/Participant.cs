@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recording info.
-        /// Information on whether the participant has recording capability.
+        /// Information about whether the participant has recording capability.
         /// </summary>
         [JsonPropertyName("recordingInfo")]
         public RecordingInfo RecordingInfo { get; set; }

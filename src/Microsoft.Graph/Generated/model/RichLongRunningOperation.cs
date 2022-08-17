@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets error.
-        /// Error due to which the operation failed.
+        /// Error that caused the operation to fail.
         /// </summary>
         [JsonPropertyName("error")]
         public PublicError Error { get; set; }
@@ -44,14 +44,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource id.
-        /// A unique identifier for the result.
+        /// The unique identifier for the result.
         /// </summary>
         [JsonPropertyName("resourceId")]
         public string ResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// Type of the operation.
+        /// The type of the operation.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

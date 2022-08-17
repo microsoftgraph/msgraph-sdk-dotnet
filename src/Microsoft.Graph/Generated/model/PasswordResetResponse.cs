@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets newPassword.
+        /// The Azure AD-generated password.
         /// </summary>
         [JsonPropertyName("newPassword")]
         public string NewPassword { get; set; }

@@ -23,14 +23,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets message.
-        /// The message describing the condition that triggered the error or warning.
         /// </summary>
         [JsonPropertyName("message")]
         public string Message { get; set; }
     
         /// <summary>
         /// Gets or sets url.
-        /// The link to the documentation for this issue.
         /// </summary>
         [JsonPropertyName("url")]
         public string Url { get; set; }

@@ -22,7 +22,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets base type.
-        /// Must be set to microsoft.graph.externalItem. Required.
+        /// Must be set to microsoft.graph.externalConnector.externalItem. Required.
         /// </summary>
         [JsonPropertyName("baseType")]
         public string BaseType { get; set; }

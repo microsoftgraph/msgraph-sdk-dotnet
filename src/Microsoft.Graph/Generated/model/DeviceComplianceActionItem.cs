@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets action type.
-        /// What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
+        /// What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification.
         /// </summary>
         [JsonPropertyName("actionType")]
         public DeviceComplianceActionType? ActionType { get; set; }

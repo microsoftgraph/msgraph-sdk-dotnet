@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content type.
-        /// Write only. Content type, such as image/png, image/jpg.
+        /// Write only. Content type. sicj as image/png, image/jpg.
         /// </summary>
         [JsonPropertyName("contentType")]
         public string ContentType { get; set; }

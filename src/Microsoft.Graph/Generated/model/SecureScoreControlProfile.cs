@@ -43,21 +43,19 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets compliance information.
-        /// The collection of compliance information associated with secure score control
         /// </summary>
         [JsonPropertyName("complianceInformation")]
         public IEnumerable<ComplianceInformation> ComplianceInformation { get; set; }
     
         /// <summary>
         /// Gets or sets control category.
-        /// Control action category (Account, Data, Device, Apps, Infrastructure).
+        /// Control action category (Identity, Data, Device, Apps, Infrastructure).
         /// </summary>
         [JsonPropertyName("controlCategory")]
         public string ControlCategory { get; set; }
     
         /// <summary>
         /// Gets or sets control state updates.
-        /// Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
         /// </summary>
         [JsonPropertyName("controlStateUpdates")]
         public IEnumerable<SecureScoreControlStateUpdate> ControlStateUpdates { get; set; }
@@ -85,7 +83,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets max score.
-        /// Current obtained max score on specified date.
+        /// max attainable score for the control.
         /// </summary>
         [JsonPropertyName("maxScore")]
         public double? MaxScore { get; set; }
@@ -120,14 +118,13 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets threats.
-        /// List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
+        /// List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
         /// </summary>
         [JsonPropertyName("threats")]
         public IEnumerable<string> Threats { get; set; }
     
         /// <summary>
         /// Gets or sets tier.
-        /// Control tier (Core, Defense in Depth, Advanced.)
         /// </summary>
         [JsonPropertyName("tier")]
         public string Tier { get; set; }
@@ -141,7 +138,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user impact.
-        /// User impact of implementing control (low, moderate, high).
         /// </summary>
         [JsonPropertyName("userImpact")]
         public string UserImpact { get; set; }

@@ -23,14 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets agreement file id.
-        /// ID of the agreement file accepted by the user.
+        /// The identifier of the agreement file accepted by the user.
         /// </summary>
         [JsonPropertyName("agreementFileId")]
         public string AgreementFileId { get; set; }
     
         /// <summary>
         /// Gets or sets agreement id.
-        /// ID of the agreement.
+        /// The identifier of the agreement.
         /// </summary>
         [JsonPropertyName("agreementId")]
         public string AgreementId { get; set; }
@@ -51,35 +51,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device ostype.
-        /// The operating system used for accepting the agreement.
+        /// The operating system used to accept the agreement.
         /// </summary>
         [JsonPropertyName("deviceOSType")]
         public string DeviceOSType { get; set; }
     
         /// <summary>
         /// Gets or sets device osversion.
-        /// The operating system version of the device used for accepting the agreement.
+        /// The operating system version of the device used to accept the agreement.
         /// </summary>
         [JsonPropertyName("deviceOSVersion")]
         public string DeviceOSVersion { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
-        /// The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets recorded date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("recordedDateTime")]
         public DateTimeOffset? RecordedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets state.
-        /// Possible values are: accepted, declined. Supports $filter (eq).
+        /// The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("state")]
         public AgreementAcceptanceState? State { get; set; }
@@ -100,7 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user id.
-        /// ID of the user who accepted the agreement.
+        /// The identifier of the user who accepted the agreement.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

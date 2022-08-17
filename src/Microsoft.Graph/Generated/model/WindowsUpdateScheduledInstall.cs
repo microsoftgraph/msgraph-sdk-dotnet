@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets scheduledInstallDay.
-        /// Scheduled Install Day in week. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
+        /// Scheduled Install Day in week. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday.
         /// </summary>
         [JsonPropertyName("scheduledInstallDay")]
         public WeeklySchedule? ScheduledInstallDay { get; set; }

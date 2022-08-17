@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets locationType.
-        /// The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
+        /// The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
         /// </summary>
         [JsonPropertyName("locationType")]
         public LocationType? LocationType { get; set; }

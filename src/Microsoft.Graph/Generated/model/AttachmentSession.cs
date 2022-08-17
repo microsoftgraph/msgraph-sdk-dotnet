@@ -22,21 +22,18 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content.
-        /// The content streams that are uploaded.
         /// </summary>
         [JsonPropertyName("content")]
         public Stream Content { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
-        /// The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
         /// </summary>
         [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets next expected ranges.
-        /// Indicates a single value {start} that represents the location in the file where the next upload should begin.
         /// </summary>
         [JsonPropertyName("nextExpectedRanges")]
         public IEnumerable<string> NextExpectedRanges { get; set; }

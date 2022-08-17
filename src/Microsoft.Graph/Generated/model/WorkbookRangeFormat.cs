@@ -29,7 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets horizontal alignment.
-        /// Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+        /// Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
         /// </summary>
         [JsonPropertyName("horizontalAlignment")]
         public string HorizontalAlignment { get; set; }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets vertical alignment.
-        /// Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
+        /// Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
         /// </summary>
         [JsonPropertyName("verticalAlignment")]
         public string VerticalAlignment { get; set; }

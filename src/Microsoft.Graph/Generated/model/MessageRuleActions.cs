@@ -86,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets redirectTo.
-        /// The email address to which a message should be redirected.
+        /// The email addresses to which a message should be redirected.
         /// </summary>
         [JsonPropertyName("redirectTo")]
         public IEnumerable<Recipient> RedirectTo { get; set; }

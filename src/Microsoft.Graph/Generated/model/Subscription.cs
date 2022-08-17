@@ -36,14 +36,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets client state.
-        /// Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+        /// Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
         /// </summary>
         [JsonPropertyName("clientState")]
         public string ClientState { get; set; }
     
         /// <summary>
         /// Gets or sets creator id.
-        /// Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.
+        /// Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
         /// </summary>
         [JsonPropertyName("creatorId")]
         public string CreatorId { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets encryption certificate id.
-        /// Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Required when includeResourceData is true.
+        /// Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
         /// </summary>
         [JsonPropertyName("encryptionCertificateId")]
         public string EncryptionCertificateId { get; set; }
@@ -92,14 +92,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notification query options.
-        /// Optional.  OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.
+        /// Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.
         /// </summary>
         [JsonPropertyName("notificationQueryOptions")]
         public string NotificationQueryOptions { get; set; }
     
         /// <summary>
         /// Gets or sets notification url.
-        /// Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+        /// Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
         /// </summary>
         [JsonPropertyName("notificationUrl")]
         public string NotificationUrl { get; set; }
@@ -113,7 +113,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource.
-        /// Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.
+        /// Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
         /// </summary>
         [JsonPropertyName("resource")]
         public string Resource { get; set; }

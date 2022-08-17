@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets contentSource.
-        /// The name of the content source which the externalItem is part of .
+        /// The name of the content source that the externalItem is part of.
         /// </summary>
         [JsonPropertyName("contentSource")]
         public string ContentSource { get; set; }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resultTemplateId.
-        /// ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.
+        /// ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
         /// </summary>
         [JsonPropertyName("resultTemplateId")]
         public string ResultTemplateId { get; set; }

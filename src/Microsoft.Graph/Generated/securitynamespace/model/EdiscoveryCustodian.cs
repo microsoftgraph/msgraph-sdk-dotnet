@@ -79,7 +79,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets user sources.
-        /// Data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+        /// Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
         /// </summary>
         [JsonPropertyName("userSources")]
         public IEdiscoveryCustodianUserSourcesCollectionPage UserSources { get; set; }

@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets alteredHighlightedQueryString.
-        /// Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)
+        /// Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is: /ue000, /ue001.
         /// </summary>
         [JsonPropertyName("alteredHighlightedQueryString")]
         public string AlteredHighlightedQueryString { get; set; }
@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alteredQueryTokens.
-        /// Represents changed segments with respect to original query.
+        /// Represents changed segments related to an original user query.
         /// </summary>
         [JsonPropertyName("alteredQueryTokens")]
         public IEnumerable<AlteredQueryToken> AlteredQueryTokens { get; set; }

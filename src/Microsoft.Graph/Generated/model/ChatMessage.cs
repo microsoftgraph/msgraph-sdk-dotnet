@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets event detail.
-        /// Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
+        /// Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
         /// </summary>
         [JsonPropertyName("eventDetail")]
         public EventMessageDetail EventDetail { get; set; }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mentions.
-        /// List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
+        /// List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
         /// </summary>
         [JsonPropertyName("mentions")]
         public IEnumerable<ChatMessageMention> Mentions { get; set; }

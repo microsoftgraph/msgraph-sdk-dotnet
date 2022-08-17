@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets id.
-        /// The object identifier of an Azure AD user or group.
+        /// The object identifier of an Azure Active Directory user or group.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }

@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets buckets.
-        /// Collection of buckets in the plan. Read-only. Nullable.
+        /// Read-only. Nullable. Collection of buckets in the plan.
         /// </summary>
         [JsonPropertyName("buckets")]
         public IPlannerPlanBucketsCollectionPage Buckets { get; set; }
@@ -71,14 +71,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets details.
-        /// Additional details about the plan. Read-only. Nullable.
+        /// Read-only. Nullable. Additional details about the plan.
         /// </summary>
         [JsonPropertyName("details")]
         public PlannerPlanDetails Details { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
-        /// Collection of tasks in the plan. Read-only. Nullable.
+        /// Read-only. Nullable. Collection of tasks in the plan.
         /// </summary>
         [JsonPropertyName("tasks")]
         public IPlannerPlanTasksCollectionPage Tasks { get; set; }

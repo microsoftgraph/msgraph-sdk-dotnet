@@ -23,21 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets expiration.
-        /// In entitlement management, when the access should expire.
+        /// When the eligible or active assignment expires.
         /// </summary>
         [JsonPropertyName("expiration")]
         public ExpirationPattern Expiration { get; set; }
     
         /// <summary>
         /// Gets or sets recurrence.
-        /// For recurring access, or eligible or active assignment. This property is currently unsupported in both PIM and entitlement management.
+        /// The frequency of the  eligible or active assignment. This property is currently unsupported in PIM.
         /// </summary>
         [JsonPropertyName("recurrence")]
         public PatternedRecurrence Recurrence { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. In PIM, when the  eligible or active assignment becomes active.
+        /// When the  eligible or active assignment becomes active.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }

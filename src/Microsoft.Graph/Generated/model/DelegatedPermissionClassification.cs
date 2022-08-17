@@ -30,14 +30,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets permission id.
-        /// The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+        /// The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
         /// </summary>
         [JsonPropertyName("permissionId")]
         public string PermissionId { get; set; }
     
         /// <summary>
         /// Gets or sets permission name.
-        /// The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
+        /// The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
         /// </summary>
         [JsonPropertyName("permissionName")]
         public string PermissionName { get; set; }

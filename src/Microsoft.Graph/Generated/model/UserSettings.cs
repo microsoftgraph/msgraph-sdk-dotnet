@@ -22,21 +22,18 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets contribution to content discovery as organization disabled.
-        /// Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
         /// </summary>
         [JsonPropertyName("contributionToContentDiscoveryAsOrganizationDisabled")]
         public bool? ContributionToContentDiscoveryAsOrganizationDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets contribution to content discovery disabled.
-        /// When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
         /// </summary>
         [JsonPropertyName("contributionToContentDiscoveryDisabled")]
         public bool? ContributionToContentDiscoveryDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets shift preferences.
-        /// The shift preferences for the user.
         /// </summary>
         [JsonPropertyName("shiftPreferences")]
         public ShiftPreferences ShiftPreferences { get; set; }

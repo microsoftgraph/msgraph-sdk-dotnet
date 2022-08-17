@@ -22,14 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets member type.
-        /// Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).
+        /// How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("memberType")]
         public string MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets schedule info.
-        /// The schedule object of the eligible role assignment request.
+        /// The period of the role eligibility.
         /// </summary>
         [JsonPropertyName("scheduleInfo")]
         public RequestSchedule ScheduleInfo { get; set; }

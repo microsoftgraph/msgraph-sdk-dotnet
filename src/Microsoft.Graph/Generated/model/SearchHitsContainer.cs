@@ -23,7 +23,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets aggregations.
-        /// Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
         /// </summary>
         [JsonPropertyName("aggregations")]
         public IEnumerable<SearchAggregation> Aggregations { get; set; }

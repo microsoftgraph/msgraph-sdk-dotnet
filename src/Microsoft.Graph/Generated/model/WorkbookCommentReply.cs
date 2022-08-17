@@ -22,14 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content.
-        /// The content of replied comment.
+        /// The content of a comment reply.
         /// </summary>
         [JsonPropertyName("content")]
         public string Content { get; set; }
     
         /// <summary>
         /// Gets or sets content type.
-        /// Indicates the type for the replied comment.
+        /// Indicates the type for the comment reply.
         /// </summary>
         [JsonPropertyName("contentType")]
         public string ContentType { get; set; }

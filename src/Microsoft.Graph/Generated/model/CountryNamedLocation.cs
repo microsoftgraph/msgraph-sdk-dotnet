@@ -31,14 +31,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets countries and regions.
-        /// List of countries and/or regions in two-letter format specified by ISO 3166-2.
+        /// List of countries and/or regions in two-letter format specified by ISO 3166-2. Required.
         /// </summary>
         [JsonPropertyName("countriesAndRegions")]
         public IEnumerable<string> CountriesAndRegions { get; set; }
     
         /// <summary>
         /// Gets or sets country lookup method.
-        /// Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress (default) and authenticatorAppGps.
+        /// Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress(default) and authenticatorAppGps. Note: authenticatorAppGps is not yet supported in the Microsoft Cloud for US Government.
         /// </summary>
         [JsonPropertyName("countryLookupMethod")]
         public CountryLookupMethodType? CountryLookupMethod { get; set; }

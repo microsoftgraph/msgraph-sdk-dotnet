@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appId.
-        /// The unique identifier for the client application.
+        /// The unique identifier for the application.
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }

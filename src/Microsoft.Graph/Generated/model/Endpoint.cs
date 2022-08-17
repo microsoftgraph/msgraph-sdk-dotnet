@@ -30,35 +30,30 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets capability.
-        /// Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.
         /// </summary>
         [JsonPropertyName("capability")]
         public string Capability { get; set; }
     
         /// <summary>
         /// Gets or sets provider id.
-        /// Application id of the publishing underlying service. Not nullable. Read-only.
         /// </summary>
         [JsonPropertyName("providerId")]
         public string ProviderId { get; set; }
     
         /// <summary>
         /// Gets or sets provider name.
-        /// Name of the publishing underlying service. Read-only.
         /// </summary>
         [JsonPropertyName("providerName")]
         public string ProviderName { get; set; }
     
         /// <summary>
         /// Gets or sets provider resource id.
-        /// For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
         /// </summary>
         [JsonPropertyName("providerResourceId")]
         public string ProviderResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets uri.
-        /// URL of the published resource. Not nullable. Read-only.
         /// </summary>
         [JsonPropertyName("uri")]
         public string Uri { get; set; }

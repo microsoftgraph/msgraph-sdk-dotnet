@@ -29,14 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets query.
-        /// This represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.
+        /// Represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.
         /// </summary>
         [JsonPropertyName("query")]
         public string Query { get; set; }
     
         /// <summary>
         /// Gets or sets queryRoot.
-        /// In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query that is, ./manager) is specified.
+        /// In the scenario where reviewers need to be specified dynamically, indicates the relative source of the query. This property is only required if a relative query (that is, ./manager) is specified.
         /// </summary>
         [JsonPropertyName("queryRoot")]
         public string QueryRoot { get; set; }

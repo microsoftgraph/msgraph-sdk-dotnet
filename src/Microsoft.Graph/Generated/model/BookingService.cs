@@ -100,7 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets maximum attendees count.
-        /// The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.
+        /// The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
         /// </summary>
         [JsonPropertyName("maximumAttendeesCount")]
         public Int32? MaximumAttendeesCount { get; set; }

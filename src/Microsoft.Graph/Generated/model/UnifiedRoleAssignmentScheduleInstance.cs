@@ -43,14 +43,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role assignment origin id.
-        /// The identifier of the role assignment in Azure AD.
+        /// The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("roleAssignmentOriginId")]
         public string RoleAssignmentOriginId { get; set; }
     
         /// <summary>
         /// Gets or sets role assignment schedule id.
-        /// The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.
+        /// The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("roleAssignmentScheduleId")]
         public string RoleAssignmentScheduleId { get; set; }

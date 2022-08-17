@@ -37,7 +37,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets productFamily.
-        /// Identifies the family of application software used by this endpoint. Possible values are: unknown, teams, skypeForBusiness, lync, unknownFutureValue, azureCommunicationServices.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: azureCommunicationServices.
+        /// Identifies the family of application software used by this endpoint. Possible values are: unknown, teams, skypeForBusiness, lync, unknownFutureValue, azureCommunicationServices. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: azureCommunicationServices.
         /// </summary>
         [JsonPropertyName("productFamily")]
         public ProductFamily? ProductFamily { get; set; }

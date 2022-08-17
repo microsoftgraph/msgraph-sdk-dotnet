@@ -100,13 +100,13 @@ namespace Microsoft.Graph
         IDriveRequestBuilder Drives  { get; }
         /// <summary>
         /// Gets the request builder for ExternalColumns.
-        /// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+        /// 
         /// </summary>
         /// <returns>The <see cref="IColumnDefinitionRequestBuilder"/>.</returns>
         IColumnDefinitionRequestBuilder ExternalColumns  { get; }
         /// <summary>
         /// Gets the request builder for Items.
-        /// Used to address any item contained in this site. This collection cannot be enumerated.
+        /// Used to address any item contained in this site. This collection can't be enumerated.
         /// </summary>
         /// <returns>The <see cref="IBaseItemRequestBuilder"/>.</returns>
         IBaseItemRequestBuilder Items  { get; }
@@ -124,7 +124,7 @@ namespace Microsoft.Graph
         IOnenoteRequestBuilder Onenote  { get; }
         /// <summary>
         /// Gets the request builder for Operations.
-        /// The collection of long running operations for the site.
+        /// The collection of long-running operations on the site.
         /// </summary>
         /// <returns>The <see cref="IRichLongRunningOperationRequestBuilder"/>.</returns>
         IRichLongRunningOperationRequestBuilder Operations  { get; }
@@ -142,7 +142,7 @@ namespace Microsoft.Graph
         ISiteRequestBuilder Sites  { get; }
         /// <summary>
         /// Gets the request builder for TermStore.
-        /// The termStore under this site.
+        /// The default termStore under this site.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.TermStore.IStoreRequestBuilder"/>.</returns>
         Microsoft.Graph.TermStore.IStoreRequestBuilder TermStore  { get; }

@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets emailAddress.
-        /// Email address of the contact.
+        /// Primary email address of the contact. Required.
         /// </summary>
         [JsonPropertyName("emailAddress")]
         public string EmailAddress { get; set; }

@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// The recurrence range. Possible values are: endDate, noEnd, numbered. Required.
+        /// The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
         /// </summary>
         [JsonPropertyName("type")]
         public RecurrenceRangeType? Type { get; set; }

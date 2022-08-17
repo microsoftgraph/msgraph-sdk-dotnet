@@ -90,7 +90,7 @@ namespace Microsoft.Graph
         IContentTypeRequestBuilder BaseTypes  { get; }
         /// <summary>
         /// Gets the request builder for ColumnLinks.
-        /// The collection of columns that are required by this content type
+        /// The collection of columns that are required by this content type.
         /// </summary>
         /// <returns>The <see cref="IColumnLinkRequestBuilder"/>.</returns>
         IColumnLinkRequestBuilder ColumnLinks  { get; }

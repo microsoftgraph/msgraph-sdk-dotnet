@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets license type.
-        /// Edition Upgrade License Type. Possible values are: productKey, licenseFile, notConfigured.
+        /// Edition Upgrade License Type. Possible values are: productKey, licenseFile.
         /// </summary>
         [JsonPropertyName("licenseType")]
         public EditionUpgradeLicenseType? LicenseType { get; set; }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target edition.
-        /// Edition Upgrade Target Edition. Possible values are: windows10Enterprise, windows10EnterpriseN, windows10Education, windows10EducationN, windows10MobileEnterprise, windows10HolographicEnterprise, windows10Professional, windows10ProfessionalN, windows10ProfessionalEducation, windows10ProfessionalEducationN, windows10ProfessionalWorkstation, windows10ProfessionalWorkstationN, notConfigured, windows10Home, windows10HomeChina, windows10HomeN, windows10HomeSingleLanguage, windows10Mobile, windows10IoTCore, windows10IoTCoreCommercial.
+        /// Edition Upgrade Target Edition. Possible values are: windows10Enterprise, windows10EnterpriseN, windows10Education, windows10EducationN, windows10MobileEnterprise, windows10HolographicEnterprise, windows10Professional, windows10ProfessionalN, windows10ProfessionalEducation, windows10ProfessionalEducationN, windows10ProfessionalWorkstation, windows10ProfessionalWorkstationN.
         /// </summary>
         [JsonPropertyName("targetEdition")]
         public Windows10EditionType? TargetEdition { get; set; }

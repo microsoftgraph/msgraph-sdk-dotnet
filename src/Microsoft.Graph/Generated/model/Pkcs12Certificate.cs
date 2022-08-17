@@ -29,14 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets password.
-        /// This is the password for the pfx file. Required. If no password is used, must still provide a value of ''.
+        /// The password for the pfx file. Required. If no password is used, you must still provide a value of ''.
         /// </summary>
         [JsonPropertyName("password")]
         public string Password { get; set; }
     
         /// <summary>
         /// Gets or sets pkcs12Value.
-        /// This is the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
+        /// Represents the pfx content that is sent. The value should be a base-64 encoded version of the actual certificate content. Required.
         /// </summary>
         [JsonPropertyName("pkcs12Value")]
         public string Pkcs12Value { get; set; }

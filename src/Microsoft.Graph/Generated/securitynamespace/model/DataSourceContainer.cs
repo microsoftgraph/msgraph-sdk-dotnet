@@ -45,7 +45,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets hold status.
-        /// The hold status of the dataSourceContainer.The possible values are: notApplied, applied, applying, removing, partial
+        /// The hold status of the dataSourceContainer. The possible values are: notApplied, applied, applying, removing, partial
         /// </summary>
         [JsonPropertyName("holdStatus")]
         public DataSourceHoldStatus? HoldStatus { get; set; }

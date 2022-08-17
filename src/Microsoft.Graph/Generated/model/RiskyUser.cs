@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets risk detail.
-        /// The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
+        /// Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("riskDetail")]
         public RiskDetail? RiskDetail { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets risk level.
-        /// Level of the detected risky user. The possible values are low, medium, high, hidden, none, unknownFutureValue.
+        /// Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("riskLevel")]
         public RiskLevel? RiskLevel { get; set; }

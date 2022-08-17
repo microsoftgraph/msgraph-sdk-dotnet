@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activity display name.
-        /// Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure Ad activity list.
+        /// Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
         /// </summary>
         [JsonPropertyName("activityDisplayName")]
         public string ActivityDisplayName { get; set; }
@@ -93,7 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target resources.
-        /// Information about the resource that changed due to the activity.
+        /// Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
         /// </summary>
         [JsonPropertyName("targetResources")]
         public IEnumerable<TargetResource> TargetResources { get; set; }

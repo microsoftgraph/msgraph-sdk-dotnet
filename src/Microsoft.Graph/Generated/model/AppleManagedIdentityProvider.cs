@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets certificate data.
-        /// The certificate data which is a long string of text from the certificate, can be null.
+        /// The certificate data, which is a long string of text from the certificate. Can be null.
         /// </summary>
         [JsonPropertyName("certificateData")]
         public string CertificateData { get; set; }

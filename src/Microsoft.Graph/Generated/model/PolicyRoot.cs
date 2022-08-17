@@ -176,7 +176,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role management policies.
-        /// Represents the role management policies.
+        /// Specifies the various policies associated with scopes and roles.
         /// </summary>
         [JsonPropertyName("roleManagementPolicies")]
         public IPolicyRootRoleManagementPoliciesCollectionPage RoleManagementPolicies { get; set; }
@@ -190,7 +190,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role management policy assignments.
-        /// Represents the role management policy assignments.
+        /// The assignment of a role management policy to a role definition object.
         /// </summary>
         [JsonPropertyName("roleManagementPolicyAssignments")]
         public IPolicyRootRoleManagementPolicyAssignmentsCollectionPage RoleManagementPolicyAssignments { get; set; }

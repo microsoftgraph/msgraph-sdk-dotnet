@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets applied date time.
-        /// The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
+        /// The timestamp when the approval decision was applied.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't applied the decision or it was automatically applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
         /// </summary>
         [JsonPropertyName("appliedDateTime")]
         public DateTimeOffset? AppliedDateTime { get; set; }
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets principal link.
-        /// Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.
+        /// A link to the principal object. For example, https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.
         /// </summary>
         [JsonPropertyName("principalLink")]
         public string PrincipalLink { get; set; }
@@ -99,7 +99,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reviewed by.
-        /// The identifier of the reviewer. Supports $select. Read-only.
+        /// The identifier of the reviewer.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't reviewed. Supports $select. Read-only.
         /// </summary>
         [JsonPropertyName("reviewedBy")]
         public UserIdentity ReviewedBy { get; set; }

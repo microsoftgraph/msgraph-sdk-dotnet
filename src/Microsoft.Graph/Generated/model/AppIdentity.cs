@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appId.
-        /// Refers to the unique identifier representing Application Id in the Azure Active Directory.
+        /// Refers to the Unique GUID representing Application Id in the Azure Active Directory.
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }
@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets servicePrincipalId.
-        /// Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
+        /// Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
         /// </summary>
         [JsonPropertyName("servicePrincipalId")]
         public string ServicePrincipalId { get; set; }

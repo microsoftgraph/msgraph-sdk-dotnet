@@ -43,7 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reviewed by.
-        /// The identifier of the reviewer. Read-only.
+        /// The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't reviewed. Read-only.
         /// </summary>
         [JsonPropertyName("reviewedBy")]
         public Identity ReviewedBy { get; set; }

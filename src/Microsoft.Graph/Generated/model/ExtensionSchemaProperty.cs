@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets name.
-        /// The name of the strongly typed property defined as part of a schema extension.
+        /// The name of the strongly-typed property defined as part of a schema extension.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }

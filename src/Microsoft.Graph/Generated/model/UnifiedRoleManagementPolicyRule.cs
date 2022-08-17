@@ -31,7 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target.
-        /// Not implemented. Defines details of scope that's targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).
+        /// Defines details of scope that's targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("target")]
         public UnifiedRoleManagementPolicyRuleTarget Target { get; set; }

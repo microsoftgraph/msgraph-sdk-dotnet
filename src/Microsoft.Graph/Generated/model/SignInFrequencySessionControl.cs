@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// Possible values are: days, hours, or null if frequencyInterval is everyTime .
+        /// Possible values are: days, hours.
         /// </summary>
         [JsonPropertyName("type")]
         public SigninFrequencyType? Type { get; set; }

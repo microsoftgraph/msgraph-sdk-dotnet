@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets app.
-        /// If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.
+        /// If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
         /// </summary>
         [JsonPropertyName("app")]
         public AppIdentity App { get; set; }
     
         /// <summary>
         /// Gets or sets user.
-        /// If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.
+        /// If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
         /// </summary>
         [JsonPropertyName("user")]
         public UserIdentity User { get; set; }

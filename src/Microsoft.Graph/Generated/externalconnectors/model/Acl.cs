@@ -23,21 +23,21 @@ namespace Microsoft.Graph.ExternalConnectors
 
         /// <summary>
         /// Gets or sets accessType.
-        /// The access granted to the identity. Possible values are: grant, deny.
+        /// The access granted to the identity. Possible values are: grant, deny, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("accessType")]
         public AccessType? AccessType { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests if the identitySource is azureActiveDirectory and just group if the identitySource is external.
+        /// The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests, externalGroup, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("type")]
         public AclType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets value.
-        /// The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
+        /// The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
         /// </summary>
         [JsonPropertyName("value")]
         public string Value { get; set; }

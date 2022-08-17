@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets instanceDurationInDays.
-        /// Duration of each recurrence of review (accessReviewInstance) in number of days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its durationInDays setting will be used instead of the value of this property.
+        /// Duration of an access review instance in days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its durationInDays setting will be used instead of the value of this property.
         /// </summary>
         [JsonPropertyName("instanceDurationInDays")]
         public Int32? InstanceDurationInDays { get; set; }

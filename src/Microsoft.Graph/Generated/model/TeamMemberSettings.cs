@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowCreateUpdateChannels.
-        /// If set to true, members can add and update any channels.
+        /// If set to true, members can add and update channels.
         /// </summary>
         [JsonPropertyName("allowCreateUpdateChannels")]
         public bool? AllowCreateUpdateChannels { get; set; }

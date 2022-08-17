@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets formula.
-        /// The formula to validate column value. For examples, see Examples of common formulas in lists
+        /// The formula to validate column value. For examples, see Examples of common formulas in lists.
         /// </summary>
         [JsonPropertyName("formula")]
         public string Formula { get; set; }

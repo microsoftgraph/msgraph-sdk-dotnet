@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets recipient shift id.
-        /// Shift ID for the recipient user with whom the request is to swap.
+        /// ShiftId for the recipient user with whom the request is to swap.
         /// </summary>
         [JsonPropertyName("recipientShiftId")]
         public string RecipientShiftId { get; set; }

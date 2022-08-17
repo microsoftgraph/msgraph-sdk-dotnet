@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets webUrl.
-        /// Location of the resource. Required.
+        /// Location of the resource. Required
         /// </summary>
         [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }

@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets automatic update mode.
-        /// Automatic update mode. Possible values are: userDefined, notifyDownload, autoInstallAtMaintenanceTime, autoInstallAndRebootAtMaintenanceTime, autoInstallAndRebootAtScheduledTime, autoInstallAndRebootWithoutEndUserControl, windowsDefault.
+        /// Automatic update mode. Possible values are: userDefined, notifyDownload, autoInstallAtMaintenanceTime, autoInstallAndRebootAtMaintenanceTime, autoInstallAndRebootAtScheduledTime, autoInstallAndRebootWithoutEndUserControl.
         /// </summary>
         [JsonPropertyName("automaticUpdateMode")]
         public AutomaticUpdateMode? AutomaticUpdateMode { get; set; }

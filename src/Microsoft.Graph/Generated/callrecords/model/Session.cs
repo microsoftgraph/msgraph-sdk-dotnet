@@ -58,7 +58,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets start date time.
-        /// UTC fime when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }

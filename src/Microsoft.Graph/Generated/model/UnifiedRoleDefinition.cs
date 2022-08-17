@@ -29,28 +29,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
+        /// The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is built in.
-        /// Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).
+        /// Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).
         /// </summary>
         [JsonPropertyName("isBuiltIn")]
         public bool? IsBuiltIn { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled.
-        /// Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
+        /// Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets resource scopes.
-        /// List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
+        /// List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
         /// </summary>
         [JsonPropertyName("resourceScopes")]
         public IEnumerable<string> ResourceScopes { get; set; }
@@ -64,21 +64,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets template id.
-        /// Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.
+        /// Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
         /// </summary>
         [JsonPropertyName("templateId")]
         public string TemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets version.
-        /// Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
+        /// Indicates version of the role definition. Read-only when isBuiltIn is true.
         /// </summary>
         [JsonPropertyName("version")]
         public string Version { get; set; }
     
         /// <summary>
         /// Gets or sets inherits permissions from.
-        /// Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+        /// Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
         /// </summary>
         [JsonPropertyName("inheritsPermissionsFrom")]
         public IUnifiedRoleDefinitionInheritsPermissionsFromCollectionPage InheritsPermissionsFrom { get; set; }

@@ -23,21 +23,18 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets receivers.
-        /// List of receiving participant ids.
         /// </summary>
         [JsonPropertyName("receivers")]
         public IEnumerable<string> Receivers { get; set; }
     
         /// <summary>
         /// Gets or sets routing mode.
-        /// Routing group mode.  Possible values are: oneToOne, multicast.
         /// </summary>
         [JsonPropertyName("routingMode")]
         public RoutingMode? RoutingMode { get; set; }
     
         /// <summary>
         /// Gets or sets sources.
-        /// List of source participant ids.
         /// </summary>
         [JsonPropertyName("sources")]
         public IEnumerable<string> Sources { get; set; }

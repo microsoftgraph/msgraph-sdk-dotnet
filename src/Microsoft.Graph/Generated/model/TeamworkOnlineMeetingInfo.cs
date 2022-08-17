@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets joinWebUrl.
-        /// The URL which can be clicked on to join or uniquely identify the meeting.
+        /// The URL that users click to join or uniquely identify the meeting.
         /// </summary>
         [JsonPropertyName("joinWebUrl")]
         public string JoinWebUrl { get; set; }

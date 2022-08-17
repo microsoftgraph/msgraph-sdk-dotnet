@@ -22,21 +22,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
+        /// Inherited property. A description of the policy. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.
+        /// Inherited property. The human-readable name of the policy. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets self service sign up.
-        /// Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property is not a key. Optional. Read-only.
+        /// Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("selfServiceSignUp")]
         public SelfServiceSignUpAuthenticationFlowConfiguration SelfServiceSignUp { get; set; }

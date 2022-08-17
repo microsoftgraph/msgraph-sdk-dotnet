@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets queryAlterationResponse.
-        /// Provides details of query alteration response for spelling correction.
+        /// Provides information related to spelling corrections in the alteration response.
         /// </summary>
         [JsonPropertyName("queryAlterationResponse")]
         public AlterationResponse QueryAlterationResponse { get; set; }

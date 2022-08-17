@@ -243,7 +243,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets extensions.
-        /// The collection of open extensions defined for the contact. Nullable.
+        /// The collection of open extensions defined for the contact. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("extensions")]
         public IContactExtensionsCollectionPage Extensions { get; set; }

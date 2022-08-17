@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets audio.
-        /// Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
+        /// Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.
         /// </summary>
         [JsonPropertyName("audio")]
         public Audio Audio { get; set; }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets pending operations.
-        /// If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
+        /// If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
         /// </summary>
         [JsonPropertyName("pendingOperations")]
         public PendingOperations PendingOperations { get; set; }

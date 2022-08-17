@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets applicationName.
-        /// Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
+        /// Name of the application managing the network connection (for example, Facebook or SMTP).
         /// </summary>
         [JsonPropertyName("applicationName")]
         public string ApplicationName { get; set; }

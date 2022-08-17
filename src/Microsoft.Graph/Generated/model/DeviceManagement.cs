@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets intune account id.
-        /// Intune Account ID for given tenant
+        /// Intune Account Id for given tenant
         /// </summary>
         [JsonPropertyName("intuneAccountId")]
         public Guid? IntuneAccountId { get; set; }

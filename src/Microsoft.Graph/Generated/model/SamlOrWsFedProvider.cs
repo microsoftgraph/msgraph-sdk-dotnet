@@ -52,7 +52,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred authentication protocol.
-        /// Preferred authentication protocol. Supported values include saml or wsfed.
+        /// Preferred authentication protocol. The possible values are: wsFed, saml, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("preferredAuthenticationProtocol")]
         public AuthenticationProtocol? PreferredAuthenticationProtocol { get; set; }

@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets organizerAvailability.
-        /// Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+        /// Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
         /// </summary>
         [JsonPropertyName("organizerAvailability")]
         public FreeBusyStatus? OrganizerAvailability { get; set; }

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets members.
-        /// A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+        /// A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
         /// </summary>
         [JsonPropertyName("members")]
         public IExternalGroupMembersCollectionPage Members { get; set; }

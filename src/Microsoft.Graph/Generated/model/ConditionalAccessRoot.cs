@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets policies.
-        /// Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
+        /// Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
         /// </summary>
         [JsonPropertyName("policies")]
         public IConditionalAccessRootPoliciesCollectionPage Policies { get; set; }

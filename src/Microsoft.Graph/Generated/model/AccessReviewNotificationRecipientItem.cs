@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notificationTemplateType.
-        /// Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
+        /// Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
         /// </summary>
         [JsonPropertyName("notificationTemplateType")]
         public string NotificationTemplateType { get; set; }

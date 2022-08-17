@@ -23,14 +23,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets attendees.
-        /// Information of the meeting attendees.
         /// </summary>
         [JsonPropertyName("attendees")]
         public IEnumerable<MeetingParticipantInfo> Attendees { get; set; }
     
         /// <summary>
         /// Gets or sets organizer.
-        /// Information of the meeting organizer.
         /// </summary>
         [JsonPropertyName("organizer")]
         public MeetingParticipantInfo Organizer { get; set; }

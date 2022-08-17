@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets body preview.
-        /// The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
+        /// The first 255 characters of the message body. It is in text format.
         /// </summary>
         [JsonPropertyName("bodyPreview")]
         public string BodyPreview { get; set; }

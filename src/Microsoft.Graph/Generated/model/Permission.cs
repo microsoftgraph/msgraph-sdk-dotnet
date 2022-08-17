@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets has password.
-        /// Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only.
+        /// Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
         /// </summary>
         [JsonPropertyName("hasPassword")]
         public bool? HasPassword { get; set; }
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets share id.
-        /// A unique token that can be used to access this shared item via the [shares API][]. Read-only.
+        /// A unique token that can be used to access this shared item via the **shares** API. Read-only.
         /// </summary>
         [JsonPropertyName("shareId")]
         public string ShareId { get; set; }

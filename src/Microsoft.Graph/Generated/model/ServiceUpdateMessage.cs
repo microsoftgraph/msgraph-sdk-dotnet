@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attachments archive.
-        /// The zip file of all attachments for a message.
+        /// The zip file that contains all attachments for a message.
         /// </summary>
         [JsonPropertyName("attachmentsArchive")]
         public Stream AttachmentsArchive { get; set; }

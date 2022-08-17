@@ -22,28 +22,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets end date time.
-        /// Time that the roleEligibilityScheduleInstance will expire.
+        /// The end date of the schedule instance.
         /// </summary>
         [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets member type.
-        /// Membership type of the assignment. It can either be Inherited, Direct, or Group.
+        /// How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("memberType")]
         public string MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets role eligibility schedule id.
-        /// Identifier of the parent roleEligibilitySchedule for this instance.
+        /// The identifier of the unifiedRoleEligibilitySchedule object from which this instance was created. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("roleEligibilityScheduleId")]
         public string RoleEligibilityScheduleId { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
-        /// Time that the roleEligibilityScheduleInstance will start.
+        /// When this instance starts.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }

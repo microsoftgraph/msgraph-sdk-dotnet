@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets id.
-        /// Resource ID
+        /// Identifier of the resource
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }

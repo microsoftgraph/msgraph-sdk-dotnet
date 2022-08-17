@@ -22,7 +22,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets workforce integrations.
-        /// A workforce integration with shifts.
         /// </summary>
         [JsonPropertyName("workforceIntegrations")]
         public ITeamworkWorkforceIntegrationsCollectionPage WorkforceIntegrations { get; set; }

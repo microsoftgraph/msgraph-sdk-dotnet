@@ -22,28 +22,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// A description of the policy.
+        /// A description of the policy. Read-only.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name of the policy.
+        /// The name of the policy. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// The date and time of the last update to the policy.
+        /// The date and time of the last update to the policy. Read-only.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets policy version.
-        /// The version of the policy in use.
+        /// The version of the policy in use. Read-only.
         /// </summary>
         [JsonPropertyName("policyVersion")]
         public string PolicyVersion { get; set; }

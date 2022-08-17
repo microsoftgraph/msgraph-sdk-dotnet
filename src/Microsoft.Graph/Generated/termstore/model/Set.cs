@@ -29,7 +29,7 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets description.
-        /// Description giving details on the term usage.
+        /// Description that gives details on the term usage.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }

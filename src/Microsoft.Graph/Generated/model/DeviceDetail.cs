@@ -23,49 +23,49 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets browser.
-        /// Indicates the browser information of the used for signing-in.
+        /// Indicates the browser information of the used for signing in.
         /// </summary>
         [JsonPropertyName("browser")]
         public string Browser { get; set; }
     
         /// <summary>
         /// Gets or sets deviceId.
-        /// Refers to the UniqueID of the device used for signing-in.
+        /// Refers to the UniqueID of the device used for signing in.
         /// </summary>
         [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
-        /// Refers to the name of the device used for signing-in.
+        /// Refers to the name of the device used for signing in.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets isCompliant.
-        /// Indicates whether the device is compliant or not.
+        /// Indicates whether the device is compliant.
         /// </summary>
         [JsonPropertyName("isCompliant")]
         public bool? IsCompliant { get; set; }
     
         /// <summary>
         /// Gets or sets isManaged.
-        /// Indicates if the device is managed or not.
+        /// Indicates whether the device is managed.
         /// </summary>
         [JsonPropertyName("isManaged")]
         public bool? IsManaged { get; set; }
     
         /// <summary>
         /// Gets or sets operatingSystem.
-        /// Indicates the OS name and version used for signing-in.
+        /// Indicates the operating system name and version used for signing in.
         /// </summary>
         [JsonPropertyName("operatingSystem")]
         public string OperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets trustType.
-        /// Indicates information on whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
+        /// Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
         /// </summary>
         [JsonPropertyName("trustType")]
         public string TrustType { get; set; }

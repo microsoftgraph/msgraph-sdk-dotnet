@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// User principal name of the user.
+        /// User principal name of the reviewer.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }

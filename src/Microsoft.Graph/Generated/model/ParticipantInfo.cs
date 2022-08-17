@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets endpointType.
-        /// The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
+        /// The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
         /// </summary>
         [JsonPropertyName("endpointType")]
         public EndpointType? EndpointType { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets region.
-        /// The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+        /// The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
         /// </summary>
         [JsonPropertyName("region")]
         public string Region { get; set; }

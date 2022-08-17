@@ -30,28 +30,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets request type.
-        /// One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+        /// The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
         /// </summary>
         [JsonPropertyName("requestType")]
         public AccessPackageRequestType? RequestType { get; set; }
     
         /// <summary>
         /// Gets or sets schedule.
-        /// The range of dates that access is to be assigned to the requestor. Read-only.
+        /// The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
         /// </summary>
         [JsonPropertyName("schedule")]
         public EntitlementManagementSchedule Schedule { get; set; }
     
         /// <summary>
         /// Gets or sets state.
-        /// The state of the request. The possible values are: submitted, pendingApproval, delivering, delivered, deliveryFailed, denied, scheduled, canceled, partiallyDelivered, unknownFutureValue. Read-only.
+        /// The state of the request. The possible values are: submitted, pendingApproval, delivering, delivered, deliveryFailed, denied, scheduled, canceled, partiallyDelivered, unknownFutureValue. Read-only. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("state")]
         public AccessPackageRequestState? State { get; set; }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package.
-        /// The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
+        /// The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
         /// </summary>
         [JsonPropertyName("accessPackage")]
         public AccessPackage AccessPackage { get; set; }

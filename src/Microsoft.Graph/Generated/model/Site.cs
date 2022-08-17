@@ -120,7 +120,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external columns.
-        /// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
         /// </summary>
         [JsonPropertyName("externalColumns")]
         public ISiteExternalColumnsCollectionWithReferencesPage ExternalColumns { get; set; }
@@ -134,7 +133,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets items.
-        /// Used to address any item contained in this site. This collection cannot be enumerated.
+        /// Used to address any item contained in this site. This collection can't be enumerated.
         /// </summary>
         [JsonPropertyName("items")]
         public ISiteItemsCollectionPage Items { get; set; }
@@ -162,7 +161,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operations.
-        /// The collection of long running operations for the site.
+        /// The collection of long-running operations on the site.
         /// </summary>
         [JsonPropertyName("operations")]
         public ISiteOperationsCollectionPage Operations { get; set; }
@@ -204,7 +203,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets term store.
-        /// The termStore under this site.
+        /// The default termStore under this site.
         /// </summary>
         [JsonPropertyName("termStore")]
         public Microsoft.Graph.TermStore.Store TermStore { get; set; }

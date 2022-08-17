@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets name.
-        /// Name of the setting (as defined by the directorySettingTemplate).
+        /// Name of the setting (as defined by the groupSettingTemplate).
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
