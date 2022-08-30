@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Chats.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in chats
+        /// Update the properties of a chat object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Chats.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Chat>(requestInfo, Microsoft.Graph.Models.Chat.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in chats
+        /// Update the properties of a chat object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

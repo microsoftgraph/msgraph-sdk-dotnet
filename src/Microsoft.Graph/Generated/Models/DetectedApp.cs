@@ -21,6 +21,16 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<List<ManagedDevice>>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
+        /// <summary>Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).</summary>
+        public DetectedAppPlatformType? Platform {
+            get { return BackingStore?.Get<DetectedAppPlatformType?>("platform"); }
+            set { BackingStore?.Set("platform", value); }
+        }
+        /// <summary>Indicates the publisher of the discovered application. For example: &apos;Microsoft&apos;.  The default value is an empty string.</summary>
+        public string Publisher {
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
+        }
         /// <summary>Discovered application size in bytes. Read-only</summary>
         public long? SizeInByte {
             get { return BackingStore?.Get<long?>("sizeInByte"); }
@@ -53,6 +63,8 @@ namespace Microsoft.Graph.Models {
                 {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>(ManagedDevice.CreateFromDiscriminatorValue).ToList(); } },
+                {"platform", n => { Platform = n.GetEnumValue<DetectedAppPlatformType>(); } },
+                {"publisher", n => { Publisher = n.GetStringValue(); } },
                 {"sizeInByte", n => { SizeInByte = n.GetLongValue(); } },
                 {"version", n => { Version = n.GetStringValue(); } },
             };
@@ -67,6 +79,8 @@ namespace Microsoft.Graph.Models {
             writer.WriteIntValue("deviceCount", DeviceCount);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<ManagedDevice>("managedDevices", ManagedDevices);
+            writer.WriteEnumValue<DetectedAppPlatformType>("platform", Platform);
+            writer.WriteStringValue("publisher", Publisher);
             writer.WriteLongValue("sizeInByte", SizeInByte);
             writer.WriteStringValue("version", Version);
         }

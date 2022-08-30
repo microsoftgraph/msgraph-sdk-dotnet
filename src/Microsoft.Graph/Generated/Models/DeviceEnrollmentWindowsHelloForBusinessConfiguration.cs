@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class DeviceEnrollmentWindowsHelloForBusinessConfiguration : DeviceEnrollmentConfiguration, IParsable {
-        /// <summary>The enhancedBiometricsState property</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? EnhancedBiometricsState {
             get { return BackingStore?.Get<Enablement?>("enhancedBiometricsState"); }
             set { BackingStore?.Set("enhancedBiometricsState", value); }
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("securityDeviceRequired"); }
             set { BackingStore?.Set("securityDeviceRequired", value); }
         }
-        /// <summary>The state property</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? State {
             get { return BackingStore?.Get<Enablement?>("state"); }
             set { BackingStore?.Set("state", value); }

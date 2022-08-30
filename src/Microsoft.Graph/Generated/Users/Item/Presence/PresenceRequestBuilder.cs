@@ -1,7 +1,9 @@
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Users.Item.Presence.ClearPresence;
+using Microsoft.Graph.Users.Item.Presence.ClearUserPreferredPresence;
 using Microsoft.Graph.Users.Item.Presence.SetPresence;
+using Microsoft.Graph.Users.Item.Presence.SetUserPreferredPresence;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -17,6 +19,10 @@ namespace Microsoft.Graph.Users.Item.Presence {
         public ClearPresenceRequestBuilder ClearPresence { get =>
             new ClearPresenceRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The clearUserPreferredPresence property</summary>
+        public ClearUserPreferredPresenceRequestBuilder ClearUserPreferredPresence { get =>
+            new ClearUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -24,6 +30,10 @@ namespace Microsoft.Graph.Users.Item.Presence {
         /// <summary>The setPresence property</summary>
         public SetPresenceRequestBuilder SetPresence { get =>
             new SetPresenceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The setUserPreferredPresence property</summary>
+        public SetUserPreferredPresenceRequestBuilder SetUserPreferredPresence { get =>
+            new SetUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

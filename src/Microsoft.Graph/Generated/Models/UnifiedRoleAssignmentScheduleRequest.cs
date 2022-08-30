@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DirectoryObject>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
-        /// <summary>Identifier of the principal that has been granted the assignment. Supports $filter (eq, ne).</summary>
+        /// <summary>Identifier of the principal that has been granted the assignment. Can be a user, role-assignable group, or a service principal. Supports $filter (eq, ne).</summary>
         public string PrincipalId {
             get { return BackingStore?.Get<string>("principalId"); }
             set { BackingStore?.Set("principalId", value); }

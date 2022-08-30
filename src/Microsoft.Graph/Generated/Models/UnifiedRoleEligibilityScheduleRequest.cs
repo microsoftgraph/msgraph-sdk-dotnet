@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DirectoryObject>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
-        /// <summary>Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).</summary>
+        /// <summary>Identifier of the principal that has been granted the role eligibility. Can be a user or a role-assignable group. You can grant only active assignments service principals.Supports $filter (eq, ne).</summary>
         public string PrincipalId {
             get { return BackingStore?.Get<string>("principalId"); }
             set { BackingStore?.Set("principalId", value); }

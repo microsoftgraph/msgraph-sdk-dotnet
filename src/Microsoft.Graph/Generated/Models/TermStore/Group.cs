@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Models.TermStore {
             get { return BackingStore?.Get<string>("parentSiteId"); }
             set { BackingStore?.Set("parentSiteId", value); }
         }
-        /// <summary>Returns the type of the group. Possible values are global, system, and siteCollection.</summary>
+        /// <summary>Returns the type of the group. Possible values are: global, system, and siteCollection.</summary>
         public TermGroupScope? Scope {
             get { return BackingStore?.Get<TermGroupScope?>("scope"); }
             set { BackingStore?.Set("scope", value); }

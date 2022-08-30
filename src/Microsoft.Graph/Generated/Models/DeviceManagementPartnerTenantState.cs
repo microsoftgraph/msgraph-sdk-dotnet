@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
+    /// <summary>Provides operations to manage the complianceManagementPartners property of the microsoft.graph.deviceManagement entity.</summary>
     public enum DeviceManagementPartnerTenantState {
         /// <summary>Partner state is unknown.</summary>
         Unknown,

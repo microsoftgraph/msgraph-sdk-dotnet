@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Provides operations to call the instantiate method.</summary>
     public class ClaimsMappingPolicy : StsPolicy, IParsable {
         /// <summary>
-        /// Instantiates a new ClaimsMappingPolicy and sets the default values.
+        /// Instantiates a new claimsMappingPolicy and sets the default values.
         /// </summary>
         public ClaimsMappingPolicy() : base() {
             OdataType = "#microsoft.graph.claimsMappingPolicy";
