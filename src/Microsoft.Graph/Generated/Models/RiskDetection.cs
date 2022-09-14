@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<string>("requestId"); }
             set { BackingStore?.Set("requestId", value); }
         }
-        /// <summary>Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.</summary>
+        /// <summary>Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: m365DAdminDismissedDetection.</summary>
         public Microsoft.Graph.Models.RiskDetail? RiskDetail {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RiskDetail?>("riskDetail"); }
             set { BackingStore?.Set("riskDetail", value); }

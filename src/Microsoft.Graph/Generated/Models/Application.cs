@@ -46,6 +46,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DirectoryObject>("createdOnBehalfOf"); }
             set { BackingStore?.Set("createdOnBehalfOf", value); }
         }
+        /// <summary>The defaultRedirectUri property</summary>
+        public string DefaultRedirectUri {
+            get { return BackingStore?.Get<string>("defaultRedirectUri"); }
+            set { BackingStore?.Set("defaultRedirectUri", value); }
+        }
         /// <summary>Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -66,7 +71,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<List<ExtensionProperty>>("extensionProperties"); }
             set { BackingStore?.Set("extensionProperties", value); }
         }
-        /// <summary>Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).</summary>
+        /// <summary>Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).</summary>
         public List<FederatedIdentityCredential> FederatedIdentityCredentials {
             get { return BackingStore?.Get<List<FederatedIdentityCredential>>("federatedIdentityCredentials"); }
             set { BackingStore?.Set("federatedIdentityCredentials", value); }
@@ -233,6 +238,7 @@ namespace Microsoft.Graph.Models {
                 {"certification", n => { Certification = n.GetObjectValue<Microsoft.Graph.Models.Certification>(Microsoft.Graph.Models.Certification.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"createdOnBehalfOf", n => { CreatedOnBehalfOf = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                {"defaultRedirectUri", n => { DefaultRedirectUri = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"disabledByMicrosoftStatus", n => { DisabledByMicrosoftStatus = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -282,6 +288,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteObjectValue<Microsoft.Graph.Models.Certification>("certification", Certification);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
+            writer.WriteStringValue("defaultRedirectUri", DefaultRedirectUri);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("disabledByMicrosoftStatus", DisabledByMicrosoftStatus);
             writer.WriteStringValue("displayName", DisplayName);

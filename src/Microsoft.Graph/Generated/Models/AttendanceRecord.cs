@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
+    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public class AttendanceRecord : Entity, IParsable {
         /// <summary>List of time periods between joining and leaving a meeting.</summary>
         public List<AttendanceInterval> AttendanceIntervals {

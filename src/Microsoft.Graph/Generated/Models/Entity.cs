@@ -397,6 +397,7 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.permissionGrantPolicy" => new PermissionGrantPolicy(),
                 "#microsoft.graph.person" => new Person(),
                 "#microsoft.graph.phoneAuthenticationMethod" => new PhoneAuthenticationMethod(),
+                "#microsoft.graph.pinnedChatMessageInfo" => new PinnedChatMessageInfo(),
                 "#microsoft.graph.place" => new Place(),
                 "#microsoft.graph.planner" => new Planner(),
                 "#microsoft.graph.plannerAssignedToTaskBoardTaskFormat" => new PlannerAssignedToTaskBoardTaskFormat(),

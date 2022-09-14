@@ -52,6 +52,8 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.membersDeletedEventMessageDetail" => new MembersDeletedEventMessageDetail(),
                 "#microsoft.graph.membersJoinedEventMessageDetail" => new MembersJoinedEventMessageDetail(),
                 "#microsoft.graph.membersLeftEventMessageDetail" => new MembersLeftEventMessageDetail(),
+                "#microsoft.graph.messagePinnedEventMessageDetail" => new MessagePinnedEventMessageDetail(),
+                "#microsoft.graph.messageUnpinnedEventMessageDetail" => new MessageUnpinnedEventMessageDetail(),
                 "#microsoft.graph.tabUpdatedEventMessageDetail" => new TabUpdatedEventMessageDetail(),
                 "#microsoft.graph.teamArchivedEventMessageDetail" => new TeamArchivedEventMessageDetail(),
                 "#microsoft.graph.teamCreatedEventMessageDetail" => new TeamCreatedEventMessageDetail(),

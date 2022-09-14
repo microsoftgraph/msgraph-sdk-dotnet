@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
+    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class Chat : Entity, IParsable {
         /// <summary>The chatType property</summary>
         public Microsoft.Graph.Models.ChatType? ChatType {
@@ -40,6 +40,11 @@ namespace Microsoft.Graph.Models {
         public TeamworkOnlineMeetingInfo OnlineMeetingInfo {
             get { return BackingStore?.Get<TeamworkOnlineMeetingInfo>("onlineMeetingInfo"); }
             set { BackingStore?.Set("onlineMeetingInfo", value); }
+        }
+        /// <summary>The pinnedMessages property</summary>
+        public List<PinnedChatMessageInfo> PinnedMessages {
+            get { return BackingStore?.Get<List<PinnedChatMessageInfo>>("pinnedMessages"); }
+            set { BackingStore?.Set("pinnedMessages", value); }
         }
         /// <summary>A collection of all the tabs in the chat. Nullable.</summary>
         public List<TeamsTab> Tabs {
@@ -87,6 +92,7 @@ namespace Microsoft.Graph.Models {
                 {"members", n => { Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"messages", n => { Messages = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"onlineMeetingInfo", n => { OnlineMeetingInfo = n.GetObjectValue<TeamworkOnlineMeetingInfo>(TeamworkOnlineMeetingInfo.CreateFromDiscriminatorValue); } },
+                {"pinnedMessages", n => { PinnedMessages = n.GetCollectionOfObjectValues<PinnedChatMessageInfo>(PinnedChatMessageInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"tabs", n => { Tabs = n.GetCollectionOfObjectValues<TeamsTab>(TeamsTab.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
                 {"topic", n => { Topic = n.GetStringValue(); } },
@@ -107,6 +113,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfObjectValues<ConversationMember>("members", Members);
             writer.WriteCollectionOfObjectValues<ChatMessage>("messages", Messages);
             writer.WriteObjectValue<TeamworkOnlineMeetingInfo>("onlineMeetingInfo", OnlineMeetingInfo);
+            writer.WriteCollectionOfObjectValues<PinnedChatMessageInfo>("pinnedMessages", PinnedMessages);
             writer.WriteCollectionOfObjectValues<TeamsTab>("tabs", Tabs);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("topic", Topic);

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Sets {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Collection of all sets available in the term store.
+        /// Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SetsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Sets {
             return requestInfo;
         }
         /// <summary>
-        /// Collection of all sets available in the term store.
+        /// Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Sets {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Collection of all sets available in the term store.</summary>
+        /// <summary>Collection of all sets available in the term store. This relationship can only be used to load a specific term set.</summary>
         public class SetsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

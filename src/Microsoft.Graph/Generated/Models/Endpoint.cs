@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Casts the previous resource to endpoint.</summary>
+    /// <summary>Provides operations to call the instantiate method.</summary>
     public class Endpoint : DirectoryObject, IParsable {
         /// <summary>The capability property</summary>
         public string Capability {

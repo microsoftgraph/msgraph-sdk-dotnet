@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models.TermStore {
             get { return BackingStore?.Get<List<string>>("languageTags"); }
             set { BackingStore?.Set("languageTags", value); }
         }
-        /// <summary>Collection of all sets available in the term store.</summary>
+        /// <summary>Collection of all sets available in the term store. This relationship can only be used to load a specific term set.</summary>
         public List<Set> Sets {
             get { return BackingStore?.Get<List<Set>>("sets"); }
             set { BackingStore?.Set("sets", value); }

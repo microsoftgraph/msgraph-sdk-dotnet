@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<List<string>>("redirectUris"); }
             set { BackingStore?.Set("redirectUris", value); }
         }
+        /// <summary>The redirectUriSettings property</summary>
+        public List<Microsoft.Graph.Models.RedirectUriSettings> RedirectUriSettings {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RedirectUriSettings>>("redirectUriSettings"); }
+            set { BackingStore?.Set("redirectUriSettings", value); }
+        }
         /// <summary>
         /// Instantiates a new webApplication and sets the default values.
         /// </summary>
@@ -64,6 +69,7 @@ namespace Microsoft.Graph.Models {
                 {"logoutUrl", n => { LogoutUrl = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"redirectUris", n => { RedirectUris = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"redirectUriSettings", n => { RedirectUriSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.RedirectUriSettings>(Microsoft.Graph.Models.RedirectUriSettings.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -77,6 +83,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("logoutUrl", LogoutUrl);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("redirectUris", RedirectUris);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.RedirectUriSettings>("redirectUriSettings", RedirectUriSettings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

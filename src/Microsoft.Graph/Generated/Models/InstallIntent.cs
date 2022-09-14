@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public enum InstallIntent {
         /// <summary>Available install intent.</summary>
         Available,

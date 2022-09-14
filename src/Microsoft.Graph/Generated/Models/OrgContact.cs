@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Provides operations to manage the collection of orgContact entities.</summary>
     public class OrgContact : DirectoryObject, IParsable {
         /// <summary>The addresses property</summary>
         public List<PhysicalOfficeAddress> Addresses {
@@ -96,7 +97,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
         /// <summary>
-        /// Instantiates a new OrgContact and sets the default values.
+        /// Instantiates a new orgContact and sets the default values.
         /// </summary>
         public OrgContact() : base() {
             OdataType = "#microsoft.graph.orgContact";
