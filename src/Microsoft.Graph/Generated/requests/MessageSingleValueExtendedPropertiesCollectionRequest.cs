@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> AddAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedProperty, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
-            this.Method = HttpMethods.POST;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsync<SingleValueLegacyExtendedProperty>(singleValueLegacyExtendedProperty, cancellationToken);
         }
 
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> AddResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedProperty, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
-            this.Method = HttpMethods.POST;
+            this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<SingleValueLegacyExtendedProperty>(singleValueLegacyExtendedProperty, cancellationToken);
         }
 
