@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps.Item.Chat {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The chat between the user and Teams app.
+        /// Retrieve the chat of the specified user and Teams app.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ChatRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps.Item.Chat {
             return requestInfo;
         }
         /// <summary>
-        /// The chat between the user and Teams app.
+        /// Retrieve the chat of the specified user and Teams app.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps.Item.Chat {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Chat>(requestInfo, Microsoft.Graph.Models.Chat.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The chat between the user and Teams app.</summary>
+        /// <summary>Retrieve the chat of the specified user and Teams app.</summary>
         public class ChatRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Contacts.Item.Manager {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get manager from contacts
+        /// Get this organizational contact&apos;s manager.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ManagerRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Contacts.Item.Manager {
             return requestInfo;
         }
         /// <summary>
-        /// Get manager from contacts
+        /// Get this organizational contact&apos;s manager.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Contacts.Item.Manager {
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get manager from contacts</summary>
+        /// <summary>Get this organizational contact&apos;s manager.</summary>
         public class ManagerRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CalendarView.Item.Can
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Cancels the giving booking appointment, sending a message to the involved parties.
+        /// Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CalendarView.Item.Can
             return requestInfo;
         }
         /// <summary>
-        /// Cancels the giving booking appointment, sending a message to the involved parties.
+        /// Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

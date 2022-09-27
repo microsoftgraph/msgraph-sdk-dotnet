@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Education.Schools.Item.AdministrativeUnit {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The underlying administrativeUnit for this school.
+        /// Get a list of **administrativeUnits** associated with an educationSchool object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AdministrativeUnitRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Education.Schools.Item.AdministrativeUnit {
             return requestInfo;
         }
         /// <summary>
-        /// The underlying administrativeUnit for this school.
+        /// Get a list of **administrativeUnits** associated with an educationSchool object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Education.Schools.Item.AdministrativeUnit {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Models.AdministrativeUnit.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The underlying administrativeUnit for this school.</summary>
+        /// <summary>Get a list of **administrativeUnits** associated with an educationSchool object.</summary>
         public class AdministrativeUnitRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

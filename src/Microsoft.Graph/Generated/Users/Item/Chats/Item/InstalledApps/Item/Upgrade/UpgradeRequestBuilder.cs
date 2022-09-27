@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.InstalledApps.Item.Upgrade {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action upgrade
+        /// Upgrade an app installation within a chat.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<UpgradeRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.InstalledApps.Item.Upgrade {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action upgrade
+        /// Upgrade an app installation within a chat.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

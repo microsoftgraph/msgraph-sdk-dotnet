@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Groups.Item.Drives.Item.Items.Item.Checkout {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action checkout
+        /// Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<CheckoutRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.Drives.Item.Items.Item.Checkout {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action checkout
+        /// Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

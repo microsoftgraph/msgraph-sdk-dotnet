@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.AddCopy {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action addCopy
+        /// Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.AddCopy {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action addCopy
+        /// Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

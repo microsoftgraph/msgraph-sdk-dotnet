@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Reopen {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action reopen
+        /// Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<ReopenRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Reopen {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action reopen
+        /// Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

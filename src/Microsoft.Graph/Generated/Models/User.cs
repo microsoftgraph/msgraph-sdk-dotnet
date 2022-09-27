@@ -50,6 +50,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Authentication>("authentication"); }
             set { BackingStore?.Set("authentication", value); }
         }
+        /// <summary>The authorizationInfo property</summary>
+        public Microsoft.Graph.Models.AuthorizationInfo AuthorizationInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthorizationInfo>("authorizationInfo"); }
+            set { BackingStore?.Set("authorizationInfo", value); }
+        }
         /// <summary>The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.</summary>
         public DateTimeOffset? Birthday {
             get { return BackingStore?.Get<DateTimeOffset?>("birthday"); }
@@ -618,6 +623,7 @@ namespace Microsoft.Graph.Models {
                 {"assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"authentication", n => { Authentication = n.GetObjectValue<Microsoft.Graph.Models.Authentication>(Microsoft.Graph.Models.Authentication.CreateFromDiscriminatorValue); } },
+                {"authorizationInfo", n => { AuthorizationInfo = n.GetObjectValue<Microsoft.Graph.Models.AuthorizationInfo>(Microsoft.Graph.Models.AuthorizationInfo.CreateFromDiscriminatorValue); } },
                 {"birthday", n => { Birthday = n.GetDateTimeOffsetValue(); } },
                 {"businessPhones", n => { BusinessPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"calendar", n => { Calendar = n.GetObjectValue<Microsoft.Graph.Models.Calendar>(Microsoft.Graph.Models.Calendar.CreateFromDiscriminatorValue); } },
@@ -744,6 +750,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfObjectValues<AssignedLicense>("assignedLicenses", AssignedLicenses);
             writer.WriteCollectionOfObjectValues<AssignedPlan>("assignedPlans", AssignedPlans);
             writer.WriteObjectValue<Microsoft.Graph.Models.Authentication>("authentication", Authentication);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AuthorizationInfo>("authorizationInfo", AuthorizationInfo);
             writer.WriteDateTimeOffsetValue("birthday", Birthday);
             writer.WriteCollectionOfPrimitiveValues<string>("businessPhones", BusinessPhones);
             writer.WriteObjectValue<Microsoft.Graph.Models.Calendar>("calendar", Calendar);

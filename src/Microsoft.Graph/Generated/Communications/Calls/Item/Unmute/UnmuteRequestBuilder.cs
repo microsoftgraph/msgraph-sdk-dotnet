@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Unmute {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action unmute
+        /// Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Unmute {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action unmute
+        /// Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

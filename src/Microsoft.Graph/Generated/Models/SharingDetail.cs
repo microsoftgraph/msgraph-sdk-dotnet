@@ -81,7 +81,6 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<InsightIdentity>("sharedBy", SharedBy);
             writer.WriteDateTimeOffsetValue("sharedDateTime", SharedDateTime);
-            writer.WriteObjectValue<ResourceReference>("sharingReference", SharingReference);
             writer.WriteStringValue("sharingSubject", SharingSubject);
             writer.WriteStringValue("sharingType", SharingType);
             writer.WriteAdditionalData(AdditionalData);

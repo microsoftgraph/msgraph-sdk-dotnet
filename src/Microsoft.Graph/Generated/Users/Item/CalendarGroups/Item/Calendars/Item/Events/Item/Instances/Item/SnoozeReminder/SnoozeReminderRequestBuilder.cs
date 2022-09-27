@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.I
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action snoozeReminder
+        /// Postpone a reminder for an event in a user calendar until a new time.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.I
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action snoozeReminder
+        /// Postpone a reminder for an event in a user calendar until a new time.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

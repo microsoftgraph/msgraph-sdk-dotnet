@@ -207,7 +207,6 @@ namespace Microsoft.Graph.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("applyOnlyToWindowsPhone81", ApplyOnlyToWindowsPhone81);
             writer.WriteBoolValue("appsBlockCopyPaste", AppsBlockCopyPaste);
             writer.WriteBoolValue("bluetoothBlocked", BluetoothBlocked);
             writer.WriteBoolValue("cameraBlocked", CameraBlocked);

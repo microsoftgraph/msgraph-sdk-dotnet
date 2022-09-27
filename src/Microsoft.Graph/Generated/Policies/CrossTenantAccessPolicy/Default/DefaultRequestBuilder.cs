@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default {
             return requestInfo;
         }
         /// <summary>
-        /// Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+        /// Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Azure AD (**isServiceDefault** is `true`) or may be customized in your tenant (**isServiceDefault** is `false`).
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DefaultRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property default in policies
+        /// Update the default configuration of a cross-tenant access policy.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -99,6 +99,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new DefaultRequestBuilderPatchRequestConfiguration();
@@ -123,7 +124,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+        /// Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Azure AD (**isServiceDefault** is `true`) or may be customized in your tenant (**isServiceDefault** is `false`).
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -137,20 +138,20 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default {
             return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationDefault>(requestInfo, CrossTenantAccessPolicyConfigurationDefault.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property default in policies
+        /// Update the default configuration of a cross-tenant access policy.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(CrossTenantAccessPolicyConfigurationDefault body, Action<DefaultRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CrossTenantAccessPolicyConfigurationDefault> PatchAsync(CrossTenantAccessPolicyConfigurationDefault body, Action<DefaultRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationDefault>(requestInfo, CrossTenantAccessPolicyConfigurationDefault.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class DefaultRequestBuilderDeleteRequestConfiguration {
@@ -166,7 +167,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.</summary>
+        /// <summary>Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Azure AD (**isServiceDefault** is `true`) or may be customized in your tenant (**isServiceDefault** is `false`).</summary>
         public class DefaultRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

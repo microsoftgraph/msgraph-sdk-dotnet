@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.RemoveEmail 
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action removeEmail
+        /// Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<RemoveEmailRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.RemoveEmail 
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action removeEmail
+        /// Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

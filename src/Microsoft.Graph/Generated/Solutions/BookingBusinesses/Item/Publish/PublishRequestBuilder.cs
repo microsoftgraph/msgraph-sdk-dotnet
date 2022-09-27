@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Publish {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Makes the scheduling page of this business available to the general public.
+        /// Make the scheduling page of a business available to external customers. Set the **isPublished** property to `true`, and the **publicUrl** property to the URL of the scheduling page.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<PublishRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Publish {
             return requestInfo;
         }
         /// <summary>
-        /// Makes the scheduling page of this business available to the general public.
+        /// Make the scheduling page of a business available to external customers. Set the **isPublished** property to `true`, and the **publicUrl** property to the URL of the scheduling page.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

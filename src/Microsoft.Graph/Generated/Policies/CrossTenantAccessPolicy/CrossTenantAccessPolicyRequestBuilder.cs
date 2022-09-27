@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// The custom rules that define an access scenario when interacting with external Azure AD tenants.
+        /// Read the properties and relationships of a crossTenantAccessPolicy object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<CrossTenantAccessPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property crossTenantAccessPolicy in policies
+        /// Update the properties of a cross-tenant access policy.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -104,6 +104,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new CrossTenantAccessPolicyRequestBuilderPatchRequestConfiguration();
@@ -128,7 +129,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The custom rules that define an access scenario when interacting with external Azure AD tenants.
+        /// Read the properties and relationships of a crossTenantAccessPolicy object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -142,20 +143,20 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CrossTenantAccessPolicy>(requestInfo, Microsoft.Graph.Models.CrossTenantAccessPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property crossTenantAccessPolicy in policies
+        /// Update the properties of a cross-tenant access policy.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Models.CrossTenantAccessPolicy body, Action<CrossTenantAccessPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.CrossTenantAccessPolicy> PatchAsync(Microsoft.Graph.Models.CrossTenantAccessPolicy body, Action<CrossTenantAccessPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CrossTenantAccessPolicy>(requestInfo, Microsoft.Graph.Models.CrossTenantAccessPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class CrossTenantAccessPolicyRequestBuilderDeleteRequestConfiguration {
@@ -171,7 +172,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The custom rules that define an access scenario when interacting with external Azure AD tenants.</summary>
+        /// <summary>Read the properties and relationships of a crossTenantAccessPolicy object.</summary>
         public class CrossTenantAccessPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

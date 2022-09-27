@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default.ResetToSystem
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action resetToSystemDefault
+        /// Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<ResetToSystemDefaultRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default.ResetToSystem
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action resetToSystemDefault
+        /// Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

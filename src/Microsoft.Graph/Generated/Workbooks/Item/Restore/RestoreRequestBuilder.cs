@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Workbooks.Item.Restore {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action restore
+        /// Restore a driveItem that has been deleted and is currently in the recycle bin. **NOTE**: This functionality is currently only available for OneDrive Personal.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Workbooks.Item.Restore {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action restore
+        /// Restore a driveItem that has been deleted and is currently in the recycle bin. **NOTE**: This functionality is currently only available for OneDrive Personal.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

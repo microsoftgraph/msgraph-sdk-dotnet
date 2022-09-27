@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.Presence.SetPresence {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action setPresence
+        /// Set the state of a user&apos;s presence session as an application.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Users.Item.Presence.SetPresence {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action setPresence
+        /// Set the state of a user&apos;s presence session as an application.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

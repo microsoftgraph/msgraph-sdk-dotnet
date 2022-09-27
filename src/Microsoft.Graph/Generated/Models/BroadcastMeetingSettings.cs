@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Caption settings of a Teams live event.</summary>
+        public BroadcastMeetingCaptionSettings Captions {
+            get { return BackingStore?.Get<BroadcastMeetingCaptionSettings>("captions"); }
+            set { BackingStore?.Set("captions", value); }
+        }
         /// <summary>Indicates whether attendee report is enabled for this Teams live event. Default value is false.</summary>
         public bool? IsAttendeeReportEnabled {
             get { return BackingStore?.Get<bool?>("isAttendeeReportEnabled"); }
@@ -65,6 +70,7 @@ namespace Microsoft.Graph.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"allowedAudience", n => { AllowedAudience = n.GetEnumValue<BroadcastMeetingAudience>(); } },
+                {"captions", n => { Captions = n.GetObjectValue<BroadcastMeetingCaptionSettings>(BroadcastMeetingCaptionSettings.CreateFromDiscriminatorValue); } },
                 {"isAttendeeReportEnabled", n => { IsAttendeeReportEnabled = n.GetBoolValue(); } },
                 {"isQuestionAndAnswerEnabled", n => { IsQuestionAndAnswerEnabled = n.GetBoolValue(); } },
                 {"isRecordingEnabled", n => { IsRecordingEnabled = n.GetBoolValue(); } },
@@ -79,6 +85,7 @@ namespace Microsoft.Graph.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<BroadcastMeetingAudience>("allowedAudience", AllowedAudience);
+            writer.WriteObjectValue<BroadcastMeetingCaptionSettings>("captions", Captions);
             writer.WriteBoolValue("isAttendeeReportEnabled", IsAttendeeReportEnabled);
             writer.WriteBoolValue("isQuestionAndAnswerEnabled", IsQuestionAndAnswerEnabled);
             writer.WriteBoolValue("isRecordingEnabled", IsRecordingEnabled);

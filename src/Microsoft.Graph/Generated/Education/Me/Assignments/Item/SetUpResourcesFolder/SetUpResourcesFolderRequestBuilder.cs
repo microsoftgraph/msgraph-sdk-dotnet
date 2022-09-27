@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.SetUpResourcesFolder {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action setUpResourcesFolder
+        /// Create a SharePoint folder to upload files for a given educationAssignment.  The teacher determines the resources to upload in the assignment&apos;s folder. 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<SetUpResourcesFolderRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.SetUpResourcesFolder {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action setUpResourcesFolder
+        /// Create a SharePoint folder to upload files for a given educationAssignment.  The teacher determines the resources to upload in the assignment&apos;s folder. 
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

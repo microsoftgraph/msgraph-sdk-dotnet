@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Remove {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action remove
+        /// Unfollow a user&apos;s site or multiple sites.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Remove {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action remove
+        /// Unfollow a user&apos;s site or multiple sites.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

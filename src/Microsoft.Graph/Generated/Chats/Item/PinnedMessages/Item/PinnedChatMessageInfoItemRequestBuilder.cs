@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Chats.Item.PinnedMessages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get pinnedMessages from chats
+        /// A collection of all the pinned messages in the chat. Nullable.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PinnedChatMessageInfoItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,6 +99,7 @@ namespace Microsoft.Graph.Chats.Item.PinnedMessages.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new PinnedChatMessageInfoItemRequestBuilderPatchRequestConfiguration();
@@ -123,7 +124,7 @@ namespace Microsoft.Graph.Chats.Item.PinnedMessages.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get pinnedMessages from chats
+        /// A collection of all the pinned messages in the chat. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -143,14 +144,14 @@ namespace Microsoft.Graph.Chats.Item.PinnedMessages.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(PinnedChatMessageInfo body, Action<PinnedChatMessageInfoItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<PinnedChatMessageInfo> PatchAsync(PinnedChatMessageInfo body, Action<PinnedChatMessageInfoItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PinnedChatMessageInfo>(requestInfo, PinnedChatMessageInfo.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class PinnedChatMessageInfoItemRequestBuilderDeleteRequestConfiguration {
@@ -166,7 +167,7 @@ namespace Microsoft.Graph.Chats.Item.PinnedMessages.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get pinnedMessages from chats</summary>
+        /// <summary>A collection of all the pinned messages in the chat. Nullable.</summary>
         public class PinnedChatMessageInfoItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

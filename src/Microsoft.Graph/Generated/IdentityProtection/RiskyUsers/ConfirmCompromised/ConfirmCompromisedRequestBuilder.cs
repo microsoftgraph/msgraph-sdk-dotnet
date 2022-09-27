@@ -44,7 +44,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action confirmCompromised
+        /// Confirm one or more riskyUser objects as compromised. This action sets the targeted user&apos;s risk level to high.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action confirmCompromised
+        /// Confirm one or more riskyUser objects as compromised. This action sets the targeted user&apos;s risk level to high.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action markRead
+        /// Mark a list of serviceUpdateMessages as **read** for the signed in user.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action markRead
+        /// Mark a list of serviceUpdateMessages as **read** for the signed in user.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

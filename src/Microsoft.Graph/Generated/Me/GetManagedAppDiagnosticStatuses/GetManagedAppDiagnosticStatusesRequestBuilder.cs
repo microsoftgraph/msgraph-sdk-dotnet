@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses {
         public GetManagedAppDiagnosticStatusesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/microsoft.graph.getManagedAppDiagnosticStatuses()";
+            UrlTemplate = "{+baseurl}/me/microsoft.graph.getManagedAppDiagnosticStatuses(){?%24top,%24skip,%24search,%24filter,%24count}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses {
         public GetManagedAppDiagnosticStatusesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/microsoft.graph.getManagedAppDiagnosticStatuses()";
+            UrlTemplate = "{+baseurl}/me/microsoft.graph.getManagedAppDiagnosticStatuses(){?%24top,%24skip,%24search,%24filter,%24count}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -57,6 +57,7 @@ namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses {
             if (requestConfiguration != null) {
                 var requestConfig = new GetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
+                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
@@ -76,12 +77,32 @@ namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses {
             };
             return await RequestAdapter.SendAsync<GetManagedAppDiagnosticStatusesResponse>(requestInfo, GetManagedAppDiagnosticStatusesResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
+        /// <summary>Gets diagnostics validation status for a given user.</summary>
+        public class GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters {
+            /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
+            public bool? Count { get; set; }
+            /// <summary>Filter items by property values</summary>
+            [QueryParameter("%24filter")]
+            public string Filter { get; set; }
+            /// <summary>Search items by search phrases</summary>
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
+            /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
+            public int? Skip { get; set; }
+            /// <summary>Show only the first n items</summary>
+            [QueryParameter("%24top")]
+            public int? Top { get; set; }
+        }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class GetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
             public IDictionary<string, string> Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
+            /// <summary>Request query parameters</summary>
+            public GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters();
             /// <summary>
             /// Instantiates a new getManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>

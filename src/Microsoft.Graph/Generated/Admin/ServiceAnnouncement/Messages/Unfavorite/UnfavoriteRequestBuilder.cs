@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action unfavorite
+        /// Remove the favorite status of serviceUpdateMessages for the signed in user.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action unfavorite
+        /// Remove the favorite status of serviceUpdateMessages for the signed in user.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

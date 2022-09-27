@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Groups.Item.SubscribeByMail {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action subscribeByMail
+        /// Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<SubscribeByMailRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.SubscribeByMail {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action subscribeByMail
+        /// Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

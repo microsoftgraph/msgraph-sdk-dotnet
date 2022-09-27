@@ -145,9 +145,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("defaultCurrencyIso", DefaultCurrencyIso);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
-            writer.WriteBoolValue("isPublished", IsPublished);
             writer.WriteStringValue("phone", Phone);
-            writer.WriteStringValue("publicUrl", PublicUrl);
             writer.WriteObjectValue<BookingSchedulingPolicy>("schedulingPolicy", SchedulingPolicy);
             writer.WriteCollectionOfObjectValues<BookingService>("services", Services);
             writer.WriteCollectionOfObjectValues<BookingStaffMemberBase>("staffMembers", StaffMembers);

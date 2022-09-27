@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Policies.AdminConsentRequestPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// The policy by which consent requests are created and managed for the entire tenant.
+        /// Read the properties and relationships of an adminConsentRequestPolicy object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AdminConsentRequestPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Policies.AdminConsentRequestPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property adminConsentRequestPolicy in policies
+        /// Update the properties of an adminConsentRequestPolicy object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -94,6 +94,7 @@ namespace Microsoft.Graph.Policies.AdminConsentRequestPolicy {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new AdminConsentRequestPolicyRequestBuilderPatchRequestConfiguration();
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Policies.AdminConsentRequestPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The policy by which consent requests are created and managed for the entire tenant.
+        /// Read the properties and relationships of an adminConsentRequestPolicy object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -132,20 +133,20 @@ namespace Microsoft.Graph.Policies.AdminConsentRequestPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AdminConsentRequestPolicy>(requestInfo, Microsoft.Graph.Models.AdminConsentRequestPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property adminConsentRequestPolicy in policies
+        /// Update the properties of an adminConsentRequestPolicy object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Models.AdminConsentRequestPolicy body, Action<AdminConsentRequestPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.AdminConsentRequestPolicy> PatchAsync(Microsoft.Graph.Models.AdminConsentRequestPolicy body, Action<AdminConsentRequestPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AdminConsentRequestPolicy>(requestInfo, Microsoft.Graph.Models.AdminConsentRequestPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class AdminConsentRequestPolicyRequestBuilderDeleteRequestConfiguration {
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.Policies.AdminConsentRequestPolicy {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The policy by which consent requests are created and managed for the entire tenant.</summary>
+        /// <summary>Read the properties and relationships of an adminConsentRequestPolicy object.</summary>
         public class AdminConsentRequestPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

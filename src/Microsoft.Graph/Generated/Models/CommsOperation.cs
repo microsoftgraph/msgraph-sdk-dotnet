@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public class CommsOperation : Entity, IParsable {
         /// <summary>Unique Client Context string. Max limit is 256 chars.</summary>
         public string ClientContext {
@@ -36,6 +36,7 @@ namespace Microsoft.Graph.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.addLargeGalleryViewOperation" => new AddLargeGalleryViewOperation(),
                 "#microsoft.graph.cancelMediaProcessingOperation" => new CancelMediaProcessingOperation(),
                 "#microsoft.graph.inviteParticipantsOperation" => new InviteParticipantsOperation(),
                 "#microsoft.graph.muteParticipantOperation" => new MuteParticipantOperation(),

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Instances.Item.Acc
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action accept
+        /// Accept the specified event in a user calendar.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Instances.Item.Acc
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action accept
+        /// Accept the specified event in a user calendar.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -73,8 +73,6 @@ namespace Microsoft.Graph.Models {
             writer.WriteObjectValue<SharingDetail>("lastShared", LastShared);
             writer.WriteObjectValue<Entity>("lastSharedMethod", LastSharedMethod);
             writer.WriteObjectValue<Entity>("resource", Resource);
-            writer.WriteObjectValue<Microsoft.Graph.Models.ResourceReference>("resourceReference", ResourceReference);
-            writer.WriteObjectValue<Microsoft.Graph.Models.ResourceVisualization>("resourceVisualization", ResourceVisualization);
             writer.WriteCollectionOfObjectValues<SharingDetail>("sharingHistory", SharingHistory);
         }
     }

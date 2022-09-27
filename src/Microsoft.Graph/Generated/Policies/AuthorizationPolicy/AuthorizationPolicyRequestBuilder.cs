@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Policies.AuthorizationPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property authorizationPolicy in policies
+        /// Update the properties of an authorizationPolicy object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -94,6 +94,7 @@ namespace Microsoft.Graph.Policies.AuthorizationPolicy {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new AuthorizationPolicyRequestBuilderPatchRequestConfiguration();
@@ -132,20 +133,20 @@ namespace Microsoft.Graph.Policies.AuthorizationPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthorizationPolicy>(requestInfo, Microsoft.Graph.Models.AuthorizationPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property authorizationPolicy in policies
+        /// Update the properties of an authorizationPolicy object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Models.AuthorizationPolicy body, Action<AuthorizationPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.AuthorizationPolicy> PatchAsync(Microsoft.Graph.Models.AuthorizationPolicy body, Action<AuthorizationPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthorizationPolicy>(requestInfo, Microsoft.Graph.Models.AuthorizationPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class AuthorizationPolicyRequestBuilderDeleteRequestConfiguration {

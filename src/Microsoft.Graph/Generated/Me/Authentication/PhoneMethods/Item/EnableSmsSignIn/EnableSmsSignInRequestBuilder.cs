@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods.Item.EnableSmsSignIn {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action enableSmsSignIn
+        /// Enable SMS sign-in for an existing `mobile` phone number registered to a user. To be successfully enabled:
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<EnableSmsSignInRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods.Item.EnableSmsSignIn {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action enableSmsSignIn
+        /// Enable SMS sign-in for an existing `mobile` phone number registered to a user. To be successfully enabled:
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

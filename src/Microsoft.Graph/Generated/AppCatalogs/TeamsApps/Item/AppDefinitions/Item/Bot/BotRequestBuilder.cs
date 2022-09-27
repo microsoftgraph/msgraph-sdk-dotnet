@@ -63,7 +63,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Bot {
             return requestInfo;
         }
         /// <summary>
-        /// The details of the bot specified in the Teams app manifest.
+        /// Get the bot associated with a specific definition of the  TeamsApp.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<BotRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -94,6 +94,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Bot {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new BotRequestBuilderPatchRequestConfiguration();
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Bot {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The details of the bot specified in the Teams app manifest.
+        /// Get the bot associated with a specific definition of the  TeamsApp.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -138,14 +139,14 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Bot {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(TeamworkBot body, Action<BotRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamworkBot> PatchAsync(TeamworkBot body, Action<BotRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkBot>(requestInfo, TeamworkBot.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class BotRequestBuilderDeleteRequestConfiguration {
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Bot {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The details of the bot specified in the Teams app manifest.</summary>
+        /// <summary>Get the bot associated with a specific definition of the  TeamsApp.</summary>
         public class BotRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

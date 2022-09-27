@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.Progress
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+        /// Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ProgressTaskBoardFormatRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.Progress
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property progressTaskBoardFormat in me
+        /// Update the properties of **plannerProgressTaskBoardTaskFormat** object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -94,6 +94,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.Progress
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration();
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.Progress
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+        /// Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -132,20 +133,20 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.Progress
             return await RequestAdapter.SendAsync<PlannerProgressTaskBoardTaskFormat>(requestInfo, PlannerProgressTaskBoardTaskFormat.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property progressTaskBoardFormat in me
+        /// Update the properties of **plannerProgressTaskBoardTaskFormat** object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(PlannerProgressTaskBoardTaskFormat body, Action<ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<PlannerProgressTaskBoardTaskFormat> PatchAsync(PlannerProgressTaskBoardTaskFormat body, Action<ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerProgressTaskBoardTaskFormat>(requestInfo, PlannerProgressTaskBoardTaskFormat.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class ProgressTaskBoardFormatRequestBuilderDeleteRequestConfiguration {
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.Progress
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.</summary>
+        /// <summary>Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.</summary>
         public class ProgressTaskBoardFormatRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

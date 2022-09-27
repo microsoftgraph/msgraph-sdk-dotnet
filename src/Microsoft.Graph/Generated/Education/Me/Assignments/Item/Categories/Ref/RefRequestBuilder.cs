@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Ref {
         public RefRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/categories/$ref{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby}";
+            UrlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/categories/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,14 +38,14 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/categories/$ref{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby}";
+            UrlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/categories/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+        /// List all the categories associated with an assignment.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<RefRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+        /// List all the categories associated with an assignment.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Ref {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>When set, enables users to easily find assignments of a given type.  Read-only. Nullable.</summary>
+        /// <summary>List all the categories associated with an assignment.</summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

@@ -265,7 +265,6 @@ namespace Microsoft.Graph.Models {
             writer.WriteIntValue("featureUpdatesDeferralPeriodInDays", FeatureUpdatesDeferralPeriodInDays);
             writer.WriteBoolValue("featureUpdatesPaused", FeatureUpdatesPaused);
             writer.WriteDateTimeOffsetValue("featureUpdatesPauseExpiryDateTime", FeatureUpdatesPauseExpiryDateTime);
-            writer.WriteDateValue("featureUpdatesPauseStartDate", FeatureUpdatesPauseStartDate);
             writer.WriteDateTimeOffsetValue("featureUpdatesRollbackStartDateTime", FeatureUpdatesRollbackStartDateTime);
             writer.WriteIntValue("featureUpdatesRollbackWindowInDays", FeatureUpdatesRollbackWindowInDays);
             writer.WriteBoolValue("featureUpdatesWillBeRolledBack", FeatureUpdatesWillBeRolledBack);
@@ -276,7 +275,6 @@ namespace Microsoft.Graph.Models {
             writer.WriteIntValue("qualityUpdatesDeferralPeriodInDays", QualityUpdatesDeferralPeriodInDays);
             writer.WriteBoolValue("qualityUpdatesPaused", QualityUpdatesPaused);
             writer.WriteDateTimeOffsetValue("qualityUpdatesPauseExpiryDateTime", QualityUpdatesPauseExpiryDateTime);
-            writer.WriteDateValue("qualityUpdatesPauseStartDate", QualityUpdatesPauseStartDate);
             writer.WriteDateTimeOffsetValue("qualityUpdatesRollbackStartDateTime", QualityUpdatesRollbackStartDateTime);
             writer.WriteBoolValue("qualityUpdatesWillBeRolledBack", QualityUpdatesWillBeRolledBack);
             writer.WriteIntValue("scheduleImminentRestartWarningInMinutes", ScheduleImminentRestartWarningInMinutes);

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.GetSchedule {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action getSchedule
+        /// Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.GetSchedule {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action getSchedule
+        /// Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

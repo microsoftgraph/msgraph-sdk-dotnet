@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.CreateOrGet {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action createOrGet
+        /// Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. 
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.CreateOrGet {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action createOrGet
+        /// Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. 
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

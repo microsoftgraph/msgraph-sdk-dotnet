@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.Reply {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action reply
+        /// Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.Reply {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action reply
+        /// Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

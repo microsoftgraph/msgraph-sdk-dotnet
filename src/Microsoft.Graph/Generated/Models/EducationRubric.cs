@@ -87,13 +87,9 @@ namespace Microsoft.Graph.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<EducationItemBody>("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<EducationAssignmentGradeType>("grading", Grading);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfObjectValues<RubricLevel>("levels", Levels);
             writer.WriteCollectionOfObjectValues<RubricQuality>("qualities", Qualities);
         }

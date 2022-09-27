@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Instances.
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action dismissReminder
+        /// Dismiss a reminder that has been triggered for an event in a user calendar.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<DismissReminderRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Instances.
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action dismissReminder
+        /// Dismiss a reminder that has been triggered for an event in a user calendar.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

@@ -78,9 +78,7 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("certificationDetailsUrl", CertificationDetailsUrl);
             writer.WriteDateTimeOffsetValue("certificationExpirationDateTime", CertificationExpirationDateTime);
-            writer.WriteBoolValue("isCertifiedByMicrosoft", IsCertifiedByMicrosoft);
             writer.WriteBoolValue("isPublisherAttested", IsPublisherAttested);
             writer.WriteDateTimeOffsetValue("lastCertificationDateTime", LastCertificationDateTime);
             writer.WriteStringValue("@odata.type", OdataType);

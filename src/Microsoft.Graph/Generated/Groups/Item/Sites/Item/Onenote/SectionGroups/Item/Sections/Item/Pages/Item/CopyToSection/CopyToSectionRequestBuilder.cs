@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.SectionGroups.Item.Sect
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action copyToSection
+        /// Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.SectionGroups.Item.Sect
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action copyToSection
+        /// Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

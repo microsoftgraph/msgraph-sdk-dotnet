@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<TeamworkOnlineMeetingInfo>("onlineMeetingInfo"); }
             set { BackingStore?.Set("onlineMeetingInfo", value); }
         }
-        /// <summary>The pinnedMessages property</summary>
+        /// <summary>A collection of all the pinned messages in the chat. Nullable.</summary>
         public List<PinnedChatMessageInfo> PinnedMessages {
             get { return BackingStore?.Get<List<PinnedChatMessageInfo>>("pinnedMessages"); }
             set { BackingStore?.Set("pinnedMessages", value); }

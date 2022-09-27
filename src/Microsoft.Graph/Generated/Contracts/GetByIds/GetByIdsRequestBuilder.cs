@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Contracts.GetByIds {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action getByIds
+        /// Return the directory objects specified in a list of IDs. Some common uses for this function are to:
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Contracts.GetByIds {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action getByIds
+        /// Return the directory objects specified in a list of IDs. Some common uses for this function are to:
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
